@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll } from '../../../../hypium/index';
+import { describe, it, expect, Level } from '../../../../hypium/index';
 import {
   GestureActionPhase,
   GestureListenerType,
@@ -25,7 +25,7 @@ import {
 } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
+
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { getMainUIContextForStaticTest, waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
 import { invokeEnableDropDisallowedBadgeTrueThenFalse } from '../../../ets/MainAbility/common/UIContextBadgeBridge';
@@ -39,9 +39,6 @@ import {
 
 export default function UIContextUIObserverApiTest(): void {
   describe('UIContextUIObserverApiTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.commonEvents.api24.static', 'EntryAbility');
-    });
 
     /**
      * @tc.number SUB_ArkUI_UIObserver_AddGlobalGestureListener_Tap_WithPhases_1400
@@ -52,6 +49,7 @@ export default function UIContextUIObserverApiTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_UIObserver_AddGlobalGestureListener_Tap_WithPhases_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let uiContext = getMainUIContextForStaticTest();
       expect(uiContext !== undefined && uiContext !== null).assertTrue();
       let listener: GestureListenerCallback = (info: GestureTriggerInfo): void => {
@@ -74,7 +72,12 @@ export default function UIContextUIObserverApiTest(): void {
       expect(Number(AppStorage.get<string>('uio_tap_cb_count'))).assertLarger(0);
       expect(AppStorage.get<string>('uio_tap_phase') !== undefined).assertTrue();
       uiContext!.getUIObserver().removeGlobalGestureListener(GestureListenerType.TAP, listener);
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -86,6 +89,7 @@ export default function UIContextUIObserverApiTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_UIObserver_RemoveGlobalGestureListener_WithCallback_1500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let uiContext = getMainUIContextForStaticTest();
       expect(uiContext !== undefined && uiContext !== null).assertTrue();
       let listener: GestureListenerCallback = (_info: GestureTriggerInfo): void => {
@@ -106,7 +110,12 @@ export default function UIContextUIObserverApiTest(): void {
       await Utils.sleep(1200);
       uiContext!.getUIObserver().removeGlobalGestureListener(GestureListenerType.LONG_PRESS, listener);
       expect(Number(AppStorage.get<string>('uio_lp_cb_count') ?? '0')).assertLargerOrEqual(0);
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**

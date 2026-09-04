@@ -985,6 +985,8 @@ export const EnumOHEnableSkipSamples1: () => number;
 
 export const EnumOHEnableSkipSamples2: () => number;
 
+export const EnumOHAudioChannelLayout: () => number;
+
 export const AudioEncoderSetMaxInputBufferSize_Zero: () => number;
 
 export const AudioEncoderSetMaxInputBufferSize_10M: () => number;

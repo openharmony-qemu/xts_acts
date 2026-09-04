@@ -14,28 +14,14 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, afterEach, TestType } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function ButtonTypeTest() {
   describe('ButtonTypeTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("TextPickerTextStyle beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.api13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async () => {
       console.info("ButtonTypeTest beforeEach start");
@@ -68,20 +54,20 @@ export default function ButtonTypeTest() {
     
     
     /**
-     * @tc.number   testButton_static_0100
-     * @tc.name     testButton_static_0100
-     * @tc.desc     testButton_static_0100
+     * @tc.number   SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100
+     * @tc.name     SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100
+     * @tc.desc     SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100
      * @tc.level    Level.LEVEL1
      */
-it('testButton_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
 
-      console.info('testButton_static_0100 START');
+      console.info('SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100 START');
       await CommonFunc.sleep(1000);
       let btn = inspector.getInspectorByKey('btn');
-      console.info("testButton_static_0100 component obj is: " + JSON.stringify(btn));
-      console.info("[testButton_static_0100] title: " + JSON.stringify(JSON.parseJsonElement(btn).getElement('$attrs').getString('type')));
+      console.info("SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100 component obj is: " + JSON.stringify(btn));
+      console.info("[SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100] title: " + JSON.stringify(JSON.parseJsonElement(btn).getElement('$attrs').getString('type')));
       expect(JSON.stringify(JSON.parseJsonElement(btn).getElement('$attrs').getString('type'))).assertEqual('"ButtonType.ROUNDED_RECTANGLE"');
-      console.info('testButton_static_0100 END');
+      console.info('SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100 END');
       done();
     });
   

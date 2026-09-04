@@ -4,8 +4,8 @@ import { notificationExtensionSubscription, notificationManager } from '@kit.Not
 import { BusinessError } from '@kit.BasicServicesKit'
 import { abilityAccessCtrl } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';
-let commonTag: string = "Subscribe"
-let bundleName:string = "com.example.actsNotificationAnsThreePartyWatchThirdPartyNoAbility"
+let commonTag: string = 'Subscribe'
+let bundleName:string = 'com.example.actsNotificationAnsThreePartyWatchThirdPartyNoAbility'
 export default function actsNotificationAnsThreePartySubscribeTest() {
   let uiAbilityContext: common.UIAbilityContext | undefined =
     AppStorage.get<common.UIAbilityContext>('uiAbilityContext');
@@ -34,7 +34,7 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
       * @tc.level     Level 2
     */
     it('Sub_Notification_Ans_ThreePartyWatch_1007', Level.LEVEL2, async (done: Function) => {
-      let TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1007 ";
+      let TAG = commonTag + 'Sub_Notification_Ans_ThreePartyWatch_1007 ';
       let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [
         {
           addr: '12345678901', // 使用动态获取的蓝牙地址
@@ -43,7 +43,7 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
       ];
       await
       notificationExtensionSubscription.subscribe(infos).then(() => {
-        console.info(TAG+"subscribe success1111");
+        console.info(TAG+'subscribe success1111');
         expect(false).assertTrue();
         done();
       }).catch((err: BusinessError) => {

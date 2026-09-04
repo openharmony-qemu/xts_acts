@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -551,6 +551,72 @@ describe('fileIO_fs_mkdir11', function () {
       console.log('fileIO_test_mkdir_async_new_014 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
     }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_new_015
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_1500
+   * @tc.desc   Test mkdir(path, recursion) interfaces. Promise. Recursion is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_new_015', Level.LEVEL0, async function (done) {
+    try {
+      await fileIO.mkdir("", null);
+      console.log('fileIO_test_mkdir_async_new_015 run err');
+      expect().assertFail();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_new_015 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_async_new_016
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_1600
+   * @tc.desc   Test mkdir(path, recursion, callback) interfaces. Recursion is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_async_new_016', Level.LEVEL0, async function (done) {
+    try {
+      fileIO.mkdir("", null, (err) => {
+        if (err) {
+          console.log('fileIO_test_mkdir_async_new_016 error package: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(13900020);
+        } else {
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_mkdir_async_new_016 has failed for ' + e.message + ', code: ' + e.code);
+      expect().assertFail();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_mkdir_sync_new_008
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIRSYNC_NEW_0800
+   * @tc.desc   Test mkdirSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_mkdir_sync_new_008', Level.LEVEL0, async function (done) {
+    try {
+      fileIO.mkdirSync('', null);
+      console.log('fileIO_test_mkdir_async_new_015 run err');
+      expect().assertFail();
+    } catch (e) {
+      console.log('fileIO_test_mkdir_sync_new_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+    done();
   });
 })
 }

@@ -15,19 +15,9 @@
  */
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign,TouchType,HitTestMode } from '@ohos.arkui.component';
 import { jsonx } from "std/core";
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 async function executeTouch(data: BasePageConfig, hitTestBehavior: string, referenceTargetExpect: string, referenceBrotherExpect: string,
   referenceChildExpect: string) {
@@ -38,7 +28,11 @@ async function executeTouch(data: BasePageConfig, hitTestBehavior: string, refer
   //Send touch event.
   let touchResult: boolean = Utils.performTouchComponentCenter(data.pageConfig.componentKey!, TouchType.Down);
   expect(touchResult).assertEqual(true);
-  await Utils.sleep(1000);
+  try {
+    await Utils.sleep(1000);
+  } catch (err) {
+    console.info('hitTestBehaviorTest sleep err: ' + JSON.stringify(err));
+  }
   Utils.performTouchComponentCenter(data.pageConfig.componentKey!, TouchType.Up);
   //Determine whether the target component responds to touch test control.
   let referenceTargetComponent: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.referenceTargetComponentKey);
@@ -156,13 +150,6 @@ export default function hitTestBehaviorTest() {
    * Create test suite.
    */
   describe('HitTestBehaviorTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("hitTestBehaviorTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Determine whether the component that sets the hitTestBehaviorTest attribute can correctly affect its own,
       //sibling, and child node's touch response according to its enumeration type

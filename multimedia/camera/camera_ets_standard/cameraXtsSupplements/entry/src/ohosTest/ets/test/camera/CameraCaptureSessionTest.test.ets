@@ -770,6 +770,80 @@ export default function CameraCaptureSessionTest() {
       }
     })
     /**
+     * @tc.name   SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0004
+     * @tc.number SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0004
+     * @tc.desc   setFocusMode FocusMode null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0004', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0004';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+      try {
+        createPhotoOutput();
+        await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
+        console.info(TAG, 'getCreateCaptureSession');
+        let support = mCaptureSession.isFocusModeSupported(null);
+        console.info(TAG, 'support: ', support);
+        if (support) {
+          mCaptureSession.setFocusMode(null);
+          console.info(TAG, 'success setFocusMode null')
+          let res: camera.FocusMode = mCaptureSession.getFocusMode();
+          console.info(TAG, testName, 'getFocusMode', res);
+          expect(res).assertEqual(camera.FocusMode.FOCUS_MODE_MANUAL)
+        }
+        await releaseCaptureSession();
+        done();
+      } catch (err) {
+        console.error(TAG, testName, err.message, err.code);
+        expect().assertFail()
+        await releaseCaptureSession();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0005
+     * @tc.number SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0005
+     * @tc.desc   setFocusMode FocusMode undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0005', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0005';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+      try {
+        createPhotoOutput();
+        await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
+        console.info(TAG, 'getCreateCaptureSession');
+        let support = mCaptureSession.isFocusModeSupported(undefined);
+        console.info(TAG, 'support: ', support);
+        if (support) {
+          mCaptureSession.setFocusMode(undefined);
+          console.info(TAG, 'success setFocusMode undefined')
+          let res: camera.FocusMode = mCaptureSession.getFocusMode();
+          console.info(TAG, testName, 'getFocusMode', res);
+          expect(res).assertEqual(camera.FocusMode.FOCUS_MODE_MANUAL)
+        }
+        await releaseCaptureSession();
+        done();
+      } catch (err) {
+        console.error(TAG, testName, err.message, err.code);
+        expect().assertFail()
+        await releaseCaptureSession();
+        done();
+      }
+    })
+    /**
      * @tc.name   SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_POINT_001
      * @tc.number SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_POINT_001
      * @tc.desc   setFocusPoint null

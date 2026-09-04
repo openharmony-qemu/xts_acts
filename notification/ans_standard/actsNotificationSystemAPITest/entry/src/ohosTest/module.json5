@@ -15,33 +15,33 @@
 
 {
   "module": {
-    "name": "phone",
+    "name": "entry_test",
     "type": "feature",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
     "description": "$string:phone_entry_dsc",
-    "mainElement": "MainAbility",
+    "mainElement": "TestAbility",
     "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:test_pages",
     "abilities": [
       {
-        "name": "com.example.systemAPI.MainAbility",
-        "srcEntry": "./ets/MainAbility/MainAbility.ts",
-        "description": "$string:phone_entry_main",
+        "name": "TestAbility",
+        "srcEntry": "./ets/testability/TestAbility.ets",
+        "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
-        "label": "$string:entry_label",
+        "label": "$string:TestAbility_label",
         "startWindowIcon": "$media:icon",
-        "startWindowBackground": "$color:white",
+        "startWindowBackground": "$color:start_window_background",
         "visible": true,
+        "exported": true,
         "orientation": "portrait",
         "skills": [
           {
-            "entities": [
-              "entity.system.home"
-            ],
             "actions": [
               "action.system.home"
+            ],
+            "entities": [
+              "entity.system.home"
             ]
           }
         ]

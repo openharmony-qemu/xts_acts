@@ -43,7 +43,7 @@ export default function uint16ArrayConstructor10Test(): void {
      * @tc.level Level 2
      */
     it('testUint16ArrayConstructorTen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-        let fa: FixedArray<number> = new FixedArray<number>(2);
+        let fa: FixedArray<number> = new FixedArray<number>(2, 0);
         fa[0] = 777;
         fa[1] = 888;
         let a: Uint16Array = new Uint16Array(fa);
@@ -366,7 +366,7 @@ export default function uint16ArrayConstructor10Test(): void {
      */
     it('testUint16ArrayConstructorTen019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
-        let fa: FixedArray<int> = new FixedArray<int>(2);
+        let fa: FixedArray<int> = new FixedArray<int>(2, 0);
         fa[0] = -1;
         fa[1] = -32768;
         let a: Uint16Array = new Uint16Array(fa);

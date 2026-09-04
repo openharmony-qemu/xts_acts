@@ -1424,5 +1424,105 @@ export default function ApiCoverTest() {
       expect(abilityName).assertEqual('TestAbility');
       done();
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ProcessCache_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_0800
+     * @tc.desc   setSupportedProcessCache with null parameter should throw error 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ProcessCache_0800', Level.LEVEL0, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_ProcessCache_0800`;
+      console.log(`${tag}, test begin`);
+      try {
+        AppStorage.get<common.ApplicationContext>("applicationContext")?.setSupportedProcessCache(null);
+        expect().assertFail();
+      } catch(e) {
+        console.error(`${tag}, e.code: ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+      console.log(`${tag}, test end`);
+      done();
+    });
+
+    /**
+      * @tc.name   testKillAllProcessesWithNull0100
+      * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_3300
+      * @tc.desc   Test killAllProcesses with clearPageStack parameter as null
+      * @tc.type   FUNCTION
+      @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+     it('testKillAllProcessesWithNull0100', Level.LEVEL0, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_ProcessCache_3300`;
+      console.log(`${tag}, test begin`);
+      await AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(
+              {
+                bundleName: 'ohos.acts.aafwk.test.stagesupplement',
+                abilityName: 'MainAbility',
+                action: 'SUB_Ability_AbilityRuntime_ProcessCache_3300'
+              }).then(data => {
+                console.debug('====>SUB_Ability_AbilityRuntime_ProcessCache_3300 startAbility err:' + JSON.stringify(data));
+              });
+      await sleep(1500);
+      await appManagerNew.getRunningProcessInformation().then((data : Array<appManagerNew.ProcessInformation>) => {
+        console.log(`The running process information is: ${JSON.stringify(data)}`);
+        data.forEach(item =>{
+          if (item.bundleNames[0].includes("ohos.acts.aafwk.test.stagesupplement")) {
+            console.log(`${tag}, getRunningProcessInformation include  stagesupplement app`);
+            expect().assertFail();
+            done();
+          }else{
+            console.log(`${tag}, getRunningProcessInformation no include  stagesupplement app`);
+            expect(true).assertTrue();
+            done();
+          }
+        })
+      }).catch((error: BusinessError) => {
+        console.error(`error: ${JSON.stringify(error)}`);
+      });
+      console.log(`${tag}, test end`);
+    });
+
+    /**
+      * @tc.name   testKillAllProcessesWithUndefined0100
+      * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_3400
+      * @tc.desc   Test killAllProcesses with clearPageStack parameter as undefined
+      * @tc.type   FUNCTION
+      @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+     it('testKillAllProcessesWithUndefined0100', Level.LEVEL0, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_ProcessCache_3400`;
+      console.log(`${tag}, test begin`);
+      await AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(
+              {
+                bundleName: 'ohos.acts.aafwk.test.stagesupplement',
+                abilityName: 'MainAbility',
+                action: 'SUB_Ability_AbilityRuntime_ProcessCache_3400'
+              }).then(data => {
+                console.debug('====>SUB_Ability_AbilityRuntime_ProcessCache_3400 startAbility err:' + JSON.stringify(data));
+              });
+      await sleep(1500);
+      await appManagerNew.getRunningProcessInformation().then((data : Array<appManagerNew.ProcessInformation>) => {
+        console.log(`The running process information is: ${JSON.stringify(data)}`);
+        data.forEach(item =>{
+          if (item.bundleNames[0].includes("ohos.acts.aafwk.test.stagesupplement")) {
+            console.log(`${tag}, getRunningProcessInformation include  stagesupplement app`);
+            expect().assertFail();
+            done();
+          }else{
+            console.log(`${tag}, getRunningProcessInformation no include  stagesupplement app`);
+            expect(true).assertTrue();
+            done();
+          }
+        })
+      }).catch((error: BusinessError) => {
+        console.error(`error: ${JSON.stringify(error)}`);
+      });
+      console.log(`${tag}, test end`);
+    });
   })
 }

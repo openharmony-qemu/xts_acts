@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
-import { SharedWorkerData } from './sendable';
+import { SharedWorkerData } from './Sendable';
 
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 

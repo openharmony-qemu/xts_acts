@@ -21,9 +21,13 @@ import { LOG_TAG, MediaErrorCode, SLEEP_TIME_500, SLEEP_TIME_5000, SLEEP_TIME_20
 import { common } from "@kit.AbilityKit";
 import { closeFd, getFd, sleep } from '../common';
 import {image} from '@kit.ImageKit';
+import myavcapability from 'libavcapability.so'
 
 const TAG = LOG_TAG + 'AVTranscoderTest';
 const VIDEO_SOURCE = 'H264_AAC.mp4';
+const VIDEO_EXCEEDS_8K_RESOLUTION = 'output_avc_7680x4320.mp4';
+const VIDEO_LARGE_4096_RESOLUTION = 'output_avc_4096x2304.mp4';
+const VIDEO_FEWER_238_RESOLUTION = 'output_avc_238x238.mp4';
 
 let mediaTestBase = new MediaTestBase();
 let fileDescriptor: media.AVFileDescriptor;
@@ -66,6 +70,12 @@ let avTranscoderTestConfigNormal: media.AVTranscoderConfig = {
   enableBFrame: true,
 };
 
+let avTranscoderTest8KConfig: media.AVTranscoderConfig = {
+  fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+  videoFrameWidth: 1080,
+  videoFrameHeight: 720,
+};
+
 function openFileFailed() {
   console.info(TAG, 'openFileFailed case file fail');
 }
@@ -90,6 +100,30 @@ async function createAVTranscoder(done: Function, context: common.UIAbilityConte
         desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
       }
       imagePixelmap = await imageResource.createPixelMap(decodingOptions);
+    } else {
+      console.error(TAG, testName + ' transcoder is undefined.');
+      expect().assertFail();
+    }
+  }).catch((error: BusinessError) => {
+    console.error(TAG, testName + ' Failed to create AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
+    expect().assertFail();
+    done();
+  });
+}
+
+async function createAVTranscoderNormal(done: Function, context: common.UIAbilityContext, resource: string, testName: string) {
+  if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+    console.info(TAG, testName + ' This device does not support transcoding.');
+    done();
+    return;
+  }
+  await media.createAVTranscoder().then(async (transcoder: media.AVTranscoder) => {
+    if (transcoder) {
+      mTranscoder = transcoder;
+      mTranscoder.fdSrc = await globalThis.abilityContext.resourceManager.getRawFd(resource);
+      mTranscoder.fdDst = await getFd('output.mp4');
+      console.info(TAG, testName + ' Succeeded in creating AVTranscoder, fd: ' + mTranscoder.fdSrc.fd + ', offset: ' +
+      mTranscoder.fdSrc.offset + ', length: ' + mTranscoder.fdSrc.length + ', fdDst: ' + mTranscoder.fdDst);
     } else {
       console.error(TAG, testName + ' transcoder is undefined.');
       expect().assertFail();
@@ -1088,6 +1122,437 @@ export default function AVTranscoderTest() {
       await createAVTranscoder(done, testContext, testName);
       completeListen(done, testName);
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_ON_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_ON_0800
+     * @tc.desc   Test repeated setting of progressUpdate callback, only the last one takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_ON_0800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_ON_0800';
+      await createAVTranscoder(done, testContext, testName);
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        if (mTranscoder !== undefined) {
+          let firstCallbackCount = 0;
+          let secondCallbackCount = 0;
+          mTranscoder.on('progressUpdate', async (progress: number) => {
+            firstCallbackCount++;
+          });
+          mTranscoder.on('progressUpdate', async (progress: number) => {
+            secondCallbackCount++;
+          });
+          mTranscoder.on('error', async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
+          });
+          await prepareAVTranscoder(done, testName);
+          await startAVTranscoder(done, testName);
+          await sleep(SLEEP_TIME_500);
+          mTranscoder.off('progressUpdate');
+          mTranscoder.off('error');
+          expect(secondCallbackCount > 0).assertTrue();
+          expect(firstCallbackCount).assertEqual(0);
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_ON_0801
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_ON_0801
+     * @tc.desc   Test repeated setting of complete callback, only the last one takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_ON_0801', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_ON_0801';
+      await createAVTranscoder(done, testContext, testName);
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        if (mTranscoder !== undefined) {
+          let firstCallbackCount = 0;
+          let secondCallbackCount = 0;
+          currentProgress = 0;
+          mTranscoder.on('progressUpdate', async (progress: number) => {
+            currentProgress = progress;
+          });
+          mTranscoder.on('complete', async () => {
+            firstCallbackCount++;
+          });
+          mTranscoder.on('complete', async () => {
+            secondCallbackCount++;
+          });
+          mTranscoder.on('error', async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
+          });
+          await prepareAVTranscoder(done, testName);
+          await startAVTranscoder(done, testName);
+          await sleep(SLEEP_TIME_5000);
+          mTranscoder.off('complete');
+          mTranscoder.off('progressUpdate');
+          mTranscoder.off('error');
+          expect(secondCallbackCount > 0).assertTrue();
+          expect(firstCallbackCount).assertEqual(0);
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_ON_0802
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_ON_0802
+     * @tc.desc   Test repeated setting of error callback, only the last one takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_ON_0802', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_ON_0802';
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        let transcoder = await media.createAVTranscoder();
+        mTranscoder = transcoder;
+        if (mTranscoder !== undefined) {
+          let firstCallbackCount = 0;
+          let secondCallbackCount = 0;
+          mTranscoder.on('error', async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
+            firstCallbackCount++;
+          });
+          mTranscoder.on('error', async (error: BusinessError) => {
+            console.error(TAG, testName + ' second error listen: err: ' + error.code + ', msg: ' + error.message);
+            secondCallbackCount++;
+          });
+          mTranscoder.fdSrc = await globalThis.abilityContext.resourceManager.getRawFd('watermark.png');
+          mTranscoder.fdDst = await getFd('output.mp4');
+          await mTranscoder.prepare(avTranscoderConfig).catch((error: BusinessError) => {
+            console.info(TAG, testName + ' prepare failed as expected, code: ' + error.code);
+          });
+          await sleep(SLEEP_TIME_500);
+          mTranscoder.off('error');
+          expect(secondCallbackCount > 0).assertTrue();
+          expect(firstCallbackCount).assertEqual(0);
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_OFF_0803
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_OFF_0803
+     * @tc.desc   Test off progressUpdate with callback parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_OFF_0803', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_OFF_0803';
+      await createAVTranscoder(done, testContext, testName);
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        if (mTranscoder !== undefined) {
+          let progressCallback = async (progress: number) => {
+            console.info(TAG, testName + ' avTranscoder progressUpdate. progress: ' + progress);
+            currentProgress = progress;
+          };
+          let errorCallback = async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
+          };
+          mTranscoder.on('progressUpdate', progressCallback);
+          mTranscoder.on('error', errorCallback);
+          await prepareAVTranscoder(done, testName);
+          await startAVTranscoder(done, testName);
+          await sleep(SLEEP_TIME_500);
+          mTranscoder.off('progressUpdate', progressCallback);
+          mTranscoder.off('error', errorCallback);
+          expect(currentProgress > 0).assertTrue();
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_OFF_0804
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_OFF_0804
+     * @tc.desc   Test off complete with callback parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_OFF_0804', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_OFF_0804';
+      await createAVTranscoder(done, testContext, testName);
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        if (mTranscoder !== undefined) {
+          let isCompleted = false;
+          let progressCallback = async (progress: number) => {
+            console.info(TAG, testName + ' avTranscoder progressUpdate. progress: ' + progress);
+            currentProgress = progress;
+          };
+          let completeCallback = async () => {
+            console.info(TAG, testName + ' avTranscoder complete.');
+            isCompleted = true;
+          };
+          let errorCallback = async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
+          };
+          mTranscoder.on('progressUpdate', progressCallback);
+          mTranscoder.on('complete', completeCallback);
+          mTranscoder.on('error', errorCallback);
+          await prepareAVTranscoder(done, testName);
+          await startAVTranscoder(done, testName);
+          await sleep(SLEEP_TIME_5000);
+          mTranscoder.off('complete', completeCallback);
+          mTranscoder.off('progressUpdate', progressCallback);
+          mTranscoder.off('error', errorCallback);
+          expect(isCompleted).assertTrue();
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_OFF_0805
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_OFF_0805
+     * @tc.desc   Test off error with callback parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_OFF_0805', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_OFF_0805';
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        let transcoder = await media.createAVTranscoder();
+        mTranscoder = transcoder;
+        if (mTranscoder !== undefined) {
+          let isError = false;
+          let errorCallback = async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
+            isError = true;
+          };
+          mTranscoder.on('error', errorCallback);
+          mTranscoder.fdSrc = await globalThis.abilityContext.resourceManager.getRawFd('watermark.png');
+          mTranscoder.fdDst = await getFd('output.mp4');
+          await mTranscoder.prepare(avTranscoderConfig).catch((error: BusinessError) => {
+            console.info(TAG, testName + ' prepare failed as expected, code: ' + error.code);
+          });
+          await sleep(SLEEP_TIME_500);
+          mTranscoder.off('error', errorCallback);
+          expect(isError).assertTrue();
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 4096 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100';
+      avTranscoderTest8KConfig.videoFrameWidth = 4094;
+      avTranscoderTest8KConfig.videoFrameHeight = 2302;
+      try {
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(4096, 2304);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(4094, 2302);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          await createAVTranscoderNormal(done, testContext, VIDEO_LARGE_4096_RESOLUTION, testName);
+          await prepareAVTranscoderNormal(avTranscoderTest8KConfig, done, testName);
+          await startAVTranscoder(done, testName);
+          await listenComplete(done)
+        }
+      } catch (err) {
+        console.error('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 240 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100';
+      avTranscoderTest8KConfig.videoFrameWidth = 240;
+      avTranscoderTest8KConfig.videoFrameHeight = 240;
+      try {
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(238, 238);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(240, 240);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          await createAVTranscoderNormal(done, testContext, VIDEO_FEWER_238_RESOLUTION, testName);
+          if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+            console.info(TAG, testName + ' This device does not support transcoding.');
+            done();
+            return;
+          }
+          if (mTranscoder !== undefined) {
+            await mTranscoder.prepare(avTranscoderTest8KConfig).then(() => {
+              console.info(TAG, testName + ' prepare success.');
+            }).catch((error: BusinessError) => {
+              console.error(TAG, testName + ' Failed to prepare AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
+              expect(error.code).assertEqual(401);
+              done();
+            });
+          }
+        }
+      } catch (err) {
+        console.error('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 7680 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100';
+      avTranscoderTest8KConfig.videoFrameWidth = 7680;
+      avTranscoderTest8KConfig.videoFrameHeight = 4318;
+      try {
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(7680, 4318);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          await createAVTranscoderNormal(done, testContext, VIDEO_EXCEEDS_8K_RESOLUTION, testName);
+          if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+            console.info(TAG, testName + ' This device does not support transcoding.');
+            done();
+            return;
+          }
+          if (mTranscoder !== undefined) {
+            await mTranscoder.prepare(avTranscoderTest8KConfig).then(() => {
+              console.info(TAG, testName + ' prepare success.');
+            }).catch((error: BusinessError) => {
+              console.error(TAG, testName + ' Failed to prepare AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
+              expect(error.code).assertEqual(5400103);
+              done();
+            });
+          }
+        }
+      } catch (err) {
+        console.error('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    }); 
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 4096 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100';
+      avTranscoderTest8KConfig.videoFrameWidth = 4096;
+      avTranscoderTest8KConfig.videoFrameHeight = 2304;
+      try {
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(4096, 2304);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          await createAVTranscoderNormal(done, testContext, VIDEO_EXCEEDS_8K_RESOLUTION, testName);
+          await prepareAVTranscoderNormal(avTranscoderTest8KConfig, done, testName);
+          await startAVTranscoder(done, testName);
+          await listenComplete(done)
+        }
+      } catch (err) {
+        console.error('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    });
 
     /**
      * @tc.name   null_undefined_001

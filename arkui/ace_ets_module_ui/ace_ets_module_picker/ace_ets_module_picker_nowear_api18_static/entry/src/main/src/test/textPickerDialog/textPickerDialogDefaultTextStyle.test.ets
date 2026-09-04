@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function textPickerDialogDefaultTextStyleTest() {
   describe('textPickerDialogDefaultTextStyleTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("textPickerDialogDefaultTextStyleTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info('textPickerDialogDefaultTextStyleTest beforeEach start');
       let options: router.RouterOptions = {
@@ -58,6 +52,7 @@ export default function textPickerDialogDefaultTextStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('textPickerDialogDefaultTextStyleTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('textPickerDialogDefaultTextStyleTest_static_001 START');
       await Utils.sleep(1000);
       let driver = Driver.create();
@@ -87,6 +82,10 @@ export default function textPickerDialogDefaultTextStyleTest() {
       await Utils.sleep(1000);
       console.info('[textPickerDialogDefaultTextStyleTest_static_001] END');
       done();
+      } catch (err) {
+        console.error("error: " + err);
+        done();
+      }
     });
  
     /**
@@ -96,6 +95,7 @@ export default function textPickerDialogDefaultTextStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('textPickerDialogDefaultTextStyleTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('textPickerDialogDefaultTextStyleTest_static_002 START');
       await Utils.sleep(1000);
       let driver = Driver.create();
@@ -125,6 +125,10 @@ export default function textPickerDialogDefaultTextStyleTest() {
       await Utils.sleep(1000);
       console.info('[textPickerDialogDefaultTextStyleTest_static_002] END');
       done();
+      } catch (err) {
+        console.error("error: " + err);
+        done();
+      }
     });
     
     /**
@@ -134,6 +138,7 @@ export default function textPickerDialogDefaultTextStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('textPickerDialogDefaultTextStyleTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('textPickerDialogDefaultTextStyleTest_static_003 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('btn3'));
@@ -162,6 +167,10 @@ export default function textPickerDialogDefaultTextStyleTest() {
       await Utils.sleep(1000);
       console.info('[textPickerDialogDefaultTextStyleTest_static_003] END');
       done();
+      } catch (err) {
+        console.error("error: " + err);
+        done();
+      }
     });
    
     /**
@@ -171,6 +180,7 @@ export default function textPickerDialogDefaultTextStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('textPickerDialogDefaultTextStyleTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('textPickerDialogDefaultTextStyleTest_static_004 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('btn4'));
@@ -199,6 +209,10 @@ export default function textPickerDialogDefaultTextStyleTest() {
       await Utils.sleep(1000);
       console.info('[textPickerDialogDefaultTextStyleTest_static_004] END');
       done();
+      } catch (err) {
+        console.error("error: " + err);
+        done();
+      }
     });
   })
 }

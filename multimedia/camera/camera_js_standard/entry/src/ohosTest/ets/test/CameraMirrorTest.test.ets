@@ -682,10 +682,56 @@ export default function CameraMirrorTest() {
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0200 FAILED err : " + JSON.stringify(err));
           expect(err.code == cameraObj.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
       }
-      stopCameraSession()
+      await stopCameraSession()
       done()
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400
+     * @tc.desc   Test photo output enable mirror with param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400--------------");
+      let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[0]);
+      if (isEmpty(cameraOutputCap)) {
+        console.info('Enter cameraOutputCap == undefined | null')
+      }
+
+      mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[0], mPhotoSurface);
+      if (isEmpty(mPhotoOutput)) {
+        console.info('Enter mPhotoOutput == undefined | null')
+      }
+      mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceIds);
+      if (isEmpty(mPreviewOutput)) {
+        console.info('Enter mPreviewOutput == undefined | null')
+      }
+      let isCreateInput = await createInput(0)
+      if (isCreateInput) {
+        mCameraSession.addInput(mCameraInput)
+      }
+      if (!isEmpty(mPhotoOutput)) {
+        mCameraSession.addOutput(mPhotoOutput)
+      }
+      if (!isEmpty(mPreviewOutput)) {
+        mCameraSession.addOutput(mPreviewOutput)
+      }
+      await mCameraSession.commitConfig()
+      try {
+        mPhotoOutput.enableMirror(undefined);
+        console.info(TAG + "Enter SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400 Success");
+        expect(true).assertFalse()
+      } catch (err) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400 FAILED err : " + JSON.stringify(err));
+          expect(err.code).assertEqual("7400101");
+      }
+      await stopCameraSession()
+      done()
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0300

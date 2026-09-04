@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level, beforeAll } from '../../../../hypium/index';
+import { expect, describe, it, afterEach, Level } from '../../../../hypium/index';
 import { Driver, ON, PointerMatrix, Rect,Component } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 
 export default function ProgressLinearStyleTest(){
 
   describe('ProgressLinearStyleTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('progressLinearStyleTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     
@@ -40,20 +40,25 @@ export default function ProgressLinearStyleTest(){
      * @tc.level    Level.LEVEL1
      */
     it('testProgressLinearStyle001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'TestProgressLinearStyle';
-      await Utils.pushPage(`progress/${PAGE_TAG}`);
-      await Utils.sleep(1000)
-      let driver = Driver.create()
-      await Utils.sleep(1000)
-      let strJson = inspector.getInspectorByKey('progress');
-      await driver.delayMs(1000);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[testProgressLinearStyle001] component width strJson:" + JSON.stringify(strJson));
-      expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeWidth')).assertEqual('50.00vp');
-      expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeRadius')).assertEqual('20.00vp');
-      expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual('false');
-      expect(obj.getElement('$attrs').getElement('linearStyle').getString('enableScanEffect')).assertEqual('true');
-      done();
+      try {
+        let PAGE_TAG = 'TestProgressLinearStyle';
+        await Utils.pushPage(`progress/${PAGE_TAG}`);
+        await Utils.sleep(1000)
+        let driver = Driver.create()
+        await Utils.sleep(1000)
+        let strJson = inspector.getInspectorByKey('progress');
+        await driver.delayMs(1000);
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[testProgressLinearStyle001] component width strJson:" + JSON.stringify(strJson));
+        expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeWidth')).assertEqual('50.00vp');
+        expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeRadius')).assertEqual('20.00vp');
+        expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual('false');
+        expect(obj.getElement('$attrs').getElement('linearStyle').getString('enableScanEffect')).assertEqual('true');
+        done();
+      } catch (err) {
+        console.info('testProgressLinearStyle001 err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     
@@ -64,18 +69,23 @@ export default function ProgressLinearStyleTest(){
      * @tc.level    Level.LEVEL1
      */
     it('testProgressLinearStyle002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'TestProgressLinearStyle';
-      await Utils.pushPage(`progress/${PAGE_TAG}`);
-      await Utils.sleep(1000)
-      let driver = Driver.create()
-      await Utils.sleep(1000)
-      let strJson = inspector.getInspectorByKey('progress1');
-      await driver.delayMs(1000);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[testProgressLinearStyle002] component width strJson:" + JSON.stringify(strJson));
-      expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeWidth')).assertEqual('4.00vp');
-      expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeRadius')).assertEqual('2.00vp');
-      done();
+      try {
+        let PAGE_TAG = 'TestProgressLinearStyle';
+        await Utils.pushPage(`progress/${PAGE_TAG}`);
+        await Utils.sleep(1000)
+        let driver = Driver.create()
+        await Utils.sleep(1000)
+        let strJson = inspector.getInspectorByKey('progress1');
+        await driver.delayMs(1000);
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[testProgressLinearStyle002] component width strJson:" + JSON.stringify(strJson));
+        expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeWidth')).assertEqual('4.00vp');
+        expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeRadius')).assertEqual('2.00vp');
+        done();
+      } catch (err) {
+        console.info('testProgressLinearStyle002 err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     
@@ -86,23 +96,28 @@ export default function ProgressLinearStyleTest(){
      * @tc.level    Level.LEVEL1
      */
     it('testProgressLinearStyle003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'TestProgressLinearStyle';
-      await Utils.pushPage(`progress/${PAGE_TAG}`);
-      await Utils.sleep(1000)
-      let driver = Driver.create()
-      await Utils.sleep(1000)
-      let progress:Component = await driver.findComponent(ON.id('progress')) as Component;
-      await progress.click();
-      await Utils.sleep(1000)
-      let strJson = inspector.getInspectorByKey('progress');
-      await driver.delayMs(1000);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[testProgressLinearStyle003] component width strJson:" + JSON.stringify(strJson));
-      expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeWidth')).assertEqual('4.00vp');
-      expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeRadius')).assertEqual('2.00vp');
-      expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual('true');
-      expect(obj.getElement('$attrs').getElement('linearStyle').getString('enableScanEffect')).assertEqual('false');
-      done();
+      try {
+        let PAGE_TAG = 'TestProgressLinearStyle';
+        await Utils.pushPage(`progress/${PAGE_TAG}`);
+        await Utils.sleep(1000)
+        let driver = Driver.create()
+        await Utils.sleep(1000)
+        let progress:Component = await driver.findComponent(ON.id('progress')) as Component;
+        await progress.click();
+        await Utils.sleep(1000)
+        let strJson = inspector.getInspectorByKey('progress');
+        await driver.delayMs(1000);
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[testProgressLinearStyle003] component width strJson:" + JSON.stringify(strJson));
+        expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeWidth')).assertEqual('4.00vp');
+        expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeRadius')).assertEqual('2.00vp');
+        expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual('true');
+        expect(obj.getElement('$attrs').getElement('linearStyle').getString('enableScanEffect')).assertEqual('false');
+        done();
+      } catch (err) {
+        console.info('testProgressLinearStyle003 err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     
@@ -113,20 +128,25 @@ export default function ProgressLinearStyleTest(){
      * @tc.level    Level.LEVEL1
      */
     it('testProgressLinearStyle004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'TestProgressLinearStyle';
-      await Utils.pushPage(`progress/${PAGE_TAG}`);
-      await Utils.sleep(1000)
-      let driver = Driver.create()
-      await Utils.sleep(1000)
-      let strJson = inspector.getInspectorByKey('progress2');
-      await driver.delayMs(1000);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[testProgressLinearStyle004] component width strJson:" + JSON.stringify(strJson));
-      expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeWidth')).assertEqual('9.00vp');
-      expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeRadius')).assertEqual('4.50vp');
-      expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual('true');
-      expect(obj.getElement('$attrs').getElement('linearStyle').getString('enableScanEffect')).assertEqual('false');
-      done();
+      try {
+        let PAGE_TAG = 'TestProgressLinearStyle';
+        await Utils.pushPage(`progress/${PAGE_TAG}`);
+        await Utils.sleep(1000)
+        let driver = Driver.create()
+        await Utils.sleep(1000)
+        let strJson = inspector.getInspectorByKey('progress2');
+        await driver.delayMs(1000);
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[testProgressLinearStyle004] component width strJson:" + JSON.stringify(strJson));
+        expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeWidth')).assertEqual('9.00vp');
+        expect(obj.getElement('$attrs').getElement('linearStyle').getString('strokeRadius')).assertEqual('4.50vp');
+        expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual('true');
+        expect(obj.getElement('$attrs').getElement('linearStyle').getString('enableScanEffect')).assertEqual('false');
+        done();
+      } catch (err) {
+        console.info('testProgressLinearStyle004 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

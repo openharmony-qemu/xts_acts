@@ -14,35 +14,23 @@
  * limitations under the License.
  */
 import { Axis } from '@ohos.arkui.component';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../../Util.test';
-import { BusinessError } from '@ohos.base';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+
 
 export default function getListItemGroupRect5() {
   describe('getListItemGroupRect5', () => {
 
 
 
-    beforeAll(async (): Promise<void> => {
-      console.info("getListItemGroupRect5 beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-    });
     beforeEach(() => {
       console.info("getListItemGroupRect5 beforeEach start");
       let options: router.RouterOptions = {
@@ -63,7 +51,11 @@ export default function getListItemGroupRect5() {
       }
     });
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("BadgeFocus after each called");
     });
 
@@ -82,19 +74,35 @@ it('getListItemGroupRect5_static_0100', Level.LEVEL0, async (done: () => void): 
       const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManagerInt")!
       message.notify({ name: 'index', value: 0 as Int })
       message.notify({ name: 'indexInGroup', value: 0 as Int })
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get Initial value')
       let listItemGroup_0: RectValue =
         CommonFunc.getComponentRect('getListItemGroupRect5_listItemGroup_0') as RectValue;
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getListItemGroupRect5_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemGroupRect5_text1')
@@ -152,39 +160,75 @@ it('getListItemGroupRect5_static_0200', Level.LEVEL0, async (done: () => void): 
       message1.notify({ name: 'listDirection1', value: Axis.Horizontal })
       message2.notify({ name: 'width2', value: '30.0' })
       message2.notify({ name: 'height2', value: '100%' })
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get Initial value')
       let listItemGroup_0: RectValue =
         CommonFunc.getComponentRect('getListItemGroupRect5_listItemGroup_0') as RectValue;
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getListItemGroupRect5_button'));
-      await CommonFunc.sleep(2000);
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemGroupRect5_text1')
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let x = Number(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
       console.log('test start x' + x)
 
       let strJson2 = inspector.getInspectorByKey('getListItemGroupRect5_text2')
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let y = Number(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
       console.log('test start y' + y)
 
       let strJson3 = inspector.getInspectorByKey('getListItemGroupRect5_text3')
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let width = Number(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'))
       console.log('test start width' + width)
 
       let strJson4 = inspector.getInspectorByKey('getListItemGroupRect5_text4')
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let height = Number(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('content'))
       console.log('test start height' + height)
 

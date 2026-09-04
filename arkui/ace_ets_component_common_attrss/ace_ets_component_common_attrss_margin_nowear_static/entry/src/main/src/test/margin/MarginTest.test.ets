@@ -18,21 +18,12 @@
 import Utils, { BasePageConfig, PageConfig, TestValue,GrowValue, ExpectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign,  Color, $r, Margin} from '@ohos.arkui.component';
 import { jsonx } from "std/core";
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 // class TestValue {
 //   describe: string = '';
 //   setValue: Margin = {} as Margin;
@@ -182,10 +173,6 @@ export default function marginTest() {
   }]
 
   describe('MarginTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("MarginTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.margin.nowear.test.static", "EntryAbility")
-    });
     //Create test cases by config.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       if(data.testValue.describe == "SetAll"){
@@ -222,14 +209,22 @@ export default function marginTest() {
       //Initialize margin properties
       console.info('[' + data.caseTag + '] setValue : ' + setInit);
       AppStorage.setOrCreate<Margin>('_margin', setInit)
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('MarginTest sleep err: ' + JSON.stringify(err));
+      }
       //Confirm successful setting of margin attribute
       let referenceRectBefore: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
       expect(referenceRectBefore.getElement('$attrs').getString('margin')).assertEqual(getInit);
       //Set test values
       console.info('[' + data.caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
       AppStorage.setOrCreate<Margin>('_margin', data.testValue.setValue.margin)
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('MarginTest sleep err: ' + JSON.stringify(err));
+      }
       let referenceRectAfter: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
       //component
       let rect = Utils.getComponentRect(data.pageConfig.componentKey);

@@ -15,24 +15,15 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, it, Level, expect } from '../../../../hypium/index'
 import router from '@ohos.router';
-import { Component, Driver, ON, MatchPattern, DisplayRotation } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility } from '../Util.test';
 
 export default function RenderNodeOtherAttributeTest() {
   describe('RenderNodeOtherAttributeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('RenderNodeOtherAttributeTest beforeAll start');
-      await UtilsTest.msSleep(4000)
-      await startAbility('com.arkui.ace.StateMangagement.api18.static', 'EntryAbility')
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('RenderNodeOtherAttributeTest beforeEach start');
       let options: router.RouterOptions = {
@@ -43,7 +34,7 @@ export default function RenderNodeOtherAttributeTest() {
         router.clear();
         let pages = router.getState();
         if (!('RenderNodeOtherAttribute' == pages.name)) {
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -56,10 +47,6 @@ export default function RenderNodeOtherAttributeTest() {
       console.info('afterEach case');
     });
 
-    afterAll(async () => {
-      console.info('afterAll case');
-    });
-
     /**
      * @tc.number   RenderNodeOtherAttributeTest_static_0100
      * @tc.name     RenderNodeOtherAttributeTest_static_0100
@@ -69,17 +56,23 @@ export default function RenderNodeOtherAttributeTest() {
      * @tc.level    Level.LEVEL0
      */
     it('RenderNodeOtherAttributeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('RenderNodeOtherAttributeTest_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('RenderNodeOtherAttributeTest_0100 START');
+        await CommonFunc.sleep(1000);
 
-      // 验证 shapeMask isMaskOut
-      let strJson: string = inspector.getInspectorByKey('RenderNodeOtherAttribute_shapeMask');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[RenderNodeOtherAttributeTest_0100] component obj is: ' + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('shapeMask: 24');
+        // 验证 shapeMask isMaskOut
+        let strJson: string = inspector.getInspectorByKey('RenderNodeOtherAttribute_shapeMask');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[RenderNodeOtherAttributeTest_0100] component obj is: ' + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('shapeMask: 24');
 
-      done();
-      console.info('RenderNodeOtherAttributeTest_0100 END');
+        done();
+        console.info('RenderNodeOtherAttributeTest_0100 END');
+      } catch (err) {
+        console.error('RenderNodeOtherAttributeTest_static_0100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -91,17 +84,23 @@ export default function RenderNodeOtherAttributeTest() {
      * @tc.level    Level.LEVEL0
      */
     it('RenderNodeOtherAttributeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('RenderNodeOtherAttributeTest_0200 START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('RenderNodeOtherAttributeTest_0200 START');
+        await CommonFunc.sleep(1000);
 
-      // 验证 shapeClip id
-      let strJson: string = inspector.getInspectorByKey('RenderNodeOtherAttribute_shapeClip');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[RenderNodeOtherAttributeTest_0200] component obj is: ' + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).not().assertUndefined();
+        // 验证 shapeClip id
+        let strJson: string = inspector.getInspectorByKey('RenderNodeOtherAttribute_shapeClip');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[RenderNodeOtherAttributeTest_0200] component obj is: ' + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).not().assertUndefined();
 
-      done();
-      console.info('RenderNodeOtherAttributeTest_0200 END');
+        done();
+        console.info('RenderNodeOtherAttributeTest_0200 END');
+      } catch (err) {
+        console.error('RenderNodeOtherAttributeTest_static_0200 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -113,17 +112,23 @@ export default function RenderNodeOtherAttributeTest() {
      * @tc.level    Level.LEVEL0
      */
     it('RenderNodeOtherAttributeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('RenderNodeOtherAttributeTest_0300 START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('RenderNodeOtherAttributeTest_0300 START');
+        await CommonFunc.sleep(1000);
 
-      // 验证 markNodeGroup
-      let strJson: string = inspector.getInspectorByKey('RenderNodeOtherAttribute_markNodeGroup');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[RenderNodeOtherAttributeTest_0300] component obj is: ' + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('markNodeGroup: true');
+        // 验证 markNodeGroup
+        let strJson: string = inspector.getInspectorByKey('RenderNodeOtherAttribute_markNodeGroup');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[RenderNodeOtherAttributeTest_0300] component obj is: ' + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('markNodeGroup: true');
 
-      done();
-      console.info('RenderNodeOtherAttributeTest_0300 END');
+        done();
+        console.info('RenderNodeOtherAttributeTest_0300 END');
+      } catch (err) {
+        console.error('RenderNodeOtherAttributeTest_static_0300 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -135,17 +140,23 @@ export default function RenderNodeOtherAttributeTest() {
      * @tc.level    Level.LEVEL0
      */
     it('RenderNodeOtherAttributeTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('RenderNodeOtherAttributeTest_0400 START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('RenderNodeOtherAttributeTest_0400 START');
+        await CommonFunc.sleep(1000);
 
-      // 验证 lengthMetricsUnit
-      let strJson: string = inspector.getInspectorByKey('RenderNodeOtherAttribute_lengthMetricsUnit');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[RenderNodeOtherAttributeTest_0400] component obj is: ' + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('lengthMetricsUnit: 0');
+        // 验证 lengthMetricsUnit
+        let strJson: string = inspector.getInspectorByKey('RenderNodeOtherAttribute_lengthMetricsUnit');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[RenderNodeOtherAttributeTest_0400] component obj is: ' + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('lengthMetricsUnit: 0');
 
-      done();
-      console.info('RenderNodeOtherAttributeTest_0400 END');
+        done();
+        console.info('RenderNodeOtherAttributeTest_0400 END');
+      } catch (err) {
+        console.error('RenderNodeOtherAttributeTest_static_0400 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }

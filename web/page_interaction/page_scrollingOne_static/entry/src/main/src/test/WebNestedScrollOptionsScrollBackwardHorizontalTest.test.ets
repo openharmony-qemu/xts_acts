@@ -92,5 +92,23 @@ export default function webNestedScrollOptionsScrollBackwardHorizontalTest() {
       await Utils.msSleep(5000);
       done();
     })
+
+    /**
+     * @tc.name   testOnSwitchNextHorizontalTest
+     * @tc.number SUB_WEB_Next_PAGE_0500
+     * @tc.desc   PAGE_REDIRECT.
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
+     */
+    it('testOnSwitchNextHorizontalTest',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitOnSwitchNextHorizontalTest', 10)
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('SetScrollbarModeParamTestButton', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+
   })
 }

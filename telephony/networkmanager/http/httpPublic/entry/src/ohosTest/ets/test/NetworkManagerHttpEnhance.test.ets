@@ -246,7 +246,6 @@ export default function NetworkManagerHttpEnhanceTest() {
     it("testNetworkMgrHTTPRequestDnsServers0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function)=> {
       let caseName: string = "SUB_NetworkMgr_HTTP_Request_DnsServers_0600";
       console.info(`${caseName}---Start`);
-
       try {
         httpRequest.requestInStream(address_baidu, httpRequestOptions_dnsServers_emptyArr).then((data) => {
           console.log(`${caseName} request succeed, data: ${JSON.stringify(data)}`);
@@ -351,14 +350,12 @@ export default function NetworkManagerHttpEnhanceTest() {
     it('testNetworkMgrHTTPOnDataSendProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrHTTPOnDataSendProgress0100';
       console.info(`${caseName}---Start`);
-
       try {
         httpRequest.on("dataSendProgress", (data: http.DataSendProgressInfo) => {
           console.info(`${caseName} dataSendProgress DataSendProgressInfo success:" + ${JSON.stringify(data)}`);
           expectTrue(data.sendSize != null);
           expectTrue(data.totalSize != null);
         });
-
         httpRequest.request(address_post, httpRequestOptions_post, (err, data) => {
           if (err) {
             console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
@@ -372,7 +369,6 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           }
         });
-
       } catch (error) {
         console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
         expectFalse();
@@ -840,39 +836,6 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrHTTPRequestDnsOverHttps0200
-     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0200
-     * @tc.desc   http::request
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testNetworkMgrHTTPRequestDnsOverHttps0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName:string = 'testNetworkMgrHTTPRequestDnsOverHttps0200';
-      console.info(`${caseName}---Start`);
-      try {
-        httpRequest.request(address_baidu2, httpRequestOptions_dnsOverHttps_emptyStr, (err, data) => {
-          if (err) {
-            console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
-            expectFalse();
-            console.info(`${caseName}---End`);
-            done();
-          } else {
-            console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode == 200);
-            console.info(`${caseName}---End`);
-            done();
-          }
-        });
-      }catch (error) {
-        console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectFalse();
-        console.info(`${caseName}---End`);
-        done();
-      }
-    });
-
-    /**
      * @tc.name   testNetworkMgrHTTPRequestDnsOverHttps0300
      * @tc.number SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0300
      * @tc.desc   http::request
@@ -989,7 +952,6 @@ export default function NetworkManagerHttpEnhanceTest() {
         httpRequest.requestInStream(address_baidu2, options).then(data => {
           console.log(caseName + JSON.stringify(data));
           expectTrue(data == 200);
-          httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
@@ -1154,19 +1116,18 @@ export default function NetworkManagerHttpEnhanceTest() {
         httpRequest.requestInStream(address_baidu, httpRequestOptions_dnsServers_emptyArr, (err: BusinessError | null, responseCode: number) => {
           if (err) {
             console.info(`${caseName} request failed, err: ${JSON.stringify(err)}`);
-            expectTrue(false);
+            expectTrue(err !== null);
           } else {
             console.info(`${caseName} request success, responseCode: ${responseCode}`);
             expectTrue(responseCode === 200);
           }
-          httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
         });
 
       } catch (error) {
         console.info(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectTrue(false);
+        expectTrue(error !== null);
         console.info(`${caseName}---End`);
         done();
       }

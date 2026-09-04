@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { describe, expect } from '../../../../hypium/index'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 /**
  * Test of common attribute: draggable
@@ -64,11 +63,6 @@ export default function draggableTest() {
    * Create test suite.
    */
   describe('draggableTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       console.error('[' + data.caseTag + '] draggableTest.');
       console.error('[' + data.caseTag + '] draggableTest. data.testValue.setValue.draggable : ' + data.testValue.setValue.draggable);

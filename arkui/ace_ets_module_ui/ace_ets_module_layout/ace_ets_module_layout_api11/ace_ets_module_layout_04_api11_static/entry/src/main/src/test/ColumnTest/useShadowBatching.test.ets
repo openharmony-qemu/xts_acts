@@ -13,32 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 
 import { Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/utils/MessageManager';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function useShadowBatching() {
   describe('useShadowBatching', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("useShadowBatching beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("useShadowBatching beforeEach start");
       let options: router.RouterOptions = {
@@ -74,7 +59,11 @@ export default function useShadowBatching() {
      */
 it('useShadowBatching_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('useShadowBatching_static_0100 START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('useShadowBatchingTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('useShadowBatching');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[useShadowBatching_static_0100] component obj is: " + JSON.stringify(obj));

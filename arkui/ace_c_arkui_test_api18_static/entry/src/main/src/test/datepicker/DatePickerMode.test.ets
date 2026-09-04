@@ -14,18 +14,14 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 
 export default function datePickerTest() {
 
   describe('DatePickerTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api18.static", "EntryAbility")
-    });
 
     afterEach(async (): Promise<void> => {
       await Utils.sleep(100);
@@ -39,13 +35,18 @@ export default function datePickerTest() {
      * @tc.level    Level.LEVEL1
      */
     it('testDatePickerMode001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'TestDatePickerMode';
-      await Utils.pushPage(`datePicker/${PAGE_TAG}`);
-      await Utils.sleep(3000)
-      let strJson = inspector.getInspectorByKey('datePickerMode1');
-      console.log('testDatePickerMode001' + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-      done();
+      try {
+        let PAGE_TAG = 'TestDatePickerMode';
+        await Utils.pushPage(`datePicker/${PAGE_TAG}`);
+        await Utils.sleep(3000)
+        let strJson = inspector.getInspectorByKey('datePickerMode1');
+        console.log('testDatePickerMode001' + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
+        done();
+      } catch (error) {
+        expect().assertFail();
+        done();
+      }
     });
 
     
@@ -56,13 +57,18 @@ export default function datePickerTest() {
      * @tc.level    Level.LEVEL1
      */
     it('testDatePickerMode002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'TestDatePickerMode';
-      await Utils.pushPage(`datePicker/${PAGE_TAG}`);
-      await Utils.sleep(3000)
-      let strJson = inspector.getInspectorByKey('datePickerMode2');
-      console.log('testDatePickerMode002' + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.YEAR_AND_MONTH');
-      done();
+      try {
+        let PAGE_TAG = 'TestDatePickerMode';
+        await Utils.pushPage(`datePicker/${PAGE_TAG}`);
+        await Utils.sleep(3000)
+        let strJson = inspector.getInspectorByKey('datePickerMode2');
+        console.log('testDatePickerMode002' + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.YEAR_AND_MONTH');
+        done();
+      } catch (error) {
+        expect().assertFail();
+        done();
+      }
     });
 
     
@@ -73,13 +79,18 @@ export default function datePickerTest() {
      * @tc.level    Level.LEVEL1
      */
     it('testDatePickerMode003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'TestDatePickerMode';
-      await Utils.pushPage(`datePicker/${PAGE_TAG}`);
-      await Utils.sleep(3000)
-      let strJson = inspector.getInspectorByKey('datePickerMode3');
-      console.log('testDatePickerMode003' + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.MONTH_AND_DAY');
-      done();
+      try {
+        let PAGE_TAG = 'TestDatePickerMode';
+        await Utils.pushPage(`datePicker/${PAGE_TAG}`);
+        await Utils.sleep(3000)
+        let strJson = inspector.getInspectorByKey('datePickerMode3');
+        console.log('testDatePickerMode003' + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.MONTH_AND_DAY');
+        done();
+      } catch (error) {
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

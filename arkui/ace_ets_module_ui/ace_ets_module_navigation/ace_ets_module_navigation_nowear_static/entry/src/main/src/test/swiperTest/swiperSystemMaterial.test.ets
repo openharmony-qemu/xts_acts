@@ -21,7 +21,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
-export default function swiperSystemMaterial() {
+export default function swiperSystemMaterial(): void {
 
   describe('swiperSystemMaterial', () => {
     beforeAll(async (): Promise<void> => {
@@ -35,14 +35,18 @@ export default function swiperSystemMaterial() {
         url: 'MainAbility/pages/swiper/swiperSystemMaterial',
       };
       try {
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info('swiperSystemMaterial state pages: ' + JSON.stringify(pages));
-        if (!('swiperSystemMaterial' == pages.name)) {
-          console.info('get swiperSystemMaterial pages.name:' + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2500);
+        let routerInstance: Router | undefined = AppStorage.get<Router>('router');
+        if (routerInstance !== undefined) {
+          routerInstance.clear();
+          let pages = routerInstance.getState();
+          console.info('swiperSystemMaterial state pages: ' + JSON.stringify(pages));
+          if (!('swiperSystemMaterial' == pages.name)) {
+            console.info('get swiperSystemMaterial pages.name:' + JSON.stringify(pages.name));
+            routerInstance.pushUrl(options);
+            await CommonFunc.sleep(2500);
+          }
+        } else {
+          console.error('swiperSystemMaterial beforeEach: Router instance is undefined');
         }
       } catch (err) {
         console.error('swiperSystemMaterial replaceUrl error: ' + err);

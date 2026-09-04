@@ -33,11 +33,11 @@ struct Index {
   @State imageLoadSuccess: string = "LoadFalse"
   abilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('EntryAbilityContext') as common.UIAbilityContext
   audioRenderer: audio.AudioRenderer = {} as audio.AudioRenderer
-  @State audioStateText: string = 'Error'
+  @State longTaskMediaStateText: string = 'Error'
   private scroller: Scroller = new Scroller()
 
   async onPageShow() {
-    this.audioStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
+    this.longTaskMediaStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
   }
 
   build() {
@@ -87,17 +87,17 @@ struct Index {
                 .onClick(async () => {
                   this.audioRenderer = await this.getAudioRenderer()
                   let res = await this.startAudio(this.audioRenderer, this.abilityContext)
-                  this.audioStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
+                  this.longTaskMediaStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
                 })
               Button('StopAudio')
                 .id('StopAudio')
                 .fontSize(20)
                 .onClick(async () => {
                   let res = await this.stopAudio(this.audioRenderer, this.abilityContext)
-                  this.audioStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
+                  this.longTaskMediaStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
                 })
-              Text(this.audioStateText)
-                .id('AudioStateText')
+              Text(this.longTaskMediaStateText)
+                .id('LongTaskMediaStateText')
                 .fontSize(50)
                 .fontWeight(FontWeight.Bold)
             }

@@ -22,7 +22,7 @@ limitations under the License.
   <marquee
           scrollamount="1"
           style="color:#00ff00;width:60%;height:60px;margin-top: 20px;"
-          >Hello JS, we are friends.</marquee>
+          >Hello JS, we are friends. This is a marquee test.</marquee>
   <marquee
           scrollamount="{{speed}}"
           class="textStyle"

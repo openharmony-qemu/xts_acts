@@ -23,7 +23,7 @@ ohos_hap_assist_suite("BmsAtomicService1") {
     ":hjs_demo_js_assets",
     ":hjs_demo_resources",
   ]
-  certificate_profile = "signature/openharmony_sx.p7b"
+  certificate_profile = "./signature/openharmony_sx.p7b"
 }
 
 ohos_app_scope("bmsatomicserviceone_app_profile") {

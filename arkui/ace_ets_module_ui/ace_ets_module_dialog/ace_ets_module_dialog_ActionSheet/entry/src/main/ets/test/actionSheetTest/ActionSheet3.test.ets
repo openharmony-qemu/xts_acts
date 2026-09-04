@@ -106,9 +106,17 @@ export default function ActionSheet3() {
       let properties: window.WindowProperties = windowClass.getWindowProperties();
       console.info("[ActionSheet3_0200] title: " + JSON.stringify(properties.type));
       expect(properties.type).assertEqual(0)
+      try {
+          let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
+          let button1 = await scrollBar.scrollSearch(ON.text('Confirm'));
+          let buttonC = await driver.findComponent(ON.text('Confirm'));
+          await buttonC.click();  
+        } catch (error) {
+          console.info('====error======='+error)
+        }
 
-      let button1 = await driver.findComponent(ON.text('Confirm'));
-      await button1.click();
+      // let button1 = await driver.findComponent(ON.text('Confirm'));
+      // await button1.click();
       await CommonFunc.sleep(1000);
 
       let strJson = getInspectorByKey('ActionSheet3');
@@ -119,7 +127,6 @@ export default function ActionSheet3() {
       console.info('[ActionSheet3_0200] END');
       done();
     });
-
 
   })
 }

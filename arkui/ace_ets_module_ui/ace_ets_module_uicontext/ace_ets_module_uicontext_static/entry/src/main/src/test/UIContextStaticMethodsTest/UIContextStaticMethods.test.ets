@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const PAGE = 'MainAbility/pages/uiContextStaticMethods/uiContextStaticMethods';
@@ -39,12 +38,6 @@ function arkuiNewErr(suite: string, phase: string, detail: string): void {
 
 export default function UIContextStaticMethodsTest(): void {
   describe('UIContextStaticMethodsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      arkuiNewLog(SUITE, 'beforeAll', 'start');
-      await UtilsTest.startAbility('com.arkui.ace.ets.module.uicontext.static', 'EntryAbility');
-      arkuiNewLog(SUITE, 'beforeAll', 'end');
-    });
-
     beforeEach(async (): Promise<void> => {
       arkuiNewLog(SUITE, 'beforeEach', 'start');
       AppStorage.delete('uiCtxSt_result');
@@ -68,7 +61,11 @@ export default function UIContextStaticMethodsTest(): void {
       arkuiNewLog(SUITE, 'afterEach', 'start');
 
       AppStorage.delete('uiCtxSt_result');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('UIContextStaticMethodsTest afterEach err: ' + JSON.stringify(err));
+      }
       arkuiNewLog(SUITE, 'afterEach', 'end');
     });
 

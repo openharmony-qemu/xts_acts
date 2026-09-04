@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,24 +21,8 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function monopolizeTest() {
   describe('monopolizeTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("monopolizeTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("monopolizeTest beforeEach start");
@@ -72,7 +56,11 @@ export default function monopolizeTest() {
 it('monopolizeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('monopolizeTest_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("monopolizeTest_static_0100 sleep error:" + err);
+      }
       let strJson = inspector.getInspectorByKey('monopolize_column');
       console.info("[monopolizeTest_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[monopolizeTest_static_0100] component obj.getElement('$attrs') is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));

@@ -16,7 +16,7 @@
 import ArrayInheritanceTest from './collections/ArrayInheritanceTest.test'
 import MapInheritanceTest from './collections/MapInheritanceTest.test'
 import SetInheritanceTest from './collections/SetInheritanceTest.test'
-import BitVectorTest from './bitVector/BitVectorTest.test'
+
 import ArrayBufferTest from './arrayBuffer/ArrayBufferTest.test'
 import ContainerComboTest from './collections/ContainerComboTest.test'
 import ConcurrentFactorComboTest from './collections/ConcurrentFactorComboTest.test'
@@ -34,9 +34,21 @@ import UintByteClampedArrayMethodTest from './uintArray/UintByteClampedArrayMeth
 import UintByteClampedArrayConcurrentTest from './uintArray/UintByteClampedArrayConcurrentTest.test'
 import UintShortArrayTest from './uintArray/UintShortArrayTest.test'
 import UintIntArrayTest from './uintArray/UintIntArrayTest.test'
+import sendableLruCacheBasicTest from './SendableLruCacheBase/SendableLruCacheBasicTypes.test';
+import sendableLruCacheBoundaryTest from './SendableLruCacheBase/SendableLruCacheBoundaryCases.test';
+import sendableLruCacheCompositeTest from './SendableLruCacheBase/SendableLruCacheComplexTypes.test';
+import sendableLruCacheErrorTest from './SendableLruCacheBase/SendableLruCacheError.test';
+import sendableLruCacheSpecialTest from './SendableLruCacheBase/SendableLruCacheSpecial.test';
+import sendableLruCacheNullableTest from './SendableLruCacheBase/SendableLruCacheNullableTest.test';
+import collectionsConcatArrayTest from './CollectionsConcatArrayTest/CollectionsConcatArray.test';
+import sendableLruCacheBatch1Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch1.test';
+import sendableLruCacheBatch2Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch2.test';
+import sendableLruCacheBatch3Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch3.test';
+import sendableLruCacheBatch4Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch4.test';
+import sendableLruCacheConcurrentTest from './SendableLruCacheConcurrent/SendableLruCacheConcurrent.test';
 export default function testsuite(): void {
   StressStabilityComboTest()
-  BitVectorTest()
+
   ArrayBufferTest()
   ArrayInheritanceTest()
   MapInheritanceTest()
@@ -56,4 +68,17 @@ export default function testsuite(): void {
   UintByteClampedArrayConcurrentTest()
   UintShortArrayTest()
   UintIntArrayTest()
+  
+  sendableLruCacheBasicTest();
+  sendableLruCacheBoundaryTest();
+  sendableLruCacheCompositeTest();
+  sendableLruCacheErrorTest();
+  sendableLruCacheSpecialTest();
+  sendableLruCacheNullableTest();
+  sendableLruCacheBatch1Test();
+  sendableLruCacheBatch2Test();
+  sendableLruCacheBatch3Test();
+  sendableLruCacheBatch4Test();
+  sendableLruCacheConcurrentTest();
+  collectionsConcatArrayTest();
 }

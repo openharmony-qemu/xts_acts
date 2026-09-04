@@ -25,9 +25,9 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
-export const FILE_CONTENT = 'hello world';
+export const FILE_CONTENT: string = 'hello world';
 
-export default function cloudFileDownloadTest() {
+export default function cloudFileDownloadTest(): void {
   describe('cloud_file_download_test', (): void => {
 
     /**
@@ -737,7 +737,6 @@ export default function cloudFileDownloadTest() {
         }, (err: Error): void => {
           hilog.info(domain, tag, '%{public}s', 'test_Getlastsynctime_static_001 failed, err = ' + err.code + ', message = ' + err.message);
         });
-        expect(true).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'test_Getlastsynctime_static_001 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
@@ -769,7 +768,6 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-        expect(true).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'test_Getlastsynctime_static_002 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();

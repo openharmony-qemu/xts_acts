@@ -89,5 +89,27 @@ export default function webResourceError() {
         done();
 
       })
+
+       /**
+      * @tc.number     SUB_WEB_NEXT_PAGE_0100
+      * @tc.name       testOnSwitchNextPageResourceError
+      * @tc.desc       test testOnSwitchNextPageResourceError
+      * @tc.size       MediumTest
+      * @tc.type       Function
+      * @tc.level      Level 3
+      */
+    it('testOnSwitchNextPageResourceError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          await Utils.msSleep(2000);
+          Utils.emitEvent('emitOnSwitchNextPageResourceError', 10)
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('WebResourceErrorButton', 10, '');
+          await Utils.msSleep(2000);
+        } catch(err) {
+          console.log('testOnSwitchNextPageResourceError' + err)
+        }
+        done();
+      })
   })
 }

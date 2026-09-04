@@ -17,22 +17,13 @@
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign, Color, $r } from '@ohos.arkui.component';
 import { jsonx } from "std/core";
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import {UtilsTest} from '../Util.test'
 import {  AppStorage } from '@ohos.arkui.stateManagement'
 import { Resource , Padding } from '@ohos.arkui.component'
 // import {Padding,Resource,} from '@ohos.arkui.component'
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 /**
  * Test of common attribute: padding
@@ -152,12 +143,6 @@ export default function PaddingBaseLengthTest() {
    * Create test suite.
    */
   describe('PaddingBaseLengthTest', () => {
-    beforeAll(async (): Promise<void> => {
-
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Modify the reference component properties.

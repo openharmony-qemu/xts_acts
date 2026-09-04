@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, Level, Size, TestType } from '../../../hypium/index';
+import {beforeAll, beforeEach, describe, it, Level, Size, TestType, expect } from '../../../hypium/index';
 import Utils from './Util.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let testAbilityContext: common.UIAbilityContext;
@@ -50,7 +51,12 @@ export default function webSetUserAgentClientHintsEnabled() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetUserAgentClientHintsEnabled', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testSetUserAgentClientHintsEnabledStatic', true, 174130, done);
+      Utils.registerBaseEvent('testSetUserAgentClientHintsEnabledStatic', true, 174130, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebSetUserAgentClientHintsEnabledButton', 10, '');
       await Utils.msSleep(2000);
@@ -69,7 +75,12 @@ export default function webSetUserAgentClientHintsEnabled() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetUserAgentClientHintsEnabledFalse', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testSetUserAgentClientHintsEnabledFalseStatic', true, 174131, done);
+      Utils.registerBaseEvent('testSetUserAgentClientHintsEnabledFalseStatic', true, 174131, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebSetUserAgentClientHintsEnabledButton', 10, '');
       await Utils.msSleep(2000);
@@ -87,7 +98,12 @@ export default function webSetUserAgentClientHintsEnabled() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitGetUserAgentClientHintsEnabledTrue', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testGetUserAgentClientHintsEnabledTrueStatic', true, 174160, done);
+      Utils.registerBaseEvent('testGetUserAgentClientHintsEnabledTrueStatic', true, 174160, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebSetUserAgentClientHintsEnabledButton', 10, '');
       await Utils.msSleep(2000);
@@ -105,12 +121,66 @@ export default function webSetUserAgentClientHintsEnabled() {
     it('testGetUserAgentClientHintsEnabledFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitGetUserAgentClientHintsEnabledFalse', 10);
-      Utils.registerEvent('testGetUserAgentClientHintsEnabledFalseStatic', false, 174170, done);
+      Utils.registerBaseEvent('testGetUserAgentClientHintsEnabledFalseStatic', false, 174170, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebSetUserAgentClientHintsEnabledButton', 10, '');
       await Utils.msSleep(2000);
       done();
     })
+
+    /**
+     * @tc.name   testSetUserAgentClientHintsEnabledNullStatic
+     * @tc.number SUB_ACE_WEB_SETUSERAGENTCLIENTHINTSENABLEDAPI_0500
+     * @tc.desc   test setUserAgentClientHintsEnabled null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetUserAgentClientHintsEnabledNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      Utils.emitEvent('emitSetUserAgentClientHintsEnabledNull', 10);
+      await Utils.msSleep(2000);
+      Utils.registerBaseEvent('testSetUserAgentClientHintsEnabledNullStatic', '401', 174140, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebSetUserAgentClientHintsEnabledButton', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   testSetUserAgentClientHintsEnabledUndefinedStatic
+     * @tc.number SUB_ACE_WEB_SETUSERAGENTCLIENTHINTSENABLEDAPI_0600
+     * @tc.desc   test setUserAgentClientHintsEnabled undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetUserAgentClientHintsEnabledUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      Utils.emitEvent('emitSetUserAgentClientHintsEnabledUndefined', 10);
+      await Utils.msSleep(2000);
+      Utils.registerBaseEvent('testSetUserAgentClientHintsEnabledUndefinedStatic', '401', 174150, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebSetUserAgentClientHintsEnabledButton', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+
     /**
      * @tc.name        SwitchNextPageStatic
      * @tc.number      SUB_WEB_ERRORCODE_JSMESSAGEEXTGET_ARRAY_0500

@@ -15,13 +15,14 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {
+  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest,startAbility} from '../Util.test';
-import { UIUtils } from '@kit.ArkUI';
 
 export default function SVDeepListenMakeObservedFalseTest(): void {
   describe('SVDeepListenMakeObservedFalseTest', () => {
@@ -51,15 +52,16 @@ export default function SVDeepListenMakeObservedFalseTest(): void {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_SVDeepListenMakeObservedTest_static_0200
-     * @tc.number SUB_ARKUI_SVDeepListenMakeObservedTest_static_0200
+     * @tc.name   SUB_ARKUI_SVDeepListenMakeObservedFalseTest_static_0200
+     * @tc.number SUB_ARKUI_SVDeepListenMakeObservedFalseTest_static_0200
      * @tc.desc   Test makeObserved deep listener - verify second level property change triggers UI update
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_SVDeepListenMakeObservedTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_SVDeepListenMakeObservedTest_static_0200] START');
+    it('SUB_ARKUI_SVDeepListenMakeObservedFalseTest_static_0200', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_SVDeepListenMakeObservedFalseTest_static_0200] START');
 
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
@@ -78,7 +80,7 @@ export default function SVDeepListenMakeObservedFalseTest(): void {
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('allowDeep(false)info.name: Jack');
 
-      console.info('[SUB_ARKUI_SVDeepListenMakeObservedTest_static_0200] END');
+      console.info('[SUB_ARKUI_SVDeepListenMakeObservedFalseTest_static_0200] END');
       done();
     });
   });

@@ -1,3 +1,4 @@
+/// <reference path="./DeviceManagerSystemApi.d.ts" />
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +16,13 @@
 
 import { beforeAll, afterAll, describe, it, expect, TestType, Size, Level } from "@ohos/hypium"
 import usbManager from "@ohos.usbManager"
-import deviceManager from '@ohos.driver.deviceManager'
-
+import { queryDeviceInfo, queryDriverInfo } from '@ohos.driver.deviceManager'
 
 export default function DeviceManagerSysApiNormalJsNdkTest() {
   describe('DeviceManagerSysApiNormalJsNdkTest', () => {
 
     const TAG: string = "[DeviceManagerSysApiNormalJsNdkTest]";
-    const SYSTEMAPI_DENIED_CODE = 202;
+    const SYSTEMAPI_UNAVAILABLE_CODE = 26300001;
     const TEST_DEVICE_ID = 0;
     const TEST_DRIVER_UID = 'testDriverUid';
 
@@ -70,13 +70,13 @@ export default function DeviceManagerSysApiNormalJsNdkTest() {
         return;
       }
       try {
-        let deviceInfos = deviceManager.queryDeviceInfo(TEST_DEVICE_ID);
+        const deviceInfos: object | null = queryDeviceInfo(TEST_DEVICE_ID);
         expect(deviceInfos === null).assertTrue();
         done();
       } catch (err) {
         console.info(TAG, 'testSystemApiQueryDeviceInfoNormal001 catch err code: ',
           err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(SYSTEMAPI_DENIED_CODE);
+        expect(err.code).assertEqual(SYSTEMAPI_UNAVAILABLE_CODE);
         done();
       }
     });
@@ -95,13 +95,13 @@ export default function DeviceManagerSysApiNormalJsNdkTest() {
         return;
       }
       try {
-        let deviceInfos = deviceManager.queryDriverInfo(TEST_DRIVER_UID);
-        expect(deviceInfos === null).assertTrue();
+        const driverInfos: object | null = queryDriverInfo(TEST_DRIVER_UID);
+        expect(driverInfos === null).assertTrue();
         done();
       } catch (err) {
         console.info(TAG, 'testSystemApiQueryDriverInfoNormal001 catch err code: ',
           err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(SYSTEMAPI_DENIED_CODE);
+        expect(err.code).assertEqual(SYSTEMAPI_UNAVAILABLE_CODE);
         done();
       }
     });

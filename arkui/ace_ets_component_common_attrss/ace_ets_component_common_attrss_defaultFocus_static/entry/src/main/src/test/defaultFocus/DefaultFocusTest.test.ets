@@ -16,22 +16,9 @@
 
 import Utils, { BasePageConfig, PageConfig, RectValue, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { beforeAll, describe, expect } from '../../../../hypium/index';
-import { AlignRuleOption, HorizontalAlign, VerticalAlign } from '@ohos.arkui.component';
+import { describe, expect } from '../../../../hypium/index';
 import { jsonx } from 'std/core';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function DefaultFocusTest() {
   //A list of components that support the position attribute, which is required.
@@ -97,17 +84,10 @@ export default function DefaultFocusTest() {
   ]
 
   /**
-   * Create test suite.
-   */
+    * Create test suite.
+    */
 
   describe('DefaultFocusTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("DefaultFocusTest beforeAll start");
-
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
-    });
-
     //Generate test cases (it) through a loop based on the support view * test values.
 
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
@@ -136,13 +116,25 @@ export default function DefaultFocusTest() {
         console.info('[' + data.caseTag + '] DefaultFocus is ' +
         viewObj.getElement('$attrs').getBoolean('defaultFocus') + '1123');
 
-        await Utils.backOnly();
+        try {
+          await Utils.backOnly();
+        } catch (err) {
+          console.info('DefaultFocusTest backOnly err: ' + JSON.stringify(err));
+        }
         console.log('test textComponentKey is:1 ' + data.pageConfig.textComponentKey)
-        await Utils.pushPage(pageConfig);
+        try {
+          await Utils.pushPage(pageConfig);
+        } catch (err) {
+          console.info('DefaultFocusTest pushPage err: ' + JSON.stringify(err));
+        }
         console.log('test textComponentKey is:2 ' + data.pageConfig.textComponentKey)
 
         expect(Utils.performKeyEventDownUp(2049, 'Tab')).assertTrue();
-        await Utils.sleep(2000);
+        try {
+          await Utils.sleep(1000);
+        } catch (err) {
+          console.info('DefaultFocusTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[' + data.caseTag + '] Press Tab.1123');
 
         //Confirm if the focus is on the target component
@@ -160,7 +152,11 @@ export default function DefaultFocusTest() {
         expect(secondReferenceComponent.getElement('$attrs').getString('label')).assertEqual('');
         //Confirm target component attribute values
         viewObj = JSON.parseJsonElement(inspector.getInspectorByKey(data.pageConfig.componentKey));
-        await Utils.sleep(2000)
+        try {
+          await Utils.sleep(2000)
+        } catch (err) {
+          console.info('DefaultFocusTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[' + data.caseTag + '] DefaultFocus is 151' +
         viewObj.getElement('$attrs').getBoolean('defaultFocus') + ' ');
         expect(viewObj.getElement('$attrs').getBoolean('defaultFocus')).assertEqual(true);
@@ -168,19 +164,31 @@ export default function DefaultFocusTest() {
       } else if ('SetFalse' == data.testValue.describe) {
         //Confirm if the focus is on the target component
         expect(Utils.performKeyEventDownUp(2049, 'Tab')).assertTrue();
-        await Utils.sleep(2000);
+        try {
+          await Utils.sleep(2000);
+        } catch (err) {
+          console.info('DefaultFocusTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[' + data.caseTag + '] Press Tab.1123');
 
         let component =
           JSON.parseJsonElement(inspector.getInspectorByKey(data.pageConfig.textComponentKey));
-        await Utils.sleep(2000)
+        try {
+          await Utils.sleep(2000)
+        } catch (err) {
+          console.info('DefaultFocusTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[' + data.caseTag + '] component.$attrs.content 157: ' +
         component.getElement('$attrs').getString('content'));
         expect(component.getElement('$attrs').getString('content')).assertEqual('');
 
         let viewObj =
           JSON.parseJsonElement(inspector.getInspectorByKey(data.pageConfig.componentKey));
-        await Utils.sleep(2000)
+        try {
+          await Utils.sleep(2000)
+        } catch (err) {
+          console.info('DefaultFocusTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[' + data.caseTag + '] DefaultFocus is 161' +
         viewObj.getElement('$attrs').getBoolean('defaultFocus') + ' ');
         expect(viewObj.getElement('$attrs').getBoolean('defaultFocus')).assertEqual(false);

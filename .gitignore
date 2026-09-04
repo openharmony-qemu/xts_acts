@@ -23,3 +23,7 @@ arkui/ace_ets_module_ui/ace_ets_module_advancedComponents/ace_ets_module_*/tools
 # .claude/settings.json     # Team settings (official Claude Code)
 # .claude/commands/         # Team slash commands (official Claude Code)
 # .claude/.plans/           # Project documentation (extension-specific)
+
+# xts-generator backup_guard.py 工具产物（滚动备份，不入库）
+commonlibrary/ets_utils/utils_static/builtin_static/std_core_static/math_standard_test_static/entry/docs/
+**/docs/backups/

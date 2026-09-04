@@ -73,8 +73,17 @@ export default function ActionSheet2() {
       console.info("[ActionSheet2_0100] title: " + JSON.stringify(properties.type));
       expect(properties.type).assertEqual(0)
 
-      let button1 = await driver.findComponent(ON.text('Confirm'));
-      await button1.click();
+      try {
+        let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
+        let button1 = await scrollBar.scrollSearch(ON.text('Confirm'));
+        let buttonC = await driver.findComponent(ON.text('Confirm'));
+        await buttonC.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
+
+      // let button1 = await driver.findComponent(ON.text('Confirm'));
+      // await button1.click();
       await CommonFunc.sleep(1000);
 
       let strJson = getInspectorByKey('ActionSheet2');
@@ -111,8 +120,17 @@ export default function ActionSheet2() {
       console.info("[ActionSheet2_0200] title: " + JSON.stringify(properties.type));
       expect(properties.type).assertEqual(0)
 
-      let button1 = await driver.findComponent(ON.text('Confirm'));
-      await button1.click();
+      try {
+        let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
+        let button1 = await scrollBar.scrollSearch(ON.text('Confirm'));
+        let buttonC = await driver.findComponent(ON.text('Confirm'));
+        await buttonC.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
+
+      // let button1 = await driver.findComponent(ON.text('Confirm'));
+      // await button1.click();
       await CommonFunc.sleep(1000);
 
       let strJson = getInspectorByKey('ActionSheet2');

@@ -13,24 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, beforeAll, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { RecordData } from '@ohos.base';
 
 export default function gridJsunit() {
   describe('grid3Test', () => {
-    beforeAll(async (): Promise<void> => {
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info('beforeEach ===================grid test beforeEach called===================');
       let options: router.RouterOptions = {

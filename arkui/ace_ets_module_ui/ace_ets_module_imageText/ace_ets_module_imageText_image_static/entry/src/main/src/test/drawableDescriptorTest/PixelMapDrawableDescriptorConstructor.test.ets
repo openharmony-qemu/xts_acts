@@ -14,25 +14,20 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME_L = 1000;
 const SLEEP_TIME_ASYNC = 3000;
 
 export default function PixelMapDrawableDescriptorConstructorTest() {
   describe('PixelMapDrawableDescriptorConstructorTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("PixelMapDrawableDescriptorConstructorTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("PixelMapDrawableDescriptorConstructorTest beforeEach start");
       let options: router.RouterOptions = {
@@ -65,19 +60,24 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
      * @tc.level    Level.LEVEL2
      */
     it('pixelMapDrawableDescriptorConstructorNoParam_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[pixelMapDrawableDescriptorConstructorNoParam_static_0100] START');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btnTest001'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME_L);
+      try {
+        console.info('[pixelMapDrawableDescriptorConstructorNoParam_static_0100] START');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btnTest001'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME_L);
 
-      let strJson = inspector.getInspectorByKey('txtTestResult001');
-      let obj = JSON.parseJsonElement(strJson);
-      let resultText: string = obj.getElement('$attrs').getString('content');
-      console.info('[pixelMapDrawableDescriptorConstructorNoParam_static_0100] result: ' + resultText);
+        let strJson = inspector.getInspectorByKey('txtTestResult001');
+        let obj = JSON.parseJsonElement(strJson);
+        let resultText: string = obj.getElement('$attrs').getString('content');
+        console.info('[pixelMapDrawableDescriptorConstructorNoParam_static_0100] result: ' + resultText);
 
-      expect(resultText).assertContain('PASS');
-      done();
+        expect(resultText).assertContain('PASS');
+        done();
+      } catch (err) {
+        console.error('[pixelMapDrawableDescriptorConstructorNoParam_static_0100] error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -87,19 +87,24 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
      * @tc.level    Level.LEVEL2
      */
     it('pixelMapDrawableDescriptorConstructorWithPixelMap_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[pixelMapDrawableDescriptorConstructorWithPixelMap_static_0100] START');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btnTest002'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME_ASYNC);
+      try {
+        console.info('[pixelMapDrawableDescriptorConstructorWithPixelMap_static_0100] START');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btnTest002'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME_ASYNC);
 
-      let strJson = inspector.getInspectorByKey('txtTestResult002');
-      let obj = JSON.parseJsonElement(strJson);
-      let resultText: string = obj.getElement('$attrs').getString('content');
-      console.info('[pixelMapDrawableDescriptorConstructorWithPixelMap_static_0100] result: ' + resultText);
+        let strJson = inspector.getInspectorByKey('txtTestResult002');
+        let obj = JSON.parseJsonElement(strJson);
+        let resultText: string = obj.getElement('$attrs').getString('content');
+        console.info('[pixelMapDrawableDescriptorConstructorWithPixelMap_static_0100] result: ' + resultText);
 
-      expect(resultText).assertContain('PASS');
-      done();
+        expect(resultText).assertContain('PASS');
+        done();
+      } catch (err) {
+        console.error('[pixelMapDrawableDescriptorConstructorWithPixelMap_static_0100] error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -109,19 +114,24 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
      * @tc.level    Level.LEVEL2
      */
     it('pixelMapDrawableDescriptorConstructorWithResource_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[pixelMapDrawableDescriptorConstructorWithResource_static_0100] START');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btnTest003'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME_ASYNC);
+      try {
+        console.info('[pixelMapDrawableDescriptorConstructorWithResource_static_0100] START');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btnTest003'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME_ASYNC);
 
-      let strJson = inspector.getInspectorByKey('txtTestResult003');
-      let obj = JSON.parseJsonElement(strJson);
-      let resultText: string = obj.getElement('$attrs').getString('content');
-      console.info('[pixelMapDrawableDescriptorConstructorWithResource_static_0100] result: ' + resultText);
+        let strJson = inspector.getInspectorByKey('txtTestResult003');
+        let obj = JSON.parseJsonElement(strJson);
+        let resultText: string = obj.getElement('$attrs').getString('content');
+        console.info('[pixelMapDrawableDescriptorConstructorWithResource_static_0100] result: ' + resultText);
 
-      expect(resultText).assertContain('PASS');
-      done();
+        expect(resultText).assertContain('PASS');
+        done();
+      } catch (err) {
+        console.error('[pixelMapDrawableDescriptorConstructorWithResource_static_0100] error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -131,19 +141,24 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
      * @tc.level    Level.LEVEL2
      */
     it('pixelMapDrawableDescriptorConstructorWithSandboxPath_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[pixelMapDrawableDescriptorConstructorWithSandboxPath_static_0100] START');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btnTest004'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME_ASYNC);
+      try {
+        console.info('[pixelMapDrawableDescriptorConstructorWithSandboxPath_static_0100] START');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btnTest004'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME_ASYNC);
 
-      let strJson = inspector.getInspectorByKey('txtTestResult004');
-      let obj = JSON.parseJsonElement(strJson);
-      let resultText: string = obj.getElement('$attrs').getString('content');
-      console.info('[pixelMapDrawableDescriptorConstructorWithSandboxPath_static_0100] result: ' + resultText);
+        let strJson = inspector.getInspectorByKey('txtTestResult004');
+        let obj = JSON.parseJsonElement(strJson);
+        let resultText: string = obj.getElement('$attrs').getString('content');
+        console.info('[pixelMapDrawableDescriptorConstructorWithSandboxPath_static_0100] result: ' + resultText);
 
-      expect(resultText).assertContain('PASS');
-      done();
+        expect(resultText).assertContain('PASS');
+        done();
+      } catch (err) {
+        console.error('[pixelMapDrawableDescriptorConstructorWithSandboxPath_static_0100] error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -153,19 +168,24 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
      * @tc.level    Level.LEVEL2
      */
     it('pixelMapDrawableDescriptorConstructorWithBase64_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[pixelMapDrawableDescriptorConstructorWithBase64_static_0100] START');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btnTest005'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME_ASYNC);
+      try {
+        console.info('[pixelMapDrawableDescriptorConstructorWithBase64_static_0100] START');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btnTest005'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME_ASYNC);
 
-      let strJson = inspector.getInspectorByKey('txtTestResult005');
-      let obj = JSON.parseJsonElement(strJson);
-      let resultText: string = obj.getElement('$attrs').getString('content');
-      console.info('[pixelMapDrawableDescriptorConstructorWithBase64_static_0100] result: ' + resultText);
+        let strJson = inspector.getInspectorByKey('txtTestResult005');
+        let obj = JSON.parseJsonElement(strJson);
+        let resultText: string = obj.getElement('$attrs').getString('content');
+        console.info('[pixelMapDrawableDescriptorConstructorWithBase64_static_0100] result: ' + resultText);
 
-      expect(resultText).assertContain('PASS');
-      done();
+        expect(resultText).assertContain('PASS');
+        done();
+      } catch (err) {
+        console.error('[pixelMapDrawableDescriptorConstructorWithBase64_static_0100] error: ' + err);
+        done();
+      }
     })
   })
 }

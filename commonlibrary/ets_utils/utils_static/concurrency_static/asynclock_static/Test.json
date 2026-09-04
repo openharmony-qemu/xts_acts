@@ -1,0 +1,30 @@
+{
+    "description": "AsyncLock static concurrency module XTS test suite",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "800000",
+        "shell-timeout": "800000",
+        "testcase-timeout": "15000",
+        "bundle-name": "com.example.asynclockStatic",
+        "module-name": "entry"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ActsAsynclockModuleStaticTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "power-shell wakeup",
+                "power-shell setmode 602"
+            ],
+            "teardown-command": [
+                "power-shell setmode 601"
+            ]
+        }
+    ]
+}

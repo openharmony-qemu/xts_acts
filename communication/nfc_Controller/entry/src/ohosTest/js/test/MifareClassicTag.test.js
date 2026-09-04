@@ -15,7 +15,7 @@
 
 
 import tag from '@ohos.nfc.tag';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
 
 function sleep(delay) {
     return new Promise(resovle => setTimeout(resovle, delay))
@@ -243,6 +243,78 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0104
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0104
+         * @tc.desc   authenticateSector isKeyA null 401 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            try {
+                let mifareTag = tag.getMifareClassic();
+                await mifareTag.authenticateSector(1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], null);
+                expect().assertFail();
+            } catch (error) {
+                expect(error.code).assertEqual(401);
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0105
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0105
+         * @tc.desc   authenticateSector isKeyA undefined 401 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            try {
+                let mifareTag = tag.getMifareClassic();
+                await mifareTag.authenticateSector(1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], undefined);
+                expect().assertFail();
+            } catch (error) {
+                expect(error.code).assertEqual(401);
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0106
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0106
+         * @tc.desc   authenticateSector key length 401 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            try {
+                let mifareTag = tag.getMifareClassic();
+                await mifareTag.authenticateSector(1, [1, 2, 3], true);
+                expect().assertFail();
+            } catch (error) {
+                expect(error.code).assertEqual(401);
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0107
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0107
+         * @tc.desc   authenticateSector sectorIndex boundary 401 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            try {
+                let mifareTag = tag.getMifareClassic();
+                await mifareTag.authenticateSector(-1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], true);
+                expect().assertFail();
+            } catch (error) {
+                expect(error.code).assertEqual(401);
+            }
+        })
+
+        /**
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0200
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0200
          * @tc.desc   Test authenticateSector api.
@@ -403,6 +475,98 @@ export default function nfcMifareClassicTag() {
             } else {
                 console.info("[NFC_test]MifareClassicTag2 = null & = undefined: ");
                 expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0204
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0204
+         * @tc.desc   authenticateSector isKeyA null callback 401 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            try {
+                let mifareTag = tag.getMifareClassic();
+                mifareTag.authenticateSector(1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], null, (err, data) => {
+                    if (err) {
+                        expect(err.code).assertEqual(401);
+                    } else {
+                        expect().assertFail();
+                    }
+                });
+            } catch (error) {
+                expect(error.code).assertEqual(401);
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0205
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0205
+         * @tc.desc   authenticateSector isKeyA undefined callback 401 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            try {
+                let mifareTag = tag.getMifareClassic();
+                mifareTag.authenticateSector(1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], undefined, (err, data) => {
+                    if (err) {
+                        expect(err.code).assertEqual(401);
+                    } else {
+                        expect().assertFail();
+                    }
+                });
+            } catch (error) {
+                expect(error.code).assertEqual(401);
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0206
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0206
+         * @tc.desc   authenticateSector key length callback 401 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            try {
+                let mifareTag = tag.getMifareClassic();
+                mifareTag.authenticateSector(1, [1, 2, 3], true, (err, data) => {
+                    if (err) {
+                        expect(err.code).assertEqual(401);
+                    } else {
+                        expect().assertFail();
+                    }
+                });
+            } catch (error) {
+                expect(error.code).assertEqual(401);
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0207
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0207
+         * @tc.desc   authenticateSector sectorIndex boundary callback 401 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            try {
+                let mifareTag = tag.getMifareClassic();
+                mifareTag.authenticateSector(-1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], true, (err, data) => {
+                    if (err) {
+                        expect(err.code).assertEqual(401);
+                    } else {
+                        expect().assertFail();
+                    }
+                });
+            } catch (error) {
+                expect(error.code).assertEqual(401);
             }
         })
 

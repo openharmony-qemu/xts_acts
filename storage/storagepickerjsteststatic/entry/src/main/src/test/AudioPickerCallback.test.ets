@@ -31,16 +31,27 @@ let context: common.UIAbilityContext | undefined;
 let windowClass: window.Window;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
-export default function audioPickerCallback() {
+export default function audioPickerCallback(): void {
   describe("audioPickerCallback", (): void => {
-    beforeEach(async () => {
-      await sleep(500);
+    beforeEach(async (done: () => void): Promise<void> => {
       await startAbility('ohos.acts.storage.picker.static', 'EntryAbility');
-      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext")! as common.UIAbilityContext;
-      await sleep(500);
-      await stopAbility('com.huawei.hmos.filemanager');
-      await stopAbility('com.huawei.hms.musicservice');
-      await sleep(500);
+      await sleep(2000);
+      try {
+        context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext")! as common.UIAbilityContext;
+        if (context) {
+          hilog.info(domain, tag, '%{public}s', `context: ${JSON.stringify(context)}`);
+        } else {
+          hilog.info(domain, tag, '%{public}s', `no context`);
+        }
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'beforeEach context: ' + e.message + ', code: ' + e.code);
+      }
+      done();
+    });
+
+    afterEach(async (done: () => void): Promise<void> => {
+      await sleep(1000);
+      done();
     });
 
     /**
@@ -113,13 +124,16 @@ async function select(testNum: string, done: () => void, dirName: string, fileNa
     audioPicker.select((err: BusinessError<void> | null, result: Array<string> | undefined) => {
       if (err != undefined) {
         hilog.info(domain, tag, '%{public}s', `${testNum}::select fail, err: ${JSON.stringify(err)}`);
-        done();
       }
       hilog.info(domain, tag, '%{public}s', `${testNum}::select result: ${JSON.stringify(result)}`);
       expect(result?.length == 0).assertTrue();
       done();
     });
-    done();
+    await sleep(2000);
+    stopAbility('com.ohos.filepicker');
+    stopAbility('com.huawei.hmos.filemanager');
+    stopAbility('com.huawei.hms.musicservice');
+    stopAbility('com.ohos.filemanager');
   }
   catch (error) {
     hilog.info(domain, tag, '%{public}s', `${testNum}::select error: ${JSON.stringify(error)}`);
@@ -134,13 +148,16 @@ async function selectWithOption(testNum: string, done: () => void, option: picke
     audioPicker.select(option, (err: BusinessError<void> | null, result: Array<string> | undefined) => {
       if (err != undefined) {
         hilog.info(domain, tag, '%{public}s', `${testNum}::selectWithOption fail, err: ${JSON.stringify(err)}`);
-        done();
       }
       hilog.info(domain, tag, '%{public}s', `${testNum}::selectWithOption result: ${JSON.stringify(result)}`);
       expect(result?.length == 0).assertTrue();
       done();
     });
-    done();
+    await sleep(2000);
+    stopAbility('com.ohos.filepicker');
+    stopAbility('com.huawei.hmos.filemanager');
+    stopAbility('com.huawei.hms.musicservice');
+    stopAbility('com.ohos.filemanager');
   }
   catch (error) {
     hilog.info(domain, tag, '%{public}s', `${testNum}::selectWithOption error: ${JSON.stringify(error)}`);
@@ -156,13 +173,16 @@ async function saveWithoutSelect(testNum: string, done: () => void, context: com
     audioPicker.save((err: BusinessError<void> | null, result: Array<string> | undefined) => {
       if (err != undefined) {
         hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithoutSelect err: ${JSON.stringify(err)}`);
-        done();
       }
       hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithoutSelect result: ${JSON.stringify(result)}`);
       expect(result?.length == 0).assertTrue();
       done();
     });
-    done();
+    await sleep(2000);
+    stopAbility('com.ohos.filepicker');
+    stopAbility('com.huawei.hmos.filemanager');
+    stopAbility('com.huawei.hms.musicservice');
+    stopAbility('com.ohos.filemanager');
   }
   catch (error) {
     hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithoutSelect error: ${JSON.stringify(error)}`);
@@ -177,13 +197,16 @@ async function saveWithOption(testNum: string, done: () => void, option: picker.
     audioPicker.save(option, (err: BusinessError<void> | null, result: Array<string> | undefined) => {
       if (err != undefined) {
         hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithOption err: ${JSON.stringify(err)}`);
-        done();
       }
       hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithOption result: ${JSON.stringify(result)}`);
       expect(result?.length == 0).assertTrue();
       done();
     });
-    done();
+    await sleep(2000);
+    stopAbility('com.ohos.filepicker');
+    stopAbility('com.huawei.hmos.filemanager');
+    stopAbility('com.huawei.hms.musicservice');
+    stopAbility('com.ohos.filemanager');
   }
   catch (error) {
     hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithOption error: ${JSON.stringify(error)}`);

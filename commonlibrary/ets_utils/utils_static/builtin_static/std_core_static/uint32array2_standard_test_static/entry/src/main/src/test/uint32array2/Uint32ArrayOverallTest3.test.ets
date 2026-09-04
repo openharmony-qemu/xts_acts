@@ -257,7 +257,7 @@ export default function uint32ArrayOverallThreeTest(): void {
         values.with(-4, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -275,7 +275,7 @@ export default function uint32ArrayOverallThreeTest(): void {
         values.with(3, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -293,7 +293,7 @@ export default function uint32ArrayOverallThreeTest(): void {
         empty.with(-1, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -311,7 +311,7 @@ export default function uint32ArrayOverallThreeTest(): void {
         empty.with(0, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

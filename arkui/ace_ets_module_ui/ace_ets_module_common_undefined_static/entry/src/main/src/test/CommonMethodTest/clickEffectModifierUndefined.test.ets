@@ -15,7 +15,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,16 +27,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
 export default function clickEffectModifierUndefined() {
-  describe('clickEffectModifierUndefined', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("clickEffectModifierUndefined beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.common.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
+  describe('clickEffectModifierUndefined', () => {
 
     beforeEach(async (): Promise<void> => {
       console.info("clickEffectModifierUndefined beforeEach start");

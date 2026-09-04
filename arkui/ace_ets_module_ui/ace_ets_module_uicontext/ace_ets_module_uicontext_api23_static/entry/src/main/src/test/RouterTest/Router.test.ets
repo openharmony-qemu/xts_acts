@@ -15,24 +15,16 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
 export default function RouterTest() {
   describe('RouterTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] RouterTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.uicontext.api23.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] RouterTest beforeEach start");
       let options: router.RouterOptions = {
@@ -62,7 +54,11 @@ export default function RouterTest() {
       if (AppStorage.get<Router>('routerForTest') != undefined) {
         AppStorage.delete('routerForTest');
       }
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('RouterTest afterEach err: ' + JSON.stringify(err));
+      }
       console.info("[ARKUI_NEW] RouterTest afterEach end");
     });
 

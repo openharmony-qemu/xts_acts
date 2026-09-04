@@ -13,25 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
 
 export default function ForEachTest() {
   describe('ForEachTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] ForEachTest beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.forEach.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('[ARKUI_NEW] ForEachTest beforeEach start');
       let options: router.RouterOptions = { url: 'MainAbility/pages/ForEach/ForEachIndex' };
@@ -41,7 +34,7 @@ export default function ForEachTest() {
         let pages = routerInstance.getState();
         console.info('[ARKUI_NEW] ForEachTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== "ForEachIndex") {
-          routerInstance.replaceUrl(options);
+          await routerInstance.replaceUrl(options);
         }
         await Utils.sleep(500);
       } catch (err) {
@@ -52,7 +45,11 @@ export default function ForEachTest() {
 
     afterEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] ForEachTest afterEach start");
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('ForEachTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("[ARKUI_NEW] ForEachTest afterEach end");
     });
 

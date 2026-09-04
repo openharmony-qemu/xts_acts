@@ -335,6 +335,9 @@ static void InitPush6(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("VideoEncodeCapability5010Test", VideoEncodeCapability5010Test));
     desc.push_back(XL("VideoEncodeCapability5020Test", VideoEncodeCapability5020Test));
     desc.push_back(XL("VideoEncodeCapability5030Test", VideoEncodeCapability5030Test));
+    desc.push_back(XL("LOWPOWER_CONFIG_001Test", LOWPOWER_CONFIG_001Test));
+    desc.push_back(XL("LOWPOWER_CONFIG_002Test", LOWPOWER_CONFIG_002Test));
+    desc.push_back(XL("LOWPOWER_CONFIG_003Test", LOWPOWER_CONFIG_003Test));
     desc.push_back(XL("VideoEncodeMseQp0100Test", VideoEncodeMseQp0100Test));
     desc.push_back(XL("VideoEncodeMseQp0200Test", VideoEncodeMseQp0200Test));
     desc.push_back(XL("VideoEncodeMseQp0300Test", VideoEncodeMseQp0300Test));
@@ -422,6 +425,9 @@ static void InitPush8(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("COLORSPACE_CONFIG_ADD_012Test", COLORSPACE_CONFIG_ADD_012Test));
     desc.push_back(XL("FRAMENUM_JUDGMENT_001Test", FRAMENUM_JUDGMENT_001Test));
     desc.push_back(XL("FRAMENUM_JUDGMENT_002Test", FRAMENUM_JUDGMENT_002Test));
+    desc.push_back(XL("LOWPOWER_SETPARAM_001Test", LOWPOWER_SETPARAM_001Test));
+    desc.push_back(XL("LOWPOWER_SETPARAM_002Test", LOWPOWER_SETPARAM_002Test));
+    desc.push_back(XL("LOWPOWER_SETPARAM_003Test", LOWPOWER_SETPARAM_003Test));
     desc.push_back(XL("VideoEncodeState0100Test", VideoEncodeState0100Test));
     desc.push_back(XL("VideoEncodeState0101Test", VideoEncodeState0101Test));
     desc.push_back(XL("VideoEncodeState0200Test", VideoEncodeState0200Test));

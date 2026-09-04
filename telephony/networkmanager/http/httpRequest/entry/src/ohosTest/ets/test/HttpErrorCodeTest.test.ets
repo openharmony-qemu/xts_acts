@@ -1358,7 +1358,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            httpRequest.request('https://hao123.com', {method: http.RequestMethod.POST}, (err: BusinessError, data: http.HttpResponse) => {
+            httpRequest.request('https://self-signed.badssl.com', {method: http.RequestMethod.POST}, (err: BusinessError, data: http.HttpResponse) => {
               console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300060);
               httpRequest.destroy();
@@ -1394,7 +1394,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            let promise = httpRequest.request('https://hao123.com', {
+            let promise = httpRequest.request('https://self-signed.badssl.com', {
               method: http.RequestMethod.GET,
             });
             promise.then((data:http.HttpResponse) => {
@@ -1435,7 +1435,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            httpRequest.requestInStream('https://hao123.com', (err: BusinessError, data: number) => {
+            httpRequest.requestInStream('https://self-signed.badssl.com', (err: BusinessError, data: number) => {
               console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300060);
               httpRequest.destroy();
@@ -1471,7 +1471,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            httpRequest.requestInStream('https://hao123.com', {method: http.RequestMethod.POST}, (err: BusinessError, data: number) => {
+            httpRequest.requestInStream('https://self-signed.badssl.com', {method: http.RequestMethod.POST}, (err: BusinessError, data: number) => {
               console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300060);
               httpRequest.destroy();
@@ -1507,7 +1507,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            let promise = httpRequest.requestInStream('https://hao123.com', {
+            let promise = httpRequest.requestInStream('https://self-signed.badssl.com', {
               method: http.RequestMethod.GET,
             });
             promise.then((data) => {
@@ -1548,7 +1548,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            httpRequest.request('https://hao123.com', (err: BusinessError, data: http.HttpResponse) => {
+            httpRequest.request('https://self-signed.badssl.com', (err: BusinessError, data: http.HttpResponse) => {
               console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300060);
               httpRequest.destroy();
@@ -1591,12 +1591,12 @@ export default function HttpErrorCodeTest() {
 
             httpRequest.request(url, options)
               .then((data: http.HttpResponse) => {
-                console.info('Result:' + data.result);
+                console.info(`${caseName} Result:` + data.result);
                 httpRequest.destroy();
                 done();
               })
               .catch((err: BusinessError) => {
-                console.info('error:' + JSON.stringify(err));
+                console.info(`${caseName} err:` + JSON.stringify(err));
                 ExpectTrue(err.code === 401);
                 httpRequest.destroy();
                 done();
@@ -2245,12 +2245,11 @@ export default function HttpErrorCodeTest() {
             let httpRequest: http.HttpRequest = http.createHttp();
             httpRequest.request(null, {method: http.RequestMethod.POST}).then((res) => {
               console.info(`${caseName} trycatch err: ${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode === 401);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} error: ${JSON.stringify(err)}`);
-              ExpectTrue(true);
+              ExpectTrue(err.code === 401);
               done();
             });
 
@@ -2285,12 +2284,11 @@ export default function HttpErrorCodeTest() {
             let httpRequest: http.HttpRequest = http.createHttp();
             httpRequest.request(undefined, {method: http.RequestMethod.POST}).then((res) => {
               console.info(`${caseName} trycatch err: ${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode === 401);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} error: ${JSON.stringify(err)}`);
-              ExpectTrue(true);
+              ExpectTrue(err.code === 401);
               done();
             });
           }
@@ -2734,6 +2732,7 @@ export default function HttpErrorCodeTest() {
         console.info(`${caseName}---End`);
         done();
       }
+      console.info(`${caseName}---End `);
     });
     /**
      * @tc.name   testHttpRequestMethodErrorCode6000
@@ -2767,6 +2766,7 @@ export default function HttpErrorCodeTest() {
         console.info(`${caseName}---End`);
         done();
       }
+      console.info(`${caseName}---End `);
     });
     /**
      * @tc.name   testHttpRequestMethodErrorCode6100
@@ -2999,14 +2999,914 @@ export default function HttpErrorCodeTest() {
         };
         const asyncResultFalse = await asyncCallbackFalse(mockContext);
         ExpectTrue(asyncResultFalse === false);
-
-        console.info(`${caseName}---End`);
-        done();
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          }
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request fail err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
       } catch (err) {
         console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
         ExpectTrue(false);
         done();
       }
+      console.info(`${caseName}---End `);
+    });
+    /**
+     * @tc.name   testConnectionHttpRequestType0100
+     * @tc.number SUB_NetworkMgr_Connection_HttpRequest_Type_0100
+     * @tc.desc   test connection.HttpRequest type (type HttpRequest = http.HttpRequest) with createHttp interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConnectionHttpRequestType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testConnectionHttpRequestType0100";
+      console.info(`${caseName} test Start`);
+      try {
+        let httpRequest: connection.HttpRequest = http.createHttp();
+        ExpectTrue(httpRequest !== undefined);
+        ExpectTrue(httpRequest !== null);
+        ExpectTrue(typeof httpRequest === 'object');
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectTrue(false);
+            done();
+          } else {
+            ExpectTrue(data.netId > 0);
+            ExpectTrue(data.netId !== undefined && data.netId !== null);
+            let httpRequestOptions: http.HttpRequestOptions = {
+              method: http.RequestMethod.GET,
+              connectTimeout: 5000,
+              readTimeout: 5000,
+              header: {
+                'Content-Type': 'application/json'
+              }
+            };
+            httpRequest.request('https://www.baidu.com', httpRequestOptions).then((response: http.HttpResponse) => {
+              console.info(`${caseName} request succeeded, responseCode: ${response.responseCode}`);
+              ExpectTrue(response.result !== undefined);
+              ExpectTrue(response.result !== null);
+              ExpectTrue(response.responseCode === 200);
+              ExpectTrue(response.header !== undefined);
+              httpRequest.destroy();
+              done();
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} request failed: ${JSON.stringify(err)}`);
+              ExpectTrue(false);
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+
+    /**
+     * @tc.name   testHttpServerAuthentication0100
+     * @tc.number SUB_NetworkMgr_Http_ServerAuthentication_0100
+     * @tc.desc   Verify http.ServerAuthentication interface construction with full fields
+     * @tc.type   Type
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level1
+     */
+    it('testHttpServerAuthentication0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testHttpServerAuthentication0100';
+      console.info(`${caseName}---Start`);
+      try {
+        const serverAuth: http.ServerAuthentication = {
+          credential: {
+            username: 'testUser',
+            password: 'testPass'
+          },
+          authenticationType: 'basic'
+        } as http.ServerAuthentication;
+
+        ExpectTrue(serverAuth !== null && serverAuth !== undefined);
+        ExpectTrue(typeof serverAuth === 'object');
+        ExpectTrue(serverAuth.credential !== undefined);
+        ExpectTrue(serverAuth.credential!.username === 'testUser');
+        ExpectTrue(serverAuth.credential!.password === 'testPass');
+        ExpectTrue(serverAuth.authenticationType === 'basic');
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          }
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request fail err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+
+    /**
+     * @tc.name   testHttpAuthenticationType0100
+     * @tc.number SUB_NetworkMgr_Http_AuthenticationType_0100
+     * @tc.desc   Verify http.AuthenticationType accepts 'basic' value
+     * @tc.type   Type
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level1
+     */
+    it('testHttpAuthenticationType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testHttpAuthenticationType0100';
+      console.info(`${caseName}---Start`);
+      try {
+        const authTypeBasic: http.AuthenticationType = 'basic';
+        ExpectTrue(authTypeBasic !== null && authTypeBasic !== undefined);
+        ExpectTrue(typeof authTypeBasic === 'string');
+        ExpectTrue(authTypeBasic === 'basic');
+
+        const serverAuth: http.ServerAuthentication = {
+          credential: {
+            username: 'authUser',
+            password: 'authPass'
+          },
+          authenticationType: authTypeBasic
+        } as http.ServerAuthentication;
+
+        ExpectTrue(serverAuth.authenticationType === 'basic');
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          }
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request fail err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+
+    /**
+     * @tc.name   testHttpCredential0100
+     * @tc.number SUB_NetworkMgr_Http_Credential_0100
+     * @tc.desc   Verify http.Credential interface with full username and password
+     * @tc.type   Type
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level1
+     */
+    it('testHttpCredential0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testHttpCredential0100';
+      console.info(`${caseName}---Start`);
+      try {
+        const serverAuth: http.ServerAuthentication = {
+          credential: {
+            username: 'proxyUser',
+            password: 'proxyPass'
+          },
+          authenticationType: 'basic'
+        } as http.ServerAuthentication;
+
+        ExpectTrue(serverAuth.credential !== undefined);
+        ExpectTrue(typeof serverAuth.credential!.username === 'string');
+        ExpectTrue(typeof serverAuth.credential!.password === 'string');
+        ExpectTrue(serverAuth.credential!.username === 'proxyUser');
+        ExpectTrue(serverAuth.credential!.password === 'proxyPass');
+        console.info(`${caseName}---End`);
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          }
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request fail err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+
+    /**
+     * @tc.name   testTlsConfigCipherSuites0100
+     * @tc.number SUB_NetworkMgr_Http_TlsConfig_CipherSuites_0100
+     * @tc.desc   Verify TlsConfig cipherSuites can be set with valid cipher suites
+     * @tc.type   FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level1
+     */
+    it('testTlsConfigCipherSuites0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testTlsConfigCipherSuites0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let tlsConfig: http.TlsConfig = {
+          tlsVersionMin: http.TlsVersion.TLS_V_1_2,
+          tlsVersionMax: http.TlsVersion.TLS_V_1_3,
+          cipherSuites: [
+            'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite,
+            'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite,
+          ]
+        };
+        ExpectTrue(tlsConfig.cipherSuites !== undefined);
+        ExpectTrue(tlsConfig.cipherSuites!.length === 2);
+        console.info(`${caseName} cipherSuites count: ${tlsConfig.cipherSuites!.length}`);
+
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          },
+          tlsOptions: tlsConfig
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End`);
+    });
+
+    /**
+     * @tc.name   testTlsV13SpecificCipherSuite0100
+     * @tc.number SUB_NetworkMgr_Http_TlsConfig_TlsV13SpecificCipherSuite_0100
+     * @tc.desc   Verify TlsV13SpecificCipherSuite type accepts valid TLS v1.3 cipher suite values
+     * @tc.type   FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level1
+     */
+    it('testTlsV13SpecificCipherSuite0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testTlsV13SpecificCipherSuite0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let cipherSuite1: http.TlsV13SpecificCipherSuite = 'TLS_AES_128_GCM_SHA256';
+        let cipherSuite2: http.TlsV13SpecificCipherSuite = 'TLS_AES_256_GCM_SHA384';
+        let cipherSuite3: http.TlsV13SpecificCipherSuite = 'TLS_CHACHA20_POLY1305_SHA256';
+
+        ExpectTrue(cipherSuite1 === 'TLS_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuite2 === 'TLS_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuite3 === 'TLS_CHACHA20_POLY1305_SHA256');
+        console.info(`${caseName} cipherSuite1: ${cipherSuite1}, cipherSuite2: ${cipherSuite2}, cipherSuite3: ${cipherSuite3}`);
+
+        let cipherSuites: http.TlsV13SpecificCipherSuite[] = [cipherSuite1, cipherSuite2, cipherSuite3];
+        ExpectTrue(cipherSuites.length === 3);
+        ExpectTrue(cipherSuites[0] === 'TLS_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuites[1] === 'TLS_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuites[2] === 'TLS_CHACHA20_POLY1305_SHA256');
+
+        let tlsConfig: http.TlsConfig = {
+          tlsVersionMin: http.TlsVersion.TLS_V_1_3,
+          tlsVersionMax: http.TlsVersion.TLS_V_1_3,
+          cipherSuites: [
+            cipherSuite1 as http.TlsV13SpecificCipherSuite as http.TlsV13CipherSuite,
+            cipherSuite2 as http.TlsV13SpecificCipherSuite as http.TlsV13CipherSuite,
+            cipherSuite3 as http.TlsV13SpecificCipherSuite as http.TlsV13CipherSuite,
+          ]
+        };
+        ExpectTrue(tlsConfig.cipherSuites !== undefined);
+        ExpectTrue(tlsConfig.cipherSuites!.length === 3);
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          },
+          tlsOptions: tlsConfig
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End`);
+    });
+
+    /**
+     * @tc.name   testTlsV12SpecificCipherSuite0100
+     * @tc.number SUB_NetworkMgr_Http_TlsConfig_TlsV12SpecificCipherSuite_0100
+     * @tc.desc   Verify TlsV12SpecificCipherSuite type accepts valid TLS v1.2 cipher suite values
+     * @tc.type   FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level1
+     */
+    it('testTlsV12SpecificCipherSuite0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testTlsV12SpecificCipherSuite0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let cipherSuite1: http.TlsV12SpecificCipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256';
+        let cipherSuite2: http.TlsV12SpecificCipherSuite = 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256';
+        let cipherSuite3: http.TlsV12SpecificCipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384';
+        let cipherSuite4: http.TlsV12SpecificCipherSuite = 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384';
+        let cipherSuite5: http.TlsV12SpecificCipherSuite = 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256';
+        let cipherSuite6: http.TlsV12SpecificCipherSuite = 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256';
+        let cipherSuite7: http.TlsV12SpecificCipherSuite = 'TLS_RSA_WITH_AES_128_GCM_SHA256';
+        let cipherSuite8: http.TlsV12SpecificCipherSuite = 'TLS_RSA_WITH_AES_256_GCM_SHA384';
+
+        ExpectTrue(cipherSuite1 === 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuite2 === 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuite3 === 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuite4 === 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuite5 === 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuite6 === 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuite7 === 'TLS_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuite8 === 'TLS_RSA_WITH_AES_256_GCM_SHA384');
+        console.info(`${caseName} cipherSuite1: ${cipherSuite1}, cipherSuite2: ${cipherSuite2}, cipherSuite3: ${cipherSuite3}, cipherSuite4: ${cipherSuite4}`);
+        console.info(`${caseName} cipherSuite5: ${cipherSuite5}, cipherSuite6: ${cipherSuite6}, cipherSuite7: ${cipherSuite7}, cipherSuite8: ${cipherSuite8}`);
+
+        let cipherSuites: http.TlsV12SpecificCipherSuite[] = [cipherSuite1, cipherSuite2, cipherSuite3, cipherSuite4, cipherSuite5, cipherSuite6, cipherSuite7, cipherSuite8];
+        ExpectTrue(cipherSuites.length === 8);
+        ExpectTrue(cipherSuites[0] === 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuites[1] === 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuites[2] === 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuites[3] === 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuites[4] === 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuites[5] === 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuites[6] === 'TLS_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuites[7] === 'TLS_RSA_WITH_AES_256_GCM_SHA384');
+
+        let tlsConfig: http.TlsConfig = {
+          tlsVersionMin: http.TlsVersion.TLS_V_1_2,
+          tlsVersionMax: http.TlsVersion.TLS_V_1_2,
+          cipherSuites: [
+            cipherSuite1 as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite,
+            cipherSuite2 as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite,
+            cipherSuite3 as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite,
+            cipherSuite4 as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite,
+            cipherSuite5 as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite,
+            cipherSuite6 as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite,
+            cipherSuite7 as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite,
+            cipherSuite8 as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite,
+          ]
+        };
+        ExpectTrue(tlsConfig.cipherSuites !== undefined);
+        ExpectTrue(tlsConfig.cipherSuites!.length === 8);
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          },
+          tlsOptions: tlsConfig
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End`);
+    });
+
+    /**
+     * @tc.name   testTlsV10SpecificCipherSuite0100
+     * @tc.number SUB_NetworkMgr_Http_TlsConfig_TlsV10SpecificCipherSuite_0100
+     * @tc.desc   Verify TlsV10SpecificCipherSuite type accepts valid TLS v1.0 cipher suite values
+     * @tc.type   FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level1
+     */
+    it('testTlsV10SpecificCipherSuite0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testTlsV10SpecificCipherSuite0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let cipherSuite1: http.TlsV10SpecificCipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA';
+        let cipherSuite2: http.TlsV10SpecificCipherSuite = 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA';
+        let cipherSuite3: http.TlsV10SpecificCipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA';
+        let cipherSuite4: http.TlsV10SpecificCipherSuite = 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA';
+        let cipherSuite5: http.TlsV10SpecificCipherSuite = 'TLS_RSA_WITH_AES_128_CBC_SHA';
+        let cipherSuite6: http.TlsV10SpecificCipherSuite = 'TLS_RSA_WITH_AES_256_CBC_SHA';
+        let cipherSuite7: http.TlsV10SpecificCipherSuite = 'TLS_RSA_WITH_3DES_EDE_CBC_SHA';
+
+        ExpectTrue(cipherSuite1 === 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuite2 === 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuite3 === 'TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuite4 === 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuite5 === 'TLS_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuite6 === 'TLS_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuite7 === 'TLS_RSA_WITH_3DES_EDE_CBC_SHA');
+        console.info(`${caseName} cipherSuite1: ${cipherSuite1}, cipherSuite2: ${cipherSuite2}, cipherSuite3: ${cipherSuite3}, cipherSuite4: ${cipherSuite4}`);
+        console.info(`${caseName} cipherSuite5: ${cipherSuite5}, cipherSuite6: ${cipherSuite6}, cipherSuite7: ${cipherSuite7}`);
+
+        let cipherSuites: http.TlsV10SpecificCipherSuite[] = [cipherSuite1, cipherSuite2, cipherSuite3, cipherSuite4, cipherSuite5, cipherSuite6, cipherSuite7];
+        ExpectTrue(cipherSuites.length === 7);
+        ExpectTrue(cipherSuites[0] === 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuites[1] === 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuites[2] === 'TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuites[3] === 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuites[4] === 'TLS_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuites[5] === 'TLS_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuites[6] === 'TLS_RSA_WITH_3DES_EDE_CBC_SHA');
+
+        let tlsConfig: http.TlsConfig = {
+          tlsVersionMin: http.TlsVersion.TLS_V_1_0,
+          tlsVersionMax: http.TlsVersion.TLS_V_1_0,
+          cipherSuites: [
+            cipherSuite1 as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite,
+            cipherSuite2 as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite,
+            cipherSuite3 as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite,
+            cipherSuite4 as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite,
+            cipherSuite5 as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite,
+            cipherSuite6 as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite,
+            cipherSuite7 as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite,
+          ]
+        };
+        ExpectTrue(tlsConfig.cipherSuites !== undefined);
+        ExpectTrue(tlsConfig.cipherSuites!.length === 7);
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          },
+          tlsOptions: tlsConfig
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End`);
+    });
+
+    /**
+     * @tc.name   testTlsV13CipherSuite0100
+     * @tc.number SUB_NetworkMgr_Http_TlsV13CipherSuite_0100
+     * @tc.desc   Verify TlsV13CipherSuite type accepts valid TLS v1.2 and TLS v1.3 cipher suite values
+     * @tc.type   FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level1
+     */
+    it('testTlsV13CipherSuite0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testTlsV13CipherSuite0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let cipherSuite1: http.TlsV13CipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite as http.TlsV13CipherSuite;
+        let cipherSuite2: http.TlsV13CipherSuite = 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite as http.TlsV13CipherSuite;
+        let cipherSuite3: http.TlsV13CipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite as http.TlsV13CipherSuite;
+        let cipherSuite4: http.TlsV13CipherSuite = 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite as http.TlsV13CipherSuite;
+        let cipherSuite5: http.TlsV13CipherSuite = 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite as http.TlsV13CipherSuite;
+        let cipherSuite6: http.TlsV13CipherSuite = 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite as http.TlsV13CipherSuite;
+        let cipherSuite7: http.TlsV13CipherSuite = 'TLS_RSA_WITH_AES_128_GCM_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite as http.TlsV13CipherSuite;
+        let cipherSuite8: http.TlsV13CipherSuite = 'TLS_RSA_WITH_AES_256_GCM_SHA384' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite as http.TlsV13CipherSuite;
+        let cipherSuite9: http.TlsV13CipherSuite = 'TLS_AES_128_GCM_SHA256' as http.TlsV13SpecificCipherSuite as http.TlsV13CipherSuite;
+        let cipherSuite10: http.TlsV13CipherSuite = 'TLS_AES_256_GCM_SHA384' as http.TlsV13SpecificCipherSuite as http.TlsV13CipherSuite;
+        let cipherSuite11: http.TlsV13CipherSuite = 'TLS_CHACHA20_POLY1305_SHA256' as http.TlsV13SpecificCipherSuite as http.TlsV13CipherSuite;
+
+        ExpectTrue(cipherSuite1 === 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuite2 === 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuite3 === 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuite4 === 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuite5 === 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuite6 === 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuite7 === 'TLS_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuite8 === 'TLS_RSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuite9 === 'TLS_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuite10 === 'TLS_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuite11 === 'TLS_CHACHA20_POLY1305_SHA256');
+        console.info(`${caseName} cipherSuite1: ${cipherSuite1}, cipherSuite2: ${cipherSuite2}, cipherSuite3: ${cipherSuite3}, cipherSuite4: ${cipherSuite4}`);
+        console.info(`${caseName} cipherSuite5: ${cipherSuite5}, cipherSuite6: ${cipherSuite6}, cipherSuite7: ${cipherSuite7}, cipherSuite8: ${cipherSuite8}`);
+        console.info(`${caseName} cipherSuite9: ${cipherSuite9}, cipherSuite10: ${cipherSuite10}, cipherSuite11: ${cipherSuite11}`);
+
+        let cipherSuites: http.TlsV13CipherSuite[] = [cipherSuite1, cipherSuite2, cipherSuite3, cipherSuite4, cipherSuite5, cipherSuite6, cipherSuite7, cipherSuite8, cipherSuite9, cipherSuite10, cipherSuite11];
+        ExpectTrue(cipherSuites.length === 11);
+        ExpectTrue(cipherSuites[0] === 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuites[1] === 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuites[2] === 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuites[3] === 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuites[4] === 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuites[5] === 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuites[6] === 'TLS_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuites[7] === 'TLS_RSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuites[8] === 'TLS_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuites[9] === 'TLS_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuites[10] === 'TLS_CHACHA20_POLY1305_SHA256');
+
+        let tlsConfig: http.TlsConfig = {
+          tlsVersionMin: http.TlsVersion.TLS_V_1_2,
+          tlsVersionMax: http.TlsVersion.TLS_V_1_3,
+          cipherSuites: [
+            cipherSuite1 as http.TlsV13CipherSuite,
+            cipherSuite2 as http.TlsV13CipherSuite,
+            cipherSuite3 as http.TlsV13CipherSuite,
+            cipherSuite4 as http.TlsV13CipherSuite,
+            cipherSuite5 as http.TlsV13CipherSuite,
+            cipherSuite6 as http.TlsV13CipherSuite,
+            cipherSuite7 as http.TlsV13CipherSuite,
+            cipherSuite8 as http.TlsV13CipherSuite,
+            cipherSuite9 as http.TlsV13CipherSuite,
+            cipherSuite10 as http.TlsV13CipherSuite,
+            cipherSuite11 as http.TlsV13CipherSuite,
+          ]
+        };
+        ExpectTrue(tlsConfig.cipherSuites !== undefined);
+        ExpectTrue(tlsConfig.cipherSuites!.length === 11);
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          },
+          tlsOptions: tlsConfig
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End`);
+    });
+
+    /**
+     * @tc.name   testTlsV12CipherSuite0100
+     * @tc.number SUB_NetworkMgr_Http_TlsV12CipherSuite_0100
+     * @tc.desc   Verify TlsV12CipherSuite type accepts valid TlsV11CipherSuite and TlsV12SpecificCipherSuite values
+     * @tc.type   FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level1
+     */
+    it('testTlsV12CipherSuite0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testTlsV12CipherSuite0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let cipherSuite1: http.TlsV12CipherSuite = 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV11CipherSuite as http.TlsV12CipherSuite;
+        let cipherSuite2: http.TlsV12CipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite;
+        let cipherSuite3: http.TlsV12CipherSuite = 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite;
+        let cipherSuite4: http.TlsV12CipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite;
+        let cipherSuite5: http.TlsV12CipherSuite = 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite;
+        let cipherSuite6: http.TlsV12CipherSuite = 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite;
+        let cipherSuite7: http.TlsV12CipherSuite = 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite;
+        let cipherSuite8: http.TlsV12CipherSuite = 'TLS_RSA_WITH_AES_128_GCM_SHA256' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite;
+        let cipherSuite9: http.TlsV12CipherSuite = 'TLS_RSA_WITH_AES_256_GCM_SHA384' as http.TlsV12SpecificCipherSuite as http.TlsV12CipherSuite;
+
+        ExpectTrue(cipherSuite1 === 'TLS_RSA_WITH_3DES_EDE_CBC_SHA');
+        ExpectTrue(cipherSuite2 === 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuite3 === 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuite4 === 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuite5 === 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuite6 === 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuite7 === 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuite8 === 'TLS_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuite9 === 'TLS_RSA_WITH_AES_256_GCM_SHA384');
+        console.info(`${caseName} cipherSuite1: ${cipherSuite1}, cipherSuite2: ${cipherSuite2}, cipherSuite3: ${cipherSuite3}, cipherSuite4: ${cipherSuite4}`);
+        console.info(`${caseName} cipherSuite5: ${cipherSuite5}, cipherSuite6: ${cipherSuite6}, cipherSuite7: ${cipherSuite7}, cipherSuite8: ${cipherSuite8}, cipherSuite9: ${cipherSuite9}`);
+
+        let cipherSuites: http.TlsV12CipherSuite[] = [cipherSuite1, cipherSuite2, cipherSuite3, cipherSuite4, cipherSuite5, cipherSuite6, cipherSuite7, cipherSuite8, cipherSuite9];
+        ExpectTrue(cipherSuites.length === 9);
+        ExpectTrue(cipherSuites[0] === 'TLS_RSA_WITH_3DES_EDE_CBC_SHA');
+        ExpectTrue(cipherSuites[1] === 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuites[2] === 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuites[3] === 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuites[4] === 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384');
+        ExpectTrue(cipherSuites[5] === 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuites[6] === 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256');
+        ExpectTrue(cipherSuites[7] === 'TLS_RSA_WITH_AES_128_GCM_SHA256');
+        ExpectTrue(cipherSuites[8] === 'TLS_RSA_WITH_AES_256_GCM_SHA384');
+
+        let tlsConfig: http.TlsConfig = {
+          tlsVersionMin: http.TlsVersion.TLS_V_1_2,
+          tlsVersionMax: http.TlsVersion.TLS_V_1_2,
+          cipherSuites: [
+            cipherSuite1 as http.TlsV12CipherSuite,
+            cipherSuite2 as http.TlsV12CipherSuite,
+            cipherSuite3 as http.TlsV12CipherSuite,
+            cipherSuite4 as http.TlsV12CipherSuite,
+            cipherSuite5 as http.TlsV12CipherSuite,
+            cipherSuite6 as http.TlsV12CipherSuite,
+            cipherSuite7 as http.TlsV12CipherSuite,
+            cipherSuite8 as http.TlsV12CipherSuite,
+            cipherSuite9 as http.TlsV12CipherSuite,
+          ]
+        };
+        ExpectTrue(tlsConfig.cipherSuites !== undefined);
+        ExpectTrue(tlsConfig.cipherSuites!.length === 9);
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          },
+          tlsOptions: tlsConfig
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End`);
+    });
+
+    /**
+     * @tc.name   testTlsV11CipherSuite0100
+     * @tc.number SUB_NetworkMgr_Http_TlsV11CipherSuite_0100
+     * @tc.desc   Verify TlsV11CipherSuite type accepts valid TlsV10CipherSuite values
+     * @tc.type   FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level1
+     */
+    it('testTlsV11CipherSuite0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testTlsV11CipherSuite0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let cipherSuite1: http.TlsV11CipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite as http.TlsV11CipherSuite;
+        let cipherSuite2: http.TlsV11CipherSuite = 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite as http.TlsV11CipherSuite;
+        let cipherSuite3: http.TlsV11CipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite as http.TlsV11CipherSuite;
+        let cipherSuite4: http.TlsV11CipherSuite = 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite as http.TlsV11CipherSuite;
+        let cipherSuite5: http.TlsV11CipherSuite = 'TLS_RSA_WITH_AES_128_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite as http.TlsV11CipherSuite;
+        let cipherSuite6: http.TlsV11CipherSuite = 'TLS_RSA_WITH_AES_256_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite as http.TlsV11CipherSuite;
+        let cipherSuite7: http.TlsV11CipherSuite = 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite as http.TlsV11CipherSuite;
+
+        ExpectTrue(cipherSuite1 === 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuite2 === 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuite3 === 'TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuite4 === 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuite5 === 'TLS_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuite6 === 'TLS_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuite7 === 'TLS_RSA_WITH_3DES_EDE_CBC_SHA');
+        console.info(`${caseName} cipherSuite1: ${cipherSuite1}, cipherSuite2: ${cipherSuite2}, cipherSuite3: ${cipherSuite3}, cipherSuite4: ${cipherSuite4}`);
+        console.info(`${caseName} cipherSuite5: ${cipherSuite5}, cipherSuite6: ${cipherSuite6}, cipherSuite7: ${cipherSuite7}`);
+
+        let cipherSuites: http.TlsV11CipherSuite[] = [cipherSuite1, cipherSuite2, cipherSuite3, cipherSuite4, cipherSuite5, cipherSuite6, cipherSuite7];
+        ExpectTrue(cipherSuites.length === 7);
+        ExpectTrue(cipherSuites[0] === 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuites[1] === 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuites[2] === 'TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuites[3] === 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuites[4] === 'TLS_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuites[5] === 'TLS_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuites[6] === 'TLS_RSA_WITH_3DES_EDE_CBC_SHA');
+
+        let tlsConfig: http.TlsConfig = {
+          tlsVersionMin: http.TlsVersion.TLS_V_1_1,
+          tlsVersionMax: http.TlsVersion.TLS_V_1_1,
+          cipherSuites: [
+            cipherSuite1 as http.TlsV11CipherSuite,
+            cipherSuite2 as http.TlsV11CipherSuite,
+            cipherSuite3 as http.TlsV11CipherSuite,
+            cipherSuite4 as http.TlsV11CipherSuite,
+            cipherSuite5 as http.TlsV11CipherSuite,
+            cipherSuite6 as http.TlsV11CipherSuite,
+            cipherSuite7 as http.TlsV11CipherSuite,
+          ]
+        };
+        ExpectTrue(tlsConfig.cipherSuites !== undefined);
+        ExpectTrue(tlsConfig.cipherSuites!.length === 7);
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          },
+          tlsOptions: tlsConfig
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End`);
+    });
+
+    /**
+     * @tc.name   testTlsV10CipherSuite0100
+     * @tc.number SUB_NetworkMgr_Http_TlsV10CipherSuite_0100
+     * @tc.desc   Verify TlsV10CipherSuite type accepts valid TlsV10SpecificCipherSuite values
+     * @tc.type   FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level1
+     */
+    it('testTlsV10CipherSuite0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testTlsV10CipherSuite0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let cipherSuite1: http.TlsV10CipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite;
+        let cipherSuite2: http.TlsV10CipherSuite = 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite;
+        let cipherSuite3: http.TlsV10CipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite;
+        let cipherSuite4: http.TlsV10CipherSuite = 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite;
+        let cipherSuite5: http.TlsV10CipherSuite = 'TLS_RSA_WITH_AES_128_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite;
+        let cipherSuite6: http.TlsV10CipherSuite = 'TLS_RSA_WITH_AES_256_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite;
+        let cipherSuite7: http.TlsV10CipherSuite = 'TLS_RSA_WITH_3DES_EDE_CBC_SHA' as http.TlsV10SpecificCipherSuite as http.TlsV10CipherSuite;
+
+        ExpectTrue(cipherSuite1 === 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuite2 === 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuite3 === 'TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuite4 === 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuite5 === 'TLS_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuite6 === 'TLS_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuite7 === 'TLS_RSA_WITH_3DES_EDE_CBC_SHA');
+        console.info(`${caseName} cipherSuite1: ${cipherSuite1}, cipherSuite2: ${cipherSuite2}, cipherSuite3: ${cipherSuite3}, cipherSuite4: ${cipherSuite4}`);
+        console.info(`${caseName} cipherSuite5: ${cipherSuite5}, cipherSuite6: ${cipherSuite6}, cipherSuite7: ${cipherSuite7}`);
+
+        let cipherSuites: http.TlsV10CipherSuite[] = [cipherSuite1, cipherSuite2, cipherSuite3, cipherSuite4, cipherSuite5, cipherSuite6, cipherSuite7];
+        ExpectTrue(cipherSuites.length === 7);
+        ExpectTrue(cipherSuites[0] === 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuites[1] === 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuites[2] === 'TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuites[3] === 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuites[4] === 'TLS_RSA_WITH_AES_128_CBC_SHA');
+        ExpectTrue(cipherSuites[5] === 'TLS_RSA_WITH_AES_256_CBC_SHA');
+        ExpectTrue(cipherSuites[6] === 'TLS_RSA_WITH_3DES_EDE_CBC_SHA');
+
+        let tlsConfig: http.TlsConfig = {
+          tlsVersionMin: http.TlsVersion.TLS_V_1_0,
+          tlsVersionMax: http.TlsVersion.TLS_V_1_0,
+          cipherSuites: [
+            cipherSuite1 as http.TlsV10CipherSuite,
+            cipherSuite2 as http.TlsV10CipherSuite,
+            cipherSuite3 as http.TlsV10CipherSuite,
+            cipherSuite4 as http.TlsV10CipherSuite,
+            cipherSuite5 as http.TlsV10CipherSuite,
+            cipherSuite6 as http.TlsV10CipherSuite,
+            cipherSuite7 as http.TlsV10CipherSuite,
+          ]
+        };
+        ExpectTrue(tlsConfig.cipherSuites !== undefined);
+        ExpectTrue(tlsConfig.cipherSuites!.length === 7);
+        let httpRequestTest: http.HttpRequest = http.createHttp();
+        let httpRequestOptionsInner: http.HttpRequestOptions = {
+          method: http.RequestMethod.GET,
+          connectTimeout: 5000,
+          readTimeout: 5000,
+          header: {
+            'Content-Type': 'application/json'
+          },
+          tlsOptions: tlsConfig
+        };
+        httpRequestTest.request('https://www.baidu.com', httpRequestOptionsInner).then((data: http.HttpResponse) => {
+          console.info(`${caseName} request succeeded, responseCode: ${data.responseCode}`);
+          ExpectTrue(data.responseCode === 200);
+          ExpectTrue(data.result !== undefined);
+          httpRequestTest.destroy();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          httpRequestTest.destroy();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName}---End`);
     });
 
   });

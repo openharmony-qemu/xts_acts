@@ -50,6 +50,20 @@ export default class MainAbility extends Ability {
         console.log('killAllProcesses fail',JSON.stringify(err.code));
       });
     };
+    if (want.action === 'SUB_Ability_AbilityRuntime_ProcessCache_3300') {
+      this.context.getApplicationContext().killAllProcesses(null).then(data => {
+        console.log('killAllProcesses success',JSON.stringify(data));
+      }).catch(err => {
+        console.log('killAllProcesses fail',JSON.stringify(err.code));
+      });
+    };
+    if (want.action === 'SUB_Ability_AbilityRuntime_ProcessCache_3400') {
+      this.context.getApplicationContext().killAllProcesses(undefined).then(data => {
+        console.log('killAllProcesses success',JSON.stringify(data));
+      }).catch(err => {
+        console.log('killAllProcesses fail',JSON.stringify(err.code));
+      });
+    };
     launchWant = this.launchWant
     lastRequestWant = this.lastRequestWant
     commonEvent.publish(listPush1 + "onCreate", (err) => {

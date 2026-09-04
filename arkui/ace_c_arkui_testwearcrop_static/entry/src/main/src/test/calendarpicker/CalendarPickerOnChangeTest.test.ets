@@ -15,11 +15,10 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext'
 
@@ -27,13 +26,12 @@ export default function calendarPickerOnChangeTest() {
 
   describe('CalendarPickerOnChangeTest', () => {
     let PAGE_TAG = 'CalendarPickerOnChangeTest';
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility")})
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
 
-    beforeAll(async (): Promise<void> => {
-      console.info("[ui] beforeAll start");
+    beforeEach(async (): Promise<void> => {
+      console.info("[ui] beforeEach start");
       await Utils.pushPage(`calendarpicker/${PAGE_TAG}`, false);
-      console.info("[ui] beforeAll end");
+      console.info("[ui] beforeEach end");
     });
 
 

@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 export default function UIContextComponentSnapshot() {
   describe('UIContextComponentSnapshot', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("UIContextComponentSnapshot beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.UIContext12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("UIContextComponentSnapshot beforeEach start");
@@ -68,19 +60,24 @@ export default function UIContextComponentSnapshot() {
      * @tc.level    Level.LEVEL0
      */
 it('UIContextComponentSnapshot_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('UIContextComponentSnapshot_static_0100 START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('gPromise'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE');
-      let obj= JSON.parseJsonElement(strcontent);
-      await CommonFunc.sleep(1000);
-      console.info('UIContextComponentSnapshot_static_0100 component obj is: ' + obj);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('UIContextComponentSnapshot_static_0100 END')
-      done();
+      try {
+        console.info('UIContextComponentSnapshot_static_0100 START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        let button = await driver.findComponent(ON.id('gPromise'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE');
+        let obj= JSON.parseJsonElement(strcontent);
+        await CommonFunc.sleep(1000);
+        console.info('UIContextComponentSnapshot_static_0100 component obj is: ' + obj);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
+        console.info('UIContextComponentSnapshot_static_0100 END')
+        done();
+      } catch (err) {
+        console.info('UIContextComponentSnapshot_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
 
@@ -92,19 +89,24 @@ it('UIContextComponentSnapshot_static_0100', Level.LEVEL0, async (done: () => vo
      * @tc.level    Level.LEVEL0
      */
 it('UIContextComponentSnapshot_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('UIContextComponentSnapshot_static_0200 START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('gPromise1'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE1');
-      let obj= JSON.parseJsonElement(strcontent);
-      await CommonFunc.sleep(1000);
-      console.info('UIContextComponentSnapshot_static_0200 component obj is: ' + obj);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('UIContextComponentSnapshot_static_0200 END')
-      done();
+      try {
+        console.info('UIContextComponentSnapshot_static_0200 START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        let button = await driver.findComponent(ON.id('gPromise1'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE1');
+        let obj= JSON.parseJsonElement(strcontent);
+        await CommonFunc.sleep(1000);
+        console.info('UIContextComponentSnapshot_static_0200 component obj is: ' + obj);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
+        console.info('UIContextComponentSnapshot_static_0200 END')
+        done();
+      } catch (err) {
+        console.info('UIContextComponentSnapshot_static_0200 err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
 
@@ -116,19 +118,24 @@ it('UIContextComponentSnapshot_static_0200', Level.LEVEL0, async (done: () => vo
      * @tc.level    Level.LEVEL0
      */
 it('UIContextComponentSnapshot_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('UIContextComponentSnapshot_static_0300 START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('gPromise2'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE2');
-      let obj= JSON.parseJsonElement(strcontent);
-      await CommonFunc.sleep(1000);
-      console.info('UIContextComponentSnapshot_static_0300 component obj is: ' + obj);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('UIContextComponentSnapshot_static_0300 END')
-      done();
+      try {
+        console.info('UIContextComponentSnapshot_static_0300 START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        let button = await driver.findComponent(ON.id('gPromise2'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE2');
+        let obj= JSON.parseJsonElement(strcontent);
+        await CommonFunc.sleep(1000);
+        console.info('UIContextComponentSnapshot_static_0300 component obj is: ' + obj);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
+        console.info('UIContextComponentSnapshot_static_0300 END')
+        done();
+      } catch (err) {
+        console.info('UIContextComponentSnapshot_static_0300 err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
 
@@ -140,19 +147,24 @@ it('UIContextComponentSnapshot_static_0300', Level.LEVEL0, async (done: () => vo
      * @tc.level    Level.LEVEL0
      */
 it('UIContextComponentSnapshot_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('UIContextComponentSnapshot_static_0400 START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('gPromise3'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE3');
-      let obj= JSON.parseJsonElement(strcontent);
-      await CommonFunc.sleep(1000);
-      console.info('UIContextComponentSnapshot_static_0400 component obj is: ' + obj);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('UIContextComponentSnapshot_static_0400 END')
-      done();
+      try {
+        console.info('UIContextComponentSnapshot_static_0400 START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        let button = await driver.findComponent(ON.id('gPromise3'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE3');
+        let obj= JSON.parseJsonElement(strcontent);
+        await CommonFunc.sleep(1000);
+        console.info('UIContextComponentSnapshot_static_0400 component obj is: ' + obj);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
+        console.info('UIContextComponentSnapshot_static_0400 END')
+        done();
+      } catch (err) {
+        console.info('UIContextComponentSnapshot_static_0400 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

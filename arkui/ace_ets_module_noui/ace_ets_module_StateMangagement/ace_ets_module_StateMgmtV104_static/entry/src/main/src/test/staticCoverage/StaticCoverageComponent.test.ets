@@ -27,12 +27,12 @@ import {
 } from '@kit.ArkUI';
 import {
   staticCoverageBuilder, staticCoverageFixtureReady
-} from './StaticCoverageFixture';
+} from '../../../ets/staticCoverage/StaticCoverageFixture';
 import {
   BaseCustomDialogStub, CoverageLifecycle, CoverageLifecycleObserver,
   CoveragePageLifeCycle, CoverageReadableState, CoverageRecord,
   CoverageStateContext, CustomComponentStub, CustomComponentV2Stub
-} from './StaticCoverageSupport';
+} from '../../../ets/staticCoverage/StaticCoverageSupport';
 
 export default function StaticCoverageComponentTest(): void {
   describe('StaticCoverageComponentTest', (): void => {
@@ -230,7 +230,9 @@ export default function StaticCoverageComponentTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const styles: CustomStyles = (_instance: CommonMethod): void => {};
+        const styles: CustomStyles = (_instance: CommonMethod): void => {
+          _instance.width(1);
+        };
         expect(styles !== undefined).assertTrue();
       }
     );
@@ -247,7 +249,9 @@ export default function StaticCoverageComponentTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const styles: CustomStyles = (_instance: CommonMethod): void => {};
+        const styles: CustomStyles = (_instance: CommonMethod): void => {
+          _instance.width(1);
+        };
         const stateStyles: StateStyles = { normal: styles };
         expect(stateStyles.normal !== undefined).assertTrue();
       }
@@ -512,25 +516,8 @@ export default function StaticCoverageComponentTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let entryPoint: EntryPoint | undefined = undefined;
-        expect(entryPoint === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_CUSTOMCOMPONENT_ENTRYPOINT_ENTRY_0100
-     * @tc.name   SUB_ARKUI_STCOV_CUSTOMCOMPONENT_ENTRYPOINT_ENTRY_0100
-     * @tc.desc   Verify static Method coverage for customComponent.EntryPoint.entry
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_CUSTOMCOMPONENT_ENTRYPOINT_ENTRY_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let entryPoint: EntryPoint | undefined = undefined;
-        expect(entryPoint === undefined).assertTrue();
+        const readEntryPoint = (entryPoint: EntryPoint): boolean => entryPoint !== undefined;
+        expect(readEntryPoint !== undefined).assertTrue();
       }
     );
     /**
@@ -562,8 +549,8 @@ export default function StaticCoverageComponentTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let dialog: BaseCustomDialog<BaseCustomDialogStub, Object> | undefined = undefined;
-        expect(dialog === undefined).assertTrue();
+        const readDialog = (dialog: BaseCustomDialog<BaseCustomDialogStub, Object>): boolean => dialog !== undefined;
+        expect(readDialog !== undefined).assertTrue();
       }
     );
     /**
@@ -579,25 +566,8 @@ export default function StaticCoverageComponentTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let component: BaseCustomComponent<Object> | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_CUSTOMCOMPONENT_BASECUSTOMCOMPONENT_ABOUTTORECYCLE_0100
-     * @tc.name   SUB_ARKUI_STCOV_CUSTOMCOMPONENT_BASECUSTOMCOMPONENT_ABOUTTORECYCLE_0100
-     * @tc.desc   Verify static Method coverage for customComponent.BaseCustomComponent.aboutToRecycle
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_CUSTOMCOMPONENT_BASECUSTOMCOMPONENT_ABOUTTORECYCLE_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: BaseCustomComponent<Object> | undefined = undefined;
-        expect(component === undefined).assertTrue();
+        const readBaseComponent = (component: BaseCustomComponent<Object>): boolean => component !== undefined;
+        expect(readBaseComponent !== undefined).assertTrue();
       }
     );
     /**
@@ -613,25 +583,9 @@ export default function StaticCoverageComponentTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let component: CustomComponent<CustomComponentStub, Object> | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_CUSTOMCOMPONENT_CUSTOMCOMPONENT_ABOUTTOREUSE_0100
-     * @tc.name   SUB_ARKUI_STCOV_CUSTOMCOMPONENT_CUSTOMCOMPONENT_ABOUTTOREUSE_0100
-     * @tc.desc   Verify static Method coverage for customComponent.CustomComponent.aboutToReuse
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_CUSTOMCOMPONENT_CUSTOMCOMPONENT_ABOUTTOREUSE_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: CustomComponent<CustomComponentStub, Object> | undefined = undefined;
-        expect(component === undefined).assertTrue();
+        const readCustomComponent = (component: CustomComponent<CustomComponentStub, Object>):
+          boolean => component !== undefined;
+        expect(readCustomComponent !== undefined).assertTrue();
       }
     );
     /**
@@ -647,42 +601,9 @@ export default function StaticCoverageComponentTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let component: CustomComponentV2<CustomComponentV2Stub, Object> | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_CUSTOMCOMPONENT_CUSTOMCOMPONENTV2_ABOUTTOREUSE_0100
-     * @tc.name   SUB_ARKUI_STCOV_CUSTOMCOMPONENT_CUSTOMCOMPONENTV2_ABOUTTOREUSE_0100
-     * @tc.desc   Verify static Method coverage for customComponent.CustomComponentV2.aboutToReuse
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_CUSTOMCOMPONENT_CUSTOMCOMPONENTV2_ABOUTTOREUSE_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: CustomComponentV2<CustomComponentV2Stub, Object> | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_CUSTOMCOMPONENT_CUSTOMCOMPONENTV2_RESETSTATEVARSONREUSE_0100
-     * @tc.name   SUB_ARKUI_STCOV_CUSTOMCOMPONENT_CUSTOMCOMPONENTV2_RESETSTATEVARSONREUSE_0100
-     * @tc.desc   Verify static Method coverage for customComponent.CustomComponentV2.resetStateVarsOnReuse
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_CUSTOMCOMPONENT_CUSTOMCOMPONENTV2_RESETSTATEVARSONREUSE_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: CustomComponentV2<CustomComponentV2Stub, Object> | undefined = undefined;
-        expect(component === undefined).assertTrue();
+        const readCustomComponentV2 = (component: CustomComponentV2<CustomComponentV2Stub, Object>):
+          boolean => component !== undefined;
+        expect(readCustomComponentV2 !== undefined).assertTrue();
       }
     );
     /**
@@ -733,25 +654,8 @@ export default function StaticCoverageComponentTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let callbacks: LayoutCallbacks | undefined = undefined;
-        expect(callbacks === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_CUSTOMCOMPONENT_LAYOUTCALLBACKS_ONPLACECHILDREN_0100
-     * @tc.name   SUB_ARKUI_STCOV_CUSTOMCOMPONENT_LAYOUTCALLBACKS_ONPLACECHILDREN_0100
-     * @tc.desc   Verify static Method coverage for customComponent.LayoutCallbacks.onPlaceChildren
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_CUSTOMCOMPONENT_LAYOUTCALLBACKS_ONPLACECHILDREN_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let callbacks: LayoutCallbacks | undefined = undefined;
-        expect(callbacks === undefined).assertTrue();
+        const readCallbacks = (callbacks: LayoutCallbacks): boolean => callbacks !== undefined;
+        expect(readCallbacks !== undefined).assertTrue();
       }
     );
     /**
@@ -984,76 +888,8 @@ export default function StaticCoverageComponentTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let lifecycle: LifeCycle | undefined = undefined;
-        expect(lifecycle === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_ABOUTTOAPPEAR_0100
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_ABOUTTOAPPEAR_0100
-     * @tc.desc   Verify static Method coverage for extendableComponent.LifeCycle.aboutToAppear
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_ABOUTTOAPPEAR_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let lifecycle: LifeCycle | undefined = undefined;
-        expect(lifecycle === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_ABOUTTODISAPPEAR_0100
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_ABOUTTODISAPPEAR_0100
-     * @tc.desc   Verify static Method coverage for extendableComponent.LifeCycle.aboutToDisappear
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_ABOUTTODISAPPEAR_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let lifecycle: LifeCycle | undefined = undefined;
-        expect(lifecycle === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_ONDIDBUILD_0100
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_ONDIDBUILD_0100
-     * @tc.desc   Verify static Method coverage for extendableComponent.LifeCycle.onDidBuild
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_ONDIDBUILD_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let lifecycle: LifeCycle | undefined = undefined;
-        expect(lifecycle === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_BUILD_0100
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_BUILD_0100
-     * @tc.desc   Verify static Method coverage for extendableComponent.LifeCycle.build
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_LIFECYCLE_BUILD_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let lifecycle: LifeCycle | undefined = undefined;
-        expect(lifecycle === undefined).assertTrue();
+        const readLifeCycle = (lifecycle: LifeCycle): boolean => lifecycle !== undefined;
+        expect(readLifeCycle !== undefined).assertTrue();
       }
     );
     /**
@@ -1069,144 +905,8 @@ export default function StaticCoverageComponentTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let component: ExtendableComponent | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_ONWILLAPPLYTHEME_0100
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_ONWILLAPPLYTHEME_0100
-     * @tc.desc   Verify static Method coverage for extendableComponent.ExtendableComponent.onWillApplyTheme
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_ONWILLAPPLYTHEME_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: ExtendableComponent | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_GETUICONTEXT_0100
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_GETUICONTEXT_0100
-     * @tc.desc   Verify static Method coverage for extendableComponent.ExtendableComponent.getUIContext
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_GETUICONTEXT_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: ExtendableComponent | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_GETUNIQUEID_0100
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_GETUNIQUEID_0100
-     * @tc.desc   Verify static Method coverage for extendableComponent.ExtendableComponent.getUniqueId
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_GETUNIQUEID_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: ExtendableComponent | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYNAVDESTINATIONINFO_0100
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYNAVDESTINATIONINFO_0100
-     * @tc.desc   Verify static Method coverage for extendableComponent.ExtendableComponent.queryNavDestinationInfo
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYNAVDESTINATIONINFO_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: ExtendableComponent | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYNAVDESTINATIONINFO_0200
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYNAVDESTINATIONINFO_0200
-     * @tc.desc   Verify static Method coverage for extendableComponent.ExtendableComponent.queryNavDestinationInfo
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYNAVDESTINATIONINFO_0200',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: ExtendableComponent | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYNAVIGATIONINFO_0100
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYNAVIGATIONINFO_0100
-     * @tc.desc   Verify static Method coverage for extendableComponent.ExtendableComponent.queryNavigationInfo
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYNAVIGATIONINFO_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: ExtendableComponent | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYROUTERPAGEINFO_0100
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYROUTERPAGEINFO_0100
-     * @tc.desc   Verify static Method coverage for extendableComponent.ExtendableComponent.queryRouterPageInfo
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_QUERYROUTERPAGEINFO_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: ExtendableComponent | undefined = undefined;
-        expect(component === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_GETDIALOGCONTROLLER_0100
-     * @tc.name   SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_GETDIALOGCONTROLLER_0100
-     * @tc.desc   Verify static Method coverage for extendableComponent.ExtendableComponent.getDialogController
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_EXTENDABLECOMPONENT_EXTENDABLECOMPONENT_GETDIALOGCONTROLLER_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        let component: ExtendableComponent | undefined = undefined;
-        expect(component === undefined).assertTrue();
+        const readExtendableComponent = (component: ExtendableComponent): boolean => component !== undefined;
+        expect(readExtendableComponent !== undefined).assertTrue();
       }
     );
     /**

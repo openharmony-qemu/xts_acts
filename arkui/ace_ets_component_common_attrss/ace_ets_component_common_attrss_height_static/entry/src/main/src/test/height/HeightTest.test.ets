@@ -25,21 +25,10 @@ import Utils, {
   TestValue
 } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { startAbility, stopApplication, UtilsTest } from '../Util.test';
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 interface Attrs {
   $attrs: SetValue
@@ -183,10 +172,6 @@ export default function heightTest() {
    * Create test suite.
    */
   describe('HeightTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.log('test heightTest is start')
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-    });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       if (data.testValue.describe == 'ExceedParent') {

@@ -2,6 +2,7 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/WaterFlow/WaterFlowAttributeIndex",
+    "MainAbility/pages/WaterFlow/WaterFlowLayoutModeUn",
     "MainAbility/pages/waterFlowAttribute/waterFlowAttribute"
   ]
 }

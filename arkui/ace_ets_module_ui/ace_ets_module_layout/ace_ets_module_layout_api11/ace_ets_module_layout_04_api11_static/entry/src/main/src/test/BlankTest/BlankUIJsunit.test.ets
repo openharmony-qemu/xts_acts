@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { ResourceColor } from '@ohos.arkui.component'
 
@@ -22,23 +22,11 @@ import CommonFunc from '../../../ets/MainAbility/utils/Common';
 import { GlobalContext } from '../../../ets/MainAbility/common/GlobalContext'
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function blankUIJsunit() {
   describe('blankUIJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("blankUIJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("blankJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -52,7 +40,7 @@ export default function blankUIJsunit() {
         if (!("blankParentWidth" == pages.name)) {
           console.info("get blankJsunit state pages.name:" + "");
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000)
+          await CommonFunc.sleep(1000)
         }
       } catch (err) {
           console.error("push blankJsunit page error:" + err);
@@ -69,9 +57,17 @@ export default function blankUIJsunit() {
      */
 it('blankJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0100 START');
-      await CommonFunc.sleep(1000);
-      AppStorage.setOrCreate<ResourceColor>("blankColor",'#FCAE5394')
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
+      AppStorage.setOrCreate<ResourceColor>("blankColor",'#FCAE5394')
+      try {
+      await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('bl2');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[blankJsunit_static_0100'] component obj is: " + JSON.stringify(obj));
@@ -87,9 +83,17 @@ it('blankJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('blankJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0200 START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.setOrCreate<number | string>("minWith",'80')
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
       
       let strJson = inspector.getInspectorByKey('bl2');
      let obj = JSON.parseJsonElement(strJson);
@@ -106,9 +110,17 @@ it('blankJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('blankJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0300 START');
-      await CommonFunc.sleep(1000);
-      AppStorage.setOrCreate<number | string>("minWith",'-30')
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
+      AppStorage.setOrCreate<number | string>("minWith",'-30')
+      try {
+      await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('bl2');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[blankJsunit_static_0300'] component obj is: " + obj.getElement('$attrs').getString('min'));
@@ -125,9 +137,17 @@ it('blankJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('blankJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0400 START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.setOrCreate<ResourceColor>("blankColor",'#AE53')
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
        
       let strJson = inspector.getInspectorByKey('bl2');
       console.info("[blankJsunit_static_0400'] component obj is: " + strJson);
@@ -145,7 +165,11 @@ it('blankJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('blankJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0500 START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
        
       let text1_rect = CommonFunc.getComponentRect('text1');
       let toggle1_rect = CommonFunc.getComponentRect('toggle1');
@@ -168,7 +192,11 @@ it('blankJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('blankJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0600 START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
        
       let strJson = inspector.getInspectorByKey('blankUIJsunit_blank');
      let obj = JSON.parseJsonElement(strJson);
@@ -191,7 +219,11 @@ it('blankJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('blankJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0700 START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
        
       let strJson = inspector.getInspectorByKey('blankUIJsunit_blank');
      let obj = JSON.parseJsonElement(strJson);
@@ -210,9 +242,17 @@ it('blankJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('blankJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankJsunit_static_0800 START');
-      await CommonFunc.sleep(1000);
-      AppStorage.setOrCreate<number | string>("minWith",'rr')
+      try {
       await CommonFunc.sleep(200);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
+      AppStorage.setOrCreate<number | string>("minWith",'rr')
+      try {
+      await CommonFunc.sleep(200);
+      } catch (err) {
+      console.info('blankUIJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('bl2');
      let obj2 = JSON.parseJsonElement(strJson2);
      console.info("[blankJsunit_static_0800'] component obj2 is: " + JSON.stringify(obj2));

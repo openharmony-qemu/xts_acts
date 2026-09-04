@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import hilog from '@ohos.hilog'
 import napitestex from 'libnapitestex.so'
 import worker, { MessageEvents } from '@ohos.worker';
+import { taskpool } from '@kit.ArkTS';
 
 const DOMAIN = 0x0000;
 declare class ArkTools {
@@ -31,6 +32,11 @@ async function sleep(time: number) {
   }).then(() => {
     console.info(`sleep ${time} over...`)
   })
+}
+
+@Concurrent
+function getGhcCountInTaskpool(): number {
+  return napitestex.getGlobalHandleCountValue();
 }
 
 export default function napiRefTest() {
@@ -525,5 +531,323 @@ export default function napiRefTest() {
       }
       done();
     });    
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountBasic
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_0100
+     * @tc.desc   传入有效env和count指针，验证返回napi_ok且count写入global_handle数量
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('napiGetGlobalHandleCountBasic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountBasic";
+      console.info(`${TAG} START`);
+      try {
+        let value: boolean = napitestex.getGlobalHandleCountBasic();
+        console.info('napiGetGlobalHandleCountBasic value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountAfterCreate
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_0200
+     * @tc.desc   创建strong_reference后查询，验证count增长
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('napiGetGlobalHandleCountAfterCreate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountAfterCreate";
+      console.info(`${TAG} START`);
+      try {
+        let base: number = napitestex.getGlobalHandleCountValue();
+        console.info(`${TAG} base count: ${base}`);
+        let created: boolean = napitestex.createStrongRefGhc();
+        expect(created).assertTrue();
+        let after: number = napitestex.getGlobalHandleCountValue();
+        console.info(`${TAG} after create count: ${after}`);
+        expect(after > base).assertTrue();
+        napitestex.deleteStrongRefGhc();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountAfterDelete
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_0300
+     * @tc.desc   删除strong_reference后查询，验证count回落
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('napiGetGlobalHandleCountAfterDelete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountAfterDelete";
+      console.info(`${TAG} START`);
+      try {
+        let created: boolean = napitestex.createStrongRefGhc();
+        expect(created).assertTrue();
+        let afterCreate: number = napitestex.getGlobalHandleCountValue();
+        console.info(`${TAG} after create count: ${afterCreate}`);
+        let deleted: boolean = napitestex.deleteStrongRefGhc();
+        expect(deleted).assertTrue();
+        let afterDelete: number = napitestex.getGlobalHandleCountValue();
+        console.info(`${TAG} after delete count: ${afterDelete}`);
+        expect(afterDelete < afterCreate).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountEnvNull
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_0400
+     * @tc.desc   env为nullptr验证返回napi_invalid_arg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('napiGetGlobalHandleCountEnvNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountEnvNull";
+      console.info(`${TAG} START`);
+      try {
+        let value: boolean = napitestex.getGlobalHandleCountEnvNull();
+        console.info('napiGetGlobalHandleCountEnvNull value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountCountNull
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_0500
+     * @tc.desc   count为nullptr验证返回napi_invalid_arg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('napiGetGlobalHandleCountCountNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountCountNull";
+      console.info(`${TAG} START`);
+      try {
+        let value: boolean = napitestex.getGlobalHandleCountCountNull();
+        console.info('napiGetGlobalHandleCountCountNull value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountPendingException
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_0600
+     * @tc.desc   存在未捕获ArkTS_Error验证返回napi_pending_exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('napiGetGlobalHandleCountPendingException', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountPendingException";
+      console.info(`${TAG} START`);
+      try {
+        let value: boolean = napitestex.getGlobalHandleCountPendingException();
+        console.info('napiGetGlobalHandleCountPendingException value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountInWorker
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_0700
+     * @tc.desc   Worker线程env调用，验证count独立于主线程强引用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('napiGetGlobalHandleCountInWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountInWorker";
+      console.info(`${TAG} START`);
+      let ghcWorker: worker.ThreadWorker | undefined;
+      try {
+        ghcWorker = new worker.ThreadWorker('../workers/GlobalHandleWorker.ets');
+        const getWorkerCount = (): Promise<number> => {
+          return new Promise<number>((resolve, reject) => {
+            let resolved = false;
+            ghcWorker!.onmessage = (e: MessageEvents) => {
+              resolved = true;
+              resolve(e.data as number);
+            };
+            ghcWorker!.onexit = () => {
+              if (!resolved) {
+                reject(new Error(`${TAG}: Worker exited without sending result`));
+              }
+            };
+            ghcWorker!.onerror = (e) => {
+              ghcWorker!.terminate();
+              reject(e);
+            };
+            ghcWorker!.postMessage('getCount');
+          });
+        };
+        let w1: number = await getWorkerCount();
+        let mainBefore: number = napitestex.getGlobalHandleCountValue();
+        console.info(`${TAG} main before: ${mainBefore}, worker count1: ${w1}`);
+        let created: boolean = napitestex.createStrongRefGhc();
+        expect(created).assertTrue();
+        let mainAfter: number = napitestex.getGlobalHandleCountValue();
+        console.info(`${TAG} main count after create: ${mainAfter}`);
+        expect(mainAfter > mainBefore).assertTrue();
+        let w2: number = await getWorkerCount();
+        console.info(`${TAG} worker count2: ${w2}`);
+        expect(w1 === w2).assertTrue();
+        napitestex.deleteStrongRefGhc();
+        ghcWorker.terminate();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        if (ghcWorker) {
+          ghcWorker.terminate();
+        }
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountInTaskpool
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_0800
+     * @tc.desc   TaskPool线程env调用，验证count独立于主线程强引用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('napiGetGlobalHandleCountInTaskpool', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountInTaskpool";
+      console.info(`${TAG} START`);
+      try {
+        let mainBefore: number = napitestex.getGlobalHandleCountValue();
+        let t1: number = await taskpool.execute(getGhcCountInTaskpool) as number;
+        console.info(`${TAG} main before: ${mainBefore}, taskpool count1: ${t1}`);
+        let created: boolean = napitestex.createStrongRefGhc();
+        expect(created).assertTrue();
+        let mainAfter: number = napitestex.getGlobalHandleCountValue();
+        console.info(`${TAG} main count after create: ${mainAfter}`);
+        expect(mainAfter > mainBefore).assertTrue();
+        let t2: number = await taskpool.execute(getGhcCountInTaskpool) as number;
+        console.info(`${TAG} taskpool count2: ${t2}`);
+        expect(t1 === t2).assertTrue();
+        napitestex.deleteStrongRefGhc();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountMultiContext
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_0900
+     * @tc.desc   多context与主env共享vm，主env强引用使子env的count同步变化
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('napiGetGlobalHandleCountMultiContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountMultiContext";
+      console.info(`${TAG} START`);
+      try {
+        let value: boolean = napitestex.getGlobalHandleCountMultiContext();
+        console.info('napiGetGlobalHandleCountMultiContext value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountCombo
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_1000
+     * @tc.desc   创建删除strong_reference组合，验证count精确变化
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('napiGetGlobalHandleCountCombo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountCombo";
+      console.info(`${TAG} START`);
+      try {
+        let value: boolean = napitestex.getGlobalHandleCountCombo();
+        console.info('napiGetGlobalHandleCountCombo value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountSendable
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_1100
+     * @tc.desc   Sendable强引用不影响global_handle_count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('napiGetGlobalHandleCountSendable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountSendable";
+      console.info(`${TAG} START`);
+      try {
+        let value: boolean = napitestex.getGlobalHandleCountSendable();
+        console.info('napiGetGlobalHandleCountSendable value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   napiGetGlobalHandleCountGetStrongRefValue
+     * @tc.number SUB_ARKUI_NAPI_GLOBALHANDLE_1200
+     * @tc.desc   get_strong_reference_value获取对象后count不变
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('napiGetGlobalHandleCountGetStrongRefValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiGetGlobalHandleCountGetStrongRefValue";
+      console.info(`${TAG} START`);
+      try {
+        let value: boolean = napitestex.getGlobalHandleCountGetStrongRefValue();
+        console.info('napiGetGlobalHandleCountGetStrongRefValue value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
   });
 }

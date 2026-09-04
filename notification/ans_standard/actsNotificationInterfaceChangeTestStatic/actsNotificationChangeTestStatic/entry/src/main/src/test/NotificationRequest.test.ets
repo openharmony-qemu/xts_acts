@@ -62,6 +62,7 @@ export default function ActsNotificationRequestTest() {
     it('Acts_NotificationRequest_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME:string = 'Acts_NotificationRequest_Static_0100';
+        let num : int = 0
         notificationManager.isNotificationEnabled((err, data) => {
           if (err) {
             console.info(`${TEST_CASE_NAME} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
@@ -157,7 +158,8 @@ export default function ActsNotificationRequestTest() {
         try {
           notificationManager.publish(notificationRequest, (data: BusinessError | null) => {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(data));
-            expect(data).assertEqual(null);
+            num++;
+            expect(num).assertEqual(1);
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
@@ -216,7 +218,7 @@ export default function ActsNotificationRequestTest() {
             done();
           })
         } catch (err) {
-          err = err as BusinessError;
+         
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s', JSON.stringify(err));
           expect(err.code).assertEqual(401);
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);

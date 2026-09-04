@@ -14,27 +14,15 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
 export default function UIContextGetOpacityTest() {
   describe('UIContextGetOpacityTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api18.static", "EntryAbility");
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("UIContextGetOpacityTest beforeEach start");
       let options: router.RouterOptions = {
@@ -58,7 +46,11 @@ export default function UIContextGetOpacityTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('UIContextGetOpacityTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("UIContextGetOpacityTest after each called");
     });
 
@@ -75,11 +67,18 @@ export default function UIContextGetOpacityTest() {
 it('UIContextGetOpacityTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('UIContextGetOpacityTest_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('UIContextGetOpacityTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('btn_click_id')) as Component;
       await button.click();
-      await CommonFunc.sleep(1000);
-
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('UIContextGetOpacityTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1: string = inspector.getInspectorByKey('getOpacityValue1');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[UIContextGetOpacityTest_static_0100] component obj1 is: " + JSON.stringifyJsonElement(obj1));

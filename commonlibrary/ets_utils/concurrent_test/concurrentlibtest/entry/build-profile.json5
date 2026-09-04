@@ -101,7 +101,12 @@
         "./src/ohosTest/ets/workers/ErrorCode/WorkerData1.ets",
         './src/ohosTest/ets/test/returnCovered/workers/Worker01.ets',
         './src/ohosTest/ets/test/serialize/workers/ContainerReturnWorker.ets',
-        './src/ohosTest/ets/test/serialize/workers/ContainerLifecycleWorker.ets'
+        './src/ohosTest/ets/test/serialize/workers/ContainerLifecycleWorker.ets',
+        './src/ohosTest/ets/workers/inheritance/InheritanceEchoWorker.ets',
+        './src/ohosTest/ets/workers/inheritance/InheritanceErrorWorker.ets',
+        './src/ohosTest/ets/workers/inheritance/InheritanceAsyncErrorWorker.ets',
+        './src/ohosTest/ets/workers/inheritance/InheritanceSelfCloseWorker.ets',
+        './src/ohosTest/ets/workers/inheritance/InheritanceTopLevelErrorWorker.ets'
       ]
     }
   },

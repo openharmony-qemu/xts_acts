@@ -1006,6 +1006,39 @@ export default function cameraSessionTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_0200
+     * @tc.desc   videosession callback off focusStateChange with callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_0200', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_0200--------------");
+      try {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_0200");
+
+        let focusStateChangeCallback = (err: BusinessError, focusState: cameraObj.FocusState) => {
+          if (err !== undefined && err.code !== 0) {
+            console.info(TAG + `Callback Error, errorCode: ${err.code}`);
+            expect().assertFail();
+          }
+          console.info(TAG + `Focus state: ${focusState}`);
+        }
+
+        mCameraSession.on('focusStateChange', focusStateChangeCallback)
+        mCameraSession.off('focusStateChange');
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_0200 ERRORCODE: " + err.code);
+        expect().assertFail();
+        done();
+      }
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_0100
      * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_0100
      * @tc.desc   videosession callback on error

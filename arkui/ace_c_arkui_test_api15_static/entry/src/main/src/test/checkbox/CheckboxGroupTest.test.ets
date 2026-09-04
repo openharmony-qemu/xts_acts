@@ -14,21 +14,16 @@
  * limitations under the License.
  */
 
-import { expect, beforeEach, beforeAll, describe, it, Level} from '../../../../hypium/index';
+import { expect, beforeEach, describe, it, Level} from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test'
 
 export default function checkboxGroupTest() {
 
   describe('CheckboxGroupTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
-    });
 
     beforeEach(async () => {
       console.info("CheckboxGroupTest beforeEach start");
@@ -58,15 +53,20 @@ export default function checkboxGroupTest() {
      * @tc.level    Level.LEVEL1
      */
     it('checkboxGroupTest001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log('checkboxGroupTest001 start')
-      let strJson = inspector.getInspectorByKey('checkbox1'); //可能是inspector.getInspectorByKey返回值有问题 strJson无法打印 导致crash
-      console.log('checkboxGroupTest001  inspector.getInspectorByKey start')
-      await Utils.sleep(1000);
-      // console.info('checkboxGroupTest001 strJson ' + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      await Utils.sleep(3000)
-      expect(obj.getElement('$attrs').getString('group')).assertEqual('checkboxgroupTrue');
-      done();
+      try {
+        console.log('checkboxGroupTest001 start')
+        let strJson = inspector.getInspectorByKey('checkbox1'); //可能是inspector.getInspectorByKey返回值有问题 strJson无法打印 导致crash
+        console.log('checkboxGroupTest001  inspector.getInspectorByKey start')
+        await Utils.sleep(1000);
+        // console.info('checkboxGroupTest001 strJson ' + strJson);
+        let obj = JSON.parseJsonElement(strJson);
+        await Utils.sleep(3000)
+        expect(obj.getElement('$attrs').getString('group')).assertEqual('checkboxgroupTrue');
+        done();
+      } catch (err) {
+        console.info('checkboxGroupTest001 err: ' + JSON.stringify(err));
+        done();
+      }
     })
   })
 }

@@ -1689,6 +1689,69 @@ static napi_value OH_LowPowerAudioSink_SetVolume0300(napi_env env, napi_callback
     napi_create_int32(env, res, &retValue);
     return retValue;
 }
+
+static napi_value OH_LowPowerVideoSink_GetParameter0100(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(g_video);
+    OH_AVFormat *Format = OH_AVFormat_Create();
+    OH_AVErrCode errcode = OH_LowPowerVideoSink_GetParameter(VideoSink, Format);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_AVFormat_Destroy(Format);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerVideoSink_GetParameter0200(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    OH_LowPowerVideoSink *VideoSink = nullptr;
+    OH_AVFormat *Format = OH_AVFormat_Create();
+    OH_AVErrCode errcode = OH_LowPowerVideoSink_GetParameter(VideoSink, Format);
+    int32_t res = 1;
+    if (errcode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_AVFormat_Destroy(Format);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerVideoSink_GetParameter0300(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(g_video);
+    OH_AVFormat *Format = nullptr;
+    OH_AVErrCode errcode = OH_LowPowerVideoSink_GetParameter(VideoSink, Format);
+    int32_t res = 1;
+    if (errcode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_AVFormat_Destroy(Format);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
 napi_property_descriptor desc[] = {
     {"OH_LowPowerAudioSink_Configure0100", nullptr, OH_LowPowerAudioSink_Configure0100, nullptr, nullptr, nullptr,
      napi_default, nullptr},
@@ -1839,6 +1902,12 @@ napi_property_descriptor desc[] = {
     {"OH_LowPowerAudioSink_SetVolume0200", nullptr, OH_LowPowerAudioSink_SetVolume0200, nullptr,
      nullptr, nullptr, napi_default, nullptr},
     {"OH_LowPowerAudioSink_SetVolume0300", nullptr, OH_LowPowerAudioSink_SetVolume0300, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_LowPowerVideoSink_GetParameter0100", nullptr, OH_LowPowerVideoSink_GetParameter0100, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_LowPowerVideoSink_GetParameter0200", nullptr, OH_LowPowerVideoSink_GetParameter0200, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_LowPowerVideoSink_GetParameter0300", nullptr, OH_LowPowerVideoSink_GetParameter0300, nullptr,
      nullptr, nullptr, napi_default, nullptr},
 
 };

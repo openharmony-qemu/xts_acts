@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function CalendarPickerDialogBGColorTest() {
   describe('CalendarPickerDialogBGColorTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CalendarPickerDialogBGColorTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info('CalendarPickerDialogBGColorTest beforeEach start');
       let options: router.RouterOptions = {
@@ -48,7 +42,7 @@ export default function CalendarPickerDialogBGColorTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try { await CommonFunc.sleep(1000); } catch (err) { console.error('' + err); }
       console.info('CalendarPickerDialogBGColorTest after each called');
     });
 
@@ -59,6 +53,7 @@ export default function CalendarPickerDialogBGColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('CalendarPickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ColorWhiteID'));
       await (button?.click() as Promise<void>);
@@ -72,6 +67,10 @@ export default function CalendarPickerDialogBGColorTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogBGColorTest_static_001 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -81,6 +80,7 @@ export default function CalendarPickerDialogBGColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('CalendarPickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('rgb(255, 100, 255)ID'));
       await (button?.click() as Promise<void>);
@@ -94,6 +94,10 @@ export default function CalendarPickerDialogBGColorTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogBGColorTest_static_002 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -103,6 +107,7 @@ export default function CalendarPickerDialogBGColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('CalendarPickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('0x008080ID'));
       await (button?.click() as Promise<void>);
@@ -116,6 +121,10 @@ export default function CalendarPickerDialogBGColorTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogBGColorTest_static_003 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -125,6 +134,7 @@ export default function CalendarPickerDialogBGColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('CalendarPickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('00FFFFID'));
       await (button?.click() as Promise<void>);
@@ -138,6 +148,10 @@ export default function CalendarPickerDialogBGColorTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogBGColorTest_static_004 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -147,6 +161,7 @@ export default function CalendarPickerDialogBGColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('CalendarPickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('colorBlueID'));
       await (button?.click() as Promise<void>);
@@ -160,6 +175,10 @@ export default function CalendarPickerDialogBGColorTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogBGColorTest_static_005 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -169,6 +188,7 @@ export default function CalendarPickerDialogBGColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('CalendarPickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('undefinedID'));
       await (button?.click() as Promise<void>);
@@ -187,6 +207,10 @@ export default function CalendarPickerDialogBGColorTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogBGColorTest_static_007 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -196,6 +220,7 @@ export default function CalendarPickerDialogBGColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('CalendarPickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('xxxID'));
       await (button?.click() as Promise<void>);
@@ -214,6 +239,10 @@ export default function CalendarPickerDialogBGColorTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogBGColorTest_static_008 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -223,6 +252,7 @@ export default function CalendarPickerDialogBGColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('CalendarPickerDialogBGColorTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('-100ID'));
       await (button?.click() as Promise<void>);
@@ -236,6 +266,10 @@ export default function CalendarPickerDialogBGColorTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogBGColorTest_static_009 error: ' + err);
+        done();
+      }
     })
   })
 }

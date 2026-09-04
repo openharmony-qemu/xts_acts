@@ -160,13 +160,31 @@ static napi_value OhAvPlayerCreate(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OhAvPlayerSetURLSourceAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    std::string urlStr = "http://live-xxx.flv";
+    std::vector<char> char_vec(urlStr.begin(), urlStr.end());
+    char_vec.push_back('\0');
+    const char* vecPrt = char_vec.data();
+    OH_AVErrCode errCode = OH_AVPlayer_SetURLSource(player, vecPrt);
+    if (errCode == AV_ERR_OK) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
 static napi_value OhAvPlayerSetURLSourceAbnormalOne(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     int backParam = FAIL;
     OH_AVPlayer *player = OH_AVPlayer_Create();
     OH_AVErrCode errCode = OH_AVPlayer_SetURLSource(player, nullptr);
-    if (errCode != AV_ERR_OK) {
+    if (errCode == AV_ERR_INVALID_VAL) {
         backParam = SUCCESS;
     }
     OH_AVPlayer_ReleaseSync(player);
@@ -179,7 +197,7 @@ static napi_value OhAvPlayerSetURLSourceAbnormalTwo(napi_env env, napi_callback_
     napi_value result = nullptr;
     int backParam = FAIL;
     OH_AVErrCode errCode = OH_AVPlayer_SetURLSource(nullptr, nullptr);
-    if (errCode != AV_ERR_OK) {
+    if (errCode == AV_ERR_INVALID_VAL) {
         backParam = SUCCESS;
     }
     napi_create_int32(env, backParam, &result);
@@ -3931,32 +3949,38 @@ static napi_value OhAvPlayerGetNewestVideoSample(napi_env env, napi_callback_inf
     EGLContext context = nullptr;
     EGLSurface surface = nullptr;
     InitGLES(display, context, surface);
-    GLuint textureId = PARAM_0;
-    glGenTextures(ONEVAL, &textureId);
-    OH_NativeImage *image = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
-    OHNativeWindow *window = OH_NativeImage_AcquireNativeWindow(image);
-    if (window != nullptr) {
+    GLuint textureId1 = PARAM_0;
+    GLuint textureId2 = PARAM_0;
+    glGenTextures(ONEVAL, &textureId1);
+    glGenTextures(ONEVAL, &textureId2);
+    OH_NativeImage *image1 = OH_NativeImage_Create(textureId1, GL_TEXTURE_2D);
+    OH_NativeImage *image2 = OH_NativeImage_Create(textureId2, GL_TEXTURE_2D);
+    OHNativeWindow *window1 = OH_NativeImage_AcquireNativeWindow(image1);
+    OHNativeWindow *window2 = OH_NativeImage_AcquireNativeWindow(image2);
+    if (window1 != nullptr && window2 != nullptr) {
         OH_AVPlayer *player = OH_AVPlayer_Create();
         AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
         OH_AVPlayer_SetPlayerCallback(player, cb);
         waitAvPlayerStateChange(player, AV_IDLE);
         GetFDSourceInfo(player);
         waitAvPlayerStateChange(player, AV_INITIALIZED);
-        OH_AVPlayer_SetVideoSurface(player, window);
-        OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(player, window);
+        OH_AVPlayer_SetVideoSurface(player, window1);
+        OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(player, window2);
         OH_AVPlayer_Prepare(player);
         waitAvPlayerStateChange(player, AV_PREPARED);
         OH_AVPlayer_Play(player);
         waitAvPlayerStateChange(player, AV_PLAYING);
         if (videoOutput != nullptr) {
             OH_VideoOutputResult videoResult = OH_AVPlayerVideoOutput_GetNewestVideoSample(videoOutput);
+            LOG("OH_AVPlayerVideoOutput_GetNewestVideoSample videoResult:%{public}d", videoResult);
             if (videoResult == OH_VIDEO_OUTPUT_OK) {
                 backParam = SUCCESS;
             }
         }
         waitAvPlayerStateChange(player, AV_INITIALIZED);
         OH_AVPlayer_ReleaseSync(player);
-        OH_NativeWindow_DestroyNativeWindow(window);
+        OH_NativeWindow_DestroyNativeWindow(window1);
+        OH_NativeWindow_DestroyNativeWindow(window2);
     }
     DestroyGLES(display, context, surface);
     napi_create_int32(env, backParam, &result);
@@ -3982,6 +4006,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"AvPlayerCreate", nullptr, OhAvPlayerCreate, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OhAvPlayerSetCurrentPathId", nullptr, OhAvPlayerSetCurrentPathId, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"AvPlayerSetURLSourceAbnormal", nullptr, OhAvPlayerSetURLSourceAbnormal, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
         {"AvPlayerSetURLSourceAbnormalOne", nullptr, OhAvPlayerSetURLSourceAbnormalOne, nullptr, nullptr,
             nullptr, napi_default, nullptr},
         {"AvPlayerSetURLSourceAbnormalTwo", nullptr, OhAvPlayerSetURLSourceAbnormalTwo, nullptr, nullptr, nullptr,

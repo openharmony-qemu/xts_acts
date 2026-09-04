@@ -40,7 +40,6 @@ export default function extensionWindowPropertiesTest() {
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
       let mainWindow = windowStage.getMainWindowSync();
       mainWindow.resizeAsync(1500, 1000);
-      mainWindow.moveWindowToAsync(1200, 200);
       isFreeWindowMode = mainWindow.isInFreeWindowMode();
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式

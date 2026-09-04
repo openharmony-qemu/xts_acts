@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 function sleep(time: number) {
   return new Promise<string>((resolve: (value: string) => void) => {
@@ -34,12 +33,6 @@ function sleep(time: number) {
 export default function gridJsunit1() {
 
   describe('gridTest', () => {
-    beforeAll(async (): Promise<void> => {
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
-    });
 
     beforeEach(async () => {
       let options: router.RouterOptions = {

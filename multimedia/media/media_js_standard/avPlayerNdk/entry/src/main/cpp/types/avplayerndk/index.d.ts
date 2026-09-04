@@ -17,6 +17,7 @@ interface NdkUser {}
 
 export const AvPlayerCreate: () => number;
 export const OhAvPlayerSetCurrentPathId: (a:number) => number;
+export const AvPlayerSetURLSourceAbnormal: () => number;
 export const AvPlayerSetURLSourceAbnormalOne: () => number;
 export const AvPlayerSetURLSourceAbnormalTwo: () => number;
 export const AvPlayerSetFDSource: () => number;

@@ -14,28 +14,15 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 export default function datePickerJsunit() {
   describe('ActsAceDatePickerTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("datePickerJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info("datePickerJsunit beforeEach start");
       let options: router.RouterOptions = {

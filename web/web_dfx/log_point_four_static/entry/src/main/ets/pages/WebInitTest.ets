@@ -309,6 +309,13 @@ struct webViewController {
                 }
                 break;
               }
+			 case 'emitSwitchNextPagePermissionRequestTest': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/PermissionRequestTest' })
+              console.log('push URL success')
+            }
+			  
             }
           })
 

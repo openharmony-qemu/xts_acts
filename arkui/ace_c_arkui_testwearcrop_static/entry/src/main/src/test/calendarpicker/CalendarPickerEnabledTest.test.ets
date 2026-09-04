@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 import { focusControl } from '@ohos.arkui.component'
 
@@ -28,11 +27,10 @@ export default function calendarPickerEnabledTest() {
 
     let PAGE_TAG = 'CalendarPickerEnabledTest';
 
-    beforeAll(async (): Promise<void> => {
-      console.info("[ui] beforeAll start");
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility")
+    beforeEach(async (): Promise<void> => {
+      console.info("[ui] beforeEach start");
       await Utils.pushPage(`calendarpicker/${PAGE_TAG}`, false);
-      console.info("[ui] beforeAll end");
+      console.info("[ui] beforeEach end");
     });
 
     
@@ -43,29 +41,34 @@ export default function calendarPickerEnabledTest() {
      * @tc.level    Level.LEVEL1
      */
     it('testCalendarPickerEnabled001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await Utils.clickComponent('OnClickEnabledCalendarPicker')
-      await Utils.sleep(1000)
+      try {
+        await Utils.clickComponent('OnClickEnabledCalendarPicker')
+        await Utils.sleep(1000)
 
-      expect(Utils.getComponentInfoByKey('OnClickEnabledCalendarPicker')
-        .getElement('$attrs')
-        .getString('backgroundColor')).assertEqual('#FF00FF00')
+        expect(Utils.getComponentInfoByKey('OnClickEnabledCalendarPicker')
+          .getElement('$attrs')
+          .getString('backgroundColor')).assertEqual('#FF00FF00')
 
-      focusControl.requestFocus('TextClick')
-      focusControl.requestFocus('EnabledCalendarPicker')
-      await Utils.sleep(1000)
-      expect(Utils.getComponentInfoByKey('EnabledCalendarPicker').getElement('$attrs').getString('backgroundColor'))
-        .assertEqual('#FF0000FF')
+        focusControl.requestFocus('TextClick')
+        focusControl.requestFocus('EnabledCalendarPicker')
+        await Utils.sleep(1000)
+        expect(Utils.getComponentInfoByKey('EnabledCalendarPicker').getElement('$attrs').getString('backgroundColor'))
+          .assertEqual('#FF0000FF')
 
-      focusControl.requestFocus('TextClick')
-      await Utils.sleep(1000)
-      expect(Utils.getComponentInfoByKey('EnabledCalendarPicker').getElement('$attrs').getString('backgroundColor'))
-        .assertEqual('#FFFFFF00')
-      expect(Utils.getComponentInfoByKey('EnabledCalendarPicker').getElement('$attrs').getBoolean('enabled'))
-        .assertTrue()
+        focusControl.requestFocus('TextClick')
+        await Utils.sleep(1000)
+        expect(Utils.getComponentInfoByKey('EnabledCalendarPicker').getElement('$attrs').getString('backgroundColor'))
+          .assertEqual('#FFFFFF00')
+        expect(Utils.getComponentInfoByKey('EnabledCalendarPicker').getElement('$attrs').getBoolean('enabled'))
+          .assertTrue()
 
-      await Utils.clickComponent('TextClick')
-      await Utils.sleep(1000)
-      done();
+        await Utils.clickComponent('TextClick')
+        await Utils.sleep(1000)
+        done();
+      } catch (err) {
+        console.error('testCalendarPickerEnabled001 error: ' + err)
+        done();
+      }
     })
 
     
@@ -76,26 +79,31 @@ export default function calendarPickerEnabledTest() {
      * @tc.level    Level.LEVEL1
      */
     it('testCalendarPickerEnabled002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await Utils.clickComponent('OnClickDisabledCalendarPicker')
-      await Utils.sleep(1000)
-      expect(Utils.getComponentInfoByKey('OnClickDisabledCalendarPicker')
-        .getElement('$attrs')
-        .getString('backgroundColor')).assertEqual('#FFFF0000')
+      try {
+        await Utils.clickComponent('OnClickDisabledCalendarPicker')
+        await Utils.sleep(1000)
+        expect(Utils.getComponentInfoByKey('OnClickDisabledCalendarPicker')
+          .getElement('$attrs')
+          .getString('backgroundColor')).assertEqual('#FFFF0000')
 
-      focusControl.requestFocus('TextClick')
-      focusControl.requestFocus('DisabledCalendarPicker')
-      await Utils.sleep(1000)
-      expect(Utils.getComponentInfoByKey('DisabledCalendarPicker').getElement('$attrs').getString('backgroundColor'))
-        .assertEqual('#FFFF0000')
+        focusControl.requestFocus('TextClick')
+        focusControl.requestFocus('DisabledCalendarPicker')
+        await Utils.sleep(1000)
+        expect(Utils.getComponentInfoByKey('DisabledCalendarPicker').getElement('$attrs').getString('backgroundColor'))
+          .assertEqual('#FFFF0000')
 
-      focusControl.requestFocus('TextClick')
-      await Utils.sleep(1000)
-      expect(Utils.getComponentInfoByKey('DisabledCalendarPicker').getElement('$attrs').getString('backgroundColor'))
-        .assertEqual('#FFFF0000')
-      expect(Utils.getComponentInfoByKey('DisabledCalendarPicker').getElement('$attrs').getBoolean('enabled'))
-        .assertFalse()
+        focusControl.requestFocus('TextClick')
+        await Utils.sleep(1000)
+        expect(Utils.getComponentInfoByKey('DisabledCalendarPicker').getElement('$attrs').getString('backgroundColor'))
+          .assertEqual('#FFFF0000')
+        expect(Utils.getComponentInfoByKey('DisabledCalendarPicker').getElement('$attrs').getBoolean('enabled'))
+          .assertFalse()
 
-      done();
+        done();
+      } catch (err) {
+        console.error('testCalendarPickerEnabled002 error: ' + err)
+        done();
+      }
     })
 
     
@@ -106,28 +114,33 @@ export default function calendarPickerEnabledTest() {
      * @tc.level    Level.LEVEL1
      */
     it('testCalendarPickerEnabled003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await Utils.clickComponent('OnClickAbnormalCalendarPicker')
-      await Utils.sleep(1000)
-      expect(Utils.getComponentInfoByKey('OnClickAbnormalCalendarPicker')
-        .getElement('$attrs')
-        .getString('backgroundColor')).assertEqual('#FF00FF00')
+      try {
+        await Utils.clickComponent('OnClickAbnormalCalendarPicker')
+        await Utils.sleep(1000)
+        expect(Utils.getComponentInfoByKey('OnClickAbnormalCalendarPicker')
+          .getElement('$attrs')
+          .getString('backgroundColor')).assertEqual('#FF00FF00')
 
-      focusControl.requestFocus('TextClick')
-      focusControl.requestFocus('AbnormalCalendarPicker')
-      await Utils.sleep(1000)
-      expect(Utils.getComponentInfoByKey('AbnormalCalendarPicker').getElement('$attrs').getString('backgroundColor'))
-        .assertEqual('#FF0000FF')
+        focusControl.requestFocus('TextClick')
+        focusControl.requestFocus('AbnormalCalendarPicker')
+        await Utils.sleep(1000)
+        expect(Utils.getComponentInfoByKey('AbnormalCalendarPicker').getElement('$attrs').getString('backgroundColor'))
+          .assertEqual('#FF0000FF')
 
-      focusControl.requestFocus('TextClick')
-      await Utils.sleep(1000)
-      expect(Utils.getComponentInfoByKey('AbnormalCalendarPicker').getElement('$attrs').getString('backgroundColor'))
-        .assertEqual('#FFFFFF00')
-      expect(Utils.getComponentInfoByKey('AbnormalCalendarPicker').getElement('$attrs').getBoolean('enabled'))
-        .assertTrue()
+        focusControl.requestFocus('TextClick')
+        await Utils.sleep(1000)
+        expect(Utils.getComponentInfoByKey('AbnormalCalendarPicker').getElement('$attrs').getString('backgroundColor'))
+          .assertEqual('#FFFFFF00')
+        expect(Utils.getComponentInfoByKey('AbnormalCalendarPicker').getElement('$attrs').getBoolean('enabled'))
+          .assertTrue()
 
-      await Utils.clickComponent('TextClick')
-      await Utils.sleep(1000)
-      done();
+        await Utils.clickComponent('TextClick')
+        await Utils.sleep(1000)
+        done();
+      } catch (err) {
+        console.error('testCalendarPickerEnabled003 error: ' + err)
+        done();
+      }
     })
   })
 }

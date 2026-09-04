@@ -361,8 +361,6 @@ describe('fileio_createWatcher', function () {
     }
      console.log('fileio_hash test fileio_test_hash_async_008 end');
   });
-  console.log('fileio_createWatcher test end');
-});
 
   // Test cases for createWatcher(filename: string, events: number, callback: AsyncCallback<number>): Watcher
   /**
@@ -375,21 +373,14 @@ describe('fileio_createWatcher', function () {
    */
   it('fileio_createWatcher_error_001', Level.LEVEL2, async function (done) {
     try {
-      await fileio.createWatcher("", 1, (err, data) => {
-        if (err) {
-          console.log('fileio_createWatcher_error_001: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'Invalid path').assertTrue();
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
+      fileio.createWatcher("", 1, (err, data) => {
       });
+      console.log('fileio_createWatcher success');
     } catch (e) {
       console.log('fileio_createWatcher_error_001: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'Invalid path').assertTrue();
-      done();
+      expect().assertFail();
     }
+    done();
   });
 
   /**
@@ -402,21 +393,14 @@ describe('fileio_createWatcher', function () {
    */
   it('fileio_createWatcher_error_002', Level.LEVEL2, async function (done) {
     try {
-      await fileio.createWatcher(null, 1, (err, data) => {
-        if (err) {
-          console.log('fileio_createWatcher_error_002: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'Invalid path').assertTrue();
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
+      fileio.createWatcher(null, 1, (err, data) => {
       });
+      expect().assertFail();
     } catch (e) {
       console.log('fileio_createWatcher_error_002: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'Invalid path').assertTrue();
-      done();
+      expect(e.message == 'Invalid filename').assertTrue();
     }
+    done();
   });
 
   /**
@@ -429,21 +413,14 @@ describe('fileio_createWatcher', function () {
    */
   it('fileio_createWatcher_error_003', Level.LEVEL2, async function (done) {
     try {
-      await fileio.createWatcher(undefined, 1, (err, data) => {
-        if (err) {
-          console.log('fileio_createWatcher_error_003: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'Invalid path').assertTrue();
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
+      fileio.createWatcher(undefined, 1, (err, data) => {
       });
+      expect().assertFail();
     } catch (e) {
       console.log('fileio_createWatcher_error_003: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'Invalid path').assertTrue();
-      done();
+      expect(e.message == 'Invalid filename').assertTrue();
     }
+    done();
   });
 
   /**
@@ -455,23 +432,15 @@ describe('fileio_createWatcher', function () {
    * @tc.level  LEVEL2
    */
   it('fileio_createWatcher_error_004', Level.LEVEL2, async function (done) {
-    let fpath = await nextFileName('fileio_createWatcher_error_004');
-    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
     try {
-      await fileio.createWatcher(fpath, null, (err, data) => {
-        if (err) {
-          console.log('fileio_createWatcher_error_004: ' + err.message + ', code: ' + err.code);
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
+      fileio.createWatcher("", null, (err, data) => {
       });
+      expect().assertFail();
     } catch (e) {
       console.log('fileio_createWatcher_error_004: ' + e.message + ', code: ' + e.code);
-      expect(fileio.unlinkSync(fpath) == null).assertTrue();
-      done();
+      expect(e.message == 'Invalid event').assertTrue();
     }
+    done();
   });
 
   /**
@@ -483,23 +452,16 @@ describe('fileio_createWatcher', function () {
    * @tc.level  LEVEL2
    */
   it('fileio_createWatcher_error_005', Level.LEVEL2, async function (done) {
-    let fpath = await nextFileName('fileio_createWatcher_error_005');
-    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
     try {
-      await fileio.createWatcher(fpath, undefined, (err, data) => {
-        if (err) {
-          console.log('fileio_createWatcher_error_005: ' + err.message + ', code: ' + err.code);
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
+      fileio.createWatcher("", undefined, (err, data) => {
       });
+      expect().assertFail();
     } catch (e) {
       console.log('fileio_createWatcher_error_005: ' + e.message + ', code: ' + e.code);
-      expect(fileio.unlinkSync(fpath) == null).assertTrue();
-      done();
+      expect(e.message == 'Invalid event').assertTrue();
     }
+    done();
   });
   console.log('fileio_createWatcher test end');
+});
 }

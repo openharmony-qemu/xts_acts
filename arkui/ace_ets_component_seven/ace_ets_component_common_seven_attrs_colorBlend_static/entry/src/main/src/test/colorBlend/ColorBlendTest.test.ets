@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { describe, expect } from '../../../../hypium/index'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { RepeatMode, GradientDirection,Color } from '@ohos.arkui.component'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -64,12 +63,6 @@ export default function ColorBlendTest() {
    */
   describe('colorBlendTest', () => {
 
-    beforeAll(async (): Promise<void> => {
-      console.info("beforeAll start");
-
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-    });
-
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Modify the target component properties.
@@ -79,7 +72,11 @@ export default function ColorBlendTest() {
       console.error('[' + data.viewObj!.getElement('$attrs').getString('colorBlend') + '] viewObj.$attrs.colorBlend');
       let strJson = inspector.getInspectorByKey(data.pageConfig.componentKey);
       console.info('strJsonstrJsonstrJson2' + strJson);
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.error('[' + data.caseTag + '] sleep error: ' + err);
+      }
       let colorBlendStrJson = JSON.parseJsonElement(strJson);
       expect(colorBlendStrJson.getElement('$attrs').getString('colorBlend')).assertEqual(data.testValue.expectValue.colorBlend);
 

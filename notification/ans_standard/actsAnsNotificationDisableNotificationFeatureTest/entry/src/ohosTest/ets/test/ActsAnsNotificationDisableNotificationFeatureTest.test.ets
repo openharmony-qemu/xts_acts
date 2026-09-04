@@ -22,7 +22,7 @@ import { notificationManager } from '@kit.NotificationKit';
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }
@@ -41,7 +41,7 @@ export default function ActsAnsNotificationDisableNotificationFeatureTest() {
     it('SUB_Ans_Notification_DisableNotificationFeature_0300', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'SUB_Ans_Notification_DisableNotificationFeature_0300'
       let disabled: boolean = true;
-      let bundleList: Array<string> = ["com.example.actsansnotificationdisablenotificationfeaturetest"];
+      let bundleList: Array<string> = ['com.example.actsansnotificationdisablenotificationfeaturetest'];
       try {
         notificationManager.disableNotificationFeature(disabled, bundleList).then((data) => {
           hilog.info(0x0000, 'testTag',

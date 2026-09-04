@@ -18,20 +18,10 @@
 import { Color,$r} from '@ohos.arkui.component'
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect,beforeAll } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 interface Attrs{
   $attrs: number
 }
@@ -69,12 +59,6 @@ export default function gridSpanTest() {
   }]
 
   describe('GridSpanTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("GridSpanTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.gridSpan.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       console.info('[' + data.caseTag + ']' + 'gridSpan is:' + data.viewObj?.getElement('$attrs').getString('span'));
       expect(data.viewObj?.getElement('$attrs').getString('span'))

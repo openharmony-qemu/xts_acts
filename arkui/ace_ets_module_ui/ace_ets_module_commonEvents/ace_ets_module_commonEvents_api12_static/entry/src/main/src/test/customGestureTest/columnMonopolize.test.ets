@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,23 +21,9 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function columnMonopolize() {
   describe('columnMonopolize', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
-      
-    });
     beforeEach(async ():Promise<void> => {
       console.log("columnMonopolize beforeEach start");
       try {
@@ -59,8 +45,12 @@ export default function columnMonopolize() {
       //done();
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      console.log("columnMonopolize after each called");
+      try {
+            await CommonFunc.sleep(1000);
+            console.log("columnMonopolize after each called");
+      } catch (err) {
+        console.error("afterEach error: " + err);
+      }
     });
 
     
@@ -81,22 +71,22 @@ it('columnMonopolize_static_001', Level.LEVEL0, async (done: () => void): Promis
       let column2 = await driver.findComponent(ON.id('column2'));
       let column1 = await driver.findComponent(ON.id('column1'));
 
-      await CommonFunc.sleep(200);
-      await (column1?.longClick() as Promise<void>);
       await CommonFunc.sleep(1000);
+      await (column1?.longClick() as Promise<void>);
+      await CommonFunc.sleep(200);
       await (column2?.click() as Promise<void>);
       let strJson1 = inspector.getInspectorByKey('columnText');
       console.log("[columnMonopolize_001] component obj is: " , JSON.stringify(JSON.parseJsonElement(strJson1)));
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('LongPressGesture onAction success;');
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('buttonBoolean'));
       let button_clean = await driver.findComponent(ON.id('button_clean'));
 
       await (button_clean?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       // change the status of monopolize Attribute
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       await (column1?.longClick() as Promise<void>);
       await CommonFunc.sleep(1000);
       await (column2?.click() as Promise<void>);

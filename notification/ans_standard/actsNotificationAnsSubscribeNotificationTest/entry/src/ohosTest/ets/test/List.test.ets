@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import ActsNotificationAnsSubscribeNotificationTest from "./ActsNotificationAnsSubscribeNotificationTest.test";
+import ActsNotificationAnsSubscribeNotificationTest from './ActsNotificationAnsSubscribeNotificationTest.test';
 
 export default function testsuite() {
   ActsNotificationAnsSubscribeNotificationTest();

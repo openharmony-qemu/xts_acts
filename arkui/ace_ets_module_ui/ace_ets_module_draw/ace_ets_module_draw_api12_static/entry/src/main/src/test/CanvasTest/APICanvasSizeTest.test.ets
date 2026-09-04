@@ -13,27 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { startAbility, UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
 
 export default function APICanvasSizeTest() {
   describe('APICanvasSizeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("APICanvasSizeTest beforeEach start");
-
-
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
-
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("APICanvasSizeTest beforeEach start");
@@ -65,7 +56,11 @@ export default function APICanvasSizeTest() {
 it('APICanvasSizeTest_static_0100', Level.LEVEL2 , async (done: () => void): Promise<void> => {
       console.info('APICanvasSizeTest_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('APICanvasSizeTest sleep err: ' + JSON.stringify(err));
+      }
 
       let rectParent = Utils.getComponentRect('APICanvasSizeFlex');
       let widthParent = rectParent.right - rectParent.left
@@ -75,7 +70,11 @@ it('APICanvasSizeTest_static_0100', Level.LEVEL2 , async (done: () => void): Pro
 
       let button1 = await driver.findComponent(ON.id('APICanvasSizeButton1'));
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('APICanvasSizeTest sleep err: ' + JSON.stringify(err));
+      }
 
       let strJson = inspector.getInspectorByKey('APICanvasSizeText1');
       let obj = JSON.parseJsonElement(strJson);
@@ -95,7 +94,11 @@ it('APICanvasSizeTest_static_0100', Level.LEVEL2 , async (done: () => void): Pro
 it('APICanvasSizeTest_static_0200', Level.LEVEL2 , async (done: () => void): Promise<void> => {
       console.info('APICanvasSizeTest_static_0200 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('APICanvasSizeTest sleep err: ' + JSON.stringify(err));
+      }
 
       let rectParent = Utils.getComponentRect('APICanvasSizeFlex');
       let widthParent = rectParent.right - rectParent.left
@@ -105,7 +108,11 @@ it('APICanvasSizeTest_static_0200', Level.LEVEL2 , async (done: () => void): Pro
 
       let button1 = await driver.findComponent(ON.id('APICanvasSizeButton2'));
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('APICanvasSizeTest sleep err: ' + JSON.stringify(err));
+      }
 
       let strJson = inspector.getInspectorByKey('APICanvasSizeText2');
       let obj = JSON.parseJsonElement(strJson);

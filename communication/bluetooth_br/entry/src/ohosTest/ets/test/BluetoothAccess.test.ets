@@ -839,10 +839,7 @@ export default function btAccessTest() {
                 expect(converuuid).assertEqual('00001801-0000-1000-8000-00805f9b34fb');
             } catch (error) {
                 console.error(`[bt_arkts]converUuid 0100 is failed, code is ${error.code}, message is ${error.message}`);
-                if (Number(error.code) == 801){
-                    console.info("[bluetooth_js]converuuid is not support");
-                    expect(Number(error.code)).assertEqual(801);
-                }
+                expect().assertFail();
             }
             done();
         })
@@ -863,10 +860,7 @@ export default function btAccessTest() {
                 expect(converuuid).assertEqual('12341801-0000-1000-8000-00805f9b34fb');
             } catch (error) {
                 console.error(`[bt_arkts]converUuid 0200 is failed, code is ${error.code}, message is ${error.message}`);
-                if (Number(error.code) == 801){
-                    console.info("[bluetooth_js]converuuid is not support");
-                    expect(Number(error.code)).assertEqual(801);
-                }
+                expect().assertFail();
             }
             done();
         })
@@ -887,10 +881,7 @@ export default function btAccessTest() {
                 expect(converuuid).assertEqual('11112222-3333-4444-5555-666677778888');
             } catch (error) {
                 console.error(`[bt_arkts]converUuid 0300 is failed, code is ${error.code}, message is ${error.message}`);
-                if (Number(error.code) == 801){
-                    console.info("[bluetooth_js]converuuid is not support");
-                    expect(Number(error.code)).assertEqual(801);
-                }
+                expect().assertFail();
             }
             done();
         })
@@ -910,13 +901,8 @@ export default function btAccessTest() {
                 console.info("[bluetooth_js]converuuid result:" + JSON.stringify(converuuid));
                 expect().assertFail();
             } catch (error) {
-                console.error(`[bt_arkts]converUuid 0400 is failed, code is ${error.code}, message is ${error.message}`);
-                if (Number(error.code) == 801){
-                    console.info("[bluetooth_js]converuuid is not support");
-                    expect(Number(error.code)).assertEqual(801);
-                }else{
-                    expect(Number(error.code)).assertEqual(401);
-                }
+                console.error(`[bt_arkts]converUuid 0400 is failed, code is ${error.code}, message is ${error.message}` + typeof error.code);
+                expect(Number(error.code)).assertEqual(401);
             }
             done();
         })
@@ -936,13 +922,8 @@ export default function btAccessTest() {
                 console.info("[bluetooth_js]converuuid result:" + JSON.stringify(converuuid));
                 expect().assertFail();
             } catch (error) {
-                console.error(`[bt_arkts]converUuid ADD0100 is failed, code is ${error.code}, message is ${error.message}`);
-                if (Number(error.code) == 801){
-                    console.info("[bluetooth_js]converuuid is not support");
-                    expect(Number(error.code)).assertEqual(801);
-                }else{
-                    expect(Number(error.code)).assertEqual(401);
-                }
+                console.error(`[bt_arkts]converUuid 0400 is failed, code is ${error.code}, message is ${error.message}` + typeof error.code);
+                expect(Number(error.code)).assertEqual(401);
             }
             done();
         })

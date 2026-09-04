@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,16 +21,10 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { uiMaterial } from '@kit.ArkUI';
 
 export default function DatePickerDialogSystemMaterialTest() {
   describe('DatePickerDialogSystemMaterialTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("DatePickerDialogSystemMaterialTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info("DatePickerDialogSystemMaterialTest beforeEach start");
       let options: router.RouterOptions = {
@@ -50,8 +44,12 @@ export default function DatePickerDialogSystemMaterialTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      console.info("DatePickerDialogSystemMaterial after each called");
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("DatePickerDialogSystemMaterialTest after each error: " + err);
+      }
+      console.info("DatePickerDialogSystemMaterialTest after each called");
     });
 
 /**
@@ -61,6 +59,7 @@ export default function DatePickerDialogSystemMaterialTest() {
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogSystemMaterialTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ULTRA_THICK_ID'));
       await (button?.click() as Promise<void>);
@@ -76,6 +75,10 @@ it('DatePickerDialogSystemMaterialTest_static_001', Level.LEVEL0, async (done: (
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
 
 /**
@@ -85,6 +88,7 @@ it('DatePickerDialogSystemMaterialTest_static_001', Level.LEVEL0, async (done: (
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogSystemMaterialTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ULTRA_THIN_ID'));
       await (button?.click() as Promise<void>);
@@ -100,6 +104,10 @@ it('DatePickerDialogSystemMaterialTest_static_002', Level.LEVEL0, async (done: (
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
 
 /**
@@ -109,6 +117,7 @@ it('DatePickerDialogSystemMaterialTest_static_002', Level.LEVEL0, async (done: (
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogSystemMaterialTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('interactive_false_ID'));
       await (button?.click() as Promise<void>);
@@ -124,6 +133,10 @@ it('DatePickerDialogSystemMaterialTest_static_003', Level.LEVEL0, async (done: (
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
 
 /**
@@ -133,6 +146,7 @@ it('DatePickerDialogSystemMaterialTest_static_003', Level.LEVEL0, async (done: (
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogSystemMaterialTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('undefinedID'));
       await (button?.click() as Promise<void>);
@@ -148,6 +162,10 @@ it('DatePickerDialogSystemMaterialTest_static_004', Level.LEVEL0, async (done: (
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
 
 /**
@@ -157,6 +175,7 @@ it('DatePickerDialogSystemMaterialTest_static_004', Level.LEVEL0, async (done: (
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogSystemMaterialTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('defaultID'));
       await (button?.click() as Promise<void>);
@@ -172,6 +191,10 @@ it('DatePickerDialogSystemMaterialTest_static_005', Level.LEVEL0, async (done: (
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
 
   })

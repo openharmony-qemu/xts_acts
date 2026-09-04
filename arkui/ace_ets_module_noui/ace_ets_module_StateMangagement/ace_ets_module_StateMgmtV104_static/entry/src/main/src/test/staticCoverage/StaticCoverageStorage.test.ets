@@ -24,7 +24,7 @@ import {
 import {
   contains, CoverageRecord, makeBaseConnectOptions, makeConnectOptions,
   makePersistOptions, makeRecord, makeSubCreators
-} from './StaticCoverageSupport';
+} from '../../../ets/staticCoverage/StaticCoverageSupport';
 
 export default function StaticCoverageStorageTest(): void {
   describe('StaticCoverageStorageTest', (): void => {

@@ -69,6 +69,8 @@ std::string testFrameUrl("test");
 
 const int NOT_FOUND = 404;
 const int OK = 200;
+const std::string CUSTOM_SCHEME_PREFIX = "custom://";
+const std::string ISOLATED_SCRIPT_SUFFIX = "/isolated_script.js";
 
 static napi_value RegisterCustomSchemes(napi_env env, napi_callback_info info)
 {
@@ -320,7 +322,11 @@ static napi_value InitResourceManager(napi_env env, napi_callback_info info)
 static napi_value GetUrl(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    if (testUrl == "custom://www.example.com/isolated_script.js") {
+    bool isCustomScheme = testUrl.rfind(CUSTOM_SCHEME_PREFIX, 0) == 0;
+    bool isIsolatedScript = testUrl.size() >= ISOLATED_SCRIPT_SUFFIX.size() &&
+                            testUrl.compare(testUrl.size() - ISOLATED_SCRIPT_SUFFIX.size(),
+                                            ISOLATED_SCRIPT_SUFFIX.size(), ISOLATED_SCRIPT_SUFFIX) == 0;
+    if (isCustomScheme && isIsolatedScript) {
         napi_create_int32(env, 0, &result);
     } else {
         napi_create_int32(env, -1, &result);

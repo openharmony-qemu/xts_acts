@@ -18,6 +18,7 @@
         "MainAbility/pages/textPicker/textPickerSelectedArea",
         "MainAbility/pages/textPicker/textPickerTextStyleThree",
         "MainAbility/pages/textPicker/textPickerValue",
+        "MainAbility/pages/textPicker/textPickerSelectedIndexEmptyArray",
         "MainAbility/pages/textPicker/textPickerDigitalCrownSensitivity",
         "MainAbility/pages/textPickerUndefinedNull/TextPickerDefaultPickerItemHeightNullUndefined",
         "MainAbility/pages/textPickerUndefinedNull/TextPickerDisappearTextStyleNullUndefined",

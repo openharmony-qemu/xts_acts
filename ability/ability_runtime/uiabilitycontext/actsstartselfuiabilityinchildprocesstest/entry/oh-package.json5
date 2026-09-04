@@ -19,7 +19,7 @@
     "libentry.so": "file:./src/main/cpp/types/libentry"
   },
   "author": "",
-  "modelVersion": "6.0.0",
+  "modelVersion": "26.0.0",
   "name": "myapplication",
   "description": "Please describe the basic information.",
   "main": "",

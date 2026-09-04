@@ -79,6 +79,7 @@ export const OH_AVScreenCapture_StrategyForFillMode0100: () => number;
 export const OH_CaptureMode0100: () => number;
 export const OH_CaptureMode0101: () => number;
 export const OH_CaptureMode0102: () => number;
+export const OH_CaptureMode0103: () => number;
 export const OH_AudioCodecFormat0100: () => number;
 export const OH_AudioCodecFormat0101: () => number;
 export const OH_VideoCodecFormat0100: () => number;

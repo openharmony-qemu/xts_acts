@@ -534,6 +534,48 @@ export default function fscreateReadStream() {
         }
     });
 
+    /**
+     * @tc.name   fileIO_test_create_ReadStream_static_024
+     * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_2400
+     * @tc.desc   Test Class ReadStream constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('fileIO_test_create_ReadStream_static_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      try {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_024 start');
+        let obj = new fs.ReadStream();
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_024 obj: ' + JSON.stringify(obj));
+        expect(obj).not().assertUndefined();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_024 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.message).assertEqual('Constructor is false');
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   fileIO_test_create_ReadStream_static_025
+     * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_2500
+     * @tc.desc   Test Class WriteStream constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('fileIO_test_create_ReadStream_static_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      try {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_025 start');
+        let obj = new fs.WriteStream();
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_025 obj: ' + JSON.stringify(obj));
+        expect(obj).not().assertUndefined();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_025 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.message).assertEqual('Constructor is false');
+      }
+      done();
+    });
+
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_create_stream end');
   })
 }

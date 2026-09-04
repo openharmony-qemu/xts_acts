@@ -21,7 +21,7 @@ import Utils from '../../src/test/Util.test';
 import webview from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError, Callback, RecordData } from '@ohos.base';
+import { Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { canIUse } from '@internal.full.global'
 import webView from '@ohos.web.webview';
@@ -54,14 +54,12 @@ struct setBlanklessLoadingWithKeyTest {
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
-    if (eventData != null) {
-      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, RecordData>;
-      if (data != null && data['ACTION'] != null) {
-        let strValue: string = String(data['ACTION']);
-        this.stringObj.str = strValue;
-        console.info(this.stringObj.str)
-      }
+    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+    const data = eventData.data as Record<string, RecordData>;
+    if (data != null && data['ACTION'] != null) {
+      let strValue: string = String(data['ACTION']);
+      this.stringObj.str = strValue;
+      console.info(this.stringObj.str)
     }
   }
 
@@ -406,6 +404,48 @@ struct setBlanklessLoadingWithKeyTest {
                     console.log(msg, ' 801 Capability not supported');
                   } else {
                     Utils.emitEvent(401, 148580);
+                  }
+                }
+                break;
+              }
+              case 'testGetBlanklessInfoWithKey801Static': {
+                let msg = 'testGetBlanklessInfoWithKey801Static';
+                try {
+                  this.controller.getBlanklessInfoWithKey('coverage801Key');
+                } catch (error) {
+                  console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(801, 148590);
+                  } else {
+                    Utils.emitEvent(Number(error.code), 148590);
+                  }
+                }
+                break;
+              }
+              case 'testSetBlanklessLoadingWithKey801Static': {
+                let msg = 'testSetBlanklessLoadingWithKey801Static';
+                try {
+                  this.controller.setBlanklessLoadingWithKey('coverage801Key', true);
+                } catch (error) {
+                  console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(801, 148594);
+                  } else {
+                    Utils.emitEvent(Number(error.code), 148594);
+                  }
+                }
+                break;
+              }
+              case 'testClearBlanklessLoadingCache801Static': {
+                let msg = 'testClearBlanklessLoadingCache801Static';
+                try {
+                  webView.WebviewController.clearBlanklessLoadingCache(['coverage801Key']);
+                } catch (error) {
+                  console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
+                  if (Number(error.code) === 801) {
+                    Utils.emitEvent(801, 148598);
+                  } else {
+                    Utils.emitEvent(Number(error.code), 148598);
                   }
                 }
                 break;

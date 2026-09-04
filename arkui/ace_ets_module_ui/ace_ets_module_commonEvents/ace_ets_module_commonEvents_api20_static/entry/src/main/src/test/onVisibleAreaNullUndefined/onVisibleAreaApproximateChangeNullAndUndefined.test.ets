@@ -14,21 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 export default function commonMethodOnVisibleAreaApproximateChangeNullAndUndefinedTest(): void {
   describe('commonMethodOnVisibleAreaApproximateChangeNullAndUndefinedTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/onVisibleAreaNullUndefined/onVisibleAreaApproximateChangeNullAndUndefined',
@@ -50,7 +45,11 @@ export default function commonMethodOnVisibleAreaApproximateChangeNullAndUndefin
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error('commonMethodOnVisibleAreaApproximateChangeNullAndUndefinedTest afterEach sleep error: ' + err);
+      }
       console.info("[commonMethodOnVisibleAreaApproximateChangeNullAndUndefinedTest] afterEach called");
     });
 

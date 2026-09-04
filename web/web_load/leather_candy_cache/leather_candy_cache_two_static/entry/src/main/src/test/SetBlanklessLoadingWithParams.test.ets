@@ -147,5 +147,43 @@ export default function SetBlanklessLoadingWithParams() : void{
         await Utils.msSleep(5000);
         done();
       })
+
+    /**
+     * @tc.name   testSetBlanklessLoadingWithParams801Static
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHPARAMS_801_STATIC_0100
+     * @tc.desc   test setBlanklessLoadingWithParams 801 capability not supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetBlanklessLoadingWithParams801Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testSetBlanklessLoadingWithParams801Static', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithParams801Static', 801, 148661, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithParamsTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+     * @tc.name   testSetBlanklessLoadingWithParamsEnableFalse
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHPARAMS_ENABLEFALSE_0100
+     * @tc.desc   test setBlanklessLoadingWithParams with enable false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetBlanklessLoadingWithParamsEnableFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testSetBlanklessLoadingWithParamsEnableFalse', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithParamsEnableFalse', 0, 148665, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithParamsTestButton', 10, '');
+      await Utils.msSleep(8000);
+      done()
+    })
   })
 }

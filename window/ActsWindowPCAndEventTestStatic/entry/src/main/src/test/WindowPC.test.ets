@@ -625,8 +625,11 @@ export default function WindowPCTest() {
         it('testisWindowRectAutoSave_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let message:string = 'testisWindowRectAutoSave_static';
             try {
+                hilog.info(domain, tag, `${message} setWindowRectAutoSave(true) begin.`);
                 await windowStage!.setWindowRectAutoSave(true);
+                hilog.info(domain, tag, `${message} setWindowRectAutoSave(true) end.`);
                 await Utils.msSleep(1000);
+                hilog.info(domain, tag, `${message} isWindowRectAutoSave() first check begin.`);
                 windowStage!.isWindowRectAutoSave().then((result:boolean) => {
                     hilog.info(domain, tag,`${message} isWindowRectAutoSave = ${result}, expect true.`)
                     if(isFreeWindowMode){
@@ -646,8 +649,11 @@ export default function WindowPCTest() {
                         done();
                     }
                 })
+                hilog.info(domain, tag, `${message} setWindowRectAutoSave(false) begin.`);
                 await windowStage!.setWindowRectAutoSave(false);
+                hilog.info(domain, tag, `${message} setWindowRectAutoSave(false) end.`);
                 await Utils.msSleep(1000);
+                hilog.info(domain, tag, `${message} isWindowRectAutoSave() second check begin.`);
                 windowStage!.isWindowRectAutoSave().then((result:boolean) => {
                     hilog.info(domain, tag,`${message} isWindowRectAutoSave = ${result}, expect false.`)
                     expect(result).assertFalse();

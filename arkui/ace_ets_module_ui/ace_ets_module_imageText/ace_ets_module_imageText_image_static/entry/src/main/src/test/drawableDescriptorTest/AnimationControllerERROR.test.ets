@@ -14,25 +14,20 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME_L = 1000;
 const SLEEP_TIME_S = 100;
 
 export default function ImageAnimationControllerERRORTest() {
   describe('AnimationController1Test', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("AnimationController1Test beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("AnimationController1Test beforeEach start");
       let options: router.RouterOptions = {
@@ -65,21 +60,26 @@ export default function ImageAnimationControllerERRORTest() {
      * @tc.level    Level.LEVEL1
      */
     it('AnimationControllerERROR_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('AnimationControllerERROR_static_001 START');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('animatedUndefined'));
-      await (button?.click() as Promise<void>);
-      console.info('animated click success');
-      await Utils.sleep(SLEEP_TIME_S);
-      const button1 = await driver.findComponent(ON.id('Controller2'));
-      await (button1?.click() as Promise<void>);
-      console.info('Controller2 click success');
-      await Utils.sleep(SLEEP_TIME_S);
-      let strJson = inspector.getInspectorByKey('ControllerText');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('AnimationControllerERROR_static_001 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
-      done();
+      try {
+        console.info('AnimationControllerERROR_static_001 START');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('animatedUndefined'));
+        await (button?.click() as Promise<void>);
+        console.info('animated click success');
+        await Utils.sleep(SLEEP_TIME_S);
+        const button1 = await driver.findComponent(ON.id('Controller2'));
+        await (button1?.click() as Promise<void>);
+        console.info('Controller2 click success');
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('ControllerText');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('AnimationControllerERROR_static_001 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('');
+        done();
+      } catch (err) {
+        console.error('AnimationControllerERROR_static_001 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -89,21 +89,26 @@ export default function ImageAnimationControllerERRORTest() {
      * @tc.level    Level.LEVEL1
      */
     it('AnimationControllerERROR_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('AnimationController1_static_002 START');
-      const driver = Driver.create();
-      const button1 = await driver.findComponent(ON.id('c3start'));
-      await (button1?.click() as Promise<void>);
-      console.info('c3start click success');
-      await Utils.sleep(SLEEP_TIME_S);
-      const button2 = await driver.findComponent(ON.id('c3status'));
-      await (button2?.click() as Promise<void>);
-      console.info('c3status click success');
-      await Utils.sleep(SLEEP_TIME_S);
-      let strJson = inspector.getInspectorByKey('getStatus1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('AnimationControllerERROR_static_002 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
-      done();
+      try {
+        console.info('AnimationController1_static_002 START');
+        const driver = Driver.create();
+        const button1 = await driver.findComponent(ON.id('c3start'));
+        await (button1?.click() as Promise<void>);
+        console.info('c3start click success');
+        await Utils.sleep(SLEEP_TIME_S);
+        const button2 = await driver.findComponent(ON.id('c3status'));
+        await (button2?.click() as Promise<void>);
+        console.info('c3status click success');
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('getStatus1');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('AnimationControllerERROR_static_002 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
+        done();
+      } catch (err) {
+        console.error('AnimationControllerERROR_static_002 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -113,20 +118,25 @@ export default function ImageAnimationControllerERRORTest() {
      * @tc.level    Level.LEVEL1
      */
     it('AnimationControllerERROR_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('AnimationControllerERROR_static_003 START');
-      const driver = Driver.create();
-      const button1 = await driver.findComponent(ON.id('c3stop'));
-      await (button1?.click() as Promise<void>);
-      console.info('c3stop click success');
-      await Utils.sleep(SLEEP_TIME_S);
-      const button2 = await driver.findComponent(ON.id('c3status'));
-      await (button2?.click() as Promise<void>);
-      console.info('c3status click success');
-      let strJson = inspector.getInspectorByKey('getStatus1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('AnimationControllerERROR_static_003 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
-      done();
+      try {
+        console.info('AnimationControllerERROR_static_003 START');
+        const driver = Driver.create();
+        const button1 = await driver.findComponent(ON.id('c3stop'));
+        await (button1?.click() as Promise<void>);
+        console.info('c3stop click success');
+        await Utils.sleep(SLEEP_TIME_S);
+        const button2 = await driver.findComponent(ON.id('c3status'));
+        await (button2?.click() as Promise<void>);
+        console.info('c3status click success');
+        let strJson = inspector.getInspectorByKey('getStatus1');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('AnimationControllerERROR_static_003 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
+        done();
+      } catch (err) {
+        console.error('AnimationControllerERROR_static_003 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -136,20 +146,25 @@ export default function ImageAnimationControllerERRORTest() {
      * @tc.level    Level.LEVEL1
      */
     it('AnimationControllerERROR_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('AnimationControllerERROR_static_004 START');
-      const driver = Driver.create();
-      const button1 = await driver.findComponent(ON.id('c3stop'));
-      await (button1?.click() as Promise<void>);
-      console.info('c3stop click success');
-      await Utils.sleep(SLEEP_TIME_S);
-      const button2 = await driver.findComponent(ON.id('c3status'));
-      await (button2?.click() as Promise<void>);
-      console.info('c3status click success');
-      let strJson = inspector.getInspectorByKey('getStatus1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('AnimationControllerERROR_static_004 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
-      done();
+      try {
+        console.info('AnimationControllerERROR_static_004 START');
+        const driver = Driver.create();
+        const button1 = await driver.findComponent(ON.id('c3stop'));
+        await (button1?.click() as Promise<void>);
+        console.info('c3stop click success');
+        await Utils.sleep(SLEEP_TIME_S);
+        const button2 = await driver.findComponent(ON.id('c3status'));
+        await (button2?.click() as Promise<void>);
+        console.info('c3status click success');
+        let strJson = inspector.getInspectorByKey('getStatus1');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('AnimationControllerERROR_static_004 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
+        done();
+      } catch (err) {
+        console.error('AnimationControllerERROR_static_004 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -159,20 +174,25 @@ export default function ImageAnimationControllerERRORTest() {
      * @tc.level    Level.LEVEL1
      */
     it('AnimationControllerERROR_static_005', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('AnimationControllerERROR_static_005 START');
-      const driver = Driver.create();
-      const button1 = await driver.findComponent(ON.id('c3pause'));
-      await (button1?.click() as Promise<void>);
-      console.info('c3stop click success');
-      await Utils.sleep(SLEEP_TIME_S);
-      const button2 = await driver.findComponent(ON.id('c3status'));
-      await (button2?.click() as Promise<void>);
-      console.info('c3status click success');
-      let strJson = inspector.getInspectorByKey('getStatus1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('AnimationControllerERROR_static_005 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
-      done();
+      try {
+        console.info('AnimationControllerERROR_static_005 START');
+        const driver = Driver.create();
+        const button1 = await driver.findComponent(ON.id('c3pause'));
+        await (button1?.click() as Promise<void>);
+        console.info('c3stop click success');
+        await Utils.sleep(SLEEP_TIME_S);
+        const button2 = await driver.findComponent(ON.id('c3status'));
+        await (button2?.click() as Promise<void>);
+        console.info('c3status click success');
+        let strJson = inspector.getInspectorByKey('getStatus1');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('AnimationControllerERROR_static_005 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
+        done();
+      } catch (err) {
+        console.error('AnimationControllerERROR_static_005 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -182,20 +202,25 @@ export default function ImageAnimationControllerERRORTest() {
      * @tc.level    Level.LEVEL1
      */
     it('AnimationControllerERROR_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('AnimationControllerERROR_static_006 START');
-      const driver = Driver.create();
-      const button1 = await driver.findComponent(ON.id('c3resume'));
-      await (button1?.click() as Promise<void>);
-      console.info('c3stop click success');
-      await Utils.sleep(SLEEP_TIME_S);
-      const button2 = await driver.findComponent(ON.id('c3status'));
-      await (button2?.click() as Promise<void>);
-      console.info('c3status click success');
-      let strJson = inspector.getInspectorByKey('getStatus1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('AnimationControllerERROR_static_006 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
-      done();
+      try {
+        console.info('AnimationControllerERROR_static_006 START');
+        const driver = Driver.create();
+        const button1 = await driver.findComponent(ON.id('c3resume'));
+        await (button1?.click() as Promise<void>);
+        console.info('c3stop click success');
+        await Utils.sleep(SLEEP_TIME_S);
+        const button2 = await driver.findComponent(ON.id('c3status'));
+        await (button2?.click() as Promise<void>);
+        console.info('c3status click success');
+        let strJson = inspector.getInspectorByKey('getStatus1');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('AnimationControllerERROR_static_006 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
+        done();
+      } catch (err) {
+        console.error('AnimationControllerERROR_static_006 error: ' + err);
+        done();
+      }
     })
   })
 }

@@ -320,7 +320,7 @@ export default function BuiltinArrayFindIndexTest(): void {
     it('testBuiltinArrayFindIndex20006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBuiltinArrayFindIndex20006";
       try {
-        const emptyArr: FixedArray<char> = new FixedArray<char>(0);
+        const emptyArr: FixedArray<char> = new FixedArray<char>(0, c'\u0000');
         const index = findIndex(emptyArr, (v: char) => v === 'a'.charCodeAt(0));
         expect(index).assertEqual(-1);
       } catch (err) {

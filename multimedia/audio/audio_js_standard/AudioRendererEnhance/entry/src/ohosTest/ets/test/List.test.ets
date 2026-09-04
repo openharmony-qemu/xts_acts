@@ -21,6 +21,7 @@ import on_off_outputDeviceChange from './OnOffOutputDeviceChange.test';
 import setChannelBlendMode from './SetChannelBlendMode.test';
 import setVolumeWithRamp from './SetVolumeWithRamp.test';
 import audioOriginalAppIdInfoTest from './AudioOriginalAppIdInfo.test';
+import audioRendererSpecErrorTest from './AudioRendererSpecErrorTest.test';
 
 
 export default function testsuite() {
@@ -32,4 +33,5 @@ export default function testsuite() {
   setChannelBlendMode();
   setVolumeWithRamp();
   AudioRoutingManagerTest();
+  audioRendererSpecErrorTest();
 }

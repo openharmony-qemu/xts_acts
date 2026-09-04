@@ -28,7 +28,7 @@ export default class Utils{
     })
   }
 
-  static async clickComponent(id: string) {
+  static async clickComponent(id: string):Promise<void> {
     let driver = Driver.create();
     let component = await driver.findComponent(ON.id(id));
     if( component != null ){
@@ -36,7 +36,7 @@ export default class Utils{
     }
   }
 
-  static async emitEvent(actualValue: boolean | string | Int | object, eventId: Int) {
+  static async emitEvent(actualValue: boolean | string | Int | object, eventId: Int):Promise<void> {
     try {
       console.info("Entry emitEvent, actualValue = " + actualValue);
       const tempData: Record<string, RecordData> = {
@@ -61,7 +61,7 @@ export default class Utils{
   }
 
   static registerBaseEvent(testCaseName: string, expected: Object, eventId: Int,
-    done: () => void, expectFunction: (backData: emitter.EventData, expected: Object) => void) {
+    done: () => void, expectFunction: (backData: emitter.EventData, expected: Object) => void): void {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: emitter.EventData) => {
@@ -85,7 +85,7 @@ export default class Utils{
     }
   }
 
-  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Int, done: () => void) {
+  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Int, done: () => void): void {
     Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: emitter.EventData, expected: Object) => {
       const data = backData?.data as Record<string, RecordData>;
       const action = data['ACTION'];

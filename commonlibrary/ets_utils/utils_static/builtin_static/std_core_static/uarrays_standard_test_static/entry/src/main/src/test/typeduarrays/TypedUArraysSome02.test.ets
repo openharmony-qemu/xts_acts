@@ -543,7 +543,7 @@ export default function typedUArraysSome02(): void {
     it('testTypedUArraysSome075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([BigInt('18446744073709551615')]);
       let result = arr.some((v) => v >= 0n);
-      expect(result).assertFalse();
+      expect(result).assertTrue();
     });
 
     /**

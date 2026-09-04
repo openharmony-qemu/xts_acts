@@ -254,6 +254,38 @@ struct httpAuthHandler {
               break;
             }
 
+            case 'emitSetRenderProcessModeNullStatic001': {
+              try {
+                web_webview.WebviewController.setRenderProcessMode((null as Int) as web_webview.RenderProcessMode);
+                Utils.emitEvent(true, 41023201)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 41023201)
+              }
+              break;
+            }
+
+            case 'emitSetRenderProcessModeUndefinedStatic001': {
+              try {
+                web_webview.WebviewController.setRenderProcessMode((undefined as Int) as web_webview.RenderProcessMode);
+                Utils.emitEvent(true, 41023202)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 41023202)
+              }
+              break;
+            }
+
+            case 'emitSetRenderProcessModeInvalidStatic001': {
+              try {
+                web_webview.WebviewController.setRenderProcessMode(999 as web_webview.RenderProcessMode);
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 41023203)
+              }
+              break;
+            }
+
             case 'emitWebViewOnRenderProcessResponding': {
               this.controllerone.refresh()
               this.controllerone.loadUrl("resource://rawfile/common_index.html")

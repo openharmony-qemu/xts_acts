@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import router from '@ohos.router';
 import {
   Component,
@@ -29,29 +29,13 @@ import {
 import events_emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import UIAbility from '@ohos.app.ability.UIAbility';
-import hilog from '@ohos.hilog'
-import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 
-import { UtilsTest } from '../Util.test';
 
-let testAbilityContext: common.UIAbilityContext;
-let domain: int = 0x0000;
-let tag: string = 'testTag';
 const waitUiReadyMs = 1000;
-
 export default function ScrollScrollEdgeCallbackJsunit() {
   describe('ScrollScrollEdgeCallbackJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info('text beforeEach start');
       let options: router.RouterOptions = {

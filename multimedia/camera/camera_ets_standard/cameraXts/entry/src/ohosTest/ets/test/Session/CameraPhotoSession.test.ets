@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1741,5 +1741,49 @@ export default function CameraPhotoSessionTest() {
       const testName = 'commitConfig_photo_preconfig_promise_abnormal_003';
       await commitPreconfigPromise(done, testName, abnormalIndex, cameraPreconfigRatio.PRECONFIG_RATIO_16_9);
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOSESSION_ON_MULTI_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOSESSION_ON_MULTI_CALLBACK_0100
+     * @tc.desc   check session listen on multi callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOSESSION_ON_MULTI_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOSESSION_ON_MULTI_CALLBACK_0100';
+      console.info(TAG, testName + ' begin.');
+
+      let callback1 = (error: BusinessError) => {
+        console.error(`callback1 error, code: ${error.code}, message: ${error.message}`)
+      }
+      let callback2 = (error: BusinessError) => {
+        console.error(`callback2 error, code: ${error.code}, message: ${error.message}`)
+      }
+      let callback3 = (error: BusinessError) => {
+        console.error(`callback3 error, code: ${error.code}, message: ${error.message}`)
+      }
+
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mSupportedModes)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          expect(isEmpty(mPhotoSession)).assertFalse();
+          console.info(TAG, testName + ' session created successfully.');
+          mPhotoSession.on('error', callback1);
+          mPhotoSession.on('error', callback2);
+          mPhotoSession.on('error', callback3);
+          mPhotoSession.off('error');
+          await mPhotoSession.release();
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
   })
 }

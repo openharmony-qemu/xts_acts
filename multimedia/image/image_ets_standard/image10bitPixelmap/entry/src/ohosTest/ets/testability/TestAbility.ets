@@ -36,6 +36,8 @@ export default class TestAbility extends UIAbility {
     AppStorage.setOrCreate('testContext', this.context);
     let pathDir: string = this.context.filesDir;
     AppStorage.setOrCreate<string>('pathDir', pathDir);
+    let cacheDir: string = this.context.cacheDir;
+    AppStorage.setOrCreate<string>('cacheDir', cacheDir);
   }
 
   onDestroy() {

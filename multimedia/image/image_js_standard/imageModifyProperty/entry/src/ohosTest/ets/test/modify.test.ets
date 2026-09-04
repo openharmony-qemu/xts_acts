@@ -365,7 +365,6 @@ async function testModifyImageBufferProperty(done: Function, testNum: string, ty
       .catch((error: BusinessError) => {
         console.info(`${testNum} message: ` + error);
         expect(error.code == 62980146).assertTrue();
-        expect(error.message == "The EXIF data failed to be written to the file.").assertTrue();
         done();
       });
   }

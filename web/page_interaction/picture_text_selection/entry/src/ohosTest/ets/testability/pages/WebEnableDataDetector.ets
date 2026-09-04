@@ -67,7 +67,7 @@ struct WebOnFirstContentfulPaint1 {
           .onClick(async () => {
             console.info("key==>" + this.str)
             await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
             switch (this.str) {
               case "emitWebEnableDataDetector": {
                 try {
@@ -91,6 +91,21 @@ struct WebOnFirstContentfulPaint1 {
           })
 
 
+
+
+        // [ARKWEB_COV] null/undefined attribute coverage
+        Web({ src: $rawfile("WebEnableDataDetector.html"), controller: new webView.WebviewController() })
+          .enableDataDetector(null)
+          .enableSelectedDataDetector(null)
+          .height(1)
+          .width(1)
+        Web({ src: $rawfile("WebEnableDataDetector.html"), controller: new webView.WebviewController() })
+          .enableDataDetector(undefined)
+          .enableSelectedDataDetector(undefined)
+          .height(1)
+          .width(1)
+
+
         Web({ src: $rawfile("WebEnableDataDetector.html"), controller: this.webController })
           .enableSelectedDataDetector(true)
           .enableDataDetector(true)
@@ -108,18 +123,6 @@ struct WebOnFirstContentfulPaint1 {
             console.log('onPageEnd url:' + event.url);
             this.isPageEnd = 1;
           })
-
-        // [ARKWEB_COV] null/undefined attribute coverage
-        Web({ src: $rawfile("WebEnableDataDetector.html"), controller: new webView.WebviewController() })
-          .enableDataDetector(null)
-          .enableSelectedDataDetector(null)
-          .height(1)
-          .width(1)
-        Web({ src: $rawfile("WebEnableDataDetector.html"), controller: new webView.WebviewController() })
-          .enableDataDetector(undefined)
-          .enableSelectedDataDetector(undefined)
-          .height(1)
-          .width(1)
       }
       .width('100%')
     }

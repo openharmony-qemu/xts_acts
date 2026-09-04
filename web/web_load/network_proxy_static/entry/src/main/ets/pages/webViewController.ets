@@ -169,6 +169,80 @@ struct webviewController {
               break;
             }
 
+            case 'createWebMessagePortsNullStatic001': {
+              try {
+                this.controller.loadUrl("www.example.com");
+                setTimeout(() => {
+                  let incognito: boolean | null = null;
+                  let ports = this.controller.createWebMessagePorts(incognito as boolean);
+                  Utils.emitEvent(ports.length > 0, 41022001);
+                }, 3000)
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 41022001);
+              }
+              break;
+            }
+
+            case 'createWebMessagePortsUndefinedStatic001': {
+              try {
+                this.controller.loadUrl("www.example.com");
+                setTimeout(() => {
+                  let incognito: boolean | undefined = undefined;
+                  let ports = this.controller.createWebMessagePorts(incognito as boolean);
+                  Utils.emitEvent(ports.length > 0, 41022002);
+                }, 3000)
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 41022002);
+              }
+              break;
+            }
+
+            case 'createWebMessagePortsReturnStatic001': {
+              try {
+                this.controller.loadUrl("www.example.com");
+                setTimeout(() => {
+                  let ports = this.controller.createWebMessagePorts();
+                  Utils.emitEvent(ports.length === 2, 41022003);
+                }, 3000)
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 41022003);
+              }
+              break;
+            }
+
+            case 'searchNextNullStatic001': {
+              try {
+                this.controller.loadUrl("www.example.com");
+                setTimeout(() => {
+                  let param: boolean | null = null;
+                  this.controller.searchNext(param as boolean);
+                  Utils.emitEvent(true, 41022101);
+                }, 3000)
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 41022101);
+              }
+              break;
+            }
+
+            case 'searchNextUndefinedStatic001': {
+              try {
+                this.controller.loadUrl("www.example.com");
+                setTimeout(() => {
+                  let param: boolean | undefined = undefined;
+                  this.controller.searchNext(param as boolean);
+                  Utils.emitEvent(true, 41022102);
+                }, 3000)
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 41022102);
+              }
+              break;
+            }
+
           }
         })
       }

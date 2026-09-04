@@ -14,27 +14,15 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
 export default function upDownTreeEventTest() {
   describe('upDownTreeEventTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("upDownTreeEventTest beforeEach start");
       let options: router.RouterOptions = {
@@ -56,16 +44,19 @@ export default function upDownTreeEventTest() {
       }
       console.info("upDownTreeEventTest beforeEach end");
     });
-    
+
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("upDownTreeEventTest after each called");
     });
-    
 
 
-    
-    
+
+
 /**
      * @tc.number   nodeOnWillUnbindTest_static_0100
      * @tc.name     nodeOnWillUnbindTest_static_0100
@@ -75,13 +66,33 @@ export default function upDownTreeEventTest() {
 it('nodeOnWillUnbindTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnWillUnbindTest_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('upDownTree')) as Component;
-      await button.click();
-      await CommonFunc.sleep(1000);
+      try {
+        await button.click();
+      } catch (err) {
+        console.info('upDownTreeEventTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let button1 = await driver.findComponent(ON.id('getTestValue')) as Component;
-      await button1.click();
-      await CommonFunc.sleep(2000);
+      try {
+        await button1.click();
+      } catch (err) {
+        console.info('upDownTreeEventTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1: string = inspector.getInspectorByKey('willUnbindValue_id');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[nodeOnWillUnbindTest_static_0100] component obj1 is: " + JSON.stringifyJsonElement(obj1));
@@ -93,7 +104,6 @@ it('nodeOnWillUnbindTest_static_0100', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
 /**
      * @tc.number   nodeOnUnBindTest_static_0200
      * @tc.name     nodeOnUnBindTest_static_0200
@@ -103,13 +113,33 @@ it('nodeOnWillUnbindTest_static_0100', Level.LEVEL0, async (done: () => void): P
 it('nodeOnUnBindTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnUnBindTest_static_0200 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('upDownTree')) as Component;
-      await button.click();
-      await CommonFunc.sleep(1000);
+      try {
+        await button.click();
+      } catch (err) {
+        console.info('upDownTreeEventTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let button1 = await driver.findComponent(ON.id('getTestValue')) as Component;
-      await button1.click();
-      await CommonFunc.sleep(2000);
+      try {
+        await button1.click();
+      } catch (err) {
+        console.info('upDownTreeEventTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('unbindValue_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[nodeOnUnBindTest_static_0200] component obj is: " + JSON.stringifyJsonElement(obj));
@@ -121,7 +151,6 @@ it('nodeOnUnBindTest_static_0200', Level.LEVEL0, async (done: () => void): Promi
 
 
     
-    
 /**
      * @tc.number   nodeOnDetachTest_static_0300
      * @tc.name     nodeOnDetachTest_static_0300
@@ -131,13 +160,33 @@ it('nodeOnUnBindTest_static_0200', Level.LEVEL0, async (done: () => void): Promi
 it('nodeOnDetachTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnDetachTest_static_0300 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('upDownTree')) as Component;
-      await button.click();
-      await CommonFunc.sleep(1000);
+      try {
+        await button.click();
+      } catch (err) {
+        console.info('upDownTreeEventTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let button1 = await driver.findComponent(ON.id('getTestValue')) as Component;
-      await button1.click();
-      await CommonFunc.sleep(2000);
+      try {
+        await button1.click();
+      } catch (err) {
+        console.info('upDownTreeEventTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('detachValue_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[nodeOnDetachTest_static_0300] component obj is: " + JSON.stringifyJsonElement(obj));
@@ -149,7 +198,6 @@ it('nodeOnDetachTest_static_0300', Level.LEVEL0, async (done: () => void): Promi
 
 
     
-    
 /**
      * @tc.number   nodeOnAttachTest_static_0400
      * @tc.name     nodeOnAttachTest_static_0400
@@ -159,10 +207,22 @@ it('nodeOnDetachTest_static_0300', Level.LEVEL0, async (done: () => void): Promi
 it('nodeOnAttachTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnAttachTest_static_0400 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('getTestValue')) as Component;
-      await button.click();
-      await CommonFunc.sleep(1000);
+      try {
+        await button.click();
+      } catch (err) {
+        console.info('upDownTreeEventTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('attachValue_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[nodeOnAttachTest_static_0400] component obj is: " + JSON.stringifyJsonElement(obj));
@@ -174,7 +234,6 @@ it('nodeOnAttachTest_static_0400', Level.LEVEL0, async (done: () => void): Promi
 
 
     
-    
 /**
      * @tc.number   nodeOnBindTest_static_0500
      * @tc.name     nodeOnBindTest_static_0500
@@ -184,10 +243,22 @@ it('nodeOnAttachTest_static_0400', Level.LEVEL0, async (done: () => void): Promi
 it('nodeOnBindTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnBindTest_static_0500 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('getTestValue')) as Component;
-      await button.click();
-      await CommonFunc.sleep(1000);
+      try {
+        await button.click();
+      } catch (err) {
+        console.info('upDownTreeEventTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('bindValue_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[nodeOnBindTest_static_0500] component obj is: " + JSON.stringifyJsonElement(obj));
@@ -199,7 +270,6 @@ it('nodeOnBindTest_static_0500', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
 /**
      * @tc.number   nodeOnWillBindTest_static_0600
      * @tc.name     nodeOnWillBindTest_static_0600
@@ -209,10 +279,22 @@ it('nodeOnBindTest_static_0500', Level.LEVEL0, async (done: () => void): Promise
 it('nodeOnWillBindTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnWillBindTest_static_0600 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('getTestValue')) as Component;
-      await button.click();
-      await CommonFunc.sleep(1000);
+      try {
+        await button.click();
+      } catch (err) {
+        console.info('upDownTreeEventTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('upDownTreeEventTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('willBindValue_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[nodeOnWillBindTest_static_0600] component obj is: " + JSON.stringifyJsonElement(obj));

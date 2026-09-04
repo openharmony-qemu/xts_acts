@@ -1,4 +1,4 @@
-import testNapi, { IsNotificationEnabled } from 'libenable.so';
+import { IsNotificationEnabled } from 'libenable.so';
 
 @Entry
 @Component

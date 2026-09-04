@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { ComputedBarAttribute } from '@ohos.arkui.component'
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 export default function gridScrollbarUpdateTest() {
   describe('gridScrollbarUpdateTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(async (): Promise<void> => {
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {

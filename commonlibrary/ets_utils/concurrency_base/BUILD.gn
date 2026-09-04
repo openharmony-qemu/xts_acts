@@ -18,5 +18,5 @@ ohos_js_app_suite("concurrency_base_js_hap") {
   testonly = true
   part_name = "ets_utils"
   subsystem_name = "commonlibrary"
-  certificate_profile = "signature/openharmony_sx.p7b"
+  certificate_profile = "./signature/openharmony_sx.p7b"
 }

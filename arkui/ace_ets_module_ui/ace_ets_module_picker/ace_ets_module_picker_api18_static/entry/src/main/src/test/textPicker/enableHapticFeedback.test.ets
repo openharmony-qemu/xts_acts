@@ -13,32 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import router from '@ohos.router';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-
 export default function EnableHapticFeedbackTest() {
   describe('EnableHapticFeedbackTest', () => {
 
-    beforeAll(async (): Promise<void> => {
-      console.info("TextPickerAddApi beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.api18.static", "EntryAbility")
-
-    });
-    
     beforeEach(async (done: () => void): Promise<void> => {
       console.info('TextPickerAddApi beforeEach start');
       let options: router.RouterOptions = {

@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -29,10 +28,6 @@ import { BusinessError, RecordData } from '@ohos.base';
 import { PlaybackSpeed } from '@ohos.arkui.component';
 export default function videoJsunit2() {
   describe('videoTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.platform.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("video beforeEach start");
       let options: router.RouterOptions = {
@@ -54,7 +49,11 @@ export default function videoJsunit2() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('videoTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("video after each called");
     });
 
@@ -102,8 +101,12 @@ it('testVideoStatic02', Level.LEVEL1, async (done: () => void): Promise<void> =>
         console.log("[testVideo02] change component data error: " + JSON.stringify((err as BusinessError)?.message));
         expect().assertFail()
       }
-      await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testVideo02 sleep err: ' + JSON.stringify(err));
+      }
+      let strJsonNew = inspector.getInspectorByKey('video');
       console.info("[testVideo02] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo02] END');
       done();
@@ -133,8 +136,12 @@ it('testVideoStatic03', Level.LEVEL1, async (done: () => void): Promise<void> =>
         console.log("[testVideo03] change component data error: " + JSON.stringify((err as BusinessError)?.message));
         expect().assertFail()
       }
-      await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testVideo03 sleep err: ' + JSON.stringify(err));
+      }
+      let strJsonNew = inspector.getInspectorByKey('video');
       console.info("[testVideo03] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo03] END');
       done();
@@ -164,8 +171,12 @@ it('testVideoStatic04', Level.LEVEL1, async (done: () => void): Promise<void> =>
         console.log("[testVideo04] change component data error: " + JSON.stringify((err as BusinessError)?.message));
         expect().assertFail()
       }
-      await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testVideo04 sleep err: ' + JSON.stringify(err));
+      }
+      let strJsonNew = inspector.getInspectorByKey('video');
       console.info("[testVideo04] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo04] END');
       done();
@@ -195,8 +206,12 @@ it('testVideoStatic05', Level.LEVEL1, async (done: () => void): Promise<void> =>
         console.log("[testVideo05] change component data error: " + JSON.stringify((err as BusinessError)?.message));
         expect().assertFail()
       }
-      await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testVideo05 sleep err: ' + JSON.stringify(err));
+      }
+      let strJsonNew = inspector.getInspectorByKey('video');
 
       console.info("[testVideo05] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo05] END');
@@ -227,8 +242,12 @@ it('testVideoStatic06', Level.LEVEL1, async (done: () => void): Promise<void> =>
         console.log("[testVideo06] change component data error: " + JSON.stringify((err as BusinessError)?.message));
         expect().assertFail()
       }
-      await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testVideo06 sleep err: ' + JSON.stringify(err));
+      }
+      let strJsonNew = inspector.getInspectorByKey('video');
 
       console.info("[testVideo06] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo06] END');
@@ -259,8 +278,12 @@ it('testVideoStatic07', Level.LEVEL1, async (done: () => void): Promise<void> =>
         console.log("[testVideo07] change component data error: " + JSON.stringify((err as BusinessError)?.message));
         expect().assertFail()
       }
-      await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testVideo07 sleep err: ' + JSON.stringify(err));
+      }
+      let strJsonNew = inspector.getInspectorByKey('video');
 
       console.info("[testVideo07] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo07] END');

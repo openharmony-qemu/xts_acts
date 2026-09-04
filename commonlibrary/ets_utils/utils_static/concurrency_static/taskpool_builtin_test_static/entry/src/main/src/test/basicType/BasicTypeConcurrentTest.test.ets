@@ -1,0 +1,432 @@
+'use static';
+/*
+ * Copyright (c) 2026 RKH Corp.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import Utils from '../Utils.test';
+
+function testNumberNoLock(): void {
+  const holder: NumberHolder = new NumberHolder();
+  for (let i: number = 0; i < 10; i++) {
+    try {
+      holder.value = holder.value + 1;
+    } catch (e) {
+      console.info(`testNumberNoLock catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
+  }
+}
+
+function testNumberAtomic(counter: AtomicInt, taskCounter: AtomicInt): void {
+  for (let i: number = 0; i < 10; i++) {
+    counter.fetchAdd(1);
+    taskCounter.fetchAdd(1);
+  }
+}
+
+function testNumberMutex(holder: NumberHolder, mutex: Mutex, taskCounter: AtomicInt): void {
+  for (let i: number = 0; i < 10; i++) {
+    mutex.lock();
+    try {
+      holder.value = holder.value + 1;
+    } finally {
+      mutex.unlock();
+    }
+    taskCounter.fetchAdd(1);
+  }
+}
+
+function testStringNoLock(): void {
+  const holder: StringHolder = new StringHolder();
+  for (let i: number = 0; i < 10; i++) {
+    try {
+      holder.value = holder.value + 'a';
+    } catch (e) {
+      console.info(`testStringNoLock catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
+  }
+}
+
+function testStringMutex(holder: StringHolder, mutex: Mutex, taskCounter: AtomicInt): void {
+  for (let i: number = 0; i < 10; i++) {
+    mutex.lock();
+    try {
+      holder.value = holder.value + 'a';
+    } finally {
+      mutex.unlock();
+    }
+    taskCounter.fetchAdd(1);
+  }
+}
+
+function testBooleanNoLock(): void {
+  const holder: BooleanHolder = new BooleanHolder();
+  for (let i: number = 0; i < 10; i++) {
+    try {
+      holder.value = !holder.value;
+    } catch (e) {
+      console.info(`testBooleanNoLock catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
+  }
+}
+
+function testBooleanAtomic(flag: AtomicBoolean): void {
+  for (let i: number = 0; i < 10; i++) {
+    try {
+      flag.exchange(!flag.load());
+    } catch (e) {
+      console.info(`testBooleanAtomic catch race-tolerated error: ${JSON.stringify(e)}`);
+    }
+  }
+}
+
+function testObjectNoLock(): void {
+  const holder: ObjectHolder = new ObjectHolder();
+  for (let i: number = 0; i < 10; i++) {
+    try {
+      holder.value = holder.value + 1;
+      holder.name = holder.name + 'a';
+    } catch (e) {
+      console.info(`testObjectNoLock catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
+  }
+}
+
+function testObjectMutex(holder: ObjectHolder, mutex: Mutex, taskCounter: AtomicInt): void {
+  for (let i: number = 0; i < 10; i++) {
+    mutex.lock();
+    try {
+      holder.value = holder.value + 1;
+      holder.name = holder.name + 'a';
+    } finally {
+      mutex.unlock();
+    }
+    taskCounter.fetchAdd(1);
+  }
+}
+
+function testNumberAtomicStress(counter: AtomicInt, taskCounter: AtomicInt): void {
+  for (let i: number = 0; i < 100; i++) {
+    counter.fetchAdd(1);
+    taskCounter.fetchAdd(1);
+  }
+}
+
+class NumberHolder {
+  value: number = 0;
+}
+
+class StringHolder {
+  value: string = '';
+}
+
+class BooleanHolder {
+  value: boolean = false;
+}
+
+class ObjectHolder {
+  value: number = 0;
+  name: string = '';
+}
+
+export default function BasicTypeConcurrentTest(): void {
+  describe('BasicTypeConcurrentTest', (): void => {
+    beforeAll((): void => { });
+    beforeEach((): void => { });
+    afterEach((): void => { });
+    afterAll((): void => {});
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_BASICTYPE_NUMBER_NOLOCK_0100
+     * @tc.name   testNumberNoLockConcurrent0100
+     * @tc.desc   CON-030 number无锁竞态并发递增
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNumberNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let count: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
+        for (let i: number = 0; i < totalTasks; i++) {
+          tasks.push(taskpool.execute(testNumberNoLock));
+        }
+        testNumberNoLock();
+        count.fetchAdd(1);
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
+        expect(count.load()).assertEqual(totalTasks + 1);
+      } catch (e) {
+        console.info(`testNumberNoLockConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_BASICTYPE_NUMBER_ATOMIC_0200
+     * @tc.name   testNumberAtomicConcurrent0200
+     * @tc.desc   CON-031 number AtomicInt保护并发递增
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNumberAtomicConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let counter: AtomicInt = new AtomicInt(0);
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
+        for (let i: number = 0; i < totalTasks; i++) {
+          tasks.push(taskpool.execute(testNumberAtomic, counter, taskCounter));
+        }
+        testNumberAtomic(counter, taskCounter);
+        await Promise.all(tasks);
+        expect(counter.load()).assertEqual(totalTasks * 10 + 10);
+      } catch (e) {
+        console.info(`testNumberAtomicConcurrent0200 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_BASICTYPE_NUMBER_MUTEX_0300
+     * @tc.name   testNumberMutexConcurrent0300
+     * @tc.desc   CON-032 number Mutex保护并发递增
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNumberMutexConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let holder: NumberHolder = new NumberHolder();
+        let mutex: Mutex = new Mutex();
+        let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
+        for (let i: number = 0; i < totalTasks; i++) {
+          tasks.push(taskpool.execute(testNumberMutex, holder, mutex, taskCounter));
+        }
+        testNumberMutex(holder, mutex, taskCounter);
+        await Promise.all(tasks);
+        expect(holder.value).assertEqual(totalTasks * 10 + 10);
+      } catch (e) {
+        console.info(`testNumberMutexConcurrent0300 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_BASICTYPE_STRING_NOLOCK_0400
+     * @tc.name   testStringNoLockConcurrent0400
+     * @tc.desc   CON-033 string无锁竞态并发修改
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStringNoLockConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let count: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
+        for (let i: number = 0; i < totalTasks; i++) {
+          tasks.push(taskpool.execute(testStringNoLock));
+        }
+        testStringNoLock();
+        count.fetchAdd(1);
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
+        expect(count.load()).assertEqual(totalTasks + 1);
+      } catch (e) {
+        console.info(`testStringNoLockConcurrent0400 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_BASICTYPE_STRING_MUTEX_0500
+     * @tc.name   testStringMutexConcurrent0500
+     * @tc.desc   CON-034 string Mutex保护并发修改
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStringMutexConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let holder: StringHolder = new StringHolder();
+        let mutex: Mutex = new Mutex();
+        let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
+        for (let i: number = 0; i < totalTasks; i++) {
+          tasks.push(taskpool.execute(testStringMutex, holder, mutex, taskCounter));
+        }
+        testStringMutex(holder, mutex, taskCounter);
+        await Promise.all(tasks);
+        expect(holder.value.length).assertEqual(totalTasks * 10 + 10);
+      } catch (e) {
+        console.info(`testStringMutexConcurrent0500 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_BASICTYPE_BOOLEAN_NOLOCK_0600
+     * @tc.name   testBooleanNoLockConcurrent0600
+     * @tc.desc   CON-035 boolean无锁竞态并发修改
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testBooleanNoLockConcurrent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let count: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
+        for (let i: number = 0; i < totalTasks; i++) {
+          tasks.push(taskpool.execute(testBooleanNoLock));
+        }
+        testBooleanNoLock();
+        count.fetchAdd(1);
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
+        expect(count.load()).assertEqual(totalTasks + 1);
+      } catch (e) {
+        console.info(`testBooleanNoLockConcurrent0600 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_BASICTYPE_BOOLEAN_ATOMIC_0700
+     * @tc.name   testBooleanAtomicConcurrent0700
+     * @tc.desc   CON-036 boolean AtomicBool保护并发修改
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testBooleanAtomicConcurrent0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let count: AtomicInt = new AtomicInt(0);
+        let flag: AtomicBoolean = new AtomicBoolean(false);
+        let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
+        for (let i: number = 0; i < totalTasks; i++) {
+          tasks.push(taskpool.execute(testBooleanAtomic, flag));
+        }
+        testBooleanAtomic(flag);
+        count.fetchAdd(1);
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
+        expect(count.load()).assertEqual(totalTasks + 1);
+      } catch (e) {
+        console.info(`testBooleanAtomicConcurrent0700 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_BASICTYPE_OBJECT_NOLOCK_0800
+     * @tc.name   testObjectNoLockConcurrent0800
+     * @tc.desc   CON-037 Object无锁竞态并发多字段属性修改
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testObjectNoLockConcurrent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let count: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
+        for (let i: number = 0; i < totalTasks; i++) {
+          tasks.push(taskpool.execute(testObjectNoLock));
+        }
+        testObjectNoLock();
+        count.fetchAdd(1);
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
+        expect(count.load()).assertEqual(totalTasks + 1);
+      } catch (e) {
+        console.info(`testObjectNoLockConcurrent0800 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_BASICTYPE_OBJECT_MUTEX_0900
+     * @tc.name   testObjectMutexConcurrent0900
+     * @tc.desc   CON-038 Object Mutex保护并发多字段属性修改
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testObjectMutexConcurrent0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let holder: ObjectHolder = new ObjectHolder();
+        let mutex: Mutex = new Mutex();
+        let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
+        for (let i: number = 0; i < totalTasks; i++) {
+          tasks.push(taskpool.execute(testObjectMutex, holder, mutex, taskCounter));
+        }
+        testObjectMutex(holder, mutex, taskCounter);
+        await Promise.all(tasks);
+        expect(holder.value).assertEqual(totalTasks * 10 + 10);
+        expect(holder.name.length).assertEqual(totalTasks * 10 + 10);
+      } catch (e) {
+        console.info(`testObjectMutexConcurrent0900 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_BASICTYPE_NUMBER_ATOMIC_STRESS_1000
+     * @tc.name   testNumberAtomicStressConcurrent1000
+     * @tc.desc   CON-039 number 100线程AtomicInt并发递增压力
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNumberAtomicStressConcurrent1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let counter: AtomicInt = new AtomicInt(0);
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 100;
+        let tasks: Promise<Any>[] = [];
+        for (let i: number = 0; i < totalTasks; i++) {
+          tasks.push(taskpool.execute(testNumberAtomicStress, counter, taskCounter));
+        }
+        await Promise.all(tasks);
+        expect(counter.load()).assertEqual(totalTasks * 100);
+      } catch (e) {
+        console.info(`testNumberAtomicStressConcurrent1000 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
+    });
+  });
+}

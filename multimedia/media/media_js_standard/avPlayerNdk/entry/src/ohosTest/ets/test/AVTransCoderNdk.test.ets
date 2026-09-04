@@ -24,6 +24,7 @@ import router, { RouterOptions } from '@system.router'
 let isSupportHdr: Boolean;
 let isSupportHEVC: Boolean;
 let isExistVpeLib: Boolean;
+let isExistVpeLib_ext: Boolean;
 const VIDEO_AVC_AUDIO_AAC = 'H264_AAC.mp4';
 const VIDEO_HDR10 = 'output_hdr10.mp4';
 const VIDEO_HLG = 'output_hlg.mp4';
@@ -31,6 +32,9 @@ const VIDEO_VP9 = '1vp9_320x240_30.mp4';
 const VIDEO_WEBM = 'vp8_720x480_60.webm';
 const VIDEO_LARAGE_RESOLUTION = 'output_8k.mp4';
 const VIDEO_SMALL_RESOLUTION = 'output_160x120.mp4';
+const VIDEO_EXCEEDS_8K_RESOLUTION = 'output_avc_7680x4320.mp4';
+const VIDEO_LARGE_4096_RESOLUTION = 'output_avc_4096x2304.mp4';
+const VIDEO_FEWER_238_RESOLUTION = 'output_avc_238x238.mp4';
 const AUDIO_SOURCE_MP3 = '01.mp3';
 const VIDEO_SOURCE_HDR_VIVID = 'test_hdr_1.mp4';
 const VIDEO_HIGH_BITRATE = "test_highBit_v46Mbps_a295kbps.mp4";
@@ -182,6 +186,7 @@ export default function AVTransCoderNdkTest() {
       isSupportHdr = await isExist('/system/lib64/ndk/libvideo_processing_capi_impl.so');
       isSupportHEVC = await isExist('/system/lib64/libav_codec_hevc_parser.z.so');
       isExistVpeLib = await isExist('/system/lib64/libvideoprocessingengine.z.so');
+      isExistVpeLib_ext = await isExist('/system/lib64/libvideoprocessingengine_ext.z.so');
     })
 
     afterEach(async () => {
@@ -421,7 +426,7 @@ export default function AVTransCoderNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkSetResolutionError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isExistVpeLib) {
+      if (isExistVpeLib && isExistVpeLib_ext) {
         let avFd = await getFileFd(VIDEO_AVC_AUDIO_AAC);
         let originWidth = 720;
         let originHeight = 480;
@@ -431,7 +436,7 @@ export default function AVTransCoderNdkTest() {
         expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
         done();
       } else {
-        expect(isExistVpeLib).assertEqual(false);
+        console.info('case testOhAvTransCoderNdkSetResolutionError0002 isExistVpeLib: ', isExistVpeLib, 'isExistVpeLib_ext: ', isExistVpeLib_ext);
         done();
       }
     });
@@ -445,7 +450,7 @@ export default function AVTransCoderNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkSetResolutionError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isExistVpeLib) {
+      if (isExistVpeLib && isExistVpeLib_ext) {
         let avFd = await getFileFd(VIDEO_AVC_AUDIO_AAC);
         let originWidth = 720;
         let originHeight = 480;
@@ -455,7 +460,7 @@ export default function AVTransCoderNdkTest() {
         expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
         done();
       } else {
-        expect(isExistVpeLib).assertEqual(false);
+        console.info('case testOhAvTransCoderNdkSetResolutionError0003 isExistVpeLib: ', isExistVpeLib, 'isExistVpeLib_ext: ', isExistVpeLib_ext);
         done();
       }
     });
@@ -1469,7 +1474,7 @@ export default function AVTransCoderNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoResolution0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isExistVpeLib) {
+      if (isExistVpeLib && isExistVpeLib_ext) {
         let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
         let dstFd = await getFileFd('testOhAvTransCodeConfigSetDstVideoResolution0001_output_video.mp4');
         let originWidth = 720;
@@ -1481,7 +1486,7 @@ export default function AVTransCoderNdkTest() {
         expect(ret).assertEqual(0);
         done();
       } else {
-        expect(isExistVpeLib).assertEqual(false);
+        console.info('case testOhAvTransCodeConfigSetDstVideoResolution0001 isExistVpeLib: ', isExistVpeLib, 'isExistVpeLib_ext: ', isExistVpeLib_ext);
         done();
       }
     });
@@ -1966,6 +1971,162 @@ export default function AVTransCoderNdkTest() {
       let ret: number = avTransCoderNdk.AvTransCoderCreate();
       expect(ret).assertEqual(0);
       done();
+    });
+
+    /**
+     * @tc.name   testOhAvTransCoderNdk4K0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_4K_0001
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 4096 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderNdk4K0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let avFd = await getRawFd(VIDEO_LARGE_4096_RESOLUTION);
+        let dstFd = await getFileFd('testOhAvTransCoderNdk4K0001_output_video.mp4');
+        let originWidth = 4094;
+        let originHeight = 2302;
+        let ret: number = avTransCoderNdk.AvTransCodeConfigSetDstVideoResolution(avFd.fd, avFd.offset, avFd.length, dstFd.fd, originWidth, originHeight);
+        console.log('case testOhAvTransCoderNdk4K0001 ret ' + JSON.stringify(ret));
+        await closeRawFd(VIDEO_LARGE_4096_RESOLUTION);
+        await closeFileFd(dstFd.fd);
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(4096, 2304);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(4094, 2302); // output resolution boundary value
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+        } else {
+          console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+        }
+        done();
+      } catch (err) {
+        console.error('testOhAvTransCoderNdk4K0001 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOhAvTransCoderNdk240Resolution0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_240RESOLUTION_0001
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 240 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderNdk240Resolution0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let avFd = await getRawFd(VIDEO_FEWER_238_RESOLUTION);
+        let dstFd = await getFileFd('testOhAvTransCoderNdk240Resolution0001_output_video.mp4');
+        let originWidth = 240;
+        let originHeight = 240;
+        let ret: number = avTransCoderNdk.AvTransCodeConfigSetDstVideoResolution(avFd.fd, avFd.offset, avFd.length, dstFd.fd, originWidth, originHeight);
+        console.log('case testOhAvTransCoderNdk240Resolution0001 ret ' + JSON.stringify(ret));
+        await closeRawFd(VIDEO_FEWER_238_RESOLUTION);
+        await closeFileFd(dstFd.fd);
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(238, 238);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(240, 240);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+        } else {
+          console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
+        }
+        done();
+      } catch (err) {
+        console.error('testOhAvTransCoderNdk240Resolution0001 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOhAvTransCoderNdk7680resolution0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_7680RESOLUTION_0001
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 7680 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderNdk7680resolution0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let avFd = await getRawFd(VIDEO_EXCEEDS_8K_RESOLUTION);
+        let dstFd = await getFileFd('testOhAvTransCoderNdk7680resolution0001_output_video.mp4');
+        let originWidth = 7680;
+        let originHeight = 4318;
+        let ret: number = avTransCoderNdk.AvTransCodeConfigSetDstVideoResolution(avFd.fd, avFd.offset, avFd.length, dstFd.fd, originWidth, originHeight);
+        console.log('case testOhAvTransCoderNdk7680resolution0001 ret ' + JSON.stringify(ret));
+        await closeRawFd(VIDEO_EXCEEDS_8K_RESOLUTION);
+        await closeFileFd(dstFd.fd);
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(7680, 4318); // output resolution boundary value
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+        } else {
+          console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+        }
+        done();
+      } catch (err) {
+        console.error('testOhAvTransCoderNdk7680resolution0001 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOhAvTransCoderNdk4096resolution0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_4096RESOLUTION_0001
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 4096 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderNdk4096resolution0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let avFd = await getRawFd(VIDEO_EXCEEDS_8K_RESOLUTION);
+        let dstFd = await getFileFd('testOhAvTransCoderNdk4096resolution0001_output_video.mp4');
+        let originWidth = 4096;
+        let originHeight = 2304;
+        let ret: number = avTransCoderNdk.AvTransCodeConfigSetDstVideoResolution(avFd.fd, avFd.offset, avFd.length, dstFd.fd, originWidth, originHeight);
+        console.log('case testOhAvTransCoderNdk4096resolution0001 ret ' + JSON.stringify(ret));
+        await closeRawFd(VIDEO_EXCEEDS_8K_RESOLUTION);
+        await closeFileFd(dstFd.fd);
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(4096, 2304);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+        } else {
+          console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+        }
+        done();
+      } catch (err) {
+        console.error('testOhAvTransCoderNdk4096resolution0001 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+        done();
+      }
     });
   })
 }

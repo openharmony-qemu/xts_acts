@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Annotation Navigation Target</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 900px; font-family: Arial, sans-serif; background: #f8fafc; color: #1e293b; }
+    main { max-width: 760px; margin: 0 auto; padding: 22px 14px; }
+    section { margin: 16px 0; padding: 14px; border: 1px solid #cbd5e1; border-radius: 6px; background: white; }
+    button, a { margin: 6px; padding: 9px 12px; border-radius: 4px; }
+    button { border: 0; background: #0f766e; color: white; font-weight: 600; }
+    a { color: #0f766e; }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <h1 data-anno="nav" data-case="nav-title" id="nav-title">Annotation Navigation Target</h1>
+      <p>这是完整页面跳转后的目标页，用于验证旧 overlay 消失和新页面重新标注。</p>
+      <button data-anno="nav" data-case="nav-button" id="nav-button">目标页按钮</button>
+      <a data-anno="nav" data-case="nav-link" id="nav-link" href="annotation_fixture.html">返回 fixture</a>
+    </section>
+  </main>
+  <script>
+    window.__annotationTest = {
+      snapshot: function() {
+        return {
+          href: location.href,
+          title: document.title,
+          routeName: 'nav-target',
+          overlay: this.overlayInfo()
+        };
+      },
+      overlayRoot: function() {
+        return document.getElementById('__arkweb_page_annotation_overlay_root__');
+      },
+      overlayInfo: function() {
+        var root = this.overlayRoot();
+        if (!root) {
+          return { exists: false, childCount: 0, boxes: 0, labels: 0, labelTexts: [] };
+        }
+        var labels = [];
+        var boxes = 0;
+        Array.prototype.slice.call(root.children).forEach(function(item) {
+          var text = (item.textContent || '').trim();
+          if (text.length > 0) {
+            labels.push(text);
+          } else {
+            boxes++;
+          }
+        });
+        return { exists: true, childCount: root.children.length, boxes: boxes, labels: labels.length, labelTexts: labels };
+      }
+    };
+  </script>
+</body>
+</html>

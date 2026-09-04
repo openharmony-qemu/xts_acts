@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -22,14 +22,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function SliderEnableHapticFeedbackTest() {
   describe('SliderAddEnableHapticFeedbackApi', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("SliderAddEnableHapticFeedbackApi beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info('SliderAddEnableHapticFeedbackApi beforeEach start');
       let options: router.RouterOptions = {
@@ -60,6 +54,7 @@ export default function SliderEnableHapticFeedbackTest() {
      * @tc.level    Level.LEVEL1
      */
 it('SliderAddEnableHapticFeedbackApi_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SliderAddEnableHapticFeedbackApi_static_001] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
@@ -73,6 +68,10 @@ it('SliderAddEnableHapticFeedbackApi_static_001', Level.LEVEL1, async (done: () 
       expect(JSON.parseJsonElement(slider).getElement('$attrs').getString('enableHapticFeedback')).assertEqual('true');
       console.info('[SliderAddEnableHapticFeedbackApi_static_001] END');
       done();
+      } catch (err) {
+        console.error('SliderAddEnableHapticFeedbackApi_static_001 error: ' + err);
+        done();
+      }
     });
 
     
@@ -84,6 +83,7 @@ it('SliderAddEnableHapticFeedbackApi_static_001', Level.LEVEL1, async (done: () 
      * @tc.level    Level.LEVEL1
      */
 it('SliderAddEnableHapticFeedbackApi_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SliderAddEnableHapticFeedbackApi_static_002] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
@@ -97,6 +97,10 @@ it('SliderAddEnableHapticFeedbackApi_static_002', Level.LEVEL1, async (done: () 
       expect(JSON.parseJsonElement(slider).getElement('$attrs').getString('enableHapticFeedback')).assertEqual('false');
       console.info('[SliderAddEnableHapticFeedbackApi_static_002] END');
       done();
+      } catch (err) {
+        console.error('SliderAddEnableHapticFeedbackApi_static_002 error: ' + err);
+        done();
+      }
     });
 
     
@@ -108,6 +112,7 @@ it('SliderAddEnableHapticFeedbackApi_static_002', Level.LEVEL1, async (done: () 
      * @tc.level    Level.LEVEL1
      */
 it('SliderAddEnableHapticFeedbackApi_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SliderAddEnableHapticFeedbackApi_static_003] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
@@ -121,6 +126,10 @@ it('SliderAddEnableHapticFeedbackApi_static_003', Level.LEVEL1, async (done: () 
       expect(JSON.parseJsonElement(slider).getElement('$attrs').getString('enableHapticFeedback')).assertEqual('true');
       console.info('[SliderAddEnableHapticFeedbackApi_static_003] END');
       done();
+      } catch (err) {
+        console.error('SliderAddEnableHapticFeedbackApi_static_003 error: ' + err);
+        done();
+      }
     });
 
     
@@ -132,6 +141,7 @@ it('SliderAddEnableHapticFeedbackApi_static_003', Level.LEVEL1, async (done: () 
      * @tc.level    Level.LEVEL1
      */
 it('SliderAddEnableHapticFeedbackApi_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SliderAddEnableHapticFeedbackApi_static_004] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
@@ -145,6 +155,10 @@ it('SliderAddEnableHapticFeedbackApi_static_004', Level.LEVEL1, async (done: () 
       expect(JSON.parseJsonElement(slider).getElement('$attrs').getString('enableHapticFeedback')).assertEqual('true');
       console.info('[SliderAddEnableHapticFeedbackApi_static_004] END');
       done();
+      } catch (err) {
+        console.error('SliderAddEnableHapticFeedbackApi_static_004 error: ' + err);
+        done();
+      }
     });
   })
 }

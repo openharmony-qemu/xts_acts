@@ -1965,8 +1965,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_1: FixedArray<Boolean> = new FixedArray<Boolean>(1);
-      let dst_1: FixedArray<boolean> = new FixedArray<boolean>(1);
+      let src_1: FixedArray<Boolean> = new FixedArray<Boolean>(1, false);
+      let dst_1: FixedArray<boolean> = new FixedArray<boolean>(1, false);
       dst_1 = src_1 as FixedArray<boolean>;
       expect(dst_1.length).assertEqual(src_1.length);
     });
@@ -1981,8 +1981,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_2: FixedArray<Byte> = new FixedArray<Byte>(1);
-      let dst_2: FixedArray<byte> = new FixedArray<byte>(1);
+      let src_2: FixedArray<Byte> = new FixedArray<Byte>(1, 0);
+      let dst_2: FixedArray<byte> = new FixedArray<byte>(1, 0);
       dst_2 = src_2 as FixedArray<byte>;
       expect(dst_2.length).assertEqual(src_2.length);
     });
@@ -1997,8 +1997,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_11: FixedArray<char> = new FixedArray<char>(1);
-      let dst_11: FixedArray<Char> = new FixedArray<Char>(1);
+      let src_11: FixedArray<char> = new FixedArray<char>(1, c'\u0000');
+      let dst_11: FixedArray<Char> = new FixedArray<Char>(1, c'\u0000');
       dst_11 = src_11 as FixedArray<Char>;
       expect(dst_11.length).assertEqual(src_11.length);
     });
@@ -2013,8 +2013,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_12: FixedArray<short> = new FixedArray<short>(1);
-      let dst_12: FixedArray<Short> = new FixedArray<Short>(1);
+      let src_12: FixedArray<short> = new FixedArray<short>(1, 0);
+      let dst_12: FixedArray<Short> = new FixedArray<Short>(1, 0);
       dst_12 = src_12 as FixedArray<Short>;
       expect(dst_12.length).assertEqual(src_12.length);
     });
@@ -2029,8 +2029,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_13: FixedArray<int> = new FixedArray<int>(1);
-      let dst_13: FixedArray<Int> = new FixedArray<Int>(1);
+      let src_13: FixedArray<int> = new FixedArray<int>(1, 0);
+      let dst_13: FixedArray<Int> = new FixedArray<Int>(1, 0);
       dst_13 = src_13 as FixedArray<Int>;
       expect(dst_13.length).assertEqual(src_13.length);
     });
@@ -2045,8 +2045,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_14: FixedArray<long> = new FixedArray<long>(1);
-      let dst_14: FixedArray<Long> = new FixedArray<Long>(1);
+      let src_14: FixedArray<long> = new FixedArray<long>(1, 0);
+      let dst_14: FixedArray<Long> = new FixedArray<Long>(1, 0);
       dst_14 = src_14 as FixedArray<Long>;
       expect(dst_14.length).assertEqual(src_14.length);
     });
@@ -2061,8 +2061,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_15: FixedArray<float> = new FixedArray<float>(1);
-      let dst_15: FixedArray<Float> = new FixedArray<Float>(1);
+      let src_15: FixedArray<float> = new FixedArray<float>(1, 0);
+      let dst_15: FixedArray<Float> = new FixedArray<Float>(1, 0);
       dst_15 = src_15 as FixedArray<Float>;
       expect(dst_15.length).assertEqual(src_15.length);
     });
@@ -2077,8 +2077,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_16: FixedArray<double> = new FixedArray<double>(1);
-      let dst_16: FixedArray<Double> = new FixedArray<Double>(1);
+      let src_16: FixedArray<double> = new FixedArray<double>(1, 0);
+      let dst_16: FixedArray<Double> = new FixedArray<Double>(1, 0);
       dst_16 = src_16 as FixedArray<Double>;
       expect(dst_16.length).assertEqual(src_16.length);
     });
@@ -2093,8 +2093,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_3: FixedArray<Char> = new FixedArray<Char>(1);
-      let dst_3: FixedArray<char> = new FixedArray<char>(1);
+      let src_3: FixedArray<Char> = new FixedArray<Char>(1, c'\u0000');
+      let dst_3: FixedArray<char> = new FixedArray<char>(1, c'\u0000');
       dst_3 = src_3 as FixedArray<char>;
       expect(dst_3.length).assertEqual(src_3.length);
     });
@@ -2109,8 +2109,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_4: FixedArray<Short> = new FixedArray<Short>(1);
-      let dst_4: FixedArray<short> = new FixedArray<short>(1);
+      let src_4: FixedArray<Short> = new FixedArray<Short>(1, 0);
+      let dst_4: FixedArray<short> = new FixedArray<short>(1, 0);
       dst_4 = src_4 as FixedArray<short>;
       expect(dst_4.length).assertEqual(src_4.length);
     });
@@ -2125,8 +2125,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_5: FixedArray<Int> = new FixedArray<Int>(1);
-      let dst_5: FixedArray<int> = new FixedArray<int>(1);
+      let src_5: FixedArray<Int> = new FixedArray<Int>(1, 0);
+      let dst_5: FixedArray<int> = new FixedArray<int>(1, 0);
       dst_5 = src_5 as FixedArray<int>;
       expect(dst_5.length).assertEqual(src_5.length);
     });
@@ -2141,8 +2141,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_6: FixedArray<Long> = new FixedArray<Long>(1);
-      let dst_6: FixedArray<long> = new FixedArray<long>(1);
+      let src_6: FixedArray<Long> = new FixedArray<Long>(1, 0);
+      let dst_6: FixedArray<long> = new FixedArray<long>(1, 0);
       dst_6 = src_6 as FixedArray<long>;
       expect(dst_6.length).assertEqual(src_6.length);
     });
@@ -2157,8 +2157,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_7: FixedArray<Float> = new FixedArray<Float>(1);
-      let dst_7: FixedArray<float> = new FixedArray<float>(1);
+      let src_7: FixedArray<Float> = new FixedArray<Float>(1, 0);
+      let dst_7: FixedArray<float> = new FixedArray<float>(1, 0);
       dst_7 = src_7 as FixedArray<float>;
       expect(dst_7.length).assertEqual(src_7.length);
     });
@@ -2173,8 +2173,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_8: FixedArray<Double> = new FixedArray<Double>(1);
-      let dst_8: FixedArray<double> = new FixedArray<double>(1);
+      let src_8: FixedArray<Double> = new FixedArray<Double>(1, 0);
+      let dst_8: FixedArray<double> = new FixedArray<double>(1, 0);
       dst_8 = src_8 as FixedArray<double>;
       expect(dst_8.length).assertEqual(src_8.length);
     });
@@ -2189,8 +2189,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_9: FixedArray<boolean> = new FixedArray<boolean>(1);
-      let dst_9: FixedArray<Boolean> = new FixedArray<Boolean>(1);
+      let src_9: FixedArray<boolean> = new FixedArray<boolean>(1, false);
+      let dst_9: FixedArray<Boolean> = new FixedArray<Boolean>(1, false);
       dst_9 = src_9 as FixedArray<Boolean>;
       expect(dst_9.length).assertEqual(src_9.length);
     });
@@ -2205,8 +2205,8 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.tags      compile-only
      */
     it("testAssignmentLikeContexts0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_10: FixedArray<byte> = new FixedArray<byte>(1);
-      let dst_10: FixedArray<Byte> = new FixedArray<Byte>(1);
+      let src_10: FixedArray<byte> = new FixedArray<byte>(1, 0);
+      let dst_10: FixedArray<Byte> = new FixedArray<Byte>(1, 0);
       dst_10 = src_10 as FixedArray<Byte>;
       expect(dst_10.length).assertEqual(src_10.length);
     });
