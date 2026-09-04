@@ -1120,6 +1120,95 @@ export default function CameraVideoSessionOnOffTest() {
       photoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback,offCallback);
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001
+     * @tc.number SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001
+     * @tc.desc   PhotoSession off smoothZoomInfoAvailable when no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001', Level.LEVEL2, async (done: Function) => {
+      const testName ='SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001'
+
+      let onCallback: zoomCallback = (err: BusinessError, smoothZoomInfo: camera.SmoothZoomInfo) => {
+        if (err !== undefined && err.code !== 0) {
+          console.error(TAG,testName, `OnCallback Error, errorCode: ${err.code}`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        console.info(TAG,testName, `The duration of smooth zoom: ${smoothZoomInfo.duration}`);
+        done();
+      }
+
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      let zoomRatioRange: Array<number> = [];
+      try {
+        zoomRatioRange = mPhotoSession.getZoomRatioRange();
+        console.info(TAG + " getZoomRatioRange  success",zoomRatioRange);
+        if(zoomRatioRange != undefined && zoomRatioRange.length == 2){
+          mPhotoSession.on('smoothZoomInfoAvailable', onCallback);
+          console.info(TAG + " smoothZoomInfoAvailable on success");
+          setSmoothZoomPhoto(zoomRatioRange[0],0);
+          console.info(TAG + " setSmoothZoom on success");
+          mPhotoSession.off('smoothZoomInfoAvailable');
+        }
+        await releasePhotoSession();
+        done();
+      } catch (err) {
+        console.info(TAG , testName + err,err.code);
+        expect(err.code).assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001
+     * @tc.number SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001
+     * @tc.desc   VideoSession off smoothZoomInfoAvailable when no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001', Level.LEVEL2, async (done: Function) => {
+      const testName ='SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001'
+
+      let onCallback: zoomCallback = (err: BusinessError, smoothZoomInfo: camera.SmoothZoomInfo) => {
+        if (err !== undefined && err.code !== 0) {
+          console.error(TAG,testName, `OnCallback Error, errorCode: ${err.code}`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        console.info(TAG,testName, `The duration of smooth zoom: ${smoothZoomInfo.duration}`);
+        done();
+      }
+
+      await createVideoOutput();
+      await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+      let zoomRatioRange: Array<number> = [];
+      try {
+        zoomRatioRange = mVideoSession.getZoomRatioRange();
+        console.info(TAG + " getZoomRatioRange  success",zoomRatioRange);
+        if(zoomRatioRange != undefined && zoomRatioRange.length == 2){
+          mVideoSession.on('smoothZoomInfoAvailable', onCallback);
+          console.info(TAG + " smoothZoomInfoAvailable on success");
+          setSmoothZoomVideo(zoomRatioRange[0], 0);
+          console.info(TAG + " setSmoothZoom on success");
+          mVideoSession.off('smoothZoomInfoAvailable');
+        }
+        await releaseVideoSession();
+        done();
+      } catch (err) {
+        console.info(TAG ,testName + err,err.code);
+        expect(err.code).assertFail();
+        await releaseVideoSession();
+        done();
+      }
+    })
 
   })
 }
