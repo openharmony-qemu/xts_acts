@@ -12,7 +12,7 @@
         "package": "com.ohos.acecollaboration.MyApplication",
         "name": ".entry1",
         "mainAbility": ".MainAbility",
-        "deviceType": ["default"],
+        "deviceType": [],
         "distro": {
             "deliveryWithInstall": true,
             "moduleName": "entry1",
