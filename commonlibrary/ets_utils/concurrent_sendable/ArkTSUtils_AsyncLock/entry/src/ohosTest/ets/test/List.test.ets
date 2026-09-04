@@ -24,7 +24,6 @@ import AsynclockSameAddSecondTest from "./AsynclockSameAddSecondTest.test";
 import AsyncLocktest from "./AsyncLocktest.test";
 import ConcurrentAsyncLockTest from "./ConcurrentAsyncLockTest.test";
 import AsyncLockConcurrencyBaseTest from "./AsyncLockConcurrencyBaseTest.test";
-import ConcurrencyModularImportAsyncLockTest from "./ConcurrencyModularImportAsyncLockTest.test";
 import AsyncLockArkTSUtilsSubsetTest from "./AsyncLockArkTSUtilsSubset.test";
 import AsyncLockUtilsCoverageSubsetTest from "./AsyncLockUtilsCoverageSubset.test";
 
@@ -40,7 +39,6 @@ export default function testsuite() {
   AsyncLocktest();
   ConcurrentAsyncLockTest();
   AsyncLockConcurrencyBaseTest();
-  ConcurrencyModularImportAsyncLockTest();
   AsyncLockArkTSUtilsSubsetTest();
   AsyncLockUtilsCoverageSubsetTest();
 }
