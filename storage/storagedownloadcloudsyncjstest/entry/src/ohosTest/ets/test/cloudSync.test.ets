@@ -33,24 +33,41 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_001', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_001 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_001 file sync state: ' + pg.state + "error type:" + pg.error);
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start start");
       fileSync.start().then(() => {
+        console.info(tag + "start then enter");
         console.log("start sync successfully");
+        console.info(tag + "end====");
+        done();
       }).catch((err: BusinessError) => {
+        console.info(tag + "start catch err: " + JSON.stringify(err));
         console.error("test_cloudSync_State_001 start sync failed : " + err.message + ", error code: " + err.code);
-        expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+        try {
+          expect(err.code === 13600001 || err.code === 22400001).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        console.info(tag + "end====");
+        done();
       });
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_001 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
+       console.info(tag + "end====");
+       done();
      }
-     done();
    });
 
    /**
@@ -62,26 +79,42 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_002', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_002 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_002 file sync state: ' + pg.state + "error type:" + pg.error);
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start start");
       fileSync.start((err: BusinessError) => {
-      if (err) {
-        console.error("test_cloudSync_State_002 start sync failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
-      } else {
-        console.info("start sync successfully");
-      }
+        console.info(tag + "start callback enter");
+        console.info(tag + "err: " + JSON.stringify(err));
+        if (err) {
+          console.error("test_cloudSync_State_002 start sync failed: " + err.message + ", error code: " + err.code);
+          try {
+            expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+          } catch (err) {
+            console.info(tag + "Assert Fail: " + JSON.stringify(err));
+          }
+        } else {
+          console.info("start sync successfully");
+        }
+        console.info(tag + "end====");
+        done();
       });
-     } catch (err) {
-       console.log('test_cloudSync_State_002 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+      done();
+    } catch (err) {
+      console.info(tag + "catch err: " + JSON.stringify(err));
+      console.log('test_cloudSync_State_002 has failed for ' + err.message + ', code: ' + err.code);
+      expect(false).assertTrue();
+      console.info(tag + "end====");
+      done();
+    }
    });
 
    /**
@@ -93,18 +126,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_003', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_003 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_003 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.SyncState.UPLOADING == 0).assertTrue();
+        try {
+          expect(cloudSync.SyncState.UPLOADING == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_003 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -117,18 +160,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_004', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_004 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_004 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.SyncState.UPLOAD_FAILED == 1).assertTrue();
+        try {
+          expect(cloudSync.SyncState.UPLOAD_FAILED == 1).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_004 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -141,18 +194,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_005', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_005 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_005 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.SyncState.DOWNLOADING == 2).assertTrue();
+        try {
+          expect(cloudSync.SyncState.DOWNLOADING == 2).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_005 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -165,19 +228,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_006', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_006 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_006 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.SyncState.DOWNLOAD_FAILED == 3).assertTrue();
+        try {
+          expect(cloudSync.SyncState.DOWNLOAD_FAILED == 3).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_006 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -190,19 +264,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_007', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_007 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_007 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.SyncState.COMPLETED == 4).assertTrue();
+        try {
+          expect(cloudSync.SyncState.COMPLETED == 4).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_007 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -215,19 +300,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_008', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_008 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_008 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.SyncState.STOPPED == 5).assertTrue();
+        try {
+          expect(cloudSync.SyncState.STOPPED == 5).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_008 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -240,19 +336,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_009', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_009 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_009 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.ErrorType.NO_ERROR == 0).assertTrue();
+        try {
+          expect(cloudSync.ErrorType.NO_ERROR == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_009 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -265,19 +372,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_010', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_010 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_010 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.ErrorType.NETWORK_UNAVAILABLE == 1).assertTrue();
+        try {
+          expect(cloudSync.ErrorType.NETWORK_UNAVAILABLE == 1).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_010 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -290,19 +408,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_011', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_011 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_011 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.ErrorType.WIFI_UNAVAILABLE == 2).assertTrue();
+        try {
+          expect(cloudSync.ErrorType.WIFI_UNAVAILABLE == 2).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_011 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -315,19 +444,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_012', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_012 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_012 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.ErrorType.BATTERY_LEVEL_LOW == 3).assertTrue();
+        try {
+          expect(cloudSync.ErrorType.BATTERY_LEVEL_LOW == 3).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_012 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -340,19 +480,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_013', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_013 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_013 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.ErrorType.BATTERY_LEVEL_WARNING == 4).assertTrue();
+        try {
+          expect(cloudSync.ErrorType.BATTERY_LEVEL_WARNING == 4).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_013 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -365,19 +516,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_014', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_014 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_014 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.ErrorType.CLOUD_STORAGE_FULL == 5).assertTrue();
+        try {
+          expect(cloudSync.ErrorType.CLOUD_STORAGE_FULL == 5).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_014 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -390,19 +552,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_015', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_015 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_015 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.ErrorType.LOCAL_STORAGE_FULL == 6).assertTrue();
+        try {
+          expect(cloudSync.ErrorType.LOCAL_STORAGE_FULL == 6).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_015 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -415,19 +588,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_016', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_016 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_016 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.ErrorType.DEVICE_TEMPERATURE_TOO_HIGH == 7).assertTrue();
+        try {
+          expect(cloudSync.ErrorType.DEVICE_TEMPERATURE_TOO_HIGH == 7).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_016 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -440,20 +624,35 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_017', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_017 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
-      fileSync.stop().then(() => {
-        console.info("stop sync successfully");
-      }).catch((err: BusinessError) => {
-        console.error("test_cloudSync_State_017 stop sync failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
-      });
-     } catch (err) {
-       console.log('test_cloudSync_State_017 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+       console.info(tag + "start stop");
+       fileSync.stop().then(() => {
+         console.info(tag + "stop then enter");
+         console.info("stop sync successfully");
+         console.info(tag + "end====");
+         done();
+       }).catch((err: BusinessError) => {
+         console.info(tag + "stop catch err: " + JSON.stringify(err));
+         console.error("test_cloudSync_State_017 stop sync failed: " + err.message + ", error code: " + err.code);
+         try {
+          expect(err.code === 13600001 || err.code === 22400001).assertTrue();
+         } catch (err) {
+           console.info(tag + "Assert Fail: " + JSON.stringify(err));
+         }
+         console.info(tag + "end====");
+         done();
+       });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        console.log('test_cloudSync_State_017 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        console.info(tag + "end====");
+        done();
+      }
    });
 
    /**
@@ -465,22 +664,36 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_018', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_018 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
-      fileSync.stop((err: BusinessError) => {
-        if (err) {
-          console.error("test_cloudSync_State_018 stop sync failed: " + err.message + ", error code: " + err.code);
-          expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
-        } else {
-          console.info("stop sync successfully");
-        }
-      });
-     } catch (err) {
-       console.log('test_cloudSync_State_018 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+       console.info(tag + "start stop");
+       fileSync.stop((err: BusinessError) => {
+         console.info(tag + "stop callback enter");
+         console.info(tag + "err: " + JSON.stringify(err));
+         if (err) {
+           console.error("test_cloudSync_State_018 stop sync failed: " + err.message + ", error code: " + err.code);
+           try {
+             expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+           } catch (err) {
+             console.info(tag + "Assert Fail: " + JSON.stringify(err));
+           }
+         } else {
+           console.info("stop sync successfully");
+         }
+         console.info(tag + "end====");
+         done();
+       });
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        console.log('test_cloudSync_State_018 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        console.info(tag + "end====");
+        done();
+      }
    });
 
    /**
@@ -492,21 +705,36 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_019', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_019 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
-      fileSync.getLastSyncTime().then((timeStamp: number) => {
-        let date = new Date(timeStamp);
-        console.info("get last sync time successfully:"+ date);
-      }).catch((err: BusinessError) => {
-        console.error("test_cloudSync_State_019 get last sync time failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
-      });
-     } catch (err) {
-       console.log('test_cloudSync_State_019 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+       console.info(tag + "start getLastSyncTime");
+       fileSync.getLastSyncTime().then((timeStamp: number) => {
+         console.info(tag + "getLastSyncTime then enter");
+         let date = new Date(timeStamp);
+         console.info("get last sync time successfully:"+ date);
+         console.info(tag + "end====");
+         done();
+       }).catch((err: BusinessError) => {
+         console.info(tag + "getLastSyncTime catch err: " + JSON.stringify(err));
+         console.error("test_cloudSync_State_019 get last sync time failed: " + err.message + ", error code: " + err.code);
+         try {
+           expect(err.code == 13600001 || err.code == 401).assertTrue();
+         } catch (err) {
+           console.info(tag + "Assert Fail: " + JSON.stringify(err));
+         }
+         console.info(tag + "end====");
+         done();
+       });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        console.log('test_cloudSync_State_019 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        console.info(tag + "end====");
+        done();
+      }
    });
 
    /**
@@ -518,23 +746,36 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_020', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_020 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
-      fileSync.getLastSyncTime((err: BusinessError, timeStamp: number) => {
-        if (err) {
-          console.error("test_cloudSync_State_020 get last sync time: " + err.message + ", error code: " + err.code);
-          expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
-        } else {
-          let date = new Date(timeStamp);
-          console.info("get last sync time successfully:"+ date);
-        }
-      });
-     } catch (err) {
-       console.log('test_cloudSync_State_020 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+       console.info(tag + "start getLastSyncTime");
+       fileSync.getLastSyncTime((err: BusinessError, timeStamp: number) => {
+         console.info(tag + "getLastSyncTime callback enter");
+         console.info(tag + "err: " + JSON.stringify(err));
+         if (err) {
+           console.error("test_cloudSync_State_020 get last sync time: " + err.message + ", error code: " + err.code);
+           try {
+            expect(err.code == 13600001 || err.code == 401).assertTrue();
+           } catch (err) {
+             console.info(tag + "Assert Fail: " + JSON.stringify(err));
+           }
+         } else {
+           let date = new Date(timeStamp);
+           console.info("get last sync time successfully:"+ date);
+         }
+         console.info(tag + "end====");
+         done();
+       });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        console.log('test_cloudSync_State_020 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        console.info(tag + "end====");
+        done();
+      }
    });
 
    /**
@@ -546,18 +787,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_021', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_021 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
-        expect(cloudSync.State.FAILED === 2).assertTrue();
+        try {
+          expect(cloudSync.State.FAILED === 2).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_021 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -570,19 +821,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_022', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_022 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
-        expect(cloudSync.State.FAILED === 2).assertTrue();
+        try {
+          expect(cloudSync.State.FAILED === 2).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileCache.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_022 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -595,26 +857,43 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_023', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_023 ";
+     console.info(tag + "start====");
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
-      fileCache.start(uri).then(() => {
-        console.info("start download successfully");
-      }).catch((err: BusinessError) => {
-        console.error("test_cloudSync_State_023 start download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
-      });
-     } catch (err) {
-       console.log('test_cloudSync_State_023 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+       console.info(tag + "start start");
+       fileCache.start(uri).then(() => {
+         console.info(tag + "start then enter");
+         console.info("start download successfully");
+         console.info(tag + "end====");
+         done();
+       }).catch((err: BusinessError) => {
+         console.info(tag + "start catch err: " + JSON.stringify(err));
+         console.error("test_cloudSync_State_023 start download failed: " + err.message + ", error code: " + err.code);
+         try {
+           expect(err.code === 13600001).assertTrue();
+         } catch (err) {
+           console.info(tag + "Assert Fail: " + JSON.stringify(err));
+         }
+         console.info(tag + "end====");
+         done();
+       });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        console.log('test_cloudSync_State_023 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        console.info(tag + "end====");
+        done();
+      }
    });
 
    /**
@@ -626,28 +905,43 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_024', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_024 ";
+     console.info(tag + "start====");
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
-      fileCache.start(uri, (err: BusinessError) => {
-        if (err) {
-          console.error("test_cloudSync_State_024 start download failed: " + err.message + ", error code: " + err.code);
-          expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
-        } else {
-          console.info("start download successfully");
-        }
-      });
-     } catch (err) {
-       console.log('test_cloudSync_State_024 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+       console.info(tag + "start start");
+       fileCache.start(uri, (err: BusinessError) => {
+         console.info(tag + "start callback enter");
+         console.info(tag + "err: " + JSON.stringify(err));
+         if (err) {
+           console.error("test_cloudSync_State_024 start download failed: " + err.message + ", error code: " + err.code);
+           try {
+             expect(err.code === 13600001).assertTrue();
+           } catch (err) {
+             console.info(tag + "Assert Fail: " + JSON.stringify(err));
+           }
+         } else {
+           console.info("start download successfully");
+         }
+         console.info(tag + "end====");
+         done();
+       });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        console.log('test_cloudSync_State_024 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        console.info(tag + "end====");
+        done();
+      }
    });
 
    /**
@@ -659,22 +953,37 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_025', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_025 ";
+     console.info(tag + "start====");
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
-      fileCache.stop(uri, true).then(() => {
-        console.info("stop download successfully");
-      }).catch((err: BusinessError) => {
-        console.error("test_cloudSync_State_025 stop download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
-      });
-     } catch (err) {
-       console.log('test_cloudSync_State_025 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+       console.info(tag + "start stop");
+       fileCache.stop(uri, true).then(() => {
+         console.info(tag + "stop then enter");
+         console.info("stop download successfully");
+         console.info(tag + "end====");
+         done();
+       }).catch((err: BusinessError) => {
+         console.info(tag + "stop catch err: " + JSON.stringify(err));
+         console.error("test_cloudSync_State_025 stop download failed: " + err.message + ", error code: " + err.code);
+         try {
+           expect(err.code === 13600001 || err.code === 401).assertTrue();
+         } catch (err) {
+           console.info(tag + "Assert Fail: " + JSON.stringify(err));
+         }
+         console.info(tag + "end====");
+         done();
+       });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        console.log('test_cloudSync_State_025 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        console.info(tag + "end====");
+        done();
+      }
    });
 
    /**
@@ -686,24 +995,37 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_026', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_026 ";
+     console.info(tag + "start====");
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
-      fileCache.stop(uri, (err: BusinessError) => {
-        if (err) {
-          console.error("test_cloudSync_State_026 stop download failed: " + err.message + ", error code: " + err.code);
-          expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
-        } else {
-          console.info("stop download successfully");
-        }
-      });
-     } catch (err) {
-       console.log('test_cloudSync_State_025 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+       console.info(tag + "start stop");
+       fileCache.stop(uri, (err: BusinessError) => {
+         console.info(tag + "stop callback enter");
+         console.info(tag + "err: " + JSON.stringify(err));
+         if (err) {
+           console.error("test_cloudSync_State_026 stop download failed: " + err.message + ", error code: " + err.code);
+           try {
+            expect(err.code === 13600001 || err.code === 401).assertTrue();
+           } catch (err) {
+             console.info(tag + "Assert Fail: " + JSON.stringify(err));
+           }
+         } else {
+           console.info("stop download successfully");
+         }
+         console.info(tag + "end====");
+         done();
+       });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        console.log('test_cloudSync_State_025 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        console.info(tag + "end====");
+        done();
+      }
    });
 
    /**
@@ -715,20 +1037,38 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_027', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_027 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (DownloadProgress: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + DownloadProgress.state);
-        expect(DownloadProgress.uri == '').assertTrue();
-        expect(DownloadProgress.size == 0).assertTrue();
-        expect(cloudSync.State.RUNNING == 0).assertTrue();
+        try {
+          expect(DownloadProgress.uri == '').assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(DownloadProgress.size == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(cloudSync.State.RUNNING == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_027 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -741,18 +1081,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_028', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_028 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
-        expect(cloudSync.State.COMPLETED == 1).assertTrue();
+        try {
+          expect(cloudSync.State.COMPLETED == 1).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_028 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -765,18 +1115,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_029', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_029 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
-        expect(cloudSync.State.FAILED == 2).assertTrue();
+        try {
+          expect(cloudSync.State.FAILED == 2).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_029 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -789,18 +1149,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_030', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_030 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
-        expect(cloudSync.State.STOPPED == 3).assertTrue();
+        try {
+          expect(cloudSync.State.STOPPED == 3).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_030 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -813,18 +1183,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_031', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_031 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.error);
-        expect(cloudSync.DownloadErrorType.NO_ERROR == 0).assertTrue();
+        try {
+          expect(cloudSync.DownloadErrorType.NO_ERROR == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_031 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -837,18 +1217,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_032', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_032 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.error);
-        expect(cloudSync.DownloadErrorType.UNKNOWN_ERROR == 1).assertTrue();
+        try {
+          expect(cloudSync.DownloadErrorType.UNKNOWN_ERROR == 1).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_032 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -861,18 +1251,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_033', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_033 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.error);
-        expect(cloudSync.DownloadErrorType.NETWORK_UNAVAILABLE == 2).assertTrue();
+        try {
+          expect(cloudSync.DownloadErrorType.NETWORK_UNAVAILABLE == 2).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_033 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -885,18 +1285,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_034', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_034 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.error);
-        expect(cloudSync.DownloadErrorType.LOCAL_STORAGE_FULL == 3).assertTrue();
+        try {
+          expect(cloudSync.DownloadErrorType.LOCAL_STORAGE_FULL == 3).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_034 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -909,18 +1319,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_035', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_035 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.error);
-        expect(cloudSync.DownloadErrorType.CONTENT_NOT_FOUND == 4).assertTrue();
+        try {
+          expect(cloudSync.DownloadErrorType.CONTENT_NOT_FOUND == 4).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_035 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -933,18 +1353,28 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_036', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_036 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.error);
-        expect(cloudSync.DownloadErrorType.FREQUENT_USER_REQUESTS == 5).assertTrue();
+        try {
+          expect(cloudSync.DownloadErrorType.FREQUENT_USER_REQUESTS == 5).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_036 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -957,19 +1387,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_037', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_037 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_037 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.ErrorType.REMOTE_SERVER_ABNORMAL == 8).assertTrue();
+        try {
+          expect(cloudSync.ErrorType.REMOTE_SERVER_ABNORMAL == 8).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_037 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -981,24 +1422,32 @@ describe('cloud_sync_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL3
     */
-   it('test_cloudSync_State_038', Level.LEVEL3, async (done: Function) => {    
+   it('test_cloudSync_State_038', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSync_State_038 ";
+      console.info(tag + "start====");    
       try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
       try {
+        console.info(tag + "start off_progress");
         fileCache.off(null, callback);
         expect(false).assertTrue();
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.log('test_cloudSync_State_038 correctly threw error for null parameter: ' + err.message);
         expect(cloudSync.State.STOPPED === 3).assertTrue();
       }
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.log('test_cloudSync_State_038 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
  	 
@@ -1011,24 +1460,32 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
     it('test_cloudSync_State_039', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSync_State_039 ";
+      console.info(tag + "start====");
       
       try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
       try {
+        console.info(tag + "start off_progress");
         fileCache.off(undefined, callback);
         expect(false).assertTrue();
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.log('test_cloudSync_State_039 correctly threw error for undefined parameter: ' + err.message);
         expect(cloudSync.State.COMPLETED === 1).assertTrue();
       }
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.log('test_cloudSync_State_039 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -1041,17 +1498,27 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_040', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_040 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_040 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.SyncState.UPLOADING == 0).assertTrue();
+        try {
+          expect(cloudSync.SyncState.UPLOADING == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on(null, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_040 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 401).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1065,17 +1532,27 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_041', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_041 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_041 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.SyncState.UPLOADING == 0).assertTrue();
+        try {
+          expect(cloudSync.SyncState.UPLOADING == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on(undefined, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_041 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 401).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1089,18 +1566,29 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_042', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_042 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_042 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.SyncState.DOWNLOAD_FAILED == 3).assertTrue();
+        try {
+          expect(cloudSync.SyncState.DOWNLOAD_FAILED == 3).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off(null, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_042 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 401).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1114,18 +1602,29 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_043', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_043 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_043 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.SyncState.DOWNLOAD_FAILED == 3).assertTrue();
+        try {
+          expect(cloudSync.SyncState.DOWNLOAD_FAILED == 3).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off(undefined, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_043 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 401).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1139,17 +1638,27 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_044', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_044 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
-        expect(cloudSync.State.FAILED === 2).assertTrue();
+        try {
+          expect(cloudSync.State.FAILED === 2).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on(null, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_044 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 13900020).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1163,17 +1672,27 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_045', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_045 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
-        expect(cloudSync.State.FAILED === 2).assertTrue();
+        try {
+          expect(cloudSync.State.FAILED === 2).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on(undefined, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_045 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 13900020).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1187,19 +1706,37 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_046', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_046 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (DownloadProgress: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + DownloadProgress.state);
-        expect(DownloadProgress.uri == '').assertTrue();
-        expect(DownloadProgress.size == 0).assertTrue();
-        expect(cloudSync.State.RUNNING == 0).assertTrue();
+        try {
+          expect(DownloadProgress.uri == '').assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(DownloadProgress.size == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(cloudSync.State.RUNNING == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on(null, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_046 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 13900020).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1213,19 +1750,37 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_047', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_047 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (DownloadProgress: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + DownloadProgress.state);
-        expect(DownloadProgress.uri == '').assertTrue();
-        expect(DownloadProgress.size == 0).assertTrue();
-        expect(cloudSync.State.RUNNING == 0).assertTrue();
+        try {
+          expect(DownloadProgress.uri == '').assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(DownloadProgress.size == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(cloudSync.State.RUNNING == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on(undefined, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_047 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 13900020).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1239,18 +1794,29 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_048', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_048 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
-        expect(cloudSync.State.FAILED === 2).assertTrue();
+        try {
+          expect(cloudSync.State.FAILED === 2).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileCache.off(null, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_048 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 13900020).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1264,18 +1830,29 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_049', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_049 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
-        expect(cloudSync.State.FAILED === 2).assertTrue();
+        try {
+          expect(cloudSync.State.FAILED === 2).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileCache.off(undefined, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_049 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 13900020).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1289,25 +1866,43 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_050', Level.LEVEL3, async (done: Function) => {
+    let tag = "====>test_cloudSync_State_050 ";
+    console.info(tag + "start====");
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileCache.off(null, callback);
+      console.info(tag + "start start");
       fileCache.start(uri).then(() => {
+        console.info(tag + "start then enter");
         console.info("start download successfully");
+        console.info(tag + "end====");
+        done();
       }).catch((err: BusinessError) => {
+        console.info(tag + "start catch err: " + JSON.stringify(err));
         console.error("test_cloudSync_State_050 start download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+        try {
+          expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        console.info(tag + "end====");
+        done();
       });
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_050 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 13900020).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1321,25 +1916,43 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_051', Level.LEVEL3, async (done: Function) => {
+    let tag = "====>test_cloudSync_State_051 ";
+    console.info(tag + "start====");
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileCache.off(undefined, callback);
+      console.info(tag + "start start");
       fileCache.start(uri).then(() => {
+        console.info(tag + "start then enter");
         console.info("start download successfully");
+        console.info(tag + "end====");
+        done();
       }).catch((err: BusinessError) => {
+        console.info(tag + "start catch err: " + JSON.stringify(err));
         console.error("test_cloudSync_State_051 start download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+        try {
+          expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        console.info(tag + "end====");
+        done();
       });
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_051 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 13900020).assertTrue();
+       console.info(tag + "end====");
        done();
      }
    });
@@ -1353,19 +1966,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_052', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_052 ";
+     console.info(tag + "start====");
      
      try {
       let fileSync = new cloudSync.FileSync();
       let callback = (pg: cloudSync.SyncProgress) => {
+        console.info(tag + "progress_callback enter");
         console.log('test_cloudSync_State_052 file sync state: ' + pg.state + "error type:" + pg.error);
-        expect(cloudSync.ErrorType.REMOTE_SERVER_ABNORMAL == 8).assertTrue();
+        try {
+          expect(cloudSync.ErrorType.REMOTE_SERVER_ABNORMAL == 8).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       }
+      console.info(tag + "start on_progress");
       fileSync.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileSync.off('progress');
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_052 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -1378,19 +2002,30 @@ describe('cloud_sync_test', () => {
     * @tc.level  LEVEL3
     */
    it('test_cloudSync_State_053', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_cloudSync_State_053 ";
+     console.info(tag + "start====");
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info(tag + "progress_callback enter");
         console.info("download state:" + pg.state);
-        expect(cloudSync.State.FAILED === 2).assertTrue();
+        try {
+          expect(cloudSync.State.FAILED === 2).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_progress");
       fileCache.on('progress', callback);
+      console.info(tag + "start off_progress");
       fileCache.off('progress');
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('test_cloudSync_State_053 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
   });

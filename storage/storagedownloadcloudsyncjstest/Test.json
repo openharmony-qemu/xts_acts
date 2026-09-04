@@ -6,7 +6,7 @@
         "bundle-name": "com.example.downloadcloudsync",
         "module-name": "entry_test",
         "shell-timeout": "600000",
-        "testcase-timeout": 70000
+        "testcase-timeout": 10000
     },
     "kits": [
         {

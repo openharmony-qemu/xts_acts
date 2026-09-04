@@ -584,17 +584,13 @@ describe('fileIO_fs_mkdir11', function () {
   it('fileIO_test_mkdir_async_new_016', Level.LEVEL0, async function (done) {
     try {
       fileIO.mkdir("", null, (err) => {
-        if (err) {
-          console.log('fileIO_test_mkdir_async_new_016 error package: ' + JSON.stringify(err));
-          expect(err.code).assertEqual(13900020);
-        } else {
-          expect().assertFail();
-        }
+        console.log('fileIO_test_mkdir_async_new_016 error package: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
     } catch (e) {
       console.log('fileIO_test_mkdir_async_new_016 has failed for ' + e.message + ', code: ' + e.code);
-      expect().assertFail();
+      expect(e.code).assertEqual(13900020);
       done();
     }
   });
