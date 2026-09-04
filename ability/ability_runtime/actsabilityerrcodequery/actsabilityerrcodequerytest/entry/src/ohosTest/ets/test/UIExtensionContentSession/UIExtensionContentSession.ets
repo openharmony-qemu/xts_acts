@@ -1442,7 +1442,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           .then(() => {
             console.info(`Successed in setting window to privacy mode.`);
             console.error(`Test case execution results do not match expected outcomes.`);
-            commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+            commonEventManager.publish('ACTS_TEST_DESTROY', () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             });
           })
@@ -1457,7 +1457,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -1482,7 +1482,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           }
           console.info(`Successed in setting window to privacy mode.`);
           console.error(`Test case execution results do not match expected outcomes.`);
-          commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          commonEventManager.publish('ACTS_TEST_DESTROY', () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
           });
         });
@@ -1494,7 +1494,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {

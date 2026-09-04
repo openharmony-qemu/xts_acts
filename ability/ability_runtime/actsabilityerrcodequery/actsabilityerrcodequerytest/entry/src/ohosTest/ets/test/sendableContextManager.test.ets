@@ -170,7 +170,7 @@ export default function sendableContextManagerTest() {
       let tag = `SUB_ChildProcessManager_sendableContextManager_0500`;
       let moduleContext: common.Context;
       try {
-        moduleContext = context.createAreaModeContext(undefined as contextConstant.AreaMode);
+        moduleContext = context.createAreaModeContext(undefined as unknown as contextConstant.AreaMode);
         expect().assertFail();
         done();
       } catch (error) {
