@@ -1322,9 +1322,9 @@ napi_value testNativeWindowSetGet3DMetadataValueNormal(napi_env env, napi_callba
         OH_VIDEO_DIM_TYPE_3D_TAB
     };
     for (int i = 0; i < sizeof(videoDimensionType) / sizeof(videoDimensionType[0]); i++) {
-        uint8_t setMetadata = videoDimensionType[i];
+        OH_NativeBuffer_VideoDimensionType setMetadata = videoDimensionType[i];
         int32_t errorCode = OH_NativeWindow_Set3DMetadataValue(
-            nativeWindow, OH_VIDEO_DIM_TYPE, sizeof(OH_VIDEO_DIM_TYPE), &setMetadata);
+            nativeWindow, OH_VIDEO_DIM_TYPE, sizeof(OH_VIDEO_DIM_TYPE), reinterpret_cast<uint8_t*>(&setMetadata));
         if (errorCode != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1, &result);
             return result;
@@ -1334,7 +1334,7 @@ napi_value testNativeWindowSetGet3DMetadataValueNormal(napi_env env, napi_callba
             napi_create_int32(env, CONSTANT_2, &result);
             return result;
         }
-        if (bufferSize != sizeof(OH_VIDEO_DIM_TYPE) && *getMetadata != setMetadata) {
+        if (bufferSize != sizeof(OH_VIDEO_DIM_TYPE) || memcmp(getMetadata, &setMetadata, sizeof(OH_NativeBuffer_VideoDimensionType)) != 0) {
             napi_create_int32(env, CONSTANT_3, &result);
             return result;
         }
@@ -1554,7 +1554,6 @@ napi_value testNativeWindowSet3DMetadataValueUnknown(napi_env env, napi_callback
     int32_t errorCode = OH_NativeWindow_Set3DMetadataValue(
         nativeWindow, static_cast<OH_NativeBuffer_3D_MetadataKey>(OH_VIDEO_DIM_TYPE),
         sizeof(OH_VIDEO_DIM_TYPE), &setMetadata);
-    LOGE("Set3DMetadataValue errorCode = %{public}d", errorCode);
     if (errorCode != NATIVE_ERROR_UNKNOWN) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
