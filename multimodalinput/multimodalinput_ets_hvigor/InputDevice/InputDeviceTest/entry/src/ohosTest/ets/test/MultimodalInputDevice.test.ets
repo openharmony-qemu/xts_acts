@@ -115,6 +115,7 @@ export default function MultimodalInputDeviceTest() {
               expect(deviceData).assertInstanceOf("Object");
               expect(deviceData.isVirtual).assertInstanceOf("Boolean");
               expect(deviceData.isLocal).assertInstanceOf("Boolean");
+              expect(deviceData.displayId).assertEqual(undefined);
               done();
             }
           });
@@ -148,6 +149,7 @@ export default function MultimodalInputDeviceTest() {
             expect(deviceData).assertInstanceOf("Object");
             expect(deviceData.isVirtual).assertInstanceOf("Boolean");
             expect(deviceData.isLocal).assertInstanceOf("Boolean");
+            expect(deviceData.displayId).assertEqual(undefined);
             done();
           });
         });
@@ -320,6 +322,7 @@ export default function MultimodalInputDeviceTest() {
           expect(deviceData).assertInstanceOf("Object");
           expect(deviceData.isVirtual).assertInstanceOf("Boolean");
           expect(deviceData.isLocal).assertInstanceOf("Boolean");
+          expect(deviceData.displayId).assertEqual(undefined);
           done();          
         });
       } catch (error) {
