@@ -12,20 +12,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
+ import hilog from '@ohos.hilog';
 
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { BackupExtensionAbility, BundleVersion } from '@kit.CoreFileKit';
-
-const DOMAIN = 0x0000;
-
-export default class EntryBackupAbility extends BackupExtensionAbility {
-  async onBackup() {
-    hilog.info(DOMAIN, 'testTag', 'onBackup ok');
-    await Promise.resolve();
+@Entry
+@Component
+struct Index {
+  aboutToAppear() {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
   }
-
-  async onRestore(bundleVersion: BundleVersion) {
-    hilog.info(DOMAIN, 'testTag', 'onRestore ok %{public}s', JSON.stringify(bundleVersion));
-    await Promise.resolve();
+ @State message: string = 'Hello World'
+   build() {
+    Flex({
+      direction: FlexDirection.Column,
+      alignItems: ItemAlign.Center,
+      justifyContent: FlexAlign.Center
+    }) {
+      Text('ACE ETS TEST')
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+    }
+    .width('100%')
+    .height('100%')
   }
-}
+ }
