@@ -63,8 +63,7 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       let networkId: int = 500;
       try {
-        //DTS2026071712031 接口removeCandidateConfig，调用该接口时若不在应用界面，返回401
-        await Utils.msSleep(5000);
+        //DTS2026071712031 接口removeCandidateConfig，调用该接口时若不在应用界面，返回401；当在应用界面输入不合法的参数，报错2501000
         await wifiManager.removeCandidateConfig(networkId);
         hilog.info(domain, tag, `${caseName} removeCandidateConfig success`);
         expect().assertFail();
