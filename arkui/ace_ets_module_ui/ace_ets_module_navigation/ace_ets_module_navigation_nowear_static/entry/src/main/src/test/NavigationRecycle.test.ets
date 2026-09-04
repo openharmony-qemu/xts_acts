@@ -23,13 +23,35 @@ function getAppStorageString(key: string): string {
   return val !== undefined ? val : '';
 }
 
-async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetries: int = 10): Promise<Component | null> {
-  for (let i: int = 0; i < maxSwipeRetries; i++) {
+async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetries: int = 10): Promise<Component | null> {
+  for (let i: int = 0; i < 3; i++) {
     let comp = await driver.findComponent(ON.id(id));
     if (comp !== null) {
       return comp;
     }
     await CommonFunc.sleep(500);
+  }
+  try {
+    let scrollComp = await driver.findComponent(ON.type('Scroll'));
+    if (scrollComp !== null) {
+      let result = await scrollComp.scrollSearch(ON.id(id));
+      if (result !== null && result !== undefined) {
+        return result;
+      }
+    }
+  } catch (e) {
+  }
+  try {
+    let scrollComp = await driver.findComponent(ON.type('Scroll'));
+    if (scrollComp !== null) {
+      await scrollComp.scrollToBottom();
+      await CommonFunc.sleep(800);
+      let comp = await driver.findComponent(ON.id(id));
+      if (comp !== null) {
+        return comp;
+      }
+    }
+  } catch (e) {
   }
   return null;
 }
@@ -123,9 +145,13 @@ export default function NavigationRecycleTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      let driver = Driver.create();
-      await clearRecycleState(driver);
-      await CommonFunc.sleep(500);
+      try {
+        let driver = await Driver.create();
+        await clearRecycleState(driver);
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.error('NavigationRecycleTest afterEach error: ' + err);
+      }
       console.info('NavigationRecycleTest after each called');
     });
 
@@ -141,7 +167,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0100 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Set recoverable to true
         let btn = await requireComponent(driver, 'nav_recoverable_true');
@@ -167,7 +193,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0200 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let btn = await requireComponent(driver, 'nav_recoverable_false');
         await btn.click();
@@ -195,7 +221,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0300 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let btn = await requireComponent(driver, 'recycle_memory_true');
         await btn.click();
@@ -219,7 +245,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0400 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let btn = await requireComponent(driver, 'recycle_memory_false');
         await btn.click();
@@ -247,7 +273,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0500 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Set dest recoverable true
         let destBtn = await requireComponent(driver, 'dest_recoverable_true');
@@ -276,7 +302,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0600 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Set dest recoverable false
         let destBtn = await requireComponent(driver, 'dest_recoverable_false');
@@ -304,7 +330,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0700 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let destBtn = await requireComponent(driver, 'dest_recoverable_true');
         await destBtn.click();
@@ -334,7 +360,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0800 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Push saveRestore page (which has onSaveState registered)
         let pushBtn = await requireComponent(driver, 'push_saveRestore');
@@ -359,7 +385,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0900 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let pushBtn = await requireComponent(driver, 'push_saveEmpty');
         await pushBtn.click();
@@ -386,7 +412,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1000 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // First set true
         let trueBtn = await requireComponent(driver, 'nav_recoverable_true');
@@ -416,7 +442,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1100 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let falseBtn = await requireComponent(driver, 'recycle_memory_false');
         await falseBtn.click();
@@ -447,7 +473,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1200 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Enable both recoverable and recycle
         let navBtn = await requireComponent(driver, 'nav_recoverable_true');
@@ -484,7 +510,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1300 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let destBtn = await requireComponent(driver, 'dest_recoverable_true');
         await destBtn.click();
@@ -511,7 +537,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1400 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let destBtn = await requireComponent(driver, 'dest_recoverable_true');
         await destBtn.click();
@@ -541,7 +567,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1500 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let sizeBtn = await requireComponent(driver, 'recycle_get_stack_size');
         await sizeBtn.click();
@@ -565,7 +591,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1600 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
@@ -594,7 +620,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1700 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
@@ -619,7 +645,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1800 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Push standard then dialog via top panel buttons (always visible)
         let pushStd = await requireComponent(driver, 'push_standard');
@@ -652,7 +678,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1900 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
@@ -680,7 +706,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2000 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // No page pushed, so 'pageStandard' should return empty
         let idxBtn = await requireComponent(driver, 'recycle_get_index_by_name');
@@ -709,7 +735,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2100 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let pushBtn = await requireComponent(driver, 'push_standard_with_param');
         await pushBtn.click();
@@ -741,7 +767,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2200 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let pushBtn = await requireComponent(driver, 'push_standard_with_param');
         await pushBtn.click();
@@ -773,7 +799,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2300 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Push first - updateStackInfo auto-called
         let pushBtn = await requireComponent(driver, 'push_standard');
@@ -807,7 +833,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2400 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Push two pages via top panel buttons (always visible)
         let pushStd = await requireComponent(driver, 'push_standard');
@@ -848,7 +874,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2500 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
@@ -877,7 +903,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2600 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let pushBtn = await requireComponent(driver, 'push_standard_with_param');
         await pushBtn.click();
@@ -906,7 +932,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2700 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Enable both
         let navBtn = await requireComponent(driver, 'nav_recoverable_true');
@@ -950,7 +976,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2800 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Disable both
         let navBtn = await requireComponent(driver, 'nav_recoverable_false');
@@ -995,7 +1021,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2900 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let pushBtn = await requireComponent(driver, 'push_saveRestore');
         await pushBtn.click();
@@ -1020,7 +1046,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3000 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let pushBtn = await requireComponent(driver, 'push_saveEmpty');
         await pushBtn.click();
@@ -1047,7 +1073,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3100 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Push saveRestore page which has both onSaveState and onRestoreState registered
         let pushBtn = await requireComponent(driver, 'push_saveRestore');
@@ -1076,7 +1102,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3200 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let destBtn = await requireComponent(driver, 'dest_recoverable_false');
         await destBtn.click();
@@ -1106,7 +1132,7 @@ export default function NavigationRecycleTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await clearModifierState(driver);
       await CommonFunc.sleep(500);
       console.info('ModifierRecycleTest after each called');
@@ -1120,7 +1146,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0100 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
         await recycleBtn.click();
@@ -1144,7 +1170,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0200 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let noRecycleBtn = await requireComponent(driver, 'use_no_recycle_modifier');
         await noRecycleBtn.click();
@@ -1168,7 +1194,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0300 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
         await recycleBtn.click();
@@ -1205,7 +1231,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0400 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
         await recycleBtn.click();
@@ -1232,7 +1258,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0500 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
         await recycleBtn.click();
@@ -1260,7 +1286,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0600 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Start with recycle modifier
         let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
@@ -1298,7 +1324,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0700 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
         await recycleBtn.click();
@@ -1335,7 +1361,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0800 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let stackLimitBtn = await requireComponent(driver, 'use_stack_limit_modifier');
         await stackLimitBtn.click();
@@ -1360,7 +1386,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0900 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let stackLimitBtn = await requireComponent(driver, 'use_stack_limit_modifier');
         await stackLimitBtn.click();
@@ -1393,7 +1419,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1000 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let clearStackBtn = await requireComponent(driver, 'use_clear_stack_modifier');
         await clearStackBtn.click();
@@ -1417,7 +1443,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1100 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let clearStackBtn = await requireComponent(driver, 'use_clear_stack_modifier');
         await clearStackBtn.click();
@@ -1445,7 +1471,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1200 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let clearStackBtn = await requireComponent(driver, 'use_clear_stack_modifier');
         await clearStackBtn.click();
@@ -1472,7 +1498,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1300 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let clearStackBtn = await requireComponent(driver, 'use_clear_stack_modifier');
         await clearStackBtn.click();
@@ -1508,7 +1534,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1400 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let clearStackBtn = await requireComponent(driver, 'use_clear_stack_modifier');
         await clearStackBtn.click();
@@ -1540,7 +1566,7 @@ export default function NavigationRecycleTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await clearRecycleState(driver);
       await CommonFunc.sleep(500);
       console.info('StackSizeLimitTest after each called');
@@ -1554,7 +1580,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0100 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let limitBtn = await requireComponent(driver, 'stack_limit_0');
         await limitBtn.click();
@@ -1583,7 +1609,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0200 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let limitBtn = await requireComponent(driver, 'stack_limit_1');
         await limitBtn.click();
@@ -1614,7 +1640,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0300 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let limitBtn = await requireComponent(driver, 'stack_limit_3');
         await limitBtn.click();
@@ -1643,7 +1669,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0400 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let limitBtn = await requireComponent(driver, 'stack_limit_minus1');
         await limitBtn.click();
@@ -1672,7 +1698,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0500 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Enable recoverable and set stack limit
         let navBtn = await requireComponent(driver, 'nav_recoverable_true');
@@ -1707,7 +1733,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0600 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let limitBtn = await requireComponent(driver, 'stack_limit_1');
         await limitBtn.click();
@@ -1737,7 +1763,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0700 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         // Set stackSizeLimit=3 and recyclePagesOnLowMemory=true together
         let limitBtn = await requireComponent(driver, 'stack_limit_3');
@@ -1773,7 +1799,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0800 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let limitBtn = await requireComponent(driver, 'stack_limit_1');
         await limitBtn.click();
@@ -1812,7 +1838,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0900 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let limitBtn = await requireComponent(driver, 'stack_limit_1');
         await limitBtn.click();
@@ -1847,7 +1873,7 @@ export default function NavigationRecycleTest(): void {
     it('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_1000 START');
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         await driver.delayMs(500);
         let navBtn = await requireComponent(driver, 'nav_recoverable_true');
         await navBtn.click();
