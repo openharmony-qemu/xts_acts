@@ -16,6 +16,17 @@
 {
   "apiType": "stageMode",
   "buildOption": {
+     "sourceOption": {
+      "workers": [
+        "./src/ohosTest/ets/workers/workerCreateCV.ets",
+        "./src/ohosTest/ets/workers/workerCreateCVReq.ets",
+        "./src/ohosTest/ets/workers/workerImplementCV.ets",
+        "./src/ohosTest/ets/workers/workerNotify.ets",
+        "./src/ohosTest/ets/workers/workerNotifyOne.ets",
+        "./src/ohosTest/ets/workers/workerWait.ets",
+        "./src/ohosTest/ets/workers/workerWaitFor.ets"
+      ]
+    }
   },
   "buildOptionSet": [
     {

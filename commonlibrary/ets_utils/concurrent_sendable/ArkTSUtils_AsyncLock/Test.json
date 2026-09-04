@@ -6,7 +6,7 @@
         "bundle-name": "com.example.arkts.utils.asynclock",
         "module-name": "entry_test",
         "shell-timeout": "800000",
-        "compile-mode": "esmodule"
+        "testcase-timeout": 70000
     },
     "kits": [
         {

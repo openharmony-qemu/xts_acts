@@ -51,14 +51,6 @@
     {
       "name": "library1",
       "srcPath": "./library1",
-      "targets": [
-        {
-          "name": "default",
-          "applyToProducts": [
-            "default"
-          ]
-        }
-      ]
     }
   ]
 }
