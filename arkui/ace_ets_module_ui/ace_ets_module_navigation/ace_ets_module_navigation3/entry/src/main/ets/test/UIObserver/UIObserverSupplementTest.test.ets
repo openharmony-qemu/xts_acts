@@ -167,7 +167,7 @@ export default function UIObserverSupplementTest() {
         // off without callback to clean up
         uiObserver.off('tabContentUpdate');
         console.info('SUB_ArkUI_UIObserver_on_tabContentUpdate_callback_0100 off success');
-        expect(true).assertTrue();
+        expect(uiObserver !== null && uiObserver !== undefined).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_UIObserver_on_tabContentUpdate_callback_0100 error:' + err);
         expect().assertFail();

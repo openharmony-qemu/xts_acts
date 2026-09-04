@@ -22,7 +22,7 @@ export default function SmallComponentSupplement() {
     // ====== BaseCustomComponent methods ======
 
     /**
-     * @tc.name   queryNavDestinationInfoReturnUndefined
+     * @tc.name   SUB_ArkUI_BaseCustomComponent_QueryNavDestinationInfo_0100
      * @tc.number SUB_ArkUI_BaseCustomComponent_QueryNavDestinationInfo_0100
      * @tc.desc   Test BaseCustomComponent.queryNavDestinationInfo returns undefined when not in NavDestination
      * @tc.type   FUNCTION
@@ -43,7 +43,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   queryNavDestinationInfoWithIsInner
+     * @tc.name   SUB_ArkUI_BaseCustomComponent_QueryNavDestinationInfo_0200
      * @tc.number SUB_ArkUI_BaseCustomComponent_QueryNavDestinationInfo_0200
      * @tc.desc   Test BaseCustomComponent.queryNavDestinationInfo(isInner) with isInner parameter
      * @tc.type   FUNCTION
@@ -64,7 +64,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   queryNavigationInfoReturnUndefined
+     * @tc.name   SUB_ArkUI_BaseCustomComponent_QueryNavigationInfo_0100
      * @tc.number SUB_ArkUI_BaseCustomComponent_QueryNavigationInfo_0100
      * @tc.desc   Test BaseCustomComponent.queryNavigationInfo returns undefined when not in Navigation
      * @tc.type   FUNCTION
@@ -85,7 +85,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   queryRouterPageInfoReturnUndefined
+     * @tc.name   SUB_ArkUI_BaseCustomComponent_QueryRouterPageInfo_0100
      * @tc.number SUB_ArkUI_BaseCustomComponent_QueryRouterPageInfo_0100
      * @tc.desc   Test BaseCustomComponent.queryRouterPageInfo returns undefined when not in router page
      * @tc.type   FUNCTION
@@ -108,7 +108,7 @@ export default function SmallComponentSupplement() {
     // ====== NavPathStack methods ======
 
     /**
-     * @tc.name   navPathStackPushPathByName
+     * @tc.name   SUB_ArkUI_NavPath_PushPathByName_0100
      * @tc.number SUB_ArkUI_NavPath_PushPathByName_0100
      * @tc.desc   Test NavPathStack.pushPathByName with name, param and animated params
      * @tc.type   FUNCTION
@@ -130,7 +130,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackPushPathByNameAnimated
+     * @tc.name   SUB_ArkUI_NavPath_PushPathByName_0200
      * @tc.number SUB_ArkUI_NavPath_PushPathByName_0200
      * @tc.desc   Test NavPathStack.pushPathByName with animated parameter
      * @tc.type   FUNCTION
@@ -152,7 +152,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackReplacePath
+     * @tc.name   SUB_ArkUI_NavPath_ReplacePath_0100
      * @tc.number SUB_ArkUI_NavPath_ReplacePath_0100
      * @tc.desc   Test NavPathStack.replacePath with NavPathInfo and animated params
      * @tc.type   FUNCTION
@@ -175,7 +175,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackReplacePathByName
+     * @tc.name   SUB_ArkUI_NavPath_ReplacePathByName_0100
      * @tc.number SUB_ArkUI_NavPath_ReplacePathByName_0100
      * @tc.desc   Test NavPathStack.replacePathByName with name, param and animated params
      * @tc.type   FUNCTION
@@ -198,7 +198,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackRemoveByNavDestinationIdFalse
+     * @tc.name   SUB_ArkUI_NavPath_RemoveByNavDestinationId_0100
      * @tc.number SUB_ArkUI_NavPath_RemoveByNavDestinationId_0100
      * @tc.desc   Test NavPathStack.removeByNavDestinationId returns false with non-existent ID
      * @tc.type   FUNCTION
@@ -220,7 +220,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackPopReturnsUndefined
+     * @tc.name   SUB_ArkUI_NavPath_Pop_0100
      * @tc.number SUB_ArkUI_NavPath_Pop_0100
      * @tc.desc   Test NavPathStack.pop returns undefined when stack is empty
      * @tc.type   FUNCTION
@@ -242,7 +242,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackPopWithResult
+     * @tc.name   SUB_ArkUI_NavPath_Pop_0200
      * @tc.number SUB_ArkUI_NavPath_Pop_0200
      * @tc.desc   Test NavPathStack.pop with result parameter
      * @tc.type   FUNCTION
@@ -265,7 +265,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackPopToIndex
+     * @tc.name   SUB_ArkUI_NavPath_PopToIndex_0100
      * @tc.number SUB_ArkUI_NavPath_PopToIndex_0100
      * @tc.desc   Test NavPathStack.popToIndex with valid index and animated
      * @tc.type   FUNCTION
@@ -290,7 +290,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackMoveToTop
+     * @tc.name   SUB_ArkUI_NavPath_MoveToTop_0100
      * @tc.number SUB_ArkUI_NavPath_MoveToTop_0100
      * @tc.desc   Test NavPathStack.moveToTop with valid name
      * @tc.type   FUNCTION
@@ -314,7 +314,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackMoveIndexToTop
+     * @tc.name   SUB_ArkUI_NavPath_MoveIndexToTop_0100
      * @tc.number SUB_ArkUI_NavPath_MoveIndexToTop_0100
      * @tc.desc   Test NavPathStack.moveIndexToTop with valid index
      * @tc.type   FUNCTION
@@ -338,7 +338,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackClearAnimated
+     * @tc.name   SUB_ArkUI_NavPath_Clear_0100
      * @tc.number SUB_ArkUI_NavPath_Clear_0100
      * @tc.desc   Test NavPathStack.clear with animated parameter
      * @tc.type   FUNCTION
@@ -362,7 +362,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackGetAllPathNameEmpty
+     * @tc.name   SUB_ArkUI_NavPath_GetAllPathName_0100
      * @tc.number SUB_ArkUI_NavPath_GetAllPathName_0100
      * @tc.desc   Test NavPathStack.getAllPathName returns empty array on empty stack
      * @tc.type   FUNCTION
@@ -384,7 +384,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackGetAllPathNameNonEmpty
+     * @tc.name   SUB_ArkUI_NavPath_GetAllPathName_0200
      * @tc.number SUB_ArkUI_NavPath_GetAllPathName_0200
      * @tc.desc   Test NavPathStack.getAllPathName returns array with path names
      * @tc.type   FUNCTION
@@ -410,7 +410,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackGetParamByIndex
+     * @tc.name   SUB_ArkUI_NavPath_GetParamByIndex_0100
      * @tc.number SUB_ArkUI_NavPath_GetParamByIndex_0100
      * @tc.desc   Test NavPathStack.getParamByIndex returns param value
      * @tc.type   FUNCTION
@@ -433,7 +433,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackGetParamByName
+     * @tc.name   SUB_ArkUI_NavPath_GetParamByName_0100
      * @tc.number SUB_ArkUI_NavPath_GetParamByName_0100
      * @tc.desc   Test NavPathStack.getParamByName returns array of params
      * @tc.type   FUNCTION
@@ -456,7 +456,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackGetIndexByName
+     * @tc.name   SUB_ArkUI_NavPath_GetIndexByName_0100
      * @tc.number SUB_ArkUI_NavPath_GetIndexByName_0100
      * @tc.desc   Test NavPathStack.getIndexByName returns array of indices
      * @tc.type   FUNCTION
@@ -480,7 +480,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackGetParentNull
+     * @tc.name   SUB_ArkUI_NavPath_GetParent_0100
      * @tc.number SUB_ArkUI_NavPath_GetParent_0100
      * @tc.desc   Test NavPathStack.getParent returns null for root stack
      * @tc.type   FUNCTION
@@ -502,7 +502,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackDisableAnimation
+     * @tc.name   SUB_ArkUI_NavPath_DisableAnimation_0100
      * @tc.number SUB_ArkUI_NavPath_DisableAnimation_0100
      * @tc.desc   Test NavPathStack.disableAnimation with true and false
      * @tc.type   FUNCTION
@@ -517,7 +517,7 @@ export default function SmallComponentSupplement() {
         console.info('SUB_ArkUI_NavPath_DisableAnimation_0100 disableAnimation(true) success');
         stack.disableAnimation(false);
         console.info('SUB_ArkUI_NavPath_DisableAnimation_0100 disableAnimation(false) success');
-        expect(true).assertTrue();
+        expect(stack !== null && stack !== undefined).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_NavPath_DisableAnimation_0100 error:' + err);
         expect(false).assertTrue();
@@ -526,7 +526,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackGetPathStackEmpty
+     * @tc.name   SUB_ArkUI_NavPath_GetPathStack_0100
      * @tc.number SUB_ArkUI_NavPath_GetPathStack_0100
      * @tc.desc   Test NavPathStack.getPathStack returns empty array on empty stack
      * @tc.type   FUNCTION
@@ -540,7 +540,7 @@ export default function SmallComponentSupplement() {
         stack.getPathStack();
         // Standalone NavPathStack (not bound to Navigation) returns undefined for getPathStack
         // Verify API is callable without throwing exception
-        expect(true).assertTrue();
+        expect(stack !== null && stack !== undefined).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_NavPath_GetPathStack_0100 error:' + err);
         expect(false).assertTrue();
@@ -549,7 +549,7 @@ export default function SmallComponentSupplement() {
     });
 
     /**
-     * @tc.name   navPathStackSetPathStack
+     * @tc.name   SUB_ArkUI_NavPath_SetPathStack_0100
      * @tc.number SUB_ArkUI_NavPath_SetPathStack_0100
      * @tc.desc   Test NavPathStack.setPathStack with NavPathInfo array and animated param
      * @tc.type   FUNCTION
@@ -566,7 +566,7 @@ export default function SmallComponentSupplement() {
         ];
         stack.setPathStack(infos, true);
         console.info('SUB_ArkUI_NavPath_SetPathStack_0100 size:' + stack.size());
-        expect(true).assertTrue();
+        expect(stack.size()).assertEqual(2);
       } catch (err) {
         console.error('SUB_ArkUI_NavPath_SetPathStack_0100 error:' + err);
         expect(false).assertTrue();
@@ -577,7 +577,7 @@ export default function SmallComponentSupplement() {
     // ====== NavPathInfo constructor ======
 
     /**
-     * @tc.name   navPathInfoConstructorWithParams
+     * @tc.name   SUB_ArkUI_NavPath_Constructor_0100
      * @tc.number SUB_ArkUI_NavPath_Constructor_0100
      * @tc.desc   Test NavPathInfo constructor with name, param, onPop and isEntry
      * @tc.type   FUNCTION

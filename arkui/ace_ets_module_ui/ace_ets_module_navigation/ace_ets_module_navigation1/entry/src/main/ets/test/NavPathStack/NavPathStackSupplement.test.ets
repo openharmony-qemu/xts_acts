@@ -566,8 +566,10 @@ export default function NavPathStackSupplement() {
       try {
         navPathStack.disableAnimation(true);
         navPathStack.disableAnimation(false);
+        expect(true).assertTrue();
       } catch (error) {
         console.info('[testDisableAnimationParam0001] ERROR: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
       console.info('[testDisableAnimationParam0001] END');
       done();

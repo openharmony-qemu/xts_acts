@@ -278,7 +278,7 @@ export default function SideBarNavDestSupplement() {
       ];
       try {
         stack.setPathStack(infos, true);
-        expect(true).assertTrue();
+        expect(stack.size()).assertEqual(2);
       } catch (err) {
         expect(false).assertTrue();
       }

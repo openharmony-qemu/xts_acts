@@ -42,7 +42,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   pushUrlWithModeCallback
+     * @tc.name   SUB_ArkUI_Router_PushUrl_0100
      * @tc.number SUB_ArkUI_Router_PushUrl_0100
      * @tc.desc   Test router.pushUrl with RouterMode and callback
      * @tc.type   FUNCTION
@@ -68,7 +68,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   pushUrlWithModeCallbackSingle
+     * @tc.name   SUB_ArkUI_Router_PushUrl_0200
      * @tc.number SUB_ArkUI_Router_PushUrl_0200
      * @tc.desc   Test router.pushUrl with RouterMode.Single and callback
      * @tc.type   FUNCTION
@@ -94,7 +94,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   replaceUrlPromiseRecoverableFalse
+     * @tc.name   SUB_ArkUI_Router_ReplaceUrl_0100
      * @tc.number SUB_ArkUI_Router_ReplaceUrl_0100
      * @tc.desc   Test router.replaceUrl with recoverable field in params
      * @tc.type   FUNCTION
@@ -133,7 +133,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   replaceUrlPromiseRecoverableTrue
+     * @tc.name   SUB_ArkUI_Router_ReplaceUrl_0200
      * @tc.number SUB_ArkUI_Router_ReplaceUrl_0200
      * @tc.desc   Test router.replaceUrl with recoverable true in params
      * @tc.type   FUNCTION
@@ -172,7 +172,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   getStateByUrlValidUrl
+     * @tc.name   SUB_ArkUI_Router_GetStateByUrl_0100
      * @tc.number SUB_ArkUI_Router_GetStateByUrl_0100
      * @tc.desc   Test router.getStateByUrl with valid url returns array with items
      * @tc.type   FUNCTION
@@ -198,7 +198,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   getStateByUrlEmptyString
+     * @tc.name   SUB_ArkUI_Router_GetStateByUrl_0200
      * @tc.number SUB_ArkUI_Router_GetStateByUrl_0200
      * @tc.desc   Test router.getStateByUrl with empty string returns empty array
      * @tc.type   FUNCTION
@@ -219,7 +219,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   enableAlertBeforeBackPageTest
+     * @tc.name   SUB_ArkUI_Router_EnableAlertBeforeBackPage_0100
      * @tc.number SUB_ArkUI_Router_EnableAlertBeforeBackPage_0100
      * @tc.desc   Test router.enableAlertBeforeBackPage with message param
      * @tc.type   FUNCTION
@@ -231,6 +231,7 @@ export default function RouterSupplementTest() {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/UIObserver/GetStateByIndexPage'
       };
+      let noError = true;
       try {
         await router.pushUrl(options);
         await CommonFunc.sleep(1000);
@@ -238,16 +239,16 @@ export default function RouterSupplementTest() {
           message: 'Confirm to exit?'
         });
         console.info('SUB_ArkUI_Router_EnableAlertBeforeBackPage_0100 enable success');
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_Router_EnableAlertBeforeBackPage_0100 error:' + err);
-        expect(false).assertTrue();
+        noError = false;
       }
+      expect(noError).assertTrue();
       done();
     });
 
     /**
-     * @tc.name   showAlertBeforeBackPageTest
+     * @tc.name   SUB_ArkUI_Router_ShowAlertBeforeBackPage_0100
      * @tc.number SUB_ArkUI_Router_ShowAlertBeforeBackPage_0100
      * @tc.desc   Test router.showAlertBeforeBackPage with message param
      * @tc.type   FUNCTION
@@ -259,6 +260,7 @@ export default function RouterSupplementTest() {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/UIObserver/GetStateByIndexPage'
       };
+      let noError = true;
       try {
         await router.pushUrl(options);
         await CommonFunc.sleep(1000);
@@ -266,16 +268,16 @@ export default function RouterSupplementTest() {
           message: 'Are you sure you want to go back?'
         });
         console.info('SUB_ArkUI_Router_ShowAlertBeforeBackPage_0100 showAlert success');
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_Router_ShowAlertBeforeBackPage_0100 error:' + err);
-        expect(false).assertTrue();
+        noError = false;
       }
+      expect(noError).assertTrue();
       done();
     });
 
     /**
-     * @tc.name   disableAlertBeforeBackPageTest
+     * @tc.name   SUB_ArkUI_Router_DisableAlertBeforeBackPage_0100
      * @tc.number SUB_ArkUI_Router_DisableAlertBeforeBackPage_0100
      * @tc.desc   Test router.disableAlertBeforeBackPage after enabling alert
      * @tc.type   FUNCTION
@@ -287,6 +289,7 @@ export default function RouterSupplementTest() {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/UIObserver/GetStateByIndexPage'
       };
+      let noError = true;
       try {
         await router.pushUrl(options);
         await CommonFunc.sleep(1000);
@@ -296,16 +299,16 @@ export default function RouterSupplementTest() {
         await CommonFunc.sleep(500);
         router.disableAlertBeforeBackPage();
         console.info('SUB_ArkUI_Router_DisableAlertBeforeBackPage_0100 disable success');
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_Router_DisableAlertBeforeBackPage_0100 error:' + err);
-        expect(false).assertTrue();
+        noError = false;
       }
+      expect(noError).assertTrue();
       done();
     });
 
     /**
-     * @tc.name   getParamsReturnsUndefined
+     * @tc.name   SUB_ArkUI_Router_GetParams_0100
      * @tc.number SUB_ArkUI_Router_GetParams_0100
      * @tc.desc   Test router.getParams returns undefined when no params passed
      * @tc.type   FUNCTION
@@ -331,7 +334,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   getParamsWithParamsPassed
+     * @tc.name   SUB_ArkUI_Router_GetParams_0200
      * @tc.number SUB_ArkUI_Router_GetParams_0200
      * @tc.desc   Test router.getParams returns params when params passed via pushUrl
      * @tc.type   FUNCTION
@@ -361,7 +364,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   pushNamedRouteCallback
+     * @tc.name   SUB_ArkUI_Router_PushNamedRoute_0100
      * @tc.number SUB_ArkUI_Router_PushNamedRoute_0100
      * @tc.desc   Test router.pushNamedRoute with callback overload
      * @tc.type   FUNCTION
@@ -395,7 +398,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   pushNamedRoutePromise
+     * @tc.name   SUB_ArkUI_Router_PushNamedRoute_0200
      * @tc.number SUB_ArkUI_Router_PushNamedRoute_0200
      * @tc.desc   Test router.pushNamedRoute promise overload
      * @tc.type   FUNCTION
@@ -422,7 +425,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   pushNamedRouteWithModeCallback
+     * @tc.name   SUB_ArkUI_Router_PushNamedRoute_0300
      * @tc.number SUB_ArkUI_Router_PushNamedRoute_0300
      * @tc.desc   Test router.pushNamedRoute with RouterMode and callback overload
      * @tc.type   FUNCTION
@@ -456,7 +459,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   pushNamedRouteWithModePromise
+     * @tc.name   SUB_ArkUI_Router_PushNamedRoute_0400
      * @tc.number SUB_ArkUI_Router_PushNamedRoute_0400
      * @tc.desc   Test router.pushNamedRoute with RouterMode promise overload
      * @tc.type   FUNCTION
@@ -483,7 +486,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   replaceNamedRouteCallback
+     * @tc.name   SUB_ArkUI_Router_ReplaceNamedRoute_0100
      * @tc.number SUB_ArkUI_Router_ReplaceNamedRoute_0100
      * @tc.desc   Test router.replaceNamedRoute with callback overload
      * @tc.type   FUNCTION
@@ -517,7 +520,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   replaceNamedRoutePromise
+     * @tc.name   SUB_ArkUI_Router_ReplaceNamedRoute_0200
      * @tc.number SUB_ArkUI_Router_ReplaceNamedRoute_0200
      * @tc.desc   Test router.replaceNamedRoute promise overload
      * @tc.type   FUNCTION
@@ -544,7 +547,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   replaceNamedRouteWithModePromise
+     * @tc.name   SUB_ArkUI_Router_ReplaceNamedRoute_0300
      * @tc.number SUB_ArkUI_Router_ReplaceNamedRoute_0300
      * @tc.desc   Test router.replaceNamedRoute with RouterMode promise overload
      * @tc.type   FUNCTION
@@ -571,7 +574,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   systemRouterBackWithOptions
+     * @tc.name   SUB_ArkUI_SysRouter_Back_0100
      * @tc.number SUB_ArkUI_SysRouter_Back_0100
      * @tc.desc   Test system.router.back with url option
      * @tc.type   FUNCTION
@@ -604,7 +607,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   systemRouterGetParamsNoParams
+     * @tc.name   SUB_ArkUI_SysRouter_GetParams_0100
      * @tc.number SUB_ArkUI_SysRouter_GetParams_0100
      * @tc.desc   Test system.router.getParams returns empty when no params passed
      * @tc.type   FUNCTION
@@ -630,7 +633,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   systemRouterGetParamsWithParams
+     * @tc.name   SUB_ArkUI_SysRouter_GetParams_0200
      * @tc.number SUB_ArkUI_SysRouter_GetParams_0200
      * @tc.desc   Test system.router.getParams returns params when passed via pushUrl
      * @tc.type   FUNCTION
@@ -660,7 +663,7 @@ export default function RouterSupplementTest() {
     });
 
     /**
-     * @tc.name   systemRouterEnableAlertBeforeBackPage
+     * @tc.name   SUB_ArkUI_SysRouter_EnableAlertBeforeBackPage_0100
      * @tc.number SUB_ArkUI_SysRouter_EnableAlertBeforeBackPage_0100
      * @tc.desc   Test system.router.enableAlertBeforeBackPage with message
      * @tc.type   FUNCTION
@@ -672,6 +675,7 @@ export default function RouterSupplementTest() {
       let pushOptions: router.RouterOptions = {
         url: 'MainAbility/pages/UIObserver/GetStateByIndexPage'
       };
+      let noError = true;
       try {
         await router.pushUrl(pushOptions);
         await CommonFunc.sleep(1000);
@@ -679,16 +683,16 @@ export default function RouterSupplementTest() {
           message: 'System router: confirm exit?'
         });
         console.info('SUB_ArkUI_SysRouter_EnableAlertBeforeBackPage_0100 enable success');
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_SysRouter_EnableAlertBeforeBackPage_0100 error:' + err);
-        expect(false).assertTrue();
+        noError = false;
       }
+      expect(noError).assertTrue();
       done();
     });
 
     /**
-     * @tc.name   systemRouterDisableAlertBeforeBackPage
+     * @tc.name   SUB_ArkUI_SysRouter_DisableAlertBeforeBackPage_0100
      * @tc.number SUB_ArkUI_SysRouter_DisableAlertBeforeBackPage_0100
      * @tc.desc   Test system.router.disableAlertBeforeBackPage after enabling alert
      * @tc.type   FUNCTION
@@ -700,6 +704,7 @@ export default function RouterSupplementTest() {
       let pushOptions: router.RouterOptions = {
         url: 'MainAbility/pages/UIObserver/GetStateByIndexPage'
       };
+      let noError = true;
       try {
         await router.pushUrl(pushOptions);
         await CommonFunc.sleep(1000);
@@ -709,16 +714,16 @@ export default function RouterSupplementTest() {
         await CommonFunc.sleep(500);
         systemRouter.disableAlertBeforeBackPage();
         console.info('SUB_ArkUI_SysRouter_DisableAlertBeforeBackPage_0100 disable success');
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_SysRouter_DisableAlertBeforeBackPage_0100 error:' + err);
-        expect(false).assertTrue();
+        noError = false;
       }
+      expect(noError).assertTrue();
       done();
     });
 
     /**
-     * @tc.name   systemRouterDisableAlertBeforeBackPageWithOptions
+     * @tc.name   SUB_ArkUI_SysRouter_DisableAlertBeforeBackPage_0200
      * @tc.number SUB_ArkUI_SysRouter_DisableAlertBeforeBackPage_0200
      * @tc.desc   Test system.router.disableAlertBeforeBackPage with options callback
      * @tc.type   FUNCTION
@@ -730,6 +735,7 @@ export default function RouterSupplementTest() {
       let pushOptions: router.RouterOptions = {
         url: 'MainAbility/pages/UIObserver/GetStateByIndexPage'
       };
+      let noError = true;
       try {
         await router.pushUrl(pushOptions);
         await CommonFunc.sleep(1000);
@@ -749,11 +755,11 @@ export default function RouterSupplementTest() {
           }
         });
         console.info('SUB_ArkUI_SysRouter_DisableAlertBeforeBackPage_0200 disable called');
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_SysRouter_DisableAlertBeforeBackPage_0200 error:' + err);
-        expect(false).assertTrue();
+        noError = false;
       }
+      expect(noError).assertTrue();
       done();
     });
   })

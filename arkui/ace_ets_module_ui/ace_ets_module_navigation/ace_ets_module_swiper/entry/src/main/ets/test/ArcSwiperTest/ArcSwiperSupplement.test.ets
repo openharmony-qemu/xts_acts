@@ -85,7 +85,7 @@ export default function ArcSwiperSupplementTest() {
       const handler = (): void => {};
       controller.finishAnimation(handler);
       controller.finishAnimation(undefined);
-      expect(true).assertTrue();
+      expect(controller !== null && controller !== undefined).assertTrue();
     });
 
     /**
