@@ -48,7 +48,7 @@ export default function onWillStartFlingModifierTest() {
      */
     it('test_onWillStartFling_Modifier', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        await CommonFunc.sleep(2000);
+        await CommonFunc.sleep(500);
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
         let dragScroll = await driver.findComponent(ON.id('grid_dragging_fling'));
@@ -61,10 +61,10 @@ export default function onWillStartFlingModifierTest() {
         let width = right - left;
         await driver.swipe(Math.round(left + width/2).toInt(), Math.round(top + height*0.8).toInt(), Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt(), 1000);
         await CommonFunc.sleep(2000);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('GridModifier_onWillStartFling' + '_onWillStartFling'))
-          .getElement('$attrs')
-          .getString('content'))
-          .assertEqual('第1次Fling开始');
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('onWillStartFling'))
+            .getElement('$attrs')
+            .getString('content'))
+            .assertEqual('第1次Fling开始');
         done();
       } catch (error) {
         console.error('[test_onWillStartFling_Modifier] error:' + error);

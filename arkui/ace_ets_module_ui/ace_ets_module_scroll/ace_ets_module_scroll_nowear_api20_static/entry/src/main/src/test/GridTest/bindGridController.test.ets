@@ -62,18 +62,18 @@ export default function bindGridControllerSetOnTest() {
         await CommonFunc.sleep(200);
         await (oriBtn2?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str6'))
-          .getElement('$attrs')
-          .getString('content'))
-          .assertEqual('OnWillScroll start');
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str'))
-          .getElement('$attrs')
-          .getString('content'))
-          .assertEqual('OnDidScroll start');
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str4'))
-          .getElement('$attrs')
-          .getString('content'))
-          .assertEqual('onScrollIndex start');
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('str6'))
+            .getElement('$attrs')
+            .getString('content'))
+            .assertEqual('OnWillScroll start');
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('str'))
+            .getElement('$attrs')
+            .getString('content'))
+            .assertEqual('OnDidScroll start');
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('str4'))
+            .getElement('$attrs')
+            .getString('content'))
+            .assertEqual('onScrollIndex start');
         done();
       } catch (error) {
         console.error('[test_bindGridController] error:' + error);
@@ -99,7 +99,7 @@ export default function bindGridControllerSetOnTest() {
         let oriBtn1 = await driver.findComponent(ON.id('set'));
         await (oriBtn1?.click() as Promise<void>);
         await CommonFunc.sleep(200);
-        let dragScroll = await driver.findComponent(ON.id('bindGridController' + '_grid_dragging_fling'));
+        let dragScroll = await driver.findComponent(ON.id('grid_dragging_fling'));
         const rect = await (dragScroll?.getBounds() as Promise<Rect>);
         let top = rect.top;
         let right = rect.right;
@@ -108,31 +108,31 @@ export default function bindGridControllerSetOnTest() {
         let height = bottom -top;
         let width = right - left;
         await driver.swipe(Math.round(left + width * 0.9).toInt(),        // 起点 X：左侧 10% 处（避免贴边）
-          Math.round(top + height / 2).toInt(),          // 起点 Y：垂直中线
-          Math.round(left + width * 0.5).toInt(),        // 终点 X：右侧 90% 处（避免贴边）
-          Math.round(top + height / 2).toInt() );
+            Math.round(top + height / 2).toInt(),          // 起点 Y：垂直中线
+            Math.round(left + width * 0.5).toInt(),        // 终点 X：右侧 90% 处（避免贴边）
+            Math.round(top + height / 2).toInt() );
         await CommonFunc.sleep(1000);
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('str3'))
-          .getElement('$attrs')
-          .getString('content'))
-          .assertEqual('OnScrollFrameBegin start');
+            .getElement('$attrs')
+            .getString('content'))
+            .assertEqual('OnScrollFrameBegin start');
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('str2'))
-          .getElement('$attrs')
-          .getString('content'))
-          .assertEqual('OnScrollStart start');
+            .getElement('$attrs')
+            .getString('content'))
+            .assertEqual('OnScrollStart start');
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('str5'))
-          .getElement('$attrs')
-          .getString('content'))
-          .assertEqual('OnScrollStop start');
+            .getElement('$attrs')
+            .getString('content'))
+            .assertEqual('OnScrollStop start');
         await driver.swipe(Math.round(left + width * 0.1).toInt(),        // 起点 X：左侧 10% 处（避免贴边）
-          Math.round(top + height / 2).toInt(),          // 起点 Y：垂直中线
-          Math.round(left + width * 0.9).toInt(),        // 终点 X：右侧 90% 处（避免贴边）
-          Math.round(top + height / 2).toInt() );
+            Math.round(top + height / 2).toInt(),          // 起点 Y：垂直中线
+            Math.round(left + width * 0.9).toInt(),        // 终点 X：右侧 90% 处（避免贴边）
+            Math.round(top + height / 2).toInt() );
         await CommonFunc.sleep(200);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str7'))
-          .getElement('$attrs')
-          .getString('content'))
-          .assertEqual('OnReachStart start');
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('str7'))
+            .getElement('$attrs')
+            .getString('content'))
+            .assertEqual('OnReachStart start');
         done();
       } catch (error) {
         console.error('[test_bindGridController_01] error:' + error);
