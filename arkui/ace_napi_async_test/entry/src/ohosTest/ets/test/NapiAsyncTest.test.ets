@@ -2009,8 +2009,8 @@ export default function abilityTest() {
      */
     it('testNapiPromiseJsInterop0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       console.info('testNapiPromiseJsInterop0001 begin');
-      let promiseA = testNapi.createPromiseAndResolve('native value A');
-      let promiseB = testNapi.createPromiseAndResolve('native value B');
+      let promiseA: Promise<string> = testNapi.createPromiseAndResolve('native value A');
+      let promiseB: Promise<string> = testNapi.createPromiseAndResolve('native value B');
       let promiseCombinations: Object[] = [
         Promise.all([promiseA, promiseB]),
         Promise.race([promiseA, promiseB]),
