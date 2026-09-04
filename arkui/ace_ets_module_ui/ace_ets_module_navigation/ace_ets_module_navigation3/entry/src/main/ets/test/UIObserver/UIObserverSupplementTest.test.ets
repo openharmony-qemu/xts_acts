@@ -31,6 +31,7 @@ export default function UIObserverSupplementTest() {
      */
     it('SUB_ArkUI_UIObserver_on_navDestinationUpdate_callback_0100', Level.LEVEL2, async (done: () => void) => {
       console.info('SUB_ArkUI_UIObserver_on_navDestinationUpdate_callback_0100 START');
+      let noError = true;
       try {
         const callback = (info: uiObserver.NavDestinationInfo) => {
           console.info('SUB_ArkUI_UIObserver_on_navDestinationUpdate_callback_0100 callback name: ' + info.name);
@@ -38,11 +39,11 @@ export default function UIObserverSupplementTest() {
         uiObserver.on('navDestinationUpdate', callback);
         console.info('SUB_ArkUI_UIObserver_on_navDestinationUpdate_callback_0100 on success');
         uiObserver.off('navDestinationUpdate', callback);
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_UIObserver_on_navDestinationUpdate_callback_0100 error:' + err);
-        expect().assertFail();
+        noError = false;
       }
+      expect(noError).assertTrue();
       done();
     });
 
@@ -56,6 +57,7 @@ export default function UIObserverSupplementTest() {
      */
     it('SUB_ArkUI_UIObserver_off_navDestinationUpdate_withOptions_0100', Level.LEVEL2, async (done: () => void) => {
       console.info('SUB_ArkUI_UIObserver_off_navDestinationUpdate_withOptions_0100 START');
+      let noError = true;
       try {
         const callback = (info: uiObserver.NavDestinationInfo) => {
           console.info('SUB_ArkUI_UIObserver_off_navDestinationUpdate_withOptions_0100 callback');
@@ -71,11 +73,11 @@ export default function UIObserverSupplementTest() {
         uiObserver.on('navDestinationUpdate', { navigationId: 'testNavId' }, callback);
         uiObserver.off('navDestinationUpdate', { navigationId: 'testNavId' });
         console.info('SUB_ArkUI_UIObserver_off_navDestinationUpdate_withOptions_0100 off with options without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_UIObserver_off_navDestinationUpdate_withOptions_0100 error:' + err);
-        expect().assertFail();
+        noError = false;
       }
+      expect(noError).assertTrue();
       done();
     });
 
@@ -89,6 +91,7 @@ export default function UIObserverSupplementTest() {
      */
     it('SUB_ArkUI_UIObserver_off_navDestinationUpdate_callback_0100', Level.LEVEL2, async (done: () => void) => {
       console.info('SUB_ArkUI_UIObserver_off_navDestinationUpdate_callback_0100 START');
+      let noError = true;
       try {
         const callback = (info: uiObserver.NavDestinationInfo) => {
           console.info('SUB_ArkUI_UIObserver_off_navDestinationUpdate_callback_0100 callback');
@@ -102,11 +105,11 @@ export default function UIObserverSupplementTest() {
         uiObserver.on('navDestinationUpdate', callback);
         uiObserver.off('navDestinationUpdate');
         console.info('SUB_ArkUI_UIObserver_off_navDestinationUpdate_callback_0100 off without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_UIObserver_off_navDestinationUpdate_callback_0100 error:' + err);
-        expect().assertFail();
+        noError = false;
       }
+      expect(noError).assertTrue();
       done();
     });
 
@@ -120,6 +123,7 @@ export default function UIObserverSupplementTest() {
      */
     it('SUB_ArkUI_UIObserver_off_tabContentUpdate_withOptions_0100', Level.LEVEL2, async (done: () => void) => {
       console.info('SUB_ArkUI_UIObserver_off_tabContentUpdate_withOptions_0100 START');
+      let noError = true;
       try {
         const callback = (info: uiObserver.TabContentInfo) => {
           console.info('SUB_ArkUI_UIObserver_off_tabContentUpdate_withOptions_0100 callback, index: ' + info.index);
@@ -140,9 +144,9 @@ export default function UIObserverSupplementTest() {
         console.info('SUB_ArkUI_UIObserver_off_tabContentUpdate_withOptions_0100 off with options without callback success');
       } catch (err) {
         console.error('SUB_ArkUI_UIObserver_off_tabContentUpdate_withOptions_0100 error:' + err);
-        expect().assertFail();
+        noError = false;
       }
-      expect(true).assertTrue();
+      expect(noError).assertTrue();
       done();
     });
 

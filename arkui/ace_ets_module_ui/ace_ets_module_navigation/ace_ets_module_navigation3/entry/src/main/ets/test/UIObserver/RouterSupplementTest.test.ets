@@ -383,7 +383,7 @@ export default function RouterSupplementTest() {
         router.pushNamedRoute(namedOptions, (err: Error) => {
           if (err) {
             console.info('SUB_ArkUI_Router_PushNamedRoute_0100 expected error for non-existent route:' + err.message);
-            expect(true).assertTrue();
+            expect(err !== undefined && err !== null).assertTrue();
           } else {
             console.info('SUB_ArkUI_Router_PushNamedRoute_0100 unexpected success');
             expect(false).assertTrue();
@@ -392,7 +392,7 @@ export default function RouterSupplementTest() {
         });
       } catch (err) {
         console.info('SUB_ArkUI_Router_PushNamedRoute_0100 catch error for non-existent route:' + err);
-        expect(true).assertTrue();
+        expect(err !== undefined && err !== null).assertTrue();
         done();
       }
     });
@@ -419,7 +419,7 @@ export default function RouterSupplementTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.info('SUB_ArkUI_Router_PushNamedRoute_0200 expected error for non-existent route:' + err);
-        expect(true).assertTrue();
+        expect(err !== undefined && err !== null).assertTrue();
       }
       done();
     });
@@ -444,7 +444,7 @@ export default function RouterSupplementTest() {
         router.pushNamedRoute(namedOptions, router.RouterMode.Standard, (err: Error) => {
           if (err) {
             console.info('SUB_ArkUI_Router_PushNamedRoute_0300 expected error for non-existent route:' + err.message);
-            expect(true).assertTrue();
+            expect(err !== undefined && err !== null).assertTrue();
           } else {
             console.info('SUB_ArkUI_Router_PushNamedRoute_0300 unexpected success');
             expect(false).assertTrue();
@@ -453,7 +453,7 @@ export default function RouterSupplementTest() {
         });
       } catch (err) {
         console.info('SUB_ArkUI_Router_PushNamedRoute_0300 catch error for non-existent route:' + err);
-        expect(true).assertTrue();
+        expect(err !== undefined && err !== null).assertTrue();
         done();
       }
     });
@@ -480,7 +480,7 @@ export default function RouterSupplementTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.info('SUB_ArkUI_Router_PushNamedRoute_0400 expected error for non-existent route:' + err);
-        expect(true).assertTrue();
+        expect(err !== undefined && err !== null).assertTrue();
       }
       done();
     });
@@ -505,7 +505,7 @@ export default function RouterSupplementTest() {
         router.replaceNamedRoute(namedOptions, (err: Error) => {
           if (err) {
             console.info('SUB_ArkUI_Router_ReplaceNamedRoute_0100 expected error for non-existent route:' + err.message);
-            expect(true).assertTrue();
+            expect(err !== undefined && err !== null).assertTrue();
           } else {
             console.info('SUB_ArkUI_Router_ReplaceNamedRoute_0100 unexpected success');
             expect(false).assertTrue();
@@ -514,7 +514,7 @@ export default function RouterSupplementTest() {
         });
       } catch (err) {
         console.info('SUB_ArkUI_Router_ReplaceNamedRoute_0100 catch error for non-existent route:' + err);
-        expect(true).assertTrue();
+        expect(err !== undefined && err !== null).assertTrue();
         done();
       }
     });
@@ -541,7 +541,7 @@ export default function RouterSupplementTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.info('SUB_ArkUI_Router_ReplaceNamedRoute_0200 expected error for non-existent route:' + err);
-        expect(true).assertTrue();
+        expect(err !== undefined && err !== null).assertTrue();
       }
       done();
     });
