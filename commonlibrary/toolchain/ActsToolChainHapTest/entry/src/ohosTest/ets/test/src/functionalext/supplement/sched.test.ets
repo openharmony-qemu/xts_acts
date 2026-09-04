@@ -27,7 +27,7 @@ export default function sched_group_test() {
      * @tc.level  LEVEL1
      */
     it("sched_cpucount", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__sched_cpucount");
+      const result: number = await testNapi.runTest("__sched_cpucount");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function sched_group_test() {
      * @tc.level  LEVEL1
      */
     it("sched_getaffinity", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sched_getaffinity");
+      const result: number = await testNapi.runTest("sched_getaffinity");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function sched_group_test() {
      * @tc.level  LEVEL1
      */
     it("sched_rr_get_interval", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sched_rr_get_interval");
+      const result: number = await testNapi.runTest("sched_rr_get_interval");
       expect(result).assertEqual(0);
       done();
     });
@@ -66,7 +66,7 @@ export default function sched_group_test() {
      * @tc.level  LEVEL1
      */
     it("sched_setaffinity", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sched_setaffinity");
+      const result: number = await testNapi.runTest("sched_setaffinity");
       expect(result).assertEqual(0);
       done();
     });
@@ -79,7 +79,7 @@ export default function sched_group_test() {
      * @tc.level  LEVEL1
      */
     it("sched_yield", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sched_yield");
+      const result: number = await testNapi.runTest("sched_yield");
       expect(result).assertEqual(0);
       done();
     });

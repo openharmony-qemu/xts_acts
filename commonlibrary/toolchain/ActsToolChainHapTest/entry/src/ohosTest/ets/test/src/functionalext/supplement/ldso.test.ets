@@ -27,7 +27,7 @@ export default function FunctionalextSupplementLdsoTestGroupTest() {
      * @tc.desc   libc-test dl_iterate_phdr
      */
     it("dl_iterate_phdr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("dl_iterate_phdr");
+      const result: number = await testNapi.runTest("dl_iterate_phdr");
       expect(result).assertEqual(0);
       done();
     });

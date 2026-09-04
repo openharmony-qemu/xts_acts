@@ -27,7 +27,7 @@ export default function ldso_cfi_group_test() {
      * @tc.level  LEVEL1
      */
     it("large_size_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("large_size_test");
+      const result: number = await testNapi.runTest("large_size_test");
       expect(result).assertEqual(0);
       done();
     });

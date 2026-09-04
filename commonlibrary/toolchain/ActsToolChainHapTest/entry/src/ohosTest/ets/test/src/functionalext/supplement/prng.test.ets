@@ -27,7 +27,7 @@ export default function prng_group_test() {
      * @tc.level  LEVEL1
      */
     it("drand48", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("drand48");
+      const result: number = await testNapi.runTest("drand48");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function prng_group_test() {
      * @tc.level  LEVEL1
      */
     it("erand48", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("erand48");
+      const result: number = await testNapi.runTest("erand48");
       expect(result).assertEqual(0);
       done();
     });
@@ -54,7 +54,7 @@ export default function prng_group_test() {
      * @tc.level  LEVEL1
      */
     it("lcong48", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lcong48");
+      const result: number = await testNapi.runTest("lcong48");
       expect(result).assertEqual(0);
       done();
     });
@@ -67,7 +67,7 @@ export default function prng_group_test() {
      * @tc.level  LEVEL1
      */
     it("lrand48", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lrand48");
+      const result: number = await testNapi.runTest("lrand48");
       expect(result).assertEqual(0);
       done();
     });
@@ -80,7 +80,7 @@ export default function prng_group_test() {
      * @tc.level  LEVEL1
      */
     it("mrand48", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mrand48");
+      const result: number = await testNapi.runTest("mrand48");
       expect(result).assertEqual(0);
       done();
     });
@@ -93,7 +93,7 @@ export default function prng_group_test() {
      * @tc.level  LEVEL1
      */
     it("rand", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("rand");
+      const result: number = await testNapi.runTest("rand");
       expect(result).assertEqual(0);
       done();
     });
@@ -106,7 +106,7 @@ export default function prng_group_test() {
      * @tc.level  LEVEL1
      */
     it("rand_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("rand_r");
+      const result: number = await testNapi.runTest("rand_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -119,7 +119,7 @@ export default function prng_group_test() {
      * @tc.level  LEVEL1
      */
     it("seed48", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("seed48");
+      const result: number = await testNapi.runTest("seed48");
       expect(result).assertEqual(0);
       done();
     });
@@ -132,7 +132,7 @@ export default function prng_group_test() {
      * @tc.level  LEVEL1
      */
     it("srand", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("srand");
+      const result: number = await testNapi.runTest("srand");
       expect(result).assertEqual(0);
       done();
     });
@@ -145,7 +145,7 @@ export default function prng_group_test() {
      * @tc.level  LEVEL1
      */
     it("srand48", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("srand48");
+      const result: number = await testNapi.runTest("srand48");
       expect(result).assertEqual(0);
       done();
     });

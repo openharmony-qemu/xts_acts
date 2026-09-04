@@ -27,7 +27,7 @@ export default function FunctionalextSchedTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("sched_getparam", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sched_getparam");
+      const result: number = await testNapi.runTest("sched_getparam");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function FunctionalextSchedTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("sched_scheduler", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sched_scheduler");
+      const result: number = await testNapi.runTest("sched_scheduler");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function FunctionalextSchedTestGroupTest() {
      * @tc.desc   libc-test sched_setparam
      */
     it("sched_setparam", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sched_setparam");
+      const result: number = await testNapi.runTest("sched_setparam");
       expect(result).assertEqual(0);
       done();
     });

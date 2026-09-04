@@ -27,7 +27,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("libc_current_sigrtmax", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__libc_current_sigrtmax");
+      const result: number = await testNapi.runTest("__libc_current_sigrtmax");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("libc_current_sigrtmin", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__libc_current_sigrtmin");
+      const result: number = await testNapi.runTest("__libc_current_sigrtmin");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("getitimer", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getitimer");
+      const result: number = await testNapi.runTest("getitimer");
       expect(result).assertEqual(0);
       done();
     });
@@ -68,7 +68,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("getitimer_time64", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__getitimer_time64");
+      const result: number = await testNapi.runTest("__getitimer_time64");
       expect(result).assertEqual(0);
       done();
     });
@@ -81,7 +81,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("setitimer_time64", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__setitimer_time64");
+      const result: number = await testNapi.runTest("__setitimer_time64");
       expect(result).assertEqual(0);
       done();
     });
@@ -94,7 +94,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("kill", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("kill");
+      const result: number = await testNapi.runTest("kill");
       expect(result).assertEqual(0);
       done();
     });
@@ -108,7 +108,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigset", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigset");
+      const result: number = await testNapi.runTest("sigset");
       expect(result).assertEqual(0);
       done();
     });
@@ -122,7 +122,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("killpg", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("killpg");
+      const result: number = await testNapi.runTest("killpg");
       expect(result).assertEqual(0);
       done();
     });
@@ -135,7 +135,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("psiginfo", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("psiginfo");
+      const result: number = await testNapi.runTest("psiginfo");
       expect(result).assertEqual(0);
       done();
     });
@@ -148,7 +148,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("psignal", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("psignal");
+      const result: number = await testNapi.runTest("psignal");
       expect(result).assertEqual(0);
       done();
     });
@@ -161,7 +161,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigaction", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigaction");
+      const result: number = await testNapi.runTest("sigaction");
       expect(result).assertEqual(0);
       done();
     });
@@ -174,7 +174,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigignore", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigignore");
+      const result: number = await testNapi.runTest("sigignore");
       expect(result).assertEqual(0);
       done();
     });
@@ -187,7 +187,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigqueue", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigqueue");
+      const result: number = await testNapi.runTest("sigqueue");
       expect(result).assertEqual(0);
       done();
     });
@@ -200,7 +200,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigwait", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigwait");
+      const result: number = await testNapi.runTest("sigwait");
       expect(result).assertEqual(0);
       done();
     });
@@ -213,7 +213,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigwaitinfo", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigwaitinfo");
+      const result: number = await testNapi.runTest("sigwaitinfo");
       expect(result).assertEqual(0);
       done();
     });
@@ -226,7 +226,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("sighold", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sighold");
+      const result: number = await testNapi.runTest("sighold");
       expect(result).assertEqual(0);
       done();
     });
@@ -239,7 +239,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigpause", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigpause");
+      const result: number = await testNapi.runTest("sigpause");
       expect(result).assertEqual(0);
       done();
     });
@@ -252,7 +252,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigrelse", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigrelse");
+      const result: number = await testNapi.runTest("sigrelse");
       expect(result).assertEqual(0);
       done();
     });
@@ -265,7 +265,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigsuspend", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigsuspend");
+      const result: number = await testNapi.runTest("sigsuspend");
       expect(result).assertEqual(0);
       done();
     });
@@ -278,7 +278,7 @@ export default function signal_group_test() {
      * @tc.level  LEVEL1
      */
     it("setitimer", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setitimer");
+      const result: number = await testNapi.runTest("setitimer");
       expect(result).assertEqual(0);
       done();
     });

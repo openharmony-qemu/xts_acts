@@ -27,7 +27,7 @@ export default function api_group_test() {
      * @tc.level  LEVEL1
      */
     it("main", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("main");
+      const result: number = await testNapi.runTest("main");
       expect(result).assertEqual(0);
       done();
     });

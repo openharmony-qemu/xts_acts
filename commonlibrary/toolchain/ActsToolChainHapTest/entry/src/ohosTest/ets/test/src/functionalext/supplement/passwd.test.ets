@@ -27,7 +27,7 @@ export default function FunctionalextSupplementPasswdTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("getgrent", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getgrent");
+      const result: number = await testNapi.runTest("getgrent");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function FunctionalextSupplementPasswdTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("getgrgid", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getgrgid");
+      const result: number = await testNapi.runTest("getgrgid");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function FunctionalextSupplementPasswdTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("getgrgid_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getgrgid_r");
+      const result: number = await testNapi.runTest("getgrgid_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -66,7 +66,7 @@ export default function FunctionalextSupplementPasswdTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("getgrnam", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getgrnam");
+      const result: number = await testNapi.runTest("getgrnam");
       expect(result).assertEqual(0);
       done();
     });
@@ -79,7 +79,7 @@ export default function FunctionalextSupplementPasswdTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("getgrnam_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getgrnam_r");
+      const result: number = await testNapi.runTest("getgrnam_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -92,7 +92,7 @@ export default function FunctionalextSupplementPasswdTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("getgrouplist", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getgrouplist");
+      const result: number = await testNapi.runTest("getgrouplist");
       expect(result).assertEqual(0);
       done();
     });
@@ -105,7 +105,7 @@ export default function FunctionalextSupplementPasswdTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("setgrent", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setgrent");
+      const result: number = await testNapi.runTest("setgrent");
       expect(result).assertEqual(0);
       done();
     });
@@ -118,7 +118,7 @@ export default function FunctionalextSupplementPasswdTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("setpwent", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setpwent");
+      const result: number = await testNapi.runTest("setpwent");
       expect(result).assertEqual(0);
       done();
     });

@@ -27,7 +27,7 @@ export default function stat_group_test() {
      * @tc.level  LEVEL1
      */
     it("umask", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("umask");
+      const result: number = await testNapi.runTest("umask");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function stat_group_test() {
      * @tc.desc   libc-test chmod
      */
     it("chmod", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("chmod");
+      const result: number = await testNapi.runTest("chmod");
       expect(result).assertEqual(0);
       done();
     });
@@ -54,7 +54,7 @@ export default function stat_group_test() {
      * @tc.desc   libc-test fchmod
      */
     it("fchmod", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fchmod");
+      const result: number = await testNapi.runTest("fchmod");
       expect(result).assertEqual(0);
       done();
     });
@@ -68,7 +68,7 @@ export default function stat_group_test() {
      * @tc.desc   libc-test fchmodat
      */
     it("fchmodat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fchmodat");
+      const result: number = await testNapi.runTest("fchmodat");
       expect(result).assertEqual(0);
       done();
     });
@@ -82,7 +82,7 @@ export default function stat_group_test() {
      * @tc.desc   libc-test futimesat
      */
     it("futimesat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("futimesat");
+      const result: number = await testNapi.runTest("futimesat");
       expect(result).assertEqual(0);
       done();
     });
@@ -96,7 +96,7 @@ export default function stat_group_test() {
      * @tc.desc   libc-test utimensat
      */
     it("utimensat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("utimensat");
+      const result: number = await testNapi.runTest("utimensat");
       expect(result).assertEqual(0);
       done();
     });

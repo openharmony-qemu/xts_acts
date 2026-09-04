@@ -27,7 +27,7 @@ export default function malloc_group_test() {
      * @tc.level  LEVEL1
      */
     it("aligned_alloc", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("aligned_alloc");
+      const result: number = await testNapi.runTest("aligned_alloc");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function malloc_group_test() {
      * @tc.level  LEVEL1
      */
     it("malloc_check_from_ptr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("malloc_check_from_ptr");
+      const result: number = await testNapi.runTest("malloc_check_from_ptr");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function malloc_group_test() {
      * @tc.level  LEVEL1
      */
     it("malloc_usable_size", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("malloc_usable_size");
+      const result: number = await testNapi.runTest("malloc_usable_size");
       expect(result).assertEqual(0);
       done();
     });
@@ -66,7 +66,7 @@ export default function malloc_group_test() {
      * @tc.level  LEVEL1
      */
     it("memalign", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("memalign");
+      const result: number = await testNapi.runTest("memalign");
       expect(result).assertEqual(0);
       done();
     });
@@ -79,7 +79,7 @@ export default function malloc_group_test() {
      * @tc.level  LEVEL1
      */
     it("posix_memalign", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("posix_memalign");
+      const result: number = await testNapi.runTest("posix_memalign");
       expect(result).assertEqual(0);
       done();
     });
@@ -92,7 +92,7 @@ export default function malloc_group_test() {
      * @tc.level  LEVEL1
      */
     it("realloc", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("realloc");
+      const result: number = await testNapi.runTest("realloc");
       expect(result).assertEqual(0);
       done();
     });
@@ -105,7 +105,7 @@ export default function malloc_group_test() {
      * @tc.desc   libc-test resTraceFreeRegion
      */
     it("resTraceFreeRegion", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("resTraceFreeRegion");
+      const result: number = await testNapi.runTest("resTraceFreeRegion");
       expect(result).assertEqual(0);
       done();
     });
@@ -119,7 +119,7 @@ export default function malloc_group_test() {
      * @tc.desc   libc-test resTraceMove
      */
     it("resTraceMove", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("resTraceMove");
+      const result: number = await testNapi.runTest("resTraceMove");
       expect(result).assertEqual(0);
       done();
     });
@@ -133,7 +133,7 @@ export default function malloc_group_test() {
      * @tc.desc   libc-test restrace
      */
     it("restrace", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("restrace");
+      const result: number = await testNapi.runTest("restrace");
       expect(result).assertEqual(0);
       done();
     });
@@ -147,7 +147,7 @@ export default function malloc_group_test() {
      * @tc.desc   libc-test restraceExt
      */
     it("restraceExt", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("restraceExt");
+      const result: number = await testNapi.runTest("restraceExt");
       expect(result).assertEqual(0);
       done();
     });

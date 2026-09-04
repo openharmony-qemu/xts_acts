@@ -27,7 +27,7 @@ export default function FunctionalextLegacyTestGroupTest() {
      * @tc.desc   libc-test ulimit
      */
     it("ulimit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ulimit");
+      const result: number = await testNapi.runTest("ulimit");
       expect(result).assertEqual(0);
       done();
     });

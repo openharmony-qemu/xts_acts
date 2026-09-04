@@ -27,7 +27,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("ctype_get_mb_cur_max", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__ctype_get_mb_cur_max");
+      const result: number = await testNapi.runTest("__ctype_get_mb_cur_max");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("isalnum", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("isalnum");
+      const result: number = await testNapi.runTest("isalnum");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("isalpha", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("isalpha");
+      const result: number = await testNapi.runTest("isalpha");
       expect(result).assertEqual(0);
       done();
     });
@@ -66,7 +66,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("isascii", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("isascii");
+      const result: number = await testNapi.runTest("isascii");
       expect(result).assertEqual(0);
       done();
     });
@@ -79,7 +79,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("isblank", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("isblank");
+      const result: number = await testNapi.runTest("isblank");
       expect(result).assertEqual(0);
       done();
     });
@@ -92,7 +92,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iscntrl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iscntrl");
+      const result: number = await testNapi.runTest("iscntrl");
       expect(result).assertEqual(0);
       done();
     });
@@ -105,7 +105,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("isdigit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("isdigit");
+      const result: number = await testNapi.runTest("isdigit");
       expect(result).assertEqual(0);
       done();
     });
@@ -118,7 +118,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("isgraph", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("isgraph");
+      const result: number = await testNapi.runTest("isgraph");
       expect(result).assertEqual(0);
       done();
     });
@@ -131,7 +131,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("islower", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("islower");
+      const result: number = await testNapi.runTest("islower");
       expect(result).assertEqual(0);
       done();
     });
@@ -144,7 +144,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("isprint", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("isprint");
+      const result: number = await testNapi.runTest("isprint");
       expect(result).assertEqual(0);
       done();
     });
@@ -157,7 +157,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("ispunct", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ispunct");
+      const result: number = await testNapi.runTest("ispunct");
       expect(result).assertEqual(0);
       done();
     });
@@ -170,7 +170,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("isspace", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("isspace");
+      const result: number = await testNapi.runTest("isspace");
       expect(result).assertEqual(0);
       done();
     });
@@ -183,7 +183,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("isupper", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("isupper");
+      const result: number = await testNapi.runTest("isupper");
       expect(result).assertEqual(0);
       done();
     });
@@ -196,7 +196,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswalhpa", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswalhpa");
+      const result: number = await testNapi.runTest("iswalhpa");
       expect(result).assertEqual(0);
       done();
     });
@@ -209,7 +209,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswalnum", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswalnum");
+      const result: number = await testNapi.runTest("iswalnum");
       expect(result).assertEqual(0);
       done();
     });
@@ -222,7 +222,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswctype", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswctype");
+      const result: number = await testNapi.runTest("iswctype");
       expect(result).assertEqual(0);
       done();
     });
@@ -235,7 +235,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("isxdigit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("isxdigit");
+      const result: number = await testNapi.runTest("isxdigit");
       expect(result).assertEqual(0);
       done();
     });
@@ -248,7 +248,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("toascii", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("toascii");
+      const result: number = await testNapi.runTest("toascii");
       expect(result).assertEqual(0);
       done();
     });
@@ -261,7 +261,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("towctrans", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("towctrans");
+      const result: number = await testNapi.runTest("towctrans");
       expect(result).assertEqual(0);
       done();
     });
@@ -274,7 +274,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcswidth", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcswidth");
+      const result: number = await testNapi.runTest("wcswidth");
       expect(result).assertEqual(0);
       done();
     });
@@ -287,7 +287,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("wctrans", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wctrans");
+      const result: number = await testNapi.runTest("wctrans");
       expect(result).assertEqual(0);
       done();
     });
@@ -300,7 +300,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("wctype", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wctype");
+      const result: number = await testNapi.runTest("wctype");
       expect(result).assertEqual(0);
       done();
     });
@@ -313,7 +313,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcwidth", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcwidth");
+      const result: number = await testNapi.runTest("wcwidth");
       expect(result).assertEqual(0);
       done();
     });
@@ -326,7 +326,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswblank", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswblank");
+      const result: number = await testNapi.runTest("iswblank");
       expect(result).assertEqual(0);
       done();
     });
@@ -339,7 +339,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswcntrl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswcntrl");
+      const result: number = await testNapi.runTest("iswcntrl");
       expect(result).assertEqual(0);
       done();
     });
@@ -352,7 +352,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswdigit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswdigit");
+      const result: number = await testNapi.runTest("iswdigit");
       expect(result).assertEqual(0);
       done();
     });
@@ -365,7 +365,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswlower", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswlower");
+      const result: number = await testNapi.runTest("iswlower");
       expect(result).assertEqual(0);
       done();
     });
@@ -378,7 +378,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswpunct", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswpunct");
+      const result: number = await testNapi.runTest("iswpunct");
       expect(result).assertEqual(0);
       done();
     });
@@ -391,7 +391,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswspace", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswspace");
+      const result: number = await testNapi.runTest("iswspace");
       expect(result).assertEqual(0);
       done();
     });
@@ -404,7 +404,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswupper", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswupper");
+      const result: number = await testNapi.runTest("iswupper");
       expect(result).assertEqual(0);
       done();
     });
@@ -417,7 +417,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswxdigit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswxdigit");
+      const result: number = await testNapi.runTest("iswxdigit");
       expect(result).assertEqual(0);
       done();
     });
@@ -430,7 +430,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("towlower", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("towlower");
+      const result: number = await testNapi.runTest("towlower");
       expect(result).assertEqual(0);
       done();
     });
@@ -443,7 +443,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("towupper", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("towupper");
+      const result: number = await testNapi.runTest("towupper");
       expect(result).assertEqual(0);
       done();
     });
@@ -456,7 +456,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("towupper_l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("towupper_l");
+      const result: number = await testNapi.runTest("towupper_l");
       expect(result).assertEqual(0);
       done();
     });
@@ -470,7 +470,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswprint", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswprint");
+      const result: number = await testNapi.runTest("iswprint");
       expect(result).assertEqual(0);
       done();
     });
@@ -484,7 +484,7 @@ export default function ctype_group_test() {
      * @tc.level  LEVEL1
      */
     it('iswalpha', Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest('iswalpha');
+      const result: number = await testNapi.runTest('iswalpha');
       expect(result).assertEqual(0);
       done();
     })

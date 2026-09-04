@@ -27,7 +27,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("alarm", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("alarm");
+      const result: number = await testNapi.runTest("alarm");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("chdir", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("chdir");
+      const result: number = await testNapi.runTest("chdir");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("ctermid", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ctermid");
+      const result: number = await testNapi.runTest("ctermid");
       expect(result).assertEqual(0);
       done();
     });
@@ -69,7 +69,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("getcwd", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getcwd");
+      const result: number = await testNapi.runTest("getcwd");
       expect(result).assertEqual(0);
       done();
     });
@@ -82,7 +82,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("getgroups", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getgroups");
+      const result: number = await testNapi.runTest("getgroups");
       expect(result).assertEqual(0);
       done();
     });
@@ -95,7 +95,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("getlogin", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getlogin");
+      const result: number = await testNapi.runTest("getlogin");
       expect(result).assertEqual(0);
       done();
     });
@@ -108,7 +108,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("getlogin_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getlogin_r");
+      const result: number = await testNapi.runTest("getlogin_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -121,7 +121,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("getpgid", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getpgid");
+      const result: number = await testNapi.runTest("getpgid");
       expect(result).assertEqual(0);
       done();
     });
@@ -134,7 +134,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("getpgrp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getpgrp");
+      const result: number = await testNapi.runTest("getpgrp");
       expect(result).assertEqual(0);
       done();
     });
@@ -147,7 +147,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("getppid", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getppid");
+      const result: number = await testNapi.runTest("getppid");
       expect(result).assertEqual(0);
       done();
     });
@@ -160,7 +160,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("getsid", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getsid");
+      const result: number = await testNapi.runTest("getsid");
       expect(result).assertEqual(0);
       done();
     });
@@ -173,7 +173,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("link", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("link");
+      const result: number = await testNapi.runTest("link");
       expect(result).assertEqual(0);
       done();
     });
@@ -186,7 +186,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("pause", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pause");
+      const result: number = await testNapi.runTest("pause");
       expect(result).assertEqual(0);
       done();
     });
@@ -199,7 +199,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("pipe2", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pipe2");
+      const result: number = await testNapi.runTest("pipe2");
       expect(result).assertEqual(0);
       done();
     });
@@ -212,7 +212,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("setsid", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setsid");
+      const result: number = await testNapi.runTest("setsid");
       expect(result).assertEqual(0);
       done();
     });
@@ -225,7 +225,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("sleep", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sleep");
+      const result: number = await testNapi.runTest("sleep");
       expect(result).assertEqual(0);
       done();
     });
@@ -238,7 +238,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("usleep", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("usleep");
+      const result: number = await testNapi.runTest("usleep");
       expect(result).assertEqual(0);
       done();
     });
@@ -251,7 +251,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("writev", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("writev");
+      const result: number = await testNapi.runTest("writev");
       expect(result).assertEqual(0);
       done();
     });
@@ -265,7 +265,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("write", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("write");
+      const result: number = await testNapi.runTest("write");
       expect(result).assertEqual(0);
       done();
     });
@@ -278,7 +278,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test dup3
      */
     it("dup3", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("dup3");
+      const result: number = await testNapi.runTest("dup3");
       expect(result).assertEqual(0);
       done();
     });
@@ -292,7 +292,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test faccessat
      */
     it("faccessat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("faccessat");
+      const result: number = await testNapi.runTest("faccessat");
       expect(result).assertEqual(0);
       done();
     });
@@ -306,7 +306,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test fchown
      */
     it("fchown", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fchown");
+      const result: number = await testNapi.runTest("fchown");
       expect(result).assertEqual(0);
       done();
     });
@@ -320,7 +320,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test fchownat
      */
     it("fchownat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fchownat");
+      const result: number = await testNapi.runTest("fchownat");
       expect(result).assertEqual(0);
       done();
     });
@@ -334,7 +334,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test fdatasync
      */
     it("fdatasync", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fdatasync");
+      const result: number = await testNapi.runTest("fdatasync");
       expect(result).assertEqual(0);
       done();
     });
@@ -348,7 +348,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test fsync
      */
     it("fsync", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fsync");
+      const result: number = await testNapi.runTest("fsync");
       expect(result).assertEqual(0);
       done();
     });
@@ -362,7 +362,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test ftruncate
      */
     it("ftruncate", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ftruncate");
+      const result: number = await testNapi.runTest("ftruncate");
       expect(result).assertEqual(0);
       done();
     });
@@ -376,7 +376,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test read
      */
     it("read", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("read");
+      const result: number = await testNapi.runTest("read");
       expect(result).assertEqual(0);
       done();
     });
@@ -390,7 +390,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test readv
      */
     it("readv", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("readv");
+      const result: number = await testNapi.runTest("readv");
       expect(result).assertEqual(0);
       done();
     });
@@ -404,7 +404,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test renameat
      */
     it("renameat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("renameat");
+      const result: number = await testNapi.runTest("renameat");
       expect(result).assertEqual(0);
       done();
     });
@@ -418,7 +418,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test symlinkat
      */
     it("symlinkat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("symlinkat");
+      const result: number = await testNapi.runTest("symlinkat");
       expect(result).assertEqual(0);
       done();
     });
@@ -432,7 +432,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test ttyname_r
      */
     it("ttyname_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ttyname_r");
+      const result: number = await testNapi.runTest("ttyname_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -446,7 +446,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test unlink
      */
     it("unlink", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("unlink");
+      const result: number = await testNapi.runTest("unlink");
       expect(result).assertEqual(0);
       done();
     });
@@ -460,7 +460,7 @@ export default function unistd_group_test() {
      * @tc.desc   libc-test unlinkat
      */
     it("unlinkat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("unlinkat");
+      const result: number = await testNapi.runTest("unlinkat");
       expect(result).assertEqual(0);
       done();
     });
@@ -474,7 +474,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("fchdir", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fchdir");
+      const result: number = await testNapi.runTest("fchdir");
       expect(result).assertEqual(0);
       done();
     });
@@ -487,7 +487,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("nice", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("nice");
+      const result: number = await testNapi.runTest("nice");
       expect(result).assertEqual(0);
       done();
     });
@@ -501,7 +501,7 @@ export default function unistd_group_test() {
      * @tc.level  LEVEL1
      */
     it("access", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("access");
+      const result: number = await testNapi.runTest("access");
       expect(result).assertEqual(0);
       done();
     });

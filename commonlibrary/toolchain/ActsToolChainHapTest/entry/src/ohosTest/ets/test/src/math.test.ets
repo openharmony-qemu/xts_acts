@@ -27,7 +27,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("acos", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("acos");
+      const result: number = await testNapi.runTest("acos");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("acosh", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("acosh");
+      const result: number = await testNapi.runTest("acosh");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("acoshf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("acoshf");
+      const result: number = await testNapi.runTest("acoshf");
       expect(result).assertEqual(0);
       done();
     });
@@ -69,7 +69,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("acosl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("acosl");
+      const result: number = await testNapi.runTest("acosl");
       expect(result).assertEqual(0);
       done();
     });
@@ -83,7 +83,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("asin", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("asin");
+      const result: number = await testNapi.runTest("asin");
       expect(result).assertEqual(0);
       done();
     });
@@ -97,7 +97,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("asinf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("asinf");
+      const result: number = await testNapi.runTest("asinf");
       expect(result).assertEqual(0);
       done();
     });
@@ -111,7 +111,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("asinh", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("asinh");
+      const result: number = await testNapi.runTest("asinh");
       expect(result).assertEqual(0);
       done();
     });
@@ -125,7 +125,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("asinhf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("asinhf");
+      const result: number = await testNapi.runTest("asinhf");
       expect(result).assertEqual(0);
       done();
     });
@@ -139,7 +139,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("asinl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("asinl");
+      const result: number = await testNapi.runTest("asinl");
       expect(result).assertEqual(0);
       done();
     });
@@ -153,7 +153,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("atan", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("atan");
+      const result: number = await testNapi.runTest("atan");
       expect(result).assertEqual(0);
       done();
     });
@@ -167,7 +167,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("atan2", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("atan2");
+      const result: number = await testNapi.runTest("atan2");
       expect(result).assertEqual(0);
       done();
     });
@@ -181,7 +181,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("atan2f", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("atan2f");
+      const result: number = await testNapi.runTest("atan2f");
       expect(result).assertEqual(0);
       done();
     });
@@ -195,7 +195,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("atan2l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("atan2l");
+      const result: number = await testNapi.runTest("atan2l");
       expect(result).assertEqual(0);
       done();
     });
@@ -209,7 +209,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("atanf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("atanf");
+      const result: number = await testNapi.runTest("atanf");
       expect(result).assertEqual(0);
       done();
     });
@@ -223,7 +223,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("atanh", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("atanh");
+      const result: number = await testNapi.runTest("atanh");
       expect(result).assertEqual(0);
       done();
     });
@@ -237,7 +237,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("atanhf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("atanhf");
+      const result: number = await testNapi.runTest("atanhf");
       expect(result).assertEqual(0);
       done();
     });
@@ -251,7 +251,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("atanhl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("atanhl");
+      const result: number = await testNapi.runTest("atanhl");
       expect(result).assertEqual(0);
       done();
     });
@@ -265,7 +265,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("atanl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("atanl");
+      const result: number = await testNapi.runTest("atanl");
       expect(result).assertEqual(0);
       done();
     });
@@ -279,7 +279,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("cbrt", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cbrt");
+      const result: number = await testNapi.runTest("cbrt");
       expect(result).assertEqual(0);
       done();
     });
@@ -293,7 +293,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("cbrtf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cbrtf");
+      const result: number = await testNapi.runTest("cbrtf");
       expect(result).assertEqual(0);
       done();
     });
@@ -307,7 +307,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("cbrtl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cbrtl");
+      const result: number = await testNapi.runTest("cbrtl");
       expect(result).assertEqual(0);
       done();
     });
@@ -321,7 +321,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("ceil", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ceil");
+      const result: number = await testNapi.runTest("ceil");
       expect(result).assertEqual(0);
       done();
     });
@@ -335,7 +335,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("ceilf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ceilf");
+      const result: number = await testNapi.runTest("ceilf");
       expect(result).assertEqual(0);
       done();
     });
@@ -349,7 +349,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("ceill", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ceill");
+      const result: number = await testNapi.runTest("ceill");
       expect(result).assertEqual(0);
       done();
     });
@@ -363,7 +363,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("copysign", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("copysign");
+      const result: number = await testNapi.runTest("copysign");
       expect(result).assertEqual(0);
       done();
     });
@@ -377,7 +377,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("copysignf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("copysignf");
+      const result: number = await testNapi.runTest("copysignf");
       expect(result).assertEqual(0);
       done();
     });
@@ -391,7 +391,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("copysignl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("copysignl");
+      const result: number = await testNapi.runTest("copysignl");
       expect(result).assertEqual(0);
       done();
     });
@@ -405,7 +405,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("cos", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cos");
+      const result: number = await testNapi.runTest("cos");
       expect(result).assertEqual(0);
       done();
     });
@@ -419,7 +419,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("cosf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cosf");
+      const result: number = await testNapi.runTest("cosf");
       expect(result).assertEqual(0);
       done();
     });
@@ -433,7 +433,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("cosh", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cosh");
+      const result: number = await testNapi.runTest("cosh");
       expect(result).assertEqual(0);
       done();
     });
@@ -447,7 +447,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("coshf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("coshf");
+      const result: number = await testNapi.runTest("coshf");
       expect(result).assertEqual(0);
       done();
     });
@@ -461,7 +461,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("coshl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("coshl");
+      const result: number = await testNapi.runTest("coshl");
       expect(result).assertEqual(0);
       done();
     });
@@ -475,7 +475,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("cosl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cosl");
+      const result: number = await testNapi.runTest("cosl");
       expect(result).assertEqual(0);
       done();
     });
@@ -489,7 +489,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("drem", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("drem");
+      const result: number = await testNapi.runTest("drem");
       expect(result).assertEqual(0);
       done();
     });
@@ -503,7 +503,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("dremf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("dremf");
+      const result: number = await testNapi.runTest("dremf");
       expect(result).assertEqual(0);
       done();
     });
@@ -517,7 +517,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("erf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("erf");
+      const result: number = await testNapi.runTest("erf");
       expect(result).assertEqual(0);
       done();
     });
@@ -531,7 +531,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("erfc", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("erfc");
+      const result: number = await testNapi.runTest("erfc");
       expect(result).assertEqual(0);
       done();
     });
@@ -545,7 +545,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("erfcf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("erfcf");
+      const result: number = await testNapi.runTest("erfcf");
       expect(result).assertEqual(0);
       done();
     });
@@ -559,7 +559,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("erff", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("erff");
+      const result: number = await testNapi.runTest("erff");
       expect(result).assertEqual(0);
       done();
     });
@@ -573,7 +573,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("erfl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("erfl");
+      const result: number = await testNapi.runTest("erfl");
       expect(result).assertEqual(0);
       done();
     });
@@ -586,7 +586,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("exp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("exp");
+      const result: number = await testNapi.runTest("exp");
       expect(result).assertEqual(0);
       done();
     });
@@ -599,7 +599,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("exp2", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("exp2");
+      const result: number = await testNapi.runTest("exp2");
       expect(result).assertEqual(0);
       done();
     });
@@ -612,7 +612,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("exp2f", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("exp2f");
+      const result: number = await testNapi.runTest("exp2f");
       expect(result).assertEqual(0);
       done();
     });
@@ -625,7 +625,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("exp2l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("exp2l");
+      const result: number = await testNapi.runTest("exp2l");
       expect(result).assertEqual(0);
       done();
     });
@@ -638,7 +638,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("expf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("expf");
+      const result: number = await testNapi.runTest("expf");
       expect(result).assertEqual(0);
       done();
     });
@@ -651,7 +651,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("expl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("expl");
+      const result: number = await testNapi.runTest("expl");
       expect(result).assertEqual(0);
       done();
     });
@@ -664,7 +664,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("expm1", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("expm1");
+      const result: number = await testNapi.runTest("expm1");
       expect(result).assertEqual(0);
       done();
     });
@@ -677,7 +677,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("expm1f", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("expm1f");
+      const result: number = await testNapi.runTest("expm1f");
       expect(result).assertEqual(0);
       done();
     });
@@ -690,7 +690,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("expm1l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("expm1l");
+      const result: number = await testNapi.runTest("expm1l");
       expect(result).assertEqual(0);
       done();
     });
@@ -703,7 +703,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fabs", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fabs");
+      const result: number = await testNapi.runTest("fabs");
       expect(result).assertEqual(0);
       done();
     });
@@ -716,7 +716,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fabsf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fabsf");
+      const result: number = await testNapi.runTest("fabsf");
       expect(result).assertEqual(0);
       done();
     });
@@ -729,7 +729,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fabsl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fabsl");
+      const result: number = await testNapi.runTest("fabsl");
       expect(result).assertEqual(0);
       done();
     });
@@ -742,7 +742,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fdiml", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fdiml");
+      const result: number = await testNapi.runTest("fdiml");
       expect(result).assertEqual(0);
       done();
     });
@@ -755,7 +755,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("floor", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("floor");
+      const result: number = await testNapi.runTest("floor");
       expect(result).assertEqual(0);
       done();
     });
@@ -768,7 +768,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("floorf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("floorf");
+      const result: number = await testNapi.runTest("floorf");
       expect(result).assertEqual(0);
       done();
     });
@@ -781,7 +781,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("floorl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("floorl");
+      const result: number = await testNapi.runTest("floorl");
       expect(result).assertEqual(0);
       done();
     });
@@ -794,7 +794,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fmax", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fmax");
+      const result: number = await testNapi.runTest("fmax");
       expect(result).assertEqual(0);
       done();
     });
@@ -807,7 +807,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fmaxf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fmaxf");
+      const result: number = await testNapi.runTest("fmaxf");
       expect(result).assertEqual(0);
       done();
     });
@@ -820,7 +820,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fmaxl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fmaxl");
+      const result: number = await testNapi.runTest("fmaxl");
       expect(result).assertEqual(0);
       done();
     });
@@ -833,7 +833,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("frexp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("frexp");
+      const result: number = await testNapi.runTest("frexp");
       expect(result).assertEqual(0);
       done();
     });
@@ -846,7 +846,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("frexpf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("frexpf");
+      const result: number = await testNapi.runTest("frexpf");
       expect(result).assertEqual(0);
       done();
     });
@@ -859,7 +859,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("frexpl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("frexpl");
+      const result: number = await testNapi.runTest("frexpl");
       expect(result).assertEqual(0);
       done();
     });
@@ -872,7 +872,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("hypot", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("hypot");
+      const result: number = await testNapi.runTest("hypot");
       expect(result).assertEqual(0);
       done();
     });
@@ -885,7 +885,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("hypotf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("hypotf");
+      const result: number = await testNapi.runTest("hypotf");
       expect(result).assertEqual(0);
       done();
     });
@@ -898,7 +898,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("hypotl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("hypotl");
+      const result: number = await testNapi.runTest("hypotl");
       expect(result).assertEqual(0);
       done();
     });
@@ -911,7 +911,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("ilogb", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ilogb");
+      const result: number = await testNapi.runTest("ilogb");
       expect(result).assertEqual(0);
       done();
     });
@@ -924,7 +924,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("ilogbf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ilogbf");
+      const result: number = await testNapi.runTest("ilogbf");
       expect(result).assertEqual(0);
       done();
     });
@@ -937,7 +937,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("ilogbl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ilogbl");
+      const result: number = await testNapi.runTest("ilogbl");
       expect(result).assertEqual(0);
       done();
     });
@@ -950,7 +950,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("acosf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("acosf");
+      const result: number = await testNapi.runTest("acosf");
       expect(result).assertEqual(0);
       done();
     });
@@ -964,7 +964,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("exp10", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("exp10");
+      const result: number = await testNapi.runTest("exp10");
       expect(result).assertEqual(0);
       done();
     });
@@ -978,7 +978,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("exp10f", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("exp10f");
+      const result: number = await testNapi.runTest("exp10f");
       expect(result).assertEqual(0);
       done();
     });
@@ -992,7 +992,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("exp10l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("exp10l");
+      const result: number = await testNapi.runTest("exp10l");
       expect(result).assertEqual(0);
       done();
     });
@@ -1006,7 +1006,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fdim", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fdim");
+      const result: number = await testNapi.runTest("fdim");
       expect(result).assertEqual(0);
       done();
     });
@@ -1020,7 +1020,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fdimf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fdimf");
+      const result: number = await testNapi.runTest("fdimf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1034,7 +1034,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fmin", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fmin");
+      const result: number = await testNapi.runTest("fmin");
       expect(result).assertEqual(0);
       done();
     });
@@ -1048,7 +1048,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fminf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fminf");
+      const result: number = await testNapi.runTest("fminf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1062,7 +1062,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fminl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fminl");
+      const result: number = await testNapi.runTest("fminl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1076,7 +1076,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fmod", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fmod");
+      const result: number = await testNapi.runTest("fmod");
       expect(result).assertEqual(0);
       done();
     });
@@ -1090,7 +1090,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fmodf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fmodf");
+      const result: number = await testNapi.runTest("fmodf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1104,7 +1104,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fmodl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fmodl");
+      const result: number = await testNapi.runTest("fmodl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1118,7 +1118,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("j0", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("j0");
+      const result: number = await testNapi.runTest("j0");
       expect(result).assertEqual(0);
       done();
     });
@@ -1132,7 +1132,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("j0f", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("j0f");
+      const result: number = await testNapi.runTest("j0f");
       expect(result).assertEqual(0);
       done();
     });
@@ -1146,7 +1146,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("j1", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("j1");
+      const result: number = await testNapi.runTest("j1");
       expect(result).assertEqual(0);
       done();
     });
@@ -1160,7 +1160,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("jn", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("jn");
+      const result: number = await testNapi.runTest("jn");
       expect(result).assertEqual(0);
       done();
     });
@@ -1174,7 +1174,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("jnf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("jnf");
+      const result: number = await testNapi.runTest("jnf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1188,7 +1188,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("ldexp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ldexp");
+      const result: number = await testNapi.runTest("ldexp");
       expect(result).assertEqual(0);
       done();
     });
@@ -1202,7 +1202,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("ldexpf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ldexpf");
+      const result: number = await testNapi.runTest("ldexpf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1216,7 +1216,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("ldexpl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ldexpl");
+      const result: number = await testNapi.runTest("ldexpl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1230,7 +1230,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("lgamma", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lgamma");
+      const result: number = await testNapi.runTest("lgamma");
       expect(result).assertEqual(0);
       done();
     });
@@ -1244,7 +1244,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("lgamma_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lgamma_r");
+      const result: number = await testNapi.runTest("lgamma_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -1258,7 +1258,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("lgammaf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lgammaf");
+      const result: number = await testNapi.runTest("lgammaf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1272,7 +1272,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("lgammaf_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lgammaf_r");
+      const result: number = await testNapi.runTest("lgammaf_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -1286,7 +1286,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("lgammal_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lgammal_r");
+      const result: number = await testNapi.runTest("lgammal_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -1300,7 +1300,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("llrint", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("llrint");
+      const result: number = await testNapi.runTest("llrint");
       expect(result).assertEqual(0);
       done();
     });
@@ -1314,7 +1314,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("llrintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("llrintf");
+      const result: number = await testNapi.runTest("llrintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1328,7 +1328,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("llrintl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("llrintl");
+      const result: number = await testNapi.runTest("llrintl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1342,7 +1342,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("llround", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("llround");
+      const result: number = await testNapi.runTest("llround");
       expect(result).assertEqual(0);
       done();
     });
@@ -1356,7 +1356,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("llroundf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("llroundf");
+      const result: number = await testNapi.runTest("llroundf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1370,7 +1370,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("llroundl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("llroundl");
+      const result: number = await testNapi.runTest("llroundl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1384,7 +1384,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("log", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log");
+      const result: number = await testNapi.runTest("log");
       expect(result).assertEqual(0);
       done();
     });
@@ -1398,7 +1398,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("log10", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log10");
+      const result: number = await testNapi.runTest("log10");
       expect(result).assertEqual(0);
       done();
     });
@@ -1412,7 +1412,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("log10f", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log10f");
+      const result: number = await testNapi.runTest("log10f");
       expect(result).assertEqual(0);
       done();
     });
@@ -1426,7 +1426,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("log10l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log10l");
+      const result: number = await testNapi.runTest("log10l");
       expect(result).assertEqual(0);
       done();
     });
@@ -1440,7 +1440,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("log1p", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log1p");
+      const result: number = await testNapi.runTest("log1p");
       expect(result).assertEqual(0);
       done();
     });
@@ -1454,7 +1454,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("log1pf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log1pf");
+      const result: number = await testNapi.runTest("log1pf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1468,7 +1468,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("log1pl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log1pl");
+      const result: number = await testNapi.runTest("log1pl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1482,7 +1482,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("log2", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log2");
+      const result: number = await testNapi.runTest("log2");
       expect(result).assertEqual(0);
       done();
     });
@@ -1496,7 +1496,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("log2f", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log2f");
+      const result: number = await testNapi.runTest("log2f");
       expect(result).assertEqual(0);
       done();
     });
@@ -1510,7 +1510,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("log2l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log2l");
+      const result: number = await testNapi.runTest("log2l");
       expect(result).assertEqual(0);
       done();
     });
@@ -1524,7 +1524,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("logb", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("logb");
+      const result: number = await testNapi.runTest("logb");
       expect(result).assertEqual(0);
       done();
     });
@@ -1538,7 +1538,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("logbf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("logbf");
+      const result: number = await testNapi.runTest("logbf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1552,7 +1552,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("logbl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("logbl");
+      const result: number = await testNapi.runTest("logbl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1566,7 +1566,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("logf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("logf");
+      const result: number = await testNapi.runTest("logf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1580,7 +1580,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("logl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("logl");
+      const result: number = await testNapi.runTest("logl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1594,7 +1594,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("lrint", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lrint");
+      const result: number = await testNapi.runTest("lrint");
       expect(result).assertEqual(0);
       done();
     });
@@ -1608,7 +1608,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("lrintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lrintf");
+      const result: number = await testNapi.runTest("lrintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1622,7 +1622,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("lrintl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lrintl");
+      const result: number = await testNapi.runTest("lrintl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1636,7 +1636,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("lround", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lround");
+      const result: number = await testNapi.runTest("lround");
       expect(result).assertEqual(0);
       done();
     });
@@ -1650,7 +1650,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("lroundf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lroundf");
+      const result: number = await testNapi.runTest("lroundf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1664,7 +1664,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("lroundl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lroundl");
+      const result: number = await testNapi.runTest("lroundl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1678,7 +1678,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("modf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("modf");
+      const result: number = await testNapi.runTest("modf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1692,7 +1692,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("modff", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("modff");
+      const result: number = await testNapi.runTest("modff");
       expect(result).assertEqual(0);
       done();
     });
@@ -1706,7 +1706,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("modfl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("modfl");
+      const result: number = await testNapi.runTest("modfl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1720,7 +1720,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("nextafter", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("nextafter");
+      const result: number = await testNapi.runTest("nextafter");
       expect(result).assertEqual(0);
       done();
     });
@@ -1734,7 +1734,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("nextafterf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("nextafterf");
+      const result: number = await testNapi.runTest("nextafterf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1748,7 +1748,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("nextafterl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("nextafterl");
+      const result: number = await testNapi.runTest("nextafterl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1762,7 +1762,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("pow", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pow");
+      const result: number = await testNapi.runTest("pow");
       expect(result).assertEqual(0);
       done();
     });
@@ -1776,7 +1776,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("pow10", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pow10");
+      const result: number = await testNapi.runTest("pow10");
       expect(result).assertEqual(0);
       done();
     });
@@ -1790,7 +1790,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("pow10f", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pow10f");
+      const result: number = await testNapi.runTest("pow10f");
       expect(result).assertEqual(0);
       done();
     });
@@ -1804,7 +1804,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("pow10l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pow10l");
+      const result: number = await testNapi.runTest("pow10l");
       expect(result).assertEqual(0);
       done();
     });
@@ -1818,7 +1818,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("powf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("powf");
+      const result: number = await testNapi.runTest("powf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1832,7 +1832,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("powl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("powl");
+      const result: number = await testNapi.runTest("powl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1846,7 +1846,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("remainder", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("remainder");
+      const result: number = await testNapi.runTest("remainder");
       expect(result).assertEqual(0);
       done();
     });
@@ -1860,7 +1860,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("remainderf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("remainderf");
+      const result: number = await testNapi.runTest("remainderf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1874,7 +1874,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("remainderl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("remainderl");
+      const result: number = await testNapi.runTest("remainderl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1888,7 +1888,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("remquo", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("remquo");
+      const result: number = await testNapi.runTest("remquo");
       expect(result).assertEqual(0);
       done();
     });
@@ -1902,7 +1902,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("remquof", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("remquof");
+      const result: number = await testNapi.runTest("remquof");
       expect(result).assertEqual(0);
       done();
     });
@@ -1916,7 +1916,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("remquol", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("remquol");
+      const result: number = await testNapi.runTest("remquol");
       expect(result).assertEqual(0);
       done();
     });
@@ -1930,7 +1930,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("round", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("round");
+      const result: number = await testNapi.runTest("round");
       expect(result).assertEqual(0);
       done();
     });
@@ -1944,7 +1944,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("roundf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("roundf");
+      const result: number = await testNapi.runTest("roundf");
       expect(result).assertEqual(0);
       done();
     });
@@ -1958,7 +1958,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("roundl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("roundl");
+      const result: number = await testNapi.runTest("roundl");
       expect(result).assertEqual(0);
       done();
     });
@@ -1972,7 +1972,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("scalb", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("scalb");
+      const result: number = await testNapi.runTest("scalb");
       expect(result).assertEqual(0);
       done();
     });
@@ -1986,7 +1986,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("scalbf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("scalbf");
+      const result: number = await testNapi.runTest("scalbf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2000,7 +2000,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("scalbln", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("scalbln");
+      const result: number = await testNapi.runTest("scalbln");
       expect(result).assertEqual(0);
       done();
     });
@@ -2014,7 +2014,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("scalblnf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("scalblnf");
+      const result: number = await testNapi.runTest("scalblnf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2028,7 +2028,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("scalblnl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("scalblnl");
+      const result: number = await testNapi.runTest("scalblnl");
       expect(result).assertEqual(0);
       done();
     });
@@ -2042,7 +2042,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("scalbn", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("scalbn");
+      const result: number = await testNapi.runTest("scalbn");
       expect(result).assertEqual(0);
       done();
     });
@@ -2056,7 +2056,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("scalbnf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("scalbnf");
+      const result: number = await testNapi.runTest("scalbnf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2070,7 +2070,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("scalbnl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("scalbnl");
+      const result: number = await testNapi.runTest("scalbnl");
       expect(result).assertEqual(0);
       done();
     });
@@ -2084,7 +2084,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("sin", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sin");
+      const result: number = await testNapi.runTest("sin");
       expect(result).assertEqual(0);
       done();
     });
@@ -2098,7 +2098,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("sincos", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sincos");
+      const result: number = await testNapi.runTest("sincos");
       expect(result).assertEqual(0);
       done();
     });
@@ -2112,7 +2112,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("sincosf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sincosf");
+      const result: number = await testNapi.runTest("sincosf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2126,7 +2126,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("sincosl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sincosl");
+      const result: number = await testNapi.runTest("sincosl");
       expect(result).assertEqual(0);
       done();
     });
@@ -2140,7 +2140,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("sinf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sinf");
+      const result: number = await testNapi.runTest("sinf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2154,7 +2154,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("sinh", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sinh");
+      const result: number = await testNapi.runTest("sinh");
       expect(result).assertEqual(0);
       done();
     });
@@ -2168,7 +2168,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("sinhf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sinhf");
+      const result: number = await testNapi.runTest("sinhf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2182,7 +2182,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("sinhl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sinhl");
+      const result: number = await testNapi.runTest("sinhl");
       expect(result).assertEqual(0);
       done();
     });
@@ -2196,7 +2196,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("sinl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sinl");
+      const result: number = await testNapi.runTest("sinl");
       expect(result).assertEqual(0);
       done();
     });
@@ -2210,7 +2210,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("tan", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tan");
+      const result: number = await testNapi.runTest("tan");
       expect(result).assertEqual(0);
       done();
     });
@@ -2224,7 +2224,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("tanf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tanf");
+      const result: number = await testNapi.runTest("tanf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2238,7 +2238,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("tanh", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tanh");
+      const result: number = await testNapi.runTest("tanh");
       expect(result).assertEqual(0);
       done();
     });
@@ -2252,7 +2252,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("tanhf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tanhf");
+      const result: number = await testNapi.runTest("tanhf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2266,7 +2266,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("tanhl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tanhl");
+      const result: number = await testNapi.runTest("tanhl");
       expect(result).assertEqual(0);
       done();
     });
@@ -2280,7 +2280,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("tanl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tanl");
+      const result: number = await testNapi.runTest("tanl");
       expect(result).assertEqual(0);
       done();
     });
@@ -2294,7 +2294,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("trunc", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("trunc");
+      const result: number = await testNapi.runTest("trunc");
       expect(result).assertEqual(0);
       done();
     });
@@ -2308,7 +2308,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("truncf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("truncf");
+      const result: number = await testNapi.runTest("truncf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2322,7 +2322,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("truncl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("truncl");
+      const result: number = await testNapi.runTest("truncl");
       expect(result).assertEqual(0);
       done();
     });
@@ -2336,7 +2336,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("tgamma", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tgamma");
+      const result: number = await testNapi.runTest("tgamma");
       expect(result).assertEqual(0);
       done();
     });
@@ -2350,7 +2350,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("tgammaf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tgammaf");
+      const result: number = await testNapi.runTest("tgammaf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2364,7 +2364,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("y0", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("y0");
+      const result: number = await testNapi.runTest("y0");
       expect(result).assertEqual(0);
       done();
     });
@@ -2378,7 +2378,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("y0f", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("y0f");
+      const result: number = await testNapi.runTest("y0f");
       expect(result).assertEqual(0);
       done();
     });
@@ -2392,7 +2392,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("y1", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("y1");
+      const result: number = await testNapi.runTest("y1");
       expect(result).assertEqual(0);
       done();
     });
@@ -2406,7 +2406,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("y1f", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("y1f");
+      const result: number = await testNapi.runTest("y1f");
       expect(result).assertEqual(0);
       done();
     });
@@ -2420,7 +2420,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("yn", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("yn");
+      const result: number = await testNapi.runTest("yn");
       expect(result).assertEqual(0);
       done();
     });
@@ -2434,7 +2434,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("ynf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ynf");
+      const result: number = await testNapi.runTest("ynf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2448,7 +2448,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("isless", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("isless");
+      const result: number = await testNapi.runTest("isless");
       expect(result).assertEqual(0);
       done();
     });

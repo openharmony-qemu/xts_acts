@@ -27,7 +27,7 @@ export default function FunctionalextQueueTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("sys_queue", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sys_queue");
+      const result: number = await testNapi.runTest("sys_queue");
       expect(result).assertEqual(0);
       done();
     });

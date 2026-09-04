@@ -27,7 +27,7 @@ export default function dirent_group_test() {
      * @tc.level  LEVEL1
      */
     it("readdir", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("readdir");
+      const result: number = await testNapi.runTest("readdir");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function dirent_group_test() {
      * @tc.level  LEVEL1
      */
     it("alphasort", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("alphasort");
+      const result: number = await testNapi.runTest("alphasort");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function dirent_group_test() {
      * @tc.level  LEVEL1
      */
     it("fdopendir", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fdopendir");
+      const result: number = await testNapi.runTest("fdopendir");
       expect(result).assertEqual(0);
       done();
     });
@@ -66,7 +66,7 @@ export default function dirent_group_test() {
      * @tc.level  LEVEL1
      */
     it("opendir", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("opendir");
+      const result: number = await testNapi.runTest("opendir");
       expect(result).assertEqual(0);
       done();
     });
@@ -79,7 +79,7 @@ export default function dirent_group_test() {
      * @tc.level  LEVEL1
      */
     it("rewinddir", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("rewinddir");
+      const result: number = await testNapi.runTest("rewinddir");
       expect(result).assertEqual(0);
       done();
     });
@@ -92,7 +92,7 @@ export default function dirent_group_test() {
      * @tc.level  LEVEL1
      */
     it("seekdir", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("seekdir");
+      const result: number = await testNapi.runTest("seekdir");
       expect(result).assertEqual(0);
       done();
     });
@@ -105,7 +105,7 @@ export default function dirent_group_test() {
      * @tc.level  LEVEL1
      */
     it("telldir", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("telldir");
+      const result: number = await testNapi.runTest("telldir");
       expect(result).assertEqual(0);
       done();
     });

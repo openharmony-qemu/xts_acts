@@ -27,7 +27,7 @@ export default function FunctionalextSupplementMmanTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("mlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mlock");
+      const result: number = await testNapi.runTest("mlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function FunctionalextSupplementMmanTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("mprotect", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mprotect");
+      const result: number = await testNapi.runTest("mprotect");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function FunctionalextSupplementMmanTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("munlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("munlock");
+      const result: number = await testNapi.runTest("munlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -66,7 +66,7 @@ export default function FunctionalextSupplementMmanTestGroupTest() {
      * @tc.desc   libc-test mmap
      */
     it("mmap", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mmap");
+      const result: number = await testNapi.runTest("mmap");
       expect(result).assertEqual(0);
       done();
     });
@@ -80,7 +80,7 @@ export default function FunctionalextSupplementMmanTestGroupTest() {
      * @tc.desc   libc-test munmap
      */
     it("munmap", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("munmap");
+      const result: number = await testNapi.runTest("munmap");
       expect(result).assertEqual(0);
       done();
     });

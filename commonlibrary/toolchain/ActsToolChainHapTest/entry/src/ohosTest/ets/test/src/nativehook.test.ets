@@ -27,7 +27,7 @@ export default function NativehookTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("nativehook_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("nativehook_test");
+      const result: number = await testNapi.runTest("nativehook_test");
       expect(result).assertEqual(0);
       done();
     });

@@ -27,7 +27,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fpclassifyf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__fpclassifyf");
+      const result: number = await testNapi.runTest("__fpclassifyf");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("fpclassifyl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__fpclassifyl");
+      const result: number = await testNapi.runTest("__fpclassifyl");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("signbitf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__signbitf");
+      const result: number = await testNapi.runTest("__signbitf");
       expect(result).assertEqual(0);
       done();
     });
@@ -69,7 +69,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("signbitl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__signbitl");
+      const result: number = await testNapi.runTest("__signbitl");
       expect(result).assertEqual(0);
       done();
     });
@@ -82,7 +82,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("finitef", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("finitef");
+      const result: number = await testNapi.runTest("finitef");
       expect(result).assertEqual(0);
       done();
     });
@@ -95,7 +95,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("nan", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("nan");
+      const result: number = await testNapi.runTest("nan");
       expect(result).assertEqual(0);
       done();
     });
@@ -108,7 +108,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("nanf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("nanf");
+      const result: number = await testNapi.runTest("nanf");
       expect(result).assertEqual(0);
       done();
     });
@@ -121,7 +121,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("nanl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("nanl");
+      const result: number = await testNapi.runTest("nanl");
       expect(result).assertEqual(0);
       done();
     });
@@ -134,7 +134,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("rint_ext", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("rint_ext");
+      const result: number = await testNapi.runTest("rint_ext");
       expect(result).assertEqual(0);
       done();
     });
@@ -147,7 +147,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("significand", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("significand");
+      const result: number = await testNapi.runTest("significand");
       expect(result).assertEqual(0);
       done();
     });
@@ -160,7 +160,7 @@ export default function math_group_test() {
      * @tc.level  LEVEL1
      */
     it("significandf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("significandf");
+      const result: number = await testNapi.runTest("significandf");
       expect(result).assertEqual(0);
       done();
     });
@@ -173,7 +173,7 @@ export default function math_group_test() {
      * @tc.desc   libc-test __signbit
      */
     it("signbit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__signbit");
+      const result: number = await testNapi.runTest("__signbit");
       expect(result).assertEqual(0);
       done();
     });
@@ -187,7 +187,7 @@ export default function math_group_test() {
      * @tc.desc   libc-test finite
      */
     it("finite", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("finite");
+      const result: number = await testNapi.runTest("finite");
       expect(result).assertEqual(0);
       done();
     });
@@ -201,7 +201,7 @@ export default function math_group_test() {
      * @tc.desc   libc-test functionalext_pow10
      */
     it("functionalext_pow10", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("functionalext_pow10");
+      const result: number = await testNapi.runTest("functionalext_pow10");
       expect(result).assertEqual(0);
       done();
     });

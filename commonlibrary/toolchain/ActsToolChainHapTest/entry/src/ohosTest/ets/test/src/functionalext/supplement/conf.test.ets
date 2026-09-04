@@ -27,7 +27,7 @@ export default function conf_group_test() {
      * @tc.level  LEVEL1
      */
     it("get_avphys_pages", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("get_avphys_pages");
+      const result: number = await testNapi.runTest("get_avphys_pages");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function conf_group_test() {
      * @tc.level  LEVEL1
      */
     it("get_nprocs", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("get_nprocs");
+      const result: number = await testNapi.runTest("get_nprocs");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function conf_group_test() {
      * @tc.level  LEVEL1
      */
     it("get_phys_pages", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("get_phys_pages");
+      const result: number = await testNapi.runTest("get_phys_pages");
       expect(result).assertEqual(0);
       done();
     });
@@ -68,7 +68,7 @@ export default function conf_group_test() {
      * @tc.level  LEVEL1
      */
     it("fpathconf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fpathconf");
+      const result: number = await testNapi.runTest("fpathconf");
       expect(result).assertEqual(0);
       done();
     });
@@ -81,7 +81,7 @@ export default function conf_group_test() {
      * @tc.level  LEVEL1
      */
     it("pathconf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pathconf");
+      const result: number = await testNapi.runTest("pathconf");
       expect(result).assertEqual(0);
       done();
     });
@@ -94,7 +94,7 @@ export default function conf_group_test() {
      * @tc.level  LEVEL1
      */
     it("sysconf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sysconf");
+      const result: number = await testNapi.runTest("sysconf");
       expect(result).assertEqual(0);
       done();
     });

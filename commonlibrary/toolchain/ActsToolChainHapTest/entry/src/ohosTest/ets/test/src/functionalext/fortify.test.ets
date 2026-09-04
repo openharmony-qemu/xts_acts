@@ -27,7 +27,7 @@ export default function fortify_group_test() {
      * @tc.level  LEVEL1
      */
     it("poll", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("poll");
+      const result: number = await testNapi.runTest("poll");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function fortify_group_test() {
      * @tc.level  LEVEL1
      */
     it("invalid_param_b", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("invalid_param_b");
+      const result: number = await testNapi.runTest("invalid_param_b");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function fortify_group_test() {
      * @tc.level  LEVEL1
      */
     it("invalid_param", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("invalid_param");
+      const result: number = await testNapi.runTest("invalid_param");
       expect(result).assertEqual(0);
       done();
     });
@@ -66,7 +66,7 @@ export default function fortify_group_test() {
      * @tc.level  LEVEL1
      */
     it("select_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("select_test");
+      const result: number = await testNapi.runTest("select_test");
       expect(result).assertEqual(0);
       done();
     });
@@ -80,7 +80,7 @@ export default function fortify_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_fortify_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_fortify_test");
+      const result: number = await testNapi.runTest("pthread_fortify_test");
       expect(result).assertEqual(0);
       done();
     });

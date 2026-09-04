@@ -27,7 +27,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fbufsize", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__fbufsize");
+      const result: number = await testNapi.runTest("__fbufsize");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("flbf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__flbf");
+      const result: number = await testNapi.runTest("__flbf");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("clearerr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("clearerr");
+      const result: number = await testNapi.runTest("clearerr");
       expect(result).assertEqual(0);
       done();
     });
@@ -69,7 +69,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fflush", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fflush");
+      const result: number = await testNapi.runTest("fflush");
       expect(result).assertEqual(0);
       done();
     });
@@ -82,7 +82,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("open_wmemstream", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("open_wmemstream");
+      const result: number = await testNapi.runTest("open_wmemstream");
       expect(result).assertEqual(0);
       done();
     });
@@ -95,7 +95,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("printf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("printf");
+      const result: number = await testNapi.runTest("printf");
       expect(result).assertEqual(0);
       done();
     });
@@ -108,7 +108,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("putc_unlocked", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("putc_unlocked");
+      const result: number = await testNapi.runTest("putc_unlocked");
       expect(result).assertEqual(0);
       done();
     });
@@ -121,7 +121,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("putchar", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("putchar");
+      const result: number = await testNapi.runTest("putchar");
       expect(result).assertEqual(0);
       done();
     });
@@ -134,7 +134,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("putchar_unlocked", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("putchar_unlocked");
+      const result: number = await testNapi.runTest("putchar_unlocked");
       expect(result).assertEqual(0);
       done();
     });
@@ -147,7 +147,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("puts", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("puts");
+      const result: number = await testNapi.runTest("puts");
       expect(result).assertEqual(0);
       done();
     });
@@ -160,7 +160,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("putwchar", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("putwchar");
+      const result: number = await testNapi.runTest("putwchar");
       expect(result).assertEqual(0);
       done();
     });
@@ -173,7 +173,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("sprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sprintf");
+      const result: number = await testNapi.runTest("sprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -186,7 +186,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("swscanf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("swscanf");
+      const result: number = await testNapi.runTest("swscanf");
       expect(result).assertEqual(0);
       done();
     });
@@ -199,7 +199,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("tempnam", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tempnam");
+      const result: number = await testNapi.runTest("tempnam");
       expect(result).assertEqual(0);
       done();
     });
@@ -212,7 +212,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("tmpnam", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tmpnam");
+      const result: number = await testNapi.runTest("tmpnam");
       expect(result).assertEqual(0);
       done();
     });
@@ -225,7 +225,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vasprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vasprintf");
+      const result: number = await testNapi.runTest("vasprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -238,7 +238,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vprintf");
+      const result: number = await testNapi.runTest("vprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -251,7 +251,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vsnprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vsnprintf");
+      const result: number = await testNapi.runTest("vsnprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -264,7 +264,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vsprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vsprintf");
+      const result: number = await testNapi.runTest("vsprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -277,7 +277,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vsscanf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vsscanf");
+      const result: number = await testNapi.runTest("vsscanf");
       expect(result).assertEqual(0);
       done();
     });
@@ -290,7 +290,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vswprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vswprintf");
+      const result: number = await testNapi.runTest("vswprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -303,7 +303,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vswscanf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vswscanf");
+      const result: number = await testNapi.runTest("vswscanf");
       expect(result).assertEqual(0);
       done();
     });
@@ -316,7 +316,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vwprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vwprintf");
+      const result: number = await testNapi.runTest("vwprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -329,7 +329,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcstoll", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcstoll");
+      const result: number = await testNapi.runTest("wcstoll");
       expect(result).assertEqual(0);
       done();
     });
@@ -342,7 +342,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcstoull", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcstoull");
+      const result: number = await testNapi.runTest("wcstoull");
       expect(result).assertEqual(0);
       done();
     });
@@ -355,7 +355,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("wprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wprintf");
+      const result: number = await testNapi.runTest("wprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -368,7 +368,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("asprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("asprintf");
+      const result: number = await testNapi.runTest("asprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -381,7 +381,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("dprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("dprintf");
+      const result: number = await testNapi.runTest("dprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -394,7 +394,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fgetln", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fgetln");
+      const result: number = await testNapi.runTest("fgetln");
       expect(result).assertEqual(0);
       done();
     });
@@ -407,7 +407,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fgetpos", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fgetpos");
+      const result: number = await testNapi.runTest("fgetpos");
       expect(result).assertEqual(0);
       done();
     });
@@ -420,7 +420,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fgets", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fgets");
+      const result: number = await testNapi.runTest("fgets");
       expect(result).assertEqual(0);
       done();
     });
@@ -433,7 +433,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fgetws", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fgetws");
+      const result: number = await testNapi.runTest("fgetws");
       expect(result).assertEqual(0);
       done();
     });
@@ -446,7 +446,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("flockfile", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("flockfile");
+      const result: number = await testNapi.runTest("flockfile");
       expect(result).assertEqual(0);
       done();
     });
@@ -459,7 +459,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fprintf");
+      const result: number = await testNapi.runTest("fprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -472,7 +472,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fputc", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fputc");
+      const result: number = await testNapi.runTest("fputc");
       expect(result).assertEqual(0);
       done();
     });
@@ -485,7 +485,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fputs", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fputs");
+      const result: number = await testNapi.runTest("fputs");
       expect(result).assertEqual(0);
       done();
     });
@@ -498,7 +498,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fputwc", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fputwc");
+      const result: number = await testNapi.runTest("fputwc");
       expect(result).assertEqual(0);
       done();
     });
@@ -511,7 +511,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fputws", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fputws");
+      const result: number = await testNapi.runTest("fputws");
       expect(result).assertEqual(0);
       done();
     });
@@ -524,7 +524,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("freopen", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("freopen");
+      const result: number = await testNapi.runTest("freopen");
       expect(result).assertEqual(0);
       done();
     });
@@ -537,7 +537,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fseeko", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fseeko");
+      const result: number = await testNapi.runTest("fseeko");
       expect(result).assertEqual(0);
       done();
     });
@@ -550,7 +550,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("ftell", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ftell");
+      const result: number = await testNapi.runTest("ftell");
       expect(result).assertEqual(0);
       done();
     });
@@ -563,7 +563,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("ftrylockfile", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ftrylockfile");
+      const result: number = await testNapi.runTest("ftrylockfile");
       expect(result).assertEqual(0);
       done();
     });
@@ -576,7 +576,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("funlockfile", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("funlockfile");
+      const result: number = await testNapi.runTest("funlockfile");
       expect(result).assertEqual(0);
       done();
     });
@@ -589,7 +589,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fwide", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fwide");
+      const result: number = await testNapi.runTest("fwide");
       expect(result).assertEqual(0);
       done();
     });
@@ -602,7 +602,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fwprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fwprintf");
+      const result: number = await testNapi.runTest("fwprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -615,7 +615,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fwrite", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fwrite");
+      const result: number = await testNapi.runTest("fwrite");
       expect(result).assertEqual(0);
       done();
     });
@@ -628,7 +628,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("getc", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getc");
+      const result: number = await testNapi.runTest("getc");
       expect(result).assertEqual(0);
       done();
     });
@@ -641,7 +641,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("getc_unlocked", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getc_unlocked");
+      const result: number = await testNapi.runTest("getc_unlocked");
       expect(result).assertEqual(0);
       done();
     });
@@ -654,7 +654,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("getchar", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getchar");
+      const result: number = await testNapi.runTest("getchar");
       expect(result).assertEqual(0);
       done();
     });
@@ -667,7 +667,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("getchar_unlocked", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getchar_unlocked");
+      const result: number = await testNapi.runTest("getchar_unlocked");
       expect(result).assertEqual(0);
       done();
     });
@@ -680,7 +680,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("getdelim", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getdelim");
+      const result: number = await testNapi.runTest("getdelim");
       expect(result).assertEqual(0);
       done();
     });
@@ -693,7 +693,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("getline", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getline");
+      const result: number = await testNapi.runTest("getline");
       expect(result).assertEqual(0);
       done();
     });
@@ -706,7 +706,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("putw", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("putw");
+      const result: number = await testNapi.runTest("putw");
       expect(result).assertEqual(0);
       done();
     });
@@ -719,7 +719,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("remove", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("remove");
+      const result: number = await testNapi.runTest("remove");
       expect(result).assertEqual(0);
       done();
     });
@@ -732,7 +732,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("rename", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("rename");
+      const result: number = await testNapi.runTest("rename");
       expect(result).assertEqual(0);
       done();
     });
@@ -745,7 +745,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("setbuf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setbuf");
+      const result: number = await testNapi.runTest("setbuf");
       expect(result).assertEqual(0);
       done();
     });
@@ -758,7 +758,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("setbuffer", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setbuffer");
+      const result: number = await testNapi.runTest("setbuffer");
       expect(result).assertEqual(0);
       done();
     });
@@ -771,7 +771,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("setlinebuf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setlinebuf");
+      const result: number = await testNapi.runTest("setlinebuf");
       expect(result).assertEqual(0);
       done();
     });
@@ -784,7 +784,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("setvbuf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setvbuf");
+      const result: number = await testNapi.runTest("setvbuf");
       expect(result).assertEqual(0);
       done();
     });
@@ -797,7 +797,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("ungetwc", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ungetwc");
+      const result: number = await testNapi.runTest("ungetwc");
       expect(result).assertEqual(0);
       done();
     });
@@ -810,7 +810,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vdprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vdprintf");
+      const result: number = await testNapi.runTest("vdprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -823,7 +823,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vfprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vfprintf");
+      const result: number = await testNapi.runTest("vfprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -836,7 +836,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vfscanf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vfscanf");
+      const result: number = await testNapi.runTest("vfscanf");
       expect(result).assertEqual(0);
       done();
     });
@@ -849,7 +849,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vfwprintf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vfwprintf");
+      const result: number = await testNapi.runTest("vfwprintf");
       expect(result).assertEqual(0);
       done();
     });
@@ -862,7 +862,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("vfwscanf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("vfwscanf");
+      const result: number = await testNapi.runTest("vfwscanf");
       expect(result).assertEqual(0);
       done();
     });
@@ -875,7 +875,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("test_fpending", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__fpending");
+      const result: number = await testNapi.runTest("__fpending");
       expect(result).assertEqual(0);
       done();
     });
@@ -888,7 +888,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("test_fpurge", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__fpurge");
+      const result: number = await testNapi.runTest("__fpurge");
       expect(result).assertEqual(0);
       done();
     });
@@ -901,7 +901,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("test_freadable", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__freadable");
+      const result: number = await testNapi.runTest("__freadable");
       expect(result).assertEqual(0);
       done();
     });
@@ -914,7 +914,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("test_freading", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__freading");
+      const result: number = await testNapi.runTest("__freading");
       expect(result).assertEqual(0);
       done();
     });
@@ -927,7 +927,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("test_fseterr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__fseterr");
+      const result: number = await testNapi.runTest("__fseterr");
       expect(result).assertEqual(0);
       done();
     });
@@ -940,7 +940,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("test_fwritable", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__fwritable");
+      const result: number = await testNapi.runTest("__fwritable");
       expect(result).assertEqual(0);
       done();
     });
@@ -953,7 +953,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("test_fwriting", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__fwriting");
+      const result: number = await testNapi.runTest("__fwriting");
       expect(result).assertEqual(0);
       done();
     });
@@ -966,7 +966,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("test_flushlbf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("_flushlbf");
+      const result: number = await testNapi.runTest("_flushlbf");
       expect(result).assertEqual(0);
       done();
     });
@@ -979,7 +979,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("fsetpos", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fsetpos");
+      const result: number = await testNapi.runTest("fsetpos");
       expect(result).assertEqual(0);
       done();
     });
@@ -992,7 +992,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("getwc", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getwc");
+      const result: number = await testNapi.runTest("getwc");
       expect(result).assertEqual(0);
       done();
     });
@@ -1005,7 +1005,7 @@ export default function stdio_group_test() {
      * @tc.level  LEVEL1
      */
     it("rewind", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("rewind");
+      const result: number = await testNapi.runTest("rewind");
       expect(result).assertEqual(0);
       done();
     });

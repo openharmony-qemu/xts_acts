@@ -27,7 +27,7 @@ export default function FunctionalextSupplementSearchTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("hcreate_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("hcreate_r");
+      const result: number = await testNapi.runTest("hcreate_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function FunctionalextSupplementSearchTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("hdestroy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("hdestroy");
+      const result: number = await testNapi.runTest("hdestroy");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function FunctionalextSupplementSearchTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("hsearch_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("hsearch_r");
+      const result: number = await testNapi.runTest("hsearch_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -67,7 +67,7 @@ export default function FunctionalextSupplementSearchTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("lfind", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lfind");
+      const result: number = await testNapi.runTest("lfind");
       expect(result).assertEqual(0);
       done();
     });
@@ -81,7 +81,7 @@ export default function FunctionalextSupplementSearchTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("tdestroy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tdestroy");
+      const result: number = await testNapi.runTest("tdestroy");
       expect(result).assertEqual(0);
       done();
     });

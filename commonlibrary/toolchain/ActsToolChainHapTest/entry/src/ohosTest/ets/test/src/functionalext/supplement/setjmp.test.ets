@@ -27,7 +27,7 @@ export default function setjmp_group_test() {
      * @tc.level  LEVEL1
      */
     it("longjmp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("_longjmp");
+      const result: number = await testNapi.runTest("_longjmp");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function setjmp_group_test() {
      * @tc.level  LEVEL1
      */
     it("supplementSetjmp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("supplementSetjmp");
+      const result: number = await testNapi.runTest("supplementSetjmp");
       expect(result).assertEqual(0);
       done();
     });

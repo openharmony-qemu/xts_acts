@@ -27,7 +27,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("h_errno_location", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__h_errno_location");
+      const result: number = await testNapi.runTest("__h_errno_location");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("recvmmsg_time64", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__recvmmsg_time64");
+      const result: number = await testNapi.runTest("__recvmmsg_time64");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("dn_comp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("dn_comp");
+      const result: number = await testNapi.runTest("dn_comp");
       expect(result).assertEqual(0);
       done();
     });
@@ -69,7 +69,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("dn_skipname", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("dn_skipname");
+      const result: number = await testNapi.runTest("dn_skipname");
       expect(result).assertEqual(0);
       done();
     });
@@ -82,7 +82,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("freeaddrinfo", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("freeaddrinfo");
+      const result: number = await testNapi.runTest("freeaddrinfo");
       expect(result).assertEqual(0);
       done();
     });
@@ -95,7 +95,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("freeifaddrs", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("freeifaddrs");
+      const result: number = await testNapi.runTest("freeifaddrs");
       expect(result).assertEqual(0);
       done();
     });
@@ -108,7 +108,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("gai_strerror", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("gai_strerror");
+      const result: number = await testNapi.runTest("gai_strerror");
       expect(result).assertEqual(0);
       done();
     });
@@ -121,7 +121,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("gethostent", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("gethostent");
+      const result: number = await testNapi.runTest("gethostent");
       expect(result).assertEqual(0);
       done();
     });
@@ -134,7 +134,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("getifaddrs", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getifaddrs");
+      const result: number = await testNapi.runTest("getifaddrs");
       expect(result).assertEqual(0);
       done();
     });
@@ -147,7 +147,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("getnetent", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getnetent");
+      const result: number = await testNapi.runTest("getnetent");
       expect(result).assertEqual(0);
       done();
     });
@@ -160,7 +160,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("getservbyname", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getservbyname");
+      const result: number = await testNapi.runTest("getservbyname");
       expect(result).assertEqual(0);
       done();
     });
@@ -173,7 +173,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("getservbyport", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getservbyport");
+      const result: number = await testNapi.runTest("getservbyport");
       expect(result).assertEqual(0);
       done();
     });
@@ -186,7 +186,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("hstrerror", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("hstrerror");
+      const result: number = await testNapi.runTest("hstrerror");
       expect(result).assertEqual(0);
       done();
     });
@@ -199,7 +199,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("htonl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("htonl");
+      const result: number = await testNapi.runTest("htonl");
       expect(result).assertEqual(0);
       done();
     });
@@ -212,7 +212,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("htons", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("htons");
+      const result: number = await testNapi.runTest("htons");
       expect(result).assertEqual(0);
       done();
     });
@@ -225,7 +225,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("if_indextoname", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("if_indextoname");
+      const result: number = await testNapi.runTest("if_indextoname");
       expect(result).assertEqual(0);
       done();
     });
@@ -238,7 +238,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("if_nameindex", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("if_nameindex");
+      const result: number = await testNapi.runTest("if_nameindex");
       expect(result).assertEqual(0);
       done();
     });
@@ -251,7 +251,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("inet_aton", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("inet_aton");
+      const result: number = await testNapi.runTest("inet_aton");
       expect(result).assertEqual(0);
       done();
     });
@@ -264,7 +264,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("inet_lnaof", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("inet_lnaof");
+      const result: number = await testNapi.runTest("inet_lnaof");
       expect(result).assertEqual(0);
       done();
     });
@@ -277,7 +277,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("inet_makeaddr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("inet_makeaddr");
+      const result: number = await testNapi.runTest("inet_makeaddr");
       expect(result).assertEqual(0);
       done();
     });
@@ -290,7 +290,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("inet_netof", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("inet_netof");
+      const result: number = await testNapi.runTest("inet_netof");
       expect(result).assertEqual(0);
       done();
     });
@@ -303,7 +303,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("inet_network", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("inet_network");
+      const result: number = await testNapi.runTest("inet_network");
       expect(result).assertEqual(0);
       done();
     });
@@ -316,7 +316,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("inet_ntoa", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("inet_ntoa");
+      const result: number = await testNapi.runTest("inet_ntoa");
       expect(result).assertEqual(0);
       done();
     });
@@ -329,7 +329,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("proto", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("proto");
+      const result: number = await testNapi.runTest("proto");
       expect(result).assertEqual(0);
       done();
     });
@@ -342,7 +342,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("sendmsg", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sendmsg");
+      const result: number = await testNapi.runTest("sendmsg");
       expect(result).assertEqual(0);
       done();
     });
@@ -355,7 +355,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("setprotoent", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setprotoent");
+      const result: number = await testNapi.runTest("setprotoent");
       expect(result).assertEqual(0);
       done();
     });
@@ -368,7 +368,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("socketpair", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("socketpair");
+      const result: number = await testNapi.runTest("socketpair");
       expect(result).assertEqual(0);
       done();
     });
@@ -381,7 +381,7 @@ export default function network_group_test() {
      * @tc.desc   libc-test accept4
      */
     it("accept4", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("accept4");
+      const result: number = await testNapi.runTest("accept4");
       expect(result).assertEqual(0);
       done();
     });
@@ -395,7 +395,7 @@ export default function network_group_test() {
      * @tc.desc   libc-test getaddrinfo
      */
     it("getaddrinfo", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getaddrinfo");
+      const result: number = await testNapi.runTest("getaddrinfo");
       expect(result).assertEqual(0);
       done();
     });
@@ -409,7 +409,7 @@ export default function network_group_test() {
      * @tc.desc   libc-test getpeername
      */
     it("getpeername", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getpeername");
+      const result: number = await testNapi.runTest("getpeername");
       expect(result).assertEqual(0);
       done();
     });
@@ -423,7 +423,7 @@ export default function network_group_test() {
      * @tc.desc   libc-test getsockopt_network
      */
     it("getsockopt_network", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getsockopt_network");
+      const result: number = await testNapi.runTest("getsockopt_network");
       expect(result).assertEqual(0);
       done();
     });
@@ -437,7 +437,7 @@ export default function network_group_test() {
      * @tc.desc   libc-test listen
      */
     it("listen", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("listen");
+      const result: number = await testNapi.runTest("listen");
       expect(result).assertEqual(0);
       done();
     });
@@ -451,7 +451,7 @@ export default function network_group_test() {
      * @tc.desc   libc-test recv
      */
     it("recv", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("recv");
+      const result: number = await testNapi.runTest("recv");
       expect(result).assertEqual(0);
       done();
     });
@@ -465,7 +465,7 @@ export default function network_group_test() {
      * @tc.desc   libc-test recvmmsg
      */
     it("recvmmsg", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("recvmmsg");
+      const result: number = await testNapi.runTest("recvmmsg");
       expect(result).assertEqual(0);
       done();
     });
@@ -479,7 +479,7 @@ export default function network_group_test() {
      * @tc.desc   libc-test recvmsg
      */
     it("recvmsg", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("recvmsg");
+      const result: number = await testNapi.runTest("recvmsg");
       expect(result).assertEqual(0);
       done();
     });
@@ -493,7 +493,7 @@ export default function network_group_test() {
      * @tc.desc   libc-test send
      */
     it("send", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("send");
+      const result: number = await testNapi.runTest("send");
       expect(result).assertEqual(0);
       done();
     });
@@ -507,7 +507,7 @@ export default function network_group_test() {
      * @tc.desc   libc-test shutdown
      */
     it("shutdown", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("shutdown");
+      const result: number = await testNapi.runTest("shutdown");
       expect(result).assertEqual(0);
       done();
     });
@@ -521,7 +521,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("inet_addr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("inet_addr");
+      const result: number = await testNapi.runTest("inet_addr");
       expect(result).assertEqual(0);
       done();
     });
@@ -534,7 +534,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("inet_ntop", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("inet_ntop");
+      const result: number = await testNapi.runTest("inet_ntop");
       expect(result).assertEqual(0);
       done();
     });
@@ -547,7 +547,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("res_mkquery", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("res_mkquery");
+      const result: number = await testNapi.runTest("res_mkquery");
       expect(result).assertEqual(0);
       done();
     });
@@ -560,7 +560,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("res_query", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("res_query");
+      const result: number = await testNapi.runTest("res_query");
       expect(result).assertEqual(0);
       done();
     });
@@ -573,7 +573,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("res_querydomain", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("res_querydomain");
+      const result: number = await testNapi.runTest("res_querydomain");
       expect(result).assertEqual(0);
       done();
     });
@@ -586,7 +586,7 @@ export default function network_group_test() {
      * @tc.level  LEVEL1
      */
     it("sendmmsg", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sendmmsg");
+      const result: number = await testNapi.runTest("sendmmsg");
       expect(result).assertEqual(0);
       done();
     });

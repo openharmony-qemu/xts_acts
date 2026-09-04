@@ -27,7 +27,7 @@ export default function FunctionalextSupplementManualNetworkTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("gethostbyaddr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("gethostbyaddr");
+      const result: number = await testNapi.runTest("gethostbyaddr");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function FunctionalextSupplementManualNetworkTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("gethostbyaddr_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("gethostbyaddr_r");
+      const result: number = await testNapi.runTest("gethostbyaddr_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function FunctionalextSupplementManualNetworkTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("gethostbyname2_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("gethostbyname2_r");
+      const result: number = await testNapi.runTest("gethostbyname2_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -66,7 +66,7 @@ export default function FunctionalextSupplementManualNetworkTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("getnameinfo", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getnameinfo");
+      const result: number = await testNapi.runTest("getnameinfo");
       expect(result).assertEqual(0);
       done();
     });
@@ -80,7 +80,7 @@ export default function FunctionalextSupplementManualNetworkTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("gethostbyname2", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("gethostbyname2");
+      const result: number = await testNapi.runTest("gethostbyname2");
       expect(result).assertEqual(0);
       done();
     });
@@ -94,7 +94,7 @@ export default function FunctionalextSupplementManualNetworkTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("gethostbyname_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("gethostbyname_r");
+      const result: number = await testNapi.runTest("gethostbyname_r");
       expect(result).assertEqual(0);
       done();
     });

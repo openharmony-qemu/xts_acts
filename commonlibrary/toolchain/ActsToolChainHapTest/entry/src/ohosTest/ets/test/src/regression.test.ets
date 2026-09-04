@@ -27,7 +27,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("daemon_failure", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("daemon-failure");
+      const result: number = await testNapi.runTest("daemon-failure");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("dn_expand_empty", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("dn_expand-empty");
+      const result: number = await testNapi.runTest("dn_expand-empty");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("dn_expand_ptr_0", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("dn_expand-ptr-0");
+      const result: number = await testNapi.runTest("dn_expand-ptr-0");
       expect(result).assertEqual(0);
       done();
     });
@@ -69,7 +69,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("fgets_eof", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fgets-eof");
+      const result: number = await testNapi.runTest("fgets-eof");
       expect(result).assertEqual(0);
       done();
     });
@@ -83,7 +83,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("fgetwc_buffering", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fgetwc-buffering");
+      const result: number = await testNapi.runTest("fgetwc-buffering");
       expect(result).assertEqual(0);
       done();
     });
@@ -97,7 +97,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("getpwnam_r_crash", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getpwnam_r-crash");
+      const result: number = await testNapi.runTest("getpwnam_r-crash");
       expect(result).assertEqual(0);
       done();
     });
@@ -111,7 +111,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("getpwnam_r_errno", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getpwnam_r-errno");
+      const result: number = await testNapi.runTest("getpwnam_r-errno");
       expect(result).assertEqual(0);
       done();
     });
@@ -125,7 +125,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("inet_ntop_v4mapped", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("inet_ntop-v4mapped");
+      const result: number = await testNapi.runTest("inet_ntop-v4mapped");
       expect(result).assertEqual(0);
       done();
     });
@@ -139,7 +139,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("inet_pton_empty_last_field", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("inet_pton-empty-last-field");
+      const result: number = await testNapi.runTest("inet_pton-empty-last-field");
       expect(result).assertEqual(0);
       done();
     });
@@ -153,7 +153,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("iswspace_null", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswspace-null");
+      const result: number = await testNapi.runTest("iswspace-null");
       expect(result).assertEqual(0);
       done();
     });
@@ -167,7 +167,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("lrand48_signextend", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("lrand48-signextend");
+      const result: number = await testNapi.runTest("lrand48-signextend");
       expect(result).assertEqual(0);
       done();
     });
@@ -181,7 +181,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("malloc_0", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("malloc-0");
+      const result: number = await testNapi.runTest("malloc-0");
       expect(result).assertEqual(0);
       done();
     });
@@ -195,7 +195,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("malloc_pressure", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("malloc-pressure");
+      const result: number = await testNapi.runTest("malloc-pressure");
       expect(result).assertEqual(0);
       done();
     });
@@ -209,7 +209,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("mbsrtowcs_overflow", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mbsrtowcs-overflow");
+      const result: number = await testNapi.runTest("mbsrtowcs-overflow");
       expect(result).assertEqual(0);
       done();
     });
@@ -223,7 +223,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("memmem_oob", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("memmem-oob");
+      const result: number = await testNapi.runTest("memmem-oob");
       expect(result).assertEqual(0);
       done();
     });
@@ -237,7 +237,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("memmem_oob_read", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("memmem-oob-read");
+      const result: number = await testNapi.runTest("memmem-oob-read");
       expect(result).assertEqual(0);
       done();
     });
@@ -251,7 +251,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("mkdtemp_failure", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mkdtemp-failure");
+      const result: number = await testNapi.runTest("mkdtemp-failure");
       expect(result).assertEqual(0);
       done();
     });
@@ -265,7 +265,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("mkstemp_failure", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mkstemp-failure");
+      const result: number = await testNapi.runTest("mkstemp-failure");
       expect(result).assertEqual(0);
       done();
     });
@@ -279,7 +279,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("printf_1e9_oob", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("printf-1e9-oob");
+      const result: number = await testNapi.runTest("printf-1e9-oob");
       expect(result).assertEqual(0);
       done();
     });
@@ -293,7 +293,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("printf_fmt_g_round", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("printf-fmt-g-round");
+      const result: number = await testNapi.runTest("printf-fmt-g-round");
       expect(result).assertEqual(0);
       done();
     });
@@ -307,7 +307,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("printf_fmt_g_zeros", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("printf-fmt-g-zeros");
+      const result: number = await testNapi.runTest("printf-fmt-g-zeros");
       expect(result).assertEqual(0);
       done();
     });
@@ -321,7 +321,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("printf_fmt_n", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("printf-fmt-n");
+      const result: number = await testNapi.runTest("printf-fmt-n");
       expect(result).assertEqual(0);
       done();
     });
@@ -335,7 +335,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_exit_cancel", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_exit-cancel");
+      const result: number = await testNapi.runTest("pthread_exit-cancel");
       expect(result).assertEqual(0);
       done();
     });
@@ -349,7 +349,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("putenv_doublefree", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("putenv-doublefree");
+      const result: number = await testNapi.runTest("putenv-doublefree");
       expect(result).assertEqual(0);
       done();
     });
@@ -363,7 +363,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("regex_backref_0", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("regex-backref-0");
+      const result: number = await testNapi.runTest("regex-backref-0");
       expect(result).assertEqual(0);
       done();
     });
@@ -377,7 +377,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("regex_bracket_icase", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("regex-bracket-icase");
+      const result: number = await testNapi.runTest("regex-bracket-icase");
       expect(result).assertEqual(0);
       done();
     });
@@ -391,7 +391,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("regex_ere_backref", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("regex-ere-backref");
+      const result: number = await testNapi.runTest("regex-ere-backref");
       expect(result).assertEqual(0);
       done();
     });
@@ -405,7 +405,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("regex_escaped_high_byte", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("regex-escaped-high-byte");
+      const result: number = await testNapi.runTest("regex-escaped-high-byte");
       expect(result).assertEqual(0);
       done();
     });
@@ -419,7 +419,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("regex_negated_range", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("regex-negated-range");
+      const result: number = await testNapi.runTest("regex-negated-range");
       expect(result).assertEqual(0);
       done();
     });
@@ -433,7 +433,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("regexec_nosub", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("regexec-nosub");
+      const result: number = await testNapi.runTest("regexec-nosub");
       expect(result).assertEqual(0);
       done();
     });
@@ -447,7 +447,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("rewind_clear_error", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("rewind-clear-error");
+      const result: number = await testNapi.runTest("rewind-clear-error");
       expect(result).assertEqual(0);
       done();
     });
@@ -461,7 +461,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("rlimit_open_files", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("rlimit-open-files");
+      const result: number = await testNapi.runTest("rlimit-open-files");
       expect(result).assertEqual(0);
       done();
     });
@@ -475,7 +475,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("scanf_bytes_consumed", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("scanf-bytes-consumed");
+      const result: number = await testNapi.runTest("scanf-bytes-consumed");
       expect(result).assertEqual(0);
       done();
     });
@@ -489,7 +489,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("scanf_match_literal_eof", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("scanf-match-literal-eof");
+      const result: number = await testNapi.runTest("scanf-match-literal-eof");
       expect(result).assertEqual(0);
       done();
     });
@@ -503,7 +503,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("scanf_nullbyte_char", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("scanf-nullbyte-char");
+      const result: number = await testNapi.runTest("scanf-nullbyte-char");
       expect(result).assertEqual(0);
       done();
     });
@@ -517,7 +517,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("setvbuf_unget", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setvbuf-unget");
+      const result: number = await testNapi.runTest("setvbuf-unget");
       expect(result).assertEqual(0);
       done();
     });
@@ -531,7 +531,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigprocmask_internal", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigprocmask-internal");
+      const result: number = await testNapi.runTest("sigprocmask-internal");
       expect(result).assertEqual(0);
       done();
     });
@@ -545,7 +545,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("sscanf_eof", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sscanf-eof");
+      const result: number = await testNapi.runTest("sscanf-eof");
       expect(result).assertEqual(0);
       done();
     });
@@ -559,7 +559,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("string_strcspn", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("string_strcspn");
+      const result: number = await testNapi.runTest("string_strcspn");
       expect(result).assertEqual(0);
       done();
     });
@@ -573,7 +573,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("syscall_sign_extend", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("syscall-sign-extend");
+      const result: number = await testNapi.runTest("syscall-sign-extend");
       expect(result).assertEqual(0);
       done();
     });
@@ -587,7 +587,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("uselocale_0", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("uselocale-0");
+      const result: number = await testNapi.runTest("uselocale-0");
       expect(result).assertEqual(0);
       done();
     });
@@ -601,7 +601,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsncpy_read_overflow", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsncpy-read-overflow");
+      const result: number = await testNapi.runTest("wcsncpy-read-overflow");
       expect(result).assertEqual(0);
       done();
     });
@@ -615,7 +615,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsstr_false_negative", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsstr-false-negative");
+      const result: number = await testNapi.runTest("wcsstr-false-negative");
       expect(result).assertEqual(0);
       done();
     });
@@ -628,7 +628,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("iconv_roundtrips", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iconv-roundtrips");
+      const result: number = await testNapi.runTest("iconv-roundtrips");
       expect(result).assertEqual(0);
       done();
     });
@@ -641,7 +641,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("malloc_free_performance", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("malloc-free-performance");
+      const result: number = await testNapi.runTest("malloc-free-performance");
       expect(result).assertEqual(0);
       done();
     });
@@ -657,7 +657,7 @@ export default function regression_group_test() {
       "malloc_multi_thread_performance",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest(
+        const result: number = await testNapi.runTest(
           "malloc-multi-thread-performance",
         );
         expect(result).assertEqual(0);
@@ -673,7 +673,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_condattr_setclock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_condattr_setclock");
+      const result: number = await testNapi.runTest("pthread_condattr_setclock");
       expect(result).assertEqual(0);
       done();
     });
@@ -686,7 +686,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("raise_race", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("raise-race");
+      const result: number = await testNapi.runTest("raise-race");
       expect(result).assertEqual(0);
       done();
     });
@@ -699,7 +699,7 @@ export default function regression_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigaltstack", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigaltstack");
+      const result: number = await testNapi.runTest("sigaltstack");
       expect(result).assertEqual(0);
       done();
     });
@@ -712,7 +712,7 @@ export default function regression_group_test() {
      * @tc.desc   libc-test execle-env
      */
     it("execle_env", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("execle-env");
+      const result: number = await testNapi.runTest("execle-env");
       expect(result).assertEqual(0);
       done();
     });
@@ -726,7 +726,7 @@ export default function regression_group_test() {
      * @tc.desc   libc-test ftello-unflushed-append
      */
     it("ftello_unflushed_append", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ftello-unflushed-append");
+      const result: number = await testNapi.runTest("ftello-unflushed-append");
       expect(result).assertEqual(0);
       done();
     });
@@ -740,7 +740,7 @@ export default function regression_group_test() {
      * @tc.desc   libc-test malloc-modify-pointer
      */
     it("malloc_modify_pointer", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("malloc-modify-pointer");
+      const result: number = await testNapi.runTest("malloc-modify-pointer");
       expect(result).assertEqual(0);
       done();
     });
@@ -754,7 +754,7 @@ export default function regression_group_test() {
      * @tc.desc   libc-test pthread-robust-detach
      */
     it("pthread_robust_detach", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread-robust-detach");
+      const result: number = await testNapi.runTest("pthread-robust-detach");
       expect(result).assertEqual(0);
       done();
     });
@@ -768,7 +768,7 @@ export default function regression_group_test() {
      * @tc.desc   libc-test pthread_cond-smasher
      */
     it("pthread_cond_smasher", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_cond-smasher");
+      const result: number = await testNapi.runTest("pthread_cond-smasher");
       expect(result).assertEqual(0);
       done();
     });
@@ -782,7 +782,7 @@ export default function regression_group_test() {
      * @tc.desc   libc-test pthread_create-oom
      */
     it("pthread_create_oom", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_create-oom");
+      const result: number = await testNapi.runTest("pthread_create-oom");
       expect(result).assertEqual(0);
       done();
     });
@@ -796,7 +796,7 @@ export default function regression_group_test() {
      * @tc.desc   libc-test pthread_once-deadlock
      */
     it("pthread_once_deadlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_once-deadlock");
+      const result: number = await testNapi.runTest("pthread_once-deadlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -810,7 +810,7 @@ export default function regression_group_test() {
      * @tc.desc   libc-test pthread_rwlock-ebusy
      */
     it("pthread_rwlock_ebusy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_rwlock-ebusy");
+      const result: number = await testNapi.runTest("pthread_rwlock-ebusy");
       expect(result).assertEqual(0);
       done();
     });
@@ -824,7 +824,7 @@ export default function regression_group_test() {
      * @tc.desc   libc-test setenv-oom
      */
     it("setenv_oom", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setenv-oom");
+      const result: number = await testNapi.runTest("setenv-oom");
       expect(result).assertEqual(0);
       done();
     });
@@ -838,7 +838,7 @@ export default function regression_group_test() {
      * @tc.desc   libc-test tls_get_new-dtv
      */
     it("tls_get_new_dtv", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tls_get_new-dtv");
+      const result: number = await testNapi.runTest("tls_get_new-dtv");
       expect(result).assertEqual(0);
       done();
     });

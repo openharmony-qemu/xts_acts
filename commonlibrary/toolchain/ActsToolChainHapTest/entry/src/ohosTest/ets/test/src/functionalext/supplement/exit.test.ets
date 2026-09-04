@@ -27,7 +27,7 @@ export default function exit_group_test() {
      * @tc.level  LEVEL1
      */
     it("at_quick_exit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("at_quick_exit");
+      const result: number = await testNapi.runTest("at_quick_exit");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function exit_group_test() {
      * @tc.level  LEVEL1
      */
     it("atexit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("atexit");
+      const result: number = await testNapi.runTest("atexit");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function exit_group_test() {
      * @tc.level  LEVEL1
      */
     it("quick_exit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("quick_exit");
+      const result: number = await testNapi.runTest("quick_exit");
       expect(result).assertEqual(0);
       done();
     });
@@ -69,7 +69,7 @@ export default function exit_group_test() {
      * @tc.level  LEVEL1
      */
     it("a_cxa_atexit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("a_cxa_atexit");
+      const result: number = await testNapi.runTest("a_cxa_atexit");
       expect(result).assertEqual(0);
       done();
     });
@@ -83,7 +83,7 @@ export default function exit_group_test() {
      * @tc.level  LEVEL1
      */
     it("double_exit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("double_exit");
+      const result: number = await testNapi.runTest("double_exit");
       expect(result).assertEqual(0);
       done();
     });
