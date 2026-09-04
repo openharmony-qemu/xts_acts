@@ -500,7 +500,7 @@ export default function dataShareConfigDeleteTest() {
 
     /**
      * @tc.name   dataShareConfigDeleteTest015
-     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1100
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_4100
      * @tc.desc   delete 4k value when default configuration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
