@@ -482,5 +482,31 @@ export default function CollectionsArrayRetainAllSendableTest(): void {
         expect(receiver.length).assertEqual(0);
         console.info(`${caseName}, test end`);
       });
+
+    /**
+     * @tc.name   collectionsArrayRetainAllTest3700
+     * @tc.number SUB_COLLECTIONS_ARRAY_RETAIN_ALL_3700
+     * @tc.desc   Verify retainAll(Array) reports bind error 10200011 when method is detached.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('collectionsArrayRetainAllTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (): void => {
+        const caseName: string = 'collectionsArrayRetainAllTest3700';
+        console.info(`${caseName}, test start`);
+        const receiver: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        const retainAllMethod: (elements: collections.Array<number>) => boolean = receiver.retainAll;
+        let thrown: boolean = false;
+        try {
+          retainAllMethod(new collections.Array<number>(1));
+          expect(true).assertFail();
+        } catch (error) {
+          thrown = true;
+          expect(error.code).assertEqual(10200011);
+        }
+        expect(thrown).assertEqual(true);
+        console.info(`${caseName}, test end`);
+      });
   });
 }

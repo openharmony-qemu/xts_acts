@@ -767,5 +767,31 @@ export default function CollectionsArrayContainsAllSendableTest(): void {
         expect(receiver.containsAll(new collections.Array<number>(10249, 10250, 10251))).assertEqual(false);
         console.info(`${caseName}, test end`);
       });
+
+    /**
+     * @tc.name   collectionsArrayContainsAllTest6300
+     * @tc.number SUB_COLLECTIONS_ARRAY_CONTAINS_ALL_6300
+     * @tc.desc   Verify containsAll(Array) reports bind error 10200011 when method is detached.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('collectionsArrayContainsAllTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (): void => {
+        const caseName: string = 'collectionsArrayContainsAllTest6300';
+        console.info(`${caseName}, test start`);
+        const receiver: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        const containsAllMethod: (elements: collections.Array<number>) => boolean = receiver.containsAll;
+        let thrown: boolean = false;
+        try {
+          containsAllMethod(new collections.Array<number>(1));
+          expect(true).assertFail();
+        } catch (error) {
+          thrown = true;
+          expect(error.code).assertEqual(10200011);
+        }
+        expect(thrown).assertEqual(true);
+        console.info(`${caseName}, test end`);
+      });
   });
 }
