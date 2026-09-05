@@ -13,6 +13,7 @@
             "type": "ShellKit",
             "pre-push": [],
             "run-command": [
+                "param set persist.usb.setting.gadget_conn_prompt false",
                 "param set persist.ace.testmode.enabled 1",
                 "power-shell wakeup",
                 "uinput  -T -d 300 600 -m 300 600 300 100 -u 300 100",
