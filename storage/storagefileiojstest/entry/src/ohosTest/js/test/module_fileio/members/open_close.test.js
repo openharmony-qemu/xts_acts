@@ -132,6 +132,25 @@ describe('fileio_open_close', function () {
   });
 
   /**
+   * @tc.name   fileio_open_sync_003
+   * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0301
+   * @tc.desc   Test openSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level   LEVEL3
+   */
+  it('fileio_open_sync_003', Level.LEVEL3, function () {
+    try {
+      fileio.openSync("filepath", null, null);
+      console.log('====>fileio_open_sync_003 run err');
+      expect().assertFail();
+    } catch (e) {
+      console.log('====>fileio_open_sync_003 has failed for ' + e);
+      expect(e.message).assertEqual("Invalid flags");
+    }
+  });
+
+  /**
    * @tc.name   fileio_close_sync_000
    * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_0000
    * @tc.desc   Test closeSync() interface.
