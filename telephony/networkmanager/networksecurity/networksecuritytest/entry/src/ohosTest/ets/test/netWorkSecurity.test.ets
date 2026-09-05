@@ -1011,6 +1011,239 @@ export default function netWorkSecurityTest() {
         }
         console.info(`${caseName} test end`);
       });
+      /**
+     * @tc.name   testNetworkMgrNetworkSecurityCertType0100
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_CertType_0100
+     * @tc.desc   Verify CertType.CERT_TYPE_PEM enum value equals 0.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityCertType0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityCertType0100';
+      console.info(`${caseName} test start`);
+      try {
+        console.info(`${caseName} CertType.CERT_TYPE_PEM = ${networkSecurity.CertType.CERT_TYPE_PEM}`);
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: perSuccess,
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: perSuccess,
+        };
+        expectTrue(networkSecurity.CertType.CERT_TYPE_PEM === 0, caseName);
+        networkSecurity.certVerification(cert, caCert).then((result) => {
+          console.info(`${caseName} Certificate verification result:, ${JSON.stringify(result)}`);
+          expectTrue(result == 0, caseName);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} Certificate verification failed:', ${JSON.stringify(error)}`);
+          expectFalse(true, caseName);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err:${err}`);
+        expectFalse(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
 
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityCertBlobType0100
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_CertBlob_Type_0100
+     * @tc.desc   Verify CertBlob interface type property with CertType.CERT_TYPE_PEM.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityCertBlobType0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityCertBlobType0100';
+      console.info(`${caseName} test start`);
+      try {
+        const certBlob: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: '-----BEGIN CERTIFICATE-----\nMIIBxTCCAW4CCQDN6xM6s6tH0zANBgkqhkiG9w0BAQsFADAgMR4wHAYDVQQDDBV0\nZXN0LWNlcnRpZmljYXRlLWRlbW8wHhcNMjUwMTAxMDAwMDAwWhcNMzUwMTAxMDAw\nMDAwWjAgMR4wHAYDVQQDDBV0ZXN0LWNlcnRpZmljYXRlLWRlbW8wgZ8wDQYJKoZI\nhvcNAQEBBQADgY0AMIGJAoGBALzF6PcHKC9B5Q7jWYFPxrYqE+UaoY8vCQwJKi7L\n4m7N3TpCJqz5Vb8nKh8L3Y7oQa3b5R2gXU0J0z5Vb8nKh8L3Y7oQa3b5R2gXU0J0\n-----END CERTIFICATE-----',
+        };
+        expectTrue(certBlob.type === networkSecurity.CertType.CERT_TYPE_PEM, caseName);
+        expectTrue(typeof certBlob.data === 'string', caseName);
+        console.info(`${caseName} certBlob.type = ${certBlob.type}`);
+        expectTrue(certBlob.type === 0, caseName);
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: perSuccess,
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: perSuccess,
+        };
+        networkSecurity.certVerification(cert, caCert).then((result) => {
+          console.info(`${caseName} Certificate verification result:, ${JSON.stringify(result)}`);
+          expectTrue(result == 0, caseName);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} Certificate verification failed:', ${JSON.stringify(error)}`);
+          expectFalse(true, caseName);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err:${err}`);
+        expectFalse(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityCertVerificationParam0100
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerification_Param_0100
+     * @tc.desc   Verify certVerification when the first parameter cert.type is an illegal enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityCertVerificationParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationParam0100';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: 2 as networkSecurity.CertType,
+          data: perSuccess,
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: perSuccess,
+        };
+        networkSecurity.certVerification(cert, caCert).then((result) => {
+          console.info(`${caseName} Certificate verification result:, ${JSON.stringify(result)}`);
+          expectFalse(true, caseName);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} Certificate verification failed:', ${JSON.stringify(error)}`);
+          expectTrue(error.code === 2305069, caseName);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err:${err}`);
+        expectFalse(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityCertVerificationParam0200
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerification_Param_0200
+     * @tc.desc   Verify certVerification when the second parameter caCert.type is an illegal enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityCertVerificationParam0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationParam0200';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: perSuccess,
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: 2 as networkSecurity.CertType,
+          data: perSuccess,
+        };
+        networkSecurity.certVerification(cert, caCert).then((result) => {
+          console.info(`${caseName} Certificate verification result:, ${JSON.stringify(result)}`);
+          expectFalse(true, caseName);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} Certificate verification failed:', ${JSON.stringify(error)}`);
+          expectTrue(error.code === 2305018, caseName);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err:${err}`);
+        expectFalse(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityCertVerificationSyncParam0100
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_Param_0100
+     * @tc.desc   Verify certVerificationSync when the first parameter cert.type is an illegal enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityCertVerificationSyncParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationSyncParam0100';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: 2 as networkSecurity.CertType,
+          data: perSuccess,
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: perSuccess,
+        };
+        try {
+          let resultSync: number = networkSecurity.certVerificationSync(cert, caCert);
+          console.info(`${caseName} Synchronous Verification Result:, ${JSON.stringify(resultSync)}`);
+          expectTrue(resultSync === 2305069, caseName);
+          done();
+        } catch (err) {
+          let e: BusinessError = err as BusinessError;
+          console.info(`${caseName}  err:${JSON.stringify(e)}`);
+          expectFalse(true, caseName);
+          done();
+        }
+      } catch (err) {
+        console.info(`${caseName}  err:${err}`);
+        expectFalse(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityCertVerificationSyncParam0200
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_Param_0200
+     * @tc.desc   Verify certVerificationSync when the second parameter caCert.type is an illegal enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityCertVerificationSyncParam0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationSyncParam0200';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: perSuccess,
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: 2 as networkSecurity.CertType,
+          data: perSuccess,
+        };
+        try {
+          let resultSync: number = networkSecurity.certVerificationSync(cert, caCert);
+          console.info(`${caseName} Synchronous Verification Result:, ${JSON.stringify(resultSync)}`);
+          expectTrue(resultSync === 2305018, caseName);
+          done();
+        } catch (err) {
+          let e: BusinessError = err as BusinessError;
+          console.info(`${caseName}  err:${JSON.stringify(e)}`);
+          expectFalse(true, caseName);
+          done();
+        }
+      } catch (err) {
+        console.info(`${caseName}  err:${err}`);
+        expectFalse(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
   });
 }
