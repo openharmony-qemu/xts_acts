@@ -15,7 +15,7 @@
 
 
 import TLSSocketServerTest from './TlsSocketServer.test';
-import UDPSocket from './UDPSocket.test';
+import UDPSocketTest from './UDPSocket.test';
 import MulticastSocket from './MulticastSocket.test';
 import TCPSocketServerTest from './TCPSocketServer.test';
 import EmptyTest from './Empty.test';
