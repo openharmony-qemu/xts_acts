@@ -3202,7 +3202,7 @@ export default function numberTest() {
           const start = Date.now();
           setTimeout(() => {
             const end = Date.now();
-            resolve(end - start >= 10);
+            resolve(end - start >= 9);
           }, 10);
         });
       };

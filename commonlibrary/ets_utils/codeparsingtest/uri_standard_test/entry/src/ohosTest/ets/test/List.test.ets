@@ -5,6 +5,7 @@ import test_0004 from './uri/URITest02.test';
 import test_0005 from './uri/URITest03.test';
 import test_0006 from './uri/URITest04.test';
 import test_0007 from './uri/URITest05.test';
+import { UriFPTest } from './urifp/UriFP.test';
 
 export default function testsuite() {
   test_0001();
@@ -14,4 +15,5 @@ export default function testsuite() {
   test_0005();
   test_0006();
   test_0007();
+  UriFPTest();
 }

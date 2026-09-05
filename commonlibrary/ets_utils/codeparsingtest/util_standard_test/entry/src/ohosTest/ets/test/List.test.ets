@@ -38,6 +38,10 @@ import util3Test from './util/Util3.test';
 import utilTypeTest from './util/UtilType.test';
 import vmHeapMemoryPressureTest from './util/VMHeapMemoryPressureTest.test';
 
+import util1FPTest from './utilfp/Util1FP.test';
+import util2FPTest from './utilfp/Util2FP.test';
+import util3FPTest from './utilfp/Util3FP.test';
+
 export default function testsuite() {
   base64HelperTest();
   base64HelperTest02();
@@ -71,4 +75,7 @@ export default function testsuite() {
   util3Test();
   utilTypeTest();
   vmHeapMemoryPressureTest();
+  util1FPTest();
+  util2FPTest();
+  util3FPTest();
 }
