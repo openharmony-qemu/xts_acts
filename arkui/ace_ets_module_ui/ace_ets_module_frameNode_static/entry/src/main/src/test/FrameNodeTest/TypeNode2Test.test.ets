@@ -57,13 +57,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_0100
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_0100
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_0100
      * @tc.desc   Verify TypeNode2 test page renders with root node visible in inspector
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('typeNode2PageRenders', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('typeNode2Root'));
@@ -74,13 +74,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_0200
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_0200
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_0200
      * @tc.desc   Verify ComponentContentBase is accessible as base class of ComponentContent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('tn2_ComponentContentBase', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let val = AppStorage.get<string>('tn2_ComponentContentBase');
@@ -92,13 +92,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_0300
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_0300
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_0300
      * @tc.desc   Verify Content is accessible as base class of ComponentContentBase
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('tn2_Content', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let val = AppStorage.get<string>('tn2_Content');
@@ -110,13 +110,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_0400
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_0400
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_0400
      * @tc.desc   Verify InputEventType works with BuilderNode.postInputEvent via touch event
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('tn2_InputEventType', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let driver = Driver.create();
@@ -128,8 +128,8 @@ export default function TypeNode2Test() {
           console.info('[ARKUI_NEW] tn2_InputEventType = ' + val);
           expect(val != null && val != undefined).assertTrue();
         } else {
-          console.info('[ARKUI_NEW] tn2_InputEventType component not found, skip touch');
-          expect(true).assertTrue();
+          console.info('[ARKUI_NEW] tn2_InputEventType component not found');
+          expect().assertFail();
         }
         done();
       } catch (error) { expect().assertFail(); done(); }
@@ -137,13 +137,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_0500
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_0500
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_0500
      * @tc.desc   Verify typeNode.createTextClockNode and attribute getter work correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('tn2_getTextClockAttribute', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let val = AppStorage.get<string>('tn2_getTextClockAttribute');
@@ -155,13 +155,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_0600
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_0600
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_0600
      * @tc.desc   Verify typeNode.createTextTimerNode and attribute getter work correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('tn2_getTextTimerAttribute', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let val = AppStorage.get<string>('tn2_getTextTimerAttribute');
@@ -173,13 +173,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_0700
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_0700
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_0700
      * @tc.desc   Verify typeNode.createSymbolGlyphNode and attribute getter work correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('tn2_getSymbolGlyphAttribute', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let val = AppStorage.get<string>('tn2_getSymbolGlyphAttribute');
@@ -191,13 +191,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_0800
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_0800
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_0800
      * @tc.desc   Verify typeNode.createQRCodeNode and attribute getter work correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('tn2_getQRCodeAttribute', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let val = AppStorage.get<string>('tn2_getQRCodeAttribute');
@@ -209,13 +209,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_0900
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_0900
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_0900
      * @tc.desc   Verify typeNode.createBadgeNode and attribute getter work correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('tn2_getBadgeAttribute', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let val = AppStorage.get<string>('tn2_getBadgeAttribute');
@@ -227,13 +227,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_1000
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_1000
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_1000
      * @tc.desc   Verify typeNode.createMarqueeNode and attribute getter work correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('tn2_getMarqueeAttribute', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let val = AppStorage.get<string>('tn2_getMarqueeAttribute');
@@ -245,13 +245,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_1100
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_1100
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_1100
      * @tc.desc   Verify typeNode.createRatingNode and attribute getter work correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('tn2_getRatingAttribute', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let val = AppStorage.get<string>('tn2_getRatingAttribute');
@@ -263,13 +263,13 @@ export default function TypeNode2Test() {
 
     /**
      * @tc.name   TypeNode2Test_static_1200
-     * @tc.number SUB_ARKUI_ACE_TYPENODE2_static_1200
+     * @tc.number SUB_ARKUI_ACE_TypeNode2Test_static_1200
      * @tc.desc   Verify typeNode.createSelectNode and attribute getter work correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  Level.LEVEL1
      */
-    it('tn2_getSelectAttribute', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TypeNode2Test_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let val = AppStorage.get<string>('tn2_getSelectAttribute');
