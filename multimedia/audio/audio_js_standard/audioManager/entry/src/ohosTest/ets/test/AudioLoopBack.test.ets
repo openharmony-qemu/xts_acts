@@ -474,6 +474,35 @@ export default function audioLoopBack() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_LOOPBACK_STATUS_CHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_LOOPBACK_STATUS_CHANGE_0100
+     * @tc.desc   enable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_LOOPBACK_STATUS_CHANGE_0100", Level.LEVEL2, async () => {
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        try {
+          let audioLoopback: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+          expect(null != audioLoopBack);
+          let callback = (status: audio.AudioLoopbackStatus) => {
+            console.info(`callback called`);
+          };
+          let callback2 = (status: audio.AudioLoopbackStatus) => {
+            console.info(`callback called`);
+          };
+          audioLoopback.on('statusChange', callback);
+          audioLoopback.on('statusChange', callback2);
+          audioLoopback.off('statusChange', callback);
+          audioLoopback.off('statusChange', callback2);
+        } catch (err) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_LOOPBACK_STATUS_CHANGE_0100 ERROR: ${err}`);
+          expect().assertFail();
+        }
+      }
+    })
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ENABLE_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_ENABLE_JS_0100
      * @tc.desc   enable

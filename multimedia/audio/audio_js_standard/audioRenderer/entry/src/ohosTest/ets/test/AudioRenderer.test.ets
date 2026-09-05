@@ -13368,6 +13368,62 @@ export default function audioRendererTest() {
     })
 
     /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_0200
+    * @tc.desc   flush test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        audioRenderer.on('stateChange', (state: audio.AudioState) => {
+          console.log(`${TagFrmwk}: Volume Change Event is called`);
+          if (state == audio.AudioState.STATE_RUNNING) {
+            audioRenderer.flush().then(() => {
+                console.info('Renderer flushed successfully');
+              }).catch((err) => {
+                console.error(`ERROR: ${err}`);
+              });
+            }
+          });
+        await audioRenderer.start();
+        console.log('SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_0200 start');
+        await sleep(1000);
+        await audioRenderer.stop();
+        console.log('SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_0200 stop');
+        await audioRenderer.release();
+        console.log('SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_0200 flush');
+        await sleep(1000);
+        done();
+      } catch (error) {
+        console.log('SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_0200 Fail: ' + error + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+      done()
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_0100
      * @tc.desc   Test AudioRenderer writeData callback with on interface
@@ -14776,6 +14832,99 @@ export default function audioRendererTest() {
       done();
     })
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STATECHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STATECHANGE_0100
+     * @tc.desc   AudioRenderer - stateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MULTIMEDIA_AUDIO_RENDERER_STATECHANGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        let callback = (state: audio.AudioState) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        let callback2 = (state: audio.AudioState) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        audioRenderer.on('stateChange', callback);
+        audioRenderer.on('stateChange', callback2);
+        audioRenderer.off('stateChange', callback);
+        audioRenderer.off('stateChange', callback2);
+        await audioRenderer.release();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_WRITEDATA_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_WRITEDATA_0100
+     * @tc.desc   AudioRenderer - writeData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MULTIMEDIA_AUDIO_RENDERER_WRITEDATA_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        let callback = (buffer: ArrayBuffer) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        let callback2 = (buffer: ArrayBuffer) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        audioRenderer.on('writeData', callback);
+        audioRenderer.on('writeData', callback2);
+        audioRenderer.off('writeData', callback);
+        audioRenderer.off('writeData', callback2);
+        await audioRenderer.release();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_9700
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_9700
      * @tc.desc   AudioRenderer - SetRenderRate - DEFAULT - RENDER_RATE_NORMAL
@@ -15815,6 +15964,53 @@ export default function audioRendererTest() {
     });
 
     /**
+     * @tc.name   AUDIORENDERER_ON_MARKREACH_0100
+     * @tc.number AUDIORENDERER_ON_MARKREACH_0100
+     * @tc.desc   on_markReach 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_ON_MARKREACH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        let callback = (position: number) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        let callback2 = (position: number) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        audioRenderer.on('markReach', 55, callback);
+        audioRenderer.on('markReach', 55, callback2);
+        audioRenderer.off('markReach', callback);
+        audioRenderer.off('markReach', callback2);
+        await audioRenderer.release();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
      * @tc.name   AUDIORENDERER_ON_PERIODREACH_1383
      * @tc.number AUDIORENDERER_ON_PERIODREACH_1383
      * @tc.desc   on_periodReach with null parameter.
@@ -15896,6 +16092,53 @@ export default function audioRendererTest() {
       } catch (err) {
         console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
         expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIORENDERER_ON_PERIODREACH_0200
+     * @tc.number AUDIORENDERER_ON_PERIODREACH_0200
+     * @tc.desc   on_periodReach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIORENDERER_ON_PERIODREACH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        let callback = (position: number) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        let callback2 = (position: number) => {
+          console.info(`${TagFrmwk}: callback called`);
+        };
+        audioRenderer.on('periodReach', 55, callback);
+        audioRenderer.on('periodReach', 55, callback2);
+        audioRenderer.off('periodReach', callback);
+        audioRenderer.off('periodReach', callback2);
+        audioRenderer.release();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${err.message}`);
+        expect(false).assertTrue();
       }
       done();
     });

@@ -6648,8 +6648,15 @@ export default function audioCapturer() {
             console.info('ON Triggered successfully');
           }
         };
+        let markReachCallback2 = (position: number) => {
+          if (position == 1000) {
+            console.info('ON Triggered successfully');
+          }
+        };
         audioCapturer.on('markReach', 1000, markReachCallback);
+        audioCapturer.on('markReach', 1000, markReachCallback2);
         audioCapturer.off('markReach', markReachCallback);
+        audioCapturer.off('markReach', markReachCallback2);
         await sleep(1000);
         console.log(`${Tag}: markReach success`);
       } catch (error) {
@@ -6718,6 +6725,108 @@ export default function audioCapturer() {
         }
         done();
       }
+    })
+
+        /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_OFF_PERIODREACH_0200 
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_OFF_PERIODREACH_0200 
+     * @tc.desc   on_off_periodReach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_OFF_PERIODREACH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let Tag: string = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_OFF_PERIODREACH_0200';
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let audioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+      console.log(`${Tag}: AudioCapturer created successfully`);
+      expect(audioCapturer != undefined).assertTrue();
+      try {
+        audioCapturer.off('periodReach');
+        let periodReachCallback = (position: number) => {
+          if (position == 1000) {
+            console.info('ON Triggered successfully');
+          }
+        };
+        let periodReachCallback2 = (position: number) => {
+          if (position == 1000) {
+            console.info('ON Triggered successfully');
+          }
+        };
+        audioCapturer.on('periodReach', 1000, periodReachCallback);
+        audioCapturer.on('periodReach', 1000, periodReachCallback2);
+        audioCapturer.off('periodReach', periodReachCallback);
+        audioCapturer.off('periodReach', periodReachCallback2);
+        await sleep(1000);
+        console.log(`${Tag}: periodReach success`);
+      } catch (error) {
+        console.log(`${Tag}: Error occurred, message: ${error.message}, code: ${error.code}`);
+        expect(error.message).assertContain('permit');
+      } finally {
+        try {
+          audioCapturer.off('periodReach');
+          await audioCapturer.release();
+          console.log(`${Tag}: Capturer released successfully`);
+        } catch (releaseError) {
+          console.log(`${Tag}: Release capturer failed: ${releaseError.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_AUDIOINTERRUPT_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_AUDIOINTERRUPT_0100
+     * @tc.desc   on_off_AudioInterrupt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_AUDIOINTERRUPT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        };
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+        };
+        let audioCapturerOptions:audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        };
+        let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        try {
+            let audioInterruptback = (interruptEvent: audio.InterruptEvent) => {
+                console.log(`SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_AUDIOINTERRUPT_0100 interruptEvent : ${JSON.stringify(interruptEvent)}`);
+                expect(interruptEvent.eventType).assertLargerOrEqual(0);
+                expect(interruptEvent.forceType).assertLargerOrEqual(0);
+                expect(interruptEvent.hintType).assertLargerOrEqual(0);
+            }
+            audioCapturer.on('audioInterrupt', audioInterruptback);
+            audioCapturer.off('audioInterrupt');
+            await audioCapturer.release();
+        } catch(error){
+            console.log(`SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_AUDIOINTERRUPT_0100 error : ${error.message}, Code:${error.code}`);
+            expect(false).assertTrue();
+        }
+        done();
     })
 
     /**

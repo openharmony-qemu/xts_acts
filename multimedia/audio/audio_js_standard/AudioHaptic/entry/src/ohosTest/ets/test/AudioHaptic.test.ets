@@ -1938,6 +1938,60 @@ export default function AudioHapticTest() {
         });
 
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_0300
+     * @tc.desc   Notification_AudioHapticPlayer_on_endofStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
+      AudioHapticManager.setAudioLatencyMode(sourceId_Notification, AudioLatencyMode);
+      AudioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
+      let AudioHapticPlayerOptions: AudioHapticPlayerOptions = {
+        muteAudio: false,
+        muteHaptics: false
+      }
+      await AudioHapticManager.createPlayer(sourceId_Notification, AudioHapticPlayerOptions)
+        .then(async (data: ESObject) => {
+          AudioHapticPlayer = data;
+          console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
+          try {
+            AudioHapticPlayer.off('endOfStream');
+            let endOfStreamCallback = () => {
+              console.info(`${tag} on endOfStream called `);
+              console.log(`${tag} AudioHapticPlayer release success`);
+            };
+            let endOfStreamCallback2 = () => {
+              console.info(`${tag} on endOfStream called `);
+              console.log(`${tag} AudioHapticPlayer release success`);
+            };
+
+            AudioHapticPlayer.on('endOfStream', endOfStreamCallback);
+            AudioHapticPlayer.on('endOfStream', endOfStreamCallback2);
+            AudioHapticPlayer.off('endOfStream', endOfStreamCallback);
+            AudioHapticPlayer.off('endOfStream', endOfStreamCallback2);
+            done();
+          } catch (err) {
+            console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
+            expect(false).assertTrue();
+            done()
+          }
+        })
+        .catch((err: BusinessError) => {
+          console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
+          if (err.code === 5400106) {
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+
+    })
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_0100
