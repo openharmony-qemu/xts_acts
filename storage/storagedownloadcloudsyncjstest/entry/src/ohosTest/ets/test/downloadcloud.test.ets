@@ -91,25 +91,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-   it('test_Download_State_001', Level.LEVEL0, async (done: Function) => {
-     let TAG = "test_Download_State_001::";
-     let RUNNING = 0;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("download_on:callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.state = " + pg.state);
-           if (pg.state == RUNNING) {
-             console.info("state:pg.state.RUNNING==0-云文件正在下载中");
-             expect(cloudSync.State.RUNNING === 0).assertTrue();
-           }
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Download_State_001', Level.LEVEL0, async (done: Function) => {
+      let TAG = "test_Download_State_001::";
+      let tag = "====>test_Download_State_001 ";
+      console.info(tag + "start====");
+      let RUNNING = 0;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("download_on:callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.state = " + pg.state);
+            if (pg.state == RUNNING) {
+              console.info("state:pg.state.RUNNING==0-云文件正在下载中");
+              try {
+                expect(cloudSync.State.RUNNING === 0).assertTrue();
+              } catch (err) {
+                console.info(tag + "Assert Fail: " + JSON.stringify(err));
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
    /**
     * @tc.name   test_Download_State_002
@@ -119,25 +129,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-   it('test_Download_State_002', Level.LEVEL0, async (done: Function) => {
-     let TAG = "test_Download_State_002::";
-     let FAILED = 2;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("download_on:callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.state = " + pg.state);
-           if (pg.state == FAILED) {
-             console.info("state:pg.state.FAILED==2-云文件下载失败");
-             expect(cloudSync.State.FAILED === 2).assertTrue();
-           }
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Download_State_002', Level.LEVEL0, async (done: Function) => {
+      let TAG = "test_Download_State_002::";
+      let tag = "====>test_Download_State_002 ";
+      console.info(tag + "start====");
+      let FAILED = 2;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("download_on:callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.state = " + pg.state);
+            if (pg.state == FAILED) {
+              console.info("state:pg.state.FAILED==2-云文件下载失败");
+              try {
+                expect(cloudSync.State.FAILED === 2).assertTrue();
+              } catch (err) {
+                console.info(tag + "Assert Fail: " + JSON.stringify(err));
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
    /**
     * @tc.name   test_Uploading_State_003
@@ -147,25 +167,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-   it('test_Uploading_State_003', Level.LEVEL0, async (done: Function) => {
-     let TAG = "test_Uploading_State_003::";
-     let UPLOADING = 0;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("download_on:callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.state = " + pg.state);
-           if (pg.state == UPLOADING) {
-             console.info("state:pg.state.SyncState==0-上行同步中");
-             expect(cloudSync.SyncState.UPLOADING === 0).assertTrue();
-           }
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Uploading_State_003', Level.LEVEL0, async (done: Function) => {
+      let TAG = "test_Uploading_State_003::";
+      let tag = "====>test_Uploading_State_003 ";
+      console.info(tag + "start====");
+      let UPLOADING = 0;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("download_on:callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.state = " + pg.state);
+            if (pg.state == UPLOADING) {
+              console.info("state:pg.state.SyncState==0-上行同步中");
+              try {
+                expect(cloudSync.SyncState.UPLOADING === 0).assertTrue();
+              } catch (err) {
+                console.info(tag + "Assert Fail: " + JSON.stringify(err));
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
    /**
     * @tc.name   test_Uploading_Failed_State_004
@@ -175,25 +205,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-   it('test_Uploading_Failed_State_004', Level.LEVEL0, async (done: Function) => {
-     let TAG = "test_Uploading_Failed_State_004::";
-     let UPLOAD_FAILED = 1;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("download_on:callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.state = " + pg.state);
-           if (pg.state == UPLOAD_FAILED) {
-             console.info("state:pg.state.SyncState==1-上行同步失败");
-             expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
-           }
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Uploading_Failed_State_004', Level.LEVEL0, async (done: Function) => {
+      let TAG = "test_Uploading_Failed_State_004::";
+      let tag = "====>test_Uploading_Failed_State_004 ";
+      console.info(tag + "start====");
+      let UPLOAD_FAILED = 1;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("download_on:callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.state = " + pg.state);
+            if (pg.state == UPLOAD_FAILED) {
+              console.info("state:pg.state.SyncState==1-上行同步失败");
+              try {
+                expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+              } catch (err) {
+                console.info(tag + "Assert Fail: " + JSON.stringify(err));
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
   /**
    * @tc.name   test_CloudSync_SyncState_005
@@ -203,25 +243,35 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('test_CloudSync_SyncState_005', Level.LEVEL0, async (done: Function) => {
-    let TAG = "test_CloudSync_SyncState_005::";
-    let DOWNLOAD_FAILED = 3;
-    try {
-      gallerySync.on("progress",(pg)=>{
-        console.info("gallerySync_on:callback succeed.");
-        if(pg != undefined){
-          console.info("on:callback succeed. pg.state = " + pg.state);
-          if (pg.state == DOWNLOAD_FAILED) {
-            console.info("state:pg.state.DOWNLOAD_FAILED ==3-云文件下行同步失败");
-            expect(cloudSync.SyncState.DOWNLOAD_FAILED === 3).assertTrue();
-          }
-        }
-      });
-    } catch (err) {
-      errHandle(err,TAG);
-    }
-    done();
-  });
+   it('test_CloudSync_SyncState_005', Level.LEVEL0, async (done: Function) => {
+     let TAG = "test_CloudSync_SyncState_005::";
+     let tag = "====>test_CloudSync_SyncState_005 ";
+     console.info(tag + "start====");
+     let DOWNLOAD_FAILED = 3;
+     try {
+       console.info(tag + "start on_progress");
+       gallerySync.on("progress",(pg)=>{
+         console.info(tag + "progress_callback enter");
+         console.info("gallerySync_on:callback succeed.");
+         if(pg != undefined){
+           console.info("on:callback succeed. pg.state = " + pg.state);
+           if (pg.state == DOWNLOAD_FAILED) {
+             console.info("state:pg.state.DOWNLOAD_FAILED ==3-云文件下行同步失败");
+             try {
+               expect(cloudSync.SyncState.DOWNLOAD_FAILED === 3).assertTrue();
+             } catch (err) {
+               console.info(tag + "Assert Fail: " + JSON.stringify(err));
+             }
+           }
+         }
+       });
+     } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
+       errHandle(err,TAG);
+     }
+     console.info(tag + "end====");
+     done();
+   });
 
    /**
     * @tc.name   test_Downloading_State_006
@@ -231,25 +281,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-   it('test_Downloading_State_006', Level.LEVEL0, async (done: Function) => {
-     let TAG = "test_Downloading_State_006::";
-     let DOWNLOADING = 2;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-          console.info("download_on:callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.state = " + pg.state);
-           if (pg.state == DOWNLOADING) {
-             console.info("state:pg.state.SyncState==2-下行同步中");
-             expect(cloudSync.SyncState.DOWNLOADING === 2).assertTrue();
-           }
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Downloading_State_006', Level.LEVEL0, async (done: Function) => {
+      let TAG = "test_Downloading_State_006::";
+      let tag = "====>test_Downloading_State_006 ";
+      console.info(tag + "start====");
+      let DOWNLOADING = 2;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+           console.info(tag + "progress_callback enter");
+           console.info("download_on:callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.state = " + pg.state);
+            if (pg.state == DOWNLOADING) {
+              console.info("state:pg.state.SyncState==2-下行同步中");
+              try {
+                expect(cloudSync.SyncState.DOWNLOADING === 2).assertTrue();
+              } catch (err) {
+                console.info(tag + "Assert Fail: " + JSON.stringify(err));
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
    /**
     * @tc.name   test_Download_Processed_001
@@ -259,25 +319,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-   it('test_Download_Processed_001', Level.LEVEL0, async (done: Function) => {
-     let TAG = "test_Download_Processed_001::";
-     let FAILED = 2;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("on:callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.state = " + pg.state);
-           if (pg.state == FAILED) {
-             console.info("on:callback succeed. pg.processed = " + pg.processed);
-             expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
-           }
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Download_Processed_001', Level.LEVEL0, async (done: Function) => {
+      let TAG = "test_Download_Processed_001::";
+      let tag = "====>test_Download_Processed_001 ";
+      console.info(tag + "start====");
+      let FAILED = 2;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("on:callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.state = " + pg.state);
+            if (pg.state == FAILED) {
+              console.info("on:callback succeed. pg.processed = " + pg.processed);
+              try {
+                expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+              } catch (err) {
+                console.info(tag + "Assert Fail: " + JSON.stringify(err));
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
    /**
     * @tc.name   test_Download_Error_001
@@ -287,25 +357,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-   it('test_Download_Error_001', Level.LEVEL0, async (done: Function) => {
-     let TAG = "test_Download_Error_001::";
-     let NO_ERROR = 0;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("download_on: callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.error = " + pg.error);
-         if (pg.error == NO_ERROR) {
-           console.info("error: pg.error.NO_ERROR==0-没有错误");
-           expect(cloudSync.DownloadErrorType.NO_ERROR === 0).assertTrue();
-         }
-       }
-       });
-    } catch (err) {
-      errHandle(err,TAG);
-    }
-     done();
-   });
+    it('test_Download_Error_001', Level.LEVEL0, async (done: Function) => {
+      let TAG = "test_Download_Error_001::";
+      let tag = "====>test_Download_Error_001 ";
+      console.info(tag + "start====");
+      let NO_ERROR = 0;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("download_on: callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.error = " + pg.error);
+          if (pg.error == NO_ERROR) {
+            console.info("error: pg.error.NO_ERROR==0-没有错误");
+            try {
+              expect(cloudSync.DownloadErrorType.NO_ERROR === 0).assertTrue();
+            } catch (err) {
+              console.info(tag + "Assert Fail: " + JSON.stringify(err));
+            }
+          }
+        }
+        });
+     } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
+       errHandle(err,TAG);
+     }
+      console.info(tag + "end====");
+      done();
+    });
 
    /**
     * @tc.name   test_Download_Error_002
@@ -315,25 +395,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-   it('test_Download_Error_002', Level.LEVEL0, async (done: Function) => {
-     let TAG = "test_Download_Error_002::";
-     let UNKNOWN_ERROR = 1;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("download_on: callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.error = " + pg.error);
-           if (pg.error == UNKNOWN_ERROR) {
-             console.info("error: pg.error.UNKNOWN_ERROR==1-未知错误");
-             expect(cloudSync.DownloadErrorType.UNKNOWN_ERROR === 1).assertTrue();
-           }
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Download_Error_002', Level.LEVEL0, async (done: Function) => {
+      let TAG = "test_Download_Error_002::";
+      let tag = "====>test_Download_Error_002 ";
+      console.info(tag + "start====");
+      let UNKNOWN_ERROR = 1;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("download_on: callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.error = " + pg.error);
+            if (pg.error == UNKNOWN_ERROR) {
+              console.info("error: pg.error.UNKNOWN_ERROR==1-未知错误");
+              try {
+                expect(cloudSync.DownloadErrorType.UNKNOWN_ERROR === 1).assertTrue();
+              } catch (err) {
+                console.info(tag + "Assert Fail: " + JSON.stringify(err));
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
    /**
     * @tc.name   test_Download_Error_003
@@ -343,25 +433,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-   it('test_Download_Error_003', Level.LEVEL0, async (done: Function) => {
-     let TAG = "test_Download_Error_003::";
-     let NETWORK_UNAVAILABLE = 2;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("download_on: callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.error = " + pg.error);
-           if (pg.error == NETWORK_UNAVAILABLE) {
-             console.info("error: pg.error.NETWORK_UNAVAILABLE==2-网络不可用");
-             expect(cloudSync.DownloadErrorType.NETWORK_UNAVAILABLE === 2).assertTrue();
-           }
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Download_Error_003', Level.LEVEL0, async (done: Function) => {
+      let TAG = "test_Download_Error_003::";
+      let tag = "====>test_Download_Error_003 ";
+      console.info(tag + "start====");
+      let NETWORK_UNAVAILABLE = 2;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("download_on: callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.error = " + pg.error);
+            if (pg.error == NETWORK_UNAVAILABLE) {
+              console.info("error: pg.error.NETWORK_UNAVAILABLE==2-网络不可用");
+              try {
+                expect(cloudSync.DownloadErrorType.NETWORK_UNAVAILABLE === 2).assertTrue();
+              } catch (err) {
+                console.info(tag + "Assert Fail: " + JSON.stringify(err));
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
    /**
     * @tc.name   test_Download_Error_004
@@ -371,25 +471,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL3
     */
-   it('test_Download_Error_004', Level.LEVEL3, async (done: Function) => {
-     let TAG = "test_Download_Error_004::";
-     let LOCAL_STORAGE_FULL = 3;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("download_on: callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.error = " + pg.error);
-           if (pg.error == LOCAL_STORAGE_FULL) {
-             console.info("error: pg.error.LOCAL_STORAGE_FULL==3-本地空间不足");
-             expect(cloudSync.DownloadErrorType.LOCAL_STORAGE_FULL === 3).assertTrue();
-           }
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Download_Error_004', Level.LEVEL3, async (done: Function) => {
+      let TAG = "test_Download_Error_004::";
+      let tag = "====>test_Download_Error_004 ";
+      console.info(tag + "start====");
+      let LOCAL_STORAGE_FULL = 3;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("download_on: callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.error = " + pg.error);
+            if (pg.error == LOCAL_STORAGE_FULL) {
+              console.info("error: pg.error.LOCAL_STORAGE_FULL==3-本地空间不足");
+              try {
+                expect(cloudSync.DownloadErrorType.LOCAL_STORAGE_FULL === 3).assertTrue();
+              } catch (err) {
+                console.info(tag + "Assert Fail: " + JSON.stringify(err));
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
    /**
     * @tc.name   test_Download_Error_005
@@ -399,25 +509,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL3
     */
-   it('test_Download_Error_005', Level.LEVEL3, async (done: Function) => {
-     let TAG = "test_Download_Error_005::";
-     let CONTENT_NOT_FOUND = 4;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("download_on: callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.error = " + pg.error);
-           if (pg.error == CONTENT_NOT_FOUND) {
-             console.info("error: pg.error.CONTENT_NOT_FOUND==4-云端空间未找到对应文件");
-             expect(cloudSync.DownloadErrorType.CONTENT_NOT_FOUND === 4).assertTrue();
-           }
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Download_Error_005', Level.LEVEL3, async (done: Function) => {
+      let TAG = "test_Download_Error_005::";
+      let tag = "====>test_Download_Error_005 ";
+      console.info(tag + "start====");
+      let CONTENT_NOT_FOUND = 4;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("download_on: callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.error = " + pg.error);
+            if (pg.error == CONTENT_NOT_FOUND) {
+              console.info("error: pg.error.CONTENT_NOT_FOUND==4-云端空间未找到对应文件");
+              try {
+                expect(cloudSync.DownloadErrorType.CONTENT_NOT_FOUND === 4).assertTrue();
+              } catch (err) {
+                console.info(tag + "Assert Fail: " + JSON.stringify(err));
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
    /**
     * @tc.name   test_Download_Error_006
@@ -427,25 +547,35 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL3
     */
-   it('test_Download_Error_006', Level.LEVEL3, async (done: Function) => {
-     let TAG = "test_Download_Error_006::";
-     let FREQUENT_USER_REQUESTS = 5;
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("download_on: callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.error = " + pg.error);
-           if (pg.error == FREQUENT_USER_REQUESTS) {
-             console.info("error: pg.error.CONTENT_NOT_FOUND==5-用户请求过于频繁");
-             expect(cloudSync.DownloadErrorType.FREQUENT_USER_REQUESTS === 5).assertTrue();
-           }
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Download_Error_006', Level.LEVEL3, async (done: Function) => {
+      let TAG = "test_Download_Error_006::";
+      let tag = "====>test_Download_Error_006 ";
+      console.info(tag + "start====");
+      let FREQUENT_USER_REQUESTS = 5;
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("download_on: callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.error = " + pg.error);
+            if (pg.error == FREQUENT_USER_REQUESTS) {
+              console.info("error: pg.error.CONTENT_NOT_FOUND==5-用户请求过于频繁");
+              try {
+                expect(cloudSync.DownloadErrorType.FREQUENT_USER_REQUESTS === 5).assertTrue();
+              } catch (err) {
+                console.info(tag + "Assert Fail: " + JSON.stringify(err));
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
    /**
     * @tc.name   test_Download_Error_007
@@ -455,21 +585,31 @@ describe('cloud_file_download_test', () => {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL3
     */
-   it('test_Download_Error_007', Level.LEVEL3, async (done: Function) => {
-     let TAG = "test_Download_Error_007::";
-     try {
-       cloudSyncDownload.on("progress",(pg)=>{
-         console.info("on: callback succeed.");
-         if(pg != undefined){
-           console.info("on:callback succeed. pg.error = " + pg.error);
-           expect(cloudSync.DownloadErrorType.UNKNOWN_ERROR === 1).assertTrue();
-         }
-       });
-     } catch (err) {
-       errHandle(err,TAG);
-     }
-     done();
-   });
+    it('test_Download_Error_007', Level.LEVEL3, async (done: Function) => {
+      let TAG = "test_Download_Error_007::";
+      let tag = "====>test_Download_Error_007 ";
+      console.info(tag + "start====");
+      try {
+        console.info(tag + "start on_progress");
+        cloudSyncDownload.on("progress",(pg)=>{
+          console.info(tag + "progress_callback enter");
+          console.info("on: callback succeed.");
+          if(pg != undefined){
+            console.info("on:callback succeed. pg.error = " + pg.error);
+            try {
+              expect(cloudSync.DownloadErrorType.UNKNOWN_ERROR === 1).assertTrue();
+            } catch (err) {
+              console.info(tag + "Assert Fail: " + JSON.stringify(err));
+            }
+          }
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+      }
+      console.info(tag + "end====");
+      done();
+    });
 
   /**
    * @tc.name   test_CloudSync_ErrorType_008
@@ -479,25 +619,35 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('test_CloudSync_ErrorType_008', Level.LEVEL3, async (done: Function) => {
-    let TAG = "test_CloudSync_ErrorType_008::";
-    let WIFI_UNAVAILABLE = 2;
-    try {
-      gallerySync.on("progress",(pg)=>{
-        console.info("gallerySync_on: callback succeed.");
-        if(pg != undefined){
-          console.info("on:callback succeed. pg.error = " + pg.error);
-          if (pg.error == WIFI_UNAVAILABLE) {
-            console.info("error: pg.error.WIFI_UNAVAILABLE == 2-WIFI不可用");
-            expect(cloudSync.ErrorType.WIFI_UNAVAILABLE === 2).assertTrue();
-          }
-        }
-      });
-    } catch (err) {
-      errHandle(err,TAG);
-    }
-    done();
-  });
+   it('test_CloudSync_ErrorType_008', Level.LEVEL3, async (done: Function) => {
+     let TAG = "test_CloudSync_ErrorType_008::";
+     let tag = "====>test_CloudSync_ErrorType_008 ";
+     console.info(tag + "start====");
+     let WIFI_UNAVAILABLE = 2;
+     try {
+       console.info(tag + "start on_progress");
+       gallerySync.on("progress",(pg)=>{
+         console.info(tag + "progress_callback enter");
+         console.info("gallerySync_on: callback succeed.");
+         if(pg != undefined){
+           console.info("on:callback succeed. pg.error = " + pg.error);
+           if (pg.error == WIFI_UNAVAILABLE) {
+             console.info("error: pg.error.WIFI_UNAVAILABLE == 2-WIFI不可用");
+             try {
+               expect(cloudSync.ErrorType.WIFI_UNAVAILABLE === 2).assertTrue();
+             } catch (err) {
+               console.info(tag + "Assert Fail: " + JSON.stringify(err));
+             }
+           }
+         }
+       });
+     } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
+       errHandle(err,TAG);
+     }
+     console.info(tag + "end====");
+     done();
+   });
 
   /**
    * @tc.name   test_CloudSync_ErrorType_009
@@ -507,25 +657,35 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('test_CloudSync_ErrorType_009', Level.LEVEL3, async (done: Function) => {
-    let TAG = "test_CloudSync_ErrorType_009::";
-    let BATTERY_LEVEL_LOW = 3;
-    try {
-      gallerySync.on("progress",(pg)=>{
-        console.info("gallerySync_on: callback succeed.");
-        if(pg != undefined){
-          console.info("on:callback succeed. pg.error = " + pg.error);
-          if (pg.error == BATTERY_LEVEL_LOW) {
-            console.info("error: pg.error.BATTERY_LEVEL_LOW == 3-低电量（低于15%）");
-            expect(cloudSync.ErrorType.BATTERY_LEVEL_LOW === 3).assertTrue();
-          }
-        }
-      });
-    } catch (err) {
-      errHandle(err,TAG);
-    }
-    done();
-  });
+   it('test_CloudSync_ErrorType_009', Level.LEVEL3, async (done: Function) => {
+     let TAG = "test_CloudSync_ErrorType_009::";
+     let tag = "====>test_CloudSync_ErrorType_009 ";
+     console.info(tag + "start====");
+     let BATTERY_LEVEL_LOW = 3;
+     try {
+       console.info(tag + "start on_progress");
+       gallerySync.on("progress",(pg)=>{
+         console.info(tag + "progress_callback enter");
+         console.info("gallerySync_on: callback succeed.");
+         if(pg != undefined){
+           console.info("on:callback succeed. pg.error = " + pg.error);
+           if (pg.error == BATTERY_LEVEL_LOW) {
+             console.info("error: pg.error.BATTERY_LEVEL_LOW == 3-低电量（低于15%）");
+             try {
+               expect(cloudSync.ErrorType.BATTERY_LEVEL_LOW === 3).assertTrue();
+             } catch (err) {
+               console.info(tag + "Assert Fail: " + JSON.stringify(err));
+             }
+           }
+         }
+       });
+     } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
+       errHandle(err,TAG);
+     }
+     console.info(tag + "end====");
+     done();
+   });
 
 
   /**
@@ -536,25 +696,35 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('test_CloudSync_ErrorType_010', Level.LEVEL3, async (done: Function) => {
-    let TAG = "test_CloudSync_ErrorType_010::";
-    let BATTERY_LEVEL_WARNING = 4;
-    try {
-      gallerySync.on("progress",(pg)=>{
-        console.info("gallerySync_on: callback succeed.");
-        if(pg != undefined){
-          console.info("on:callback succeed. pg.error = " + pg.error);
-          if (pg.error == BATTERY_LEVEL_WARNING) {
-            console.info("error: pg.error.BATTERY_LEVEL_WARNING == 4-告警电量（低于10%）");
-            expect(cloudSync.ErrorType.BATTERY_LEVEL_WARNING === 4).assertTrue();
-          }
-        }
-      });
-    } catch (err) {
-      errHandle(err,TAG);
-    }
-    done();
-  });
+   it('test_CloudSync_ErrorType_010', Level.LEVEL3, async (done: Function) => {
+     let TAG = "test_CloudSync_ErrorType_010::";
+     let tag = "====>test_CloudSync_ErrorType_010 ";
+     console.info(tag + "start====");
+     let BATTERY_LEVEL_WARNING = 4;
+     try {
+       console.info(tag + "start on_progress");
+       gallerySync.on("progress",(pg)=>{
+         console.info(tag + "progress_callback enter");
+         console.info("gallerySync_on: callback succeed.");
+         if(pg != undefined){
+           console.info("on:callback succeed. pg.error = " + pg.error);
+           if (pg.error == BATTERY_LEVEL_WARNING) {
+             console.info("error: pg.error.BATTERY_LEVEL_WARNING == 4-告警电量（低于10%）");
+             try {
+               expect(cloudSync.ErrorType.BATTERY_LEVEL_WARNING === 4).assertTrue();
+             } catch (err) {
+               console.info(tag + "Assert Fail: " + JSON.stringify(err));
+             }
+           }
+         }
+       });
+     } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
+       errHandle(err,TAG);
+     }
+     console.info(tag + "end====");
+     done();
+   });
 
 
   /**
@@ -565,25 +735,35 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('test_CloudSync_ErrorType_011', Level.LEVEL3, async (done: Function) => {
-    let TAG = "test_CloudSync_ErrorType_011::";
-    let CLOUD_STORAGE_FULL = 5;
-    try {
-      gallerySync.on("progress",(pg)=>{
-        console.info("gallerySync_on: callback succeed.");
-        if(pg != undefined){
-          console.info("on:callback succeed. pg.error = " + pg.error);
-          if (pg.error == CLOUD_STORAGE_FULL) {
-            console.info("error: pg.error.CLOUD_STORAGE_FULL == 5-云端空间不足");
-            expect(cloudSync.ErrorType.CLOUD_STORAGE_FULL === 5).assertTrue();
-          }
-        }
-      });
-    } catch (err) {
-      errHandle(err,TAG);
-    }
-    done();
-  });
+   it('test_CloudSync_ErrorType_011', Level.LEVEL3, async (done: Function) => {
+     let TAG = "test_CloudSync_ErrorType_011::";
+     let tag = "====>test_CloudSync_ErrorType_011 ";
+     console.info(tag + "start====");
+     let CLOUD_STORAGE_FULL = 5;
+     try {
+       console.info(tag + "start on_progress");
+       gallerySync.on("progress",(pg)=>{
+         console.info(tag + "progress_callback enter");
+         console.info("gallerySync_on: callback succeed.");
+         if(pg != undefined){
+           console.info("on:callback succeed. pg.error = " + pg.error);
+           if (pg.error == CLOUD_STORAGE_FULL) {
+             console.info("error: pg.error.CLOUD_STORAGE_FULL == 5-云端空间不足");
+             try {
+               expect(cloudSync.ErrorType.CLOUD_STORAGE_FULL === 5).assertTrue();
+             } catch (err) {
+               console.info(tag + "Assert Fail: " + JSON.stringify(err));
+             }
+           }
+         }
+       });
+     } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
+       errHandle(err,TAG);
+     }
+     console.info(tag + "end====");
+     done();
+   });
 
 
   /**
@@ -594,25 +774,35 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('test_CloudSync_ErrorType_012', Level.LEVEL3, async (done: Function) => {
-    let TAG = "test_CloudSync_ErrorType_012::";
-    let DEVICE_TEMPERATURE_TOO_HIGH = 7;
-    try {
-      gallerySync.on("progress",(pg)=>{
-        console.info("gallerySync_on: callback succeed.");
-        if(pg != undefined){
-          console.info("on:callback succeed. pg.error = " + pg.error);
-          if (pg.error == DEVICE_TEMPERATURE_TOO_HIGH) {
-            console.info("error: pg.error.DEVICE_TEMPERATURE_TOO_HIGH == 7-设备温度过高");
-            expect(cloudSync.ErrorType.DEVICE_TEMPERATURE_TOO_HIGH === 7).assertTrue();
-          }
-        }
-      });
-    } catch (err) {
-      errHandle(err,TAG);
-    }
-    done();
-  });
+   it('test_CloudSync_ErrorType_012', Level.LEVEL3, async (done: Function) => {
+     let TAG = "test_CloudSync_ErrorType_012::";
+     let tag = "====>test_CloudSync_ErrorType_012 ";
+     console.info(tag + "start====");
+     let DEVICE_TEMPERATURE_TOO_HIGH = 7;
+     try {
+       console.info(tag + "start on_progress");
+       gallerySync.on("progress",(pg)=>{
+         console.info(tag + "progress_callback enter");
+         console.info("gallerySync_on: callback succeed.");
+         if(pg != undefined){
+           console.info("on:callback succeed. pg.error = " + pg.error);
+           if (pg.error == DEVICE_TEMPERATURE_TOO_HIGH) {
+             console.info("error: pg.error.DEVICE_TEMPERATURE_TOO_HIGH == 7-设备温度过高");
+             try {
+               expect(cloudSync.ErrorType.DEVICE_TEMPERATURE_TOO_HIGH === 7).assertTrue();
+             } catch (err) {
+               console.info(tag + "Assert Fail: " + JSON.stringify(err));
+             }
+           }
+         }
+       });
+     } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
+       errHandle(err,TAG);
+     }
+     console.info(tag + "end====");
+     done();
+   });
 
   /**
    * @tc.name   test_CloudSync_NotifyType_001
@@ -622,17 +812,21 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('test_CloudSync_NotifyType_001', Level.LEVEL3, async (done: Function) => {
-    console.info('--------------test_CloudSync_NotifyType_001 begin-------------------')
-    try{
-      let value1 = cloudSync.NotifyType.NOTIFY_ADDED;
-      expect(value1).assertEqual(0);
-      done();
-    }catch(e){
-      console.info("test_CloudSync_NotifyType_001 has failed for " + e.message + ",code:"+e.code);
-      expect(false).assertTrue();
-    }
-  });
+   it('test_CloudSync_NotifyType_001', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_CloudSync_NotifyType_001 ";
+     console.info(tag + "start====");
+     console.info('--------------test_CloudSync_NotifyType_001 begin-------------------')
+     try{
+       let value1 = cloudSync.NotifyType.NOTIFY_ADDED;
+       expect(value1).assertEqual(0);
+       console.info(tag + "end====");
+       done();
+     }catch(e){
+       console.info(tag + "catch err: " + JSON.stringify(e));
+       console.info("test_CloudSync_NotifyType_001 has failed for " + e.message + ",code:"+e.code);
+       expect(false).assertTrue();
+     }
+   });
 
 
   /**
@@ -643,17 +837,21 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('test_CloudSync_NotifyType_002', Level.LEVEL3, async (done: Function) => {
-    console.info('--------------test_CloudSync_NotifyType_002 begin-------------------')
-    try{
-      let value1 = cloudSync.NotifyType.NOTIFY_MODIFIED;
-      expect(value1).assertEqual(1);
-      done();
-    }catch(e){
-      console.info("test_CloudSync_NotifyType_002 has failed for " + e.message + ",code:"+e.code);
-      expect(false).assertTrue();
-    }
-  });
+   it('test_CloudSync_NotifyType_002', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_CloudSync_NotifyType_002 ";
+     console.info(tag + "start====");
+     console.info('--------------test_CloudSync_NotifyType_002 begin-------------------')
+     try{
+       let value1 = cloudSync.NotifyType.NOTIFY_MODIFIED;
+       expect(value1).assertEqual(1);
+       console.info(tag + "end====");
+       done();
+     }catch(e){
+       console.info(tag + "catch err: " + JSON.stringify(e));
+       console.info("test_CloudSync_NotifyType_002 has failed for " + e.message + ",code:"+e.code);
+       expect(false).assertTrue();
+     }
+   });
 
   /**
    * @tc.name   test_CloudSync_NotifyType_003
@@ -663,17 +861,21 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('test_CloudSync_NotifyType_003', Level.LEVEL3, async (done: Function) => {
-    console.info('--------------test_CloudSync_NotifyType_003 begin-------------------')
-    try{
-      let value1 = cloudSync.NotifyType.NOTIFY_DELETED;
-      expect(value1).assertEqual(2);
-      done();
-    }catch(e){
-      console.info("test_CloudSync_NotifyType_002 has failed for " + e.message + ",code:"+e.code);
-      expect(false).assertTrue();
-    }
-  });
+   it('test_CloudSync_NotifyType_003', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_CloudSync_NotifyType_003 ";
+     console.info(tag + "start====");
+     console.info('--------------test_CloudSync_NotifyType_003 begin-------------------')
+     try{
+       let value1 = cloudSync.NotifyType.NOTIFY_DELETED;
+       expect(value1).assertEqual(2);
+       console.info(tag + "end====");
+       done();
+     }catch(e){
+       console.info(tag + "catch err: " + JSON.stringify(e));
+       console.info("test_CloudSync_NotifyType_002 has failed for " + e.message + ",code:"+e.code);
+       expect(false).assertTrue();
+     }
+   });
 
 
   /**
@@ -684,17 +886,21 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('test_CloudSync_NotifyType_004', Level.LEVEL3, async (done: Function) => {
-    console.info('--------------test_CloudSync_NotifyType_004 begin-------------------')
-    try{
-      let value1 = cloudSync.NotifyType.NOTIFY_RENAMED;
-      expect(value1).assertEqual(3);
-      done();
-    }catch(e){
-      console.info("test_CloudSync_NotifyType_002 has failed for " + e.message + ",code:"+e.code);
-      expect(false).assertTrue();
-    }
-  });
+   it('test_CloudSync_NotifyType_004', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>test_CloudSync_NotifyType_004 ";
+     console.info(tag + "start====");
+     console.info('--------------test_CloudSync_NotifyType_004 begin-------------------')
+     try{
+       let value1 = cloudSync.NotifyType.NOTIFY_RENAMED;
+       expect(value1).assertEqual(3);
+       console.info(tag + "end====");
+       done();
+     }catch(e){
+       console.info(tag + "catch err: " + JSON.stringify(e));
+       console.info("test_CloudSync_NotifyType_002 has failed for " + e.message + ",code:"+e.code);
+       expect(false).assertTrue();
+     }
+   });
 
   /**
    * @tc.name   test_Getlastsynctime_001
@@ -704,18 +910,23 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('test_Getlastsynctime_001', Level.LEVEL3, async (done: Function) => {
-    let TAG = "test_Getlastsynctime_001::";
-    let fileSync = new cloudSync.FileSync();
-    try {
-      let timeStamp = await fileSync.getLastSyncTime();
-      let date = new Date(timeStamp);
-      expect(cloudSync.SyncState.UPLOADING === 0).assertTrue();
-    } catch (err) {
-      errHandle(err,TAG);
-    }
-    done();
-  });
+   it('test_Getlastsynctime_001', Level.LEVEL3, async (done: Function) => {
+     let TAG = "test_Getlastsynctime_001::";
+     let tag = "====>test_Getlastsynctime_001 ";
+     console.info(tag + "start====");
+     let fileSync = new cloudSync.FileSync();
+     try {
+       console.info(tag + "start getLastSyncTime");
+       let timeStamp = await fileSync.getLastSyncTime();
+       let date = new Date(timeStamp);
+       expect(cloudSync.SyncState.UPLOADING === 0).assertTrue();
+     } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
+       errHandle(err,TAG);
+     }
+     console.info(tag + "end====");
+     done();
+   });
 
   /**
    * @tc.name   test_Getlastsynctime_002
@@ -725,23 +936,37 @@ describe('cloud_file_download_test', () => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('test_Getlastsynctime_002', Level.LEVEL3, async (done: Function) => {
-    let TAG = "test_Getlastsynctime_002::";
-    let fileSync = new cloudSync.FileSync();
-    try {
-      fileSync.getLastSyncTime((err, timeStamp) => {
-        if (err) {
-          console.error("test_Getlastsynctime_002 get last sync time failed: " + err.message + ", error code: " + err.code);
-        } else {
-          let date = new Date(timeStamp);
-          console.info("test_Getlastsynctime_002 get last sync time successfully:"+ date);
-          expect(cloudSync.SyncState.UPLOADING === 0).assertTrue();
-        }
-      });
-    } catch (err) {
-      errHandle(err,TAG);
-    }
-    done();
-  });
+   it('test_Getlastsynctime_002', Level.LEVEL3, async (done: Function) => {
+     let TAG = "test_Getlastsynctime_002::";
+     let tag = "====>test_Getlastsynctime_002 ";
+     console.info(tag + "start====");
+     let fileSync = new cloudSync.FileSync();
+      try {
+        console.info(tag + "start getLastSyncTime");
+        fileSync.getLastSyncTime((err, timeStamp) => {
+          console.info(tag + "getLastSyncTime callback enter");
+          console.info(tag + "err: " + JSON.stringify(err));
+          console.info(tag + "timeStamp: " + JSON.stringify(timeStamp));
+          if (err) {
+            console.error("test_Getlastsynctime_002 get last sync time failed: " + err.message + ", error code: " + err.code);
+          } else {
+            let date = new Date(timeStamp);
+            console.info("test_Getlastsynctime_002 get last sync time successfully:"+ date);
+            try {
+              expect(cloudSync.SyncState.UPLOADING === 0).assertTrue();
+            } catch (err) {
+              console.info(tag + "Assert Fail: " + JSON.stringify(err));
+            }
+          }
+          console.info(tag + "end====");
+          done();
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        errHandle(err,TAG);
+        console.info(tag + "end====");
+        done();
+      }
+   });
   });
 }

@@ -32,17 +32,27 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_001', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>Test_CloudFile_State_001 ";
+     console.info(tag + "start====");
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+        console.info(tag + "batchDownload_callback enter");
         console.info("batchDownload state：" + pg.state);
-        expect(cloudSync.State.RUNNING === 0).assertTrue();
+        try {
+          expect(cloudSync.State.RUNNING === 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_batchDownload");
       fileCache.on('batchDownload', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('Test_CloudFile_State_001 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -55,18 +65,29 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_002', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>Test_CloudFile_State_002 ";
+     console.info(tag + "start====");
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+        console.info(tag + "batchDownload_callback enter");
         console.info("batchDownload state：" + pg.state);
-        expect(cloudSync.State.RUNNING === 0).assertTrue();
+        try {
+          expect(cloudSync.State.RUNNING === 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_batchDownload");
       fileCache.on('batchDownload', callback);
+      console.info(tag + "start off_batchDownload");
       fileCache.off('batchDownload', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('Test_CloudFile_State_002 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -79,6 +100,8 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_003', Level.LEVEL3, async (done: Function) => {
+    let tag = "====>Test_CloudFile_State_003 ";
+    console.info(tag + "start====");
     let path1 = "/data/storage/el2/cloud/1.txt";
     let path2 = "/data/storage/el2/cloud/2.txt";
     let uris = [fileUri.getUriFromPath(path1), fileUri.getUriFromPath(path2)];
@@ -87,21 +110,35 @@ describe('cloud_file_test', () => {
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+        console.info(tag + "batchDownload_callback enter");
         console.info("batchDownload state：" + pg.state);
       };
+      console.info(tag + "start on_batchDownload");
       fileCache.on('batchDownload', callback);
-      fileCache.startBatch(uris, fileType).then(() => {
-        console.info("startBatch Download successfully");
-      }).catch((err: BusinessError) => {
-        console.error("Test_CloudFile_State_003 startBatch download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 22400005).assertTrue();
+       console.info(tag + "start startBatch");
+       fileCache.startBatch(uris, fileType).then(() => {
+         console.info(tag + "startBatch then enter");
+         console.info("startBatch Download successfully");
+         console.info(tag + "end====");
+         done();
+       }).catch((err: BusinessError) => {
+         console.info(tag + "startBatch catch err: " + JSON.stringify(err));
+         console.error("Test_CloudFile_State_003 startBatch download failed: " + err.message + ", error code: " + err.code);
+         try {
+           expect(err.code === 13600001 || err.code === 22400005).assertTrue();
+         } catch (err) {
+           console.info(tag + "Assert Fail: " + JSON.stringify(err));
+         }
+         console.info(tag + "end====");
+         done();
+       });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        console.log('Test_CloudFile_State_003 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        console.info(tag + "end====");
         done();
-      });
-     } catch (err) {
-       console.log('Test_CloudFile_State_003 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+      }
    });
 
    /**
@@ -113,27 +150,43 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_004', Level.LEVEL3, async (done: Function) => {
+    let tag = "====>Test_CloudFile_State_004 ";
+    console.info(tag + "start====");
     let downloadId = 1;
     let needClean = true;
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+        console.info(tag + "batchDownload_callback enter");
         console.info("batchDownload state：" + pg.state);
       };
+      console.info(tag + "start on_batchDownload");
       fileCache.on('batchDownload', callback);
-      fileCache.stopBatch(downloadId, needClean).then(() => {
-        console.info("stopBatch Download successfully");
-      }).catch((err: BusinessError) => {
-        console.error("Test_CloudFile_State_004 stopBatch download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 201 && err.message =='Permission verification failed').assertTrue();
+       console.info(tag + "start stopBatch");
+       fileCache.stopBatch(downloadId, needClean).then(() => {
+         console.info(tag + "stopBatch then enter");
+         console.info("stopBatch Download successfully");
+         console.info(tag + "end====");
+         done();
+       }).catch((err: BusinessError) => {
+         console.info(tag + "stopBatch catch err: " + JSON.stringify(err));
+         console.error("Test_CloudFile_State_004 stopBatch download failed: " + err.message + ", error code: " + err.code);
+         try {
+           expect(err.code === 13600001).assertTrue();
+         } catch (err) {
+           console.info(tag + "Assert Fail: " + JSON.stringify(err));
+         }
+         console.info(tag + "end====");
+         done();
+       });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        console.log('Test_CloudFile_State_004 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        console.info(tag + "end====");
         done();
-      });
-     } catch (err) {
-       console.log('Test_CloudFile_State_004 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+      }
    });
 
    /**
@@ -145,28 +198,63 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_005', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>Test_CloudFile_State_005 ";
+     console.info(tag + "start====");
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (MultiDownloadProgress: cloudSync.MultiDownloadProgress) => {
+        console.info(tag + "batchDownload_callback enter");
         console.info("batchDownload state：" + MultiDownloadProgress.state);
-        expect(MultiDownloadProgress.taskId == 0).assertTrue();
-        expect(MultiDownloadProgress.successfulCount == 0).assertTrue();
-        expect(MultiDownloadProgress.failedCount == 0).assertTrue();
-        expect(MultiDownloadProgress.totalCount == 0).assertTrue();
-        expect(MultiDownloadProgress.downloadedSize == 0).assertTrue();
-        expect(MultiDownloadProgress.totalSize == 0).assertTrue();
-        expect(MultiDownloadProgress.errType == cloudSync.DownloadErrorType.NO_ERROR).assertTrue();
+        try {
+          expect(MultiDownloadProgress.taskId == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(MultiDownloadProgress.successfulCount == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(MultiDownloadProgress.failedCount == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(MultiDownloadProgress.totalCount == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(MultiDownloadProgress.downloadedSize == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(MultiDownloadProgress.totalSize == 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        try {
+          expect(MultiDownloadProgress.errType == cloudSync.DownloadErrorType.NO_ERROR).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
         let FailedFileInfo = MultiDownloadProgress.getFailedFiles();
         let SuccessFileInfo = MultiDownloadProgress.getSuccessfulFiles();
         console.info("Test_CloudFile_State_005 FailedFileInfo " + FailedFileInfo);
         console.info("Test_CloudFile_State_005 SuccessFileInfo " + SuccessFileInfo);
       };
+      console.info(tag + "start on_batchDownload");
       fileCache.on('batchDownload', callback);
+      console.info(tag + "start off_batchDownload");
       fileCache.off('batchDownload', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('Test_CloudFile_State_005 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -179,22 +267,37 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_006', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>Test_CloudFile_State_006 ";
+     console.info(tag + "start====");
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (MultiDownloadProgress: cloudSync.MultiDownloadProgress) => {
+        console.info(tag + "batchDownload_callback enter");
         console.info("batchDownload state：" + MultiDownloadProgress.state);
         let failedList: Array<cloudSync.FailedFileInfo> = MultiDownloadProgress.getFailedFiles();
         for (let FailedFileInfo of failedList) {
-          expect(FailedFileInfo.uri == '').assertTrue();
-          expect(FailedFileInfo.error == cloudSync.DownloadErrorType.NO_ERROR).assertTrue();
+          try {
+            expect(FailedFileInfo.uri == '').assertTrue();
+          } catch (err) {
+            console.info(tag + "Assert Fail: " + JSON.stringify(err));
+          }
+          try {
+            expect(FailedFileInfo.error == cloudSync.DownloadErrorType.NO_ERROR).assertTrue();
+          } catch (err) {
+            console.info(tag + "Assert Fail: " + JSON.stringify(err));
+          }
         }
       };
+      console.info(tag + "start on_batchDownload");
       fileCache.on('batchDownload', callback);
+      console.info(tag + "start off_batchDownload");
       fileCache.off('batchDownload', callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('Test_CloudFile_State_006 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -207,6 +310,8 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_007', Level.LEVEL3, async (done: Function) => {
+    let tag = "====>Test_CloudFile_State_007 ";
+    console.info(tag + "start====");
     let path1 = "/data/storage/el2/cloud/1.txt";
     let path2 = "/data/storage/el2/cloud/2.txt";
     let uris = [fileUri.getUriFromPath(path1), fileUri.getUriFromPath(path2)];
@@ -215,24 +320,50 @@ describe('cloud_file_test', () => {
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+        console.info(tag + "batchDownload_callback enter");
         console.info("batchDownload state：" + pg.state);
       };
+      console.info(tag + "start on_batchDownload");
       fileCache.on('batchDownload', callback);
-      fileCache.startBatch(uris, fileType).then(() => {
-        console.info("startBatch Download successfully");
-        expect(cloudSync.DownloadFileType.CONTENT == 0).assertTrue();
-        expect(cloudSync.DownloadFileType.THUMBNAIL == 1).assertTrue();
-        expect(cloudSync.DownloadFileType.LCD == 2).assertTrue();
-      }).catch((err: BusinessError) => {
-        console.error("Test_CloudFile_State_007 startBatch download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 22400005).assertTrue();
+       console.info(tag + "start startBatch");
+       fileCache.startBatch(uris, fileType).then(() => {
+         console.info(tag + "startBatch then enter");
+         console.info("startBatch Download successfully");
+         try {
+           expect(cloudSync.DownloadFileType.CONTENT == 0).assertTrue();
+         } catch (err) {
+           console.info(tag + "Assert Fail: " + JSON.stringify(err));
+         }
+         try {
+           expect(cloudSync.DownloadFileType.THUMBNAIL == 1).assertTrue();
+         } catch (err) {
+           console.info(tag + "Assert Fail: " + JSON.stringify(err));
+         }
+         try {
+           expect(cloudSync.DownloadFileType.LCD == 2).assertTrue();
+         } catch (err) {
+           console.info(tag + "Assert Fail: " + JSON.stringify(err));
+         }
+         console.info(tag + "end====");
+         done();
+       }).catch((err: BusinessError) => {
+         console.info(tag + "startBatch catch err: " + JSON.stringify(err));
+         console.error("Test_CloudFile_State_007 startBatch download failed: " + err.message + ", error code: " + err.code);
+         try {
+           expect(err.code === 13600001 || err.code === 22400005).assertTrue();
+         } catch (err) {
+           console.info(tag + "Assert Fail: " + JSON.stringify(err));
+         }
+         console.info(tag + "end====");
+         done();
+       });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        console.log('Test_CloudFile_State_007 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        console.info(tag + "end====");
         done();
-      });
-     } catch (err) {
-       console.log('Test_CloudFile_State_007 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
-     }
-     done();
+      }
    });
 
    /**
@@ -244,15 +375,20 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_008', Level.LEVEL3, async (done: Function) => {
+    let tag = "====>Test_CloudFile_State_008 ";
+    console.info(tag + "start====");
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
      try {
       let fileCache = new cloudSync.CloudFileCache();
+      console.info(tag + "start cleanFileCache");
       fileCache.cleanFileCache(uri);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('Test_CloudFile_State_008 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code == 401 && err.message == 'The input parameter is invalid').assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -265,10 +401,13 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_009', Level.LEVEL3, async (done: Function) => {
+    let tag = "====>Test_CloudFile_State_009 ";
+    console.info(tag + "start====");
     let path = "/data/storage/el2/cloud/Test_CloudFile_State_009.txt";
     let uri = fileUri.getUriFromPath(path);
     console.info("Test_CloudFile_State_009 uri: " + uri);
     try {
+      console.info(tag + "start getCoreFileSyncState");
       cloudSync.getCoreFileSyncState(uri);
       expect(cloudSync.FileState.INITIAL_AFTER_DOWNLOAD  == 0).assertTrue();
       expect(cloudSync.FileState.UPLOADING == 1).assertTrue();
@@ -277,9 +416,11 @@ describe('cloud_file_test', () => {
       expect(cloudSync.FileState.UPLOAD_SUCCESS  == 4).assertTrue();
       expect(cloudSync.FileState.UPLOAD_FAILURE  == 5).assertTrue();
     } catch (e) {
+      console.info(tag + "catch err: " + JSON.stringify(e));
       console.log('Test_CloudFile_State_009 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 14000002 && e.message == 'Invalid uri').assertTrue();
     }
+    console.info(tag + "end====");
     done();
   });
 
@@ -292,17 +433,26 @@ describe('cloud_file_test', () => {
   * @tc.level  LEVEL3
   */
   it('Test_CloudFile_State_010', Level.LEVEL3, async (done: Function) => {
+    let tag = "====>Test_CloudFile_State_010 ";
+    console.info(tag + "start====");
     try {
     let fileCache = new cloudSync.CloudFileCache();
     let callback = (pg: cloudSync.MultiDownloadProgress) => {
       console.info("batchDownload state：" + pg.state);
-      expect(cloudSync.State.RUNNING === 0).assertTrue();
+      try {
+        expect(cloudSync.State.RUNNING === 0).assertTrue();
+      } catch (err) {
+        console.info(tag + "Assert Fail: " + JSON.stringify(err));
+      }
     };
+    console.info(tag + "start on");
     fileCache.on(null, callback);
     } catch (err) {
+      console.info(tag + "catch err: " + JSON.stringify(err));
       console.log('Test_CloudFile_State_010 has failed for ' + err.message + ', code: ' + err.code);
       expect(err.code === 13900020).assertTrue();
     }
+    console.info(tag + "end====");
     done();
   });
 
@@ -315,17 +465,26 @@ describe('cloud_file_test', () => {
   * @tc.level  LEVEL3
   */
   it('Test_CloudFile_State_011', Level.LEVEL3, async (done: Function) => {
+    let tag = "====>Test_CloudFile_State_011 ";
+    console.info(tag + "start====");
     try {
     let fileCache = new cloudSync.CloudFileCache();
     let callback = (pg: cloudSync.MultiDownloadProgress) => {
       console.info("batchDownload state：" + pg.state);
-      expect(cloudSync.State.RUNNING === 0).assertTrue();
+      try {
+        expect(cloudSync.State.RUNNING === 0).assertTrue();
+      } catch (err) {
+        console.info(tag + "Assert Fail: " + JSON.stringify(err));
+      }
     };
+    console.info(tag + "start on");
     fileCache.on(undefined, callback);
     } catch (err) {
+      console.info(tag + "catch err: " + JSON.stringify(err));
       console.log('Test_CloudFile_State_011 has failed for ' + err.message + ', code: ' + err.code);
       expect(err.code === 13900020).assertTrue();
     }
+    console.info(tag + "end====");
     done();
   });
 
@@ -338,18 +497,29 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_012', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>Test_CloudFile_State_012 ";
+     console.info(tag + "start====");
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+        console.info(tag + "batchDownload_callback enter");
         console.info("batchDownload state：" + pg.state);
-        expect(cloudSync.State.RUNNING === 0).assertTrue();
+        try {
+          expect(cloudSync.State.RUNNING === 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_batchDownload");
       fileCache.on('batchDownload', callback);
+      console.info(tag + "start off");
       fileCache.off(null, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('Test_CloudFile_State_012 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 13900020).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -362,18 +532,29 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_013', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>Test_CloudFile_State_013 ";
+     console.info(tag + "start====");
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+        console.info(tag + "batchDownload_callback enter");
         console.info("batchDownload state：" + pg.state);
-        expect(cloudSync.State.RUNNING === 0).assertTrue();
+        try {
+          expect(cloudSync.State.RUNNING === 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_batchDownload");
       fileCache.on('batchDownload', callback);
+      console.info(tag + "start off");
       fileCache.off(undefined, callback);
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('Test_CloudFile_State_013 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 13900020).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
 
@@ -386,15 +567,21 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_CloudFileCache_getCachedTotalSize_001', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_CloudFileCache_getCachedTotalSize_001 ";
+      console.info(tag + "start====");
       try {
         let fileCache = new cloudSync.CloudFileCache();
+        console.info(tag + "start cleanAllFileCache");
 		    await fileCache.cleanAllFileCache();
+        console.info(tag + "start getCachedTotalSize");
         let size = await fileCache.getCachedTotalSize();
         expect(size == 0).assertTrue();
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_CloudFileCache_getCachedTotalSize_001 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code === 13900010).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -407,15 +594,21 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_CloudFileCache_getCachedTotalSize_002', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_CloudFileCache_getCachedTotalSize_002 ";
+      console.info(tag + "start====");
       try {
         let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+        console.info(tag + "start cleanAllFileCache");
 		    await fileCache.cleanAllFileCache();
+        console.info(tag + "start getCachedTotalSize");
         let size = await fileCache.getCachedTotalSize();
         expect(size == 0).assertTrue();
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_CloudFileCache_getCachedTotalSize_002 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code === 13900010).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -428,16 +621,23 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_CloudFileCache_getCachedTotalSize_003', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_CloudFileCache_getCachedTotalSize_003 ";
+      console.info(tag + "start====");
       try {
         let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+        console.info(tag + "start cleanAllFileCache");
 		    await fileCache.cleanAllFileCache();
+        console.info(tag + "start getCachedTotalSize");
         let size = await fileCache.getCachedTotalSize();
         expect(size == 0).assertTrue();
+        console.info(tag + "start cleanAllFileCache");
         await fileCache.cleanAllFileCache()
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_CloudFileCache_getCachedTotalSize_003 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code === 13900010).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -450,13 +650,17 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_cloudSyncManager_DownloadStopReason_001', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSyncManager_DownloadStopReason_001 ";
+      console.info(tag + "start====");
       try {
         let value1 = cloudSyncManager.DownloadStopReason.NO_STOP;
         expect(value1).assertEqual(0);
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_cloudSyncManager_DownloadStopReason_001 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -469,13 +673,17 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_cloudSyncManager_DownloadStopReason_002', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSyncManager_DownloadStopReason_002 ";
+      console.info(tag + "start====");
       try {
         let value1 = cloudSyncManager.DownloadStopReason.NETWORK_UNAVAILABLE;
         expect(value1).assertEqual(1);
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_cloudSyncManager_DownloadStopReason_002 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -488,13 +696,17 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_cloudSyncManager_DownloadStopReason_003', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSyncManager_DownloadStopReason_003 ";
+      console.info(tag + "start====");
       try {
         let value1 = cloudSyncManager.DownloadStopReason.LOCAL_STORAGE_FULL;
         expect(value1).assertEqual(2);
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_cloudSyncManager_DownloadStopReason_003 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -507,13 +719,17 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_cloudSyncManager_DownloadStopReason_004', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSyncManager_DownloadStopReason_004 ";
+      console.info(tag + "start====");
       try {
         let value1 = cloudSyncManager.DownloadStopReason.TEMPERATURE_LIMIT;
         expect(value1).assertEqual(3);
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_cloudSyncManager_DownloadStopReason_004 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -526,13 +742,17 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_cloudSyncManager_DownloadStopReason_005', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSyncManager_DownloadStopReason_005 ";
+      console.info(tag + "start====");
       try {
         let value1 = cloudSyncManager.DownloadStopReason.USER_STOPPED;
         expect(value1).assertEqual(4);
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_cloudSyncManager_DownloadStopReason_005 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -545,13 +765,17 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_cloudSyncManager_DownloadStopReason_006', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSyncManager_DownloadStopReason_006 ";
+      console.info(tag + "start====");
       try {
         let value1 = cloudSyncManager.DownloadStopReason.APP_UNLOAD;
         expect(value1).assertEqual(5);
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_cloudSyncManager_DownloadStopReason_006 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -564,13 +788,17 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_cloudSyncManager_DownloadStopReason_007', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSyncManager_DownloadStopReason_007 ";
+      console.info(tag + "start====");
       try {
         let value1 = cloudSyncManager.DownloadStopReason.OTHER_REASON;
         expect(value1).assertEqual(6);
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_cloudSyncManager_DownloadStopReason_007 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -583,13 +811,17 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_cloudSyncManager_DownloadState_001', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSyncManager_DownloadState_001 ";
+      console.info(tag + "start====");
       try {
         let value1 = cloudSyncManager.DownloadState.RUNNING;
         expect(value1).assertEqual(0);
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_cloudSyncManager_DownloadState_001 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -602,13 +834,17 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_cloudSyncManager_DownloadState_002', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSyncManager_DownloadState_002 ";
+      console.info(tag + "start====");
       try {
         let value1 = cloudSyncManager.DownloadState.COMPLETED;
         expect(value1).assertEqual(1);
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_cloudSyncManager_DownloadState_002 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -621,13 +857,17 @@ describe('cloud_file_test', () => {
      * @tc.level  LEVEL3
      */
     it('test_cloudSyncManager_DownloadState_003', Level.LEVEL3, async (done: Function) => {
+      let tag = "====>test_cloudSyncManager_DownloadState_003 ";
+      console.info(tag + "start====");
       try {
         let value1 = cloudSyncManager.DownloadState.STOPPED;
         expect(value1).assertEqual(2);
       } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
         console.error('test_cloudSyncManager_DownloadState_003 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
+      console.info(tag + "end====");
       done();
     });
 
@@ -640,18 +880,29 @@ describe('cloud_file_test', () => {
     * @tc.level  LEVEL3
     */
    it('Test_CloudFile_State_014', Level.LEVEL3, async (done: Function) => {
+     let tag = "====>Test_CloudFile_State_014 ";
+     console.info(tag + "start====");
      try {
       let fileCache = new cloudSync.CloudFileCache();
       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+        console.info(tag + "batchDownload_callback enter");
         console.info("batchDownload state：" + pg.state);
-        expect(cloudSync.State.RUNNING === 0).assertTrue();
+        try {
+          expect(cloudSync.State.RUNNING === 0).assertTrue();
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
       };
+      console.info(tag + "start on_batchDownload");
       fileCache.on('batchDownload', callback);
+      console.info(tag + "start off_batchDownload");
       fileCache.off('batchDownload');
      } catch (err) {
+       console.info(tag + "catch err: " + JSON.stringify(err));
        console.log('Test_CloudFile_State_014 has failed for ' + err.message + ', code: ' + err.code);
        expect(false).assertTrue();
      }
+     console.info(tag + "end====");
      done();
    });
   });

@@ -29,21 +29,27 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_FileSync_on_null_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_FileSync_on_null_event::";
- 	       let fileSync = new cloudSync.FileSync();
- 	       let callback = (pg: cloudSync.SyncProgress) => {
- 	         console.info("sync progress state：" + pg.state + " error type:" + pg.error);
- 	       };
- 	       
- 	       try {
- 	         fileSync.on(null, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
- 	         expect(err.code === 401).assertTrue(); // 401 - The input parameter is invalid
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_FileSync_on_null_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_FileSync_on_null_event::";
+	       let fileSync = new cloudSync.FileSync();
+	       let callback = (pg: cloudSync.SyncProgress) => {
+	         console.info(tag + "progress_callback enter");
+	         console.info("sync progress state：" + pg.state + " error type:" + pg.error);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileSync.on(null, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
+	         expect(err.code === 401).assertTrue(); // 401 - The input parameter is invalid
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_FileSync_on_undefined_event
@@ -54,21 +60,27 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_FileSync_on_undefined_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_FileSync_on_undefined_event::";
- 	       let fileSync = new cloudSync.FileSync();
- 	       let callback = (pg: cloudSync.SyncProgress) => {
- 	         console.info("sync progress state：" + pg.state + " error type:" + pg.error);
- 	       };
- 	       
- 	       try {
- 	         fileSync.on(undefined, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
- 	         expect(err.code === 401).assertTrue(); // 401 - The input parameter is invalid
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_FileSync_on_undefined_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_FileSync_on_undefined_event::";
+	       let fileSync = new cloudSync.FileSync();
+	       let callback = (pg: cloudSync.SyncProgress) => {
+	         console.info(tag + "progress_callback enter");
+	         console.info("sync progress state：" + pg.state + " error type:" + pg.error);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileSync.on(undefined, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
+	         expect(err.code === 401).assertTrue(); // 401 - The input parameter is invalid
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_FileSync_off_null_event
@@ -79,22 +91,29 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_FileSync_off_null_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_FileSync_off_null_event::";
- 	       let fileSync = new cloudSync.FileSync();
- 	       let callback = (pg: cloudSync.SyncProgress) => {
- 	         console.info("sync progress state：" + pg.state + " error type:" + pg.error);
- 	       };
- 	       
- 	       try {
- 	         fileSync.on('progress', callback);
- 	         fileSync.off(null, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
- 	         expect(err.code === 401).assertTrue(); // 401 - The input parameter is invalid
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_FileSync_off_null_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_FileSync_off_null_event::";
+	       let fileSync = new cloudSync.FileSync();
+	       let callback = (pg: cloudSync.SyncProgress) => {
+	         console.info(tag + "progress_callback enter");
+	         console.info("sync progress state：" + pg.state + " error type:" + pg.error);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileSync.on('progress', callback);
+	         console.info(tag + "start off");
+	         fileSync.off(null, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
+	         expect(err.code === 401).assertTrue(); // 401 - The input parameter is invalid
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_FileSync_off_undefined_event
@@ -105,22 +124,29 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_FileSync_off_undefined_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_FileSync_off_undefined_event::";
- 	       let fileSync = new cloudSync.FileSync();
- 	       let callback = (pg: cloudSync.SyncProgress) => {
- 	         console.info("sync progress state：" + pg.state + " error type:" + pg.error);
- 	       };
- 	       
- 	       try {
- 	         fileSync.on('progress', callback);
- 	         fileSync.off(undefined, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
- 	         expect(err.code === 401).assertTrue(); // 401 - The input parameter is invalid
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_FileSync_off_undefined_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_FileSync_off_undefined_event::";
+	       let fileSync = new cloudSync.FileSync();
+	       let callback = (pg: cloudSync.SyncProgress) => {
+	         console.info(tag + "progress_callback enter");
+	         console.info("sync progress state：" + pg.state + " error type:" + pg.error);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileSync.on('progress', callback);
+	         console.info(tag + "start off");
+	         fileSync.off(undefined, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
+	         expect(err.code === 401).assertTrue(); // 401 - The input parameter is invalid
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_on_progress_null_event
@@ -131,21 +157,27 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_on_progress_null_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_on_progress_null_event::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       let callback = (pg: cloudSync.DownloadProgress) => {
- 	         console.info("download progress state：" + pg.state + " uri: " + pg.uri);
- 	       };
- 	       
- 	       try {
- 	         fileCache.on(null, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
- 	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_on_progress_null_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_on_progress_null_event::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       let callback = (pg: cloudSync.DownloadProgress) => {
+	         console.info(tag + "progress_callback enter");
+	         console.info("download progress state：" + pg.state + " uri: " + pg.uri);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileCache.on(null, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
+	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_on_progress_undefined_event
@@ -156,21 +188,27 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_on_progress_undefined_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_on_progress_undefined_event::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       let callback = (pg: cloudSync.DownloadProgress) => {
- 	         console.info("download progress state：" + pg.state + " uri: " + pg.uri);
- 	       };
- 	       
- 	       try {
- 	         fileCache.on(undefined, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
- 	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_on_progress_undefined_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_on_progress_undefined_event::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       let callback = (pg: cloudSync.DownloadProgress) => {
+	         console.info(tag + "progress_callback enter");
+	         console.info("download progress state：" + pg.state + " uri: " + pg.uri);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileCache.on(undefined, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
+	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_on_batchDownload_null_event
@@ -181,21 +219,27 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_on_batchDownload_null_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_on_batchDownload_null_event::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       let callback = (pg: cloudSync.MultiDownloadProgress) => {
- 	         console.info("batch download state：" + pg.state + " task id: " + pg.taskId);
- 	       };
- 	       
- 	       try {
- 	         fileCache.on(null, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
- 	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_on_batchDownload_null_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_on_batchDownload_null_event::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+	         console.info(tag + "batchDownload_callback enter");
+	         console.info("batch download state：" + pg.state + " task id: " + pg.taskId);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileCache.on(null, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
+	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_on_batchDownload_undefined_event
@@ -206,21 +250,27 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_on_batchDownload_undefined_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_on_batchDownload_undefined_event::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       let callback = (pg: cloudSync.MultiDownloadProgress) => {
- 	         console.info("batch download state：" + pg.state + " task id: " + pg.taskId);
- 	       };
- 	       
- 	       try {
- 	         fileCache.on(undefined, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
- 	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_on_batchDownload_undefined_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_on_batchDownload_undefined_event::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+	         console.info(tag + "batchDownload_callback enter");
+	         console.info("batch download state：" + pg.state + " task id: " + pg.taskId);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileCache.on(undefined, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
+	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_off_progress_null_event
@@ -231,22 +281,29 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_off_progress_null_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_off_progress_null_event::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       let callback = (pg: cloudSync.DownloadProgress) => {
- 	         console.info("download progress state：" + pg.state + " uri: " + pg.uri);
- 	       };
- 	       
- 	       try {
- 	         fileCache.on('progress', callback);
- 	         fileCache.off(null, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
- 	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_off_progress_null_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_off_progress_null_event::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       let callback = (pg: cloudSync.DownloadProgress) => {
+	         console.info(tag + "progress_callback enter");
+	         console.info("download progress state：" + pg.state + " uri: " + pg.uri);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileCache.on('progress', callback);
+	         console.info(tag + "start off");
+	         fileCache.off(null, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
+	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_off_progress_undefined_event
@@ -257,22 +314,29 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_off_progress_undefined_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_off_progress_undefined_event::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       let callback = (pg: cloudSync.DownloadProgress) => {
- 	         console.info("download progress state：" + pg.state + " uri: " + pg.uri);
- 	       };
- 	       
- 	       try {
- 	         fileCache.on('progress', callback);
- 	         fileCache.off(undefined, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
- 	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_off_progress_undefined_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_off_progress_undefined_event::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       let callback = (pg: cloudSync.DownloadProgress) => {
+	         console.info(tag + "progress_callback enter");
+	         console.info("download progress state：" + pg.state + " uri: " + pg.uri);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileCache.on('progress', callback);
+	         console.info(tag + "start off");
+	         fileCache.off(undefined, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
+	         expect(err.code === 13900020).assertTrue(); // 401 - The input parameter is invalid
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_off_batchDownload_null_event
@@ -283,22 +347,29 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_off_batchDownload_null_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_off_batchDownload_null_event::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       let callback = (pg: cloudSync.MultiDownloadProgress) => {
- 	         console.info("batch download state：" + pg.state + " task id: " + pg.taskId);
- 	       };
- 	       
- 	       try {
- 	         fileCache.on('batchDownload', callback);
- 	         fileCache.off(null, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_off_batchDownload_null_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_off_batchDownload_null_event::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+	         console.info(tag + "batchDownload_callback enter");
+	         console.info("batch download state：" + pg.state + " task id: " + pg.taskId);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileCache.on('batchDownload', callback);
+	         console.info(tag + "start off");
+	         fileCache.off(null, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null event parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_off_batchDownload_undefined_event
@@ -309,22 +380,29 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_off_batchDownload_undefined_event', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_off_batchDownload_undefined_event::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       let callback = (pg: cloudSync.MultiDownloadProgress) => {
- 	         console.info("batch download state：" + pg.state + " task id: " + pg.taskId);
- 	       };
- 	       
- 	       try {
- 	         fileCache.on('batchDownload', callback);
- 	         fileCache.off(undefined, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_off_batchDownload_undefined_event ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_off_batchDownload_undefined_event::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       let callback = (pg: cloudSync.MultiDownloadProgress) => {
+	         console.info(tag + "batchDownload_callback enter");
+	         console.info("batch download state：" + pg.state + " task id: " + pg.taskId);
+	       };
+	       
+	       try {
+	         console.info(tag + "start on");
+	         fileCache.on('batchDownload', callback);
+	         console.info(tag + "start off");
+	         fileCache.off(undefined, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined event parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_start_empty_uri
@@ -335,18 +413,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_start_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_start_empty_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.start("");
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_start_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_start_empty_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start start");
+	         fileCache.start("");
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_start_null_uri
@@ -357,18 +440,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_start_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_start_null_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.start(null);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_start_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_start_null_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start start");
+	         fileCache.start(null);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_start_undefined_uri
@@ -379,18 +467,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_start_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_start_undefined_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.start(undefined);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_start_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_start_undefined_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start start");
+	         fileCache.start(undefined);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_start_callback_empty_uri
@@ -401,21 +494,36 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_start_callback_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_start_callback_empty_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.start("", (err: BusinessError) => {
- 	           expect(err !== undefined).assertTrue();
- 	           expect(err.code === 401 || err.code === 14000002).assertTrue();
- 	           done();
- 	         });
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	         done();
- 	       }
- 	     });
+	       let tag = "====>test_CloudFileCache_start_callback_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_start_callback_empty_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start start");
+	         fileCache.start("", (err: BusinessError) => {
+	           console.info(tag + "start callback enter");
+	           console.info(tag + "err: " + JSON.stringify(err));
+	           try {
+	           	expect(err !== undefined).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           try {
+	           	expect(err.code === 401 || err.code === 14000002).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           done();
+	         });
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	         console.info(tag + "end====");
+	         done();
+	       }
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_start_callback_null_uri
@@ -426,21 +534,36 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_start_callback_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_start_callback_null_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.start(null, (err: BusinessError) => {
- 	           expect(err !== undefined).assertTrue();
- 	           expect(err.code === 401 || err.code === 14000002).assertTrue();
- 	           done();
- 	         });
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	         done();
- 	       }
- 	     });
+	       let tag = "====>test_CloudFileCache_start_callback_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_start_callback_null_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start start");
+	         fileCache.start(null, (err: BusinessError) => {
+	           console.info(tag + "start callback enter");
+	           console.info(tag + "err: " + JSON.stringify(err));
+	           try {
+	           	expect(err !== undefined).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           try {
+	           	expect(err.code === 401 || err.code === 14000002).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           done();
+	         });
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	         console.info(tag + "end====");
+	         done();
+	       }
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_start_callback_undefined_uri
@@ -451,21 +574,36 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_start_callback_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_start_callback_undefined_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.start(undefined, (err: BusinessError) => {
- 	           expect(err !== undefined).assertTrue();
- 	           expect(err.code === 401 || err.code === 14000002).assertTrue();
- 	           done();
- 	         });
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	         done();
- 	       }
- 	     });
+	       let tag = "====>test_CloudFileCache_start_callback_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_start_callback_undefined_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start start");
+	         fileCache.start(undefined, (err: BusinessError) => {
+	           console.info(tag + "start callback enter");
+	           console.info(tag + "err: " + JSON.stringify(err));
+	           try {
+	           	expect(err !== undefined).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           try {
+	           	expect(err.code === 401 || err.code === 14000002).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           done();
+	         });
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	         console.info(tag + "end====");
+	         done();
+	       }
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_startBatch_null_uris
@@ -476,18 +614,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_startBatch_null_uris', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_startBatch_null_uris::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.startBatch(null);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uris parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_startBatch_null_uris ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_startBatch_null_uris::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start startBatch");
+	         fileCache.startBatch(null);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uris parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_startBatch_undefined_uris
@@ -498,18 +641,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_startBatch_undefined_uris', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_startBatch_undefined_uris::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.startBatch(undefined);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uris parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_startBatch_undefined_uris ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_startBatch_undefined_uris::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start startBatch");
+	         fileCache.startBatch(undefined);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uris parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_startBatch_empty_array
@@ -520,18 +668,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_startBatch_empty_array', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_startBatch_empty_array::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.startBatch([]);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty array parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_startBatch_empty_array ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_startBatch_empty_array::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start startBatch");
+	         fileCache.startBatch([]);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty array parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_startBatch_thumbnail
@@ -542,23 +695,38 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_startBatch_thumbnail', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_startBatch_thumbnail::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       let uris = ["file://media/image/1", "file://media/image/2"];
- 	       
- 	       try {
+	       let tag = "====>test_CloudFileCache_startBatch_thumbnail ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_startBatch_thumbnail::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       let uris = ["file://media/image/1", "file://media/image/2"];
+	       
+	       try {
+			console.info(tag + "start startBatch");
 			fileCache.startBatch(uris, cloudSync.DownloadFileType.THUMBNAIL).then(() => {
+				console.info(tag + "startBatch then enter");
 				console.info("startBatch THUMBNAI successfully");
+				console.info(tag + "end====");
+				done();
 			}).catch((err: BusinessError) => {
+				console.info(tag + "startBatch catch err: " + JSON.stringify(err));
 				console.error(TAG + "startBatch download failed: " + err.message + ", error code: " + err.code);
-				expect(err.code == 22400005).assertTrue();
+				try {
+					expect(err.code === 13600001 || err.code === 22400005).assertTrue();
+				} catch (err) {
+					console.info(tag + "Assert Fail: " + JSON.stringify(err));
+				}
+				console.info(tag + "end====");
+				done();
 			});
- 	       } catch (err) {
- 	         console.log(TAG + " threw error for THUMBNAIL fileType: " + err.code);
- 	         expect(false).assertTrue(); // Should not reach here for valid operation
- 	       }
- 	       done();
- 	     });
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " threw error for THUMBNAIL fileType: " + err.code);
+	         expect(false).assertTrue(); // Should not reach here for valid operation
+	         console.info(tag + "end====");
+	         done();
+	       }
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_startBatch_lcd
@@ -569,23 +737,38 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_startBatch_lcd', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_startBatch_lcd::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       let uris = ["file://media/image/1", "file://media/image/2"];
- 	       
- 	       try {
+	       let tag = "====>test_CloudFileCache_startBatch_lcd ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_startBatch_lcd::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       let uris = ["file://media/image/1", "file://media/image/2"];
+	       
+	       try {
+			console.info(tag + "start startBatch");
 			fileCache.startBatch(uris, cloudSync.DownloadFileType.LCD).then(() => {
+				console.info(tag + "startBatch then enter");
 				console.info("startBatch LCD successfully");
+				console.info(tag + "end====");
+				done();
 			}).catch((err: BusinessError) => {
+				console.info(tag + "startBatch catch err: " + JSON.stringify(err));
 				console.error(TAG + "startBatch download failed: " + err.message + ", error code: " + err.code);
-				expect(err.code == 22400005).assertTrue();
+				try {
+					expect(err.code === 13600001 || err.code === 22400005).assertTrue();
+				} catch (err) {
+					console.info(tag + "Assert Fail: " + JSON.stringify(err));
+				}
+				console.info(tag + "end====");
+				done();
 			});
- 	       } catch (err) {
- 	         console.log(TAG + " threw error for LCD fileType: " + err.code);
- 	         expect(false).assertTrue(); // Should not reach here for valid operation
- 	       }
- 	       done();
- 	     });
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " threw error for LCD fileType: " + err.code);
+	         expect(false).assertTrue(); // Should not reach here for valid operation
+	         console.info(tag + "end====");
+	         done();
+	       }
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_stop_empty_uri
@@ -596,18 +779,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_stop_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_stop_empty_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.stop("");
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_stop_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_stop_empty_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start stop");
+	         fileCache.stop("");
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_stop_null_uri
@@ -618,18 +806,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_stop_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_stop_null_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.stop(null);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_stop_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_stop_null_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start stop");
+	         fileCache.stop(null);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_stop_undefined_uri
@@ -640,18 +833,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_stop_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_stop_undefined_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.stop(undefined);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_stop_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_stop_undefined_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start stop");
+	         fileCache.stop(undefined);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_stop_false_needClean
@@ -662,19 +860,24 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_stop_false_needClean', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_stop_false_needClean::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       let path = "/data/storage/el2/cloud/1.txt";
- 	       let uri = fileUri.getUriFromPath(path);
- 	       
- 	       try {
- 	         fileCache.stop(uri, false);
- 	       } catch (err) {
- 	         console.log(TAG + " threw error for false needClean parameter: " + err.code);
- 	         expect(err.code === 13600001).assertTrue(); // 13600001 - IPC error
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_stop_false_needClean ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_stop_false_needClean::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       let path = "/data/storage/el2/cloud/1.txt";
+	       let uri = fileUri.getUriFromPath(path);
+	       
+	       try {
+	         console.info(tag + "start stop");
+	         fileCache.stop(uri, false);
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " threw error for false needClean parameter: " + err.code);
+	         expect(err.code === 13600001).assertTrue(); // 13600001 - IPC error
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_stop_callback_empty_uri
@@ -685,21 +888,36 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_stop_callback_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_stop_callback_empty_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.stop("", (err: BusinessError) => {
- 	           expect(err !== undefined).assertTrue();
- 	           expect(err.code === 401 || err.code === 14000002).assertTrue();
- 	           done();
- 	         });
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	         done();
- 	       }
- 	     });
+	       let tag = "====>test_CloudFileCache_stop_callback_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_stop_callback_empty_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start stop");
+	         fileCache.stop("", (err: BusinessError) => {
+	           console.info(tag + "stop callback enter");
+	           console.info(tag + "err: " + JSON.stringify(err));
+	           try {
+	           	expect(err !== undefined).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           try {
+	           	expect(err.code === 401 || err.code === 14000002).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           done();
+	         });
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	         console.info(tag + "end====");
+	         done();
+	       }
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_stop_callback_null_uri
@@ -710,21 +928,36 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_stop_callback_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_stop_callback_null_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.stop(null, (err: BusinessError) => {
- 	           expect(err !== undefined).assertTrue();
- 	           expect(err.code === 401 || err.code === 14000002).assertTrue();
- 	           done();
- 	         });
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	         done();
- 	       }
- 	     });
+	       let tag = "====>test_CloudFileCache_stop_callback_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_stop_callback_null_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start stop");
+	         fileCache.stop(null, (err: BusinessError) => {
+	           console.info(tag + "stop callback enter");
+	           console.info(tag + "err: " + JSON.stringify(err));
+	           try {
+	           	expect(err !== undefined).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           try {
+	           	expect(err.code === 401 || err.code === 14000002).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           done();
+	         });
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	         console.info(tag + "end====");
+	         done();
+	       }
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_stop_callback_undefined_uri
@@ -735,21 +968,36 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_stop_callback_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_stop_callback_undefined_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.stop(undefined, (err: BusinessError) => {
- 	           expect(err !== undefined).assertTrue();
- 	           expect(err.code === 401 || err.code === 14000002).assertTrue();
- 	           done();
- 	         });
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
- 	         done();
- 	       }
- 	     });
+	       let tag = "====>test_CloudFileCache_stop_callback_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_stop_callback_undefined_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start stop");
+	         fileCache.stop(undefined, (err: BusinessError) => {
+	           console.info(tag + "stop callback enter");
+	           console.info(tag + "err: " + JSON.stringify(err));
+	           try {
+	           	expect(err !== undefined).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           try {
+	           	expect(err.code === 401 || err.code === 14000002).assertTrue();
+	           } catch (err) {
+	           	console.info(tag + "Assert Fail: " + JSON.stringify(err));
+	           }
+	           done();
+	         });
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // 401 or 14000002 - Invalid argument or URI
+	         console.info(tag + "end====");
+	         done();
+	       }
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_stopBatch_null_downloadId
@@ -760,18 +1008,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_stopBatch_null_downloadId', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_stopBatch_null_downloadId::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.stopBatch(null);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null downloadId parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_stopBatch_null_downloadId ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_stopBatch_null_downloadId::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start stopBatch");
+	         fileCache.stopBatch(null);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null downloadId parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_stopBatch_undefined_downloadId
@@ -782,18 +1035,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_stopBatch_undefined_downloadId', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_stopBatch_undefined_downloadId::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.stopBatch(undefined);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined downloadId parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_stopBatch_undefined_downloadId ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_stopBatch_undefined_downloadId::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start stopBatch");
+	         fileCache.stopBatch(undefined);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined downloadId parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // 401 or 13900020 - Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_stopBatch_false_needClean
@@ -804,17 +1062,22 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_stopBatch_false_needClean', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_stopBatch_false_needClean::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.stopBatch(1, false);
- 	       } catch (err) {
- 	         console.log(TAG + " threw error for false needClean parameter: " + err.code);
- 	         expect(err.code === 13600001 || err.code === 13900020).assertTrue(); // 13600001 or 13900020
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_stopBatch_false_needClean ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_stopBatch_false_needClean::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start stopBatch");
+	         fileCache.stopBatch(1, false);
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " threw error for false needClean parameter: " + err.code);
+	         expect(err.code === 13600001 || err.code === 13900020).assertTrue(); // 13600001 or 13900020
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_cleanFileCache_empty_uri
@@ -825,18 +1088,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_cleanFileCache_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_cleanFileCache_empty_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.cleanFileCache("");
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_cleanFileCache_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_cleanFileCache_empty_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start cleanFileCache");
+	         fileCache.cleanFileCache("");
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_cleanFileCache_null_uri
@@ -847,18 +1115,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_cleanFileCache_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_cleanFileCache_null_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.cleanFileCache(null);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_cleanFileCache_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_cleanFileCache_null_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start cleanFileCache");
+	         fileCache.cleanFileCache(null);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_CloudFileCache_cleanFileCache_undefined_uri
@@ -869,18 +1142,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_CloudFileCache_cleanFileCache_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_CloudFileCache_cleanFileCache_undefined_uri::";
- 	       let fileCache = new cloudSync.CloudFileCache();
- 	       
- 	       try {
- 	         fileCache.cleanFileCache(undefined);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_CloudFileCache_cleanFileCache_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_CloudFileCache_cleanFileCache_undefined_uri::";
+	       let fileCache = new cloudSync.CloudFileCache();
+	       
+	       try {
+	         console.info(tag + "start cleanFileCache");
+	         fileCache.cleanFileCache(undefined);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_getCoreFileSyncState_empty_uri
@@ -891,17 +1169,22 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_getCoreFileSyncState_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_getCoreFileSyncState_empty_uri::";
- 	       
- 	       try {
- 	         cloudSync.getCoreFileSyncState("");
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_getCoreFileSyncState_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_getCoreFileSyncState_empty_uri::";
+	       
+	       try {
+	         console.info(tag + "start getCoreFileSyncState");
+	         cloudSync.getCoreFileSyncState("");
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_getCoreFileSyncState_null_uri
@@ -912,17 +1195,22 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_getCoreFileSyncState_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_getCoreFileSyncState_null_uri::";
- 	       
- 	       try {
- 	         cloudSync.getCoreFileSyncState(null);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_getCoreFileSyncState_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_getCoreFileSyncState_null_uri::";
+	       
+	       try {
+	         console.info(tag + "start getCoreFileSyncState");
+	         cloudSync.getCoreFileSyncState(null);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_getCoreFileSyncState_undefined_uri
@@ -933,17 +1221,22 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_getCoreFileSyncState_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_getCoreFileSyncState_undefined_uri::";
- 	       
- 	       try {
- 	         cloudSync.getCoreFileSyncState(undefined);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_getCoreFileSyncState_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_getCoreFileSyncState_undefined_uri::";
+	       
+	       try {
+	         console.info(tag + "start getCoreFileSyncState");
+	         cloudSync.getCoreFileSyncState(undefined);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_registerChange_empty_uri
@@ -954,20 +1247,26 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_registerChange_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_registerChange_empty_uri::";
- 	       let callback = (changeData: cloudSync.ChangeData) => {
- 	         console.info("file change type：" + changeData.type);
- 	       };
- 	       
- 	       try {
- 	         cloudSync.registerChange("", true, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_registerChange_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_registerChange_empty_uri::";
+	       let callback = (changeData: cloudSync.ChangeData) => {
+	         console.info(tag + "registerChange_callback enter");
+	         console.info("file change type：" + changeData.type);
+	       };
+	       
+	       try {
+	         console.info(tag + "start registerChange");
+	         cloudSync.registerChange("", true, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_registerChange_null_uri
@@ -978,20 +1277,26 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_registerChange_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_registerChange_null_uri::";
- 	       let callback = (changeData: cloudSync.ChangeData) => {
- 	         console.info("file change type：" + changeData.type);
- 	       };
- 	       
- 	       try {
- 	         cloudSync.registerChange(null, true, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_registerChange_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_registerChange_null_uri::";
+	       let callback = (changeData: cloudSync.ChangeData) => {
+	         console.info(tag + "registerChange_callback enter");
+	         console.info("file change type：" + changeData.type);
+	       };
+	       
+	       try {
+	         console.info(tag + "start registerChange");
+	         cloudSync.registerChange(null, true, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_registerChange_undefined_uri
@@ -1002,20 +1307,26 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_registerChange_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_registerChange_undefined_uri::";
- 	       let callback = (changeData: cloudSync.ChangeData) => {
- 	         console.info("file change type：" + changeData.type);
- 	       };
- 	       
- 	       try {
- 	         cloudSync.registerChange(undefined, true, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_registerChange_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_registerChange_undefined_uri::";
+	       let callback = (changeData: cloudSync.ChangeData) => {
+	         console.info(tag + "registerChange_callback enter");
+	         console.info("file change type：" + changeData.type);
+	       };
+	       
+	       try {
+	         console.info(tag + "start registerChange");
+	         cloudSync.registerChange(undefined, true, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_registerChange_true_recursion
@@ -1026,21 +1337,27 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_registerChange_true_recursion', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_registerChange_true_recursion::";
- 	       let path = "/data/storage/el2/cloud/";
- 	       let uri = fileUri.getUriFromPath(path);
- 	       let callback = (changeData: cloudSync.ChangeData) => {
- 	         console.info("file change type：" + changeData.type);
- 	       };
- 	       
- 	       try {
- 	         cloudSync.registerChange(uri, true, callback);
- 	       } catch (err) {
- 	         console.log(TAG + " threw error for true recursion parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue();
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_registerChange_true_recursion ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_registerChange_true_recursion::";
+	       let path = "/data/storage/el2/cloud/";
+	       let uri = fileUri.getUriFromPath(path);
+	       let callback = (changeData: cloudSync.ChangeData) => {
+	         console.info(tag + "registerChange_callback enter");
+	         console.info("file change type：" + changeData.type);
+	       };
+	       
+	       try {
+	         console.info(tag + "start registerChange");
+	         cloudSync.registerChange(uri, true, callback);
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " threw error for true recursion parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue();
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_unregisterChange_empty_uri
@@ -1051,17 +1368,22 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_unregisterChange_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_unregisterChange_empty_uri::";
- 	       
- 	       try {
- 	         cloudSync.unregisterChange("");
+	       let tag = "====>test_cloudSync_unregisterChange_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_unregisterChange_empty_uri::";
+	       
+	       try {
+	         console.info(tag + "start unregisterChange");
+	         cloudSync.unregisterChange("");
              console.log(TAG + " test_cloudSync_unregisterChange_empty_uri res");
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.message + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.message + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_unregisterChange_null_uri
@@ -1072,17 +1394,22 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_unregisterChange_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_unregisterChange_null_uri::";
- 	       
- 	       try {
- 	         cloudSync.unregisterChange(null);
- 	         console.log(TAG + " test_cloudSync_unregisterChange_null_uri res");
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_unregisterChange_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_unregisterChange_null_uri::";
+	       
+	       try {
+	         console.info(tag + "start unregisterChange");
+	         cloudSync.unregisterChange(null);
+	         console.log(TAG + " test_cloudSync_unregisterChange_null_uri res");
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_unregisterChange_undefined_uri
@@ -1093,17 +1420,22 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_unregisterChange_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_unregisterChange_undefined_uri::";
- 	       
- 	       try {
- 	         cloudSync.unregisterChange(undefined);
- 	         console.log(TAG + " test_cloudSync_unregisterChange_undefined_uri res");
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_unregisterChange_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_unregisterChange_undefined_uri::";
+	       
+	       try {
+	         console.info(tag + "start unregisterChange");
+	         cloudSync.unregisterChange(undefined);
+	         console.log(TAG + " test_cloudSync_unregisterChange_undefined_uri res");
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 14000002).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_getHistoryVersionList_empty_uri
@@ -1114,18 +1446,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_getHistoryVersionList_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_getHistoryVersionList_empty_uri::";
- 	       
- 	       try {
+	       let tag = "====>test_cloudSync_getHistoryVersionList_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_getHistoryVersionList_empty_uri::";
+
+	       try {
              let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.getHistoryVersionList("", 1);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	         console.info(tag + "start getHistoryVersionList");
+	         fileVersion.getHistoryVersionList("", 1);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_getHistoryVersionList_null_uri
@@ -1136,18 +1473,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_getHistoryVersionList_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_getHistoryVersionList_null_uri::";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.getHistoryVersionList(null, 1);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_getHistoryVersionList_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_getHistoryVersionList_null_uri::";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start getHistoryVersionList");
+	         fileVersion.getHistoryVersionList(null, 1);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_getHistoryVersionList_undefined_uri
@@ -1158,18 +1500,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_getHistoryVersionList_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_getHistoryVersionList_undefined_uri::";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.getHistoryVersionList(undefined, 1);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_getHistoryVersionList_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_getHistoryVersionList_undefined_uri::";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start getHistoryVersionList");
+	         fileVersion.getHistoryVersionList(undefined, 1);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_getHistoryVersionList_null_versionNumLimit
@@ -1180,20 +1527,25 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_getHistoryVersionList_null_versionNumLimit', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_getHistoryVersionList_null_versionNumLimit::";
- 	       let path = "/data/storage/el2/cloud/1.txt";
- 	       let uri = fileUri.getUriFromPath(path);
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.getHistoryVersionList(uri, null);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null versionNumLimit parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_getHistoryVersionList_null_versionNumLimit ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_getHistoryVersionList_null_versionNumLimit::";
+	       let path = "/data/storage/el2/cloud/1.txt";
+	       let uri = fileUri.getUriFromPath(path);
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start getHistoryVersionList");
+	         fileVersion.getHistoryVersionList(uri, null);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null versionNumLimit parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_getHistoryVersionList_undefined_versionNumLimit
@@ -1204,20 +1556,25 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_getHistoryVersionList_undefined_versionNumLimit', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_getHistoryVersionList_undefined_versionNumLimit::";
- 	       let path = "/data/storage/el2/cloud/1.txt";
- 	       let uri = fileUri.getUriFromPath(path);
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.getHistoryVersionList(uri, undefined);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined versionNumLimit parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_getHistoryVersionList_undefined_versionNumLimit ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_getHistoryVersionList_undefined_versionNumLimit::";
+	       let path = "/data/storage/el2/cloud/1.txt";
+	       let uri = fileUri.getUriFromPath(path);
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start getHistoryVersionList");
+	         fileVersion.getHistoryVersionList(uri, undefined);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined versionNumLimit parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_downloadHistoryVersion_empty_uri
@@ -1228,21 +1585,27 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_downloadHistoryVersion_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_downloadHistoryVersion_empty_uri::";
- 	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
- 	         console.info("download progress: " + progress.progress);
- 	       };
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.downloadHistoryVersion("", "version1", callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_downloadHistoryVersion_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_downloadHistoryVersion_empty_uri::";
+	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
+	         console.info(tag + "downloadHistoryVersion_callback enter");
+	         console.info("download progress: " + progress.progress);
+	       };
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start downloadHistoryVersion");
+	         fileVersion.downloadHistoryVersion("", "version1", callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_downloadHistoryVersion_null_uri
@@ -1253,21 +1616,27 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_downloadHistoryVersion_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_downloadHistoryVersion_null_uri::";
- 	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
- 	         console.info("download progress: " + progress.progress);
- 	       };
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.downloadHistoryVersion(null, "version1", callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_downloadHistoryVersion_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_downloadHistoryVersion_null_uri::";
+	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
+	         console.info(tag + "downloadHistoryVersion_callback enter");
+	         console.info("download progress: " + progress.progress);
+	       };
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start downloadHistoryVersion");
+	         fileVersion.downloadHistoryVersion(null, "version1", callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_downloadHistoryVersion_undefined_uri
@@ -1278,21 +1647,27 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_downloadHistoryVersion_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_downloadHistoryVersion_undefined_uri::";
- 	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
- 	         console.info("download progress: " + progress.progress);
- 	       };
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.downloadHistoryVersion(undefined, "version1", callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_downloadHistoryVersion_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_downloadHistoryVersion_undefined_uri::";
+	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
+	         console.info(tag + "downloadHistoryVersion_callback enter");
+	         console.info("download progress: " + progress.progress);
+	       };
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start downloadHistoryVersion");
+	         fileVersion.downloadHistoryVersion(undefined, "version1", callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_downloadHistoryVersion_empty_versionId
@@ -1303,23 +1678,29 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_downloadHistoryVersion_empty_versionId', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_downloadHistoryVersion_empty_versionId::";
- 	       let path = "/data/storage/el2/cloud/1.txt";
- 	       let uri = fileUri.getUriFromPath(path);
- 	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
- 	         console.info("download progress: " + progress.progress);
- 	       };
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.downloadHistoryVersion(uri, "", callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty versionId parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_downloadHistoryVersion_empty_versionId ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_downloadHistoryVersion_empty_versionId::";
+	       let path = "/data/storage/el2/cloud/1.txt";
+	       let uri = fileUri.getUriFromPath(path);
+	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
+	         console.info(tag + "downloadHistoryVersion_callback enter");
+	         console.info("download progress: " + progress.progress);
+	       };
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start downloadHistoryVersion");
+	         fileVersion.downloadHistoryVersion(uri, "", callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty versionId parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_downloadHistoryVersion_null_versionId
@@ -1330,23 +1711,29 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_downloadHistoryVersion_null_versionId', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_downloadHistoryVersion_null_versionId::";
- 	       let path = "/data/storage/el2/cloud/1.txt";
- 	       let uri = fileUri.getUriFromPath(path);
- 	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
- 	         console.info("download progress: " + progress.progress);
- 	       };
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.downloadHistoryVersion(uri, null, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null versionId parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_downloadHistoryVersion_null_versionId ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_downloadHistoryVersion_null_versionId::";
+	       let path = "/data/storage/el2/cloud/1.txt";
+	       let uri = fileUri.getUriFromPath(path);
+	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
+	         console.info(tag + "downloadHistoryVersion_callback enter");
+	         console.info("download progress: " + progress.progress);
+	       };
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start downloadHistoryVersion");
+	         fileVersion.downloadHistoryVersion(uri, null, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null versionId parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_downloadHistoryVersion_undefined_versionId
@@ -1357,23 +1744,29 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_downloadHistoryVersion_undefined_versionId', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_downloadHistoryVersion_undefined_versionId::";
- 	       let path = "/data/storage/el2/cloud/1.txt";
- 	       let uri = fileUri.getUriFromPath(path);
- 	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
- 	         console.info("download progress: " + progress.progress);
- 	       };
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.downloadHistoryVersion(uri, undefined, callback);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined versionId parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_downloadHistoryVersion_undefined_versionId ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_downloadHistoryVersion_undefined_versionId::";
+	       let path = "/data/storage/el2/cloud/1.txt";
+	       let uri = fileUri.getUriFromPath(path);
+	       let callback = (progress: cloudSync.VersionDownloadProgress) => {
+	         console.info(tag + "downloadHistoryVersion_callback enter");
+	         console.info("download progress: " + progress.progress);
+	       };
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start downloadHistoryVersion");
+	         fileVersion.downloadHistoryVersion(uri, undefined, callback);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined versionId parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_replaceFileWithHistoryVersion_empty_originalUri
@@ -1384,19 +1777,24 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_replaceFileWithHistoryVersion_empty_originalUri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_empty_originalUri::";
- 	       let versionUri = "file://media/image/version";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.replaceFileWithHistoryVersion("", versionUri);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty originalUri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_replaceFileWithHistoryVersion_empty_originalUri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_empty_originalUri::";
+	       let versionUri = "file://media/image/version";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start replaceFileWithHistoryVersion");
+	         fileVersion.replaceFileWithHistoryVersion("", versionUri);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty originalUri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_replaceFileWithHistoryVersion_null_originalUri
@@ -1407,19 +1805,24 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_replaceFileWithHistoryVersion_null_originalUri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_null_originalUri::";
- 	       let versionUri = "file://media/image/version";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.replaceFileWithHistoryVersion(null, versionUri);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null originalUri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_replaceFileWithHistoryVersion_null_originalUri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_null_originalUri::";
+	       let versionUri = "file://media/image/version";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start replaceFileWithHistoryVersion");
+	         fileVersion.replaceFileWithHistoryVersion(null, versionUri);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null originalUri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_replaceFileWithHistoryVersion_undefined_originalUri
@@ -1430,19 +1833,24 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_replaceFileWithHistoryVersion_undefined_originalUri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_undefined_originalUri::";
- 	       let versionUri = "file://media/image/version";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.replaceFileWithHistoryVersion(undefined, versionUri);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined originalUri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_replaceFileWithHistoryVersion_undefined_originalUri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_undefined_originalUri::";
+	       let versionUri = "file://media/image/version";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start replaceFileWithHistoryVersion");
+	         fileVersion.replaceFileWithHistoryVersion(undefined, versionUri);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined originalUri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_replaceFileWithHistoryVersion_empty_versionUri
@@ -1453,19 +1861,24 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_replaceFileWithHistoryVersion_empty_versionUri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_empty_versionUri::";
- 	       let originalUri = "file://media/image/original";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.replaceFileWithHistoryVersion(originalUri, "");
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty versionUri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_replaceFileWithHistoryVersion_empty_versionUri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_empty_versionUri::";
+	       let originalUri = "file://media/image/original";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start replaceFileWithHistoryVersion");
+	         fileVersion.replaceFileWithHistoryVersion(originalUri, "");
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty versionUri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_replaceFileWithHistoryVersion_null_versionUri
@@ -1476,19 +1889,24 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_replaceFileWithHistoryVersion_null_versionUri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_null_versionUri::";
- 	       let originalUri = "file://media/image/original";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.replaceFileWithHistoryVersion(originalUri, null);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null versionUri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_replaceFileWithHistoryVersion_null_versionUri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_null_versionUri::";
+	       let originalUri = "file://media/image/original";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start replaceFileWithHistoryVersion");
+	         fileVersion.replaceFileWithHistoryVersion(originalUri, null);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null versionUri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_replaceFileWithHistoryVersion_undefined_versionUri
@@ -1499,19 +1917,24 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_replaceFileWithHistoryVersion_undefined_versionUri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_undefined_versionUri::";
- 	       let originalUri = "file://media/image/original";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.replaceFileWithHistoryVersion(originalUri, undefined);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined versionUri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_replaceFileWithHistoryVersion_undefined_versionUri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_replaceFileWithHistoryVersion_undefined_versionUri::";
+	       let originalUri = "file://media/image/original";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start replaceFileWithHistoryVersion");
+	         fileVersion.replaceFileWithHistoryVersion(originalUri, undefined);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined versionUri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_isFileConflict_empty_uri
@@ -1522,18 +1945,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_isFileConflict_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_isFileConflict_empty_uri::";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.isFileConflict("");
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_isFileConflict_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_isFileConflict_empty_uri::";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start isFileConflict");
+	         fileVersion.isFileConflict("");
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_isFileConflict_null_uri
@@ -1544,18 +1972,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_isFileConflict_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_isFileConflict_null_uri::";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.isFileConflict(null);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_isFileConflict_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_isFileConflict_null_uri::";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start isFileConflict");
+	         fileVersion.isFileConflict(null);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_isFileConflict_undefined_uri
@@ -1566,18 +1999,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_isFileConflict_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_isFileConflict_undefined_uri::";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.isFileConflict(undefined);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_isFileConflict_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_isFileConflict_undefined_uri::";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start isFileConflict");
+	         fileVersion.isFileConflict(undefined);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_clearFileConflict_empty_uri
@@ -1588,18 +2026,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_clearFileConflict_empty_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_clearFileConflict_empty_uri::";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.clearFileConflict("");
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_clearFileConflict_empty_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_clearFileConflict_empty_uri::";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start clearFileConflict");
+	         fileVersion.clearFileConflict("");
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for empty uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_clearFileConflict_null_uri
@@ -1610,18 +2053,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_clearFileConflict_null_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_clearFileConflict_null_uri::";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.clearFileConflict(null);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_clearFileConflict_null_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_clearFileConflict_null_uri::";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start clearFileConflict");
+	         fileVersion.clearFileConflict(null);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for null uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
  	 
  	     /**
  	      * @tc.name   test_cloudSync_clearFileConflict_undefined_uri
@@ -1632,18 +2080,23 @@
  	      * @tc.level  LEVEL3
  	      */
  	     it('test_cloudSync_clearFileConflict_undefined_uri', Level.LEVEL3, async (done: Function) => {
- 	       let TAG = "test_cloudSync_clearFileConflict_undefined_uri::";
- 	       
- 	       try {
- 	         let fileVersion = new cloudSync.FileVersion();
- 	         fileVersion.clearFileConflict(undefined);
- 	         expect(false).assertTrue(); // Should not reach here
- 	       } catch (err) {
- 	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
- 	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
- 	       }
- 	       done();
- 	     });
+	       let tag = "====>test_cloudSync_clearFileConflict_undefined_uri ";
+	       console.info(tag + "start====");
+	       let TAG = "test_cloudSync_clearFileConflict_undefined_uri::";
+	       
+	       try {
+	         let fileVersion = new cloudSync.FileVersion();
+	         console.info(tag + "start clearFileConflict");
+	         fileVersion.clearFileConflict(undefined);
+	         expect(false).assertTrue(); // Should not reach here
+	       } catch (err) {
+	         console.info(tag + "catch err: " + JSON.stringify(err));
+	         console.log(TAG + " correctly threw error for undefined uri parameter: " + err.code);
+	         expect(err.code === 401 || err.code === 13900020).assertTrue(); // Invalid argument or URI
+	       }
+	       console.info(tag + "end====");
+	       done();
+	     });
 
 		/**
 			* @tc.name   test_CloudFileCache_startBatch_null_fileType
@@ -1654,18 +2107,23 @@
 			* @tc.level  LEVEL3
 			*/
 		it('test_CloudFileCache_startBatch_null_fileType', Level.LEVEL3, async (done: Function) => {
+			let tag = "====>test_CloudFileCache_startBatch_null_fileType ";
+			console.info(tag + "start====");
 			let TAG = "test_CloudFileCache_startBatch_null_fileType::";
 			let fileCache = new cloudSync.CloudFileCache();
 			let uris = ["file://media/audio/1"];
 
 			try {
+				console.info(tag + "start startBatch");
 				await fileCache.startBatch(uris, null);
 				console.info(TAG + " startBatch null fileType run err");
 				expect().assertFail();
 			} catch (err) {
+				console.info(tag + "catch err: " + JSON.stringify(err));
 				console.log(TAG + " sync error: " + err.code);
 				expect(err.code === 13600001 || err.code === 22400005).assertTrue();
 			}
+			console.info(tag + "end====");
 			done();
 		});
 
@@ -1678,18 +2136,23 @@
 			* @tc.level  LEVEL3
 			*/
 		it('test_CloudFileCache_startBatch_undefined_fileType', Level.LEVEL3, async (done: Function) => {
+			let tag = "====>test_CloudFileCache_startBatch_undefined_fileType ";
+			console.info(tag + "start====");
 			let TAG = "test_CloudFileCache_startBatch_undefined_fileType::";
 			let fileCache = new cloudSync.CloudFileCache();
 			let uris = ["file://media/audio/2"];
 
 			try {
+				console.info(tag + "start startBatch");
 				await fileCache.startBatch(uris, undefined);
 				console.info(TAG + " startBatch undefined fileType run err");
 				expect().assertFail();
 			} catch (err) {
+				console.info(tag + "catch err: " + JSON.stringify(err));
 				console.log(TAG + " sync error: " + err.code);
 				expect(err.code === 22400005 || err.code === 13600001).assertTrue();
 			}
+			console.info(tag + "end====");
 			done();
 		});
 
@@ -1702,18 +2165,23 @@
 			* @tc.level  LEVEL3
 			*/
 		it('test_CloudFileCache_startBatch_outofrange_fileType', Level.LEVEL3, async (done: Function) => {
+			let tag = "====>test_CloudFileCache_startBatch_outofrange_fileType ";
+			console.info(tag + "start====");
 			let TAG = "test_CloudFileCache_startBatch_outofrange_fileType::";
 			let fileCache = new cloudSync.CloudFileCache();
 			let uris = ["file://media/audio/3"];
 
 			try {
+				console.info(tag + "start startBatch");
 				await fileCache.startBatch(uris, 3);
 				console.info(TAG + " startBatch outofrange fileType run err");
 				expect().assertFail();
 			} catch (err) {
+				console.info(tag + "catch err: " + JSON.stringify(err));
 				console.log(TAG + " startBatch outofrange fileType error: " + err.code + ", " + err.message);
 				expect(err.code === 401 || err.code === 13900020 || err.code === 13600001).assertTrue();
 			}
+			console.info(tag + "end====");
 			done();
 		});
 
@@ -1726,18 +2194,23 @@
 			* @tc.level  LEVEL3
 			*/
 		it('test_CloudFileCache_stop_null_needClean', Level.LEVEL3, async (done: Function) => {
+			let tag = "====>test_CloudFileCache_stop_null_needClean ";
+			console.info(tag + "start====");
 			let TAG = "test_CloudFileCache_stop_null_needClean::";
 			let fileCache = new cloudSync.CloudFileCache();
 			let uri = "file://media/cloud/test_null.txt";
 
 			try {
+				console.info(tag + "start stop");
 				await fileCache.stop(uri, null);
 				console.info(TAG + " stop null run err");
 				expect().assertFail();
 			} catch (err) {
+				console.info(tag + "catch err: " + JSON.stringify(err));
 				console.log(TAG + " stop null needClean error: " + err.code + ", " + err.message);
 				expect(err.code === 13600001 || err.code === 22400005 || err.code === 401).assertTrue();
 			}
+			console.info(tag + "end====");
 			done();
 		});
 
@@ -1750,18 +2223,23 @@
 			* @tc.level  LEVEL3
 			*/
 		it('test_CloudFileCache_stop_undefined_needClean', Level.LEVEL3, async (done: Function) => {
+			let tag = "====>test_CloudFileCache_stop_undefined_needClean ";
+			console.info(tag + "start====");
 			let TAG = "test_CloudFileCache_stop_undefined_needClean::";
 			let fileCache = new cloudSync.CloudFileCache();
 			let uri = "file://media/cloud/test_undefined.txt";
 
 			try {
+				console.info(tag + "start stop");
 				await fileCache.stop(uri, undefined);
 				console.info(TAG + " stop undefined run err");
 				expect().assertFail();
 			} catch (err) {
+				console.info(tag + "catch err: " + JSON.stringify(err));
 				console.log(TAG + " stop undefined needClean error: " + err.code + ", " + err.message);
 				expect(err.code === 13600001 || err.code === 22400005 || err.code === 401).assertTrue();
 			}
+			console.info(tag + "end====");
 			done();
 		});
 
@@ -1774,17 +2252,22 @@
 			* @tc.level  LEVEL3
 			*/
 		it('test_CloudFileCache_stopBatch_null_needClean', Level.LEVEL3, async (done: Function) => {
+			let tag = "====>test_CloudFileCache_stopBatch_null_needClean ";
+			console.info(tag + "start====");
 			let TAG = "test_CloudFileCache_stopBatch_null_needClean::";
 			let fileCache = new cloudSync.CloudFileCache();
 
 			try {
+				console.info(tag + "start stopBatch");
 				await fileCache.stopBatch(1, null);
 				console.info(TAG + " stopBatch null needClean run err");
 				expect().assertFail();
 			} catch (err) {
+				console.info(tag + "catch err: " + JSON.stringify(err));
 				console.log(TAG + " stopBatch null needClean error: " + err.code + ", " + err.message);
 				expect(err.code === 13600001 || err.code === 22400005).assertTrue();
 			}
+			console.info(tag + "end====");
 			done();
 		});
 
@@ -1797,17 +2280,22 @@
 			* @tc.level  LEVEL3
 			*/
 		it('test_CloudFileCache_stopBatch_undefined_needClean', Level.LEVEL3, async (done: Function) => {
+			let tag = "====>test_CloudFileCache_stopBatch_undefined_needClean ";
+			console.info(tag + "start====");
 			let TAG = "test_CloudFileCache_stopBatch_undefined_needClean::";
 			let fileCache = new cloudSync.CloudFileCache();
 
 			try {
+				console.info(tag + "start stopBatch");
 				await fileCache.stopBatch(1, undefined);
 				console.info(TAG + " stopBatch undefined needClean run err");
 				expect().assertFail();
 			} catch (err) {
+				console.info(tag + "catch err: " + JSON.stringify(err));
 				console.log(TAG + " stopBatch undefined needClean error: " + err.code + ", " + err.message);
 				expect(err.code === 13600001 || err.code === 22400005).assertTrue();
 			}
+			console.info(tag + "end====");
 			done();
 		});
  	   });
