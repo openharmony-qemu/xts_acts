@@ -26,7 +26,7 @@ const SLEEP_TIME = 500;
 
 export default function RefreshTest() {
   describe('RefreshTest', () => {
-    beforeEach((): void => {
+    beforeEach(async (): Promise<void> => {
       console.info('RefreshTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Refresh/refresh',
@@ -38,6 +38,7 @@ export default function RefreshTest() {
         console.info('RefreshTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'refresh') {
           routerInstance.replaceUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('RefreshTest replaceUrl error: ' + err);

@@ -90,50 +90,57 @@ it('repeatWaterFlow_static_0100', Level.LEVEL1, async (done: () => void): Promis
      * @tc.level    Level.LEVEL1
      */
 it('repeatWaterFlow_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[repeatWaterFlow_static_0200] START');
-      let waterFlowRect = CommonFunc.getComponentRectOnScreen('flowRepeat_event')
-      let driver = Driver.create()
-      await driver.fling({
-        x: Number.parseInt(`${(waterFlowRect.right - waterFlowRect.left) * 0.5 + waterFlowRect.left}`).toInt(),
-        y: Number.parseInt(`${(waterFlowRect.bottom - waterFlowRect.top) * 0.6 + waterFlowRect.top}`).toInt()
-      },
-        {
+      try {
+        console.info('[repeatWaterFlow_static_0200] START');
+        let waterFlowRect = CommonFunc.getComponentRectOnScreen('flowRepeat_event')
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        await driver.fling({
           x: Number.parseInt(`${(waterFlowRect.right - waterFlowRect.left) * 0.5 + waterFlowRect.left}`).toInt(),
-          y: Number.parseInt(`${(waterFlowRect.bottom - waterFlowRect.top) * 0.2 + waterFlowRect.top}`).toInt()
-        }, 5, 1000);
-      await CommonFunc.sleep(2000);
+          y: Number.parseInt(`${(waterFlowRect.bottom - waterFlowRect.top) * 0.6 + waterFlowRect.top}`).toInt()
+        },
+          {
+            x: Number.parseInt(`${(waterFlowRect.right - waterFlowRect.left) * 0.5 + waterFlowRect.left}`).toInt(),
+            y: Number.parseInt(`${(waterFlowRect.bottom - waterFlowRect.top) * 0.2 + waterFlowRect.top}`).toInt()
+          }, 5, 1000);
+        await CommonFunc.sleep(2000);
 
-      let strJson1 = inspector.getInspectorByKey('flowRepeat_onFrameBegin');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      console.info("[repeatWaterFlow_static_0200] component obj1 is: " + JSON.stringify(obj1));
-      console.info("[repeatWaterFlow_static_0200] onScrollFrameBegin: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('onScrollFrameBegin: success');
+        let strJson1 = inspector.getInspectorByKey('flowRepeat_onFrameBegin');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        console.info("[repeatWaterFlow_static_0200] component obj1 is: " + JSON.stringify(obj1));
+        console.info("[repeatWaterFlow_static_0200] onScrollFrameBegin: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
+        expect(obj1.getElement('$attrs').getString('content')).assertEqual('onScrollFrameBegin: success');
 
-      let strJson2 = inspector.getInspectorByKey('flowRepeat_onText_1');
-      let obj2 = JSON.parseJsonElement(strJson2);
-      console.info("[repeatWaterFlow_static_0200] component obj2 is: " + JSON.stringify(obj2));
-      console.info("[repeatWaterFlow_static_0200] onWillScroll: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual('onWillScroll: success');
+        let strJson2 = inspector.getInspectorByKey('flowRepeat_onText_1');
+        let obj2 = JSON.parseJsonElement(strJson2);
+        console.info("[repeatWaterFlow_static_0200] component obj2 is: " + JSON.stringify(obj2));
+        console.info("[repeatWaterFlow_static_0200] onWillScroll: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
+        expect(obj2.getElement('$attrs').getString('content')).assertEqual('onWillScroll: success');
 
-      let strJson3 = inspector.getInspectorByKey('flowRepeat_onText_2');
-      let obj3 = JSON.parseJsonElement(strJson3);
-      console.info("[repeatWaterFlow_static_0200] component obj5 is: " + JSON.stringify(obj3));
-      console.info("[repeatWaterFlow_static_0200] onDidScroll: " + JSON.stringify(obj3.getElement('$attrs').getString('content')));
-      expect(obj3.getElement('$attrs').getString('content')).assertEqual('onDidScroll: success');
+        let strJson3 = inspector.getInspectorByKey('flowRepeat_onText_2');
+        let obj3 = JSON.parseJsonElement(strJson3);
+        console.info("[repeatWaterFlow_static_0200] component obj5 is: " + JSON.stringify(obj3));
+        console.info("[repeatWaterFlow_static_0200] onDidScroll: " + JSON.stringify(obj3.getElement('$attrs').getString('content')));
+        expect(obj3.getElement('$attrs').getString('content')).assertEqual('onDidScroll: success');
 
-      let btm = await driver.findComponent(ON.id('flowRepeat_scroll'));
-      await (btm?.click() as Promise<void>);
-      await CommonFunc.sleep(5000);
+        let btm = await driver.findComponent(ON.id('flowRepeat_scroll'));
+        await (btm?.click() as Promise<void>);
+        await CommonFunc.sleep(5000);
 
-      let strJson4 = inspector.getInspectorByKey('flowRepeat_onReachText');
-      let obj4 = JSON.parseJsonElement(strJson4);
-      console.info("[repeatWaterFlow_static_0200] component obj2 is: " + JSON.stringify(obj4));
-      console.info("[repeatWaterFlow_static_0200] onReachEnd: " + JSON.stringify(obj4.getElement('$attrs').getString('content')));
-      expect(obj4.getElement('$attrs').getString('content')).assertEqual('onReachEnd: success');
+        let strJson4 = inspector.getInspectorByKey('flowRepeat_onReachText');
+        let obj4 = JSON.parseJsonElement(strJson4);
+        console.info("[repeatWaterFlow_static_0200] component obj2 is: " + JSON.stringify(obj4));
+        console.info("[repeatWaterFlow_static_0200] onReachEnd: " + JSON.stringify(obj4.getElement('$attrs').getString('content')));
+        expect(obj4.getElement('$attrs').getString('content')).assertEqual('onReachEnd: success');
 
-      await CommonFunc.sleep(1000);
-      console.info('[repeatWaterFlow_static_0200] END');
-      done();
+        await CommonFunc.sleep(1000);
+        console.info('[repeatWaterFlow_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[repeatWaterFlow_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

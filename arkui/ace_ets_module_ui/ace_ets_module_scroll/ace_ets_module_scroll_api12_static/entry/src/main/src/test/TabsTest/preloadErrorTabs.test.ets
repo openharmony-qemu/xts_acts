@@ -36,6 +36,7 @@ export default function preloadErrorTabs() {
         if (!("preloadErrorTabs" == pages.name)) {
           console.info("get preloadErrorTabs pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push preloadErrorTabs page error:" + err);

@@ -54,6 +54,7 @@ export default function TabBarComponentContent() {
     it('TabBarComponentContent_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.id('button1'));
         await (button1?.click() as Promise<void>);
         console.info('[TabBarComponentContent_static_0100] Button1 Onclick');
@@ -83,6 +84,7 @@ export default function TabBarComponentContent() {
     it('TabBarComponentContent_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await CommonFunc.sleep(1000);
         let button2 = await driver.findComponent(ON.id('button2'));
         await (button2?.click() as Promise<void>);
         console.info('[TabBarComponentContent_static_0200] Button2 Onclick');
@@ -108,6 +110,7 @@ export default function TabBarComponentContent() {
     it('TabBarComponentContent_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await CommonFunc.sleep(1000);
         let button3 = await driver.findComponent(ON.id('button3'));
         await (button3?.click() as Promise<void>);
         console.info('[TabBarComponentContent_static_0300] Button3 Onclick');

@@ -33,6 +33,7 @@ export default function listLevel1Test() {
         if (!("ListLevel1" == pages.name)) {
           console.info("get listLevel1 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({ url: "MainAbility/pages/List/ListLevel1" })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push listLevel1 page error:" + err);

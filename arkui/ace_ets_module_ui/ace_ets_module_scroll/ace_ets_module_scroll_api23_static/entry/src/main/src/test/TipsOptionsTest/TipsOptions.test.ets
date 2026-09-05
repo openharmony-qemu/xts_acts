@@ -41,7 +41,7 @@ function logLongString(tag: string, longStr: string): void {
 
 export default function TipsOptionsTest() {
   describe('TipsOptionsTest', () => {
-    beforeEach((): void => {
+    beforeEach(async (): Promise<void> => {
       console.info('TipsOptionsTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/TipsOptions/TipsOptions',
@@ -53,6 +53,7 @@ export default function TipsOptionsTest() {
         console.info('TipsOptionsTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'TipsOptions') {
           routerInstance.replaceUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('TipsOptionsTest replaceUrl error: ' + err);

@@ -40,6 +40,7 @@ export default function ScrollContentStartOffsetModifierTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/scrollModifier/scrollContentStartOffsetModifier',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ScrollContentStartOffsetModifierTest page error:' + err);

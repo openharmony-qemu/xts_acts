@@ -40,6 +40,7 @@ export default function RefreshMaxPullDownDistanceTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/refresh/refreshMaxPullDownDistance',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push RefreshMaxPullDownDistanceTest page error:' + err);

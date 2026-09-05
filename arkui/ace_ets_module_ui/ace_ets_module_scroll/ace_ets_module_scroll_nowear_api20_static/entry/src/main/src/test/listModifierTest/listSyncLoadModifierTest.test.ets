@@ -40,6 +40,7 @@ export default function ListSyncLoadModifierTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/listModifier/listSyncLoadModifier',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ListSyncLoadModifierTest page error:' + err);

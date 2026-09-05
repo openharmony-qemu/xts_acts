@@ -100,6 +100,7 @@ export default function ListScrollApiTest() {
       async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
+        await Utils.sleep(1000);
         const wire = await driver.findComponent(ON.id('listApi_wire'));
         expect(!!wire).assertTrue();
         await (wire?.click() as Promise<void>);
@@ -193,6 +194,7 @@ export default function ListScrollApiTest() {
       async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
+        await Utils.sleep(1000);
         const snapBtn = await driver.findComponent(ON.id('listApi_toggleSnap'));
         expect(!!snapBtn).assertTrue();
         await (snapBtn?.click() as Promise<void>);

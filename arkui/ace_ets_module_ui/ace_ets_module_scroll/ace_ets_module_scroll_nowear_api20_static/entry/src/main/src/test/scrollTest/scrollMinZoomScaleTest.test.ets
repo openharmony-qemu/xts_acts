@@ -40,6 +40,7 @@ export default function ScrollMinZoomScaleTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/scroll/scrollMinZoomScale',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ScrollMinZoomScaleTest page error:' + err);

@@ -36,6 +36,7 @@ export default function tabsModeTest() {
         if (!("tabsMode" == pages.name)) {
           console.info("get tabsModeTest pages.name:" + JSON.stringify(pages.name));
           tabsMode.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push tabsModeTest page error:" + err);

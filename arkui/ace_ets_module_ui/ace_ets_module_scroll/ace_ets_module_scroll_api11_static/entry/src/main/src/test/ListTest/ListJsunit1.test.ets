@@ -62,6 +62,7 @@ export default function listJsunit1() {
         if (!("List1" == pages.name)) {
           console.info("get List state success " + JSON.stringify(pages.name));
           router.pushUrl(options)
+          await CommonFunc.sleep(2000);
           // console.info("push List page success " + JSON.stringify(result));
         }
       } catch (err) {

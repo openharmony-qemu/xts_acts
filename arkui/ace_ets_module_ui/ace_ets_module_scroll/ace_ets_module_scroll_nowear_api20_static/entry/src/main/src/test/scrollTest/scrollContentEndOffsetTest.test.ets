@@ -40,6 +40,7 @@ export default function ScrollContentEndOffsetTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/scroll/scrollContentEndOffset',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ScrollContentEndOffsetTest page error:' + err);

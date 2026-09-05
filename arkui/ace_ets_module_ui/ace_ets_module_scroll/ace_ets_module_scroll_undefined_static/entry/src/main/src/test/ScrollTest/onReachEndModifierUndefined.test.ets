@@ -52,33 +52,40 @@ export default function onReachEndModifierUndefinedTest() {
      * @tc.level     Level.LEVEL1
      */
     it('onReachEndModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[onReachEndModifierUndefinedTest_static_0100] START.');
-      await CommonFunc.sleep(500);
-      let driver = Driver.create();
-      let btn2 = await driver.findComponent(ON.id('flingTop')) as Component;
-      let btn3 = await driver.findComponent(ON.id('flingBottom')) as Component;
-      await btn3.click();
-      await CommonFunc.sleep(1000);
-      let strJson1 = inspector.getInspectorByKey('common_onReachEndModifier');
-      let onReachEndValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('content');
-      console.info('$onReachEnd: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('content')));
-      expect(onReachEndValue1.asString()).assertEqual('Count2');
-      await btn2.click();
-      await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('changeButton')) as Component;
-      await btn1.click();
-      await CommonFunc.sleep(500);
-      await btn3.click();
-      await CommonFunc.sleep(1000);
-      let strJson2 = inspector.getInspectorByKey('common_onReachEndModifier');
-      let onReachEndValue2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content');
-      console.info('$onReachEnd: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content')));
-      expect(onReachEndValue2.asString()).assertEqual('Count2');
+      try {
+        console.info('[onReachEndModifierUndefinedTest_static_0100] START.');
+        await CommonFunc.sleep(500);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let btn2 = await driver.findComponent(ON.id('flingTop')) as Component;
+        let btn3 = await driver.findComponent(ON.id('flingBottom')) as Component;
+        await btn3.click();
+        await CommonFunc.sleep(1000);
+        let strJson1 = inspector.getInspectorByKey('common_onReachEndModifier');
+        let onReachEndValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('content');
+        console.info('$onReachEnd: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('content')));
+        expect(onReachEndValue1.asString()).assertEqual('Count2');
+        await btn2.click();
+        await CommonFunc.sleep(1000);
+        let btn1 = await driver.findComponent(ON.id('changeButton')) as Component;
+        await btn1.click();
+        await CommonFunc.sleep(500);
+        await btn3.click();
+        await CommonFunc.sleep(1000);
+        let strJson2 = inspector.getInspectorByKey('common_onReachEndModifier');
+        let onReachEndValue2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content');
+        console.info('$onReachEnd: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content')));
+        expect(onReachEndValue2.asString()).assertEqual('Count2');
 
-      console.info('[onReachEndUndefinedTest_static_0100] END');
-      done();
+        console.info('[onReachEndUndefinedTest_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[onReachEndModifierUndefinedTest_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

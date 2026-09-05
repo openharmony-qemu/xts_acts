@@ -40,6 +40,7 @@ export default function ListScrollBarMarginTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/list/listScrollBarMargin',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ListScrollBarMarginTest page error:' + err);

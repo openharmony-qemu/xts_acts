@@ -37,6 +37,7 @@ export default function ScrollSource() {
         if (!("ScrollSource" == pages.name)) {
           console.info("get ScrollSource state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push ScrollSource page error: " + err);

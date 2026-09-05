@@ -48,6 +48,7 @@ export default function listDividerOptions() {
         if (!("listDividerOptions" == pages.name)) {
           console.info("get listDividerOptions pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push listDividerOptions page error:" + err);

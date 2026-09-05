@@ -43,6 +43,7 @@ export default function WaterFlowColumnsTemplateTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/WaterFlow/waterFlowColumnsTemplate',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ScrollColumnsTemplateTest page error:' + err);

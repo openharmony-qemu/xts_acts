@@ -40,6 +40,7 @@ export default function ListScrollBarColorModifierTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/listModifier/listScrollBarColorModifier',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ListScrollBarColorModifierTest page error:' + err);

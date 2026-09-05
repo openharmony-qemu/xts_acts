@@ -80,31 +80,38 @@ it('cachedShowFlow_static_0100', Level.LEVEL1, async (done: () => void): Promise
      * @tc.level    Level.LEVEL1
      */
 it('cachedShowFlow_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowFlow_static_0200] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "clip1": false,
-            "show1": false
-          } as Record<String,RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 125,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
-        console.info("[cachedShowFlow_static_0200] start to publish emit:");
-        console.info("[cachedShowFlow_static_0200] start to publish emit:" + JSON.stringify(eventData?.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[cachedShowFlow_static_0200] change component data error: " + (err as Error)?.message);
+        console.info('[cachedShowFlow_static_0200] START');
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "clip1": false,
+              "show1": false
+            } as Record<String,RecordData>
+          } as events_emitter.EventData
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 125,
+            priority: events_emitter.EventPriority.LOW
+          } as events_emitter.InnerEvent
+          console.info("[cachedShowFlow_static_0200] start to publish emit:");
+          console.info("[cachedShowFlow_static_0200] start to publish emit:" + JSON.stringify(eventData?.data));
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[cachedShowFlow_static_0200] change component data error: " + (err as Error)?.message);
+        }
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let onText = await driver.findComponent(ON.id('show_flow_9'));
+        console.info("[cachedShowFlow_static_0200] onText is: " + onText);
+        expect(onText).assertEqual(null);
+        console.info('[cachedShowFlow_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowFlow_static_0200] error:' + error);
+        expect().assertFail();
+        done();
       }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let onText = await driver.findComponent(ON.id('show_flow_9'));
-      console.info("[cachedShowFlow_static_0200] onText is: " + onText);
-      expect(onText).assertEqual(null);
-      console.info('[cachedShowFlow_static_0200] END');
-      done();
     });
 
 
@@ -116,30 +123,37 @@ it('cachedShowFlow_static_0200', Level.LEVEL1, async (done: () => void): Promise
      * @tc.level    Level.LEVEL1
      */
 it('cachedShowFlow_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowFlow_static_0300] START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "clip1": true,
-            "show1": false
-          } as Record<String,RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 125,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
-        console.info("[cachedShowFlow_static_0300] start to publish emit:" + JSON.stringify(eventData?.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[cachedShowGrid_0300] change component data error: " + (err as Error)?.message);
+        console.info('[cachedShowFlow_static_0300] START');
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "clip1": true,
+              "show1": false
+            } as Record<String,RecordData>
+          } as events_emitter.EventData
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 125,
+            priority: events_emitter.EventPriority.LOW
+          } as events_emitter.InnerEvent
+          console.info("[cachedShowFlow_static_0300] start to publish emit:" + JSON.stringify(eventData?.data));
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[cachedShowGrid_0300] change component data error: " + (err as Error)?.message);
+        }
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let onText: Component | null = await driver.findComponent(ON.id('show_flow_9'));
+        console.info("[cachedShowFlow_static_0300] onText is: " + onText);
+        expect(onText).assertEqual(null);
+        console.info('[cachedShowFlow_static_0300] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowFlow_static_0300] error:' + error);
+        expect().assertFail();
+        done();
       }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let onText: Component | null = await driver.findComponent(ON.id('show_flow_9'));
-      console.info("[cachedShowFlow_static_0300] onText is: " + onText);
-      expect(onText).assertEqual(null);
-      console.info('[cachedShowFlow_static_0300] END');
-      done();
     });
 
 

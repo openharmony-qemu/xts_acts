@@ -59,19 +59,26 @@ export default function cachedShowGrid() {
      * @tc.level    Level.LEVEL0
      */
 it('cachedShowGrid_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowGrid_static_0100] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('cachedCount_show_grid');
-      console.info("[cachedShowGrid_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[cachedShowGrid_static_0100] cachedCount: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedCount')));
-      await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Grid');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('cachedCount')).assertEqual(2);
-      await driver.assertComponentExist(ON.text('10'));
-      console.info('[cachedShowGrid_static_0100] END');
-      done();
+      try {
+        console.info('[cachedShowGrid_static_0100] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('cachedCount_show_grid');
+        console.info("[cachedShowGrid_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+        console.info("[cachedShowGrid_static_0100] cachedCount: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedCount')));
+        await CommonFunc.sleep(1000);
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Grid');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('cachedCount')).assertEqual(2);
+        await driver.assertComponentExist(ON.text('10'));
+        console.info('[cachedShowGrid_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowGrid_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
@@ -83,20 +90,27 @@ it('cachedShowGrid_static_0100', Level.LEVEL0, async (done: () => void): Promise
      * @tc.level    Level.LEVEL0
      */
 it('cachedShowGrid_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowGrid_static_0200] START');
       try {
-        AppStorage.setOrCreate<boolean>('clip1', false);
-        AppStorage.setOrCreate<boolean>('show1', false);
-      } catch (err) {
-        console.log("[cachedShowGrid_static_0200] change component data error: " + err.message);
+        console.info('[cachedShowGrid_static_0200] START');
+        try {
+          AppStorage.setOrCreate<boolean>('clip1', false);
+          AppStorage.setOrCreate<boolean>('show1', false);
+        } catch (err) {
+          console.log("[cachedShowGrid_static_0200] change component data error: " + err.message);
+        }
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let txt = await driver.findComponent(ON.id('show_grid_10'));
+        console.info("[cachedShowGrid_static_0200'] txt is: " + txt);
+        expect(txt).assertEqual(null);
+        console.info('[cachedShowGrid_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowGrid_static_0200] error:' + error);
+        expect().assertFail();
+        done();
       }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let txt = await driver.findComponent(ON.id('show_grid_10'));
-      console.info("[cachedShowGrid_static_0200'] txt is: " + txt);
-      expect(txt).assertEqual(null);
-      console.info('[cachedShowGrid_static_0200] END');
-      done();
     });
 
 
@@ -118,6 +132,7 @@ it('cachedShowGrid_static_0400', Level.LEVEL0, async (done: () => void): Promise
           }
           await CommonFunc.sleep(2000);
           let driver = Driver.create()
+          await CommonFunc.sleep(1000);
           let txt = await driver.findComponent(ON.id('show_grid_10'));
           let text = await (txt?.getText() as Promise<string>);
           console.info("[cachedShowGrid_static_0400'] text is: " + text);
@@ -138,20 +153,27 @@ it('cachedShowGrid_static_0400', Level.LEVEL0, async (done: () => void): Promise
      * @tc.level    Level.LEVEL0
      */
 it('cachedShowGrid_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowGrid_static_0300] START');
       try {
-        AppStorage.setOrCreate<boolean>('clip1', true);
-        AppStorage.setOrCreate<boolean>('show1', false);
-      } catch (err) {
-        console.log("[cachedShowGrid_0300] change component data error: " + err.message);
+        console.info('[cachedShowGrid_static_0300] START');
+        try {
+          AppStorage.setOrCreate<boolean>('clip1', true);
+          AppStorage.setOrCreate<boolean>('show1', false);
+        } catch (err) {
+          console.log("[cachedShowGrid_0300] change component data error: " + err.message);
+        }
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let txt = await driver.findComponent(ON.id('show_grid_10'));
+        console.info("[cachedShowGrid_static_0300'] txt is: " + txt);
+        expect(txt).assertEqual(null);
+        console.info('[cachedShowGrid_static_0300] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowGrid_static_0300] error:' + error);
+        expect().assertFail();
+        done();
       }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let txt = await driver.findComponent(ON.id('show_grid_10'));
-      console.info("[cachedShowGrid_static_0300'] txt is: " + txt);
-      expect(txt).assertEqual(null);
-      console.info('[cachedShowGrid_static_0300] END');
-      done();
     });
 
 
@@ -163,20 +185,27 @@ it('cachedShowGrid_static_0300', Level.LEVEL0, async (done: () => void): Promise
      * @tc.level    Level.LEVEL0
      */
 it('cachedShowGrid_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowGrid_static_0500] START');
       try {
-        AppStorage.setOrCreate<boolean>('clip1', false);
-        AppStorage.setOrCreate<boolean | null>('show1', null);
-      } catch (err) {
-        console.log("[cachedShowGrid_static_0500] change component data error: " + err.message);
+        console.info('[cachedShowGrid_static_0500] START');
+        try {
+          AppStorage.setOrCreate<boolean>('clip1', false);
+          AppStorage.setOrCreate<boolean | null>('show1', null);
+        } catch (err) {
+          console.log("[cachedShowGrid_static_0500] change component data error: " + err.message);
+        }
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let txt = await driver.findComponent(ON.id('show_grid_10'));
+        console.info("[cachedShowGrid_static_0500'] txt is: " + txt);
+        expect(txt).assertEqual(null);
+        console.info('[cachedShowGrid_static_0500] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowGrid_static_0500] error:' + error);
+        expect().assertFail();
+        done();
       }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let txt = await driver.findComponent(ON.id('show_grid_10'));
-      console.info("[cachedShowGrid_static_0500'] txt is: " + txt);
-      expect(txt).assertEqual(null);
-      console.info('[cachedShowGrid_static_0500] END');
-      done();
     });
 
 
@@ -188,20 +217,27 @@ it('cachedShowGrid_static_0500', Level.LEVEL0, async (done: () => void): Promise
      * @tc.level    Level.LEVEL0
      */
 it('cachedShowGrid_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowGrid_static_0600] START');
       try {
-        AppStorage.setOrCreate<boolean>('clip1', false);
-        AppStorage.setOrCreate<boolean | undefined>('show1', undefined);
-      } catch (err) {
-        console.log("[cachedShowGrid_static_0600] change component data error: " + err.message);
+        console.info('[cachedShowGrid_static_0600] START');
+        try {
+          AppStorage.setOrCreate<boolean>('clip1', false);
+          AppStorage.setOrCreate<boolean | undefined>('show1', undefined);
+        } catch (err) {
+          console.log("[cachedShowGrid_static_0600] change component data error: " + err.message);
+        }
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let txt = await driver.findComponent(ON.id('show_grid_10'));
+        console.info("[cachedShowGrid_static_0600'] txt is: " + txt);
+        expect(txt).assertEqual(null);
+        console.info('[cachedShowGrid_static_0600] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowGrid_static_0600] error:' + error);
+        expect().assertFail();
+        done();
       }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let txt = await driver.findComponent(ON.id('show_grid_10'));
-      console.info("[cachedShowGrid_static_0600'] txt is: " + txt);
-      expect(txt).assertEqual(null);
-      console.info('[cachedShowGrid_static_0600] END');
-      done();
     });
   })
 }

@@ -35,6 +35,7 @@ export default function tabsCallBack5() {
         if (!("tabsCallBack5" == pages.name)) {
           console.info("get tabsCallBack5 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push tabsCallBack5 page error:" + err);

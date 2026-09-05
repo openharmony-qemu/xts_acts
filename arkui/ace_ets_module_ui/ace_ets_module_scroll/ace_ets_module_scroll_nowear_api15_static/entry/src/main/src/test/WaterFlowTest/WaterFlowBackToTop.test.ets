@@ -19,6 +19,7 @@ import { Component, Driver, On, ON, MouseButton, Rect } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function WaterFlowBackToTopTest() {
   describe('WaterFlowBackToTopTest', () => {
@@ -35,6 +36,7 @@ export default function WaterFlowBackToTopTest() {
           routerInstance.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
@@ -43,94 +45,103 @@ export default function WaterFlowBackToTopTest() {
     
     
 /**
-     * @tc.number   WaterFlowScrollTest1_static_0100
+     * @tc.number   SUB_ARKUI_WATERFLOW_BACKTOTOP_STATIC_0100
      * @tc.name     WaterFlowScrollTest1_static_0100
      * @tc.desc     WaterFlowScrollTest1_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('WaterFlowScrollTest1_static_0100', Level.LEVEL0, async () => {
-      console.info('WaterFlowScrollTest_static_0100 START');
-      await sleep(1000)
-      let driverWaterFlow: Driver = Driver.create();
-      let waterFlow = await driverWaterFlow.findComponent(ON.id('WaterFlowScroll_4'));
-      let rect = await (waterFlow?.getBounds() as Promise<Rect>);
-      let top = rect.top;
-      let left = rect.left;
-      let right = rect.right;
-      let bottom = rect.bottom;
-      console.info("WaterFlowScrollTest_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom - top;
-      let width = right - left;
-      // driver create
-      let driverTop = Driver.create();
-      let topButton = await driverTop.findComponent(ON.id('Top'));
-      let driverSwitch = Driver.create();
-      let switchButton = await driverSwitch.findComponent(ON.id('Switch'))
-      await sleep(1000);
-      // apply the swipe action to the WaterFlow component
-      await driverWaterFlow.swipe(
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 4).toInt(),
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 2).toInt()
-      );
-      await sleep(2000);  // wait for the scroll to complete
-      await (topButton?.click() as Promise<void>);
-      await sleep(1500)
-      let stopJson = inspector.getInspectorByKey('waterFlowBackToTop');
-      expect(JSON.parseJsonElement(stopJson).getElement('$attrs').getString('content') !== 'onDidWaterFlowBackToTop').assertTrue();
+it('WaterFlowScrollTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        console.info('WaterFlowScrollTest_static_0100 START');
+        await sleep(1000)
+        let driverWaterFlow: Driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let waterFlow = await driverWaterFlow.findComponent(ON.id('WaterFlowScroll_4'));
+        let rect = await (waterFlow?.getBounds() as Promise<Rect>);
+        let top = rect.top;
+        let left = rect.left;
+        let right = rect.right;
+        let bottom = rect.bottom;
+        console.info("WaterFlowScrollTest_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
+        let height = bottom - top;
+        let width = right - left;
+        // driver create
+        let driverTop = Driver.create();
+        await CommonFunc.sleep(1000);
+        let topButton = await driverTop.findComponent(ON.id('Top'));
+        let driverSwitch = Driver.create();
+        let switchButton = await driverSwitch.findComponent(ON.id('Switch'))
+        await sleep(1000);
+        // apply the swipe action to the WaterFlow component
+        await driverWaterFlow.swipe(
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 4).toInt(),
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 2).toInt()
+        );
+        await sleep(2000);  // wait for the scroll to complete
+        await (topButton?.click() as Promise<void>);
+        await sleep(1500)
+        let stopJson = inspector.getInspectorByKey('waterFlowBackToTop');
+        expect(JSON.parseJsonElement(stopJson).getElement('$attrs').getString('content') !== 'onDidWaterFlowBackToTop').assertTrue();
       
-      await (switchButton?.click() as Promise<void>);
-      await sleep(500)
-      await (topButton?.click() as Promise<void>);
-      await sleep(1500)
+        await (switchButton?.click() as Promise<void>);
+        await sleep(500)
+        await (topButton?.click() as Promise<void>);
+        await sleep(1500)
 
-      await driverWaterFlow.swipe(
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 4).toInt(),
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 2).toInt()
-      );
-      await sleep(2000);
-      await (switchButton?.click() as Promise<void>);
-      await sleep(500)
-      await (topButton?.click() as Promise<void>);
-      await sleep(1500)
+        await driverWaterFlow.swipe(
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 4).toInt(),
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 2).toInt()
+        );
+        await sleep(2000);
+        await (switchButton?.click() as Promise<void>);
+        await sleep(500)
+        await (topButton?.click() as Promise<void>);
+        await sleep(1500)
       
-      await driverWaterFlow.swipe(
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 4).toInt(),
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 2).toInt()
-      );
-      await sleep(2000);
-      await (switchButton?.click() as Promise<void>);
-      await sleep(500)
-      await (topButton?.click() as Promise<void>);
-      await sleep(1000); // wait for backToTop complete
+        await driverWaterFlow.swipe(
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 4).toInt(),
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 2).toInt()
+        );
+        await sleep(2000);
+        await (switchButton?.click() as Promise<void>);
+        await sleep(500)
+        await (topButton?.click() as Promise<void>);
+        await sleep(1000); // wait for backToTop complete
 
-      let strJson = inspector.getInspectorByKey('waterFlowScroll_1');
-      let strJson1 = inspector.getInspectorByKey('waterFlowScroll_2');
-      let strJson3 = inspector.getInspectorByKey('waterFlowBackToTop');
-      let strJson4 = inspector.getInspectorByKey('waterFlowAbnormal');
+        let strJson = inspector.getInspectorByKey('waterFlowScroll_1');
+        let strJson1 = inspector.getInspectorByKey('waterFlowScroll_2');
+        let strJson3 = inspector.getInspectorByKey('waterFlowBackToTop');
+        let strJson4 = inspector.getInspectorByKey('waterFlowAbnormal');
 
-      console.info("getInspectorByKey result for waterFlowScroll_1: " + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("getInspectorByKey result for waterFlowScroll_2: " + strJson1);
-      let obj1 = JSON.parseJsonElement(strJson1);
-      console.info("getInspectorByKey result for waterFlowBackToTop: " + strJson3);
-      let obj3 = JSON.parseJsonElement(strJson3);
-      let obj4 = JSON.parseJsonElement(strJson4);
-      // output console info
-      console.info("[WaterFlowScrollTest_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[WaterFlowScrollTest_static_0100] component obj1 is: " + JSON.stringify(obj1));
-      console.info("[WaterFlowScrollTest_static_0100] component obj3 is: " + JSON.stringify(obj3));
-      console.info("[WaterFlowScrollTest_static_0100] component obj4 is: " + JSON.stringify(obj4));
-      // assertEqual the value of the event
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('onWillScroll');
-      expect(obj3.getElement('$attrs').getString('content')).assertEqual('onDidWaterFlowBackToTop');
-      expect(obj4.getElement('$attrs').getString('content')).assertEqual('DidAbnormal');
-      console.info('[WaterFlowScrollTest_static_0100] END');
+        console.info("getInspectorByKey result for waterFlowScroll_1: " + strJson);
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("getInspectorByKey result for waterFlowScroll_2: " + strJson1);
+        let obj1 = JSON.parseJsonElement(strJson1);
+        console.info("getInspectorByKey result for waterFlowBackToTop: " + strJson3);
+        let obj3 = JSON.parseJsonElement(strJson3);
+        let obj4 = JSON.parseJsonElement(strJson4);
+        // output console info
+        console.info("[WaterFlowScrollTest_static_0100] component obj is: " + JSON.stringify(obj));
+        console.info("[WaterFlowScrollTest_static_0100] component obj1 is: " + JSON.stringify(obj1));
+        console.info("[WaterFlowScrollTest_static_0100] component obj3 is: " + JSON.stringify(obj3));
+        console.info("[WaterFlowScrollTest_static_0100] component obj4 is: " + JSON.stringify(obj4));
+        // assertEqual the value of the event
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('onWillScroll');
+        expect(obj3.getElement('$attrs').getString('content')).assertEqual('onDidWaterFlowBackToTop');
+        expect(obj4.getElement('$attrs').getString('content')).assertEqual('DidAbnormal');
+        console.info('[WaterFlowScrollTest_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowScrollTest1_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }

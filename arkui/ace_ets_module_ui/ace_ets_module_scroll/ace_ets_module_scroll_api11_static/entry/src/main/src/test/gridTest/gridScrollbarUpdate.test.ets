@@ -19,6 +19,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { ComputedBarAttribute } from '@ohos.arkui.component'
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function gridScrollbarUpdateTest() {
   describe('gridScrollbarUpdateTest', () => {
@@ -37,6 +38,7 @@ export default function gridScrollbarUpdateTest() {
           console.info("get gridScrollBar state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
+          await CommonFunc.sleep(2000);
           // console.info("push gridScrollBar page success " + JSON.stringify(result));
         }
       } catch (err) {

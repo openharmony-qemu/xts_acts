@@ -49,6 +49,7 @@ export default function APITabsBarBackgroundBlurStyleJsunit() {
           console.info("get APITabsBarBackgroundBlurStyleJsunit state pages.name:" + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
+          await CommonFunc.sleep(2000);
           // console.info("push APITabsBarBackgroundBlurStyleJsunit success " + JSON.stringify(result));
         }
       } catch (err) {

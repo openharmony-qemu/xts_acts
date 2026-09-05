@@ -60,43 +60,50 @@ export default function arcSwiperEvent() {
      * @tc.level  Level.LEVEL0
      */
     it('SUB_ARKUI_ARCSWIPER_EVENT_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[arcSwiperEvent_0100] START');
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let arc2 = await driver.findComponent(ON.id('arcSwiper_eventChange'));
-      let swipeTabs = await (arc2?.getBounds() as Promise<Rect>);
-      let top = swipeTabs.top;
-      let right = swipeTabs.right;
-      let left = swipeTabs.left;
-      let bottom = swipeTabs.bottom;
-      let height = bottom - top;
-      let width = right - left;
-      await driver.drag(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
-        Math.round(left + width * 0.2).toInt(), Math.round(top + height / 2).toInt());
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('arcSwiper_onChange');
-      console.info('[arcSwiperEvent_0100] content: ' +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('onChange: -1');
+      try {
+        console.info('[arcSwiperEvent_0100] START');
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let arc2 = await driver.findComponent(ON.id('arcSwiper_eventChange'));
+        let swipeTabs = await (arc2?.getBounds() as Promise<Rect>);
+        let top = swipeTabs.top;
+        let right = swipeTabs.right;
+        let left = swipeTabs.left;
+        let bottom = swipeTabs.bottom;
+        let height = bottom - top;
+        let width = right - left;
+        await driver.drag(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
+          Math.round(left + width * 0.2).toInt(), Math.round(top + height / 2).toInt());
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('arcSwiper_onChange');
+        console.info('[arcSwiperEvent_0100] content: ' +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('onChange: -1');
 
-      let strJson1 = inspector.getInspectorByKey('arcSwiper_onAnimationStart');
-      console.info('[arcSwiperEvent_0100] content1: ' +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
-        .assertEqual('onAnimationStart: -1');
+        let strJson1 = inspector.getInspectorByKey('arcSwiper_onAnimationStart');
+        console.info('[arcSwiperEvent_0100] content1: ' +
+        JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')));
+        expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
+          .assertEqual('onAnimationStart: -1');
 
-      let strJson2 = inspector.getInspectorByKey('arcSwiper_onAnimationEnd');
-      console.info('[arcSwiperEvent_0100] content2: ' +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
-        .assertEqual('onAnimationEnd: -1');
+        let strJson2 = inspector.getInspectorByKey('arcSwiper_onAnimationEnd');
+        console.info('[arcSwiperEvent_0100] content2: ' +
+        JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
+        expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
+          .assertEqual('onAnimationEnd: -1');
 
-      let strJson3 = inspector.getInspectorByKey('arcSwiper_finishAnimation');
-      console.info('[arcSwiperEvent_0100] content3: ' +
-      JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')).assertEqual('finishText: 0');
-      console.info('[arcSwiperEvent_0100] END');
-      done();
+        let strJson3 = inspector.getInspectorByKey('arcSwiper_finishAnimation');
+        console.info('[arcSwiperEvent_0100] content3: ' +
+        JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')));
+        expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')).assertEqual('finishText: 0');
+        console.info('[arcSwiperEvent_0100] END');
+        done();
+      } catch (error) {
+        console.error('[SUB_ARKUI_ARCSWIPER_EVENT_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**

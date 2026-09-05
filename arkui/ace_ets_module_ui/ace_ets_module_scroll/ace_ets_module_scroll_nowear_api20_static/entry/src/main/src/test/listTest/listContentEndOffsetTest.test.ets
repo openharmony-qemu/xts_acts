@@ -40,6 +40,7 @@ export default function ListContentEndOffsetTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/list/listContentEndOffset',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ListContentEndOffsetTest page error:' + err);
