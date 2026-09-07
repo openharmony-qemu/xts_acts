@@ -15,51 +15,31 @@
 
 import { HashSet } from '@kit.ArkTS';
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
-import { SYMBOL_C } from '../../../js/hashmap/SymbolValues';
+import { SYMBOL_A, SYMBOL_B, SYMBOL_C, SYMBOL_D, SYMBOL_E } from '../../../../js/hashmap/SymbolValues';
 
-class UnionClassItem {
-  id: number;
-  label: string;
-
-  constructor(id: number, label: string) {
-    this.id = id;
-    this.label = label;
-  }
-}
-
-interface UnionObjectItem { id: number; label: string; }
-type UnionFunctionItem = (value: number) => number;
-type UnionItem = number | string | boolean | bigint | Object | UnionClassItem | Date |
-  UnionFunctionItem | Map<string, number> | Set<number> | Array<number> | UnionObjectItem | RegExp;
-const UNION_CLASS: UnionClassItem = new UnionClassItem(1, 'class');
-const UNION_DATE: Date = new Date('2026-03-05');
-const UNION_FUNCTION: UnionFunctionItem = (value: number): number => value + 1;
-const UNION_MAP: Map<string, number> = new Map<string, number>();
-UNION_MAP.set('map', 1);
-const UNION_SET: Set<number> = new Set<number>([1]);
-const UNION_ARRAY: Array<number> = [1, 2, 3];
-const UNION_OBJECT: UnionObjectItem = { id: 1, label: 'object' };
-const UNION_REGEXP: RegExp = /abc/gi;
-const VALID_VALUES: Array<UnionItem> = [
-  100, -99, 'test', true, 100n, SYMBOL_C, UNION_CLASS, UNION_DATE,
-  UNION_FUNCTION, UNION_MAP, UNION_SET, UNION_ARRAY, UNION_OBJECT, UNION_REGEXP,
+interface SymbolInvalidObject { marker: string; }
+const SYMBOL_INVALID_OBJECT: SymbolInvalidObject = { marker: 'invalid' };
+const VALID_VALUES: Array<Object> = [
+  SYMBOL_A, SYMBOL_B, SYMBOL_C, SYMBOL_D, SYMBOL_E,
 ];
-type UnionInvalidValue = null | undefined;
-type AllValue = UnionItem | UnionInvalidValue;
-const ALL_VALUES: Array<AllValue> = [...VALID_VALUES, null, undefined];
-type Value = UnionItem;
+type SymbolInvalidValue = string | number | null | undefined | SymbolInvalidObject | Array<Object>;
+type AllValue = Object | SymbolInvalidValue;
+const ALL_VALUES: Array<AllValue> = [
+  ...VALID_VALUES, 'Symbol', 123, null, undefined, SYMBOL_INVALID_OBJECT, [],
+];
+type Value = Object;
 
-export default function HashSetUnionTest(): void {
-  describe('HashSetUnionTest', (): void => {
+export default function HashSetSymbolTest(): void {
+  describe('HashSetSymbolTest', (): void => {
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHSET_UNION_TEST_0100
-     * @tc.name      testHashSetUnionTest0100
-     * @tc.desc      Verify HashSet construction, add, membership, length, and empty-state behavior with Union values
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHSET_SYMBOL_TEST_0100
+     * @tc.name      testHashSetSymbolTest0100
+     * @tc.desc      Verify HashSet construction, add, membership, length, and empty-state behavior with Symbol values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testHashSetUnionTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testHashSetSymbolTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const valueA: Value = VALID_VALUES[0];
       const valueB: Value = VALID_VALUES[1];
       const set: HashSet<Value> = new HashSet<Value>();
@@ -73,14 +53,14 @@ export default function HashSetUnionTest(): void {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHSET_UNION_TEST_0200
-     * @tc.name      testHashSetUnionTest0200
-     * @tc.desc      Verify HashSet bulk addition, membership, and capacity behavior with Union values
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHSET_SYMBOL_TEST_0200
+     * @tc.name      testHashSetSymbolTest0200
+     * @tc.desc      Verify HashSet bulk addition, membership, and capacity behavior with Symbol values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testHashSetUnionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testHashSetSymbolTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const valueA: Value = VALID_VALUES[0];
       const valueB: Value = VALID_VALUES[1];
       const set: HashSet<Value> = new HashSet<Value>();
@@ -96,14 +76,14 @@ export default function HashSetUnionTest(): void {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHSET_UNION_TEST_0300
-     * @tc.name      testHashSetUnionTest0300
-     * @tc.desc      Verify HashSet indexed access, removal, and empty-state behavior with Union values
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHSET_SYMBOL_TEST_0300
+     * @tc.name      testHashSetSymbolTest0300
+     * @tc.desc      Verify HashSet indexed access, removal, and empty-state behavior with Symbol values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testHashSetUnionTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testHashSetSymbolTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const valueA: Value = VALID_VALUES[0];
       const valueB: Value = VALID_VALUES[1];
       const set: HashSet<Value> = new HashSet<Value>();
@@ -124,14 +104,14 @@ export default function HashSetUnionTest(): void {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHSET_UNION_TEST_0400
-     * @tc.name      testHashSetUnionTest0400
-     * @tc.desc      Verify HashSet equality, conversion, iteration, callback, and clear behavior with Union values
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHSET_SYMBOL_TEST_0400
+     * @tc.name      testHashSetSymbolTest0400
+     * @tc.desc      Verify HashSet equality, conversion, iteration, callback, and clear behavior with Symbol values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testHashSetUnionTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testHashSetSymbolTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const valueA: Value = VALID_VALUES[0];
       const valueB: Value = VALID_VALUES[1];
       const set: HashSet<Value> = new HashSet<Value>();
@@ -160,14 +140,14 @@ export default function HashSetUnionTest(): void {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHSET_UNION_TEST_0500
-     * @tc.name      testHashSetUnionTest0500
-     * @tc.desc      Verify HashSet dynamic-value access and iterator behavior with Union values
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHSET_SYMBOL_TEST_0500
+     * @tc.name      testHashSetSymbolTest0500
+     * @tc.desc      Verify HashSet dynamic-value access and iterator behavior with Symbol values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testHashSetUnionTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testHashSetSymbolTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dynamicSet: HashSet<AllValue> = new HashSet<AllValue>();
       const dynamicValue: AllValue = ALL_VALUES[ALL_VALUES.length - 1];
       expect(dynamicSet.add(dynamicValue)).assertTrue();

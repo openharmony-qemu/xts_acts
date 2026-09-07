@@ -15,31 +15,51 @@
 
 import { PlainArray } from '@kit.ArkTS';
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
-import { SYMBOL_A, SYMBOL_B, SYMBOL_C, SYMBOL_D, SYMBOL_E } from '../../../js/hashmap/SymbolValues';
+import { SYMBOL_C } from '../../../../js/hashmap/SymbolValues';
 
-interface SymbolInvalidObject { marker: string; }
-const SYMBOL_INVALID_OBJECT: SymbolInvalidObject = { marker: 'invalid' };
-const VALID_VALUES: Array<Object> = [
-  SYMBOL_A, SYMBOL_B, SYMBOL_C, SYMBOL_D, SYMBOL_E,
-];
-type SymbolInvalidValue = string | number | null | undefined | SymbolInvalidObject | Array<Object>;
-type AllValue = Object | SymbolInvalidValue;
-const ALL_VALUES: Array<AllValue> = [
-  ...VALID_VALUES, 'Symbol', 123, null, undefined, SYMBOL_INVALID_OBJECT, [],
-];
-type Value = Object;
+class UnionClassItem {
+  id: number;
+  label: string;
 
-export default function PlainArraySymbolTest(): void {
-  describe('PlainArraySymbolTest', (): void => {
+  constructor(id: number, label: string) {
+    this.id = id;
+    this.label = label;
+  }
+}
+
+interface UnionObjectItem { id: number; label: string; }
+type UnionFunctionItem = (value: number) => number;
+type UnionItem = number | string | boolean | bigint | Object | UnionClassItem | Date |
+  UnionFunctionItem | Map<string, number> | Set<number> | Array<number> | UnionObjectItem | RegExp;
+const UNION_CLASS: UnionClassItem = new UnionClassItem(1, 'class');
+const UNION_DATE: Date = new Date('2026-03-05');
+const UNION_FUNCTION: UnionFunctionItem = (value: number): number => value + 1;
+const UNION_MAP: Map<string, number> = new Map<string, number>();
+UNION_MAP.set('map', 1);
+const UNION_SET: Set<number> = new Set<number>([1]);
+const UNION_ARRAY: Array<number> = [1, 2, 3];
+const UNION_OBJECT: UnionObjectItem = { id: 1, label: 'object' };
+const UNION_REGEXP: RegExp = /abc/gi;
+const VALID_VALUES: Array<UnionItem> = [
+  100, -99, 'test', true, 100n, SYMBOL_C, UNION_CLASS, UNION_DATE,
+  UNION_FUNCTION, UNION_MAP, UNION_SET, UNION_ARRAY, UNION_OBJECT, UNION_REGEXP,
+];
+type UnionInvalidValue = null | undefined;
+type AllValue = UnionItem | UnionInvalidValue;
+const ALL_VALUES: Array<AllValue> = [...VALID_VALUES, null, undefined];
+type Value = UnionItem;
+
+export default function PlainArrayUnionTest(): void {
+  describe('PlainArrayUnionTest', (): void => {
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_SYMBOL_TEST_0100
-     * @tc.name      testPlainArraySymbolTest0100
-     * @tc.desc      Verify PlainArray construction, add, length, key lookup, and empty-state behavior with Symbol values
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_UNION_TEST_0100
+     * @tc.name      testPlainArrayUnionTest0100
+     * @tc.desc      Verify PlainArray construction, add, length, key lookup, and empty-state behavior with Union values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testPlainArraySymbolTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testPlainArrayUnionTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const valueA: Value = VALID_VALUES[0];
       const valueB: Value = VALID_VALUES[1];
       const array: PlainArray<Value> = new PlainArray<Value>();
@@ -54,14 +74,14 @@ export default function PlainArraySymbolTest(): void {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_SYMBOL_TEST_0200
-     * @tc.name      testPlainArraySymbolTest0200
-     * @tc.desc      Verify PlainArray index and value lookup together with clone behavior with Symbol values
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_UNION_TEST_0200
+     * @tc.name      testPlainArrayUnionTest0200
+     * @tc.desc      Verify PlainArray index and value lookup together with clone behavior with Union values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testPlainArraySymbolTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testPlainArrayUnionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const valueA: Value = VALID_VALUES[0];
       const valueB: Value = VALID_VALUES[1];
       const array: PlainArray<Value> = new PlainArray<Value>();
@@ -77,14 +97,14 @@ export default function PlainArraySymbolTest(): void {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_SYMBOL_TEST_0300
-     * @tc.name      testPlainArraySymbolTest0300
-     * @tc.desc      Verify PlainArray removal, range removal, value update, and length behavior with Symbol values
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_UNION_TEST_0300
+     * @tc.name      testPlainArrayUnionTest0300
+     * @tc.desc      Verify PlainArray removal, range removal, value update, and length behavior with Union values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testPlainArraySymbolTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testPlainArrayUnionTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const valueA: Value = VALID_VALUES[0];
       const valueB: Value = VALID_VALUES[1];
       const valueC: Value = VALID_VALUES[2];
@@ -102,14 +122,14 @@ export default function PlainArraySymbolTest(): void {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_SYMBOL_TEST_0400
-     * @tc.name      testPlainArraySymbolTest0400
-     * @tc.desc      Verify PlainArray forEach callback and iterator behavior with Symbol values
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_UNION_TEST_0400
+     * @tc.name      testPlainArrayUnionTest0400
+     * @tc.desc      Verify PlainArray forEach callback and iterator behavior with Union values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testPlainArraySymbolTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testPlainArrayUnionTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const valueA: Value = VALID_VALUES[0];
       const valueB: Value = VALID_VALUES[1];
       const array: PlainArray<Value> = new PlainArray<Value>();
@@ -138,20 +158,21 @@ export default function PlainArraySymbolTest(): void {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_SYMBOL_TEST_0500
-     * @tc.name      testPlainArraySymbolTest0500
-     * @tc.desc      Verify PlainArray dynamic-value access, conversion, and clear behavior with Symbol values
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_UNION_TEST_0500
+     * @tc.name      testPlainArrayUnionTest0500
+     * @tc.desc      Verify PlainArray dynamic-value access, conversion, and clear behavior with Union values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testPlainArraySymbolTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testPlainArrayUnionTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dynamicArray: PlainArray<AllValue> = new PlainArray<AllValue>();
       const dynamicValue: AllValue = ALL_VALUES[ALL_VALUES.length - 1];
       dynamicArray.add(1, dynamicValue);
       expect(dynamicArray.get(1)).assertEqual(dynamicValue);
       expect(dynamicArray.has(1)).assertTrue();
       expect(dynamicArray.length).assertEqual(1);
+      expect(typeof dynamicArray.toString()).assertEqual('string');
       dynamicArray.clear();
       expect(dynamicArray.length).assertEqual(0);
       expect(dynamicArray.isEmpty()).assertTrue();
