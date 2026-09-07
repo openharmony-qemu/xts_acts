@@ -23,6 +23,8 @@ import PublicApiNineTest from './PublicApiNineTest.test.ets';
 import getApplicationLabel from './GetApplicationLabel.test.ets';
 import addAITestCaseTest from './addAItestcase.test.ets';
 import coverageEnhancementTest from './CoverageEnhancementTest.test.ets';
+import getAllBundleInfoUserIdCallbackCoverageTest from './GetAllBundleInfoUserIdCallbackCoverage.test.ets';
+import getAllBundleInfoCallbackCoverageTest from './GetAllBundleInfoCallbackCoverage.test.ets';
 
 
 export default function testsuite() {
@@ -35,5 +37,7 @@ export default function testsuite() {
   PublicApiNineTest();
   getApplicationLabel();
   coverageEnhancementTest();
+  getAllBundleInfoUserIdCallbackCoverageTest();
+  getAllBundleInfoCallbackCoverageTest();
   addAITestCaseTest();
 }

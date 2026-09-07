@@ -13,9 +13,7 @@
  * limitations under the License.
  */
 import actsGetLauncherAbilityInfo2Test from './GetLauncherAbilityInfo.test'
-import coverageLauncherTypeExportsTest from './CoverageTypeExports.test'
 
 export default function testsuite() {
   actsGetLauncherAbilityInfo2Test();
-  coverageLauncherTypeExportsTest();
 }

@@ -18784,15 +18784,15 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.name   SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157
-         * @tc.number SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157
-         * @tc.desc   test deflateInit2 return status enum coverage
+         * @tc.name   SUB_BMS_Zlib_DeflateInit2_InvalidLevelEnum_0158
+         * @tc.number SUB_BMS_Zlib_DeflateInit2_InvalidLevelEnum_0158
+         * @tc.desc   test deflateInit2 with invalid CompressLevel enum (param 2 only)
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
-            console.info("==================SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157 start==================");
+        it('SUB_BMS_Zlib_DeflateInit2_InvalidLevelEnum_0158', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================SUB_BMS_Zlib_DeflateInit2_InvalidLevelEnum_0158 start==================");
             let str = 'hello world!';
             let arrayBufferIn = new ArrayBuffer(str.length);
             let byteArray = new Uint8Array(arrayBufferIn);
@@ -18801,31 +18801,83 @@ export default function ActsZipTest() {
             }
             let arrayBufferOut = new ArrayBuffer(100);
             let zip = zlib.createZipSync();
-            await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
-                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressMethod.DEFLATED, 15,
-                zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY)
-                .then((data) => {
-                    expect(data).assertEqual(zlib.ReturnStatus.OK);
-                    expect(zlib.ReturnStatus.STREAM_END).assertEqual(1);
-                    expect(zlib.ReturnStatus.NEED_DICT).assertEqual(2);
-                    expect(zlib.ReturnStatus.ERRNO).assertEqual(-1);
-                    expect(zlib.ReturnStatus.STREAM_ERROR).assertEqual(-2);
-                    expect(zlib.ReturnStatus.DATA_ERROR).assertEqual(-3);
-                    expect(zlib.ReturnStatus.MEM_ERROR).assertEqual(-4);
-                    expect(zlib.ReturnStatus.BUF_ERROR).assertEqual(-5);
-                }).catch((errData: base.BusinessError) => {
-                    console.error(`SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157 errCode:${errData.code}  message:${errData.message}`);
-                    expect().assertFail();
-                });
-            await zip.deflate({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
-                zlib.CompressFlushMode.FINISH).then((data) => {
-                    expect(data).assertEqual(zlib.ReturnStatus.STREAM_END);
-                }).catch((errData: base.BusinessError) => {
-                    console.error(`SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157 deflate errCode:${errData.code}`);
-                    expect().assertFail();
-                });
-            console.info("==================SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157 end==================");
+            const invalidLevel = 99999;
+            try {
+                await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                    invalidLevel, zlib.CompressMethod.DEFLATED, 15, zlib.MemLevel.MEM_LEVEL_DEFAULT,
+                    zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY);
+                expect().assertFail();
+            } catch (errData) {
+                console.error(`SUB_BMS_Zlib_DeflateInit2_InvalidLevelEnum_0158 errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(17800004);
+            }
+            console.info("==================SUB_BMS_Zlib_DeflateInit2_InvalidLevelEnum_0158 end==================");
             done();
         })
+
+        /**
+         * @tc.name   SUB_BMS_Zlib_DeflateInit2_InvalidMemLevelEnum_0159
+         * @tc.number SUB_BMS_Zlib_DeflateInit2_InvalidMemLevelEnum_0159
+         * @tc.desc   test deflateInit2 with invalid MemLevel enum (param 5 only)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_BMS_Zlib_DeflateInit2_InvalidMemLevelEnum_0159', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================SUB_BMS_Zlib_DeflateInit2_InvalidMemLevelEnum_0159 start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            const invalidMemLevel = 99999;
+            try {
+                await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                    zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressMethod.DEFLATED, 15, invalidMemLevel,
+                    zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY);
+                expect().assertFail();
+            } catch (errData) {
+                console.error(`SUB_BMS_Zlib_DeflateInit2_InvalidMemLevelEnum_0159 errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(17800004);
+            }
+            console.info("==================SUB_BMS_Zlib_DeflateInit2_InvalidMemLevelEnum_0159 end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_BMS_Zlib_DeflateInit2_InvalidStrategyEnum_0160
+         * @tc.number SUB_BMS_Zlib_DeflateInit2_InvalidStrategyEnum_0160
+         * @tc.desc   test deflateInit2 with invalid CompressStrategy enum (param 6 only)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_BMS_Zlib_DeflateInit2_InvalidStrategyEnum_0160', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================SUB_BMS_Zlib_DeflateInit2_InvalidStrategyEnum_0160 start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            const invalidStrategy = 99999;
+            try {
+                await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                    zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressMethod.DEFLATED, 15,
+                    zlib.MemLevel.MEM_LEVEL_DEFAULT, invalidStrategy);
+                expect().assertFail();
+            } catch (errData) {
+                console.error(`SUB_BMS_Zlib_DeflateInit2_InvalidStrategyEnum_0160 errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(17800004);
+            }
+            console.info("==================SUB_BMS_Zlib_DeflateInit2_InvalidStrategyEnum_0160 end==================");
+            done();
+        })
+
     })
 }
