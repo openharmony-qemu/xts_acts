@@ -871,5 +871,35 @@ export default function actsNotificationPriorityTest() {
         done()
       }
     })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_7600
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_7600
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_7600', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_7600"
+      let count = 0
+      try {
+        notificationManager.addSlot(15, (err) => {
+          if (err) {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        done()
+      }
+
+    })
   })
 }
