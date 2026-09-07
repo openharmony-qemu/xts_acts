@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import {beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let emitKey = 'scroll01';
@@ -75,7 +75,12 @@ export default function webViewSrollableJsunit(){
       await Utils.msSleep(1000);
       let driver:Driver = Driver.create();
       await Utils.msSleep(1000);
-      Utils.registerEvent('scrollByTo01',0,20250322,done);
+      Utils.registerBaseEvent('scrollByTo01', 0, 20250322, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       let button = await driver.findComponent(ON.id('scrollByToButton'));
       button?.click();
@@ -97,7 +102,12 @@ export default function webViewSrollableJsunit(){
         await Utils.msSleep(1000);
         let driver:Driver = Driver.create();
         await Utils.msSleep(1000);
-        Utils.registerEvent('testWebViewGetScrollOffset',false,1601319,done);
+        Utils.registerBaseEvent('testWebViewGetScrollOffset', false, 1601319, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         let button = await driver.findComponent(ON.id('scrollByToButton'));
         button?.click();
@@ -123,7 +133,161 @@ export default function webViewSrollableJsunit(){
         await Utils.msSleep(1000);
         button?.click();
         await Utils.msSleep(2000)
-        done()
+        expect(button != null).assertTrue();
+
+        done();
+      })
+
+    /**
+     * @tc.name   testSetScrollableNullStatic001
+     * @tc.number SUB_WEB_SETSCROLLABLE_NULL_0100
+     * @tc.desc   test setScrollable with null enable param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetScrollableNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          Utils.emitEvent('testSetScrollableNullStatic001', 10)
+          await Utils.msSleep(2000);
+          Utils.registerBaseEvent('testSetScrollableNullStatic001', true, 41022801, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+          });
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('scrollByToButton', 10, '');
+          await Utils.msSleep(3000);
+          done()
+      
+        } catch (err) {
+          console.info('[testSetScrollableNullStatic001] err:'+JSON.stringify(err));
+          done();
+
+          }
+      })
+
+    /**
+     * @tc.name   testSetScrollableUndefinedStatic001
+     * @tc.number SUB_WEB_SETSCROLLABLE_UNDEFINED_0100
+     * @tc.desc   test setScrollable with undefined enable param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetScrollableUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          Utils.emitEvent('testSetScrollableUndefinedStatic001', 10)
+          await Utils.msSleep(2000);
+          Utils.registerBaseEvent('testSetScrollableUndefinedStatic001', true, 41022802, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+          });
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('scrollByToButton', 10, '');
+          await Utils.msSleep(3000);
+          done()
+      
+        } catch (err) {
+          console.info('[testSetScrollableUndefinedStatic001] err:'+JSON.stringify(err));
+          done();
+
+          }
+      })
+
+    /**
+     * @tc.name   testSetScrollableTypeNullStatic001
+     * @tc.number SUB_WEB_SETSCROLLABLE_TYPE_NULL_0100
+     * @tc.desc   test setScrollable with null ScrollType param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetScrollableTypeNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          Utils.emitEvent('testSetScrollableTypeNullStatic001', 10)
+          await Utils.msSleep(2000);
+          Utils.registerBaseEvent('testSetScrollableTypeNullStatic001', true, 41022803, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+          });
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('scrollByToButton', 10, '');
+          await Utils.msSleep(3000);
+          done()
+      
+        } catch (err) {
+          console.info('[testSetScrollableTypeNullStatic001] err:' + JSON.stringify(err));
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetScrollableTypeInvalidStatic001
+     * @tc.number SUB_WEB_SETSCROLLABLE_TYPE_INVALID_0100
+     * @tc.desc   test setScrollable with invalid ScrollType enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetScrollableTypeInvalidStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          Utils.emitEvent('testSetScrollableTypeInvalidStatic001', 10)
+          await Utils.msSleep(2000);
+          Utils.registerBaseEvent('testSetScrollableTypeInvalidStatic001', 401, 41022804, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+          });
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('scrollByToButton', 10, '');
+          await Utils.msSleep(3000);
+          done()
+      
+        } catch (err) {
+          console.info('[testSetScrollableTypeInvalidStatic001] err:' + JSON.stringify(err));
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetScrollableTypeUndefinedStatic001
+     * @tc.number SUB_WEB_SETSCROLLABLE_TYPE_UNDEFINED_0100
+     * @tc.desc   test setScrollable with undefined ScrollType enum param spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetScrollableTypeUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          Utils.emitEvent('testSetScrollableTypeUndefinedStatic001', 10)
+          await Utils.msSleep(2000);
+          Utils.registerBaseEvent('testSetScrollableTypeUndefinedStatic001', true, 41022805, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+          });
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('scrollByToButton', 10, '');
+          await Utils.msSleep(3000);
+          done()
+
+        } catch (err) {
+          console.info('[testSetScrollableTypeUndefinedStatic001] err:' + JSON.stringify(err));
+          done();
+        }
       })
   })
 }

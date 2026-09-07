@@ -26,6 +26,9 @@ napi_value VideoEncodeCapability5000Test(napi_env env, napi_callback_info info);
 napi_value VideoEncodeCapability5010Test(napi_env env, napi_callback_info info);
 napi_value VideoEncodeCapability5020Test(napi_env env, napi_callback_info info);
 napi_value VideoEncodeCapability5030Test(napi_env env, napi_callback_info info);
+napi_value LOWPOWER_CONFIG_001Test(napi_env env, napi_callback_info info);
+napi_value LOWPOWER_CONFIG_002Test(napi_env env, napi_callback_info info);
+napi_value LOWPOWER_CONFIG_003Test(napi_env env, napi_callback_info info);
 extern void InitConfigureTest();
 extern void TestTearDownConfigure();
 

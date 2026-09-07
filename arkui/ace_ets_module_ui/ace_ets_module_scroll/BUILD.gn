@@ -30,6 +30,7 @@ group("ActsAceEtsModuleScrollTest") {
   } else {
     deps = [
       "ace_ets_module_scroll_arcScroll:ActsAceEtsModuleScrollArcScrollTest",
+      "ace_ets_module_scroll_arcScroll_static:ActsAceEtsModuleScrollArcScrollStaticTest",
       "ace_ets_module_scroll_grid:ActsAceEtsModuleScrollGridTest",
       "ace_ets_module_scroll_grid02:ActsAceEtsModuleScrollGrid02Test",
       "ace_ets_module_scroll_list:ActsAceEtsModuleScrollListTest",

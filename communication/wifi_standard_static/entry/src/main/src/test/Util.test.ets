@@ -16,6 +16,7 @@
 
 import hilog from '@ohos.hilog';
 import wifiManager from '@ohos.wifiManager';
+import { Driver, ON} from '@ohos.UiTest';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'wifiUtilsTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -64,6 +65,33 @@ export default class Utils{
     } else {
       hilog.info(domain, tag, '无需操作wifi状态 isWifiActive:' + state);
       hilog.info(domain, tag, 'wifi is close');
+    }
+  }
+  static async clickText(text_respond: string): Promise<void> {
+    try {
+      hilog.info(domain, tag,'clickText start');
+      let driver = Driver.create();
+      await driver.delayMs(1000);
+      hilog.info(domain, tag,'get button start');
+      let button = await driver.findComponent(ON.text(text_respond));
+      hilog.info(domain, tag,"get button success" + JSON.stringify(button));
+      let i = 0;
+      while (button == null) {
+        hilog.info(domain, tag,"get button success")
+        i++;
+        button = await driver.findComponent(ON.text(text_respond));
+        hilog.info(domain, tag,"get button while" + JSON.stringify(button));
+        await driver.delayMs(1000);
+        if(i > 30){
+          break;
+        }
+      };
+      hilog.info(domain, tag,"get button break" + JSON.stringify(button));
+      await button!.click();
+      await driver.delayMs(2000);
+      hilog.info(domain, tag,'clickText end');
+    } catch (err) {
+      hilog.info(domain, tag,'nearLink clickRequestPermission failed' + err);
     }
   }
 }

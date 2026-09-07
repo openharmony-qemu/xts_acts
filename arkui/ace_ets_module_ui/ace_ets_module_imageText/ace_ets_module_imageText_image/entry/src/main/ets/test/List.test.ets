@@ -17,6 +17,7 @@ import AboutToRecycleImageJSTest from './ImageTest/AboutToRecycleImageJS.test';
 import ImageBasicAttributesTest from './ImageTest/ImageBasicAttributes.test';
 import ImageTextTest from './ImageTest/ImageText.test';
 import ImageDynamicRangeModeTest from './ImageTest/ImageDynamicRangeMode.test';
+import ImageDynamicRangeModeInvalidEnumTest from './ImageTest/ImageDynamicRangeModeInvalidEnum.test';
 import ImageEnableAnalyzerTest from './ImageTest/ImageEnableAnalyzer.test';
 import ImageObjectFitTest from './ImageTest/ImageObjectFit.test';
 import ImageApiTest from './ImageTest/ImageApi.test';
@@ -34,6 +35,7 @@ import ImageAnalyzerControllerTest from './ImageAnalyzerControllerTest/ImageAnal
 import ImageAnimationControllerTest from './ImageAnimationControllerTest/ImageAnimationController.test';
 import ImageAnimatorFillModeJsunitTest from './ImageAnimator/FillModeJsunit.test';
 import ImageAnimatorBasicAttributesTest from './ImageAnimator/ImageAnimatorBasicAttributes.test';
+import ImageAnimatorAttributeModifierTest from './ImageAnimator/ImageAnimatorAttributeModifier.test';
 import ImageAnimatorEventDataTest from './ImageAnimator/ImageAnimatorEventData.test';
 import monitorInvisibleAreaTest from './ImageAnimator/monitorInvisibleArea.test';
 import ImageAnimatorAdvancedTest from './ImageAnimatorAdvancedTest/ImageAnimatorAdvancedTest.test';
@@ -73,8 +75,12 @@ import ImageColorFilterUndefinedAndNullTest from './ImageUndefinedAndNullTest/Im
 import ImageDraggableUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageDraggableUndefinedAndNull.test';
 import ImageEnableAnalyzerUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageEnableAnalyzerUndefinedAndNull.test';
 import ImageResizableUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageResizableUndefinedAndNull.test';
+import ImageFitOriginalSizeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageFitOriginalSizeUndefinedAndNull.test';
+import ImageMatchTextDirectionUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageMatchTextDirectionUndefinedAndNull.test';
 import ImageAnimatorDurationUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorDurationUndefinedAndNull.test';
 import ImageAnimatorFillModeUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorFillModeUndefinedAndNull.test';
+import ImageAnimatorFixedSizeUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorFixedSizeUndefinedAndNull.test';
+import ImageAnimatorReverseUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorReverseUndefinedAndNull.test';
 import ImageAnimatorIterationsUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorIterationsUndefinedAndNull.test';
 import ImageAnimatorPreDecodeUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorPreDecodeUndefinedAndNull.test';
 import ImageAnimatorStateUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorStateUndefinedAndNull.test';
@@ -99,6 +105,7 @@ export default function testsuite() {
   ImageBasicAttributesTest();
   ImageTextTest();
   ImageDynamicRangeModeTest();
+  ImageDynamicRangeModeInvalidEnumTest();
   ImageEnableAnalyzerTest();
   ImageObjectFitTest();
   ImageApiTest();
@@ -116,6 +123,7 @@ export default function testsuite() {
   ImageAnimationControllerTest();
   ImageAnimatorFillModeJsunitTest();
   ImageAnimatorBasicAttributesTest();
+  ImageAnimatorAttributeModifierTest();
   ImageAnimatorEventDataTest();
   monitorInvisibleAreaTest();
   ImageAnimatorAdvancedTest();
@@ -148,8 +156,12 @@ export default function testsuite() {
   ImageDraggableUndefinedAndNullTest();
   ImageEnableAnalyzerUndefinedAndNullTest();
   ImageResizableUndefinedAndNullTest();
+  ImageFitOriginalSizeUndefinedAndNullTest();
+  ImageMatchTextDirectionUndefinedAndNullTest();
   ImageAnimatorDurationUndefinedAndNullTest();
   ImageAnimatorFillModeUndefinedAndNullTest();
+  ImageAnimatorFixedSizeUndefinedAndNullTest();
+  ImageAnimatorReverseUndefinedAndNullTest();
   ImageAnimatorIterationsUndefinedAndNullTest();
   ImageAnimatorPreDecodeUndefinedAndNullTest();
   ImageAnimatorStateUndefinedAndNullTest();

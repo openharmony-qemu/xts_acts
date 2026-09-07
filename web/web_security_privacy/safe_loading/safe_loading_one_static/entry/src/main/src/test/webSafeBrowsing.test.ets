@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach } from '../../../hypium/index';
+import {Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach, expect } from '../../../hypium/index';
 import Utils from './Utils.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 
 let testAbilityContext: common.UIAbilityContext;
 
@@ -67,7 +68,12 @@ export default function ActsAceWebSafeBrowsing() {
       await Utils.msSleep(2000);
       Utils.emitEvent("emitEnableSafeBrowsingTrue", 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent("testEnableSafeBrowsingTrue", true, 2001, done);
+      Utils.registerBaseEvent("testEnableSafeBrowsingTrue", true, 2001, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
       await Utils.msSleep(2000);
@@ -87,7 +93,12 @@ export default function ActsAceWebSafeBrowsing() {
       await Utils.msSleep(2000);
       Utils.emitEvent("emitEnableSafeBrowsingFalse", 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent("testEnableSafeBrowsingFalse", true, 2002, done);
+      Utils.registerBaseEvent("testEnableSafeBrowsingFalse", true, 2002, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
       await Utils.msSleep(2000);
@@ -107,7 +118,12 @@ export default function ActsAceWebSafeBrowsing() {
       await Utils.msSleep(2000);
       Utils.emitEvent("emitIsSafeBrowsingEnabledTrue", 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent("testIsSafeBrowsingEnabledTrue", true, 2003, done);
+      Utils.registerBaseEvent("testIsSafeBrowsingEnabledTrue", true, 2003, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
       await Utils.msSleep(2000);
@@ -127,7 +143,62 @@ export default function ActsAceWebSafeBrowsing() {
       await Utils.msSleep(2000);
       Utils.emitEvent("emitIsSafeBrowsingEnabledFalse", 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent("testIsSafeBrowsingEnabledFalse", true, 2004, done);
+      Utils.registerBaseEvent("testIsSafeBrowsingEnabledFalse", true, 2004, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEnableSafeBrowsingNullStatic001
+     * @tc.number SUB_ACE_WEB_SAFEBROWSING_NULL_0100
+     * @tc.desc   test enableSafeBrowsing with null param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnableSafeBrowsingNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent("emitEnableSafeBrowsingNullStatic001", 10);
+      await Utils.msSleep(2000);
+      Utils.registerBaseEvent("testEnableSafeBrowsingNullStatic001", true, 41021701, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEnableSafeBrowsingUndefinedStatic001
+     * @tc.number SUB_ACE_WEB_SAFEBROWSING_UNDEFINED_0100
+     * @tc.desc   test enableSafeBrowsing with undefined param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnableSafeBrowsingUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent("emitEnableSafeBrowsingUndefinedStatic001", 10);
+      await Utils.msSleep(2000);
+      Utils.registerBaseEvent("testEnableSafeBrowsingUndefinedStatic001", true, 41021702, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
       await Utils.msSleep(2000);

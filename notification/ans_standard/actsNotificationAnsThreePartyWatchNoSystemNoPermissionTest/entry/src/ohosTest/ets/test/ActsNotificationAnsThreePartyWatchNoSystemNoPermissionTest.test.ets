@@ -24,9 +24,9 @@ let context: common.UIAbilityContext;
 export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest() {
   describe('ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest', () => {
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       notificationManager.setNotificationEnable({
-        bundle: "com.example.actsnotificationansthreepartywatchnosystemnopermissiontest"
+        bundle: 'com.example.actsnotificationansthreepartywatchnosystemnopermissiontest'
       }, true)
     })
     beforeEach(() => {

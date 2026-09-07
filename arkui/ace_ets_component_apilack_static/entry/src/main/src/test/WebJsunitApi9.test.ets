@@ -35,18 +35,18 @@ import { RecordData } from '@ohos.base';
 
 let emitKey = "emitUserAgent";
 
-export default function webJsunit() {
+export default function webJsunit(): void {
   describe('ActsAceWebDevTest1', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.sleep(2000);
       console.info("web beforeEach start");
 
     })
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       console.info("web afterEach start:" + emitKey);
       try {
         let backData: events_emitter.EventData = {
@@ -75,7 +75,7 @@ export default function webJsunit() {
      * @tc.desc     testmultiWindow_static_01
      * @tc.level    Level.LEVEL0
      */
-it('testmultiWindow_static_01', Level.LEVEL0, async () => {
+it('testmultiWindow_static_01', Level.LEVEL0, async (): Promise<void> => {
       console.info('testmultiWindow01  START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('multiwindow');
@@ -95,7 +95,7 @@ it('testmultiWindow_static_01', Level.LEVEL0, async () => {
      * @tc.desc     testonWindowExit_static_02
      * @tc.level    Level.LEVEL0
      */
-it('testonWindowExit_static_02', Level.LEVEL0, async () => {
+it('testonWindowExit_static_02', Level.LEVEL0, async (): Promise<void> => {
       try {
         //Utils.registerContainEvent("WindowExit", true, 800);
         inspector.sendEventByKey('multiwindow', 10, '');
@@ -111,7 +111,7 @@ it('testonWindowExit_static_02', Level.LEVEL0, async () => {
      * @tc.desc     tesweb_static_03
      * @tc.level    Level.LEVEL0
      */
-it('tesweb_static_03', Level.LEVEL0, async () => {
+it('tesweb_static_03', Level.LEVEL0, async (): Promise<void> => {
       try {
         //Utils.registerContainEvent("onWindowNew", true, 801,);
         inspector.sendEventByKey('onWindowNew', 10, '');
@@ -128,7 +128,7 @@ it('tesweb_static_03', Level.LEVEL0, async () => {
      * @tc.desc     tesweb_static_04
      * @tc.level    Level.LEVEL0
      */
-it('tesweb_static_04', Level.LEVEL0, async () => {
+it('tesweb_static_04', Level.LEVEL0, async (): Promise<void> => {
       try {
         //Utils.registerContainEvent("onFullScreen", true, 802,);
         inspector.sendEventByKey('onWindowNew', 10, '');
@@ -144,7 +144,7 @@ it('tesweb_static_04', Level.LEVEL0, async () => {
      * @tc.desc     tesweb_static_05
      * @tc.level    Level.LEVEL0
      */
-it('tesweb_static_05', Level.LEVEL0, async () => {
+it('tesweb_static_05', Level.LEVEL0, async (): Promise<void> => {
       try {
         //Utils.registerContainEvent("onSslErrorEventReceive", true, 803,);
         inspector.sendEventByKey('onSslErrorEventReceive', 10, '');
@@ -160,7 +160,7 @@ it('tesweb_static_05', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_06
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_06', Level.LEVEL0, async () => {
+it('testweb_static_06', Level.LEVEL0, async (): Promise<void> => {
       console.info('testmultiWindow016 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('web2');
@@ -180,7 +180,7 @@ it('testweb_static_06', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_07
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_07', Level.LEVEL0, async () => {
+it('testweb_static_07', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitGeturl";
         //Utils.registerContainEvent("Geturl", null, 810,);
@@ -198,7 +198,7 @@ it('testweb_static_07', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_08
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_08', Level.LEVEL0, async () => {
+it('testweb_static_08', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitclearClientAuthenticationCache";
         //Utils.registerContainEvent("clearClientAuthenticationCache", true, 811,);
@@ -216,7 +216,7 @@ it('testweb_static_08', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_09
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_09', Level.LEVEL0, async () => {
+it('testweb_static_09', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitclearSslCache";
         //Utils.registerContainEvent("clearSslCache", true, 812,);
@@ -234,7 +234,7 @@ it('testweb_static_09', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_10
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_10', Level.LEVEL0, async () => {
+it('testweb_static_10', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitsearchNext";
         //Utils.registerContainEvent("clearsearchNext", true, 813,);
@@ -252,7 +252,7 @@ it('testweb_static_10', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_11
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_11', Level.LEVEL0, async () => {
+it('testweb_static_11', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitclearMatches";
         //Utils.registerContainEvent("clearMatches", true, 814,);
@@ -270,7 +270,7 @@ it('testweb_static_11', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_12
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_12', Level.LEVEL0, async () => {
+it('testweb_static_12', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitDefaultUserAgent";
         //Utils.registerContainEvent("getDefaultUserAgent", "", 815,);
@@ -288,7 +288,7 @@ it('testweb_static_12', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_13
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_13', Level.LEVEL0, async () => {
+it('testweb_static_13', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitgetWebId";
         //Utils.registerContainEvent("getWebId", 0, 816,);
@@ -306,7 +306,7 @@ it('testweb_static_13', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_14
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_14', Level.LEVEL0, async () => {
+it('testweb_static_14', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitcreateWebMessagePorts";
         //Utils.registerContainEvent("createWebMessagePorts", 0, 817,);
@@ -324,7 +324,7 @@ it('testweb_static_14', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_15
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_15', Level.LEVEL0, async () => {
+it('testweb_static_15', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitdeleteSessionCookie";
         //Utils.registerContainEvent("deleteSessionCookie", true, 818,);
@@ -342,7 +342,7 @@ it('testweb_static_15', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_16
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_16', Level.LEVEL0, async () => {
+it('testweb_static_16', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitdeleteExpiredCookie";
         //Utils.registerContainEvent("deleteExpiredCookie", true, 819,);
@@ -360,7 +360,7 @@ it('testweb_static_16', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_17
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_17', Level.LEVEL0, async () => {
+it('testweb_static_17', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitexistCookie";
         //Utils.registerContainEvent("existCookie", true, 820,);
@@ -378,7 +378,7 @@ it('testweb_static_17', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_18
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_18', Level.LEVEL0, async () => {
+it('testweb_static_18', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitgetCookie";
         //Utils.registerContainEvent("getCookie", "", 821,);
@@ -396,7 +396,7 @@ it('testweb_static_18', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_19
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_19', Level.LEVEL0, async () => {
+it('testweb_static_19', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitsetCookie";
         //Utils.registerContainEvent("setCookie", true, 822,);
@@ -414,7 +414,7 @@ it('testweb_static_19', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_20
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_20', Level.LEVEL0, async () => {
+it('testweb_static_20', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitsaveCookie";
         //Utils.registerContainEvent("saveCookie", true, 823,);
@@ -432,7 +432,7 @@ it('testweb_static_20', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_21
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_21', Level.LEVEL0, async () => {
+it('testweb_static_21', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitputAcceptFileURICookieEnabled";
         //Utils.registerContainEvent("putAcceptFileURICookieEnabled", true, 823,);
@@ -450,7 +450,7 @@ it('testweb_static_21', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_22
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_22', Level.LEVEL0, async () => {
+it('testweb_static_22', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitputAcceptThirdPartyCookieEnabled";
         //Utils.registerContainEvent("putAcceptThirdPartyCookieEnabled", true, 824,);
@@ -468,7 +468,7 @@ it('testweb_static_22', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_23
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_23', Level.LEVEL0, async () => {
+it('testweb_static_23', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitisFileURICookieAllowed";
         //Utils.registerContainEvent("isFileURICookieAllowed", false, 825,);
@@ -486,7 +486,7 @@ it('testweb_static_23', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_24
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_24', Level.LEVEL0, async () => {
+it('testweb_static_24', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "hasImage";
         //Utils.registerContainEvent("isThirdPartyCookieAllowed", false, 826,);
@@ -504,7 +504,7 @@ it('testweb_static_24', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_25
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_25', Level.LEVEL0, async () => {
+it('testweb_static_25', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "hasImageTwo";
         //Utils.registerContainEvent("hasImage", true, 828,);
@@ -522,7 +522,7 @@ it('testweb_static_25', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_26
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_26', Level.LEVEL0, async () => {
+it('testweb_static_26', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "setNetworkAvailable";
         //Utils.registerContainEvent("hasImage", true, 829,);
@@ -540,7 +540,7 @@ it('testweb_static_26', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_27
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_27', Level.LEVEL0, async () => {
+it('testweb_static_27', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "getFavicon";
         //Utils.registerContainEvent("setNetworkAvailable", false, 830,);
@@ -558,7 +558,7 @@ it('testweb_static_27', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_28
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_28', Level.LEVEL0, async () => {
+it('testweb_static_28', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "getOriginalUrl";
         //Utils.registerContainEvent("getFavicon", "baidu", 831,);
@@ -576,7 +576,7 @@ it('testweb_static_28', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_29
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_29', Level.LEVEL0, async () => {
+it('testweb_static_29', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "history";
         //Utils.registerContainEvent("getOriginalUrl", "www.baidu.com", 832,);
@@ -594,7 +594,7 @@ it('testweb_static_29', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_30
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_30', Level.LEVEL0, async () => {
+it('testweb_static_30', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "pageUp";
         //Utils.registerContainEvent("history", 1, 833,);
@@ -612,7 +612,7 @@ it('testweb_static_30', Level.LEVEL0, async () => {
      * @tc.desc     testweb_static_31
      * @tc.level    Level.LEVEL0
      */
-it('testweb_static_31', Level.LEVEL0, async () => {
+it('testweb_static_31', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "pageUp";
         //Utils.registerContainEvent("pageUp", true, 834);

@@ -14,35 +14,23 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../../Util.test';
-import { BusinessError } from '@ohos.base';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+
 
 export default function getListItemRect1() {
   describe('getListItemRect1', () => {
 
 
 
-    beforeAll(async (): Promise<void> => {
-      console.info("getListItemRect1 beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-    });
     beforeEach(() => {
       console.info("getListItemRect1 beforeEach start");
       let options: router.RouterOptions = {
@@ -63,13 +51,33 @@ export default function getListItemRect1() {
       }
     });
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let btn3 = await driver.findComponent(ON.id('getListItemRect1_button3'));
-      await CommonFunc.sleep(2000);
-      await (btn3?.click() as Promise<void>);
-      await CommonFunc.sleep(3000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn3?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       // const routerInstance = AppStorage.get<Router>("router") as Router
       // routerInstance.back();
       console.info("BadgeFocus after each called");
@@ -89,18 +97,34 @@ it('getListItemRect1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get Initial value')
       let listItem_1: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
@@ -148,18 +172,38 @@ it('getListItemRect1_static_0200', Level.LEVEL0, async (done: () => void): Promi
       let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 1 })
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let listItem_2: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_2') as RectValue;
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
-      await CommonFunc.sleep(2000);
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
@@ -208,15 +252,31 @@ it('getListItemRect1_static_0300', Level.LEVEL0, async (done: () => void): Promi
       let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: -1 })
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
@@ -261,20 +321,44 @@ it('getListItemRect1_static_0400', Level.LEVEL0, async (done: () => void): Promi
       let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('button2 click')
       let btn2 = await driver.findComponent(ON.id('getListItemRect1_button2'));
-      await (btn2?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await (btn2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
@@ -318,15 +402,31 @@ it('getListItemRect1_static_0500', Level.LEVEL0, async (done: () => void): Promi
       let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 100 })
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
@@ -370,18 +470,34 @@ it('getListItemRect1_static_0600', Level.LEVEL0, async (done: () => void): Promi
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'padding1', value: 20.0 })
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get Initial value')
       let listItem_1: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')
@@ -427,18 +543,34 @@ it('getListItemRect1_static_0700', Level.LEVEL0, async (done: () => void): Promi
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'margin1', value: 20.0 })
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get Initial value')
       let listItem_1: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getListItemRect1_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect1_text1')

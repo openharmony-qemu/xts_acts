@@ -1573,5 +1573,261 @@ export default function AVScreenCaptureRecorderTest() {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0400 end');
       done();
     })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0100
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0100', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0100 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      try {
+        await captureRecorder!.setPickerMode(null).then(() => {
+          console.info('Succeeded in setting picker mode.');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to set picker mode. Code: ${err.code}, message: ${err.message}`);
+        });
+      } catch (err) {
+        console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message + err.code);
+        expect(err.code).assertUndefined();
+      }
+
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0100 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0200
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0200
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0200', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0200 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      try {
+        await captureRecorder!.setPickerMode(undefined).then(() => {
+          console.info('Succeeded in setting picker mode.');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to set picker mode. Code: ${err.code}, message: ${err.message}`);
+        });
+      } catch (err) {
+        console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message + err.code);
+        expect(err.code).assertUndefined();
+      }
+
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0200 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0300
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0300
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0300', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0300 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      await captureRecorder!.setPickerMode(7).then(() => {
+        console.info('Succeeded in setting picker mode.');
+      }).catch((err: BusinessError) => {
+        console.error(`Failed to set picker mode. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      });
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_0300 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETMICENABLED_0100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETMICENABLED_0100
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETMICENABLED_0100', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETMICENABLED_0100 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      try {
+        await captureRecorder!.setMicEnabled(null).then(() => {
+          console.info('Succeeded in setting microphone enabled.');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to set microphone enabled. Code: ${err.code}, message: ${err.message}`);
+        });
+      } catch (err) {
+        console.error('avScreenCaptureRecorder setMicEnabled failed, error: ' + err.message + err.code);
+        expect(err.code).assertUndefined();
+      }
+
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETMICENABLED_0100 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETMICENABLED_0200
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETMICENABLED_0200
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETMICENABLED_0200', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETMICENABLED_0200 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      try {
+        await captureRecorder!.setMicEnabled(undefined).then(() => {
+          console.info('Succeeded in setting microphone enabled.');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to set microphone enabled. Code: ${err.code}, message: ${err.message}`);
+        });
+      } catch (err) {
+        console.error('avScreenCaptureRecorder setMicEnabled failed, error: ' + err.message + err.code);
+        expect(err.code).assertUndefined();
+      }
+
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETMICENABLED_0200 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_ERROR_0100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_ERROR_0100
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_ERROR_0100', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_ERROR_0100 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      try {
+        captureRecorder!.on('error', (err: BusinessError) => {
+          console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
+        });
+        captureRecorder!.on('error', (err: BusinessError) => {
+          console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
+        });
+      } catch (err) {
+        console.error('avScreenCaptureRecorder on_error failed, error: ' + err.message + err.code);
+        expect().assertFail();
+      }
+      captureRecorder!.off('error');
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_ERROR_0100 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_STATECHANGE_0100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_STATECHANGE_0100
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_STATECHANGE_0100', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_STATECHANGE_0100 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      try {
+        let callback = (state: media.AVScreenCaptureStateCode) => {
+          console.log('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_STATECHANGE_0100 off_statechange callback called');          
+        };
+        captureRecorder!.off('stateChange', callback);
+      } catch (err) {
+        console.error('avScreenCaptureRecorder off_stateChange failed, error: ' + err.message + err.code);
+        expect().assertFail();
+      }
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_STATECHANGE_0100 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_ERROR_0100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_ERROR_0100
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_ERROR_0100', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_ERROR_0100 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      try {
+        let callback = (err: BusinessError) => {
+          console.log('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_ERROR_0100 OFF_ERROR callback called');          
+        };
+        captureRecorder!.off('error', callback);
+      } catch (err) {
+        console.error('avScreenCaptureRecorder off_error failed, error: ' + err.message + err.code);
+        expect().assertFail();
+      }
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_ERROR_0100 end');
+      done();
+    })
   })
 }

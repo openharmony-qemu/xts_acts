@@ -184,7 +184,7 @@ export default function SetConstructor2_2Test(): void {
      * @tc.level LEVEL2
      */
     it('testConstructor2_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fa: FixedArray<string> = new FixedArray<string>(2, '');
+      const fa: FixedArray<string> = new FixedArray<string>(2, "");
       fa[0] = "hello";
       fa[1] = "world";
       const set: Set<string> = new Set<string>(fa);
@@ -476,7 +476,7 @@ export default function SetConstructor2_2Test(): void {
      * @tc.level LEVEL2
      */
     it('testConstructor2_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fa: FixedArray<boolean> = new FixedArray<boolean>(2, false);
+      const fa: FixedArray<boolean> = new FixedArray<boolean>(2, true);
       fa[0] = true;
       fa[1] = false;
       const set: Set<boolean> = new Set<boolean>(fa);
@@ -985,7 +985,7 @@ export default function SetConstructor2_2Test(): void {
      * @tc.level LEVEL2
      */
     it('testConstructor2_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fa: FixedArray<float> = new FixedArray<float>(1, 0);
+      const fa: FixedArray<float> = new FixedArray<float>(1, 0.0f);
       fa[0] = 0.0 as float;
       const set: Set<float> = new Set<float>(fa);
       expect(set.size).assertEqual(1);
@@ -1001,7 +1001,7 @@ export default function SetConstructor2_2Test(): void {
      * @tc.level LEVEL2
      */
     it('testConstructor2_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fa: FixedArray<float> = new FixedArray<float>(1, 0);
+      const fa: FixedArray<float> = new FixedArray<float>(1, 0.0f);
       fa[0] = Float.NaN;
       const set: Set<float> = new Set<float>(fa);
       expect(set.size).assertEqual(1);
@@ -1017,7 +1017,7 @@ export default function SetConstructor2_2Test(): void {
      * @tc.level LEVEL2
      */
     it('testConstructor2_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fa: FixedArray<float> = new FixedArray<float>(1, 0);
+      const fa: FixedArray<float> = new FixedArray<float>(1, 0.0f);
       fa[0] = Float.POSITIVE_INFINITY;
       const set: Set<float> = new Set<float>(fa);
       expect(set.size).assertEqual(1);
@@ -1033,7 +1033,7 @@ export default function SetConstructor2_2Test(): void {
      * @tc.level LEVEL2
      */
     it('testConstructor2_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fa: FixedArray<char> = new FixedArray<char>(3, c'\u0000');
+      const fa: FixedArray<char> = new FixedArray<char>(3, c'a');
       fa[0] = c'A';
       fa[1] = c'中';
       fa[2] = c'0';
@@ -1198,7 +1198,7 @@ export default function SetConstructor2_2Test(): void {
     it('testConstructor2_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const o1: ObjTest = new ObjTest(1);
       const o2: ObjTest = new ObjTest(2);
-      const fa: FixedArray<ObjTest> = new FixedArray<ObjTest>(2, new ObjTest());
+      const fa: FixedArray<ObjTest> = new FixedArray<ObjTest>(2, o1);
       fa[0] = o1;
       fa[1] = o2;
       const set: Set<ObjTest> = new Set<ObjTest>(fa);
@@ -1275,7 +1275,7 @@ export default function SetConstructor2_2Test(): void {
     it('testConstructor2_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d1: Date = new Date(2025, 0, 1);
       const d2: Date = new Date(2025, 6, 15);
-      const fa: FixedArray<Date> = new FixedArray<Date>(2, new Date());
+      const fa: FixedArray<Date> = new FixedArray<Date>(2, d1);
       fa[0] = d1;
       fa[1] = d2;
       const set: Set<Date> = new Set<Date>(fa);
@@ -1398,7 +1398,8 @@ export default function SetConstructor2_2Test(): void {
     it('testConstructor2_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e1: Error = new Error('msg1');
       const e2: TypeError = new TypeError('type error');
-      const fa: FixedArray<Error> = new FixedArray<Error>(2, new Error());
+      const e3: Error = new TypeError('error');
+      const fa: FixedArray<Error> = new FixedArray<Error>(2, e3);
       fa[0] = e1;
       fa[1] = e2;
       const set: Set<Error> = new Set<Error>(fa);
@@ -1418,7 +1419,8 @@ export default function SetConstructor2_2Test(): void {
     it('testConstructor2_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a1: Int8Array = new Int8Array([1, 2]);
       const a2: Int8Array = new Int8Array([3, 4]);
-      const fa: FixedArray<Int8Array> = new FixedArray<Int8Array>(2, new Int8Array());
+      const a3: Int8Array = new Int8Array([0, 0]);
+      const fa: FixedArray<Int8Array> = new FixedArray<Int8Array>(2, a3);
       fa[0] = a1;
       fa[1] = a2;
       const set: Set<Int8Array> = new Set<Int8Array>(fa);

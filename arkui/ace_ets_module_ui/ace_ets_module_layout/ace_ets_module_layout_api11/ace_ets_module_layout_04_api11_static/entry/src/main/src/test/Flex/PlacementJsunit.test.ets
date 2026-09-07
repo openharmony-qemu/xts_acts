@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 
 import Utils from '../Utils.test';
@@ -21,26 +21,12 @@ import events_emitter from '@ohos.events.emitter';
 import { Placement } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { RecordData } from '@ohos.base';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function placementJsunit() {
   describe('placementJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("placementJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Flex/placement',
@@ -61,7 +47,11 @@ export default function placementJsunit() {
     });
 
     afterEach(async () => {
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('placementJsunitTest await err: ' + JSON.stringify(err));
+      }
       console.info("placement after each called");
     });
 

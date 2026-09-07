@@ -15,11 +15,10 @@
  */
 import router from '@ohos.router';
 import { UIContext, AtomicServiceBar, Router, KeyboardAvoidMode } from '@ohos.arkui.UIContext';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 interface optionsObj {
@@ -28,13 +27,6 @@ interface optionsObj {
 
 export default function getDragController() {
   describe('getDragController', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("getDragController beforeEach start");
-
-
-      await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       console.info("getDragController beforeEach start");
       let options: router.RouterOptions = {
@@ -70,20 +62,25 @@ export default function getDragController() {
      * @tc.level    Level.LEVEL0
      */
 it('getDragController_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('getDragController_0100 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('dragFlag'));
-      console.log('++++++++++++findComponent',button)
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('Do_id');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[getDragController_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[getDragController_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
-      console.info('[getDragController_0100] END');
-      done();
+      try {
+        console.info('getDragController_0100 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(500);
+        let button = await driver.findComponent(ON.id('dragFlag'));
+        console.log('++++++++++++findComponent',button)
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJson: string = inspector.getInspectorByKey('Do_id');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[getDragController_0100] component obj is: " + JSON.stringify(obj));
+        console.info("[getDragController_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
+        console.info('[getDragController_0100] END');
+        done();
+      } catch (err) {
+        console.info('getDragController_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

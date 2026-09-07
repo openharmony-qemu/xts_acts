@@ -14,36 +14,19 @@
  * limitations under the License.
  */
 
-
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 
 export default function ListItem_Delete_Start_Resource() {
   describe('ListItem_Delete_Start_Resource', () => {
-    beforeAll(async (): Promise<void> => {
-      console.log("ListItem_Delete_Start_Resource beforeAll start111")
-            
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    })
     beforeEach(async (): Promise<void> => {
       console.info("ListItem_Delete_Start_Resource beforeEach start");
       let options: router.RouterOptions = {
@@ -57,7 +40,7 @@ export default function ListItem_Delete_Start_Resource() {
         if (!("ListItem_Delete_Start_Resource" == pages.name)) {
           console.info("get ListItem_Delete_Start_Resource pages.name:" + JSON.stringify(pages.name));
            routerInstance.pushUrl(options);
-          await CommonFunc.sleep(1000);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push ListItem_Delete_Start_Resource page error:" + err);

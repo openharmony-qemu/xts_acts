@@ -13,25 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
 
 export default function InspectorTest() {
   describe('InspectorTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] InspectorTest beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.inspector.static", "EntryAbility");
-    });
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] InspectorTest beforeEach start");
       let options: router.RouterOptions = { url: 'MainAbility/pages/Inspector/InspectorIndex' };
@@ -46,7 +39,11 @@ export default function InspectorTest() {
     });
     afterEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] InspectorTest afterEach start");
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('[ARKUI_NEW] InspectorTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("[ARKUI_NEW] InspectorTest afterEach end");
     });
 

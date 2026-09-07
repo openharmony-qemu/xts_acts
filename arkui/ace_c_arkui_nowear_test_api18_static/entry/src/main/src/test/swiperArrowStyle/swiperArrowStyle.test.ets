@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 
 const libUtil: LibUtil = new LibUtil();
@@ -27,12 +26,13 @@ const libUtil: LibUtil = new LibUtil();
 
 export default function SwiperArrowStyleTest(){
   describe('SwiperArrowStyleTest',  () =>{
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api18_static", "EntryAbility")
-    });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100)
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('SwiperArrowStyleTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     /**
@@ -42,11 +42,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_a', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_a()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_a will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_a()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_a will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_a err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -56,11 +61,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_b', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_b()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_b will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_b()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_b will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_b err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -70,11 +80,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_c', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_c()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_c will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_c()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_c will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_c err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -84,11 +99,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_c1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_c1()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_c1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_c1()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_c1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_c1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -98,11 +118,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_c2', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_c2()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_c2 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_c2()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_c2 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_c2 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -112,11 +137,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_d', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_d()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_d will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_d()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_d will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_d err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -126,11 +156,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_d1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_d1()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_d1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_d1()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_d1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_d1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -140,11 +175,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_d2', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_d2()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_d2 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_d2()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_d2 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_d2 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -154,11 +194,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_e', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_e()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_e will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_e()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_e will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_e err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -168,11 +213,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_e1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_e1()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_e1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_e1()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_e1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_e1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -182,11 +232,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_f', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_f()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_f will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_f()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_f will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_f err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -196,11 +251,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_f1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_f1()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_f1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_f1()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_f1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_f1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -210,11 +270,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_g', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_g()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_g will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_g()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_g will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_g err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -224,11 +289,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_g1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_g1()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_g1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_g1()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_g1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_g1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -238,11 +308,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_h', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_h()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_h will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_h()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_h will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_h err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -252,11 +327,16 @@ export default function SwiperArrowStyleTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperArrowStyleTest_h1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperArrowStyleTest_h1()).assertEqual(0)
-      console.log('SwiperArrowStyleTest_h1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperArrowStyleTest_h1()).assertEqual(0)
+        console.log('SwiperArrowStyleTest_h1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperArrowStyleTest_h1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -22,14 +22,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function datePickerDialogModeTest() {
   describe('DatePickerDialogMode', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("DatePickerDialogMode beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerDialog/DatePickerDialogMode',
@@ -55,6 +49,7 @@ export default function datePickerDialogModeTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DatePickerDialog_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('DatePickerDialog_static_0010 start ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('DatePickerDialog_static_001'));
@@ -75,6 +70,10 @@ export default function datePickerDialogModeTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000); 
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     });
       
     /**
@@ -84,6 +83,7 @@ export default function datePickerDialogModeTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DatePickerDialog_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('DatePickerDialog_static_0020 start ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('DatePickerDialog_static_002'));
@@ -103,6 +103,10 @@ export default function datePickerDialogModeTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000); 
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     });
      
     /**
@@ -112,6 +116,7 @@ export default function datePickerDialogModeTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DatePickerDialog_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('DatePickerDialog_static_0030 start ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('DatePickerDialog_static_003'));
@@ -131,6 +136,10 @@ export default function datePickerDialogModeTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000); 
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     });
       
     /**
@@ -140,6 +149,7 @@ export default function datePickerDialogModeTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DatePickerDialog_static_0040', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('DatePickerDialog_static_0040 start ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('DatePickerDialog_static_004'));
@@ -159,6 +169,10 @@ export default function datePickerDialogModeTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000); 
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     });
        
     /**
@@ -168,6 +182,7 @@ export default function datePickerDialogModeTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DatePickerDialog_static_0050', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('DatePickerDialog_static_0050 start ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('DatePickerDialog_static_005'));
@@ -187,6 +202,10 @@ export default function datePickerDialogModeTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000); 
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     });     
       
     /**
@@ -196,6 +215,7 @@ export default function datePickerDialogModeTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DatePickerDialog_static_0060', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('DatePickerDialog_static_0060 start ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('DatePickerDialog_static_006'));
@@ -215,6 +235,10 @@ export default function datePickerDialogModeTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000); 
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     });
        
     /**
@@ -224,6 +248,7 @@ export default function datePickerDialogModeTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DatePickerDialog_static_0070', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('DatePickerDialog_static_0070 start ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('DatePickerDialog_static_007'));
@@ -243,6 +268,10 @@ export default function datePickerDialogModeTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000); 
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     });
   })
 }

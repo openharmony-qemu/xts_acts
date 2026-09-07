@@ -32,13 +32,13 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function textMinFontSizeJsunit() {
+export default function textMinFontSizeJsunit(): void {
   describe('textMinFontSizeTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/text',
@@ -59,7 +59,7 @@ export default function textMinFontSizeJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("textMinFontSize after each called");
     });
@@ -73,7 +73,7 @@ export default function textMinFontSizeJsunit() {
      * @tc.desc     testtextMinFontSize_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0001', Level.LEVEL0, async () => {
+it('testtextMinFontSize_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('textMinFontSize testtextMinFontSize0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -94,7 +94,7 @@ it('testtextMinFontSize_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testtextMinFontSize_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0002', Level.LEVEL0, async () => {
+it('testtextMinFontSize_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('textMinFontSize testtextMinFontSize0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -115,7 +115,7 @@ it('testtextMinFontSize_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testtextMinFontSize_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0003', Level.LEVEL0, async () => {
+it('testtextMinFontSize_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('textMinFontSize testtextMinFontSize0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -137,7 +137,7 @@ it('testtextMinFontSize_static_0003', Level.LEVEL0, async () => {
      * @tc.desc     testtextMinFontSize_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0004', Level.LEVEL0, async () => {
+it('testtextMinFontSize_static_0004', Level.LEVEL0, async (): Promise<void> => {
       console.info('textMinFontSize testtextMinFontSize0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -158,7 +158,7 @@ it('testtextMinFontSize_static_0004', Level.LEVEL0, async () => {
      * @tc.desc     testtextMinFontSize_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0005', Level.LEVEL0, async () => {
+it('testtextMinFontSize_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('textMinFontSize testtextMinFontSize0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -179,7 +179,7 @@ it('testtextMinFontSize_static_0005', Level.LEVEL0, async () => {
      * @tc.desc     testtextMinFontSize_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0006', Level.LEVEL0, async () => {
+it('testtextMinFontSize_static_0006', Level.LEVEL0, async (): Promise<void> => {
       console.info('textMinFontSize testtextMinFontSize0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -199,7 +199,7 @@ it('testtextMinFontSize_static_0006', Level.LEVEL0, async () => {
      * @tc.desc     testtextMinFontSize_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0007', Level.LEVEL0, async () => {
+it('testtextMinFontSize_static_0007', Level.LEVEL0, async (): Promise<void> => {
       console.info('textMinFontSize testtextMinFontSize0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -219,7 +219,7 @@ it('testtextMinFontSize_static_0007', Level.LEVEL0, async () => {
      * @tc.desc     testtextMinFontSize_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0009', Level.LEVEL0, async () => {
+it('testtextMinFontSize_static_0009', Level.LEVEL0, async (): Promise<void> => {
       console.info('textMinFontSize testtextMinFontSize009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -240,7 +240,7 @@ it('testtextMinFontSize_static_0009', Level.LEVEL0, async () => {
      * @tc.desc     testtextMinFontSize_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0010', Level.LEVEL0, async () => {
+it('testtextMinFontSize_static_0010', Level.LEVEL0, async (): Promise<void> => {
       console.info('textMinFontSize testtextMinFontSize0010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -260,7 +260,7 @@ it('testtextMinFontSize_static_0010', Level.LEVEL0, async () => {
      * @tc.desc     testtextMinFontSize_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0011', Level.LEVEL0, async () => {
+it('testtextMinFontSize_static_0011', Level.LEVEL0, async (): Promise<void> => {
       console.info('textMinFontSize testtextMinFontSize0011 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -280,7 +280,7 @@ it('testtextMinFontSize_static_0011', Level.LEVEL0, async () => {
      * @tc.desc     testtextCopyOptionText_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testtextCopyOptionText_static_0001', Level.LEVEL0, async () => {
+it('testtextCopyOptionText_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('textMinFontSize testtextCopyOptionText0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('text_copyOptionText');

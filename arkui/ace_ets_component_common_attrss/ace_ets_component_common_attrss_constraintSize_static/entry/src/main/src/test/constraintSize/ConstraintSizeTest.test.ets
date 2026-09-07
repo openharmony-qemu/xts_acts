@@ -18,20 +18,11 @@ import { ConstraintSizeOptions} from '@ohos.arkui.component';
 import { AttrsManager, AlignItems } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign, $r, ItemAlign } from '@ohos.arkui.component';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 
 export default function constraintSizeTest() {
@@ -240,12 +231,6 @@ export default function constraintSizeTest() {
   ]
 
   describe('ConstraintSizeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("constraintSizeTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
 
       if(data.testValue.describe == "SetOrderMaxMinSetting"){

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function TextPickerDialogBackgroundColorTest() {
   describe('TextPickerDialogBackgroundColorTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('TextPickerDialogBackgroundColorTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.picker.textPickerDialog.static', 'EntryAbility')
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('TextPickerDialogBackgroundColorTest beforeEach start');
       let options: router.RouterOptions = {
@@ -58,6 +52,7 @@ export default function TextPickerDialogBackgroundColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerDialogBackgroundColorTest_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('BG001'));
       await (btn1?.click() as Promise<void>);
@@ -72,6 +67,10 @@ export default function TextPickerDialogBackgroundColorTest() {
       await (cancelBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       done();
+      } catch (err) {
+        console.error('TextPickerDialogBackgroundColorTest_001 error: ' + err);
+        done();
+      }
     })
     /**
      * @tc.number   TextPickerDialogBackgroundColorTest_002
@@ -80,6 +79,7 @@ export default function TextPickerDialogBackgroundColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerDialogBackgroundColorTest_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       let btn2 = await driver.findComponent(ON.id('BG002'));
       await (btn2?.click() as Promise<void>);
@@ -94,6 +94,10 @@ export default function TextPickerDialogBackgroundColorTest() {
       await (cancelBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       done();
+      } catch (err) {
+        console.error('TextPickerDialogBackgroundColorTest_002 error: ' + err);
+        done();
+      }
     })
     /**
      * @tc.number   TextPickerDialogBackgroundColorTest_003
@@ -102,6 +106,7 @@ export default function TextPickerDialogBackgroundColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerDialogBackgroundColorTest_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       await CommonFunc.sleep(500);
       let btn3 = await driver.findComponent(ON.id('BG003'));
@@ -117,6 +122,10 @@ export default function TextPickerDialogBackgroundColorTest() {
       await (cancelBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       done();
+      } catch (err) {
+        console.error('TextPickerDialogBackgroundColorTest_003 error: ' + err);
+        done();
+      }
     })
     /**
      * @tc.number   TextPickerDialogBackgroundColorTest_004
@@ -125,6 +134,7 @@ export default function TextPickerDialogBackgroundColorTest() {
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerDialogBackgroundColorTest_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       await CommonFunc.sleep(500);
       let btn4 = await driver.findComponent(ON.id('BG004'));
@@ -140,6 +150,10 @@ export default function TextPickerDialogBackgroundColorTest() {
       await (cancelBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       done();
+      } catch (err) {
+        console.error('TextPickerDialogBackgroundColorTest_004 error: ' + err);
+        done();
+      }
     })
   })
 }

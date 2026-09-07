@@ -101,7 +101,7 @@ export default class CommonTest {
 
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
-              await Utils.sleep(2000);
+              await Utils.sleep(1000);
               data.viewObj = JSON.parseJsonElement(strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 

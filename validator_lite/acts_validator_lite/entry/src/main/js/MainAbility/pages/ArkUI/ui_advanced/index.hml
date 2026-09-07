@@ -1,0 +1,132 @@
+<div class="container">
+    <div class="content-title">
+        <text class="title">animator / picker / swiper / image / switch / event / app / config / timer</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+    <list class="scroll-area">
+        <list-item class="litem" style="height:350px;">
+            <text class="box-title">图片动画 image-animator</text>
+            <text class="val-text">{{ animatorState }}</text>
+            <image-animator ref="animator" class="animator" images="{{frames}}" duration="1s" style="height:150px;width:150px;"></image-animator>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="handleStart" />
+                <input class="opBtn" type="button" value="暂停" onclick="handlePause" />
+                <input class="opBtn" type="button" value="恢复" onclick="handleResume" />
+                <input class="opBtn" type="button" value="停止" onclick="handleStop" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{aPassColor}};" type="button" value="pass" onclick="passA" />
+                <input class="pfBtn" style="background-color:{{aFailColor}};" type="button" value="fail" onclick="failA" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:270px;">
+            <text class="box-title">选择器 picker-view</text>
+            <text class="val-text">Selected: {{ time }}</text>
+            <picker-view class="time-picker" type="time" selected="{{defaultTime}}" @change="handleChange"></picker-view>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{pPassColor}};" type="button" value="pass" onclick="passP" />
+                <input class="pfBtn" style="background-color:{{pFailColor}};" type="button" value="fail" onclick="failP" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:280px;">
+            <text class="box-title">滑动 swiper</text>
+            <swiper index="{{index}}" duration="200" class="swiper-area" style="height:160px;" vertical="true" onchange="showPage">
+                <stack class="swiper-stack" style="height:140px;"><text class="swiper-text">第{{index}}页 共3页</text></stack>
+                <stack class="swiper-stack" style="height:140px;"><text class="swiper-text">第{{index}}页 共3页</text></stack>
+                <stack class="swiper-stack" style="height:140px;"><text class="swiper-text">第{{index}}页 共3页</text></stack>
+            </swiper>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{sPassColor}};" type="button" value="pass" onclick="passS" />
+                <input class="pfBtn" style="background-color:{{sFailColor}};" type="button" value="fail" onclick="failS" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:275px;">
+            <text class="box-title">图片 image</text>
+            <image style="width:120px;height:120px;margin:6px;" src="/common/icon.png"></image>
+            <text class="val-text">图片应正常显示于上方</text>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{iPassColor}};" type="button" value="pass" onclick="passI" />
+                <input class="pfBtn" style="background-color:{{iFailColor}};" type="button" value="fail" onclick="failI" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">开关 switch</text>
+            <switch class="demoSwitch" checked="{{ switchStatus }}" onchange="onSwitchChange"></switch>
+            <text class="val-text">Status: {{ switchStatus }}</text>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{stPassColor}};" type="button" value="pass" onclick="passSt" />
+                <input class="pfBtn" style="background-color:{{stFailColor}};" type="button" value="fail" onclick="failSt" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:260px;">
+            <text class="box-title">长按 longpress</text>
+            <div class="touch-area" style="background-color:{{lpColor}}" onlongpress="longPressEvent"></div>
+            <text class="val-text">x: {{lpPointX}} , y: {{lpPointY}}</text>
+            <text class="val-text">timeStamp: {{lpTimeStamp}}</text>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{lpPassColor}};" type="button" value="pass" onclick="passLp" />
+                <input class="pfBtn" style="background-color:{{lpFailColor}};" type="button" value="fail" onclick="failLp" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:260px;">
+            <text class="box-title">滑动事件 swipe</text>
+            <div class="touch-area" style="background-color:{{spColor}}" onswipe="swipeEvent"></div>
+            <text class="val-text">方向: {{spDirection}} , 距离: {{spDistance}}</text>
+            <text class="val-text">timeStamp: {{spTimeStamp}}</text>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{spPassColor}};" type="button" value="pass" onclick="passSp" />
+                <input class="pfBtn" style="background-color:{{spFailColor}};" type="button" value="fail" onclick="failSp" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:230px;">
+            <text class="box-title">应用 app</text>
+            <text class="result">{{ appResult }}</text>
+            <text class="status-text">状态: {{ appStatus }}</text>
+            <div class="op-row"><input class="opBtn" type="button" value="获取信息" onclick="getAppInfo" /></div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{appPassColor}};" type="button" value="pass" onclick="passApp" />
+                <input class="pfBtn" style="background-color:{{appFailColor}};" type="button" value="fail" onclick="failApp" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:250px;">
+            <text class="box-title">配置 configuration</text>
+            <text class="tip" show="{{!cfgSupported}}">{{ cfgTip }}</text>
+            <text class="result">{{ cfgResult }}</text>
+            <text class="status-text">状态: {{ cfgStatus }}</text>
+            <div class="op-row"><input class="opBtn" type="button" value="获取信息" onclick="getCfgInfo" /></div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{cfgPassColor}};" type="button" value="pass" onclick="passCfg" />
+                <input class="pfBtn" style="background-color:{{cfgFailColor}};" type="button" value="fail" onclick="failCfg" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:210px;">
+            <text class="box-title">定时器 timeout</text>
+            <text class="result">{{ toValue }}</text>
+            <text class="status-text">状态: {{ toStatus }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="startTimer" onclick="startTimeout" />
+                <input class="opBtn" type="button" value="clearTimer" onclick="clearTimeoutBtn" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{toPassColor}};" type="button" value="pass" onclick="passTo" />
+                <input class="pfBtn" style="background-color:{{toFailColor}};" type="button" value="fail" onclick="failTo" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:210px;">
+            <text class="box-title">定时器 interval</text>
+            <text class="result">{{ tiIndex }}</text>
+            <text class="status-text">状态: {{ tiStatus }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="startInterval" onclick="startInterval" />
+                <input class="opBtn" type="button" value="clearInterval" onclick="clearIntervalBtn" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{tiPassColor}};" type="button" value="pass" onclick="passTi" />
+                <input class="pfBtn" style="background-color:{{tiFailColor}};" type="button" value="fail" onclick="failTi" />
+            </div>
+        </list-item>
+    </list>
+    <div class="bottom-bt">
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

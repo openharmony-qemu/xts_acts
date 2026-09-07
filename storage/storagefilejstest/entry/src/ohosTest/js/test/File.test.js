@@ -1667,6 +1667,43 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_readText_011
+   * @tc.number SUB_STORAGE_File_readText_1100
+   * @tc.desc   Function of API, encoding = "" .The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('File_readText_011', Level.LEVEL0, async function (done) {
+    file.writeText({
+      uri: 'internal://cache/File_readText_011',
+      text: 'Text that just for test.',
+      encoding: 'utf-8',
+      success: function () {
+        console.info('File_readText_011 call writeText success.');
+        file.readText({
+          uri: 'internal://cache/File_readText_011',
+          encoding: '',
+          success: function (data) {
+            console.info('File_readText_011 call readText success run err');
+            expect(null).assertFail();
+            done();
+          },
+          fail: function (data, code) {
+            console.info('File_readText_011 readText fail, code: ' + code + ', data: ' + data);
+            expect(code).assertEqual(300);
+            done();
+          },
+        });
+      },
+      fail: function (data, code) {
+        console.info('File_readText_011 writeText fail, code: ' + code + ', data: ' + data);
+        expect(null).assertFail();
+      },
+    });
+  });
+
+  /**
    * @tc.name   File_read_array_buffer_001
    * @tc.number SUB_STORAGE_File_read_array_buffer_0100
    * @tc.desc   Function of API, readArrayBuffer, cache path.position = 0, length = 10.
@@ -3875,7 +3912,18 @@ describe('fileTest', function () {
     file.list({
       uri: 'internal://cache/../files/File_List_001d',
       success: function (data) {
-        console.info('File_List_001 call list success.' + JSON.stringify(data.fileList));
+        console.info('File_List_001 call list success.' + JSON.stringify(data));
+        let fileResponseArray = data.fileList;
+        if (fileResponseArray.length > 0) {
+          let fileResponse = fileResponseArray[0];
+          expect(fileResponse.uri).not().assertUndefined();
+          expect(fileResponse.length).not().assertUndefined();
+          expect(fileResponse.lastModifiedTime).not().assertUndefined();
+          expect(fileResponse.type).not().assertUndefined();
+          if (fileResponse.subFiles > 0) {
+            expect(fileResponse.subFiles).not().assertUndefined();
+          }
+        }
         fileio.unlinkSync(fpath);
         fileio.rmdirSync(ddpath);
         fileio.rmdirSync(dpath);

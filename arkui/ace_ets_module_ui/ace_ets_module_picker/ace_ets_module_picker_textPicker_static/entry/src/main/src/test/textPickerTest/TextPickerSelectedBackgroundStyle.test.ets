@@ -13,23 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index'
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index'
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 export default function TextPickerSelectedBackgroundStyleTest() {
   describe('TextPickerSelectedBackgroundStyleTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("TextPickerSelectedBackgroundStyleTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.textPicker.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info("TextPickerSelectedBackgroundStyleTest beforeEach start");
       let options: router.RouterOptions = {
@@ -49,7 +43,11 @@ export default function TextPickerSelectedBackgroundStyleTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('TextPickerSelectedBackgroundStyleTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("TextPickerSelectedBackgroundStyleTest after each called");
     });
 

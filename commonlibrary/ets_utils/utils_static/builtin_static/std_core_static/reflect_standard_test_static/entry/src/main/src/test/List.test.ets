@@ -131,7 +131,27 @@ import InstanceMethodIsPrivateTest from './InstanceMethod/InstanceMethodIsPrivat
 import InstanceMethodIsProtectedTest from './InstanceMethod/InstanceMethodIsProtectedTest.test';
 import InstanceMethodIsPublicTest from './InstanceMethod/InstanceMethodIsPublicTest.test';
 import InstanceMethodIsSetterTest from './InstanceMethod/InstanceMethodIsSetterTest.test';
-
+import ConstructorAccessModifierCombo2Test2 from './constructor/ConstructorAccessModifierCombo2Test2.test';
+import ConstructorComprehensiveTest2Part1 from './constructor/ConstructorComprehensiveTest2Part1.test';
+import ConstructorCreateInstanceTest2Part1 from './constructor/ConstructorCreateInstanceTest2Part1.test';
+import ConstructorCreateInstanceTest2Part2 from './constructor/ConstructorCreateInstanceTest2Part2.test';
+import ConstructorEqualsTest2Part1 from './constructor/ConstructorEqualsTest2Part1.test';
+import ConstructorGetNameTest2Part1 from './constructor/ConstructorGetNameTest2Part1.test';
+import ConstructorGetOwnerTest2Part1 from './constructor/ConstructorGetOwnerTest2Part1.test';
+import ConstructorGetParameterTypeTest2Part1 from './constructor/ConstructorGetParameterTypeTest2Part1.test';
+import ConstructorGetParameterTypeTest2Part2 from './constructor/ConstructorGetParameterTypeTest2Part2.test';
+import ConstructorGetParameterTypesTest2Part1 from './constructor/ConstructorGetParameterTypesTest2Part1.test';
+import ConstructorGetParameterTypesTest2Part2 from './constructor/ConstructorGetParameterTypesTest2Part2.test';
+import ConstructorGetParametersNumTest2Part1 from './constructor/ConstructorGetParametersNumTest2Part1.test';
+import ConstructorGetReturnTypeTest2Part1 from './constructor/ConstructorGetReturnTypeTest2Part1.test';
+import ConstructorGetReturnTypeTest2Part2 from './constructor/ConstructorGetReturnTypeTest2Part2.test';
+import ConstructorIsAbstractTest2 from './constructor/ConstructorIsAbstractTest2.test';
+import ConstructorIsFinalTest2 from './constructor/ConstructorIsFinalTest2.test';
+import ConstructorIsNativeTest2 from './constructor/ConstructorIsNativeTest2.test';
+import ConstructorIsPrivateTest2Part1 from './constructor/ConstructorIsPrivateTest2Part1.test';
+import ConstructorIsPrivateTest2Part2 from './constructor/ConstructorIsPrivateTest2Part2.test';
+import ConstructorIsProtectedTest2Part1 from './constructor/ConstructorIsProtectedTest2Part1.test';
+import ConstructorIsPublicTest2Part1 from './constructor/ConstructorIsPublicTest2Part1.test';
 
 
 export default function testsuite(): void {
@@ -250,4 +270,26 @@ export default function testsuite(): void {
   InstanceMethodIsProtectedTest();
   InstanceMethodIsPublicTest();
   InstanceMethodIsSetterTest();
+
+  ConstructorAccessModifierCombo2Test2();
+  ConstructorComprehensiveTest2Part1();
+  ConstructorCreateInstanceTest2Part1();
+  ConstructorCreateInstanceTest2Part2();
+  ConstructorEqualsTest2Part1();
+  ConstructorGetNameTest2Part1();
+  ConstructorGetOwnerTest2Part1();
+  ConstructorGetParameterTypeTest2Part1();
+  ConstructorGetParameterTypeTest2Part2();
+  ConstructorGetParameterTypesTest2Part1();
+  ConstructorGetParameterTypesTest2Part2();
+  ConstructorGetParametersNumTest2Part1();
+  ConstructorGetReturnTypeTest2Part1();
+  ConstructorGetReturnTypeTest2Part2();
+  ConstructorIsAbstractTest2();
+  ConstructorIsFinalTest2();
+  ConstructorIsNativeTest2();
+  ConstructorIsPrivateTest2Part1();
+  ConstructorIsPrivateTest2Part2();
+  ConstructorIsProtectedTest2Part1();
+  ConstructorIsPublicTest2Part1();
 }

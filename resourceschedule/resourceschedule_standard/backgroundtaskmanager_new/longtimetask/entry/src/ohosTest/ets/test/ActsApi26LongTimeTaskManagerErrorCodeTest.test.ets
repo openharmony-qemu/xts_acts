@@ -101,7 +101,7 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
               } catch (err) {
                 let e: BusinessError = err as BusinessError;
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0100 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
-                expect(Number(e.code)).assertEqual(9800005);
+                expect(e.code).assertEqual(9800005);
                 done();
               }
             }).catch((error: BusinessError) => {
@@ -120,6 +120,59 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
           done();
         }
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0100 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0200
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0200
+     * @tc.desc   Test updateDataTransferProgress with negative continuousTaskId returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0200 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              try {
+                let progress: backgroundTaskManager.ProgressInfo = {
+                  title: 'NegId',
+                  fileName: 'neg.dat',
+                  progressValue: 10,
+                };
+                let dataTransferProgress: backgroundTaskManager.DataTransferProgress = {
+                  continuousTaskId: -1,
+                  progressInfo: progress,
+                };
+                backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0200 updateDataTransferProgress unexpected success');
+                expect(false).assertTrue();
+                done();
+              } catch (err) {
+                let e: BusinessError = err as BusinessError;
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0200 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                expect(e.code).assertEqual(9800006);
+                done();
+              }
+            }).catch((error: BusinessError) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0200 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: BusinessError) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0200 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0200 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0200 end---');
       })
 
     /**
@@ -159,7 +212,7 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0300 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
-                  expect(Number(e.code)).assertEqual(9800005);
+                  expect(e.code).assertEqual(9800005);
                   backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
                   console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0300 stopBackgroundRunning success");
                   done();
@@ -224,7 +277,7 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0400 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
-                  expect(Number(e.code)).assertEqual(9800006);
+                  expect(e.code).assertEqual(9800006);
                   backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
                   console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0400 stopBackgroundRunning success");
                   done();
@@ -289,7 +342,7 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0500 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
-                  expect(Number(e.code)).assertEqual(9800006);
+                  expect(e.code).assertEqual(9800006);
                   backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
                   console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0500 stopBackgroundRunning success");
                   done();
@@ -318,23 +371,283 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
       })
 
     /**
-     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400
-     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400
-     * @tc.desc   Test updateDataTransferProgress with very large progressValue Number.MAX_SAFE_INTEGER returns error 98000006
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0600
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0600
+     * @tc.desc   Test updateDataTransferProgress with context as null returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0600 begin---');
+        try {
+          let progress: backgroundTaskManager.ProgressInfo = {
+            title: 'NullContext',
+            fileName: 'null.ctx',
+            progressValue: 50,
+          };
+          let dataTransferProgress: backgroundTaskManager.DataTransferProgress = {
+            continuousTaskId: 0,
+            progressInfo: progress,
+          };
+          backgroundTaskManager.updateDataTransferProgress(null, dataTransferProgress);
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0600 updateDataTransferProgress unexpected success');
+          expect(false).assertTrue();
+          done();
+        } catch (err) {
+          let e: BusinessError = err as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0600 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+          expect(e.code).assertEqual(9800006);
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0600 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0700
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0700
+     * @tc.desc   Test updateDataTransferProgress with context as undefined returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0700 begin---');
+        try {
+          let progress: backgroundTaskManager.ProgressInfo = {
+            title: 'UndefContext',
+            fileName: 'undef.ctx',
+            progressValue: 50,
+          };
+          let dataTransferProgress: backgroundTaskManager.DataTransferProgress = {
+            continuousTaskId: 0,
+            progressInfo: progress,
+          };
+          backgroundTaskManager.updateDataTransferProgress(undefined, dataTransferProgress);
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0700 updateDataTransferProgress unexpected success');
+          expect(false).assertTrue();
+          done();
+        } catch (err) {
+          let e: BusinessError = err as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0700 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+          expect(e.code).assertEqual(9800006);
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0700 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0800
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0800
+     * @tc.desc   Test updateDataTransferProgress with DataTransferProgress as null returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0800 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              try {
+                backgroundTaskManager.updateDataTransferProgress(ability.context, null);
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0800 updateDataTransferProgress unexpected success');
+                expect(false).assertTrue();
+                done();
+              } catch (err) {
+                let e: BusinessError = err as BusinessError;
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0800 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                expect(e.code).assertEqual(9800006);
+                done();
+              }
+            }).catch((error: BusinessError) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0800 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: BusinessError) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0800 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0800 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0800 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0900
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0900
+     * @tc.desc   Test updateDataTransferProgress with DataTransferProgress as undefined returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0900 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              try {
+                backgroundTaskManager.updateDataTransferProgress(ability.context, undefined);
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0900 updateDataTransferProgress unexpected success');
+                expect(false).assertTrue();
+                done();
+              } catch (err) {
+                let e: BusinessError = err as BusinessError;
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0900 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                expect(e.code).assertEqual(9800006);
+                done();
+              }
+            }).catch((error: BusinessError) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0900 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: BusinessError) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0900 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0900 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0900 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1000
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1000
+     * @tc.desc   Test updateDataTransferProgress with ProgressInfo missing title returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1000 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              try {
+                let progress = {
+                  fileName: 'notitle.dat',
+                  progressValue: 50,
+                } as backgroundTaskManager.ProgressInfo;
+                let dataTransferProgress: backgroundTaskManager.DataTransferProgress = {
+                  continuousTaskId: 0,
+                  progressInfo: progress,
+                };
+                backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1000 updateDataTransferProgress unexpected success');
+                expect(false).assertTrue();
+                done();
+              } catch (err) {
+                let e: BusinessError = err as BusinessError;
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1000 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                expect(e.code).assertEqual(9800006);
+                done();
+              }
+            }).catch((error: BusinessError) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1000 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: BusinessError) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1000 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1000 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1000 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1100
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1100
+     * @tc.desc   Test updateDataTransferProgress with ProgressInfo missing fileName returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1100 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              try {
+                let progress = {
+                  title: 'NoFileName',
+                  progressValue: 50,
+                } as backgroundTaskManager.ProgressInfo;
+                let dataTransferProgress: backgroundTaskManager.DataTransferProgress = {
+                  continuousTaskId: 0,
+                  progressInfo: progress,
+                };
+                backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1100 updateDataTransferProgress unexpected success');
+                expect(false).assertTrue();
+                done();
+              } catch (err) {
+                let e: BusinessError = err as BusinessError;
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1100 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                expect(e.code).assertEqual(9800006);
+                done();
+              }
+            }).catch((error: BusinessError) => {
+              hilog.info(DOMAIN, TAG, 'ERROR_1500 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: BusinessError) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1100 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1100 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1100 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200
+     * @tc.desc   Test updateDataTransferProgress with very large progressValue Number.MAX_SAFE_INTEGER returns error 9800006
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
      */
-    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
       async (done: Function) => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 begin---');
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200 begin---');
         try {
           wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
             let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
             delegator.getCurrentTopAbility().then((ability: UIAbility) => {
               let bgModes: Array<string> = ['dataTransfer'];
               backgroundTaskManager.startBackgroundRunning(ability.context, bgModes, want).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 startBackgroundRunning success');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200 startBackgroundRunning success');
                 try {
                   let progress: backgroundTaskManager.ProgressInfo = {
                     title: 'MaxProgress',
@@ -346,40 +659,37 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
                     progressInfo: progress,
                   };
                   backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
-                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 updateDataTransferProgress unexpected success');
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200 updateDataTransferProgress unexpected success');
                   expect(false).assertTrue();
-                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
-                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 stopBackgroundRunning success");
-                  done();
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
-                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
-                  expect(Number(e.code)).assertEqual(9800006);
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                  expect(e.code).assertEqual(9800006);
                   backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
-                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 stopBackgroundRunning success");
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200 stopBackgroundRunning success");
                   done();
                 }
               }).catch((error: BusinessError) => {
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 startBackgroundRunning error: %{public}s', JSON.stringify(error));
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200 startBackgroundRunning error: %{public}s', JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
               })
             }).catch((error: BusinessError) => {
-              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
               expect(false).assertTrue();
               done();
             });
           }).catch((error: BusinessError) => {
-            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 getWantAgent error: %{public}s', JSON.stringify(error));
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200 getWantAgent error: %{public}s', JSON.stringify(error));
             expect(false).assertTrue();
             done();
           })
         } catch (error) {
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 error: %{public}s', JSON.stringify(error));
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200 error: %{public}s', JSON.stringify(error));
           expect(false).assertTrue();
           done();
         }
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 end---');
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200 end---');
       })
 
   })

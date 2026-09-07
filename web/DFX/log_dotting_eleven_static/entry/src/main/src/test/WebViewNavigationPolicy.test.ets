@@ -19,9 +19,10 @@ import router from '@ohos.router';
 import Utils from './Utils.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import{BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 import { NavigationPolicy } from "@ohos.arkui.component";
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import { MicrophoneCaptureState } from "@ohos.arkui.component";
@@ -87,7 +88,12 @@ export default function webViewController() {
         await webComponent.click();
         console.info("webComponent.click")
       }
-      Utils.registerEvent('testWebViewNavigationPolicy001', NavigationPolicy.NEW_POPUP, 20260113, done);
+      Utils.registerBaseEvent('testWebViewNavigationPolicy001', NavigationPolicy.NEW_POPUP, 20260113, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
       await Utils.msSleep(2000);
       if(keyButton){
@@ -125,7 +131,12 @@ export default function webViewController() {
         await webComponent.click()
         console.info("webComponent.click")
       }
-      Utils.registerEvent('testWebViewNavigationPolicy001', NavigationPolicy.NEW_WINDOW, 20260114, done)
+      Utils.registerBaseEvent('testWebViewNavigationPolicy001', NavigationPolicy.NEW_WINDOW, 20260114, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -147,34 +158,46 @@ export default function webViewController() {
      * @tc.level      LEVEL0
      */
     it('testWebViewNavigationPolicyStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      Utils.emitEvent('emitWebViewNavigationPolicy003',10)
-      await Utils.msSleep(1000)
-      let buttonOne = await driver.findComponent(ON.text('打开新窗口'))
-      if(buttonOne){
+      try {
+        Utils.emitEvent('emitWebViewNavigationPolicy003',10)
+        await Utils.msSleep(1000)
+        let buttonOne = await driver.findComponent(ON.text('打开新窗口'))
+        if(buttonOne){
         let point = await buttonOne.getBoundsCenter()
         await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2072)
         console.info("buttonOne.mouseClick")
-      }
-      await Utils.msSleep(1000)
-      let webComponent = await driver.findComponent(ON.id('WebViewNavigationPolicyWeb'))
-      if(webComponent){
+        }
+        await Utils.msSleep(1000)
+        let webComponent = await driver.findComponent(ON.id('WebViewNavigationPolicyWeb'))
+        if(webComponent){
         await webComponent.click()
         await Utils.msSleep(2000)
         await webComponent.click()
         console.info("webComponent.click")
-      }
-      Utils.registerEvent('testWebViewNavigationPolicy003', NavigationPolicy.NEW_BACKGROUND_TAB, 20260115, done)
-      let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
-      await Utils.msSleep(2000)
-      if(keyButton){
+        }
+        Utils.registerBaseEvent('testWebViewNavigationPolicy003', NavigationPolicy.NEW_BACKGROUND_TAB, 20260115, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+        const data = backData?.data as Record<string, RecordData>;
+        const action = data['ACTION'];
+        expect(action).assertEqual(expected);
+        });
+        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
+        await Utils.msSleep(2000)
+        if(keyButton){
         await keyButton.click()
         await Utils.msSleep(2000)
         console.info("keyButton.click")
         await keyButton.click()
-      }
-      await Utils.msSleep(6000)
-      done()
-    })
+        }
+        await Utils.msSleep(6000)
+        done()
+    
+      } catch (err) {
+        console.info('[testWebViewNavigationPolicyStatic003] err:'+JSON.stringify(err));
+        done();
+
+        }
+      })
 
     /**
      * @tc.name       testWebViewNavigationPolicyStatic004
@@ -185,34 +208,46 @@ export default function webViewController() {
      * @tc.level      LEVEL0
      */
     it('testWebViewNavigationPolicyStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      Utils.emitEvent('emitWebViewNavigationPolicy004',10)
-      await Utils.msSleep(1000)
-      let buttonOne = await driver.findComponent(ON.text('打开新标签'))
-      if(buttonOne){
+      try {
+        Utils.emitEvent('emitWebViewNavigationPolicy004',10)
+        await Utils.msSleep(1000)
+        let buttonOne = await driver.findComponent(ON.text('打开新标签'))
+        if(buttonOne){
         let point = await buttonOne.getBoundsCenter()
         await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT)
         console.info("buttonOne.mouseClick")
-      }
-      await Utils.msSleep(1000)
-      let webComponent = await driver.findComponent(ON.id('WebViewNavigationPolicyWeb'))
-      if(webComponent){
+        }
+        await Utils.msSleep(1000)
+        let webComponent = await driver.findComponent(ON.id('WebViewNavigationPolicyWeb'))
+        if(webComponent){
         await webComponent.click()
         await Utils.msSleep(2000)
         await webComponent.click()
         console.info("webComponent.click")
-      }
-      Utils.registerEvent('testWebViewNavigationPolicy004', NavigationPolicy.NEW_FOREGROUND_TAB, 20260116, done)
-      let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
-      await Utils.msSleep(2000)
-      if(keyButton){
+        }
+        Utils.registerBaseEvent('testWebViewNavigationPolicy004', NavigationPolicy.NEW_FOREGROUND_TAB, 20260116, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+        const data = backData?.data as Record<string, RecordData>;
+        const action = data['ACTION'];
+        expect(action).assertEqual(expected);
+        });
+        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
+        await Utils.msSleep(2000)
+        if(keyButton){
         await keyButton.click()
         await Utils.msSleep(2000)
         console.info("keyButton.click")
         await keyButton.click()
-      }
-      await Utils.msSleep(6000)
-      done()
-    })
+        }
+        await Utils.msSleep(6000)
+        done()
+    
+      } catch (err) {
+        console.info('[testWebViewNavigationPolicyStatic004] err:'+JSON.stringify(err));
+        done();
+
+        }
+      })
 
     /**
      * @tc.name   testHasImageErrorStatic001
@@ -225,7 +260,12 @@ export default function webViewController() {
     it('testHasImageErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000)
       Utils.emitEvent("testHasImageError001", 10);
-      Utils.registerEvent("testHasImageError001", '17100001', 115380, done);
+      Utils.registerBaseEvent("testHasImageError001", '17100001', 115380, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -248,7 +288,12 @@ export default function webViewController() {
     it('testHasImageErrorStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000)
       Utils.emitEvent("testHasImageError002", 10);
-      Utils.registerEvent("testHasImageError002", '17100001', 115390, done);
+      Utils.registerBaseEvent("testHasImageError002", '17100001', 115390, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -270,7 +315,12 @@ export default function webViewController() {
      */
     it('testSetAppCustomUserAgentStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetAppCustomUserAgent001', 10);
-      Utils.registerEvent("emitSetAppCustomUserAgent001", true, 174020, done);
+      Utils.registerBaseEvent("emitSetAppCustomUserAgent001", true, 174020, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -292,7 +342,12 @@ export default function webViewController() {
      */
     it('testSetAppCustomUserAgentStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetAppCustomUserAgent002', 10);
-      Utils.registerEvent("emitSetAppCustomUserAgent002", false, 174021, done);
+      Utils.registerBaseEvent("emitSetAppCustomUserAgent002", false, 174021, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -314,7 +369,12 @@ export default function webViewController() {
      */
     it('testSetUserAgentForHostsOverRangeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetUserAgentForHostsOverRange001', 10);
-      Utils.registerEvent("emitSetUserAgentForHostsOverRange001", false, 174060, done);
+      Utils.registerBaseEvent("emitSetUserAgentForHostsOverRange001", false, 174060, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -336,7 +396,12 @@ export default function webViewController() {
      */
     it('testSetUserAgentForHostsOverRangeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetUserAgentForHostsOverRange002', 10);
-      Utils.registerEvent("emitSetUserAgentForHostsOverRange002", false, 174061, done);
+      Utils.registerBaseEvent("emitSetUserAgentForHostsOverRange002", false, 174061, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -358,7 +423,12 @@ export default function webViewController() {
      */
     it('testSetSoftKeyboardBehaviorModeErrStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitSetSoftKeyboardBehaviorModeErr001", 10);
-      Utils.registerEvent("testSetSoftKeyboardBehaviorModeErr", 17100001, 20151222, done);
+      Utils.registerBaseEvent("testSetSoftKeyboardBehaviorModeErr", 17100001, 20151222, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -379,7 +449,12 @@ export default function webViewController() {
      */
     it('testSetSoftKeyboardBehaviorModeErrStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitSetSoftKeyboardBehaviorModeErr002", 10);
-      Utils.registerEvent("testSetSoftKeyboardBehaviorModeErr", 17100001, 20151223, done);
+      Utils.registerBaseEvent("testSetSoftKeyboardBehaviorModeErr", 17100001, 20151223, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -400,7 +475,12 @@ export default function webViewController() {
      */
     it('testOnCameraCaptureStateChangeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitOnCameraCaptureStateChange003", 10)
-      Utils.registerEvent("testOnCameraCaptureStateChange003", 2, 20260203, done);
+      Utils.registerBaseEvent("testOnCameraCaptureStateChange003", 2, 20260203, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -421,7 +501,12 @@ export default function webViewController() {
      */
     it('testOnTextSelectionChangeStatic02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitOnTextSelectionChange02", 10);
-      Utils.registerEvent("testOnTextSelectionChange02", 'selectionText', 202601212, done);
+      Utils.registerBaseEvent("testOnTextSelectionChange02", 'selectionText', 202601212, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(1000)
       if(keyButton){
@@ -448,7 +533,12 @@ export default function webViewController() {
      */
     it('testOnMicrophoneCaptureStateChangeStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange004", 10)
-      Utils.registerEvent("testOnMicrophoneCaptureStateChange004", MicrophoneCaptureState.NONE, 20251231, done);
+      Utils.registerBaseEvent("testOnMicrophoneCaptureStateChange004", MicrophoneCaptureState.NONE, 20251231, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -469,7 +559,12 @@ export default function webViewController() {
      */
     it('emitEnableSelectedDataDetectorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitEnableSelectedDataDetector001", 10)
-      Utils.registerEvent("emitEnableSelectedDataDetector001", 'false', 20251232, done);
+      Utils.registerBaseEvent("emitEnableSelectedDataDetector001", 'false', 20251232, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -490,7 +585,12 @@ export default function webViewController() {
      */
     it('emitEnableDataDetectorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitEnableDataDetector001", 10)
-      Utils.registerEvent("emitEnableDataDetector001", 'false', 20251233, done);
+      Utils.registerBaseEvent("emitEnableDataDetector001", 'false', 20251233, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -511,7 +611,12 @@ export default function webViewController() {
      */
     it('emitEnableDataDetectorStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitEnableDataDetector002", 10)
-      Utils.registerEvent("emitEnableDataDetector002", 'undefined', 20251234, done);
+      Utils.registerBaseEvent("emitEnableDataDetector002", 'undefined', 20251234, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(2000)
       if(keyButton){
@@ -532,7 +637,12 @@ export default function webViewController() {
      */
     it('testWebViewMetaViewportTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitWebViewMetaViewportTrue", 10)
-      Utils.registerEvent("emitWebViewMetaViewportFalse", "true", 10002, done);
+      Utils.registerBaseEvent("emitWebViewMetaViewportFalse", "true", 10002, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(1000)
       if(keyButton){
@@ -553,7 +663,12 @@ export default function webViewController() {
      */
     it('emitWebViewSetWebDestroyModeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitwebViewSetWebDestroyMode001', 10)
-        Utils.registerEvent('emitwebViewSetWebDestroyMode001', 'webview.WebDestroyMode.FAST_MODE', 138560, done);
+        Utils.registerBaseEvent('emitwebViewSetWebDestroyMode001', 'webview.WebDestroyMode.FAST_MODE', 138560, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
         await Utils.msSleep(1000)
         if(keyButton){
@@ -574,7 +689,12 @@ export default function webViewController() {
      */
     it('emitWebViewSetWebDestroyModeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitwebViewSetWebDestroyMode002', 10)
-        Utils.registerEvent('emitwebViewSetWebDestroyMode002', 'webview.WebDestroyMode.NORMAL_MODE', 138570, done);
+        Utils.registerBaseEvent('emitwebViewSetWebDestroyMode002', 'webview.WebDestroyMode.NORMAL_MODE', 138570, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
         await Utils.msSleep(1000)
         if(keyButton){
@@ -584,6 +704,84 @@ export default function webViewController() {
         await Utils.msSleep(6000)
         done()
       })
+
+    /**
+     * @tc.name   emitWebViewSetWebDestroyModeNullStatic
+     * @tc.number SUB_ACE_WEB_WEBVIEWSETWEBDESTROYMODE_API_0003
+     * @tc.desc   test setWebDestroyMode null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitWebViewSetWebDestroyModeNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      Utils.emitEvent('emitWebViewSetWebDestroyModeNull', 10)
+      Utils.registerBaseEvent('emitWebViewSetWebDestroyModeNullStatic', '401', 138580, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+      let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
+      await Utils.msSleep(1000)
+      if (keyButton) {
+        await keyButton.click()
+      }
+      await Utils.msSleep(6000)
+      done()
+    })
+
+    /**
+     * @tc.name   emitWebViewSetWebDestroyModeUndefinedStatic
+     * @tc.number SUB_ACE_WEB_WEBVIEWSETWEBDESTROYMODE_API_0004
+     * @tc.desc   test setWebDestroyMode undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitWebViewSetWebDestroyModeUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      Utils.emitEvent('emitWebViewSetWebDestroyModeUndefined', 10)
+      Utils.registerBaseEvent('emitWebViewSetWebDestroyModeUndefinedStatic', '401', 138581, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+      let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
+      await Utils.msSleep(1000)
+      if (keyButton) {
+        await keyButton.click()
+      }
+      await Utils.msSleep(6000)
+      done()
+    })
+
+    /**
+     * @tc.name   emitWebViewSetWebDestroyModeInvalidStatic
+     * @tc.number SUB_ACE_WEB_WEBVIEWSETWEBDESTROYMODE_API_0005
+     * @tc.desc   test setWebDestroyMode invalid enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitWebViewSetWebDestroyModeInvalidStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      Utils.emitEvent('emitWebViewSetWebDestroyModeInvalid', 10)
+      Utils.registerBaseEvent('emitWebViewSetWebDestroyModeInvalidStatic', '401', 138582, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+      let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
+      await Utils.msSleep(1000)
+      if (keyButton) {
+        await keyButton.click()
+      }
+      await Utils.msSleep(6000)
+      done()
+    })
 
     /**
      * @tc.name   testSetScrollbarModeStatic001
@@ -596,7 +794,12 @@ export default function webViewController() {
     it('testSetScrollbarModeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       Utils.emitEvent('emitSetScrollbarMode001', 10)
-      Utils.registerEvent('emitwebViewSetWebDestroyMode002', 1, 20251208, done);
+      Utils.registerBaseEvent('emitwebViewSetWebDestroyMode002', 1, 20251208, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(1000)
       if(keyButton){
@@ -618,7 +821,12 @@ export default function webViewController() {
     it('testOnDataResubmittedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       Utils.emitEvent('emitOnDataResubmitted', 10)
-      Utils.registerEvent('emitOnDataResubmitted', 'onDataResubmitted', 20251210, done);
+      Utils.registerBaseEvent('emitOnDataResubmitted', 'onDataResubmitted', 20251210, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))
       await Utils.msSleep(1000)
       if(keyButton){

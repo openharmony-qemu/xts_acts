@@ -103,6 +103,30 @@ struct WebInitTest {
                 break;
               }
 
+              case 'emitSetPrintBackgroundNullStatic001': {
+                try {
+                  let param: boolean | null = null;
+                  this.controller.setPrintBackground(param as boolean);
+                  Utils.emitEvent(true, 41022901);
+                } catch (error) {
+                  error = error as BusinessError;
+                  Utils.emitEvent(`${error.code}`, 41022901);
+                }
+                break;
+              }
+
+              case 'emitSetPrintBackgroundUndefinedStatic001': {
+                try {
+                  let param: boolean | undefined = undefined;
+                  this.controller.setPrintBackground(param as boolean);
+                  Utils.emitEvent(true, 41022902);
+                } catch (error) {
+                  error = error as BusinessError;
+                  Utils.emitEvent(`${error.code}`, 41022902);
+                }
+                break;
+              }
+
               case 'emitWebViewNotRespondingReason_INPUT_TIMEOUT': {
                 try {
                   this.controller.refresh()

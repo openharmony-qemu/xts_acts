@@ -27,7 +27,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import { NavPathInfo, NavigationDividerStyle, ScrollEffectType } from '@ohos.arkui.component';
 
-export default function navigationMaterial() {
+export default function navigationMaterial(): void {
   describe('navigationMaterial', () => {
     beforeAll(async (): Promise<void> => {
       console.info('navigationMaterial beforeAll start');
@@ -40,14 +40,18 @@ export default function navigationMaterial() {
         url: 'MainAbility/pages/navigation/navigationMaterial',
       };
       try {
-        const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info('get navigationMaterial state pages:' + JSON.stringify(pages));
-        if (!('navigationMaterial' == pages.name)) {
-          console.info('get navigationMaterial pages.name:' + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2500);
+        let routerInstance: Router | undefined = AppStorage.get<Router>("router");
+        if (routerInstance !== undefined) {
+          routerInstance.clear();
+          let pages = routerInstance.getState();
+          console.info('get navigationMaterial state pages:' + JSON.stringify(pages));
+          if (!('navigationMaterial' == pages.name)) {
+            console.info('get navigationMaterial pages.name:' + JSON.stringify(pages.name));
+            routerInstance.pushUrl(options);
+            await CommonFunc.sleep(2500);
+          }
+        } else {
+          console.error('navigationMaterial beforeEach: Router instance is undefined');
         }
       } catch (err) {
         console.error('push navigationMaterial page error:' + err);

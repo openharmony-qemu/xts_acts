@@ -5,8 +5,8 @@ import { BusinessError } from '@kit.BasicServicesKit'
 import { abilityAccessCtrl } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';
 import bundleManager from '@ohos.bundle.bundleManager';
-let commonTag: string = "GetUserGrantedEnableBundles"
-let bundleName: string = "com.example.actsNotificationAnsThreePartyWatchThirdParty"
+let commonTag: string = 'GetUserGrantedEnableBundles'
+let bundleName: string = 'com.example.actsNotificationAnsThreePartyWatchThirdParty'
 export default function actsNotificationAnsThreePartyGetUserGrantedEnableBundles3Test() {
   let uiAbilityContext: common.UIAbilityContext | undefined =
     AppStorage.get<common.UIAbilityContext>('uiAbilityContext');
@@ -30,7 +30,7 @@ export default function actsNotificationAnsThreePartyGetUserGrantedEnableBundles
      * @tc.level     Level 2
      */
     it('Sub_Notification_Ans_ThreePartyWatch_1058', Level.LEVEL1, async (done: Function) => {
-      const TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1058 ";
+      const TAG = commonTag + 'Sub_Notification_Ans_ThreePartyWatch_1058 ';
       try {
         const result = await notificationExtensionSubscription.getUserGrantedEnabledBundles();
         hilog.info(0x000, TAG, `111111Result: ${JSON.stringify(result)}`);
@@ -42,11 +42,11 @@ export default function actsNotificationAnsThreePartyGetUserGrantedEnableBundles
           // 检查是否是字符串数组还是对象数组
           if (typeof firstItem === 'string') {
             // 字符串数组的情况
-            hilog.info(0x000, TAG, "Returned string array format");
+            hilog.info(0x000, TAG, 'Returned string array format');
             expect(typeof firstItem === 'string').assertTrue();
           } else {
             // 对象数组的情况
-            hilog.info(0x000, TAG, "Returned object array format");
+            hilog.info(0x000, TAG, 'Returned object array format');
             expect(typeof firstItem.bundleName === 'string').assertTrue();
             expect(typeof firstItem.appIndex === 'number').assertTrue();
             if (firstItem.appName) {
@@ -55,10 +55,10 @@ export default function actsNotificationAnsThreePartyGetUserGrantedEnableBundles
           }
         }
 
-        hilog.info(0x000, TAG, "Test completed successfully");
+        hilog.info(0x000, TAG, 'Test completed successfully');
 
       } catch (err) {
-        console.error(TAG + "Test failed: " + JSON.stringify(err));
+        console.error(TAG + 'Test failed: ' + JSON.stringify(err));
         if(err.code == 201){
           expect(err.code).assertEqual(201);
           done()

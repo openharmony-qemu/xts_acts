@@ -17,10 +17,9 @@
 import hilog from '@ohos.hilog';
 import router from '@ohos.router';
 import { UIContext, AtomicServiceBar, Router, KeyboardAvoidMode } from '@ohos.arkui.UIContext';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import window from "@ohos.window";
 import { Nullable , FontStyle } from '@ohos.arkui.component'
@@ -28,13 +27,6 @@ import { Nullable , FontStyle } from '@ohos.arkui.component'
 export default function atomicServiceBarTest() {
   let uiContext = AppStorage.get<UIContext>('uiContext')
   describe('atomicServiceBarTest', () => {
-
-
-    beforeAll(async (): Promise<void> => {
-      console.info("atomicServiceBarTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("atomicServiceBarTest beforeEach start");
@@ -77,7 +69,11 @@ it('ArkuiContext_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
           console.log('++++++++++++++++1',uiContext)
             let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar(); //appDied
           console.log('++++++++++++++++2')
-            await CommonFunc.sleep(2000);
+            try {
+              await CommonFunc.sleep(2000);
+            } catch (err) {
+              console.info('atomicServiceBar sleep err: ' + JSON.stringify(err));
+            }
             if (atomicServiceBar != undefined) {
                 // support service
                 hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');

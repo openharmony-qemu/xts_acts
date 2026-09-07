@@ -20,7 +20,7 @@ import cloudFileDownloadTest from "./DownloadCloud.test";
 import CloudFileVersionTest from "./CloudFileVersion.test";
 import CloudFileTest from "./CloudSyncFile.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
     cloudCloudSyncTest();
     changeDataTest();
     cloudFileDownloadTest();

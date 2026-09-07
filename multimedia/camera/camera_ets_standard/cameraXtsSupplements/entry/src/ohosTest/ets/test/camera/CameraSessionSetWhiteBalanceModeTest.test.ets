@@ -843,6 +843,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
         }else {
           await createVideoOutput();
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          await mVideoSession.start()
           mVideoSession.setZoomRatio(undefined);
           console.info(TAG, testName, ' setZoomRatio.');
           let zoomRatioRange: Array<number> = []
@@ -1100,6 +1101,74 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       }
     })
     /**
+     * @tc.name   SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0005
+     * @tc.number SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0005
+     * @tc.desc   setSmoothZoom when the second param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0005';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          let zoomRatioRange: Array<number> = []
+          zoomRatioRange = mPhotoSession.getZoomRatioRange();
+          console.info(TAG, testName, "zoomRatioRange",zoomRatioRange);
+          if(zoomRatioRange!= undefined && zoomRatioRange.length > 0) {
+            mPhotoSession.setSmoothZoom(zoomRatioRange[0], null);
+            console.info(TAG, testName, ' setSmoothZoom.');
+          }else{
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releasePhotoSession();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0006
+     * @tc.number SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0006
+     * @tc.desc   setSmoothZoom when the second param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0006';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          let zoomRatioRange: Array<number> = []
+          zoomRatioRange = mPhotoSession.getZoomRatioRange();
+          console.info(TAG, testName, "zoomRatioRange",zoomRatioRange);
+          if(zoomRatioRange!= undefined && zoomRatioRange.length > 0) {
+            mPhotoSession.setSmoothZoom(zoomRatioRange[1], undefined);
+            console.info(TAG, testName, ' setSmoothZoom.');
+          }else{
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releasePhotoSession();
+        done();
+      }
+    })
+    /**
      * @tc.name   CAMERA_SESSION_ENABLE_CONTROL_CENTER_001
      * @tc.number CAMERA_SESSION_ENABLE_CONTROL_CENTER_001
      * @tc.desc   enableControlCenter true
@@ -1132,6 +1201,84 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       }
     })
     /**
+     * @tc.name   SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0002
+     * @tc.number SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0002
+     * @tc.desc   enableControlCenter null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0002';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let isSupported: boolean = mVideoSession.isControlCenterSupported();
+          if (isSupported) {
+            try {
+              mVideoSession.enableControlCenter(null);
+              console.info(TAG, testName, ' enableControlCenter is ok, but expect fail');
+              expect().assertFail();
+            }
+            catch (err) {
+              console.info(TAG, testName, `enableControlCenter error, code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual('7400101')
+            }
+          } else {
+            console.info(TAG, testName, ' 该设备不支持');
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releaseVideoSession();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0003
+     * @tc.number SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0003
+     * @tc.desc   enableControlCenter undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0003';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let isSupported: boolean = mVideoSession.isControlCenterSupported();
+          if (isSupported) {
+            try {
+              mVideoSession.enableControlCenter(undefined);
+              console.info(TAG, testName, ' enableControlCenter is ok, but expect fail');
+              expect().assertFail();
+            }
+            catch (err) {
+              console.info(TAG, testName, `enableControlCenter error, code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual('7400101')
+            }
+          } else {
+            console.info(TAG, testName, ' 该设备不支持');
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releaseVideoSession();
+        done();
+      }
+    })
+    /**
      * @tc.name   CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_001
      * @tc.number CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_001
      * @tc.desc   enableAutoDeviceSwitch false
@@ -1152,6 +1299,84 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             mVideoSession.enableAutoDeviceSwitch(false);
             console.info(TAG, testName, ' enableControlCenter is ok');
           }else{
+            console.info(TAG, testName, ' 该设备不支持');
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releaseVideoSession();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0002
+     * @tc.number SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0002
+     * @tc.desc   enableAutoDeviceSwitch null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0002';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let isSupported: boolean = mVideoSession.isAutoDeviceSwitchSupported();
+          if (isSupported) {
+            try {
+              mVideoSession.enableAutoDeviceSwitch(null);
+              console.info(TAG, testName, ' enableAutoDeviceSwitch is ok, but expect fail');
+              expect().assertFail();
+            }
+            catch (err) {
+              console.info(TAG, testName, `enableAutoDeviceSwitch error, code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual(camera.CameraErrorCode.INVALID_ARGUMENT)
+            }
+          } else {
+            console.info(TAG, testName, ' 该设备不支持');
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releaseVideoSession();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0003
+     * @tc.number SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0003
+     * @tc.desc   enableAutoDeviceSwitch undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0003';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let isSupported: boolean = mVideoSession.isAutoDeviceSwitchSupported();
+          if (isSupported) {
+            try {
+              mVideoSession.enableAutoDeviceSwitch(undefined);
+              console.info(TAG, testName, ' enableAutoDeviceSwitch is ok, but expect fail');
+              expect().assertFail();
+            }
+            catch (err) {
+              console.info(TAG, testName, `enableAutoDeviceSwitch error, code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual(camera.CameraErrorCode.INVALID_ARGUMENT)
+            }
+          } else {
             console.info(TAG, testName, ' 该设备不支持');
           }
         }
@@ -1266,5 +1491,140 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100
+     * @tc.number SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100
+     * @tc.desc   isWhiteBalanceModeSupported param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          let isSupported =mPhotoSession.isWhiteBalanceModeSupported(null);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported null:", isSupported);
+          expect(isSupported == false || isSupported == true).assertTrue()
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200
+     * @tc.number SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200
+     * @tc.desc   isWhiteBalanceModeSupported param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          let isSupported =mPhotoSession.isWhiteBalanceModeSupported(undefined);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported undefined:", isSupported);
+          expect(isSupported == false || isSupported == true).assertTrue()
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100
+     * @tc.number SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100
+     * @tc.desc   setWhiteBalanceMode param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let status = mVideoSession.isWhiteBalanceModeSupported(null);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported null:", status);
+          if (status) {
+            let mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            mVideoSession.setWhiteBalanceMode(null);
+            mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.AUTO);
+          } else {
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releaseVideoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200
+     * @tc.number SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200
+     * @tc.desc   setWhiteBalanceMode param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let status = mVideoSession.isWhiteBalanceModeSupported(undefined);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported undefined:", status);
+          if (status) {
+            let mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            mVideoSession.setWhiteBalanceMode(undefined);
+            mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.AUTO);
+          } else {
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releaseVideoSession();
+        done();
+      }
+    })
+
   })
 }

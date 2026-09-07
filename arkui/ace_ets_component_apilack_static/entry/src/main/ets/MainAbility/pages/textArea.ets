@@ -57,11 +57,11 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct TextAreaOnCut {
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear TextAreaOnCut start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear TextAreaOnCut end`)
   }
 

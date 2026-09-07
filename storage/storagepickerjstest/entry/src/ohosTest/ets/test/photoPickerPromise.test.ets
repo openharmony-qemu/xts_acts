@@ -16,6 +16,7 @@
 import { afterEach, describe, expect, it, Level } from '@ohos/hypium';
 import { sleep, startAbility, stopAbility } from './Common';
 import picker from '@ohos.file.picker';
+import globalContext from './GlobalContext'
 
 export default function photoPickerPromise(abilityContext: Context) {
   describe("photoPickerPromise", () => {
@@ -372,6 +373,27 @@ export default function photoPickerPromise(abilityContext: Context) {
     option.newFileNames = [''];
     let saveDir = "Pictures";
     await saveWithOption(testNum, done, option, saveDir);
+  });
+
+  /**
+   * @tc.name   PhotoViewPicker_constructor_001
+   * @tc.number SUB_DF_PhotoViewPicker_constructor_0010
+   * @tc.desc   Test PhotoViewPicker constructor
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('PhotoViewPicker_constructor_001', Level.LEVEL3, async (done: Function) => {
+    try {
+      let obj = new picker.PhotoViewPicker(globalContext.getContext().getAbility());
+      console.log('PhotoViewPicker_constructor_001 obj: ' + JSON.stringify(obj));
+      expect(obj).not().assertUndefined();
+      done();
+    } catch (e) {
+      console.log('PhotoViewPicker_constructor_001 has failed for ' + e.message + ', code: ' + e.code);
+      expect().assertFail();
+      done();
+    }
   });
   });
 }

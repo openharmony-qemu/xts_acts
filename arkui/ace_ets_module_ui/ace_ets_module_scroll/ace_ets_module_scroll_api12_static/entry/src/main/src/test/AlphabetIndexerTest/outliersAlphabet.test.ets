@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Driver,
@@ -28,21 +28,10 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest } from '../Util.test';
 import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 function alphabetDefaultPopupSize(sysWidth: Resource) {
   const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
   let resourcePopupSize = context?.resourceManager.getDouble(sysWidth.id)
@@ -50,7 +39,6 @@ function alphabetDefaultPopupSize(sysWidth: Resource) {
   let newPopupSize: string = Math.round(uiContext.px2vp(resourcePopupSize ?? 0)) + '.00vp'
   return newPopupSize;
 }
-
 function spliceBgColor(sysColor: Resource, sysColor1: Resource) {
   const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
   let resourceColor = context?.resourceManager.getColorSync(sysColor.id)
@@ -61,15 +49,8 @@ function spliceBgColor(sysColor: Resource, sysColor1: Resource) {
   let newArgb: string = '#' + numColor1?.toString(16).toUpperCase() + resourceColor?.toInt().toString(16).toUpperCase().slice(2)
   return newArgb;
 }
-
 export default function outliersAlphabet() {
   describe('outliersAlphabet', () => {
-    beforeAll(async (): Promise<void> => {
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("outliersAlphabet beforeEach start");
       let options: router.RouterOptions = {

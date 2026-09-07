@@ -13,19 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function ActsGridTest() {
   describe('ActsGridTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
@@ -41,6 +37,7 @@ export default function ActsGridTest() {
           console.info("get grid state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
+          await CommonFunc.sleep(2000);
           // console.info("push grid page success " + JSON.stringify(result));
         }
       } catch (err) {

@@ -13,23 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import hilog from '@ohos.hilog';
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import events_emitter from '@ohos.events.emitter';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility, stopApplication } from './Util.test';
 import router from '@ohos.router';
 import Utils  from "../../ets/MainAbility/common/Utils";
 
 export default function systempromptJsunit() {
   describe('systempromptJsunit', () => {
-
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
-    })
 
     beforeEach(async (): Promise<void> => {
       console.info("prompt beforeEach start");
@@ -65,7 +59,7 @@ export default function systempromptJsunit() {
 it('promptTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('promptTest_0100 is start');
       try{
-        await Utils.sleep(1500);
+        await Utils.sleep(1000);
       console.info("promptTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('systemPrompt' + '_button1',10,"")));
       await Utils.sleep(1500);
       }catch(e){
@@ -85,7 +79,7 @@ it('promptTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<voi
 it('promptTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('promptTest_0200 is start');
       try{
-        await Utils.sleep(1500);
+        await Utils.sleep(1000);
       console.info("promptTest_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('systemPrompt' + '_button2',10,"")));
       await Utils.sleep(1500);
       }catch(e){

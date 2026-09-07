@@ -94,6 +94,120 @@ static napi_value OH_AVRecorder_UpdateRotation0100(napi_env env, napi_callback_i
     return retValue;
 }
 
+static napi_value OH_AVRecorder_UpdateRotation0200(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t videoRotation = 90;
+    OH_AVRecorder *Recorder = OH_AVRecorder_Create();
+    OH_AVErrCode errcode = OH_AVRecorder_UpdateRotation(Recorder, videoRotation);
+    OH_LOG_INFO(LOG_APP, "AVRecorder updateRotationAVRecorder result :%{public}d", errcode);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVRecorder_UpdateRotation0300(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t videoRotation = 180;
+    OH_AVRecorder *Recorder = OH_AVRecorder_Create();
+    OH_AVErrCode errcode = OH_AVRecorder_UpdateRotation(Recorder, videoRotation);
+    OH_LOG_INFO(LOG_APP, "AVRecorder updateRotationAVRecorder result :%{public}d", errcode);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVRecorder_UpdateRotation0400(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t videoRotation = 270;
+    OH_AVRecorder *Recorder = OH_AVRecorder_Create();
+    OH_AVErrCode errcode = OH_AVRecorder_UpdateRotation(Recorder, videoRotation);
+    OH_LOG_INFO(LOG_APP, "AVRecorder updateRotationAVRecorder result :%{public}d", errcode);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVRecorder_UpdateRotation0500(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t videoRotation = 0;
+    OH_AVRecorder *Recorder = OH_AVRecorder_Create();
+    OH_AVErrCode errcode = OH_AVRecorder_UpdateRotation(Recorder, videoRotation);
+    OH_LOG_INFO(LOG_APP, "AVRecorder updateRotationAVRecorder result :%{public}d", errcode);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVRecorder_UpdateRotation0600(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t videoRotation = 120;
+    OH_AVRecorder *Recorder = OH_AVRecorder_Create();
+    OH_AVErrCode errcode = OH_AVRecorder_UpdateRotation(Recorder, videoRotation);
+    OH_LOG_INFO(LOG_APP, "AVRecorder updateRotationAVRecorder result :%{public}d", errcode);
+    int32_t res = 1;
+    if (errcode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVRecorder_UpdateRotation0700(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t videoRotation = 360;
+    OH_AVRecorder *Recorder = OH_AVRecorder_Create();
+    OH_AVErrCode errcode = OH_AVRecorder_UpdateRotation(Recorder, videoRotation);
+    OH_LOG_INFO(LOG_APP, "AVRecorder updateRotationAVRecorder result :%{public}d", errcode);
+    int32_t res = 1;
+    if (errcode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
 static napi_value OH_AVRecorder_Start0100(napi_env env, napi_callback_info info)
 {
     OH_AVErrCode errcode = OH_AVRecorder_Start(nullptr);
@@ -696,6 +810,18 @@ napi_property_descriptor desc[] = {
     {"OH_AVRecorder_GetInputSurface0101", nullptr, OH_AVRecorder_GetInputSurface0101, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"OH_AVRecorder_UpdateRotation0100", nullptr, OH_AVRecorder_UpdateRotation0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVRecorder_UpdateRotation0200", nullptr, OH_AVRecorder_UpdateRotation0200, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVRecorder_UpdateRotation0300", nullptr, OH_AVRecorder_UpdateRotation0300, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVRecorder_UpdateRotation0400", nullptr, OH_AVRecorder_UpdateRotation0400, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVRecorder_UpdateRotation0500", nullptr, OH_AVRecorder_UpdateRotation0500, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVRecorder_UpdateRotation0600", nullptr, OH_AVRecorder_UpdateRotation0600, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVRecorder_UpdateRotation0700", nullptr, OH_AVRecorder_UpdateRotation0700, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"OH_AVRecorder_Start0100", nullptr, OH_AVRecorder_Start0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVRecorder_Pause0100", nullptr, OH_AVRecorder_Pause0100, nullptr, nullptr, nullptr, napi_default, nullptr},

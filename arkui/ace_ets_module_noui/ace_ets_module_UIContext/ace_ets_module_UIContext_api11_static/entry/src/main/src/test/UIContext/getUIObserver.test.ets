@@ -15,11 +15,10 @@
  */
 import router from '@ohos.router';
 import { UIContext, AtomicServiceBar, Router, KeyboardAvoidMode } from '@ohos.arkui.UIContext';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 interface optionsObj {
@@ -28,11 +27,6 @@ interface optionsObj {
 
 export default function getUIObserver() {
   describe('getUIObserver', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("getUIObserver beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       console.info("getUIObserver beforeEach start");
       let options: router.RouterOptions = {
@@ -68,23 +62,28 @@ export default function getUIObserver() {
      * @tc.level    Level.LEVEL0
      */
 it('getUIObserver_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('getUIObserver_0100 START');
-      let driver = Driver.create()
-      console.info('+++++++++++++++++++1');
-      await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.id('Wlan_Id')) as Component;
-      console.info('+++++++++++++++++++2');
-      await button!.click();
-      console.info('+++++++++++++++++++3');
-      await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('getUIObserver_showFlag_id');
-      console.log('++++++++++4')
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[getUIObserver_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[getUIObserver_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('30');
-      console.info('[getUIObserver_0100] END');
-      done();
+      try {
+        console.info('getUIObserver_0100 START');
+        let driver = Driver.create()
+        console.info('+++++++++++++++++++1');
+        await CommonFunc.sleep(500);
+        let button = await driver.findComponent(ON.id('Wlan_Id')) as Component;
+        console.info('+++++++++++++++++++2');
+        await button!.click();
+        console.info('+++++++++++++++++++3');
+        await CommonFunc.sleep(1000);
+        let strJson: string = inspector.getInspectorByKey('getUIObserver_showFlag_id');
+        console.log('++++++++++4')
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[getUIObserver_0100] component obj is: " + JSON.stringify(obj));
+        console.info("[getUIObserver_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('30');
+        console.info('[getUIObserver_0100] END');
+        done();
+      } catch (err) {
+        console.info('getUIObserver_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

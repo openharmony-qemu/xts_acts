@@ -22,6 +22,7 @@ import preferencesV9CallbackTest from './PreferencesV9CallBackJsunit.test';
 import preferencesV9PromiseTest from './PreferencesV9PromiseJsunit.test';
 import PreferencesInterfaceTest from './PreferencesInterfaceTest.test'
 import preferencesErrcodeTest from './PreferenceErrcodeTest.test';
+import preferencesCoverageAddTest from './PreferencesCoverageAdd.test';
 
 export default function testsuite() {
   preferencesCallBackTest()
@@ -33,5 +34,6 @@ export default function testsuite() {
   preferencesV9PromiseTest()
   PreferencesInterfaceTest()
   preferencesErrcodeTest();
+  preferencesCoverageAddTest();
 }
 

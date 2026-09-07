@@ -13,21 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
 export default function waterFlowLayoutMode() {
   describe('waterFlowLayoutMode', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("waterFlowLayoutMode beforeEach start");
       let options: router.RouterOptions = {
@@ -62,20 +58,27 @@ export default function waterFlowLayoutMode() {
      * @tc.level    Level.LEVEL1
      */
 it('waterFlowLayoutMode_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[waterFlowLayoutMode_static_001] START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('layout_scroll'));
-      console.info("[waterFlowLayoutMode_static_001] component btn is: " + btn);
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('[waterFlowLayoutMode_static_001] START');
+        await CommonFunc.sleep(1000);
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let btn = await driver.findComponent(ON.id('layout_scroll'));
+        console.info("[waterFlowLayoutMode_static_001] component btn is: " + btn);
+        await (btn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('layoutMode_yOffset');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[waterFlowLayoutMode_static_001] component strJson is: " + strJson);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('yOffset: 100');
-      console.info('[waterFlowLayoutMode_static_001] END');
-      done();
+        let strJson = inspector.getInspectorByKey('layoutMode_yOffset');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[waterFlowLayoutMode_static_001] component strJson is: " + strJson);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('yOffset: 100');
+        console.info('[waterFlowLayoutMode_static_001] END');
+        done();
+      } catch (error) {
+        console.error('[waterFlowLayoutMode_static_001] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 

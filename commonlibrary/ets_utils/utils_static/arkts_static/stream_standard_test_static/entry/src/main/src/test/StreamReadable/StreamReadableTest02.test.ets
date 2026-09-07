@@ -23,7 +23,7 @@ class TestReadable0201 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(size: number) {
+  doRead(size: int) {
     if (this.index < this.data.length) {
       let chunk = new Uint8Array(1);
       chunk[0] = this.data[this.index++];
@@ -38,7 +38,7 @@ class TestReadable0202 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(size: number) {
+  doRead(size: int) {
     this.push(null);
   }
 }
@@ -47,7 +47,7 @@ class TestReadable0203 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -55,7 +55,7 @@ class TestReadable0204 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(size: number) {
+  doRead(size: int) {
     let arr = new Uint8Array(3);
     arr[0] = 1;
     arr[1] = 2;
@@ -70,7 +70,7 @@ class TestReadable0205 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(size: number) {
+  doRead(size: int) {
     if (this.index < this.data.length) {
       let chunk = new Uint8Array(1);
       chunk[0] = this.data[this.index++];

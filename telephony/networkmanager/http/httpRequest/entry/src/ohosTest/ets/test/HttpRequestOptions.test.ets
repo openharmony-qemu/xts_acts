@@ -63,7 +63,7 @@ export default function HttpRequestOptionsTest() {
                                 letter: "test",
                                 characters: "测试文字",
                             },
-                            header: "content-type': 'application/json",
+                            header: { 'content-type': 'application/json' },
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions,
@@ -111,7 +111,7 @@ export default function HttpRequestOptionsTest() {
                         console.info(`${caseName} Network connected`);
                         let httpRequestOptions: http.HttpRequestOptions = {
                             extraData: 'testInformation测试',
-                            header: "content-type': 'application/x-www-form-urlencoded",
+                            header: { 'content-type': 'application/x-www-form-urlencoded' },
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions,
@@ -159,7 +159,7 @@ export default function HttpRequestOptionsTest() {
                         console.info(`${caseName} Network connected`);
                         let httpRequestOptions: http.HttpRequestOptions = {
                             extraData: 'testInformation测试',
-                            header: "content-type': 'text/xml",
+                            header: { 'content-type': 'text/xml' },
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions, (err: Error, data: http.HttpResponse) => {
@@ -209,7 +209,7 @@ export default function HttpRequestOptionsTest() {
                                 letter: "test",
                                 characters: "测试文字",
                             },
-                            header: "content-type': 'application/json",
+                            header: { 'content-type': 'application/json' },
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
@@ -254,7 +254,7 @@ export default function HttpRequestOptionsTest() {
                         console.info(`${caseName} Network connected`);
                         let httpRequestOptions: http.HttpRequestOptions = {
                             extraData: 'testInformation测试',
-                            header: "content-type': 'application/x-www-form-urlencoded",
+                            header: { 'content-type': 'application/x-www-form-urlencoded' },
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
@@ -299,7 +299,7 @@ export default function HttpRequestOptionsTest() {
                         console.info(`${caseName} Network connected`);
                         let httpRequestOptions: http.HttpRequestOptions = {
                             extraData: 'testInformation测试',
-                            header: "content-type': 'text/xml",
+                            header: { 'content-type': 'text/xml' },
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
@@ -1542,7 +1542,7 @@ export default function HttpRequestOptionsTest() {
                     } else {
                         console.info(`${caseName} Network connected`);
                         let httpRequestOptions: http.HttpRequestOptions = {
-                            header: "xts-test’: ‘xts/test"
+                            header: { 'xts-test': 'xts/test' },
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions, (err: Error, data: http.HttpResponse) => {
@@ -1678,7 +1678,7 @@ export default function HttpRequestOptionsTest() {
                     } else {
                         console.info(`${caseName} Network connected`);
                         let httpRequestOptions: http.HttpRequestOptions = {
-                            header: "xts-test’: ‘xts/test"
+                            header: { 'xts-test': 'xts/test' },
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {

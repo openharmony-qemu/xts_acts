@@ -17,22 +17,28 @@ import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import JSON from '@ohos.util.json';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct webviewGetAndSetHttpAuthUsernamePassword {
   controller: WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State showNativeMediaPlayer: boolean = false;
   @State nodeWidth : number = 300;
   @State nodeHeight : number = 150;
   @State isShouldOverlay : boolean = true;
   @State isCallback : boolean = true;
-  host: string = 'www.spincast.org';
+  host: string = '';
   realm: string = 'protected example';
   usernamePassword: string[] = [];
   @State emitKey: string = '';
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
+
+  aboutToAppear() {
+    this.host = this.mServer.getBaseUri().replace('http://', '').replace('https://', '').split(':')[0];
+  }
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -44,6 +50,10 @@ struct webviewGetAndSetHttpAuthUsernamePassword {
 
   onPageHide() {
       events_emitter.off(130000);
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -208,7 +218,7 @@ struct webviewGetAndSetHttpAuthUsernamePassword {
           }
         })
       }
-      Web({ src: 'www.example.com', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('databaseAccess.html'), controller: this.controller })
         .databaseAccess(true)
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);

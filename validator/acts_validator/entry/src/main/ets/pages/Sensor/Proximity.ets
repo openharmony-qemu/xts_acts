@@ -47,6 +47,22 @@ struct Proximity {
       // 打开接近光传感器
       Logger.info(TAG, 'enter')
       try {
+        const sensorList: sensor.Sensor[] = sensor.getSingleSensorByDeviceSync(sensor.SensorId.PROXIMITY);
+        Logger.info(TAG, `sensorList.length: ${sensorList.length}`);
+        if (sensorList.length > 0) {
+          Logger.info(TAG, `isMockSensor: ${sensorList[0].isMockSensor}`);
+          if (sensorList[0].isMockSensor == true) {
+            this.isHave = false;
+            this.Vue = false;
+            promptAction.showToast({
+              message: '当前设备接近光传感器为模拟传感器'
+            })
+            router.back({
+              url: 'pages/Sensor/Sensor_index',
+              params: { result: 'true ', title: this.name }
+            })
+          }
+        }
         sensor.on(sensor.SensorId.PROXIMITY, (data: sensor.ProximityResponse) => {
           console.info('Succeeded in invoking on. Proximity: ' + data.distance);
           this.dataPedometer = data.distance.toFixed(2);

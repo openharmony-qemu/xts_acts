@@ -83,7 +83,7 @@ struct NavigationExample {
   @State titleMode: NavigationTitleMode = NavigationTitleMode.Free
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5)
 
-  onPageShow() {
+  onPageShow(): void {
     console.info('progress page show called');
     let stateChangeEvent: events_emitter.InnerEvent = {
       eventId: 135,
@@ -134,7 +134,7 @@ struct NavigationExample {
               .textAlign(TextAlign.Center)
           }
 
-        }, (item: number) => item!.toString())
+        }, (item: number) => item.toString())
       }
       .listDirection(Axis.Vertical)
       .key('Navigation')
@@ -206,24 +206,22 @@ struct NavigationExample {
   }
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      const data = eventData.data as Record<String,RecordData>
-      console.info("tabs page state change called:" + JSON.stringify(eventData));
-      if (data['vertical'] != null) {
-        this.titleMode = data['vertical'] as NavigationTitleMode;
-      }
-      if (data['hideToolBar'] != null) {
-        this.hideToolBar = data['hideToolBar'] as boolean;
-      }
-      if (data['hideTitleBar'] != null) {
-        this.hideTitleBar = data['hideTitleBar'] as boolean;
-      }
-      if (data['hideBackButton'] != null) {
-        this.hideBackButton = data['hideBackButton'] as boolean;
-      }
-      if (data['hideNavBar'] != null) {
-        this.titleMode = data['hideNavBar'] as NavigationTitleMode;
-      }
+    const data = eventData.data as Record<string,RecordData>
+    console.info("tabs page state change called:" + JSON.stringify(eventData));
+    if (data['vertical'] != null) {
+      this.titleMode = data['vertical'] as NavigationTitleMode;
+    }
+    if (data['hideToolBar'] != null) {
+      this.hideToolBar = data['hideToolBar'] as boolean;
+    }
+    if (data['hideTitleBar'] != null) {
+      this.hideTitleBar = data['hideTitleBar'] as boolean;
+    }
+    if (data['hideBackButton'] != null) {
+      this.hideBackButton = data['hideBackButton'] as boolean;
+    }
+    if (data['hideNavBar'] != null) {
+      this.titleMode = data['hideNavBar'] as NavigationTitleMode;
     }
   }
 }

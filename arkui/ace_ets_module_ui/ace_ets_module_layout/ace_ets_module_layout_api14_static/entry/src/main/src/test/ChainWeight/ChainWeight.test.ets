@@ -15,14 +15,10 @@
  */
 
 import router from '@ohos.router';
-import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
-  afterAll,
   it,
   expect,
   Level,
@@ -40,28 +36,15 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function ChainWeight() {
   describe('ChainWeight', () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility("com.arkui.ace.layout.api14.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("ChainWeight beforeEach start");
       let options: router.RouterOptions = {
@@ -99,7 +82,11 @@ export default function ChainWeight() {
      */
 it('ChainWeight_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ChainWeight_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ChainWeightTest sleep err: ' + JSON.stringify(err));
+      }
 
       let rect1 = Utils.getComponentRect('row1');
       let rect2 = Utils.getComponentRect('row2');

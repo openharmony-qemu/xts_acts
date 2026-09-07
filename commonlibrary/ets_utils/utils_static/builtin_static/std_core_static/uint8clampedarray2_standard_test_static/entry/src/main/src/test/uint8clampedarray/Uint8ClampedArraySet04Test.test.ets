@@ -627,7 +627,7 @@ export default function uint8ClampedArraySetFourTest(): void {
         arr.set(src, 0x7FFFFFFF);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

@@ -48,7 +48,7 @@ export default function imagePixelmap() {
   let cacheDir: string | undefined | null;
   let testContext: common.UIAbilityContext;
   let isSupportHEIFDecode: boolean;
-  let isSupportHdr: Boolean;
+  let isSupportHdr: Boolean = false;
   const AUTO = image.AllocatorType.AUTO;
   const DMA = image.AllocatorType.DMA;
   const SHARE_MEMORY = image.AllocatorType.SHARE_MEMORY;
@@ -84,14 +84,11 @@ export default function imagePixelmap() {
       testContext = Hypium.get('context') as common.UIAbilityContext;
       isSupportHEIFDecode =
         image.createImageSource(filesDir + '/' + "test.jpg")!.supportedFormats.includes("image/heic");
-      // isSupportHdr = 
-      //   !display.getDefaultDisplaySync().hdrFormats.includes(hdrCapability.HDRFormat.NONE) &&
-      //     display.getDefaultDisplaySync().hdrFormats.length != 0;
       try {
-        isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
+        isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
+        console.info('isSupportHdr is ' + isSupportHdr);
       } catch (err) {
-        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-        isSupportHdr = false;
+        console.error('The file path does not exist');
       }
     })
 

@@ -14,30 +14,17 @@
  * limitations under the License.
  */
 import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Visibility, Position } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function flex_NoWrap_PositionTest() {
   describe('Flex_NoWrap_PositionTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Flex_NoWrap_PositionTest beforeEach start");
-     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Flex_NoWrap_PositionTest beforeEach start");
       let options: router.RouterOptions = {
@@ -60,7 +47,11 @@ export default function flex_NoWrap_PositionTest() {
     });
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       console.info("Flex_NoWrap_Position after each called");
     });
     
@@ -78,7 +69,11 @@ it('testWrapNoWrapTextPosition_static', Level.LEVEL0, async () => {
           x: 20, y: 40
         }
       })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_Position01');
       let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_Position02');
       let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_Position03');

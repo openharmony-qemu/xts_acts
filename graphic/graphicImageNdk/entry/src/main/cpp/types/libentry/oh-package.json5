@@ -14,7 +14,7 @@
  */
 
 {
-  "name": "libImageNdk.so",
+  "name": "@types/libImageNdk.so",
   "types": "./index.d.ts",
   "version": "",
   "description": "Please describe the basic information."

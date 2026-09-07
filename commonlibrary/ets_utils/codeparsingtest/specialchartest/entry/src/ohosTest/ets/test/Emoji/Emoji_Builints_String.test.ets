@@ -21,7 +21,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0100
      * @tc.desc   Testing the String interface Constructor with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -42,7 +42,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0200
      * @tc.desc   Testing the String interface Constructor with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0300
      * @tc.desc   Testing the String interface Constructor with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0400
      * @tc.desc   Testing the String interface Constructor with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0500
      * @tc.desc   Testing the String interface Constructor with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -126,7 +126,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0600
      * @tc.desc   Testing the String interface Constructor with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -147,7 +147,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0700
      * @tc.desc   Testing the String interface Constructor with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -168,7 +168,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0800
      * @tc.desc   Testing the String interface Constructor with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -189,7 +189,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0900
      * @tc.desc   Testing the String interface Constructor with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -210,7 +210,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1000
      * @tc.desc   Testing the String interface Constructor with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -231,7 +231,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1100
      * @tc.desc   Testing the String interface Constructor with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -252,7 +252,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringConstructorEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1200
      * @tc.desc   Testing the String interface Constructor with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2185,7 +2185,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_0100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2204,7 +2204,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_0200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc64.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2224,7 +2224,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_0300
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc6b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2245,7 +2245,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_0400
      * @tc.desc   Testing the Url interface parseURL with input emoji \u260e.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2266,7 +2266,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_0500
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2287,7 +2287,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_0600
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd5b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2308,7 +2308,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_0700
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf4f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2329,7 +2329,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_0800
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd03.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2350,7 +2350,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_0900
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf41.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2371,7 +2371,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_1000
      * @tc.desc   Testing the Url interface parseURL with input emoji \u2666.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2392,7 +2392,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_1100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc48.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2413,7 +2413,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeLocalCompareEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Compare1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_COMPARE_1200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2434,7 +2434,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_0100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2454,7 +2454,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeMatchEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_0200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc64.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2476,7 +2476,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_0300
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc6b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2498,7 +2498,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_0400
      * @tc.desc   Testing the Url interface parseURL with input emoji \u260e.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2520,7 +2520,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_0500
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2542,7 +2542,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_0600
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd5b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2564,7 +2564,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_0700
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf4f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2586,7 +2586,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_0800
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd03.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2608,7 +2608,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_0900
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf41.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2630,7 +2630,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_1000
      * @tc.desc   Testing the Url interface parseURL with input emoji \u2666.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2652,7 +2652,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_1100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc48.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2674,7 +2674,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Match1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCH_1200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2695,7 +2695,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_0100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2717,7 +2717,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_0200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc64.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2740,7 +2740,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_0300
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc6b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2763,7 +2763,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_0400
      * @tc.desc   Testing the Url interface parseURL with input emoji \u260e.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2786,7 +2786,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_0500
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2809,7 +2809,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_0600
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd5b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2832,7 +2832,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_0700
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf4f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2855,7 +2855,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_0800
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd03.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2878,7 +2878,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_0900
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf41.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2901,7 +2901,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_1000
      * @tc.desc   Testing the Url interface parseURL with input emoji \u2666.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2924,7 +2924,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_1100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc48.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2947,7 +2947,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeMatchAllEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MatchAll1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_MATCHALL_1200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2969,7 +2969,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_0100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2987,7 +2987,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_0200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc64.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3007,7 +3007,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_0300
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc6b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3027,7 +3027,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_0400
      * @tc.desc   Testing the Url interface parseURL with input emoji \u260e.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3047,7 +3047,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_0500
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3067,7 +3067,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_0600
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd5b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3087,7 +3087,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_0700
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf4f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3107,7 +3107,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_0800
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd03.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3127,7 +3127,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_0900
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf41.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3147,7 +3147,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_1000
      * @tc.desc   Testing the Url interface parseURL with input emoji \u2666.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3167,7 +3167,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_1100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc48.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3187,7 +3187,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeNormalizeEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_Normalize1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_NORMALIZE_1200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5804,7 +5804,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleLowerCaseEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LowerCase0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LOWERCASE_0100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5822,7 +5822,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeToLocaleLowerCaseEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LowerCase0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LOWERCASE_0200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc64.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5843,7 +5843,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleLowerCaseEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LowerCase0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LOWERCASE_0400
      * @tc.desc   Testing the Url interface parseURL with input emoji \u260e.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5863,7 +5863,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleLowerCaseEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LowerCase0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LOWERCASE_0500
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5883,7 +5883,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleLowerCaseEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LowerCase0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LOWERCASE_0600
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd5b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5903,7 +5903,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleLowerCaseEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LowerCase0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LOWERCASE_0700
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf4f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5923,7 +5923,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleLowerCaseEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LowerCase0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LOWERCASE_0800
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd03.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5943,7 +5943,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleLowerCaseEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LowerCase0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LOWERCASE_0900
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf41.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5963,7 +5963,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleLowerCaseEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LowerCase1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LOWERCASE_1000
      * @tc.desc   Testing the Url interface parseURL with input emoji \u2666.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5983,7 +5983,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleLowerCaseEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LowerCase1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LOWERCASE_1100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc48.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6003,7 +6003,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleLowerCaseEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LowerCase1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_LOWERCASE_1200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6022,7 +6022,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_1300
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6040,7 +6040,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_1400
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc64.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6059,7 +6059,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_1500
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc6b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6078,7 +6078,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_1600
      * @tc.desc   Testing the Url interface parseURL with input emoji \u260e.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6097,7 +6097,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_1700
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6116,7 +6116,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_1800
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd5b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6135,7 +6135,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_1900
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf4f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6154,7 +6154,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_2000
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd03.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6173,7 +6173,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_2100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf41.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6192,7 +6192,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_2200
      * @tc.desc   Testing the Url interface parseURL with input emoji \u2666.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6211,7 +6211,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_2300
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc48.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6230,7 +6230,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLocaleUpperCaseEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UpperCase2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_UPPERCASE_2400
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6248,7 +6248,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_2500
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6266,7 +6266,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_2600
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc64.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6285,7 +6285,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_2700
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc6b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6304,7 +6304,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_2800
      * @tc.desc   Testing the Url interface parseURL with input emoji \u260e.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6323,7 +6323,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_2900
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6342,7 +6342,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_3000
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd5b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6361,7 +6361,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_3100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf4f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6380,7 +6380,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_3200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd03.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6399,7 +6399,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_3300
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf41.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6418,7 +6418,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_3400
      * @tc.desc   Testing the Url interface parseURL with input emoji \u2666.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6437,7 +6437,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_3500
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc48.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6455,7 +6455,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeToLowerCaseEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLowerCase3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLOWERCASE_3600
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6473,7 +6473,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeToStringEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLString3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLSTRING_3700
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6491,7 +6491,7 @@ export default function Emoji_String() {
     });
     /**
      * @tc.name   testStringPrototypeToStringEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLString3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLSTRING_3800
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc64.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6510,7 +6510,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToStringEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLString3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLSTRING_3900
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc6b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6529,7 +6529,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToStringEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLString4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLSTRING_4000
      * @tc.desc   Testing the Url interface parseURL with input emoji \u260e.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6548,7 +6548,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToStringEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLString4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLSTRING_4100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6567,7 +6567,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToStringEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLString4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLSTRING_4200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd5b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6586,7 +6586,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToStringEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLString4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLSTRING_4300
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf4f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6605,7 +6605,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToStringEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLString4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLSTRING_4400
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd03.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6624,7 +6624,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToStringEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLString4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLSTRING_4500
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf41.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6681,7 +6681,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeToStringEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_ToLString4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_EMOJI_TOLSTRING_4600
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6940,7 +6940,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1300
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6960,7 +6960,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1400
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6980,7 +6980,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1500
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji  \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7000,7 +7000,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1600
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7020,7 +7020,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1700
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7040,7 +7040,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1800
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7060,7 +7060,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1900
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7080,7 +7080,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_2000
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7100,7 +7100,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_2100
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7120,7 +7120,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_2200
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7140,7 +7140,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_2300
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7160,7 +7160,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_2400
      * @tc.desc   Testing the String interface PrototypeTrim with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7180,7 +7180,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_2500
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7200,7 +7200,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_2600
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7220,7 +7220,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_2700
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7240,7 +7240,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_2800
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7260,7 +7260,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_2900
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7280,7 +7280,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_3000
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7300,7 +7300,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_3100
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7320,7 +7320,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_3200
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7340,7 +7340,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_3300
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7360,7 +7360,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_3400
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7380,7 +7380,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_3500
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7400,7 +7400,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimEndEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_3600
      * @tc.desc   Testing the String interface PrototypeTrimEnd with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7420,7 +7420,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_3700
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7440,7 +7440,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_3800
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7460,7 +7460,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_3900
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7480,7 +7480,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_4000
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7500,7 +7500,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_4100
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7520,7 +7520,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_4200
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7540,7 +7540,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_4300
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7560,7 +7560,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_4400
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7580,7 +7580,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_4500
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7600,7 +7600,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_4600
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7620,7 +7620,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_4700
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7640,7 +7640,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeTrimStartEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_4800
      * @tc.desc   Testing the String interface PrototypeTrimStart with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7660,7 +7660,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_4900
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7680,7 +7680,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_5000
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7700,7 +7700,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_5100
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7720,7 +7720,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_5200
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7740,7 +7740,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_5300
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7760,7 +7760,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji000v6
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_5400
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7780,7 +7780,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_5500
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7800,7 +7800,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_5600
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7820,7 +7820,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_5700
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7840,7 +7840,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_5800
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7860,7 +7860,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_5900
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7880,7 +7880,7 @@ export default function Emoji_String() {
 
     /**
      * @tc.name   testStringPrototypeValueOfEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_String_EMOJI_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_6000
      * @tc.desc   Testing the String interface PrototypeValueOf with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

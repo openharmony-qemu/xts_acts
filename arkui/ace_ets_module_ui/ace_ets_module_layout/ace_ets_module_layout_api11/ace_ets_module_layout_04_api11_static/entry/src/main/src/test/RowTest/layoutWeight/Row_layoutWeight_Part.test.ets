@@ -14,29 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function Row_layoutWeight_Part() {
   describe('Row_layoutWeight_Part', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Row_layoutWeight_Part beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Row_layoutWeight_Part beforeEach start");
       let options: router.RouterOptions = {
@@ -58,7 +45,11 @@ export default function Row_layoutWeight_Part() {
       }
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('Row_layoutWeight_ParTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_layoutWeight_Part after each called")
     });
 
@@ -80,7 +71,11 @@ it('SUB_ACE_Row_layoutWeight_Part_TEST_static_0100', Level.LEVEL0, async (done: 
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'layoutWeight2', value: '2'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_layoutWeight_ParTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_layoutWeight_Part_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Part_011');
       let Row_layoutWeight_Part_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Part_012');
@@ -140,7 +135,11 @@ it('SUB_ACE_Row_layoutWeight_Part_TEST_static_0200', Level.LEVEL0, async (done: 
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'layoutWeight2', value: '3'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_layoutWeight_ParTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_layoutWeight_Part_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Part_011');
       let Row_layoutWeight_Part_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Part_012');
@@ -200,7 +199,11 @@ it('SUB_ACE_Row_layoutWeight_Part_TEST_static_0300', Level.LEVEL0, async (done: 
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'layoutWeight2', value: '2'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_layoutWeight_ParTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_layoutWeight_Part_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Part_011');
       let Row_layoutWeight_Part_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Part_012');

@@ -4,7 +4,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import { Utils, startAbility, stopApplication } from './Util.test';
 import webview from '@ohos.web.webview';
@@ -322,6 +322,111 @@ export default function webCloudServiceTest() {
             await Utils.msSleep(5000);
             done();
             hilog.info(domain, tag, '%{public}s', 'testWebviewController_loadData_getTitle end');
+        })
+
+        /**
+         * @tc.name   testLoadDataEmptyStatic001
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADDATA_EMPTY_0100
+         * @tc.desc   test loadData with empty string params
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testLoadDataEmptyStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+          async (done: () => void): Promise<void> => {
+            try {
+            Utils.emitEvent("LoadDataEmptyStatic001", 10);
+            Utils.registerBaseEvent("testLoadDataEmptyStatic001", 'success', 41021901, done,
+              (backData: emitter.EventData, expected: Object) => {
+                const data = backData?.data as Record<string, RecordData>;
+                expect(data['ACTION']).assertEqual(expected);
+              });
+            await Utils.msSleep(2000);
+            try {
+              let driver = Driver.create();
+              let button = await driver.findComponent(ON.text('WebviewContrllerTestButton'));
+              if (button != null) {
+                await button.click();
+              }
+            } catch (error) {
+              console.info('testLoadDataEmptyStatic001 error: ' + JSON.stringify(error));
+            }
+            await Utils.msSleep(3000);
+            done();
+            } catch (err) {
+              console.info('testLoadDataEmptyStatic001 err: ' + JSON.stringify(err));
+              done();
+            }
+        })
+
+        /**
+         * @tc.name   testLoadDataNullStatic001
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADDATA_NULL_0100
+         * @tc.desc   test loadData with null params
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testLoadDataNullStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+          async (done: () => void): Promise<void> => {
+            try {
+            Utils.emitEvent("LoadDataNullStatic001", 10);
+            Utils.registerBaseEvent("testLoadDataNullStatic001", 'success', 41021902, done,
+              (backData: emitter.EventData, expected: Object) => {
+                const data = backData?.data as Record<string, RecordData>;
+                expect(data['ACTION']).assertEqual(expected);
+              });
+            await Utils.msSleep(2000);
+            try {
+              let driver = Driver.create();
+              let button = await driver.findComponent(ON.text('WebviewContrllerTestButton'));
+              if (button != null) {
+                await button.click();
+              }
+            } catch (error) {
+              console.info('testLoadDataNullStatic001 error: ' + JSON.stringify(error));
+            }
+            await Utils.msSleep(3000);
+            done();
+            } catch (err) {
+              console.info('testLoadDataNullStatic001 err: ' + JSON.stringify(err));
+              done();
+            }
+        })
+
+        /**
+         * @tc.name   testLoadDataUndefinedStatic001
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADDATA_UNDEFINED_0100
+         * @tc.desc   test loadData with undefined params
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testLoadDataUndefinedStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+          async (done: () => void): Promise<void> => {
+            try {
+            Utils.emitEvent("LoadDataUndefinedStatic001", 10);
+            Utils.registerBaseEvent("testLoadDataUndefinedStatic001", 'success', 41021903, done,
+              (backData: emitter.EventData, expected: Object) => {
+                const data = backData?.data as Record<string, RecordData>;
+                expect(data['ACTION']).assertEqual(expected);
+              });
+            await Utils.msSleep(2000);
+            try {
+              let driver = Driver.create();
+              let button = await driver.findComponent(ON.text('WebviewContrllerTestButton'));
+              if (button != null) {
+                await button.click();
+              }
+            } catch (error) {
+              console.info('testLoadDataUndefinedStatic001 error: ' + JSON.stringify(error));
+            }
+            await Utils.msSleep(3000);
+            done();
+            } catch (err) {
+              console.info('testLoadDataUndefinedStatic001 err: ' + JSON.stringify(err));
+              done();
+            }
         })
 
         /**

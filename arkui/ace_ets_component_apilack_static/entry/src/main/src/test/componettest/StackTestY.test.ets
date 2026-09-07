@@ -44,14 +44,14 @@ import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function stackAlignContentJsunits() {
+export default function stackAlignContentJsunits(): void {
   describe('stackAlignContentTest1', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/stack_y',
@@ -71,7 +71,7 @@ export default function stackAlignContentJsunits() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("stackAlignContent after each called");
     });
@@ -85,7 +85,7 @@ export default function stackAlignContentJsunits() {
      * @tc.desc     teststackAlignContent_static_00011
      * @tc.level    Level.LEVEL0
      */
-it('teststackAlignContent_static_00011', Level.LEVEL0, async () => {
+it('teststackAlignContent_static_00011', Level.LEVEL0, async (): Promise<void> => {
       console.info('stackAlignContent teststackAlignContent0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('stack_y_Stack');
@@ -106,7 +106,7 @@ it('teststackAlignContent_static_00011', Level.LEVEL0, async () => {
      * @tc.desc     teststackAlignContent_static_00021
      * @tc.level    Level.LEVEL0
      */
-it('teststackAlignContent_static_00021', Level.LEVEL0, async () => {
+it('teststackAlignContent_static_00021', Level.LEVEL0, async (): Promise<void> => {
       console.info('stackAlignContent teststackAlignContent0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('stack_y_Stack');

@@ -874,5 +874,441 @@ export default function ndkTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_2500
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_2500
+     * @tc.desc   Test startChildProcess with startMode as 2 (out of enum range, promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_2500', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_2500`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          await childProcessManager.startChildProcess('./ets/process/AProcess.ts', 2 as childProcessManager.StartMode)
+            .then((pid)=>{
+              console.log(`${tag} startChildProcess success, pid: ${pid}`);
+              try{expect().assertFail();}catch(e){}
+              done();
+            }).catch((err:BusinessError)=>{
+              console.log(`${tag} startChildProcess error, err: ${err?.code}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            });
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_2600
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_2600
+     * @tc.desc   Test startChildProcess with startMode as 2 (out of enum range, callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_2600', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_2600`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          childProcessManager.startChildProcess('./ets/process/AProcess.ts', 2 as childProcessManager.StartMode,
+            (err, pid)=>{
+              console.log(`${tag} startChildProcess callback, err: ${err?.code}, pid: ${pid}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            })
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_2700
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_2700
+     * @tc.desc   Test startChildProcess with startMode as -1 (negative value, promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_2700', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_2700`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          await childProcessManager.startChildProcess('./ets/process/AProcess.ts', -1 as childProcessManager.StartMode)
+            .then((pid)=>{
+              console.log(`${tag} startChildProcess success, pid: ${pid}`);
+              try{expect().assertFail();}catch(e){}
+              done();
+            }).catch((err:BusinessError)=>{
+              console.log(`${tag} startChildProcess error, err: ${err?.code}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            });
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_2800
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_2800
+     * @tc.desc   Test startChildProcess with startMode as -1 (negative value, callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_2800', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_2800`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          childProcessManager.startChildProcess('./ets/process/AProcess.ts', -1 as childProcessManager.StartMode,
+            (err, pid)=>{
+              console.log(`${tag} startChildProcess callback, err: ${err?.code}, pid: ${pid}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            })
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_2900
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_2900
+     * @tc.desc   Test startChildProcess with startMode as 100 (large out-of-range, promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_2900', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_2900`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          await childProcessManager.startChildProcess('./ets/process/AProcess.ts', 100 as childProcessManager.StartMode)
+            .then((pid)=>{
+              console.log(`${tag} startChildProcess success, pid: ${pid}`);
+              try{expect().assertFail();}catch(e){}
+              done();
+            }).catch((err:BusinessError)=>{
+              console.log(`${tag} startChildProcess error, err: ${err?.code}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            });
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_3000
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_3000
+     * @tc.desc   Test startChildProcess with startMode as 100 (large out-of-range, callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_3000', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_3000`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          childProcessManager.startChildProcess('./ets/process/AProcess.ts', 100 as childProcessManager.StartMode,
+            (err, pid)=>{
+              console.log(`${tag} startChildProcess callback, err: ${err?.code}, pid: ${pid}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            })
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_3100
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_3100
+     * @tc.desc   Test startChildProcess with startMode as Number.MAX_SAFE_INTEGER (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_3100', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_3100`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          await childProcessManager.startChildProcess('./ets/process/AProcess.ts',
+            Number.MAX_SAFE_INTEGER as childProcessManager.StartMode)
+            .then((pid)=>{
+              console.log(`${tag} startChildProcess success, pid: ${pid}`);
+              try{expect().assertFail();}catch(e){}
+              done();
+            }).catch((err:BusinessError)=>{
+              console.log(`${tag} startChildProcess error, err: ${err?.code}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            });
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_3200
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_3200
+     * @tc.desc   Test startChildProcess with startMode as Number.MAX_SAFE_INTEGER (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_3200', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_3200`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          childProcessManager.startChildProcess('./ets/process/AProcess.ts',
+            Number.MAX_SAFE_INTEGER as childProcessManager.StartMode,
+            (err, pid)=>{
+              console.log(`${tag} startChildProcess callback, err: ${err?.code}, pid: ${pid}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            })
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_3300
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_3300
+     * @tc.desc   Test startChildProcess with startMode as Number.MIN_SAFE_INTEGER (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_3300', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_3300`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          await childProcessManager.startChildProcess('./ets/process/AProcess.ts',
+            Number.MIN_SAFE_INTEGER as childProcessManager.StartMode)
+            .then((pid)=>{
+              console.log(`${tag} startChildProcess success, pid: ${pid}`);
+              try{expect().assertFail();}catch(e){}
+              done();
+            }).catch((err:BusinessError)=>{
+              console.log(`${tag} startChildProcess error, err: ${err?.code}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            });
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_3400
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_3400
+     * @tc.desc   Test startChildProcess with startMode as Number.MIN_SAFE_INTEGER (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_3400', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_3400`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          childProcessManager.startChildProcess('./ets/process/AProcess.ts',
+            Number.MIN_SAFE_INTEGER as childProcessManager.StartMode,
+            (err, pid)=>{
+              console.log(`${tag} startChildProcess callback, err: ${err?.code}, pid: ${pid}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            })
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_3500
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_3500
+     * @tc.desc   Test startChildProcess with startMode as 0.5 (non-integer, promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_3500', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_3500`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          await childProcessManager.startChildProcess('./ets/process/AProcess.ts', 0.5 as childProcessManager.StartMode)
+            .then((pid)=>{
+              console.log(`${tag} startChildProcess success, pid: ${pid}`);
+              try{expect().assertFail();}catch(e){}
+              done();
+            }).catch((err:BusinessError)=>{
+              console.log(`${tag} startChildProcess error, err: ${err?.code}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            });
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_3600
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_3600
+     * @tc.desc   Test startChildProcess with startMode as 0.5 (non-integer, callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_startChildProcess_3600', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_startChildProcess_3600`;
+      console.log(`${tag}, it begin`);
+      if(mpEnable == 'true'){
+        try {
+          childProcessManager.startChildProcess('./ets/process/AProcess.ts', 0.5 as childProcessManager.StartMode,
+            (err, pid)=>{
+              console.log(`${tag} startChildProcess callback, err: ${err?.code}, pid: ${pid}`);
+              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              done();
+            })
+        } catch (err) {
+          console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
+          expect(err?.code).assertEqual(PARAM_INVALID)
+          done();
+        }
+      }else if(mpEnable == 'false'){
+        console.error(`${tag} startChildProcess error, current device not support.`);
+        done();
+      }else{
+        console.error(`${tag} startChildProcess error, current device not set param value.`);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }

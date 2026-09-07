@@ -14,31 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
 import { Position } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function row_TextOffsetTest() {
   describe('Row_TextOffsetTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Row_TextOffsetTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Row_TextPositionTest beforeEach start");
       let options: router.RouterOptions = {
@@ -60,7 +47,11 @@ export default function row_TextOffsetTest() {
       console.info("Row_TextPositionTest beforeEach end");
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('Row_TextOffsetTestTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_TextOffsetTest after each called");
     });
     
@@ -86,7 +77,11 @@ it('testRowTextOffset_static_01', Level.LEVEL0, async (done: () => void): Promis
           x: 10, y: 10
         } as Position
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_TextOffsetTestTest await err: ' + JSON.stringify(err));
+      }
       firstText = CommonFunc.getComponentRect('Row_TextOffset1');
       secondText = CommonFunc.getComponentRect('Row_TextOffset2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextOffset3');

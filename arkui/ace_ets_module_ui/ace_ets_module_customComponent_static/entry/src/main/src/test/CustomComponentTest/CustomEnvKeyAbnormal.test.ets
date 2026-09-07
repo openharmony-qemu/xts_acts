@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 function readContent(key: string): string {
@@ -30,10 +28,6 @@ function readContent(key: string): string {
 
 export default function CustomEnvKeyAbnormalTest(): void {
   describe('CustomEnvKeyAbnormalTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.customComponent.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/CustomComponent/CustomEnvKeyAbnormalPage',
@@ -42,7 +36,7 @@ export default function CustomEnvKeyAbnormalTest(): void {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         if (!('CustomEnvKeyAbnormalPage' == routerInstance.getState().name)) {
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

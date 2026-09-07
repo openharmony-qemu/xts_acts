@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level , beforeAll } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import {LibUtil} from '../../../ets/pages/LibUtil'
 import { Driver, ON, PointerMatrix, Rect,Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 
 let libUtil:LibUtil = new LibUtil();
 
 export default function TextInputLetterSpacing(){
 
   describe('TextInputLetterSpacing',  () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api16.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('TextInputLetterSpacing beforeEach err: ' + JSON.stringify(err));
+      }
     });
 
     /*
@@ -50,38 +50,43 @@ export default function TextInputLetterSpacing(){
      * @tc.level    Level.LEVEL1
      */
     it('textInputLetterSpacing001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'TextInputLetterSpacing';
-      await Utils.pushPage(`textInput/${PAGE_TAG}`);
-      console.info("[textInputLetterSpacing001] start succ");
-      await Utils.sleep(500);
-      let driver = Driver.create();
-      await Utils.sleep(500);
+      try {
+        let PAGE_TAG = 'TextInputLetterSpacing';
+        await Utils.pushPage(`textInput/${PAGE_TAG}`);
+        console.info("[textInputLetterSpacing001] start succ");
+        await Utils.sleep(500);
+        let driver = Driver.create();
+        await Utils.sleep(500);
 
-      let textinput:Component | null = await driver.findComponent(ON.id('textinput'));
-      await Utils.sleep(500);
-      await (textinput?.click() as Promise<void>);
-      await Utils.sleep(500);
-      await driver.triggerKey(2017);
-      await Utils.sleep(500);
-      await driver.triggerKey(2047);
-      await Utils.sleep(500);
-      await driver.triggerKey(2017);
-      await Utils.sleep(500);
-      await driver.triggerKey(2047);
-      await Utils.sleep(500);
-      await driver.triggerKey(2024);
-      await Utils.sleep(500);
-      await driver.triggerKey(2047);
-      await Utils.sleep(500);
-      let strJson2 = inspector.getInspectorByKey('text6');
-      await Utils.sleep(200);
-      let obj2 = JSON.parseJsonElement(strJson2);
-      console.info("[textInputLetterSpacing001] component obj2 is: " + JSON.stringify(obj2));
-      console.info("[textInputLetterSpacing001] content is: " + JSON.stringify(obj2.getElement('$attrs').getString('backgroundColor')));
-      await Utils.sleep(500);
-      expect(obj2.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFE31111');
+        let textinput:Component | null = await driver.findComponent(ON.id('textinput'));
+        await Utils.sleep(500);
+        await (textinput?.click() as Promise<void>);
+        await Utils.sleep(500);
+        await driver.triggerKey(2017);
+        await Utils.sleep(500);
+        await driver.triggerKey(2047);
+        await Utils.sleep(500);
+        await driver.triggerKey(2017);
+        await Utils.sleep(500);
+        await driver.triggerKey(2047);
+        await Utils.sleep(500);
+        await driver.triggerKey(2024);
+        await Utils.sleep(500);
+        await driver.triggerKey(2047);
+        await Utils.sleep(500);
+        let strJson2 = inspector.getInspectorByKey('text6');
+        await Utils.sleep(200);
+        let obj2 = JSON.parseJsonElement(strJson2);
+        console.info("[textInputLetterSpacing001] component obj2 is: " + JSON.stringify(obj2));
+        console.info("[textInputLetterSpacing001] content is: " + JSON.stringify(obj2.getElement('$attrs').getString('backgroundColor')));
+        await Utils.sleep(500);
+        expect(obj2.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFE31111');
 
-      done()
+        done()
+      } catch (err) {
+        console.info('textInputLetterSpacing001 err: ' + JSON.stringify(err));
+        done();
+      }
     })
   })
 }

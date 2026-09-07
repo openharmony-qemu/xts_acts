@@ -947,5 +947,41 @@ export default function VideoEncoderSetparamTest() {
       let result: number = await testNapi.FRAMENUM_JUDGMENT_002Test();
       expect(result).assertEqual(0);
     });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_SETPARAM_0100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_SETPARAM_0100
+     * @tc.desc   setparameter lowpower camera with value 1 (HEVC+CBR)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_SETPARAM_0100', Level.LEVEL1, async () => {
+      let result: number = await testNapi.LOWPOWER_SETPARAM_001Test();
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_SETPARAM_0200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_SETPARAM_0200
+     * @tc.desc   setparameter lowpower camera with value 0 (AVC+VBR)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_SETPARAM_0200', Level.LEVEL1, async () => {
+      let result: number = await testNapi.LOWPOWER_SETPARAM_002Test();
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_SETPARAM_0300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_SETPARAM_0300
+     * @tc.desc   setparameter lowpower camera with value -1 (HEVC+VBR)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_SETPARAM_0300', Level.LEVEL1, async () => {
+      let result: number = await testNapi.LOWPOWER_SETPARAM_003Test();
+      expect(result).assertEqual(0);
+    });
   });
 }

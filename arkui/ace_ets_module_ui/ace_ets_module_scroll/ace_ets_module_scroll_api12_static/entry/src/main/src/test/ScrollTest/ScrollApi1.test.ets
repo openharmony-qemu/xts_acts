@@ -15,7 +15,7 @@
  */
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import router from '@ohos.router';
 import {
   Component,
@@ -29,27 +29,13 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import UIAbility from '@ohos.app.ability.UIAbility';
-import hilog from '@ohos.hilog'
-import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 
-import { UtilsTest } from '../Util.test';
 
-let testAbilityContext: common.UIAbilityContext;
-let domain: int = 0x0000;
-let tag: string = 'testTag';
 const waitUiReadyMs = 1000;
-
 export default function ScrollApi1() {
   describe('ScrollApi1', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ScrollApi1 beforeEach start");

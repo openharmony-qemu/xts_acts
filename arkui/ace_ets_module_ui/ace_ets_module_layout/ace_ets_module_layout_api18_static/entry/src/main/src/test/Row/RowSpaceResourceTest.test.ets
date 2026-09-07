@@ -17,47 +17,19 @@
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
-  afterAll,
   it,
   expect,
   Level
 } from '../../../../hypium/index';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function RowSpaceResourceTest() {
   describe('RowSpaceResourceTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("RowSpaceResourceTest beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("RowSpaceResourceTest beforeEach start");
@@ -71,23 +43,24 @@ export default function RowSpaceResourceTest() {
         console.info("get RowSpaceResourceTest state pages:" + JSON.stringify(pages));
         if (!("RowSpaceResourcePage" == pages.name)) {
           console.info("get RowSpaceResourceTest pages.name:" + JSON.stringify(pages.name));
-          
-          routerInstance.pushUrl(options);
+
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+
         }
       } catch (err) {
         console.error("push RowSpaceResourceTest page error:" + err);
+        expect().assertFail();
       }
       console.info("RowSpaceResourceTest beforeEach end");
-      
+
     });
     afterEach(async () => {
     });
 
 
-    
-    
+
+
 
 
 /**
@@ -97,32 +70,38 @@ export default function RowSpaceResourceTest() {
      * @tc.level    Level.LEVEL1
      */
 it('RowSpaceResourceTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[RowSpaceResourceTest_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('[RowSpaceResourceTest_0100] START');
+        await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('RowSpaceResource_Row1');
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('space')).assertEqual("10.00vp");
+        let strJson = inspector.getInspectorByKey('RowSpaceResource_Row1');
+        let obj = JSON.parseJsonElement(strJson);
+        expect(obj.getElement('$attrs').getString('space')).assertEqual("10.00vp");
 
-      let Row1 = CommonFunc.getComponentRect('RowSpaceResource_Row1');
-      let Row1_01 = CommonFunc.getComponentRect('RowSpaceResource_Row1_01');
-      let Row1_02 = CommonFunc.getComponentRect('RowSpaceResource_Row1_02');
-      let Row1_03 = CommonFunc.getComponentRect('RowSpaceResource_Row1_03');
+        let Row1 = CommonFunc.getComponentRect('RowSpaceResource_Row1');
+        let Row1_01 = CommonFunc.getComponentRect('RowSpaceResource_Row1_01');
+        let Row1_02 = CommonFunc.getComponentRect('RowSpaceResource_Row1_02');
+        let Row1_03 = CommonFunc.getComponentRect('RowSpaceResource_Row1_03');
 
-      console.info('[RowSpaceResourceTest_0100] Row1.left - Row1_01.left');
-      console.info('[RowSpaceResourceTest_0100] Row1_02.left - Row1_01.right - UIContext.resolveUIContext()!.vp2px(10)');
-      console.info('[RowSpaceResourceTest_0100] Row1_03.left - Row1_02.right - UIContext.resolveUIContext()!.vp2px(10)');
-      expect(Math.floor(Math.abs(Row1.left - Row1_01.left)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row1_02.left - Row1_01.right - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row1_03.left - Row1_02.right - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+        console.info('[RowSpaceResourceTest_0100] Row1.left - Row1_01.left');
+        console.info('[RowSpaceResourceTest_0100] Row1_02.left - Row1_01.right - UIContext.resolveUIContext()!.vp2px(10)');
+        console.info('[RowSpaceResourceTest_0100] Row1_03.left - Row1_02.right - UIContext.resolveUIContext()!.vp2px(10)');
+        expect(Math.floor(Math.abs(Row1.left - Row1_01.left)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Row1_02.left - Row1_01.right - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Row1_03.left - Row1_02.right - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
-      console.info('[RowSpaceResourceTest_0100] END');
-      done();
+        console.info('[RowSpaceResourceTest_0100] END');
+        done();
+      } catch (err) {
+        console.error('[RowSpaceResourceTest_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
 
-    
-    
+
+
 
 
 /**
@@ -132,32 +111,38 @@ it('RowSpaceResourceTest_static_0100', Level.LEVEL1, async (done: () => void): P
      * @tc.level    Level.LEVEL1
      */
 it('RowSpaceResourceTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[RowSpaceResourceTest_0200] START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('[RowSpaceResourceTest_0200] START');
+        await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('RowSpaceResource_Row2');
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('space')).assertEqual("10.00vp");
+        let strJson = inspector.getInspectorByKey('RowSpaceResource_Row2');
+        let obj = JSON.parseJsonElement(strJson);
+        expect(obj.getElement('$attrs').getString('space')).assertEqual("10.00vp");
 
-      let Row2 = CommonFunc.getComponentRect('RowSpaceResource_Row2');
-      let Row2_01 = CommonFunc.getComponentRect('RowSpaceResource_Row2_01');
-      let Row2_02 = CommonFunc.getComponentRect('RowSpaceResource_Row2_02');
-      let Row2_03 = CommonFunc.getComponentRect('RowSpaceResource_Row2_03');
+        let Row2 = CommonFunc.getComponentRect('RowSpaceResource_Row2');
+        let Row2_01 = CommonFunc.getComponentRect('RowSpaceResource_Row2_01');
+        let Row2_02 = CommonFunc.getComponentRect('RowSpaceResource_Row2_02');
+        let Row2_03 = CommonFunc.getComponentRect('RowSpaceResource_Row2_03');
 
-      console.info('[RowSpaceResourceTest_0200] Row2.left - Row2_01.left');
-      console.info('[RowSpaceResourceTest_0200] Row2_02.left - Row2_01.right - UIContext.resolveUIContext()!.vp2px(10)');
-      console.info('[RowSpaceResourceTest_0200] Row2_03.left - Row2_02.right - UIContext.resolveUIContext()!.vp2px(10)');
-      expect(Math.floor(Math.abs(Row2.left - Row2_01.left)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row2_02.left - Row2_01.right - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row2_03.left - Row2_02.right - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+        console.info('[RowSpaceResourceTest_0200] Row2.left - Row2_01.left');
+        console.info('[RowSpaceResourceTest_0200] Row2_02.left - Row2_01.right - UIContext.resolveUIContext()!.vp2px(10)');
+        console.info('[RowSpaceResourceTest_0200] Row2_03.left - Row2_02.right - UIContext.resolveUIContext()!.vp2px(10)');
+        expect(Math.floor(Math.abs(Row2.left - Row2_01.left)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Row2_02.left - Row2_01.right - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Row2_03.left - Row2_02.right - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
-      console.info('[RowSpaceResourceTest_0200] END');
-      done();
+        console.info('[RowSpaceResourceTest_0200] END');
+        done();
+      } catch (err) {
+        console.error('[RowSpaceResourceTest_0200] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
 
-    
-    
+
+
 
 
 /**
@@ -167,27 +152,33 @@ it('RowSpaceResourceTest_static_0200', Level.LEVEL1, async (done: () => void): P
      * @tc.level    Level.LEVEL1
      */
 it('RowSpaceResourceTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[RowSpaceResourceTest_0300] START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('[RowSpaceResourceTest_0300] START');
+        await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('RowSpaceResource_Row3');
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('space')).assertEqual("10.90vp");
+        let strJson = inspector.getInspectorByKey('RowSpaceResource_Row3');
+        let obj = JSON.parseJsonElement(strJson);
+        expect(obj.getElement('$attrs').getString('space')).assertEqual("10.90vp");
 
-      let Row3 = CommonFunc.getComponentRect('RowSpaceResource_Row3');
-      let Row3_01 = CommonFunc.getComponentRect('RowSpaceResource_Row3_01');
-      let Row3_02 = CommonFunc.getComponentRect('RowSpaceResource_Row3_02');
-      let Row3_03 = CommonFunc.getComponentRect('RowSpaceResource_Row3_03');
+        let Row3 = CommonFunc.getComponentRect('RowSpaceResource_Row3');
+        let Row3_01 = CommonFunc.getComponentRect('RowSpaceResource_Row3_01');
+        let Row3_02 = CommonFunc.getComponentRect('RowSpaceResource_Row3_02');
+        let Row3_03 = CommonFunc.getComponentRect('RowSpaceResource_Row3_03');
 
-      console.info('[RowSpaceResourceTest_0300] Row3.left - Row3_01.left');
-      console.info('[RowSpaceResourceTest_0300] Row3_02.left - Row3_01.right - UIContext.resolveUIContext()!.vp2px(10.9)');
-      console.info('[RowSpaceResourceTest_0300] Row3_03.left - Row3_02.right - UIContext.resolveUIContext()!.vp2px(10.9)');
-      expect(Math.floor(Math.abs(Row3.left - Row3_01.left)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row3_02.left - Row3_01.right - UIContext.resolveUIContext()!.vp2px(10.9))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Row3_03.left - Row3_02.right - UIContext.resolveUIContext()!.vp2px(10.9))) <= 1).assertTrue();
+        console.info('[RowSpaceResourceTest_0300] Row3.left - Row3_01.left');
+        console.info('[RowSpaceResourceTest_0300] Row3_02.left - Row3_01.right - UIContext.resolveUIContext()!.vp2px(10.9)');
+        console.info('[RowSpaceResourceTest_0300] Row3_03.left - Row3_02.right - UIContext.resolveUIContext()!.vp2px(10.9)');
+        expect(Math.floor(Math.abs(Row3.left - Row3_01.left)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Row3_02.left - Row3_01.right - UIContext.resolveUIContext()!.vp2px(10.9))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Row3_03.left - Row3_02.right - UIContext.resolveUIContext()!.vp2px(10.9))) <= 1).assertTrue();
 
-      console.info('[RowSpaceResourceTest_0300] END');
-      done();
+        console.info('[RowSpaceResourceTest_0300] END');
+        done();
+      } catch (err) {
+        console.error('[RowSpaceResourceTest_0300] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

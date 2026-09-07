@@ -13,24 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, MouseButton, ON } from '@ohos.UiTest';
 import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { BusinessError } from '@ohos.base';
-
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../../Util.test';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 interface ParamsData {
   data3: number[];
@@ -43,11 +33,6 @@ interface MyParams {
 
 export default function getWaterFlowItemRect5() {
   describe('getWaterFlowItemRect5', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("getWaterFlowItemRect5 beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-
-    });
     beforeEach(async (): Promise<void> => {
       console.info("getWaterFlowItemRect5 beforeEach start");
       let options: router.RouterOptions = {
@@ -85,15 +70,15 @@ it('getWaterFlowItemRect5_static_0100', Level.LEVEL0, async (done: () => void): 
       const message1: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManagerInt")!
       message1.notify({ name: 'index', value: 0 })
       message.notify({ name: 'padding1', value: 20 as Double })
-      await CommonFunc.sleep(1000);
+      try { await CommonFunc.sleep(1000); } catch (err) { console.info('getWaterFlowItemRect5 sleep err: ' + JSON.stringify(err)); }
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try { await CommonFunc.sleep(2000); } catch (err) { console.info('getWaterFlowItemRect5 sleep err: ' + JSON.stringify(err)); }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getWaterFlowItemRect5_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try { await (btn?.click() as Promise<void>); } catch (err) { console.info('getWaterFlowItemRect5 click err: ' + JSON.stringify(err)); }
+      try { await CommonFunc.sleep(2000); } catch (err) { console.info('getWaterFlowItemRect5 sleep err: ' + JSON.stringify(err)); }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getWaterFlowItemRect5_text1')
@@ -135,7 +120,7 @@ it('getWaterFlowItemRect5_static_0200', Level.LEVEL0, async (done: () => void): 
 
       console.info('[getWaterFlowItemRect5_static_0200] START');
       const ohosrouter = AppStorage.get<Router>("router") as Router
-      await CommonFunc.sleep(1000);
+      try { await CommonFunc.sleep(1000); } catch (err) { console.info('getWaterFlowItemRect5 sleep err: ' + JSON.stringify(err)); }
       try {
         ohosrouter.back({
           url: 'MainAbility/pages/index/index'
@@ -166,17 +151,17 @@ it('getWaterFlowItemRect5_static_0200', Level.LEVEL0, async (done: () => void): 
       const message: MessageManager<Double> = AppStorage.get<MessageManager<Double>>("messageManager")!
       const message1: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManagerInt")!
       message1.notify({ name: 'index', value: 0 })
-      await CommonFunc.sleep(500);
+      try { await CommonFunc.sleep(500); } catch (err) { console.info('getWaterFlowItemRect5 sleep err: ' + JSON.stringify(err)); }
       message.notify({ name: 'margin1', value: 20 as Double })
-      await CommonFunc.sleep(1000);
+      try { await CommonFunc.sleep(1000); } catch (err) { console.info('getWaterFlowItemRect5 sleep err: ' + JSON.stringify(err)); }
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try { await CommonFunc.sleep(2000); } catch (err) { console.info('getWaterFlowItemRect5 sleep err: ' + JSON.stringify(err)); }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getWaterFlowItemRect5_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try { await (btn?.click() as Promise<void>); } catch (err) { console.info('getWaterFlowItemRect5 click err: ' + JSON.stringify(err)); }
+      try { await CommonFunc.sleep(2000); } catch (err) { console.info('getWaterFlowItemRect5 sleep err: ' + JSON.stringify(err)); }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getWaterFlowItemRect5_text1')

@@ -53,7 +53,7 @@ export default function HttpBasicTest() {
           console.info(`${caseName} get data.responseCode is: `+ JSON.stringify(data.responseCode));
           console.info(`${caseName} get data.result is: `+ JSON.stringify(data));
           http.destroy();
-          ExpectTrue(data.responseCode == 200 || data.responseCode > 500);
+          ExpectTrue(data.responseCode == 200);
           if (data.responseCode == 200) {
             ExpectTrue(data.result.toString().search("user-agent") != -1 && data.result.toString().search("libcurl-agent/1.0") != -1);
           }
@@ -87,7 +87,7 @@ export default function HttpBasicTest() {
           header: { 'Content-Type': 'application/json' }
         }).then((data)=> {
           http.destroy();
-          ExpectTrue(data.responseCode == 200 || data.responseCode > 500);
+          ExpectTrue(data.responseCode == 200);
           console.info(`${caseName} get data is: ` + JSON.stringify(data));
           if (data.responseCode == 200) {
             ExpectTrue(data.result.toString().search("Content-Type") != -1);
@@ -126,7 +126,7 @@ export default function HttpBasicTest() {
           extraData: "MineMine"
         }).then((data) =>{
           http.destroy();
-          ExpectTrue(data.responseCode == 200 || data.responseCode > 500);
+          ExpectTrue(data.responseCode == 200);
           if (data.responseCode == 200) {
             ExpectTrue(data.result.toString().search("MineMine") != -1);
           }
@@ -159,7 +159,7 @@ export default function HttpBasicTest() {
           extraData: "MineMine"
         }).then((data) => {
           http.destroy();
-          ExpectTrue(data.responseCode == 200 || data.responseCode > 500);
+          ExpectTrue(data.responseCode == 200);
           if (data.responseCode == 200) {
             ExpectTrue(data.result.toString().search("MineMine") != -1);
           }
@@ -189,7 +189,7 @@ export default function HttpBasicTest() {
         http.request("https://httpbin.org/cookies/set/name/value").then( (data) =>{
           console.info(`${caseName} request get data is: `+ JSON.stringify(data));
           http.destroy();
-          ExpectTrue(data.responseCode == 200 || data.responseCode > 500);
+          ExpectTrue(data.responseCode == 200);
           if (data.responseCode == 200) {
             ExpectTrue(data.cookies !== "");
           }

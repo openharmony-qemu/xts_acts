@@ -16,7 +16,7 @@ import abilityTest from './Ability.test';
 import collectionsAddTest from './Array/CollectionsAdd.test';
 import collectionsConcurrentModifyTest from './Array/CollectionsConcurrentModify.test';
 import AsyncLocktest from './AsyncLock/AsyncLocktest.test';
-import BitVectortest from './BitVector/BitVector.test';
+
 import collectionsSecondtest from './CollectionsSecondtest.test';
 import collectionstest from './Collectionstest.test';
 import sendableLruCachetest from './SendableLruCache/SendableLruCachetest.test';
@@ -45,7 +45,7 @@ export default function testsuite() {
   CollectionsFloattest();
   collectionsInttest();
   Uint8ClampedArraytest();
-  BitVectortest();
+
   AsyncLocktest();
   collectionsAddTest();
   ColectiontTypeArray();

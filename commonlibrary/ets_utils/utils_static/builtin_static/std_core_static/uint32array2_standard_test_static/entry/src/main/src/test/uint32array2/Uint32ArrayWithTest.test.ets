@@ -179,12 +179,8 @@ export default function uint32ArrayWithOneTest(): void {
       const src = Uint32Array.of(10, 20, 30);
       const v: number = 40;
       const index: int = -1;
-      try {
-        src.with(index, v);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      src.with(index, v);
+      expect(src.toString()).assertEqual('10,20,30');
     });
 
 
@@ -200,12 +196,8 @@ export default function uint32ArrayWithOneTest(): void {
       const src = Uint32Array.of(42);
       const v: number = 19;
       const index: int = -1;
-      try {
-        src.with(index, v);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      src.with(index, v);
+      expect(src.toString()).assertEqual('42');
     });
 
     /**
@@ -220,12 +212,8 @@ export default function uint32ArrayWithOneTest(): void {
       const src = new Uint32Array(100);
       const v: number = 21;
       const index: int = -100;
-      try {
-        src.with(index, v);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      src.with(index, v);
+      expect(src.toString()).assertEqual('0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0');
     });
 
     /**
@@ -243,7 +231,7 @@ export default function uint32ArrayWithOneTest(): void {
         src.with(3, v);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -263,7 +251,7 @@ export default function uint32ArrayWithOneTest(): void {
         src.with(1, v);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -282,7 +270,7 @@ export default function uint32ArrayWithOneTest(): void {
         src.with(0, v);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -301,7 +289,7 @@ export default function uint32ArrayWithOneTest(): void {
         src.with(2, v);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -320,7 +308,7 @@ export default function uint32ArrayWithOneTest(): void {
         src.with(-5, v);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -339,7 +327,7 @@ export default function uint32ArrayWithOneTest(): void {
         src.with(-3, v);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -358,7 +346,7 @@ export default function uint32ArrayWithOneTest(): void {
         src.with(-2, v);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -377,7 +365,7 @@ export default function uint32ArrayWithOneTest(): void {
         src.with(-1, v);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -827,12 +815,8 @@ export default function uint32ArrayWithOneTest(): void {
       const a: number = 10;
       const b: number = 20;
       const r1 = src.with(0, a);
-      try {
-        r1.with(-1, b);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      r1.with(-1, b);
+      expect(src.toString()).assertEqual('1,2,3,4');
     });
 
     /**
@@ -989,7 +973,7 @@ export default function uint32ArrayWithOneTest(): void {
         src.with(102, v);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1008,7 +992,7 @@ export default function uint32ArrayWithOneTest(): void {
         src.with(-3, v);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

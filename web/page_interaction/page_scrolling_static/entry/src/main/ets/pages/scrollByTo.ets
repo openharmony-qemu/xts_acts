@@ -97,6 +97,64 @@ struct WebComponent{
               let router: Router = uiContext.getRouter();
               router.pushUrl({ url: 'pages/scrollEvent' })
               console.log('push URL success')
+              break;
+            }
+
+            case 'testSetScrollableNullStatic001': {
+              try {
+                let param: boolean | null = null;
+                this.controller.setScrollable(param as boolean);
+                Utils.emitEvent(true, 41022801)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41022801)
+              }
+              break;
+            }
+
+            case 'testSetScrollableUndefinedStatic001': {
+              try {
+                let param: boolean | undefined = undefined;
+                this.controller.setScrollable(param as boolean);
+                Utils.emitEvent(true, 41022802)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41022802)
+              }
+              break;
+            }
+
+            case 'testSetScrollableTypeNullStatic001': {
+              try {
+                this.controller.setScrollable(true, (null as Int) as webview.ScrollType);
+                Utils.emitEvent(true, 41022803)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41022803)
+              }
+              break;
+            }
+
+            case 'testSetScrollableTypeInvalidStatic001': {
+              try {
+                this.controller.setScrollable(true, 999 as webview.ScrollType);
+                Utils.emitEvent(true, 41022804)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41022804)
+              }
+              break;
+            }
+
+            case 'testSetScrollableTypeUndefinedStatic001': {
+              try {
+                this.controller.setScrollable(true, (undefined as Int) as webview.ScrollType);
+                Utils.emitEvent(true, 41022805)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41022805)
+              }
+              break;
             }
           }
         })

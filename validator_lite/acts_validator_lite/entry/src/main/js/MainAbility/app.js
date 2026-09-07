@@ -20,45 +20,26 @@ export default {
       'swiper': { cat: 'component', status: 'null', help: 'Verify swiper page switching' },
       'transition': { cat: 'component', status: 'null', help: 'Verify transition animation' },
       'api_app': { cat: 'api', status: 'null', help: 'Verify app.getInfo returns appName/versionName/versionCode' },
-      'api_configuration': { cat: 'api', status: 'null', help: 'Verify configuration.getLocale returns language/country/dir' },
+      'api_configuration': { cat: 'api', status: 'null', help: 'Verify @system.configuration getLocale (require SystemCapability.ArkUI.ArkUI.Lite; auto-skip as untested if unsupported)' },
       'api_timer_timeout': { cat: 'api', status: 'null', help: 'Verify setTimeout fires after 3s and clearTimer stops it' },
       'api_timer_interval': { cat: 'api', status: 'null', help: 'Verify setInterval increments every 1s and clearInterval stops' },
       'api_storage': { cat: 'api', status: 'null', help: 'Verify storage set/get/delete/clear operations' },
       'api_file': { cat: 'api', status: 'null', help: 'Verify file writeText/readText/writeArrayBuffer/readArrayBuffer/mkdir/rmdir/list/get/move/copy/delete/access' },
-      'api_vibrator': { cat: 'api', status: 'null', help: 'Verify vibrator short/long vibrate' },
       'api_deviceinfo': { cat: 'api', status: 'null', help: 'Verify device.getInfo returns brand/model/language/screenDensity etc' },
-      'api_brightness_value': { cat: 'api', status: 'null', help: 'Verify brightness getValue/setValue via slider' },
-      'api_brightness_mode': { cat: 'api', status: 'null', help: 'Verify brightness getMode/setMode/setKeepScreenOn' },
-      'api_battery': { cat: 'api', status: 'null', help: 'Verify battery.getStatus returns level' },
-      'api_nfc': { cat: 'api', status: 'null', help: 'Verify NFC HceService startHCE/on/sendResponse' }
-    },
-    catNames: {
-      'text': 'Text',
-      'button': 'Button',
-      'image': 'Image',
-      'progress': 'Progress',
-      'slider': 'Slider',
-      'switch': 'Switch',
-      'chart': 'Chart'
-    },
-    catPages: {
-      'text': 'text',
-      'button': 'button',
-      'image': 'image',
-      'progress': 'progress',
-      'slider': 'slider',
-      'switch': 'switch',
-      'chart': 'chart'
-    },
-    catList: [
-      { key: 'text', name: 'Text' },
-      { key: 'button', name: 'Button' },
-      { key: 'image', name: 'Image' },
-      { key: 'progress', name: 'Progress' },
-      { key: 'slider', name: 'Slider' },
-      { key: 'switch', name: 'Switch' },
-      { key: 'chart', name: 'Chart' }
-    ]
+      'api_brightness_value': { cat: 'api', status: 'null', help: 'Verify @system.brightness getValue/setValue (require SystemCapability.PowerManager.DisplayPowerManager.Lite; auto-skip as untested if unsupported)' },
+      'api_brightness_mode': { cat: 'api', status: 'null', help: 'Verify @system.brightness getMode/setMode/setKeepScreenOn (require SystemCapability.PowerManager.DisplayPowerManager.Lite; auto-skip as untested if unsupported)' },
+      'api_battery': { cat: 'api', status: 'null', help: 'Verify @system.battery getStatus (require SystemCapability.PowerManager.BatteryManager.Lite; auto-skip as untested if unsupported)' },
+      'api_nfc': { cat: 'api', status: 'null', help: 'Verify NFC HceService startHCE/on/sendResponse (require SystemCapability.Communication.NFC.CardEmulation; auto-skip as untested if unsupported)' },
+      'api_vibrator': { cat: 'api', status: 'null', help: 'Verify @system.vibrator vibrate short/long (require SystemCapability.Sensors.MiscDevice.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_step': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeStepCounter returns step count (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_barometer': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeBarometer returns pressure (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_heartrate': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeHeartRate returns heart rate (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_onbody': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeOnBodyState returns wear state (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_accelerometer': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeAccelerometer returns x/y/z (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_gyroscope': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeGyroscope returns x/y/z (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_location_info': { cat: 'api', status: 'null', help: 'Verify @system.geolocation getLocation/getLocationType/getSupportedCoordTypes (require SystemCapability.Location.Location.Lite; auto-skip as untested if unsupported)' },
+      'api_location_subscribe': { cat: 'api', status: 'null', help: 'Verify @system.geolocation subscribe/unsubscribe (require SystemCapability.Location.Location.Lite; auto-skip as untested if unsupported)' }
+    }
   },
   onCreate() {
     console.info('[start] start run suites');

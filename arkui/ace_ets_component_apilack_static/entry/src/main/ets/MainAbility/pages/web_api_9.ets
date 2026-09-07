@@ -79,7 +79,7 @@ struct Index {
   @State str: string = "emitUserAgent"
   fileSelector: FileSelectorResult = new FileSelectorResult();
 
-  onPageShow() {
+  onPageShow(): void {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW

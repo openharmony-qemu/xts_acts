@@ -13,25 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from "../../../../ets/MainAbility/common/Common";
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { startAbility, UtilsTest } from '../../Util.test';
 
 export default function SaveLayerTest() {
   describe('SaveLayerTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("SaveLayerTest beforeEach start");
-
-
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
-
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("SaveLayerTest beforeEach start");
@@ -56,7 +47,11 @@ export default function SaveLayerTest() {
       console.info("SaveLayerTest beforeEach end");
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SaveLayerTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("SaveLayerTest after each called");
     });
 
@@ -69,9 +64,17 @@ export default function SaveLayerTest() {
      */
 it('SaveLayerTest_static_001', Level.LEVEL3 , async (done: () => void): Promise<void> => {
       console.info('[SaveLayerTest_static_001] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SaveLayerTest sleep err: ' + JSON.stringify(err));
+      }
       let text2 = inspector.getInspectorByKey('text2');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SaveLayerTest sleep err: ' + JSON.stringify(err));
+      }
       expect(JSON.parseJsonElement(text2).getElement('$attrs').getString('content')).assertEqual('saveLayer');
       console.info('[SaveLayerTest_static_001] END');
       done();

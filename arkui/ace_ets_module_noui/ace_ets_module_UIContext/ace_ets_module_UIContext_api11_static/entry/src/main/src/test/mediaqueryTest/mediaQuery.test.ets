@@ -17,7 +17,7 @@
 import router from '@ohos.router';
 import { UIContext, AtomicServiceBar, Router, KeyboardAvoidMode } from '@ohos.arkui.UIContext';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
@@ -29,12 +29,6 @@ import { RecordData } from '@ohos.base';
 
 export default function mediaQueryOffJsunit() {
   describe('mediaQueryOffTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("mediaQueryOffTest beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       console.info("mediaQueryOffTest beforeEach start");
       let options: router.RouterOptions = {
@@ -66,7 +60,11 @@ export default function mediaQueryOffJsunit() {
 
     afterAll(async () => {
       console.info('[mediaQueryOffTest] after each called')
-      await UtilsTest.msSleep(1000)
+      try {
+        await UtilsTest.msSleep(1000)
+      } catch (err) {
+        console.info('mediaQuery afterAll err: ' + JSON.stringify(err));
+      }
     });
 
     
@@ -79,7 +77,11 @@ export default function mediaQueryOffJsunit() {
      */
 it('testmediaQueryOff_static_0001', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0001 START');
-      await UtilsTest.msSleep(2000);
+      try {
+        await UtilsTest.msSleep(2000);
+      } catch (err) {
+        console.info('mediaQuery msSleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -100,7 +102,11 @@ it('testmediaQueryOff_static_0001', Level.LEVEL0, async  () => {
      */
 it('testmediaQueryOff_static_0002', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0002 START');
-      await UtilsTest.msSleep(2000);
+      try {
+        await UtilsTest.msSleep(2000);
+      } catch (err) {
+        console.info('mediaQuery msSleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -120,7 +126,11 @@ it('testmediaQueryOff_static_0002', Level.LEVEL0, async  () => {
      */
 it('testmediaQueryOff_static_0003', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0003 START');
-      await UtilsTest.msSleep(2000);
+      try {
+        await UtilsTest.msSleep(2000);
+      } catch (err) {
+        console.info('mediaQuery msSleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -140,7 +150,11 @@ it('testmediaQueryOff_static_0003', Level.LEVEL0, async  () => {
      */
 it('testmediaQueryOff_static_0004', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0004 START');
-      await UtilsTest.msSleep(2000);
+      try {
+        await UtilsTest.msSleep(2000);
+      } catch (err) {
+        console.info('mediaQuery msSleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0004] component opacity strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -160,7 +174,11 @@ it('testmediaQueryOff_static_0004', Level.LEVEL0, async  () => {
      */
 it('testmediaQueryOff_static_0005', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0005 START');
-      await UtilsTest.msSleep(2000);
+      try {
+        await UtilsTest.msSleep(2000);
+      } catch (err) {
+        console.info('mediaQuery msSleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0005] component align strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -180,7 +198,11 @@ it('testmediaQueryOff_static_0005', Level.LEVEL0, async  () => {
      */
 it('testmediaQueryOff_static_0006', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0006 START');
-      await UtilsTest.msSleep(2000);
+      try {
+        await UtilsTest.msSleep(2000);
+      } catch (err) {
+        console.info('mediaQuery msSleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff_static_0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -199,7 +221,11 @@ it('testmediaQueryOff_static_0006', Level.LEVEL0, async  () => {
      */
 it('testmediaQueryOff_static_0007', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0007 START');
-      await UtilsTest.msSleep(2000);
+      try {
+        await UtilsTest.msSleep(2000);
+      } catch (err) {
+        console.info('mediaQuery msSleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff_static_0007] component lineHeight strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -219,7 +245,11 @@ it('testmediaQueryOff_static_0007', Level.LEVEL0, async  () => {
      */
 it('testmediaQueryOff_static_0009', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0009 START');
-      await UtilsTest.msSleep(2000);
+      try {
+        await UtilsTest.msSleep(2000);
+      } catch (err) {
+        console.info('mediaQuery msSleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff_static_0009] component padding strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -239,7 +269,11 @@ it('testmediaQueryOff_static_0009', Level.LEVEL0, async  () => {
      */
 it('testmediaQueryOff_static_0010', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0010 START');
-      await UtilsTest.msSleep(2000);
+      try {
+        await UtilsTest.msSleep(2000);
+      } catch (err) {
+        console.info('mediaQuery msSleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff_static_0010] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);

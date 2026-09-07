@@ -56,15 +56,15 @@ struct ScrollOnScrollBegin {
   scroller: Scroller = new Scroller()
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear ScrollOnScrollBegin start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear ScrollOnScrollBegin end`)
   }
 
-  onPageShow() {
+  onPageShow(): void {
     console.info('scroll page show called');
     AppStorage.setOrCreate('alwaysEnabled', false);
   }

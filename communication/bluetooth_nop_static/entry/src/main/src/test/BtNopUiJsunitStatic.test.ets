@@ -2088,5 +2088,29 @@ export default function btNopUiJsunit() {
         
             done();
         })
+        /**
+         * @tc.number  SUB_Communication_Bluetooth_NopStatic_DisconnectAllowedProfiles_1900
+         * @tc.name    SUB_Communication_Bluetooth_NopStatic_DisconnectAllowedProfiles_1900
+         * @tc.desc    Test 
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_Communication_Bluetooth_NopStatic_DisconnectAllowedProfiles_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                await connection.disconnectAllowedProfiles('68:13:24:79:4C:8C');
+                hilog.info(domain, tag, 'disconnectAllowedProfiles success');
+                expect().assertFail();
+            } catch (err) {
+                hilog.info(domain, tag, "disconnectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(201);
+                }
+            }
+            done();
+        })
     })
 }

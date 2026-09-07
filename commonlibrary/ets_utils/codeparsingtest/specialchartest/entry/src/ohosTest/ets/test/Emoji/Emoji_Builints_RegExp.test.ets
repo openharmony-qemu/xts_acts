@@ -20,7 +20,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_0100
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_0200
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -62,7 +62,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_0300
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -83,7 +83,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_0400
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -104,7 +104,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_0500
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -125,7 +125,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_0600
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -146,7 +146,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_0700
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -167,7 +167,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_0800
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -188,7 +188,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_0900
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -209,7 +209,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_1000
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -230,7 +230,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_1100
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -251,7 +251,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpConstructorEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EMOJI_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EMOJI_1200
      * @tc.desc   Testing the RegExp interface Constructor with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -272,7 +272,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_0100
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -294,7 +294,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_0200
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -316,7 +316,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_0300
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -338,7 +338,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_0400
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -360,7 +360,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_0500
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -382,7 +382,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_0600
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -404,7 +404,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_0700
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -426,7 +426,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_0800
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -448,7 +448,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_0900
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -470,7 +470,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_1000
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -492,7 +492,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_1100
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -514,7 +514,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolMatchAllEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_EXEC_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_EXEC_1200
      * @tc.desc   Testing the RegExp.prototype.Symbol.matchAll method with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -536,7 +536,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_0100
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -557,7 +557,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_0200
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji 👤
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -578,7 +578,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_0300
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji 👫
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -599,7 +599,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_0400
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji ☎
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -620,7 +620,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_0500
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji 👹
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -641,7 +641,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_0600
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji 🕛
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -662,7 +662,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_0700
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji 🍏
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -683,7 +683,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_0800
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji 🔃
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -704,7 +704,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_0900
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji 🍁
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -725,7 +725,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_1000
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji ♦
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -746,7 +746,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_1100
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji 👈
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -767,7 +767,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeSymbolReplaceEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Replace_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_REPLACE_1200
      * @tc.desc   Testing the RegExp.prototype.Symbol.Replace method with input emoji 🤼‍♂️
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -788,7 +788,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_0100
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -808,7 +808,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_0200
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji 👤
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -828,7 +828,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_0300
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji 👫
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -848,7 +848,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_0400
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji ☎
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -868,7 +868,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_0500
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji 👹
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -888,7 +888,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_0600
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji 🕛
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -908,7 +908,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_0700
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji 🍏
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -928,7 +928,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_0800
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji 🔃
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -948,7 +948,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_0900
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji 🍁
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -968,7 +968,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_1000
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji ♦
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -988,7 +988,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_1100
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji 👈
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1008,7 +1008,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeTestEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RegExp_Test_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REGEXP_TEST_1200
      * @tc.desc   Testing the RegExp.prototype.Test method with input emoji 🤼‍♂️
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1028,7 +1028,7 @@ export default function Emoji_RegExp() {
 
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0100
      * @tc.desc   Testing the RegExp interface toString with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1047,7 +1047,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0200
      * @tc.desc   Testing the RegExp interface toString with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1066,7 +1066,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0300
      * @tc.desc   Testing the RegExp interface toString with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1085,7 +1085,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0400
      * @tc.desc   Testing the RegExp interface toString with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1104,7 +1104,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0500
      * @tc.desc   Testing the RegExp interface toString with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1123,7 +1123,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0600
      * @tc.desc   Testing the RegExp interface toString with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1142,7 +1142,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0700
      * @tc.desc   Testing the RegExp interface toString with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1161,7 +1161,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0800
      * @tc.desc   Testing the RegExp interface toString with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1180,7 +1180,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0900
      * @tc.desc   Testing the RegExp interface toString with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1199,7 +1199,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1000
      * @tc.desc   Testing the RegExp interface toString with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1218,7 +1218,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1100
      * @tc.desc   Testing the RegExp interface toString with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1237,7 +1237,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeToStringEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1200
      * @tc.desc   Testing the RegExp interface toString with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1256,7 +1256,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0100
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1275,7 +1275,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0200
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1294,7 +1294,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0300
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1313,7 +1313,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0400
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1332,7 +1332,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0500
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1351,7 +1351,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0600
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1370,7 +1370,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0700
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1389,7 +1389,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0800
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1408,7 +1408,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0900
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1427,7 +1427,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1000
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1446,7 +1446,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1100
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1465,7 +1465,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeDotAllEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1200
      * @tc.desc   Testing the RegExp interface dotAll with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1484,7 +1484,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0100
      * @tc.desc   Testing the RegExp interface flags with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1503,7 +1503,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0200
      * @tc.desc   Testing the RegExp interface flags with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1522,7 +1522,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0300
      * @tc.desc   Testing the RegExp interface flags with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1541,7 +1541,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0400
      * @tc.desc   Testing the RegExp interface flags with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1560,7 +1560,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0500
      * @tc.desc   Testing the RegExp interface flags with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1579,7 +1579,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0600
      * @tc.desc   Testing the RegExp interface flags with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1598,7 +1598,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0700
      * @tc.desc   Testing the RegExp interface flags with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1617,7 +1617,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0800
      * @tc.desc   Testing the RegExp interface flags with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1636,7 +1636,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0900
      * @tc.desc   Testing the RegExp interface flags with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1655,7 +1655,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1000
      * @tc.desc   Testing the RegExp interface flags with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1674,7 +1674,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1100
      * @tc.desc   Testing the RegExp interface flags with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1693,7 +1693,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeFlagsEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1200
      * @tc.desc   Testing the RegExp interface flags with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1712,7 +1712,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0100
      * @tc.desc   Testing the RegExp interface global with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1731,7 +1731,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0200
      * @tc.desc   Testing the RegExp interface global with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1750,7 +1750,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0300
      * @tc.desc   Testing the RegExp interface global with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1769,7 +1769,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0400
      * @tc.desc   Testing the RegExp interface global with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1788,7 +1788,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0500
      * @tc.desc   Testing the RegExp interface global with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1807,7 +1807,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0600
      * @tc.desc   Testing the RegExp interface global with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1826,7 +1826,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0700
      * @tc.desc   Testing the RegExp interface global with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1845,7 +1845,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0800
      * @tc.desc   Testing the RegExp interface global with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1864,7 +1864,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_0900
      * @tc.desc   Testing the RegExp interface global with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1883,7 +1883,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1000
      * @tc.desc   Testing the RegExp interface global with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1902,7 +1902,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1100
      * @tc.desc   Testing the RegExp interface global with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1921,7 +1921,7 @@ export default function Emoji_RegExp() {
     })
     /**
      * @tc.name   testRegExpPrototypeGlobalEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP__EMOJI_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_REGEXP_EMOJI_1200
      * @tc.desc   Testing the RegExp interface global with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

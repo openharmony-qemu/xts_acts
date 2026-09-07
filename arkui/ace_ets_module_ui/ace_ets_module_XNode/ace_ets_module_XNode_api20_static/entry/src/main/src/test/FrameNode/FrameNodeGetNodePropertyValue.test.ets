@@ -25,7 +25,6 @@ import {
   Level
 } from '../../../../hypium/index'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
@@ -34,12 +33,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 export default function FrameNodeGetNodePropertyValue() {
   describe('FrameNodeGetNodePropertyValue', () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(1000);
-      console.info('beforeAll case');
-    });
-
     beforeEach(async () => {
       console.info('frameNodeApi beforeEach start');
       let options: router.RouterOptions  = {
@@ -75,15 +68,35 @@ export default function FrameNodeGetNodePropertyValue() {
     it('FrameNodeGetNodePropertyValue_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeGetNodePropertyValue_0100] START');
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('FrameNodeGetNodePropertyValueTest await err: ' + JSON.stringify(err));
+      }
 
       let getPropertyBtn = await driver.findComponent(ON.id('ButtonGetNodePropertyValue'));
-      await CommonFunc.sleep(1000);
-      await (getPropertyBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('FrameNodeGetNodePropertyValueTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (getPropertyBtn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('FrameNodeGetNodePropertyValueTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('FrameNodeGetNodePropertyValueTest await err: ' + JSON.stringify(err));
+      }
 
       let strJson = inspector.getInspectorByKey('propertyResult');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('FrameNodeGetNodePropertyValueTest await err: ' + JSON.stringify(err));
+      }
       console.info('[FrameNodeGetNodePropertyValue_0100] content: ' +
         JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
 

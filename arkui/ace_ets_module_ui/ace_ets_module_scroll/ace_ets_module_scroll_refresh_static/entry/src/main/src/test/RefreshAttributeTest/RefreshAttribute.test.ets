@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const PAGE = 'MainAbility/pages/refreshAttribute/refreshAttribute';
@@ -39,12 +38,6 @@ function arkuiNewErr(suite: string, phase: string, detail: string): void {
 
 export default function RefreshAttributeTest() {
   describe('RefreshAttributeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      arkuiNewLog(SUITE, 'beforeAll', 'start');
-      await UtilsTest.startAbility('com.arkui.ace.refresh.static', 'EntryAbility');
-      arkuiNewLog(SUITE, 'beforeAll', 'end');
-    });
-
     beforeEach(async (): Promise<void> => {
       arkuiNewLog(SUITE, 'beforeEach', 'start');
       AppStorage.delete('refreshAttr_ready');
@@ -173,6 +166,7 @@ export default function RefreshAttributeTest() {
       async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(1000);
         let t = await d.findComponent(ON.text('pull', MatchPattern.EQUALS));
         if (!t) {
           t = await d.findComponent(ON.text('pull', MatchPattern.CONTAINS));

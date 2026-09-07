@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Annotation Full Test Fixture</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 2400px; font-family: Arial, sans-serif; color: #172033; background: #f4f7fb; }
+    header { position: sticky; top: 0; z-index: 50; padding: 10px 14px; background: #16324f; color: white; }
+    main { max-width: 980px; margin: 0 auto; padding: 14px 12px 120px; }
+    section { margin: 12px 0; padding: 12px; border: 1px solid #d8e0eb; border-radius: 6px; background: white; }
+    h1, h2, p { margin: 0 0 10px; }
+    h1 { font-size: 20px; }
+    h2 { font-size: 15px; }
+    button, a, input, textarea, select, [contenteditable], .pseudo-button {
+      margin: 5px;
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+    button, .pseudo-button {
+      border: 0;
+      border-radius: 4px;
+      background: #0a59f7;
+      color: white;
+      font-weight: 600;
+    }
+    a { color: #0a59f7; font-weight: 600; }
+    input, textarea, select, [contenteditable] {
+      min-width: 170px;
+      border: 1px solid #8ea0b8;
+      border-radius: 4px;
+      background: white;
+    }
+    textarea { width: 260px; height: 64px; vertical-align: top; }
+    iframe { width: 100%; height: 220px; border: 2px solid #22c55e; border-radius: 6px; background: #f0fdf4; }
+    .dense-grid { display: grid; grid-template-columns: repeat(8, minmax(32px, 1fr)); gap: 4px; }
+    .dense-grid button { margin: 0; padding: 6px 3px; min-width: 0; background: #6d28d9; font-size: 12px; }
+    .tiny-target { display: inline-block; width: 3px; height: 3px; margin: 12px; background: #dc2626; }
+    .partial-target { position: fixed; left: -32px; top: 145px; z-index: 70; width: 90px; min-height: 34px; background: #f59e0b; color: #111827; border-radius: 4px; padding: 8px; }
+    .covered-host { position: relative; width: 260px; min-height: 70px; padding: 8px; border: 1px dashed #64748b; }
+    .cover-layer { position: absolute; left: 0; top: 0; width: 260px; height: 70px; z-index: 8; background: rgba(20, 30, 50, 0.70); color: white; display: flex; align-items: center; justify-content: center; }
+    .covered-host button { position: relative; z-index: 1; }
+    .offscreen-spacer { height: 900px; }
+    .multi-line { display: inline; line-height: 1.8; background: linear-gradient(transparent 55%, #fef3c7 55%); }
+    .high-z { position: relative; z-index: 9999; padding: 10px; border-radius: 6px; outline: 2px solid #0f766e; background: rgba(15, 118, 110, 0.12); }
+    .dyn-wrap { display: grid; grid-template-columns: repeat(20, 1fr); gap: 2px; margin-top: 8px; }
+    .dyn-wrap button { margin: 0; min-width: 0; padding: 3px 1px; font-size: 10px; background: #334155; }
+    .state-line { min-height: 22px; color: #475569; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 data-anno="main" data-case="title" id="fixture-title">Annotation Full Test Fixture</h1>
+    <p>用于验证 addPageAnnotation/removePageAnnotation 的接口返回、样式、可见性、iframe、滚动和生命周期场景。</p>
+  </header>
+
+  <div class="partial-target" data-anno="layout" data-case="partial-visible" id="partial-visible">Partial</div>
+
+  <main>
+    <section>
+      <h2>基础元素</h2>
+      <button data-anno="main" data-case="basic-button" id="basic-button" onclick="window.__clickedCount=(window.__clickedCount||0)+1;document.getElementById('click-state').textContent='clicked '+window.__clickedCount;">主按钮</button>
+      <button data-anno="main" data-case="secondary-button" id="secondary-button">次按钮</button>
+      <a data-anno="main" data-case="basic-link" id="basic-link" href="#form-section">本地链接</a>
+      <span class="pseudo-button" data-anno="main" data-case="role-button" id="role-button" role="button" tabindex="0">role button</span>
+      <p class="state-line" id="click-state">not clicked</p>
+    </section>
+
+    <section id="form-section">
+      <h2>表单元素</h2>
+      <input data-anno="form" data-case="form-input" id="form-input" value="ArkWeb">
+      <input data-anno="form" data-case="form-checkbox" id="form-checkbox" type="checkbox" checked>
+      <select data-anno="form" data-case="form-select" id="form-select"><option>A</option><option>B</option></select>
+      <textarea data-anno="form" data-case="form-textarea" id="form-textarea">textarea fixture</textarea>
+      <div data-anno="form" data-case="form-editable" id="form-editable" contenteditable="true">contenteditable</div>
+    </section>
+
+    <section id="layout-section">
+      <h2>可见性和布局</h2>
+      <span class="tiny-target" data-anno="layout" data-case="tiny-area" id="tiny-area"></span>
+      <button data-anno="layout" data-case="hide-later" id="hide-later">后续隐藏元素</button>
+      <div class="covered-host">
+        <button data-anno="layout" data-case="covered-button" id="covered-button">被遮挡按钮</button>
+        <div class="cover-layer" id="cover-layer">cover layer</div>
+      </div>
+      <p><span data-anno="layout" data-case="multi-rect" id="multi-rect" class="multi-line">
+        这是一段用于产生多个 client rect 的长文本。文本会在不同窗口宽度下自然换行，便于观察一个元素多个标注框和一个数字标签的关系。
+      </span></p>
+      <div class="high-z" data-anno="layout" data-case="high-z" id="high-z">高 z-index 面板，overlay 应显示在其上方。</div>
+    </section>
+
+    <section>
+      <h2>密集元素</h2>
+      <div class="dense-grid" id="dense-grid">
+        <button data-anno="dense" data-case="dense" id="dense-01">01</button>
+        <button data-anno="dense" data-case="dense" id="dense-02">02</button>
+        <button data-anno="dense" data-case="dense" id="dense-03">03</button>
+        <button data-anno="dense" data-case="dense" id="dense-04">04</button>
+        <button data-anno="dense" data-case="dense" id="dense-05">05</button>
+        <button data-anno="dense" data-case="dense" id="dense-06">06</button>
+        <button data-anno="dense" data-case="dense" id="dense-07">07</button>
+        <button data-anno="dense" data-case="dense" id="dense-08">08</button>
+        <button data-anno="dense" data-case="dense" id="dense-09">09</button>
+        <button data-anno="dense" data-case="dense" id="dense-10">10</button>
+        <button data-anno="dense" data-case="dense" id="dense-11">11</button>
+        <button data-anno="dense" data-case="dense" id="dense-12">12</button>
+      </div>
+      <div id="dynamic-root" class="dyn-wrap"></div>
+    </section>
+
+    <section id="iframe-section">
+      <h2>iframe 场景</h2>
+      <iframe id="fixture-iframe" data-anno="iframe" data-case="iframe-shell" title="annotation iframe"
+        srcdoc='<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>body{margin:0;padding:14px;font-family:Arial;background:#f0fdf4;color:#064e3b}.corner{position:fixed;right:4px;top:4px;background:#f97316;color:#111;padding:4px;border-radius:4px}button,input,a{margin:8px;padding:8px}.card{border:1px solid #16a34a;border-radius:6px;background:white;padding:10px;margin-top:12px}</style></head><body><div class="corner" data-anno="iframe" data-case="iframe-edge" id="iframe-edge">IF Edge</div><h3 data-anno="iframe" data-case="iframe-title" id="iframe-title">Iframe Fixture</h3><button data-anno="iframe" data-case="iframe-button" id="iframe-button">Iframe Button</button><input data-anno="iframe" data-case="iframe-input" id="iframe-input" placeholder="iframe input"><a data-anno="iframe" data-case="iframe-link" id="iframe-link" href="#inner">Iframe Link</a><div class="card" data-anno="iframe" data-case="iframe-card" id="iframe-card">iframe card</div></body></html>'>
+      </iframe>
+    </section>
+
+    <div class="offscreen-spacer"></div>
+    <section>
+      <h2>Viewport 外元素</h2>
+      <button data-anno="layout" data-case="outside-viewport" id="outside-viewport">页面底部按钮</button>
+    </section>
+  </main>
+
+  <script>
+    window.__annotationTestLoadToken = String(Date.now()) + ':' + String(Math.random());
+    window.__clickedCount = 0;
+    window.__routeName = 'fixture';
+    window.__annotationTest = {
+      snapshot: function() {
+        return {
+          href: location.href,
+          title: document.title,
+          routeName: window.__routeName || '',
+          scrollY: window.scrollY || 0,
+          clickedCount: window.__clickedCount || 0,
+          overlay: this.overlayInfo()
+        };
+      },
+      overlayRoot: function() {
+        return document.getElementById('__arkweb_page_annotation_overlay_root__');
+      },
+      overlayInfo: function() {
+        var root = this.overlayRoot();
+        if (!root) {
+          return { exists: false, childCount: 0, boxes: 0, labels: 0, labelTexts: [], firstTop: -1, firstLeft: -1 };
+        }
+        var children = Array.prototype.slice.call(root.children);
+        var labels = [];
+        var boxes = 0;
+        var firstTop = -1;
+        var firstLeft = -1;
+        children.forEach(function(item, index) {
+          var text = (item.textContent || '').trim();
+          var rect = item.getBoundingClientRect();
+          if (index === 0) {
+            firstTop = rect.top;
+            firstLeft = rect.left;
+          }
+          if (text.length > 0) {
+            labels.push(text);
+          } else {
+            boxes++;
+          }
+        });
+        return { exists: true, childCount: children.length, boxes: boxes, labels: labels.length, labelTexts: labels, firstTop: firstTop, firstLeft: firstLeft };
+      },
+      styleInfo: function() {
+        var root = this.overlayRoot();
+        if (!root || root.children.length === 0) {
+          return {};
+        }
+        var box = root.children[0];
+        var label = null;
+        for (var i = 0; i < root.children.length; i++) {
+          if ((root.children[i].textContent || '').trim().length > 0) {
+            label = root.children[i];
+            break;
+          }
+        }
+        var boxStyle = getComputedStyle(box);
+        var labelStyle = label ? getComputedStyle(label) : null;
+        return {
+          borderColor: boxStyle.borderTopColor,
+          borderWidth: boxStyle.borderTopWidth,
+          labelFontSize: labelStyle ? labelStyle.fontSize : '',
+          labelColor: labelStyle ? labelStyle.color : '',
+          labelBackground: labelStyle ? labelStyle.backgroundColor : '',
+          pointerEvents: getComputedStyle(root).pointerEvents
+        };
+      },
+      prepareVisible: function() {
+        document.getElementById('hide-later').style.display = '';
+        window.scrollTo(0, 0);
+        window.__routeName = 'fixture';
+      },
+      hideLater: function() {
+        document.getElementById('hide-later').style.display = 'none';
+      },
+      scrollTop: function() {
+        window.scrollTo(0, 0);
+      },
+      scrollForm: function() {
+        var form = document.getElementById('form-section');
+        if (form) {
+          form.scrollIntoView({ block: 'center' });
+        }
+      },
+      scrollLayout: function() {
+        var layout = document.getElementById('layout-section');
+        if (layout) {
+          layout.scrollIntoView({ block: 'center' });
+        }
+      },
+      scrollDense: function() {
+        var dense = document.getElementById('dense-grid');
+        if (dense) {
+          dense.scrollIntoView({ block: 'center' });
+        }
+      },
+      scrollDynamic: function() {
+        var dynamic = document.getElementById('dynamic-root');
+        if (dynamic) {
+          dynamic.scrollIntoView({ block: 'center' });
+        }
+      },
+      scrollBottom: function() {
+        window.scrollTo(0, document.body.scrollHeight);
+      },
+      pushRoute: function() {
+        history.pushState({ route: 'same-doc' }, '', '#same-doc-route');
+        window.__routeName = 'same-doc';
+      },
+      generateDynamic: function(count) {
+        var root = document.getElementById('dynamic-root');
+        root.innerHTML = '';
+        for (var i = 0; i < count; i++) {
+          var button = document.createElement('button');
+          button.id = 'dyn-' + i;
+          button.setAttribute('data-anno', 'dynamic');
+          button.setAttribute('data-case', 'dynamic');
+          button.textContent = String(i);
+          root.appendChild(button);
+        }
+        return count;
+      },
+      clickBasic: function() {
+        document.getElementById('basic-button').click();
+        return window.__clickedCount || 0;
+      }
+    };
+  </script>
+</body>
+</html>

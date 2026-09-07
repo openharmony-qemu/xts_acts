@@ -29,19 +29,10 @@ import {
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test'
 import events_emitter from '@ohos.events.emitter';
 
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function listUxTest() {
 
@@ -50,8 +41,6 @@ export default function listUxTest() {
   describe('listUxTest', () => {
 
     beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      await CommonFunc.sleep(4000);
 
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/list_ux",

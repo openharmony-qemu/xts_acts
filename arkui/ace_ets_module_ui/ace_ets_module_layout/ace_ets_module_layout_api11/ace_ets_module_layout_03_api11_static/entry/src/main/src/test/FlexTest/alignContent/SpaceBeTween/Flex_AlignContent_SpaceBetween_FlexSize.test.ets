@@ -14,29 +14,16 @@
  * limitations under the License.
  */
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function flex_AlignContent_SpaceBetween_FlexSizeTest() {
   describe('Flex_AlignContent_SpaceBetween_FlexSizeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("flex_AlignContent_SpaceBetween_FlexSizeTest beforeEach start");
-     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Flex_AlignContent_SpaceBetween_FlexSizeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -59,7 +46,11 @@ export default function flex_AlignContent_SpaceBetween_FlexSizeTest() {
     });
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       console.info("Flex_AlignContent_SpaceBetween_FlexSizeTest after each called");
     });
     
@@ -78,7 +69,11 @@ it('testFlexAlignContentSpaceAroundFlexSizeMeet_static', Level.LEVEL0, async () 
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 400
       })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceBetween_FlexSize01');
       let secondText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceBetween_FlexSize02');
       let thirdText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceBetween_FlexSize03');
@@ -124,7 +119,11 @@ it('testFlexAlignContentSpaceAroundFlexSizeOverflow_static', Level.LEVEL0, async
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 250
       })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceBetween_FlexSize01');
       let secondText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceBetween_FlexSize02');
       let thirdText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceBetween_FlexSize03');

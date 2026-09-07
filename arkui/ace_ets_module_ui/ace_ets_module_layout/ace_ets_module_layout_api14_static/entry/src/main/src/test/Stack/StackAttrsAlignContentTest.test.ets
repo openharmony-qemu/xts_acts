@@ -13,24 +13,16 @@
  * See the License for specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility } from '../Util.test';
 
 export default function StackAttrsAlignContentTest() {
   describe('StackAttrsAlignContentTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("StackAttrsAlignContentTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.api14.static", "EntryAbility");
-      await UtilsTest.msSleep(1000);
-      console.info('StackAttrsAlignContentTest startAbility completed');
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("StackAttrsAlignContentTest beforeEach start");
       let options: router.RouterOptions = {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -27,26 +27,12 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import {UtilsTest,startAbility} from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+
 export default function BindControllerErrorCodeTest() {
   describe('BindControllerErrorCodeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("BindControllerErrorCodeTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api16.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async () => {
       console.info('BindControllerErrorCodeTest beforeEach start');
       let options: router.RouterOptions = {
@@ -56,13 +42,11 @@ export default function BindControllerErrorCodeTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
-        // let result = await router.replaceUrl(options);
         router.replaceUrl(options);
         console.info('get BindControllerErrorCodeTest state pages:' + JSON.stringify(pages));
         if (!('BindControllerErrorCodeTest' == pages.name)) {
           console.info('get BindControllerErrorCodeTest pages.name:' + JSON.stringify(pages.name));
           await CommonFunc.sleep(2000);
-          //console.info('push BindControllerErrorCodeTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push BindControllerErrorCodeTest page error:' + err);
@@ -71,14 +55,15 @@ export default function BindControllerErrorCodeTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BindControllerErrorCodeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('BindControllerErrorCodeTest after each called');
     });
 
-    
-    
-
-
+    afterAll(() => {})
 
     /**
      * @tc.number   BindControllerErrorCodeTest_static_0100
@@ -86,14 +71,31 @@ export default function BindControllerErrorCodeTest() {
      * @tc.desc     BindControllerErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('BindControllerErrorCodeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+    it('BindControllerErrorCodeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
 
       console.info('BindControllerErrorCodeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('error_bnt401_id'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BindControllerErrorCodeTest sleep err: ' + JSON.stringify(err));
+      }
+      let button: Component | null = null;
+      try {
+        button = await driver.findComponent(ON.id('error_bnt401_id'));
+      } catch (err) {
+        console.info('BindControllerErrorCodeTest findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('BindControllerErrorCodeTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BindControllerErrorCodeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('error_str401_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[BindControllerErrorCodeTest_0100] content obj is:' + JSON.stringify(obj.getElement('$attrs').getString('content')));
@@ -102,25 +104,37 @@ it('BindControllerErrorCodeTest_static_0100', Level.LEVEL2, async (done: () => v
       done();
     });
 
-    
-    
-
-
-
     /**
      * @tc.number   BindControllerErrorCodeTest_static_0200
      * @tc.name     BindControllerErrorCodeTest_static_0200
      * @tc.desc     BindControllerErrorCodeTest_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('BindControllerErrorCodeTest_static_0200', Level.LEVEL2, async (done: () => void) => {
+    it('BindControllerErrorCodeTest_static_0200', Level.LEVEL2, async (done: () => void) => {
 
       console.info('BindControllerErrorCodeTest_0200 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('error_bnt100021_id'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BindControllerErrorCodeTest sleep err: ' + JSON.stringify(err));
+      }
+      let button: Component | null = null;
+      try {
+        button = await driver.findComponent(ON.id('error_bnt100021_id'));
+      } catch (err) {
+        console.info('BindControllerErrorCodeTest findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('BindControllerErrorCodeTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BindControllerErrorCodeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('error_str100021_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[BindControllerErrorCodeTest_0200] content obj is:' + JSON.stringify(obj.getElement('$attrs').getString('content')));

@@ -13,18 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router'
 import { Driver, Component, ON } from '@ohos.UiTest'
 import events_emitter from '@ohos.events.emitter';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
@@ -33,13 +27,6 @@ export default function WaterFlowEffectEdge() {
   const waitUiReadyMs: number = 1500
 
   describe('WaterFlowEffectEdge', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("WaterFlowEffectEdge beforeEach start");
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.scroll.nowear.api16.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("WaterFlowEffectEdge beforeEach start");
       let options: router.RouterOptions = {

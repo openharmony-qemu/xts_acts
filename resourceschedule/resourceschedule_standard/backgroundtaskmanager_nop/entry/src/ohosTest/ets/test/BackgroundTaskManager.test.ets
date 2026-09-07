@@ -863,7 +863,7 @@ export default function BackgroundTaskManagerTest() {
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
-                  expect(Number(e.code)).assertEqual(201);
+                  expect(e.code).assertEqual(201);
                   done();
                 }
             }).catch((error: BusinessError) => {

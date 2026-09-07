@@ -4635,5 +4635,137 @@ export default function btBleManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off characteristicRead without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      try {
+        gattS.on("characteristicRead", ReadCharacteristicReq);
+        gattS.off("characteristicRead");
+        console.info('[bluetooth_js]off characteristicRead without callback success');
+        expect(true).assertTrue();
+      } catch (err) {
+        console.info("characteristicReadOffNoCallback errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]characteristicRead is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off characteristicWrite without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      try {
+        gattS.on("characteristicWrite", WriteCharacteristicReq);
+        gattS.off("characteristicWrite");
+        console.info('[bluetooth_js]off characteristicWrite without callback success');
+        expect(true).assertTrue();
+      } catch (err) {
+        console.info("characteristicWriteOffNoCallback errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]characteristicWrite is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off descriptorRead without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      try {
+        gattS.on("descriptorRead", ReadDescriptorReq);
+        gattS.off("descriptorRead");
+        console.info('[bluetooth_js]off descriptorRead without callback success');
+        expect(true).assertTrue();
+      } catch (err) {
+        console.info("descriptorReadOffNoCallback errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]descriptorRead is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off descriptorWrite without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+      try {
+        gattS.on("descriptorWrite", WriteDescriptorReq);
+        gattS.off("descriptorWrite");
+        console.info('[bluetooth_js]off descriptorWrite without callback success');
+        expect(true).assertTrue();
+      } catch (err) {
+        console.info("descriptorWriteOffNoCallback errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]descriptorWrite is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_OFF_NOCALLBACK_0100
+     * @tc.desc   Test GattClientDevice off BLEMtuChange without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+      try {
+        gattC.on('BLEMtuChange', (mtu: number) => {
+          console.info('BLEMtuChange, mtu: ' + mtu);
+        });
+        gattC.off('BLEMtuChange');
+        console.info('[bluetooth_js]off BLEMtuChange without callback success');
+        expect(true).assertTrue();
+      } catch (err) {
+        console.info("BLEMtuChangeOffNoCallback errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]BLEMtuChange is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
   })
 }

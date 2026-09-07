@@ -14,32 +14,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function TouchTestStrategy() {
   describe('TouchTestStrategy', () => {
-    beforeAll(async (): Promise<void> => {
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("TouchTestStrategy beforeEach start");
       let options: router.RouterOptions = {
@@ -72,27 +57,34 @@ export default function TouchTestStrategy() {
      * @tc.level    Level.LEVEL0
      */
 it('TouchTestStrategy_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('TouchTestStrategy_static_0100 START');
-      await CommonFunc.sleep(1000);
-      let gridTop = CommonFunc.getComponentRect('border_TouchStrategy');
-      let top = gridTop.top
-      let gridBottom = CommonFunc.getComponentRect('border_TouchStrategy');
-      let bottom = gridBottom.bottom
-      let driver = Driver.create()
-      const uiContext = AppStorage.get<UIContext>('uiContext')!;
-      await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(80))).toInt(),
-        (Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(10))).toInt());
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('listText_TouchStrategy');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[TouchTestStrategy_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[TouchTestStrategy_static_0100] text: " +
-      JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Test Text is completely invisible');
-      console.info('[Touch_static_0100] END');
-      done();
+      try {
+        console.info('TouchTestStrategy_static_0100 START');
+        await CommonFunc.sleep(1000);
+        let gridTop = CommonFunc.getComponentRect('border_TouchStrategy');
+        let top = gridTop.top
+        let gridBottom = CommonFunc.getComponentRect('border_TouchStrategy');
+        let bottom = gridBottom.bottom
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        const uiContext = AppStorage.get<UIContext>('uiContext')!;
+        await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
+          (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(80))).toInt(),
+          (Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
+          (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(10))).toInt());
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('listText_TouchStrategy');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[TouchTestStrategy_static_0100] component obj is: " + JSON.stringify(obj));
+        console.info("[TouchTestStrategy_static_0100] text: " +
+        JSON.stringify(obj.getElement('$attrs').getString('content')));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('Test Text is completely invisible');
+        console.info('[Touch_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[TouchTestStrategy_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

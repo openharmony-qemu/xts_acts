@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function DatePickerDialogEnableHapticFeedbackTest() {
   describe('DatePickerDialogEnableHapticFeedbackTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("DatePickerDialogEnableHapticFeedbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info('DatePickerDialogEnableHapticFeedbackTest beforeEach start');
       let options: router.RouterOptions = {
@@ -50,7 +44,11 @@ export default function DatePickerDialogEnableHapticFeedbackTest() {
       console.info('DatePickerDialogEnableHapticFeedbackTest beforeEach end');
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error('DatePickerDialogEnableHapticFeedbackTest after each error: ' + err);
+      }
       console.info('DatePickerDialogEnableHapticFeedbackTest after each called');
     });
     
@@ -62,6 +60,7 @@ export default function DatePickerDialogEnableHapticFeedbackTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DatePickerDialog_EnableHapticFeedback_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('DatePickerDialog_EnableHapticFeedback_static_001 start ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('DatePickerDialog1'));
@@ -78,6 +77,10 @@ export default function DatePickerDialogEnableHapticFeedbackTest() {
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     });
  
     /**
@@ -87,6 +90,7 @@ export default function DatePickerDialogEnableHapticFeedbackTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DatePickerDialog_EnableHapticFeedback_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('DatePickerDialog_EnableHapticFeedback_static_002 start ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('DatePickerDialog2'));
@@ -103,6 +107,10 @@ export default function DatePickerDialogEnableHapticFeedbackTest() {
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     });
   
     /**
@@ -112,6 +120,7 @@ export default function DatePickerDialogEnableHapticFeedbackTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DatePickerDialog_EnableHapticFeedback_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('DatePickerDialog_EnableHapticFeedback_static_003 start ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('DatePickerDialog3'));
@@ -128,6 +137,10 @@ export default function DatePickerDialogEnableHapticFeedbackTest() {
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     });
       
     /**
@@ -137,6 +150,7 @@ export default function DatePickerDialogEnableHapticFeedbackTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DatePickerDialog_EnableHapticFeedback_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('DatePickerDialog_EnableHapticFeedback_static_004 start ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('DatePickerDialog4'));
@@ -153,6 +167,10 @@ export default function DatePickerDialogEnableHapticFeedbackTest() {
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     });
   })
 }

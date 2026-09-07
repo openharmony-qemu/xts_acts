@@ -13,23 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
-import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
-import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest, startAbility } from '../Util.test';
-let testAbilityContext:common.UIAbilityContext;
-let domain: int = 0x0000;
-let tag: string = 'testTag';
 
 
 let selectorBundleName = '';
@@ -38,12 +30,6 @@ const DOMAIN = 0xF811;
 
 export default function listItemGroupComponent() {
   describe('listItemGroupComponent', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.scroll13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("listItemGroupComponent beforeEach start");
       let options: router.RouterOptions = {
@@ -78,13 +64,19 @@ export default function listItemGroupComponent() {
      */
 it('listItemGroupComponent_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> =>{
 
+    try {
       let driver = Driver.create();
       await driver.delayMs(2000);
       let com1 = (JSON.parseJsonElement(inspector.getInspectorByKey("buildTest1"))).getElement('$attrs').getString('content');
       expect(com1 === "message1").assertTrue();
       hilog.info(DOMAIN, TAG, '%{public}s', 'listItemGroupComponent_0100');
       done();
-    });
+    } catch (error) {
+      console.error('[listItemGroupComponent_static_0100] error:' + error);
+      expect().assertFail();
+      done();
+    }
+  });
 
 
 
@@ -97,12 +89,18 @@ it('listItemGroupComponent_static_0100', Level.LEVEL1, async (done: () => void):
      */
 it('listItemGroupComponent_static_0101', Level.LEVEL1, async (done: () => void): Promise<void> =>{
 
+  try {
     let driver = Driver.create();
     await driver.delayMs(2000);
     let com2 = (JSON.parseJsonElement(inspector.getInspectorByKey("buildTest2"))).getElement('$attrs').getString('content');
     expect(com2 === "message2").assertTrue();
     hilog.info(DOMAIN, TAG, '%{public}s', 'listItemGroupComponent_0101');
     done();
+  } catch (error) {
+    console.error('[listItemGroupComponent_static_0101] error:' + error);
+    expect().assertFail();
+    done();
+  }
   });
   })
 }

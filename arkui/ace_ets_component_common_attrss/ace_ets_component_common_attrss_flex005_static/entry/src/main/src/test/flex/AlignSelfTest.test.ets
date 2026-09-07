@@ -22,21 +22,11 @@ import Utils, {
   DefaultAlignItems,
 } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { describe, expect } from '../../../../hypium/index'
 import { ItemAlign, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function alignSelfTest() {
 
@@ -134,11 +124,6 @@ export default function alignSelfTest() {
   }]
 
   describe('AlignSelfTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("AlignSelfTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.005.test.static", "EntryAbility")
-    });
-    
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
       async (data: BasePageConfig): Promise<void> => {
         console.info("AlignSelfTest start");

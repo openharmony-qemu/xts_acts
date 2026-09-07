@@ -1372,5 +1372,36 @@ export default function wifiManagerTest() {
       hilog.info(domain, tag, `${caseName} test end`);
       done();
     });
+    /**
+     * @tc.number SUB_Communication_WiFiManager_ConnectToCandidateConfig_NOP_0049
+     * @tc.name SUB_Communication_WiFiManager_ConnectToCandidateConfig_NOP_0049
+     * @tc.desc connectToCandidateConfig permission denied test.
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WiFiManager_ConnectToCandidateConfig_NOP_0049", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let settings: wifiManager.ConnectSettings = {
+        networkId: 0,
+        withUserAction: true,
+        userActionTimeout: 15,
+        addNetworkToSystem: true
+      };
+      try {
+        await wifiManager.connectToCandidateConfig(settings);
+        hilog.info(domain, tag, "connectToCandidateConfig success");
+        expect().assertFail();
+      } catch (err) { 
+        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+        hilog.info(domain, tag, "connectToCandidateConfig get errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(201);
+        }
+      }
+      done();
+    });
   })
 }

@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 const SLEEP_TIME = 1000;
@@ -82,14 +81,15 @@ async function waitStatusByAppStorage(key: string, expected: string, timeoutMs: 
 
 export default function UIContextTest(): void {
   describe('UIContextTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.ets.module.uicontext.static', 'EntryAbility');
-    });
     beforeEach(async (): Promise<void> => {
       await ensurePageReady();
     });
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('UIContextTest afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**

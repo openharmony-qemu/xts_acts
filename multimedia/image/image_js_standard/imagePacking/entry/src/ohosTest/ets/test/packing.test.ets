@@ -1777,14 +1777,14 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0400
-     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0400
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_2000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_2000
      * @tc.desc   1.create PixelMap List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0400", Level.LEVEL0, async (done: Function) => {
+    it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_2000", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
         console.info("This device does not support GIF encoding.")
         done();
@@ -1793,7 +1793,7 @@ export default function imagePacking() {
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [10], loopCount: 2
         };
-        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0400", 
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_2000", 
           { width: 6016, height: 3384 }, packingOptions, pixelMapList)
       }
     });

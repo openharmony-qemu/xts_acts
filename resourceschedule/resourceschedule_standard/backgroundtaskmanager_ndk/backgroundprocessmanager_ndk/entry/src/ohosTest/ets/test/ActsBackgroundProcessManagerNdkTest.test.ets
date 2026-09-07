@@ -15,7 +15,7 @@
 
 import { describe, expect, it, Level } from '@ohos/hypium'
 import { backgroundProcessManager } from '@kit.BackgroundTasksKit'
-import backgroundProcessManagerNdk from 'libbackgroundprocessmanagerndk.so'
+import * as backgroundProcessManagerNdk from 'libbackgroundprocessmanagerndk.so'
 
 export default function ActsBackgroundProcessManagerNdkTest() {
   describe('ActsBackgroundProcessManagerNdkTest', () => {

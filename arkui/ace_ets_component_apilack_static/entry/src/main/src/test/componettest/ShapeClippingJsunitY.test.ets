@@ -44,14 +44,14 @@ import { RecordData } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function shapeClippingJsunit() {
+export default function shapeClippingJsunit(): void {
   describe('borderTest_five_4', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("shapeClipping beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/shapeClipping_y',
@@ -71,7 +71,7 @@ export default function shapeClippingJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("shapeClipping after each called");
     });
@@ -84,7 +84,7 @@ export default function shapeClippingJsunit() {
      * @tc.desc     testShapeClipping_static_001
      * @tc.level    Level.LEVEL0
      */
-it('testShapeClipping_static_001', Level.LEVEL0, async () => {
+it('testShapeClipping_static_001', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testShapeClipping001] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('image_clip');
@@ -108,7 +108,7 @@ it('testShapeClipping_static_001', Level.LEVEL0, async () => {
      * @tc.desc     testShapeClipping_static_002
      * @tc.level    Level.LEVEL0
      */
-it('testShapeClipping_static_002', Level.LEVEL0, async () => {
+it('testShapeClipping_static_002', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testShapeClipping002] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('image_mask');
@@ -128,7 +128,7 @@ it('testShapeClipping_static_002', Level.LEVEL0, async () => {
      * @tc.desc     testShapeClipping_static_003
      * @tc.level    Level.LEVEL0
      */
-it('testShapeClipping_static_003', Level.LEVEL0, async () => {
+it('testShapeClipping_static_003', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testShapeClipping003] START');
       try {
         let eventData: events_emitter.EventData = {
@@ -163,7 +163,7 @@ it('testShapeClipping_static_003', Level.LEVEL0, async () => {
      * @tc.desc     testShapeClipping_static_004
      * @tc.level    Level.LEVEL0
      */
-it('testShapeClipping_static_004', Level.LEVEL0, async () => {
+it('testShapeClipping_static_004', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testShapeClipping004] START');
       try {
         let eventData: events_emitter.EventData = {
@@ -198,7 +198,7 @@ it('testShapeClipping_static_004', Level.LEVEL0, async () => {
      * @tc.desc     testShapeClipping_static_005
      * @tc.level    Level.LEVEL0
      */
-it('testShapeClipping_static_005', Level.LEVEL0, async () => {
+it('testShapeClipping_static_005', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testShapeClipping004] START');
       try {
         let eventData: events_emitter.EventData = {

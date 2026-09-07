@@ -3,8 +3,8 @@ import { notificationExtensionSubscription, notificationManager } from '@kit.Not
 import { BusinessError } from '@kit.BasicServicesKit'
 import { abilityAccessCtrl } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';
-let commonTag: string = "GetSubscribeInfo"
-let bundleName:string = "com.example.actsNotificationAnsThreePartyWatchThirdParty"
+let commonTag: string = 'GetSubscribeInfo'
+let bundleName:string = 'com.example.actsNotificationAnsThreePartyWatchThirdParty'
 export default function actsNotificationAnsThreePartyGetSubscribeInfoTest() {
   let uiAbilityContext: common.UIAbilityContext | undefined =
     AppStorage.get<common.UIAbilityContext>('uiAbilityContext');
@@ -18,7 +18,7 @@ export default function actsNotificationAnsThreePartyGetSubscribeInfoTest() {
       } catch (err) {
       }
     })
-    
+
     /**
       * @tc.number    Sub_Notification_Ans_ThreePartyWatch_1017
       * @tc.name      Sub_Notification_Ans_ThreePartyWatch_1017
@@ -28,7 +28,7 @@ export default function actsNotificationAnsThreePartyGetSubscribeInfoTest() {
       * @tc.level     Level 2
      */
     it('Sub_Notification_Ans_ThreePartyWatch_1017', Level.LEVEL2, async (done: Function) => {
-      let TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1017 ";
+      let TAG = commonTag + 'Sub_Notification_Ans_ThreePartyWatch_1017 ';
       notificationExtensionSubscription.getSubscribeInfo().then((data) => {
         console.info(TAG +`getSubscribeInfo successfully. Data: ${JSON.stringify(data)}`);
         expect(data.length).assertEqual(0)

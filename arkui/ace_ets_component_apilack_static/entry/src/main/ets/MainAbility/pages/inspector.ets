@@ -45,7 +45,7 @@ struct Inspector {
   @State setColor: string = '#F9CF93'
   @State catchStatus: string = "success"
 
-  onPageShow() {
+  onPageShow(): void {
     console.info('[inspector] page show called');
     let stateChangeEvent: events_emitter.InnerEvent = {
       eventId: 60211,

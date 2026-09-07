@@ -3497,11 +3497,15 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs * 2);
                 let text = await driver.findComponent(ON.text('toast'));
                 expect(text == null).assertTrue();
-                await driver.delayMs(waitUiReadyMs);
-                let pressureCom = await driver.findComponent(ON.id('pressure'));
-                await driver.delayMs(waitUiReadyMs);
-                let pressure = await pressureCom.getText();
-                await driver.delayMs(waitUiReadyMs);
+                let pressure = '';
+                for (let retry = 0; retry < 5; retry++) {
+                    let pressureCom = await driver.waitForComponent(ON.id('pressure'), waitUiReadyMs);
+                    pressure = await pressureCom.getText();
+                    if (pressure === '1.0') {
+                        break;
+                    }
+                    await driver.delayMs(waitUiReadyMs);
+                }
                 expect(pressure).assertEqual('1.0');
                 await driver.delayMs(waitUiReadyMs);
                 let scrollBar = await driver.findComponent(ON.type('Scroll'));
@@ -3510,7 +3514,11 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs);
             } catch (error) {
                 console.log(TestTag, `testInjectPenPointActionSpeed error is, ${JSON.stringify(error)}`);
-                expect(error.code).assertEqual(DeviceErrorCode);
+                if ((error as BusinessError).code === DeviceErrorCode) {
+                    expect((error as BusinessError).code).assertEqual(DeviceErrorCode);
+                } else {
+                    expect().assertFail();
+                }
             } finally {
                 await stopApplication('com.uitestScene.acts')
             }

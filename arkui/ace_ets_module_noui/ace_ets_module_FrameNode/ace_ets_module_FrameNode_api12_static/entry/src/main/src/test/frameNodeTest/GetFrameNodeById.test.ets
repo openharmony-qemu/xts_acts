@@ -15,37 +15,19 @@
  */
 
 import inspector from '@ohos.arkui.inspector'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
-import pasteboard from '@ohos.pasteboard'
 import {
-  Component,
   Driver,
-  UiWindow,
   ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest,startAbility} from '../Util.test'
 import { FrameNode } from "@ohos.arkui.node"
 
 export default function GetFrameNodeByIdTest() {
   describe('GetFrameNodeByIdTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("GetFrameNodeByIdTest beforeEach start");
-      await startAbility("com.arkui.ace.FrameNode.api12.static", "EntryAbility")
-    });
     beforeEach(async () => {
       console.info("GetFrameNodeByIdTest beforeEach start");
       let options: router.RouterOptions = {
@@ -58,10 +40,10 @@ export default function GetFrameNodeByIdTest() {
         console.info("get GetFrameNodeByIdTest state pages: " + JSON.stringify(pages));
         if (!("GetFrameNodeById" == pages.name)) {
           console.info("get GetFrameNodeByIdTest state pages.name: " + JSON.stringify(pages.name));
-          
-          router.replaceUrl(options);
+
+          await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          
+
         }
       } catch (err) {
         console.error("push GetFrameNodeByIdTest page error: " + err);
@@ -77,31 +59,38 @@ export default function GetFrameNodeByIdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('GetFrameNodeByIdTest_0100', Level.LEVEL0, async () => {
-      console.info('[GetFrameNodeByIdTest_0100] START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+    it('GetFrameNodeByIdTest_0100', Level.LEVEL0, async (done: () => void) => {
+      try {
+        console.info('[GetFrameNodeByIdTest_0100] START');
+        let driver = await Driver.create()
+        await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('GetFrameNodeById_testNode');
-      let obj= JSON.parseJsonElement(strJson);
-      console.info("[GetFrameNodeByIdTest_0100] obj width is: " + obj.getElement('$attrs').getString('width'));
-      console.info("[GetFrameNodeByIdTest_0100] obj height is: " + obj.getElement('$attrs').getString('height'));
-      expect(obj.getElement('$attrs').getString('width')).assertEqual('100.00vp');
-      expect(obj.getElement('$attrs').getString('height')).assertEqual('50.00vp');
+        let strJson = inspector.getInspectorByKey('GetFrameNodeById_testNode');
+        let obj= JSON.parseJsonElement(strJson);
+        console.info("[GetFrameNodeByIdTest_0100] obj width is: " + obj.getElement('$attrs').getString('width'));
+        console.info("[GetFrameNodeByIdTest_0100] obj height is: " + obj.getElement('$attrs').getString('height'));
+        expect(obj.getElement('$attrs').getString('width')).assertEqual('100.00vp');
+        expect(obj.getElement('$attrs').getString('height')).assertEqual('50.00vp');
 
-      console.info('GetFrameNodeByIdTest_0100 click GetFrameNodeById_testValidButton');
-      let button = await driver.findComponent(ON.id('GetFrameNodeById_testValidButton'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        console.info('GetFrameNodeByIdTest_0100 click GetFrameNodeById_testValidButton');
+        let button = await driver.findComponent(ON.id('GetFrameNodeById_testValidButton'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      let strJsonAfter = inspector.getInspectorByKey('GetFrameNodeById_testNode');
-      let objAfter= JSON.parseJsonElement(strJsonAfter);
-      console.info("[GetFrameNodeByIdTest_0100] objAfter width is: " + objAfter.getElement('$attrs').getString('width'));
-      console.info("[GetFrameNodeByIdTest_0100] objAfter height is: " + objAfter.getElement('$attrs').getString('height'));
-      expect(objAfter.getElement('$attrs').getString('width')).assertEqual('120.00vp');
-      expect(objAfter.getElement('$attrs').getString('height')).assertEqual('60.00vp');
+        let strJsonAfter = inspector.getInspectorByKey('GetFrameNodeById_testNode');
+        let objAfter= JSON.parseJsonElement(strJsonAfter);
+        console.info("[GetFrameNodeByIdTest_0100] objAfter width is: " + objAfter.getElement('$attrs').getString('width'));
+        console.info("[GetFrameNodeByIdTest_0100] objAfter height is: " + objAfter.getElement('$attrs').getString('height'));
+        expect(objAfter.getElement('$attrs').getString('width')).assertEqual('120.00vp');
+        expect(objAfter.getElement('$attrs').getString('height')).assertEqual('60.00vp');
 
-      console.info('[GetFrameNodeByIdTest_0100] END');
+        console.info('[GetFrameNodeByIdTest_0100] END');
+        done();
+      } catch (error) {
+        console.error('[GetFrameNodeByIdTest_0100] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     })
 
     /**
@@ -112,29 +101,36 @@ export default function GetFrameNodeByIdTest() {
       * @tc.size   SMALLTEST
       * @tc.level  LEVEL0
       */
-    it('GetFrameNodeByIdTest_0200', Level.LEVEL0, async () => {
-      console.info('[GetFrameNodeByIdTest_0200] START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+    it('GetFrameNodeByIdTest_0200', Level.LEVEL0, async (done: () => void) => {
+      try {
+        console.info('[GetFrameNodeByIdTest_0200] START');
+        let driver = await Driver.create()
+        await CommonFunc.sleep(1000);
 
-      console.info('GetFrameNodeByIdTest_0200 click GetFrameNodeById_testDuplicateNodeButton');
-      let button = await driver.findComponent(ON.id('GetFrameNodeById_testDuplicateNodeButton'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        console.info('GetFrameNodeByIdTest_0200 click GetFrameNodeById_testDuplicateNodeButton');
+        let button = await driver.findComponent(ON.id('GetFrameNodeById_testDuplicateNodeButton'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      expect(AppStorage.get<FrameNode | null>('getFrameNodeByIdDuplicateResult')).not().assertNull();
-      AppStorage.delete('getFrameNodeByIdDuplicateResult');
+        expect(AppStorage.get<FrameNode | null>('getFrameNodeByIdDuplicateResult')).not().assertNull();
+        AppStorage.delete('getFrameNodeByIdDuplicateResult');
 
-      let strJson = inspector.getInspectorByKey('GetFrameNodeById_duplicateNode');
-      let obj= JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Duplicate Node 1');
+        let strJson = inspector.getInspectorByKey('GetFrameNodeById_duplicateNode');
+        let obj= JSON.parseJsonElement(strJson);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('Duplicate Node 1');
 
-      console.info("[GetFrameNodeByIdTest_0200] obj width is: " + obj.getElement('$attrs').getString('width'));
-      console.info("[GetFrameNodeByIdTest_0200] obj height is: " + obj.getElement('$attrs').getString('height'));
-      expect(obj.getElement('$attrs').getString('width')).assertEqual('150.00vp');
-      expect(obj.getElement('$attrs').getString('height')).assertEqual('60.00vp');
+        console.info("[GetFrameNodeByIdTest_0200] obj width is: " + obj.getElement('$attrs').getString('width'));
+        console.info("[GetFrameNodeByIdTest_0200] obj height is: " + obj.getElement('$attrs').getString('height'));
+        expect(obj.getElement('$attrs').getString('width')).assertEqual('150.00vp');
+        expect(obj.getElement('$attrs').getString('height')).assertEqual('60.00vp');
 
-      console.info('[GetFrameNodeByIdTest_0200] END');
+        console.info('[GetFrameNodeByIdTest_0200] END');
+        done();
+      } catch (error) {
+        console.error('[GetFrameNodeByIdTest_0200] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     })
 
     /**
@@ -145,20 +141,27 @@ export default function GetFrameNodeByIdTest() {
       * @tc.size   SMALLTEST
       * @tc.level  LEVEL0
       */
-    it('GetFrameNodeByIdTest_0300', Level.LEVEL0, async () => {
-      console.info('[GetFrameNodeByIdTest_0300] START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+    it('GetFrameNodeByIdTest_0300', Level.LEVEL0, async (done: () => void) => {
+      try {
+        console.info('[GetFrameNodeByIdTest_0300] START');
+        let driver = await Driver.create()
+        await CommonFunc.sleep(1000);
 
-      console.info('GetFrameNodeByIdTest_0300 click GetFrameNodeById_testEmptyStringButton');
-      let button = await driver.findComponent(ON.id('GetFrameNodeById_testEmptyStringButton'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        console.info('GetFrameNodeByIdTest_0300 click GetFrameNodeById_testEmptyStringButton');
+        let button = await driver.findComponent(ON.id('GetFrameNodeById_testEmptyStringButton'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      expect(AppStorage.get<FrameNode | null>('getFrameNodeByIdEmptyStringResult')).assertNull();
-      AppStorage.delete('getFrameNodeByIdEmptyStringResult');
+        expect(AppStorage.get<FrameNode | null>('getFrameNodeByIdEmptyStringResult')).assertNull();
+        AppStorage.delete('getFrameNodeByIdEmptyStringResult');
 
-      console.info('[GetFrameNodeByIdTest_0300] END');
+        console.info('[GetFrameNodeByIdTest_0300] END');
+        done();
+      } catch (error) {
+        console.error('[GetFrameNodeByIdTest_0300] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     })
 
     /**
@@ -169,20 +172,27 @@ export default function GetFrameNodeByIdTest() {
       * @tc.size   SMALLTEST
       * @tc.level  LEVEL0
       */
-    it('GetFrameNodeByIdTest_0400', Level.LEVEL0, async () => {
-      console.info('[GetFrameNodeByIdTest_0400] START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+    it('GetFrameNodeByIdTest_0400', Level.LEVEL0, async (done: () => void) => {
+      try {
+        console.info('[GetFrameNodeByIdTest_0400] START');
+        let driver = await Driver.create()
+        await CommonFunc.sleep(1000);
 
-      console.info('GetFrameNodeByIdTest_0400 click GetFrameNodeById_testNonExistentNodeButton');
-      let button = await driver.findComponent(ON.id('GetFrameNodeById_testNonExistentNodeButton'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        console.info('GetFrameNodeByIdTest_0400 click GetFrameNodeById_testNonExistentNodeButton');
+        let button = await driver.findComponent(ON.id('GetFrameNodeById_testNonExistentNodeButton'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      expect(AppStorage.get<FrameNode | null>('getFrameNodeByIdNonExistentResult')).assertNull();
-      AppStorage.delete('getFrameNodeByIdNonExistentResult');
+        expect(AppStorage.get<FrameNode | null>('getFrameNodeByIdNonExistentResult')).assertNull();
+        AppStorage.delete('getFrameNodeByIdNonExistentResult');
 
-      console.info('[GetFrameNodeByIdTest_0400] END');
+        console.info('[GetFrameNodeByIdTest_0400] END');
+        done();
+      } catch (error) {
+        console.error('[GetFrameNodeByIdTest_0400] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     })
   })
 }

@@ -25,7 +25,6 @@ import {
   Level
 } from '../../../../hypium/index'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
@@ -36,8 +35,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function AttributeUpdaterAttribute() {
   describe('AttributeUpdaterAttribute', () => {
     beforeAll(async () => {
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(1000)
       console.info('frameNodeApi beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/AttributeUpdaterAttribute/AttributeUpdaterAttribute',
@@ -53,7 +50,6 @@ export default function AttributeUpdaterAttribute() {
       }
       console.info('beforeAll case');
     });
-
     beforeEach(async () => {
 
       console.info('frameNodeApi beforeEach end');
@@ -78,23 +74,43 @@ export default function AttributeUpdaterAttribute() {
     it('AttributeUpdater_attribute_direct_update_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[AttributeUpdater_attribute_direct_update_0100] START');
       let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttributeUpdaterAttributeTest await err: ' + JSON.stringify(err));
+      }
 
-      // 获取Button组件初始属性
+      // 閼惧嘲褰嘊utton缂佸嫪娆㈤崚婵嗩潗鐏炵偞鈧?
       let strJson = inspector.getInspectorByKey('btn_with_modifier');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttributeUpdaterAttributeTest await err: ' + JSON.stringify(err));
+      }
       console.info('[AttributeUpdater_attribute_direct_update_0100] initial $attrs: ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundColor')));
       let setColor = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundColor'));
       expect(setColor).assertEqual('"#FFD5D5D5"');
-      // 点击Button触发attribute更新
+      // 閻愮懓鍤瓸utton鐟欙箑褰俛ttribute閺囧瓨鏌?
       let button = await driver.findComponent(ON.id('btn_with_modifier'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttributeUpdaterAttributeTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttributeUpdaterAttributeTest await err: ' + JSON.stringify(err));
+      }
 
-      // 获取更新后的组件属性
+      // 閼惧嘲褰囬弴瀛樻煀閸氬海娈戠紒鍕鐏炵偞鈧?
       let strJson2 = inspector.getInspectorByKey('btn_with_modifier');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttributeUpdaterAttributeTest await err: ' + JSON.stringify(err));
+      }
       console.info('[AttributeUpdater_attribute_direct_update_0100] updated $attrs: ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('backgroundColor')));
       let resultColor = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('backgroundColor'));

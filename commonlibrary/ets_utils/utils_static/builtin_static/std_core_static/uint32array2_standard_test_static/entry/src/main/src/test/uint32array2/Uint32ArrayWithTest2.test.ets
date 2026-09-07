@@ -86,7 +86,7 @@ export default function uint32ArrayWithTwoTest(): void {
         values.with(2, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -105,7 +105,7 @@ export default function uint32ArrayWithTwoTest(): void {
         values.with(-3, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -123,7 +123,7 @@ export default function uint32ArrayWithTwoTest(): void {
         values.with(0, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -141,7 +141,7 @@ export default function uint32ArrayWithTwoTest(): void {
         values.with(-1, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -173,7 +173,7 @@ export default function uint32ArrayWithTwoTest(): void {
         values.with(1, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -187,12 +187,8 @@ export default function uint32ArrayWithTwoTest(): void {
      */
     it('testUint32ArrayWithTwo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = Uint32Array.of(42);
-      try {
-        values.with(-1, 99);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      values.with(-1, 99);
+      expect(values.toString()).assertEqual('42');
     });
 
     /**

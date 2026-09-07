@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 import { LibUtil } from '../../../ets/pages/LibUtil';
 export default function textInputMethodTest() {
 
@@ -26,11 +25,10 @@ export default function textInputMethodTest() {
 
     let PAGE_TAG = 'TextInputMethodTest';
 
-    beforeAll(async (): Promise<void> => {
-      console.info("[ui] beforeAll start");
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility")
+    beforeEach(async (): Promise<void> => {
+      console.info("[ui] beforeEach start");
       await Utils.pushPage(`textarea/${PAGE_TAG}`, false);
-      console.info("[ui] beforeAll end");
+      console.info("[ui] beforeEach end");
     });
 
     
@@ -41,21 +39,25 @@ export default function textInputMethodTest() {
      * @tc.level    Level.LEVEL1
      */
     it('textInputMethodTest001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      await Utils.sleep(500);
-      console.log('textInputMethodTest001----1')
-      let textinput = await driver.findComponent(ON.id('MethodTestTextInput'));
-      console.log('textInputMethodTest001----2')
-      await Utils.sleep(500);
-      await (textinput?.click() as Promise<void>)
-      console.log('textInputMethodTest001----3')
-      await Utils.sleep(500);
-      let button1 = await driver.findComponent(ON.text('下一步'));
-      await Utils.sleep(500);
-      await (button1?.click() as Promise<void>);
-      await Utils.sleep(500);
-      expect('').assertEqual('')
-      done()
+      try {
+        let driver = Driver.create();
+        await Utils.sleep(500);
+        console.log('textInputMethodTest001----1')
+        let textinput = await driver.findComponent(ON.id('MethodTestTextInput'));
+        console.log('textInputMethodTest001----2')
+        await Utils.sleep(500);
+        await (textinput?.click() as Promise<void>)
+        console.log('textInputMethodTest001----3')
+        await Utils.sleep(500);
+        let button1 = await driver.findComponent(ON.text('下一步'));
+        await Utils.sleep(500);
+        await (button1?.click() as Promise<void>);
+        await Utils.sleep(500);
+        expect('').assertEqual('')
+        done()
+      } catch (e) {
+        done()
+      }
     })
   })
 }

@@ -40,6 +40,38 @@ class Utils{
     })
   }
 
+
+  static registerBaseEvent(testCaseName: string, expected: Object, eventId: Long,
+    done: () => void, expectFunction: (backData: emitter.EventData, expected: Object) => void): void {
+    hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " start expectValue=" + JSON.stringify(expected));
+    try {
+      let callBack = (backData: emitter.EventData) => {
+        try {
+          hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " get result is: " + JSON.stringify(backData));
+          expectFunction(backData, expected);
+          hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " END");
+        } catch (err) {
+          hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " err: " + JSON.stringify(err));
+        }
+      }
+      let innerEvent: emitter.InnerEvent = {
+        eventId: eventId
+      }
+      emitter.on(innerEvent, callBack)
+    } catch (err) {
+      hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " err: " + JSON.stringify(err));
+    }
+  }
+
+  static registerEventWithDone(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) {
+    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: emitter.EventData, expected: Object) => {
+      const data = backData?.data as Record<string, RecordData>;
+      const action = data['ACTION'];
+      expect(action).assertEqual(expected);
+      done();
+    });
+  }
+
   static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) {
     hilog.info(0x0000, 'testTag', "testCaseName=" + testCaseName + " start expectValue=" + JSON.stringify(expectedValue));
     try {

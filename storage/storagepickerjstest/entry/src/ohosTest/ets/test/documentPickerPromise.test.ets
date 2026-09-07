@@ -16,6 +16,8 @@
 import { afterEach, describe, expect, it, Level } from '@ohos/hypium';
 import { sleep, startAbility, stopAbility } from './Common';
 import picker from '@ohos.file.picker';
+import globalContext from './GlobalContext'
+import window from '@ohos.window';
 
 export default function documentPickerPromise(abilityContext: Context) {
   describe("documentPickerPromise", () => {
@@ -789,6 +791,50 @@ export default function documentPickerPromise(abilityContext: Context) {
       let option = new picker.DocumentSaveOptions();
       option.fileSuffixChoices = [''];
       await saveWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_constructor_001
+    * @tc.number SUB_DF_DocumentViewPicker_constructor_0010
+    * @tc.desc   Test DocumentViewPicker constructor
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_constructor_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        let obj = new picker.DocumentViewPicker(globalContext.getContext().getAbility());
+        console.log('DocumentViewPicker_constructor_001 obj: ' + JSON.stringify(obj));
+        expect(obj).not().assertUndefined();
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_constructor_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_constructor_002
+    * @tc.number SUB_DF_DocumentViewPicker_constructor_0020
+    * @tc.desc   Test DocumentViewPicker constructor
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_constructor_002', Level.LEVEL3, async (done: Function) => {
+      try {
+        let windowClass = AppStorage.get('mainWindow') as window.Window;
+        console.log('DocumentViewPicker_constructor_002 windowClass obj: ' + JSON.stringify(windowClass));
+        let obj = new picker.DocumentViewPicker(globalContext.getContext().getAbility(), windowClass);
+        console.log('DocumentViewPicker_constructor_002 DocumentViewPicker obj: ' + JSON.stringify(obj));
+        expect(obj).not().assertUndefined();
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_constructor_002 has failed for ' + e.message + ', code: ' + e.code);
+        expect().assertFail();
+        done();
+      }
     });
   });
 }

@@ -158,3 +158,15 @@ export const testRegisterDensityInfoChangeCallback: (windowId: number, callback:
 export const testRegisterDensityInfoChangeCallbackWithNullCallback: (windowId: number) => number;
 export const testUnregisterDensityInfoChangeCallback: (windowId: number, callback: Function) => number;
 export const testUnregisterDensityInfoChangeCallbackWithNullCallback: (windowId: number) => number;
+
+export interface FilterResult {
+    resultCode: number;
+    hasFilter: boolean;
+}
+
+export const getKeyEventFilter: (windowId: number) => FilterResult;
+export const getKeyEventFilterNullParam: (windowId: number) => number;
+export const getMouseEventFilter: (windowId: number) => FilterResult;
+export const getMouseEventFilterNullParam: (windowId: number) => number;
+export const getTouchEventFilter: (windowId: number) => FilterResult;
+export const getTouchEventFilterNullParam: (windowId: number) => number;

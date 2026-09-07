@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach } from '../../../hypium/index';
+import {Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach, expect } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import{BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview'
 
 let testAbilityContext:common.UIAbilityContext;
@@ -69,7 +70,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testRestoreWebState001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testRestoreWebState001", "index", 100083, done);
+        Utils.registerBaseEvent("testRestoreWebState001", "index", 100083, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -89,7 +95,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testSerializeWebStateErrorCode001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testSerializeWebStateErrorCode001", 17100001, 110083, done);
+        Utils.registerBaseEvent("testSerializeWebStateErrorCode001", 17100001, 110083, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -109,7 +120,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testResumeMicrophoneErrorCode001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testResumeMicrophoneErrorCode001", 17100001, 120083, done);
+        Utils.registerBaseEvent("testResumeMicrophoneErrorCode001", 17100001, 120083, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -129,7 +145,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testPauseMicrophoneErrorCode001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testPauseMicrophoneErrorCode001", 17100001, 130083, done);
+        Utils.registerBaseEvent("testPauseMicrophoneErrorCode001", 17100001, 130083, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -149,7 +170,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testStopMicrophoneErrorCode001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testStopMicrophoneErrorCode001", 17100001, 140083, done);
+        Utils.registerBaseEvent("testStopMicrophoneErrorCode001", 17100001, 140083, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -169,7 +195,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testRequestFocusErrorCode001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testRequestFocusErrorCode001", 17100001, 150083, done);
+        Utils.registerBaseEvent("testRequestFocusErrorCode001", 17100001, 150083, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -189,7 +220,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testGetCustomUserAgentErrorCode001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testGetCustomUserAgentErrorCode001", 17100001, 160083, done);
+        Utils.registerBaseEvent("testGetCustomUserAgentErrorCode001", 17100001, 160083, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -209,7 +245,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testGetPageHeightErrorCode001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testGetPageHeightErrorCode001", 17100001, 101083, done);
+        Utils.registerBaseEvent("testGetPageHeightErrorCode001", 17100001, 101083, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -229,7 +270,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testWebViewGetRenderProcessMode001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testWebViewGetRenderProcessMode001", 1, 108006, done);
+        Utils.registerBaseEvent("testWebViewGetRenderProcessMode001", 1, 108006, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -249,7 +295,87 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testWebViewGetRenderProcessMode002", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testWebViewGetRenderProcessMode002", 0, 108003, done);
+        Utils.registerBaseEvent("testWebViewGetRenderProcessMode002", 0, 108003, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testSetRenderProcessModeNullStatic001
+     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_NULL_0100
+     * @tc.desc   test setRenderProcessMode with null param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetRenderProcessModeNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testSetRenderProcessModeNullStatic001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerBaseEvent("testSetRenderProcessModeNullStatic001", true, 41023211, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testSetRenderProcessModeInvalidStatic001
+     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_INVALID_0100
+     * @tc.desc   test setRenderProcessMode with invalid enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetRenderProcessModeInvalidStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testSetRenderProcessModeInvalidStatic001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerBaseEvent("testSetRenderProcessModeInvalidStatic001", 401, 41023212, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testSetRenderProcessModeUndefinedStatic001
+     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_UNDEFINED_0100
+     * @tc.desc   test setRenderProcessMode with undefined param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetRenderProcessModeUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testSetRenderProcessModeUndefinedStatic001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerBaseEvent("testSetRenderProcessModeUndefinedStatic001", true, 41023213, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -269,7 +395,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitWebSiteIsolationMode001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("emitWebSiteIsolationMode001",webview.SiteIsolationMode.PARTIAL, 20250920, done);
+        Utils.registerBaseEvent("emitWebSiteIsolationMode001", webview.SiteIsolationMode.PARTIAL, 20250920, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -289,7 +420,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitWebSiteIsolationMode002", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("emitWebSiteIsolationMode002",webview.SiteIsolationMode.STRICT, 20250921, done);
+        Utils.registerBaseEvent("emitWebSiteIsolationMode002", webview.SiteIsolationMode.STRICT, 20250921, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -309,7 +445,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitAvoidVisibleViewportBottom001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("emitAvoidVisibleViewportBottom001", 50, 153920, done);
+        Utils.registerBaseEvent("emitAvoidVisibleViewportBottom001", 50, 153920, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -329,7 +470,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitAvoidVisibleViewportBottomErrCode001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("emitAvoidVisibleViewportBottomErrCode001", 17100001, 20250827, done);
+        Utils.registerBaseEvent("emitAvoidVisibleViewportBottomErrCode001", 17100001, 20250827, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -349,7 +495,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitAvoidVisibleViewportBottomErrCode002", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("emitAvoidVisibleViewportBottomErrCode002", 801, 20250910, done);
+        Utils.registerBaseEvent("emitAvoidVisibleViewportBottomErrCode002", 801, 20250910, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -369,7 +520,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testRestoreWebState002", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testRestoreWebState002", "17100001", 1000831, done);
+        Utils.registerBaseEvent("testRestoreWebState002", "17100001", 1000831, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
         done();
@@ -388,7 +544,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitEnableWholeWebPageDrawing001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("emitEnableWholeWebPageDrawing001", true, 20250830, done);
+        Utils.registerBaseEvent("emitEnableWholeWebPageDrawing001", true, 20250830, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);

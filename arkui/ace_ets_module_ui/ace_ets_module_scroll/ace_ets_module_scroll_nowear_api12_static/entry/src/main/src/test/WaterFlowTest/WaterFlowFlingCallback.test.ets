@@ -13,21 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, beforeAll, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function WaterFlowFlingCallbackJsunit() {
   describe('WaterFlowFlingCallbackTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info('text beforeEach start');
       let options: router.RouterOptions = {

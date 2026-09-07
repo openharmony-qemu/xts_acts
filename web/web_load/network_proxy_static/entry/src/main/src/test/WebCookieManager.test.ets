@@ -14,21 +14,72 @@
  * limitations under the License.
  */
 
-import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach } from '../../../hypium/index';
+import {Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach, expect } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import{ BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 
 let testAbilityContext:common.UIAbilityContext;
-export default function webCookieManager() {
+export default function webCookieManager():void {
   describe('WebCookieManagerTestSuite', () => {
     beforeAll(async (): Promise<void> => {
       await Utils.msSleep(2000);
       console.info("webCookieManager beforeAll start");
+    })
+
+    /**
+     * @tc.name   testRemoveAllCacheNullStatic001
+     * @tc.number SUB_WEB_REMOVEALLCACHE_NULL_0100
+     * @tc.desc   test removeAllCache with null param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRemoveAllCacheNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testRemoveAllCacheNullStatic001', 10)
+      await Utils.msSleep(2000);
+      Utils.registerBaseEvent('testRemoveAllCacheNullStatic001', 'success', 41022601, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebCookieManagerButton', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   testRemoveAllCacheUndefinedStatic001
+     * @tc.number SUB_WEB_REMOVEALLCACHE_UNDEFINED_0100
+     * @tc.desc   test removeAllCache with undefined param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRemoveAllCacheUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testRemoveAllCacheUndefinedStatic001', 10)
+      await Utils.msSleep(2000);
+      Utils.registerBaseEvent('testRemoveAllCacheUndefinedStatic001', 'success', 41022602, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebCookieManagerButton', 10, '');
+      await Utils.msSleep(2000);
+      done();
     })
 
     /**
@@ -43,7 +94,12 @@ export default function webCookieManager() {
       await Utils.msSleep(6000);
       Utils.emitEvent('testSaveCookieSync001', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('testSaveCookieSync001', 'success', 202502180, done);
+      Utils.registerBaseEvent('testSaveCookieSync001', 'success', 202502180, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -62,7 +118,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('testRemoveAllCache001', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('testRemoveAllCache001', 'success', 202502211, done);
+      Utils.registerBaseEvent('testRemoveAllCache001', 'success', 202502211, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -81,7 +142,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('testRemoveAllCache002', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('testRemoveAllCache002', 'success', 202502212, done);
+      Utils.registerBaseEvent('testRemoveAllCache002', 'success', 202502212, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -100,7 +166,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('WebHttpCookieSameSitePolicy_NONE', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('WebHttpCookieSameSitePolicy_NONE', 0, 202502213, done);
+      Utils.registerBaseEvent('WebHttpCookieSameSitePolicy_NONE', 0, 202502213, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -119,7 +190,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('WebHttpCookieSameSitePolicy_LAX', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('WebHttpCookieSameSitePolicy_LAX', 1, 202502214, done);
+      Utils.registerBaseEvent('WebHttpCookieSameSitePolicy_LAX', 1, 202502214, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -138,7 +214,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('WebHttpCookieSameSitePolicy_STRICT', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('WebHttpCookieSameSitePolicy_STRICT', 2, 202502215, done);
+      Utils.registerBaseEvent('WebHttpCookieSameSitePolicy_STRICT', 2, 202502215, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -157,7 +238,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('WebHttpCookieSameSitePolicy_samesitePolicy', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('WebHttpCookieSameSitePolicy_samesitePolicy', true, 202502216, done);
+      Utils.registerBaseEvent('WebHttpCookieSameSitePolicy_samesitePolicy', true, 202502216, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -176,7 +262,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('WebHttpCookieSameSitePolicy_name', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('WebHttpCookieSameSitePolicy_name', true, 202502217, done);
+      Utils.registerBaseEvent('WebHttpCookieSameSitePolicy_name', true, 202502217, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -195,7 +286,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('WebHttpCookieSameSitePolicy_isSessionCookie', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('WebHttpCookieSameSitePolicy_isSessionCookie', true, 202502218, done);
+      Utils.registerBaseEvent('WebHttpCookieSameSitePolicy_isSessionCookie', true, 202502218, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -214,7 +310,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('WebHttpCookieSameSitePolicy_value', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('WebHttpCookieSameSitePolicy_value', true, 202502219, done);
+      Utils.registerBaseEvent('WebHttpCookieSameSitePolicy_value', true, 202502219, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -233,7 +334,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('WebHttpCookieSameSitePolicy_path', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('WebHttpCookieSameSitePolicy_path', true, 202502220, done);
+      Utils.registerBaseEvent('WebHttpCookieSameSitePolicy_path', true, 202502220, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -252,7 +358,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('WebHttpCookieSameSitePolicy_isHttpOnly', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('WebHttpCookieSameSitePolicy_isHttpOnly', true, 202502221, done);
+      Utils.registerBaseEvent('WebHttpCookieSameSitePolicy_isHttpOnly', true, 202502221, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -271,7 +382,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('WebHttpCookieSameSitePolicy_isSecure', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('WebHttpCookieSameSitePolicy_isSecure', true, 202502222, done);
+      Utils.registerBaseEvent('WebHttpCookieSameSitePolicy_isSecure', true, 202502222, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);
@@ -290,7 +406,12 @@ export default function webCookieManager() {
       await Utils.msSleep(2000);
       Utils.emitEvent('WebHttpCookieSameSitePolicy_domain', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('WebHttpCookieSameSitePolicy_domain', true, 202502223, done);
+      Utils.registerBaseEvent('WebHttpCookieSameSitePolicy_domain', true, 202502223, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebCookieManagerButton', 10, '');
       await Utils.msSleep(2000);

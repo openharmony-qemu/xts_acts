@@ -759,6 +759,7 @@ static napi_value KeyCode27(napi_env env, napi_callback_info info)
     int32_t keyCode9 = 2042;
     int32_t keyCode10 = 2045;
     int32_t keyCode11 = 2046;
+    int32_t keyCode12 = 2016;
     napi_create_int32(env,
                       (Input_KeyCode::KEYCODE_9 == keyCode1 &&
                       Input_KeyCode::KEYCODE_DPAD_UP == keyCode2 &&
@@ -770,7 +771,8 @@ static napi_value KeyCode27(napi_env env, napi_callback_info info)
                       Input_KeyCode::KEYCODE_P == keyCode8 &&
                       Input_KeyCode::KEYCODE_Z == keyCode9 &&
                       Input_KeyCode::KEYCODE_ALT_LEFT == keyCode10 &&
-                      Input_KeyCode::KEYCODE_ALT_RIGHT == keyCode11) ? 1 : 0, &result);
+                      Input_KeyCode::KEYCODE_ALT_RIGHT == keyCode11 &&
+                      Input_KeyCode::KEYCODE_DPAD_CENTER == keyCode12) ? 1 : 0, &result);
     return result;
 }
 

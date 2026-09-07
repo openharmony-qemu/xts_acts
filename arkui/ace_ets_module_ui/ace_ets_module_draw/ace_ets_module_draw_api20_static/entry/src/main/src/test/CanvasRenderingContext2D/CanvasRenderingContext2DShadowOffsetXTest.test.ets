@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { Driver, ON } from '@ohos.UiTest'
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 export default function CanvasRenderingContext2DShadowOffsetXTest() {
   describe('CanvasRenderingContext2DShadowOffsetXTest', () => {
-    beforeAll(async () => {
-      console.info("CanvasRenderingContext2DShadowOffsetXTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       console.info("CanvasRenderingContext2DShadowOffsetXTest beforeEach start");
       let options: router.RouterOptions = {
@@ -60,19 +54,39 @@ export default function CanvasRenderingContext2DShadowOffsetXTest() {
     it('CanvasRenderingContext2DShadowOffsetXTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[CanvasRenderingContext2DShadowOffsetXTest_static_0100] START');
       let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasRenderingContext2DShadowOffsetXTestTest await err: ' + JSON.stringify(err));
+      }
 
       let strJson = inspector.getInspectorByKey('text_shadowOffsetX_result');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasRenderingContext2DShadowOffsetXTestTest await err: ' + JSON.stringify(err));
+      }
       console.info("[CanvasRenderingContext2DShadowOffsetXTest_static_0100] Initial content: " +
         JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
 
       let button = await driver.findComponent(ON.id('button_shadowOffsetX'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CanvasRenderingContext2DShadowOffsetXTestTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasRenderingContext2DShadowOffsetXTestTest await err: ' + JSON.stringify(err));
+      }
 
       strJson = inspector.getInspectorByKey('text_shadowOffsetX_result');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasRenderingContext2DShadowOffsetXTestTest await err: ' + JSON.stringify(err));
+      }
       console.info("[CanvasRenderingContext2DShadowOffsetXTest_static_0100] Result after click: " +
         JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)

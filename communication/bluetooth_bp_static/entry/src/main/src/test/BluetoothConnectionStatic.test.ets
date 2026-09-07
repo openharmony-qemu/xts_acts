@@ -2463,5 +2463,101 @@ export default function bluetoothConnectionTest() {
           hilog.info(domain, tag, `${caseName} test end`);
           done();
       })
+    /**
+     * @tc.number  SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0100
+     * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0100
+     * @tc.desc    Test disconnectAllowedProfiles_promise API 入参正常
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await connection.disconnectAllowedProfiles(deviceId_invalid);
+        hilog.info(domain, tag, 'disconnectAllowedProfiles success');
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(domain, tag, "disconnectAllowedProfiles get errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(2900099);
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.number  SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0200
+     * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0200
+     * @tc.desc    Test disconnectAllowedProfiles_promise API 入参为空
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await connection.disconnectAllowedProfiles('');
+        hilog.info(domain, tag, 'disconnectAllowedProfiles success');
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(domain, tag, "disconnectAllowedProfiles get errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.number  SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0300
+     * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0300
+     * @tc.desc    Test disconnectAllowedProfiles_promise API 入参长度少1位
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await connection.disconnectAllowedProfiles('68:13:24:79:4C:8');
+        hilog.info(domain, tag, 'disconnectAllowedProfiles success');
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(domain, tag, "disconnectAllowedProfiles get errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.number  SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0400
+     * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0400
+     * @tc.desc    Test disconnectAllowedProfiles_promise API 入参长度超1位
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await connection.disconnectAllowedProfiles('68:13:24:79:4C:8C1');
+        hilog.info(domain, tag, 'disconnectAllowedProfiles success');
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(domain, tag, "disconnectAllowedProfiles get errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      done();
+    });
   })
 }

@@ -13,33 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { startAbility, UtilsTest } from '../Util.test'
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function listScrollerBar() {
   describe('listScrollerBar', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("listScrollerBar beforeEach start");
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll14.static", "EntryAbility");
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("listScrollerBar beforeEach start");
       let options: router.RouterOptions = {
@@ -74,28 +57,35 @@ export default function listScrollerBar() {
      * @tc.level    Level.LEVEL0
      */
 it('listScrollerBar_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[listScrollerBar_static_0100] START');
-      let driver = Driver.create()
-      let swiperBar = CommonFunc.getComponentRectOnScreen('scroller_list_scrollbar');
-      let top = swiperBar.top;
-      let bottom = swiperBar.bottom;
-      let right = swiperBar.right;
-      let left = swiperBar.left;
-      let widthBar = right - left;
-      console.info("listScrollerBar_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      const uiContext = AppStorage.get<UIContext>('uiContext')!;
-      await (driver.swipe((Math.round(left + widthBar / 2)).toInt(), (Math.round(top + uiContext.vp2px(10))).toInt(),
-        (Math.round(left + widthBar / 2)).toInt(),
-        (Math.round(bottom - uiContext.vp2px(10))).toInt(),1000) as Promise<void>);
-      await CommonFunc.sleep(8000);
-      let strJson = inspector.getInspectorByKey('list_scrollBar_onText');
-      console.info("[listScrollerBar_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[listScrollerBar_static_0100] content: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('bar: reachStart3-reachStart1-scrollStart3-scrollStart1-reachEnd1-reachEnd3-scrollStop1-reachEnd3-scrollStop3-');
-      console.info('[listScrollerBar_static_0100] END');
-      done();
+      try {
+        console.info('[listScrollerBar_static_0100] START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let swiperBar = CommonFunc.getComponentRectOnScreen('scroller_list_scrollbar');
+        let top = swiperBar.top;
+        let bottom = swiperBar.bottom;
+        let right = swiperBar.right;
+        let left = swiperBar.left;
+        let widthBar = right - left;
+        console.info("listScrollerBar_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
+        const uiContext = AppStorage.get<UIContext>('uiContext')!;
+        await (driver.swipe((Math.round(left + widthBar / 2)).toInt(), (Math.round(top + uiContext.vp2px(10))).toInt(),
+          (Math.round(left + widthBar / 2)).toInt(),
+          (Math.round(bottom - uiContext.vp2px(10))).toInt(),1000) as Promise<void>);
+        await CommonFunc.sleep(8000);
+        let strJson = inspector.getInspectorByKey('list_scrollBar_onText');
+        console.info("[listScrollerBar_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+        console.info("[listScrollerBar_static_0100] content: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+          .assertEqual('bar: reachStart3-reachStart1-scrollStart3-scrollStart1-reachEnd1-reachEnd3-scrollStop1-reachEnd3-scrollStop3-');
+        console.info('[listScrollerBar_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[listScrollerBar_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

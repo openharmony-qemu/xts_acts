@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const PAGE = 'MainAbility/pages/listScrollApi/listScrollApi';
@@ -39,12 +38,6 @@ function arkuiNewErr(suite: string, phase: string, detail: string): void {
 
 export default function ListScrollApiTest() {
   describe('ListScrollApiTest', () => {
-    beforeAll(async (): Promise<void> => {
-      arkuiNewLog(SUITE, 'beforeAll', 'start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll.api24.static', 'EntryAbility');
-      arkuiNewLog(SUITE, 'beforeAll', 'end');
-    });
-
     beforeEach(async (): Promise<void> => {
       arkuiNewLog(SUITE, 'beforeEach', 'start');
       AppStorage.delete('listApi_wire');
@@ -107,6 +100,7 @@ export default function ListScrollApiTest() {
       async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
+        await Utils.sleep(1000);
         const wire = await driver.findComponent(ON.id('listApi_wire'));
         expect(!!wire).assertTrue();
         await (wire?.click() as Promise<void>);
@@ -200,6 +194,7 @@ export default function ListScrollApiTest() {
       async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
+        await Utils.sleep(1000);
         const snapBtn = await driver.findComponent(ON.id('listApi_toggleSnap'));
         expect(!!snapBtn).assertTrue();
         await (snapBtn?.click() as Promise<void>);
