@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function navigatorTargetJsunit(): void {
+export default function navigatorTargetJsunit() {
   describe('navigatorTargetTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/navigator',
@@ -60,7 +60,7 @@ export default function navigatorTargetJsunit(): void {
       }
     });
 
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.sleep(1000);
       console.info("navigatorTarget after each called");
     });
@@ -74,7 +74,7 @@ export default function navigatorTargetJsunit(): void {
      * @tc.desc     testnavigatorTarget_static_0001
      * @tc.level    Level.LEVEL0
      */
-//it('testnavigatorTarget_static_0001', Level.LEVEL0, async (): Promise<void> => {
+//it('testnavigatorTarget_static_0001', Level.LEVEL0, async () => {
     //   console.info('navigatorTarget testnavigatorTarget0001 START');
     //   await Utils.sleep(2000);
     //   let strJson = inspector.getInspectorByKey('Navigator');

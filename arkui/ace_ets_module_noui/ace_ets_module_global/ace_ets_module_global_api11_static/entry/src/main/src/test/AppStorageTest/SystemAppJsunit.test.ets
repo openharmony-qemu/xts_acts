@@ -26,7 +26,7 @@ import Utils from '../../../ets/MainAbility/common/Utils'
 import App, { ScreenOnVisibleOptions } from '@system.app';
 
 
-export default function systemAppJsunit(): void {
+export default function systemAppJsunit() {
   describe('appInfoTest_four_9', () => {
 
     
@@ -43,8 +43,12 @@ it('systemAppTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       console.info('systemAppTest_0100 START');
       let a = App.getInfo(); //app Died
       console.log('systemAppTest_0100 END' + JSON.stringify(a));
-      expect(a.appID == "com.open.harmony.acetestfour").assertTrue();
-      console.info('systemAppTest_0100 END');
+      if (a != null) {
+        expect(a.appID == "com.open.harmony.acetestfour").assertTrue();
+        console.info('systemAppTest_0100 END');
+      } else {
+        expect().assertFail();
+      }
       done();
     });
     
@@ -62,7 +66,11 @@ it('systemAppTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       console.info('systemAppTest_0200 START');
       let a = App.getInfo();
       console.log('systemAppTest_0200 END' + JSON.stringify(a));
-      expect(a.appName == "$string:entry_MainAbility").assertTrue();
+      if (a != null) {
+        expect(a.appName == "$string:entry_MainAbility").assertTrue();
+      } else {
+        expect().assertFail();
+      }
       console.info('systemAppTest_0200 END');
       done();
     });
@@ -81,7 +89,11 @@ it('systemAppTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       console.info('systemAppTest_0300 START');
       let a = App.getInfo();
       console.log('systemAppTest_0300 END' + JSON.stringify(a));
-      expect(a.versionName == "1.0.0").assertTrue();
+      if (a != null) {
+        expect(a.versionName == "1.0.0").assertTrue();
+      } else {
+        expect().assertFail();
+      }
       console.info('systemAppTest_0300 END');
       done();
     });

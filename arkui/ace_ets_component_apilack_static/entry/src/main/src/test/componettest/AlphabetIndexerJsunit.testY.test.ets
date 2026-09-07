@@ -44,7 +44,7 @@ import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function alphabetIndexerJsunit(): void {
+export default function alphabetIndexerJsunit() {
 
 
   describe('alphabetIndexerTest', () => {
@@ -53,7 +53,7 @@ export default function alphabetIndexerJsunit(): void {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/AlphabetIndexer_y',
       }
@@ -72,7 +72,7 @@ export default function alphabetIndexerJsunit(): void {
       await Utils.sleep(2000);
     });
 
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.sleep(1000);
       console.info("AlphabetIndexer after each called");
     });
@@ -85,7 +85,7 @@ export default function alphabetIndexerJsunit(): void {
      * @tc.desc     alphabetIndexerTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('alphabetIndexerTest_static_001', Level.LEVEL0, async (): Promise<void> => {
+it('alphabetIndexerTest_static_001', Level.LEVEL0, async () => {
       console.info('AlphabetIndexerTest001 START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('AlphabetIndexer_y_alphabetIndexer');
@@ -103,7 +103,7 @@ it('alphabetIndexerTest_static_001', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     alphabetIndexerTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('alphabetIndexerTest_static_002', Level.LEVEL0, async (): Promise<void> => {
+it('alphabetIndexerTest_static_002', Level.LEVEL0, async () => {
       try {
         console.info('AlphabetIndexerTest002 START');
         let strJson = inspector.getInspectorByKey('alphabetIndexer1');

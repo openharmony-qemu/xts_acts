@@ -45,11 +45,11 @@ const TAG = 'ets_apiLack_add';
 @Component
 struct RectNe {
 
-  aboutToAppear(): void {
+  aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear RectNe start`)
   }
 
-  aboutToDisappear(): void {
+  aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear RectNe end`)
   }
 

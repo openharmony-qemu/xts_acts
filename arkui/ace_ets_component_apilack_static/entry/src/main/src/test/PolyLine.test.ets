@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function polyLineNeJsunit(): void {
+export default function polyLineNeJsunit() {
   describe('polyLineNeTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/polyLine',
@@ -60,7 +60,7 @@ export default function polyLineNeJsunit(): void {
       }
     });
 
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.sleep(1000);
       console.info("polyLineNe after each called");
     });
@@ -74,7 +74,7 @@ export default function polyLineNeJsunit(): void {
      * @tc.desc     testpolyLineNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testpolyLineNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testpolyLineNe_static_0001', Level.LEVEL0, async () => {
       console.info('polyLineNe testpolyLineNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polyline');
@@ -95,7 +95,7 @@ it('testpolyLineNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     testpolyLineNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testpolyLineNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
+it('testpolyLineNe_static_0002', Level.LEVEL0, async () => {
       console.info('polyLineNe testpolyLineNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polyline');

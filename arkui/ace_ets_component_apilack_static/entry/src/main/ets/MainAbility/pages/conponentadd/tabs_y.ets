@@ -84,11 +84,11 @@ const TAG = 'ets_apiLack_add';
 struct TabsBarPosition {
   private controller: TabsController = new TabsController()
 
-  aboutToAppear(): void {
+  aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear TabsBarPosition start`)
   }
 
-  aboutToDisappear(): void {
+  aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear TabsBarPosition end`)
   }
 

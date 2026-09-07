@@ -46,7 +46,7 @@ export default class MainAbility extends Ability {
   storage?: LocalStorage
   windowClass: window.Window | undefined = undefined;
 
-  onCreate(want: Want): void {
+  onCreate(want: Want) {
     this.storage = new LocalStorage();
     this.storage?.setOrCreate("storageSimpleProp", 121);
     console.log("[Demo MainAbility onCreate]");
@@ -57,7 +57,7 @@ export default class MainAbility extends Ability {
     console.log('[Demo MainAbility onDestroy]')
   }
 
-  onWindowStageCreate(): void {
+  onWindowStageCreate() {
     try {
       this.windowClass!.setUIContent('pages/index', (err: BusinessError | null) => {
         const errCode: Int | undefined = err?.code;
@@ -73,15 +73,15 @@ export default class MainAbility extends Ability {
     // window.setUIContent(this.context, "pages/index", this.storage)
   }
 
-  onWindowStageDestroy(): void {
+  onWindowStageDestroy() {
     console.log("[Demo] MainAbility onWindoeStageDestroy")
   }
 
-  onForeground(): void {
+  onForeground() {
     console.log("[Demo] MainAbility onForeground")
   }
 
-  onBackground(): void {
+  onBackground() {
     console.log("[Demo] MainAbility onBackground")
   }
 }

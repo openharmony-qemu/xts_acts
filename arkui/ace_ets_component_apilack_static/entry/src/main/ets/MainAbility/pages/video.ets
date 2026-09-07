@@ -71,11 +71,11 @@ struct VideoOnFullscreenChange {
   @State autoPlays: boolean = false;
   controller: VideoController = new VideoController();
 
-  aboutToAppear(): void {
+  aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear VideoOnFullscreenChange start`)
   }
 
-  aboutToDisappear(): void {
+  aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear VideoOnFullscreenChange end`)
   }
 

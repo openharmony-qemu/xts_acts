@@ -35,14 +35,14 @@ import { RecordData } from '@ohos.base';
 
 let emitKey = "emitUserAgent";
 
-export default function web9Jsunit(): void {
+export default function web9Jsunit() {
 
   describe('web9Jsunit', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/web_api_9',
       }
@@ -62,7 +62,7 @@ export default function web9Jsunit(): void {
       console.info("web beforeEach start");
 
     })
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       console.info("web afterEach start:" + emitKey);
       try {
         let backData: events_emitter.EventData = {
@@ -90,7 +90,7 @@ export default function web9Jsunit(): void {
      * @tc.desc     webContextMenuResultTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('webContextMenuResultTest_static_001', Level.LEVEL0, async (): Promise<void> => {
+it('webContextMenuResultTest_static_001', Level.LEVEL0, async () => {
       try {
         emitKey = "emitwebContextMenuResult";
         //Utils.registerContainEvent("webContextMenuResult", true, 1101);
@@ -106,7 +106,7 @@ it('webContextMenuResultTest_static_001', Level.LEVEL0, async (): Promise<void> 
      * @tc.desc     setWebControllerTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('setWebControllerTest_static_002', Level.LEVEL0, async (): Promise<void> => {
+it('setWebControllerTest_static_002', Level.LEVEL0, async () => {
       try {
         emitKey = "emitsetWebController";
         //Utils.registerContainEvent("setWebController", true, 1102);
@@ -122,7 +122,7 @@ it('setWebControllerTest_static_002', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     setWebControllerTest_static_003
      * @tc.level    Level.LEVEL0
      */
-it('setWebControllerTest_static_003', Level.LEVEL0, async (): Promise<void> => {
+it('setWebControllerTest_static_003', Level.LEVEL0, async () => {
       try {
         emitKey = "emitHitTestValue";
         //Utils.registerContainEvent("HitTestValue", true, 1103);

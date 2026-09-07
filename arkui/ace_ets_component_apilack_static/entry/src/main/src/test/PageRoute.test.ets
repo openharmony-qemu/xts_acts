@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function pageRouteTest(): void {
+export default function pageRouteTest() {
   describe('pageRouteTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       console.info("pageRouteTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/pageRoute',
@@ -61,7 +61,7 @@ export default function pageRouteTest(): void {
       }
     });
 
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.sleep(1000);
       console.info("pageRouteTest after each called");
     })
@@ -74,11 +74,11 @@ export default function pageRouteTest(): void {
      * @tc.desc     testOnPageHide_static_01
      * @tc.level    Level.LEVEL0
      */
-it('testOnPageHide_static_01', Level.LEVEL0, async (): Promise<void> => {
+it('testOnPageHide_static_01', Level.LEVEL0, async () => {
       console.info('[testOnPageHide01] START');
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("[testOnPageHide01] get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as ESObject).getProperty('value').toString()).assertEqual('onPageHide')
+        expect(((eventData.data) as ESObject)?.getProperty('value').toString()).assertEqual('onPageHide')
 
       }
       let innerEvent: events_emitter.InnerEvent = {

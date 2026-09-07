@@ -42,7 +42,7 @@ struct ColumnExample {
     end: 270
   } as AnimatorOptions);
 
-  onPageShow(): void {
+  onPageShow() {
     this.animation1.onRepeat = () => {
       let repeatoptions: AnimatorOptions = {
         duration: 2000,

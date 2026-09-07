@@ -36,7 +36,7 @@ import { UtilsTest } from '../Util.test';
 import  Utils  from '../../../ets/MainAbility/common/Utils';
 
 
-export default function ResourceColor(): void {
+export default function ResourceColor() {
   describe('ResourceColor', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ResourceColor beforeAll start");
@@ -116,7 +116,7 @@ it('ResourceColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<
   console.log('+++++++++++++++++++++++++++1')
       let button = await driver.findComponent(ON.id('ResourceColor'));
   console.log('+++++++++++++++++++++++++++2',button)
-      await button?.click();
+      await (button?.click() as Promise<void>);
   console.log('+++++++++++++++++++++++++++3')
       // await CommonFunc.sleep(10000);
   await UtilsTest.msSleep(2000)

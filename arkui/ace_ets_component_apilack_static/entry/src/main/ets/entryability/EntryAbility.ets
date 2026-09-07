@@ -75,15 +75,15 @@ class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
   }
 
-  onWindowStageDestroy(): void {
+  onWindowStageDestroy() {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onWindowStageDestroy');
   }
 
-  onForeground(): void {
+  onForeground() {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onForeground');
   }
 
-  onBackground(): void {
+  onBackground() {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onBackground');
   }
 }

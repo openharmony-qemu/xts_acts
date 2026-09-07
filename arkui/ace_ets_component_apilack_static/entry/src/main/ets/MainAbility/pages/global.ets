@@ -33,11 +33,11 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct GlobalLack {
-  aboutToAppear(): void {
+  aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear GlobalLack start`)
   }
 
-  aboutToDisappear(): void {
+  aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear GlobalLack end`)
   }
 

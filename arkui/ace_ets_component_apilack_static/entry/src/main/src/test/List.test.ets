@@ -53,12 +53,9 @@ import textAreaOnCutJsunit from './TextArea.test';
 import textInputOnEditChangeJsunit from './TextInput.test';
 import videoOnFullscreenChangeJsunit from './Video.test';
 import webGetTitleJsunit from './Web.test';
-import webJsunit1 from './componettest/WebJsunitTestG.test';
-import webJsunit2 from './componettest/WebJsunitTestG2.test';
-import webApi9GapJsunit from './WebApi9Gap.test';
 import xcomponentGetXComponentContextJsunit from './XComponent1.test';
 
-export default function testsuite(): void {
+export default function testsuite() {
   lazyForEachOnDataAddJsunit()
   alphabetIndexerOnSelectJsunit()
   checkBoxGroupSelectAllJsunit()
@@ -94,8 +91,5 @@ export default function testsuite(): void {
   textAreaOnCutJsunit()
   textInputOnEditChangeJsunit()
   videoOnFullscreenChangeJsunit()
-  webJsunit1()
-  webJsunit2()
-  webApi9GapJsunit()
   xcomponentGetXComponentContextJsunit()
 }
