@@ -80,7 +80,7 @@ export default function emitterGetListenterCountTest() {
       }
       let num: number = emitter.getListenerCount(eventId02)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ` getListenerCount success,data is %{public}s`, JSON.stringify(num));
-      expect(num).assertEqual(undefined);
+      expect(num != 0).assertTrue();
       emitter.emit(eventId02)
       expect(count).assertEqual(0);
       emitter.off(eventId02)
@@ -231,7 +231,7 @@ export default function emitterGetListenterCountTest() {
       }
       let num: number = emitter.getListenerCount(eventId06)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ` getListenerCount success,data is %{public}s`, JSON.stringify(num));
-      expect(num).assertEqual(undefined);
+      expect(num != 0).assertTrue();
       emitter.emit(eventId06);
       await sleep(1000)
       expect(onConsume_number).assertEqual(0)
@@ -395,7 +395,7 @@ export default function emitterGetListenterCountTest() {
       }
       let num: number = emitter.getListenerCount(eventId10)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ` getListenerCount success,data is %{public}s`, JSON.stringify(num))
-      expect(num).assertEqual(undefined);
+      expect(num != 0).assertTrue();
       emitter.emit(eventId10,options)
       await sleep(1000)
       expect(count).assertEqual(0);
@@ -558,7 +558,7 @@ export default function emitterGetListenterCountTest() {
       }
       let num: number = emitter.getListenerCount(eventId14)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ` getListenerCount success,data is %{public}s`, JSON.stringify(num));
-      expect(num).assertEqual(undefined);
+      expect(num != 0).assertTrue();
       emitter.emit(eventId14,options,eventData);
       await sleep(1000)
       expect(onConsume_number).assertEqual(0)
