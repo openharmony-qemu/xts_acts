@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections, BuiltinArray, taskpool, worker, MessageEvents } from '@kit.ArkTS';
+import { collections, taskpool, worker, MessageEvents } from '@kit.ArkTS';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 function sleep(time: number): Promise<void> {
@@ -598,21 +598,21 @@ export default function CollectionsArrayContainsAllBuiltinTest(): void {
       });
 
     /**
-     * @tc.name   collectionsArrayContainsAllTest5800
-     * @tc.number SUB_COLLECTIONS_ARRAY_CONTAINS_ALL_5800
+     * @tc.name   collectionsArrayContainsAllTest6400
+     * @tc.number SUB_COLLECTIONS_ARRAY_CONTAINS_ALL_6400
      * @tc.desc   Verify containsAll with explicitly declared BuiltinArray type input.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('collectionsArrayContainsAllTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('collectionsArrayContainsAllTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (): void => {
-        const caseName: string = 'collectionsArrayContainsAllTest5800';
+        const caseName: string = 'collectionsArrayContainsAllTest6400';
         console.info(`${caseName}, test start`);
         const receiver: collections.Array<number> = new collections.Array<number>(1, 2, 3);
-        const elements: BuiltinArray<number> = [1, 2, 3];
+        const elements: Array<number> = [1, 2, 3];
         expect(receiver.containsAll(elements)).assertEqual(true);
-        const notFound: BuiltinArray<number> = [4, 5];
+        const notFound: Array<number> = [4, 5];
         expect(receiver.containsAll(notFound)).assertEqual(false);
         console.info(`${caseName}, test end`);
       });

@@ -752,16 +752,16 @@ export default function CollectionsArrayRetainAllPredicateTest(): void {
       });
 
     /**
-     * @tc.name   collectionsArrayRetainAllPredicateTest3400
-     * @tc.number SUB_COLLECTIONS_ARRAY_RETAIN_ALL_PREDICATE_3400
+     * @tc.name   collectionsArrayRetainAllPredicateTest4200
+     * @tc.number SUB_COLLECTIONS_ARRAY_RETAIN_ALL_PREDICATE_4200
      * @tc.desc   Verify retainAll with explicitly declared ArrayElementPredicateFn type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('collectionsArrayRetainAllPredicateTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('collectionsArrayRetainAllPredicateTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (): void => {
-        const caseName: string = 'collectionsArrayRetainAllPredicateTest3400';
+        const caseName: string = 'collectionsArrayRetainAllPredicateTest4200';
         console.info(`${caseName}, test start`);
         const receiver: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
         const predicate: collections.ArrayElementPredicateFn<number> = (value: number): boolean => value >= 3;

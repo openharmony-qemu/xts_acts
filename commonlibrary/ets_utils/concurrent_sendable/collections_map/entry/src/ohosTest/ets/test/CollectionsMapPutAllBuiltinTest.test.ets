@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections, BuiltinMap, taskpool, worker, MessageEvents } from '@kit.ArkTS';
+import { collections, taskpool, worker, MessageEvents } from '@kit.ArkTS';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 
@@ -304,7 +304,7 @@ export default function CollectionsMapPutAllBuiltinTest(): void {
         const caseName: string = 'collectionsMapPutAllTest4600';
         console.info(`${caseName}, test start`);
         const map: collections.Map<number, string> = new collections.Map<number, string>();
-        const source: BuiltinMap<number, string> = new Map<number, string>();
+        const source: Map<number, string> = new Map<number, string>();
         source.set(1, 'a');
         source.set(2, 'b');
         source.set(3, 'c');

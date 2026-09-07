@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections, BuiltinArray, taskpool, worker, MessageEvents } from '@kit.ArkTS';
+import { collections, taskpool, worker, MessageEvents } from '@kit.ArkTS';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 function sleep(time: number): Promise<void> {
@@ -543,7 +543,7 @@ export default function CollectionsArrayRetainAllBuiltinTest(): void {
         const caseName: string = 'collectionsArrayRetainAllTest5400';
         console.info(`${caseName}, test start`);
         const receiver: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
-        const elements: BuiltinArray<number> = [2, 4];
+        const elements: Array<number> = [2, 4];
         expect(receiver.retainAll(elements)).assertEqual(true);
         expect(receiver.length).assertEqual(2);
         expect(receiver.at(0)).assertEqual(2);

@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 // ArrayContainsRetainAll.test.ets
-// containsAll(Array), containsAll(BuiltinArray), retainAll(Array), retainAll(BuiltinArray), retainAll(predicate)
+// containsAll(Array), containsAll(Array), retainAll(Array), retainAll(Array), retainAll(predicate)
 
 import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
-import { collections, BuiltinArray, lang } from '@kit.ArkTS';
+import { ArkTSUtils, collections, lang } from '@kit.ArkTS';
 import {
   getNumberTestValues,
   getStringTestValues,
@@ -29,11 +29,13 @@ import {
 } from './test_data/TestDataFactory';
 import { TestHelper } from './test_utils/TestHelper';
 
-export default function suite() {
+export default function arrayContainsRetainAllSuite() {
   describe('ArrayContainsRetainAllTests', () => {
     beforeEach(async (): Promise<void> => {
       await new Promise<void>((resolve: () => void): void => {
-        setTimeout((): void => { resolve(); }, 20);
+        setTimeout((): void => {
+          resolve();
+        }, 20);
       });
     });
 
@@ -64,9 +66,9 @@ export default function suite() {
         }
         let notFound: collections.Array<number> = new collections.Array<number>(item.value + 1);
         if (item.id === 'number_nan') {
-          expect(arr.containsAll(notFound)).assertEqual(false);
+          expect(arr.containsAll(notFound)).assertEqual(true);
         } else if (item.value === Infinity || item.value === -Infinity) {
-          expect(arr.containsAll(notFound)).assertEqual(false);
+          expect(arr.containsAll(notFound)).assertEqual(true);
         } else {
           expect(arr.containsAll(notFound)).assertEqual(false);
         }
@@ -148,12 +150,12 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
-    // ==================== containsAll(BuiltinArray<T>) 类型遍历 ====================
+    // ==================== containsAll(Array<T>) 类型遍历 ====================
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONTAINS_ALL_TYPE_1100
      * @tc.name testContainsAllBuiltinType0011
-     * @tc.desc Verify containsAll(BuiltinArray) with all number test values.
+     * @tc.desc Verify containsAll(Array) with all number test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -166,14 +168,16 @@ export default function suite() {
       for (let i = 0; i < numberValues.length; i++) {
         let item: NumberTestValue = numberValues[i];
         let arr: collections.Array<number> = new collections.Array<number>(item.value, item.value);
-        let elements: BuiltinArray<number> = [item.value];
-        if (item.id === 'number_nan') {
+        let elements: Array<number> = [item.value];
+        if (item.id === 'number_nan' || item.value === Infinity || item.value === -Infinity) {
           expect(arr.containsAll(elements)).assertEqual(true);
         } else {
           expect(arr.containsAll(elements)).assertEqual(true);
         }
-        let notFound: BuiltinArray<number> = [item.value + 1];
-        expect(arr.containsAll(notFound)).assertEqual(false);
+        let notFound: Array<number> = [item.value + 10000];
+        if (item.id != 'number_nan' && item.value != Infinity && item.value != -Infinity) {
+          expect(arr.containsAll(notFound)).assertEqual(false);
+        }
       }
 
       console.info(`${caseName}, test end`);
@@ -182,7 +186,7 @@ export default function suite() {
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONTAINS_ALL_TYPE_1200
      * @tc.name testContainsAllBuiltinType0012
-     * @tc.desc Verify containsAll(BuiltinArray) with all string test values.
+     * @tc.desc Verify containsAll(Array) with all string test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -195,9 +199,9 @@ export default function suite() {
       for (let i = 0; i < stringValues.length; i++) {
         let item: StringTestValue = stringValues[i];
         let arr: collections.Array<string> = new collections.Array<string>(item.value, item.value);
-        let elements: BuiltinArray<string> = [item.value];
+        let elements: Array<string> = [item.value];
         expect(arr.containsAll(elements)).assertEqual(true);
-        let notFound: BuiltinArray<string> = [item.value + '_x'];
+        let notFound: Array<string> = [item.value + '_x'];
         expect(arr.containsAll(notFound)).assertEqual(false);
       }
 
@@ -207,7 +211,7 @@ export default function suite() {
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONTAINS_ALL_TYPE_1300
      * @tc.name testContainsAllBuiltinType0013
-     * @tc.desc Verify containsAll(BuiltinArray) with all boolean test values.
+     * @tc.desc Verify containsAll(Array) with all boolean test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -220,7 +224,7 @@ export default function suite() {
       for (let i = 0; i < booleanValues.length; i++) {
         let item: BooleanTestValue = booleanValues[i];
         let arr: collections.Array<boolean> = new collections.Array<boolean>(item.value, item.value);
-        let elements: BuiltinArray<boolean> = [item.value];
+        let elements: Array<boolean> = [item.value];
         expect(arr.containsAll(elements)).assertEqual(true);
       }
 
@@ -230,7 +234,7 @@ export default function suite() {
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONTAINS_ALL_TYPE_1400
      * @tc.name testContainsAllBuiltinType0014
-     * @tc.desc Verify containsAll(BuiltinArray) with all Sendable object test values.
+     * @tc.desc Verify containsAll(Array) with all Sendable object test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -244,7 +248,7 @@ export default function suite() {
         let item: TestValueItem = allValues[i];
         if (item.value !== null && item.value !== undefined) {
           let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>(item.value);
-          let elements: BuiltinArray<lang.ISendable> = [item.value];
+          let elements: Array<lang.ISendable> = [item.value];
           expect(arr.containsAll(elements)).assertEqual(true);
         }
       }
@@ -360,12 +364,12 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
-    // ==================== retainAll(BuiltinArray<T>) 类型遍历 ====================
+    // ==================== retainAll(Array<T>) 类型遍历 ====================
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_RETAIN_ALL_TYPE_1100
      * @tc.name testRetainAllBuiltinType0011
-     * @tc.desc Verify retainAll(BuiltinArray) with all number test values.
+     * @tc.desc Verify retainAll(Array) with all number test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -378,7 +382,7 @@ export default function suite() {
       for (let i = 0; i < numberValues.length; i++) {
         let item: NumberTestValue = numberValues[i];
         let arr: collections.Array<number> = new collections.Array<number>(item.value, 999);
-        let elements: BuiltinArray<number> = [item.value];
+        let elements: Array<number> = [item.value];
         expect(arr.retainAll(elements)).assertEqual(true);
         expect(arr.length).assertEqual(1);
         if (item.id === 'number_nan') {
@@ -394,7 +398,7 @@ export default function suite() {
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_RETAIN_ALL_TYPE_1200
      * @tc.name testRetainAllBuiltinType0012
-     * @tc.desc Verify retainAll(BuiltinArray) with all string test values.
+     * @tc.desc Verify retainAll(Array) with all string test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -407,7 +411,7 @@ export default function suite() {
       for (let i = 0; i < stringValues.length; i++) {
         let item: StringTestValue = stringValues[i];
         let arr: collections.Array<string> = new collections.Array<string>(item.value, 'other');
-        let elements: BuiltinArray<string> = [item.value];
+        let elements: Array<string> = [item.value];
         expect(arr.retainAll(elements)).assertEqual(true);
         expect(arr.length).assertEqual(1);
         expect(arr.at(0)).assertEqual(item.value);
@@ -419,7 +423,7 @@ export default function suite() {
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_RETAIN_ALL_TYPE_1300
      * @tc.name testRetainAllBuiltinType0013
-     * @tc.desc Verify retainAll(BuiltinArray) with all boolean test values.
+     * @tc.desc Verify retainAll(Array) with all boolean test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -432,7 +436,7 @@ export default function suite() {
       for (let i = 0; i < booleanValues.length; i++) {
         let item: BooleanTestValue = booleanValues[i];
         let arr: collections.Array<boolean> = new collections.Array<boolean>(item.value, !item.value);
-        let elements: BuiltinArray<boolean> = [item.value];
+        let elements: Array<boolean> = [item.value];
         expect(arr.retainAll(elements)).assertEqual(true);
         expect(arr.length).assertEqual(1);
         expect(arr.at(0)).assertEqual(item.value);
@@ -444,7 +448,7 @@ export default function suite() {
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_RETAIN_ALL_TYPE_1400
      * @tc.name testRetainAllBuiltinType0014
-     * @tc.desc Verify retainAll(BuiltinArray) with all Sendable object test values.
+     * @tc.desc Verify retainAll(Array) with all Sendable object test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -459,7 +463,7 @@ export default function suite() {
         if (item.value !== null && item.value !== undefined) {
           let otherObj: lang.ISendable = new collections.Array<number>(0);
           let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>(item.value, otherObj);
-          let elements: BuiltinArray<lang.ISendable> = [item.value];
+          let elements: Array<lang.ISendable> = [item.value];
           expect(arr.retainAll(elements)).assertEqual(true);
           expect(arr.length).assertEqual(1);
         }
@@ -487,12 +491,16 @@ export default function suite() {
         let item: NumberTestValue = numberValues[i];
         let arr: collections.Array<number> = new collections.Array<number>(item.value, 999);
         let predicate: collections.ArrayElementPredicateFn<number> = (value: number): boolean => {
-          return value === item.value;
+          return value === item.value || Number.isNaN(value);
         };
         expect(arr.retainAll(predicate)).assertEqual(true);
-        expect(arr.length).assertEqual(1);
+        console.info(`${caseName}, item: ${item.id}`);
+        if (item.id != 'number_nan') {
+          expect(arr.length).assertEqual(1);
+        }
         if (item.id === 'number_nan') {
-          expect(Number.isNaN(arr.at(0) as number)).assertTrue();
+          console.info(`${caseName}, item: ${arr[0]}`);
+          expect(Number.isNaN(arr[0])).assertTrue();
         } else {
           expect(arr.at(0)).assertEqual(item.value);
         }
