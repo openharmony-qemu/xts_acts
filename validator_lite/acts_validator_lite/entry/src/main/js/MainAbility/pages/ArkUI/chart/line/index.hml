@@ -1,17 +1,22 @@
 <div class="container">
     <div class="content-title">
-        <text style="width:130px;height:50px;text-align: center;font-size:16px;">char-line</text>
+        <text class="title">chart</text>
         <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
     </div>
-
-    <div class="content">
-        <chart class="chart" type="line" ref="linechart" options="{{lineOps}}" datasets="{{lineData}}"></chart>
-        <input class="button-add" type="button" value="Add data" onclick="addData"/>
-    </div>
-
+    <list class="scroll-area">
+        <list-item class="litem" style="height:335px;">
+            <text class="box-title">折线图 chart(line)</text>
+            <chart class="chart-area" type="line" ref="linechart" options="{{lineOps}}" datasets="{{lineData}}"></chart>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="Add data" onclick="addData" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{cPassColor}};" type="button" value="pass" onclick="passC" />
+                <input class="pfBtn" style="background-color:{{cFailColor}};" type="button" value="fail" onclick="failC" />
+            </div>
+        </list-item>
+    </list>
     <div class="bottom-bt">
-        <input type="button" value="pass" class="button" onclick="passClicked" />
-        <input type="button" value="fail" class="button" onclick="failClicked" />
         <input type="button" value="back" class="button" onclick="backClicked" />
     </div>
 </div>

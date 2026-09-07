@@ -24,6 +24,12 @@
     <input class="sub-btn" type="button" value="Communication" onclick="navigateTo('Communication')" />
   </list-item>
   <list-item class="listItem">
+    <input class="sub-btn" type="button" value="Sensors" onclick="navigateTo('Sensors')" />
+  </list-item>
+  <list-item class="listItem">
+    <input class="sub-btn" type="button" value="Location" onclick="navigateTo('Location')" />
+  </list-item>
+  <list-item class="listItem">
     <input class="report-btn" type="button" value="{{ reportBtnText }}" onclick="generateReport" />
   </list-item>
 </list>
