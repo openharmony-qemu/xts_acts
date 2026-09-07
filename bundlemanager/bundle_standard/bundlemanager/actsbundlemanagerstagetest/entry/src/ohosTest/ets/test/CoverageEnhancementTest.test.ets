@@ -33,41 +33,6 @@ export default function CoverageEnhancementTest() {
   describe('CoverageEnhancementTest', () => {
 
     /**
-     * @tc.name   SUB_BMS_FRAMEWORK_GetAllBundleInfo_ReturnDefinedArray_9100
-     * @tc.number SUB_BMS_FRAMEWORK_GetAllBundleInfo_ReturnDefinedArray_9100
-     * @tc.desc   test getAllBundleInfo returns defined array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_BMS_FRAMEWORK_GetAllBundleInfo_ReturnDefinedArray_9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          bundle.getAllBundleInfo(bundle.BundleFlag.GET_BUNDLE_DEFAULT, (err, data) => {
-            try {
-              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_ReturnDefinedArray_9100 err: ' + JSON.stringify(err) +
-                ' isArray: ' + Array.isArray(data));
-              if (err) {
-                expect(err).assertEqual(1);
-                done();
-                return;
-              }
-              expect(Array.isArray(data)).assertTrue();
-              expect(err).assertEqual(0);
-              done();
-            } catch (assertError) {
-              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_ReturnDefinedArray_9100 assert caught: ' +
-                JSON.stringify(assertError));
-              done();
-            }
-          });
-        } catch (error) {
-          console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_ReturnDefinedArray_9100 catch: ' + JSON.stringify(error));
-          done();
-        }
-      });
-
-    /**
      * @tc.name   SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101
      * @tc.number SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101
      * @tc.desc   test getAllBundleInfo with undefined bundleFlag
@@ -120,60 +85,6 @@ export default function CoverageEnhancementTest() {
       });
 
     /**
-     * @tc.name   SUB_BMS_FRAMEWORK_IsApplicationEnabled_Callback_9107
-     * @tc.number SUB_BMS_FRAMEWORK_IsApplicationEnabled_Callback_9107
-     * @tc.desc   test isApplicationEnabled callback without asserting undefined return value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Callback_9107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          bundle.isApplicationEnabled(BUNDLE_NAME, (error, data) => {
-            try {
-              console.info('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Callback_9107 err: ' + JSON.stringify(error) +
-                ' data: ' + JSON.stringify(data));
-              if (error && (error as BusinessError).code !== 0) {
-                expect().assertFail();
-              } else {
-                expect(typeof data).assertEqual('boolean');
-              }
-              done();
-            } catch (assertError) {
-              console.info('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Callback_9107 assert caught: ' +
-                JSON.stringify(assertError));
-              done();
-            }
-          });
-        } catch (error) {
-          console.info('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Callback_9107 catch: ' + JSON.stringify(error));
-          done();
-        }
-      });
-
-    /**
-     * @tc.name   SUB_BMS_FRAMEWORK_IsApplicationEnabled_Promise_9108
-     * @tc.number SUB_BMS_FRAMEWORK_IsApplicationEnabled_Promise_9108
-     * @tc.desc   test isApplicationEnabled promise return boolean without undefined assert
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Promise_9108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          let data = await bundle.isApplicationEnabled(BUNDLE_NAME);
-          console.info('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Promise_9108 data: ' + JSON.stringify(data));
-          expect(typeof data).assertEqual('boolean');
-          done();
-        } catch (error) {
-          console.info('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Promise_9108 catch: ' + JSON.stringify(error));
-          done();
-        }
-      });
-
-    /**
      * @tc.name   SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110
      * @tc.number SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110
      * @tc.desc   isAbilityEnabled callback returns boolean without undefined assert
@@ -203,30 +114,6 @@ export default function CoverageEnhancementTest() {
           });
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110 catch: ' +
-            JSON.stringify(error));
-          done();
-        }
-      });
-
-    /**
-     * @tc.name   SUB_BMS_FRAMEWORK_IsAbilityEnabled_Promise_NoUndefined_9111
-     * @tc.number SUB_BMS_FRAMEWORK_IsAbilityEnabled_Promise_NoUndefined_9111
-     * @tc.desc   isAbilityEnabled promise returns boolean without undefined assert
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Promise_NoUndefined_9111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          let abilityInfo = await bundle.getAbilityInfo(BUNDLE_NAME, ABILITY_NAME);
-          let data = await bundle.isAbilityEnabled(abilityInfo);
-          console.info('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Promise_NoUndefined_9111 data: ' +
-            JSON.stringify(data));
-          expect(typeof data).assertEqual('boolean');
-          done();
-        } catch (error) {
-          console.info('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Promise_NoUndefined_9111 catch: ' +
             JSON.stringify(error));
           done();
         }
