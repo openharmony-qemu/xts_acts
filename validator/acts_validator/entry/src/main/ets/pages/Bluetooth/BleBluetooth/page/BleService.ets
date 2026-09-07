@@ -35,7 +35,7 @@ struct Main {
   @State name: string = 'BleService';
   @State intervalNum: number = 0;
   @State StepTips: string = '操作步骤：\n1、点击按钮开启广播' + '\n预期结果：能够发送数据则通过';
-  @State Vue: boolean = false;
+  @State isPassed: boolean = false;
   @State startAdvertiserState: boolean = false;
   private mIntervalId: number;
 
@@ -94,7 +94,7 @@ struct Main {
   onPageShow() {
     this.intervalNum = setInterval(() => {
       if (this.heartRate > 1) {
-        this.Vue = true
+        this.isPassed = true
       }
     }, 1000)
   }
@@ -105,38 +105,25 @@ struct Main {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .opacity(0.4)
-      .onClick(() => {
-
-      })
+    Button({ stateEffect: this.isPassed }) {
+      Image($r('app.media.ic_public_pass'))
+        .width('20vp')
+        .height('20vp')
     }
-    else {
-      Button({ stateEffect: this.Vue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }.width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .onClick(() => {
-        router.back({
-          url: 'pages/Bluetooth/BlueTooth_index',
-          params: { result: 'true ', title: this.name, }
-        })
-        promptAction.showToast({
-          message: '通过', duration: 1000
-        });
+    .width('30%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .opacity(this.isPassed ? 1 : 0.4)
+    .enabled(this.isPassed)
+    .onClick(() => {
+      router.back({
+        url: 'pages/Bluetooth/BlueTooth_index',
+        params: { result: 'true ', title: this.name, }
       })
-    }
+      promptAction.showToast({
+        message: '通过', duration: 1000
+      });
+    })
   }
 
   @Builder
@@ -274,7 +261,7 @@ struct Main {
     router.replaceUrl({
       url: 'pages/Bluetooth/BlueTooth_index',
       params: {
-        'Vue': this.Vue
+        'isPassed': this.isPassed
       }
     })
   }
