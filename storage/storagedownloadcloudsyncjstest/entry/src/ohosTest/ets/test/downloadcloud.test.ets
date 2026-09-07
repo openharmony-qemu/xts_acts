@@ -95,7 +95,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Download_State_001::";
      let RUNNING = 0;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("download_on:callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.state = " + pg.state);
@@ -123,7 +123,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Download_State_002::";
      let FAILED = 2;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("download_on:callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.state = " + pg.state);
@@ -151,7 +151,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Uploading_State_003::";
      let UPLOADING = 0;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("download_on:callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.state = " + pg.state);
@@ -179,7 +179,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Uploading_Failed_State_004::";
      let UPLOAD_FAILED = 1;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("download_on:callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.state = " + pg.state);
@@ -235,7 +235,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Downloading_State_006::";
      let DOWNLOADING = 2;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
           console.info("download_on:callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.state = " + pg.state);
@@ -263,7 +263,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Download_Processed_001::";
      let FAILED = 2;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("on:callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.state = " + pg.state);
@@ -291,7 +291,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Download_Error_001::";
      let NO_ERROR = 0;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("download_on: callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.error = " + pg.error);
@@ -319,7 +319,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Download_Error_002::";
      let UNKNOWN_ERROR = 1;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("download_on: callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.error = " + pg.error);
@@ -347,7 +347,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Download_Error_003::";
      let NETWORK_UNAVAILABLE = 2;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("download_on: callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.error = " + pg.error);
@@ -375,7 +375,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Download_Error_004::";
      let LOCAL_STORAGE_FULL = 3;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("download_on: callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.error = " + pg.error);
@@ -403,7 +403,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Download_Error_005::";
      let CONTENT_NOT_FOUND = 4;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("download_on: callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.error = " + pg.error);
@@ -431,7 +431,7 @@ describe('cloud_file_download_test', () => {
      let TAG = "test_Download_Error_006::";
      let FREQUENT_USER_REQUESTS = 5;
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("download_on: callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.error = " + pg.error);
@@ -458,7 +458,7 @@ describe('cloud_file_download_test', () => {
    it('test_Download_Error_007', Level.LEVEL3, async (done: Function) => {
      let TAG = "test_Download_Error_007::";
      try {
-      cloudSyncDownload.on("progress",(pg)=>{
+       cloudSyncDownload.on("progress",(pg)=>{
          console.info("on: callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.error = " + pg.error);
