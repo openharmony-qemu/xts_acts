@@ -33,6 +33,7 @@ static napi_value TestArcSwiperShowNext001(napi_env env, napi_callback_info info
     NAPI_START(arcSwiper, ARKUI_NODE_ARC_SWIPER);
     auto ret = OH_ArkUI_ArcSwiper_ShowNext(arcSwiper);
     ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 
@@ -41,6 +42,7 @@ static napi_value TestArcSwiperShowNext002(napi_env env, napi_callback_info info
     NAPI_START(arcSwiper, ARKUI_NODE_ARC_SWIPER);
     auto ret = OH_ArkUI_ArcSwiper_ShowNext(nullptr);
     ASSERT_EQ(ret, INVALID_PARAM);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
 
@@ -49,6 +51,7 @@ static napi_value TestArcSwiperShowPrevious001(napi_env env, napi_callback_info 
     NAPI_START(arcSwiper, ARKUI_NODE_ARC_SWIPER);
     auto ret = OH_ArkUI_ArcSwiper_ShowPrevious(arcSwiper);
     ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 
@@ -57,6 +60,7 @@ static napi_value TestArcSwiperShowPrevious002(napi_env env, napi_callback_info 
     NAPI_START(arcSwiper, ARKUI_NODE_ARC_SWIPER);
     auto ret = OH_ArkUI_ArcSwiper_ShowPrevious(nullptr);
     ASSERT_EQ(ret, INVALID_PARAM);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
 
@@ -65,6 +69,7 @@ static napi_value TestArcSwiperFinishAnimation001(napi_env env, napi_callback_in
     NAPI_START(arcSwiper, ARKUI_NODE_ARC_SWIPER);
     auto ret = OH_ArkUI_ArcSwiper_FinishAnimation(arcSwiper);
     ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 
@@ -73,6 +78,7 @@ static napi_value TestArcSwiperFinishAnimation002(napi_env env, napi_callback_in
     NAPI_START(arcSwiper, ARKUI_NODE_ARC_SWIPER);
     auto ret = OH_ArkUI_ArcSwiper_FinishAnimation(nullptr);
     ASSERT_EQ(ret, INVALID_PARAM);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
 
