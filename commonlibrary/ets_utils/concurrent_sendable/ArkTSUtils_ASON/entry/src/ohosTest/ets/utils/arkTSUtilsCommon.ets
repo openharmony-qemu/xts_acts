@@ -27,7 +27,7 @@ export function loadCase(): Promise<void | Object> {
 
 @Concurrent
 export async function sharedTaskTime(lockName: string): Promise<Array<number>> {
-  let res = new Array<number>();
+  let res: Array<number> = [];
   let lock = ArkTSUtils.locks.AsyncLock.request(lockName);
   await lock.lockAsync(async () => {
     res.push(GetTime());
@@ -61,7 +61,7 @@ export async function lockExclusiveTask(lock: ArkTSUtils.locks.AsyncLock, str: s
 
 @Concurrent
 export async function sharedTimeTask(lockName: string): Promise<Array<number>> {
-  let res = new Array<number>();
+  let res: Array<number> = [];
   let lock = ArkTSUtils.locks.AsyncLock.request(lockName);
   await lock.lockAsync(async () => {
     res.push(ArkTSUtils.locks.AsyncLockMode.SHARED);
@@ -73,7 +73,7 @@ export async function sharedTimeTask(lockName: string): Promise<Array<number>> {
 
 @Concurrent
 export async function exclusiveTimeTask(lockName: string): Promise<Array<number>> {
-  let res = new Array<number>();
+  let res: Array<number> = [];
   let lock = ArkTSUtils.locks.AsyncLock.request(lockName);
   await lock.lockAsync(async () => {
     res.push(ArkTSUtils.locks.AsyncLockMode.EXCLUSIVE);
@@ -97,7 +97,7 @@ export async function locksTask(lock: ArkTSUtils.locks.AsyncLock,
 @Concurrent
 export async function locksTimeTask(lock: ArkTSUtils.locks.AsyncLock,
   mode: ArkTSUtils.locks.AsyncLockMode): Promise<Array<number>> {
-  let res = new Array<number>();
+  let res: Array<number> = [];
   await lock.lockAsync(async () => {
     res.push(GetTime());
     await Sleep(500);
@@ -127,7 +127,7 @@ export class NumClass {
 
 @Sendable
 export class SendableClass {
-  count_: number = 0;
+  public count_: number = 0;
   public static count: number = 1;
 
   static getPromiseCount(): Promise<number> {

@@ -257,7 +257,7 @@ export default function SendableLruCacheGetTest() {
     
     /**
      * @tc.name   sendableLruCacheRemoveReturnValidation001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_LRU_CACHE_GET_0007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_LRU_CACHE_GET_0009
      * @tc.desc   Test SendableLruCache.remove return type validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
