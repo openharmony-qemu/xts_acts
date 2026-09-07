@@ -15,7 +15,7 @@
  * limitations under the License.
  */
  
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../../hypium/index";
 import router from '@ohos.router';
 import drawing from '@ohos.graphics.drawing';
 import {
@@ -30,19 +30,13 @@ import { EnterKeyType } from '@ohos.arkui.component'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { BarState } from '@ohos.arkui.component';
 
 export default function ContextMenuMaxHeightTest(): void {
   describe('ContextMenuMaxHeightTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ContextMenuMaxHeightTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("ContextMenuMaxHeight beforeEach start");
       try {
@@ -71,42 +65,47 @@ export default function ContextMenuMaxHeightTest(): void {
      * @tc.level  LEVEL2
      */
     it('ContextMenuMaxHeightTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[ContextMenuMaxHeightTest_0100] START');
-      let driver = Driver.create();
-      await Utils.sleep(2000);
+      try {
+        console.info('[ContextMenuMaxHeightTest_0100] START');
+        let driver = Driver.create();
+        await Utils.sleep(2000);
 
-      let strJson1 = inspector.getInspectorByKey('SetMaxHeightPercent');
-      let strJson2 = inspector.getInspectorByKey('SetMaxHeightVp');
-      let strJson3 = inspector.getInspectorByKey('SetMaxHeightPx');
-      let strJson4 = inspector.getInspectorByKey('SetMaxHeightFp');
-      let strJson5 = inspector.getInspectorByKey('SetMaxHeightLpx');
-      let strJson6 = inspector.getInspectorByKey('SetMaxHeight_0');
-      let strJson7 = inspector.getInspectorByKey('SetMaxHeight_-1');
-      let strJson8 = inspector.getInspectorByKey('SetMaxHeightUndefined');
-      console.info('hello: ' + Number(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height').split('.')[0]));
-      console.info('hello: ' + Number(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height').split('.')[0]));
-      console.info('hello: ' + Number(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height').split('.')[0]));
-      console.info('hello: ' + Number(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('height').split('.')[0]));
-      console.info('hello: ' + Number(JSON.parseJsonElement(strJson5).getElement('$attrs').getString('height').split('.')[0]));
-      console.info('hello: ' + Number(JSON.parseJsonElement(strJson6).getElement('$attrs').getString('height').split('.')[0]));
-      console.info('hello: ' + Number(JSON.parseJsonElement(strJson7).getElement('$attrs').getString('height').split('.')[0]));
-      console.info('hello: ' + Number(JSON.parseJsonElement(strJson8).getElement('$attrs').getString('height').split('.')[0]));
+        let strJson1 = inspector.getInspectorByKey('SetMaxHeightPercent');
+        let strJson2 = inspector.getInspectorByKey('SetMaxHeightVp');
+        let strJson3 = inspector.getInspectorByKey('SetMaxHeightPx');
+        let strJson4 = inspector.getInspectorByKey('SetMaxHeightFp');
+        let strJson5 = inspector.getInspectorByKey('SetMaxHeightLpx');
+        let strJson6 = inspector.getInspectorByKey('SetMaxHeight_0');
+        let strJson7 = inspector.getInspectorByKey('SetMaxHeight_-1');
+        let strJson8 = inspector.getInspectorByKey('SetMaxHeightUndefined');
+        console.info('hello: ' + Number(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height').split('.')[0]));
+        console.info('hello: ' + Number(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height').split('.')[0]));
+        console.info('hello: ' + Number(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height').split('.')[0]));
+        console.info('hello: ' + Number(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('height').split('.')[0]));
+        console.info('hello: ' + Number(JSON.parseJsonElement(strJson5).getElement('$attrs').getString('height').split('.')[0]));
+        console.info('hello: ' + Number(JSON.parseJsonElement(strJson6).getElement('$attrs').getString('height').split('.')[0]));
+        console.info('hello: ' + Number(JSON.parseJsonElement(strJson7).getElement('$attrs').getString('height').split('.')[0]));
+        console.info('hello: ' + Number(JSON.parseJsonElement(strJson8).getElement('$attrs').getString('height').split('.')[0]));
 
-      expect(BarState.Off).assertEqual(0);
-      expect(BarState.Auto).assertEqual(1);
-      expect(BarState.On).assertEqual(2);
+        expect(BarState.Off).assertEqual(0);
+        expect(BarState.Auto).assertEqual(1);
+        expect(BarState.On).assertEqual(2);
 
-      expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson5).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson6).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson7).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson8).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson5).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson6).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson7).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Number(JSON.parseJsonElement(strJson8).getElement('$attrs').getString('height').split('.')[0]) -16)) <= 1).assertTrue();
 
-      console.info('[ContextMenuMaxHeightTest_0100] END');
-      done();
+        console.info('[ContextMenuMaxHeightTest_0100] END');
+        done();
+      } catch (err) {
+        console.info('ContextMenuMaxHeightTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
   })

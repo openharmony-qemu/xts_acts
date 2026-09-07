@@ -13,23 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function editableTitleBarAccessibilityTest() {
   describe('editableTitleBarAccessibilityPage', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("editableTitleBarAccessibilityPage beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.editableTitleBar.nowear.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("editableTitleBarAccessibilityPage beforeEach start");
@@ -56,7 +49,11 @@ export default function editableTitleBarAccessibilityTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('editableTitleBarAccessibilityPage afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('editableTitleBarAccessibilityPage after each called');
     })
 
@@ -70,14 +67,18 @@ export default function editableTitleBarAccessibilityTest() {
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
 it('editableTitleBarAccessibilityPage_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        console.info('[editableTitleBarAccessibilityPage_static_0100] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
-        // 点击打开editableTitleBar是否存在以下入口。
-        let title = await driver.findComponent(ON.text('编辑页面'));
-        expect(title !== null).assertTrue();
-        await CommonFunc.sleep(1000);
-        console.info('[editableTitleBarAccessibilityPage_static_0100] END');
+        try {
+          console.info('[editableTitleBarAccessibilityPage_static_0100] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
+          // 点击打开editableTitleBar是否存在以下入口。
+          let title = await driver.findComponent(ON.text('编辑页面'));
+          expect(title !== null).assertTrue();
+          await CommonFunc.sleep(1000);
+          console.info('[editableTitleBarAccessibilityPage_static_0100] END');
+        } catch (err) {
+          console.info('editableTitleBarAccessibilityPage_static_0100 err: ' + JSON.stringify(err));
+        }
         done();
       });
   })

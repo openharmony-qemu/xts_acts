@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import { describe, it, expect, Level } from '../../../../hypium/index';
 import { MenuKeyboardAvoidMode } from '@ohos.arkui.component';
 

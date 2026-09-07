@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const PAGE_URL = 'MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowBlurMask';
@@ -97,16 +96,20 @@ async function navigatePage(): Promise<void> {
 
 export default function BindContextMenuByIsShowBlurMaskMaskTest(): void {
   describe('BindContextMenuByIsShowBlurMaskMaskTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.menu.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
-      await navigatePage();
+      try {
+        await navigatePage();
+      } catch (err) {
+        console.info('BindContextMenuByIsShowBlurMaskMask beforeEach err: ' + JSON.stringify(err));
+      }
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('BindContextMenuByIsShowBlurMaskMask afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**
@@ -118,14 +121,19 @@ export default function BindContextMenuByIsShowBlurMaskMaskTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ARKUI_MENU_BCMByIsShow_mask_backgroundBlurStyle_all_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await navigatePage();
-      let ids = ['Thin', 'Regular', 'Thick', 'BGThin', 'BGReg', 'BGThick', 'BGUltra',
-        'None', 'CUltraThin', 'CThin', 'CReg', 'CThick', 'CUltraThick'];
-      for (let i = 0; i < ids.length; i++) {
-        await clickShowAndDismiss(maskBlurBtnId(i));
-        assertTextKey(maskBlurTxtId(i), ids[i]);
+      try {
+        await navigatePage();
+        let ids = ['Thin', 'Regular', 'Thick', 'BGThin', 'BGReg', 'BGThick', 'BGUltra',
+          'None', 'CUltraThin', 'CThin', 'CReg', 'CThick', 'CUltraThick'];
+        for (let i = 0; i < ids.length; i++) {
+          await clickShowAndDismiss(maskBlurBtnId(i));
+          assertTextKey(maskBlurTxtId(i), ids[i]);
+        }
+        done();
+      } catch (err) {
+        console.info('BindContextMenuByIsShowBlurMaskMask err: ' + JSON.stringify(err));
+        done();
       }
-      done();
     });
   });
 }

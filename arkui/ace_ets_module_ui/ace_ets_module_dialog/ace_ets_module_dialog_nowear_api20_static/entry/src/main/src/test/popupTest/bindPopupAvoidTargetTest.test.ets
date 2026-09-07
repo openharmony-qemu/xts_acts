@@ -17,7 +17,6 @@
 import Utils from '../../../ets/MainAbility/common/Utils';
 import {
   afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
@@ -43,16 +42,11 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 export default function BindPopupAvoidTargetTest() {
   describe('BindPopupAvoidTargetTest', () => {
     const SLEEP_TIME_1000 = 1000;
     const SLEEP_TIME_3000 = 3000;
-    beforeAll(async (): Promise<void> => {
-      console.info("BindPopupAvoidTargetTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api20.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("BindPopupAvoidTargetTest beforeEach start");
       try {
@@ -90,7 +84,11 @@ export default function BindPopupAvoidTargetTest() {
           return;
         }
         await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+        }
         const buttonRect = await button.getBounds();
         let on: On = ON.type('Column').within(ON.type('Popup'));
         const popupContent = await driver.findComponent(on);
@@ -99,7 +97,11 @@ export default function BindPopupAvoidTargetTest() {
           done();
           return;
         }
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+        }
         const popupRect = await popupContent.getBounds();
         console.info(
           `[BindPopup_AvoidTargetPopup_0010] + ${popupRect.left}, ${popupRect.top}, ${popupRect.right},
@@ -133,7 +135,11 @@ export default function BindPopupAvoidTargetTest() {
           return;
         }
         await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+        }
         const buttonRect = await button.getBounds();
         let on: On = ON.type('Column').within(ON.type('Popup'));
         const popupContent = await driver.findComponent(on);
@@ -142,7 +148,11 @@ export default function BindPopupAvoidTargetTest() {
           done();
           return;
         }
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+        }
         const popupRect = await popupContent.getBounds();
         console.info(
           `[BindPopup_AvoidTargetPopup_0020] + ${popupRect.left}, ${popupRect.top}, ${popupRect.right},
@@ -178,7 +188,11 @@ export default function BindPopupAvoidTargetTest() {
           return;
         }
         await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+        }
         const buttonRect = await button.getBounds();
         let on: On = ON.type('Column').within(ON.type('Popup'));
         const popupContent = await driver.findComponent(on);
@@ -187,7 +201,11 @@ export default function BindPopupAvoidTargetTest() {
           done();
           return;
         }
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+        }
         const popupRect = await popupContent.getBounds();
         console.info(
           `[BindPopup_AvoidTargetPopup_0030] + ${popupRect.left}, ${popupRect.top}, ${popupRect.right},
@@ -223,7 +241,11 @@ export default function BindPopupAvoidTargetTest() {
           return;
         }
         await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+        }
         const buttonRect = await button.getBounds();
         let on: On = ON.type('Column').within(ON.type('Popup'));
         const popupContent = await driver.findComponent(on);
@@ -232,7 +254,11 @@ export default function BindPopupAvoidTargetTest() {
           done();
           return;
         }
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+        }
         const popupRect = await popupContent.getBounds();
         console.info(
           `[BindPopup_AvoidTargetPopup_0040] + ${popupRect.left}, ${popupRect.top}, ${popupRect.right},
@@ -268,7 +294,11 @@ export default function BindPopupAvoidTargetTest() {
           return;
         }
         await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+        }
         const buttonRect = await button.getBounds();
         let on: On = ON.type('Column').within(ON.type('Popup'));
         const popupContent = await driver.findComponent(on);
@@ -277,7 +307,11 @@ export default function BindPopupAvoidTargetTest() {
           done();
           return;
         }
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+        }
         const popupRect = await popupContent.getBounds();
         console.info(
           `[BindPopup_AvoidTargetPopup_0050] + ${popupRect.left}, ${popupRect.top}, ${popupRect.right},
@@ -310,7 +344,11 @@ export default function BindPopupAvoidTargetTest() {
         return;
       }
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME_1000);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+      }
       const buttonRect = await button.getBounds();
       let on: On = ON.type('Column').within(ON.type('Popup'));
       const popupContent = await driver.findComponent(on);
@@ -319,7 +357,11 @@ export default function BindPopupAvoidTargetTest() {
         done();
         return;
       }
-      await CommonFunc.sleep(SLEEP_TIME_1000);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('BindPopupAvoidTargetTest sleep err: ' + JSON.stringify(err));
+      }
       const popupRect = await popupContent.getBounds();
       console.info(
         `[BindPopup_AvoidTargetPopup_0060] + ${popupRect.left}, ${popupRect.top}, ${popupRect.right},

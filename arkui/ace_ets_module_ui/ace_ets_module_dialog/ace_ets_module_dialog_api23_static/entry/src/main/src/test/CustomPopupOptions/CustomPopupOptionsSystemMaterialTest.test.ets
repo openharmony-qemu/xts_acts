@@ -16,22 +16,17 @@
  */
 
 import router from '@ohos.router';
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { uiMaterial } from '@kit.ArkUI';
-import { UtilsTest } from '../Util.test';
 
 export default function CustomPopupOptionsSystemMaterial() {
   describe('CustomPopupOptionsSystemMaterial', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CustomPopupOptionsSystemMaterial beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.api23.static", "EntryAbility");
-    });
     beforeEach(async (): Promise<void> => {
       console.info("CustomPopupOptionsSystemMaterial beforeEach start");
       let options: router.RouterOptions = {
@@ -64,6 +59,7 @@ export default function CustomPopupOptionsSystemMaterial() {
      * @tc.level  LEVEL2
      */
     it('CustomPopupOptionsSystemMaterial_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       console.info('CustomPopupOptionsSystemMaterial_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -82,11 +78,16 @@ export default function CustomPopupOptionsSystemMaterial() {
       await CommonFunc.sleep(500);
 
       let closeButton = await driver.findComponent(ON.text('Close'));
- 	    await (closeButton!.click() as Promise<void>);
+  	    await (closeButton!.click() as Promise<void>);
       
       await CommonFunc.sleep(1000);
       console.info('CustomPopupOptionsSystemMaterial_0100 END');
       done();
+      } catch (err) {
+        console.info('CustomPopupOptionsSystemMaterial_0100 err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -99,6 +100,7 @@ export default function CustomPopupOptionsSystemMaterial() {
      * @tc.level  LEVEL2
      */
     it('CustomPopupOptionsSystemMaterial_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       console.info('CustomPopupOptionsSystemMaterial_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -115,11 +117,16 @@ export default function CustomPopupOptionsSystemMaterial() {
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));
- 	    await (closeButton!.click() as Promise<void>);
+  	    await (closeButton!.click() as Promise<void>);
       
       await CommonFunc.sleep(1000);
       console.info('CustomPopupOptionsSystemMaterial_0200 END');
       done();
+      } catch (err) {
+        console.info('CustomPopupOptionsSystemMaterial_0200 err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -132,6 +139,7 @@ export default function CustomPopupOptionsSystemMaterial() {
      * @tc.level  LEVEL2
      */
     it('CustomPopupOptionsSystemMaterial_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       console.info('CustomPopupOptionsSystemMaterial_0300 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -153,6 +161,11 @@ export default function CustomPopupOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
       console.info('CustomPopupOptionsSystemMaterial_0300 END');
       done();
+      } catch (err) {
+        console.info('CustomPopupOptionsSystemMaterial_0300 err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -165,6 +178,7 @@ export default function CustomPopupOptionsSystemMaterial() {
      * @tc.level  LEVEL2
      */
     it('CustomPopupOptionsSystemMaterial_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       console.info('CustomPopupOptionsSystemMaterial_0400 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -188,6 +202,11 @@ export default function CustomPopupOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
       console.info('CustomPopupOptionsSystemMaterial_0400 END');
       done();
+      } catch (err) {
+        console.info('CustomPopupOptionsSystemMaterial_0400 err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -200,6 +219,7 @@ export default function CustomPopupOptionsSystemMaterial() {
      * @tc.level  LEVEL2
      */
     it('CustomPopupOptionsSystemMaterial_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       console.info('CustomPopupOptionsSystemMaterial_0500 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -224,6 +244,11 @@ export default function CustomPopupOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
       console.info('CustomPopupOptionsSystemMaterial_0500 END');
       done();
+      } catch (err) {
+        console.info('CustomPopupOptionsSystemMaterial_0500 err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -236,6 +261,7 @@ export default function CustomPopupOptionsSystemMaterial() {
      * @tc.level  LEVEL2
      */
     it('CustomPopupOptionsSystemMaterial_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       console.info('CustomPopupOptionsSystemMaterial_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -259,6 +285,11 @@ export default function CustomPopupOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
       console.info('CustomPopupOptionsSystemMaterial_0600 END');
       done();
+      } catch (err) {
+        console.info('CustomPopupOptionsSystemMaterial_0600 err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
     });
 
   })

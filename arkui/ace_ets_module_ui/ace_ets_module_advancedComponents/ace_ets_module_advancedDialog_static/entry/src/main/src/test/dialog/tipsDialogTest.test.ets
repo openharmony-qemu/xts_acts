@@ -17,7 +17,6 @@
 import {
   afterAll,
   afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
@@ -38,7 +37,6 @@ import {
 } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -46,11 +44,6 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function tipsDialogTest() {
   describe('tipsDialogTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("tipsDialogTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.advancedDialog.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("tipsDialogTest beforeEach start");
@@ -74,7 +67,11 @@ export default function tipsDialogTest() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('tipsDialogTest after each called');
     })
 
@@ -88,11 +85,23 @@ export default function tipsDialogTest() {
       async (done: () => void): Promise<void> => {
         console.info('[tipsDialogTest_static_0100] START');
         let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          await CommonFunc.sleep(2000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog
         let openAlertDialog = await driver.findComponent(ON.type('Button').text('TipsDialog'))
-        await (openAlertDialog?.click() as Promise<void>);;
-        await CommonFunc.sleep(1000);
+        try {
+          await (openAlertDialog?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog是否存在以下入口。
         let content = await driver.findComponent(ON.text('想要卸载这个APP嘛?'));
         let cancelButton = await driver.findComponent(ON.type('Button').text('取消'));
@@ -101,8 +110,16 @@ export default function tipsDialogTest() {
         expect(cancelButton !== null).assertTrue();
         expect(confirmButton !== null).assertTrue();
         // 关闭TipsDialog
-        await (cancelButton?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
+        try {
+          await (cancelButton?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[tipsDialogTest_static_0100] END');
         done();
       });
@@ -117,11 +134,23 @@ export default function tipsDialogTest() {
       async (done: () => void): Promise<void> => {
         console.info('[tipsDialogTest_static_0200] START');
         let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          await CommonFunc.sleep(2000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog
         let openAlertDialog = await driver.findComponent(ON.type('Button').text('TipsDialogTitle'))
-        await (openAlertDialog?.click() as Promise<void>);;
-        await CommonFunc.sleep(1000);
+        try {
+          await (openAlertDialog?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog是否存在以下入口。
         let title = await driver.findComponent(ON.text('TipsDialog'));
         let cancelButton = await driver.findComponent(ON.type('Button').text('取消'));
@@ -130,8 +159,16 @@ export default function tipsDialogTest() {
         expect(cancelButton !== null).assertTrue();
         expect(confirmButton !== null).assertTrue();
         // 关闭TipsDialog
-        await (cancelButton?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
+        try {
+          await (cancelButton?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[tipsDialogTest_static_0200] END');
         done();
       });
@@ -146,11 +183,23 @@ export default function tipsDialogTest() {
       async (done: () => void): Promise<void> => {
         console.info('[tipsDialogTest_static_0300] START');
         let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          await CommonFunc.sleep(2000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog
         let openAlertDialog = await driver.findComponent(ON.type('Button').text('TipsDialogTips'))
-        await (openAlertDialog?.click() as Promise<void>);;
-        await CommonFunc.sleep(1000);
+        try {
+          await (openAlertDialog?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog是否存在以下入口。
         let checkTips = await driver.findComponent(ON.text('checkTips'));
         let cancelButton = await driver.findComponent(ON.type('Button').text('取消'));
@@ -159,8 +208,16 @@ export default function tipsDialogTest() {
         expect(cancelButton !== null).assertTrue();
         expect(confirmButton !== null).assertTrue();
         // 关闭TipsDialog
-        await (cancelButton?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
+        try {
+          await (cancelButton?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[tipsDialogTest_static_0300] END');
         done();
       });
@@ -175,11 +232,23 @@ export default function tipsDialogTest() {
       async (done: () => void): Promise<void> => {
         console.info('[tipsDialogTest_static_0400] START');
         let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          await CommonFunc.sleep(2000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog
         let openAlertDialog = await driver.findComponent(ON.type('Button').text('TipsDialogTipsTextAlign'))
-        await (openAlertDialog?.click() as Promise<void>);;
-        await CommonFunc.sleep(1000);
+        try {
+          await (openAlertDialog?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog是否存在以下入口。
         let checkTips = await driver.findComponent(ON.text('checkTips'));
         let cancelButton = await driver.findComponent(ON.type('Button').text('取消'));
@@ -188,8 +257,16 @@ export default function tipsDialogTest() {
         expect(cancelButton !== null).assertTrue();
         expect(confirmButton !== null).assertTrue();
         // 关闭TipsDialog
-        await (cancelButton?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
+        try {
+          await (cancelButton?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[tipsDialogTest_static_0400] END');
         done();
       });
@@ -204,11 +281,23 @@ export default function tipsDialogTest() {
       async (done: () => void): Promise<void> => {
         console.info('[tipsDialogTest_static_0500] START');
         let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          await CommonFunc.sleep(2000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog
         let openAlertDialog = await driver.findComponent(ON.type('Button').text('TipsDialogTipsTextAlign2'))
-        await (openAlertDialog?.click() as Promise<void>);;
-        await CommonFunc.sleep(1000);
+        try {
+          await (openAlertDialog?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog是否存在以下入口。
         let checkTips = await driver.findComponent(ON.text('checkTips'));
         let cancelButton = await driver.findComponent(ON.type('Button').text('取消'));
@@ -217,8 +306,16 @@ export default function tipsDialogTest() {
         expect(cancelButton !== null).assertTrue();
         expect(confirmButton !== null).assertTrue();
         // 关闭TipsDialog
-        await (cancelButton?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
+        try {
+          await (cancelButton?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[tipsDialogTest_static_0500] END');
         done();
       });
@@ -233,11 +330,23 @@ export default function tipsDialogTest() {
       async (done: () => void): Promise<void> => {
         console.info('[tipsDialogTest_static_0600] START');
         let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          await CommonFunc.sleep(2000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog
         let openAlertDialog = await driver.findComponent(ON.type('Button').text('TipsDialogTipsTextAlign3'))
-        await (openAlertDialog?.click() as Promise<void>);;
-        await CommonFunc.sleep(1000);
+        try {
+          await (openAlertDialog?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开TipsDialog是否存在以下入口。
         let checkTips = await driver.findComponent(ON.text('checkTips'));
         let cancelButton = await driver.findComponent(ON.type('Button').text('取消'));
@@ -246,13 +355,19 @@ export default function tipsDialogTest() {
         expect(cancelButton !== null).assertTrue();
         expect(confirmButton !== null).assertTrue();
         // 关闭TipsDialog
-        await (cancelButton?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
+        try {
+          await (cancelButton?.click() as Promise<void>);
+        } catch (err) {
+          console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[tipsDialogTest_static_0600] END');
         done();
       });
-
-
 
 
 

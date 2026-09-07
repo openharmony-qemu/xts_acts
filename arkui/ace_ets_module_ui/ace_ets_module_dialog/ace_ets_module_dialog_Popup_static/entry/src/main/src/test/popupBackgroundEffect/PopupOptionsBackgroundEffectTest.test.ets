@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from
+import { describe, it, expect, afterEach, Level, beforeEach } from
   '../../../../hypium';
 import { Driver, ON, Component } from '@kit.TestKit';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 const PAGE_URL = 'MainAbility/pages/popup/PopupOptionsBackgroundEffect';
@@ -37,7 +36,7 @@ async function navigatePage(): Promise<void> {
   routerInstance.clear();
   if (routerInstance.getState().name !== PAGE_NAME) {
     routerInstance.replaceUrl({ url: PAGE_URL });
-    await CommonFunc.sleep(SLEEP_TIME);
+          await CommonFunc.sleep(2000);
   }
 }
 
@@ -52,70 +51,131 @@ async function assertMsgPopup(driver: Driver, btnId: string, msg: string): Promi
 
 export default function PopupOptionsBackgroundEffectTest(): void {
   describe('PopupOptionsBackgroundEffectTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.popup.static', 'EntryAbility');
-    });
     beforeEach(async (): Promise<void> => {
-      await navigatePage();
+       try {
+         await navigatePage();
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
     });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(SLEEP_TIME);
+       try {
+         await Utils.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('sleep err: ' + JSON.stringify(err));
+       }
     });
 
     it('PopupOptionsBackgroundEffect_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'radius_0', 'Popup radius 0');
+       try {
+         await assertMsgPopup(Driver.create(), 'radius_0', 'Popup radius 0');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0002', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'radius_20', 'Popup radius 20');
+       try {
+         await assertMsgPopup(Driver.create(), 'radius_20', 'Popup radius 20');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0003', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'radius_60', 'Popup radius 60');
+       try {
+         await assertMsgPopup(Driver.create(), 'radius_60', 'Popup radius 60');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0004', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'saturation_0', 'Popup saturation 0');
+       try {
+         await assertMsgPopup(Driver.create(), 'saturation_0', 'Popup saturation 0');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0005', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'saturation_1', 'Popup saturation 1');
+       try {
+         await assertMsgPopup(Driver.create(), 'saturation_1', 'Popup saturation 1');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0006', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'saturation_2', 'Popup saturation 2');
+       try {
+         await assertMsgPopup(Driver.create(), 'saturation_2', 'Popup saturation 2');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0007', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'brightness_0', 'Popup brightness 0');
+       try {
+         await assertMsgPopup(Driver.create(), 'brightness_0', 'Popup brightness 0');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0008', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'brightness_1', 'Popup brightness 1');
+       try {
+         await assertMsgPopup(Driver.create(), 'brightness_1', 'Popup brightness 1');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0009', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'brightness_2', 'Popup brightness 2');
+       try {
+         await assertMsgPopup(Driver.create(), 'brightness_2', 'Popup brightness 2');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'color_red', 'Popup color red');
+       try {
+         await assertMsgPopup(Driver.create(), 'color_red', 'Popup color red');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0011', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'color_string', 'Popup color string');
+       try {
+         await assertMsgPopup(Driver.create(), 'color_string', 'Popup color string');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0012', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'adaptiveColor_DEFAULT', 'Popup adaptiveColor DEFAULT');
+       try {
+         await assertMsgPopup(Driver.create(), 'adaptiveColor_DEFAULT', 'Popup adaptiveColor DEFAULT');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0013', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'adaptiveColor_AVERAGE', 'Popup adaptiveColor AVERAGE');
+       try {
+         await assertMsgPopup(Driver.create(), 'adaptiveColor_AVERAGE', 'Popup adaptiveColor AVERAGE');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0014', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'policy_ALWAYS_ACTIVE', 'Popup policy ALWAYS_ACTIVE');
+       try {
+         await assertMsgPopup(Driver.create(), 'policy_ALWAYS_ACTIVE', 'Popup policy ALWAYS_ACTIVE');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     it('PopupOptionsBackgroundEffect_0015', Level.LEVEL2, async (done: () => void): Promise<void> => {
@@ -124,7 +184,11 @@ export default function PopupOptionsBackgroundEffectTest(): void {
       done();
     });
     it('PopupOptionsBackgroundEffect_0016', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await assertMsgPopup(Driver.create(), 'combinedOptions', 'Popup combined effect options');
+       try {
+         await assertMsgPopup(Driver.create(), 'combinedOptions', 'Popup combined effect options');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
   });

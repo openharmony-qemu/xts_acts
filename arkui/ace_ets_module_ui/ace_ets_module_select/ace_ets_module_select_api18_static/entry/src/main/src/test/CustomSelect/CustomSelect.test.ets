@@ -13,27 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
 export default function CustomSelectionPage() {
    describe('CustomSelectionPage', () => {
-     beforeAll(async (): Promise<void> => {
-       
-       await UtilsTest.startAbility("com.arkui.ace.select.api18.static", "EntryAbility");
-       
-     });
 
      beforeEach(async (): Promise<void> => {
        console.info('CustomSelectionPage beforeEach start');
@@ -62,21 +49,25 @@ export default function CustomSelectionPage() {
      
     
 /**
-     * @tc.number   selecttest_static_001
-     * @tc.name     selecttest_static_001
-     * @tc.desc     selecttest_static_001
+     * @tc.number   selecttest_001
+     * @tc.name     selecttest_001
+     * @tc.desc     selecttest_001
      * @tc.level    Level.LEVEL3
      */
-it('selecttest_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('selecttest_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       // try {
         let Key: string = 'select01'
         let strJson = inspector.getInspectorByKey(Key);
-        console.log('selecttest_static_001')
-        await CommonFunc.sleep(1000)
+        console.log('selecttest_001')
+        try {
+          await CommonFunc.sleep(1000)
+        } catch (err) {
+          console.info('CustomSelectTest sleep err: ' + JSON.stringify(err));
+        }
         let obj = JSON.parseJsonElement(strJson);
         let objString = obj.getElement('$attrs').tryGetElement('avoidance')
         if(objString) {
-          console.info('selecttest_static_001 ' + JSON.stringifyJsonElement(objString!));
+          console.info('selecttest_001 ' + JSON.stringifyJsonElement(objString!));
         }
 
       // } catch(ERROR) {

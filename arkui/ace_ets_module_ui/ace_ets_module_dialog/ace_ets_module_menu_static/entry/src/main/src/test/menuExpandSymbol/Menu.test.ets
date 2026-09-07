@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
@@ -43,11 +41,6 @@ function logLongString(tag: string, longStr: string): void {
 
 export default function MenuTest(): void {
   describe('MenuTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("MenuTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("MenuTest beforeEach start");
       let options: router.RouterOptions = {
@@ -70,8 +63,12 @@ export default function MenuTest(): void {
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
-      console.info("MenuTest after each called");
+      try {
+        await Utils.sleep(SLEEP_TIME);
+        console.info("MenuTest after each called");
+      } catch (err) {
+        console.info('Menu afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**
