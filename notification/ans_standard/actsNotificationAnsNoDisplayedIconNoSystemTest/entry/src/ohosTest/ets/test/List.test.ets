@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import ActsNotificationAnsNoDisplayedIconNoSystemTest from "./ActsNotificationAnsNoDisplayedIconNoSystemTest.test";
+import ActsNotificationAnsNoDisplayedIconNoSystemTest from './ActsNotificationAnsNoDisplayedIconNoSystemTest.test';
 
 
 export default function testsuite() {

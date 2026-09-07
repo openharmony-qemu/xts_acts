@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function listNewJsunit() {
+export default function listNewJsunit(): void {
   describe('listNewJsunit', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/list',
@@ -60,7 +60,7 @@ export default function listNewJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("listNe after each called");
     });
@@ -74,7 +74,7 @@ export default function listNewJsunit() {
      * @tc.desc     testListNew_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testListNew_static_0001', Level.LEVEL0, async () => {
+it('testListNew_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('listNe testListNew0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
@@ -95,7 +95,7 @@ it('testListNew_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testListNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testListNe_static_0002', Level.LEVEL0, async () => {
+it('testListNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('listNe testListNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
@@ -116,7 +116,7 @@ it('testListNe_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testListNe_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testListNe_static_0003', Level.LEVEL0, async () => {
+it('testListNe_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('listNe testListNe0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
@@ -136,7 +136,7 @@ it('testListNe_static_0003', Level.LEVEL0, async () => {
      * @tc.desc     testListNe_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testListNe_static_0004', Level.LEVEL0, async () => {
+it('testListNe_static_0004', Level.LEVEL0, async (): Promise<void> => {
       console.info('listNe testListNe0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
@@ -157,7 +157,7 @@ it('testListNe_static_0004', Level.LEVEL0, async () => {
      * @tc.desc     testListNe_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testListNe_static_0005', Level.LEVEL0, async () => {
+it('testListNe_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('listNe testListNe0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
@@ -178,7 +178,7 @@ it('testListNe_static_0005', Level.LEVEL0, async () => {
      * @tc.desc     testListNe_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testListNe_static_0006', Level.LEVEL0, async () => {
+it('testListNe_static_0006', Level.LEVEL0, async (): Promise<void> => {
       console.info('listNe testListNe0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
@@ -199,7 +199,7 @@ it('testListNe_static_0006', Level.LEVEL0, async () => {
      * @tc.desc     testListNe_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testListNe_static_0007', Level.LEVEL0, async () => {
+it('testListNe_static_0007', Level.LEVEL0, async (): Promise<void> => {
       console.info('listNe testListNe0007 START');
       let innerEvent: events_emitter.InnerEvent = {
         eventId: 60216,
@@ -209,8 +209,8 @@ it('testListNe_static_0007', Level.LEVEL0, async () => {
         try {
           console.info("callback success");
           console.info("testListNe0007 eventData.data.result result is: " +
-          ((eventData.data) as ESObject)?.getProperty('result').toString());
-          expect(((eventData.data) as ESObject)?.getProperty('result').toString()).assertEqual("success");
+          ((eventData.data) as ESObject).getProperty('result').toString());
+          expect(((eventData.data) as ESObject).getProperty('result').toString()).assertEqual("success");
           console.info("testListNe0007 end");
         } catch (err) {
           console.info("testListNe0007 on events_emitter err : " + JSON.stringify(err));

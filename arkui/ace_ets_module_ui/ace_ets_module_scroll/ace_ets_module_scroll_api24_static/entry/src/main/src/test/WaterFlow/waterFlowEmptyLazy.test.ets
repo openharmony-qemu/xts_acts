@@ -49,6 +49,7 @@ export default function waterFlowEmptyLazy() {
         if (!("waterFlowEmptyLazy" == pages.name)) {
           console.info("get waterFlowEmptyLazy pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push waterFlowEmptyLazy page error:" + err);

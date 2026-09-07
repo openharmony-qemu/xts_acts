@@ -49,6 +49,7 @@ export default function LazyVGridLayout() {
         if (!("LazyVGridLayout" == pages.name)) {
           console.info("get LazyVGridLayout pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push LazyVGridLayout page error:" + err);

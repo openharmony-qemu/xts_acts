@@ -57,27 +57,34 @@ export default function onScrollIndexFlow2() {
      * @tc.level    Level.LEVEL1
      */
 it('onScrollIndexFlow2_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[onScrollIndexFlow2_static_0100] START');
-      let waterRect = CommonFunc.getComponentRectOnScreen('water_onIndex');
-      let driver = Driver.create();
-      let top = waterRect.top;
-      let right = waterRect.right;
-      let left = waterRect.left;
-      let bottom = waterRect.bottom;
-      console.info("onScrollIndexFlow2_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom -top;
-      let width = right - left;
-      await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2).toInt(),Math.round(top + height*0.7).toInt(),Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt());
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('[onScrollIndexFlow2_static_0100] START');
+        let waterRect = CommonFunc.getComponentRectOnScreen('water_onIndex');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let top = waterRect.top;
+        let right = waterRect.right;
+        let left = waterRect.left;
+        let bottom = waterRect.bottom;
+        console.info("onScrollIndexFlow2_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
+        let height = bottom -top;
+        let width = right - left;
+        await CommonFunc.sleep(1000);
+        await driver.swipe(Math.round(left + width/2).toInt(),Math.round(top + height*0.7).toInt(),Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt());
+        await CommonFunc.sleep(2000);
 
-      let strJson = inspector.getInspectorByKey('onScrollIndex_flow');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[onScrollIndexFlow2_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[onScrollIndexFlow2_static_0100] content obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('onScrollIndex:succ5');
-      console.info('[onScrollIndexFlow2_static_0100] END');
-      done();
+        let strJson = inspector.getInspectorByKey('onScrollIndex_flow');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[onScrollIndexFlow2_static_0100] component obj is: " + JSON.stringify(obj));
+        console.info("[onScrollIndexFlow2_static_0100] content obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('onScrollIndex:succ5');
+        console.info('[onScrollIndexFlow2_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[onScrollIndexFlow2_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

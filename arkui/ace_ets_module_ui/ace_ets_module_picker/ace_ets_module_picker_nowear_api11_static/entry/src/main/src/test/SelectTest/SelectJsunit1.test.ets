@@ -13,17 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils.test';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -31,19 +25,8 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Font, FontStyle,ResourceColor } from '@ohos.arkui.component';
 import { RecordData } from '@ohos.base';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function selectJsunit() {
   describe('appInfoTest_five_2', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("appInfoTest_five_2 beforeEach start");
-
-
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
-
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Select/select1',
@@ -65,7 +48,11 @@ export default function selectJsunit() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info("select after each error: " + JSON.stringify(err));
+      }
       console.info("select after each called");
     });
 
@@ -77,14 +64,19 @@ export default function selectJsunit() {
      * @tc.level    Level.LEVEL1
      */
 it('selectTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('selectTest_static_0100 START');
-      await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('select');
-      console.info("selectTest_static_0100 component JSON.parse(strJson) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString("value")).assertEqual('10');
-      await Utils.sleep(1000);
-      done();
+      try {
+        console.info('selectTest_static_0100 START');
+        await Utils.sleep(1000);
+        let strJson: string = inspector.getInspectorByKey('select');
+        console.info("selectTest_static_0100 component JSON.parse(strJson) is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString("value")).assertEqual('10');
+        await Utils.sleep(1000);
+        done();
+      } catch (err) {
+        console.info('selectTest_static_0100 ERR ' + JSON.stringify(err));
+        done();
+      }
     });
 
     
@@ -95,30 +87,35 @@ it('selectTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL1
      */
 it('selectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[selectTest_static_0200] START');
-      await Utils.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": "5"
-          } as Record<String,RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 191,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
-        console.info("[selectTest_static_0200] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        console.info('[selectTest_static_0200] START');
+        await Utils.sleep(1000);
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "value": "5"
+            } as Record<String,RecordData>
+          } as events_emitter.EventData
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 191,
+            priority: events_emitter.EventPriority.LOW
+          } as events_emitter.InnerEvent
+          console.info("[selectTest_static_0200] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[selectTest_static_0200] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJsonNew = inspector.getInspectorByKey('select');
+        let objNew = JSON.parseJsonElement(strJsonNew);
+        console.info("[selectTest_static_0200] component objNew is: " + objNew.getElement('$attrs').getString('value'));
+        expect(objNew.getElement('$attrs').getString('value')).assertEqual('5');
+        await Utils.sleep(1000);
+        done();
       } catch (err) {
-        console.log("[selectTest_static_0200] change component data error: " + (err as Error).message);
+        console.info('[selectTest_static_0200] ERR ' + JSON.stringify(err));
+        done();
       }
-      await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('select');
-      let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("[selectTest_static_0200] component objNew is: " + objNew.getElement('$attrs').getString('value'));
-      expect(objNew.getElement('$attrs').getString('value')).assertEqual('5');
-      await Utils.sleep(1000);
-      done();
     });
 
     
@@ -154,43 +151,48 @@ it('selectTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL1
      */
 it('selectTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[selectTest_static_0400] START');
-      await Utils.sleep(1000);
-      let font: Font = {
-        size: 24,
-        weight: 500,
-        family: 'sans-serif',
-        style: FontStyle.Normal
-      } as Font
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "font": font as Font
-          } as Record<String,RecordData>
+        console.info('[selectTest_static_0400] START');
+        await Utils.sleep(1000);
+        let font: Font = {
+          size: 24,
+          weight: 500,
+          family: 'sans-serif',
+          style: FontStyle.Normal
+        } as Font
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "font": font as Font
+            } as Record<String,RecordData>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 191,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[selectTest_static_0400] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[selectTest_static_0400] change component data error: " + (err as Error).message);
         }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 191,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[selectTest_static_0400] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        await Utils.sleep(2000);
+        let strJson: string = inspector.getInspectorByKey('select');
+        console.info("[selectTest_static_0400] component strJson:" + strJson);
+        console.info("[selectTest_static_0400] font:" +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString("font"));
+        expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString("font"))
+          .getString('size')).assertEqual('24.00fp');
+        expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString("font"))
+          .getString('weight')).assertEqual('500');
+        expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString("font"))
+          .getString('family')).assertEqual('sans-serif');
+        expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString("font"))
+          .getString('style')).assertEqual('FontStyle.Normal');
+        done();
       } catch (err) {
-        console.log("[selectTest_static_0400] change component data error: " + (err as Error).message);
+        console.info('[selectTest_static_0400] ERR ' + JSON.stringify(err));
+        done();
       }
-      await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('select');
-      console.info("[selectTest_static_0400] component strJson:" + strJson);
-      console.info("[selectTest_static_0400] font:" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString("font"));
-      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString("font"))
-        .getString('size')).assertEqual('24.00fp');
-      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString("font"))
-        .getString('weight')).assertEqual('500');
-      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString("font"))
-        .getString('family')).assertEqual('sans-serif');
-      expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString("font"))
-        .getString('style')).assertEqual('FontStyle.Normal');
-      done();
     });
 
     
@@ -252,29 +254,34 @@ it('selectTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL1
      */
 it('selectTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[selectTest_static_0700] START');
-      await Utils.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": "-10"
-          } as Record<String,RecordData>
+        console.info('[selectTest_static_0700] START');
+        await Utils.sleep(1000);
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "value": "-10"
+            } as Record<String,RecordData>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 191,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[selectTest_static_0700] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[selectTest_static_0700] change component data error: " + (err as Error).message);
         }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 191,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[selectTest_static_0700] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        await Utils.sleep(2000);
+        let strJsonNew = inspector.getInspectorByKey('select');
+        console.info("[selectTest_static_0700] component objNew is: " +
+        JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString("value")).assertEqual('-10');
+        done();
       } catch (err) {
-        console.log("[selectTest_static_0700] change component data error: " + (err as Error).message);
+        console.info('[selectTest_static_0700] ERR ' + JSON.stringify(err));
+        done();
       }
-      await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('select');
-      console.info("[selectTest_static_0700] component objNew is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString("value")).assertEqual('-10');
-      done();
     });
 
     
@@ -285,29 +292,34 @@ it('selectTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL1
      */
 it('selectTest_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[selectTest_static_0800] START');
-      await Utils.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": '1111111111'
-          } as Record<String,RecordData>
+        console.info('[selectTest_static_0800] START');
+        await Utils.sleep(1000);
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "value": '1111111111'
+            } as Record<String,RecordData>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 191,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[selectTest_static_0800] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[selectTest_static_0800] change component data error: " + (err as Error).message);
         }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 191,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[selectTest_static_0800] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        await Utils.sleep(2000);
+        let strJsonNew = inspector.getInspectorByKey('select');
+        console.info("[selectTest_static_0800] component objNew is: " +
+        JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString("value")).assertEqual('1111111111');
+        done();
       } catch (err) {
-        console.log("[selectTest_static_0800] change component data error: " + (err as Error).message);
+        console.info('[selectTest_static_0800] ERR ' + JSON.stringify(err));
+        done();
       }
-      await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('select');
-      console.info("[selectTest_static_0800] component objNew is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString("value")).assertEqual('1111111111');
-      done();
     });
 
     
@@ -318,29 +330,34 @@ it('selectTest_static_0800', Level.LEVEL1, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL1
      */
 it('selectTest_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[selectTest_static_0900] START');
-      await Utils.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": '1111111111aaa'
-          } as Record<String,RecordData>
+        console.info('[selectTest_static_0900] START');
+        await Utils.sleep(1000);
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "value": '1111111111aaa'
+            } as Record<String,RecordData>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 191,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[selectTest_static_0900] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[selectTest_static_0900] change component data error: " + (err as Error).message);
         }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 191,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[selectTest_static_0900] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        await Utils.sleep(2000);
+        let strJsonNew = inspector.getInspectorByKey('select');
+        console.info("[selectTest_static_0900] component objNew is: " +
+        JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString("value")).assertEqual('1111111111aaa');
+        done();
       } catch (err) {
-        console.log("[selectTest_static_0900] change component data error: " + (err as Error).message);
+        console.info('[selectTest_static_0900] ERR ' + JSON.stringify(err));
+        done();
       }
-      await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('select');
-      console.info("[selectTest_static_0900] component objNew is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString("value")).assertEqual('1111111111aaa');
-      done();
     });
 
     

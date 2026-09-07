@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function tabsBarPositionJsunit() {
+export default function tabsBarPositionJsunit(): void {
   describe('tabsBarPositionTest2', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/tabs',
@@ -60,7 +60,7 @@ export default function tabsBarPositionJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("tabsBarPosition after each called");
     });
@@ -74,7 +74,7 @@ export default function tabsBarPositionJsunit() {
      * @tc.desc     testtabsBarPosition_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testtabsBarPosition_static_0001', Level.LEVEL0, async () => {
+it('testtabsBarPosition_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('tabsBarPosition testtabsBarPosition0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
@@ -95,7 +95,7 @@ it('testtabsBarPosition_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testtabsBarPosition_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testtabsBarPosition_static_0002', Level.LEVEL0, async () => {
+it('testtabsBarPosition_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('tabsBarPosition testtabsBarPosition0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
@@ -116,7 +116,7 @@ it('testtabsBarPosition_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testtabsBarPosition_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testtabsBarPosition_static_0003', Level.LEVEL0, async () => {
+it('testtabsBarPosition_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('tabsBarPosition testtabsBarPosition0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
@@ -137,7 +137,7 @@ it('testtabsBarPosition_static_0003', Level.LEVEL0, async () => {
      * @tc.desc     testtabsBarPosition_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testtabsBarPosition_static_0004', Level.LEVEL0, async () => {
+it('testtabsBarPosition_static_0004', Level.LEVEL0, async (): Promise<void> => {
       console.info('tabsBarPosition testtabsBarPosition0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
@@ -158,7 +158,7 @@ it('testtabsBarPosition_static_0004', Level.LEVEL0, async () => {
      * @tc.desc     testtabsBarPosition_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testtabsBarPosition_static_0005', Level.LEVEL0, async () => {
+it('testtabsBarPosition_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('tabsBarPosition testtabsBarPosition0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
@@ -179,7 +179,7 @@ it('testtabsBarPosition_static_0005', Level.LEVEL0, async () => {
      * @tc.desc     testtabsBarPosition_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testtabsBarPosition_static_0006', Level.LEVEL0, async () => {
+it('testtabsBarPosition_static_0006', Level.LEVEL0, async (): Promise<void> => {
       console.info('tabsBarPosition testtabsBarPosition0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
@@ -200,7 +200,7 @@ it('testtabsBarPosition_static_0006', Level.LEVEL0, async () => {
      * @tc.desc     testtabsBarPosition_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testtabsBarPosition_static_0007', Level.LEVEL0, async () => {
+it('testtabsBarPosition_static_0007', Level.LEVEL0, async (): Promise<void> => {
       console.info('tabsBarPosition testtabsBarPosition0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
@@ -221,7 +221,7 @@ it('testtabsBarPosition_static_0007', Level.LEVEL0, async () => {
      * @tc.desc     testtabsBarPosition_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testtabsBarPosition_static_0009', Level.LEVEL0, async () => {
+it('testtabsBarPosition_static_0009', Level.LEVEL0, async (): Promise<void> => {
       console.info('tabsBarPosition testtabsBarPosition009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
@@ -242,7 +242,7 @@ it('testtabsBarPosition_static_0009', Level.LEVEL0, async () => {
      * @tc.desc     testtabsBarPosition_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testtabsBarPosition_static_0010', Level.LEVEL0, async () => {
+it('testtabsBarPosition_static_0010', Level.LEVEL0, async (): Promise<void> => {
       console.info('tabsBarPosition testtabsBarPosition0010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
@@ -263,7 +263,7 @@ it('testtabsBarPosition_static_0010', Level.LEVEL0, async () => {
      * @tc.desc     testtabsBarPosition_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('testtabsBarPosition_static_0011', Level.LEVEL0, async () => {
+it('testtabsBarPosition_static_0011', Level.LEVEL0, async (): Promise<void> => {
       console.info('tabsBarPosition testtabsBarPosition0011 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_y_barPositionTabs');

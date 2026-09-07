@@ -57,33 +57,40 @@ export default function gridAttrsUndefined() {
      * @tc.level    Level.LEVEL1
      */
     it('gridAttrsUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[gridAttrsUndefined_static_0001] START');
-      let driver: Driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('Grid');
-      console.info("[gridAttrsUndefined_static_0001] alignItems: " +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems'))
-        .assertEqual('GridItemAlignment.Default');
+      try {
+        console.info('[gridAttrsUndefined_static_0001] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('Grid');
+        console.info("[gridAttrsUndefined_static_0001] alignItems: " +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems'))
+          .assertEqual('GridItemAlignment.Default');
 
-      let changeBtn = await driver.findComponent(ON.id('Grid_alignItemsValue'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+        let changeBtn = await driver.findComponent(ON.id('Grid_alignItemsValue'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(500);
 
-      strJson = inspector.getInspectorByKey('Grid');
-      console.info("[gridAttrsUndefined_static_0001] alignItems: " +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems'))
-        .assertEqual('GridItemAlignment.Stretch');
+        strJson = inspector.getInspectorByKey('Grid');
+        console.info("[gridAttrsUndefined_static_0001] alignItems: " +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems'))
+          .assertEqual('GridItemAlignment.Stretch');
 
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(500);
 
-      strJson = inspector.getInspectorByKey('Grid');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems'))
-        .assertEqual('GridItemAlignment.Default');
+        strJson = inspector.getInspectorByKey('Grid');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignItems'))
+          .assertEqual('GridItemAlignment.Default');
 
-      console.info('[gridAttrsUndefined_static_0001] END');
-      done();
+        console.info('[gridAttrsUndefined_static_0001] END');
+        done();
+      } catch (error) {
+        console.error('[gridAttrsUndefined_static_0001] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**

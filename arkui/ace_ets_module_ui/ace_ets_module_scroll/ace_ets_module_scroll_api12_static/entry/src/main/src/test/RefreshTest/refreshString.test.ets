@@ -38,6 +38,7 @@ export default function refreshString() {
         if (!("refreshLevel1" == pages.name)) {
           console.info("get refresh state pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push refresh page error:" + err);

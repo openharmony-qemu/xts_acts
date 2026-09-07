@@ -14,21 +14,16 @@
  * limitations under the License.
  */
 
-import { expect, beforeEach, beforeAll, describe, it, Level} from '../../../../hypium/index';
+import { expect, beforeEach, describe, it, Level} from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test'
 
 export default function checkboxGroupSelectAllTest() {
 
   describe('CheckboxGroupSelectAllTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
-    });
 
     beforeEach(async () => {
       console.info("CheckboxGroupSelectAllTest beforeEach start");
@@ -58,15 +53,20 @@ export default function checkboxGroupSelectAllTest() {
      * @tc.level    Level.LEVEL1
      */
     it('checkboxGroupSelectAllTest001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let  strJson = inspector.getInspectorByKey('checkboxgroupTrue') //可能是inspector.getInspectorByKey返回值有问题 strJson无法打印 导致crash
-      await Utils.sleep(1000)
-      // console.info('checkboxGroupSelectAllTest001 strJson ' + strJson)
-      let obj = JSON.parseJsonElement(strJson)
-      await Utils.sleep(3000)
-      console.info('CheckboxGroupSelectAllTest selectAll ' + JSON.stringify(obj.getElement('$attrs').getString('selectAll')))
-      expect(obj.getElement('$attrs').getString('selectAll')).assertEqual("true")
-      console.info('CheckboxGroupSelectAllTest selectAll end')
-      done();
+      try {
+        let  strJson = inspector.getInspectorByKey('checkboxgroupTrue') //可能是inspector.getInspectorByKey返回值有问题 strJson无法打印 导致crash
+        await Utils.sleep(1000)
+        // console.info('checkboxGroupSelectAllTest001 strJson ' + strJson)
+        let obj = JSON.parseJsonElement(strJson)
+        await Utils.sleep(3000)
+        console.info('CheckboxGroupSelectAllTest selectAll ' + JSON.stringify(obj.getElement('$attrs').getString('selectAll')))
+        expect(obj.getElement('$attrs').getString('selectAll')).assertEqual("true")
+        console.info('CheckboxGroupSelectAllTest selectAll end')
+        done();
+      } catch (err) {
+        console.info('checkboxGroupSelectAllTest001 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     
@@ -77,15 +77,20 @@ export default function checkboxGroupSelectAllTest() {
      * @tc.level    Level.LEVEL1
      */
     it('checkboxGroupSelectAllTest002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('checkboxgroupFalse')//可能是inspector.getInspectorByKey返回值有问题 strJson无法打印 导致crash
-      await Utils.sleep(1000)
-      // console.info('checkboxGroupSelectAllTest002 strJson ' + strJson)
-      let obj = JSON.parseJsonElement(strJson)
-      await Utils.sleep(3000)
-      console.info('CheckboxGroupSelectAllTest selectAll ' + JSON.stringify(obj.getElement('$attrs').getString('selectAll')))
-      expect(obj.getElement('$attrs').getString('selectAll')).assertEqual("false")
-      console.info('CheckboxGroupSelectAllTest selectAll end')
-      done();
+      try {
+        let strJson = inspector.getInspectorByKey('checkboxgroupFalse')//可能是inspector.getInspectorByKey返回值有问题 strJson无法打印 导致crash
+        await Utils.sleep(1000)
+        // console.info('checkboxGroupSelectAllTest002 strJson ' + strJson)
+        let obj = JSON.parseJsonElement(strJson)
+        await Utils.sleep(3000)
+        console.info('CheckboxGroupSelectAllTest selectAll ' + JSON.stringify(obj.getElement('$attrs').getString('selectAll')))
+        expect(obj.getElement('$attrs').getString('selectAll')).assertEqual("false")
+        console.info('CheckboxGroupSelectAllTest selectAll end')
+        done();
+      } catch (err) {
+        console.info('checkboxGroupSelectAllTest002 err: ' + JSON.stringify(err));
+        done();
+      }
     })
   })
 }

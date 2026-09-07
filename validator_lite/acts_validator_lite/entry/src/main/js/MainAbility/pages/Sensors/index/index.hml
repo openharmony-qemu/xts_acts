@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="content-title">
+        <text class="title">Sensors</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+    <list class="scroll-area">
+        <list-item class="litem" style="height:230px;">
+            <text class="box-title">振动 Vibrator</text>
+            <text class="tip" show="{{!vibSupported}}">{{ vibTip }}</text>
+            <text class="result">{{ vibState }}</text>
+            <text class="status-text">状态: {{ vibMsg }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="短振动" onclick="vibrateShort" />
+                <input class="opBtn" type="button" value="长振动" onclick="vibrateLong" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{vibPassColor}};" type="button" value="pass" onclick="passVib" />
+                <input class="pfBtn" style="background-color:{{vibFailColor}};" type="button" value="fail" onclick="failVib" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:230px;">
+            <text class="box-title">加速度 Accelerometer</text>
+            <text class="tip" show="{{!sensorSupported}}">{{ accTip }}</text>
+            <text class="result">x:{{accX}} y:{{accY}} z:{{accZ}}</text>
+            <text class="status-text">状态: {{ accMsg }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="订阅" onclick="subAcc" />
+                <input class="opBtn" type="button" value="取消" onclick="unsubAcc" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{accPassColor}};" type="button" value="pass" onclick="passAcc" />
+                <input class="pfBtn" style="background-color:{{accFailColor}};" type="button" value="fail" onclick="failAcc" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:230px;">
+            <text class="box-title">陀螺仪 Gyroscope</text>
+            <text class="tip" show="{{!sensorSupported}}">{{ gyroTip }}</text>
+            <text class="result">x:{{gyroX}} y:{{gyroY}} z:{{gyroZ}}</text>
+            <text class="status-text">状态: {{ gyroMsg }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="订阅" onclick="subGyro" />
+                <input class="opBtn" type="button" value="取消" onclick="unsubGyro" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{gyroPassColor}};" type="button" value="pass" onclick="passGyro" />
+                <input class="pfBtn" style="background-color:{{gyroFailColor}};" type="button" value="fail" onclick="failGyro" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:230px;">
+            <text class="box-title">计步 StepCounter</text>
+            <text class="tip" show="{{!sensorSupported}}">{{ stepTip }}</text>
+            <text class="result">steps:{{steps}}</text>
+            <text class="status-text">状态: {{ stepMsg }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="订阅" onclick="subStep" />
+                <input class="opBtn" type="button" value="取消" onclick="unsubStep" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{stepPassColor}};" type="button" value="pass" onclick="passStep" />
+                <input class="pfBtn" style="background-color:{{stepFailColor}};" type="button" value="fail" onclick="failStep" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:230px;">
+            <text class="box-title">气压 Barometer</text>
+            <text class="tip" show="{{!sensorSupported}}">{{ baroTip }}</text>
+            <text class="result">pressure:{{pressure}}</text>
+            <text class="status-text">状态: {{ baroMsg }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="订阅" onclick="subBaro" />
+                <input class="opBtn" type="button" value="取消" onclick="unsubBaro" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{baroPassColor}};" type="button" value="pass" onclick="passBaro" />
+                <input class="pfBtn" style="background-color:{{baroFailColor}};" type="button" value="fail" onclick="failBaro" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:230px;">
+            <text class="box-title">心率 HeartRate</text>
+            <text class="tip" show="{{!sensorSupported}}">{{ hrTip }}</text>
+            <text class="result">heartRate:{{heartRate}}</text>
+            <text class="status-text">状态: {{ hrMsg }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="订阅" onclick="subHr" />
+                <input class="opBtn" type="button" value="取消" onclick="unsubHr" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{hrPassColor}};" type="button" value="pass" onclick="passHr" />
+                <input class="pfBtn" style="background-color:{{hrFailColor}};" type="button" value="fail" onclick="failHr" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:230px;">
+            <text class="box-title">佩戴 OnBodyState</text>
+            <text class="tip" show="{{!sensorSupported}}">{{ onBodyTip }}</text>
+            <text class="result">value:{{onBody}}</text>
+            <text class="status-text">状态: {{ onBodyMsg }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="订阅" onclick="subOnBody" />
+                <input class="opBtn" type="button" value="取消" onclick="unsubOnBody" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{onPassColor}};" type="button" value="pass" onclick="passOn" />
+                <input class="pfBtn" style="background-color:{{onFailColor}};" type="button" value="fail" onclick="failOn" />
+            </div>
+        </list-item>
+    </list>
+    <div class="bottom-bt">
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

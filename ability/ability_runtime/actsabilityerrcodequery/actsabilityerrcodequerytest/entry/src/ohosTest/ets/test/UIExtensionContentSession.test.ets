@@ -51,6 +51,7 @@ export default function UIExtensionContentSessionTest() {
       }
     })
     beforeEach(() => {
+      router.clear();
     })
     afterEach(() => {
     })

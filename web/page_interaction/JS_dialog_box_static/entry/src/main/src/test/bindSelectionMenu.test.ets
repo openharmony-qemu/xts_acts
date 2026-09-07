@@ -26,7 +26,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function webViewSrollableJsunit() {
+export default function webViewSrollableJsunit(): void {
   describe('bindSelectionMenuTest',  (): void => {
     beforeAll(async (): Promise<void> => {
       await Utils.msSleep(2000)

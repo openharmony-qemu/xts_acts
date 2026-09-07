@@ -28,7 +28,7 @@ struct Index {
           .fontWeight(FontWeight.Bold)
           .onClick(() => {
           })
-        Button("openNotificationSettingsWithResult")
+        Button('openNotificationSettingsWithResult')
           .onClick(() => {
             try {
               let context = getContext(this) as common.UIAbilityContext;

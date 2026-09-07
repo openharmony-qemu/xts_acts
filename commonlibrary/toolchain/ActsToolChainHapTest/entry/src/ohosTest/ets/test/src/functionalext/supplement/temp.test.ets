@@ -27,7 +27,7 @@ export default function FunctionalextSupplementTempTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("mktemp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mktemp");
+      const result: number = await testNapi.runTest("mktemp");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function FunctionalextSupplementTempTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("mkostemp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mkostemp");
+      const result: number = await testNapi.runTest("mkostemp");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function FunctionalextSupplementTempTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("mkostemps", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mkostemps");
+      const result: number = await testNapi.runTest("mkostemps");
       expect(result).assertEqual(0);
       done();
     });
@@ -66,7 +66,7 @@ export default function FunctionalextSupplementTempTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("mkstemp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mkstemp");
+      const result: number = await testNapi.runTest("mkstemp");
       expect(result).assertEqual(0);
       done();
     });
@@ -79,7 +79,7 @@ export default function FunctionalextSupplementTempTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("mkstemps", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mkstemps");
+      const result: number = await testNapi.runTest("mkstemps");
       expect(result).assertEqual(0);
       done();
     });

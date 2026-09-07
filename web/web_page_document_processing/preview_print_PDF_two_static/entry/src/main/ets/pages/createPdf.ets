@@ -74,11 +74,10 @@ struct WebComponent {
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     console.info('web page valueChangeCallBack');
-    if (eventData != null) {
-      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , RecordData>)?.['ACTION'] != null) {
-        this.str = '' + (eventData.data as Record<string , RecordData>)?.['ACTION'];
-      }
+    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+    const data = eventData.data as Record<string , RecordData>;
+    if (data != null && data['ACTION'] != null) {
+      this.str = '' + data['ACTION'];
     }
   }
 
@@ -97,7 +96,7 @@ struct WebComponent {
                     if (!context || !context.filesDir) {
                       console.error('获取 UIAbilityContext 失败！');
                     }
-                    let filePath = context?.filesDir + '/test.pdf';
+                    let filePath = context.filesDir + '/test.pdf';
                     let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
                     const buffer = result.pdfArrayBuffer()
                     fs.write(file.fd, result.pdfArrayBuffer().buffer)
@@ -114,7 +113,7 @@ struct WebComponent {
                       fs.closeSync(file);
                     });
                   } catch (resError) {
-                    console.error(`ErrorCode: ${(resError as BusinessError).code},  Message: ${(resError as BusinessError).message}`);
+                    console.error(`ErrorCode: ${resError.code},  Message: ${resError.message}`);
                   }
                 });
               break;
@@ -143,7 +142,7 @@ struct WebComponent {
                       fs.closeSync(file);
                     });
                   } catch (resError) {
-                    console.error(`ErrorCode: ${(resError as BusinessError).code},  Message: ${(resError as BusinessError).message}`);
+                    console.error(`ErrorCode: ${resError.code},  Message: ${resError.message}`);
                   }
                 })
 
@@ -173,7 +172,7 @@ struct WebComponent {
                       fs.closeSync(file);
                     });
                   } catch (resError) {
-                    console.error(`ErrorCode: ${(resError as BusinessError).code},  Message: ${(resError as BusinessError).message}`);
+                    console.error(`ErrorCode: ${resError.code},  Message: ${resError.message}`);
                   }
                 })
 
@@ -200,7 +199,7 @@ struct WebComponent {
                       fs.closeSync(file);
                     });
                   } catch (resError) {
-                    console.error(`ErrorCode: ${(resError as BusinessError).code},  Message: ${(resError as BusinessError).message}`);
+                    console.error(`ErrorCode: ${resError.code},  Message: ${resError.message}`);
                     Utils.emitEvent(resError.code, 20260326);
                   }
                 })
@@ -231,7 +230,7 @@ struct WebComponent {
                       fs.closeSync(file);
                     });
                   } catch (resError) {
-                    console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                    console.error(`ErrorCode: ${resError.code},  Message: ${resError.message}`);
                   }
                 });
 
@@ -261,7 +260,7 @@ struct WebComponent {
                       fs.closeSync(file);
                     });
                   } catch (resError) {
-                    console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                    console.error(`ErrorCode: ${resError.code},  Message: ${resError.message}`);
                   }
                 });
 
@@ -288,7 +287,7 @@ struct WebComponent {
                       fs.closeSync(file);
                     });
                   } catch (resError) {
-                    console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                    console.error(`ErrorCode: ${resError.code},  Message: ${resError.message}`);
                     Utils.emitEvent(resError.code, 20260329);
                   }
                 });

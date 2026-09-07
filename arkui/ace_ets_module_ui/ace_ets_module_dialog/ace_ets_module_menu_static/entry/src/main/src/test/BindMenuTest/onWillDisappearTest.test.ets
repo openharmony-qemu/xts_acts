@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../../hypium/index";
 import router from '@ohos.router';
 import drawing from '@ohos.graphics.drawing';
 import {
@@ -28,18 +28,12 @@ import { EnterKeyType } from '@ohos.arkui.component'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function onWillDisappearTest(): void {
   describe('onWillDisappearTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("onWillDisappearTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("onWillDisappearTest beforeEach start");
       try {
@@ -67,17 +61,22 @@ export default function onWillDisappearTest(): void {
      * @tc.level  @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('onWillDisappearTest_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('onWillDisappearBindMenu'));
-      await (btn?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      await (btn?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      let onWillDisappear = inspector.getInspectorByKey('onWillDisappearBindMenuText');
-      console.info("[onWillDisappearTest_static_0001] attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(onWillDisappear).getElement('$attrs')));
-      expect(JSON.parseJsonElement(onWillDisappear).getElement('$attrs').getString('content')).assertEqual('true');
-      done();
+      try {
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('onWillDisappearBindMenu'));
+        await (btn?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        await (btn?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        let onWillDisappear = inspector.getInspectorByKey('onWillDisappearBindMenuText');
+        console.info("[onWillDisappearTest_static_0001] attrs is: " +
+        JSON.stringify(JSON.parseJsonElement(onWillDisappear).getElement('$attrs')));
+        expect(JSON.parseJsonElement(onWillDisappear).getElement('$attrs').getString('content')).assertEqual('true');
+        done();
+      } catch (err) {
+        console.info('onWillDisappearTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

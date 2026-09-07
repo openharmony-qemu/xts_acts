@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON, Component } from '@kit.TestKit';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 const PAGE_URL = 'MainAbility/pages/Select/SelectMenuBackgroundBlurStyleOptions';
@@ -47,16 +46,20 @@ async function navigatePage(): Promise<void> {
 
 export default function SelectMenuBackgroundBlurStyleOptionsTest(): void {
   describe('SelectMenuBackgroundBlurStyleOptionsTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.select.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
-      await navigatePage();
+      try {
+        await navigatePage();
+      } catch (err) {
+        console.info('SelectMenuBackgroundBlurStyleOptionsTest beforeEach err: ' + JSON.stringify(err));
+      }
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('SelectMenuBackgroundBlurStyleOptionsTest afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**
@@ -67,13 +70,19 @@ export default function SelectMenuBackgroundBlurStyleOptionsTest(): void {
      */
     it('SelectMenuBackgroundBlurStyleOptions_0001', Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        const driver = Driver.create();
-        await CommonFunc.sleep(SLEEP_TIME);
-        await openSelectMenu(driver);
-        const menuItem = await driver.findComponent(ON.text('aaa'));
-        expect(!!menuItem).assertEqual(true);
-        await openSelectMenu(driver);
-        done();
+        try {
+          const driver = Driver.create();
+          await CommonFunc.sleep(SLEEP_TIME);
+          await openSelectMenu(driver);
+          const menuItem = await driver.findComponent(ON.text('aaa'));
+          expect(!!menuItem).assertEqual(true);
+          await openSelectMenu(driver);
+          done();
+        } catch (error) {
+          console.error('SelectMenuBackgroundBlurStyleOptions_0001 error: ' + error);
+          expect().assertFail();
+          done();
+        }
       });
 
     /**
@@ -84,15 +93,21 @@ export default function SelectMenuBackgroundBlurStyleOptionsTest(): void {
      */
     it('SelectMenuBackgroundBlurStyleOptions_0002', Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        const driver = Driver.create();
-        await CommonFunc.sleep(SLEEP_TIME);
-        await clickById(driver, 'btnBlurEmpty');
-        await CommonFunc.sleep(SLEEP_TIME);
-        await openSelectMenu(driver);
-        const menuItem = await driver.findComponent(ON.text('aaa'));
-        expect(!!menuItem).assertEqual(true);
-        await openSelectMenu(driver);
-        done();
+        try {
+          const driver = Driver.create();
+          await CommonFunc.sleep(SLEEP_TIME);
+          await clickById(driver, 'btnBlurEmpty');
+          await CommonFunc.sleep(SLEEP_TIME);
+          await openSelectMenu(driver);
+          const menuItem = await driver.findComponent(ON.text('aaa'));
+          expect(!!menuItem).assertEqual(true);
+          await openSelectMenu(driver);
+          done();
+        } catch (error) {
+          console.error('SelectMenuBackgroundBlurStyleOptions_0002 error: ' + error);
+          expect().assertFail();
+          done();
+        }
       });
 
     /**
@@ -103,15 +118,21 @@ export default function SelectMenuBackgroundBlurStyleOptionsTest(): void {
      */
     it('SelectMenuBackgroundBlurStyleOptions_0003', Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        const driver = Driver.create();
-        await CommonFunc.sleep(SLEEP_TIME);
-        await clickById(driver, 'btnBlurBlue');
-        await CommonFunc.sleep(SLEEP_TIME);
-        await openSelectMenu(driver);
-        const menuItem = await driver.findComponent(ON.text('aaa'));
-        expect(!!menuItem).assertEqual(true);
-        await openSelectMenu(driver);
-        done();
+        try {
+          const driver = Driver.create();
+          await CommonFunc.sleep(SLEEP_TIME);
+          await clickById(driver, 'btnBlurBlue');
+          await CommonFunc.sleep(SLEEP_TIME);
+          await openSelectMenu(driver);
+          const menuItem = await driver.findComponent(ON.text('aaa'));
+          expect(!!menuItem).assertEqual(true);
+          await openSelectMenu(driver);
+          done();
+        } catch (error) {
+          console.error('SelectMenuBackgroundBlurStyleOptions_0003 error: ' + error);
+          expect().assertFail();
+          done();
+        }
       });
   });
 }

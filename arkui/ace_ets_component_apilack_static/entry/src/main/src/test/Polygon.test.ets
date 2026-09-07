@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function polygonNewJsunit() {
+export default function polygonNewJsunit(): void {
   describe('polygonNewJsunit', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/polygon',
@@ -59,7 +59,7 @@ export default function polygonNewJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("polygonNe after each called");
     });
@@ -73,7 +73,7 @@ export default function polygonNewJsunit() {
      * @tc.desc     testpolygonNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testpolygonNe_static_0001', Level.LEVEL0, async () => {
+it('testpolygonNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('polygonNe testpolygonNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polygon');
@@ -94,7 +94,7 @@ it('testpolygonNe_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testpolygonNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testpolygonNe_static_0002', Level.LEVEL0, async () => {
+it('testpolygonNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('polygonNe testpolygonNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polygon');

@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 const PAGE = 'MainAbility/pages/segmentButtonEnableStateAnimation/segmentButtonEnableStateAnimation';
 const TITLE_ID = 'segV1_title';
@@ -39,12 +38,6 @@ function arkuiNewErr(suite: string, phase: string, detail: string): void {
 
 export default function SegmentButtonEnableStateAnimationTest() {
   describe('SegmentButtonEnableStateAnimationTest', () => {
-    beforeAll(async (): Promise<void> => {
-      arkuiNewLog(SUITE, 'beforeAll', 'start');
-      await UtilsTest.startAbility('com.arkui.ace.dialog.button.static', 'EntryAbility');
-      arkuiNewLog(SUITE, 'beforeAll', 'end');
-    });
-
     beforeEach(async (): Promise<void> => {
       arkuiNewLog(SUITE, 'beforeEach', 'start');
       AppStorage.delete('segV1_mounted');
@@ -68,7 +61,11 @@ export default function SegmentButtonEnableStateAnimationTest() {
       arkuiNewLog(SUITE, 'afterEach', 'start');
 
       AppStorage.delete('segV1_mounted');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        arkuiNewErr(SUITE, 'afterEach', 'sleep err: ' + JSON.stringify(err));
+      }
       arkuiNewLog(SUITE, 'afterEach', 'end');
     });
 

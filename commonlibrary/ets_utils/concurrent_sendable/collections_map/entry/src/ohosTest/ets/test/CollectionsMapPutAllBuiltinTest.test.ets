@@ -290,5 +290,30 @@ export default function CollectionsMapPutAllBuiltinTest(): void {
         console.info(`${caseName}, test end`);
         done();
       });
+
+    /**
+     * @tc.name   collectionsMapPutAllTest4600
+     * @tc.number SUB_COLLECTIONS_MAP_PUT_ALL_4600
+     * @tc.desc   Verify putAll with explicitly declared BuiltinMap type source.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('collectionsMapPutAllTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (): void => {
+        const caseName: string = 'collectionsMapPutAllTest4600';
+        console.info(`${caseName}, test start`);
+        const map: collections.Map<number, string> = new collections.Map<number, string>();
+        const source: Map<number, string> = new Map<number, string>();
+        source.set(1, 'a');
+        source.set(2, 'b');
+        source.set(3, 'c');
+        map.putAll(source);
+        expect(map.size).assertEqual(3);
+        expect(map.get(1)).assertEqual('a');
+        expect(map.get(2)).assertEqual('b');
+        expect(map.get(3)).assertEqual('c');
+        console.info(`${caseName}, test end`);
+      });
   });
 }

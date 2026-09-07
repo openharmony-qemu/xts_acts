@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import {
   Driver, ON
@@ -27,13 +26,6 @@ import {
 
 export default function BackdropBlurTest() {
   describe('BackdropBlurTest', () => {
-    beforeAll(async ():Promise<void> => {
-      console.info("BackdropBlurTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("BackdropBlurTest beforeEach start");
       let options: router.RouterOptions = {
@@ -63,9 +55,17 @@ export default function BackdropBlurTest() {
     it('BackdropBlurUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[BackdropBlurUndefinedTest_static_0100] START');
       let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BackdropBlurUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('backdropBlurTest');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BackdropBlurUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
 
       console.info("[BackdropBlurUndefinedTest_static_0100] $attrs: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -74,11 +74,23 @@ export default function BackdropBlurTest() {
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backdropBlur')))
         .assertEqual('0');
       let changeBtn = await driver.findComponent(ON.id('backdropBlur_change'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (changeBtn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('BackdropBlurUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BackdropBlurUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       console.info("[BackdropBlurUndefinedTest_static_0100] click backdropBlur");
       strJson = inspector.getInspectorByKey('backdropBlurTest');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BackdropBlurUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backdropBlur')))
         .assertEqual('10');
       console.info('[backgroundColorUndefinedTest_static_0600] END');

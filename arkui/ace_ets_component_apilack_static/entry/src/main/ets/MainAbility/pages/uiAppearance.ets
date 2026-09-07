@@ -64,11 +64,11 @@ const TAG = 'ets_apiLack_add';
 struct uiAppearanceSetDarkMode {
   xcomponentController: XComponentController = new XComponentController()
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear uiAppearanceSetDarkMode start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear uiAppearanceSetDarkMode end`)
   }
 

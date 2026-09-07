@@ -2519,7 +2519,7 @@ export default function TaskTimeout2Test() {
       group.addTask(taskGroupAsyncRunnerInnerLongOuterShort);
       group.addTask(taskGroupAsyncRunnerInnerLongOuterShort);
       group.addTask(taskGroupAsyncRunnerInnerLongOuterShort);
-      taskpool.execute(group, { timeout: 100 }).catch((e: BusinessError) => {
+      taskpool.execute(group, { timeout: 80 }).catch((e: BusinessError) => {
         console.log(`${caseName} catch: ${e}`);
         isTerminate = true;
         expect(e.code).assertEqual(10200070);

@@ -55,26 +55,33 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_0100] START');
-      let driver: Driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('WaterFlow');
+      try {
+        console.info('[WaterFlowUndefinedTest_static_0100] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('WaterFlow');
 
-      console.info("[WaterFlowUndefinedTest_static_0100] $attrs: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[WaterFlowUndefinedTest_static_0100] friction: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('friction')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('friction')))
-        .assertEqual('20');
+        console.info("[WaterFlowUndefinedTest_static_0100] $attrs: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[WaterFlowUndefinedTest_static_0100] friction: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('friction')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('friction')))
+          .assertEqual('20');
 
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_friction'));
-      await (changeBtn?.click() as Promise<void>);
-      console.info("[WaterFlowUndefinedTest_static_0100] click WaterFlow_friction");
-      strJson = inspector.getInspectorByKey('WaterFlow');
-      await CommonFunc.sleep(1000);
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('friction')) !== "20.0")
-        .assertTrue();
-      console.info('[WaterFlowUndefinedTest_static_0100] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_friction'));
+        await (changeBtn?.click() as Promise<void>);
+        console.info("[WaterFlowUndefinedTest_static_0100] click WaterFlow_friction");
+        strJson = inspector.getInspectorByKey('WaterFlow');
+        await CommonFunc.sleep(1000);
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('friction')) !== "20.0")
+          .assertTrue();
+        console.info('[WaterFlowUndefinedTest_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -84,28 +91,35 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_0200] START');
-      let driver: Driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('WaterFlow');
+      try {
+        console.info('[WaterFlowUndefinedTest_static_0200] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('WaterFlow');
 
-      console.info("[WaterFlowUndefinedTest_static_0200] $attrs: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[WaterFlowUndefinedTest_static_0200] enableScrollInteraction: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('enableScrollInteraction')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('enableScrollInteraction')))
-        .assertEqual('false');
+        console.info("[WaterFlowUndefinedTest_static_0200] $attrs: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[WaterFlowUndefinedTest_static_0200] enableScrollInteraction: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('enableScrollInteraction')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('enableScrollInteraction')))
+          .assertEqual('false');
 
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_enableScrollInteraction'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info("[WaterFlowUndefinedTest_static_0200] click WaterFlow_enableScrollInteraction");
-      strJson = inspector.getInspectorByKey('WaterFlow');
-      await CommonFunc.sleep(1000);
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('enableScrollInteraction')))
-        .assertEqual('true');
-      await CommonFunc.sleep(1000);
-      console.info('[WaterFlowUndefinedTest_static_0200] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_enableScrollInteraction'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info("[WaterFlowUndefinedTest_static_0200] click WaterFlow_enableScrollInteraction");
+        strJson = inspector.getInspectorByKey('WaterFlow');
+        await CommonFunc.sleep(1000);
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('enableScrollInteraction')))
+          .assertEqual('true');
+        await CommonFunc.sleep(1000);
+        console.info('[WaterFlowUndefinedTest_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -115,27 +129,34 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_0300] START');
-      let driver: Driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('WaterFlow');
+      try {
+        console.info('[WaterFlowUndefinedTest_static_0300] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('WaterFlow');
 
-      console.info("[WaterFlowUndefinedTest_static_0300] $attrs: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[WaterFlowUndefinedTest_static_0300] layoutDirection: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('layoutDirection')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('layoutDirection')))
-        .assertEqual('\"FlexDirection.Row\"');
+        console.info("[WaterFlowUndefinedTest_static_0300] $attrs: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[WaterFlowUndefinedTest_static_0300] layoutDirection: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('layoutDirection')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('layoutDirection')))
+          .assertEqual('\"FlexDirection.Row\"');
 
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_layoutDirection'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info("[WaterFlowUndefinedTest_static_0300] click WaterFlow_layoutDirection");
-      strJson = inspector.getInspectorByKey('WaterFlow');
-      await CommonFunc.sleep(1000);
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('layoutDirection')))
-        .assertEqual('\"FlexDirection.Column\"');
-      console.info('[WaterFlowUndefinedTest_static_0300] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_layoutDirection'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info("[WaterFlowUndefinedTest_static_0300] click WaterFlow_layoutDirection");
+        strJson = inspector.getInspectorByKey('WaterFlow');
+        await CommonFunc.sleep(1000);
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('layoutDirection')))
+          .assertEqual('\"FlexDirection.Column\"');
+        console.info('[WaterFlowUndefinedTest_static_0300] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_0300] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -145,27 +166,34 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_0400] START');
-      let driver: Driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('WaterFlow');
+      try {
+        console.info('[WaterFlowUndefinedTest_static_0400] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('WaterFlow');
 
-      console.info("[WaterFlowUndefinedTest_static_0400] $attrs: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[WaterFlowUndefinedTest_static_0400] rowsGap: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsGap')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsGap')))
-        .assertEqual('\"10.00vp\"');
+        console.info("[WaterFlowUndefinedTest_static_0400] $attrs: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[WaterFlowUndefinedTest_static_0400] rowsGap: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsGap')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsGap')))
+          .assertEqual('\"10.00vp\"');
 
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_rowsGapValue'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info("[WaterFlowUndefinedTest_static_0400] click WaterFlow_rowsGapValue");
-      strJson = inspector.getInspectorByKey('WaterFlow');
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsGap')))
-        .assertEqual('\"0.00vp\"');
-      await CommonFunc.sleep(1000);
-      console.info('[WaterFlowUndefinedTest_static_0400] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_rowsGapValue'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info("[WaterFlowUndefinedTest_static_0400] click WaterFlow_rowsGapValue");
+        strJson = inspector.getInspectorByKey('WaterFlow');
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsGap')))
+          .assertEqual('\"0.00vp\"');
+        await CommonFunc.sleep(1000);
+        console.info('[WaterFlowUndefinedTest_static_0400] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_0400] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -175,27 +203,34 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_0500] START');
-      let driver: Driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('WaterFlow');
+      try {
+        console.info('[WaterFlowUndefinedTest_static_0500] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('WaterFlow');
 
-      console.info("[WaterFlowUndefinedTest_static_0500] $attrs: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[WaterFlowUndefinedTest_static_0500] columnsGap: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsGap')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsGap')))
-        .assertEqual('\"10.00vp\"');
+        console.info("[WaterFlowUndefinedTest_static_0500] $attrs: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[WaterFlowUndefinedTest_static_0500] columnsGap: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsGap')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsGap')))
+          .assertEqual('\"10.00vp\"');
 
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_columnsGapValue'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info("[WaterFlowUndefinedTest_static_0500] click WaterFlow_columnsGapValue");
-      strJson = inspector.getInspectorByKey('WaterFlow');
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsGap')))
-        .assertEqual('\"0.00vp\"');
-      await CommonFunc.sleep(1000);
-      console.info('[WaterFlowUndefinedTest_static_0500] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_columnsGapValue'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info("[WaterFlowUndefinedTest_static_0500] click WaterFlow_columnsGapValue");
+        strJson = inspector.getInspectorByKey('WaterFlow');
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsGap')))
+          .assertEqual('\"0.00vp\"');
+        await CommonFunc.sleep(1000);
+        console.info('[WaterFlowUndefinedTest_static_0500] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_0500] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -205,30 +240,37 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_0600] START');
-      let driver: Driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('WaterFlow');
+      try {
+        console.info('[WaterFlowUndefinedTest_static_0600] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('WaterFlow');
 
-      console.info("[WaterFlowUndefinedTest_static_0600] $attrs: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[WaterFlowUndefinedTest_static_0600] rowsTemplate: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsTemplate')));
-      let changeBtn_layoutDirection = await driver.findComponent(ON.id('WaterFlow_layoutDirection'));
-      await (changeBtn_layoutDirection?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsTemplate')))
-        .assertEqual('\"1fr 1fr\"');
+        console.info("[WaterFlowUndefinedTest_static_0600] $attrs: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[WaterFlowUndefinedTest_static_0600] rowsTemplate: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsTemplate')));
+        let changeBtn_layoutDirection = await driver.findComponent(ON.id('WaterFlow_layoutDirection'));
+        await (changeBtn_layoutDirection?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsTemplate')))
+          .assertEqual('\"1fr 1fr\"');
 
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_rowsTemplateValue'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info("[WaterFlowUndefinedTest_static_0600] click WaterFlow_rowsTemplateValue");
-      strJson = inspector.getInspectorByKey('WaterFlow');
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsTemplate')))
-        .assertEqual('\"\"');
-      await CommonFunc.sleep(1000);
-      console.info('[WaterFlowUndefinedTest_static_0600] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_rowsTemplateValue'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info("[WaterFlowUndefinedTest_static_0600] click WaterFlow_rowsTemplateValue");
+        strJson = inspector.getInspectorByKey('WaterFlow');
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsTemplate')))
+          .assertEqual('\"\"');
+        await CommonFunc.sleep(1000);
+        console.info('[WaterFlowUndefinedTest_static_0600] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_0600] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -238,27 +280,34 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_0700] START');
-      let driver: Driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('WaterFlow');
+      try {
+        console.info('[WaterFlowUndefinedTest_static_0700] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('WaterFlow');
 
-      console.info("[WaterFlowUndefinedTest_static_0700] $attrs: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[WaterFlowUndefinedTest_static_0700] columnsTemplate: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsTemplate')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsTemplate')))
-        .assertEqual('\"1fr 1fr\"');
+        console.info("[WaterFlowUndefinedTest_static_0700] $attrs: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[WaterFlowUndefinedTest_static_0700] columnsTemplate: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsTemplate')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsTemplate')))
+          .assertEqual('\"1fr 1fr\"');
 
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_columnsTemplateValue'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info("[WaterFlowUndefinedTest_static_0700] click WaterFlow_columnsTemplateValue");
-      strJson = inspector.getInspectorByKey('WaterFlow');
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsTemplate')))
-        .assertEqual('\"\"');
-      await CommonFunc.sleep(1000);
-      console.info('[WaterFlowUndefinedTest_static_0700] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_columnsTemplateValue'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info("[WaterFlowUndefinedTest_static_0700] click WaterFlow_columnsTemplateValue");
+        strJson = inspector.getInspectorByKey('WaterFlow');
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsTemplate')))
+          .assertEqual('\"\"');
+        await CommonFunc.sleep(1000);
+        console.info('[WaterFlowUndefinedTest_static_0700] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_0700] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -268,27 +317,34 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_0800] START');
-      let driver: Driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('WaterFlow');
+      try {
+        console.info('[WaterFlowUndefinedTest_static_0800] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('WaterFlow');
 
-      console.info("[WaterFlowUndefinedTest_static_0800] $attrs: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[WaterFlowUndefinedTest_static_0800] itemConstraintSize: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('itemConstraintSize')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('itemConstraintSize')))
-        .assertEqual('\"{\\"minWidth\\":\\"100.00vp\\",\\"minHeight\\":\\"100.00vp\\",\\"maxWidth\\":\\"100.00vp\\",\\"maxHeight\\":\\"100.00vp\\"}\"');
+        console.info("[WaterFlowUndefinedTest_static_0800] $attrs: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[WaterFlowUndefinedTest_static_0800] itemConstraintSize: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('itemConstraintSize')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('itemConstraintSize')))
+          .assertEqual('\"{\\"minWidth\\":\\"100.00vp\\",\\"minHeight\\":\\"100.00vp\\",\\"maxWidth\\":\\"100.00vp\\",\\"maxHeight\\":\\"100.00vp\\"}\"');
 
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_itemConstraintSizeValue'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info("[WaterFlowUndefinedTest_static_0800] click WaterFlow_itemConstraintSizeValue");
-      strJson = inspector.getInspectorByKey('WaterFlow');
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('itemConstraintSize')))
-        .assertEqual('\"0\"');
-      await CommonFunc.sleep(1000);
-      console.info('[WaterFlowUndefinedTest_static_0800] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_itemConstraintSizeValue'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info("[WaterFlowUndefinedTest_static_0800] click WaterFlow_itemConstraintSizeValue");
+        strJson = inspector.getInspectorByKey('WaterFlow');
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('itemConstraintSize')))
+          .assertEqual('\"0\"');
+        await CommonFunc.sleep(1000);
+        console.info('[WaterFlowUndefinedTest_static_0800] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_0800] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -298,27 +354,34 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_0900] START');
-      let driver: Driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('WaterFlow');
+      try {
+        console.info('[WaterFlowUndefinedTest_static_0900] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('WaterFlow');
 
-      console.info("[WaterFlowUndefinedTest_static_0900] $attrs: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[WaterFlowUndefinedTest_static_0900] nestedScroll: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('nestedScroll')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('nestedScroll')))
-        .assertEqual('{"scrollForward":"NestedScrollMode.SELF_FIRST","scrollBackward":"NestedScrollMode.SELF_FIRST"}');
+        console.info("[WaterFlowUndefinedTest_static_0900] $attrs: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[WaterFlowUndefinedTest_static_0900] nestedScroll: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('nestedScroll')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('nestedScroll')))
+          .assertEqual('{"scrollForward":"NestedScrollMode.SELF_FIRST","scrollBackward":"NestedScrollMode.SELF_FIRST"}');
 
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_nestedScrollValue'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info("[WaterFlowUndefinedTest_static_0900] click WaterFlow_nestedScrollValue");
-      strJson = inspector.getInspectorByKey('WaterFlow');
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('nestedScroll')))
-        .assertEqual('{"scrollForward":"NestedScrollMode.SELF_ONLY","scrollBackward":"NestedScrollMode.SELF_ONLY"}');
-      await CommonFunc.sleep(1000);
-      console.info('[WaterFlowUndefinedTest_static_0900] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_nestedScrollValue'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info("[WaterFlowUndefinedTest_static_0900] click WaterFlow_nestedScrollValue");
+        strJson = inspector.getInspectorByKey('WaterFlow');
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('nestedScroll')))
+          .assertEqual('{"scrollForward":"NestedScrollMode.SELF_ONLY","scrollBackward":"NestedScrollMode.SELF_ONLY"}');
+        await CommonFunc.sleep(1000);
+        console.info('[WaterFlowUndefinedTest_static_0900] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_0900] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -328,27 +391,34 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_1000] START');
-      let driver: Driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('WaterFlow');
+      try {
+        console.info('[WaterFlowUndefinedTest_static_1000] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('WaterFlow');
 
-      console.info("[WaterFlowUndefinedTest_static_1000] $attrs: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[WaterFlowUndefinedTest_static_1000] cachedCount: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedCount')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedCount')))
-        .assertEqual('2');
+        console.info("[WaterFlowUndefinedTest_static_1000] $attrs: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[WaterFlowUndefinedTest_static_1000] cachedCount: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedCount')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedCount')))
+          .assertEqual('2');
 
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_cachedCountValue'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info("[WaterFlowUndefinedTest_static_1000] click WaterFlow_cachedCountValue");
-      strJson = inspector.getInspectorByKey('WaterFlow');
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedCount')))
-        .assertEqual('1');
-      await CommonFunc.sleep(1000);
-      console.info('[WaterFlowUndefinedTest_static_1000] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_cachedCountValue'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info("[WaterFlowUndefinedTest_static_1000] click WaterFlow_cachedCountValue");
+        strJson = inspector.getInspectorByKey('WaterFlow');
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedCount')))
+          .assertEqual('1');
+        await CommonFunc.sleep(1000);
+        console.info('[WaterFlowUndefinedTest_static_1000] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_1000] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -358,41 +428,48 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
     */
     it('WaterFlowUndefinedTest_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_1100] START');
-      let driver: Driver = Driver.create()
-      let resetTextBtn = await driver.findComponent(ON.id('WaterFlow_resetText'));
-      let waterFlow = await driver.findComponent(ON.type('WaterFlow'));
+      try {
+        console.info('[WaterFlowUndefinedTest_static_1100] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let resetTextBtn = await driver.findComponent(ON.id('WaterFlow_resetText'));
+        let waterFlow = await driver.findComponent(ON.type('WaterFlow'));
 
-      let changeBtn_bottom = await driver.findComponent(ON.id('WaterFlow_toBottom'));
-      let changeBtn_top = await driver.findComponent(ON.id('WaterFlow_toTop'));
-      let text = await driver.findComponent(ON.id('WaterFlow_text'));
-      await CommonFunc.sleep(1000);
-      expect(await (text?.getText() as Promise<String>)).assertEqual('onReachStart');
-      await (changeBtn_bottom?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      expect(await (text?.getText() as Promise<String>)).assertEqual('onReachEnd');
-      await CommonFunc.sleep(1000);
-      await (resetTextBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn_bottom = await driver.findComponent(ON.id('WaterFlow_toBottom'));
+        let changeBtn_top = await driver.findComponent(ON.id('WaterFlow_toTop'));
+        let text = await driver.findComponent(ON.id('WaterFlow_text'));
+        await CommonFunc.sleep(1000);
+        expect(await (text?.getText() as Promise<String>)).assertEqual('onReachStart');
+        await (changeBtn_bottom?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        expect(await (text?.getText() as Promise<String>)).assertEqual('onReachEnd');
+        await CommonFunc.sleep(1000);
+        await (resetTextBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      let changeBtn_start = await driver.findComponent(ON.id('WaterFlow_onReachStart'));
-      await (changeBtn_start?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info("[WaterFlowUndefinedTest_static_1100] click WaterFlow_onReachStart");
-      await (changeBtn_top?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      expect(await (text?.getText() as Promise<String>)).assertEqual('Hello World');
-      await CommonFunc.sleep(1000);
+        let changeBtn_start = await driver.findComponent(ON.id('WaterFlow_onReachStart'));
+        await (changeBtn_start?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info("[WaterFlowUndefinedTest_static_1100] click WaterFlow_onReachStart");
+        await (changeBtn_top?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        expect(await (text?.getText() as Promise<String>)).assertEqual('Hello World');
+        await CommonFunc.sleep(1000);
 
-      let changeBtn_end = await driver.findComponent(ON.id('WaterFlow_onReachEnd'));
-      await (changeBtn_end?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info("[WaterFlowUndefinedTest_static_1100] click WaterFlow_onReachEnd");
-      await (changeBtn_bottom?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      expect(await (text?.getText() as Promise<String>)).assertEqual('Hello World');
-      console.info('[WaterFlowUndefinedTest_static_1100] END');
-      done();
+        let changeBtn_end = await driver.findComponent(ON.id('WaterFlow_onReachEnd'));
+        await (changeBtn_end?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info("[WaterFlowUndefinedTest_static_1100] click WaterFlow_onReachEnd");
+        await (changeBtn_bottom?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        expect(await (text?.getText() as Promise<String>)).assertEqual('Hello World');
+        console.info('[WaterFlowUndefinedTest_static_1100] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_1100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -402,31 +479,38 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_1200] START');
-      let driver: Driver = Driver.create()
-      let resetTextBtn = await driver.findComponent(ON.id('WaterFlow_resetText'));
-      let waterFlow = await driver.findComponent(ON.type('WaterFlow'));
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_onScrollIndexValue'));
-      await (changeBtn?.click() as Promise<void>);
+      try {
+        console.info('[WaterFlowUndefinedTest_static_1200] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let resetTextBtn = await driver.findComponent(ON.id('WaterFlow_resetText'));
+        let waterFlow = await driver.findComponent(ON.type('WaterFlow'));
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_onScrollIndexValue'));
+        await (changeBtn?.click() as Promise<void>);
 
-      let changeBtn_bottom = await driver.findComponent(ON.id('WaterFlow_toBottom'));
-      let changeBtn_top = await driver.findComponent(ON.id('WaterFlow_toTop'));
-      await (changeBtn_top?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let text = await driver.findComponent(ON.id('WaterFlow_text'));
-      await CommonFunc.sleep(1000);
-      expect(await (text?.getText() as Promise<String>)).assertEqual('onScrollIndex');
-      await CommonFunc.sleep(1000);
-      await (resetTextBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn_bottom = await driver.findComponent(ON.id('WaterFlow_toBottom'));
+        let changeBtn_top = await driver.findComponent(ON.id('WaterFlow_toTop'));
+        await (changeBtn_top?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let text = await driver.findComponent(ON.id('WaterFlow_text'));
+        await CommonFunc.sleep(1000);
+        expect(await (text?.getText() as Promise<String>)).assertEqual('onScrollIndex');
+        await CommonFunc.sleep(1000);
+        await (resetTextBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      await (changeBtn?.click() as Promise<void>);
-      console.info("[WaterFlowUndefinedTest_static_1200] click WaterFlow_onScrollIndexValue");
-      await (changeBtn_bottom?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      expect(await (text?.getText() as Promise<String>)).assertEqual('Hello World');
-      console.info('[WaterFlowUndefinedTest_static_1200] END');
-      done();
+        await (changeBtn?.click() as Promise<void>);
+        console.info("[WaterFlowUndefinedTest_static_1200] click WaterFlow_onScrollIndexValue");
+        await (changeBtn_bottom?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        expect(await (text?.getText() as Promise<String>)).assertEqual('Hello World');
+        console.info('[WaterFlowUndefinedTest_static_1200] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_1200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -436,26 +520,33 @@ export default function WaterFlowUndefinedTest() {
      * @tc.level    Level.LEVEL1
      */
     it('WaterFlowUndefinedTest_static_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[WaterFlowUndefinedTest_static_1300] START');
-      let driver: Driver = Driver.create()
-      let resetTextBtn = await driver.findComponent(ON.id('WaterFlow_resetText'));
-      let waterFlow = await driver.findComponent(ON.type('WaterFlow'));
+      try {
+        console.info('[WaterFlowUndefinedTest_static_1300] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let resetTextBtn = await driver.findComponent(ON.id('WaterFlow_resetText'));
+        let waterFlow = await driver.findComponent(ON.type('WaterFlow'));
 
-      let changeBtn_top = await driver.findComponent(ON.id('WaterFlow_flingTop'));
-      await (changeBtn_top?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
-      let text = await driver.findComponent(ON.id('WaterFlow_text'));
-      expect(await (text?.getText() as Promise<String>)).assertEqual('onScrollFrameBegin');
-      await (resetTextBtn?.click() as Promise<void>);
+        let changeBtn_top = await driver.findComponent(ON.id('WaterFlow_flingTop'));
+        await (changeBtn_top?.click() as Promise<void>);
+        await CommonFunc.sleep(500);
+        let text = await driver.findComponent(ON.id('WaterFlow_text'));
+        expect(await (text?.getText() as Promise<String>)).assertEqual('onScrollFrameBegin');
+        await (resetTextBtn?.click() as Promise<void>);
 
-      let changeBtn = await driver.findComponent(ON.id('WaterFlow_onScrollFrameBeginValue'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
-      console.info("[WaterFlowUndefinedTest_static_1300] click WaterFlow_onScrollFrameBeginValue");
-      await (changeBtn_top?.click() as Promise<void>);
-      expect(await (text?.getText() as Promise<String>)).assertEqual('Hello World');
-      console.info('[WaterFlowUndefinedTest_static_1300] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('WaterFlow_onScrollFrameBeginValue'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(500);
+        console.info("[WaterFlowUndefinedTest_static_1300] click WaterFlow_onScrollFrameBeginValue");
+        await (changeBtn_top?.click() as Promise<void>);
+        expect(await (text?.getText() as Promise<String>)).assertEqual('Hello World');
+        console.info('[WaterFlowUndefinedTest_static_1300] END');
+        done();
+      } catch (error) {
+        console.error('[WaterFlowUndefinedTest_static_1300] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

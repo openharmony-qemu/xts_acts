@@ -243,7 +243,7 @@ struct SaveButton_2 {
             .minFontSize(this.minFontSize)
             .enabled(this.enable)
             .id(this.saveId)
-            .key("keySave11")
+            .id("keySave11")
         }.width(100)
       }.width('100%').alignItems(HorizontalAlign.Center)
     }.height('100%')

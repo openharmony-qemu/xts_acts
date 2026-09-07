@@ -1436,7 +1436,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
       }
     }
     // errorCode_03300 - setWindowPrivacyMode param is null promise
-    if (want.action == 'Sub_UIExtensionContentSession_errorCode_3300') {
+    if (want.action == 'SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3300') {
       try {
         session.setWindowPrivacyMode(null)
           .then(() => {
@@ -1473,7 +1473,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
       }
     }
     // errorCode_03400 - setWindowPrivacyMode param is null callback
-    if (want.action == 'Sub_UIExtensionContentSession_errorCode_3400') {
+    if (want.action == 'SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3400') {
       try {
         session.setWindowPrivacyMode(null, (err: BusinessError) => {
           if (err) {

@@ -1035,6 +1035,30 @@ static napi_value CheckHidebugStoragePressureCritical(napi_env env, napi_callbac
     return ret;
 }
 
+static napi_value CheckHidebugFailure(napi_env env, napi_callback_info info)
+{
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_FAILURE == 11400430;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugInvalidMaxAsyncNestingDepth(napi_env env, napi_callback_info info)
+{
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_INVALID_MAX_ASYNC_NESTING_DEPTH == 11400431;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugInvalidMaxAsyncTaskStackDepth(napi_env env, napi_callback_info info)
+{
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_INVALID_MAX_ASYNC_TASK_STACK_DEPTH == 11400432;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
 // 内存监听回调函数
 static bool memDumpListenerCallback1(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg)
 {
@@ -1611,6 +1635,11 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testInvalidContext", nullptr, TestInvalidContext, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testZeroContext", nullptr, TestZeroContext, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testNestedPushPop", nullptr, TestNestedPushPop, nullptr, nullptr, nullptr, napi_default, nullptr},
+        { "checkHidebugFailure", nullptr, CheckHidebugFailure, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "checkHidebugInvalidMaxAsyncNestingDepth", nullptr, CheckHidebugInvalidMaxAsyncNestingDepth, nullptr,
+        nullptr, nullptr, napi_default, nullptr },
+        { "checkHidebugInvalidMaxAsyncTaskStackDepth", nullptr, CheckHidebugInvalidMaxAsyncTaskStackDepth, nullptr,
+        nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

@@ -13,10 +13,6 @@
  * limitations under the License.
  */
 
-import { hilog } from '@kit.PerformanceAnalysisKit';
-
-const DOMAIN = 0x0000;
-
 @Entry
 @Component
 struct Index {
@@ -26,11 +22,10 @@ struct Index {
     Row() {
       Column() {
         Text(this.message)
-          .fontSize($r('app.float.page_text_font_size'))
+          .fontSize(50)
           .fontWeight(FontWeight.Bold)
           .onClick(() => {
-            this.message = 'Welcome';
-            hilog.info(DOMAIN, 'testTag', 'Test');
+            console.info('Button clicked');
           })
       }
       .width('100%')

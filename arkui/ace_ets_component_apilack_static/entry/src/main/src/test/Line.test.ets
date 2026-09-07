@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function lineNeJsunit() {
+export default function lineNeJsunit(): void {
   describe('lineNeTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/line',
@@ -59,7 +59,7 @@ export default function lineNeJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("lineNe after each called");
     });
@@ -73,7 +73,7 @@ export default function lineNeJsunit() {
      * @tc.desc     testlineNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testlineNe_static_0001', Level.LEVEL0, async () => {
+it('testlineNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('lineNe testlineNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('line1');
@@ -94,7 +94,7 @@ it('testlineNe_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testlineNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testlineNe_static_0002', Level.LEVEL0, async () => {
+it('testlineNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('lineNe testlineNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('line1');
@@ -115,7 +115,7 @@ it('testlineNe_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testlineNe_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testlineNe_static_0005', Level.LEVEL0, async () => {
+it('testlineNe_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('lineNe testlineNe0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('line2');
@@ -136,7 +136,7 @@ it('testlineNe_static_0005', Level.LEVEL0, async () => {
      * @tc.desc     testlineNe_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testlineNe_static_0006', Level.LEVEL0, async () => {
+it('testlineNe_static_0006', Level.LEVEL0, async (): Promise<void> => {
       console.info('lineNe testlineNe0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('line2');

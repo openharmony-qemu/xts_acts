@@ -14,24 +14,17 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from './Util.test';
 
 export default function foregroundEffect() {
 
   describe('foregroundEffect', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("foregroundEffect beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api12.static", "EntryAbility")
-
-    });
     beforeEach(async () => {
       console.info("foregroundEffect beforeEach start");
       let options: router.RouterOptions = {
@@ -53,7 +46,11 @@ export default function foregroundEffect() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('foregroundEffect afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("foregroundEffect after each called");
     });
 
@@ -68,16 +65,28 @@ export default function foregroundEffect() {
 it('foregroundEffect_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('foregroundEffect_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('foregroundEffect sleep err: ' + JSON.stringify(err));
+      }
       let button1 = await driver.findComponent(ON.id('foregroundEffect1'));
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('foregroundEffect sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('foregroundEffect1');
       console.info("foregroundEffect_0100 obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("foregroundEffect_0100 " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('foregroundEffect')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('foregroundEffect').getString('radius'))
         .assertEqual('20.000000');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('foregroundEffect sleep err: ' + JSON.stringify(err));
+      }
 
       console.info('[foregroundEffect_0100] END');
       done();

@@ -40,6 +40,7 @@ export default function ListScrollSnapAnimationSpeedTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/list/listScrollSnapAnimationSpeed',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ListScrollSnapAnimationSpeedTest page error:' + err);

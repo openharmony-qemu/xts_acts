@@ -57,30 +57,37 @@ export default function tabsOnContentWillChangeIndex12JsunitTest() {
      * @tc.level    Level.LEVEL0
      */
 it('tabsOnContentWillChangeJsunitTest_static_0120', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('tabsOnContentWillChangeJsunitTest_static_0120 START');
-      let driver = Driver.create();
-      // get the content rect value
-      let tabsRect = CommonFunc.getComponentRect('content12x');
-      console.info("tabsOnContentWillChangeJsunitTest_static_0120  test rect value " + tabsRect.left + "," +
-      tabsRect.right + "," +
-      tabsRect.top + "," + tabsRect.bottom);
-      // swipe index 0 -1  right swipe to left
-      await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) +
-        (tabsRect.right - tabsRect.left) * 0.2 + tabsRect.left)).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + (tabsRect.bottom - tabsRect.top) / 2 +
-        tabsRect.top)).toInt(), (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
-          (tabsRect.right - tabsRect.left) * 0.1 + tabsRect.left)).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + (tabsRect.bottom - tabsRect.top) / 2 +
-        tabsRect.top)).toInt());
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('tabsOnContentWillChangeJsunitTest_static_0120 START');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        // get the content rect value
+        let tabsRect = CommonFunc.getComponentRect('content12x');
+        console.info("tabsOnContentWillChangeJsunitTest_static_0120  test rect value " + tabsRect.left + "," +
+        tabsRect.right + "," +
+        tabsRect.top + "," + tabsRect.bottom);
+        // swipe index 0 -1  right swipe to left
+        await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) +
+          (tabsRect.right - tabsRect.left) * 0.2 + tabsRect.left)).toInt(),
+          (Math.round((AppStorage.get<number>("winTop") ?? 0) + (tabsRect.bottom - tabsRect.top) / 2 +
+          tabsRect.top)).toInt(), (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
+            (tabsRect.right - tabsRect.left) * 0.1 + tabsRect.left)).toInt(),
+          (Math.round((AppStorage.get<number>("winTop") ?? 0) + (tabsRect.bottom - tabsRect.top) / 2 +
+          tabsRect.top)).toInt());
+        await CommonFunc.sleep(2000);
 
-      let text01 = await driver.findComponent(ON.text("首页的内容"))
-      let texContent = await (text01?.getText() as Promise<string>);
-      expect(texContent).assertEqual("首页的内容");
+        let text01 = await driver.findComponent(ON.text("首页的内容"))
+        let texContent = await (text01?.getText() as Promise<string>);
+        expect(texContent).assertEqual("首页的内容");
 
-      console.info('tabsOnContentWillChangeJsunitTest_static_0120  END');
-      done();
+        console.info('tabsOnContentWillChangeJsunitTest_static_0120  END');
+        done();
 
+      } catch (error) {
+        console.error('[tabsOnContentWillChangeJsunitTest_static_0120] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 

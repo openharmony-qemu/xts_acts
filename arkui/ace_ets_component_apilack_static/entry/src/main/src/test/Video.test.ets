@@ -32,13 +32,13 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function videoOnFullscreenChangeJsunit() {
+export default function videoOnFullscreenChangeJsunit(): void {
   describe('videoOnFullscreenChangeTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/video',
@@ -59,7 +59,7 @@ export default function videoOnFullscreenChangeJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("videoOnFullscreenChange after each called");
     });
@@ -73,7 +73,7 @@ export default function videoOnFullscreenChangeJsunit() {
      * @tc.desc     testvideoOnFullscreenChange_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0001', Level.LEVEL0, async () => {
+it('testvideoOnFullscreenChange_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -94,7 +94,7 @@ it('testvideoOnFullscreenChange_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testvideoOnFullscreenChange_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0002', Level.LEVEL0, async () => {
+it('testvideoOnFullscreenChange_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -115,7 +115,7 @@ it('testvideoOnFullscreenChange_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testvideoOnFullscreenChange_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0003', Level.LEVEL0, async () => {
+it('testvideoOnFullscreenChange_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -137,7 +137,7 @@ it('testvideoOnFullscreenChange_static_0003', Level.LEVEL0, async () => {
      * @tc.desc     testvideoOnFullscreenChange_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0004', Level.LEVEL0, async () => {
+it('testvideoOnFullscreenChange_static_0004', Level.LEVEL0, async (): Promise<void> => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -158,7 +158,7 @@ it('testvideoOnFullscreenChange_static_0004', Level.LEVEL0, async () => {
      * @tc.desc     testvideoOnFullscreenChange_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0005', Level.LEVEL0, async () => {
+it('testvideoOnFullscreenChange_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -179,7 +179,7 @@ it('testvideoOnFullscreenChange_static_0005', Level.LEVEL0, async () => {
      * @tc.desc     testvideoOnFullscreenChange_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0006', Level.LEVEL0, async () => {
+it('testvideoOnFullscreenChange_static_0006', Level.LEVEL0, async (): Promise<void> => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -201,7 +201,7 @@ it('testvideoOnFullscreenChange_static_0006', Level.LEVEL0, async () => {
      * @tc.desc     testvideoOnFullscreenChange_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0007', Level.LEVEL0, async () => {
+it('testvideoOnFullscreenChange_static_0007', Level.LEVEL0, async (): Promise<void> => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -223,7 +223,7 @@ it('testvideoOnFullscreenChange_static_0007', Level.LEVEL0, async () => {
      * @tc.desc     testvideoOnFullscreenChange_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0009', Level.LEVEL0, async () => {
+it('testvideoOnFullscreenChange_static_0009', Level.LEVEL0, async (): Promise<void> => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -244,7 +244,7 @@ it('testvideoOnFullscreenChange_static_0009', Level.LEVEL0, async () => {
      * @tc.desc     testvideoOnFullscreenChange_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0010', Level.LEVEL0, async () => {
+it('testvideoOnFullscreenChange_static_0010', Level.LEVEL0, async (): Promise<void> => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -265,7 +265,7 @@ it('testvideoOnFullscreenChange_static_0010', Level.LEVEL0, async () => {
      * @tc.desc     testvideoOnFullscreenChange_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0011', Level.LEVEL0, async () => {
+it('testvideoOnFullscreenChange_static_0011', Level.LEVEL0, async (): Promise<void> => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0011 START');
       let innerEvent: events_emitter.InnerEvent = {
         eventId: 60227,
@@ -275,8 +275,8 @@ it('testvideoOnFullscreenChange_static_0011', Level.LEVEL0, async () => {
         try {
           console.info("callback success");
           console.info("eventData.data.result result is: " +
-          ((eventData.data) as ESObject)?.getProperty('result').toString());
-          expect(((eventData.data) as ESObject)?.getProperty('result').toString()).assertEqual("success");
+          ((eventData.data) as ESObject).getProperty('result').toString());
+          expect(((eventData.data) as ESObject).getProperty('result').toString()).assertEqual("success");
           console.info("video_101 end: ");
         } catch (err) {
           console.info("video_101 on events_emitter err : " + JSON.stringify(err));

@@ -14,32 +14,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function buttonTypeTest() {
   describe('buttonTypeTest', () => {
-    beforeAll(async (): Promise<void> => {
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.dialog.api15.static", "EntryAbility")
-      
-    })
 
     beforeEach(async () => {
       console.info("buttonTypeTest beforeEach start");
@@ -79,7 +64,11 @@ export default function buttonTypeTest() {
      */
 it('buttonTypeTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('buttonTypeTest_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn = inspector.getInspectorByKey('btn');
       console.info("buttonTypeTest_static_0100 component obj is: " + JSON.stringify(btn));
       console.info("[buttonTypeTest_static_0100] title: " + JSON.stringify(JSON.parseJsonElement(btn).getElement('$attrs').getString('type')));

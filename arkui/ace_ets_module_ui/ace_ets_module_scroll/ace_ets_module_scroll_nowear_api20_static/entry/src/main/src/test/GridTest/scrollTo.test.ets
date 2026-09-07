@@ -33,6 +33,7 @@ export default function scrollToTest() {
         if (!('TextLineSpacing' == pages.name)) {
           console.info('get TextLineSpacingTest state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push TextLineSpacingTest page error: ' + err);
@@ -47,23 +48,30 @@ export default function scrollToTest() {
      * @tc.level    Level.LEVEL0
      */
     it('test_scrollTo', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let dragScroll = await driver.findComponent(ON.id('grid_scrollTo_8'));
-      const rect = await (dragScroll?.getBounds() as Promise<Rect>);
-      let bottom = rect.bottom;
-      await CommonFunc.sleep(2000);
-      let oriBtn = await driver.findComponent(ON.id('scrollTo'));
-      await (oriBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
-      let dragScroll1 = await driver.findComponent(ON.id('grid_scrollTo_8'));
-      const rect1 = await (dragScroll1?.getBounds() as Promise<Rect>);
-      let bottom1 = rect1.bottom;
-      console.info('test_scrollTo bottom' + JSON.stringify(bottom));
-      console.info('test_scrollTo bottom1' + JSON.stringify(bottom1));
-      expect((Math.round(bottom - bottom1).toInt()) >= 200)
-        .assertEqual(true);
-      done();
+      try {
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let dragScroll = await driver.findComponent(ON.id('grid_scrollTo_8'));
+        const rect = await (dragScroll?.getBounds() as Promise<Rect>);
+        let bottom = rect.bottom;
+        await CommonFunc.sleep(2000);
+        let oriBtn = await driver.findComponent(ON.id('scrollTo'));
+        await (oriBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(500);
+        let dragScroll1 = await driver.findComponent(ON.id('grid_scrollTo_8'));
+        const rect1 = await (dragScroll1?.getBounds() as Promise<Rect>);
+        let bottom1 = rect1.bottom;
+        console.info('test_scrollTo bottom' + JSON.stringify(bottom));
+        console.info('test_scrollTo bottom1' + JSON.stringify(bottom1));
+        expect((Math.round(bottom - bottom1).toInt()) >= 200)
+          .assertEqual(true);
+        done();
+      } catch (error) {
+        console.error('[test_scrollTo] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }

@@ -46,7 +46,7 @@ import { UtilsTest } from './Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function curvesStepsJsunit() {
+export default function curvesStepsJsunit(): void {
   describe('curvesStepsTest', () => {
 
     /**
@@ -57,7 +57,7 @@ export default function curvesStepsJsunit() {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info('[curvesStepsTest] before each called')
 
       // let result = '';
@@ -76,7 +76,7 @@ export default function curvesStepsJsunit() {
     /**
      * run after testcase
      */
-    afterAll(async () => {
+    afterAll(async (): Promise<void> => {
       console.info('[curvesStepsTest] after each called')
       await Utils.sleep(1000)
     });
@@ -90,7 +90,7 @@ export default function curvesStepsJsunit() {
      * @tc.desc     testcurvesSteps_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testcurvesSteps_static_0001', Level.LEVEL0, async () => {
+it('testcurvesSteps_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('curvesSteps testcurvesSteps0001 START');
       let innerEvent: events_emitter.InnerEvent = {
         eventId: 60229,
@@ -100,8 +100,8 @@ it('testcurvesSteps_static_0001', Level.LEVEL0, async () => {
         try {
           console.info("callback success");
           console.info("curveApi eventData.data.curveApi result is: " +
-          ((eventData.data) as ESObject)?.getProperty('curveApi').toString());
-          expect(((eventData.data) as ESObject)?.getProperty('curveApi').toString()).assertEqual("callBackSuccess");
+          ((eventData.data) as ESObject).getProperty('curveApi').toString());
+          expect(((eventData.data) as ESObject).getProperty('curveApi').toString()).assertEqual("callBackSuccess");
           console.info("curveApi end");
         } catch (err) {
           console.info("curveApi on events_emitter err : " + JSON.stringify(err));

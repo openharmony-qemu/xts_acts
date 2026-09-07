@@ -17,6 +17,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium';
 import { fetchAllOption, getPermission, driveFn, fetchOption, photoKeys, photoType, LOG_TAG } from '../../common';
 import common from '@ohos.app.ability.common';
+import dataSharePredicates from '@ohos.data.dataSharePredicates';
 
 const TAG = LOG_TAG + 'getFirstObject';
 
@@ -181,6 +182,37 @@ export default function getFirstObjectTest() {
       const testNum = 'fetchResult_getFirstObject_callback_003';
       let fetchOps: photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.PHOTO_TYPE, photoType.VIDEO);
       await getFirstObjectCallbackTest(done, fetchOps, testNum);
+    })
+
+    /**
+     * @tc.name   fetchResult_getFirstObject_callback_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_FETCHRESULT_GETFIRSTOBJECT_PROMISE_0007
+     * @tc.desc   getFirstObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fetchResult_getFirstObject_callback_004', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'fetchResult_getFirstObject_callback_004';
+      const errorCode = 14000011;
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let helper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      try{
+        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+        predicates.equalTo('noexist', 'noexist');
+        let fetchOption: photoAccessHelper.FetchOptions = {
+          fetchColumns: [],
+          predicates: predicates
+        }
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        expect(false).assertTrue();
+        done();
+      } catch (error){
+        console.info(`${testNum} failed; error: ${error}`);
+        expect(error.code).assertEqual(String(errorCode));
+        done();
+      }
     })
   })
 }

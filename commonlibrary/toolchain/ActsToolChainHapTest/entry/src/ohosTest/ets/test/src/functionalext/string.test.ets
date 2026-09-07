@@ -27,7 +27,7 @@ export default function FunctionalextStringTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("strlen_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strlen_test");
+      const result: number = await testNapi.runTest("strlen_test");
       expect(result).assertEqual(0);
       done();
     });

@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 
 const PAGE_URL = 'MainAbility/pages/popupBackground/PopupBackgroundBlurStyleOptions';
 const PAGE_NAME = 'PopupBackgroundBlurStyleOptions';
@@ -56,14 +55,19 @@ async function waitForText(label: string): Promise<boolean> {
 
 export default function PopupBackgroundBlurStyleOptionsTest(): void {
   describe('PopupBackgroundBlurStyleOptionsTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.api26.static', 'EntryAbility');
-    });
     beforeEach(async (): Promise<void> => {
-      await navigatePage();
+      try {
+        await navigatePage();
+      } catch (err) {
+        console.info('PopupBackgroundBlurStyleOptionsTest beforeEach err: ' + JSON.stringify(err));
+      }
     });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('PopupBackgroundBlurStyleOptionsTest afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**

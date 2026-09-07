@@ -62,6 +62,7 @@ it('getIndicator_static_0100', Level.LEVEL1, async (done: () => void): Promise<v
       try {
         await CommonFunc.sleep(1000);
         let driver = Driver.create();
+        await CommonFunc.sleep(1000);
         let strJson = inspector.getInspectorByKey('IndicatorComponent_1');
         console.info("[getIndicator_static_0100] component obj is: " +
         JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));

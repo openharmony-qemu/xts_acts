@@ -53,6 +53,22 @@ struct AccelerometerUncalibrated {
       // 打开加速度传感器
       Logger.info(TAG, 'enter')
       try {
+        const sensorList = sensor.getSingleSensorByDeviceSync(sensor.SensorId.ACCELEROMETER_UNCALIBRATED);
+        Logger.info(TAG, `sensorList.length: ${sensorList.length}`);
+        if (sensorList.length > 0) {
+          Logger.info(TAG, `isMockSensor: ${sensorList[0].isMockSensor}`);
+          if (sensorList[0].isMockSensor == true) {
+            this.isHave = false;
+            this.Vue = false;
+            promptAction.showToast({
+              message: '当前设备未校准加速度传感器为模拟传感器'
+            })
+            router.back({
+              url: 'pages/Sensor/Sensor_index',
+              params: { result: 'true ', title: this.name }
+            })
+          }
+        }
         sensor.on(sensor.SensorId.ACCELEROMETER_UNCALIBRATED, (data: sensor.AccelerometerUncalibratedResponse) => {
           this.backCount += 1;
           this.dataX = data.x.toFixed(0)

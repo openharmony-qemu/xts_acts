@@ -27,7 +27,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("execl", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("execl");
+      const result: number = await testNapi.runTest("execl");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("fexecve", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fexecve");
+      const result: number = await testNapi.runTest("fexecve");
       expect(result).assertEqual(0);
       done();
     });
@@ -54,7 +54,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("fexecverely", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fexecverely");
+      const result: number = await testNapi.runTest("fexecverely");
       expect(result).assertEqual(0);
       done();
     });
@@ -67,7 +67,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it('fork', Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest('fork');
+      const result: number = await testNapi.runTest('fork');
       expect(result).assertEqual(0);
       done();
     })
@@ -80,7 +80,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("posix_spawn", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("posix_spawn");
+      const result: number = await testNapi.runTest("posix_spawn");
       expect(result).assertEqual(0);
       done();
     });
@@ -93,7 +93,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("posix_spawnattr_getflags", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("posix_spawnattr_getflags");
+      const result: number = await testNapi.runTest("posix_spawnattr_getflags");
       expect(result).assertEqual(0);
       done();
     });
@@ -106,7 +106,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("posix_spawnattr_getpgroup", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("posix_spawnattr_getpgroup");
+      const result: number = await testNapi.runTest("posix_spawnattr_getpgroup");
       expect(result).assertEqual(0);
       done();
     });
@@ -122,7 +122,7 @@ export default function process_group_test() {
       "posix_spawnattr_getsigdefault",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest("posix_spawnattr_getsigdefault");
+        const result: number = await testNapi.runTest("posix_spawnattr_getsigdefault");
         expect(result).assertEqual(0);
         done();
       },
@@ -136,7 +136,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("posix_spawnattr_getsigmask", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("posix_spawnattr_getsigmask");
+      const result: number = await testNapi.runTest("posix_spawnattr_getsigmask");
       expect(result).assertEqual(0);
       done();
     });
@@ -149,7 +149,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("posix_spawnattr_setflags", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("posix_spawnattr_setflags");
+      const result: number = await testNapi.runTest("posix_spawnattr_setflags");
       expect(result).assertEqual(0);
       done();
     });
@@ -162,7 +162,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("posix_spawnattr_setpgroup", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("posix_spawnattr_setpgroup");
+      const result: number = await testNapi.runTest("posix_spawnattr_setpgroup");
       expect(result).assertEqual(0);
       done();
     });
@@ -178,7 +178,7 @@ export default function process_group_test() {
       "posix_spawnattr_setsigdefault",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest("posix_spawnattr_setsigdefault");
+        const result: number = await testNapi.runTest("posix_spawnattr_setsigdefault");
         expect(result).assertEqual(0);
         done();
       },
@@ -192,7 +192,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("posix_spawnattr_setsigmask", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("posix_spawnattr_setsigmask");
+      const result: number = await testNapi.runTest("posix_spawnattr_setsigmask");
       expect(result).assertEqual(0);
       done();
     });
@@ -205,7 +205,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("posix_spawnp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("posix_spawnp");
+      const result: number = await testNapi.runTest("posix_spawnp");
       expect(result).assertEqual(0);
       done();
     });
@@ -218,7 +218,7 @@ export default function process_group_test() {
      * @tc.level  LEVEL1
      */
     it("waitid", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("waitid");
+      const result: number = await testNapi.runTest("waitid");
       expect(result).assertEqual(0);
       done();
     });
@@ -231,7 +231,7 @@ export default function process_group_test() {
      * @tc.desc   libc-test posix_spawn_file_actions_addopen
      */
     it("posix_spawn_file_actions_addopen", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("posix_spawn_file_actions_addopen");
+      const result: number = await testNapi.runTest("posix_spawn_file_actions_addopen");
       expect(result).assertEqual(0);
       done();
     });

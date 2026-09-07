@@ -13,32 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function showAlertDialogMode() {
   describe('showAlertDialogMode', () => {
-    beforeAll(async (): Promise<void> => {
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.dialog.api15.static", "EntryAbility")
-      
-    })
 
     beforeEach(async () => {
       console.info("showAlertDialogMode beforeEach start");
@@ -77,34 +62,78 @@ export default function showAlertDialogMode() {
      */
 it('showAlertDialogMode_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showAlertDialogMode_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn: Component = ( await driver.findComponent(ON.id('levelMode: OVERLAY')) ) as Component;
-      await ( btn?.click() as Promise<void>);
+      try {
+        await ( btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0100] overlay click');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let btn0: Component = ( await driver.findComponent(ON.id('uniqId: Normal value')) ) as Component;
-      await ( btn0?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn0?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn1: Component = ( await driver.findComponent(ON.id('warningDialog')) ) as Component;
-      await ( btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0100] warningDialog click');
 
       let btn2: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn2 != null).assertTrue();
       console.info('[showAlertDialogMode_static_0100] ok');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn3: Component = ( await driver.findComponent(ON.id('back')) ) as Component;
-      await ( btn3?.click() as Promise<void>);
+      try {
+        await ( btn3?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0100] back');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn4: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn4 != null).assertTrue();
-      await ( btn4?.click() as Promise<void>);
+      try {
+        await ( btn4?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0100] END');
       done();
     });
@@ -120,32 +149,72 @@ it('showAlertDialogMode_static_0100', Level.LEVEL1, async (done: () => void): Pr
      */
 it('showAlertDialogMode_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showAlertDialogMode_static_0200 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn: Component = ( await driver.findComponent(ON.id('levelMode: EMBEDDED')) ) as Component;
-      await ( btn?.click() as Promise<void>);
+      try {
+        await ( btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0200] EMBEDDED click');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let btn0: Component = ( await driver.findComponent(ON.id('uniqId: Normal value')) ) as Component;
-      await ( btn0?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn0?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let btn1: Component = ( await driver.findComponent(ON.id('warningDialog')) ) as Component;
-      await ( btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0200] warningDialog click');
 
       let btn2: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn2 != null).assertTrue();
       console.info('[showAlertDialogMode_static_0200] ok');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn3: Component = ( await driver.findComponent(ON.id('back')) ) as Component;
-      await ( btn3?.click() as Promise<void>);
+      try {
+        await ( btn3?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0200] back');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn4 = await driver.findComponent(ON.text('ok'));
       expect(btn4 != null).assertFalse();
       console.info('[showAlertDialogMode_static_0200] END');
@@ -163,40 +232,82 @@ it('showAlertDialogMode_static_0200', Level.LEVEL1, async (done: () => void): Pr
      */
 it('showAlertDialogMode_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showAlertDialogMode_static_0300 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn: Component = ( await driver.findComponent(ON.id('levelMode: OVERLAY')) ) as Component;
-      await ( btn?.click() as Promise<void>);
+      try {
+        await ( btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0300] OVERLAY click');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let btn0: Component = ( await driver.findComponent(ON.id('uniqId: Abnormal value')) ) as Component;
-      await ( btn0?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn0?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let btn1: Component = ( await driver.findComponent(ON.id('warningDialog')) ) as Component;
-      await ( btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0300] warningDialog click');
 
       let btn2: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn2 != null).assertTrue();
       console.info('[showAlertDialogMode_static_0300] ok');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn3: Component = ( await driver.findComponent(ON.id('back')) ) as Component;
-      await ( btn3?.click() as Promise<void>);
+      try {
+        await ( btn3?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0300] back');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn4: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn4 != null).assertTrue();
-      await ( btn4?.click() as Promise<void>);
+      try {
+        await ( btn4?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0300] END');
       done();
     });
-
-
 
 
 /**
@@ -207,41 +318,82 @@ it('showAlertDialogMode_static_0300', Level.LEVEL1, async (done: () => void): Pr
      */
 it('showAlertDialogMode_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showAlertDialogMode_static_0400 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn: Component = ( await driver.findComponent(ON.id('levelMode: EMBEDDED')) ) as Component;
-      await ( btn?.click() as Promise<void>);
+      try {
+        await ( btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0400] EMBEDDED click');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let btn0: Component = ( await driver.findComponent(ON.id('uniqId: Abnormal value')) ) as Component;
-      await ( btn0?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn0?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let btn1: Component = ( await driver.findComponent(ON.id('warningDialog')) ) as Component;
-      await ( btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0400] warningDialog click');
 
       let btn2: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn2 != null).assertTrue();
       console.info('[showAlertDialogMode_static_0400] ok');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn3: Component = ( await driver.findComponent(ON.id('back')) ) as Component;
-      await ( btn3?.click() as Promise<void>);
+      try {
+        await ( btn3?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0400] back');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn4: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn4 != null).assertTrue();
-      await ( btn4?.click() as Promise<void>);
+      try {
+        await ( btn4?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0400] END');
       done();
     });
-
-
-
 
 
 /**
@@ -252,37 +404,74 @@ it('showAlertDialogMode_static_0400', Level.LEVEL1, async (done: () => void): Pr
      */
 it('showAlertDialogMode_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showAlertDialogMode_static_0500 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
      let btn: Component = ( await driver.findComponent(ON.id('levelMode: EMBEDDED')) ) as Component;
-      await ( btn?.click() as Promise<void>);
+      try {
+        await ( btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0400] EMBEDDED click');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
        let btn0: Component = ( await driver.findComponent(ON.id('uniqId: Normal value')) ) as Component;
-      await ( btn0?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn0?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
 
       let button: Component = (await driver.findComponent(ON.id('imMode: extend'))) as Component;
-      await ( button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let btn1: Component = ( await driver.findComponent(ON.id('warningDialog')) ) as Component;
-      await ( btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0500] warningDialog click');
 
       let btn2: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn2 != null).assertTrue();
       console.info('[showAlertDialogMode_static_0500] ok');
-      await ( btn2?.click() as Promise<void>);
+      try {
+        await ( btn2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0500] END');
       done();
     });
-
-
-
 
 
 /**
@@ -293,35 +482,73 @@ it('showAlertDialogMode_static_0500', Level.LEVEL1, async (done: () => void): Pr
      */
 it('showAlertDialogMode_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showAlertDialogMode_static_0500 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
      let btn: Component = ( await driver.findComponent(ON.id('levelMode: EMBEDDED')) ) as Component;
-      await ( btn?.click() as Promise<void>);
+      try {
+        await ( btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0400] EMBEDDED click');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
        let btn0: Component = ( await driver.findComponent(ON.id('uniqId: Normal value')) ) as Component;
-      await ( btn0?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn0?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let button: Component = ( await driver.findComponent(ON.id('imMode: default')) ) as Component;
-      await ( button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let btn1: Component = ( await driver.findComponent(ON.id('warningDialog')) ) as Component;
-      await ( btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0500] warningDialog click');
 
       let btn2: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn2 != null).assertTrue();
       console.info('[showAlertDialogMode_static_0500] ok');
-      await ( btn2?.click() as Promise<void>);
+      try {
+        await ( btn2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0500] END');
       done();
     });
-
-
 
 
 /**
@@ -332,39 +559,81 @@ it('showAlertDialogMode_static_0600', Level.LEVEL1, async (done: () => void): Pr
      */
 it('showAlertDialogMode_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showAlertDialogMode_static_0700 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn: Component = (await driver.findComponent(ON.id('undefined'))) as Component;
-      await ( btn?.click() as Promise<void>);
+      try {
+        await ( btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0700] overlay click');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let btn0: Component = ( await driver.findComponent(ON.id('uniqId: Normal value')) ) as Component;
-      await ( btn0?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn0?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn1: Component = ( await driver.findComponent(ON.id('warningDialog')) ) as Component;
-      await ( btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0700] warningDialog click');
 
       let btn2: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn2 != null).assertTrue();
       console.info('[showAlertDialogMode_static_0700] ok');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn3: Component = ( await driver.findComponent(ON.id('back')) ) as Component;
-      await ( btn3?.click() as Promise<void>);
+      try {
+        await ( btn3?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0700] back');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn4: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn4 != null).assertTrue();
-      await ( btn4?.click() as Promise<void>);
+      try {
+        await ( btn4?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0700] END');
       done();
     });
-
-
 
 
 /**
@@ -375,34 +644,78 @@ it('showAlertDialogMode_static_0700', Level.LEVEL1, async (done: () => void): Pr
      */
 it('showAlertDialogMode_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showAlertDialogMode_static_0800 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn: Component = ( await driver.findComponent(ON.id('null')) ) as Component;
-      await ( btn?.click() as Promise<void>);
+      try {
+        await ( btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0800] overlay click');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
 
       let btn0: Component = ( await driver.findComponent(ON.id('uniqId: Normal value')) ) as Component;
-      await ( btn0?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn0?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn1: Component = ( await driver.findComponent(ON.id('warningDialog')) ) as Component;
-      await ( btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await ( btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0800] warningDialog click');
 
       let btn2: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn2 != null).assertTrue();
       console.info('[showAlertDialogMode_static_0800] ok');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn3: Component = ( await driver.findComponent(ON.id('back')) ) as Component;
-      await ( btn3?.click() as Promise<void>);
+      try {
+        await ( btn3?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0800] back');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       let btn4: Component = ( await driver.findComponent(ON.text('ok')) ) as Component;
       expect(btn4 != null).assertTrue();
-      await ( btn4?.click() as Promise<void>);
+      try {
+        await ( btn4?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showAlertDialogMode_static_0800] END');
       done();
     });

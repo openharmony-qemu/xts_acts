@@ -62,134 +62,141 @@ export default function tabs_IndexTest() {
      * @tc.level    Level.LEVEL0
      */
 it('testTabsIndexLessThanMin_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsIndexLessThanMin_static_01] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'index', value: -1
-      });
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('Tabs_Index_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      console.info(`[testTabsIndexLessThanMin_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info(`[testTabsIndexLessThanMin_static_01] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barPosition'))}`);
-      console.info(`[testTabsIndexLessThanMin_static_01] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('index'))}`);
-      console.info(`[testTabsIndexLessThanMin_static_01] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getBoolean('scrollable'))}`);
-      console.info(`[testTabsIndexLessThanMin_static_01] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('vertical'))}`);
-      console.info(`[testTabsIndexLessThanMin_static_01] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barMode'))}`);
+      try {
+        console.info('[testTabsIndexLessThanMin_static_01] START');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'index', value: -1
+        });
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('Tabs_Index_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        console.info(`[testTabsIndexLessThanMin_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info(`[testTabsIndexLessThanMin_static_01] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barPosition'))}`);
+        console.info(`[testTabsIndexLessThanMin_static_01] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('index'))}`);
+        console.info(`[testTabsIndexLessThanMin_static_01] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getBoolean('scrollable'))}`);
+        console.info(`[testTabsIndexLessThanMin_static_01] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('vertical'))}`);
+        console.info(`[testTabsIndexLessThanMin_static_01] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barMode'))}`);
 
-      let Tabs_index_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_01');
-      let Tabs_index_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_001');
-      let Tabs_index_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_011');
-      let driver = Driver.create();
-      await driver.swipe((Math.round((Tabs_index_011.right -
-        ((Tabs_index_011.right - Tabs_index_011.left) / 6)))).toInt(),
-        (Math.round(Tabs_index_011.top + ((Tabs_index_011.bottom - Tabs_index_011.top) / 2))).toInt(),
-        (Math.round(Tabs_index_011.left + ((Tabs_index_011.right - Tabs_index_011.left) / 6))).toInt(),
-        (Math.round(Tabs_index_011.top + ((Tabs_index_011.bottom - Tabs_index_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_index_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_002');
-      let Tabs_index_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_012');
-      await driver.swipe((Math.round(Tabs_index_012.right -
-        ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
-        (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt(),
-        (Math.round(Tabs_index_012.left + ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
-        (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_index_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_003');
-      let Tabs_index_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_013');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Yellow');
+        let Tabs_index_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_01');
+        let Tabs_index_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_001');
+        let Tabs_index_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_011');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round((Tabs_index_011.right -
+          ((Tabs_index_011.right - Tabs_index_011.left) / 6)))).toInt(),
+          (Math.round(Tabs_index_011.top + ((Tabs_index_011.bottom - Tabs_index_011.top) / 2))).toInt(),
+          (Math.round(Tabs_index_011.left + ((Tabs_index_011.right - Tabs_index_011.left) / 6))).toInt(),
+          (Math.round(Tabs_index_011.top + ((Tabs_index_011.bottom - Tabs_index_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_index_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_002');
+        let Tabs_index_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_012');
+        await driver.swipe((Math.round(Tabs_index_012.right -
+          ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
+          (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt(),
+          (Math.round(Tabs_index_012.left + ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
+          (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_index_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_003');
+        let Tabs_index_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_013');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Yellow');
 
-      console.info(`[testTabsIndexLessThanMin_static_01] Tabs_index_01.left = ${Tabs_index_01.left}`);
-
-
-      expect(Math.abs(Tabs_index_01.left - Tabs_index_011.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_01.left - Tabs_index_012.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_01.left - Tabs_index_013.left) <= 1).assertTrue();
+        console.info(`[testTabsIndexLessThanMin_static_01] Tabs_index_01.left = ${Tabs_index_01.left}`);
 
 
-      console.info(`[testTabsIndexLessThanMin_static_01] Tabs_index_011.left = ${Tabs_index_011.left}`);
-
-      expect(Math.abs(Tabs_index_011.left - Tabs_index_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_012.left - Tabs_index_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_013.left - Tabs_index_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_011.top - Tabs_index_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_012.top - Tabs_index_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_013.top - Tabs_index_003.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_01.left - Tabs_index_011.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_01.left - Tabs_index_012.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_01.left - Tabs_index_013.left) <= 1).assertTrue();
 
 
-      console.info(`[testTabsIndexLessThanMin_static_01] Tabs_index_011.bottom -
-      Tabs_index_011.top = ${Tabs_index_011.bottom - Tabs_index_011.top}`);
+        console.info(`[testTabsIndexLessThanMin_static_01] Tabs_index_011.left = ${Tabs_index_011.left}`);
+
+        expect(Math.abs(Tabs_index_011.left - Tabs_index_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_012.left - Tabs_index_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_013.left - Tabs_index_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_011.top - Tabs_index_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_012.top - Tabs_index_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_013.top - Tabs_index_003.top) <= 1).assertTrue();
 
 
-      expect(Math.abs(Math.round(Tabs_index_011.bottom - Tabs_index_011.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_012.bottom - Tabs_index_012.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_013.bottom - Tabs_index_013.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-
-      //expect(Math.round(Tabs_index_011.bottom - Tabs_index_011.top)).assertEqual(Math.round(uiContext.vp2px(244)));
-      // expect(Math.round(Tabs_index_012.bottom - Tabs_index_012.top)).assertEqual(Math.round(uiContext.vp2px(244)));
-      //expect(Math.round(Tabs_index_013.bottom - Tabs_index_013.top)).assertEqual(Math.round(uiContext.vp2px(244)));
-      expect(Math.abs(Tabs_index_011.right - Tabs_index_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_012.right - Tabs_index_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_013.right - Tabs_index_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
-
-      console.info(`[testTabsIndexLessThanMin_static_01] Tabs_index_001.bottom -
-      Tabs_index_001.top = ${Tabs_index_001.bottom - Tabs_index_001.top}`);
-
-      expect(Math.abs(Math.round(Tabs_index_001.bottom - Tabs_index_001.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_002.bottom - Tabs_index_002.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_003.bottom - Tabs_index_003.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Tabs_index_001.right - Tabs_index_001.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_002.right - Tabs_index_002.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_003.right - Tabs_index_003.left - uiContext.vp2px(330)) <= 1).assertTrue();
-
-      console.info(`[testTabsIndexLessThanMin_static_01] subGreen.bottom = ${subGreen.bottom}`);
+        console.info(`[testTabsIndexLessThanMin_static_01] Tabs_index_011.bottom -
+        Tabs_index_011.top = ${Tabs_index_011.bottom - Tabs_index_011.top}`);
 
 
-      expect(Math.abs(subGreen.bottom - Tabs_index_001.top) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_011.bottom - Tabs_index_011.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_012.bottom - Tabs_index_012.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_013.bottom - Tabs_index_013.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+
+        //expect(Math.round(Tabs_index_011.bottom - Tabs_index_011.top)).assertEqual(Math.round(uiContext.vp2px(244)));
+        // expect(Math.round(Tabs_index_012.bottom - Tabs_index_012.top)).assertEqual(Math.round(uiContext.vp2px(244)));
+        //expect(Math.round(Tabs_index_013.bottom - Tabs_index_013.top)).assertEqual(Math.round(uiContext.vp2px(244)));
+        expect(Math.abs(Tabs_index_011.right - Tabs_index_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_012.right - Tabs_index_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_013.right - Tabs_index_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+
+        console.info(`[testTabsIndexLessThanMin_static_01] Tabs_index_001.bottom -
+        Tabs_index_001.top = ${Tabs_index_001.bottom - Tabs_index_001.top}`);
+
+        expect(Math.abs(Math.round(Tabs_index_001.bottom - Tabs_index_001.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_002.bottom - Tabs_index_002.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_003.bottom - Tabs_index_003.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+
+        expect(Math.abs(Tabs_index_001.right - Tabs_index_001.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_002.right - Tabs_index_002.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_003.right - Tabs_index_003.left - uiContext.vp2px(330)) <= 1).assertTrue();
+
+        console.info(`[testTabsIndexLessThanMin_static_01] subGreen.bottom = ${subGreen.bottom}`);
 
 
-      console.info(`[testTabsIndexLessThanMin_static_01] subGreen.bottom - subGreen.top = ${subGreen.bottom -
-      subGreen.top}`);
-
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
-        .assertTrue();
+        expect(Math.abs(subGreen.bottom - Tabs_index_001.top) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
 
 
-      console.info('[testTabsIndexLessThanMin_static_01] END');
-      done();
+        console.info(`[testTabsIndexLessThanMin_static_01] subGreen.bottom - subGreen.top = ${subGreen.bottom -
+        subGreen.top}`);
+
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+          .assertTrue();
+
+
+        console.info('[testTabsIndexLessThanMin_static_01] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsIndexLessThanMin_static_01] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
@@ -201,123 +208,130 @@ it('testTabsIndexLessThanMin_static_01', Level.LEVEL0, async (done: () => void):
      * @tc.level    Level.LEVEL0
      */
 it('testTabsIndexNormal_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsIndexNormal_static_02] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'index', value: 1
-      });
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('Tabs_Index_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("1");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      console.info(`[testTabsIndexNormal_static_02] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info(`[testTabsIndexNormal_static_02] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barPosition'))}`);
-      console.info(`[testTabsIndexNormal_static_02] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('index'))}`);
-      console.info(`[testTabsIndexNormal_static_02] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getBoolean('scrollable'))}`);
-      console.info(`[testTabsIndexNormal_static_02] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('vertical'))}`);
-      console.info(`[testTabsIndexNormal_static_02] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barMode'))}`);
-      let driver = Driver.create();
-      let Tabs_index_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_002');
-      let Tabs_index_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_012');
-      await driver.swipe((Math.round(Tabs_index_012.right -
-        ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
-        (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt(),
-        (Math.round(Tabs_index_012.left + ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
-        (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_index_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_003');
-      let Tabs_index_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_013');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Yellow');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'index', value: 0
-      });
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('[testTabsIndexNormal_static_02] START');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'index', value: 1
+        });
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('Tabs_Index_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("1");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        console.info(`[testTabsIndexNormal_static_02] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info(`[testTabsIndexNormal_static_02] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barPosition'))}`);
+        console.info(`[testTabsIndexNormal_static_02] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('index'))}`);
+        console.info(`[testTabsIndexNormal_static_02] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getBoolean('scrollable'))}`);
+        console.info(`[testTabsIndexNormal_static_02] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('vertical'))}`);
+        console.info(`[testTabsIndexNormal_static_02] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barMode'))}`);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let Tabs_index_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_002');
+        let Tabs_index_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_012');
+        await driver.swipe((Math.round(Tabs_index_012.right -
+          ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
+          (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt(),
+          (Math.round(Tabs_index_012.left + ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
+          (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_index_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_003');
+        let Tabs_index_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_013');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Yellow');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'index', value: 0
+        });
+        await CommonFunc.sleep(1000);
 
-      let Tabs_index_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_01');
-      let Tabs_index_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_001');
-      let Tabs_index_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_011');
+        let Tabs_index_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_01');
+        let Tabs_index_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_001');
+        let Tabs_index_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_011');
 
-      console.info(`[testTabsIndexNormal_static_02] Tabs_index_01.left = ${Tabs_index_01.left}`);
-
-
-      expect(Math.abs(Tabs_index_01.left - Tabs_index_011.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_01.left - Tabs_index_012.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_01.left - Tabs_index_013.left) <= 1).assertTrue();
+        console.info(`[testTabsIndexNormal_static_02] Tabs_index_01.left = ${Tabs_index_01.left}`);
 
 
-      console.info(`[testTabsIndexNormal_static_02] Tabs_index_011.left = ${Tabs_index_011.left}`);
-      expect(Math.abs(Tabs_index_011.left - Tabs_index_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_012.left - Tabs_index_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_013.left - Tabs_index_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_011.top - Tabs_index_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_012.top - Tabs_index_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_013.top - Tabs_index_003.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_01.left - Tabs_index_011.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_01.left - Tabs_index_012.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_01.left - Tabs_index_013.left) <= 1).assertTrue();
 
 
-      console.info(`[testTabsIndexNormal_static_02] Tabs_index_011.bottom -
-      Tabs_index_011.top = ${Tabs_index_011.bottom - Tabs_index_011.top}`);
-
-      expect(Math.abs(Math.round(Tabs_index_011.bottom - Tabs_index_011.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_012.bottom - Tabs_index_012.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_013.bottom - Tabs_index_013.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsIndexNormal_static_02] Tabs_index_011.left = ${Tabs_index_011.left}`);
+        expect(Math.abs(Tabs_index_011.left - Tabs_index_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_012.left - Tabs_index_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_013.left - Tabs_index_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_011.top - Tabs_index_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_012.top - Tabs_index_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_013.top - Tabs_index_003.top) <= 1).assertTrue();
 
 
-      expect(Math.abs(Tabs_index_011.right - Tabs_index_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_012.right - Tabs_index_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_013.right - Tabs_index_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        console.info(`[testTabsIndexNormal_static_02] Tabs_index_011.bottom -
+        Tabs_index_011.top = ${Tabs_index_011.bottom - Tabs_index_011.top}`);
 
-      console.info(`[testTabsIndexNormal_static_02] Tabs_index_001.bottom -
-      Tabs_index_001.top = ${Tabs_index_001.bottom - Tabs_index_001.top}`);
-      expect(Math.abs(Math.round(Tabs_index_001.bottom - Tabs_index_001.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_002.bottom - Tabs_index_002.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_003.bottom - Tabs_index_003.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Tabs_index_001.right - Tabs_index_001.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_002.right - Tabs_index_002.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_003.right - Tabs_index_003.left - uiContext.vp2px(330)) <= 1).assertTrue();
-
-      console.info(`[testTabsIndexNormal_static_02] subGreen.bottom = ${subGreen.bottom}`);
-      expect(Math.abs(subGreen.bottom - Tabs_index_001.top) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_011.bottom - Tabs_index_011.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_012.bottom - Tabs_index_012.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_013.bottom - Tabs_index_013.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
 
 
-      console.info(`[testTabsIndexNormal_static_02] subGreen.bottom - subGreen.top = ${subGreen.bottom -
-      subGreen.top}`);
+        expect(Math.abs(Tabs_index_011.right - Tabs_index_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_012.right - Tabs_index_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_013.right - Tabs_index_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsIndexNormal_static_02] Tabs_index_001.bottom -
+        Tabs_index_001.top = ${Tabs_index_001.bottom - Tabs_index_001.top}`);
+        expect(Math.abs(Math.round(Tabs_index_001.bottom - Tabs_index_001.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_002.bottom - Tabs_index_002.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_003.bottom - Tabs_index_003.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
 
-      done();
+        expect(Math.abs(Tabs_index_001.right - Tabs_index_001.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_002.right - Tabs_index_002.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_003.right - Tabs_index_003.left - uiContext.vp2px(330)) <= 1).assertTrue();
+
+        console.info(`[testTabsIndexNormal_static_02] subGreen.bottom = ${subGreen.bottom}`);
+        expect(Math.abs(subGreen.bottom - Tabs_index_001.top) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
+
+
+        console.info(`[testTabsIndexNormal_static_02] subGreen.bottom - subGreen.top = ${subGreen.bottom -
+        subGreen.top}`);
+
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+          .assertTrue();
+
+        done();
+      } catch (error) {
+        console.error('[testTabsIndexNormal_static_02] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
@@ -329,131 +343,138 @@ it('testTabsIndexNormal_static_02', Level.LEVEL0, async (done: () => void): Prom
      * @tc.level    Level.LEVEL0
      */
 it('testTabsIndexMoreThanMax_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsIndexMoreThanMax_static_03] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'index', value: 3
-      });
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('Tabs_Index_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      console.info(`[testTabsIndexMoreThanMax_static_03] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info(`[testTabsIndexMoreThanMax_static_03] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barPosition'))}`);
-      console.info(`[testTabsIndexMoreThanMax_static_03] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('index'))}`);
-      console.info(`[testTabsIndexMoreThanMax_static_03] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getBoolean('scrollable'))}`);
-      console.info(`[testTabsIndexMoreThanMax_static_03] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('vertical'))}`);
-      console.info(`[testTabsIndexMoreThanMax_static_03] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barMode'))}`);
+      try {
+        console.info('[testTabsIndexMoreThanMax_static_03] START');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'index', value: 3
+        });
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('Tabs_Index_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        console.info(`[testTabsIndexMoreThanMax_static_03] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info(`[testTabsIndexMoreThanMax_static_03] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barPosition'))}`);
+        console.info(`[testTabsIndexMoreThanMax_static_03] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('index'))}`);
+        console.info(`[testTabsIndexMoreThanMax_static_03] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getBoolean('scrollable'))}`);
+        console.info(`[testTabsIndexMoreThanMax_static_03] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('vertical'))}`);
+        console.info(`[testTabsIndexMoreThanMax_static_03] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barMode'))}`);
 
-      let Tabs_index_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_01');
-      let Tabs_index_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_001');
-      let Tabs_index_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_011');
-      let driver = Driver.create();
-      await driver.swipe((Math.round(Tabs_index_011.right -
-        ((Tabs_index_011.right - Tabs_index_011.left) / 6))).toInt(),
-        (Math.round(Tabs_index_011.top + ((Tabs_index_011.bottom - Tabs_index_011.top) / 2))).toInt(),
-        (Math.round(Tabs_index_011.left + ((Tabs_index_011.right - Tabs_index_011.left) / 6))).toInt(),
-        (Math.round(Tabs_index_011.top + ((Tabs_index_011.bottom - Tabs_index_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_index_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_002');
-      let Tabs_index_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_012');
-      await driver.swipe((Math.round(Tabs_index_012.right -
-        ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
-        (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt(),
-        (Math.round(Tabs_index_012.left + ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
-        (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_index_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_003');
-      let Tabs_index_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_013');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Yellow');
+        let Tabs_index_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_01');
+        let Tabs_index_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_001');
+        let Tabs_index_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_011');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(Tabs_index_011.right -
+          ((Tabs_index_011.right - Tabs_index_011.left) / 6))).toInt(),
+          (Math.round(Tabs_index_011.top + ((Tabs_index_011.bottom - Tabs_index_011.top) / 2))).toInt(),
+          (Math.round(Tabs_index_011.left + ((Tabs_index_011.right - Tabs_index_011.left) / 6))).toInt(),
+          (Math.round(Tabs_index_011.top + ((Tabs_index_011.bottom - Tabs_index_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_index_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_002');
+        let Tabs_index_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_012');
+        await driver.swipe((Math.round(Tabs_index_012.right -
+          ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
+          (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt(),
+          (Math.round(Tabs_index_012.left + ((Tabs_index_012.right - Tabs_index_012.left) / 6))).toInt(),
+          (Math.round(Tabs_index_012.top + ((Tabs_index_012.bottom - Tabs_index_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_index_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_003');
+        let Tabs_index_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_013');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_Index_Yellow');
 
-      console.info(`[testTabsIndexMoreThanMax_static_03] Tabs_index_01.left = ${Tabs_index_01.left}`);
+        console.info(`[testTabsIndexMoreThanMax_static_03] Tabs_index_01.left = ${Tabs_index_01.left}`);
 
-      expect(Math.abs(Tabs_index_01.left - Tabs_index_011.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_01.left - Tabs_index_012.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_01.left - Tabs_index_013.left) <= 1).assertTrue();
-
-
-      console.info(`[testTabsIndexMoreThanMax_static_03] Tabs_index_011.left = ${Tabs_index_011.left}`);
-
-      expect(Math.abs(Tabs_index_011.left - Tabs_index_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_012.left - Tabs_index_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_013.left - Tabs_index_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_011.top - Tabs_index_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_012.top - Tabs_index_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_013.top - Tabs_index_003.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_01.left - Tabs_index_011.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_01.left - Tabs_index_012.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_01.left - Tabs_index_013.left) <= 1).assertTrue();
 
 
-      console.info(`[testTabsIndexMoreThanMax_static_03] Tabs_index_011.bottom -
-      Tabs_index_011.top = ${Tabs_index_011.bottom - Tabs_index_011.top}`);
+        console.info(`[testTabsIndexMoreThanMax_static_03] Tabs_index_011.left = ${Tabs_index_011.left}`);
 
-      expect(Math.abs(Math.round(Tabs_index_011.bottom - Tabs_index_011.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_012.bottom - Tabs_index_012.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_013.bottom - Tabs_index_013.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-
-
-      expect(Math.abs(Tabs_index_011.right - Tabs_index_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_012.right - Tabs_index_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_013.right - Tabs_index_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
-
-      console.info(`[testTabsIndexMoreThanMax_static_03] Tabs_index_001.bottom -
-      Tabs_index_001.top = ${Tabs_index_001.bottom - Tabs_index_001.top}`);
-
-      expect(Math.abs(Math.round(Tabs_index_001.bottom - Tabs_index_001.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_002.bottom - Tabs_index_002.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_index_003.bottom - Tabs_index_003.top) - Math.round(uiContext.vp2px(244))) <= 1)
-        .assertTrue();
+        expect(Math.abs(Tabs_index_011.left - Tabs_index_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_012.left - Tabs_index_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_013.left - Tabs_index_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_011.top - Tabs_index_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_012.top - Tabs_index_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_013.top - Tabs_index_003.top) <= 1).assertTrue();
 
 
-      expect(Math.abs(Tabs_index_001.right - Tabs_index_001.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_002.right - Tabs_index_002.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_index_003.right - Tabs_index_003.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        console.info(`[testTabsIndexMoreThanMax_static_03] Tabs_index_011.bottom -
+        Tabs_index_011.top = ${Tabs_index_011.bottom - Tabs_index_011.top}`);
 
-      console.info(`[testTabsIndexMoreThanMax_static_03] subGreen.bottom = ${subGreen.bottom}`);
-
-      expect(Math.abs(subGreen.bottom - Tabs_index_001.top) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
-
-
-      console.info(`[testTabsIndexMoreThanMax_static_03] subGreen.bottom - subGreen.top = ${subGreen.bottom -
-      subGreen.top}`);
-
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
-        .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_011.bottom - Tabs_index_011.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_012.bottom - Tabs_index_012.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_013.bottom - Tabs_index_013.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
 
 
-      console.info('[testTabsIndexMoreThanMax_static_03] END');
-      done();
+        expect(Math.abs(Tabs_index_011.right - Tabs_index_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_012.right - Tabs_index_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_013.right - Tabs_index_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+
+        console.info(`[testTabsIndexMoreThanMax_static_03] Tabs_index_001.bottom -
+        Tabs_index_001.top = ${Tabs_index_001.bottom - Tabs_index_001.top}`);
+
+        expect(Math.abs(Math.round(Tabs_index_001.bottom - Tabs_index_001.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_002.bottom - Tabs_index_002.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_index_003.bottom - Tabs_index_003.top) - Math.round(uiContext.vp2px(244))) <= 1)
+          .assertTrue();
+
+
+        expect(Math.abs(Tabs_index_001.right - Tabs_index_001.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_002.right - Tabs_index_002.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_index_003.right - Tabs_index_003.left - uiContext.vp2px(330)) <= 1).assertTrue();
+
+        console.info(`[testTabsIndexMoreThanMax_static_03] subGreen.bottom = ${subGreen.bottom}`);
+
+        expect(Math.abs(subGreen.bottom - Tabs_index_001.top) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
+
+
+        console.info(`[testTabsIndexMoreThanMax_static_03] subGreen.bottom - subGreen.top = ${subGreen.bottom -
+        subGreen.top}`);
+
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+          .assertTrue();
+
+
+        console.info('[testTabsIndexMoreThanMax_static_03] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsIndexMoreThanMax_static_03] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

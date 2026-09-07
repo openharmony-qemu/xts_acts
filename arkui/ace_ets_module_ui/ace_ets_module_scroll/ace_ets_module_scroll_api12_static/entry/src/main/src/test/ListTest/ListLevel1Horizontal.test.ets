@@ -34,6 +34,7 @@ export default function listLevel1HorizontalTest() {
         if (!("ListLevel1Horizontal" == pages.name)) {
           console.info("get listLevel1HorizontalTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({ url: "MainAbility/pages/List/ListLevel1Horizontal" })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push listLevel1HorizontalTest page error:" + err);

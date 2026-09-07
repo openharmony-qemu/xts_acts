@@ -47,6 +47,7 @@ export default function alphabetIndexerJsunit() {
           console.info("get AlphabetIndexer state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)
+          await CommonFunc.sleep(2000);
           // console.info("push AlphabetIndexer page success " + JSON.stringify(result));
         }
       } catch (err) {

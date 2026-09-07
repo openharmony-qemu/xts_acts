@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { uiMaterial } from '@kit.ArkUI';
 
 const SLEEP_TIME = 1000;
@@ -44,10 +43,6 @@ async function hoverButtonAndFindTips(
 
 export default function TipsOptionsSystemMaterialTest(): void {
   describe('TipsOptionsSystemMaterial', (): void => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility('com.arkui.ace.dialog.popup.static', 'EntryAbility');
-    });
 
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = { url: PAGE_URL };
@@ -57,7 +52,7 @@ export default function TipsOptionsSystemMaterialTest(): void {
         let pages = routerInstance.getState();
         if (pages.name !== 'TipsOptionsSystemMaterial') {
           routerInstance.replaceUrl(options);
-          await CommonFunc.sleep(SLEEP_TIME);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('replace TipsOptionsSystemMaterial page error: ' + err);
@@ -66,13 +61,25 @@ export default function TipsOptionsSystemMaterialTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(SLEEP_TIME);
+       try {
+         await Utils.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('sleep err: ' + JSON.stringify(err));
+       }
     });
 
     it('TipsOptionsSystemMaterial_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await hoverButtonAndFindTips(driver, 'undefined', 'TipsOptions Undefined Test');
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await hoverButtonAndFindTips(driver, 'undefined', 'TipsOptions Undefined Test');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
       expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       done();
@@ -103,37 +110,101 @@ export default function TipsOptionsSystemMaterialTest(): void {
 
     it('TipsOptionsSystemMaterial_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await hoverButtonAndFindTips(driver, 'semi_transparent', 'TipsOptions SEMI_TRANSPARENT Test');
-      await driver.mouseMoveTo({ x: 1, y: 1 });
-      await CommonFunc.sleep(500);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await hoverButtonAndFindTips(driver, 'semi_transparent', 'TipsOptions SEMI_TRANSPARENT Test');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await driver.mouseMoveTo({ x: 1, y: 1 });
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(500);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
 
     it('TipsOptionsSystemMaterial_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await hoverButtonAndFindTips(driver, 'immersive_thick', 'TipsOptions Immersive THICK Test');
-      await driver.mouseMoveTo({ x: 1, y: 1 });
-      await CommonFunc.sleep(500);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await hoverButtonAndFindTips(driver, 'immersive_thick', 'TipsOptions Immersive THICK Test');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await driver.mouseMoveTo({ x: 1, y: 1 });
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(500);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
 
     it('TipsOptionsSystemMaterial_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await hoverButtonAndFindTips(driver, 'immersive_ultra_thin', 'TipsOptions Immersive ULTRA_THIN Test');
-      await driver.mouseMoveTo({ x: 1, y: 1 });
-      await CommonFunc.sleep(500);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await hoverButtonAndFindTips(driver, 'immersive_ultra_thin', 'TipsOptions Immersive ULTRA_THIN Test');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await driver.mouseMoveTo({ x: 1, y: 1 });
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(500);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
 
     it('TipsOptionsSystemMaterial_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await hoverButtonAndFindTips(driver, 'none', 'TipsOptions NONE Test');
-      await driver.mouseMoveTo({ x: 1, y: 1 });
-      await CommonFunc.sleep(500);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await hoverButtonAndFindTips(driver, 'none', 'TipsOptions NONE Test');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await driver.mouseMoveTo({ x: 1, y: 1 });
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(500);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
   });

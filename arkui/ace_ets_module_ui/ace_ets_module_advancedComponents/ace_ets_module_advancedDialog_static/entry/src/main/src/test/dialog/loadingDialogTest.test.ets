@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Component} from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -26,11 +25,6 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function loadingDialogTest() {
   describe('loadingDialogTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("loadingDialogTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.advancedDialog.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("loadingDialogTest beforeEach start");
@@ -54,7 +48,11 @@ export default function loadingDialogTest() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('loadingDialogTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('loadingDialogTest after each called');
     })
 
@@ -70,14 +68,30 @@ it('loadingDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.
       try {
         console.info('[loadingDialogTest_static_0100] START');
           let driver = Driver.create();
-          await CommonFunc.sleep(2000);
+          try {
+            await CommonFunc.sleep(2000);
+          } catch (err) {
+            console.info('loadingDialogTest sleep err: ' + JSON.stringify(err));
+          }
           // 点击打开loadingDialog
           let openAlertDialog = await driver.findComponent(ON.type('Button').text('LoadingDialog'))
-          await (openAlertDialog?.click() as Promise<void>);
-          await CommonFunc.sleep(1000);
+          try {
+            await (openAlertDialog?.click() as Promise<void>);
+          } catch (err) {
+            console.info('loadingDialogTest click err: ' + JSON.stringify(err));
+          }
+          try {
+            await CommonFunc.sleep(1000);
+          } catch (err) {
+            console.info('loadingDialogTest sleep err: ' + JSON.stringify(err));
+          }
           // 点击打开loadingDialog是否存在以下入口。
           let content = await driver.findComponent(ON.text('text'));
-          await CommonFunc.sleep(1000);
+          try {
+            await CommonFunc.sleep(1000);
+          } catch (err) {
+            console.info('loadingDialogTest sleep err: ' + JSON.stringify(err));
+          }
           console.info('[loadingDialogTest_static_0100] END');
           done();
       } catch (error) {

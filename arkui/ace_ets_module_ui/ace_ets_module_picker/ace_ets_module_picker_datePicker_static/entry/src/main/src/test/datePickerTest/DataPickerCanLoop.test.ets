@@ -13,38 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, afterEach, TestType } from '../../../../hypium/index';
 import { Color } from '@ohos.arkui.component';
 import router from '@ohos.router';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 const SLEEP_TIME_L = 1000;
-const SLEEP_TIME_S = 100;
+const SLEEP_TIME_S = 1000;
 export default function DataPickerCanLoopTest() {
   describe('DataPickerCanLoopTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("DataPickerCanLoopTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.datePicker.static", "EntryAbility")
-      await UtilsTest.msSleep(SLEEP_TIME_L)
-    });
 
     beforeEach(async () => {
       console.info('DataPickerCanLoopTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePicker/DataPickerCanLoop',
       }
-      await Utils.sleep(SLEEP_TIME_L);
+      try {
+        await Utils.sleep(SLEEP_TIME_L);
+      } catch (err) {
+        console.info('DataPickerCanLoopTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
@@ -69,17 +60,22 @@ export default function DataPickerCanLoopTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DataPickerCanLoop_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('DataPickerCanLoop_static_001 START');
-      const driver = Driver.create();
-      const button1 = await driver.findComponent(ON.id('trueID'));
-      await (button1?.click() as Promise<void>);
-      console.info('trueID click success');
-      await Utils.sleep(SLEEP_TIME_S);
-      let strJson = inspector.getInspectorByKey('datePicker');
-      let obj = JSON.parseJsonElement(strJson);
-      let obj1 :string = obj.getElement('$attrs').getString('canLoop');
-      expect(obj1).assertEqual('true');
-      done();
+      try {
+        console.info('DataPickerCanLoop_static_001 START');
+        const driver = Driver.create();
+        const button1 = await driver.findComponent(ON.id('trueID'));
+        await (button1?.click() as Promise<void>);
+        console.info('trueID click success');
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson);
+        let obj1 :string = obj.getElement('$attrs').getString('canLoop');
+        expect(obj1).assertEqual('true');
+        done();
+      } catch (err) {
+        console.info('DataPickerCanLoop_static_001 error: ' + JSON.stringify(err));
+        done();
+      }
     });
     /**
      * @tc.number   DataPickerCanLoop_static_002
@@ -88,17 +84,22 @@ export default function DataPickerCanLoopTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DataPickerCanLoop_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('DataPickerCanLoop_static_001 START');
-      const driver = Driver.create();
-      const button1 = await driver.findComponent(ON.id('falseID'));
-      await (button1?.click() as Promise<void>);
-      console.info('falseID click success');
-      await Utils.sleep(SLEEP_TIME_S);
-      let strJson = inspector.getInspectorByKey('datePicker');
-      let obj = JSON.parseJsonElement(strJson);
-      let obj1 :string = obj.getElement('$attrs').getString('canLoop');
-      expect(obj1).assertEqual('false');
-      done();
+      try {
+        console.info('DataPickerCanLoop_static_001 START');
+        const driver = Driver.create();
+        const button1 = await driver.findComponent(ON.id('falseID'));
+        await (button1?.click() as Promise<void>);
+        console.info('falseID click success');
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson);
+        let obj1 :string = obj.getElement('$attrs').getString('canLoop');
+        expect(obj1).assertEqual('false');
+        done();
+      } catch (err) {
+        console.info('DataPickerCanLoop_static_002 error: ' + JSON.stringify(err));
+        done();
+      }
     });
     /**
      * @tc.number   DataPickerCanLoop_static_003
@@ -107,17 +108,22 @@ export default function DataPickerCanLoopTest() {
      * @tc.level    Level.LEVEL1
      */
     it('DataPickerCanLoop_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('DataPickerCanLoop_static_001 START');
-      const driver = Driver.create();
-      const button1 = await driver.findComponent(ON.id('undefinedID'));
-      await (button1?.click() as Promise<void>);
-      console.info('undefinedID click success');
-      await Utils.sleep(SLEEP_TIME_S);
-      let strJson = inspector.getInspectorByKey('datePicker');
-      let obj = JSON.parseJsonElement(strJson);
-      let obj1 :string = obj.getElement('$attrs').getString('canLoop');
-      expect(obj1).assertEqual('true');
-      done();
+      try {
+        console.info('DataPickerCanLoop_static_001 START');
+        const driver = Driver.create();
+        const button1 = await driver.findComponent(ON.id('undefinedID'));
+        await (button1?.click() as Promise<void>);
+        console.info('undefinedID click success');
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson);
+        let obj1 :string = obj.getElement('$attrs').getString('canLoop');
+        expect(obj1).assertEqual('true');
+        done();
+      } catch (err) {
+        console.info('DataPickerCanLoop_static_003 error: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

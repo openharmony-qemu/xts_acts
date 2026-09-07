@@ -49,14 +49,14 @@ interface Data {
   y: number | string
 }
 
-export default function positionSettingJsunit() {
+export default function positionSettingJsunit(): void {
   describe('borderTest_five_3', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("positionSetting beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/positionSetting_y',
@@ -76,7 +76,7 @@ export default function positionSettingJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("positionSetting after each called");
     });
@@ -89,7 +89,7 @@ export default function positionSettingJsunit() {
      * @tc.desc     testPositionSetting_static_001
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_001', Level.LEVEL0, async () => {
+it('testPositionSetting_static_001', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting001] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('textAlign');
@@ -108,7 +108,7 @@ it('testPositionSetting_static_001', Level.LEVEL0, async () => {
      * @tc.desc     testPositionSetting_static_002
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_002', Level.LEVEL0, async () => {
+it('testPositionSetting_static_002', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting002] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('rowDirection');
@@ -127,7 +127,7 @@ it('testPositionSetting_static_002', Level.LEVEL0, async () => {
      * @tc.desc     testPositionSetting_static_003
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_003', Level.LEVEL0, async () => {
+it('testPositionSetting_static_003', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting003] START');
       try {
         let eventData: events_emitter.EventData = {
@@ -161,7 +161,7 @@ it('testPositionSetting_static_003', Level.LEVEL0, async () => {
      * @tc.desc     testPositionSetting_static_004
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_004', Level.LEVEL0, async () => {
+it('testPositionSetting_static_004', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting004] START');
       await Utils.sleep(1000);
       try {
@@ -196,7 +196,7 @@ it('testPositionSetting_static_004', Level.LEVEL0, async () => {
      * @tc.desc     testPositionSetting_static_005
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_005', Level.LEVEL0, async () => {
+it('testPositionSetting_static_005', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting005] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('position1');
@@ -224,7 +224,7 @@ it('testPositionSetting_static_005', Level.LEVEL0, async () => {
      * @tc.desc     testPositionSetting_static_006
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_006', Level.LEVEL0, async () => {
+it('testPositionSetting_static_006', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting006] START');
       await Utils.sleep(1000);
       try {
@@ -276,7 +276,7 @@ it('testPositionSetting_static_006', Level.LEVEL0, async () => {
      * @tc.desc     testPositionSetting_static_007
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_007', Level.LEVEL0, async () => {
+it('testPositionSetting_static_007', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting007] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('markAnchor');
@@ -298,7 +298,7 @@ it('testPositionSetting_static_007', Level.LEVEL0, async () => {
      * @tc.desc     testPositionSetting_static_008
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_008', Level.LEVEL0, async () => {
+it('testPositionSetting_static_008', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting008] START');
       await Utils.sleep(1000);
       try {
@@ -339,7 +339,7 @@ it('testPositionSetting_static_008', Level.LEVEL0, async () => {
      * @tc.desc     testPositionSetting_static_009
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_009', Level.LEVEL0, async () => {
+it('testPositionSetting_static_009', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting009] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('offset');
@@ -362,7 +362,7 @@ it('testPositionSetting_static_009', Level.LEVEL0, async () => {
      * @tc.desc     testPositionSetting_static_010
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_010', Level.LEVEL0, async () => {
+it('testPositionSetting_static_010', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting010] START');
       await Utils.sleep(1000);
       try {
@@ -402,7 +402,7 @@ it('testPositionSetting_static_010', Level.LEVEL0, async () => {
      * @tc.desc     testPositionSetting_static_011
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_011', Level.LEVEL0, async () => {
+it('testPositionSetting_static_011', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting011] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('opacity');
@@ -421,7 +421,7 @@ it('testPositionSetting_static_011', Level.LEVEL0, async () => {
      * @tc.desc     testPositionSetting_static_012
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_012', Level.LEVEL0, async () => {
+it('testPositionSetting_static_012', Level.LEVEL0, async (): Promise<void> => {
       console.info('[testPositionSetting012] START');
       try {
         let eventData: events_emitter.EventData = {

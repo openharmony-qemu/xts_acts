@@ -22,7 +22,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 export default function refreshOffsetUndefined() {
   describe('refreshOffsetUndefined', () => {
-    beforeEach((): void => {
+    beforeEach(async (): Promise<void> => {
       console.info('refreshOffsetUndefined beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Refresh/refreshOffsetUndefined',
@@ -34,6 +34,7 @@ export default function refreshOffsetUndefined() {
         console.info('refreshOffsetUndefined state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'refreshOffsetUndefined') {
           routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('refreshOffsetUndefined replaceUrl error: ' + err);

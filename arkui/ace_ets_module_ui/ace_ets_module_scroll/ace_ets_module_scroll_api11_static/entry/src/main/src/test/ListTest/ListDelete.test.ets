@@ -56,6 +56,7 @@ export default function ListDeleteTest() {
           router.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
@@ -76,37 +77,44 @@ export default function ListDeleteTest() {
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_List_Delete_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let CASE: string = 'ArkUI_List_Delete_static_0100'
-      console.info(`${SUITE} ${CASE} START`);
-      await sleep(2000);
-      let baseKey: string = 'MyList1_ListItem0'
-      let strJson: string = inspector.getInspectorByKey(baseKey);
-      console.info("the rect json is " + strJson);
+      try {
+        let CASE: string = 'ArkUI_List_Delete_static_0100'
+        console.info(`${SUITE} ${CASE} START`);
+        await sleep(2000);
+        let baseKey: string = 'MyList1_ListItem0'
+        let strJson: string = inspector.getInspectorByKey(baseKey);
+        console.info("the rect json is " + strJson);
 
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('startDeleteAreaDistance'))
-        .assertEqual("0.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('endDeleteAreaDistance'))
-        .assertEqual("0.00vp");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('startDeleteAreaDistance'))
+          .assertEqual("0.00vp");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('endDeleteAreaDistance'))
+          .assertEqual("0.00vp");
 
-      let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
-      let driver: Driver = Driver.create()
-      const winLeft: number = AppStorage.get<number>("winLeft") as number
-      const winTop: number = AppStorage.get<number>("winTop") as number
-      console.info("windowRect Left: " + winLeft + ',' + "windowRect Top: " + winTop);
-      await driver.swipe((Math.round(rectCenter[0] + winLeft)).toInt(), (Math.round(rectCenter[1] + winTop)).toInt(),
-        0, (Math.round(rectCenter[1]) + winTop).toInt())
-      await sleep(3000);
-      let strJsonButtonDel: string = inspector.getInspectorByKey(baseKey + '_Button_Del');
+        let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        const winLeft: number = AppStorage.get<number>("winLeft") as number
+        const winTop: number = AppStorage.get<number>("winTop") as number
+        console.info("windowRect Left: " + winLeft + ',' + "windowRect Top: " + winTop);
+        await driver.swipe((Math.round(rectCenter[0] + winLeft)).toInt(), (Math.round(rectCenter[1] + winTop)).toInt(),
+          0, (Math.round(rectCenter[1]) + winTop).toInt())
+        await sleep(3000);
+        let strJsonButtonDel: string = inspector.getInspectorByKey(baseKey + '_Button_Del');
 
-      expect(JSON.parseJsonElement(strJsonButtonDel).getElement('$attrs').getString('visibility'))
-        .assertEqual("Visibility.Visible");
-      let strJsonButtonSet: string = inspector.getInspectorByKey(baseKey + '_Button_Set');
+        expect(JSON.parseJsonElement(strJsonButtonDel).getElement('$attrs').getString('visibility'))
+          .assertEqual("Visibility.Visible");
+        let strJsonButtonSet: string = inspector.getInspectorByKey(baseKey + '_Button_Set');
 
-      expect(JSON.parseJsonElement(strJsonButtonSet).getElement('$attrs').getString('visibility'))
-        .assertEqual("Visibility.Visible");
+        expect(JSON.parseJsonElement(strJsonButtonSet).getElement('$attrs').getString('visibility'))
+          .assertEqual("Visibility.Visible");
 
-      console.info(`${SUITE} ${CASE} END`);
-      done();
+        console.info(`${SUITE} ${CASE} END`);
+        done();
+      } catch (error) {
+        console.error('[ArkUI_List_Delete_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /*
@@ -123,36 +131,43 @@ it('ArkUI_List_Delete_static_0100', Level.LEVEL1, async (done: () => void): Prom
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_List_Delete_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let CASE: string = 'ArkUI_List_Delete_static_0200'
-      console.info(`${SUITE} ${CASE} START`);
+      try {
+        let CASE: string = 'ArkUI_List_Delete_static_0200'
+        console.info(`${SUITE} ${CASE} START`);
 
-      let baseKey: string = 'MyList2_ListItem0'
-      let strJson: string = inspector.getInspectorByKey(baseKey);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('startDeleteAreaDistance'))
-        .assertEqual("0.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('endDeleteAreaDistance'))
-        .assertEqual("0.00vp");
+        let baseKey: string = 'MyList2_ListItem0'
+        let strJson: string = inspector.getInspectorByKey(baseKey);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('startDeleteAreaDistance'))
+          .assertEqual("0.00vp");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('endDeleteAreaDistance'))
+          .assertEqual("0.00vp");
 
-      let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
-      let driver: Driver = Driver.create()
-      const winLeft: number = AppStorage.get<number>("winLeft") as number
-      const winTop: number = AppStorage.get<number>("winTop") as number
-      console.info("windowRect Left: " + winLeft + ',' + "windowRect Top: " + winTop);
-      await driver.swipe((Math.round(winLeft + rectCenter[0] - (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
-        (Math.round(rectCenter[1] + winTop)).toInt(),
-        (Math.round(winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
-        (Math.round(rectCenter[1] + winTop)).toInt())
-      await sleep(3000);
-      let strJsonButtonDel: string = inspector.getInspectorByKey(baseKey + '_Button_Del');
-      expect(JSON.parseJsonElement(strJsonButtonDel).getElement('$attrs').getString('visibility'))
-        .assertEqual("Visibility.Visible");
-      let strJsonButtonSet: string = inspector.getInspectorByKey(baseKey + '_Button_Set');
+        let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        const winLeft: number = AppStorage.get<number>("winLeft") as number
+        const winTop: number = AppStorage.get<number>("winTop") as number
+        console.info("windowRect Left: " + winLeft + ',' + "windowRect Top: " + winTop);
+        await driver.swipe((Math.round(winLeft + rectCenter[0] - (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
+          (Math.round(rectCenter[1] + winTop)).toInt(),
+          (Math.round(winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
+          (Math.round(rectCenter[1] + winTop)).toInt())
+        await sleep(3000);
+        let strJsonButtonDel: string = inspector.getInspectorByKey(baseKey + '_Button_Del');
+        expect(JSON.parseJsonElement(strJsonButtonDel).getElement('$attrs').getString('visibility'))
+          .assertEqual("Visibility.Visible");
+        let strJsonButtonSet: string = inspector.getInspectorByKey(baseKey + '_Button_Set');
 
-      expect(JSON.parseJsonElement(strJsonButtonSet).getElement('$attrs').getString('visibility'))
-        .assertEqual("Visibility.Visible");
+        expect(JSON.parseJsonElement(strJsonButtonSet).getElement('$attrs').getString('visibility'))
+          .assertEqual("Visibility.Visible");
 
-      console.info(`${SUITE} ${CASE} END`);
-      done();
+        console.info(`${SUITE} ${CASE} END`);
+        done();
+      } catch (error) {
+        console.error('[ArkUI_List_Delete_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /*

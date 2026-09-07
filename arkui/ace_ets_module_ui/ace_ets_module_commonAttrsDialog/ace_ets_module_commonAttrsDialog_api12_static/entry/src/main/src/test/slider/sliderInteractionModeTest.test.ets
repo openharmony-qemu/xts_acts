@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import {
   Component,
   DisplayRotation,
@@ -29,26 +29,12 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
 import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
-import common from '@ohos.app.ability.common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function sliderInteractionModeTest() {
   describe('sliderInteractionModeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("sliderInteractionModeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -81,10 +67,14 @@ export default function sliderInteractionModeTest() {
 it('sliderInteractionModeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sliderInteractionModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('slider1'));
-      await (btn1?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+        let btn1 = await driver.findComponent(ON.id('slider1'));
+        await (btn1?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('sliderInteractionModeTest_0100 err: ' + JSON.stringify(err));
+      }
       let slider = inspector.getInspectorByKey('slider1');
       console.info("[sliderInteractionModeTest_0100] sliderInteractionModeTest_0100 JSON.parseJsonElement(slider) is: " +
       JSON.stringify(slider));
@@ -94,7 +84,11 @@ it('sliderInteractionModeTest_static_0100', Level.LEVEL0, async (done: () => voi
       JSON.stringify(JSON.parseJsonElement(slider).getElement('$attrs').getString('sliderInteractionMode')));
       expect(JSON.parseJsonElement(slider).getElement('$attrs').getString('sliderInteractionMode'))
         .assertEqual('SliderInteraction.SLIDE_AND_CLICK');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('sliderInteractionModeTest_0100 err: ' + JSON.stringify(err));
+      }
       console.info('[sliderInteractionModeTest_0100] END');
       done();
     });
@@ -110,10 +104,14 @@ it('sliderInteractionModeTest_static_0100', Level.LEVEL0, async (done: () => voi
 it('sliderInteractionModeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sliderInteractionModeTest_0200 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('slider2'));
-      await (btn1?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+        let btn1 = await driver.findComponent(ON.id('slider2'));
+        await (btn1?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('sliderInteractionModeTest_0200 err: ' + JSON.stringify(err));
+      }
       let slider = inspector.getInspectorByKey('slider2');
       console.info("[sliderInteractionModeTest_0200] sliderInteractionModeTest_0200 JSON.parseJsonElement(slider) is: " +
       JSON.stringify(slider));
@@ -123,7 +121,11 @@ it('sliderInteractionModeTest_static_0200', Level.LEVEL0, async (done: () => voi
       JSON.stringify(JSON.parseJsonElement(slider).getElement('$attrs').getString('sliderInteractionMode')));
       expect(JSON.parseJsonElement(slider).getElement('$attrs').getString('sliderInteractionMode'))
         .assertEqual('SliderInteraction.SLIDE_ONLY');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('sliderInteractionModeTest_0200 err: ' + JSON.stringify(err));
+      }
       console.info('[sliderInteractionModeTest_0200] END');
       done();
     });
@@ -139,10 +141,14 @@ it('sliderInteractionModeTest_static_0200', Level.LEVEL0, async (done: () => voi
 it('sliderInteractionModeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sliderInteractionModeTest_0300 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('slider3'));
-      await (btn1?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+        let btn1 = await driver.findComponent(ON.id('slider3'));
+        await (btn1?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('sliderInteractionModeTest_0300 err: ' + JSON.stringify(err));
+      }
       let slider = inspector.getInspectorByKey('slider3');
       console.info("[sliderInteractionModeTest_0300] sliderInteractionModeTest_0300 JSON.parseJsonElement(slider) is: " +
       JSON.stringify(slider));
@@ -152,10 +158,13 @@ it('sliderInteractionModeTest_static_0300', Level.LEVEL0, async (done: () => voi
       JSON.stringify(JSON.parseJsonElement(slider).getElement('$attrs').getString('sliderInteractionMode')));
       expect(JSON.parseJsonElement(slider).getElement('$attrs').getString('sliderInteractionMode'))
         .assertEqual('SliderInteraction.SLIDE_AND_CLICK_UP');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('sliderInteractionModeTest_0300 err: ' + JSON.stringify(err));
+      }
       console.info('[sliderInteractionModeTest_0300] END');
       done();
     });
   })
 }
-

@@ -14,28 +14,15 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function TextPickerTextStyleAnimationTest() {
   describe('TextPickerTextStyleAnimationTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("TextPickerTextStyle beforeAll start");
-      await UtilsTest.startAbility("com.open.harmony.picker.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async () => {
       let options: router.RouterOptions = {
@@ -49,7 +36,7 @@ export default function TextPickerTextStyleAnimationTest() {
         if (!('TextStyleAnimation' == pages.name)) {
           console.info('get TextStyle state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
-          await UtilsTest.msSleep(2000)
+          await CommonFunc.sleep(2000)
           
         }
       } catch (err) {

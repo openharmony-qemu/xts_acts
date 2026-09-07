@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function panelBackgroundMaskJsunit() {
+export default function panelBackgroundMaskJsunit(): void {
   describe('panelBackgroundMaskTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/panel',
@@ -60,7 +60,7 @@ export default function panelBackgroundMaskJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("panelBackgroundMask after each called");
     });
@@ -74,7 +74,7 @@ export default function panelBackgroundMaskJsunit() {
      * @tc.desc     testpanelBackgroundMask_static_0001
      * @tc.level    Level.LEVEL0
      */
-//it('testpanelBackgroundMask_static_0001', Level.LEVEL0, async () => { // 组件废弃
+//it('testpanelBackgroundMask_static_0001', Level.LEVEL0, async (): Promise<void> => { // 组件废弃
     //   console.info('panelBackgroundMask testpanelBackgroundMask0001 START');
     //   await Utils.sleep(2000);
     //   let strJson = inspector.getInspectorByKey('panel_y_panel');
@@ -96,7 +96,7 @@ export default function panelBackgroundMaskJsunit() {
      * @tc.desc     testpanelOnHeightChange_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testpanelOnHeightChange_static_0002', Level.LEVEL0, async () => {
+it('testpanelOnHeightChange_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('panelBackgroundMask testpanelOnHeightChange0002 START');
       let panelOnHeightChangeEvent: events_emitter.InnerEvent = {
         eventId: 10111,
@@ -104,10 +104,10 @@ it('testpanelOnHeightChange_static_0002', Level.LEVEL0, async () => {
       }
       let callback1: (eventData: events_emitter.EventData) => void = (backData: events_emitter.EventData) => {
         console.info("testpanelOnHeightChange0002 backData.data.result is: " +
-        ((backData.data) as ESObject)?.getProperty('result').toString());
+        ((backData.data) as ESObject).getProperty('result').toString());
         try {
           console.info("testpanelOnHeightChange0002 callback1 success");
-          expect(((backData.data) as ESObject)?.getProperty('result').toString()).assertEqual("success");
+          expect(((backData.data) as ESObject).getProperty('result').toString()).assertEqual("success");
 
         } catch (err) {
           console.info("testpanelOnHeightChange0002 on events_emitter err : " + JSON.stringify(err));

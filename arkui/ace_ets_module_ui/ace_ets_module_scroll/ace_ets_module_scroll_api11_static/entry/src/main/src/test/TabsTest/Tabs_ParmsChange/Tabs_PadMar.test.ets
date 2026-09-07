@@ -72,155 +72,162 @@ export default function tabs_PadMarTest() {
      * @tc.level    Level.LEVEL0
      */
 it('testTabsPad_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsPad_static_01] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'padding', value: 20
-      });
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('Tabs_PadMar' + '_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_PadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_01');
-      let Tabs_PadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_001');
-      let Tabs_PadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_011');
-      console.info(`[testTabsPad_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info(`[testTabsPad_static_01] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barPosition'))}`);
-      console.info(`[testTabsPad_static_01] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('index'))}`);
-      console.info(`[testTabsPad_static_01] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getBoolean('scrollable'))}`);
-      console.info(`[testTabsPad_static_01] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('vertical'))}`);
-      console.info(`[testTabsPad_static_01] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barMode'))}`);
-      let driver = Driver.create();
-      await driver.swipe((Math.round(Tabs_PadMar_011.right -
-        ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(),
-        (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_PadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_002');
-      let Tabs_PadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_012');
-      await driver.swipe((Math.round(Tabs_PadMar_012.right -
-        ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(),
-        (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_PadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_003');
-      let Tabs_PadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_013');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Yellow');
+      try {
+        console.info('[testTabsPad_static_01] START');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'padding', value: 20
+        });
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('Tabs_PadMar' + '_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        let Tabs_PadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_01');
+        let Tabs_PadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_001');
+        let Tabs_PadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_011');
+        console.info(`[testTabsPad_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info(`[testTabsPad_static_01] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barPosition'))}`);
+        console.info(`[testTabsPad_static_01] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('index'))}`);
+        console.info(`[testTabsPad_static_01] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getBoolean('scrollable'))}`);
+        console.info(`[testTabsPad_static_01] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('vertical'))}`);
+        console.info(`[testTabsPad_static_01] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barMode'))}`);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(Tabs_PadMar_011.right -
+          ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(),
+          (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_PadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_002');
+        let Tabs_PadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_012');
+        await driver.swipe((Math.round(Tabs_PadMar_012.right -
+          ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(),
+          (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_PadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_003');
+        let Tabs_PadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_013');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Yellow');
 
-      console.info(`[testTabsPad_static_01] Tabs_PadMar_011.left -
-      Tabs_PadMar_01.left = ${Tabs_PadMar_011.left - Tabs_PadMar_01.left}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_011.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_012.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_013.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.top - Tabs_PadMar_01.top) - Math.round(uiContext.vp2px(20))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsPad_static_01] Tabs_PadMar_011.left -
+        Tabs_PadMar_01.left = ${Tabs_PadMar_011.left - Tabs_PadMar_01.left}`);
+        expect(Math.abs(Math.round(Tabs_PadMar_011.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_012.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_013.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.top - Tabs_PadMar_01.top) - Math.round(uiContext.vp2px(20))) <= 1)
+          .assertTrue();
 
-      console.info(`[testTabsPad_static_01] Tabs_index_011.left = ${Tabs_PadMar_011.left}`);
-      expect(Math.abs(Tabs_PadMar_011.left - Tabs_PadMar_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_012.left - Tabs_PadMar_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_013.left - Tabs_PadMar_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_011.top - Tabs_PadMar_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_012.top - Tabs_PadMar_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_013.top - Tabs_PadMar_003.top) <= 1).assertTrue();
+        console.info(`[testTabsPad_static_01] Tabs_index_011.left = ${Tabs_PadMar_011.left}`);
+        expect(Math.abs(Tabs_PadMar_011.left - Tabs_PadMar_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_012.left - Tabs_PadMar_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_013.left - Tabs_PadMar_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_011.top - Tabs_PadMar_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_012.top - Tabs_PadMar_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_013.top - Tabs_PadMar_003.top) <= 1).assertTrue();
 
-      let Tabs_PadMar_01_width = Tabs_PadMar_01.right - Tabs_PadMar_01.left;
-      let Tabs_PadMar_01_height = Tabs_PadMar_01.bottom - Tabs_PadMar_01.top;
-      console.info('[testTabsPad_static_01] Tabs_PadMar_01_width: ' + Tabs_PadMar_01_width);
-      console.info('[testTabsPad_static_01] Tabs_PadMar_01_height: ' + Tabs_PadMar_01_height);
+        let Tabs_PadMar_01_width = Tabs_PadMar_01.right - Tabs_PadMar_01.left;
+        let Tabs_PadMar_01_height = Tabs_PadMar_01.bottom - Tabs_PadMar_01.top;
+        console.info('[testTabsPad_static_01] Tabs_PadMar_01_width: ' + Tabs_PadMar_01_width);
+        console.info('[testTabsPad_static_01] Tabs_PadMar_01_height: ' + Tabs_PadMar_01_height);
 
-      let Tabs_PadMar_001_width = Tabs_PadMar_001.right - Tabs_PadMar_001.left;
-      let Tabs_PadMar_001_height = Tabs_PadMar_001.bottom - Tabs_PadMar_001.top;
-      console.info('[testTabsPad_static_01] Tabs_PadMar_001_width: ' + Tabs_PadMar_001_width);
-      console.info('[testTabsPad_static_01] Tabs_PadMar_001_height: ' + Tabs_PadMar_001_height);
+        let Tabs_PadMar_001_width = Tabs_PadMar_001.right - Tabs_PadMar_001.left;
+        let Tabs_PadMar_001_height = Tabs_PadMar_001.bottom - Tabs_PadMar_001.top;
+        console.info('[testTabsPad_static_01] Tabs_PadMar_001_width: ' + Tabs_PadMar_001_width);
+        console.info('[testTabsPad_static_01] Tabs_PadMar_001_height: ' + Tabs_PadMar_001_height);
 
-      console.info(`[testTabsPad_static_01] Tabs_PadMar_011.bottom -
-        Tabs_PadMar_011.top = ${Tabs_PadMar_011.bottom - Tabs_PadMar_011.top}`);
-      console.info(`[testTabsPad_static_01] Tabs_PadMar_011.right -
-        Tabs_PadMar_011.left = ${Tabs_PadMar_011.right - Tabs_PadMar_011.left}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_013.bottom - Tabs_PadMar_013.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_011.right - Tabs_PadMar_011.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_012.right - Tabs_PadMar_012.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_013.right - Tabs_PadMar_013.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsPad_static_01] Tabs_PadMar_011.bottom -
+          Tabs_PadMar_011.top = ${Tabs_PadMar_011.bottom - Tabs_PadMar_011.top}`);
+        console.info(`[testTabsPad_static_01] Tabs_PadMar_011.right -
+          Tabs_PadMar_011.left = ${Tabs_PadMar_011.right - Tabs_PadMar_011.left}`);
+        expect(Math.abs(Math.round(Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_013.bottom - Tabs_PadMar_013.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_011.right - Tabs_PadMar_011.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_012.right - Tabs_PadMar_012.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_013.right - Tabs_PadMar_013.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
 
-      console.info(`[testTabsPad_static_01] Tabs_PadMar_001.bottom -
-        Tabs_PadMar_001.top = ${Tabs_PadMar_001.bottom - Tabs_PadMar_001.top}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_001.bottom - Tabs_PadMar_001.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_002.bottom - Tabs_PadMar_002.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_003.bottom - Tabs_PadMar_003.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_001.right - Tabs_PadMar_001.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_002.right - Tabs_PadMar_002.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_003.right - Tabs_PadMar_003.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsPad_static_01] Tabs_PadMar_001.bottom -
+          Tabs_PadMar_001.top = ${Tabs_PadMar_001.bottom - Tabs_PadMar_001.top}`);
+        expect(Math.abs(Math.round(Tabs_PadMar_001.bottom - Tabs_PadMar_001.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_002.bottom - Tabs_PadMar_002.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_003.bottom - Tabs_PadMar_003.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_001.right - Tabs_PadMar_001.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_002.right - Tabs_PadMar_002.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_003.right - Tabs_PadMar_003.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
 
-      console.info(`[testTabsPad_static_01] subGreen.bottom = ${subGreen.bottom}`);
-      expect(Math.abs(subGreen.bottom - Tabs_PadMar_001.top) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
+        console.info(`[testTabsPad_static_01] subGreen.bottom = ${subGreen.bottom}`);
+        expect(Math.abs(subGreen.bottom - Tabs_PadMar_001.top) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
 
-      console.info(`[testTabsPad_static_01]subGreen.bottom - subGreen.top = ${subGreen.bottom - subGreen.top}`);
-      console.info(`[testTabsPad_static_01]subGreen.right - subGreen.left = ${subGreen.right - subGreen.left}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
-        .assertTrue();
+        console.info(`[testTabsPad_static_01]subGreen.bottom - subGreen.top = ${subGreen.bottom - subGreen.top}`);
+        console.info(`[testTabsPad_static_01]subGreen.right - subGreen.left = ${subGreen.right - subGreen.left}`);
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
+          .assertTrue();
 
-      console.info('[testTabsPad_static_01] END');
-      done();
+        console.info('[testTabsPad_static_01] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsPad_static_01] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
@@ -232,138 +239,145 @@ it('testTabsPad_static_01', Level.LEVEL0, async (done: () => void): Promise<void
      * @tc.level    Level.LEVEL0
      */
 it('testTabsMar_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsMar_static_02] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'margin', value: 20
-      });
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('Tabs_PadMar' + '_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_PadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_01');
-      let Tabs_PadMar_Column_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_Column_01');
-      let Tabs_PadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_001');
-      let Tabs_PadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_011');
-      console.info(`[testTabsMar_static_02] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info(`[testTabsMar_static_02] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barPosition'))}`);
-      console.info(`[testTabsMar_static_02] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('index'))}`);
-      console.info(`[testTabsMar_static_02] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getBoolean('scrollable'))}`);
-      console.info(`[testTabsMar_static_02] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('vertical'))}`);
-      console.info(`[testTabsMar_static_02] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barMode'))}`);
-      let driver = Driver.create();
-      await driver.swipe((Math.round(Tabs_PadMar_011.right -
-        ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(),
-        (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_PadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_002');
-      let Tabs_PadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_012');
-      await driver.swipe((Math.round(Tabs_PadMar_012.right -
-        ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(),
-        (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_PadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_003');
-      let Tabs_PadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_013');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Yellow');
+      try {
+        console.info('[testTabsMar_static_02] START');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'margin', value: 20
+        });
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('Tabs_PadMar' + '_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        let Tabs_PadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_01');
+        let Tabs_PadMar_Column_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_Column_01');
+        let Tabs_PadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_001');
+        let Tabs_PadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_011');
+        console.info(`[testTabsMar_static_02] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info(`[testTabsMar_static_02] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barPosition'))}`);
+        console.info(`[testTabsMar_static_02] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('index'))}`);
+        console.info(`[testTabsMar_static_02] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getBoolean('scrollable'))}`);
+        console.info(`[testTabsMar_static_02] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('vertical'))}`);
+        console.info(`[testTabsMar_static_02] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barMode'))}`);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(Tabs_PadMar_011.right -
+          ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(),
+          (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_PadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_002');
+        let Tabs_PadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_012');
+        await driver.swipe((Math.round(Tabs_PadMar_012.right -
+          ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(),
+          (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_PadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_003');
+        let Tabs_PadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_013');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Yellow');
 
-      console.info(`[testTabsMar_static_02] Tabs_PadMar_01.left -
-        Tabs_PadMar_Column_01.left = ${Tabs_PadMar_01.left - Tabs_PadMar_Column_01.left}`);
+        console.info(`[testTabsMar_static_02] Tabs_PadMar_01.left -
+          Tabs_PadMar_Column_01.left = ${Tabs_PadMar_01.left - Tabs_PadMar_Column_01.left}`);
 
-      expect(Math.abs(Math.round(Tabs_PadMar_01.left - Tabs_PadMar_Column_01.left) - Math.round(uiContext.vp2px(20))) <=
-        1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_01.top - Tabs_PadMar_Column_01.top) - Math.round(uiContext.vp2px(20))) <=
-        1)
-        .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_01.left - Tabs_PadMar_Column_01.left) - Math.round(uiContext.vp2px(20))) <=
+          1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_01.top - Tabs_PadMar_Column_01.top) - Math.round(uiContext.vp2px(20))) <=
+          1)
+          .assertTrue();
 
-      console.info(`[testTabsMar_static_02] Tabs_index_011.left = ${Tabs_PadMar_011.left}`);
-      expect(Math.abs(Tabs_PadMar_011.left - Tabs_PadMar_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_012.left - Tabs_PadMar_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_013.left - Tabs_PadMar_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_011.top - Tabs_PadMar_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_012.top - Tabs_PadMar_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_013.top - Tabs_PadMar_003.top) <= 1).assertTrue();
+        console.info(`[testTabsMar_static_02] Tabs_index_011.left = ${Tabs_PadMar_011.left}`);
+        expect(Math.abs(Tabs_PadMar_011.left - Tabs_PadMar_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_012.left - Tabs_PadMar_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_013.left - Tabs_PadMar_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_011.top - Tabs_PadMar_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_012.top - Tabs_PadMar_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_013.top - Tabs_PadMar_003.top) <= 1).assertTrue();
 
-      let Tabs_PadMar_01_width = Tabs_PadMar_01.right - Tabs_PadMar_01.left;
-      let Tabs_PadMar_01_height = Tabs_PadMar_01.bottom - Tabs_PadMar_01.top;
-      console.info('[testTabsMar_static_02] Tabs_PadMar_01_width: ' + Tabs_PadMar_01_width);
-      console.info('[testTabsMar_static_02] Tabs_PadMar_01_height: ' + Tabs_PadMar_01_height);
+        let Tabs_PadMar_01_width = Tabs_PadMar_01.right - Tabs_PadMar_01.left;
+        let Tabs_PadMar_01_height = Tabs_PadMar_01.bottom - Tabs_PadMar_01.top;
+        console.info('[testTabsMar_static_02] Tabs_PadMar_01_width: ' + Tabs_PadMar_01_width);
+        console.info('[testTabsMar_static_02] Tabs_PadMar_01_height: ' + Tabs_PadMar_01_height);
 
-      let Tabs_PadMar_001_width = Tabs_PadMar_001.right - Tabs_PadMar_001.left;
-      let Tabs_PadMar_001_height = Tabs_PadMar_001.bottom - Tabs_PadMar_001.top;
-      console.info('[testTabsMar_static_02] Tabs_PadMar_001_width: ' + Tabs_PadMar_001_width);
-      console.info('[testTabsMar_static_02] Tabs_PadMar_001_height: ' + Tabs_PadMar_001_height);
+        let Tabs_PadMar_001_width = Tabs_PadMar_001.right - Tabs_PadMar_001.left;
+        let Tabs_PadMar_001_height = Tabs_PadMar_001.bottom - Tabs_PadMar_001.top;
+        console.info('[testTabsMar_static_02] Tabs_PadMar_001_width: ' + Tabs_PadMar_001_width);
+        console.info('[testTabsMar_static_02] Tabs_PadMar_001_height: ' + Tabs_PadMar_001_height);
 
-      console.info(`[testTabsMar_static_02] Tabs_PadMar_011.bottom -
-        Tabs_PadMar_011.top = ${Tabs_PadMar_011.bottom - Tabs_PadMar_011.top}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_013.bottom - Tabs_PadMar_013.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Tabs_PadMar_011.right - Tabs_PadMar_011.left - Tabs_PadMar_01_width) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_012.right - Tabs_PadMar_012.left - Tabs_PadMar_01_width) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_013.right - Tabs_PadMar_013.left - Tabs_PadMar_01_width) <= 1).assertTrue();
+        console.info(`[testTabsMar_static_02] Tabs_PadMar_011.bottom -
+          Tabs_PadMar_011.top = ${Tabs_PadMar_011.bottom - Tabs_PadMar_011.top}`);
+        expect(Math.abs(Math.round(Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_013.bottom - Tabs_PadMar_013.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Tabs_PadMar_011.right - Tabs_PadMar_011.left - Tabs_PadMar_01_width) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_012.right - Tabs_PadMar_012.left - Tabs_PadMar_01_width) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_013.right - Tabs_PadMar_013.left - Tabs_PadMar_01_width) <= 1).assertTrue();
 
-      console.info(`[testTabsMar_static_02] Tabs_PadMar_001.bottom -
-        Tabs_PadMar_001.top = ${Tabs_PadMar_001.bottom - Tabs_PadMar_001.top}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_001.bottom - Tabs_PadMar_001.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_002.bottom - Tabs_PadMar_002.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_003.bottom - Tabs_PadMar_003.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Tabs_PadMar_001.right - Tabs_PadMar_001.left - Tabs_PadMar_01_width) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_002.right - Tabs_PadMar_002.left - Tabs_PadMar_01_width) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_003.right - Tabs_PadMar_003.left - Tabs_PadMar_01_width) <= 1).assertTrue();
+        console.info(`[testTabsMar_static_02] Tabs_PadMar_001.bottom -
+          Tabs_PadMar_001.top = ${Tabs_PadMar_001.bottom - Tabs_PadMar_001.top}`);
+        expect(Math.abs(Math.round(Tabs_PadMar_001.bottom - Tabs_PadMar_001.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_002.bottom - Tabs_PadMar_002.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_003.bottom - Tabs_PadMar_003.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Tabs_PadMar_001.right - Tabs_PadMar_001.left - Tabs_PadMar_01_width) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_002.right - Tabs_PadMar_002.left - Tabs_PadMar_01_width) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_003.right - Tabs_PadMar_003.left - Tabs_PadMar_01_width) <= 1).assertTrue();
 
-      console.info(`[testTabsMar_static_02] subGreen.bottom = ${subGreen.bottom}`);
-      expect(Math.abs(subGreen.bottom - Tabs_PadMar_001.top) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
+        console.info(`[testTabsMar_static_02] subGreen.bottom = ${subGreen.bottom}`);
+        expect(Math.abs(subGreen.bottom - Tabs_PadMar_001.top) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
 
-      console.info(`[testTabsMar_static_02]subGreen.bottom - subGreen.top = ${subGreen.bottom - subGreen.top}`);
-      console.info(`[testTabsMar_static_02]subGreen.right - subGreen.left = ${subGreen.right - subGreen.left}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(Tabs_PadMar_001_width / 3)) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(Tabs_PadMar_001_width / 3)) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(Tabs_PadMar_001_width / 3)) <= 1)
-        .assertTrue();
-      console.info('[testTabsMar_static_02] END');
-      done();
+        console.info(`[testTabsMar_static_02]subGreen.bottom - subGreen.top = ${subGreen.bottom - subGreen.top}`);
+        console.info(`[testTabsMar_static_02]subGreen.right - subGreen.left = ${subGreen.right - subGreen.left}`);
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(Tabs_PadMar_001_width / 3)) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(Tabs_PadMar_001_width / 3)) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(Tabs_PadMar_001_width / 3)) <= 1)
+          .assertTrue();
+        console.info('[testTabsMar_static_02] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsMar_static_02] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
@@ -375,168 +389,175 @@ it('testTabsMar_static_02', Level.LEVEL0, async (done: () => void): Promise<void
      * @tc.level    Level.LEVEL0
      */
 it('testTabsPadMar_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsPadMar_static_03] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'padding', value: 20
-      });
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'margin', value: 20
-      });
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('Tabs_PadMar' + '_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_PadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_01');
-      let Tabs_PadMar_Column_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_Column_01');
-      let Tabs_PadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_001');
-      let Tabs_PadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_011');
-      console.info(`[testTabsPadMar_static_03] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info(`[testTabsPadMar_static_03] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barPosition'))}`);
-      console.info(`[testTabsPadMar_static_03] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('index'))}`);
-      console.info(`[testTabsPadMar_static_03] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getBoolean('scrollable'))}`);
-      console.info(`[testTabsPadMar_static_03] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('vertical'))}`);
-      console.info(`[testTabsPadMar_static_03] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barMode'))}`);
-      let driver = Driver.create();
-      await driver.swipe((Math.round(Tabs_PadMar_011.right -
-        ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(),
-        (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_PadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_002');
-      let Tabs_PadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_012');
-      await driver.swipe((Math.round(Tabs_PadMar_012.right -
-        ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(),
-        (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
-        (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_PadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_003');
-      let Tabs_PadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_013');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Yellow');
+      try {
+        console.info('[testTabsPadMar_static_03] START');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'padding', value: 20
+        });
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'margin', value: 20
+        });
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('Tabs_PadMar' + '_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        let Tabs_PadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_01');
+        let Tabs_PadMar_Column_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_Column_01');
+        let Tabs_PadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_001');
+        let Tabs_PadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_011');
+        console.info(`[testTabsPadMar_static_03] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info(`[testTabsPadMar_static_03] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barPosition'))}`);
+        console.info(`[testTabsPadMar_static_03] index: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('index'))}`);
+        console.info(`[testTabsPadMar_static_03] scrollable: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getBoolean('scrollable'))}`);
+        console.info(`[testTabsPadMar_static_03] vertical: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('vertical'))}`);
+        console.info(`[testTabsPadMar_static_03] barMode: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barMode'))}`);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(Tabs_PadMar_011.right -
+          ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(),
+          (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_PadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_002');
+        let Tabs_PadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_012');
+        await driver.swipe((Math.round(Tabs_PadMar_012.right -
+          ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(),
+          (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(),
+          (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_PadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_003');
+        let Tabs_PadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_013');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar_Yellow');
 
-      console.info(`[testTabsPadMar_static_03] Tabs_PadMar_01.left -
-        Tabs_PadMar_Column_01.left = ${Tabs_PadMar_01.left - Tabs_PadMar_Column_01.left}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_01.left - Tabs_PadMar_Column_01.left) - Math.round(uiContext.vp2px(20))) <=
-        1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_01.top - Tabs_PadMar_Column_01.top) - Math.round(uiContext.vp2px(20))) <=
-        1)
-        .assertTrue();
+        console.info(`[testTabsPadMar_static_03] Tabs_PadMar_01.left -
+          Tabs_PadMar_Column_01.left = ${Tabs_PadMar_01.left - Tabs_PadMar_Column_01.left}`);
+        expect(Math.abs(Math.round(Tabs_PadMar_01.left - Tabs_PadMar_Column_01.left) - Math.round(uiContext.vp2px(20))) <=
+          1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_01.top - Tabs_PadMar_Column_01.top) - Math.round(uiContext.vp2px(20))) <=
+          1)
+          .assertTrue();
 
-      console.info(`[testTabsPadMar_static_03] Tabs_PadMar_011.left -
-        Tabs_PadMar_01.left = ${Tabs_PadMar_011.left - Tabs_PadMar_01.left}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_011.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_012.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_013.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.top - Tabs_PadMar_01.top) - Math.round(uiContext.vp2px(20))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsPadMar_static_03] Tabs_PadMar_011.left -
+          Tabs_PadMar_01.left = ${Tabs_PadMar_011.left - Tabs_PadMar_01.left}`);
+        expect(Math.abs(Math.round(Tabs_PadMar_011.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_012.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_013.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.left - Tabs_PadMar_01.left) - Math.round(uiContext.vp2px(20))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.top - Tabs_PadMar_01.top) - Math.round(uiContext.vp2px(20))) <= 1)
+          .assertTrue();
 
-      console.info(`[testTabsPadMar_static_03] Tabs_index_011.left = ${Tabs_PadMar_011.left}`);
-      expect(Math.abs(Tabs_PadMar_011.left - Tabs_PadMar_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_012.left - Tabs_PadMar_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_013.left - Tabs_PadMar_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_011.top - Tabs_PadMar_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_012.top - Tabs_PadMar_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_PadMar_013.top - Tabs_PadMar_003.top) <= 1).assertTrue();
+        console.info(`[testTabsPadMar_static_03] Tabs_index_011.left = ${Tabs_PadMar_011.left}`);
+        expect(Math.abs(Tabs_PadMar_011.left - Tabs_PadMar_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_012.left - Tabs_PadMar_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_013.left - Tabs_PadMar_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_011.top - Tabs_PadMar_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_012.top - Tabs_PadMar_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_PadMar_013.top - Tabs_PadMar_003.top) <= 1).assertTrue();
 
-      let Tabs_PadMar_01_width = Tabs_PadMar_01.right - Tabs_PadMar_01.left;
-      let Tabs_PadMar_01_height = Tabs_PadMar_01.bottom - Tabs_PadMar_01.top;
-      console.info('[testTabsPadMar_static_03] Tabs_PadMar_01_width: ' + Tabs_PadMar_01_width);
-      console.info('[testTabsPadMar_static_03] Tabs_PadMar_01_height: ' + Tabs_PadMar_01_height);
+        let Tabs_PadMar_01_width = Tabs_PadMar_01.right - Tabs_PadMar_01.left;
+        let Tabs_PadMar_01_height = Tabs_PadMar_01.bottom - Tabs_PadMar_01.top;
+        console.info('[testTabsPadMar_static_03] Tabs_PadMar_01_width: ' + Tabs_PadMar_01_width);
+        console.info('[testTabsPadMar_static_03] Tabs_PadMar_01_height: ' + Tabs_PadMar_01_height);
 
-      let Tabs_PadMar_001_width = Tabs_PadMar_001.right - Tabs_PadMar_001.left;
-      let Tabs_PadMar_001_height = Tabs_PadMar_001.bottom - Tabs_PadMar_001.top;
-      console.info('[testTabsPadMar_static_03] Tabs_PadMar_001_width: ' + Tabs_PadMar_001_width);
-      console.info('[testTabsPadMar_static_03] Tabs_PadMar_001_height: ' + Tabs_PadMar_001_height);
+        let Tabs_PadMar_001_width = Tabs_PadMar_001.right - Tabs_PadMar_001.left;
+        let Tabs_PadMar_001_height = Tabs_PadMar_001.bottom - Tabs_PadMar_001.top;
+        console.info('[testTabsPadMar_static_03] Tabs_PadMar_001_width: ' + Tabs_PadMar_001_width);
+        console.info('[testTabsPadMar_static_03] Tabs_PadMar_001_height: ' + Tabs_PadMar_001_height);
 
-      console.info(`[testTabsPadMar_static_03] Tabs_PadMar_011.bottom -
-        Tabs_PadMar_011.top = ${Tabs_PadMar_011.bottom - Tabs_PadMar_011.top}`);
-      console.info(`[testTabsPadMar_static_03] Tabs_PadMar_011.right -
-        Tabs_PadMar_011.left = ${Tabs_PadMar_011.right - Tabs_PadMar_011.left}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_013.bottom - Tabs_PadMar_013.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_011.right - Tabs_PadMar_011.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_012.right - Tabs_PadMar_012.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_013.right - Tabs_PadMar_013.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsPadMar_static_03] Tabs_PadMar_011.bottom -
+          Tabs_PadMar_011.top = ${Tabs_PadMar_011.bottom - Tabs_PadMar_011.top}`);
+        console.info(`[testTabsPadMar_static_03] Tabs_PadMar_011.right -
+          Tabs_PadMar_011.left = ${Tabs_PadMar_011.right - Tabs_PadMar_011.left}`);
+        expect(Math.abs(Math.round(Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_013.bottom - Tabs_PadMar_013.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_011.right - Tabs_PadMar_011.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_012.right - Tabs_PadMar_012.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_013.right - Tabs_PadMar_013.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
 
-      console.info(`[testTabsPadMar_static_03] Tabs_PadMar_001.bottom -
-      Tabs_PadMar_001.top = ${Tabs_PadMar_001.bottom - Tabs_PadMar_001.top}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_001.bottom - Tabs_PadMar_001.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_002.bottom - Tabs_PadMar_002.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_003.bottom - Tabs_PadMar_003.top) -
-      Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_001.right - Tabs_PadMar_001.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_002.right - Tabs_PadMar_002.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_003.right - Tabs_PadMar_003.left) -
-      Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsPadMar_static_03] Tabs_PadMar_001.bottom -
+        Tabs_PadMar_001.top = ${Tabs_PadMar_001.bottom - Tabs_PadMar_001.top}`);
+        expect(Math.abs(Math.round(Tabs_PadMar_001.bottom - Tabs_PadMar_001.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_002.bottom - Tabs_PadMar_002.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_003.bottom - Tabs_PadMar_003.top) -
+        Math.round(Tabs_PadMar_01_height - uiContext.vp2px(56 + 40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_001.right - Tabs_PadMar_001.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_002.right - Tabs_PadMar_002.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(Tabs_PadMar_003.right - Tabs_PadMar_003.left) -
+        Math.round(Tabs_PadMar_01_width - uiContext.vp2px(40))) <= 1)
+          .assertTrue();
 
-      console.info(`[testTabsPadMar_static_03] subGreen.bottom = ${subGreen.bottom}`);
-      expect(Math.abs(subGreen.bottom - Tabs_PadMar_001.top) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
+        console.info(`[testTabsPadMar_static_03] subGreen.bottom = ${subGreen.bottom}`);
+        expect(Math.abs(subGreen.bottom - Tabs_PadMar_001.top) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(subGreen.bottom - subYellow.bottom) <= 1).assertTrue();
 
-      console.info(`[testTabsPadMar_static_03]subGreen.bottom - subGreen.top = ${subGreen.bottom - subGreen.top}`);
-      console.info(`[testTabsPadMar_static_03]subGreen.right - subGreen.left = ${subGreen.right - subGreen.left}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
-        .assertTrue();
+        console.info(`[testTabsPadMar_static_03]subGreen.bottom - subGreen.top = ${subGreen.bottom - subGreen.top}`);
+        console.info(`[testTabsPadMar_static_03]subGreen.right - subGreen.left = ${subGreen.right - subGreen.left}`);
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.floor(Tabs_PadMar_001_width / 3)) <= 1)
+          .assertTrue();
 
-      console.info('[testTabsPadMar_static_03] END');
-      done();
+        console.info('[testTabsPadMar_static_03] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsPadMar_static_03] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

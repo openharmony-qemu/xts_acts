@@ -30,7 +30,7 @@ export default function info_group_test() {
       "application_target_sdk_version_test",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest(
+        const result: number = await testNapi.runTest(
           "application_target_sdk_version_test",
         );
         expect(result).assertEqual(0);
@@ -47,7 +47,7 @@ export default function info_group_test() {
      * @tc.level  LEVEL1
      */
     it("device_api_version", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("device_api_version");
+      const result: number = await testNapi.runTest("device_api_version");
       expect(result).assertEqual(0);
       done();
     });
@@ -60,7 +60,7 @@ export default function info_group_test() {
      * @tc.desc   libc-test fatal_message
      */
     it("fatal_message", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fatal_message");
+      const result: number = await testNapi.runTest("fatal_message");
       expect(result).assertEqual(0);
       done();
     });

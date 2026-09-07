@@ -25,7 +25,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function webInitTest() {
+export default function webInitTest(): void {
   describe('WebInitTest', (): void => {
     beforeAll(async (): Promise<void> => {
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -281,6 +281,44 @@ export default function webInitTest() {
           const action = data['ACTION'];
           expect(action).assertEqual(expected);
         });
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebInitButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testDeleteAllDataStatic003
+    * @tc.number       SUB_WEB_DELETEALLDATA_0300
+    * @tc.desc         test deleteAllData with null
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 3
+    */
+    it('testDeleteAllDataStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitDeleteAllData003', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testDeleteAllDataStatic003', "success", 60607, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebInitButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testDeleteAllDataStatic004
+    * @tc.number       SUB_WEB_DELETEALLDATA_0400
+    * @tc.desc         test deleteAllData with undefined
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 3
+    */
+    it('testDeleteAllDataStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitDeleteAllData004', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testDeleteAllDataStatic004', "success", 60608, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebInitButton', 10, '');
       await Utils.msSleep(6000);

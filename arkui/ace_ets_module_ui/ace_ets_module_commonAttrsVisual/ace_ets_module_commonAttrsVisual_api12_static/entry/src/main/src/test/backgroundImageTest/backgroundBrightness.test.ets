@@ -14,33 +14,17 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function backgroundBrightness() {
 
   describe('backgroundBrightness', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("backgroundBrightness beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api12.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("backgroundBrightness beforeEach start");
       let options: router.RouterOptions = {
@@ -63,7 +47,11 @@ export default function backgroundBrightness() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('backgroundBrightness afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("backgroundBrightness after each called");
     });
 
@@ -71,16 +59,24 @@ export default function backgroundBrightness() {
     
     
 /**
-     * @tc.number   backgroundBrightness_static_0100
-     * @tc.name     backgroundBrightness_static_0100
-     * @tc.desc     backgroundBrightness_static_0100
-     * @tc.level    Level.LEVEL2
-     */
+      * @tc.number   backgroundBrightness_static_0100
+      * @tc.name     backgroundBrightness_static_0100
+      * @tc.desc     backgroundBrightness_static_0100
+      * @tc.level    Level.LEVEL2
+      */
 it('backgroundBrightness_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('backgroundBrightness_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('backgroundBrightness sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('backgroundBrightness');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('backgroundBrightness sleep err: ' + JSON.stringify(err));
+      }
       console.log('test str is: ' + JSON.stringify(strJson))
       console.info("[backgroundBrightness_static_0100] backgroundBrightness obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)

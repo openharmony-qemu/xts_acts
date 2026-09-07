@@ -16,7 +16,6 @@
 
 import {
   afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
@@ -28,18 +27,12 @@ import {
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { startAbility, UtilsTest } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function selectDialogTest() {
   describe('selectDialogTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("selectDialogTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.advancedDialog.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("selectDialogTest beforeEach start");
@@ -63,7 +56,11 @@ export default function selectDialogTest() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('selectDialogTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('selectDialogTest after each called');
     })
 
@@ -77,11 +74,23 @@ export default function selectDialogTest() {
       async (done: () => void): Promise<void> => {
         console.info('[selectDialogTest_static_0100] START');
         let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          await CommonFunc.sleep(2000);
+        } catch (err) {
+          console.info('selectDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开SelectDialog
         let openAlertDialog = await driver.findComponent(ON.type('Button').text('SelectDialog'))
-        await (openAlertDialog?.click() as Promise<void>);;
-        await CommonFunc.sleep(1000);
+        try {
+          await (openAlertDialog?.click() as Promise<void>);
+        } catch (err) {
+          console.info('selectDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('selectDialogTest sleep err: ' + JSON.stringify(err));
+        }
         // 点击打开SelectDialog是否存在以下入口。
         let primaryTitle = await driver.findComponent(ON.text('文本标题'));
         let content = await driver.findComponent(ON.text('内容内容'));
@@ -92,8 +101,16 @@ export default function selectDialogTest() {
         expect(radioContent !== null).assertTrue();
         expect(cancelButton !== null).assertTrue();
         // 关闭SelectDialog
-        await (cancelButton?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
+        try {
+          await (cancelButton?.click() as Promise<void>);
+        } catch (err) {
+          console.info('selectDialogTest click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(1000);
+        } catch (err) {
+          console.info('selectDialogTest sleep err: ' + JSON.stringify(err));
+        }
         console.info('[selectDialogTest_static_0100] END');
         done();
       });

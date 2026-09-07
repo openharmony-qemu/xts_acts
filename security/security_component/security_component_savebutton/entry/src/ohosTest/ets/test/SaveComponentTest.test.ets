@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest'
 import Utils from './Utils';
 import window from '@ohos.window';
-import {ObjectUtils}  from './ObjectUtils';
+import { EventDataValue, ObjectUtils } from './ObjectUtils';
 
 export default function saveComponentTest() {
   describe('saveComponentTest', ( ) => {
@@ -1410,8 +1410,10 @@ export default function saveComponentTest() {
             console.info('Succeeded in obtaining the window properties.width: ' + properties.windowRect.width);
             let window_width = properties.windowRect.width;
             console.info('====>[Test_Security_Button_Save_1400] properties.windowRect.width is: ' + properties.windowRect.width);
-            let offsetObj:ESObject = {"positionX": `${window_width / 2}px`};
-            ObjectUtils.assign(eventData.data,offsetObj);
+            let offsetObj: EventDataValue = { "positionX": `${window_width / 2}px` };
+            if (eventData.data !== undefined) {
+              ObjectUtils.assign(eventData.data as EventDataValue, offsetObj);
+            }
           });
         } catch (error){
           console.error('Failed to obtain the window properties.error.code: ' + error.code)
@@ -1524,8 +1526,10 @@ export default function saveComponentTest() {
             console.info('Succeeded in obtaining the window properties.width: ' + properties.windowRect.width);
             let window_width = properties.windowRect.width;
             console.info('====>[Test_Security_Button_Save_1500] properties.windowRect.width is: ' + properties.windowRect.width);
-            let offsetObj:ESObject = {"positionX": `${window_width / 2}px`};
-            ObjectUtils.assign(eventData.data,offsetObj);
+            let offsetObj: EventDataValue = { "positionX": `${window_width / 2}px` };
+            if (eventData.data !== undefined) {
+              ObjectUtils.assign(eventData.data as EventDataValue, offsetObj);
+            }
           });
         } catch (error){
           console.error('Failed to obtain the window properties.error.code: ' + error.code)
@@ -1639,13 +1643,15 @@ export default function saveComponentTest() {
           let button_height = data[0].height * (1/3);
           console.info('====>[Test_Security_Button_Save_1600] button_width is: ' + button_width);
           console.info('====>[Test_Security_Button_Save_1600] button_height is: ' + button_height);
-          let offsetObj:ESObject = {
+          let offsetObj: EventDataValue = {
             "buWidth": `${button_width}px`,
             "buHeight": `${button_height}px`,
             "rowWidth": `${button_width}px`,
             "rowHeight": `${button_height}px`
           };
-          ObjectUtils.assign(eventData.data,offsetObj);
+          if (eventData.data !== undefined) {
+            ObjectUtils.assign(eventData.data as EventDataValue, offsetObj);
+          }
         });
         await Utils.sleep(1000);
         let innerEvent:events_emitter.InnerEvent = {

@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Component} from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -25,11 +24,6 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function alertDialogTest() {
   describe('alertDialogTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("alertDialogTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.advancedDialog.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("alertDialogTest beforeEach start");
@@ -53,7 +47,11 @@ export default function alertDialogTest() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('alertDialogTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('alertDialogTest after each called');
     })
 
@@ -68,11 +66,23 @@ export default function alertDialogTest() {
 it('alertDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alertDialogTest_0100] START');
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('alertDialogTest sleep err: ' + JSON.stringify(err));
+      }
       // 点击打开AlertDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('AlertDialog'))
-      await (openAlertDialog?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (openAlertDialog?.click() as Promise<void>);
+      } catch (err) {
+        console.info('alertDialogTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('alertDialogTest sleep err: ' + JSON.stringify(err));
+      }
       // 点击打开AlertDialog是否存在以下入口。
       let primaryTitle = await driver.findComponent(ON.text('弹框一级标题'));
       let secondaryTitle = await driver.findComponent(ON.text('弹框二级标题'));
@@ -85,8 +95,16 @@ it('alertDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
       expect(cancelButton !== null).assertTrue();
       expect(confirmButton !== null).assertTrue();
       // 关闭AlertDialog
-       await (cancelButton?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+       try {
+         await (cancelButton?.click() as Promise<void>);
+       } catch (err) {
+         console.info('alertDialogTest click err: ' + JSON.stringify(err));
+       }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('alertDialogTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[alertDialogTest_0100] END');
       done();
     });

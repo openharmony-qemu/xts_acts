@@ -56,39 +56,46 @@ export default function waterFlowStart1() {
      * @tc.level    Level.LEVEL1
      */
 it('waterFlowStart1_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[waterFlowStart1_static_0100] START');
-      let driver = Driver.create();
-      let onReachStartText = await driver.findComponent(ON.id('onReachStart_wText_1'));
-      let text1 = await (onReachStartText?.getText() as Promise<string>);
-      console.info('[waterFlowStart1_static_0100] onReachStartText' + text1);
-      expect(text1).assertEqual('onReachStart:succ');
-      await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('flow_scrollToIndex_1'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('[waterFlowStart1_static_0100] START');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let onReachStartText = await driver.findComponent(ON.id('onReachStart_wText_1'));
+        let text1 = await (onReachStartText?.getText() as Promise<string>);
+        console.info('[waterFlowStart1_static_0100] onReachStartText' + text1);
+        expect(text1).assertEqual('onReachStart:succ');
+        await CommonFunc.sleep(1000);
+        let btn = await driver.findComponent(ON.id('flow_scrollToIndex_1'));
+        await (btn?.click() as Promise<void>);
+        await CommonFunc.sleep(2000);
 
-      let onScrollStartText = await driver.findComponent(ON.id('onScrollStart_wText_1'));
-      let text2 = await (onScrollStartText?.getText() as Promise<string>);
-      console.info('[waterFlowStart1_static_0100] onScrollStartText' + text2);
-      expect(text2).assertEqual('onScrollStart:succ');
-      await CommonFunc.sleep(1000);
+        let onScrollStartText = await driver.findComponent(ON.id('onScrollStart_wText_1'));
+        let text2 = await (onScrollStartText?.getText() as Promise<string>);
+        console.info('[waterFlowStart1_static_0100] onScrollStartText' + text2);
+        expect(text2).assertEqual('onScrollStart:succ');
+        await CommonFunc.sleep(1000);
 
-      let onScrollStopText = await driver.findComponent(ON.id('onScrollStop_wText_1'));
-      let text3 = await (onScrollStopText?.getText() as Promise<string>);
-      console.info('[waterFlowStart1_static_0100] onScrollStopText' + text3);
-      expect(text3).assertEqual('onScrollStop:succ');
-      await CommonFunc.sleep(1000);
+        let onScrollStopText = await driver.findComponent(ON.id('onScrollStop_wText_1'));
+        let text3 = await (onScrollStopText?.getText() as Promise<string>);
+        console.info('[waterFlowStart1_static_0100] onScrollStopText' + text3);
+        expect(text3).assertEqual('onScrollStop:succ');
+        await CommonFunc.sleep(1000);
 
-      let btm = await driver.findComponent(ON.id('flow_scrollEdge_2'));
-      await (btm?.click() as Promise<void>);
-      await CommonFunc.sleep(5000);
-      let onReachEndText = await driver.findComponent(ON.id('onReachEnd_wText_1'));
-      let text4 = await (onReachEndText?.getText() as Promise<string>);
-      console.info('[waterFlowStart1_static_0100] onReachEndText' + text4);
-      expect(text4).assertEqual('onReachEnd:succ');
+        let btm = await driver.findComponent(ON.id('flow_scrollEdge_2'));
+        await (btm?.click() as Promise<void>);
+        await CommonFunc.sleep(5000);
+        let onReachEndText = await driver.findComponent(ON.id('onReachEnd_wText_1'));
+        let text4 = await (onReachEndText?.getText() as Promise<string>);
+        console.info('[waterFlowStart1_static_0100] onReachEndText' + text4);
+        expect(text4).assertEqual('onReachEnd:succ');
 
-      console.info('[waterFlowStart1_static_0100] END');
-      done();
+        console.info('[waterFlowStart1_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[waterFlowStart1_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

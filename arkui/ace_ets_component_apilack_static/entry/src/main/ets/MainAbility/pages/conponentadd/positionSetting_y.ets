@@ -186,7 +186,7 @@ struct PositionSetting {
     .width('100%').margin({ top: 5 } as Margin)
   }
 
-  onPageShow() {
+  onPageShow(): void {
     let stateChangeEvent: events_emitter.InnerEvent = {
       eventId: 25,
       priority: events_emitter.EventPriority.LOW

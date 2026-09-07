@@ -41,11 +41,11 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct PromptShowDialog {
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear PromptShowDialog start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear PromptShowDialog end`)
   }
 

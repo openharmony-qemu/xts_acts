@@ -17,12 +17,22 @@
 #include <cstdio>
 #include <cstring>
 #include <pthread.h>
+#include <sched.h>
 #include <unistd.h>
 #include "libc_test_shim.h"
 
+struct PthreadGettidArg {
+    pid_t tid;
+    volatile int canExit;
+};
+
 void* PthreadTest(void* arg)
 {
-    *((pid_t*)arg) = gettid();
+    struct PthreadGettidArg* a = (struct PthreadGettidArg*)arg;
+    a->tid = gettid();
+    while (!a->canExit) {
+        sched_yield();
+    }
     return nullptr;
 }
 
@@ -30,19 +40,20 @@ int PthreadGettidNpTest()
 {
     int status = SUCCESS_CODE;
 
-    pid_t tid = 0;
+    struct PthreadGettidArg arg = { 0, 0 };
     pthread_t t;
-    if (pthread_create(&t, nullptr, PthreadTest, &tid) != 0) {
+    if (pthread_create(&t, nullptr, PthreadTest, &arg) != 0) {
         LibcTestError(&status, "pthread_create failed\n");
         return status;
     }
     pid_t recvResult = pthread_gettid_np(t);
+    arg.canExit = 1;
     if (!(pthread_join(t, nullptr) == 0)) {
         LibcTestError(&status, "pthread_join(t, nullptr) == 0 failed: pthread_join is failed\n");
     }
 
-    if (!(tid == recvResult)) {
-        LibcTestError(&status, "tid == recvResult failed: tid=%d recvResult=%d\n", tid, recvResult);
+    if (!(arg.tid == recvResult)) {
+        LibcTestError(&status, "tid == recvResult failed: tid=%d recvResult=%d\n", arg.tid, recvResult);
     }
     return status;
 }

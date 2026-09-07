@@ -35,14 +35,14 @@ import { UtilsTest } from './Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function common_ts_ets_apiStaticClearJsunit() {
+export default function common_ts_ets_apiStaticClearJsunit(): void {
   describe('common_ts_ets_apiStaticClearTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/common_ts_ets_api',
@@ -62,7 +62,7 @@ export default function common_ts_ets_apiStaticClearJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("common_ts_ets_apiStaticClear after each called");
     });
@@ -76,7 +76,7 @@ export default function common_ts_ets_apiStaticClearJsunit() {
      * @tc.desc     testcommon_ts_ets_apiPersistProp_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testcommon_ts_ets_apiPersistProp_static_0001', Level.LEVEL0, async () => {
+it('testcommon_ts_ets_apiPersistProp_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('common_ts_ets_apiPersistProp testcommon_ts_ets_apiPersistProp0001 START');
       await Utils.sleep(2000);
       try {
@@ -86,7 +86,7 @@ it('testcommon_ts_ets_apiPersistProp_static_0001', Level.LEVEL0, async () => {
         }
         let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
           console.info("common_ts_ets_apiPersistProp0001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as ESObject)?.getProperty('Score').toString()).assertEqual("Score");
+          expect(((eventData.data) as ESObject).getProperty('Score').toString()).assertEqual("Score");
         }
         console.info("PersistProp0001 click result is: " + JSON.stringify(inspector.sendEventByKey('PersistPropText', 10, "")));
         events_emitter.on(innerEvent, callback);
@@ -104,7 +104,7 @@ it('testcommon_ts_ets_apiPersistProp_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testcommon_ts_ets_apiEnvProp_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL0, async () => {
+it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('common_ts_ets_apiEnvProp testcommon_ts_ets_apiEnvProp0001 START');
       await Utils.sleep(2000);
       try {
@@ -114,7 +114,7 @@ it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL0, async () => {
         }
         let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
           console.info("common_ts_ets_apiEnvProp0001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as ESObject)?.getProperty('Result').toBoolean()).assertEqual(false);
+          expect(((eventData.data) as ESObject).getProperty('Result').toBoolean()).assertEqual(false);
         }
         console.info("EnvProp0001 click result is: " + JSON.stringify(inspector.sendEventByKey('EnvPropText', 10, "")));
         events_emitter.on(innerEvent, callback);
@@ -132,7 +132,7 @@ it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     test_font_registerFont_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('test_font_registerFont_static_0001', Level.LEVEL0, async () => {
+it('test_font_registerFont_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('test_font_registerFont_0001 Register a customized font in the FontManagerSTART');
       await Utils.sleep(2000);
       let fontOptions: font.FontOptions = {

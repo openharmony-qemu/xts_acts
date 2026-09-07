@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function promptShowDialogJsunit() {
+export default function promptShowDialogJsunit(): void {
   describe('promptShowDialogTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/prompt',
@@ -60,7 +60,7 @@ export default function promptShowDialogJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("promptShowDialog after each called");
     });
@@ -74,7 +74,7 @@ export default function promptShowDialogJsunit() {
      * @tc.desc     testpromptShowDialog_static_001
      * @tc.level    Level.LEVEL0
      */
-it('testpromptShowDialog_static_001', Level.LEVEL0, async () => {
+it('testpromptShowDialog_static_001', Level.LEVEL0, async (): Promise<void> => {
       console.info('promptShowDialog testpromptShowDialog001 START');
       await Utils.sleep(1000);
       try {
@@ -84,7 +84,7 @@ it('testpromptShowDialog_static_001', Level.LEVEL0, async () => {
         }
         let callback1: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
           console.info("testpromptShowDialog001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as ESObject)?.getProperty('STATUS').toBoolean()).assertEqual(true);
+          expect(((eventData.data) as ESObject).getProperty('STATUS').toBoolean()).assertEqual(true);
 
         }
         console.info("onSelect_001 click result is: " + JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
@@ -104,7 +104,7 @@ it('testpromptShowDialog_static_001', Level.LEVEL0, async () => {
      * @tc.desc     testshowActionMenu_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testshowActionMenu_static_0001', Level.LEVEL0, async () => {
+it('testshowActionMenu_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('promptShowDialog testshowActionMenu0001 START');
       await Utils.sleep(1000);
       try {
@@ -114,7 +114,7 @@ it('testshowActionMenu_static_0001', Level.LEVEL0, async () => {
         }
         let callback2: (eventData: events_emitter.EventData) => void = (backData1: events_emitter.EventData) => {
           console.info("onRequestPopupData_0011 get event state result is: " + JSON.stringify(backData1));
-          expect(((backData1.data) as ESObject)?.getProperty('STATUS').toBoolean()).assertEqual(true);
+          expect(((backData1.data) as ESObject).getProperty('STATUS').toBoolean()).assertEqual(true);
 
         }
         console.info("onSelect_002 click result is: " + JSON.stringify(inspector.sendEventByKey('showActionMenuText', 10, "")));
