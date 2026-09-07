@@ -68,14 +68,24 @@ struct WebComponent {
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitOnInputMethodAttached01": {
-              this.flag = 1;
-              // 页面仅设置状态；模拟输入由测试侧串行执行，避免与测试并发使用 UiTest（17000002）
-              Utils.emitEvent(true, 20250420);
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent(true, 20250420)
+              } else {
+                 this.flag = 1;
+                 // 页面仅设置状态；模拟输入由测试侧串行执行，避免与测试并发使用 UiTest（17000002）
+                 Utils.emitEvent(true, 20250420);
+              }
               break;
             }
             case "emitOnInputMethodAttached02": {
-              this.flag = 2;
-              Utils.emitEvent(true, 20250421);
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent(true, 20250421)
+              } else {
+                this.flag = 2;
+                Utils.emitEvent(true, 20250421);
+              }
               break;
             }
           }
