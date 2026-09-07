@@ -19,11 +19,12 @@ import { ArkTSUtils } from '@kit.ArkTS';
 import { sleep } from '../Utils';
 import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS';
 
+import { ConstructorDefaultNestedCounter, constructorDefaultNestedInnerFunc } from './TaskGroupConstructorDefaultTestInner';
+
 interface TaskGroupWorkerResult {
   name: string
   result: number
 }
-import { ConstructorDefaultNestedCounter, constructorDefaultNestedInnerFunc } from './TaskGroupConstructorDefaultTestInner';
 
 @Concurrent
 function constructorDefaultAddFunc(arg: number): number {

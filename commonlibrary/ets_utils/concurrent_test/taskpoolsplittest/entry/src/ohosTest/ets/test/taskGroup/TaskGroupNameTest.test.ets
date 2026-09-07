@@ -17,11 +17,12 @@ import taskpool from '@ohos.taskpool';
 import { sleep } from '../Utils';
 import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS';
 
+import { NameNestedCounter, nameNestedInnerFunc } from './TaskGroupNameTestInner';
+
 interface TaskGroupNameWorkerResult {
   echoName: string
   result: number
 }
-import { NameNestedCounter, nameNestedInnerFunc } from './TaskGroupNameTestInner';
 
 @Concurrent
 function nameSimpleFunc(): number {
