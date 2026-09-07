@@ -17,7 +17,6 @@ import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "..
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import {
-  Point,
   Driver,
   Component,
   UiWindow,
@@ -73,18 +72,29 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210', Level.LEVEL0, 
       await CommonFunc.sleep(3000)
       let driver = Driver.create()
       await CommonFunc.sleep(500);
-      let swiper = await driver.findComponent(ON.id("swiperdisplaycount0210"));
-      let point = await (swiper?.getBoundsCenter() as Promise<Point>);
-      await CommonFunc.sleep(1000);
-      await driver.fling({
-        x: point.x - 30, y: point.y
-      }, {
-        x: point.x + 30, y: point.y
-      }, 5, 1000);
+      let rect = CommonFunc.getComponentRectOnScreen('swiperdisplaycount0210');
+      let top: number = rect.top;
+      let right: number = rect.right;
+      let left: number = rect.left;
+      let bottom: number = rect.bottom;
+      let height: number = bottom - top;
+      let width: number = right - left;
+      console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210 rect: left=" + left + " right=" + right + " top=" + top + " bottom=" + bottom + " width=" + width + " height=" + height);
+      let centerY: number = Math.round(top + height / 2);
+      let startX: number = Math.round(left + width * 0.8);
+      let endX: number = Math.round(left + width * 0.2);
+      for (let i: int = 0; i < 5; i++) {
+        await driver.fling({
+          x: startX, y: centerY
+        }, {
+          x: endX, y: centerY
+        }, 5, 1000);
+        await CommonFunc.sleep(1000);
+      }
       await CommonFunc.sleep(1000);
       let strIndex: string = inspector.getInspectorByKey('swiperdisplaycount0210_1')
       let jsonIndex = JSON.parseJsonElement(strIndex).getElement('$attrs').getString('content');
-      expect(jsonIndex).assertEqual('0')
+      expect(jsonIndex).assertEqual('5')
       await CommonFunc.sleep(1000);
       console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210 END');
       done();
