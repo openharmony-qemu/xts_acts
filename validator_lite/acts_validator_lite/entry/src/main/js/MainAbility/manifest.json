@@ -14,11 +14,10 @@
     "pages/Communication/nfc/index",
     "pages/DistributedData/storage/index",
     "pages/FileManagement/file/index",
-    "pages/PowerManager/battery/index",
-    "pages/PowerManager/brightness/mode/index",
-    "pages/PowerManager/brightness/value/index",
-    "pages/PowerManager/common/index/index",
+    "pages/PowerManager/power/index",
     "pages/Startup/deviceInfo/index",
+    "pages/Sensors/index/index",
+    "pages/Location/index/index",
     "pages/common/help/index"
   ],
   "deviceType": [

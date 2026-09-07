@@ -1,22 +1,24 @@
 <div class="container">
     <div class="content-title">
-        <text style="width:150px;height:50px;text-align: center;font-size:16px;">NFC卡片</text>
+        <text class="title">NFC</text>
         <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
     </div>
-
-    <div class="content">
-        <text class="content-info"> 读卡：{{value}} </text>
-        <text class="content-info">状态: {{statusMsg}}</text>
-        <text class="content-tip">{{ tipMsg }}</text>
-    </div>
-
+    <list class="scroll-area">
+        <list-item class="litem" style="height:260px;">
+            <text class="box-title">NFC 卡片模拟 CardEmulation</text>
+            <text class="tip" show="{{!supported}}">{{ nfcTip }}</text>
+            <text class="result">读卡: {{ value }}</text>
+            <text class="status-text">状态: {{ statusMsg }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="读卡" onclick="nfcOperate" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{nPassColor}};" type="button" value="pass" onclick="passN" />
+                <input class="pfBtn" style="background-color:{{nFailColor}};" type="button" value="fail" onclick="failN" />
+            </div>
+        </list-item>
+    </list>
     <div class="bottom-bt">
-        <input type="button" value="读卡" class="button-operate" onclick="nfcOperate" />
-    </div>
-
-    <div class="bottom-bt">
-        <input type="button" value="pass" class="button" onclick="passClicked" />
-        <input type="button" value="fail" class="button" onclick="failClicked" />
         <input type="button" value="back" class="button" onclick="backClicked" />
     </div>
 </div>
