@@ -67,7 +67,7 @@ export default function ActsGetStaticTest(): void {
       await context!.startAbility(wantInfo).then(() => {
         hilog.info(0x0000, 'testTag', 'startAbility success.');
       }).catch((e: Error) => {
-        hilog.error(0x0000, 'testTag', 'startAbility failed.');
+        hilog.error(0x0000, 'testTag', 'startAbility failed: ' + JSON.stringify(e));
       });
       await Utils.msSleep(1000);
       try {
@@ -125,8 +125,7 @@ export default function ActsGetStaticTest(): void {
         context?.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err: Error = e as Error;
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed: ' + JSON.stringify(e));
         });
         await Utils.msSleep(1000);
         let onForeground_WindowStage =
@@ -193,8 +192,7 @@ export default function ActsGetStaticTest(): void {
         context?.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err: Error = e as Error;
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed: ' + JSON.stringify(e));
         });
         await Utils.msSleep(1000);
         let onBackground_WindowStage =
@@ -263,8 +261,7 @@ export default function ActsGetStaticTest(): void {
         context?.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err: Error = e as Error;
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed: ' + JSON.stringify(e));
         });
         await Utils.msSleep(1000);
         let appContext = context?.getApplicationContext();
@@ -324,8 +321,7 @@ export default function ActsGetStaticTest(): void {
         context?.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', `${TESTCASE} startAbility success.`);
         }).catch((e: Error) => {
-          let err: Error = e as Error;
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed: ' + JSON.stringify(e));
         });
         await Utils.msSleep(1000);
         let appContext = (await application.createModuleContext(context!, 'entry')).getApplicationContext();
@@ -399,8 +395,7 @@ export default function ActsGetStaticTest(): void {
         context?.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err: Error = e as Error;
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed: ' + JSON.stringify(e));
         });
         await Utils.msSleep(1000);
         try {
