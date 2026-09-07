@@ -411,7 +411,6 @@ export default function SocketGetLocalSocketTest() {
             done();
             return;
           }
-          // 先注册 connect 事件，再发起连接，避免事件丢失
           tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
             client.getLocalAddress().then((localAddress: socket.NetAddress) => {
               expectTrue(localAddress != null);
@@ -618,8 +617,6 @@ export default function SocketGetLocalSocketTest() {
         }
         await server.listen(localAddr);
         console.log('listen success');
-
-        // listen 成功后注册 connect 事件监听
         let connectionPromise: Promise<socket.LocalSocketConnection> = new Promise((resolve) => {
           server.on('connect', (connection: socket.LocalSocketConnection) => {
             console.log('server received connection');
@@ -634,14 +631,10 @@ export default function SocketGetLocalSocketTest() {
         }
         await client.connect(connectOpt);
         console.log('client connected');
-
-        // 等待从服务器的 connect 事件获取连接对象
         let connection: socket.LocalSocketConnection = await connectionPromise;
         let localPath: string = await server.getLocalAddress();
         expectTrue(localPath != null);
         console.log("localPath is " + JSON.stringify(localPath));
-
-        // 清理资源
         connection.close();
         client.close();
         server.close();
