@@ -568,6 +568,53 @@ export default function TaskGroupNameTest(): void {
       done()
     })
 
+    // ========== Success callback creates and executes a new Task (attr#019) ==========
+
+    /**
+     * @tc.name   TaskGroupNameTest3100
+     * @tc.number SUB_TASKGROUP_NAME_TEST_3100
+     * @tc.desc   Verify onExecutionSucceeded callback creates and executes a new Task, with exact nested result and completion count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskGroupNameTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let counter = new NameNestedCounter()
+      let innerPromise: Promise<Object> | null = null
+      let callbackCount: number = 0
+      let callbackError: boolean = false
+      let outerTask = new taskpool.Task(nameSimpleFunc)
+      outerTask.onExecutionSucceeded((): void => {
+        try {
+          callbackCount++
+          let innerTask = new taskpool.Task(nameNestedInnerFunc, counter)
+          innerPromise = taskpool.execute(innerTask)
+        } catch (error) {
+          callbackError = true
+        }
+      })
+      try {
+        await taskpool.execute(outerTask)
+        let waited: number = 0
+        while (innerPromise === null && waited < 5000) {
+          await sleep(100)
+          waited += 100
+        }
+        expect(callbackError).assertFalse()
+        expect(callbackCount).assertEqual(1)
+        expect(innerPromise !== null).assertTrue()
+        if (innerPromise !== null) {
+          let innerResult: Object = await innerPromise
+          expect(innerResult as number).assertEqual(9)
+        }
+        expect(counter.count).assertEqual(1)
+      } catch (error) {
+        console.error('TaskGroupNameTest3100 failed')
+        expect(false).assertFail()
+      }
+      done()
+    })
+
     // ========== Name Serialized To Worker (attr#012, F9 worker assets) ==========
 
     /**
