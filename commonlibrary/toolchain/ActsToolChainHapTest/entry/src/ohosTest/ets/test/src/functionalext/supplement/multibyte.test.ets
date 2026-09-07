@@ -27,7 +27,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("c16rtomb", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("c16rtomb");
+      const result: number = await testNapi.runTest("c16rtomb");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("c32rtomb", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("c32rtomb");
+      const result: number = await testNapi.runTest("c32rtomb");
       expect(result).assertEqual(0);
       done();
     });
@@ -54,7 +54,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("mblen", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mblen");
+      const result: number = await testNapi.runTest("mblen");
       expect(result).assertEqual(0);
       done();
     });
@@ -67,7 +67,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("mbrtoc16", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mbrtoc16");
+      const result: number = await testNapi.runTest("mbrtoc16");
       expect(result).assertEqual(0);
       done();
     });
@@ -80,7 +80,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("mbrtoc32", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mbrtoc32");
+      const result: number = await testNapi.runTest("mbrtoc32");
       expect(result).assertEqual(0);
       done();
     });
@@ -93,7 +93,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("mbsinit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mbsinit");
+      const result: number = await testNapi.runTest("mbsinit");
       expect(result).assertEqual(0);
       done();
     });
@@ -106,7 +106,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("mbsnrtowcs", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mbsnrtowcs");
+      const result: number = await testNapi.runTest("mbsnrtowcs");
       expect(result).assertEqual(0);
       done();
     });
@@ -119,7 +119,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("mbstowcs", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mbstowcs");
+      const result: number = await testNapi.runTest("mbstowcs");
       expect(result).assertEqual(0);
       done();
     });
@@ -132,7 +132,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("mbtowc", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mbtowc");
+      const result: number = await testNapi.runTest("mbtowc");
       expect(result).assertEqual(0);
       done();
     });
@@ -145,7 +145,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsrtombs", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsrtombs");
+      const result: number = await testNapi.runTest("wcsrtombs");
       expect(result).assertEqual(0);
       done();
     });
@@ -158,7 +158,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcstombs", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcstombs");
+      const result: number = await testNapi.runTest("wcstombs");
       expect(result).assertEqual(0);
       done();
     });
@@ -171,7 +171,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("wctob", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wctob");
+      const result: number = await testNapi.runTest("wctob");
       expect(result).assertEqual(0);
       done();
     });
@@ -184,7 +184,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("wctomb", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wctomb");
+      const result: number = await testNapi.runTest("wctomb");
       expect(result).assertEqual(0);
       done();
     });
@@ -197,7 +197,7 @@ export default function multibyte_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsnrtombs", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsnrtombs");
+      const result: number = await testNapi.runTest("wcsnrtombs");
       expect(result).assertEqual(0);
       done();
     });

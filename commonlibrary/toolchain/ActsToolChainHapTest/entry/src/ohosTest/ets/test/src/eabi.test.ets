@@ -27,7 +27,7 @@ export default function eabi_group_test() {
      * @tc.level  LEVEL1
      */
     it("aeabi_memclr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__aeabi_memclr");
+      const result: number = await testNapi.runTest("__aeabi_memclr");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function eabi_group_test() {
      * @tc.level  LEVEL1
      */
     it("aeabi_memcpy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__aeabi_memcpy");
+      const result: number = await testNapi.runTest("__aeabi_memcpy");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function eabi_group_test() {
      * @tc.level  LEVEL1
      */
     it("aeabi_memmove", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__aeabi_memmove");
+      const result: number = await testNapi.runTest("__aeabi_memmove");
       expect(result).assertEqual(0);
       done();
     });
@@ -69,7 +69,7 @@ export default function eabi_group_test() {
      * @tc.level  LEVEL1
      */
     it("aeabi_read_tp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__aeabi_read_tp");
+      const result: number = await testNapi.runTest("__aeabi_read_tp");
       expect(result).assertEqual(0);
       done();
     });
@@ -83,7 +83,7 @@ export default function eabi_group_test() {
      * @tc.level  LEVEL1
      */
     it("gmtime64", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__gmtime64");
+      const result: number = await testNapi.runTest("__gmtime64");
       expect(result).assertEqual(0);
       done();
     });
@@ -97,7 +97,7 @@ export default function eabi_group_test() {
      * @tc.level  LEVEL1
      */
     it("sigtimedwait_time64", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__sigtimedwait_time64");
+      const result: number = await testNapi.runTest("__sigtimedwait_time64");
       expect(result).assertEqual(0);
       done();
     });

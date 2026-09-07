@@ -27,7 +27,7 @@ export default function time_group_test() {
      * @tc.level  LEVEL1
      */
     it("ctime", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ctime");
+      const result: number = await testNapi.runTest("ctime");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function time_group_test() {
      * @tc.level  LEVEL1
      */
     it("ctime_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ctime_r");
+      const result: number = await testNapi.runTest("ctime_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -54,7 +54,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test asctime
      */
     it("asctime", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("asctime");
+      const result: number = await testNapi.runTest("asctime");
       expect(result).assertEqual(0);
       done();
     });
@@ -68,7 +68,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test asctime_r
      */
     it("asctime_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("asctime_r");
+      const result: number = await testNapi.runTest("asctime_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -82,7 +82,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test difftime
      */
     it("difftime", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("difftime");
+      const result: number = await testNapi.runTest("difftime");
       expect(result).assertEqual(0);
       done();
     });
@@ -96,7 +96,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test gmtime
      */
     it("gmtime", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("gmtime");
+      const result: number = await testNapi.runTest("gmtime");
       expect(result).assertEqual(0);
       done();
     });
@@ -110,7 +110,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test gmtime_r
      */
     it("gmtime_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("gmtime_r");
+      const result: number = await testNapi.runTest("gmtime_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -124,7 +124,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test localtime
      */
     it("localtime", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("localtime");
+      const result: number = await testNapi.runTest("localtime");
       expect(result).assertEqual(0);
       done();
     });
@@ -138,7 +138,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test localtime_r
      */
     it("localtime_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("localtime_r");
+      const result: number = await testNapi.runTest("localtime_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -152,7 +152,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test mktime
      */
     it("mktime", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mktime");
+      const result: number = await testNapi.runTest("mktime");
       expect(result).assertEqual(0);
       done();
     });
@@ -166,7 +166,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test strftime_ext
      */
     it("strftime_ext", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strftime_ext");
+      const result: number = await testNapi.runTest("strftime_ext");
       expect(result).assertEqual(0);
       done();
     });
@@ -180,7 +180,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test strftime_l
      */
     it("strftime_l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strftime_l");
+      const result: number = await testNapi.runTest("strftime_l");
       expect(result).assertEqual(0);
       done();
     });
@@ -194,7 +194,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test strptime_ext
      */
     it("strptime_ext", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strptime_ext");
+      const result: number = await testNapi.runTest("strptime_ext");
       expect(result).assertEqual(0);
       done();
     });
@@ -208,7 +208,7 @@ export default function time_group_test() {
      * @tc.desc   libc-test timegm
      */
     it("timegm", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("timegm");
+      const result: number = await testNapi.runTest("timegm");
       expect(result).assertEqual(0);
       done();
     });
