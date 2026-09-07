@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-import BackupExtensionAbility, {BundleVersion} from '@ohos.application.BackupExtensionAbility';
+import BackupExtensionAbility, { BundleVersion } from '@ohos.application.BackupExtensionAbility';
 
 export default class BackupExt extends BackupExtensionAbility {
-  onRestore(ver : BundleVersion) {
+  onRestore(ver: BundleVersion): void {
     console.log('do restore ' + JSON.stringify(ver));
   }
-  onBackup() {
+  onBackup(): void {
     console.log('do backup.');
   }
 };
