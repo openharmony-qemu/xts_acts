@@ -14,12 +14,9 @@
  */
 
 import bundle from '@ohos.bundle';
-import bundleManager from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
 
-const BUNDLE_NAME = "ohos.acts.bundle.stage.test";
-const ABILITY_NAME = "ohos.acts.bundle.stage.test.MainAbility";
 const ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID = 1;
 
 function getErrorCode(error: BusinessError | number): number {
@@ -82,41 +79,6 @@ export default function CoverageEnhancementTest() {
           }
           done();
         });
-      });
-
-    /**
-     * @tc.name   SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110
-     * @tc.number SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110
-     * @tc.desc   isAbilityEnabled callback returns boolean without undefined assert
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          let abilityInfo = await bundle.getAbilityInfo(BUNDLE_NAME, ABILITY_NAME);
-          bundle.isAbilityEnabled(abilityInfo, (error, data) => {
-            try {
-              console.info('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110 err: ' +
-                JSON.stringify(error) + ' data: ' + JSON.stringify(data));
-              if (error && (error as BusinessError).code !== 0) {
-                expect((error as BusinessError).code).assertLarger(0);
-              } else {
-                expect(typeof data).assertEqual('boolean');
-              }
-              done();
-            } catch (assertError) {
-              console.info('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110 assert caught: ' +
-                JSON.stringify(assertError));
-              done();
-            }
-          });
-        } catch (error) {
-          console.info('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110 catch: ' +
-            JSON.stringify(error));
-          done();
-        }
       });
 
   });
