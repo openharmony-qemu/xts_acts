@@ -136,7 +136,8 @@ void addUsbDDkErrorCodeTest2(std::vector<napi_property_descriptor> &descData)
     descData.push_back({"ScsiPeripheralVerify10TASKABORTED", nullptr, ScsiPeripheralVerify10TASKABORTED, nullptr,
                         nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"UsbSerialInit", nullptr, UsbSerialInit, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"UsbSerialRelease", nullptr, UsbSerialRelease, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"UsbSerialRelease", nullptr, UsbSerialRelease, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
     descData.push_back({"UsbSerialReleaseInitError", nullptr, UsbSerialReleaseInitError, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
     descData.push_back({"UsbSerialCloseInitError", nullptr, UsbSerialCloseInitError, nullptr, nullptr, nullptr,
