@@ -14,16 +14,31 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UtilsTest } from '../Util.test';
+let domain: int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 
 export default function DismissReasonTest() {
   describe('DismissReasonTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("DismissReasonTest beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
+
+    });
+
     beforeEach(async () => {
       console.info("DismissReasonTest beforeEach start");
       let options: router.RouterOptions = {
@@ -58,23 +73,19 @@ export default function DismissReasonTest() {
      */
 it('DismissReasonTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('DismissReasonTest_static_0010 START');
-      try {
-        let driver = Driver.create()
-        await CommonFunc.sleep(500);
-        let button = await driver.findComponent(ON.id('DismissReason_Button')) as Component;
-        await button!.click();
-        await CommonFunc.sleep(1000);
-        await driver.pressBack()
-        await CommonFunc.sleep(1000);
-        let strJson = inspector.getInspectorByKey('DismissReason_Button');
-        let obj = JSON.parseJsonElement(strJson);
-        console.info("[DismissReasonTest_static_0010] component obj is: " + JSON.stringifyJsonElement(obj));
-        expect(obj.getElement('$attrs').getString('label')).assertEqual('DismissReason succ');
-        console.info('[DismissReasonTest_static_0010] END');
-        done();
-      } catch (error) {
-        expect().assertFail();
-      }
+      let driver = Driver.create()
+      await CommonFunc.sleep(500);
+      let button = await driver.findComponent(ON.id('DismissReason_Button')) as Component;
+      await button!.click();
+      await CommonFunc.sleep(1000);
+      await driver.pressBack()
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('DismissReason_Button');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[DismissReasonTest_static_0010] component obj is: " + JSON.stringifyJsonElement(obj));
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('DismissReason succ');
+      console.info('[DismissReasonTest_static_0010] END');
+      done();
     });
   })
 }

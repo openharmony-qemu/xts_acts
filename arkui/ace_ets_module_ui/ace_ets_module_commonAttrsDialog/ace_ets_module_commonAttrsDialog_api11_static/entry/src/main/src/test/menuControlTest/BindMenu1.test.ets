@@ -13,18 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import window from '@ohos.window';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { UtilsTest } from '../Util.test';
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function bindMenu() {
   describe('bindMenu', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
+    });
+
     beforeEach(async (): Promise<void> => {
       console.info("bindMenu beforeEach start");
       let options: router.RouterOptions = {
@@ -58,22 +70,10 @@ it('bindMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('bindMenu_0100 START');
       let abilityStage=AppStorage.get<common.BaseContext>("abilityContext")
       let driver =  Driver.create()
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('bindMenu_0100 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindMenu'));
-       try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('bindMenu_0100 click err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('bindMenu_0100 sleep err: ' + JSON.stringify(err));
-      }
+       await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
       windowClass = await window.getLastWindow(abilityStage as common.BaseContext);
@@ -85,17 +85,9 @@ it('bindMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       console.log("[bindMenu_0100] density.x: " + JSON.stringify(density.x))
       expect(properties.type == 1 || properties.type == 0).assertTrue()
 
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('bindMenu_0100 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
        driver?.click(2, 2);
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('bindMenu_0100 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info('[bindMenu_0100] END');
       done();
     });

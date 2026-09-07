@@ -14,15 +14,29 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import deviceInfo from "@ohos.deviceInfo"
+import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function presentCustomDialogOrder() {
   describe('presentCustomDialogOrder', () => {
+    beforeAll(async (): Promise<void> => {
+
+      
+      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+      
+    })
+
     beforeEach(async () => {
       console.info("presentCustomDialogOrder beforeEach start");
       let options: router.RouterOptions = {
@@ -49,11 +63,7 @@ export default function presentCustomDialogOrder() {
       if (AppStorage.get<number>('presentCustomDialogOrder') != undefined) {
         AppStorage.delete('presentCustomDialogOrder')
       }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('presentCustomDialogOrder after each sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("presentCustomDialogOrder after each called");
     });
 
@@ -71,16 +81,16 @@ it('presentCustomDialogOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST |
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('100'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let top = AppStorage.get<number>('presentCustomDialogOrder')
       expect(top).assertEqual(100)
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.id('close'));
       await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       console.info('presentCustomDialogOrder_static_0100 END');
       done();
     });
@@ -99,16 +109,16 @@ it('presentCustomDialogOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST |
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('100001'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let top = AppStorage.get<number>('presentCustomDialogOrder')
       expect(top).assertEqual(100000)
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.id('close'));
       await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       console.info('presentCustomDialogOrder_static_0200 END');
       done();
     });
@@ -127,16 +137,16 @@ it('presentCustomDialogOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST |
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('-100001'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let top = AppStorage.get<number>('presentCustomDialogOrder')
       expect(top).assertEqual(-100000)
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.id('close'));
       await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       console.info('presentCustomDialogOrder_static_0300 END');
       done();
     });
@@ -154,16 +164,16 @@ it('presentCustomDialogOrder_static_0400', TestType.FUNCTION | Size.MEDIUMTEST |
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('undefined'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let top = AppStorage.get<number>('presentCustomDialogOrder')
       expect(top).assertEqual(0)
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.id('close'));
       await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       console.info('presentCustomDialogOrder_static_0400 END');
       done();
     });

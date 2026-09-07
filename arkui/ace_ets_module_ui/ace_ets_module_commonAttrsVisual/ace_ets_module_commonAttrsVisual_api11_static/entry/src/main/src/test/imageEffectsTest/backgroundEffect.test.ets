@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -32,9 +32,26 @@ import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import bundle from '@ohos.bundle.bundleManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UtilsTest } from '../Util.test';
+
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 export default function backgroundEffectJsunit() {
   describe('backgroundEffectJsunit', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("backgroundEffectJsunit beforeAll start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
+      
+    });
+
     beforeEach(async (): Promise<void> => {
       console.info("backgroundEffectJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -69,11 +86,7 @@ it('backgroundEffectJsunit_static_0100', Level.LEVEL2, async (done: () => void):
       // Get the information of the backgroundEffect component
       console.info('[backgroundEffectJsunit_0100] START');
       let strJson = inspector.getInspectorByKey('backgroundEffect_id1');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('backgroundEffectTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info("[backgroundEffectJsunit_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[backgroundEffectJsunit_0100] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -99,11 +112,7 @@ it('backgroundEffectJsunit_static_0200', Level.LEVEL2, async (done: () => void):
       // Get the information of the backgroundEffect component
       console.info('[backgroundEffectJsunit_0200] START');
       let strJson = inspector.getInspectorByKey('backgroundEffect_id1');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('backgroundEffectTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info("[backgroundEffectJsunit_0200] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson)
@@ -163,11 +172,7 @@ it('backgroundEffectJsunit_static_0400', Level.LEVEL2, async (done: () => void):
       // Get the information of the backgroundEffect component
       console.info('[backgroundEffectJsunit_0400] START');
       let strJson = inspector.getInspectorByKey('backgroundEffect_id1');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('backgroundEffectTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info("[backgroundEffectJsunit_0400] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson)
@@ -192,11 +197,7 @@ it('backgroundEffectJsunit_static_0500', Level.LEVEL2, async (done: () => void):
       // Get the information of the backgroundEffect component
       console.info('[backgroundEffectJsunit_0500] START');
       let strJson = inspector.getInspectorByKey('backgroundEffect_id2');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('backgroundEffectTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info("[backgroundEffectJsunit_0500] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson)

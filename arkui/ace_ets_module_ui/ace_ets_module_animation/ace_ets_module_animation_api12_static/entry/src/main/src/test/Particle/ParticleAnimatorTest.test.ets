@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
@@ -28,11 +28,20 @@ import {
   WindowMode
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
+import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function ParticleAnimatorTest() {
   describe('ParticleAnimatorTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("ParticleAnimatorTest beforeEach start");
+
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
+      
+
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ParticleAnimatorTest beforeEach start");
@@ -48,7 +57,7 @@ export default function ParticleAnimatorTest() {
           console.info("get ParticleAnimatorTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(3000);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push ParticleAnimatorTest page error:" + err);
@@ -57,15 +66,11 @@ export default function ParticleAnimatorTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleAnimatorTest err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("ParticleAnimatorTest after each called");
     });
-
-
+    
+    
 /**
      * @tc.number   ParticleAnimatorTest_static_001
      * @tc.name     ParticleAnimatorTest_static_001
@@ -75,17 +80,9 @@ export default function ParticleAnimatorTest() {
 it('ParticleAnimatorTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[ParticleAnimatorTest_static_001] START');
-      try {
-        await CommonFunc.sleep(500);
-      } catch (err) {
-        console.info('ParticleAnimatorTest err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(500);
       let json = inspector.getInspectorByKey('particleAnimationTest_particleTest');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('ParticleAnimatorTest err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('particleAnimatorTest_00_0100 :' + JSON.stringify(json));
       // test whether support the commonAttrs
       console.info('particleAnimatorTest_00_0100 :' +

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -32,9 +32,26 @@ import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import emitter from '@ohos.events.emitter'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UtilsTest } from '../Util.test';
+
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 export default function InvertOptionsJsSuit() {
   describe('InvertOptionsJsSuit', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("InvertOptionsJsSuit beforeAll start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
+      
+    });
+
     beforeEach(async (): Promise<void> => {
       console.info("InvertOptionsJsSuit beforeEach start");
       let options: router.RouterOptions = {
@@ -58,11 +75,7 @@ export default function InvertOptionsJsSuit() {
 
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('InvertOptionsJsSuitTest afterEach sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("overlay after each called");
     });
 
@@ -78,20 +91,12 @@ export default function InvertOptionsJsSuit() {
 it('InvertOptionsJsSuit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[InvertOptionsJsSuit_0100] START');
       let driver = Driver.create()
-      try {
-        await CommonFunc.sleep(1000);
-        let button_Bottom = await driver.findComponent(ON.id('InvertOptionsenum'));
-        await (button_Bottom?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('InvertOptionsJsSuitTest action err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
+      let button_Bottom = await driver.findComponent(ON.id('InvertOptionsenum'));
+      await (button_Bottom?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('InvertOptionsenum');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('InvertOptionsJsSuitTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("[InvertOptionsJsSuit_0100] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('invert')

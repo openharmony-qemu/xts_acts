@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import { Driver, ON, Rect } from '@kit.TestKit';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 const SLEEP_TIME = 1000;
@@ -26,25 +27,21 @@ const PAGE_NAME = 'ResponseRegionIndex';
 
 export default function ResponseRegionTest() {
   describe('ResponseRegionTest', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility('com.arkui.ace.ets.module.common.static', 'EntryAbility');
+    });
+
     beforeEach(async (): Promise<void> => {
       const options: router.RouterOptions = { url: PAGE_URL };
       const routerInstance = AppStorage.get<Router>('router') as Router;
       routerInstance.clear();
       routerInstance.replaceUrl(options);
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-      } catch (err) {
-        console.info('ResponseRegionTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(SLEEP_TIME);
       expect(routerInstance.getState().name).assertEqual(PAGE_NAME);
     });
 
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-      } catch (err) {
-        console.info('ResponseRegionTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(SLEEP_TIME);
     });
 
     /**

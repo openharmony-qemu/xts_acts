@@ -13,18 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import window from '@ohos.window';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import common from '@ohos.app.ability.common';
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { UtilsTest } from '../Util.test';
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function ModalBlurStyle() {
   describe('ModalBlurStyle', () => {
+
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ModalBlurStyle beforeEach start");
@@ -53,23 +66,11 @@ export default function ModalBlurStyle() {
 
     afterEach(async () => {
       let driver = Driver.create();
-      try {
-        await CommonFunc.sleep(500);
-      } catch (err) {
-        console.info('ModalBlurStyle afterEach sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('blurStyle_init'));
-       try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('ModalBlurStyle afterEach click err: ' + JSON.stringify(err));
-      }
+       await (button?.click() as Promise<void>);
       console.log('reset button click succ')
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle afterEach sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
     });
     
     
@@ -81,28 +82,12 @@ export default function ModalBlurStyle() {
      */
 it('ModalBlurStyle_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ModalBlurStyle_0100 START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0100 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let driver = Driver.create()
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0100 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('blurStyle_1'));
-       try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('ModalBlurStyle_0100 click err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0100 sleep err: ' + JSON.stringify(err));
-      }
+       await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_1');
 
       console.info("[ModalBlurStyle_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -120,28 +105,12 @@ it('ModalBlurStyle_static_0100', Level.LEVEL0, async (done: () => void): Promise
      */
 it('ModalBlurStyle_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ModalBlurStyle_0200 START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0200 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let driver = Driver.create()
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0200 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('blurStyle_2'));
-       try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('ModalBlurStyle_0200 click err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0200 sleep err: ' + JSON.stringify(err));
-      }
+       await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_2');
       console.info("[ModalBlurStyle_0200] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 2');
@@ -158,28 +127,12 @@ it('ModalBlurStyle_static_0200', Level.LEVEL0, async (done: () => void): Promise
      */
 it('ModalBlurStyle_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ModalBlurStyle_0300 START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0300 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let driver = Driver.create()
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0300 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('blurStyle_3'));
-       try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('ModalBlurStyle_0300 click err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0300 sleep err: ' + JSON.stringify(err));
-      }
+       await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_3');
       console.info("[ModalBlurStyle_0300] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 3');
@@ -196,29 +149,13 @@ it('ModalBlurStyle_static_0300', Level.LEVEL0, async (done: () => void): Promise
      */
 it('ModalBlurStyle_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ModalBlurStyle_0400 START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0400 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let driver = Driver.create()
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0400 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let scrollBar: Component = (await driver.findComponent(ON.type('Scroll'))) as Component;
       let button = await scrollBar.scrollSearch(ON.id('blurStyle_4'));
-       try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('ModalBlurStyle_0400 click err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0400 sleep err: ' + JSON.stringify(err));
-      }
+       await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_4');
       console.info("[ModalBlurStyle_0400] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 4');
@@ -235,29 +172,13 @@ it('ModalBlurStyle_static_0400', Level.LEVEL0, async (done: () => void): Promise
      */
 it('ModalBlurStyle_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ModalBlurStyle_0500 START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0500 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let driver = Driver.create()
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0500 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let scrollBar: Component = (await driver.findComponent(ON.type('Scroll'))) as Component;
       let button = await scrollBar.scrollSearch(ON.id('blurStyle_5'));
-      try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('ModalBlurStyle_0500 click err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ModalBlurStyle_0500 sleep err: ' + JSON.stringify(err));
-      }
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_5');
       console.info("[ModalBlurStyle_0500] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 5');

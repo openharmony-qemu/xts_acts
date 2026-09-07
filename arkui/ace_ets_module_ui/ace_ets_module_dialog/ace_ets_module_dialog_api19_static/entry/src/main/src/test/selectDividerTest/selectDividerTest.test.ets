@@ -17,6 +17,7 @@
 import Utils from '../../../ets/MainAbility/common/Utils';
 import {
   afterEach,
+  beforeAll,
   beforeEach,
   describe,
   expect,
@@ -31,10 +32,15 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import { UtilsTest } from '../Util.test';
 
 export default function selectDividerTest() {
   console.info('selectDividerTest beforeEach start');
   describe('selectDividerTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("selectDividerTest beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.api19.static", "EntryAbility")
+    });
     beforeEach(async (): Promise<void> => {
       console.info("selectDividerTest beforeEach start");
       try {

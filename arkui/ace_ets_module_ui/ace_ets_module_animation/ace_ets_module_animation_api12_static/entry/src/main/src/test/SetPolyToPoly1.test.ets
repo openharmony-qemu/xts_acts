@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index'
 import {
   Component,
   DisplayRotation,
@@ -28,11 +28,19 @@ import {
 import router from '@ohos.router';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
+import { startAbility, UtilsTest } from './Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function setPolyToPoly() {
   describe('setPolyToPoly', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("setPolyToPoly beforeEach start");
+
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
+      
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("setPolyToPoly beforeEach start");
@@ -57,15 +65,11 @@ export default function setPolyToPoly() {
     });
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('setPolyToPoly err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("setPolyToPoly after each called");
     });
-
-
+    
+    
 /**
      * @tc.number   setPolyToPoly_static_0100
      * @tc.name     setPolyToPoly_static_0100
@@ -76,29 +80,12 @@ it('setPolyToPoly_static_0100', Level.LEVEL0, async (done: () => void): Promise<
 
       console.info('setPolyToPoly_static_0100 START');
       let driver = Driver.create()
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('setPolyToPoly err: ' + JSON.stringify(err));
-      }
-      let button1: Component | null = null;
-      try {
-        button1 = await driver.findComponent(ON.id('ImageSetPoly'));
-      } catch (err) {
-        console.info('setPolyToPoly err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('setPolyToPoly err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
+      let button1 = await driver.findComponent(ON.id('ImageSetPoly'));
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSetPoly');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('150.00vp');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('setPolyToPoly err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info('[setPolyToPoly_static_0100] END');
       done();
     });

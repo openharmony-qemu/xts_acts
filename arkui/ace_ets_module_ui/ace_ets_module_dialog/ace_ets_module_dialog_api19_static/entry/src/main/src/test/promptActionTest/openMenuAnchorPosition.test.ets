@@ -16,6 +16,7 @@
 import Utils from '../../../ets/MainAbility/common/Utils';
 import {
   afterEach,
+  beforeAll,
   beforeEach,
   describe,
   expect,
@@ -30,10 +31,15 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import { UtilsTest } from '../Util.test';
 
 export default function openMenuAnchorPositionTest() {
 
     describe('openMenuAnchorPositionTest', () => {
+      beforeAll(async (): Promise<void> => {
+        console.info("openMenuTest beforeAll start");
+        await UtilsTest.startAbility("com.arkui.ace.dialog.api19.static", "EntryAbility")
+      });
 
       beforeEach(async () => {
         console.info("openMenuAnchorPositionTest beforeEach start");

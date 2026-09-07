@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
@@ -30,11 +30,20 @@ import {
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import text from '@ohos.graphics.text';
+import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function animateToTest() {
   describe('animateToTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("animateToTest beforeEach start");
+
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
+      
+
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("animateToTest beforeEach start");
@@ -59,15 +68,11 @@ export default function animateToTest() {
       console.info("animateToTest beforeEach end");
     });
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('animateToTest err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("animateToTest after each called");
     });
-
-
+    
+    
 /**
      * @tc.number   animateToTest_static_001
      * @tc.name     animateToTest_static_001
@@ -77,41 +82,16 @@ export default function animateToTest() {
 it('animateToTest_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
 
       console.info('[animateToTest_static_001] START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('animateToTest err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let button: Component | null = null;
-      try {
-        button = await driver.findComponent(ON.id('animateToTestBt'));
-      } catch (err) {
-        console.info('animateToTest err: ' + JSON.stringify(err));
-      }
-      try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('animateToTest err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('animateToTest err: ' + JSON.stringify(err));
-      }
+      let button = await driver.findComponent(ON.id('animateToTestBt'));
+      await (button?.click() as Promise<void>)
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('animateToTest');
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateToTest err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[animateToTest_static_001] component obj is: " + JSON.stringify(obj));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('animateToTest err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('animateToImmediately');
       console.info('[animateToTest_static_001] END');
       done();

@@ -14,17 +14,25 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import emitter from '@ohos.events.emitter';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { UtilsTest } from '../../test/Util.test'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function geometryTransitionJsunit() {
   describe('geometryTransitionTest', () => {
+
+    beforeAll(async (): Promise<void> => {
+      console.info("geometryTransitionJsunit beforeEach start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
+      
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("geometryTransitionJsunit beforeEach start");
@@ -39,7 +47,7 @@ export default function geometryTransitionJsunit() {
         if (!("geometryTransition2" == pages.name)) {
           console.info("get geometryTransitionJsunit pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(1000);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push playModeReverseTest page error:" + err);
@@ -48,11 +56,7 @@ export default function geometryTransitionJsunit() {
     });
 
     afterEach(async () => {
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('geometryTransitionJsunit err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       console.info("geometryTransition after each called");
     });
     
@@ -68,11 +72,7 @@ it('geometryTransitionTest_static_0100', Level.LEVEL0, async (done: () => void):
         eventId: 104,
         priority: emitter.EventPriority.LOW
       } as emitter.InnerEvent
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('geometryTransitionTest_static_0100 err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       let callback = (indexEvent: emitter.EventData) => {
         console.info("geometryTransitionTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
         expect(((indexEvent.data) as ESObject)?.getProperty('btn1')).assertEqual(false);
@@ -84,11 +84,7 @@ it('geometryTransitionTest_static_0100', Level.LEVEL0, async (done: () => void):
       }
       console.info("geometryTransitionTest_static_0100 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button', 10, "")));
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('geometryTransitionTest_static_0100 err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       console.info('geometryTransitionTest_static_0100 END');
       done();
     });

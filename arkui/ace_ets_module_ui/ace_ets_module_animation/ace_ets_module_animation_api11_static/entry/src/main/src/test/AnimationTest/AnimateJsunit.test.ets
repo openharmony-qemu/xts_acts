@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter'
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -33,7 +33,17 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import curves from '@ohos.curves';
 import { PlayMode } from '@ohos.arkui.component'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { startAbility, UtilsTest } from '../Util.test'
 import { RecordData } from '@ohos.base';
+
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 interface DataI {
   duration: number
@@ -72,6 +82,13 @@ interface ParamName2 {
 export default function animateJsunit() {
   describe('animateTest', () => {
 
+    beforeAll(async (): Promise<void> => {
+      console.info("animateJsunit beforeEach start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
+      
+    });
+
     beforeEach(async (): Promise<void> => {
       console.info("animateJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -85,11 +102,7 @@ export default function animateJsunit() {
         if (!("animate" == pages.name)) {
           console.info("get animateJsunit pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push animateJsunit page error:" + err);
@@ -99,11 +112,7 @@ export default function animateJsunit() {
 
 
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("animate after each called");
     });
 
@@ -116,11 +125,7 @@ export default function animateJsunit() {
      */
 it('animateTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0100 START');
-      try {
-        await CommonFunc.sleep(1500);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1500);
       let indexEvent: emitter.InnerEvent = {
         eventId: 51,
         priority: emitter.EventPriority.LOW
@@ -139,11 +144,7 @@ it('animateTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button1', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_0100 END');
       done();
     });
@@ -157,11 +158,7 @@ it('animateTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('animateTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0200 START');
-      try {
-        await CommonFunc.sleep(1500);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1500);
       let indexEvent: emitter.InnerEvent = {
         eventId: 52,
         priority: emitter.EventPriority.LOW
@@ -176,11 +173,7 @@ it('animateTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button2', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_0200 END');
       done();
     });
@@ -194,11 +187,7 @@ it('animateTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('animateTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0300 START');
-      try {
-        await CommonFunc.sleep(1500);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1500);
       let indexEvent: emitter.InnerEvent = {
         eventId: 53,
         priority: emitter.EventPriority.LOW
@@ -217,11 +206,7 @@ it('animateTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button3', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_0300 END');
       done();
     });
@@ -235,11 +220,7 @@ it('animateTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('animateTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0400 START');
-      try {
-        await CommonFunc.sleep(1500);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1500);
       let indexEvent: emitter.InnerEvent = {
         eventId: 54,
         priority: emitter.EventPriority.LOW
@@ -254,11 +235,7 @@ it('animateTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_0400 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0400 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button4', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_0400 END');
       done();
     });
@@ -272,11 +249,7 @@ it('animateTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('animateTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animateTest_0500 START');
-      try {
-        await CommonFunc.sleep(1500);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1500);
       let indexEvent: emitter.InnerEvent = {
         eventId: 55,
         priority: emitter.EventPriority.LOW
@@ -291,11 +264,7 @@ it('animateTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_0500 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0500 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button5', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_0500 END');
       done();
     });
@@ -308,21 +277,13 @@ it('animateTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<vo
      * @tc.level    Level.LEVEL0
      */
 it('animateTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       const animate = AppStorage.get<MessageManager<Int>>("MessageManager")
       let msg: Message<Int> = {
         name: 'duration', value: 2000
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 151,
         priority: emitter.EventPriority.LOW
@@ -341,11 +302,7 @@ it('animateTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_0600 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0600 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button11', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_0600 END');
       done();
     });
@@ -364,11 +321,7 @@ it('animateTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'curve', value: 'Linear'
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 152,
         priority: emitter.EventPriority.LOW
@@ -387,11 +340,7 @@ it('animateTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_0700 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0700 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button12', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_0700 END');
       done();
     });
@@ -411,11 +360,7 @@ it('animateTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'iteration', value: 2
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 153,
         priority: emitter.EventPriority.LOW
@@ -434,11 +379,7 @@ it('animateTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_0800 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0800 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button13', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_0800 END');
       done();
     });
@@ -458,11 +399,7 @@ it('animateTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'tempo', value: 20000
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 154,
         priority: emitter.EventPriority.LOW
@@ -481,11 +418,7 @@ it('animateTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_0900 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_0900 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button14', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_0900 END');
       done();
     });
@@ -504,11 +437,7 @@ it('animateTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'playmode', value: PlayMode.Alternate
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 155,
         priority: emitter.EventPriority.LOW
@@ -528,11 +457,7 @@ it('animateTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_1000 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1000 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button15', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_1000 END');
       done();
     });
@@ -551,11 +476,7 @@ it('animateTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'duration', value: -1000
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 1001,
         priority: emitter.EventPriority.LOW
@@ -574,11 +495,7 @@ it('animateTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_1100 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1100 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button6', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_1100 END');
       done();
     });
@@ -598,11 +515,7 @@ it('animateTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'duration', value: 100000000
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 1002,
         priority: emitter.EventPriority.LOW
@@ -621,11 +534,7 @@ it('animateTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_1200 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1200 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button7', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_1200 END');
       done();
     });
@@ -645,11 +554,7 @@ it('animateTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'curve', value: '123'
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 1003,
         priority: emitter.EventPriority.LOW
@@ -668,11 +573,7 @@ it('animateTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_1300 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1300 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button8', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_1300 END');
       done();
     });
@@ -692,11 +593,7 @@ it('animateTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'curve', value: 'abc'
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 1004,
         priority: emitter.EventPriority.LOW
@@ -715,11 +612,7 @@ it('animateTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_1400 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1400 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button9', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_1400 END');
       done();
     });
@@ -738,11 +631,7 @@ it('animateTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'iteration', value: 121
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 1005,
         priority: emitter.EventPriority.LOW
@@ -761,11 +650,7 @@ it('animateTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_1500 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1500 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button10', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_1500 END');
       done();
     });
@@ -784,11 +669,7 @@ it('animateTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'iteration', value: -5
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 1006,
         priority: emitter.EventPriority.LOW
@@ -808,11 +689,7 @@ it('animateTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<vo
       }
       console.info("animateTest_1600 click result is: " +
       JSON.stringify(inspector.sendEventByKey('animate_button111', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_1600 END');
       done();
     });
@@ -831,11 +708,7 @@ it('animateTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'tempo', value: 12121212121212
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 1007,
         priority: emitter.EventPriority.LOW
@@ -855,11 +728,7 @@ it('animateTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<vo
       }
       console.info("animateTest_1700 click result is: " +
       JSON.stringify(inspector.sendEventByKey('animate_button121', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_1700 END');
       done();
     });
@@ -879,11 +748,7 @@ it('animateTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'tempo', value: -5
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 1008,
         priority: emitter.EventPriority.LOW
@@ -903,11 +768,7 @@ it('animateTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<vo
       }
       console.info("animateTest_1800 click result is: " +
       JSON.stringify(inspector.sendEventByKey('animate_button131', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_1800 END');
       done();
     });
@@ -927,11 +788,7 @@ it('animateTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'playmode', value: -6
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 1009,
         priority: emitter.EventPriority.LOW
@@ -951,11 +808,7 @@ it('animateTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<vo
       }
       console.info("animateTest_1900 click result is: " +
       JSON.stringify(inspector.sendEventByKey('animate_button141', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_1900 END');
       done();
     });
@@ -974,11 +827,7 @@ it('animateTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<vo
         name: 'playmode', value: 123456
       }
       animate?.notify(msg);
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let indexEvent: emitter.InnerEvent = {
         eventId: 1010,
         priority: emitter.EventPriority.LOW
@@ -998,11 +847,7 @@ it('animateTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<vo
       }
       console.info("animateTest_2000 click result is: " +
       JSON.stringify(inspector.sendEventByKey('animate_button151', 10, "")));
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('animateTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info('animateTest_2000 END');
       done();
     });

@@ -32,12 +32,27 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
+import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 export default function showToastOptions() {
   describe('showToastOptions', () => {
     let currentDeviceIsPC = false
     beforeAll(async (): Promise<void> => {
+
+      
+      await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")
+      
+
       let deviceTypeInfo = deviceInfo.deviceType
       currentDeviceIsPC = deviceTypeInfo === "2in1" ? true : false
       console.info("the value of the currentDeviceIsPC is " + currentDeviceIsPC)
@@ -73,7 +88,6 @@ export default function showToastOptions() {
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
 it('showToastOptions_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-try {
 
         console.info('showToastOptions_static_0100 START');
         let driver = Driver.create()
@@ -96,10 +110,6 @@ try {
         }
         await CommonFunc.sleep(1000);
         console.info('showToastOptions_static_0100 END');
-} catch (err) {
-  console.info('showToastOptions_static_0100 err: ' + JSON.stringify(err));
-  expect().assertFail();
-}
         done();
       });
 
@@ -112,7 +122,6 @@ try {
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
 it('showToastOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        try {
         console.info('showToastOptions_static_0200 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -146,10 +155,6 @@ it('showToastOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         }
         await CommonFunc.sleep(1000);
         console.info('showToastOptions_static_0200 END');
-        } catch (err) {
-          console.info('showToastOptions_static_0200 err: ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done();
       });
 
@@ -162,7 +167,6 @@ it('showToastOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
 it('showToastOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        try {
         console.info('showToastOptions_static_0300 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -182,10 +186,6 @@ it('showToastOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         }
         await CommonFunc.sleep(1000);
         console.info('showToastOptions_static_0300 END');
-        } catch (err) {
-          console.info('showToastOptions_static_0300 err: ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done();
       });
 
@@ -198,7 +198,6 @@ it('showToastOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
 it('showToastOptions_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        try {
         console.info('showToastOptions_static_0400 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -220,10 +219,6 @@ it('showToastOptions_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         }
         await CommonFunc.sleep(1000);
         console.info('showToastOptions_static_0400 END');
-        } catch (err) {
-          console.info('showToastOptions_static_0400 err: ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done();
       });
 
@@ -236,7 +231,6 @@ it('showToastOptions_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
 it('showToastOptions_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        try {
         console.info('showToastOptions_static_0500 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -259,10 +253,6 @@ it('showToastOptions_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         }
         await CommonFunc.sleep(1000);
         console.info('showToastOptions_static_0500 END');
-        } catch (err) {
-          console.info('showToastOptions_static_0500 err: ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done();
       });
 
@@ -275,7 +265,6 @@ it('showToastOptions_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
 it('showToastOptions_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        try {
         console.info('showToastOptions_static_0600 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -299,10 +288,6 @@ it('showToastOptions_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
 
         await CommonFunc.sleep(1000);
         console.info('showToastOptions_static_0600 END');
-        } catch (err) {
-          console.info('showToastOptions_static_0600 err: ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done();
       });
 
@@ -315,7 +300,6 @@ it('showToastOptions_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
 it('showToastOptions_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        try {
         console.info('showToastOptions_static_0700 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -339,10 +323,6 @@ it('showToastOptions_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
 
         await CommonFunc.sleep(1000);
         console.info('showToastOptions_static_0700 END');
-        } catch (err) {
-          console.info('showToastOptions_static_0700 err: ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done();
       });
 
@@ -355,7 +335,6 @@ it('showToastOptions_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
 it('showToastOptions_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        try {
         console.info('showToastOptions_static_0800 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -376,10 +355,6 @@ it('showToastOptions_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         }
         await CommonFunc.sleep(1000);
         console.info('showToastOptions_static_0800 END');
-        } catch (err) {
-          console.info('showToastOptions_static_0800 err: ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done();
       });
 
@@ -392,7 +367,6 @@ it('showToastOptions_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
 it('showToastOptions_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        try {
         console.info('showToastOptions_static_0900 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -414,10 +388,6 @@ it('showToastOptions_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
 
         await CommonFunc.sleep(1000);
         console.info('showToastOptions_static_0900 END');
-        } catch (err) {
-          console.info('showToastOptions_static_0900 err: ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done();
       });
   })

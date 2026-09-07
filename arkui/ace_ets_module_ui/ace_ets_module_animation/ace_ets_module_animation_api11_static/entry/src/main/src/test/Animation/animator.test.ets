@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -32,9 +32,26 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import curves from '@ohos.curves';
 import { PlayMode } from '@ohos.arkui.component'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { startAbility, UtilsTest } from '../Util.test'
+
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 export default function animatorOnframeJsunit() {
   describe('animatorOnframeTest', () => {
+
+    beforeAll(async (): Promise<void> => {
+      console.info("playModeReverseTest beforeEach start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
+      
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("playModeReverseTest beforeEach start");
@@ -59,11 +76,7 @@ export default function animatorOnframeJsunit() {
 
 
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('animatorOnframe afterEach err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("animatorOnframe after each called");
     });
 
@@ -76,11 +89,7 @@ export default function animatorOnframeJsunit() {
      */
 it('testanimatorOnframe_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0001 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('testanimatorOnframe0001 err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('onframeText');
       console.info("[testanimatorOnframe0001] component width strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
@@ -99,11 +108,7 @@ it('testanimatorOnframe_static_0001', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testanimatorOnframe_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0002 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('testanimatorOnframe0002 err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('onframeText');
       console.info("[testanimatorOnframe0002] component height strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
@@ -122,17 +127,9 @@ it('testanimatorOnframe_static_0002', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testanimatorOnframe_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0003 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('testanimatorOnframe0003 err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('onframeText');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('testanimatorOnframe0003 err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info("[testanimatorOnframe0003] component fontSize strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
 
@@ -151,11 +148,7 @@ it('testanimatorOnframe_static_0003', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testanimatorOnframe_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0004 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('testanimatorOnframe0004 err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('onframeText');
       console.info("[testanimatorOnframe0004] component opacity strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
@@ -175,11 +168,7 @@ it('testanimatorOnframe_static_0004', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testanimatorOnframe_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0005 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('testanimatorOnframe0005 err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('onframeText');
       console.info("[testanimatorOnframe0005] component align strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
@@ -199,11 +188,7 @@ it('testanimatorOnframe_static_0005', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testanimatorOnframe_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0006 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('testanimatorOnframe0006 err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('onframeText');
       console.info("[testanimatorOnframe0006] component fontColor strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
@@ -224,11 +209,7 @@ it('testanimatorOnframe_static_0006', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testanimatorOnframe_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0007 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('testanimatorOnframe0007 err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('onframeText');
       console.info("[testanimatorOnframe0007] component lineHeight strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
@@ -249,11 +230,7 @@ it('testanimatorOnframe_static_0007', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testanimatorOnframe_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe009 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('testanimatorOnframe0009 err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('onframeText');
       console.info("[testanimatorOnframe0009] component padding strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
@@ -273,11 +250,7 @@ it('testanimatorOnframe_static_0009', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testanimatorOnframe_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0010 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('testanimatorOnframe0010 err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('onframeText');
       console.info("[testanimatorOnframe0010] component textAlign strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
@@ -299,32 +272,28 @@ it('testanimatorOnframe_static_0010', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testanimatorOnframe_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0011 START');
-      try {
-        let driver = Driver.create();
-        await driver.delayMs(1000);
-        let playBtn = await driver.findComponent(ON.id('Play'));
-        await CommonFunc.sleep(2000);
-        console.log('test result ' + JSON.stringify(playBtn))
+      let driver = Driver.create();
+      await driver.delayMs(1000);
+      let playBtn = await driver.findComponent(ON.id('Play'));
+      await CommonFunc.sleep(2000);
+      console.log('test result ' + JSON.stringify(playBtn))
 
-        await (playBtn?.click() as Promise<void>);
-        await CommonFunc.sleep(5000);
-        console.info('[testanimatorOnframe0011] playBtn click');
-        await CommonFunc.sleep(2000);
+      await (playBtn?.click() as Promise<void>);
+      await CommonFunc.sleep(5000);
+      console.info('[testanimatorOnframe0011] playBtn click');
+      await CommonFunc.sleep(2000);
 
-        let strJson3 = inspector.getInspectorByKey('Test003');
-        await CommonFunc.sleep(2000);
-        let typeParam = JSON.parseJsonElement(strJson3);
-        console.log('test strJson3 ' + strJson3)
-        console.info('[testanimatorOnframe_static_0011] strJson3: ' +
-        typeParam.getElement('$attrs').getString('content'));
-        expect(typeParam.getElement('$attrs').getString('content')).assertEqual('250');
-        done();
+      let strJson3 = inspector.getInspectorByKey('Test003');
+      await CommonFunc.sleep(2000);
+      let typeParam = JSON.parseJsonElement(strJson3);
+      console.log('test strJson3 ' + strJson3)
+      console.info('[testanimatorOnframe_static_0011] strJson3: ' +
+      typeParam.getElement('$attrs').getString('content'));
+      expect(typeParam.getElement('$attrs').getString('content')).assertEqual('250');
+      done();
 
-        console.info('testanimatorOnframe0011 END');
-        done();
-      } catch (err) {
-        console.info('testanimatorOnframe0011 err: ' + JSON.stringify(err));
-      }
+      console.info('testanimatorOnframe0011 END');
+      done();
     });
 
     
@@ -336,11 +305,7 @@ it('testanimatorOnframe_static_0011', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testanimatorOnframe_static_012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe0011 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('testanimatorOnframe012 err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
 
       let strJson4: string = inspector.getInspectorByKey('Test004');
       let typeParam = JSON.parseJsonElement(strJson4);
@@ -360,25 +325,21 @@ it('testanimatorOnframe_static_012', Level.LEVEL0, async (done: () => void): Pro
      */
 it('testanimatorOnframe_static_013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('animatorOnframe testanimatorOnframe013 START');
-      try {
-        await CommonFunc.sleep(1000);
-        let driver = Driver.create();
-        await driver.delayMs(1000);
-        let cancelBtn = await driver.findComponent(ON.id('Cancel'));
-        await (cancelBtn?.click() as Promise<void>);
-        console.info('[testanimatorOnframe013] cancelBtn click');
-        await driver.delayMs(2000);
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      await driver.delayMs(1000);
+      let cancelBtn = await driver.findComponent(ON.id('Cancel'));
+      await (cancelBtn?.click() as Promise<void>);
+      console.info('[testanimatorOnframe013] cancelBtn click');
+      await driver.delayMs(2000);
 
-        let strJson5: string = inspector.getInspectorByKey('Test005');
-        let typeParam = JSON.parseJsonElement(strJson5);
+      let strJson5: string = inspector.getInspectorByKey('Test005');
+      let typeParam = JSON.parseJsonElement(strJson5);
 
-        console.info('[testanimatorOnframe013] strJson5: ' + typeParam.getElement('$attrs').getString('content'));
-        expect(typeParam.getElement('$attrs').getString('content')).assertEqual('animator-Test005:1');
-        console.info('testanimatorOnframe013 END');
-        done();
-      } catch (err) {
-        console.info('testanimatorOnframe013 err: ' + JSON.stringify(err));
-      }
+      console.info('[testanimatorOnframe013] strJson5: ' + typeParam.getElement('$attrs').getString('content'));
+      expect(typeParam.getElement('$attrs').getString('content')).assertEqual('animator-Test005:1');
+      console.info('testanimatorOnframe013 END');
+      done();
     });
   })
 }

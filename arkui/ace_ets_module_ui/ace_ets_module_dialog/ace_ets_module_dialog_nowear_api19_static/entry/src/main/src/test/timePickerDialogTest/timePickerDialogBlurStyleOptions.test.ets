@@ -13,17 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll, beforeEach, Size, TestType } from '../../../../hypium/index';
 import router from '@ohos.router';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
 
 export default function timePickerDialogBlurStyleOptionsTest() {
   describe('TimePickerDialogBlurStyleOptionsTest', () => {
 
+    beforeAll(async (): Promise<void> => {
+      console.info("TimePickerDialogBlurStyleOptionsTest beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("TimePickerDialogBlurStyleOptionsTest beforeEach start");
@@ -37,11 +48,7 @@ export default function timePickerDialogBlurStyleOptionsTest() {
       if (!("timePickerDialogBlurStyleOptions" == pages.name)) {
         console.info("get TimePickerDialogBlurStyleOptionsTest state pages.name: " + JSON.stringify(pages.name));
         routerInstance.pushUrl(options);
-        try {
-          await Utils.sleep(2000);
-        } catch (err) {
-          console.info('xxxTest err: ' + JSON.stringify(err));
-        }
+        await Utils.sleep(2000);
       }
     });
 
@@ -58,29 +65,13 @@ export default function timePickerDialogBlurStyleOptionsTest() {
 it('timePickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'timePickerDialogBlurStyleOptions';
       console.info('[' + tagName + '] START============================');
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('TimePickerDialog_Options001'));
-      try {
-        await btn!.click();
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await btn!.click();
+      await Utils.sleep(1000);
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let dialog = obj1.getArray('$children')[1]
       let date1 = obj1.getArray('$children')[1].getArray('$children')[0]
       let uniRenderFlag: string = dialog.getElement('$attrs').getString('uniRender');
@@ -99,16 +90,8 @@ it('timePickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.MEDI
         expect(date1.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('inactiveColor')).assertEqual('#FFFFC0CB');
       }
       let btn1: Component | null = await driver.findComponent(ON.text('确定'));
-      try {
-        await (btn1?.click() as Promise<void>);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await (btn1?.click() as Promise<void>);
+      await Utils.sleep(1000);
       console.info('[' + tagName + '] END ===========================');
       done();
     });
@@ -126,29 +109,13 @@ it('timePickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.MEDI
 it('timePickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'timePickerDialogBlurStyleOptions_static_0200';
       console.info('[' + tagName + '] START============================');
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('TimePickerDialog_Options002'));
-      try {
-        await btn!.click();
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await btn!.click();
+      await Utils.sleep(1000);
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let date = obj.getArray('$children')[1].getArray('$children')[0]
       console.info("[timePickerDialogBlurStyleOptions_static_0200] $attrs.options is: " + JSON.stringify(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options')));
       expect(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
@@ -157,16 +124,8 @@ it('timePickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.MEDI
       expect(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('colorMode')).assertEqual('ThemeColorMode.System');
       expect(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
       let btn1: Component | null = await driver.findComponent(ON.text('确定'));
-      try {
-        await (btn1?.click() as Promise<void>);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await (btn1?.click() as Promise<void>);
+      await Utils.sleep(1000);
       console.info('[' + tagName + '] END ===========================');
       done();
     });
@@ -184,29 +143,13 @@ it('timePickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.MEDI
 it('timePickerDialogBlurStyleOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'timePickerDialogBlurStyleOptions_static_0300';
       console.info('[' + tagName + '] START============================');
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('TimePickerDialog_Options003'));
-      try {
-        await btn!.click();
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await btn!.click();
+      await Utils.sleep(1000);
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let date = obj.getArray('$children')[1].getArray('$children')[0]
       console.info("[timePickerDialogBlurStyleOptions_static_0300] $attrs.options is: " + JSON.stringify(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options')));
       expect(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
@@ -215,16 +158,8 @@ it('timePickerDialogBlurStyleOptions_static_0300', TestType.FUNCTION | Size.MEDI
       expect(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('colorMode')).assertEqual('ThemeColorMode.System');
       expect(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
       let btn1: Component | null = await driver.findComponent(ON.text('确定'));
-      try {
-        await (btn1?.click() as Promise<void>);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest err: ' + JSON.stringify(err));
-      }
+      await (btn1?.click() as Promise<void>);
+      await Utils.sleep(1000);
       console.info('[' + tagName + '] END ===========================');
       done();
     });

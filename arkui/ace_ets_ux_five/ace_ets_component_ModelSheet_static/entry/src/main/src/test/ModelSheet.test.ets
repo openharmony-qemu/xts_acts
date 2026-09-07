@@ -14,12 +14,23 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../hypium/index';
 import router from '@ohos.router';
+import {
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from './Util.test'
+import { UtilsTest, startAbility } from './Util.test'
 import emitter from '@ohos.events.emitter';
 import { SheetSize, BlurStyle, SheetType } from '@ohos.arkui.component'
 
@@ -30,6 +41,13 @@ class TitleSub {
 
 export default function ModelSheetTest() {
   describe('ModelSheetTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("ModelSheetTest beforeAll start");
+      
+      await UtilsTest.startAbility("com.example.ModelSheet.static", "EntryAbility")
+      
+    });
+
     beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {

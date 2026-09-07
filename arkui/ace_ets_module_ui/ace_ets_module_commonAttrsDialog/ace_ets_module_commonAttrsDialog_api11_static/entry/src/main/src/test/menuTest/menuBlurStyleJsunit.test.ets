@@ -13,18 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import window from '@ohos.window';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import common from '@ohos.app.ability.common';
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { UtilsTest } from '../Util.test';
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function menuBlurStyleJsunit() {
   describe('menuBlurStyleJsunit', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("menuBlurStyleJsunit beforeEach start");
@@ -51,11 +63,7 @@ export default function menuBlurStyleJsunit() {
     });
 
        afterEach(async () => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('menuBlurStyle after each sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("menuBlurStyle after each called");
     });
 
@@ -70,37 +78,17 @@ export default function menuBlurStyleJsunit() {
 it('menuBlurStyleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuBlurStyleJsunit_0100] START');
       let driver =  Driver.create()
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('menuBlurStyleJsunit_0100 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('menu_blurStyle'));
        button?.longClick();
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('menuBlurStyleJsunit_0100 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('menu_blurStyle');
       console.info("[menuBlurStyleJsunit_0100] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[menuBlurStyleJsunit_0100] menuText is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("menuBlurStyle");
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('menuBlurStyleJsunit_0100 sleep err: ' + JSON.stringify(err));
-      }
-      try {
-        await driver.triggerKey(2070);
-      } catch (err) {
-        console.info('menuBlurStyleJsunit_0100 triggerKey err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('menuBlurStyleJsunit_0100 sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(1000);
       console.info('[menuBlurStyleJsunit_0100] END');
       done();
     });

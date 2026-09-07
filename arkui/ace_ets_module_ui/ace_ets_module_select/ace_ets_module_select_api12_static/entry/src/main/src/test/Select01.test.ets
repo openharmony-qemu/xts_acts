@@ -14,21 +14,32 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../hypium/index';
-import { ArrowPosition, $r } from '@ohos.arkui.component';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../hypium/index';
+import { Color, ArrowPosition, $r } from '@ohos.arkui.component';
+import router from '@ohos.router';
 import Utils from '../../ets/MainAbility/common/Utils';
+import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { RecordData } from '@ohos.base';
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError, RecordData } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from './Util.test';
 import events_emitter from '@ohos.events.emitter';
 export default function select() {
   describe('ActsAceBasicSelectTest', () => {
 
+    beforeAll(async (): Promise<void> => {
+      console.info("select beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.select.api12.static", "EntryAbility")
+      
+    });
+
     beforeEach(async () => {
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       console.info("select beforeEach start");
     })
 
@@ -58,16 +69,16 @@ export default function select() {
     
     
     /**
-     * @tc.number   ArkUI_Stage_Select_Layout_0100
-     * @tc.name     ArkUI_Stage_Select_Layout_0100
-     * @tc.desc     ArkUI_Stage_Select_Layout_0100
+     * @tc.number   ArkUI_Stage_Select_Layout_static_0100
+     * @tc.name     ArkUI_Stage_Select_Layout_static_0100
+     * @tc.desc     ArkUI_Stage_Select_Layout_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_Layout_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUI_Stage_Select_Layout_0100 start");
+it('ArkUI_Stage_Select_Layout_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUI_Stage_Select_Layout_static_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
 
-      console.info("ArkUI_Stage_Select_Layout_0100: arrowPosition=" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition'))
+      console.info("ArkUI_Stage_Select_Layout_static_0100: arrowPosition=" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition'))
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition') == 'ArrowPosition.END').assertTrue();
       done();
     });
@@ -77,13 +88,13 @@ it('ArkUI_Stage_Select_Layout_0100', Level.LEVEL0, async (done: () => void): Pro
     
     
     /**
-     * @tc.number   ArkUI_Stage_Select_Layout_0200
-     * @tc.name     ArkUI_Stage_Select_Layout_0200
-     * @tc.desc     ArkUI_Stage_Select_Layout_0200
+     * @tc.number   ArkUI_Stage_Select_Layout_static_0200
+     * @tc.name     ArkUI_Stage_Select_Layout_static_0200
+     * @tc.desc     ArkUI_Stage_Select_Layout_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_Layout_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUI_Stage_Select_Layout_0200 start");
+it('ArkUI_Stage_Select_Layout_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUI_Stage_Select_Layout_static_0200 start");
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -94,20 +105,16 @@ it('ArkUI_Stage_Select_Layout_0200', Level.LEVEL0, async (done: () => void): Pro
           eventId: 181,
           priority: events_emitter.EventPriority.LOW
         }
-        console.info("[ArkUI_Stage_Select_Layout_0200] start to publish emit");
+        console.info("[ArkUI_Stage_Select_Layout_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
-        console.log("[ArkUI_Stage_Select_Layout_0200] change component data error: " + (err as Error).message);
+        console.log("[ArkUI_Stage_Select_Layout_static_0200] change component data error: " + (err as Error).message);
 
       }
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('selectTest');
 
-      console.info("[ArkUI_Stage_Select_Layout_0200] arrowPosition:" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition'));
+      console.info("[ArkUI_Stage_Select_Layout_static_0200] arrowPosition:" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition') == 'ArrowPosition.START').assertTrue();
       done();
     });
@@ -117,13 +124,13 @@ it('ArkUI_Stage_Select_Layout_0200', Level.LEVEL0, async (done: () => void): Pro
     
     
     /**
-     * @tc.number   ArkUI_Stage_Select_Layout_0300
-     * @tc.name     ArkUI_Stage_Select_Layout_0300
-     * @tc.desc     ArkUI_Stage_Select_Layout_0300
+     * @tc.number   ArkUI_Stage_Select_Layout_static_0300
+     * @tc.name     ArkUI_Stage_Select_Layout_static_0300
+     * @tc.desc     ArkUI_Stage_Select_Layout_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_Layout_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUI_Stage_Select_Layout_0300 start");
+it('ArkUI_Stage_Select_Layout_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUI_Stage_Select_Layout_static_0300 start");
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -134,20 +141,16 @@ it('ArkUI_Stage_Select_Layout_0300', Level.LEVEL0, async (done: () => void): Pro
           eventId: 181,
           priority: events_emitter.EventPriority.LOW
         }
-        console.info("[ArkUI_Stage_Select_Layout_0300] start to publish emit");
+        console.info("[ArkUI_Stage_Select_Layout_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
-        console.log("[ArkUI_Stage_Select_Layout_0300] change component data error: " + (err as Error).message);
+        console.log("[ArkUI_Stage_Select_Layout_static_0300] change component data error: " + (err as Error).message);
 
       }
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('selectTest');
 
-      console.info("[ArkUI_Stage_Select_Layout_0300] arrowPosition:" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition'));
+      console.info("[ArkUI_Stage_Select_Layout_static_0300] arrowPosition:" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition') == 'ArrowPosition.END').assertTrue();
       done();
     });
@@ -157,13 +160,13 @@ it('ArkUI_Stage_Select_Layout_0300', Level.LEVEL0, async (done: () => void): Pro
     
     
     /**
-     * @tc.number   ArkUI_Stage_Select_Layout_0400
-     * @tc.name     ArkUI_Stage_Select_Layout_0400
-     * @tc.desc     ArkUI_Stage_Select_Layout_0400
+     * @tc.number   ArkUI_Stage_Select_Layout_static_0400
+     * @tc.name     ArkUI_Stage_Select_Layout_static_0400
+     * @tc.desc     ArkUI_Stage_Select_Layout_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_Layout_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUI_Stage_Select_Layout_0400 start");
+it('ArkUI_Stage_Select_Layout_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUI_Stage_Select_Layout_static_0400 start");
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -174,20 +177,16 @@ it('ArkUI_Stage_Select_Layout_0400', Level.LEVEL0, async (done: () => void): Pro
           eventId: 181,
           priority: events_emitter.EventPriority.LOW
         }
-        console.info("[ArkUI_Stage_Select_Layout_0400] start to publish emit");
+        console.info("[ArkUI_Stage_Select_Layout_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
-        console.log("[ArkUI_Stage_Select_Layout_0400] change component data error: " + (err as Error).message);
+        console.log("[ArkUI_Stage_Select_Layout_static_0400] change component data error: " + (err as Error).message);
 
       }
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('selectTest');
 
-      console.info("[ArkUI_Stage_Select_Layout_0400] arrowPosition:" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition'));
+      console.info("[ArkUI_Stage_Select_Layout_static_0400] arrowPosition:" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('arrowPosition') == 'ArrowPosition.END').assertTrue();
       done();
     });
@@ -239,11 +238,7 @@ it('ArkUI_Stage_Select_Space_0200', Level.LEVEL0, async (done: () => void): Prom
         console.log("[ArkUI_Stage_Select_Space_0200] change component data error: " + (err as Error).message);
 
       }
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('selectTest');
 
       console.info("[ArkUI_Stage_Select_Space_0200] space:" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('space'));
@@ -279,11 +274,7 @@ it('ArkUI_Stage_Select_Space_0300', Level.LEVEL0, async (done: () => void): Prom
         console.log("[ArkUI_Stage_Select_Space_0300] change component data error: " + (err as Error).message);
 
       }
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('selectTest2');
 
       console.info("[ArkUI_Stage_Select_Space_0300] space:" + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('space'));
@@ -319,11 +310,7 @@ it('ArkUI_Stage_Select_Space_0400', Level.LEVEL0, async (done: () => void): Prom
         console.log("[ArkUI_Stage_Select_Space_0400] change component data error: " + (err as Error).message);
 
       }
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('selectTest');
 
       console.info("[ArkUI_Stage_Select_Space_0400] space:" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('space'));
@@ -359,11 +346,7 @@ it('ArkUI_Stage_Select_Space_0500', Level.LEVEL0, async (done: () => void): Prom
         console.log("[ArkUI_Stage_Select_Space_0500] change component data error: " + (err as Error).message);
 
       }
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('selectTest');
 
       console.info("[ArkUI_Stage_Select_Space_0500] space:" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('space'));
@@ -399,11 +382,7 @@ it('ArkUI_Stage_Select_Space_0600', Level.LEVEL0, async (done: () => void): Prom
         console.log("[ArkUI_Stage_Select_Space_0600] change component data error: " + (err as Error).message);
 
       }
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('selectTest3');
 
       console.info("[ArkUI_Stage_Select_Space_0600] space:" + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('space'));
@@ -439,11 +418,7 @@ it('ArkUI_Stage_Select_Space_0700', Level.LEVEL0, async (done: () => void): Prom
         console.log("[ArkUI_Stage_Select_Space_0700] change component data error: " + (err as Error).message);
 
       }
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('selectTest2');
 
       console.info("[ArkUI_Stage_Select_Space_0700] space:" + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('space'));
@@ -480,11 +455,7 @@ it('ArkUI_Stage_Select_Space_0800', Level.LEVEL0, async (done: () => void): Prom
         console.log("[ArkUI_Stage_Select_Space_0800] change component data error: " + (err as Error).message);
 
       }
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('selectTest2');
 
       console.info("[ArkUI_Stage_Select_Space_0800] space:" + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('space'));
@@ -520,11 +491,7 @@ it('ArkUI_Stage_Select_Space_0900', Level.LEVEL0, async (done: () => void): Prom
         console.log("[ArkUI_Stage_Select_Space_0900] change component data error: " + (err as Error).message);
 
       }
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('selectTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('selectTest2');
 
       console.info("[ArkUI_Stage_Select_Space_0900] space:" + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('space'));

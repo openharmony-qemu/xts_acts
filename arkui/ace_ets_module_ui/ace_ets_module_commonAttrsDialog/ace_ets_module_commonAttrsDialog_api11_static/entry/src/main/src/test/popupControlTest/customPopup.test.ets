@@ -13,21 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import window from '@ohos.window';
-import { RecordData } from '@ohos.base';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import common from '@ohos.app.ability.common';
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import events_emitter from '@ohos.events.emitter';
+import { UtilsTest } from '../Util.test';
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function customPopup() {
   describe('customPopup', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
+    });
+
     beforeEach(async (): Promise<void> => {
       console.info("customPopup beforeEach start");
       let options: router.RouterOptions = {
@@ -43,7 +55,7 @@ export default function customPopup() {
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(1000);
+          await CommonFunc.sleep(2000);
           // console.info("push customPopup page result:" + JSON.stringify(result));
         }
       } catch (err) {
@@ -54,11 +66,7 @@ export default function customPopup() {
 
 
     afterEach(async () => {
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('customPopup after each sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       console.info("customPopup after each called");
     });
     
@@ -71,11 +79,7 @@ export default function customPopup() {
      */
 it('customPopup_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('customPopup_0100 START');
-      try {
-        await Utils.sleep(1500);
-      } catch (err) {
-        console.info('customPopup_0100 sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1500);
       let callback = (indexEvent:events_emitter.EventData) => {
         console.info("customPopup_0100 get state result is: " + JSON.stringify(indexEvent));
         const data = indexEvent.data as Record<String,RecordData>
@@ -93,17 +97,9 @@ it('customPopup_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("customPopup_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("customPopup_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('custom1', 10, "")));
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('customPopup_0100 sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       console.info("customPopup_0100 click Two result is: " + JSON.stringify(inspector.sendEventByKey('image', 10, "")));
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('customPopup_0100 sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       console.info('customPopup_0100 END');
       done();
     });

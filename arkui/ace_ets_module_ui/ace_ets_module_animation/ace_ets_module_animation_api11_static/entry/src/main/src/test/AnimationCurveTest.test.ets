@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter'
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -33,6 +33,16 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import Curves from '@ohos.curves';
 import { FinishCallbackType } from '@ohos.arkui.component'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UtilsTest } from '../test/Util.test'
+
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 let abc: number
 const interpolate4 = (fraction: number) => {
   abc = Number(fraction)
@@ -44,6 +54,13 @@ const interpolate3 = (fraction: number): number => {
 
 export default function animationCurveTest() {
   describe('animationCurveTest', () => {
+
+    beforeAll(async (): Promise<void> => {
+      console.info("playModeReverseTest beforeEach start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
+      
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("playModeReverseTest beforeEach start");

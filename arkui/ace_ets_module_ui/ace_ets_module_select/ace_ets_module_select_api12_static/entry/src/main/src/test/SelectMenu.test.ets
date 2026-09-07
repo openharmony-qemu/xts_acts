@@ -14,15 +14,30 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../hypium/index';
+import { Color } from '@ohos.arkui.component';
 import router from '@ohos.router';
+import Utils from '../../ets/MainAbility/common/Utils';
+import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from './Util.test';
 let emitKey = "emitUserAgent";
 
 export default function selectmenuTest() {
   describe('ActsSelectMenuTest', () => {
+
+    beforeAll(async (): Promise<void> => {
+      console.info("SelectMenu beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.select.api12.static", "EntryAbility")
+      
+    });
 
     beforeEach(async () => {
       let options: router.RouterOptions = {
@@ -47,23 +62,23 @@ export default function selectmenuTest() {
     
     
     /**
-     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_0100
-     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_0100
-     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_0100
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0100 start");
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0100 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('selectTest1');
 
-          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_0100]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
+          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0100]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual("MenuAlignType.Start");
           done();
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_0100 ERR ' + JSON.stringify(err));
+          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_static_0100 ERR ' + JSON.stringify(err));
           done();
         }
       }, 500)
@@ -74,23 +89,23 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0100', Level.LEVEL0, async (done: () => 
     
     
     /**
-     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_0200
-     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_0200
-     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_0200
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0200 start");
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0200 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('SelectMenu' + '_selectTest2');
 
-          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_0200]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
+          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0200]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual("MenuAlignType.Center");
           done();
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_0200 ERR ' + JSON.stringify(err));
+          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_static_0200 ERR ' + JSON.stringify(err));
           done();
         }
       }, 500)
@@ -101,23 +116,23 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0200', Level.LEVEL0, async (done: () => 
     
     
     /**
-     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_0300
-     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_0300
-     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_0300
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0300 start");
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0300 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('SelectMenu' + '_selectTest3');
 
-          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_0300]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
+          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0300]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual("MenuAlignType.End");
           done();
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_0300 ERR ' + JSON.stringify(err));
+          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_static_0300 ERR ' + JSON.stringify(err));
           done();
         }
       }, 500)
@@ -128,18 +143,18 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0300', Level.LEVEL0, async (done: () => 
     
     
     /**
-     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_0400
-     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_0400
-     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_0400
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0400 start");
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0400 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('selectTest4');
 
-          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_0400]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
+          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0400]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual("MenuAlignType.Start");
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')
             .getElement('offset').getInteger('dX')).assertEqual(10);
@@ -148,7 +163,7 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0400', Level.LEVEL0, async (done: () => 
           done();
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_0400 ERR ' + JSON.stringify(err));
+          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_static_0400 ERR ' + JSON.stringify(err));
           done();
         }
       }, 500)
@@ -159,18 +174,18 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0400', Level.LEVEL0, async (done: () => 
     
     
     /**
-     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_0500
-     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_0500
-     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_0500
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0500 start");
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0500 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('selectTest5');
 
-          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_0500]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
+          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0500]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual("MenuAlignType.Center");
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')
             .getElement('offset').getInteger('dX')).assertEqual(-10);
@@ -179,7 +194,7 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0500', Level.LEVEL0, async (done: () => 
           done();
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_0500 ERR ' + JSON.stringify(err));
+          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_static_0500 ERR ' + JSON.stringify(err));
           done();
         }
       }, 500)
@@ -190,18 +205,18 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0500', Level.LEVEL0, async (done: () => 
     
     
     /**
-     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_0600
-     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_0600
-     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_0600
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0600 start");
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0600 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('selectTest6');
 
-          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_0600]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
+          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0600]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual("MenuAlignType.End");
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')
             .getElement('offset').getInteger('dX')).assertEqual(-20);
@@ -210,7 +225,7 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0600', Level.LEVEL0, async (done: () => 
           done();
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_0600 ERR ' + JSON.stringify(err));
+          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_static_0600 ERR ' + JSON.stringify(err));
           done();
         }
       }, 500)
@@ -221,18 +236,18 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0600', Level.LEVEL0, async (done: () => 
     
     
     /**
-     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_0700
-     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_0700
-     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_0700
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0700 start");
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0700 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('selectTest7');
 
-          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_0700]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
+          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0700]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual("MenuAlignType.End");
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')
             .getElement('offset').getInteger('dX')).assertEqual(0);
@@ -241,7 +256,7 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0700', Level.LEVEL0, async (done: () => 
           done();
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_0700 ERR ' + JSON.stringify(err));
+          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_static_0700 ERR ' + JSON.stringify(err));
           done();
         }
       }, 500)
@@ -252,18 +267,18 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0700', Level.LEVEL0, async (done: () => 
     
     
     /**
-     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_0800
-     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_0800
-     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_0800
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0800 start");
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0800 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('selectTest8');
 
-          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_0800]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
+          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0800]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual("MenuAlignType.Start");
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')
             .getElement('offset').getInteger('dX')).assertEqual(0);
@@ -272,7 +287,7 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0800', Level.LEVEL0, async (done: () => 
           done();
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_0800 ERR ' + JSON.stringify(err));
+          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_static_0800 ERR ' + JSON.stringify(err));
           done();
         }
       }, 500)
@@ -283,18 +298,18 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0800', Level.LEVEL0, async (done: () => 
     
     
     /**
-     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_0900
-     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_0900
-     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_0900
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_0900 start");
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0900 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('selectTest9');
 
-          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_0900]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
+          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0900]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual("MenuAlignType.Start");
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')
             .getElement('offset').getInteger('dX')).assertEqual(0);
@@ -303,7 +318,7 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_0900', Level.LEVEL0, async (done: () => 
           done();
         } catch (err) {
           expect().assertFail();
-          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_0900 ERR ' + JSON.stringify(err));
+          console.info('ArkUXII_Stage_Select_Menu_MenuAlign_static_0900 ERR ' + JSON.stringify(err));
           done();
         }
       }, 500)

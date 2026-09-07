@@ -32,11 +32,26 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
+import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 export default function openDialogTransitionTest() {
   describe('OpenDialogTransitionTest', () => {
     beforeAll(async (): Promise<void> => {
+
+      
+      await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")
+      
+
       console.info("OpenDialogTransitionTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/promptAction/openDialogTransition',
@@ -49,7 +64,7 @@ export default function openDialogTransitionTest() {
         if (!("openDialogTransition" == pages.name)) {
           console.info("get OpenDialogTransitionTest state pages.name: " + JSON.stringify(pages.name));
           OpenDialogTransitionTest.pushUrl(options);
-          await CommonFunc.sleep(3000);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push OpenDialogTransitionTest page error: " + err);
@@ -106,7 +121,6 @@ export default function openDialogTransitionTest() {
      * @tc.level    Level.LEVEL2
      */
 it('OpenDialogTransitionTest_static_100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
       console.info('OpenDialogTransitionTest_static_100 start');
       let driver: Driver = Driver.create();
       let maskTransitionButton = await driver.findComponent(ON.id('EnableMaskTransition'));
@@ -122,10 +136,6 @@ it('OpenDialogTransitionTest_static_100', Level.LEVEL2, async (done: () => void)
       await CommonFunc.sleep(500);
       await (maskTransitionButton?.click() as Promise<void>);
       console.info('OpenDialogTransitionTest_static_100 end');
-      } catch (err) {
-        console.info('OpenDialogTransitionTest_static_100 err: ' + JSON.stringify(err));
-        expect().assertFail();
-      }
       done();
     });
 
@@ -137,7 +147,6 @@ it('OpenDialogTransitionTest_static_100', Level.LEVEL2, async (done: () => void)
      * @tc.level    Level.LEVEL2
      */
 it('OpenDialogTransitionTest_static_200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
       console.info('OpenDialogTransitionTest_static_200 start');
       let driver: Driver = Driver.create();
       let dialogTransitionButton = await driver.findComponent(ON.id('EnableDialogTransition'));
@@ -153,10 +162,6 @@ it('OpenDialogTransitionTest_static_200', Level.LEVEL2, async (done: () => void)
       await CommonFunc.sleep(500);
       await (dialogTransitionButton?.click() as Promise<void>);
       console.info('OpenDialogTransitionTest_static_200 end');
-      } catch (err) {
-        console.info('OpenDialogTransitionTest_static_200 err: ' + JSON.stringify(err));
-        expect().assertFail();
-      }
       done();
     });
 
@@ -168,12 +173,11 @@ it('OpenDialogTransitionTest_static_200', Level.LEVEL2, async (done: () => void)
      * @tc.level    Level.LEVEL2
      */
 it('OpenDialogTransitionTest_static_300', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
       console.info('OpenDialogTransitionTest_static_300 start');
       let driver: Driver = Driver.create();
       let dialogTransitionButton = await driver.findComponent(ON.id('EnableDialogTransition'));
       await (dialogTransitionButton?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       let defaultTransitionButton = await driver.findComponent(ON.id('EnableTransition'));
       await (defaultTransitionButton?.click() as Promise<void>);
       let openDialogButton = await driver.findComponent(ON.id('OpenDialog'));
@@ -188,10 +192,6 @@ it('OpenDialogTransitionTest_static_300', Level.LEVEL2, async (done: () => void)
       await CommonFunc.sleep(500);
       await (defaultTransitionButton?.click() as Promise<void>);
       console.info('OpenDialogTransitionTest_static_300 end');
-      } catch (err) {
-        console.info('OpenDialogTransitionTest_static_300 err: ' + JSON.stringify(err));
-        expect().assertFail();
-      }
       done();
     });
 
@@ -203,12 +203,11 @@ it('OpenDialogTransitionTest_static_300', Level.LEVEL2, async (done: () => void)
      * @tc.level    Level.LEVEL2
      */
 it('OpenDialogTransitionTest_static_400', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
       console.info('OpenDialogTransitionTest_static_400 start');
       let driver: Driver = Driver.create();
       let maskTransitionButton = await driver.findComponent(ON.id('EnableMaskTransition'));
       await (maskTransitionButton?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       let defaultTransitionButton = await driver.findComponent(ON.id('EnableTransition'));
       await (defaultTransitionButton?.click() as Promise<void>);
       let openDialogButton = await driver.findComponent(ON.id('OpenDialog'));
@@ -223,10 +222,6 @@ it('OpenDialogTransitionTest_static_400', Level.LEVEL2, async (done: () => void)
       await CommonFunc.sleep(500);
       await (defaultTransitionButton?.click() as Promise<void>);
       console.info('OpenDialogTransitionTest_static_400 end');
-      } catch (err) {
-        console.info('OpenDialogTransitionTest_static_400 err: ' + JSON.stringify(err));
-        expect().assertFail();
-      }
       done();
     });
 
@@ -238,12 +233,11 @@ it('OpenDialogTransitionTest_static_400', Level.LEVEL2, async (done: () => void)
      * @tc.level    Level.LEVEL2
      */
 it('OpenDialogTransitionTest_static_500', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
       console.info('OpenDialogTransitionTest_static_500 start');
       let driver: Driver = Driver.create();
       let maskTransitionButton = await driver.findComponent(ON.id('EnableMaskTransition'));
       await (maskTransitionButton?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       let dialogTransitionButton = await driver.findComponent(ON.id('EnableDialogTransition'));
       await (dialogTransitionButton?.click() as Promise<void>);
       let openDialogButton = await driver.findComponent(ON.id('OpenDialog'));
@@ -258,10 +252,6 @@ it('OpenDialogTransitionTest_static_500', Level.LEVEL2, async (done: () => void)
       await CommonFunc.sleep(500);
       await (dialogTransitionButton?.click() as Promise<void>);
       console.info('OpenDialogTransitionTest_static_500 end');
-      } catch (err) {
-        console.info('OpenDialogTransitionTest_static_500 err: ' + JSON.stringify(err));
-        expect().assertFail();
-      }
       done();
     });
 
@@ -273,7 +263,6 @@ it('OpenDialogTransitionTest_static_500', Level.LEVEL2, async (done: () => void)
      * @tc.level    Level.LEVEL2
      */
 it('OpenDialogTransitionTest_static_600', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
       console.info('OpenDialogTransitionTest_static_600 start');
       let driver: Driver = Driver.create();
       let maskTransitionButton = await driver.findComponent(ON.id('EnableMaskTransition'));
@@ -299,10 +288,6 @@ it('OpenDialogTransitionTest_static_600', Level.LEVEL2, async (done: () => void)
       await CommonFunc.sleep(500);
       await (defaultTransitionButton?.click() as Promise<void>);
       console.info('OpenDialogTransitionTest_static_600 end');
-      } catch (err) {
-        console.info('OpenDialogTransitionTest_static_600 err: ' + JSON.stringify(err));
-        expect().assertFail();
-      }
       done();
     });
 

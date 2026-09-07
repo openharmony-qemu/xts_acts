@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -27,6 +27,13 @@ import { RecordData } from '@ohos.base';
 
 export default function pageTransitionJsunit() {
   describe('pageTransitionJsunit', () => {
+
+    beforeAll(async (): Promise<void> => {
+      console.info("pageTransitionJsunit beforeEach start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
+      
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("pageTransitionJsunit beforeEach start");
@@ -50,11 +57,7 @@ export default function pageTransitionJsunit() {
     });
 
     afterEach(async () => {
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('pageTransition afterEach err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       console.info("pageTransition after each called");
     });
 
@@ -83,11 +86,7 @@ it('pageTransitionTest_static_0400', Level.LEVEL0, async (done: () => void): Pro
       } catch (err) {
         console.log("pageTransitionTest_static_0400 change component data error: " + (err as Error).message);
       }
-      try {
-        await Utils.sleep(4000);
-      } catch (err) {
-        console.info('pageTransitionTest_static_0400 err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(4000);
       let callback = (indexEventOne: emitter.EventData) => {
         try {
           console.info("pageTransitionTest_static_0400 get state result is: " + JSON.stringify(indexEventOne));
@@ -111,11 +110,7 @@ it('pageTransitionTest_static_0400', Level.LEVEL0, async (done: () => void): Pro
       }
       console.info("pageTransitionTest_static_0400 click result is: " +
       JSON.stringify(inspector.sendEventByKey('Navigator', 10, "")));
-      try {
-        await UtilsTest.msSleep(2000)
-      } catch (err) {
-        console.info('pageTransitionTest_static_0400 err: ' + JSON.stringify(err));
-      }
+      await UtilsTest.msSleep(2000)
       console.info('pageTransitionTest_static_0400 END');
       done();
     });
