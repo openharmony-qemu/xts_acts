@@ -290,8 +290,8 @@ export default function TlsSkipRemoteValidationTest() {
 
       try {
         await tlsServer.listen(tlsConnectOptions_server).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tls.bind(bindAddr).then(() => {
           tls.connect(tlsConnectOptions_client_wrongCA).then(() => {
             console.log("connect success!");
@@ -384,8 +384,8 @@ export default function TlsSkipRemoteValidationTest() {
 
       try {
         await tlsServer.listen(tlsConnectOptions_server).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tls.bind(bindAddr).then(() => {
           tls.connect(tlsConnectOptions_client_wrongCA_noSkip).then(() => {
             console.log("connect success!");
@@ -477,8 +477,8 @@ export default function TlsSkipRemoteValidationTest() {
       }
       try {
         await tlsServer.listen(tlsConnectOptions_server).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tls.bind(bindAddr).then(() => {
           tls.connect(tlsConnectOptions_client_rightCA_noSkip).then(() => {
             console.log("connect success!");
@@ -570,8 +570,8 @@ export default function TlsSkipRemoteValidationTest() {
       }
       try {
         await tlsServer.listen(tlsConnectOptions_server).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         let tcpExtraOptions: socket.TCPExtraOptions = {
           keepAlive: true,
           OOBInline: true,
@@ -642,8 +642,7 @@ export default function TlsSkipRemoteValidationTest() {
           cert: server_ca,
           protocols: socket.Protocol.TLSv13,
           useRemoteCipherPrefer: true,
-          signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-          cipherSuite: "AES256-SHA256"
+          signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256"
         },
         ALPNProtocols: ["spdy/1", "http/1.1"]
       }
@@ -655,8 +654,7 @@ export default function TlsSkipRemoteValidationTest() {
           cert: client_ca,
           protocols: socket.Protocol.TLSv13,
           useRemoteCipherPrefer: true,
-          signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-          cipherSuite: "AES256-SHA256"
+          signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256"
         },
         ALPNProtocols: ["spdy/1", "http/1.1"],
         skipRemoteValidation: true
@@ -664,8 +662,8 @@ export default function TlsSkipRemoteValidationTest() {
 
       try {
         await tlsServer.listen(tlsConnectOptions_server_TLS13).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tls.bind(bindAddr).then(() => {
           tls.connect(tlsConnectOptions_client_wrongCA_skip_TLS13).then(() => {
             console.log("connect success!");
@@ -758,8 +756,8 @@ export default function TlsSkipRemoteValidationTest() {
 
       try {
         await tlsServer.listen(tlsConnectOptions_server).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         let tcpExtraOptions: socket.TCPExtraOptions = {
           keepAlive: true,
           OOBInline: true,
