@@ -45,7 +45,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
      */
     it('PromiseCatchFourthTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("failed"))
-      let resultPromise = promise.catch<string>((error: Error) => {
+      let resultPromise = promise.catch<string>(() => {
         try {
           return "parsed: true"
         } catch (parseError) {
@@ -67,7 +67,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
      */
     it('PromiseCatchFourthTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("failed"))
-      let resultPromise = promise.catch<string>((error: Error) => {
+      let resultPromise = promise.catch<string>(() => {
          try {
            throw new Error("parse failure")
            return "parse error caught"
@@ -127,9 +127,9 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
      */
     it('PromiseCatchFourthTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("error1"))
-      let result = await promise.catch((error: Error) => { throw new Error("error2") })
+      let result = await promise.catch(() => { throw new Error("error2") })
         .catch(() => { throw new Error("error3") })
-        .catch((error: Error) => {
+        .catch(() => {
           return "finally recovered"
         })
       expect(result).assertEqual("finally recovered")
@@ -223,7 +223,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
      */
     it('PromiseCatchFourthTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("failed"))
-      let result = await promise.catch<string>((error: Error) => "recovered")
+      let result = await promise.catch<string>(() => "recovered")
         .then((value: string) => {
           expect(value).assertEqual("recovered")
           return value + " processed"
@@ -247,7 +247,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     it('PromiseCatchFourthTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("error1"))
       let result = await promise.catch(() => { throw new Error("error2") })
-        .catch((error: Error) => {
+        .catch(() => {
           return "final recovery"
         })
       expect(result).assertEqual("final recovery")
@@ -282,11 +282,11 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
      */
     it('PromiseCatchFourthTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("level1"))
-      let result = await promise.catch((error: Error) => {
+      let result = await promise.catch(() => {
         throw new Error("level2")
       }).catch(() => {
         throw new Error("level3")
-      }).catch((error: Error) => {
+      }).catch(() => {
         return "final"
       })
       expect(result).assertEqual("final")
@@ -325,7 +325,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
      */
     it('PromiseCatchFourthTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("static reject"))
-      let result = await promise.catch((error: Error) => {
+      let result = await promise.catch(() => {
         return "recovered"
       })
       expect(result).assertEqual("recovered")
@@ -814,7 +814,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
       let promises: Promise<string|undefined>[] = []
       for (let i = 0; i < 3; i++) {
         let p = Promise.reject<string>(new Error("error" + i.toString()))
-          .catch<string|undefined>((error: Error) => { counter++; return undefined })
+          .catch<string|undefined>(() => { counter++; return undefined })
         promises.push(p)
       }
       await Promise.all(promises)
@@ -835,7 +835,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
       let promises: Promise<string|undefined>[] = []
       for (let i = 0; i < 5; i++) {
         let p = Promise.reject<string>(new Error("error" + i.toString()))
-          .catch<string|undefined>((error: Error) => { counter++; return undefined })
+          .catch<string|undefined>(() => { counter++; return undefined })
         promises.push(p)
       }
       await Promise.all(promises)
@@ -939,7 +939,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
         let baseValue = job.Await()
 
         let result = await Promise.reject<number>(new Error("fail"))
-          .catch<number>((e: Error) => baseValue)
+          .catch<number>(() => baseValue)
           .then<number>((v: number) => v + 5)
           .then<number>((v: number) => v * 2)
         expect(result).assertEqual(30)
@@ -969,7 +969,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
         let baseValue = job.Await()
 
         let result = await Promise.reject<number>(new Error("test"))
-          .catch<number>((e: Error) => baseValue)
+          .catch<number>(() => baseValue)
           .then<number>((v: number) => v + 50)
           .then<number>((v: number) => { cleanupDone = true; return v })
         expect(result).assertEqual(150)

@@ -700,7 +700,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
       let caught: boolean = false
       await Promise.resolve("value")
         .finally(() => { throw new Error("finally error") })
-        .catch((e) => {
+        .catch(() => {
           caught = true
         })
       expect(caught).assertTrue()

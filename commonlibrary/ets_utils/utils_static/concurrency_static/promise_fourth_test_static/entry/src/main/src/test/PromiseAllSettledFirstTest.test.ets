@@ -1168,7 +1168,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let branch1 = new Promise<PromiseSettledResult<string>[]>((resolve: (value: PromiseSettledResult<string>[]) => void) => {
         setTimeout(() => {
           let promises: Promise<string>[] = [Promise.resolve<string>("timer1")]
-          Promise.allSettled<string>(promises).then<void>((r: PromiseSettledResult<string>[]) => resolve(r))
+          Promise.allSettled<string>(promises).then<void, void>((r: PromiseSettledResult<string>[]) => resolve(r), (): void => { expect().assertFail() })
         }, 100)
       })
       let branch2 = new Promise<PromiseSettledResult<string>[]>((resolve: (value: PromiseSettledResult<string>[]) => void) => {
@@ -1241,7 +1241,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let counter = 0
       let promises: Promise<number>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(Promise.resolve<number>(1.0).then<number>(() => { counter++; return 1.0 }))
+        promises.push(Promise.resolve<number>(1.0).then<number, number>(() => { counter++; return 1.0 }, (): number => { expect().assertFail(); return 1.0 }))
       }
 
       await Promise.allSettled<number>(promises)

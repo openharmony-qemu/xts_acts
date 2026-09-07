@@ -1092,9 +1092,9 @@ export default function BuiltinsPromiseThenFirstTest(): void {
       let counter = 0
       let promises: Promise<void>[] = []
       for (let i = 0; i < 3; i++) {
-        promises.push(Promise.resolve(i).then<void>(() => {
+        promises.push(Promise.resolve(i).then<void, void>(() => {
           counter++
-        }))
+        }, (): void => { expect().assertFail() }))
       }
       await Promise.all(promises)
       expect(counter).assertEqual(3)
@@ -1113,9 +1113,9 @@ export default function BuiltinsPromiseThenFirstTest(): void {
       let counter = 0
       let promises: Promise<void>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(Promise.resolve(i).then<void>(() => {
+        promises.push(Promise.resolve(i).then<void, void>(() => {
           counter++
-        }))
+        }, (): void => { expect().assertFail() }))
       }
       await Promise.all(promises)
       expect(counter).assertEqual(5)

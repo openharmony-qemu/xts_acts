@@ -134,7 +134,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
      */
     it('PromiseCatchThirdTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<number>(new Error("failed"))
-      let resultPromise = promise.catch<number>((error: Error) => 42)
+      let resultPromise = promise.catch<number>(() => 42)
       let result = await resultPromise
       expect(result).assertEqual(42)
       Done();
@@ -150,7 +150,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
      */
     it('PromiseCatchThirdTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("failed"))
-      let resultPromise = promise.catch<string>((error: Error) => "recovered")
+      let resultPromise = promise.catch<string>(() => "recovered")
       let result = await resultPromise
       expect(result).assertEqual("recovered")
       Done();
@@ -445,7 +445,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
      */
     it('PromiseCatchThirdTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<number>(new Error("failed"))
-      let resultPromise = promise.catch<string>((error: Error) => {
+      let resultPromise = promise.catch<string>(() => {
         return "string instead of number"
       })
       let result = await resultPromise
@@ -464,7 +464,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
      */
     it('PromiseCatchThirdTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("failed"))
-      let resultPromise = promise.catch<string>((error: Error) => "recovered")
+      let resultPromise = promise.catch<string>(() => "recovered")
       let result = await resultPromise
       expect(result).assertEqual("recovered")
       Done();
@@ -480,7 +480,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
      */
     it('PromiseCatchThirdTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("failed"))
-      let resultPromise = promise.catch<string>((error: Error) => {
+      let resultPromise = promise.catch<string>(() => {
         return "recovered"
       })
       let result = await resultPromise
@@ -498,7 +498,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
      */
     it('PromiseCatchThirdTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("failed"))
-      let result = await promise.catch<string>((error: Error) => "recovered")
+      let result = await promise.catch<string>(() => "recovered")
         .then((result: string) => {
           expect(result).assertEqual("recovered")
           return result
@@ -768,7 +768,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
      */
     it('PromiseCatchThirdTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("failed"))
-      let resultPromise = promise.catch<string>((error: Error) => "recovered")
+      let resultPromise = promise.catch<string>(() => "recovered")
       let result = await resultPromise
       expect(result).assertEqual("recovered")
       Done();
@@ -908,7 +908,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
     it('PromiseCatchThirdTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let expectedError = new Error("error in catch handler")
       let promise = Promise.reject<string>(new Error("first error"))
-      let resultPromise = promise.catch((error: Error) => { throw expectedError })
+      let resultPromise = promise.catch(() => { throw expectedError })
       let caught = false
       await resultPromise.catch((finalError: Error) => {
         caught = true

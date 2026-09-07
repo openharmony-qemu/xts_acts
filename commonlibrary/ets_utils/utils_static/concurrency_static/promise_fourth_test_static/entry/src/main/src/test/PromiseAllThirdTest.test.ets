@@ -360,9 +360,9 @@ export default function BuiltinsPromiseAllThirdTest(): void {
       let totalCount = 5;
       let promises = new Set<Promise<void>>();
       for (let i = 0; i < totalCount; i++) {
-        promises.add(Promise.resolve<void>(undefined).then<void>(() => {
+        promises.add(Promise.resolve<void>(undefined).then<void, void>(() => {
           counter++;
-        }));
+        }, (): void => { expect().assertFail() }));
       }
       await Promise.all<void>(promises);
       expect(counter).assertEqual(totalCount);
@@ -672,10 +672,10 @@ export default function BuiltinsPromiseAllThirdTest(): void {
       let counter = 0;
       let promises = new Set<Promise<void>>();
       for (let i = 0; i < 3; i++) {
-        promises.add(Promise.resolve<void>(undefined).then<void>(() => {
+        promises.add(Promise.resolve<void>(undefined).then<void, void>(() => {
           counter++;
           return;
-        }));
+        }, (): void => { expect().assertFail() }));
       }
       await Promise.all<void>(promises);
       expect(counter).assertEqual(3);
@@ -694,10 +694,10 @@ export default function BuiltinsPromiseAllThirdTest(): void {
       let counter = 0;
       let promises = new Set<Promise<void>>();
       for (let i = 0; i < 5; i++) {
-        promises.add(Promise.resolve<void>(undefined).then<void>(() => {
+        promises.add(Promise.resolve<void>(undefined).then<void, void>(() => {
           counter++;
           return;
-        }));
+        }, (): void => { expect().assertFail() }));
       }
       await Promise.all<void>(promises);
       expect(counter).assertEqual(5);

@@ -1855,10 +1855,10 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       let counter = 0
       let promises = new Set<Promise<number>>()
       for (let i = 0; i < 3; i++) {
-        promises.add(Promise.resolve<number>(i * 1.0).then<number>(() => {
+        promises.add(Promise.resolve<number>(i * 1.0).then<number, number>(() => {
           counter++
           return i * 1.0
-        }))
+        }, (): number => { expect().assertFail(); return i * 1.0 }))
       }
       await Promise.any<number>(promises)
       await Promise.all<number>(promises)
@@ -1878,10 +1878,10 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       let counter = 0
       let promises = new Set<Promise<number>>()
       for (let i = 0; i < 5; i++) {
-        promises.add(Promise.resolve<number>(i * 1.0).then<number>(() => {
+        promises.add(Promise.resolve<number>(i * 1.0).then<number, number>(() => {
           counter++
           return i * 1.0
-        }))
+        }, (): number => { expect().assertFail(); return i * 1.0 }))
       }
       await Promise.any<number>(promises)
       await Promise.all<number>(promises)
