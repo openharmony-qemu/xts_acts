@@ -35,7 +35,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testISendable0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0001
      * @tc.desc   Test the function of the interface ISendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0002
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -77,7 +77,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0003
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -97,7 +97,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0004
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -117,7 +117,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0005
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0005
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0006
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -157,7 +157,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0007
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0007
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0008
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,7 +197,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0008
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0009
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -217,7 +217,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0009
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0010
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -237,7 +237,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0010
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0011
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -257,7 +257,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0011
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0012
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -277,7 +277,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0012
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0013
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -297,7 +297,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0013
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0014
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -323,7 +323,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0014
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0015
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -343,7 +343,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0015
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0016
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -363,7 +363,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0016
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0017
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -383,7 +383,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0017
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0018
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -403,7 +403,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0018
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0019
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -423,7 +423,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0019
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0020
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -443,7 +443,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0020
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0021
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -463,7 +463,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0021
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0022
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -483,7 +483,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0022
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0023
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -503,7 +503,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0023
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0024
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -523,7 +523,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0024
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0025
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -543,7 +543,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0025
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0026
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -564,7 +564,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0026
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0027
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -584,7 +584,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0027
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0028
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -604,7 +604,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0028
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0029
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -623,7 +623,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0029
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0030
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -642,7 +642,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0030
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0031
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -662,7 +662,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0031
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0032
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -682,7 +682,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0032
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0033
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -702,7 +702,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0033
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0034
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -722,7 +722,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0034
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0035
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -742,7 +742,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0035
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0036
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -762,7 +762,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0036
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0037
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -782,7 +782,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0037
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0038
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -802,7 +802,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0038
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0039
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -822,7 +822,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0039
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0040
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -842,7 +842,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0040
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0041
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -861,7 +861,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0041
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0042
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -881,7 +881,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0042
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_12000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0043
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -903,7 +903,7 @@ export default function arkTSUtilsIsSendableTest() {
 
     /**
      * @tc.name   testIsSendable0043
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_12100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARKTS_ASON_IS_SENDABLE_0044
      * @tc.desc   Test the function of the interface IsSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

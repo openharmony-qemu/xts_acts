@@ -220,7 +220,7 @@ export default function SendableLruCacheGetTest() {
   
   /**
      * @tc.name   sendableLruCacheEmptyString001
-     * @tc.number SUB_UTILS_SENDABLE_LRU_CACHE_EMPTY_STRING_001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_LRU_CACHE_GET_0008
      * @tc.desc   Test SendableLruCache with empty string key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -257,7 +257,7 @@ export default function SendableLruCacheGetTest() {
     
     /**
      * @tc.name   sendableLruCacheRemoveReturnValidation001
-     * @tc.number SUB_UTILS_SENDABLE_LRU_CACHE_REMOVE_RETURN_VALIDATION_001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_LRU_CACHE_GET_0007
      * @tc.desc   Test SendableLruCache.remove return type validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

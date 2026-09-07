@@ -128,7 +128,7 @@ export class NumClass {
 @Sendable
 export class SendableClass {
   count_: number = 0;
-  static count: number = 1;
+  public static count: number = 1;
 
   static getPromiseCount(): Promise<number> {
     let lock: ArkTSUtils.locks.AsyncLock = ArkTSUtils.locks.AsyncLock.request("lock");

@@ -25,7 +25,7 @@ export default function conditionVariableNotifyTest() {
 
     /**
      * @tc.name   conditionVariableRequestEmptyString001
-     * @tc.number SUB_UTILS_CONDITION_VARIABLE_REQUEST_EMPTY_STRING_001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONDITION_VARIABLE_NOTIFY_0024
      * @tc.desc   Test ConditionVariable.request with empty string parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -47,7 +47,7 @@ export default function conditionVariableNotifyTest() {
       
     /**
      * @tc.name   conditionVariableRequestReturnValidation001
-     * @tc.number SUB_UTILS_CONDITION_VARIABLE_REQUEST_RETURN_VALIDATION_001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONDITION_VARIABLE_NOTIFY_0023
      * @tc.desc   Test ConditionVariable.request return type validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
