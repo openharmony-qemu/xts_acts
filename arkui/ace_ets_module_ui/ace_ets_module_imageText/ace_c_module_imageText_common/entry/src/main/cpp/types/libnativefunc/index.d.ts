@@ -176,6 +176,18 @@ export const RadialGradientTest_031: () => number;
 export const RadialGradientTest_032: () => number;
 export const RadialGradientTest_033: () => number;
 
+export const LineSpacingOptionsTest_001: () => number;
+export const LineSpacingOptionsTest_004: () => number;
+export const LineSpacingOptionsTest_005: () => number;
+export const LineSpacingOptionsTest_006: () => number;
+export const LineSpacingOptionsTest_007: () => number;
+export const LineSpacingOptionsTest_008: () => number;
+export const LineSpacingOptionsTest_009: () => number;
+export const LineSpacingOptionsTest_010: () => number;
+export const LineSpacingOptionsTest_011: () => number;
+export const LineSpacingOptionsTest_012: () => number;
+export const LineSpacingOptionsTest_013: () => number;
+
 export const GetGlyphRangeForCharacterRangeWithEncodingTest_001: () => number;
 export const GetGlyphRangeForCharacterRangeWithEncodingTest_002: () => number;
 export const GetGlyphRangeForCharacterRangeWithEncodingTest_003: () => number;
