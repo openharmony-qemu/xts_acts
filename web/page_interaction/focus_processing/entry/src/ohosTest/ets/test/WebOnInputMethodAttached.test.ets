@@ -103,7 +103,7 @@ export default function webViewSrollableJsunit() {
     } else {
       Utils.emitEvent("emitOnInputMethodAttached01", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("emitOnInputMethodAttached01", true, 20250420, () => { pageReady = true });
+      Utils.registerEvent("emitOnInputMethodAttached01", true, 20250420, () => { isReturn = true });
       await Utils.waitAndClickComponent(driver, "WebOnInputMethodAttachedButton","emitOnInputMethodAttached01");
       await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached01" + '_returnCheck', true, 1000);
       done();
@@ -139,7 +139,7 @@ export default function webViewSrollableJsunit() {
       } else {
         Utils.emitEvent("emitOnInputMethodAttached02", EVENT_ID_SET_SUITE_KEY);
         let isReturn = false;
-        Utils.registerEvent("emitOnInputMethodAttached02", true, 20250421, () => { pageReady = true });
+        Utils.registerEvent("emitOnInputMethodAttached02", true, 20250421, () => { isReturn = true });
         await Utils.waitAndClickComponent(driver, "WebOnInputMethodAttachedButton","emitOnInputMethodAttached02");
         await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached02" + '_returnCheck', true, 1000);
         done();
