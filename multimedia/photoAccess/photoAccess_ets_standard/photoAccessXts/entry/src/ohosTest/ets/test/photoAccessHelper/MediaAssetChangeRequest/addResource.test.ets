@@ -174,6 +174,23 @@ export default function MediaAssetChangeRequestAddResourceTest() {
     })
 
     /**
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_promise_0009
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_promise_0009
+     * @tc.desc   addResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MediaAssetChangeRequest_addResource_promise_0009', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_promise_0009';
+      const fileName = 'test6.gif';
+      const path = 'test6.gif';
+      const imageType = 'gif';
+      await copyImageToSandbox(fileName, path);
+      await addResourceAbnormalPromiseTest(done, testName, undefined, imageType, photoAccessHelper.ResourceType.IMAGE_RESOURCE, 202);
+    })
+
+    /**
      * @tc.name   MediaAssetChangeRequest_addResource_buffer_promise_001
      * @tc.number MEDIA_ASSET_CHANGE_REQUEST_ADD_RESOURCE_006
      * @tc.desc   addResource(type: ResourceType, data: ArrayBuffer): void
