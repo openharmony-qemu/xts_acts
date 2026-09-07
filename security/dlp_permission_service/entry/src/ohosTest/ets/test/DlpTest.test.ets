@@ -4290,7 +4290,7 @@ export default function dlpTest() {
     })
 
     /**
-     * @tc.name   testStartDLPManagerForResult0200
+     * @tc.name   SUB_SECURITY_DLP_startDLPManagerForResult_0200
      * @tc.number SUB_SECURITY_DLP_startDLPManagerForResult_0200
      * @tc.desc   test startDLPManagerForResult with windowClass
      * @tc.type   FUNCTION
