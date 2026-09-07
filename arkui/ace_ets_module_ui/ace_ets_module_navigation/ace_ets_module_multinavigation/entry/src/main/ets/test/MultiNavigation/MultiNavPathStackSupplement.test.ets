@@ -182,7 +182,8 @@ export default function MultiNavPathStackSupplement() {
       await CommonFunc.sleep(500);
       sendEventByKey('btn_setHomeWidthRange', 10, '');
       await CommonFunc.sleep(1000);
-      expect(true).assertTrue();
+      const stack: MultiNavPathStack = AppStorage.get<MultiNavPathStack>('multiNavPathStack') as MultiNavPathStack;
+      expect(stack !== null && stack !== undefined).assertTrue();
       console.info('[testSetHomeWidthRangeParam0008] END');
       done();
     });
@@ -197,7 +198,8 @@ export default function MultiNavPathStackSupplement() {
       await CommonFunc.sleep(500);
       sendEventByKey('btn_keepBottomPage_true', 10, '');
       await CommonFunc.sleep(1000);
-      expect(true).assertTrue();
+      const stack: MultiNavPathStack = AppStorage.get<MultiNavPathStack>('multiNavPathStack') as MultiNavPathStack;
+      expect(stack !== null && stack !== undefined).assertTrue();
       console.info('[testKeepBottomPageParam0009] END');
       done();
     });
@@ -212,7 +214,8 @@ export default function MultiNavPathStackSupplement() {
       await CommonFunc.sleep(500);
       sendEventByKey('btn_keepBottomPage_false', 10, '');
       await CommonFunc.sleep(1000);
-      expect(true).assertTrue();
+      const stack: MultiNavPathStack = AppStorage.get<MultiNavPathStack>('multiNavPathStack') as MultiNavPathStack;
+      expect(stack !== null && stack !== undefined).assertTrue();
       console.info('[testKeepBottomPageParam0010] END');
       done();
     });
@@ -265,7 +268,8 @@ export default function MultiNavPathStackSupplement() {
       await CommonFunc.sleep(500);
       sendEventByKey('btn_setPlaceholderPage', 10, '');
       await CommonFunc.sleep(1000);
-      expect(true).assertTrue();
+      const stack: MultiNavPathStack = AppStorage.get<MultiNavPathStack>('multiNavPathStack') as MultiNavPathStack;
+      expect(stack !== null && stack !== undefined).assertTrue();
       console.info('[testSetPlaceholderPageParam0011] END');
       done();
     });

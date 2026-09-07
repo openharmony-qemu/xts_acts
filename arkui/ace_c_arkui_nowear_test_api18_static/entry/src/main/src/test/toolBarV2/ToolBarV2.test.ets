@@ -31,7 +31,7 @@ export default function ToolBarV2Test(): void {
     // ==================== ToolBarV2ItemState enum ====================
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemState_Enable_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemState_Enable_0100
      * @tc.name     testToolBarV2ItemStateEnable001
      * @tc.desc     verify ToolBarV2ItemState.ENABLE equals 1
      * @tc.level    Level.LEVEL0
@@ -47,7 +47,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemState_Disable_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemState_Disable_0100
      * @tc.name     testToolBarV2ItemStateDisable001
      * @tc.desc     verify ToolBarV2ItemState.DISABLE equals 2
      * @tc.level    Level.LEVEL0
@@ -63,7 +63,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemState_Activate_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemState_Activate_0100
      * @tc.name     testToolBarV2ItemStateActivate001
      * @tc.desc     verify ToolBarV2ItemState.ACTIVATE equals 3
      * @tc.level    Level.LEVEL0
@@ -81,7 +81,7 @@ export default function ToolBarV2Test(): void {
     // ==================== ToolBarV2SymbolGlyph ====================
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_SymbolGlyph_Constructor_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_SymbolGlyph_Constructor_0100
      * @tc.name     testSymbolGlyphConstructor001
      * @tc.desc     verify ToolBarV2SymbolGlyph constructor with normal options
      * @tc.level    Level.LEVEL0
@@ -102,7 +102,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_SymbolGlyph_Normal_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_SymbolGlyph_Normal_0100
      * @tc.name     testSymbolGlyphNormal001
      * @tc.desc     verify ToolBarV2SymbolGlyph.normal property value
      * @tc.level    Level.LEVEL0
@@ -123,7 +123,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_SymbolGlyph_Activated_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_SymbolGlyph_Activated_0100
      * @tc.name     testSymbolGlyphActivated001
      * @tc.desc     verify ToolBarV2SymbolGlyph.activated property value when provided
      * @tc.level    Level.LEVEL0
@@ -146,7 +146,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_SymbolGlyph_Activated_002
+     * @tc.number   SUB_ArkUI_ToolBarV2_SymbolGlyph_Activated_0200
      * @tc.name     testSymbolGlyphActivated002
      * @tc.desc     verify ToolBarV2SymbolGlyph.activated is undefined when not provided
      * @tc.level    Level.LEVEL0
@@ -169,7 +169,7 @@ export default function ToolBarV2Test(): void {
     // ==================== ToolBarV2ItemText ====================
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemText_Constructor_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemText_Constructor_0100
      * @tc.name     testItemTextConstructor001
      * @tc.desc     verify ToolBarV2ItemText constructor with full options
      * @tc.level    Level.LEVEL0
@@ -191,7 +191,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemText_Text_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemText_Text_0100
      * @tc.name     testItemTextText001
      * @tc.desc     verify ToolBarV2ItemText.text property value
      * @tc.level    Level.LEVEL0
@@ -211,7 +211,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemText_Color_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemText_Color_0100
      * @tc.name     testItemTextColor001
      * @tc.desc     verify ToolBarV2ItemText.color property is set correctly
      * @tc.level    Level.LEVEL0
@@ -233,7 +233,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemText_ActivatedColor_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemText_ActivatedColor_0100
      * @tc.name     testItemTextActivatedColor001
      * @tc.desc     verify ToolBarV2ItemText.activatedColor property is set correctly
      * @tc.level    Level.LEVEL0
@@ -255,7 +255,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemText_Optional_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemText_Optional_0100
      * @tc.name     testItemTextOptional001
      * @tc.desc     verify ToolBarV2ItemText.color and activatedColor are undefined when not provided
      * @tc.level    Level.LEVEL0
@@ -278,7 +278,7 @@ export default function ToolBarV2Test(): void {
     // ==================== ToolBarV2ItemImage ====================
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemImage_Constructor_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemImage_Constructor_0100
      * @tc.name     testItemImageConstructor001
      * @tc.desc     verify ToolBarV2ItemImage constructor with full options
      * @tc.level    Level.LEVEL0
@@ -300,7 +300,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemImage_Src_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemImage_Src_0100
      * @tc.name     testItemImageSrc001
      * @tc.desc     verify ToolBarV2ItemImage.src property is set correctly
      * @tc.level    Level.LEVEL0
@@ -320,7 +320,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemImage_Color_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemImage_Color_0100
      * @tc.name     testItemImageColor001
      * @tc.desc     verify ToolBarV2ItemImage.color property is set correctly
      * @tc.level    Level.LEVEL0
@@ -342,7 +342,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemImage_ActivatedColor_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemImage_ActivatedColor_0100
      * @tc.name     testItemImageActivatedColor001
      * @tc.desc     verify ToolBarV2ItemImage.activatedColor property is set correctly
      * @tc.level    Level.LEVEL0
@@ -364,7 +364,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemImage_Optional_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemImage_Optional_0100
      * @tc.name     testItemImageOptional001
      * @tc.desc     verify ToolBarV2ItemImage.color and activatedColor are undefined when not provided
      * @tc.level    Level.LEVEL0
@@ -387,7 +387,7 @@ export default function ToolBarV2Test(): void {
     // ==================== ToolBarV2ItemIconType ====================
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemIconType_Image_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemIconType_Image_0100
      * @tc.name     testItemIconTypeImage001
      * @tc.desc     verify ToolBarV2ItemImage can be assigned to ToolBarV2ItemIconType
      * @tc.level    Level.LEVEL0
@@ -408,7 +408,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemIconType_SymbolGlyph_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemIconType_SymbolGlyph_0100
      * @tc.name     testItemIconTypeSymbolGlyph001
      * @tc.desc     verify ToolBarV2SymbolGlyph can be assigned to ToolBarV2ItemIconType
      * @tc.level    Level.LEVEL0
@@ -432,7 +432,7 @@ export default function ToolBarV2Test(): void {
     // ==================== ToolBarV2Item ====================
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Item_Constructor_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Item_Constructor_0100
      * @tc.name     testItemConstructor001
      * @tc.desc     verify ToolBarV2Item constructor with full options
      * @tc.level    Level.LEVEL0
@@ -454,8 +454,8 @@ export default function ToolBarV2Test(): void {
           },
           icon: itemImage,
           state: ToolBarV2ItemState.ENABLE,
-          accessibilityText: 'access_text',
-          accessibilityDescription: 'access_desc',
+          accessibilityText: 'accessibility_text',
+          accessibilityDescription: 'test_description',
           accessibilityLevel: 'yes'
         };
         const item: ToolBarV2Item = new ToolBarV2Item(options);
@@ -468,7 +468,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Item_Content_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Item_Content_0100
      * @tc.name     testItemContent001
      * @tc.desc     verify ToolBarV2Item.content property value
      * @tc.level    Level.LEVEL0
@@ -493,7 +493,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Item_Action_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Item_Action_0100
      * @tc.name     testItemAction001
      * @tc.desc     verify ToolBarV2Item.action callback can be invoked
      * @tc.level    Level.LEVEL0
@@ -524,7 +524,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Item_Icon_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Item_Icon_0100
      * @tc.name     testItemIcon001
      * @tc.desc     verify ToolBarV2Item.icon property with ToolBarV2ItemImage
      * @tc.level    Level.LEVEL0
@@ -553,7 +553,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Item_Icon_002
+     * @tc.number   SUB_ArkUI_ToolBarV2_Item_Icon_0200
      * @tc.name     testItemIcon002
      * @tc.desc     verify ToolBarV2Item.icon property with ToolBarV2SymbolGlyph
      * @tc.level    Level.LEVEL0
@@ -583,7 +583,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Item_State_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Item_State_0100
      * @tc.name     testItemState001
      * @tc.desc     verify ToolBarV2Item.state property value
      * @tc.level    Level.LEVEL0
@@ -608,7 +608,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Item_AccessibilityText_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Item_AccessibilityText_0100
      * @tc.name     testItemAccessibilityText001
      * @tc.desc     verify ToolBarV2Item.accessibilityText property value
      * @tc.level    Level.LEVEL0
@@ -621,10 +621,10 @@ export default function ToolBarV2Test(): void {
         const itemText: ToolBarV2ItemText = new ToolBarV2ItemText(textOptions);
         const options: ToolBarV2ItemOptions = {
           content: itemText,
-          accessibilityText: 'my_accessibility_text'
+          accessibilityText: 'accessibility_text'
         };
         const item: ToolBarV2Item = new ToolBarV2Item(options);
-        expect(item.accessibilityText).assertEqual('my_accessibility_text');
+        expect(item.accessibilityText).assertEqual('accessibility_text');
         done();
       } catch (err) {
         console.info('testItemAccessibilityText001 err: ' + JSON.stringify(err));
@@ -633,7 +633,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Item_AccessibilityDescription_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Item_AccessibilityDescription_0100
      * @tc.name     testItemAccessibilityDescription001
      * @tc.desc     verify ToolBarV2Item.accessibilityDescription property value
      * @tc.level    Level.LEVEL0
@@ -646,10 +646,10 @@ export default function ToolBarV2Test(): void {
         const itemText: ToolBarV2ItemText = new ToolBarV2ItemText(textOptions);
         const options: ToolBarV2ItemOptions = {
           content: itemText,
-          accessibilityDescription: 'my_description'
+          accessibilityDescription: 'test_description'
         };
         const item: ToolBarV2Item = new ToolBarV2Item(options);
-        expect(item.accessibilityDescription).assertEqual('my_description');
+        expect(item.accessibilityDescription).assertEqual('test_description');
         done();
       } catch (err) {
         console.info('testItemAccessibilityDescription001 err: ' + JSON.stringify(err));
@@ -658,7 +658,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Item_AccessibilityLevel_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Item_AccessibilityLevel_0100
      * @tc.name     testItemAccessibilityLevel001
      * @tc.desc     verify ToolBarV2Item.accessibilityLevel property value
      * @tc.level    Level.LEVEL0
@@ -683,7 +683,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Item_AccessibilityLevel_002
+     * @tc.number   SUB_ArkUI_ToolBarV2_Item_AccessibilityLevel_0200
      * @tc.name     testItemAccessibilityLevel002
      * @tc.desc     verify ToolBarV2Item.accessibilityLevel is undefined when not provided
      * @tc.level    Level.LEVEL0
@@ -709,7 +709,7 @@ export default function ToolBarV2Test(): void {
     // ==================== ToolBarV2ItemAction ====================
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_ItemAction_Callback_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_ItemAction_Callback_0100
      * @tc.name     testItemActionCallback001
      * @tc.desc     verify ToolBarV2ItemAction callback receives correct index parameter
      * @tc.level    Level.LEVEL0
@@ -732,7 +732,7 @@ export default function ToolBarV2Test(): void {
     // ==================== ToolBarV2Modifier ====================
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_Height_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_Height_0100
      * @tc.name     testModifierHeight001
      * @tc.desc     verify ToolBarV2Modifier.height returns ToolBarV2Modifier instance
      * @tc.level    Level.LEVEL0
@@ -750,7 +750,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_BackgroundColor_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_BackgroundColor_0100
      * @tc.name     testModifierBackgroundColor001
      * @tc.desc     verify ToolBarV2Modifier.backgroundColor returns ToolBarV2Modifier instance
      * @tc.level    Level.LEVEL0
@@ -768,7 +768,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_Padding_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_Padding_0100
      * @tc.name     testModifierPadding001
      * @tc.desc     verify ToolBarV2Modifier.padding returns ToolBarV2Modifier instance
      * @tc.level    Level.LEVEL0
@@ -786,7 +786,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_StateEffect_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_StateEffect_0100
      * @tc.name     testModifierStateEffect001
      * @tc.desc     verify ToolBarV2Modifier.stateEffect returns ToolBarV2Modifier instance
      * @tc.level    Level.LEVEL0
@@ -804,7 +804,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_StateEffect_002
+     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_StateEffect_0200
      * @tc.name     testModifierStateEffect002
      * @tc.desc     verify ToolBarV2Modifier.stateEffect with false returns ToolBarV2Modifier instance
      * @tc.level    Level.LEVEL0
@@ -822,7 +822,7 @@ export default function ToolBarV2Test(): void {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_Chain_001
+     * @tc.number   SUB_ArkUI_ToolBarV2_Modifier_Chain_0100
      * @tc.name     testModifierChain001
      * @tc.desc     verify ToolBarV2Modifier method chaining works correctly
      * @tc.level    Level.LEVEL0
