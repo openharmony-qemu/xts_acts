@@ -829,7 +829,7 @@ export default function HttpResponseExtraInfoTest() {
               } else {
                 console.info(`${caseName} Network connected`);
                 let httpRequest = http.createHttp();
-                httpRequest.request('https://www.microsoft.com')
+                httpRequest.request('https://httpbin.moyufangge.com/redirect/1')
                   .then((res: http.HttpResponse) => {
                     console.info(' success');
                     if (res?.connectionExtraInfo) {
