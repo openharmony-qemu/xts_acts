@@ -2530,71 +2530,58 @@ export default function windowPropertiesTest3() {
     it('testOnDisplayIdChange_twoCallbacks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testOnDisplayIdChange_twoCallbacks';
 
+      // 判断是否满足触发displayIdChange的条件：PC + 折叠态 + 多屏幕
+      let canMove = false;
+      let isHalfFolded = false;
+      let displays: Array<display.Display> = [];
+      let currentDisplayId = -1;
+      let targetDisplayId = -1;
+      let windowRect: window.Rect = { left: 0, top: 0, width: 0, height: 0 };
+
       // 判断当前设备是否是PC
       if (deviceType !== '2in1') {
-        console.info(`${message} Device is not PC (deviceType: ${deviceType}), skip test.`);
-        done();
-        return;
-      }
+        console.info(`${message} Device is not PC (deviceType: ${deviceType}).`);
+      } else {
+        // 判断是否是折叠态（半折叠状态）
+        try {
+          let foldStatus: display.FoldStatus = display.getFoldStatus();
+          console.info(`${message} foldStatus: ${foldStatus}`);
+          isHalfFolded = foldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED;
+          console.info(`${message} isHalfFolded: ${isHalfFolded}`);
+        } catch (e) {
+          console.info(`${message} getFoldStatus not supported.`);
+        }
 
-      // 判断是否是折叠态（半折叠状态）
-      let isHalfFolded = false;
-      try {
-        let foldStatus: display.FoldStatus = display.getFoldStatus();
-        console.info(`${message} foldStatus: ${foldStatus}`);
-        isHalfFolded = foldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED;
-        console.info(`${message} isHalfFolded: ${isHalfFolded}`);
-      } catch (e) {
-        console.info(`${message} getFoldStatus not supported, skip test.`);
-        done();
-        return;
-      }
-      if (!isHalfFolded) {
-        console.info(`${message} Device is not in half-folded state, skip test.`);
-        done();
-        return;
-      }
+        if (isHalfFolded) {
+          // 获取当前所有的屏幕ID
+          try {
+            displays = await display.getAllDisplays();
+            console.info(`${message} All displays count: ${displays.length}`);
+          } catch (e) {
+            console.info(`${message} Failed to get all displays.`);
+          }
 
-      // 获取当前所有的屏幕ID
-      let displays: Array<display.Display> = [];
-      try {
-        displays = await display.getAllDisplays();
-        console.info(`${message} All displays count: ${displays.length}`);
-      } catch (e) {
-        console.info(`${message} Failed to get all displays, skip test.`);
-        done();
-        return;
-      }
+          if (displays.length >= 2) {
+            // 获取当前窗口在当前屏幕的位置
+            windowRect = mainWindowClass.getWindowProperties().windowRect;
+            currentDisplayId = display.getDefaultDisplaySync().id;
 
-      if (displays.length < 2) {
-        console.info(`${message} Less than 2 displays (${displays.length}), skip test.`);
-        done();
-        return;
-      }
+            // 已知当前窗口所在的屏幕ID，除此之后的display即为需要移动到的displayId
+            for (let d of displays) {
+              if (d.id !== currentDisplayId) {
+                targetDisplayId = d.id;
+                break;
+              }
+            }
 
-      // 获取当前窗口在当前屏幕的位置
-      let windowRect = mainWindowClass.getWindowProperties().windowRect;
-      let currentDisplayId = display.getDefaultDisplaySync().id;
-
-      // 已知当前窗口所在的屏幕ID，除此之后的display即为需要移动到的displayId
-      let targetDisplayId = -1;
-      for (let d of displays) {
-        if (d.id !== currentDisplayId) {
-          targetDisplayId = d.id;
-          break;
+            if (targetDisplayId !== -1) {
+              canMove = true;
+            }
+          }
         }
       }
-      if (targetDisplayId === -1) {
-        console.info(`${message} No other display found, skip test.`);
-        done();
-        return;
-      }
 
-      // 使用MoveConfiguration指定目标屏幕ID，移动到另一块屏幕的同一位置
-      let moveConfiguration: window.MoveConfiguration = {
-        displayId: targetDisplayId
-      };
-      console.info(`${message} currentDisplayId: ${currentDisplayId}, targetDisplayId: ${targetDisplayId}, windowRect: ${JSON.stringify(windowRect)}`);
+      console.info(`${message} canMove: ${canMove}`);
 
       let callbackATriggered = false;
       let callbackBTriggered = false;
@@ -2608,43 +2595,59 @@ export default function windowPropertiesTest3() {
       };
 
       try {
+        // 注册两个callback
         mainWindowClass.on('displayIdChange', callbackA);
         console.info(`${message} Succeeded in registering callbackA.`);
         mainWindowClass.on('displayIdChange', callbackB);
         console.info(`${message} Succeeded in registering callbackB.`);
 
-        // 将当前窗口移动到另一块屏幕的同一位置触发监听
-        await mainWindowClass.moveWindowToGlobal(windowRect.left, windowRect.top, moveConfiguration);
-        console.info(`${message} Succeeded in moving window to another display.`);
+        if (canMove) {
+          // 将当前窗口移动到另一块屏幕的同一位置触发监听
+          let moveConfiguration: window.MoveConfiguration = {
+            displayId: targetDisplayId
+          };
+          console.info(`${message} currentDisplayId: ${currentDisplayId}, targetDisplayId: ${targetDisplayId}, windowRect: ${JSON.stringify(windowRect)}`);
+          await mainWindowClass.moveWindowToGlobal(windowRect.left, windowRect.top, moveConfiguration);
+          console.info(`${message} Succeeded in moving window to another display.`);
 
-        await sleep(3000);
+          await sleep(3000);
 
-        expect(callbackATriggered).assertTrue();
-        expect(callbackBTriggered).assertTrue();
-        console.info(`${message} Both callbacks triggered.`);
+          expect(callbackATriggered).assertTrue();
+          expect(callbackBTriggered).assertTrue();
+          console.info(`${message} Both callbacks triggered.`);
 
-        mainWindowClass.off('displayIdChange', callbackA);
-        mainWindowClass.off('displayIdChange', callbackB);
-        console.info(`${message} Succeeded in unregistering both callbacks.`);
+          mainWindowClass.off('displayIdChange', callbackA);
+          mainWindowClass.off('displayIdChange', callbackB);
+          console.info(`${message} Succeeded in unregistering both callbacks.`);
 
-        // 将窗口移动回原屏幕
-        let originalMoveConfiguration: window.MoveConfiguration = {
-          displayId: currentDisplayId
-        };
-        await mainWindowClass.moveWindowToGlobal(windowRect.left, windowRect.top, originalMoveConfiguration);
-        console.info(`${message} Succeeded in moving window back to original display.`);
-        done();
+          // 将窗口移动回原屏幕
+          let originalMoveConfiguration: window.MoveConfiguration = {
+            displayId: currentDisplayId
+          };
+          await mainWindowClass.moveWindowToGlobal(windowRect.left, windowRect.top, originalMoveConfiguration);
+          console.info(`${message} Succeeded in moving window back to original display.`);
+          done();
+        } else {
+          // 不满足触发条件，验证注册监听不报错即可
+          mainWindowClass.off('displayIdChange', callbackA);
+          mainWindowClass.off('displayIdChange', callbackB);
+          console.info(`${message} Conditions not met, succeeded in registering and unregistering callbacks.`);
+          done();
+        }
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
         if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          expect(exception.message != null).assertTrue();
-          done();
-        } else if (exception.code === 1300010) {
-          console.info(`${message} Window is not in FLOATING mode, skip test.`);
-          expect(exception.message != null).assertTrue();
-          done();
+          let isSupported = canIUse('SystemCapability.Window.SessionManager');
+          if (isSupported) {
+            console.info(`${message} SessionManager supported but got 801.`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${message} SessionManager not supported, expected 801.`);
+            expect(exception.message != null).assertTrue();
+            done();
+          }
         } else {
           expect().assertFail();
           done();
@@ -2765,13 +2768,15 @@ export default function windowPropertiesTest3() {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
         if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          expect(exception.message != null).assertTrue();
-          done();
-        } else if (exception.code === 201) {
-          console.info(`${message} Permission not granted.`);
-          expect(exception.message != null).assertTrue();
-          done();
+          if (deviceType === 'phone' || deviceType === '2in1' || deviceType === 'tablet') {
+            console.info(`${message} Device (${deviceType}) should support screenshot.capture but got 801.`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${message} Device (${deviceType}) does not support screenshot.capture, expected 801.`);
+            expect(exception.message != null).assertTrue();
+            done();
+          }
         } else {
           expect().assertFail();
           done();
