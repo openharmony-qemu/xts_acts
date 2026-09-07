@@ -23,6 +23,6 @@ using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000097,
-        "KHR-GL31.texture_repeat_mode.r",
-        "gba32ui_49x23_2_mirrored_repeat");
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000888,
+        "KHR-GL31.primitive_",
+        "restart.restart_mode");

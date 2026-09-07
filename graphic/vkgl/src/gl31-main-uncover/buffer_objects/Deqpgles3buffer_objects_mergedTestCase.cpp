@@ -23,6 +23,22 @@ using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000017,
-        "KHR-GL31.transform_feedback.c",
-        "apture_geometry_separate_test");
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000870,
+        "KHR-GL31.buffer_",
+        "objects.elements");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000868,
+        "KHR-GL31.buffer_o",
+        "bjects.gen_buffers");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000871,
+        "KHR-GL31.buffer_ob",
+        "jects.multi_texture");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000872,
+        "KHR-GL31.buffer_",
+        "objects.sub_data");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000869,
+        "KHR-GL31.buffer_",
+        "objects.triangles");

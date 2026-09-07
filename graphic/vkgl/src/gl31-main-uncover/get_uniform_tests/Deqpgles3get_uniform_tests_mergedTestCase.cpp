@@ -23,6 +23,6 @@ using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000021,
-        "KHR-GL31.transform_feedback",
-        ".query_vertex_separate_test");
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000875,
+        "KHR-GL31.get_unifor",
+        "m_tests.get_uniform");

@@ -23,6 +23,6 @@ using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000030,
-        "KHR-GL31.transform_feedback.d",
-        "raw_xfb_stream_instanced_test");
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000878,
+        "KHR-GL31.draw_buff",
+        "ers.draw_buffers_1");

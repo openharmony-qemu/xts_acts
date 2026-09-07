@@ -23,6 +23,26 @@ using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000028,
-        "KHR-GL31.transform_feedback.ca",
-        "pture_special_interleaved_test");
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000005,
+        "KHR-GL31.inf",
+        "o.extensions");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000006,
+        "KHR-GL31.info",
+        ".render_target");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000002,
+        "KHR-GL31.in",
+        "fo.renderer");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000004,
+        "KHR-GL31.info.shadi",
+        "ng_language_version");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000001,
+        "KHR-GL31.i",
+        "nfo.vendor");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000003,
+        "KHR-GL31.i",
+        "nfo.version");
