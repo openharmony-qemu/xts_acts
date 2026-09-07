@@ -95,9 +95,11 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_0200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_0200`;
-      let moduleContext: common.UIAbilityContext;
+      let moduleContext: common.Context;
       try {
-        moduleContext = context.createModuleContext('') as common.UIAbilityContext;
+        moduleContext = context.createModuleContext(undefined);
+        expect().assertFail();
+        done();
       } catch (error) {
         console.error(`createModuleContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
         expect(error.code).assertEqual(401)
