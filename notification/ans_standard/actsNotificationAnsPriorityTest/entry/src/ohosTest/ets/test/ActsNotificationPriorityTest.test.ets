@@ -839,5 +839,37 @@ export default function actsNotificationPriorityTest() {
         done()
       }
     })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_7500
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_7500
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_7500', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_7500"
+      let count = 0
+      try {
+        let removeSlotCallback = (err: BusinessError): void => {
+          if (err) {
+            console.error(TAG + `Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info(TAG + `Succeeded in removing slot.`);
+            count++
+            expect(count).assertEqual(1)
+            done()
+          }
+        }
+        notificationManager.removeSlot(undefined, removeSlotCallback);
+      }catch (err) {
+        console.info(`${TAG} removeSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
   })
 }
