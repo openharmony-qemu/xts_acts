@@ -176,6 +176,7 @@ describe('HidebugToDevJsTest', function () {
             for (let ii = 0; ii < appThreadCpuUsage.length; ii++) {
                 console.info(`SUB_DFX_DFT_HiDebug_CPU_Js_0200 > threadId =: ${appThreadCpuUsage[ii].threadId}`)
                 console.info(`SUB_DFX_DFT_HiDebug_CPU_Js_0200 > cpuUsage =: ${appThreadCpuUsage[ii].cpuUsage}`)
+                console.info(`SUB_DFX_DFT_HiDebug_CPU_Js_0200 > threadName =: ${appThreadCpuUsage[ii].threadName}`)
                 expect(appThreadCpuUsage[ii].cpuUsage >= 0 && appThreadCpuUsage[ii].cpuUsage <= 100).assertTrue();
             }
             done()
