@@ -67,7 +67,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
       let rejectedCalled = false
       let result = promise.then<string, string>(
         (value: string) => { return value + " processed" },
-        (error: Error) => { rejectedCalled = true; return "fallback" }
+        () => { rejectedCalled = true; return "fallback" }
       )
       let val = await result
       expect(val).assertEqual("hello processed")
@@ -522,7 +522,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
       let catchCalled = false
       let result = promise
         .then<string>((value: number) => value.toString())
-        .catch<string>((error: Error) => { catchCalled = true; return "-1" })
+        .catch<string>(() => { catchCalled = true; return "-1" })
       let val = await result
       expect(val).assertEqual("42")
       expect(catchCalled).assertFalse()
@@ -839,18 +839,18 @@ export default function BuiltinsPromiseThenFirstTest(): void {
       let winner: string = ""
       let promise1 = new Promise<string>((resolve: (value: string) => void) => {
         setTimeout(() => {
-          Promise.resolve<string>("timer1").then<void>((v: string) => {
+          Promise.resolve<string>("timer1").then<void, void>((v: string) => {
             winner = v
             resolve("done1")
-          })
+          }, (): void => { expect().assertFail() })
         }, 100)
       })
       let promise2 = new Promise<string>((resolve: (value: string) => void) => {
         setTimeout(() => {
-          Promise.resolve<string>("timer2").then<void>((v: string) => {
+          Promise.resolve<string>("timer2").then<void, void>((v: string) => {
             if (!winner) winner = v
             resolve("done2")
-          })
+          }, (): void => { expect().assertFail() })
         }, 200)
       })
       await Promise.race([promise1, promise2])
@@ -1134,9 +1134,9 @@ export default function BuiltinsPromiseThenFirstTest(): void {
       let counter = 0
       let promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(Promise.resolve(i).then<void>(() => {
+        promises.push(Promise.resolve(i).then<void, void>(() => {
           counter++
-        }))
+        }, (): void => { expect().assertFail() }))
       }
       await Promise.all(promises)
       expect(counter).assertEqual(10)

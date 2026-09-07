@@ -873,10 +873,10 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let result = await new Promise<PromiseSettledResult<string>[]>((resolve: (value: PromiseSettledResult<string>[]) => void) => {
         setTimeout(() => {
         let promises: Promise<string>[] = [Promise.resolve<string>("a"), Promise.resolve<string>("b")]
-        Promise.allSettled<string>(promises).then<void>((r: PromiseSettledResult<string>[]) => {
+        Promise.allSettled<string>(promises).then<void, void>((r: PromiseSettledResult<string>[]) => {
           resolve(r)
           return
-        })
+        }, (): void => { expect().assertFail() })
         }, 500)
       })
       expect(result.length).assertEqual(2)
@@ -1015,7 +1015,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       }
       await new Promise<void>((resolve: (value: void) => void) => {
         setTimeout(() => {
-          onEventTrigger().then<void>(() => resolve(undefined))
+          onEventTrigger().then<void, void>(() => resolve(undefined), (): void => { expect().assertFail() })
         }, 500)
       })
       expect(eventTriggered).assertTrue()
@@ -1174,7 +1174,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let branch2 = new Promise<PromiseSettledResult<string>[]>((resolve: (value: PromiseSettledResult<string>[]) => void) => {
         setTimeout(() => {
           let promises: Promise<string>[] = [Promise.resolve<string>("timer2")]
-          Promise.allSettled<string>(promises).then<void>((r: PromiseSettledResult<string>[]) => resolve(r))
+          Promise.allSettled<string>(promises).then<void, void>((r: PromiseSettledResult<string>[]) => resolve(r), (): void => { expect().assertFail() })
         }, 200)
       })
       let branchResults = await Promise.all<PromiseSettledResult<string>[]>([branch1, branch2])
@@ -1261,7 +1261,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let counter = 0
       let promises: Promise<number>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(Promise.resolve<number>(1.0).then<number>(() => { counter++; return 1.0 }))
+        promises.push(Promise.resolve<number>(1.0).then<number, number>(() => { counter++; return 1.0 }, (): number => { expect().assertFail(); return 1.0 }))
       }
 
       await Promise.allSettled<number>(promises)

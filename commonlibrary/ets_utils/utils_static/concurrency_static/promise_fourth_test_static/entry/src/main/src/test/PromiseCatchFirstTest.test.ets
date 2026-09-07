@@ -612,7 +612,7 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      */
     it('PromiseCatchFirstTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("original error"))
-      let recoveredPromise = promise.catch<undefined>((error: Error) => {
+      let recoveredPromise = promise.catch<undefined>(() => {
         return undefined
       })
       let value = await recoveredPromise
@@ -768,7 +768,7 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      */
     it('PromiseCatchFirstTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("test"))
-      let result = promise.catch<number>((error: Error) => {
+      let result = promise.catch<number>(() => {
         return 456
       })
       let value = await result

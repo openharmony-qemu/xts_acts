@@ -316,9 +316,9 @@ export default function BuiltinsPromiseAllThirdTest(): void {
           let promises = new Set<Promise<string>>();
           promises.add(Promise.resolve<string>(data + "_1"));
           promises.add(Promise.resolve<string>(data + "_2"));
-          Promise.all<string>(promises).then<void>((result: string[]) => {
+          Promise.all<string>(promises).then<void, void>((result: string[]) => {
             resolve(result);
-          });
+          }, (): void => { expect().assertFail() });
         });
       });
       emitter.emit('data', 'input');
@@ -716,10 +716,10 @@ export default function BuiltinsPromiseAllThirdTest(): void {
       let counter = 0;
       let promises = new Set<Promise<void>>();
       for (let i = 0; i < 10; i++) {
-        promises.add(Promise.resolve<void>(undefined).then<void>(() => {
+        promises.add(Promise.resolve<void>(undefined).then<void, void>(() => {
           counter++;
           return;
-        }));
+        }, (): void => { expect().assertFail() }))
       }
       await Promise.all<void>(promises);
       expect(counter).assertEqual(10);
@@ -740,10 +740,10 @@ export default function BuiltinsPromiseAllThirdTest(): void {
 
       let promises: Promise<void>[] = [];
       for (let i = 0; i < taskCount; i++) {
-        promises.push(Promise.resolve<void>(undefined).then<void>(() => {
+        promises.push(Promise.resolve<void>(undefined).then<void, void>(() => {
           atomicCounter.fetchAdd(1);
           return;
-        }));
+        }, (): void => { expect().assertFail() }))
       }
 
       await Promise.all<void>(promises);

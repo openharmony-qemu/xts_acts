@@ -1082,9 +1082,9 @@ export default function BuiltinsPromiseThenFourthTest(): void {
       let shared = new SharedData()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(Promise.resolve(i).then().then<void>(async() => {
+        promises.push(Promise.resolve(i).then().then<void, void>(async() => {
           await shared.add()
-        }))
+        }, (): void => { expect().assertFail() }))
       }
       await Promise.all(promises)
       expect(await shared.getValue()).assertEqual(5)
@@ -1230,9 +1230,9 @@ export default function BuiltinsPromiseThenFourthTest(): void {
       let counter = 0
       let promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(Promise.resolve(i * 1.0).then<void>(() => {
+        promises.push(Promise.resolve(i * 1.0).then<void, void>(() => {
           counter++
-        }))
+        }, (): void => { expect().assertFail() }))
       }
       await Promise.all(promises)
       expect(counter).assertEqual(10)
@@ -1326,7 +1326,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     it('PromiseThenFourthTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<number>[] = []
       for (let i = 0; i < 100; i++) {
-        promises.push(Promise.resolve(i * 1.0).then<number>((v: number) => v))
+        promises.push(Promise.resolve(i * 1.0).then<number, number>((v: number) => v, (): number => { expect().assertFail(); return 0 }))
       }
       let results = await Promise.all(promises)
       expect(results.length).assertEqual(100)
@@ -1426,7 +1426,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
         let catchCalled = false
         let result = await Promise.resolve<number>(workerResult)
           .then<number>((v: number) => { expect(v).assertEqual(30); return v })
-          .catch<number>((e: Error) => { catchCalled = true; return 0 })
+          .catch<number>(() => { catchCalled = true; return 0 })
         expect(result).assertEqual(30)
         expect(catchCalled).assertFalse()
       } finally {

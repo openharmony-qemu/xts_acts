@@ -575,7 +575,7 @@ export default function BuiltinsPromiseThenSecondTest(): void  {
       let catchCalled = false
       let result = await promise
         .then<number>(() => 42)
-        .catch((error) => { catchCalled = true; return 0 })
+        .catch(() => { catchCalled = true; return 0 })
       expect(result).assertEqual(42)
       expect(catchCalled).assertFalse()
       Done();

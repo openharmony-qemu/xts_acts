@@ -1576,7 +1576,7 @@ export default function BuiltinsPromiseAnyFirstTest(): void {
       let promises: Array<Promise<number>> = []
       for (let i = 0; i < 10; i++) {
         let v = i * 1.0
-        promises.push(Promise.resolve<number>(v).then<number>((_v: number) => { counter++; return v }))
+        promises.push(Promise.resolve<number>(v).then<number, number>((_v: number) => { counter++; return v }, (): number => { expect().assertFail(); return v }))
       }
       await Promise.any<number>(promises)
       await Promise.all<number>(promises)

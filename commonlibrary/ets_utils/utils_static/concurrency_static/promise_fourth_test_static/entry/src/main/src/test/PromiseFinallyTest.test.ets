@@ -721,7 +721,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
         .finally(async() => {
           throw new Error("async finally error")
         })
-        .catch((e) => {
+        .catch(() => {
           caught = true
         })
       expect(caught).assertTrue()
@@ -1086,7 +1086,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
         })
         let workerResult = job.Await()
         let result = await Promise.reject<string>(new Error("test"))
-          .catch<string>((e: Error) => workerResult)
+          .catch<string>(() => workerResult)
           .then<string>((v: string) => v + " processed")
           .finally(() => { finalCleanup = true })
         expect(result).assertEqual("recovered processed")

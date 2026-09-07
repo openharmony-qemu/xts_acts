@@ -1488,7 +1488,7 @@ export default function BuiltinsPromiseAllFirstTest(): void {
       })
       const allPromise = Promise.all<int>([Promise.resolve(1), slow, Promise.resolve(3)])
       let settled: boolean = false;
-      allPromise.then((_: int[]): void => { settled = true });
+      allPromise.then((_: int[]): void => { settled = true }, (): void => { expect().assertFail() });
       await Promise.resolve();
       expect(settled).assertFalse();
       resolveSlow(2);
@@ -1615,7 +1615,7 @@ export default function BuiltinsPromiseAllFirstTest(): void {
             Promise.resolve(2)
           ]).then((values: int[]) => {
             resolve(values);
-          });
+          }, (): void => { expect().assertFail() });
         }, 500);
       });
       const result = await resultPromise;

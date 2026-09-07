@@ -305,9 +305,9 @@ export default function BuiltinsPromiseAllSecondTest(): void {
       let counter = 0;
       const promises: Promise<void>[] = [];
       for (let i = 0; i < 10; i++) {
-        promises.push(Promise.resolve<void>(undefined).then<void>(() => {
+        promises.push(Promise.resolve<void>(undefined).then<void, void>(() => {
           counter++;
-        }));
+        }, (): void => { expect().assertFail() }))
       }
 
       await Promise.all<void>(promises)
@@ -1937,7 +1937,7 @@ export default function BuiltinsPromiseAllSecondTest(): void {
           const promises = new Set<Promise<string>>();
           promises.add(Promise.resolve<string>("one"));
           promises.add(Promise.resolve<string>("two"));
-          Promise.all<string>(promises).then<void>((r: string[]) => resolve(r));
+          Promise.all<string>(promises).then<void, void>((r: string[]) => resolve(r), (): void => { expect().assertFail() });
           return;
         }, 500);
       });

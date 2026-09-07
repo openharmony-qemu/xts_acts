@@ -1018,10 +1018,10 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let executionOrder: string[] = []
       let promises = new Set<Promise<string>>()
       promises.add(new Promise<string>((resolve) => {
-        Promise.resolve<string>("").then<void>(() => {
+        Promise.resolve<string>("").then<void, void>(() => {
           executionOrder.push("microtask1")
           resolve("p1")
-        })
+        }, (): void => { expect().assertFail() })
       }))
       promises.add(Promise.resolve("p2"))
       await Promise.allSettled<string>(promises)
@@ -1058,7 +1058,7 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
     it('PromiseAllSettledSecondTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
       promises.add(new Promise<string>((resolve) => {
-        Promise.resolve<string>("").then<void>(() => { resolve("micro") })
+        Promise.resolve<string>("").then<void, void>(() => { resolve("micro") }, (): void => { expect().assertFail() })
       }))
       promises.add(new Promise<string>((resolve) => {
         setTimeout(() => resolve("macro"), 100)
@@ -1252,9 +1252,12 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
      */
     it('PromiseAllSettledSecondTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      promises.add(Promise.resolve("start").then(() => {
-        throw new Error("chain error")
-      }))
+      let makeChainError = (): Promise<string> => {
+        return Promise.resolve("start").then(() => {
+          throw new Error("chain error")
+        })
+      }
+      promises.add(makeChainError())
       let result = await Promise.allSettled<string>(promises)
       expect(result[0].status).assertEqual("rejected")
       Done();

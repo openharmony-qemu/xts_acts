@@ -441,7 +441,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
       let result = await new Promise<number>((resolve) => {
         setTimeout(() => {
           let promise = Promise.resolve<string>("hello")
-          promise.then<number>(() => 42).then(resolve)
+          promise.then<number>(() => 42).then(resolve, (): void => { expect().assertFail() })
         }, 500)
       })
       expect(result).assertEqual(42)
@@ -758,9 +758,9 @@ export default function BuiltinsPromiseThenThirdTest(): void {
       let result = new SharedResult()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(Promise.resolve<string>("test").then<void>(async() => {
+        promises.push(Promise.resolve<string>("test").then<void, void>(async() => {
           await result.increment()
-        }))
+        }, (): void => { expect().assertFail() }))
       }
       await Promise.all(promises)
       expect(await result.getValue()).assertEqual(10)

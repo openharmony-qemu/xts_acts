@@ -56,7 +56,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
       let value = await promise
         .catch(() => { throw new Error("error2") })
         .catch(() => { throw new Error("error3") })
-        .catch((error: Error) => {
+        .catch(() => {
           return "caught"
         })
       expect(value).assertEqual("caught")
@@ -591,7 +591,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     it('PromiseCatchSecondTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("error1"))
       let secondError = new Error("error2")
-      let caughtPromise = promise.catch<Promise<string>>((error: Error) => {
+      let caughtPromise = promise.catch<Promise<string>>(() => {
         return Promise.reject<string>(secondError)
       })
       let errorCaught: boolean = false
@@ -810,7 +810,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
       let result = await Promise.resolve("start")
         .then<string>(() => {
           return Promise.reject<string>(new Error("nested error"))
-            .catch<string>((error: Error) => "nested-recovered")
+            .catch<string>(() => "nested-recovered")
         })
       expect(result).assertEqual("nested-recovered")
       Done();
@@ -932,7 +932,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
      */
     it('PromiseCatchSecondTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("handler error"))
-      let result = promise.catch((error: Error) => {
+      let result = promise.catch(() => {
         return "recovered"
       })
       let value = await result
@@ -1088,7 +1088,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
         let workerResult = job.Await()
 
         let result = await Promise.reject<string>(new Error("eaWorker catch test"))
-          .catch<string>((error: Error) => {
+          .catch<string>(() => {
             return workerResult
           })
         expect(result).assertEqual("EAWorker recovered")
@@ -1147,7 +1147,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
         let workerResult = job.Await()
 
         let result = await Promise.reject<string>(new Error("test"))
-          .catch<string>((e: Error) => workerResult)
+          .catch<string>(() => workerResult)
           .then<string>((v: string) => { cleanupExecuted = true; return v })
         expect(result).assertEqual("recovered")
         expect(cleanupExecuted).assertTrue()
@@ -1203,7 +1203,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
         let baseValue = job.Await()
 
         let result = await Promise.reject<number>(new Error("error"))
-          .catch<number>((e: Error) => baseValue)
+          .catch<number>(() => baseValue)
           .then<number>((v: number) => v * 100)
           .then<string>((v: number) => "final: " + v.toString())
         expect(result).assertEqual("final: 500")
@@ -1232,7 +1232,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
         let workerResult = job.Await()
 
         let result = await Promise.reject<string>(new Error("worker error"))
-          .catch<string>((error: Error) => workerResult)
+          .catch<string>(() => workerResult)
         expect(result).assertEqual("worker-catch-recovered")
 
       } finally {
