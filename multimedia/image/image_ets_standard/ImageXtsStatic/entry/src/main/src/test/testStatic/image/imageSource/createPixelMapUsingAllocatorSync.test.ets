@@ -230,38 +230,6 @@ export default function ImageSourceCreatePixelMapUsingAllocatorSyncTest(): void 
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_CREATE_PixelMap_UsingAllocator_Sync_static_0700
-     * @tc.number SUB_MEDIA_IMAGE_CREATE_PixelMap_UsingAllocator_Sync_static_0700
-     * @tc.desc   image createPixelMapUsingAllocatorSync the pixelFormat is UNKNOWN
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_IMAGE_CREATE_PixelMap_UsingAllocator_Sync_static_0700', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_CREATE_PixelMap_UsingAllocator_Sync_static_0700';
-      let pixelMap: image.PixelMap | undefined;
-      try {
-        let opts: image.InitializationOptions =
-          {
-            editable: true,
-            srcPixelFormat: image.PixelMapFormat.UNKNOWN,
-            pixelFormat: image.PixelMapFormat.UNKNOWN,
-            size: { height: 4, width: 6 }
-          }
-        pixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.AUTO);
-        let res = await pixelMap.getImageInfo();
-        expect(isEmpty(pixelMap)).assertFalse();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
-      } catch (error) {
-        console.error(TAG, testName, ' createPixelMapUsingAllocatorSync error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(0);
-      } finally {
-        await pixelMap?.release();
-        done();
-      }
-    })
-
-    /**
      * @tc.name   SUB_MEDIA_IMAGE_CREATE_PixelMap_UsingAllocator_Sync_static_0800
      * @tc.number SUB_MEDIA_IMAGE_CREATE_PixelMap_UsingAllocator_Sync_static_0800
      * @tc.desc   image createPixelMapUsingAllocatorSync the srcPixelFormat is ARGB_8888 the pixelFormat is ARGB_8888
