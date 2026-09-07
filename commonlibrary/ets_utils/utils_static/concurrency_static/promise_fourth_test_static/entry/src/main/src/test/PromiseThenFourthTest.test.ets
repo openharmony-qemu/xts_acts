@@ -296,7 +296,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
       let promise1 = Promise.resolve<number>(42)
       let promise2 = promise1.then()
       let result = await promise2
-      expect(typeof result).assertEqual("number")
+      expect(result instanceof number).assertTrue()
       expect(result).assertEqual(42)
       Done();
     })
@@ -313,7 +313,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
       let promise1 = Promise.resolve<string>("hello world")
       let promise2 = promise1.then()
       let result = await promise2
-      expect(typeof result).assertEqual("string")
+      expect(result instanceof string).assertTrue()
       expect(result).assertEqual("hello world")
       Done();
     })
@@ -330,7 +330,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
       let promise1 = Promise.resolve<boolean>(true)
       let promise2 = promise1.then()
       let result = await promise2
-      expect(typeof result).assertEqual("boolean")
+      expect(result instanceof boolean).assertTrue()
       expect(result).assertTrue()
       Done();
     })
@@ -382,7 +382,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
       let promise1 = Promise.resolve<string | number>(42)
       let promise2 = promise1.then()
       let result = await promise2
-      expect(typeof result).assertEqual("number")
+      expect(result instanceof number).assertTrue()
       expect(result).assertEqual(42)
       Done();
     })

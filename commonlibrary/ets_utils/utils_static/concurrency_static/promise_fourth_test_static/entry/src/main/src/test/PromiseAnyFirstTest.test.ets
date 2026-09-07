@@ -1740,7 +1740,7 @@ export default function BuiltinsPromiseAnyFirstTest(): void {
         fetchUser(4)
       ]
       let result = await Promise.any<User>(promises)
-      expect(typeof result.id === 'number').assertTrue()
+      expect(result.id instanceof number).assertTrue()
       expect(result.id !== 3).assertTrue()
       Done();
     })

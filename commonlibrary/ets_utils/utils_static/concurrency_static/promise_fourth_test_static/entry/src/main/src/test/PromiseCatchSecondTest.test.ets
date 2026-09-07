@@ -393,7 +393,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
       let promise = Promise.reject<number>(new Error("test"))
       let result = promise.catch<string>(() => "recovered")
       let value: number|string = await result
-      expect(typeof value === "string").assertTrue()
+      expect(value instanceof string).assertTrue()
       expect(value).assertEqual("recovered")
       Done();
     })
@@ -410,7 +410,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
       let promise = Promise.reject<string>(new Error("test"))
       let result = promise.catch<number>(() => 200)
       let value: string|number = await result
-      expect(typeof value === "number").assertTrue()
+      expect(value instanceof number).assertTrue()
       expect(value).assertEqual(200)
       Done();
     })
@@ -427,7 +427,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
       let promise = Promise.reject<string>(new Error("test"))
       let result = promise.catch<GenericObject>(() => new GenericObject("recovered"))
       let value: string|GenericObject = await result
-      expect(typeof value === "object").assertTrue()
+      expect(value instanceof GenericObject).assertTrue()
       expect((value as GenericObject).status).assertEqual("recovered")
       Done();
     })
@@ -461,7 +461,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
       let promise = Promise.reject<string>(new Error("test"))
       let result = promise.catch<Promise<number>>(() => Promise.resolve<number>(123.0))
       let value: string|number = await result
-      expect(typeof value === "number").assertTrue()
+      expect(value instanceof number).assertTrue()
       expect(value).assertEqual(123.0)
       Done();
     })
@@ -510,7 +510,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
       let promise = Promise.reject<string>(new Error("test"))
       let result = promise.catch<number|boolean>(() => 123)
       let value: string|number|boolean = await result
-      expect(typeof value === "number").assertTrue()
+      expect(value instanceof number).assertTrue()
       expect(value).assertEqual(123)
       Done();
     })
@@ -559,7 +559,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
       let promise = Promise.reject<void>(new Error("test"))
       let result = promise.catch<string>(() => "recovered")
       let value: void|string = await result
-      expect(typeof value === "string").assertTrue()
+      expect(value instanceof string).assertTrue()
       expect(value).assertEqual("recovered")
       Done();
     })

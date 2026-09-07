@@ -449,7 +449,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
         return "string instead of number"
       })
       let result = await resultPromise
-      expect(typeof result === "string").assertTrue()
+      expect(result instanceof string).assertTrue()
       expect(result).assertEqual("string instead of number")
       Done();
     })
@@ -737,7 +737,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
       let promise = Promise.reject<string>(new Error("failed"))
       let resultPromise = promise.catch<number>((error: Error) => 42)
       let result = await resultPromise
-      expect(typeof result === "number").assertTrue()
+      expect(result instanceof number).assertTrue()
       expect(result).assertEqual(42)
       Done();
     })

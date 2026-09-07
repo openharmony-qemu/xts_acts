@@ -1362,7 +1362,7 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
       let result3 = await Promise.race<string>([
         Promise.resolve("str")
       ])
-      expect(typeof result3 === "string").assertTrue()
+      expect(result3 instanceof string).assertTrue()
       expect(result3).assertEqual("str")
       Done();
     })

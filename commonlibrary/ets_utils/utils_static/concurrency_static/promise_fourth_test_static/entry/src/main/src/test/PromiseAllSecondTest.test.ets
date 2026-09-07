@@ -193,8 +193,8 @@ export default function BuiltinsPromiseAllSecondTest(): void {
         Promise.resolve(42)
       ];
       const result = await Promise.all<string | int>(promises);
-      expect(typeof result[0]).assertEqual("string");
-       expect(typeof result[1]).assertEqual("int");
+      expect(result[0] instanceof string).assertTrue();
+       expect(result[1] instanceof int).assertTrue();
       Done();
     })
 

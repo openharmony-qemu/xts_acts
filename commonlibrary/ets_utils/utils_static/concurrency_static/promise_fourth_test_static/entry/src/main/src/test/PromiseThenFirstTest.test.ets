@@ -180,7 +180,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
       let promise = Promise.resolve<string>("hello")
       let checkType = false
       await promise.then((value: string) => {
-        checkType = typeof value === "string"
+        checkType = value instanceof string
       })
       expect(checkType).assertTrue()
       Done();
@@ -233,7 +233,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
     it('PromiseThenFirstTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string | number>("hello")
       let result = await promise.then((value: string | number): string => {
-        if (typeof value === "string") {
+        if (value instanceof string) {
           return value
         }
         return value.toString()

@@ -641,7 +641,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest2800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_2800
-     * @tc.desc   Verify Promise.then returning number with typeof check
+     * @tc.desc   Verify Promise.then returning number with instanceof check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -649,7 +649,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     it('PromiseThenThirdTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
       let result = await promise.then<number>(() => 42)
-       expect(typeof result).assertEqual("number")
+       expect(result instanceof number).assertTrue()
       Done();
     })
 
@@ -899,7 +899,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
         return obj
       })
       let promiseResult = await promise
-       expect(typeof result).assertEqual("int")
+       expect(result instanceof int).assertTrue()
       expect(result).assertEqual(42)
       expect(promiseResult).assertEqual("hello")
       Done();
@@ -908,7 +908,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest4200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_4200
-     * @tc.desc   Verify Promise.then returning Object type with typeof check
+     * @tc.desc   Verify Promise.then returning Object type with instanceof check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -919,7 +919,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
         let obj: Object = 42 as Object
         return obj
       })
-       expect(typeof result).assertEqual("int")
+       expect(result instanceof int).assertTrue()
       expect(result).assertEqual(42)
       Done();
     })
@@ -1049,7 +1049,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest4900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_4900
-     * @tc.desc   Verify Promise.then returning Promise with typeof check
+     * @tc.desc   Verify Promise.then returning Promise with instanceof check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1057,7 +1057,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     it('PromiseThenThirdTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
       let result = await promise.then<number>(() => Promise.resolve(42.0))
-      expect(typeof result).assertEqual("number")
+      expect(result instanceof number).assertTrue()
       Done();
     })
 

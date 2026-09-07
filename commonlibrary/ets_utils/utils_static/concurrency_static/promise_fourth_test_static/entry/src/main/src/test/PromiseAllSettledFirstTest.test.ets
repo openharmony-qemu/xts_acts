@@ -546,7 +546,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let settledResult = result[0]
       if (settledResult instanceof PromiseFulfilledResult) {
         expect(settledResult.status).assertEqual("fulfilled")
-        expect(typeof settledResult.value).assertEqual("string")
+        expect(settledResult.value instanceof string).assertTrue()
         expect(settledResult.value).assertEqual("test")
       } else {
         expect().assertFail()

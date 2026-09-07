@@ -621,7 +621,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     it('PromiseCatchFourthTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("error"))
       let result = await promise.catch((error: Error) => {
-        expect(typeof error === "object").assertTrue()
+        expect(error instanceof Error).assertTrue()
         return "recovered"
       })
       expect(result).assertEqual("recovered")

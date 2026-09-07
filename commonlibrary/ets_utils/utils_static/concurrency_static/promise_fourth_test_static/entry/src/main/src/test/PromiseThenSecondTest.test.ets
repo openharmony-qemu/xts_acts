@@ -726,7 +726,7 @@ export default function BuiltinsPromiseThenSecondTest(): void  {
     /**
      * @tc.name   PromiseThenSecondTest4000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_SECOND_TEST_4000
-     * @tc.desc   Verify Promise.then returning number with typeof check
+     * @tc.desc   Verify Promise.then returning number with instanceof check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -734,7 +734,7 @@ export default function BuiltinsPromiseThenSecondTest(): void  {
     it('PromiseThenSecondTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
       let result = await promise.then<number>(() => 42)
-       expect(typeof result).assertEqual("number")
+       expect(result instanceof number).assertTrue()
       Done();
     })
 
