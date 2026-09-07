@@ -1794,12 +1794,9 @@ export default function cameraJSUnitOutput() {
         console.info(`photo output start listen on captureReady failed: ${err.code}`);
       })
 
-      photoOutput.off('captureReady', async (err) => {
-        console.info(`photo output stop listen on captureReady failed: ${err.code}`);
-        expect(true).assertFalse()
-        done();
-      })
+      photoOutput.off('captureReady')
       console.info(`photo output stop listen on captureReady success`);
+      
       photoOutput.release()
       done();
     })
