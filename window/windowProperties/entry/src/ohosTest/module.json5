@@ -144,6 +144,9 @@
       },
       {
         "name": "ohos.permission.SET_WINDOW_ALPHA"
+      },
+      {
+        "name": "ohos.permission.CUSTOM_SCREEN_CAPTURE"
       }
     ]
   }
