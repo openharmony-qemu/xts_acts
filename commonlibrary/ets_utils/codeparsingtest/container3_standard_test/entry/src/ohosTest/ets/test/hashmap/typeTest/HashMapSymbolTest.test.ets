@@ -23,7 +23,7 @@ import {
   SYMBOL_E,
   SYMBOL_F,
   SYMBOL_KEY_FOR_RESULT,
-} from '../../../js/hashmap/SymbolValues';
+} from '../../../../js/hashmap/SymbolValues';
 
 interface SymbolInvalidObject { marker: string; }
 const SYMBOL_INVALID_OBJECT: SymbolInvalidObject = { marker: 'invalid' };

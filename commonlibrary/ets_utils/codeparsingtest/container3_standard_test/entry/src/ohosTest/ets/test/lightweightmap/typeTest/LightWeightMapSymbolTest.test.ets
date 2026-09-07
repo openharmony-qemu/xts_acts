@@ -15,7 +15,7 @@
 
 import { LightWeightMap } from '@kit.ArkTS';
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
-import { SYMBOL_A, SYMBOL_B, SYMBOL_C, SYMBOL_D, SYMBOL_E } from '../../../js/hashmap/SymbolValues';
+import { SYMBOL_A, SYMBOL_B, SYMBOL_C, SYMBOL_D, SYMBOL_E } from '../../../../js/hashmap/SymbolValues';
 
 interface SymbolInvalidObject { marker: string; }
 const SYMBOL_INVALID_OBJECT: SymbolInvalidObject = { marker: 'invalid' };

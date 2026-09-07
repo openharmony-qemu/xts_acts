@@ -15,7 +15,7 @@
 
 import { TreeMap } from '@kit.ArkTS';
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
-import { SYMBOL_C } from '../../../js/hashmap/SymbolValues';
+import { SYMBOL_C } from '../../../../js/hashmap/SymbolValues';
 
 class UnionClassItem {
   id: number;
