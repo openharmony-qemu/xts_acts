@@ -1030,5 +1030,30 @@ export default function NavigationPreloadTest(): void {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_ARKUI_NAVIGATION_PRELOADPATH_3600
+     * @tc.number SUB_ARKUI_NAVIGATION_PRELOADPATH_3600
+     * @tc.desc   Test preloadPath with options = undefined (explicit), should behave as omitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level.LEVEL1
+     */
+    it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let driver = Driver.create();
+        let btn = await requireComponent(driver, 'btnPreloadOptionsUndefined');
+        await btn.click();
+        await CommonFunc.sleep(2000);
+        let result = getTextContentById('preloadResult');
+        expect(result).assertEqual('success');
+        let thenCalled = getTextContentById('thenCalled');
+        expect(thenCalled).assertEqual('true');
+      } catch (err) {
+        console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_3600 error: ' + err);
+        expect(false).assertTrue();
+      }
+      done();
+    });
   });
 }
