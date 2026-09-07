@@ -212,14 +212,15 @@ export default function SocketGetLocalSocketTest() {
           udp.getLocalAddress().then((localAddress: socket.NetAddress) => {
             expectTrue(localAddress != null);
             console.log("UDP_Socket get SUCCESS! IP Port: " + JSON.stringify(localAddress));
+            console.info(`${caseName} test end`);
+            udp.close();
+            done();
           }).catch((err: BusinessError) => {
             console.log("UDP_Socket get FAILED! error: " + JSON.stringify(err));
             ExpectFail();
+            udp.close();
             done();
           })
-          console.info(`${caseName} test end`);
-          udp.close();
-          done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
@@ -247,25 +248,26 @@ export default function SocketGetLocalSocketTest() {
             console.info(`${caseName} err: ${JSON.stringify(err)}`);
             ExpectFail();
             done();
+            return;
           }
           multicast.getLocalAddress().then((localAddress: socket.NetAddress) => {
             expectTrue(localAddress != null);
             console.log("UDP_Socket get SUCCESS! IP Port: " + JSON.stringify(localAddress));
+            console.info(`${caseName} test end`);
+            multicast.close();
+            done();
           }).catch((err: BusinessError) => {
             console.log("UDP_Socket get FAILED! error: " + JSON.stringify(err));
             ExpectFail();
+            multicast.close();
             done();
           })
-          console.info(`${caseName} test end`);
-          multicast.close();
-          done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         ExpectFail();
         done();
       }
-      console.info(`${caseName} test end`);
     });
 
     /**
@@ -294,9 +296,11 @@ export default function SocketGetLocalSocketTest() {
               tls.connect(tlsConnectOptions_client).then(() => {
                 console.log("connect successfully");
                 tls.getLocalAddress().then((localAddress: socket.NetAddress) => {
-                  tls.close();
                   expectTrue(localAddress != null);
                   console.log("Family IP Port: " + JSON.stringify(localAddress));
+                  console.info(`${caseName} test end`);
+                  tls.close();
+                  done();
                 }).catch((err: BusinessError) => {
                   console.log("TLS Client Get Family IP Port failed, error: " + JSON.stringify(err));
                   tls.close();
@@ -310,7 +314,6 @@ export default function SocketGetLocalSocketTest() {
                 done();
               });
             }
-            done();
           });
         })
       } catch (err) {
@@ -318,7 +321,6 @@ export default function SocketGetLocalSocketTest() {
         ExpectFail();
         done();
       }
-      console.info(`${caseName} test end`);
     });
 
     /**
@@ -341,28 +343,34 @@ export default function SocketGetLocalSocketTest() {
             if (err) {
               console.info(`${caseName} err: ${JSON.stringify(err)}`);
               ExpectFail();
-            } else {
-              tls.connect(tlsConnectOptions_client).then(() => {
-                console.log("connect successfully");
-
-                tlsServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
-                  expectTrue(localAddress != null);
-                  console.log("Family IP Port: " + JSON.stringify(localAddress));
-                }).catch((err: BusinessError) => {
-                  console.log("TLS Server Get Family IP Port failed, error: " + JSON.stringify(err));
-                })
-              }).catch((err: BusinessError) => {
-                console.log("connect failed " + JSON.stringify(err));
-              });
+              done();
+              return;
             }
-            console.info(`${caseName} test end`);
-            done();
-            tls.close();
+            tls.connect(tlsConnectOptions_client).then(() => {
+              console.log("connect successfully");
+
+              tlsServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
+                expectTrue(localAddress != null);
+                console.log("Family IP Port: " + JSON.stringify(localAddress));
+                console.info(`${caseName} test end`);
+                tls.close();
+                done();
+              }).catch((err: BusinessError) => {
+                console.log("TLS Server Get Family IP Port failed, error: " + JSON.stringify(err));
+                ExpectFail();
+                tls.close();
+                done();
+              })
+            }).catch((err: BusinessError) => {
+              console.log("connect failed " + JSON.stringify(err));
+              ExpectFail();
+              tls.close();
+              done();
+            });
           });
         })
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         ExpectFail();
         done();
       }
@@ -400,25 +408,32 @@ export default function SocketGetLocalSocketTest() {
           if (err) {
             console.log("listen fail");
             ExpectFail();
+            done();
+            return;
           }
-          tcp.connect(options, (err: BusinessError) => {
-            if (err) {
-              console.log('connect fail');
-              ExpectFail();
-            }
-            console.log('connect success!');
-          })
+          // 先注册 connect 事件，再发起连接，避免事件丢失
           tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
             client.getLocalAddress().then((localAddress: socket.NetAddress) => {
               expectTrue(localAddress != null);
               console.log("Family IP Port: " + JSON.stringify(localAddress));
+              console.info(`${caseName} test end`);
+              tcp.close();
+              done();
             }).catch((err: BusinessError) => {
               console.log("TCP Get Family IP Port failed, error: " + JSON.stringify(err));
               ExpectFail();
+              tcp.close();
+              done();
             })
-            console.info(`${caseName} test end`);
-            done();
-            tcp.close();
+          })
+          tcp.connect(options, (err: BusinessError) => {
+            if (err) {
+              console.log('connect fail');
+              ExpectFail();
+              done();
+              return;
+            }
+            console.log('connect success!');
           })
         })
       } catch (err) {
@@ -447,21 +462,24 @@ export default function SocketGetLocalSocketTest() {
           if (err) {
             console.info(`${caseName} err: ${JSON.stringify(err)}`);
             ExpectFail();
-          } else {
-            tcp.getLocalAddress().then((localAddress: socket.NetAddress) => {
-              expectTrue(localAddress != null);
-              console.log("Family IP Port: " + JSON.stringify(localAddress));
-            }).catch((err: BusinessError) => {
-              console.log("TCP Get Family IP Port failed, error: " + JSON.stringify(err));
-            })
+            done();
+            return;
           }
-          console.info(`${caseName} test end`);
-          done();
-          tcp.close();
+          tcp.getLocalAddress().then((localAddress: socket.NetAddress) => {
+            expectTrue(localAddress != null);
+            console.log("Family IP Port: " + JSON.stringify(localAddress));
+            console.info(`${caseName} test end`);
+            tcp.close();
+            done();
+          }).catch((err: BusinessError) => {
+            console.log("TCP Get Family IP Port failed, error: " + JSON.stringify(err));
+            ExpectFail();
+            tcp.close();
+            done();
+          })
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         ExpectFail();
         done();
       }
@@ -484,21 +502,23 @@ export default function SocketGetLocalSocketTest() {
           if (err) {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
             ExpectFail();
-          } else {
-            tcpServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
-              expectTrue(localAddress != null);
-              console.log("Family IP Port: " + JSON.stringify(localAddress));
-            }).catch((err: BusinessError) => {
-              console.log("TCP Get Family IP Port failed, error: " + JSON.stringify(err));
-            })
-            console.info(`${caseName} success`);
+            done();
+            return;
           }
-          console.info(`${caseName} test end`);
-          done();
+          tcpServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
+            expectTrue(localAddress != null);
+            console.log("Family IP Port: " + JSON.stringify(localAddress));
+            console.info(`${caseName} success`);
+            console.info(`${caseName} test end`);
+            done();
+          }).catch((err: BusinessError) => {
+            console.log("TCP Get Family IP Port failed, error: " + JSON.stringify(err));
+            ExpectFail();
+            done();
+          })
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         ExpectFail();
         done();
       }
@@ -525,16 +545,17 @@ export default function SocketGetLocalSocketTest() {
           client.getLocalAddress().then((localPath) => {
             expectTrue(localPath != null);
             console.log("localPath is " + JSON.stringify(localPath));
+            console.info(`${caseName} success`);
+            console.info(`${caseName} test end`);
+            done();
           }).catch((err: BusinessError) => {
             console.log("Get failed, error: " + JSON.stringify(err));
+            ExpectFail();
+            done();
           })
-          console.info(`${caseName} success`);
-          console.info(`${caseName} test end`);
-          done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         ExpectFail();
         done();
       }
@@ -561,12 +582,14 @@ export default function SocketGetLocalSocketTest() {
           server.getLocalAddress().then((localPath) => {
             expectTrue(localPath != null);
             console.log("localPath is " + JSON.stringify(localPath));
+            console.info(`${caseName} success`);
+            console.info(`${caseName} test end`);
+            done();
           }).catch((err: BusinessError) => {
             console.log("Get failed, error: " + JSON.stringify(err));
+            ExpectFail();
+            done();
           })
-          console.info(`${caseName} success`);
-          console.info(`${caseName} test end`);
-          done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
@@ -593,29 +616,42 @@ export default function SocketGetLocalSocketTest() {
         let localAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        server.listen(localAddr).then(() => {
-          console.log('listen success');
-          let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-          let connectOpt: socket.LocalConnectOptions = {
-            address: localAddr,
-            timeout: 6000
-          }
-          client.connect(connectOpt).then(() => {
-            server.getLocalAddress().then((localPath) => {
-              expectTrue(localPath != null);
-              console.log("localPath is " + JSON.stringify(localPath));
-            }).catch((err: BusinessError) => {
-              console.log("FAIL FAIL FAIL" + JSON.stringify(err));
-            })
-          }).catch((err: Object) => {
-            console.error('connect fail: ' + JSON.stringify(err));
+        await server.listen(localAddr);
+        console.log('listen success');
+
+        // listen 成功后注册 connect 事件监听
+        let connectionPromise: Promise<socket.LocalSocketConnection> = new Promise((resolve) => {
+          server.on('connect', (connection: socket.LocalSocketConnection) => {
+            console.log('server received connection');
+            resolve(connection);
           });
-          console.info(`${caseName} success`);
-          console.info(`${caseName} test end`);
-          done();
         });
+
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log('client connected');
+
+        // 等待从服务器的 connect 事件获取连接对象
+        let connection: socket.LocalSocketConnection = await connectionPromise;
+        let localPath: string = await server.getLocalAddress();
+        expectTrue(localPath != null);
+        console.log("localPath is " + JSON.stringify(localPath));
+
+        // 清理资源
+        connection.close();
+        client.close();
+        server.close();
+        console.info(`${caseName} success`);
+        console.info(`${caseName} test end`);
+        done();
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} err code: ${(err as BusinessError).code}`);
+        console.info(`${caseName} err msg: ${(err as BusinessError).message}`);
         console.info(`${caseName} test end`);
         ExpectFail();
         done();
@@ -680,12 +716,14 @@ export default function SocketGetLocalSocketTest() {
               tls.connect(tlsConnectOptions_client).then(() => {
                 console.log("connect successfully");
                 tls.getLocalAddress().then((localAddress: socket.NetAddress) => {
-                  tls.close();
                   expectTrue(localAddress != null);
                   expectTrue(localAddress.address != null);
                   expectTrue(localAddress.port != null);
                   expectTrue(localAddress.family != null);
                   console.log("Family IP Port: " + JSON.stringify(localAddress));
+                  console.info(`${caseName} test end`);
+                  tls.close();
+                  done();
                 }).catch((err: BusinessError) => {
                   console.log("TLS Client Get Family IP Port failed, error: " + JSON.stringify(err));
                   tls.close();
@@ -699,7 +737,6 @@ export default function SocketGetLocalSocketTest() {
                 done();
               });
             }
-            done();
           });
         })
       } catch (err) {
@@ -707,7 +744,6 @@ export default function SocketGetLocalSocketTest() {
         ExpectFail();
         done();
       }
-      console.info(`${caseName} test end`);
     });
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest9900
@@ -726,20 +762,23 @@ export default function SocketGetLocalSocketTest() {
           if (err) {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
             ExpectFail();
-          } else {
-            tcpServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
-              expectTrue(localAddress != null);
-              expectTrue(localAddress.address != null);
-              expectTrue(localAddress.port != null);
-              expectTrue(localAddress.family != null);
-              console.log("Family IP Port: " + JSON.stringify(localAddress));
-            }).catch((err: BusinessError) => {
-              console.log("TCP Get Family IP Port failed, error: " + JSON.stringify(err));
-            })
-            console.info(`${caseName} success`);
+            done();
+            return;
           }
-          console.info(`${caseName} test end`);
-          done();
+          tcpServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
+            expectTrue(localAddress != null);
+            expectTrue(localAddress.address != null);
+            expectTrue(localAddress.port != null);
+            expectTrue(localAddress.family != null);
+            console.log("Family IP Port: " + JSON.stringify(localAddress));
+            console.info(`${caseName} success`);
+            console.info(`${caseName} test end`);
+            done();
+          }).catch((err: BusinessError) => {
+            console.log("TCP Get Family IP Port failed, error: " + JSON.stringify(err));
+            ExpectFail();
+            done();
+          })
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
