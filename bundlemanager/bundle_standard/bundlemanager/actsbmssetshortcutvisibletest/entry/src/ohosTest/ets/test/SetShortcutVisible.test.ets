@@ -159,7 +159,7 @@ export default function setShortcutVisible() {
         } catch (error) {
           let msg: string = `setShortcutVisibleForSelf(id_test1,null) failed: ${JSON.stringify(error)}`;
           hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
-          expect(JSON.stringify(error)).assertEqual('{}');
+          expect((error as BusinessError).code).assertEqual(401);
           hilog.info(DOMAIN, 'testTag', '%{public}s', 'SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0700 end');
           done();
         }
@@ -183,7 +183,7 @@ export default function setShortcutVisible() {
         } catch (error) {
           let msg: string = `setShortcutVisibleForSelf(id_test1,undefined) failed: ${JSON.stringify(error)}`;
           hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
-          expect(JSON.stringify(error)).assertEqual('{}');
+          expect((error as BusinessError).code).assertEqual(401);
           hilog.info(DOMAIN, 'testTag', '%{public}s', 'SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0800 end');
           done();
         }
