@@ -13,27 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, afterEach, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Component, Driver, ON, MouseButton, Rect } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME_L = 1000;
 const ITEM_COUNT: int = 12;
 export default function UIPickerCallbackTest() {
   describe('UIPickerCallbackTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("UIPickerCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.container.static", "EntryAbility")
-      await UtilsTest.msSleep(SLEEP_TIME_L)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info('UIPickerCallbackTest beforeEach start');
