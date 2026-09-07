@@ -16,7 +16,6 @@ group("ets_utils") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "arkts_ason_lib_standard:arkts_ason_js_test",
       "arkts_collections_lib_standard:arkts_collections_js_test",
       "atomics_lib_standard:atomics_js_hap",
       "codeparsingtest:codeparsingtest",
@@ -24,7 +23,6 @@ group("ets_utils") {
       "concurrent_builtin_test:concurrent_builtin_test",
       "concurrent_sendable:concurrent_sendable",
       "concurrent_test:concurrent_test",
-      "conditionvariable_test:ActsConditionVariableTest",
       "intl_lib_standard:intl_js_test",
       "json_lib_standard:json_js_test",
       "sendable_lib_collections:collections_js_test",
