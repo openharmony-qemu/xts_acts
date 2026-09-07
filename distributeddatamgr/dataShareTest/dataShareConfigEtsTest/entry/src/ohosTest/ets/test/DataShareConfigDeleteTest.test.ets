@@ -500,7 +500,7 @@ export default function dataShareConfigDeleteTest() {
 
     /**
      * @tc.name   dataShareConfigDeleteTest015
-     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1100
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_4100
      * @tc.desc   delete 4k value when default configuration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -530,7 +530,7 @@ export default function dataShareConfigDeleteTest() {
 
     /**
      * @tc.name   dataShareConfigDeleteTest016
-     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1200
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1210
      * @tc.desc   delete 4k value when maxValueLength = MAX_LENGTH_4K
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -632,7 +632,7 @@ export default function dataShareConfigDeleteTest() {
 
     /**
      * @tc.name   dataShareConfigDeleteTest019
-     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1500
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1510
      * @tc.desc   delete 100k value when maxValueLength = MAX_LENGTH_4K
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -670,7 +670,7 @@ export default function dataShareConfigDeleteTest() {
 
     /**
      * @tc.name   dataShareConfigDeleteTest020
-     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1600
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1601
      * @tc.desc   delete 100k value when maxValueLength = MAX_LENGTH_100K
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1157,6 +1157,141 @@ export default function dataShareConfigDeleteTest() {
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest035 failed.code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual("15700014");
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigDeleteTest036
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_0920
+     * @tc.desc   maxValueLength.MAX_LENGTH_4K = 4097
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigDeleteTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let testUri1 = "datashareproxy://com.acts.dataShare.config/test";
+      let uris = [testUri1];
+      try {
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri1,
+          value: "valueisokgoodddd".repeat(256),
+          allowList: []
+        }
+        proxyData.push(g_proxyDataAllowTest1);
+        let config_delete: dataShare.DataProxyConfig = {
+          type: 0 as dataShare.DataProxyType.SHARED_CONFIG,
+          maxValueLength: 4097 as dataShare.DataProxyMaxValueLength.MAX_LENGTH_4K
+        }
+        await g_handle!.publish(proxyData, g_config);
+        await g_handle!.delete(uris, config_delete);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest036 failed.code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual("15700014");
+      }
+    });
+
+
+    /**
+     * @tc.name   dataShareConfigDeleteTest037
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_0930
+     * @tc.desc   maxValueLength.MAX_LENGTH_100K = 102401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigDeleteTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let testUri1 = "datashareproxy://com.acts.dataShare.config/test";
+      let uris = [testUri1];
+      try {
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri1,
+          value: "valueisokgoodddd".repeat(256),
+          allowList: []
+        }
+        proxyData.push(g_proxyDataAllowTest1);
+        let config_delete: dataShare.DataProxyConfig = {
+          type: 0 as dataShare.DataProxyType.SHARED_CONFIG,
+          maxValueLength: 102401 as dataShare.DataProxyMaxValueLength.MAX_LENGTH_100K
+        }
+        await g_handle!.publish(proxyData, g_config);
+        await g_handle!.delete(uris, config_delete);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest037 failed.code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual("15700014");
+      }
+    });
+
+
+    /**
+     * @tc.name   dataShareConfigDeleteTest038
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_0950
+     * @tc.desc   maxValueLength = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigDeleteTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let testUri1 = "datashareproxy://com.acts.dataShare.config/test";
+      let uris = [testUri1];
+      try {
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri1,
+          value: "valueisokgoodddd".repeat(256),
+          allowList: []
+        }
+        proxyData.push(g_proxyDataAllowTest1);
+        let config_delete: dataShare.DataProxyConfig = {
+          type: 0 as dataShare.DataProxyType.SHARED_CONFIG,
+          maxValueLength: undefined
+        }
+        await g_handle!.publish(proxyData, g_config);
+        let results = await g_handle!.delete(uris, config_delete);
+        results.forEach((result) => {
+          expect(result.result).assertEqual(dataShare.DataProxyErrorCode.SUCCESS);
+        });
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest038 failed.code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
+      }
+    });
+
+
+
+    /**
+     * @tc.name   dataShareConfigDeleteTest039
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_0940
+     * @tc.desc   maxValueLength = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigDeleteTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let testUri1 = "datashareproxy://com.acts.dataShare.config/test";
+      let uris = [testUri1];
+      try {
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri1,
+          value: "valueisokgoodddd".repeat(256),
+          allowList: []
+        }
+        proxyData.push(g_proxyDataAllowTest1);
+        let config_delete: dataShare.DataProxyConfig = {
+          type: -1 as dataShare.DataProxyType.SHARED_CONFIG,
+        }
+        await g_handle!.publish(proxyData, g_config);
+        let results = await g_handle!.delete(uris, config_delete);
+        results.forEach((result) => {
+          expect(result.result).assertEqual(dataShare.DataProxyErrorCode.SUCCESS);
+        });
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest039 failed.code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
       }
     });
   })
