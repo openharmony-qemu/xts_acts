@@ -31,13 +31,7 @@
        "./resource/media/codec/video_encoder/1080_1920_nv12.yuv ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
        "./resource/media/codec/video_encoder/1280_720_nv.yuv ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
        "./resource/media/codec/video_encoder/1280_720_yuv420p_01.yuv ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/1920_1080_nv21.yuv ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_01_sqr_buffer.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_01_sqr_surface.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_04_sqr_buffer.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_04_sqr_surface.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_07_sqr_buffer.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_07_sqr_surface.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/"
+       "./resource/media/codec/video_encoder/1920_1080_nv21.yuv ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/"
      ]
    }
  ]
