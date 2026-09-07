@@ -22,7 +22,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { deviceInfo } from '@kit.BasicServicesKit';
 import { fileIo } from '@kit.CoreFileKit';
-import { UIContext, window} from '@kit.ArkUI'
+import { window } from '@kit.ArkUI'
 
 let checkDlpNotSupported = () => {
   return !canIUse("SystemCapability.Security.DataLossPrevention");
@@ -4310,7 +4310,7 @@ export default function dlpTest() {
       let config: window.Configuration = {
         name: "dlp_test_window",
         windowType: window.WindowType.TYPE_FLOAT,
-        ctx: new UIContext().getHostContext() as common.Context
+        ctx: globalThis.context
       };
       let windowClass = await window.createWindow(config);
       if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
@@ -4329,6 +4329,7 @@ export default function dlpTest() {
         }
       }
       console.info(curTag, "end");
+      await windowClass.destroyWindow();
       done();
     })
 
@@ -4353,7 +4354,7 @@ export default function dlpTest() {
         let config: window.Configuration = {
           name: "dlp_test_window_context_null",
           windowType: window.WindowType.TYPE_FLOAT,
-          ctx: new UIContext().getHostContext() as common.Context
+          ctx: globalThis.context
         };
         let windowClass = await window.createWindow(config);
         if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
@@ -4374,6 +4375,7 @@ export default function dlpTest() {
           }
         }
         console.info(curTag, "end");
+        await windowClass.destroyWindow();
         done();
       })
 
@@ -4398,7 +4400,7 @@ export default function dlpTest() {
         let config: window.Configuration = {
           name: "dlp_test_window_context_undefined",
           windowType: window.WindowType.TYPE_FLOAT,
-          ctx: new UIContext().getHostContext() as common.Context
+          ctx: globalThis.context
         };
         let windowClass = await window.createWindow(config);
         if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
@@ -4419,6 +4421,7 @@ export default function dlpTest() {
           }
         }
         console.info(curTag, "end");
+        await windowClass.destroyWindow();
         done();
       })
 
@@ -4524,7 +4527,7 @@ export default function dlpTest() {
         let config: window.Configuration = {
           name: "dlp_test_window_uri_empty",
           windowType: window.WindowType.TYPE_FLOAT,
-          ctx: new UIContext().getHostContext() as common.Context
+          ctx: globalThis.context
         };
         let windowClass = await window.createWindow(config);
         if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
@@ -4545,6 +4548,7 @@ export default function dlpTest() {
           }
         }
         console.info(curTag, "end");
+        await windowClass.destroyWindow();
         done();
       })
 
