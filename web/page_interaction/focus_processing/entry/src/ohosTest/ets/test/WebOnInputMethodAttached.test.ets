@@ -69,6 +69,7 @@ export default function webViewSrollableJsunit() {
      * @tc.level  LEVEL0
      */
     it('emitOnInputMethodAttached01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+      if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
       Utils.emitEvent("emitOnInputMethodAttached01", EVENT_ID_SET_SUITE_KEY);
       try {
         let buttonOne = await driver.findComponent(ON.text('小艺输入法',MatchPattern.CONTAINS));
@@ -99,6 +100,14 @@ export default function webViewSrollableJsunit() {
       await submitButton.click();
       await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached01" + '_returnCheck', true, 1000);
       done();
+    } else {
+      Utils.emitEvent("emitOnInputMethodAttached01", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("emitOnInputMethodAttached01", true, 20250420, () => { pageReady = true });
+      await Utils.waitAndClickComponent(driver, "WebOnInputMethodAttachedButton","emitOnInputMethodAttached01");
+      await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached01" + '_returnCheck', true, 1000);
+      done();
+      }
     })
 
 
@@ -111,6 +120,7 @@ export default function webViewSrollableJsunit() {
      * @tc.level  LEVEL1
      */
     it('emitOnInputMethodAttached02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async  (done: Function) =>{
+      if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
       Utils.emitEvent("emitOnInputMethodAttached02", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
       Utils.registerEvent("emitOnInputMethodAttached02", true, 20250419,  () => { isReturn = true });
@@ -126,6 +136,14 @@ export default function webViewSrollableJsunit() {
       await submitButton.click();
       await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached02" + '_returnCheck', true, 1000);
       done();
+      } else {
+        Utils.emitEvent("emitOnInputMethodAttached02", EVENT_ID_SET_SUITE_KEY);
+        let isReturn = false;
+        Utils.registerEvent("emitOnInputMethodAttached02", true, 20250421, () => { pageReady = true });
+        await Utils.waitAndClickComponent(driver, "WebOnInputMethodAttachedButton","emitOnInputMethodAttached02");
+        await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached02" + '_returnCheck', true, 1000);
+        done();
+      }
     })
 
   })
