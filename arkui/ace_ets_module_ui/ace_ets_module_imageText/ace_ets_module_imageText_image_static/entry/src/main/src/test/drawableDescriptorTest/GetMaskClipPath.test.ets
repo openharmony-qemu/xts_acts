@@ -62,11 +62,12 @@ export default function GetMaskClipPathTest() {
       try {
         console.info('[layeredDrawableDescriptorGetMaskClipPathReturnType_static_0100] START');
         const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME_L);
         const button = await driver.findComponent(ON.id('btnTest001'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_L);
 
-        let strJson = inspector.getInspectorByKey('txtTestResult001');
+        let strJson = inspector.getInspectorByKey('GetMaskClipPathTest001');
         let obj = JSON.parseJsonElement(strJson);
         let resultText: string = obj.getElement('$attrs').getString('content');
         console.info('[layeredDrawableDescriptorGetMaskClipPathReturnType_static_0100] result: ' + resultText);
@@ -90,11 +91,12 @@ export default function GetMaskClipPathTest() {
       try {
         console.info('[layeredDrawableDescriptorGetMaskClipPathNotEmpty_static_0100] START');
         const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME_L);
         const button = await driver.findComponent(ON.id('btnTest002'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_L);
 
-        let strJson = inspector.getInspectorByKey('txtTestResult002');
+        let strJson = inspector.getInspectorByKey('GetMaskClipPathTest002');
         let obj = JSON.parseJsonElement(strJson);
         let resultText: string = obj.getElement('$attrs').getString('content');
         console.info('[layeredDrawableDescriptorGetMaskClipPathNotEmpty_static_0100] result: ' + resultText);
@@ -119,11 +121,12 @@ export default function GetMaskClipPathTest() {
       try {
         console.info('[layeredDrawableDescriptorGetMaskClipPathValidCommand_static_0100] START');
         const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME_L);
         const button = await driver.findComponent(ON.id('btnTest003'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_L);
 
-        let strJson = inspector.getInspectorByKey('txtTestResult003');
+        let strJson = inspector.getInspectorByKey('GetMaskClipPathTest003');
         let obj = JSON.parseJsonElement(strJson);
         let resultText: string = obj.getElement('$attrs').getString('content');
         console.info('[layeredDrawableDescriptorGetMaskClipPathValidCommand_static_0100] result: ' + resultText);
@@ -148,11 +151,12 @@ export default function GetMaskClipPathTest() {
       try {
         console.info('[layeredDrawableDescriptorGetMaskClipPathConsistency_static_0100] START');
         const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME_L);
         const button = await driver.findComponent(ON.id('btnTest004'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_L);
 
-        let strJson = inspector.getInspectorByKey('txtTestResult004');
+        let strJson = inspector.getInspectorByKey('GetMaskClipPathTest004');
         let obj = JSON.parseJsonElement(strJson);
         let resultText: string = obj.getElement('$attrs').getString('content');
         console.info('[layeredDrawableDescriptorGetMaskClipPathConsistency_static_0100] result: ' + resultText);
@@ -177,11 +181,12 @@ export default function GetMaskClipPathTest() {
       try {
         console.info('[layeredDrawableDescriptorGetMaskClipPathStaticCall_static_0100] START');
         const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME_L);
         const button = await driver.findComponent(ON.id('btnTest005'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_L);
 
-        let strJson = inspector.getInspectorByKey('txtTestResult005');
+        let strJson = inspector.getInspectorByKey('GetMaskClipPathTest005');
         let obj = JSON.parseJsonElement(strJson);
         let resultText: string = obj.getElement('$attrs').getString('content');
         console.info('[layeredDrawableDescriptorGetMaskClipPathStaticCall_static_0100] result: ' + resultText);
@@ -206,11 +211,12 @@ export default function GetMaskClipPathTest() {
       try {
         console.info('[layeredDrawableDescriptorGetMaskClipPathHasCoordinates_static_0100] START');
         const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME_L);
         const button = await driver.findComponent(ON.id('btnTest006'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_L);
 
-        let strJson = inspector.getInspectorByKey('txtTestResult006');
+        let strJson = inspector.getInspectorByKey('GetMaskClipPathTest006');
         let obj = JSON.parseJsonElement(strJson);
         let resultText: string = obj.getElement('$attrs').getString('content');
         console.info('[layeredDrawableDescriptorGetMaskClipPathHasCoordinates_static_0100] result: ' + resultText);
@@ -235,11 +241,12 @@ export default function GetMaskClipPathTest() {
       try {
         console.info('[layeredDrawableDescriptorGetMaskClipPathConstructPath_static_0100] START');
         const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME_L);
         const button = await driver.findComponent(ON.id('btnTest007'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_L);
 
-        let strJson = inspector.getInspectorByKey('txtTestResult007');
+        let strJson = inspector.getInspectorByKey('GetMaskClipPathTest007');
         let obj = JSON.parseJsonElement(strJson);
         let resultText: string = obj.getElement('$attrs').getString('content');
         console.info('[layeredDrawableDescriptorGetMaskClipPathConstructPath_static_0100] result: ' + resultText);
@@ -264,11 +271,12 @@ export default function GetMaskClipPathTest() {
       try {
         console.info('[layeredDrawableDescriptorGetMaskClipPathApplyClipShape_static_0100] START');
         const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME_L);
         const button = await driver.findComponent(ON.id('btnTest008'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_L);
 
-        let strJson = inspector.getInspectorByKey('txtTestResult008');
+        let strJson = inspector.getInspectorByKey('GetMaskClipPathTest008');
         let obj = JSON.parseJsonElement(strJson);
         let resultText: string = obj.getElement('$attrs').getString('content');
         console.info('[layeredDrawableDescriptorGetMaskClipPathApplyClipShape_static_0100] result: ' + resultText);
@@ -299,11 +307,12 @@ export default function GetMaskClipPathTest() {
       try {
         console.info('[layeredDrawableDescriptorGetMaskClipPathAfterInstance_static_0100] START');
         const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME_L);
         const button = await driver.findComponent(ON.id('btnTest009'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_L);
 
-        let strJson = inspector.getInspectorByKey('txtTestResult009');
+        let strJson = inspector.getInspectorByKey('GetMaskClipPathTest009');
         let obj = JSON.parseJsonElement(strJson);
         let resultText: string = obj.getElement('$attrs').getString('content');
         console.info('[layeredDrawableDescriptorGetMaskClipPathAfterInstance_static_0100] result: ' + resultText);
@@ -328,11 +337,12 @@ export default function GetMaskClipPathTest() {
       try {
         console.info('[layeredDrawableDescriptorGetMaskClipPathHasCloseCommand_static_0100] START');
         const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME_L);
         const button = await driver.findComponent(ON.id('btnTest010'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_L);
 
-        let strJson = inspector.getInspectorByKey('txtTestResult010');
+        let strJson = inspector.getInspectorByKey('GetMaskClipPathTest010');
         let obj = JSON.parseJsonElement(strJson);
         let resultText: string = obj.getElement('$attrs').getString('content');
         console.info('[layeredDrawableDescriptorGetMaskClipPathHasCloseCommand_static_0100] result: ' + resultText);

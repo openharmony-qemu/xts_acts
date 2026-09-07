@@ -28,12 +28,12 @@ import {
   FontWeight,
   Color,
   Image,
-  Path,
   Builder,
   $r
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { LayeredDrawableDescriptor } from '@ohos.arkui.drawableDescriptor'
+import { CircleShape, EllipseShape, PathShape, RectShape } from "@ohos.arkui.shape"
 
 @Entry
 @Component
@@ -52,9 +52,9 @@ struct GetMaskClipPathTest {
 
   build() {
     Scroll() {
-      Column({ space: 10 } as ColumnOptions) {
+      Column() {
         Text('LayeredDrawableDescriptor getMaskClipPath')
-          .fontSize(14)
+          .fontSize(12)
           .fontWeight(FontWeight.Bold)
           .fontColor(0x333333)
 
@@ -64,9 +64,10 @@ struct GetMaskClipPathTest {
           Button('getMaskClipPath returnType')
             .id('btnTest001')
             .height('5%')
+            .fontSize(12)
             .onClick((e: ClickEvent) => this.Test001())
           Text(this.testResult001)
-            .id('txtTestResult001')
+            .id('GetMaskClipPathTest001')
             .fontSize(10)
         }
 
@@ -76,9 +77,10 @@ struct GetMaskClipPathTest {
           Button('getMaskClipPath notEmpty')
             .id('btnTest002')
             .height('5%')
+            .fontSize(12)
             .onClick((e: ClickEvent) => this.Test002())
           Text(this.testResult002)
-            .id('txtTestResult002')
+            .id('GetMaskClipPathTest002')
             .fontSize(10)
         }
 
@@ -88,9 +90,10 @@ struct GetMaskClipPathTest {
           Button('getMaskClipPath validCommand')
             .id('btnTest003')
             .height('5%')
+            .fontSize(12)
             .onClick((e: ClickEvent) => this.Test003())
           Text(this.testResult003)
-            .id('txtTestResult003')
+            .id('GetMaskClipPathTest003')
             .fontSize(10)
         }
 
@@ -100,9 +103,10 @@ struct GetMaskClipPathTest {
           Button('getMaskClipPath consistency')
             .id('btnTest004')
             .height('5%')
+            .fontSize(12)
             .onClick((e: ClickEvent) => this.Test004())
           Text(this.testResult004)
-            .id('txtTestResult004')
+            .id('GetMaskClipPathTest004')
             .fontSize(10)
         }
 
@@ -112,9 +116,10 @@ struct GetMaskClipPathTest {
           Button('getMaskClipPath staticCall')
             .id('btnTest005')
             .height('5%')
+            .fontSize(12)
             .onClick((e: ClickEvent) => this.Test005())
           Text(this.testResult005)
-            .id('txtTestResult005')
+            .id('GetMaskClipPathTest005')
             .fontSize(10)
         }
 
@@ -124,9 +129,10 @@ struct GetMaskClipPathTest {
           Button('getMaskClipPath hasCoordinates')
             .id('btnTest006')
             .height('5%')
+            .fontSize(12)
             .onClick((e: ClickEvent) => this.Test006())
           Text(this.testResult006)
-            .id('txtTestResult006')
+            .id('GetMaskClipPathTest006')
             .fontSize(10)
         }
 
@@ -136,9 +142,10 @@ struct GetMaskClipPathTest {
           Button('getMaskClipPath constructPath')
             .id('btnTest007')
             .height('5%')
+            .fontSize(12)
             .onClick((e: ClickEvent) => this.Test007())
           Text(this.testResult007)
-            .id('txtTestResult007')
+            .id('GetMaskClipPathTest007')
             .fontSize(10)
         }
 
@@ -148,17 +155,18 @@ struct GetMaskClipPathTest {
           Button('getMaskClipPath applyClipShape')
             .id('btnTest008')
             .height('5%')
+            .fontSize(12)
             .onClick((e: ClickEvent) => this.Test008())
           Text(this.testResult008)
-            .id('txtTestResult008')
+            .id('GetMaskClipPathTest008')
             .fontSize(10)
         }
 
         Image($r('app.media.startIcon'))
-          .width(100)
-          .height(100)
+          .width(50)
+          .height(50)
           .id('imgClipShape')
-          .clipShape(new Path({ commands: LayeredDrawableDescriptor.getMaskClipPath() }))
+          .clipShape(new PathShape({ commands: LayeredDrawableDescriptor.getMaskClipPath() }))
 
         this.BuildSectionTitle('9. call after creating instance')
 
@@ -166,9 +174,10 @@ struct GetMaskClipPathTest {
           Button('getMaskClipPath afterInstance')
             .id('btnTest009')
             .height('5%')
+            .fontSize(12)
             .onClick((e: ClickEvent) => this.Test009())
           Text(this.testResult009)
-            .id('txtTestResult009')
+            .id('GetMaskClipPathTest009')
             .fontSize(10)
         }
 
@@ -178,9 +187,10 @@ struct GetMaskClipPathTest {
           Button('getMaskClipPath hasCloseCommand')
             .id('btnTest010')
             .height('5%')
+            .fontSize(12)
             .onClick((e: ClickEvent) => this.Test010())
           Text(this.testResult010)
-            .id('txtTestResult010')
+            .id('GetMaskClipPathTest010')
             .fontSize(10)
         }
 
@@ -199,7 +209,7 @@ struct GetMaskClipPathTest {
   @Builder
   BuildSectionTitle(title: string) {
     Text(title)
-      .fontSize(14)
+      .fontSize(10)
       .fontWeight(FontWeight.Medium)
       .fontColor(Color.Black)
       .width('100%')
@@ -234,7 +244,7 @@ struct GetMaskClipPathTest {
   Test003() {
     try {
       let result: string = LayeredDrawableDescriptor.getMaskClipPath();
-      let firstChar: string = result.charAt(0);
+      let firstChar: string = result.substring(0, 1);
       let validCommands: string = 'MmLlHhVvCcSsQqTtAaZz';
       if (validCommands.includes(firstChar)) {
         this.testResult003 = `PASS: starts with ${firstChar}`;
@@ -279,8 +289,8 @@ struct GetMaskClipPathTest {
       let result: string = LayeredDrawableDescriptor.getMaskClipPath();
       let hasNumber: boolean = false;
       for (let i = 0; i < result.length; i++) {
-        let ch: string = result.charAt(i);
-        if (ch >= '0' && ch <= '9') {
+        let ch: char = result.charAt(i);
+        if (String(ch) >= '0' && String(ch) <= '9') {
           hasNumber = true;
           break;
         }
@@ -298,7 +308,7 @@ struct GetMaskClipPathTest {
   Test007() {
     try {
       let result: string = LayeredDrawableDescriptor.getMaskClipPath();
-      let pathObj: Path = new Path({ commands: result });
+      let pathObj: PathShape = new PathShape({ commands: result });
       if (pathObj !== undefined && pathObj !== null) {
         this.testResult007 = 'PASS: Path object constructed';
       } else {
@@ -312,7 +322,7 @@ struct GetMaskClipPathTest {
   Test008() {
     try {
       let result: string = LayeredDrawableDescriptor.getMaskClipPath();
-      let pathObj: Path = new Path({ commands: result });
+      let pathObj: PathShape = new PathShape({ commands: result });
       this.clipPathStr = result;
       this.testResult008 = 'PASS: clipShape applied without crash';
     } catch (e) {

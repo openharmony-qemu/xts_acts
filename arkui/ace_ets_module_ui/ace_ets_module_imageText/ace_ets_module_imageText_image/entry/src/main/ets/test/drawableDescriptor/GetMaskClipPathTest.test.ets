@@ -57,11 +57,12 @@ export default function GetMaskClipPathTest() {
       console.info('[getMaskClipPathReturnType_0100] START');
       try {
         let driver = await Driver.create();
+        await CommonFunc.sleep(1000);
         let button = await driver.findComponent(ON.id('btnTest001'));
         await button.click();
         await CommonFunc.sleep(1000);
 
-        let strJson = getInspectorByKey('txtTestResult001');
+        let strJson = getInspectorByKey('GetMaskClipPathTest001');
         console.info('[getMaskClipPathReturnType_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
         let resultText: string = obj.$attrs.content;
@@ -89,11 +90,12 @@ export default function GetMaskClipPathTest() {
       console.info('[getMaskClipPathNotEmpty_0100] START');
       try {
         let driver = await Driver.create();
+        await CommonFunc.sleep(1000);
         let button = await driver.findComponent(ON.id('btnTest002'));
         await button.click();
         await CommonFunc.sleep(1000);
 
-        let strJson = getInspectorByKey('txtTestResult002');
+        let strJson = getInspectorByKey('GetMaskClipPathTest002');
         console.info('[getMaskClipPathNotEmpty_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
         let resultText: string = obj.$attrs.content;
@@ -121,11 +123,12 @@ export default function GetMaskClipPathTest() {
       console.info('[getMaskClipPathConsistency_0100] START');
       try {
         let driver = await Driver.create();
+        await CommonFunc.sleep(1000);
         let button = await driver.findComponent(ON.id('btnTest003'));
         await button.click();
         await CommonFunc.sleep(1000);
 
-        let strJson = getInspectorByKey('txtTestResult003');
+        let strJson = getInspectorByKey('GetMaskClipPathTest003');
         console.info('[getMaskClipPathConsistency_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
         let resultText: string = obj.$attrs.content;
@@ -153,11 +156,12 @@ export default function GetMaskClipPathTest() {
       console.info('[getMaskClipPathValidFormat_0100] START');
       try {
         let driver = await Driver.create();
+        await CommonFunc.sleep(1000);
         let button = await driver.findComponent(ON.id('btnTest004'));
         await button.click();
         await CommonFunc.sleep(1000);
 
-        let strJson = getInspectorByKey('txtTestResult004');
+        let strJson = getInspectorByKey('GetMaskClipPathTest004');
         console.info('[getMaskClipPathValidFormat_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
         let resultText: string = obj.$attrs.content;
@@ -185,11 +189,12 @@ export default function GetMaskClipPathTest() {
       console.info('[getMaskClipPathAppliedToPath_0100] START');
       try {
         let driver = await Driver.create();
+        await CommonFunc.sleep(1000);
         let button = await driver.findComponent(ON.id('btnTest005'));
         await button.click();
         await CommonFunc.sleep(1000);
 
-        let strJson = getInspectorByKey('txtTestResult005');
+        let strJson = getInspectorByKey('GetMaskClipPathTest005');
         console.info('[getMaskClipPathAppliedToPath_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
         let resultText: string = obj.$attrs.content;

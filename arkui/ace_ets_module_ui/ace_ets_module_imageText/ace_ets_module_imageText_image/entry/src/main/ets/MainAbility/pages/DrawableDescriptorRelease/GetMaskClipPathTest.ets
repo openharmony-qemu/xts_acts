@@ -25,12 +25,10 @@ struct GetMaskClipPathTest {
   @State testResult005: string = '';
 
   build() {
-    Column({ space: 0 }) {
-      Text('LayeredDrawableDescriptor getMaskClipPath (API 11+)')
-        .fontSize(12)
+    Column({ space: 5 }) {
+      Text('LayeredDrawableDescriptor getMaskClipPath')
+        .fontSize(14)
         .fontWeight(FontWeight.Bold)
-        .width('100%')
-        .height('4%')
 
       Column({ space: 2 }) {
         this.BuildAllTestRows()
@@ -58,9 +56,9 @@ struct GetMaskClipPathTest {
     Column({ space: 1 }) {
       Button('E2E_001').id('btnTest001').width('100%').height('55%')
         .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test001(); })
-      Text(this.testResult001).id('txtTestResult001').key('txtTestResult001').width('100%').height('45%')
+      Text(this.testResult001).id('GetMaskClipPathTest001').key('GetMaskClipPathTest001').width('100%').height('45%')
         .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
-    }.width('100%').height('7.5%')
+    }.width('80%').height('7.5%')
   }
 
   @Builder
@@ -68,9 +66,9 @@ struct GetMaskClipPathTest {
     Column({ space: 1 }) {
       Button('E2E_002').id('btnTest002').width('100%').height('55%')
         .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test002(); })
-      Text(this.testResult002).id('txtTestResult002').key('txtTestResult002').width('100%').height('45%')
+      Text(this.testResult002).id('GetMaskClipPathTest002').key('GetMaskClipPathTest002').width('100%').height('45%')
         .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
-    }.width('100%').height('7.5%')
+    }.width('80%').height('7.5%')
   }
 
   @Builder
@@ -78,9 +76,9 @@ struct GetMaskClipPathTest {
     Column({ space: 1 }) {
       Button('E2E_003').id('btnTest003').width('100%').height('55%')
         .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test003(); })
-      Text(this.testResult003).id('txtTestResult003').key('txtTestResult003').width('100%').height('45%')
+      Text(this.testResult003).id('GetMaskClipPathTest003').key('GetMaskClipPathTest003').width('100%').height('45%')
         .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
-    }.width('100%').height('7.5%')
+    }.width('80%').height('7.5%')
   }
 
   @Builder
@@ -88,9 +86,9 @@ struct GetMaskClipPathTest {
     Column({ space: 1 }) {
       Button('E2E_004').id('btnTest004').width('100%').height('55%')
         .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test004(); })
-      Text(this.testResult004).id('txtTestResult004').key('txtTestResult004').width('100%').height('45%')
+      Text(this.testResult004).id('GetMaskClipPathTest004').key('GetMaskClipPathTest004').width('100%').height('45%')
         .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
-    }.width('100%').height('7.5%')
+    }.width('80%').height('7.5%')
   }
 
   @Builder
@@ -98,9 +96,9 @@ struct GetMaskClipPathTest {
     Column({ space: 1 }) {
       Button('E2E_005').id('btnTest005').width('100%').height('55%')
         .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test005(); })
-      Text(this.testResult005).id('txtTestResult005').key('txtTestResult005').width('100%').height('45%')
+      Text(this.testResult005).id('GetMaskClipPathTest005').key('GetMaskClipPathTest005').width('100%').height('45%')
         .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
-    }.width('100%').height('7.5%')
+    }.width('80%').height('7.5%')
   }
 
   Test001() {
