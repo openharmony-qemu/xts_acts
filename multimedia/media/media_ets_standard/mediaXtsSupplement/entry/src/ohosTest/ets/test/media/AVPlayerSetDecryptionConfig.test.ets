@@ -204,15 +204,15 @@ export default function AVPlayerSetDecryptionConfigSuppTest() {
       }
     })
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_007
-     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_007
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0100
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0100
      * @tc.desc   AVPlayer_setDecryptionConfig
      * @tc.size   MEDIUM
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_007', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_007';
+    it('SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0100';
       avPlayer = await media.createAVPlayer();
       console.info(TAG, testName, "AVPlayer created successfully");
       try {
@@ -229,15 +229,15 @@ export default function AVPlayerSetDecryptionConfigSuppTest() {
       }
     })
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_008
-     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_008
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0200
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0200
      * @tc.desc   AVPlayer_setDecryptionConfig
      * @tc.size   MEDIUM
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_008', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_008';
+    it('SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0200';
       avPlayer = await media.createAVPlayer();
       console.info(TAG, testName, "AVPlayer created successfully");
       try {
