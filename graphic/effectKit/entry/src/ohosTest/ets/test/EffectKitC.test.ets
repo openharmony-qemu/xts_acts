@@ -1606,7 +1606,7 @@ export default function effectKitCTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('blur2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+    it('testFilterBlur_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'testFilterBlur_0100';
       let msgStr = 'www data jsunitTest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
