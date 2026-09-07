@@ -24,13 +24,13 @@ struct XComponentInterfaceConstructorNullUndefinedTest {
         // ========== (options: XComponentOptions) constructor tests (since 12) ==========
 
         // Test XComponentInterface constructor with null options (since 12)
-        XComponent(null as XComponentOptions)
+        XComponent(null as unknown as XComponentOptions)
           .id('xcomponent_options_null')
           .width('100%')
           .height('5%')
 
         // Test XComponentInterface constructor with undefined options (since 12)
-        XComponent(undefined as XComponentOptions)
+        XComponent(undefined as unknown as XComponentOptions)
           .id('xcomponent_options_undefined')
           .width('100%')
           .height('5%')
@@ -44,13 +44,13 @@ struct XComponentInterfaceConstructorNullUndefinedTest {
         // ========== (params: NativeXComponentParameters) constructor tests (since 19) ==========
 
         // Test XComponentInterface constructor with null params (since 19)
-        XComponent(null as NativeXComponentParameters)
+        XComponent(null as unknown as NativeXComponentParameters)
           .id('xcomponent_params_null')
           .width('100%')
           .height('5%')
 
         // Test XComponentInterface constructor with undefined params (since 19)
-        XComponent(undefined as NativeXComponentParameters)
+        XComponent(undefined as unknown as NativeXComponentParameters)
           .id('xcomponent_params_undefined')
           .width('100%')
           .height('5%')
