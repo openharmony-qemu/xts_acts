@@ -113,6 +113,7 @@ static napi_value TestListChildrenMainSize006(napi_env env, napi_callback_info i
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestListChildrenMainSize006",
         "ret1 = %{public}d, ret2 = %{public}f", ret1, ret2);
     ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(ret2, PARAM_0);
     ASSERT_EQ(ret, SUCCESS);
     NAPI_END;
@@ -130,6 +131,7 @@ static napi_value TestListChildrenMainSize007(napi_env env, napi_callback_info i
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestListChildrenMainSize007",
         "ret1 = %{public}d, ret2 = %{public}f", ret1, ret2);
     ASSERT_EQ(ret1, INVALID_PARAM);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_PARAM_INVALID);
     ASSERT_EQ(ret2, PARAM_0);
     ASSERT_EQ(ret, SUCCESS);
     NAPI_END;
@@ -213,6 +215,7 @@ static napi_value TestListChildrenMainSize013(napi_env env, napi_callback_info i
         "ret1 = %{public}d, ret2 = %{public}f", ret1, ret2);
     ASSERT_EQ(ret, SUCCESS);
     ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(ret2, PARAM_0);
     NAPI_END;
 }
@@ -247,6 +250,7 @@ static napi_value TestListChildrenMainSize015(napi_env env, napi_callback_info i
         "ret1 = %{public}d, ret2 = %{public}f", ret1, ret2);
     ASSERT_EQ(ret, SUCCESS);
     ASSERT_EQ(ret1, INVALID_PARAM);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_PARAM_INVALID);
     ASSERT_EQ(ret2, PARAM_NEGATIVE_1);
     NAPI_END;
 }
@@ -310,6 +314,7 @@ static napi_value TestListChildrenMainSize019(napi_env env, napi_callback_info i
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestListChildrenMainSize019", "ret1 = %{public}d", ret1);
     ASSERT_EQ(ret, SUCCESS);
     ASSERT_EQ(ret1, INVALID_PARAM);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
 
@@ -338,6 +343,7 @@ static napi_value TestListChildrenMainSize021(napi_env env, napi_callback_info i
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestListChildrenMainSize021", "ret1 = %{public}d", ret1);
     ASSERT_EQ(ret, SUCCESS);
     ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 
