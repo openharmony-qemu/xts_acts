@@ -336,6 +336,223 @@ export default function abilityDelegatorStage(): void {
         done();
       })
         })
+
+    // ===== 静态特有：同步前官方 12701~12803，跨包/空 want 错误码测试点（动态无对应）=====
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1271
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1271
+     * @tc.desc   startAbility rely EntryAbility fails with 16000004 (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1271', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const name = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1271';
+        hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', `${name} begin`);
+        try {
+          abilityDelegator.startAbility({
+            bundleName: 'com.acts.abilitydelegatorrely.static',
+            abilityName: 'EntryAbility'
+          }, (err: BusinessError<void> | null): void => {
+            hilog.info(0x0000, 'abilityDelegatorStageTag',
+              `${name} err ` + JSON.stringify(err?.code));
+            if (err?.code) {
+              expect(err?.code).assertEqual(16000004);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (error) {
+          hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
+            `${name} failed ` + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1281
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1281
+     * @tc.desc   startAbility rely EntryAbility fails with 16000004 (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1281', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const name = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1281';
+        hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', `${name} begin`);
+        try {
+          let want: Want = {
+            bundleName: 'com.acts.abilitydelegatorrely.static',
+            abilityName: 'EntryAbility'
+          };
+          abilityDelegator.startAbility(want).then((data: void) => {
+            console.info(`${name} promise success unexpected`);
+            expect(false).assertTrue();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', `${name} catch`);
+            expect(err?.code).assertEqual(16000004);
+            done();
+          });
+        } catch (error) {
+          hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
+            `${name} failed ` + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1272
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1272
+     * @tc.desc   startAbility rely EntryAbility2 fails with 16000005 (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1272', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const name = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1272';
+        hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', `${name} begin`);
+        try {
+          abilityDelegator.startAbility({
+            bundleName: 'com.acts.abilitydelegatorrely.static',
+            abilityName: 'EntryAbility2'
+          }, (err: BusinessError<void> | null): void => {
+            hilog.info(0x0000, 'abilityDelegatorStageTag',
+              `${name} err ` + JSON.stringify(err?.code));
+            if (err?.code) {
+              expect(err?.code).assertEqual(16000005);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (error) {
+          hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
+            `${name} failed ` + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1282
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1282
+     * @tc.desc   startAbility rely EntryAbility2 fails with 16000005 (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1282', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const name = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1282';
+        hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', `${name} begin`);
+        try {
+          let want: Want = {
+            bundleName: 'com.acts.abilitydelegatorrely.static',
+            abilityName: 'EntryAbility2'
+          };
+          abilityDelegator.startAbility(want).then((data: void) => {
+            console.info(`${name} promise success unexpected`);
+            expect(false).assertTrue();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', `${name} catch`);
+            expect(err?.code).assertEqual(16000005);
+            done();
+          });
+        } catch (error) {
+          hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
+            `${name} failed ` + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1273
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1273
+     * @tc.desc   startAbility with empty want fails with 16000019 (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1273', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const name = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1273';
+        hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', `${name} begin`);
+        let cmd = 'aa start -a EntryAbility1 -b com.acts.abilitydelegatortest.static';
+        let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
+        if (user !== undefined) {
+          cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd);
+        await Utils.msSleep(2000);
+        try {
+          abilityDelegator.startAbility({}, (err: BusinessError<void> | null): void => {
+            hilog.info(0x0000, 'abilityDelegatorStageTag',
+              `${name} err ` + JSON.stringify(err?.code));
+            if (err?.code) {
+              expect(err?.code).assertEqual(16000019);
+              let cmd2 = 'aa start -a EntryAbility -b com.acts.abilitydelegatortest.static';
+              let user2 = abilityDelegatorRegistry.getArguments().parameters['-u'];
+              if (user2 !== undefined) {
+                cmd2 += ' -u ' + user2;
+              }
+              abilityDelegator.executeShellCommand(cmd2);
+              Utils.msSleep(2000);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (error) {
+          hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
+            `${name} failed ` + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1283
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1283
+     * @tc.desc   startAbility with empty want fails with 16000019 (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1283', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const name = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1283';
+        hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', `${name} begin`);
+        try {
+          let want: Want = {};
+          abilityDelegator.startAbility(want).then((data: void) => {
+            console.info(`${name} promise success unexpected`);
+            expect(false).assertTrue();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', `${name} catch`);
+            expect(err?.code).assertEqual(16000019);
+            done();
+          });
+        } catch (error) {
+          hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
+            `${name} failed ` + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+      })
   });
 }
 
