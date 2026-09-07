@@ -75,7 +75,7 @@ async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetr
     }
   }
 
-
+  // Step 1: Try scrollSearch (uses accessibility scroll actions)
   try {
     let result = await scrollComp.scrollSearch(ON.id(id));
     if (result !== null && result !== undefined) {
@@ -1313,6 +1313,104 @@ export default function NavigationPreloadTest() {
         expect(hasError || hasSuccess).assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_3500 error: ' + err);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_NAVIGATION_PRELOADPATH_3600
+     * @tc.number SUB_ARKUI_NAVIGATION_PRELOADPATH_3600
+     * @tc.desc   Test preloadPath with info = null, error code 401 expected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level.LEVEL0
+     */
+    it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3600', Level.LEVEL0, async (done: Function): Promise<void> => {
+      try {
+        let driver = await createDriverSafely();
+        if (driver === null) {
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        let btn = await findComponentWithScroll(driver, 'btnPreloadInfoNull');
+        expect(btn != null).assertTrue();
+        await btn!.click();
+        await CommonFunc.sleep(2000);
+        let result = getTextContentById('preloadResult');
+        expect(result).assertEqual('error');
+        let catchCalled = getTextContentById('catchCalled');
+        expect(catchCalled).assertEqual('true');
+        let errorCode = getTextContentById('errorCode');
+        expect(errorCode === '401' || errorCode === '100001' ||
+          errorCode === '100005' || errorCode === '100006').assertTrue();
+      } catch (err) {
+        console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_3600 error: ' + err);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_NAVIGATION_PRELOADPATH_3700
+     * @tc.number SUB_ARKUI_NAVIGATION_PRELOADPATH_3700
+     * @tc.desc   Test preloadPath with options = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level.LEVEL1
+     */
+    it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3700', Level.LEVEL1, async (done: Function): Promise<void> => {
+      try {
+        let driver = await createDriverSafely();
+        if (driver === null) {
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        let btn = await findComponentWithScroll(driver, 'btnPreloadOptionsNull');
+        expect(btn != null).assertTrue();
+        await btn!.click();
+        await CommonFunc.sleep(2000);
+        let result = getTextContentById('preloadResult');
+        expect(result === 'success' || result === 'error').assertTrue();
+        if (result === 'error') {
+          let errorCode = getTextContentById('errorCode');
+          expect(errorCode === '401' || errorCode === '100001').assertTrue();
+        }
+      } catch (err) {
+        console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_3700 error: ' + err);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_NAVIGATION_PRELOADPATH_3800
+     * @tc.number SUB_ARKUI_NAVIGATION_PRELOADPATH_3800
+     * @tc.desc   Test preloadPath with options = undefined (explicit), should behave as omitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  Level.LEVEL1
+     */
+    it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3800', Level.LEVEL1, async (done: Function): Promise<void> => {
+      try {
+        let driver = await createDriverSafely();
+        if (driver === null) {
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        let btn = await findComponentWithScroll(driver, 'btnPreloadOptionsUndefined');
+        expect(btn != null).assertTrue();
+        await btn!.click();
+        await CommonFunc.sleep(2000);
+        let result = getTextContentById('preloadResult');
+        expect(result).assertEqual('success');
+        let thenCalled = getTextContentById('thenCalled');
+        expect(thenCalled).assertEqual('true');
+      } catch (err) {
+        console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_3800 error: ' + err);
         expect(false).assertTrue();
       }
       done();

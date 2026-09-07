@@ -919,6 +919,74 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+
+          // ========== Parameter spec coverage - info = null ==========
+          Button('InfoNull')
+            .id('btnPreloadInfoNull')
+            .key('btnPreloadInfoNull')
+            .fontSize(16)
+            .margin({ top: 10 } as Margin)
+            .onClick(() => {
+              this.resetState()
+              this.stack.preloadPath(
+                null as ESObject,
+                { onDestroy: () => { this.onDestroyCalled = 'true' } }
+              ).then(() => {
+                this.preloadResult = 'success'
+                this.thenCalled = 'true'
+              }).catch((error: BusinessError) => {
+                this.preloadResult = 'error'
+                this.catchCalled = 'true'
+                this.errorCode = String(error.code)
+                this.errorMsg = error.message
+              })
+            })
+
+          // ========== Parameter spec coverage - options = null ==========
+          Button('OptNull')
+            .id('btnPreloadOptionsNull')
+            .key('btnPreloadOptionsNull')
+            .fontSize(16)
+            .margin({ top: 10 } as Margin)
+            .onClick(() => {
+              this.resetState()
+              this.stack.preloadPath(
+                new NavPathInfo('STANDARD_19', new NavParamTwo('OptNull')),
+                null as ESObject
+              ).then(() => {
+                this.preloadResult = 'success'
+                this.thenCalled = 'true'
+                this.stackNames = JSON.stringify(this.stack.getAllPathName())
+              }).catch((error: BusinessError) => {
+                this.preloadResult = 'error'
+                this.catchCalled = 'true'
+                this.errorCode = String(error.code)
+                this.errorMsg = error.message
+              })
+            })
+
+          // ========== Parameter spec coverage - options = undefined (explicit) ==========
+          Button('OptUndef')
+            .id('btnPreloadOptionsUndefined')
+            .key('btnPreloadOptionsUndefined')
+            .fontSize(16)
+            .margin({ top: 10 } as Margin)
+            .onClick(() => {
+              this.resetState()
+              this.stack.preloadPath(
+                new NavPathInfo('STANDARD_20', new NavParamTwo('OptUndef')),
+                undefined
+              ).then(() => {
+                this.preloadResult = 'success'
+                this.thenCalled = 'true'
+                this.stackNames = JSON.stringify(this.stack.getAllPathName())
+              }).catch((error: BusinessError) => {
+                this.preloadResult = 'error'
+                this.catchCalled = 'true'
+                this.errorCode = String(error.code)
+                this.errorMsg = error.message
+              })
+            })
         }
         .width('100%')
         .alignItems(HorizontalAlign.Center)
