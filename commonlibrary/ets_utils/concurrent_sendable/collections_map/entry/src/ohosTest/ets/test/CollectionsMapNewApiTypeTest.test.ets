@@ -75,8 +75,8 @@ export default function CollectionsMapNewApiTypeTest() {
         src.set(99990 + idx, 'src_' + id);
         map.putAll(src);
         expect(map.size).assertEqual(2);
-        // putAll(BuiltinMap)
-        let bsrc: BuiltinMap<number, string> = new Map<number, string>();
+        // putAll(Map)
+        let bsrc: Map<number, string> = new Map<number, string>();
         bsrc.set(99995 + idx, 'bsrc_' + id);
         map.putAll(bsrc);
         expect(map.size).assertEqual(3);
@@ -331,7 +331,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcAf', new SendableArrowFn());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('afKey')).assertEqual(fn);
+      expect(map.remove('afKey')).assertEqual(fn2);
       expect(map.remove('afKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
@@ -354,7 +354,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcAs', new SendableAsyncFn());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('asKey')).assertEqual(fn);
+      expect(map.remove('asKey')).assertEqual(fn2);
       expect(map.remove('asKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
@@ -377,7 +377,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcAd', new SendableAddFn());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('adKey')).assertEqual(fn);
+      expect(map.remove('adKey')).assertEqual(fn2);
       expect(map.remove('adKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
@@ -487,7 +487,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcLock', new ArkTSUtils.locks.AsyncLock());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('lockKey')).assertEqual(lock);
+      expect(map.remove('lockKey')).assertEqual(lock2);
       expect(map.remove('lockKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
@@ -510,7 +510,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcCv', new ArkTSUtils.locks.ConditionVariable());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('cvKey')).assertEqual(cv);
+      expect(map.remove('cvKey')).assertEqual(cv2);
       expect(map.remove('cvKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
@@ -535,7 +535,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcCache', new ArkTSUtils.SendableLruCache<number, string>());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('cacheKey')).assertEqual(cache);
+      expect(map.remove('cacheKey')).assertEqual(cache2);
       expect(map.remove('cacheKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
@@ -561,7 +561,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcNested', new collections.Map<number, string>());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('nestedKey')).assertEqual(nested);
+      expect(map.remove('nestedKey')).assertEqual(nested2);
       expect(map.remove('nestedKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
@@ -586,7 +586,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcSet', new collections.Set<number>());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('setKey')).assertEqual(s);
+      expect(map.remove('setKey')).assertEqual(s2);
       expect(map.remove('setKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
@@ -611,7 +611,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcArr', new collections.Array<number>());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('arrKey')).assertEqual(a);
+      expect(map.remove('arrKey')).assertEqual(a2);
       expect(map.remove('arrKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
@@ -635,7 +635,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcLarge', new LargeObject());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('largeKey')).assertEqual(obj);
+      expect(map.remove('largeKey')).assertEqual(obj2);
       expect(map.remove('largeKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
@@ -684,7 +684,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcDeep', new DeepNestedObject('b'));
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('deepKey')).assertEqual(root);
+      expect(map.remove('deepKey')).assertEqual(root2);
       expect(map.remove('deepKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
@@ -709,7 +709,7 @@ export default function CollectionsMapNewApiTypeTest() {
       bsrc.set('bsrcCirc', new CircularRef('b'));
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
-      expect(map.remove('circularKey')).assertEqual(obj);
+      expect(map.remove('circularKey')).assertEqual(obj2);
       expect(map.remove('circularKey')).assertEqual(undefined);
       console.info(caseName + ', test end');
     });
