@@ -15,7 +15,7 @@ function sleep(time: number) {
 export default function actsNotificationPriorityTest() {
   describe('actsNotificationPriorityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(async () => {
+    beforeAll(async (done: Function) => {
       context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       notificationManager.requestEnableNotification(context).then(() => {
         console.info(`requestEnableNotification succeeded`);
@@ -27,14 +27,15 @@ export default function actsNotificationPriorityTest() {
           expect().assertFail();
         }
       });
-      await sleep(1000)
+      await sleep(1500)
       let driver = Driver.create();
       let button = await driver.findComponent(ON.text('允许'));
       console.info(`button is ${JSON.stringify(button)}`);
       if (button !== null) {
-        await sleep(1000);
+        await sleep(1500);
         await button.click();
-        await sleep(1000);
+        await sleep(1500);
+        done()
       } else {
         console.info(`null button`);
         expect(button).assertContain('允许')
