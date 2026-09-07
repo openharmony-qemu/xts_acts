@@ -27,6 +27,7 @@
 #include "TextCommon/ParagraphStyleTailIndentsTest.cpp"
 #include "StyledString/LinearGradientTest.cpp"
 #include "StyledString/RadialGradientTest.cpp"
+#include "StyledString/LineSpacingOptionsTest.cpp"
 #include "TextCommon/TextLayoutManagerWithEncodingTest.cpp"
 
 namespace ArkUICapiTest {
@@ -201,6 +202,18 @@ static napi_value Init(napi_env env, napi_value exports)
         {"RadialGradientTest_031", nullptr, RadialGradientTest_031, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RadialGradientTest_032", nullptr, RadialGradientTest_032, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RadialGradientTest_033", nullptr, RadialGradientTest_033, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"LineSpacingOptionsTest_001", nullptr, LineSpacingOptionsTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LineSpacingOptionsTest_004", nullptr, LineSpacingOptionsTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LineSpacingOptionsTest_005", nullptr, LineSpacingOptionsTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LineSpacingOptionsTest_006", nullptr, LineSpacingOptionsTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LineSpacingOptionsTest_007", nullptr, LineSpacingOptionsTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LineSpacingOptionsTest_008", nullptr, LineSpacingOptionsTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LineSpacingOptionsTest_009", nullptr, LineSpacingOptionsTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LineSpacingOptionsTest_010", nullptr, LineSpacingOptionsTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LineSpacingOptionsTest_011", nullptr, LineSpacingOptionsTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LineSpacingOptionsTest_012", nullptr, LineSpacingOptionsTest_012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LineSpacingOptionsTest_013", nullptr, LineSpacingOptionsTest_013, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"GetGlyphRangeForCharacterRangeWithEncodingTest_001", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetGlyphRangeForCharacterRangeWithEncodingTest_002", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
