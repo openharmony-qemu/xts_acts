@@ -69,7 +69,7 @@ function expectTrue(data : boolean){
 export default function NetworkManagerMulticast2HTTP2Test() {
     afterAll(async ()=> {
         console.log('NetworkManagerMulticastHTTPTest afterAll start');
-        console.log('NetworkManagerMulticastHTTPTest afterAll end');
+        console.log('NetworkManagerMulticastHTTPTest NetworkManagerMulticast2HTTP2TestafterAll end');
     });
     describe("NetworkManagerMulticast2HTTP2Test", ()=> {
         /**
@@ -91,12 +91,12 @@ export default function NetworkManagerMulticast2HTTP2Test() {
                     done();
                 }).catch((err: BusinessError) => {
                     console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
-                    expectTrue(err.code === 2300999);
+                    expectFalse();
                     console.info(`${caseName}---End`);
                     done();
                 })
             }catch (error) {
-                console.log(`${caseName}  request failed, error: ${JSON.stringify(error)}`);
+                console.log(`${caseName} request failed, error: ${JSON.stringify(error)}`);
                 expectFalse();
                 console.info(`${caseName}---End`);
                 done();

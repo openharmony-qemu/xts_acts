@@ -34,9 +34,10 @@ struct Index {
   build() {
     Row() {
       Column() {
-        Text(this.message)
+        Text(this.SystemDensity.toString())
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
+          .id('SystemDensity')
       }
       .width('100%')
     }

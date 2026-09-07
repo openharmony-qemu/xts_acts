@@ -22,7 +22,7 @@ import web_webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
-
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 export class StringFields {
   public str: string = '';
 }
@@ -100,10 +100,11 @@ struct EnableMediaNetworkProxy {
         this.replyOk(this.setProxy(undefined));
         break;
       }
-      default: {
-        this.replyOk('unknown');
-        break;
-      }
+	 case 'emitOnSwitchNextPageChangeParamTest': {
+		let uiContext: UIContext = this.getUIContext();
+		let router: Router = uiContext.getRouter();
+		router.pushUrl({ url: "pages/HandleStatusChangedParamTest" })
+	  }
     }
   }
 

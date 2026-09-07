@@ -13,3 +13,6 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 
 add_library(entry SHARED napi_init.cpp trafficfilter_napi_utils.cpp napi_utils.cpp)
 target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libnet_trafficfilter.so)
+
+add_library(packet SHARED napi_packet.cpp)
+target_link_libraries(packet PUBLIC libace_napi.z.so libhilog_ndk.z.so libnet_trafficfilter.so)

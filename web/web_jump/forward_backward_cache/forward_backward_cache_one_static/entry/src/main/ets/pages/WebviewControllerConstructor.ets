@@ -1,0 +1,98 @@
+'use static';
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import webview from '@ohos.web.webview';
+import events_emitter from '@ohos.events.emitter';
+import Utils from '../../src/test/Util.test';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
+
+export class StringFields {
+  public str: string = '';
+}
+
+@Entry
+@Component
+struct WebviewControllerConstructor {
+  stringObj: StringFields = new StringFields();
+  controllerEmpty: webview.WebviewController = new webview.WebviewController("");
+  controllerNull: webview.WebviewController = new webview.WebviewController(null as string);
+  controllerUndefined: webview.WebviewController = new webview.WebviewController(undefined);
+  @State javaScriptAccess: boolean = true;
+
+  aboutToAppear() {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 10,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
+    if (eventData != null) {
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
+        this.stringObj.str = String(data['ACTION']);
+      }
+    }
+  }
+
+  build() {
+    Column() {
+      Row() {
+        Button('WebviewControllerConstructor click').key('WebviewControllerConstructorButton')
+          .onClick((e: ClickEvent) => {
+            console.info('key==>' + this.stringObj.str)
+            switch (this.stringObj.str) {
+              case 'testWebviewControllerConstructorEmptyStatic001': {
+                try {
+                  this.controllerEmpty.loadUrl('resource://rawfile/index.html');
+                  Utils.emitEvent(true, 41021601)
+                } catch (error) {
+                  error = error as BusinessError;
+                  Utils.emitEvent(error.code, 41021601)
+                }
+                break;
+              }
+              case 'testWebviewControllerConstructorNullStatic001': {
+                try {
+                  this.controllerNull.loadUrl('resource://rawfile/index.html');
+                  Utils.emitEvent(true, 41021602)
+                } catch (error) {
+                  error = error as BusinessError;
+                  Utils.emitEvent(error.code, 41021602)
+                }
+                break;
+              }
+              case 'testWebviewControllerConstructorUndefinedStatic001': {
+                try {
+                  this.controllerUndefined.loadUrl('resource://rawfile/index.html');
+                  Utils.emitEvent(true, 41021603)
+                } catch (error) {
+                  error = error as BusinessError;
+                  Utils.emitEvent(error.code, 41021603)
+                }
+                break;
+              }
+            }
+          })
+      }
+      Web({ src: 'resource://rawfile/index.html', controller: this.controllerUndefined })
+        .javaScriptAccess(this.javaScriptAccess)
+    }
+  }
+}

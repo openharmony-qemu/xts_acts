@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,14 +21,9 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 
 export default function textPickerJsunit() {
   describe('appInfoTest_four_13', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("textPickerJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
-    })
 
     beforeEach(async (): Promise<void> => {
       console.info("button beforeEach start");
@@ -51,7 +46,11 @@ export default function textPickerJsunit() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('textPickerDialog afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("textPickerDialog after each called");
     })
 

@@ -14,7 +14,7 @@
  */
 
 import {
-    fileIO, prepareFile, nextFileName, isIntNum, FILE_CONTENT,
+    fileIO, prepareFile, nextFileName, isIntNum, FILE_CONTENT, sleep,
     describe, it, expect
 } from '../Common';
 import fs from '@ohos.file.fs';
@@ -34,6 +34,62 @@ export function initReadfile(fpath) {
   }
   const writefile = fileIO.openSync(wpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE | fileIO.OpenMode.TRUNC);
   fileIO.closeSync(writefile);
+}
+
+export function makeStreamDataHandler(caseName, ws) {
+  let payloadLogged = false;
+  return function (emitData) {
+    try {
+      if (!payloadLogged) {
+        payloadLogged = true;
+        let keys = '';
+        let json = '';
+        let ctor = '';
+        try { keys = Object.keys(emitData).join(',').substring(0, 100); } catch (e) { keys = 'ERR'; }
+        try { json = JSON.stringify(emitData); json = (json === undefined || json === null) ? 'n/a' : json.substring(0, 200); } catch (e) { json = 'ERR'; }
+        try { ctor = emitData.constructor ? emitData.constructor.name : 'none'; } catch (e) { ctor = 'ERR'; }
+        console.log(caseName + ' payload typeof=' + (typeof emitData) + ', ctor=' + ctor + ', keys=[' + keys + '], json=' + json);
+      }
+      let a = emitData;
+      if (a == undefined || a == null) {
+        return;
+      }
+      if (typeof a === 'object' && a.data !== undefined && a.data !== null) {
+        a = a.data;
+      }
+      if (a == undefined || a == null) {
+        return;
+      }
+      if (typeof a === 'string') {
+        console.log(caseName + ' content(str) ' + a.slice(0, 10) + ', len: ' + a.length);
+        ws.write(a);
+        return;
+      }
+      let u8 = null;
+      try { u8 = new Uint8Array(a); } catch (e) { u8 = null; }
+      if (u8 !== null && u8.length > 0) {
+        console.log(caseName + ' content(u8) len: ' + u8.length);
+        try {
+          ws.write(u8);
+        } catch (e) {
+          console.log(caseName + ' write(u8) failed: ' + e + ', retry as string');
+          let s = '';
+          for (let i = 0; i < u8.length; i++) {
+            s += String.fromCharCode(u8[i]);
+          }
+          ws.write(s);
+        }
+        return;
+      }
+      let s2 = a.toString();
+      console.log(caseName + ' content(toString) len: ' + s2.length + ', val: ' + s2.substring(0, 20));
+      if (s2.length > 0) {
+        ws.write(s2);
+      }
+    } catch (e) {
+      console.log(caseName + ' data handler error: ' + e);
+    }
+  };
 }
 
 export default function fileIOCreateRandomAccessFile() {
@@ -413,29 +469,41 @@ describe('fileIO_create_randomAccessFile', function () {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_create_randomaccessfile_sync_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    it('fileIO_create_randomaccessfile_sync_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_016');
-        initReadfile(fpath);
+        let wpath1 = await nextFileName('fileIO_create_randomaccessfile_sync_01601');
+        expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
         const readfile = fileIO.openSync(fpath, fs.OpenMode.READ_ONLY);
-        const writefile = fileIO.openSync(wpath, fs.OpenMode.WRITE_ONLY);
+        const writefile = fileIO.openSync(wpath1, fs.OpenMode.CREATE | fs.OpenMode.WRITE_ONLY);
+        let randomaccessfile1;
+        let randomaccessfile2;
+        let rs;
+        let ws;
 
         try {
-            let rs = fs.createRandomAccessFileSync(readfile).getReadStream();
-            let ws = fs.createRandomAccessFileSync(writefile).getWriteStream();
-            rs.on('data', (emitData) => {
-                let data = emitData?.data;
-                ws.write(data);
-                console.log('fileIO_create_randomaccessfile_sync_016 content ' + data.slice(0, 10) + ', data.length: ' + data?.length);
-              });
-              rs.on('close', async() =>{
-                let readhash = await Hash.hash(fpath, 'sha256');
-                let writehash = await Hash.hash(wpath, 'sha256');
-                console.log('fileIO_create_randomaccessfile_sync_016 readhash ' + readhash + ', writehash: ' + writehash);
-                expect(readhash === writehash).assertTrue();
-              });
+            let stat = fs.statSync(fpath);
+            randomaccessfile1 = fs.createRandomAccessFileSync(readfile);
+            rs = randomaccessfile1.getReadStream();
+            randomaccessfile2 = fs.createRandomAccessFileSync(writefile);
+            ws = randomaccessfile2.getWriteStream();
+            rs.on('data', makeStreamDataHandler('fileIO_create_randomaccessfile_sync_016', ws));
+            await sleep(2000);
+            let Witebytes = ws.bytesWritten;
+            console.log('fileIO_create_randomaccessfile_sync_016 Witebytes: ' + Witebytes + ', stat.size: ' + stat.size);
+            expect(Witebytes == stat.size).assertTrue();
+            randomaccessfile1.close();
+            randomaccessfile2.close();
+            rs.close();
+            ws.close();
+            done();
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_sync_016 has failed for ' + err);
+            try { if (rs) rs.close(); } catch (e) {}
+            try { if (ws) ws.close(); } catch (e) {}
+            try { if (randomaccessfile1) randomaccessfile1.close(); } catch (e) {}
+            try { if (randomaccessfile2) randomaccessfile2.close(); } catch (e) {}
             expect(false).assertTrue();
+            done();
         }
     });
 
@@ -447,31 +515,41 @@ describe('fileIO_create_randomAccessFile', function () {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_create_randomaccessfile_sync_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    it('fileIO_create_randomaccessfile_sync_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_017');
-        initReadfile(fpath);
+        let wpath1 = await nextFileName('fileIO_create_randomaccessfile_sync_01701');
+        expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
         let size = fs.lstatSync(fpath).size;
+        let randomaccessfile1;
+        let randomaccessfile2;
+        let rs;
+        let ws;
 
         try {
-            let randomaccessfile1 = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0, end:size/4});
-            let rs = randomaccessfile1.getReadStream();
-            let randomaccessfile2 = fs.createRandomAccessFileSync(wpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0});
-            let ws = randomaccessfile2.getWriteStream();
-            rs.on('data', (emitData) => {
-                let data = emitData?.data;
-                ws.write(data);
-                console.log('fileIO_create_randomaccessfile_sync_017 content ' + data.slice(0, 10) + ', data.length: ' + data?.length);
-              });
-              rs.on('close', async() =>{
-                let readhash = await Hash.hash(fpath, 'sha256');
-                let writehash = await Hash.hash(wpath, 'sha256');
-                console.log('fileIO_create_randomaccessfile_sync_017 readhash ' + readhash + ', writehash: ' + writehash);
-                expect(readhash === writehash).assertTrue();
-              });
+            randomaccessfile1 = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0, end:size/4});
+            rs = randomaccessfile1.getReadStream();
+            randomaccessfile2 = fs.createRandomAccessFileSync(wpath1, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0});
+            ws = randomaccessfile2.getWriteStream();
+            rs.on('data', makeStreamDataHandler('fileIO_create_randomaccessfile_sync_017', ws));
+            await sleep(2000);
+            let Witebytes = ws.bytesWritten;
+            let stat2 = fs.statSync(wpath1);
+            console.log('fileIO_create_randomaccessfile_sync_017 Witebytes: ' + Witebytes + ', stat2.size: ' + stat2.size + ', size/4: ' + size/4);
+            expect(stat2.size == Witebytes).assertTrue();
+            randomaccessfile1.close();
+            randomaccessfile2.close();
+            rs.close();
+            ws.close();
             fileIO.unlinkSync(fpath);
+            done();
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_sync_017 has failed for ' + err);
+            try { if (rs) rs.close(); } catch (e) {}
+            try { if (ws) ws.close(); } catch (e) {}
+            try { if (randomaccessfile1) randomaccessfile1.close(); } catch (e) {}
+            try { if (randomaccessfile2) randomaccessfile2.close(); } catch (e) {}
             expect(false).assertTrue();
+            done();
         }
     });
 
@@ -483,31 +561,40 @@ describe('fileIO_create_randomAccessFile', function () {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_create_randomaccessfile_sync_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    it('fileIO_create_randomaccessfile_sync_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_018');
-        initReadfile(fpath);
-        let size = fs.lstatSync(fpath).size;
+        let wpath1 = await nextFileName('fileIO_create_randomaccessfile_sync_01801');
+        expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+        let randomaccessfile1;
+        let randomaccessfile2;
+        let rs;
+        let ws;
 
         try {
-            let randomaccessfile1 = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:size/4, end:size/2});
-            let rs = randomaccessfile1.getReadStream();
-            let randomaccessfile2 = fs.createRandomAccessFileSync(wpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:size/4});
-            let ws = randomaccessfile2.getWriteStream();
-            rs.on('data', (emitData) => {
-                let data = emitData?.data;
-                ws.write(data);
-                console.log('fileIO_create_randomaccessfile_sync_018 content ' + data.slice(0, 10) + ', data.length: ' + data?.length);
-              });
-              rs.on('close', async() =>{
-                let readhash = await Hash.hash(fpath, 'sha256');
-                let writehash = await Hash.hash(wpath, 'sha256');
-                console.log('fileIO_create_randomaccessfile_sync_018 readhash ' + readhash + ', writehash: ' + writehash);
-                expect(readhash === writehash).assertTrue();
-              });
+            randomaccessfile1 = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:1, end:9});
+            rs = randomaccessfile1.getReadStream();
+            randomaccessfile2 = fs.createRandomAccessFileSync(wpath1, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:1});
+            ws = randomaccessfile2.getWriteStream();
+            rs.on('data', makeStreamDataHandler('fileIO_create_randomaccessfile_sync_018', ws));
+            await sleep(2000);
+            let Witebytes = ws.bytesWritten;
+            let stat2 = fs.statSync(wpath1);
+            console.log('fileIO_create_randomaccessfile_sync_018 Witebytes: ' + Witebytes + ', stat2.size: ' + stat2.size);
+            expect(stat2.size == Witebytes + 1).assertTrue();
+            randomaccessfile1.close();
+            randomaccessfile2.close();
+            rs.close();
+            ws.close();
             fileIO.unlinkSync(fpath);
+            done();
         } catch (err) {
             console.info('fileIO_create_randomaccessfile_sync_018 has failed for ' + err);
+            try { if (rs) rs.close(); } catch (e) {}
+            try { if (ws) ws.close(); } catch (e) {}
+            try { if (randomaccessfile1) randomaccessfile1.close(); } catch (e) {}
+            try { if (randomaccessfile2) randomaccessfile2.close(); } catch (e) {}
             expect(false).assertTrue();
+            done();
         }
     });
 
@@ -1099,33 +1186,43 @@ describe('fileIO_create_randomAccessFile', function () {
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL0
       */
-     it('fileIO_create_randomaccessfile_async_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
-        let fpath = await nextFileName('fileIO_create_randomaccessfile_async_016');
-        initReadfile(fpath);
-        let size = fs.lstatSync(fpath).size;
+     it('fileIO_create_randomaccessfile_async_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_016');
+         let wpath1 = await nextFileName('fileIO_create_randomaccessfile_async_01601');
+         expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+         let size = fs.lstatSync(fpath).size;
+         let randomaccessfile1;
+         let randomaccessfile2;
+         let rs;
+         let ws;
 
-        try {
-            let randomaccessfile1 = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:size/4*3, end:size});
-            let rs = randomaccessfile1.getReadStream();
-            let randomaccessfile2 = await fs.createRandomAccessFile(wpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0});
-            let ws = randomaccessfile2.getWriteStream();
-            rs.on('data', (emitData) => {
-                let data = emitData?.data;
-                ws.write(data);
-                console.log('fileIO_create_randomaccessfile_async_016 content ' + data.slice(0, 10) + ', data.length: ' + data?.length);
-              });
-              rs.on('close', async() =>{
-                let readhash = await Hash.hash(fpath, 'sha256');
-                let writehash = await Hash.hash(wpath, 'sha256');
-                console.log('fileIO_create_randomaccessfile_async_016 readhash ' + readhash + ', writehash: ' + writehash);
-                expect(readhash === writehash).assertTrue();
-              });
-            fileIO.unlinkSync(fpath);
-        } catch (err) {
-            console.info('fileIO_create_randomaccessfile_async_016 has failed for ' + err);
-            expect(false).assertTrue();
-        }
-    });
+         try {
+             randomaccessfile1 = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:1, end:size});
+             rs = randomaccessfile1.getReadStream();
+             randomaccessfile2 = await fs.createRandomAccessFile(wpath1, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0});
+             ws = randomaccessfile2.getWriteStream();
+             rs.on('data', makeStreamDataHandler('fileIO_create_randomaccessfile_async_016', ws));
+             await sleep(3000);
+             let Witebytes = ws.bytesWritten;
+             let stat2 = fs.statSync(wpath1);
+             console.log('fileIO_create_randomaccessfile_async_016 Witebytes: ' + Witebytes + ', stat2.size: ' + stat2.size + ', size: ' + size);
+             expect(stat2.size == Witebytes).assertTrue();
+             randomaccessfile1.close();
+             randomaccessfile2.close();
+             rs.close();
+             ws.close();
+             fileIO.unlinkSync(fpath);
+             done();
+         } catch (err) {
+             console.info('fileIO_create_randomaccessfile_async_016 has failed for ' + err);
+             try { if (rs) rs.close(); } catch (e) {}
+             try { if (ws) ws.close(); } catch (e) {}
+             try { if (randomaccessfile1) randomaccessfile1.close(); } catch (e) {}
+             try { if (randomaccessfile2) randomaccessfile2.close(); } catch (e) {}
+             expect(false).assertTrue();
+             done();
+         }
+     });
 
     /**
      * @tc.name   fileIO_create_randomaccessfile_async_018

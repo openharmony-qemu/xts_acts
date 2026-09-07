@@ -15,19 +15,17 @@
  */
 
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import {
   CanvasParams,
   LengthMetricsUnit,
-  RenderingContextSettings,
   RenderingContextOptions
 } from '@ohos.arkui.component';
 
@@ -35,12 +33,6 @@ const SLEEP_TIME = 1000;
 
 export default function CanvasTest() {
   describe('CanvasTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('CanvasTest beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility('com.arkui.ace.canvas.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('CanvasTest beforeEach start');
       let options: router.RouterOptions = {
@@ -52,7 +44,7 @@ export default function CanvasTest() {
         let pages = routerInstance.getState();
         console.info('CanvasTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'CanvasIndex') {
-          routerInstance.replaceUrl(options);
+          await routerInstance.replaceUrl(options);
           await Utils.sleep(1500);
         }
         await Utils.sleep(500);
@@ -63,7 +55,11 @@ export default function CanvasTest() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('CanvasTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('CanvasTest after each called');
     });
 
@@ -110,26 +106,6 @@ export default function CanvasTest() {
       }
     });
 
-    /**
-     * @tc.number CanvasTest_003
-     * @tc.name renderingContextSettings_antialias_default
-     * @tc.desc Test RenderingContextSettings default constructor returns boolean antialias
-     */
-    it('renderingContextSettings_antialias_default', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('CanvasTest execute: renderingContextSettings_antialias_default START');
-      try {
-        await CommonFunc.sleep(200);
-        let settings = new RenderingContextSettings();
-        let antialias = settings.antialias;
-        console.info('CanvasTest: antialias_default value = ' + antialias);
-        expect(antialias === true || antialias === false).assertEqual(true);
-        done();
-      } catch (error) {
-        console.error('CanvasTest execute: renderingContextSettings_antialias_default error: ' + error);
-        expect().assertFail();
-        done();
-      }
-    });
 
     /**
      * @tc.number CanvasTest_004

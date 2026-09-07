@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -116,8 +116,8 @@ struct IOTControl {
 
     if (this.name == 'SUB_IOT_QUERY_SERVICE_BLE_0100' ||
       this.name == 'SUB_IOT_QUERY_SERVICE_WIFI_0100') {
-      tips += '点击《服务查询》按钮，执行allservices指令查询设备支持的所有服务，查询结果返回则判定用例通过，点击Pass按钮' +
-        '\n5、设备无响应未打印设备所有服务信息则判定用例失败，点击Fail按钮';
+      tips += '点击<服务查询>按钮，执行allservices指令查询设备支持的所有服务，弹出"查询成功"且页面打印设备所有服务信息则判定用例通过，点击Pass按钮' +
+        '\n5、弹出"查询失败"且页面未打印设备所有服务信息则判定用例失败，点击Fail按钮';
       btnText = '服务查询';
     } else if (this.name == 'SUB_IOT_QUERY_SWITCH_SERVICE_WIFI_0100' ||
       this.name == 'SUB_IOT_QUERY_SWITCH_SERVICE_BLE_0100') {
@@ -140,7 +140,16 @@ struct IOTControl {
       this.executeScan();
     }, 500);
     IotHelper.getInstance().registerMessageReceivers('IOTControl', (list: InfDeviceState[]) => {
-      this.queryText = JSON.stringify(list);
+      Logger.info(`queryText ${JSON.stringify(list)}`);
+      if (list && list.length > 0) {
+        this.isVue = true;
+        AlertDialog.show({
+          title: '查询成功',
+          message: '全部服务查询成功，已获取设备所有服务信息',
+          confirm: { value: '确定', action: () => {} }
+        });
+        this.queryText = JSON.stringify(list);
+      }
     })
     IotHelper.getInstance().registerConnectStateChanged('IOTControl', (state: number) => {
       if (state == ConnectType.OFFLINE && this.clickSwitchOff) {
@@ -160,16 +169,19 @@ struct IOTControl {
   }
 
   private executeBusiness() {
+    this.isVue = false;
+    this.queryText = '';
     if (this.name.indexOf('QUERY_SERVICE') >= 0) {
       let config = IotHelper.getInstance().getDeviceConfig();
       if (config && config.reportConfig) {
         IotHelper.getInstance().queryDeviceState([IotConstants.SID_ALL_SERVICES]).then((value) => {
           let index = value.findIndex((item) => item.sid == 'switch');
-          if (index >= 0) {
-            this.isVue = true;
-          }
-        }).catch(() => {
-          console.log('queryDeviceState error');
+        }).catch((error: BusinessError) => {
+          AlertDialog.show({
+            title: '查询失败',
+            message: `全部服务查询失败，错误码: ${error.code}`,
+            confirm: { value: '确定', action: () => {} }
+          });
         });
       } else {
         this.queryDeviceAllServices();
@@ -189,11 +201,12 @@ struct IOTControl {
   private queryDeviceAllServices() {
     IotHelper.getInstance().queryDeviceAllServices().then((value) => {
       let index = value.findIndex((item) => item.sid == 'switch');
-      if (index >= 0) {
-        this.isVue = true;
-      }
     }).catch((error: BusinessError) => {
-
+      AlertDialog.show({
+        title: '查询失败',
+        message: `全部服务查询失败，错误码: ${error.code}`,
+        confirm: { value: '确定', action: () => {} }
+      });
     })
   }
 
@@ -333,6 +346,8 @@ struct IOTControl {
                 if (connectDevice != undefined) {
                   this.deviceDataResource.pushData(connectDevice);
                 }
+                this.isVue = false;
+                this.queryText = '';
               })
             Button(
               this.buttonText,

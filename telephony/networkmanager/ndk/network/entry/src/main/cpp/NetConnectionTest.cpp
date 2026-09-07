@@ -121,6 +121,34 @@ napi_value Netconn_GetEnumInternalError(napi_env env, napi_callback_info info)
     return result;
 }
 
+napi_value Netconn_GetEnumByCaseIndex(napi_env env, napi_callback_info info)
+{
+    int32_t caseIndex = GetInt(env, info, 0);
+    int32_t errorCode = INVALID_STATUS;
+    switch (caseIndex) {
+        case CASE_INDEX_1:
+            errorCode = NetConn_ErrorCode::NETCONN_SUCCESS;
+            break;
+        case CASE_INDEX_2:
+            errorCode = NetConn_ErrorCode::NETCONN_PERMISSION_DENIED;
+            break;
+        case CASE_INDEX_3:
+            errorCode = NetConn_ErrorCode::NETCONN_PARAMETER_ERROR;
+            break;
+        case CASE_INDEX_4:
+            errorCode = NetConn_ErrorCode::NETCONN_OPERATION_FAILED;
+            break;
+        case CASE_INDEX_5:
+            errorCode = NetConn_ErrorCode::NETCONN_INTERNAL_ERROR;
+            break;
+        default:
+            break;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, errorCode, &result);
+    return result;
+}
+
 
 napi_value NetConn_GetDefaultNet(napi_env env, napi_callback_info info)
 {
@@ -1142,6 +1170,8 @@ static void RegisterRemainingProperties(napi_env env, napi_value exports)
         {"GetCertificatesHost", nullptr, GetCertificatesHost, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Netconn_GetEnum", nullptr, Netconn_GetEnum, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Netconn_GetEnumInternalError", nullptr, Netconn_GetEnumInternalError, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"Netconn_GetEnumByCaseIndex", nullptr, Netconn_GetEnumByCaseIndex, nullptr, nullptr, nullptr,
          napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

@@ -254,15 +254,28 @@ export default function Message3Test(): void {
         const TAG: string = 'WhatValueTest001';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
-        let receivedWhat: Array<number> = [];
-        let flag: boolean = false;
+        let receivedCount = new AtomicInt(0);
+        let zeroCount = new AtomicInt(0);
+        let oneCount = new AtomicInt(0);
+        let hundredCount = new AtomicInt(0);
+        let maxCount = new AtomicInt(0);
+        let negativeCount = new AtomicInt(0);
         worker.start();
         try {
           const handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            receivedWhat.push(msg.getWhat());
-            if (receivedWhat.length >= 5) {
-              flag = true;
+            let what = msg.getWhat();
+            if (what === 0) {
+              zeroCount.fetchAdd(1);
+            } else if (what === 1) {
+              oneCount.fetchAdd(1);
+            } else if (what === 100) {
+              hundredCount.fetchAdd(1);
+            } else if (what === 65535) {
+              maxCount.fetchAdd(1);
+            } else if (what === -1) {
+              negativeCount.fetchAdd(1);
             }
+            receivedCount.fetchAdd(1);
           }, worker);
 
           const testValues = [0, 1, 100, 65535, -1];
@@ -271,14 +284,18 @@ export default function Message3Test(): void {
             handler.sendMessage(message);
           }
 
-          while (!flag) {
+          let waitCount: number = 0;
+          while (receivedCount.load() < testValues.length && waitCount < 50) {
+            waitCount++;
             await Utils.msSleep(100)
           }
 
-          expect(receivedWhat.length).assertEqual(testValues.length);
-          for (let i = 0; i < testValues.length; i++) {
-            expect(receivedWhat[i]).assertEqual(testValues[i]);
-          }
+          expect(receivedCount.load()).assertEqual(testValues.length);
+          expect(zeroCount.load()).assertEqual(1);
+          expect(oneCount.load()).assertEqual(1);
+          expect(hundredCount.load()).assertEqual(1);
+          expect(maxCount.load()).assertEqual(1);
+          expect(negativeCount.load()).assertEqual(1);
         } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);
           expect(false).assertFail();

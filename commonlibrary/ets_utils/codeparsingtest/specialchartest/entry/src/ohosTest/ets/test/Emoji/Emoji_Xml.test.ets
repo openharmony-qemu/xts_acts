@@ -39,7 +39,7 @@ export default function EmojiXmlTest() {
     })
     /**
      * @tc.name   testXmlConstructorEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Xml_EMOJI_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_EMOJI_0100
      * @tc.desc   Testing the XML interface constructor with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlConstructorEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Xml_EMOJI_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_EMOJI_0200
      * @tc.desc   Testing the XML interface constructor with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -77,7 +77,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlConstructorEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Xml_EMOJI_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_EMOJI_0300
      * @tc.desc   Testing the XML interface constructor with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -96,7 +96,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlConstructorEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Xml_EMOJI_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_EMOJI_0400
      * @tc.desc   Testing the XML interface constructor with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -115,7 +115,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlConstructorEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Xml_EMOJI_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_EMOJI_0500
      * @tc.desc   Testing the XML interface constructor with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -134,7 +134,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlConstructorEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Xml_EMOJI_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_EMOJI_0600
      * @tc.desc   Testing the XML interface constructor with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlConstructorEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Xml_EMOJI_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_EMOJI_0700
      * @tc.desc   Testing the XML interface constructor with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -172,7 +172,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlConstructorEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Xml_EMOJI_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_EMOJI_0800
      * @tc.desc   Testing the XML interface constructor with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -191,7 +191,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlConstructorEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Xml_EMOJI_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_EMOJI_0900
      * @tc.desc   Testing the XML interface constructor with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -210,7 +210,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlConstructorEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_Xml_EMOJI_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_EMOJI_1000
      * @tc.desc   Testing the XML interface constructor with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -229,7 +229,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlConstructorEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_Xml_EMOJI_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_EMOJI_1100
      * @tc.desc   Testing the XML interface constructor with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -248,7 +248,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlConstructorEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Xml_EMOJI_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_EMOJI_1200
      * @tc.desc   Testing the XML interface constructor with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1121,7 +1121,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlSetCommentEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_6100
      * @tc.desc   Test the function of the Interface emoji  😊  \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1144,7 +1144,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXmlSetCommentEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_6200
      * @tc.desc   Test the function of the Interface emoji  👤  \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1168,7 +1168,7 @@ export default function EmojiXmlTest() {
 
     /**
      * @tc.name   testXmlSetCommentEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_6300
      * @tc.desc   Test the function of the Interface emoji  👫  \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1192,7 +1192,7 @@ export default function EmojiXmlTest() {
 
     /**
      * @tc.name   testXmlSetCommentEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_6400
      * @tc.desc   Test the function of the Interface emoji  ☎  \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1216,7 +1216,7 @@ export default function EmojiXmlTest() {
 
     /**
      * @tc.name   testXmlSetCommentEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_6500
      * @tc.desc   Test the function of the Interface emoji  👹  \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1240,7 +1240,7 @@ export default function EmojiXmlTest() {
 
     /**
      * @tc.name   testXmlSetCommentEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_6600
      * @tc.desc   Test the function of the Interface emoji  🕛  \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1264,7 +1264,7 @@ export default function EmojiXmlTest() {
 
     /**
      * @tc.name   testXmlSetCommentEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_6700
      * @tc.desc   Test the function of the Interface emoji  🍏  \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1288,7 +1288,7 @@ export default function EmojiXmlTest() {
 
     /**
      * @tc.name   testXmlSetCommentEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_6800
      * @tc.desc   Test the function of the Interface emoji  🔃  \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1312,7 +1312,7 @@ export default function EmojiXmlTest() {
 
     /**
      * @tc.name   testXmlSetCommentEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_6900
      * @tc.desc   Test the function of the Interface emoji  🍁  \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1336,7 +1336,7 @@ export default function EmojiXmlTest() {
 
     /**
      * @tc.name   testXmlSetCommentEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_7000
      * @tc.desc   Test the function of the Interface emoji  ♦   \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1360,7 +1360,7 @@ export default function EmojiXmlTest() {
 
     /**
      * @tc.name   testXmlSetCommentEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_7100
      * @tc.desc   Test the function of the Interface emoji  👈  \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1384,7 +1384,7 @@ export default function EmojiXmlTest() {
 
     /**
      * @tc.name   testXmlSetCommentEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SetComment_Emoji_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETCOMMENT_EMOJI_7200
      * @tc.desc   Test the function of the Interface emoji  🤼‍♂️ \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1996,7 +1996,7 @@ export default function EmojiXmlTest() {
     })
     /**
      * @tc.name   testXml_setDocTypeEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_Xml_setDocType_EMOJI_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_SETDOCTYPE_EMOJI_9700
      * @tc.desc   Testing the XML interface setDocType with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2018,7 +2018,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXml_setDocTypeEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_Xml_setDocType_EMOJI_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_SETDOCTYPE_EMOJI_9800
      * @tc.desc   Testing the XML interface setDocType with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2040,7 +2040,7 @@ export default function EmojiXmlTest() {
     });
     /**
      * @tc.name   testXml_setDocTypeEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_Xml_setDocType_EMOJI_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_SETDOCTYPE_EMOJI_9900
      * @tc.desc   Testing the XML interface setDocType with input emoji  \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

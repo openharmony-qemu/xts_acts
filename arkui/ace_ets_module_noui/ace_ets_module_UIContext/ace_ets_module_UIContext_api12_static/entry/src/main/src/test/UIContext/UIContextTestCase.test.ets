@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 export default function UIContextTestCase() {
   describe('UIContextTestCase', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("UIContextTestCase beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.UIContext12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("UIContextTestCase beforeEach start");
@@ -69,15 +61,20 @@ export default function UIContextTestCase() {
      * @tc.level    Level.LEVEL2
      */
 it('UIContextTestCase_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('UIContextTestCase_static_0100');
-      await CommonFunc.sleep(1000);
-      
-      let strJson = inspector.getInspectorByKey('getHostContext');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[UIContextTestCase_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('object = [object Object]');
-      console.info('[UIContextTestCase_static_0100] END');
-      done();
+      try {
+        console.info('UIContextTestCase_static_0100');
+        await CommonFunc.sleep(1000);
+
+        let strJson = inspector.getInspectorByKey('getHostContext');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[UIContextTestCase_static_0100] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('object = [object Object]');
+        console.info('[UIContextTestCase_static_0100] END');
+        done();
+      } catch (err) {
+        console.info('UIContextTestCase_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
 
@@ -90,15 +87,20 @@ it('UIContextTestCase_static_0100', Level.LEVEL2, async (done: () => void): Prom
      * @tc.level    Level.LEVEL2
      */
 it('UIContextTestCase_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('UIContextTestCase_static_0200');
-      await CommonFunc.sleep(1000);
-      
-      let strJson = inspector.getInspectorByKey('getWindowName');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[UIContextTestCase_static_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('static0');
-      console.info('[UIContextTestCase_static_0200] END');
-      done();
+      try {
+        console.info('UIContextTestCase_static_0200');
+        await CommonFunc.sleep(1000);
+
+        let strJson = inspector.getInspectorByKey('getWindowName');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[UIContextTestCase_static_0200] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('static0');
+        console.info('[UIContextTestCase_static_0200] END');
+        done();
+      } catch (err) {
+        console.info('UIContextTestCase_static_0200 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

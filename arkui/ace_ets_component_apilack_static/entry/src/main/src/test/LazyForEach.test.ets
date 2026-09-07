@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function lazyForEachOnDataAddJsunit() {
+export default function lazyForEachOnDataAddJsunit(): void {
   describe('lazyForEachOnDataAddTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/lazyForEach',
@@ -59,7 +59,7 @@ export default function lazyForEachOnDataAddJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("lazyForEachOnDataAdd after each called");
     });
@@ -73,7 +73,7 @@ export default function lazyForEachOnDataAddJsunit() {
      * @tc.desc     testlazyForEachOnDataAdd_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testlazyForEachOnDataAdd_static_0001', Level.LEVEL0, async () => {
+it('testlazyForEachOnDataAdd_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0001 START');
 
       let innerEvent1: events_emitter.InnerEvent = {
@@ -82,12 +82,12 @@ it('testlazyForEachOnDataAdd_static_0001', Level.LEVEL0, async () => {
       }
       let callback1: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("eventData.data.result1 result is: " +
-        ((eventData.data) as ESObject)?.getProperty('result1').toBoolean());
+        ((eventData.data) as ESObject).getProperty('result1').toBoolean());
         try {
           console.info("callback1 success");
           console.info("Lazy_101 eventData.data.result1 result is: " +
-          ((eventData.data) as ESObject)?.getProperty('result1').toBoolean());
-          expect(((eventData.data) as ESObject)?.getProperty('result1').toBoolean()).assertEqual(true);
+          ((eventData.data) as ESObject).getProperty('result1').toBoolean());
+          expect(((eventData.data) as ESObject).getProperty('result1').toBoolean()).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0001 END');
         } catch (err) {
           console.info("Lazy_101 on events_emitter err : " + JSON.stringify(err));
@@ -111,7 +111,7 @@ it('testlazyForEachOnDataAdd_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testlazyForEachOnDataAdd_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testlazyForEachOnDataAdd_static_0002', Level.LEVEL0, async () => {
+it('testlazyForEachOnDataAdd_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0002 START');
 
       let innerEvent2: events_emitter.InnerEvent = {
@@ -120,12 +120,12 @@ it('testlazyForEachOnDataAdd_static_0002', Level.LEVEL0, async () => {
       }
       let callback2: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("eventData.data.result2 result is: " +
-        ((eventData.data) as ESObject)?.getProperty('result2').toBoolean());
+        ((eventData.data) as ESObject).getProperty('result2').toBoolean());
         try {
           console.info("callback2 success");
           console.info("Lazy_102 eventData.data.result2 result is: " +
-          ((eventData.data) as ESObject)?.getProperty('result2').toBoolean());
-          expect(((eventData.data) as ESObject)?.getProperty('result2').toBoolean()).assertEqual(true);
+          ((eventData.data) as ESObject).getProperty('result2').toBoolean());
+          expect(((eventData.data) as ESObject).getProperty('result2').toBoolean()).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0002 END');
         } catch (err) {
           console.info("Lazy_102 on events_emitter err : " + JSON.stringify(err));
@@ -149,7 +149,7 @@ it('testlazyForEachOnDataAdd_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testlazyForEachOnDataAdd_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testlazyForEachOnDataAdd_static_0003', Level.LEVEL0, async () => {
+it('testlazyForEachOnDataAdd_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0003 START');
 
       let innerEvent3: events_emitter.InnerEvent = {
@@ -158,12 +158,12 @@ it('testlazyForEachOnDataAdd_static_0003', Level.LEVEL0, async () => {
       }
       let callback3: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("eventData.data.result3 result is: " +
-        ((eventData.data) as ESObject)?.getProperty('result3').toBoolean());
+        ((eventData.data) as ESObject).getProperty('result3').toBoolean());
         try {
           console.info("callback3 success");
           console.info("Lazy_103 eventData.data.result3 result is: " +
-          ((eventData.data) as ESObject)?.getProperty('result3').toBoolean());
-          expect(((eventData.data) as ESObject)?.getProperty('result3').toBoolean()).assertEqual(true);
+          ((eventData.data) as ESObject).getProperty('result3').toBoolean());
+          expect(((eventData.data) as ESObject).getProperty('result3').toBoolean()).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0003 END');
         } catch (err) {
           console.info("Lazy_103 on events_emitter err : " + JSON.stringify(err));
@@ -187,7 +187,7 @@ it('testlazyForEachOnDataAdd_static_0003', Level.LEVEL0, async () => {
      * @tc.desc     testlazyForEachOnDataAdd_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testlazyForEachOnDataAdd_static_0004', Level.LEVEL0, async () => {
+it('testlazyForEachOnDataAdd_static_0004', Level.LEVEL0, async (): Promise<void> => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0004 START');
 
       let innerEvent4: events_emitter.InnerEvent = {
@@ -196,12 +196,12 @@ it('testlazyForEachOnDataAdd_static_0004', Level.LEVEL0, async () => {
       }
       let callback4: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("eventData.data.result4 result is: " +
-        ((eventData.data) as ESObject)?.getProperty('result4').toBoolean());
+        ((eventData.data) as ESObject).getProperty('result4').toBoolean());
         try {
           console.info("callback4 success");
           console.info("Lazy_104 eventData.data.result4 result is: " +
-          ((eventData.data) as ESObject)?.getProperty('result4').toBoolean());
-          expect(((eventData.data) as ESObject)?.getProperty('result4').toBoolean()).assertEqual(true);
+          ((eventData.data) as ESObject).getProperty('result4').toBoolean());
+          expect(((eventData.data) as ESObject).getProperty('result4').toBoolean()).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0004 END');
         } catch (err) {
           console.info("Lazy_104 on events_emitter err : " + JSON.stringify(err));

@@ -52,6 +52,22 @@ struct LinearAccelerometer {
       // 打开线性加速度传感器
       Logger.info(TAG, 'enter')
       try {
+        const sensorList: sensor.Sensor[] = sensor.getSingleSensorByDeviceSync(sensor.SensorId.LINEAR_ACCELEROMETER);
+        Logger.info(TAG, `sensorList.length: ${sensorList.length}`);
+        if (sensorList.length > 0) {
+          Logger.info(TAG, `isMockSensor: ${sensorList[0].isMockSensor}`);
+          if (sensorList[0].isMockSensor == true) {
+            this.isHave = false;
+            this.Vue = false;
+            promptAction.showToast({
+              message: '当前设备无线性加速度传感器为模拟传感器'
+            })
+            router.back({
+              url: 'pages/Sensor/Sensor_index',
+              params: { result: 'true ', title: this.name }
+            })
+          }
+        }
         sensor.on(sensor.SensorId.LINEAR_ACCELEROMETER, (data: sensor.LinearAccelerometerResponse) => {
           this.backCount += 1;
           Logger.info(TAG, 'Succeeded in getting the LinearAccelerometer: ' + data.x);

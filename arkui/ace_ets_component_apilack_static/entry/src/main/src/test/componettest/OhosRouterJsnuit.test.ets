@@ -44,14 +44,14 @@ import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function OhosRouterJsunit() {
+export default function OhosRouterJsunit(): void {
   describe('ohosRouterTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/ohosRouterA_y',
       }
@@ -70,7 +70,7 @@ export default function OhosRouterJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("ohosRouter after each called");
     });
@@ -83,7 +83,7 @@ export default function OhosRouterJsunit() {
      * @tc.desc     ohosRouterTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_001', Level.LEVEL0, async () => {
+it('ohosRouterTest_static_001', Level.LEVEL0, async (): Promise<void> => {
       console.info('[ohosRouterTest001] START');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/ohosRouterA_y',
@@ -111,7 +111,7 @@ it('ohosRouterTest_static_001', Level.LEVEL0, async () => {
      * @tc.desc     ohosRouterTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_002', Level.LEVEL0, async () => {
+it('ohosRouterTest_static_002', Level.LEVEL0, async (): Promise<void> => {
       console.info('[ohosRouterTest002] START');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
@@ -123,9 +123,9 @@ it('ohosRouterTest_static_002', Level.LEVEL0, async () => {
         console.error("[ohosRouterTest002] push page error " + JSON.stringify(err));
       }
       await Utils.sleep(1500);
-      let callback = (paramsEvent: events_emitter.EventData) => {
+      let callback = (paramsEvent: events_emitter.EventData): void => {
         console.info("[ohosRouterTest002] get state result is: " + JSON.stringify(paramsEvent));
-        expect(((paramsEvent.data) as ESObject)?.getProperty('params').toString()).assertEqual('B Page');
+        expect(((paramsEvent.data) as ESObject).getProperty('params').toString()).assertEqual('B Page');
       }
       let paramsEvent: events_emitter.InnerEvent = {
         eventId: 142,
@@ -152,7 +152,7 @@ it('ohosRouterTest_static_002', Level.LEVEL0, async () => {
      * @tc.desc     ohosRouterTest_static_003
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_003', Level.LEVEL0, async () => {
+it('ohosRouterTest_static_003', Level.LEVEL0, async (): Promise<void> => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       console.info('[ohosRouterTest003] START');
       await Utils.sleep(1000);
@@ -173,7 +173,7 @@ it('ohosRouterTest_static_003', Level.LEVEL0, async () => {
      * @tc.desc     ohosRouterTest_static_004
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_004', Level.LEVEL0, async () => {
+it('ohosRouterTest_static_004', Level.LEVEL0, async (): Promise<void> => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       console.info('[ohosRouterTest004] START');
       routerInstance.clear();
@@ -209,7 +209,7 @@ it('ohosRouterTest_static_004', Level.LEVEL0, async () => {
      * @tc.desc     ohosRouterTest_static_005
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_005', Level.LEVEL0, async () => {
+it('ohosRouterTest_static_005', Level.LEVEL0, async (): Promise<void> => {
       console.info('[ohosRouterTest005] START');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
@@ -223,9 +223,9 @@ it('ohosRouterTest_static_005', Level.LEVEL0, async () => {
       await Utils.sleep(1000);
       routerInstance.clear();
       await Utils.sleep(1500);
-      let callback = (paramsEvent: events_emitter.EventData) => {
+      let callback = (paramsEvent: events_emitter.EventData): void => {
         console.info("[ohosRouterTest005] get state result is: " + JSON.stringify(paramsEvent));
-        expect(((paramsEvent.data) as ESObject)?.getProperty('params').toString()).assertEqual('B Page');
+        expect(((paramsEvent.data) as ESObject).getProperty('params').toString()).assertEqual('B Page');
       }
       let paramsEvent: events_emitter.InnerEvent = {
         eventId: 142,
@@ -250,7 +250,7 @@ it('ohosRouterTest_static_005', Level.LEVEL0, async () => {
      * @tc.desc     ohosRouterTest_static_006
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_006', Level.LEVEL0, async () => {
+it('ohosRouterTest_static_006', Level.LEVEL0, async (): Promise<void> => {
       console.info('[ohosRouterTest006] START');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
@@ -264,9 +264,9 @@ it('ohosRouterTest_static_006', Level.LEVEL0, async () => {
       await Utils.sleep(1000);
       routerInstance.clear();
       await Utils.sleep(1500);
-      let callback = (paramsEvent: events_emitter.EventData) => {
+      let callback = (paramsEvent: events_emitter.EventData): void => {
         console.info("[ohosRouterTest006] get state result is: " + JSON.stringify(paramsEvent));
-        expect(((paramsEvent.data) as ESObject)?.getProperty('params').toString()).assertEqual('B Page');
+        expect(((paramsEvent.data) as ESObject).getProperty('params').toString()).assertEqual('B Page');
       }
       let paramsEvent: events_emitter.InnerEvent = {
         eventId: 142,
@@ -290,7 +290,7 @@ it('ohosRouterTest_static_006', Level.LEVEL0, async () => {
      * @tc.desc     ohosRouterTest_static_008
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_008', Level.LEVEL0, async () => {
+it('ohosRouterTest_static_008', Level.LEVEL0, async (): Promise<void> => {
       console.info('[ohosRouterTest008] START');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
@@ -304,9 +304,9 @@ it('ohosRouterTest_static_008', Level.LEVEL0, async () => {
       await Utils.sleep(1000);
       routerInstance.clear();
       await Utils.sleep(1500);
-      let callback = (paramsEvent: events_emitter.EventData) => {
+      let callback = (paramsEvent: events_emitter.EventData): void => {
         console.info("[ohosRouterTest008] get state result is: " + JSON.stringify(paramsEvent));
-        expect(((paramsEvent.data) as ESObject)?.getProperty('params').toString()).assertEqual('B Page');
+        expect(((paramsEvent.data) as ESObject).getProperty('params').toString()).assertEqual('B Page');
       }
       let paramsEvent: events_emitter.InnerEvent = {
         eventId: 142,
@@ -330,7 +330,7 @@ it('ohosRouterTest_static_008', Level.LEVEL0, async () => {
      * @tc.desc     ohosRouterTest_static_007
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_007', Level.LEVEL0, async () => {
+it('ohosRouterTest_static_007', Level.LEVEL0, async (): Promise<void> => {
       console.info('[ohosRouterTest007] START');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
@@ -344,9 +344,9 @@ it('ohosRouterTest_static_007', Level.LEVEL0, async () => {
       await Utils.sleep(1000);
       routerInstance.clear();
       await Utils.sleep(1500);
-      let callback = (paramsEvent: events_emitter.EventData) => {
+      let callback = (paramsEvent: events_emitter.EventData): void => {
         console.info("[ohosRouterTest007] get state result is: " + JSON.stringify(paramsEvent));
-        expect(((paramsEvent.data) as ESObject)?.getProperty('params')).assertEqual('B Page');
+        expect(((paramsEvent.data) as ESObject).getProperty('params')).assertEqual('B Page');
       }
       let paramsEvent: events_emitter.InnerEvent = {
         eventId: 142,
@@ -369,7 +369,7 @@ it('ohosRouterTest_static_007', Level.LEVEL0, async () => {
      * @tc.desc     ohosRouterTest_static_009
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_009', Level.LEVEL0, async () => {
+it('ohosRouterTest_static_009', Level.LEVEL0, async (): Promise<void> => {
       console.info('[ohosRouterTest009] START');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
@@ -383,9 +383,9 @@ it('ohosRouterTest_static_009', Level.LEVEL0, async () => {
       await Utils.sleep(1000);
       routerInstance.clear();
       await Utils.sleep(1500);
-      let callback = (paramsEvent: events_emitter.EventData) => {
+      let callback = (paramsEvent: events_emitter.EventData): void => {
         console.info("[ohosRouterTest009] get state result is: " + JSON.stringify(paramsEvent));
-        expect(((paramsEvent.data) as ESObject)?.getProperty('params')).assertEqual('B Page');
+        expect(((paramsEvent.data) as ESObject).getProperty('params')).assertEqual('B Page');
       }
       let paramsEvent: events_emitter.InnerEvent = {
         eventId: 142,

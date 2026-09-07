@@ -488,7 +488,9 @@ export default class EntryAbility extends Ability {
           };
           commonEvent.publish('ACTS_CALL_EVENT', commonEventData, (err) => {
             console.log('====>Acts_SingleInstanceCallFunction_1000 publish err:' + JSON.stringify(err));
-            globalThis.terminate();
+            setTimeout(()=>{
+              globalThis.terminate();
+            }, 500)
           })
         }).catch((err) => {
           console.info('====>Acts_SingleInstanceCallFunction_1000 callWithResult err:' + JSON.stringify(err));

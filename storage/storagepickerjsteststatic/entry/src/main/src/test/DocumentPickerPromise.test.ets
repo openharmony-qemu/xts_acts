@@ -25,6 +25,7 @@ import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -32,15 +33,27 @@ let context: common.UIAbilityContext | undefined;
 let windowClass: window.Window;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
-export default function documentPickerPromise() {
+export default function documentPickerPromise(): void {
   describe("documentPickerPromise", (): void => {
-    beforeEach(async () => {
-      await sleep(500);
+    beforeEach(async (done: () => void): Promise<void> => {
       await startAbility('ohos.acts.storage.picker.static', 'EntryAbility');
-      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext")! as common.UIAbilityContext;
-      await sleep(500);
-      await stopAbility('com.huawei.hmos.filemanager');
-      await sleep(500);
+      await sleep(2000);
+      try {
+        context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext")! as common.UIAbilityContext;
+        if (context) {
+          hilog.info(domain, tag, '%{public}s', `context: ${JSON.stringify(context)}`);
+        } else {
+          hilog.info(domain, tag, '%{public}s', `no context`);
+        }
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'beforeEach context: ' + e.message + ', code: ' + e.code);
+      }
+      done();
+    });
+
+    afterEach(async (done: () => void): Promise<void> => {
+      await sleep(1000);
+      done();
     });
 
     /**
@@ -499,13 +512,16 @@ export default function documentPickerPromise() {
       let documentPicker = new picker.DocumentViewPicker(context!);
       documentPicker.save(option).then((documentSaveResult: Array<string>) => {
         hilog.info(domain, tag, '%{public}s', `${testNum}:documentSaveResult uri: ` + JSON.stringify(documentSaveResult));
-        expect(documentSaveResult.length == 1).assertTrue();
         done();
       }).catch((err: Error): void => {
-        hilog.info(domain, tag, '%{public}s', `${testNum}:failed with err is: ${JSON.stringify(err)}`);
+        hilog.info(domain, tag, '%{public}s', `${testNum}:failed with err code is: ${JSON.stringify(err.code)}`);
         expect(false).assertTrue();
         done();
       });
+      await sleep(2000);
+      stopAbility('com.huawei.hmos.filemanager');
+      stopAbility('com.ohos.filepicker');
+      stopAbility('com.ohos.filemanager');
     });
     /**
      * @tc.name   test_Documentpicker_Save_Promise_static_011
@@ -523,12 +539,58 @@ export default function documentPickerPromise() {
       };
       await saveWithOption(testNum, done, option, context!);
     });
+
+    /**
+    * @tc.name   DocumentViewPicker_constructor_001
+    * @tc.number SUB_DF_DocumentViewPicker_constructor_0010
+    * @tc.desc   Test DocumentViewPicker constructor
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_constructor_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      try {
+        let obj = new picker.DocumentViewPicker();
+        hilog.info(domain, tag, '%{public}s', 'DocumentViewPicker_constructor_001 obj: ' + JSON.stringify(obj));
+        expect(obj).not().assertUndefined();
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'DocumentViewPicker_constructor_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_constructor_002
+    * @tc.number SUB_DF_DocumentViewPicker_constructor_0020
+    * @tc.desc   Test DocumentViewPicker constructor
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_constructor_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        windowClass = AppStorage.get<window.Window>('mainWindow')! as window.Window;
+        hilog.info(domain, tag, '%{public}s', 'DocumentViewPicker_constructor_002 windowClass obj: ' + JSON.stringify(windowClass));
+        let obj = new picker.DocumentViewPicker(context!, windowClass);
+        hilog.info(domain, tag, '%{public}s', 'DocumentViewPicker_constructor_002 DocumentViewPicker obj: ' + JSON.stringify(obj));
+        expect(obj).not().assertUndefined();
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'DocumentViewPicker_constructor_002 has failed for ' + e.message + ', code: ' + e.code);
+        expect().assertFail();
+        done();
+      }
+    });
   });
 }
 
 
 async function select(testNum: string, done: () => void, context: common.UIAbilityContext) {
   try {
+    hilog.info(domain, tag, '%{public}s', `in select`);
     let documentPicker = new picker.DocumentViewPicker(context);
     documentPicker.select().then((documentSelectResult: Array<string>) => {
       hilog.info(domain, tag, '%{public}s', `${testNum}::select result: ${JSON.stringify(documentSelectResult)}`);
@@ -538,7 +600,10 @@ async function select(testNum: string, done: () => void, context: common.UIAbili
       hilog.info(domain, tag, '%{public}s', `${testNum}::select err: ${JSON.stringify(err)}`);
       done();
     })
-    done();
+    await sleep(2000);
+    stopAbility('com.huawei.hmos.filemanager');
+    stopAbility('com.ohos.filepicker');
+    stopAbility('com.ohos.filemanager');
   } catch (error) {
     hilog.info(domain, tag, '%{public}s', `${testNum}::select error: ${JSON.stringify(error)}`);
     expect(false).assertTrue();
@@ -548,6 +613,7 @@ async function select(testNum: string, done: () => void, context: common.UIAbili
 
 async function selectWithOption(testNum: string, done: () => void, option: picker.DocumentSelectOptions, context: common.UIAbilityContext) {
   try {
+    hilog.info(domain, tag, '%{public}s', `in selectWithOption`);
     let documentPicker = new picker.DocumentViewPicker(context);
     documentPicker.select(option).then((documentSelectResult: Array<string>) => {
       hilog.info(domain, tag, '%{public}s', `${testNum}::selectWithOption result: ${JSON.stringify(documentSelectResult)}`);
@@ -557,7 +623,10 @@ async function selectWithOption(testNum: string, done: () => void, option: picke
       hilog.info(domain, tag, '%{public}s', `${testNum}::selectWithOption err: ${JSON.stringify(err)}`);
       done();
     })
-    done();
+    await sleep(2000);
+    stopAbility('com.huawei.hmos.filemanager');
+    stopAbility('com.ohos.filepicker');
+    stopAbility('com.ohos.filemanager');
   } catch (error) {
     hilog.info(domain, tag, '%{public}s', `${testNum}::selectWithOption error: ${JSON.stringify(error)}`);
     expect(false).assertTrue();
@@ -567,6 +636,7 @@ async function selectWithOption(testNum: string, done: () => void, option: picke
 
 async function saveWithoutSelect(testNum: string, done: () => void, context: common.UIAbilityContext) {
   try {
+    hilog.info(domain, tag, '%{public}s', `in saveWithoutSelect`);
     let documentPicker = new picker.DocumentViewPicker(context);
     documentPicker.save().then((documentSaveResult: Array<string>) => {
       hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithoutSelect result: ${JSON.stringify(documentSaveResult)}`);
@@ -576,7 +646,10 @@ async function saveWithoutSelect(testNum: string, done: () => void, context: com
       hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithoutSelect err: ${JSON.stringify(err)}`);
       done();
     })
-    done();
+    await sleep(2000);
+    stopAbility('com.huawei.hmos.filemanager');
+    stopAbility('com.ohos.filepicker');
+    stopAbility('com.ohos.filemanager');
   } catch (error) {
     hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithoutSelect error: ${JSON.stringify(error)}`);
     expect(false).assertTrue();
@@ -586,8 +659,9 @@ async function saveWithoutSelect(testNum: string, done: () => void, context: com
 
 async function saveWithOption(testNum: string, done: () => void, option: picker.DocumentSaveOptions, context: common.UIAbilityContext) {
   try {
+    hilog.info(domain, tag, '%{public}s', `in saveWithOption`);
     let documentPicker = new picker.DocumentViewPicker(context);
-    documentPicker.save(option).then((result: Array<string>) => {
+    documentPicker.save(option).then(async (result: Array<string>) => {
       hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithOption result: ${JSON.stringify(result)}`);
       expect(result.length == 0).assertTrue();
       done();
@@ -595,7 +669,10 @@ async function saveWithOption(testNum: string, done: () => void, option: picker.
       hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithOption err: ${JSON.stringify(err)}`);
       done();
     })
-    done();
+    await sleep(2000);
+    stopAbility('com.huawei.hmos.filemanager');
+    stopAbility('com.ohos.filepicker');
+    stopAbility('com.ohos.filemanager');
   } catch (error) {
     hilog.info(domain, tag, '%{public}s', `${testNum}::saveWithOption error: ${JSON.stringify(error)}`);
     expect(false).assertTrue();

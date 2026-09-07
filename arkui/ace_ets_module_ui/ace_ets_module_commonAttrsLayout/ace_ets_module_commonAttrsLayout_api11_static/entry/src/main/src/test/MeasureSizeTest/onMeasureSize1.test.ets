@@ -21,21 +21,12 @@ import { Driver, ON } from '@ohos.UiTest';
 import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import RectValue from '../../../ets/MainAbility/common/Rect'
 
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+
 
 export default function onMeasureSize1() {
 
-  waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")})
 
 
   let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
@@ -76,7 +67,11 @@ export default function onMeasureSize1() {
 it('onMeasureSize1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[onMeasureSize1_static_001] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get Initial value')
       let text_01: RectValue = CommonFunc.getComponentRect('onMeasureSize1_text_01') as RectValue;

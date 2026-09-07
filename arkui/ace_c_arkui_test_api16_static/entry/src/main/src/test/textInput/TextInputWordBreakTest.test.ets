@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level, beforeAll } from '../../../../hypium/index';
+import { expect, describe, it, afterEach, Level } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import { LibUtil } from '../../../ets/pages/LibUtil'
-import { UtilsTest } from '../Util.test'
 
 let libUtil: LibUtil = new LibUtil();
 
 export default function textInputWordBreakTest() {
 
   describe('textInputWordBreakTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api16.static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('textInputWordBreakTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     

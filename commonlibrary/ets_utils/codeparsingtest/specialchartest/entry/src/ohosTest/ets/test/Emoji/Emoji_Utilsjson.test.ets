@@ -39,7 +39,7 @@ export default function demoEmojiUtilJsonTest() {
     })
     /**
      * @tc.name   testparseEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_0100
      * @tc.desc   Test the Utils interface parse with input emoji \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -61,7 +61,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testparseEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_0200
      * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udc64.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -83,7 +83,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testparseEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_0300
      * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udc6b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testparseEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_0400
      * @tc.desc   Test the Utils interface parse with input emoji \u260e.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testparseEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_0500
      * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -149,7 +149,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testparseEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_0600
      * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udd5b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -171,7 +171,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testparseEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_0700
      * @tc.desc   Test the Utils interface parse with input emoji \ud83c\udf4f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -193,7 +193,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testparseEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_0800
      * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udd03.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -215,7 +215,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testparseEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_0900
      * @tc.desc   Test the Utils interface parse with input emoji \ud83c\udf41.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -237,7 +237,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testparseEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_1000
      * @tc.desc   Test the Utils interface parse with input emoji \u2666.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -259,7 +259,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testparseEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_1100
      * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udc48.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -281,7 +281,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testparseEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_EMOJI_1200
      * @tc.desc   Test the Utils interface parse with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -303,7 +303,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testUtilJsonRemoveEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_1300
      * @tc.desc   Test the function of the Interface emoji  😊  \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -324,7 +324,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_1400
      * @tc.desc   Test the function of the Interface emoji  👤  \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -345,7 +345,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_1500
      * @tc.desc   Test the function of the Interface emoji  👫  \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -366,7 +366,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_1600
      * @tc.desc   Test the function of the Interface emoji  ☎  \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -387,7 +387,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_1700
      * @tc.desc   Test the function of the Interface emoji  👹  \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -408,7 +408,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_1800
      * @tc.desc   Test the function of the Interface emoji  🕛  \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -429,7 +429,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_1900
      * @tc.desc   Test the function of the Interface emoji  🍏  \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -450,7 +450,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_2000
      * @tc.desc   Test the function of the Interface emoji  🔃  \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -471,7 +471,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_2100
      * @tc.desc   Test the function of the Interface emoji  🍁  \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -492,7 +492,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_2200
      * @tc.desc   Test the function of the Interface emoji  ♦   \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -513,7 +513,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_2300
      * @tc.desc   Test the function of the Interface emoji  👈  \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -534,7 +534,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_EMOJI_2400
      * @tc.desc   Test the function of the Interface emoji  🤼‍♂️ \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -554,7 +554,7 @@ export default function demoEmojiUtilJsonTest() {
     });
     /**
      * @tc.name   testUtilJsonHasEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_2500
      * @tc.desc   Test the function of the Interface emoji  😊  \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -574,7 +574,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_2600
      * @tc.desc   Test the function of the Interface emoji  👤  \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -594,7 +594,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_2700
      * @tc.desc   Test the function of the Interface emoji  👫  \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -614,7 +614,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_2800
      * @tc.desc   Test the function of the Interface emoji  ☎  \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -634,7 +634,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_2900
      * @tc.desc   Test the function of the Interface emoji  👹  \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -654,7 +654,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_3000
      * @tc.desc   Test the function of the Interface emoji  🕛  \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -674,7 +674,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_3100
      * @tc.desc   Test the function of the Interface emoji  🍏  \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -694,7 +694,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_3200
      * @tc.desc   Test the function of the Interface emoji  🔃  \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -714,7 +714,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_3300
      * @tc.desc   Test the function of the Interface emoji  🍁  \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -734,7 +734,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_3400
      * @tc.desc   Test the function of the Interface emoji  ♦   \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -754,7 +754,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_3500
      * @tc.desc   Test the function of the Interface emoji  👈  \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -774,7 +774,7 @@ export default function demoEmojiUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_3600
      * @tc.desc   Test the function of the Interface emoji  🤼‍♂️ \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

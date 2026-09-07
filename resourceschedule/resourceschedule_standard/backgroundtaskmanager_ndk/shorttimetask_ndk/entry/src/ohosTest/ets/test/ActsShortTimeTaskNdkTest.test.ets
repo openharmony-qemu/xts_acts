@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium'
-import shortTimeTaskNdk from 'libshorttimetaskndk.so'
+import * as shortTimeTaskNdk from 'libshorttimetaskndk.so'
 
 export default function ActsShortTimeTaskNdkTest() {
   describe('ActsShortTimeTaskNdkTest', () => {
@@ -121,9 +121,38 @@ export default function ActsShortTimeTaskNdkTest() {
         let requestId: number = shortTimeTaskNdk.RequestSuspendDelayWithReasonIsNull();
         console.log("SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelayWithReasonIsNull_0100 requestId: " + requestId);
         expect(requestId).assertLarger(0);
+        shortTimeTaskNdk.CancelSuspendDelay();
         done()
       } catch (err) {
         console.error("SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelayWithReasonIsNull_0100 catch err: " + err);
+        shortTimeTaskNdk.CancelSuspendDelay();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Resourceschedule_ShortTimeTask_GetRemainingDelayTime_0200
+     * @tc.number SUB_Resourceschedule_ShortTimeTask_GetRemainingDelayTime_0200
+     * @tc.desc   GetRemainingDelayTime with nullptr delayTime pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Resourceschedule_ShortTimeTask_GetRemainingDelayTime_0200', Level.LEVEL3, async (done: Function) => {
+      try {
+        console.info("====>SUB_Resourceschedule_ShortTimeTask_GetRemainingDelayTime_0200 start====");
+        shortTimeTaskNdk.CancelSuspendDelay();
+        let requestId: number = shortTimeTaskNdk.RequestSuspendDelay();
+        console.log("SUB_Resourceschedule_ShortTimeTask_GetRemainingDelayTime_0200 requestId: " + requestId);
+        expect(requestId).assertLarger(0);
+        let res: number = shortTimeTaskNdk.GetRemainingDelayTimeWithNull();
+        console.log("SUB_Resourceschedule_ShortTimeTask_GetRemainingDelayTime_0200 res: " + res);
+        expect(res != 0).assertTrue();
+        shortTimeTaskNdk.CancelSuspendDelay();
+        done()
+      } catch (err) {
+        console.error("SUB_Resourceschedule_ShortTimeTask_GetRemainingDelayTime_0200 catch err: " + err);
+        shortTimeTaskNdk.CancelSuspendDelay();
         done()
       }
     })

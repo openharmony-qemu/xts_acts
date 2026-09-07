@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, Point } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 export default function HoveredAttributeTest(): void {
   describe('HoveredAttributeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api24.static", "EntryAbility");
-    });
 
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -50,8 +46,12 @@ export default function HoveredAttributeTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
       console.info("[HoveredAttributeTest] afterEach called");
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+      }
     });
 
     /**
@@ -63,6 +63,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('applyHoveredAttributeHoverTest', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_APPLYHOVEREDATTRIBUTE_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -92,7 +93,12 @@ export default function HoveredAttributeTest(): void {
       expect(normalColor).assertEqual('#FF000000');
 
       console.info('[SUB_ACE_ARKUI_APPLYHOVEREDATTRIBUTE_0100] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -104,6 +110,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('applyHoveredAttributeStateSwitch', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_APPLYHOVEREDATTRIBUTE_0200] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -128,7 +135,12 @@ export default function HoveredAttributeTest(): void {
       }
 
       console.info('[SUB_ACE_ARKUI_APPLYHOVEREDATTRIBUTE_0200] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -140,6 +152,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('applyHoveredAttributeInitialColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_APPLYHOVEREDATTRIBUTE_0300] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -156,7 +169,12 @@ export default function HoveredAttributeTest(): void {
       expect(initialColor).assertEqual('#FF000000');
 
       console.info('[SUB_ACE_ARKUI_APPLYHOVEREDATTRIBUTE_0300] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -168,6 +186,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('applyHoveredAttributeMoveOut', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_APPLYHOVEREDATTRIBUTE_0400] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -189,7 +208,12 @@ export default function HoveredAttributeTest(): void {
       expect(normalColor).assertEqual('#FF000000');
 
       console.info('[SUB_ACE_ARKUI_APPLYHOVEREDATTRIBUTE_0400] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -201,6 +225,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('stateStylesHoveredHoverTest', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -229,7 +254,12 @@ export default function HoveredAttributeTest(): void {
       expect(normalColor).assertEqual('#FF0000FF');
 
       console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0100] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -241,6 +271,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('stateStylesHoveredStateSwitch', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0200] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -265,7 +296,12 @@ export default function HoveredAttributeTest(): void {
       }
 
       console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0200] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -277,6 +313,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('stateStylesHoveredInitialColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0300] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -293,7 +330,12 @@ export default function HoveredAttributeTest(): void {
       expect(initialColor).assertEqual('#FF0000FF');
 
       console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0300] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -305,6 +347,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('stateStylesHoveredMoveOut', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0400] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -326,7 +369,12 @@ export default function HoveredAttributeTest(): void {
       expect(normalColor).assertEqual('#FF0000FF');
 
       console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0400] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -338,6 +386,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('onHoverHoveredHoverTest', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -369,7 +418,12 @@ export default function HoveredAttributeTest(): void {
       expect(normalColor).assertEqual('#FF008000');
 
       console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0100] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -381,6 +435,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('onHoverHoveredStateSwitch', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0200] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -405,7 +460,12 @@ export default function HoveredAttributeTest(): void {
       }
 
       console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0200] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -417,6 +477,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('onHoverHoveredRemove', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0300] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -438,7 +499,12 @@ export default function HoveredAttributeTest(): void {
       expect(hoverColor).assertEqual('#FF008000');
 
       console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0300] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -450,6 +516,7 @@ export default function HoveredAttributeTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('onHoverHoveredNormalState', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0400] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -466,7 +533,12 @@ export default function HoveredAttributeTest(): void {
       expect(normalColor).assertEqual('#FF008000');
 
       console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0400] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
   });
 }

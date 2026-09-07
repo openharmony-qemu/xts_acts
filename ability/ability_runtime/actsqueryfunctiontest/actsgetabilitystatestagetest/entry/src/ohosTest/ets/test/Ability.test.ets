@@ -20,7 +20,7 @@ import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from "@ohos.base";
 import { Driver, ON, Component} from '@kit.TestKit';
-
+import hilog from '@ohos.hilog';
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 let subscriberInfo_MainAbility: commonEvent.CommonEventSubscribeInfo = {
   events: ["GetCurrentTopAbility"],
@@ -273,6 +273,28 @@ export default function abilityTest() {
           console.log("====>startAbility_0600 err:" + JSON.stringify(err));
         })
       })
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetAbilityState_0700
+     * @tc.number SUB_Ability_AbilityRuntime_GetAbilityState_0700
+     * @tc.desc   Verify the BACKGROUND enum value is 3 in AbilityLifecycleState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_GetAbilityState_0700', Level.LEVEL0, async (done: Function) => {
+      let TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_GetAbilityState_0700';
+      hilog.info(0x0000, 'testTag', TEST_CASE_NAME + 'it begin');
+      expect(AbilityDelegatorRegistry.AbilityLifecycleState.BACKGROUND).assertEqual(3);
+      expect(AbilityDelegatorRegistryOld.AbilityLifecycleState.BACKGROUND).assertEqual(3);
+      let state = AbilityDelegatorRegistry.AbilityLifecycleState.BACKGROUND;
+      let stateOld = AbilityDelegatorRegistryOld.AbilityLifecycleState.BACKGROUND;
+      expect(state).assertEqual(stateOld);
+      expect(state).assertLarger(AbilityDelegatorRegistry.AbilityLifecycleState.FOREGROUND);
+      expect(state).assertLess(AbilityDelegatorRegistry.AbilityLifecycleState.DESTROY);
+      hilog.info(0x0000, 'testTag', TEST_CASE_NAME + 'it end');
+      done();
     })
   })
 }

@@ -73,9 +73,7 @@ export default function BooleanValueOfInstanceTest(): void {
      */
     it("testBooleanValueOfRequiresInstanceCallCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let instance = new Boolean(true);
-      let result = instance.valueOf();
-      expect(typeof result).assertEqual("boolean");
-      expect(result).assertEqual(true);
+      expect(instance.valueOf()).assertEqual(true);
     })
 
     /**
@@ -344,8 +342,9 @@ export default function BooleanValueOfInstanceTest(): void {
      */
     it("testBooleanValueOfMethodExistsOnInstance", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let instance = new Boolean(true);
-      expect(typeof instance.valueOf).assertEqual("function");
-      expect(instance.valueOf()).assertEqual(true);
+      let result = instance.valueOf();
+      expect(typeof result).assertEqual("boolean");
+      expect(result).assertEqual(true);
     })
 
     /**

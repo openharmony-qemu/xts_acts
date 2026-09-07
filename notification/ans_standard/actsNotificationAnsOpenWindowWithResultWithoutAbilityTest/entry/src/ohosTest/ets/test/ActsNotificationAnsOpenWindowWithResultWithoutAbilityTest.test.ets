@@ -24,7 +24,7 @@ let ctx = getContext(this) as common.UIAbilityContext;
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }

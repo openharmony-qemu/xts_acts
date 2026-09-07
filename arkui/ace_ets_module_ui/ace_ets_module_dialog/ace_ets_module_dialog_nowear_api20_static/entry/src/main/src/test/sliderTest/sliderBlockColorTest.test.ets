@@ -16,30 +16,18 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { Color,$r } from '@ohos.arkui.component'
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
 
 export default function SliderBlockColorTest() {
   describe('sliderBlockColorTest', () => {
     const SLEEP_TIME_1000 = 1000;
-    beforeAll(async (): Promise<void> => {
-      console.info("sliderBlockColorTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api20.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("sliderBlockColorTest beforeEach start");
       try {
@@ -68,7 +56,11 @@ export default function SliderBlockColorTest() {
     it('SliderBlockColorTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'SliderBlockColorTest_static_0100';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('SliderBlockColorTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('slider001');
       let obj = JSON.parseJsonElement(strJson).getElement('$attrs').getString('linerGradientBlockColor');
       console.info('SliderBlockColorTest_static_0100 content:'+ obj);
@@ -93,7 +85,11 @@ export default function SliderBlockColorTest() {
     it('SliderBlockColorTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'SliderBlockColorTest_static_0200';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('SliderBlockColorTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('slider002');
       let obj = JSON.parseJsonElement(strJson);
       let colorStr = obj.getElement('$attrs').getString('linerGradientBlockColor');
@@ -112,7 +108,11 @@ export default function SliderBlockColorTest() {
     it('SliderBlockColorTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'SliderBlockColorTest_static_0300';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('SliderBlockColorTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('slider003');
       let obj = JSON.parseJsonElement(strJson);
       let colorStr = obj.getElement('$attrs').getString('linerGradientBlockColor');

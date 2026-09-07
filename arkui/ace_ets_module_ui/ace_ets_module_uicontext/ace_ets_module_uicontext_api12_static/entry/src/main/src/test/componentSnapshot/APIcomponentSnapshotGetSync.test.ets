@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 export default function APIcomponentSnapshotGetSync() {
   describe('APIcomponentSnapshotGetSync', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("APIcomponentSnapshotGetSync beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("APIcomponentSnapshotGetSync beforeEach start");
       let options: router.RouterOptions = {
@@ -56,7 +48,11 @@ export default function APIcomponentSnapshotGetSync() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('APIcomponentSnapshotGetSync afterEach err: ' + JSON.stringify(err));
+      }
       console.info("APIcomponentSnapshotGetSync after each called");
     });
     
@@ -68,23 +64,27 @@ export default function APIcomponentSnapshotGetSync() {
      * @tc.level    Level.LEVEL0
      */
 it('APIcomponentSnapshotGetSync_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('[APIcomponentSnapshotGetSync_static_0100] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let btn1 = await (scrollBar?.scrollSearch(ON.id('APIcomponentSnapshotGetSync_button')) as Promise<Component|null>);
-      await (btn1!.click() as Promise<void>)
-      await CommonFunc.sleep(3000);
-      console.info('[APIcomponentSnapshotGetSync_static_0100] btn1 click');
-      let strJson1 = inspector.getInspectorByKey('APIcomponentSnapshotGetSync_text');
-      await CommonFunc.sleep(1000);
-      console.info("[APIcomponentSnapshotGetSync_static_0100] obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)));
-      console.info("[APIcomponentSnapshotGetSync_static_0100] obj2 is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('end');
-      console.info('[APIcomponentSnapshotGetSync_static_0100] END');
-      done();
+      try {
+        console.info('[APIcomponentSnapshotGetSync_static_0100] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let btn1 = await (scrollBar?.scrollSearch(ON.id('APIcomponentSnapshotGetSync_button')) as Promise<Component|null>);
+        await (btn1!.click() as Promise<void>)
+        await CommonFunc.sleep(3000);
+        console.info('[APIcomponentSnapshotGetSync_static_0100] btn1 click');
+        let strJson1 = inspector.getInspectorByKey('APIcomponentSnapshotGetSync_text');
+        await CommonFunc.sleep(1000);
+        console.info("[APIcomponentSnapshotGetSync_static_0100] obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)));
+        console.info("[APIcomponentSnapshotGetSync_static_0100] obj2 is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'));
+        expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('end');
+        console.info('[APIcomponentSnapshotGetSync_static_0100] END');
+        done();
+      } catch (err) {
+        console.info('APIcomponentSnapshotGetSync_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

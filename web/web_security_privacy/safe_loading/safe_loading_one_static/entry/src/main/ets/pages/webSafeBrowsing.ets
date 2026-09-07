@@ -118,6 +118,30 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               }
               break;
             }
+
+            case 'emitEnableSafeBrowsingNullStatic001': {
+              try {
+                let param: boolean | null = null;
+                this.controller.enableSafeBrowsing(param as boolean);
+                Utils.emitEvent(true, 41021701)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41021701)
+              }
+              break;
+            }
+
+            case 'emitEnableSafeBrowsingUndefinedStatic001': {
+              try {
+                let param: boolean | undefined = undefined;
+                this.controller.enableSafeBrowsing(param as boolean);
+                Utils.emitEvent(true, 41021702)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41021702)
+              }
+              break;
+            }
           }
         })
 

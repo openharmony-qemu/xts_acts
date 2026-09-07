@@ -833,6 +833,57 @@ export default function BackgroundTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_1900 end---');
       })
 
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000
+     * @tc.desc   Test updateDataTransferProgress without KEEP_BACKGROUND_RUNNING permission returns error 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              try {
+                  let progress: backgroundTaskManager.ProgressInfo = {
+                    title: 'NoPermTest',
+                    fileName: 'noperm.dat',
+                    progressValue: 50,
+                  };
+                  let dataTransferProgress: backgroundTaskManager.DataTransferProgress = {
+                    continuousTaskId: 0,
+                    progressInfo: progress,
+                  };
+                  backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000 updateDataTransferProgress success (permission exists)');
+                } catch (err) {
+                  let e: BusinessError = err as BusinessError;
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                  expect(e.code).assertEqual(201);
+                  done();
+                }
+            }).catch((error: BusinessError) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: BusinessError) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000 end---');
+    })
+
   })
 }
 

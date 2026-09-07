@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import commonEvent from '@ohos.commonEvent';
+import commonEvent from '@ohos.commonEventManager';
 import common from '@ohos.app.ability.common';
 import { UIAbility, application} from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -97,7 +97,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1500', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'CreateModuleContext_1500';
       hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start`);
-      let context = AppStorage.get<Context>("abilityContext");
+      let context = AppStorage.get<Context>('abilityContext');
       let moduleName = null;
       try {
         await application.createModuleContext(context,moduleName).then((data: Context)=>{
@@ -126,7 +126,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'CreateModuleContext_1600';
       hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start`);
-      let context = AppStorage.get<Context>("abilityContext");
+      let context = AppStorage.get<Context>('abilityContext');
       let moduleName = undefined;
       try {
         await application.createModuleContext(context,moduleName).then((data: Context)=>{
@@ -155,7 +155,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1700', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'CreateModuleContext_1700';
       hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start`);
-      let context = AppStorage.get<Context>("abilityContext");
+      let context = AppStorage.get<Context>('abilityContext');
       let moduleName = 'x&x';
       try {
         await application.createModuleContext(context,moduleName).then((data: Context)=>{
@@ -184,7 +184,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1800', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'CreateModuleContext_1800';
       hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start`);
-      let context = AppStorage.get<Context>("abilityContext");
+      let context = AppStorage.get<Context>('abilityContext');
       let moduleName = '';
       try {
         await application.createModuleContext(context,moduleName).then((data: Context)=>{

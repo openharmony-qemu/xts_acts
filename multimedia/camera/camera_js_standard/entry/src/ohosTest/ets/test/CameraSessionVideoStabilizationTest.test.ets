@@ -1233,5 +1233,238 @@ export default function cameraSessionVideoStabilizationTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_0600
+     * @tc.desc   Check capture session isVideoStabilizationModeSupported when param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_0600', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_0600"
+      console.info("--------------" + caseName + "--------------");
+
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering " + caseName + " FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        for (let i = 0; i < mCameraNum; i++) {
+          console.info(TAG +
+            "Entering " + caseName + " start for camera[" +
+            i + "]");
+
+          await startCameraSession(i);
+
+          let isVideoStabilizationModeSupported =
+            mCameraSession.isVideoStabilizationModeSupported(null);
+          console.info(TAG +
+            "Entering " + caseName + " finish");
+          if (isVideoStabilizationModeSupported != null || isVideoStabilizationModeSupported != undefined) {
+            console.info(TAG +
+              "Entering " + caseName + " PASSED with isVideoStabilizationModeSupported is: " +
+              isVideoStabilizationModeSupported);
+          } else {
+            console.info(TAG +
+              "Entering " + caseName + " FAILED with isVideoStabilizationModeSupported is: " +
+              isVideoStabilizationModeSupported);
+            expect().assertFail();
+          }
+
+          await stopCameraSession();
+
+          console.info(TAG +
+            "Entering " + caseName + " end for camera[" +
+            i + "]");
+        }
+
+        console.info(TAG +
+          "Entering " + caseName + " ends here");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_0700
+     * @tc.desc   Check capture session isVideoStabilizationModeSupported when param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_0700', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_0700"
+      console.info("--------------" + caseName + "--------------");
+
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering " + caseName + " FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        for (let i = 0; i < mCameraNum; i++) {
+          console.info(TAG +
+            "Entering " + caseName + " start for camera[" +
+            i + "]");
+
+          await startCameraSession(i);
+
+          let isVideoStabilizationModeSupported =
+            mCameraSession.isVideoStabilizationModeSupported(undefined);
+          console.info(TAG +
+            "Entering " + caseName + " finish");
+          if (isVideoStabilizationModeSupported != null || isVideoStabilizationModeSupported != undefined) {
+            console.info(TAG +
+              "Entering " + caseName + " PASSED with isVideoStabilizationModeSupported is: " +
+              isVideoStabilizationModeSupported);
+          } else {
+            console.info(TAG +
+              "Entering " + caseName + " FAILED with isVideoStabilizationModeSupported is: " +
+              isVideoStabilizationModeSupported);
+            expect().assertFail();
+          }
+
+          await stopCameraSession();
+
+          console.info(TAG +
+            "Entering " + caseName + " end for camera[" +
+            i + "]");
+        }
+
+        console.info(TAG +
+          "Entering " + caseName + " ends here");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_0600
+     * @tc.desc   Check capture session setVideoStabilizationMode when param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_0600', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_0600"
+      console.info("--------------" + caseName + "--------------");
+
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering " + caseName + " FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        for (let i = 0; i < mCameraNum; i++) {
+          console.info(TAG +
+            "Entering " + caseName + " start for camera[" +
+            i + "]");
+
+          await startCameraSession(i);
+
+          if (mIsVideoStabilizationModeSupportedArray[i] == true) {
+            mCameraSession.setVideoStabilizationMode(null);
+            console.info(TAG +
+              "Entering " + caseName + " finish");
+            console.info(TAG +
+              "Entering " + caseName + " PASSED with VideoStabilizationMode is: null");
+
+            let vdeoStabilizationMode = mCameraSession.getActiveVideoStabilizationMode();
+            console.info(TAG +
+              "Entering " + caseName + " finish");
+            if (vdeoStabilizationMode == cameraObj.VideoStabilizationMode.OFF) {
+              console.info(TAG +
+                "Entering " + caseName + " PASSED with VideoStabilizationMode is: " +
+                vdeoStabilizationMode);
+            } else {
+              console.info(TAG +
+                "Entering " + caseName + " FAILED with VideoStabilizationMode is: " +
+                vdeoStabilizationMode);
+              expect().assertFail();
+            }
+          } else {
+            console.info(TAG +
+              "Entering " + caseName + " PASSED");
+          }
+
+          await stopCameraSession();
+
+          console.info(TAG +
+            "Entering " + caseName + " end for camera[" + i +
+            "]");
+        }
+
+        console.info(TAG +
+          "Entering " + caseName + " ends here");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_0700
+     * @tc.desc   Check capture session setVideoStabilizationMode when param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_0700', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_0700"
+      console.info("--------------" + caseName + "--------------");
+
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering " + caseName + " FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        for (let i = 0; i < mCameraNum; i++) {
+          console.info(TAG +
+            "Entering " + caseName + " start for camera[" +
+            i + "]");
+
+          await startCameraSession(i);
+
+          if (mIsVideoStabilizationModeSupportedArray[i] == true) {
+            mCameraSession.setVideoStabilizationMode(undefined);
+            console.info(TAG +
+              "Entering " + caseName + " finish");
+            console.info(TAG +
+              "Entering " + caseName + " PASSED with VideoStabilizationMode is: undefined");
+
+            let vdeoStabilizationMode = mCameraSession.getActiveVideoStabilizationMode();
+            console.info(TAG +
+              "Entering " + caseName + " finish");
+            if (vdeoStabilizationMode == cameraObj.VideoStabilizationMode.OFF) {
+              console.info(TAG +
+                "Entering " + caseName + " PASSED with VideoStabilizationMode is: " +
+                vdeoStabilizationMode);
+            } else {
+              console.info(TAG +
+                "Entering " + caseName + " FAILED with VideoStabilizationMode is: " +
+                vdeoStabilizationMode);
+              expect().assertFail();
+            }
+          } else {
+            console.info(TAG +
+              "Entering " + caseName + " PASSED");
+          }
+
+          await stopCameraSession();
+
+          console.info(TAG +
+            "Entering " + caseName + " end for camera[" + i +
+            "]");
+        }
+
+        console.info(TAG +
+          "Entering " + caseName + " ends here");
+        done();
+      }
+    })
+
   })
 }

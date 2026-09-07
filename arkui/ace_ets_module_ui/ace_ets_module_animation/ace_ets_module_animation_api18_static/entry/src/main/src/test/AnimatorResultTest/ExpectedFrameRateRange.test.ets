@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter'
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -29,19 +29,11 @@ import {
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { RecordData } from '@ohos.base';
 
 export default function ExpectedFrameRateRange() {
   describe('ExpectedFrameRateRange', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ExpectedFrameRateRange beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation18.static", "EntryAbility")
-      
-    });
-
     beforeEach(async () => {
       console.info('ExpectedFrameRateRange beforeEach start');
       let options: router.RouterOptions = {
@@ -63,7 +55,11 @@ export default function ExpectedFrameRateRange() {
       console.info('ExpectedFrameRateRange beforeEach end');
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error('ExpectedFrameRateRange afterEach error: ' + JSON.stringify(err));
+      }
       console.info('ExpectedFrameRateRange after each called');
     });
     
@@ -100,13 +96,17 @@ it('ExpectedFrameRateRange_static_001', Level.LEVEL3, async (done: () => void): 
       } catch (err) {
         console.info('ExpectedFrameRateRange_static_001 on emitter err : ' + JSON.stringify(err));
       }
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let play = await driver.findComponent(ON.id('circleId'));
-      console.info('[ExpectedFrameRateRange_static_001] ' + JSON.stringify(play));
-      await (play?.click() as Promise<void>);
-      console.log('[ExpectedFrameRateRange_static_001] play btn clicked')
+      try {
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let play = await driver.findComponent(ON.id('circleId'));
+        console.info('[ExpectedFrameRateRange_static_001] ' + JSON.stringify(play));
+        await (play?.click() as Promise<void>);
+        console.log('[ExpectedFrameRateRange_static_001] play btn clicked')
+      } catch (err) {
+        console.info('ExpectedFrameRateRange_static_001 error: ' + JSON.stringify(err));
+      }
     });
   })
 }

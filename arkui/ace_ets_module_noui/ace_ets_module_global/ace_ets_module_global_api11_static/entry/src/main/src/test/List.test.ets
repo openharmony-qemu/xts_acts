@@ -31,15 +31,17 @@ import webEditTextJsunit from './webTest/web.test';
 import web9Jsunit from './webTest/Web9Jsunit.test'
 import webJsunit from './webTest/WebJsunitApi9.test'
 import webViewPageattrLackJsunit from './webTest/webviewPageLackattr.test'
+import web2CookieTest from './webTest/Web2Cookie.test'
 
-export default function testsuite() {
-   AppStorageJsunit();
-   basicJsunit();
-   globalJsunit1();
-   ResourceColor();
-   ResourceFloat();
-   ResourceInteger();
-   ResourcePlural();
-   ResourceStrarray();
+export default function testsuite(): void {
+       AppStorageJsunit();
+       basicJsunit();
+       globalJsunit1();
+       ResourceColor();
+       ResourceFloat();
+       ResourceInteger();
+       ResourcePlural();
+       ResourceStrarray();
   ResourceString();
+       web2CookieTest();
 }

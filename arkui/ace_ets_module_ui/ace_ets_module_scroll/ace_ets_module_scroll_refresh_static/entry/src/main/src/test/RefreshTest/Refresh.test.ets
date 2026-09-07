@@ -15,24 +15,18 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
-const SLEEP_TIME = 1000;
+const SLEEP_TIME = 500;
 
 export default function RefreshTest() {
   describe('RefreshTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('RefreshTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.refresh.static', 'EntryAbility');
-    });
-
-    beforeEach((): void => {
+    beforeEach(async (): Promise<void> => {
       console.info('RefreshTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Refresh/refresh',
@@ -44,6 +38,7 @@ export default function RefreshTest() {
         console.info('RefreshTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'refresh') {
           routerInstance.replaceUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('RefreshTest replaceUrl error: ' + err);

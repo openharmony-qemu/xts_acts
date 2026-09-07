@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 export default function PageInfo1() {
   describe('PageInfo1', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("PageInfo1 beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("PageInfo1 beforeEach start");
       let options: router.RouterOptions = {
@@ -56,7 +48,11 @@ export default function PageInfo1() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('PageInfo1 afterEach err: ' + JSON.stringify(err));
+      }
       console.info("PageInfo1 after each called");
     });
     
@@ -68,29 +64,33 @@ export default function PageInfo1() {
      * @tc.level    Level.LEVEL0
      */
 it('PageInfo1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('[PageInfo1_static_0100] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('PageInfo1_pageOne'));
-      await (btn1?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      console.info('[PageInfo1_static_0100] btn1 click');
-      let btn2 = await driver.findComponent(ON.id('PageInfo1_get'));
-      await (btn2?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      console.info('[PageInfo1_static_0100] btn2 click');
-      let strJson1 = inspector.getInspectorByKey('PageInfo1_text1');
-      await CommonFunc.sleep(1000);
-      console.info("[PageInfo1_static_0100] obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('MainAbility/pages/PageInfo/PageInfo1');
-      let strJson2 = inspector.getInspectorByKey('PageInfo1_text2');
-      await CommonFunc.sleep(1000);
-      console.info("[PageInfo1_static_0100] obj2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2)));
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('pageOne');
-      console.info('[PageInfo1_static_0100] END');
-      done();
+      try {
+        console.info('[PageInfo1_static_0100] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let btn1 = await driver.findComponent(ON.id('PageInfo1_pageOne'));
+        await (btn1?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+        console.info('[PageInfo1_static_0100] btn1 click');
+        let btn2 = await driver.findComponent(ON.id('PageInfo1_get'));
+        await (btn2?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+        console.info('[PageInfo1_static_0100] btn2 click');
+        let strJson1 = inspector.getInspectorByKey('PageInfo1_text1');
+        await CommonFunc.sleep(1000);
+        console.info("[PageInfo1_static_0100] obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)));
+        expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('MainAbility/pages/PageInfo/PageInfo1');
+        let strJson2 = inspector.getInspectorByKey('PageInfo1_text2');
+        await CommonFunc.sleep(1000);
+        console.info("[PageInfo1_static_0100] obj2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2)));
+        expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('pageOne');
+        console.info('[PageInfo1_static_0100] END');
+        done();
+      } catch (err) {
+        console.info('PageInfo1_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

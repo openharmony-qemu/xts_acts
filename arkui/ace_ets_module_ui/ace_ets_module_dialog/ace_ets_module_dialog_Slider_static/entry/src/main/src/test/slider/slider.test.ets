@@ -15,17 +15,16 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
-const SLEEP_TIME = 1000;
+const SLEEP_TIME = 2000;
 const LOG_CHUNK_SIZE = 500;
 
 function logLongString(tag: string, longStr: string): void {
@@ -43,10 +42,8 @@ function logLongString(tag: string, longStr: string): void {
 
 export default function SliderTest() {
   describe('SliderTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("SliderTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.slider_static", "EntryAbility");
-
+    beforeEach(async (): Promise<void> => {
+      console.info("SliderTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/slider/SliderIndex',
       };
@@ -65,12 +62,12 @@ export default function SliderTest() {
       }
     });
 
-    beforeEach(async (): Promise<void> => {
-      console.info("SliderTest beforeEach start");
-    });
-
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('SliderTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("SliderTest after each called");
     });
 

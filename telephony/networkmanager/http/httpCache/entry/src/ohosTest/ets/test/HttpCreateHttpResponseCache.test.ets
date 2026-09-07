@@ -93,7 +93,7 @@ export default function HttpCreateHttpResponseCacheTest() {
       const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0300';
       console.info(`${caseName}---Start`);
       try {
-        let cacheSize: number = 11;
+        let cacheSize: number = -1;
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
         ExpectTrue(typeof httpResponseCache == 'object');
         done();
@@ -117,7 +117,7 @@ export default function HttpCreateHttpResponseCacheTest() {
       const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0400';
       console.info(`${caseName}---Start`);
       try {
-        let cacheSize: number = -1;
+        let cacheSize: number = 0;
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
         ExpectTrue(typeof httpResponseCache == 'object');
         done();
@@ -141,30 +141,6 @@ export default function HttpCreateHttpResponseCacheTest() {
       const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0500';
       console.info(`${caseName}---Start`);
       try {
-        let cacheSize: number = 0;
-        let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
-        ExpectTrue(typeof httpResponseCache == 'object');
-        done();
-      } catch (err) {
-        console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-      console.info(`${caseName}---End `);
-    });
-
-    /**
-     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0600
-     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0600
-     * @tc.desc   Create a default object to store the response of HTTP access requests.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNetworkMgrHttpCreateHttpResponseCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0600';
-      console.info(`${caseName}---Start`);
-      try {
         let cacheSize: number = 10485761;
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
         ExpectTrue(typeof httpResponseCache == 'object');
@@ -177,15 +153,15 @@ export default function HttpCreateHttpResponseCacheTest() {
       console.info(`${caseName}---End `);
     });
      /**
-     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0700
-     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0700
+     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0600
+     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0600
      * @tc.desc   Create a default object to store the response of HTTP access requests.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-     it('testNetworkMgrHttpCreateHttpResponseCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0700';
+     it('testNetworkMgrHttpCreateHttpResponseCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0600';
       console.info(`${caseName}---Start`);
       try {
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(null);
@@ -199,15 +175,15 @@ export default function HttpCreateHttpResponseCacheTest() {
       console.info(`${caseName}---End `);
     });
      /**
-     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0800
-     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0800
+     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0700
+     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0700
      * @tc.desc   Create a default object to store the response of HTTP access requests.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNetworkMgrHttpCreateHttpResponseCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0800';
+    it('testNetworkMgrHttpCreateHttpResponseCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0700';
       console.info(`${caseName}---Start`);
       try {
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(undefined);

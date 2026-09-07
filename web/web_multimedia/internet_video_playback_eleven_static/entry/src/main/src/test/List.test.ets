@@ -15,7 +15,10 @@
  */
 
 import enableMediaNetworkProxyTestJsunit from './EnableMediaNetworkProxy.test';
-
+import HandleFullscreenChangedParamTest from './HandleFullscreenChangedParamTest.test'
+import HandleStatusChangedParamTest from './HandleStatusChangedParamTest.test'
 export default function testsuite(): void {
   enableMediaNetworkProxyTestJsunit();
+  HandleFullscreenChangedParamTest();
+  HandleStatusChangedParamTest();
 }

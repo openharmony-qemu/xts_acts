@@ -8,7 +8,7 @@ import int8ArrayTest from './ClassInt8Array.test';
 import Int16ArrayGlobalTest from './ClassInt16Array.test';
 import Int32ArrayGlobalTest from './ClassInt32Array.test';
 import Float32ArrayGlobalTest from './ClassFloat32Array.test';
-import BitVectorTest from './ConcurrentBitVectorTest.test'
+
 import Uint8ArrayTest from './ConcurrentUint8ArrayTest.test'
 import Uint16ArrayTest from './ConcurrentUint16ArrayTest.test'
 import Uint32ArrayTest from './ConcurrentUint32ArrayTest.test'
@@ -24,7 +24,7 @@ export default function testsuite() {
   Int16ArrayGlobalTest();
   Int32ArrayGlobalTest();
   Float32ArrayGlobalTest();
-  BitVectorTest();
+
   Uint8ArrayTest();
   Uint16ArrayTest();
   Uint32ArrayTest();

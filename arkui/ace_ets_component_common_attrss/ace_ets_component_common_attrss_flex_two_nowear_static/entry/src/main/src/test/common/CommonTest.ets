@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from  '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
@@ -72,8 +71,12 @@ export default class CommonTest {
           pageConfig.componentKey = targetView;
           pageConfig.containerView = containerView;
           pageConfig.testValue = testValue;
-          await Utils.pushPage(pageConfig);
-          // try {
+          try {
+            await Utils.pushPage(pageConfig);
+          } catch (err) {
+            console.info('FlexGrowTest pushPage err: ' + JSON.stringify(err));
+          }
+          try {
             //If there is no call back functions, do nothing.
             if (functions.length === 0) {
               done();
@@ -110,16 +113,24 @@ export default class CommonTest {
             data.viewObj = JSON.parseJsonElement(strJson);
             await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-          // } catch (err: Error) {
-          //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-          //   console.error(msg);
-          //   console.error(err.stack);
-          //   if (err.name != 'AssertException') {
-          //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-          //     expect().assertFail();
-          //   }
-          // }
-          await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+          } catch (err) {
+            let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+            console.error(msg);
+            if (err instanceof Error && err.stack) {
+              console.error(err.stack);
+            }
+            try {
+              await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+            } catch (backErr) {
+              console.info('FlexGrowTest back in catch err: ' + JSON.stringify(backErr));
+            }
+            expect().assertFail();
+          }
+          try {
+            await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+          } catch (err) {
+            console.info('FlexGrowTest back err: ' + JSON.stringify(err));
+          }
 
           console.info('[' + caseTag + '] END');
           done();

@@ -56,7 +56,7 @@ export default function photoMediaLibraryNoPermissionStatic(): void {
           done();
         } catch (error) {
           console.log(TAG,'媒体库监听注册失败无读权限');
-          expect(Number(error.code)).assertEqual(201);
+          expect(error.code).assertEqual(201);
           done();
         }
       })
@@ -80,7 +80,7 @@ export default function photoMediaLibraryNoPermissionStatic(): void {
           done();
         } catch (error) {
           console.log(TAG,'媒体库监听解除失败无读权限');
-          expect(Number(error.code)).assertEqual(201);
+          expect(error.code).assertEqual(201);
           done();
         }
       })

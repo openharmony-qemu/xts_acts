@@ -326,7 +326,7 @@ struct Index {
                 }, 2000)
               } catch (error) {
                 console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                if (error.code == 801) {
+                if (error.code === 801) {
                   Utils.emitEvent(true, 174020)
                 }
               }
@@ -356,7 +356,7 @@ struct Index {
                 }, 2000)
               } catch (error) {
                 console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                if (error.code == 801) {
+                if (error.code === 801) {
                   Utils.emitEvent(true, 174021)
                 }
               }
@@ -386,7 +386,7 @@ struct Index {
                 }, 2000)
               } catch (error) {
                 console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                if (error.code == 801) {
+                if (error.code === 801) {
                   Utils.emitEvent(true, 174060)
                 }
               }
@@ -416,7 +416,7 @@ struct Index {
                 }, 2000)
               } catch (error) {
                 console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                if (error.code == 801) {
+                if (error.code === 801) {
                   Utils.emitEvent(true, 174061)
                 }
               }
@@ -547,6 +547,42 @@ struct Index {
 
             case 'emitwebViewSetWebDestroyMode002': {
               Utils.emitEvent(this.setWebDestroyModeArr[1], 138570)
+              break;
+            }
+
+            case 'emitWebViewSetWebDestroyModeNull': {
+              try {
+                webview.WebviewController.setWebDestroyMode((null as Int) as webview.WebDestroyMode);
+                Utils.emitEvent(true, 138580);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 138580);
+              }
+              break;
+            }
+
+            case 'emitWebViewSetWebDestroyModeUndefined': {
+              try {
+                webview.WebviewController.setWebDestroyMode((undefined as Int) as webview.WebDestroyMode);
+                Utils.emitEvent(true, 138581);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 138581);
+              }
+              break;
+            }
+
+            case 'emitWebViewSetWebDestroyModeInvalid': {
+              try {
+                let invalidMode = 99 as webview.WebDestroyMode;
+                webview.WebviewController.setWebDestroyMode(invalidMode);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 138582);
+              }
               break;
             }
 

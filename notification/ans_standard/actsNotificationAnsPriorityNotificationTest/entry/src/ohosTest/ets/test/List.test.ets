@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import actsnotificationansprioritynotificationtest from "./ActsNotificationAnsPriorityNotificationTest.test";
+import actsnotificationansprioritynotificationtest from './ActsNotificationAnsPriorityNotificationTest.test';
 
 export default function testsuite() {
   actsnotificationansprioritynotificationtest()

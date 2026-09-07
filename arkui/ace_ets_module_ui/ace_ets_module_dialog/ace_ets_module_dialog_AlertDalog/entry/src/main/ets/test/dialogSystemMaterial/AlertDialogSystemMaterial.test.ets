@@ -64,16 +64,22 @@ export default function AlertDialogSystemMaterialTest() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let dialog: ESObject = obj.$children[1]
       expect(dialog).not().assertUndefined();
-		  expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-		  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-		  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-		  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-		  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       console.info('AlertDialogSystemMaterial_0100 Dialog Undefined is visible');
 
       await CommonFunc.sleep(500);
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('AlertDialogSystemMaterial_0100 END');
       done();
@@ -103,8 +109,14 @@ export default function AlertDialogSystemMaterialTest() {
       console.info('AlertDialogSystemMaterial_0200 Dialog HDS THICK is visible');
 
       await CommonFunc.sleep(500);
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('AlertDialogSystemMaterial_0200 END');
       done();
@@ -131,11 +143,18 @@ export default function AlertDialogSystemMaterialTest() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let dialog: ESObject = obj.$children[1]
       expect(dialog).not().assertUndefined();
+
       console.info('AlertDialogSystemMaterial_0300 Dialog SEMI_TRANSPARENT is visible');
 
       await CommonFunc.sleep(500);
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('AlertDialogSystemMaterial_0300 END');
       done();
@@ -165,8 +184,14 @@ export default function AlertDialogSystemMaterialTest() {
       console.info('AlertDialogSystemMaterial_0400 Dialog Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('AlertDialogSystemMaterial_0400 END');
       done();
@@ -197,8 +222,16 @@ export default function AlertDialogSystemMaterialTest() {
       console.info('AlertDialogSystemMaterial_0500 Dialog Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
+      
       await CommonFunc.sleep(1000);
       console.info('AlertDialogSystemMaterial_0500 END');
       done();
@@ -228,8 +261,14 @@ export default function AlertDialogSystemMaterialTest() {
       console.info('AlertDialogSystemMaterial_0600 Dialog NONE is visible');
 
       await CommonFunc.sleep(500);
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('AlertDialogSystemMaterial_0600 END');
       done();

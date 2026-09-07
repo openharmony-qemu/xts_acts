@@ -98,6 +98,30 @@ struct webViewController {
                 }
                 break;
               }
+              case "testRemoveCacheNullStatic001": {
+                try {
+                  let param: boolean | null = null;
+                  this.controller.removeCache(param as boolean);
+                  Utils.emitEvent('success', 41022501)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 41022501)
+                }
+                break;
+              }
+              case "testRemoveCacheUndefinedStatic001": {
+                try {
+                  let param: boolean | undefined = undefined;
+                  this.controller.removeCache(param as boolean);
+                  Utils.emitEvent('success', 41022502)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 41022502)
+                }
+                break;
+              }
             }
           })
       }

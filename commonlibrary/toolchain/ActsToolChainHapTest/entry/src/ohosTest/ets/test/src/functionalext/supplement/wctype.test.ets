@@ -27,7 +27,7 @@ export default function FunctionalextSupplementWctypeTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("iswctype_l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswctype_l");
+      const result: number = await testNapi.runTest("iswctype_l");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function FunctionalextSupplementWctypeTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("iswgraph", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswgraph");
+      const result: number = await testNapi.runTest("iswgraph");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function FunctionalextSupplementWctypeTestGroupTest() {
      * @tc.desc   libc-test iswalnum_l
      */
     it("iswalnum_l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswalnum_l");
+      const result: number = await testNapi.runTest("iswalnum_l");
       expect(result).assertEqual(0);
       done();
     });
@@ -67,7 +67,7 @@ export default function FunctionalextSupplementWctypeTestGroupTest() {
      * @tc.desc   libc-test iswgraph_l
      */
     it("iswgraph_l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("iswgraph_l");
+      const result: number = await testNapi.runTest("iswgraph_l");
       expect(result).assertEqual(0);
       done();
     });

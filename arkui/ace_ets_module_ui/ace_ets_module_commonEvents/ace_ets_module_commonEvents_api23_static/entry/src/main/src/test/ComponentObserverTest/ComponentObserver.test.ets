@@ -15,25 +15,19 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
 
 export default function ComponentObserverTest() {
   describe('ComponentObserverTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] ComponentObserverTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.common.componentSnapshot.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] ComponentObserverTest beforeEach start");
       let options: router.RouterOptions = {
@@ -81,7 +75,11 @@ export default function ComponentObserverTest() {
       if (AppStorage.get<boolean>('componentObserverOffLayoutChildren') != undefined) {
         AppStorage.delete('componentObserverOffLayoutChildren');
       }
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.error("[ARKUI_NEW] ComponentObserverTest afterEach sleep error: " + err);
+      }
       console.info("[ARKUI_NEW] ComponentObserverTest afterEach end");
     });
 

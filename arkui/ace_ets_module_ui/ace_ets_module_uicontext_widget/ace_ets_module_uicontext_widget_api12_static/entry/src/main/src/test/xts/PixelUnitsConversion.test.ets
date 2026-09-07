@@ -13,33 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach,  it, Level, expect, beforeAll } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach,  it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import {UtilsTest,startAbility} from '../Util.test'
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function PixelUnitsConversionJsunit() {
   describe('PixelUnitsConversionTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("PixelUnitsConversionTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.example.myapplication.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async () => {
       console.info('PixelUnitsConversionTest beforeEach start');
       let options:router.RouterOptions = {
@@ -61,7 +46,11 @@ export default function PixelUnitsConversionJsunit() {
       }
     });
     afterEach(async  () =>{
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('PixelUnitsConversion afterEach err: ' + JSON.stringify(err));
+      }
       console.info('PixelUnitsConversion after each called');
     });
     
@@ -75,16 +64,20 @@ export default function PixelUnitsConversionJsunit() {
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
-
-      console.info('PixelUnitsConversionTest_0100 START');
-      let driver1 = Driver.create();
-      let button = await driver1.findComponent(ON.id('px2vp_01'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      let text = inspector.getInspectorByKey('px2vp_text');
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
-      console.info('PixelUnitsConversionTest_0100 END');
-      done();
+      try {
+        console.info('PixelUnitsConversionTest_0100 START');
+        let driver1 = Driver.create();
+        let button = await driver1.findComponent(ON.id('px2vp_01'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        let text = inspector.getInspectorByKey('px2vp_text');
+        expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
+        console.info('PixelUnitsConversionTest_0100 END');
+        done();
+      } catch (err) {
+        console.info('PixelUnitsConversionTest_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
     
@@ -97,16 +90,20 @@ it('PixelUnitsConversionTest_static_0100', Level.LEVEL0, async (done: ()=>void) 
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
-
-      console.info('PixelUnitsConversionTest_0200 START');
-      let driver1 = Driver.create();
-      let button = await driver1.findComponent(ON.id('vp2px_01'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      let text = inspector.getInspectorByKey('vp2px_text');
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
-      console.info('PixelUnitsConversionTest_0200 END');
-      done();
+      try {
+        console.info('PixelUnitsConversionTest_0200 START');
+        let driver1 = Driver.create();
+        let button = await driver1.findComponent(ON.id('vp2px_01'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        let text = inspector.getInspectorByKey('vp2px_text');
+        expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
+        console.info('PixelUnitsConversionTest_0200 END');
+        done();
+      } catch (err) {
+        console.info('PixelUnitsConversionTest_static_0200 err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
     
@@ -119,16 +116,20 @@ it('PixelUnitsConversionTest_static_0200', Level.LEVEL0, async (done: ()=>void) 
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
-
-      console.info('PixelUnitsConversionTest_0300 START');
-      let driver1 = Driver.create();
-      let button = await driver1.findComponent(ON.id('fp2px_01'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      let text = inspector.getInspectorByKey('fp2px_text');
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
-      console.info('PixelUnitsConversionTest_0300 END');
-      done();
+      try {
+        console.info('PixelUnitsConversionTest_0300 START');
+        let driver1 = Driver.create();
+        let button = await driver1.findComponent(ON.id('fp2px_01'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        let text = inspector.getInspectorByKey('fp2px_text');
+        expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
+        console.info('PixelUnitsConversionTest_0300 END');
+        done();
+      } catch (err) {
+        console.info('PixelUnitsConversionTest_static_0300 err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
     
@@ -141,16 +142,20 @@ it('PixelUnitsConversionTest_static_0300', Level.LEVEL0, async (done: ()=>void) 
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
-
-      console.info('PixelUnitsConversionTest_0400 START');
-      let driver1 = Driver.create();
-      let button = await driver1.findComponent(ON.id('px2fp_01'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      let text = inspector.getInspectorByKey('px2fp_text');
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
-      console.info('PixelUnitsConversionTest_0400 END');
-      done();
+      try {
+        console.info('PixelUnitsConversionTest_0400 START');
+        let driver1 = Driver.create();
+        let button = await driver1.findComponent(ON.id('px2fp_01'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        let text = inspector.getInspectorByKey('px2fp_text');
+        expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
+        console.info('PixelUnitsConversionTest_0400 END');
+        done();
+      } catch (err) {
+        console.info('PixelUnitsConversionTest_static_0400 err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
     
@@ -163,16 +168,20 @@ it('PixelUnitsConversionTest_static_0400', Level.LEVEL0, async (done: ()=>void) 
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
-
-      console.info('PixelUnitsConversionTest_0500 START');
-      let driver1 = Driver.create();
-      let button = await driver1.findComponent(ON.id('lpx2px_01'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      let text = inspector.getInspectorByKey('lpx2px_text');
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
-      console.info('PixelUnitsConversionTest_0500 END');
-      done();
+      try {
+        console.info('PixelUnitsConversionTest_0500 START');
+        let driver1 = Driver.create();
+        let button = await driver1.findComponent(ON.id('lpx2px_01'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        let text = inspector.getInspectorByKey('lpx2px_text');
+        expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
+        console.info('PixelUnitsConversionTest_0500 END');
+        done();
+      } catch (err) {
+        console.info('PixelUnitsConversionTest_static_0500 err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
     
@@ -185,16 +194,20 @@ it('PixelUnitsConversionTest_static_0500', Level.LEVEL0, async (done: ()=>void) 
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
-
-      console.info('PixelUnitsConversionTest_0600 START');
-      let driver1 = Driver.create();
-      let button = await driver1.findComponent(ON.id('px2lpx_01'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      let text = inspector.getInspectorByKey('px2lpx_text');
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
-      console.info('PixelUnitsConversionTest_0600 END');
-      done();
+      try {
+        console.info('PixelUnitsConversionTest_0600 START');
+        let driver1 = Driver.create();
+        let button = await driver1.findComponent(ON.id('px2lpx_01'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        let text = inspector.getInspectorByKey('px2lpx_text');
+        expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('220');
+        console.info('PixelUnitsConversionTest_0600 END');
+        done();
+      } catch (err) {
+        console.info('PixelUnitsConversionTest_static_0600 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

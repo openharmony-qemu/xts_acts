@@ -40,7 +40,7 @@ export default function HiRetrievalGetLastParticipationTimestampTest() {
                 hiRetrieval.participate(config);
                 let timestamp = hiRetrieval.getLastParticipationTimestamp();
                 hilog.info(0x0000, 'testTag', 'timestamp: %{public}d', timestamp);
-                expect(timestamp > 0).assertTrue();
+                expect(timestamp > 0n).assertTrue();
                 hilog.info(0x0000, 'testTag', '*********** testHiRetrievalGetLastParticipationTimestamp_0100 Test end***********');
             } catch (err) {
                 hilog.error(0x0000, 'testTag', '%{public}s', JSON.stringify(err));
@@ -62,7 +62,7 @@ export default function HiRetrievalGetLastParticipationTimestampTest() {
                 hiRetrieval.init();
                 let timestamp = hiRetrieval.getLastParticipationTimestamp();
                 hilog.info(0x0000, 'testTag', 'timestamp: %{public}d', timestamp);
-                expect(timestamp >= 0).assertTrue();
+                expect(timestamp >= 0n).assertTrue();
                 hilog.info(0x0000, 'testTag', '*********** testHiRetrievalGetLastParticipationTimestamp_0300 Test end***********');
             } catch (err) {
                 hilog.error(0x000000, 'testTag', '%{public}s', JSON.stringify(err));
@@ -91,7 +91,7 @@ export default function HiRetrievalGetLastParticipationTimestampTest() {
                 hiRetrieval.quit();
                 let timestamp = hiRetrieval.getLastParticipationTimestamp();
                 hilog.info(0x0000, 'testTag', 'timestamp: %{public}d', timestamp);
-                expect(timestamp > 0).assertTrue();
+                expect(timestamp > 0n).assertTrue();
                 hilog.info(0x0000, 'testTag', '*********** testHiRetrievalGetLastParticipationTimestamp_0400 Test end***********');
             } catch (err) {
                 hilog.error(0x0000, 'testTag', '%{public}s', JSON.stringify(err));

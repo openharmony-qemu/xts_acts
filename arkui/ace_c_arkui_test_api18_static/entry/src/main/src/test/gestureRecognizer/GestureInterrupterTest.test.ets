@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 import { Content, NodeContent } from '@ohos.arkui.node'
 
@@ -28,9 +27,6 @@ let rootSlot: Content = new NodeContent() as Content;
 export default function gestureInterrupterTest() {
 
   describe('GestureInterrupterTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api18.static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
       await Utils.sleep(100);
     })
@@ -43,14 +39,19 @@ export default function gestureInterrupterTest() {
      * @tc.level    Level.LEVEL0
      */
     it('GestureInterrupterTest', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'GestureInterrupterTest';
-      let PAGE_TAG5 = 'gestureInterrupterTest';
-      await Utils.pushPage(`gestureRecognizer/${PAGE_TAG}`);
-      await Utils.sleep(3000)
-      let dataArray: string[] = libUtil.TestGestureInterrupter(rootSlot)
-      console.log('[ui]dataArray[0]：' + dataArray[0]);
-      expect(dataArray[0] != '0').assertEqual(true)
-      done();
+      try {
+        let PAGE_TAG = 'GestureInterrupterTest';
+        let PAGE_TAG5 = 'gestureInterrupterTest';
+        await Utils.pushPage(`gestureRecognizer/${PAGE_TAG}`);
+        await Utils.sleep(3000)
+        let dataArray: string[] = libUtil.TestGestureInterrupter(rootSlot)
+        console.log('[ui]dataArray[0]：' + dataArray[0]);
+        expect(dataArray[0] != '0').assertEqual(true)
+        done();
+      } catch (error) {
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

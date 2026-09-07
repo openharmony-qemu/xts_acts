@@ -13,7 +13,7 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("basic_scenario_main") {
+ohos_app_assist_suite("ActsArkTsNapiLoadLibTest") {
   hap_name = "ActsArkTsNapiLoadLibTest"
   testonly = true
   part_name = "ets_runtime"
@@ -27,5 +27,5 @@ ohos_js_app_suite("ActsArkTsNapiLoadTest") {
   part_name = "ets_runtime"
   subsystem_name = "arkcompiler"
   certificate_profile = "./signature/myApplication_ohos_Provision.p7b"
-  deps = [ ":basic_scenario_main" ]
+  deps = [ ":ActsArkTsNapiLoadLibTest" ]
 }

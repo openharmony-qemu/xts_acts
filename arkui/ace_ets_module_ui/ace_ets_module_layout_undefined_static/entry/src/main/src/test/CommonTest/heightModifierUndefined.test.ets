@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -25,16 +25,8 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest } from '../Util.test';
-
 export default function heightModifierUndefinedTest() {
   describe('heightModifierUndefinedTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility('com.arkui.ace.layout.undefined.static', 'EntryAbility');
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('heightModifierUndefinedTest beforeEach start');
       let options: router.RouterOptions = {
@@ -47,7 +39,7 @@ export default function heightModifierUndefinedTest() {
         console.info('get heightModifierUndefinedTest state pages:' + JSON.stringify(pages));
         if (!('heightModifier' == pages.name)) {
           console.info('get heightModifierUndefinedTest pages.name:' + JSON.stringify(pages.name));
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

@@ -15,12 +15,11 @@
  */
 
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import Utils from '../../../../main/ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const ROUTE = 'MainAbility/pages/CommonPage/CommonPage';
@@ -96,10 +95,6 @@ function readShowCounterOptionColor(key: string, field: string): string {
 
 export default function CommonTest(): void {
   describe('Common', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.ets.module.common.api24.static', 'EntryAbility');
-    });
-
     beforeEach(() => {
       try {
         replaceUrlForTest(ROUTE);
@@ -109,7 +104,11 @@ export default function CommonTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(SLEEP);
+      try {
+        await Utils.sleep(SLEEP);
+      } catch (err) {
+        console.info('CommonTest afterEach sleep err: ' + JSON.stringify(err));
+      }
     });
 
     /**

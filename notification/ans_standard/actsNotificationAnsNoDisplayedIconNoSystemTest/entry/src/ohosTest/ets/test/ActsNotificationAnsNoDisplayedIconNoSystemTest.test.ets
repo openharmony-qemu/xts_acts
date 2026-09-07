@@ -24,7 +24,7 @@ let context: common.UIAbilityContext;
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }
@@ -32,9 +32,9 @@ function sleep(time: number) {
 export default function ActsNotificationAnsNoDisplayedIconNoSystemTest() {
   describe('ActsNotificationAnsNoDisplayedIconNoSystemTest', () => {
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       notificationManager.setNotificationEnable({
-        bundle: "com.example.actsnotificationansnodisplayediconnosystemtest"
+        bundle: 'com.example.actsnotificationansnodisplayediconnosystemtest'
       }, true)
     })
     beforeEach(() => {
@@ -61,15 +61,15 @@ export default function ActsNotificationAnsNoDisplayedIconNoSystemTest() {
         uid = data?.appInfo?.uid as number;
       })
       let bundle: notificationManager.BundleOption = {
-        bundle: "com.example.actsnotificationansnodisplayediconnosystemtest",
+        bundle: 'com.example.actsnotificationansnodisplayediconnosystemtest',
       };
 
       let num: number = 0
       let onEnabledSilentReminderChangedCallback: notificationSubscribe.EnabledSilentReminderChangedCallback =
         (callbackData: notificationSubscribe.EnabledSilentReminderCallbackData) => {
-          console.info(testNum + "bundle: ", callbackData.bundle);
-          console.info(testNum + "uid: ", callbackData.uid);
-          console.info(testNum + "enable: ", callbackData.enableStatus);
+          console.info(testNum + 'bundle: ', callbackData.bundle);
+          console.info(testNum + 'uid: ', callbackData.uid);
+          console.info(testNum + 'enable: ', callbackData.enableStatus);
           expect(false).assertTrue();
           done();
         };
@@ -80,7 +80,7 @@ export default function ActsNotificationAnsNoDisplayedIconNoSystemTest() {
       try {
         await notificationSubscribe.subscribeNotification(subscriber).then(() => {
           num = 0
-          console.info(testNum + "subscribeNotification success");
+          console.info(testNum + 'subscribeNotification success');
           num++
           expect(num).assertEqual(1);
           expect(false).assertTrue();

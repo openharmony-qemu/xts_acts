@@ -14,29 +14,16 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, expect, it, beforeAll,Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function gridContainerJsunit() {
   describe('gridContainerTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("gridContainerJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("gridContainerJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -54,11 +41,19 @@ export default function gridContainerJsunit() {
       } catch (err) {
         console.error("push GridContainer page error " + JSON.stringify(err));
       }
+      try {
       await UtilsTest.msSleep(1000)
+      } catch (err) {
+      console.info('gridContainerTestTest await err: ' + JSON.stringify(err));
+      }
     });
 
     afterEach(async () => {
+      try {
       await UtilsTest.msSleep(1000)
+      } catch (err) {
+      console.info('gridContainerTestTest await err: ' + JSON.stringify(err));
+      }
       console.info("GridContainer after each called");
     });
 

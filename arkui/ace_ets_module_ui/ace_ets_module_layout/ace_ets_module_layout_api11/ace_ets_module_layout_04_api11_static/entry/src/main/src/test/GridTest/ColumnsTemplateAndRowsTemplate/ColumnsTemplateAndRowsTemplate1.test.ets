@@ -14,31 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function ColumnsTemplateAndRowsTemplate1() {
   describe('ColumnsTemplateAndRowsTemplate1', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ColumnsTemplateAndRowsTemplate1 beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("ColumnsTemplateAndRowsTemplate1 beforeEach start");
       let options: router.RouterOptions = {
@@ -62,7 +47,11 @@ export default function ColumnsTemplateAndRowsTemplate1() {
       console.info("ColumnsTemplateAndRowsTemplate1 beforeEach end");
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('ColumnsTemplateAndRoTest await err: ' + JSON.stringify(err));
+      }
       const router = AppStorage.get<Router>("router") as Router
       router.replaceUrl({url:'MainAbility/pages/index/index'})
       console.info("ColumnsTemplateAndRowsTemplate1 after each called");
@@ -82,7 +71,11 @@ export default function ColumnsTemplateAndRowsTemplate1() {
           name: 'columnEnd1', value: 2
         })
 
+        try {
         await CommonFunc.sleep(2000);
+        } catch (err) {
+        console.info('ColumnsTemplateAndRoTest await err: ' + JSON.stringify(err));
+        }
 
         console.log('get Initial value')
         let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
@@ -122,7 +115,11 @@ export default function ColumnsTemplateAndRowsTemplate1() {
         AppStorage.get<MessageManager<int>>('messageManager')?.notify({
           name: 'columnStart1', value: 2
         })
-        await CommonFunc.sleep(1000);
+        try {
+        await CommonFunc.sleep(2000);
+        } catch (err) {
+        console.info('ColumnsTemplateAndRoTest await err: ' + JSON.stringify(err));
+        }
 
         console.log('get Initial value')
         let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
@@ -151,7 +148,11 @@ export default function ColumnsTemplateAndRowsTemplate1() {
       AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnStart1', value: 5
       })
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('ColumnsTemplateAndRoTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
       let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
@@ -189,7 +190,11 @@ export default function ColumnsTemplateAndRowsTemplate1() {
         AppStorage.get<MessageManager<int>>('messageManager')?.notify({
           name: 'rowStart1', value: 0
         })
+        try {
         await CommonFunc.sleep(2000);
+        } catch (err) {
+        console.info('ColumnsTemplateAndRoTest await err: ' + JSON.stringify(err));
+        }
 
         console.log('get Initial value')
         let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
@@ -227,7 +232,11 @@ export default function ColumnsTemplateAndRowsTemplate1() {
       AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'rowStart1', value: 2
       })
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('ColumnsTemplateAndRoTest await err: ' + JSON.stringify(err));
+      }
 
       console.log('get Initial value')
       let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
@@ -263,7 +272,11 @@ export default function ColumnsTemplateAndRowsTemplate1() {
       AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'rowStart1', value: 5
       })
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('ColumnsTemplateAndRoTest await err: ' + JSON.stringify(err));
+      }
 
       console.log('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700 get Initial value')
       let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');

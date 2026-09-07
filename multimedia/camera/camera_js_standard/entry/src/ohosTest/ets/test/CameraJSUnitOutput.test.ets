@@ -919,6 +919,31 @@ export default function cameraJSUnitOutput() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_0200
+     * @tc.desc   metadata output callback off error api with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_0200--------------");
+      if (isEmpty(metadataOutput)) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_0200 metadata is not support")
+      } else {
+        try {
+          console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_0200 to operate");
+          metadataOutput.off('error')
+        } catch (err) {
+          console.error(`metadataOutput off error, code: ${err.code}, message: ${err.message}`)
+          expect().assertFail()
+          done()
+        }
+      }
+      done();
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_START_CALLBACK_0100
@@ -1621,16 +1646,15 @@ export default function cameraJSUnitOutput() {
         console.info(TAG +
           " --------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_0100--------------");
         createPhotoSession(1);
-        addCommit(0, 1);
+        await addCommit(0, 1);
         await cameraSession.commitConfig();
-        await sleep();
         await cameraSession.start();
         if (isEmpty(photoOutput)) {
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_0100 photoOutput == null || undefined")
           expect().assertFail();
         } else {
-          photoOutput.capture(captureSetting, async (err) => {
+          photoOutput.capture(captureSetting, (err) => {
             if (!err) {
               expect(true).assertTrue();
               console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_0100 success");
@@ -1640,12 +1664,9 @@ export default function cameraJSUnitOutput() {
               err.message);
             }
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_0100 ends here");
-            await sleep(1000);
             done();
           })
         }
-        await sleep(1000);
-        done();
       } catch (err) {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_0100 ends here");
         done();
@@ -1752,6 +1773,33 @@ export default function cameraJSUnitOutput() {
       console.info(`photo output stop listen on captureReady success`);
       expect(true).assertTrue()
       await sleep(1000);
+      photoOutput.release()
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_READY_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_READY_0200
+     * @tc.desc   photo output callback off captureReady with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_READY_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_READY_0200--------------");
+      getCameraDevices()
+      createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
+
+      photoOutput.on('captureReady', async (err) => {
+        console.info(`photo output start listen on captureReady failed: ${err.code}`);
+      })
+
+      photoOutput.off('captureReady', async (err) => {
+        console.info(`photo output stop listen on captureReady failed: ${err.code}`);
+        expect(true).assertFalse()
+        done();
+      })
+      console.info(`photo output stop listen on captureReady success`);
       photoOutput.release()
       done();
     })
@@ -2037,6 +2085,37 @@ export default function cameraJSUnitOutput() {
       console.info(`photo output stop listen on estimatedCaptureDuration success`);
       expect(true).assertTrue()
       await sleep(1000);
+      photoOutput.release()
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_ESTIMATED_CAPTURE_DURATION_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_ESTIMATED_CAPTURE_DURATION_0200
+     * @tc.desc   photo output callback off estimatedCaptureDuration with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_ESTIMATED_CAPTURE_DURATION_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_ESTIMATED_CAPTURE_DURATION_0200--------------");
+      getCameraDevices()
+      createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_ESTIMATED_CAPTURE_DURATION_0100 to operate");
+
+      photoOutput.on('estimatedCaptureDuration', async (err) => {
+        console.info(`photo output start listen on estimatedCaptureDuration failed: ${err.code}`);
+      })
+
+      try {
+        photoOutput.off('estimatedCaptureDuration')
+        console.info('photoOutput off estimatedCaptureDuration success')
+      } catch (err) {
+        console.error(`photoOutput off estimatedCaptureDuration failed, code: ${err.code}, message: ${err.message}`)
+        photoOutput.release()
+        expect().assertFail()
+      }
+
       photoOutput.release()
       done();
     })
@@ -2378,7 +2457,36 @@ export default function cameraJSUnitOutput() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_ASSET_AVAILABLE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_ASSET_AVAILABLE_0200
+     * @tc.desc   photo output callback off photoAssetAvailable with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_ASSET_AVAILABLE_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_ASSET_AVAILABLE_0200--------------");
+      getCameraDevices()
+      createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_ASSET_AVAILABLE_0200 to operate");
 
+      photoOutput.on('photoAssetAvailable', async (err) => {
+        console.info(`photo output start listen on photoAssetAvailable: ${err.code}`);
+      })
+
+      try {
+        photoOutput.off('photoAssetAvailable')
+        console.info('photoOutput off photoAssetAvailable success')
+      } catch (err) {
+        console.error(`photoOutput off photoAssetAvailable failed, code: ${err.code}, message: ${err.message}`)
+        photoOutput.release()
+        expect().assertFail()
+      }
+
+      photoOutput.release()
+      done();
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_0100
@@ -2420,6 +2528,36 @@ export default function cameraJSUnitOutput() {
       photoOutput.capture();
       photoOutput.release()
       await sleep(1000);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_0200
+     * @tc.desc   photo output callback off captureStart with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_0200--------------");
+      getCameraDevices()
+      createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
+      
+      photoOutput.on('captureStart', async (err) => {
+        console.info(`photo output error code: ${err.code}`);
+      })
+
+      try {
+        photoOutput.off('captureStart')
+        console.info('photoOutput off captureStart success')
+      } catch (err) {
+        console.error(`photoOutput off captureStart failed, code: ${err.code}, message: ${err.message}`)
+        photoOutput.release()
+        expect().assertFail()
+      }
+      
+      photoOutput.release()
       done();
     })
 
@@ -2470,8 +2608,75 @@ export default function cameraJSUnitOutput() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_WITH_INFO_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_WITH_INFO_0200
+     * @tc.desc   photo output callback off captureStartWithInfo with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_WITH_INFO_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_WITH_INFO_0200--------------");
+      getCameraDevices()
+      createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
 
+      photoOutput.on('captureStartWithInfo', async (err) => {
+        console.info(`photo output error code: ${err.code}`);
+      })
 
+      try {
+        photoOutput.off('captureStartWithInfo')
+        console.info('photoOutput off captureStartWithInfo success')
+      } catch (err) {
+        console.error(`photoOutput off captureStartWithInfo failed, code: ${err.code}, message: ${err.message}`)
+        photoOutput.release()
+        expect().assertFail()
+      }
+
+      photoOutput.release()
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_WITH_INFO_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_WITH_INFO_0300
+     * @tc.desc   photo output callback on captureStartWithInfo with multi callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_WITH_INFO_0300', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_WITH_INFO_0300--------------");
+      getCameraDevices()
+      createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
+
+      let callback1 = (error: BusinessError) => {
+        console.error(`callback1 captureStartWithInfo, code: ${error.code}, message: ${error.message}`)
+      }
+      let callback2 = (error: BusinessError) => {
+        console.error(`callback2 captureStartWithInfo, code: ${error.code}, message: ${error.message}`)
+      }
+      let callback3 = (error: BusinessError) => {
+        console.error(`callback3 captureStartWithInfo, code: ${error.code}, message: ${error.message}`)
+      }
+
+      photoOutput.on('captureStartWithInfo', callback1)
+      photoOutput.on('captureStartWithInfo', callback2)
+      photoOutput.on('captureStartWithInfo', callback3)
+
+      try {
+        photoOutput.off('captureStartWithInfo')
+        console.info('photoOutput off captureStartWithInfo success')
+      } catch (err) {
+        console.error(`photoOutput off captureStartWithInfo failed, code: ${err.code}, message: ${err.message}`)
+        photoOutput.release()
+        expect().assertFail()
+      }
+
+      photoOutput.release()
+      done();
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_0100
@@ -2519,6 +2724,35 @@ export default function cameraJSUnitOutput() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_0200
+     * @tc.desc   photo output callback off frameShutter with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_0200--------------");
+      getCameraDevices()
+      createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
+
+      photoOutput.on('frameShutter', async (err, data) => {
+        console.info(`photo output error code: ${err.code}`);
+      })
+
+      try {
+        photoOutput.off('frameShutter')
+        console.info('photoOutput off frameShutter success')
+      } catch (err) {
+        console.error(`photoOutput off frameShutter failed, code: ${err.code}, message: ${err.message}`)
+        photoOutput.release()
+        expect().assertFail()
+      }
+
+      photoOutput.release()
+      done();
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_END_0100
@@ -2590,6 +2824,37 @@ export default function cameraJSUnitOutput() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_END_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_END_0200
+     * @tc.desc   photo output callback off frameShutterEnd with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_END_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_END_0200--------------");
+      getCameraDevices()
+      createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_END_0200 to operate");
+
+      photoOutput.on('frameShutterEnd', async (err) => {
+        console.info(`photo output start listen on frameShutterEnd failed: ${err.code}`);
+      })
+
+      try {
+        photoOutput.off('frameShutterEnd')
+        console.info('photoOutput off frameShutterEnd success')
+      } catch (err) {
+        console.error(`photoOutput off frameShutterEnd failed, code: ${err.code}, message: ${err.message}`)
+        photoOutput.release()
+        expect().assertFail()
+      }
+
+      photoOutput.release()
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_END_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_END_0100
      * @tc.desc   photo output callback off captureEnd
@@ -2634,6 +2899,36 @@ export default function cameraJSUnitOutput() {
 
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_END_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_END_0200
+     * @tc.desc   photo output callback off captureEnd with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_END_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_END_0200--------------");
+      getCameraDevices()
+      createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_END_0200 to operate");
+
+      photoOutput.on('captureEnd', async (err, data) => {
+        console.info(`photo output error code: ${err.code}`);
+      })
+
+      try {
+        photoOutput.off('captureEnd')
+        console.info('photoOutput off captureEnd success')
+      } catch (err) {
+        console.error(`photoOutput off captureEnd failed, code: ${err.code}, message: ${err.message}`)
+        photoOutput.release()
+        expect().assertFail()
+      }
+
+      photoOutput.release()
+      done();
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_READY_0100
@@ -2704,9 +2999,35 @@ export default function cameraJSUnitOutput() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_ERROR_0200
+     * @tc.desc   photo output callback off error with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_ERROR_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_ERROR_0200--------------");
+      getCameraDevices()
+      createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
 
+      photoOutput.on('error', async (err) => {
+        console.info(`photo output error code: ${err.code}`);
+      })
 
+      try {
+        photoOutput.off('error')
+        console.info('photoOutput off error success')
+      } catch (err) {
+        console.error(`photoOutput off error failed, code: ${err.code}, message: ${err.message}`)
+        photoOutput.release()
+        expect().assertFail()
+      }
 
+      photoOutput.release()
+      done();
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_GET_ACTIVE_PROFILE_0100
@@ -2885,6 +3206,40 @@ export default function cameraJSUnitOutput() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_0200
+     * @tc.desc   video output callback off frameStart api with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_0200', Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("--------------SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_0200--------------");
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_0200 to operate");
+        await getVideoSurface();
+        let cameraOutputCap =
+          getSupportedOutputCapabilityInPromise(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
+        expect(isEmpty(cameraOutputCap)).assertFalse();
+        let videoProfilesArray = cameraOutputCap?.videoProfiles[0];
+        expect(isEmpty(videoProfilesArray)).assertFalse();
+        if (videoProfilesArray && videoSurfaceId) {
+          videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId);
+          videoOutput.off('frameStart')
+        } else {
+          console.info(TAG +
+            `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_0200 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
+        }
+        videoOutput.release();
+        done();
+      } catch (err) {
+        console.info(TAG +
+          `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_0200 error`);
+        expect().assertFail()
+      }
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_0100
      * @tc.desc   video output callback off frameEnd api
@@ -2923,6 +3278,40 @@ export default function cameraJSUnitOutput() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_0200
+     * @tc.desc   video output callback off frameEnd api with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_0200--------------");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_0200 to operate");
+      await getVideoSurface();
+      let cameraOutputCap =
+        getSupportedOutputCapabilityInPromise(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
+      expect(isEmpty(cameraOutputCap)).assertFalse();
+      let videoProfilesArray = cameraOutputCap?.videoProfiles[0];
+      expect(isEmpty(videoProfilesArray)).assertFalse();
+      if (videoProfilesArray && videoSurfaceId) {
+        videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId);
+        try {
+          videoOutput.off('frameEnd')
+          console.info('videoOutput off frameEnd success')
+        } catch (err) {
+          console.error(`videoOutput off frameEnd failed, code: ${err.code}, message: ${err.message}`)
+          videoOutput.release()
+          expect().assertFail()
+        }
+      } else {
+        console.info(TAG +
+          `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_0200 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
+      }
+      videoOutput.release();
+      done();
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100
@@ -3360,6 +3749,45 @@ export default function cameraJSUnitOutput() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_ERROR_0100
+     * @tc.desc   capture session callback off error wiht callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_ERROR_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_ERROR_0100--------------");
+      if (isEmpty(cameraManager)) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_ERROR_0100 cameraManager == null || undefined");
+        expect().assertFail();
+      } else {
+        try {
+          captureSession = cameraManager.createCaptureSession();
+
+          let errorCallback = async (error: BusinessError) => {
+            console.error(`Capture session error code: ${error.code}`);
+          };
+
+          captureSession.on('error', errorCallback);
+          captureSession.off('error', errorCallback);
+          done();
+        } catch (err) {
+          let error = err as BusinessError
+          console.info(TAG +
+            "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_ERROR_0100 FAILED!");
+          console.info('ERRORCODE: ' + error.code)
+          expect().assertFail();
+          done();
+        }
+      }
+      console.info(TAG +
+        "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_ERROR_0100 PASSED");
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_FOCUS_STATE_CHANGE_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_FOCUS_STATE_CHANGE_0100
      * @tc.desc   capture session callback on focusStateChange
@@ -3399,6 +3827,48 @@ export default function cameraJSUnitOutput() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_FOCUS_STATE_CHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_FOCUS_STATE_CHANGE_0100
+     * @tc.desc   capture session callback off focusStateChange with callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_FOCUS_STATE_CHANGE_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_FOCUS_STATE_CHANGE_0100--------------");
+      if (isEmpty(cameraManager)) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_FOCUS_STATE_CHANGE_0100 == null || undefined");
+        expect().assertFail();
+      } else {
+        try {
+          captureSession = cameraManager.createCaptureSession();
+
+          let focusStateChangeCallback = async (error: BusinessError, focusState: cameraObj.FocusState) => {
+            if (error !== undefined && error.code !== 0) {
+              console.error(`Callback Error, errorCode: ${error.code}`);
+              return;
+            }
+            console.info(`Focus state: ${focusState}`);
+          };
+
+          captureSession.on('focusStateChange', focusStateChangeCallback);
+          captureSession.off('focusStateChange', focusStateChangeCallback);
+          done();
+        } catch (err) {
+          let error = err as BusinessError
+          console.info(TAG +
+            "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_FOCUS_STATE_CHANGE_0100 FAILED!");
+          console.info('ERRORCODE: ' + error.code)
+          expect().assertFail();
+          done();
+        }
+      }
+      console.info(TAG +
+        "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_OFF_FOCUS_STATE_CHANGE_0100 PASSED");
+      done();
+    });
 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0100
@@ -3535,16 +4005,16 @@ export default function cameraJSUnitOutput() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300
-     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900
      * @tc.desc   preview output set frame rate with errorCode 7400110
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300', Level.LEVEL2, async (done: Function) => {
-      let testNum: string = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300';
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900', Level.LEVEL2, async (done: Function) => {
+      let testNum: string = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900';
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900--------------");
       let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
       let previewProfiles: cameraObj.Profile = cameraOutputCap.previewProfiles[0];
       console.info(`${testNum} cameraOutputCap.videoProfiles length is ${cameraOutputCap.videoProfiles.length}`);
@@ -3614,7 +4084,7 @@ export default function cameraJSUnitOutput() {
       videoOutput2.release()
       await stopCameraSession()
       await cameraSession.release();
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300 PASS");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900 PASS");
       // 关闭previewOutput
       await previewOutput.release();
       await sleep(1000);
@@ -3792,7 +4262,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (err) {
             console.info(`previewOutPut setLogViewAssistEnable enable failed: ${JSON.stringify(err)}`);
-            expect(err.code == 801).assertTrue()
+            expect(err.code).assertEqual(801)
           }
           try {
             previewOutput.setLogViewAssistEnable(false)
@@ -3800,7 +4270,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (err) {
             console.info(`previewOutPut setLogViewAssistEnable diaable failed: ${JSON.stringify(err)}`);
-            expect(err.code == 801).assertTrue()
+            expect(err.code).assertEqual(801)
           }
         }
         console.info(`${caseName} PASSED`)
@@ -3841,7 +4311,7 @@ export default function cameraJSUnitOutput() {
           expect().assertFail()
         } catch (error) {
           console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-          expect(error.code == 801).assertTrue()
+          expect(error.code).assertEqual(801)
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -3972,7 +4442,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (error) {
             console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-            expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue()
+            expect(error.code).assertEqual(cameraObj.CameraErrorCode.SESSION_NOT_CONFIG)
           }
         }
         console.info(`${caseName} PASSED`)

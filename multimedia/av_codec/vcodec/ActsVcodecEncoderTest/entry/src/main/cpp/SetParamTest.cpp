@@ -24,6 +24,7 @@
 #include "videoenc_sample.h"
 #include "videoenc_api11_sample.h"
 #include <multimedia/player_framework/native_avcodec_base.h>
+#include <multimedia/player_framework/native_avcodec_videobase.h>
 #include "avcodec_codec_name.h"
 #include <multimedia/player_framework/native_avcapability.h>
 #include "include/OhosCommonTest.h"
@@ -1914,4 +1915,100 @@ napi_value FRAMENUM_JUDGMENT_002Test(napi_env env, napi_callback_info info)
 void InitSetparamTest()
 {
     SetUpTestCase();
+}
+
+napi_value LOWPOWER_SETPARAM_001Test(napi_env env, napi_callback_info info)
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (cap) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = INP_DIR_720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
+        vEncSample->DEFAULT_BITRATE_MODE = CBR;
+        vEncSample->OUT_DIR = "/data/test/media/lowpower_setparam_cbr_hevc.h265";
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        OH_AVFormat *format = OH_AVFormat_Create();
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_WITH_LOWPOWER_CAMERA, 1);
+        if (vEncSample->SetParameter(format) != AV_ERR_OK) {
+            OH_AVFormat_Destroy(format);
+            vEncSample->Release();
+            return CreateIntInt32Result(env, -1);
+        }
+        OH_AVFormat_Destroy(format);
+        vEncSample->WaitForEOS();
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
+    } else {
+        return CreateIntInt32Result(env, 0);
+    }
+}
+
+napi_value LOWPOWER_SETPARAM_002Test(napi_env env, napi_callback_info info)
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = INP_DIR_720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
+        vEncSample->DEFAULT_BITRATE_MODE = VBR;
+        vEncSample->OUT_DIR = "/data/test/media/lowpower_setparam_vbr_avc.h264";
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        OH_AVFormat *format = OH_AVFormat_Create();
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_WITH_LOWPOWER_CAMERA, 0);
+        if (vEncSample->SetParameter(format) != AV_ERR_OK) {
+            OH_AVFormat_Destroy(format);
+            vEncSample->Release();
+            return CreateIntInt32Result(env, -1);
+        }
+        OH_AVFormat_Destroy(format);
+        vEncSample->WaitForEOS();
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
+    } else {
+        return CreateIntInt32Result(env, 0);
+    }
+}
+
+napi_value LOWPOWER_SETPARAM_003Test(napi_env env, napi_callback_info info)
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (cap) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = INP_DIR_720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
+        vEncSample->DEFAULT_BITRATE_MODE = VBR;
+        vEncSample->OUT_DIR = "/data/test/media/lowpower_setparam_vbr_hevc.h265";
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        OH_AVFormat *format = OH_AVFormat_Create();
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_WITH_LOWPOWER_CAMERA, -1);
+        if (vEncSample->SetParameter(format) != AV_ERR_OK) {
+            OH_AVFormat_Destroy(format);
+            vEncSample->Release();
+            return CreateIntInt32Result(env, -1);
+        }
+        OH_AVFormat_Destroy(format);
+        vEncSample->WaitForEOS();
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
+    } else {
+        return CreateIntInt32Result(env, 0);
+    }
 }

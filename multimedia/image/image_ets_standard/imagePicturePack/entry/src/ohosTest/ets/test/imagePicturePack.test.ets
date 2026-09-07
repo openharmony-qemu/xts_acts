@@ -38,7 +38,7 @@ export default function imagePicturePack() {
   let testContext: common.UIAbilityContext;
   let isSupportHEIFDecode: boolean;
   let isSupportHEICEncode: boolean;
-  let isSupportHdr: Boolean;
+  let isSupportHdr: Boolean = false;
   const GAINMAP = image.AuxiliaryPictureType.GAINMAP;
   const DEPTH_MAP = image.AuxiliaryPictureType.DEPTH_MAP;
   const UNREFOCUS_MAP = image.AuxiliaryPictureType.UNREFOCUS_MAP;
@@ -55,18 +55,12 @@ export default function imagePicturePack() {
         image.createImageSource(filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
       isSupportHEICEncode = 
         image.createImagePacker().supportedFormats.includes("image/heic");
-      isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean) => {
-        if (res) {
-          console.info("file exists");
-          return true;
-        } else {
-          console.info("file not exists");
-          return false;
-        }
-      }).catch((err: BusinessError) => {
-        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-        return false;
-      });
+      try {
+        isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
+        console.info('isSupportHdr is ' + isSupportHdr);
+      } catch (err) {
+        console.error('The file path does not exist');
+      }
     })
 
     afterEach(async () => {

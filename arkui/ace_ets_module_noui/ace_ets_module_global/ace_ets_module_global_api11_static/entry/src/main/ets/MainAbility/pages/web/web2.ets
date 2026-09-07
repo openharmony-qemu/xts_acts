@@ -23,6 +23,8 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
+import emitter from '@ohos.events.emitter';
+import Utils from '../../common/Utils';
 const uiContext = new UIContext();
 
 @Entry
@@ -35,6 +37,29 @@ struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
   controllerTwo: webview.WebviewController = new webview.WebviewController();
   webResourceResponse: WebResourceResponse = new WebResourceResponse();
+  @State str: string = "";
+
+  onPageShow(): void {
+    let valueChangeEvent: emitter.InnerEvent = {
+      eventId: 10,
+      priority: emitter.EventPriority.LOW
+    }
+    emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  private valueChangeCallBack: (p1: emitter.EventData) => void = (eventData: emitter.EventData): void => {
+    console.info("web2 page valueChangeCallBack");
+    try {
+      let dataStr = JSON.stringify(eventData.data);
+      let parsed = JSON.parseJsonElement(dataStr);
+      let action = parsed.getString("ACTION");
+      if (action != "") {
+        this.str = action;
+      }
+    } catch (err) {
+      console.info("valueChangeCallBack err: " + JSON.stringify(err));
+    }
+  }
 
   build() {
     Column() {
@@ -212,6 +237,37 @@ struct WebComponent {
         })
       Text('End')
         .fontSize(20)
+      Row() {
+        Button("web2_cookie_test")
+          .key("web2_cookie_test")
+          .onClick((e: ClickEvent): void => {
+            console.info("key==>" + this.str);
+            switch (this.str) {
+              case 'testPutAcceptCookieEnabled001': {
+                try {
+                  webview.WebCookieManager.putAcceptCookieEnabled(null as boolean);
+                  Utils.emitEvent('unexpected_success', 90300);
+                } catch (error) {
+                  console.error('testPutAcceptCookieEnabled001 error: ' + JSON.stringify(error));
+                  Utils.emitEvent(401, 90300);
+                }
+                break;
+              }
+              case 'testPutAcceptCookieEnabled002': {
+                try {
+                  webview.WebCookieManager.putAcceptCookieEnabled(undefined as boolean);
+                  Utils.emitEvent('unexpected_success', 90301);
+                } catch (error) {
+                  console.error('testPutAcceptCookieEnabled002 error: ' + JSON.stringify(error));
+                  Utils.emitEvent(401, 90301);
+                }
+                break;
+              }
+              default:
+                console.info("can not match case");
+            }
+          })
+      }
     }
   }
 }

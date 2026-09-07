@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import hilog from '@ohos.hilog';
 import events_emitter from '@ohos.events.emitter';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -33,16 +32,9 @@ import { Callback, MessageManager } from '../../ets/MainAbility/common/MessageMa
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from './Util.test';
 
 export default function noBarrierComponentsTest() {
   describe('noBarrierComponentsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("noBarrierComponentsTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.nowear.api11.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {

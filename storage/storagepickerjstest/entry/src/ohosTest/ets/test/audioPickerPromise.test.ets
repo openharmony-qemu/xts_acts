@@ -16,6 +16,7 @@
 import { afterEach, describe, expect, it, Level} from '@ohos/hypium';
 import { sleep, startAbility, stopAbility } from './Common'
 import picker from '@ohos.file.picker';
+import globalContext from './GlobalContext'
 
 export default function audioPickerPromise(abilityContext: Context) {
   describe("audioPickerPromise", () => {
@@ -285,6 +286,27 @@ export default function audioPickerPromise(abilityContext: Context) {
       option.newFileNames = [''];
       let saveDir = "Audios";
       await saveWithOption(testNum, done, option, saveDir);
+    });
+
+    /**
+    * @tc.name   AudioViewPicker_constructor_001
+    * @tc.number SUB_DF_AudioViewPicker_constructor_0010
+    * @tc.desc   Test AudioViewPicker constructor
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_constructor_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        let obj = new picker.AudioViewPicker(globalContext.getContext().getAbility());
+        console.log('AudioViewPicker_constructor_001 obj: ' + JSON.stringify(obj));
+        expect(obj).not().assertUndefined();
+        done();
+      } catch (e) {
+        console.log('AudioViewPicker_constructor_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect().assertFail();
+        done();
+      }
     });
   });
 }

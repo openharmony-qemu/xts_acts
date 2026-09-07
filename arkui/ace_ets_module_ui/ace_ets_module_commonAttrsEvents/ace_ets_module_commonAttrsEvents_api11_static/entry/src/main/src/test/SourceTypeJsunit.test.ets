@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import RectValue from '../../ets/MainAbility/common/Rect';
@@ -22,17 +22,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
 import { TouchObject, TouchType } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from './Util.test';
 import { RecordData } from '@ohos.base';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 interface Source {
   source: number
@@ -45,11 +35,6 @@ interface Eve {
 export default function sourceTypeJsunit() {
 
   describe('sourceTypeJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("sourceTypeJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("sourceTypeJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -83,7 +68,11 @@ export default function sourceTypeJsunit() {
      * @tc.level    Level.LEVEL0
      */
 it('sourceTypeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await CommonFunc.sleep(1000)
+      try {
+        await CommonFunc.sleep(1000)
+      } catch (err) {
+        console.error("sourceTypeTest_static_0100 sleep error:" + err);
+      }
 
       let rect = CommonFunc.getComponentRect('button')
       console.info("sourceTypeTest_static_0100 rectInfo is " + JSON.stringify(rect));
@@ -118,7 +107,11 @@ it('sourceTypeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise
       } catch (err) {
         console.info("sourceTypeTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      await CommonFunc.sleep(1000)
+      try {
+        await CommonFunc.sleep(1000)
+      } catch (err) {
+        console.error("sourceTypeTest_static_0100 sleep2 error:" + err);
+      }
       console.info('sourceTypeTest_static_0100 testSendTouchEvent END');
       done();
     });

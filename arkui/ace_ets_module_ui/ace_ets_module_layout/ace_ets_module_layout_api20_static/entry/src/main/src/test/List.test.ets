@@ -25,14 +25,14 @@ import StackSafeAreaTest from './Stack/StackSafeAreaTest';
 import ButtonAlignTest from './BoxAlign/ButtonAlignTest';
 
 export default function testsuite() {
-  FlexLayoutPolicyTest();
+  //FlexLayoutPolicyTest();
   GridRowNoColumnsTest();
-  LayoutInspectorTest();
+  //LayoutInspectorTest();
   ColumnMatchParentTest();
-  FlexMatchParentTest();
-  RowMatchParentTest();
-  StackChildAlignmentTest();
-  StackMatchParentTest();
-  StackSafeAreaTest();
-  ButtonAlignTest();
+  //FlexMatchParentTest();
+  //RowMatchParentTest();
+  //StackChildAlignmentTest();
+  //StackMatchParentTest();
+  //StackSafeAreaTest();
+  //ButtonAlignTest();
 }

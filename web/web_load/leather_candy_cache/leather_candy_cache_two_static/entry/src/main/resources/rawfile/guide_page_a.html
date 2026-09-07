@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guide Local A</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #14213d;
+      background: #f7fbfc;
+    }
+    main {
+      padding: 18px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 28px;
+    }
+    .marker {
+      margin-bottom: 14px;
+      padding: 12px;
+      border-left: 4px solid #00897b;
+      background: #e0f2f1;
+    }
+    a, button {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #78909c;
+      border-radius: 6px;
+      background: #ffffff;
+      color: #004d40;
+      font-size: 16px;
+      text-align: left;
+      text-decoration: none;
+    }
+    #state {
+      min-height: 24px;
+      padding: 8px 0;
+      color: #455a64;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id="guide-page">Guide Local A</h1>
+    <p class="marker">Page A is the default local page. Use B and C to build a back/forward history stack.</p>
+    <a id="go-b" href="guide_page_b.html">Open local page B</a>
+    <a id="go-c" href="guide_page_c.html">Open local page C</a>
+    <button id="push-state" onclick="history.pushState({ page: 'A-state' }, '', '#state-a'); document.getElementById('state').textContent = location.href;">
+      Push same-document history entry
+    </button>
+    <p id="state">No same-document history entry yet.</p>
+    <script>
+      window.__guidePage = 'A';
+      window.__guideSnapshot = function() {
+        return {
+          page: window.__guidePage || '',
+          href: location.href,
+          title: document.title,
+          stateText: document.getElementById('state') ? document.getElementById('state').textContent : ''
+        };
+      };
+    </script>
+  </main>
+</body>
+</html>

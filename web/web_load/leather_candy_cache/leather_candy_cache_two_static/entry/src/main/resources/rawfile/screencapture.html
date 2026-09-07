@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>华为商城</title>
+    <style id="react-native-stylesheet" data-savepage-sheetrules="">
+      body {
+        margin: 0px;
+        background-color: rgb(241, 243, 245);
+      }
+
+      .css-1dbjc4n {
+        -webkit-box-align: stretch;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        align-items: stretch;
+        border: 0px solid black;
+        box-sizing: border-box;
+        display: flex;
+        flex-basis: auto;
+        flex-direction: column;
+        flex-shrink: 0;
+        margin: 0px;
+        min-height: 0px;
+        min-width: 0px;
+        position: relative;
+        z-index: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+      }
+
+      .box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 58px;
+        width: 100%;
+        flex-direction: row;
+        padding-right: 16px;
+        padding-left: 16px;
+        background-color: rgb(241, 243, 245);
+        /*
+        吸顶测试
+        */
+        /* margin-top: 52px;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+         */
+      }
+
+      .vmall {
+        margin-right: 16px;
+        height: 26px;
+        width: 80px;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .search {
+        margin-right: 16px;
+        padding-left: 13px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.05);
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 20px;
+        display: flex;
+        flex: 1 1 0%;
+        opacity: 1;
+        touch-action: manipulation;
+        cursor: pointer;
+        user-select: none;
+        transition-property: opacity;
+        transition-duration: 0.15s;
+      }
+
+      .searchSVG {
+        width: 16px;
+        margin-top: 2px;
+        margin-right: 8px;
+        height: 16px;
+      }
+
+      .searchText {
+        padding-right: 10px;
+        opacity: 0.6;
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        /*flex: 1 1 0%;*/
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .message {
+        margin-bottom: 0px;
+        max-width: 120px;
+        justify-content: flex-end;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+        opacity: 1;
+        touch-action: manipulation;
+        cursor: pointer;
+        user-select: none;
+        transition-property: opacity;
+        transition-duration: 0.15s;
+        margin-right: 0px;
+        width: 24px;
+        height: 24px;
+      }
+
+      .login {
+        margin-left: 16px;
+        opacity: 1;
+        touch-action: manipulation;
+        cursor: pointer;
+        user-select: none;
+        transition-property: opacity;
+        transition-duration: 0.15s;
+        overflow: hidden;
+        text-align: right;
+        max-width: 28px;
+        line-height: 19px;
+        height: 18px;
+        font-weight: 500;
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+      }
+
+      .icon-slide_wrapper {
+        top: auto;
+        z-index: 1;
+        position: relative;
+        width: 100%;
+        background-color: rgb(241, 243, 245);
+        overflow: hidden;
+      }
+
+      .icon-slide_content {
+        width: 360px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        height: 36px;
+        overflow-y: hidden;
+        flex-direction: row;
+        padding-left: 16px;
+        background-color: rgb(241, 243, 245);
+        margin-right: 6px;
+        overflow: scroll;
+        display: flex;
+      }
+
+      .textFather {
+        padding-right: 8px;
+        padding-left: 8px;
+        height: 28px;
+        text-align: center;
+        margin-right: 8px;
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 14px;
+      }
+
+      .text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 28px;
+        opacity: 0.9;
+        font-size: 12px;
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+        text-align: center;
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+        /* Chrome Safari */
+      }
+
+      .header-pullapp {
+        width: 100%;
+        /* z-index: 200; */
+        background-color: #333;
+        height: 52px;
+        display: flex;
+        align-items: center;
+      }
+
+      .header-pullapp-close {
+        margin-left: 8px;
+
+        width: 42px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .header-pullapp-close_img {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+      }
+
+      .header-pullapp-img {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        /* border: 0; */
+      }
+
+      .header-pullapp-txtbox {
+        padding-left: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+        font-size: 12px;
+        width: 210px;
+      }
+
+      .header-pullapp-txtbox-title {
+        font-size: 14px;
+      }
+
+      .header-pullapp-btnbox {
+        font-size: 12px;
+        height: 28px;
+        color: #000;
+        min-width: 48px;
+        overflow: hidden;
+        background-color: #fff;
+        padding: 0 12px;
+        border-radius: 16px;
+        text-align: center;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        height: 1200px;
+      }
+
+      .content-icon_wrapper {
+        padding-top: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(241, 243, 245);
+      }
+
+      .content-icon_content-wrapper {
+        display: flex;
+        flex-shrink: 0;
+        flex-basis: auto;
+        overflow: scroll;
+        width: 364px;
+        height: 150px;
+        /* background-image: url("./Images/logo_white.png");
+        background-repeat: repeat; */
+        /* z-index: 3; */
+      }
+
+      .content-icon_content-column {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        flex-shrink: 0;
+      }
+
+      .content-icon_content-text {
+        -webkit-line-clamp: 2;
+        color: black;
+        opacity: 0.9;
+        font-size: 12px;
+        text-align: center;
+        line-height: 16px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .content-icon_slide-wrapper {
+        align-self: center;
+        background-color: white;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        height: 4px;
+        border-radius: 3px;
+        width: 40px;
+        position: relative;
+      }
+
+      .content-icon_slide {
+        width: 20px;
+        left: 0px;
+        height: 4px;
+        border-radius: 3px;
+        background-color: rgb(207, 10, 44);
+        top: 0px;
+        position: absolute;
+      }
+
+      .content-icon_content-item {
+        border: 0px solid black;
+        box-sizing: border-box;
+        display: flex;
+        flex-basis: auto;
+        flex-direction: column;
+        flex-shrink: 0;
+        width: 74px;
+        opacity: 1;
+        justify-content: center;
+        align-items: center;
+        touch-action: manipulation;
+        cursor: pointer;
+        user-select: none;
+        transition-property: opacity;
+        transition-duration: 0.15s;
+        padding-bottom: 8px;
+      }
+
+      .content-icon_content-pic {
+        border-radius: 0px;
+        height: 48px;
+        width: 48px;
+      }
+
+      .content-new_wrapper {
+        padding-top: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        background-color: rgb(241, 243, 245);
+      }
+
+      .content-new_img {
+        width: 382px;
+        border-radius: 14px;
+        display: none;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0px;
+        background-color: rgb(241, 243, 245);
+        width: 100%;
+        /* todo */
+        /* min-height: 56px; */
+        max-height: 56px;
+        display: flex;
+        justify-content: space-between;
+        z-index: 100000;
+      }
+
+      .footer_item-wrapper {
+        width: 82.8px;
+        touch-action: manipulation;
+        opacity: 1;
+        cursor: pointer;
+        background-color: rgb(241, 243, 245);
+        padding-right: 4px;
+        padding-left: 4px;
+        padding-top: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 2;
+        font-size: 10px;
+      }
+
+      .footer_item-img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .footer_item-text {
+        display: flex;
+        justify-content: center;
+      }
+
+      .content-ads_wrapper {
+        width: 382px;
+        position: relative;
+        flex-direction: column;
+        /* padding-left: 16px; */
+        /* padding-right: 16px; */
+        padding-top: 10px;
+        background-color: rgb(241, 243, 245);
+      }
+
+      .content-ads_container {
+        width: 382px;
+        height: 164px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        border-radius: 14px;
+      }
+
+      .content-ads_content {
+        width: 9999px;
+        position: absolute;
+        /**一张图片的宽度 todo bug修复*/
+        left: -382px;
+        display: flex;
+        /* transition-property: left;
+        transition-duration: 1s;
+        transition-timing-function: ease-in-out; */
+      }
+
+      .content-ads_img {
+        display: block;
+        float: left;
+        width: 382px;
+        flex-shrink: 0;
+      }
+
+      .content-ads_dots {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        margin-bottom: 10px;
+        margin-top: 20px;
+      }
+
+      .dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        background-color: gray;
+        margin-right: 10px;
+      }
+
+      .dot.active {
+        background-color: red;
+        width: 12px;
+      }
+
+      .content-recons_dots {
+        /* todo 换成 */
+
+        /* text-align: center; */
+        /* height: 50px; */
+        /* position: absolute; */
+        /* bottom: -30px; */
+        /* left: 45%; */
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        margin-bottom: 10px;
+        margin-top: 20px;
+      }
+
+      .content-recons_dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        background-color: gray;
+        margin-right: 10px;
+      }
+
+      .content-recons_dot.active {
+        background-color: red;
+        width: 12px;
+      }
+
+      .content-recons_wrapper {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 8px;
+        background-color: rgb(241, 243, 245);
+      }
+
+      .content-recons_container {
+        background-color: rgb(255, 255, 255);
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        padding-bottom: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 16px;
+      }
+
+      .content-recons_title {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding-bottom: 8px;
+      }
+
+      .content-recons_title_alt {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .content-recons_title_more {
+        font-weight: 400;
+        opacity: 0.6;
+        font-size: 14px;
+      }
+
+      .content-recons_content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-recons_content-img {
+        width: 100%;
+        height: 218px;
+      }
+
+      .content-recons_content-desc {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        margin-right: 12px;
+        margin-left: 12px;
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: 8px;
+      }
+
+      .content-recons_content-desc_tip {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+        opacity: 0.6;
+      }
+
+      .content-recons_content-desc_price {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+        align-items: center;
+      }
+
+      .content-recons-small_content {
+        display: flex;
+      }
+
+      .content-recons-small_column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-recons-small_item {
+        width: 170px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 20px;
+        align-items: center;
+      }
+
+      .content-recons-small_title {
+        /* text-align: center;
+        todo 不生效，改flex */
+        display: flex;
+        justify-content: center;
+        height: 18px;
+        align-items: center;
+      }
+
+      .content-recons-small_desc {
+        overflow: hidden;
+        max-width: 132px;
+        color: rgb(207, 10, 44);
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(207, 10, 44, 0.4);
+        border-radius: 2px;
+        padding-left: 1px;
+        padding-right: 1px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-top: 4px;
+        font-size: 9px;
+        font-weight: 400;
+      }
+
+      .content-recons-small_img {
+        width: 116px;
+        height: 116px;
+      }
+
+      .content-recons-small_price {
+        /* text-align: center;
+        todo 不生效，改flex */
+        display: flex;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .content-recons-small_old-price {
+        text-decoration: line-through;
+        font-weight: 400;
+        font-size: 10px;
+        color: rgba(0, 0, 0, 0.5);
+        bottom: 0.1px;
+        margin-left: 4px;
+      }
+
+      .content-likes_wrapper {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 8px;
+        background-color: rgb(241, 243, 245);
+      }
+
+      .content-likes_container {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .content-likes_title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .content-likes_item {
+        border-radius: 20px;
+        flex-direction: column;
+        padding-top: 20px;
+        padding-left: 16px;
+        padding-right: 16px;
+        background-color: rgb(255, 255, 255);
+        width: 160px;
+        /* height: 263px; */
+        margin-top: 8px;
+        /* todo */
+        padding-bottom: 20px;
+      }
+
+      .content-likes_img {
+        width: 120px;
+        height: 120px;
+        /*
+        todo 设置margin会占图片位置
+        margin-top: 40px;
+        margin-bottom: 40px; */
+      }
+
+      .content-likes_desc {
+        margin-top: 20px;
+        font-size: 13px;
+        font-weight: bold;
+        margin-bottom: 4px;
+        /* height: 56px; */
+      }
+
+      .content-likes_price {
+        opacity: 1;
+        font-weight: 600;
+        color: rgb(207, 10, 44);
+        font-size: 16px;
+      }
+
+      .content-likes_tip {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .flex-column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .flex-row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .border-red-with-margin {
+        overflow: hidden;
+        max-width: 132px;
+        color: rgb(207, 10, 44);
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(207, 10, 44, 0.4);
+        border-radius: 2px;
+        padding-left: 1px;
+        padding-right: 1px;
+        font-weight: 400;
+        font-size: 9px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-top: 4px;
+        margin-right: 4px;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header-pullapp" data-focusable="true">
+        <div class="header-pullapp-close">
+          <img
+            class="header-pullapp-close_img"
+            src="Images/icon-app-close.png"
+          />
+        </div>
+        <img class="header-pullapp-img" src="Images/05414906713610941450.png" />
+
+        <div class="header-pullapp-txtbox">
+          <div class="header-pullapp-txtbox-title">来华为商城APP</div>
+          <div>立即领取新人专享见面礼</div>
+        </div>
+        <div class="header-pullapp-btnbox">打开APP</div>
+      </div>
+      <div class="css-1dbjc4n box">
+        <div class="css-1dbjc4n vmall">
+          <img
+            draggable="false"
+            data-savepage-src="https://res.vmallres.com/portal/1.22.9.301/h5/images/logo_red.png"
+            src="Images/logo_red.png"
+          />
+        </div>
+        <div class="css-1dbjc4n search">
+          <div class="css-1dbjc4n searchSVG">
+            <svg width="16" height="16" viewBox="0 0 1024 1024">
+              <path
+                d="M744.758 704.861l143.275 143.25c12.497 12.497 12.497 32.758 0 45.255s-32.758 12.497-45.255 0l-143.686-143.691c16.388-13.702 31.662-28.692 45.666-44.814zM442.667 85.333c197.35 0 357.333 159.984 357.333 357.333 0 88.502-32.174 169.489-85.464 231.903v0l-0.944 1.101c-2.851 3.312-5.762 6.571-8.731 9.776l9.674-10.877c-3.963 4.641-8.042 9.179-12.233 13.61-2.5 2.643-5.032 5.239-7.602 7.796-0.895 0.89-1.782 1.764-2.674 2.633-2.996 2.92-6.063 5.806-9.18 8.637-1.208 1.097-2.431 2.193-3.663 3.282-2.857 2.525-5.744 4.995-8.67 7.419-0.589 0.488-1.169 0.965-1.75 1.441-61.596 50.386-140.317 80.613-226.098 80.613-197.35 0-357.333-159.984-357.333-357.333s159.984-357.333 357.333-357.333zM442.667 149.333c-162.004 0-293.333 131.33-293.333 293.333s131.33 293.333 293.333 293.333c162.004 0 293.333-131.33 293.333-293.333s-131.33-293.333-293.333-293.333z"
+                fill="#000000"
+                fill-opacity="0.6"
+              ></path>
+            </svg>
+          </div>
+          <div dir="auto" class="searchText">换电池</div>
+        </div>
+        <div>
+          <div class="css-1dbjc4n message">
+            <svg width="24" height="24" viewBox="0 0 1024 1024">
+              <path
+                d="M661.333 128c176.731 0 320 143.269 320 320 0 174.964-140.418 317.131-314.708 319.957l-5.292 0.043h-72.085l-161.287 161.294c-11.997 11.997-31.15 12.477-43.719 1.44l-1.536-1.44c-11.997-11.997-12.477-31.15-1.44-43.719l1.44-1.536 170.667-170.667c5.501-5.501 12.799-8.792 20.514-9.303l2.113-0.070h85.333c141.385 0 256-114.615 256-256 0-139.971-112.334-253.705-251.767-255.966l-302.9-0.034c-141.385 0-256 114.615-256 256 0 139.971 112.334 253.705 251.767 255.966l4.233 0.034h32c17.673 0 32 14.327 32 32 0 17.042-13.322 30.972-30.12 31.946l-1.88 0.054h-32c-176.731 0-320-143.269-320-320 0-174.964 140.418-317.131 314.708-319.957l5.292-0.043h298.667zM298.667 394.667c29.455 0 53.333 23.878 53.333 53.333s-23.878 53.333-53.333 53.333c-29.455 0-53.333-23.878-53.333-53.333s23.878-53.333 53.333-53.333zM512 394.667c29.455 0 53.333 23.878 53.333 53.333s-23.878 53.333-53.333 53.333c-29.455 0-53.333-23.878-53.333-53.333s23.878-53.333 53.333-53.333zM725.333 394.667c29.455 0 53.333 23.878 53.333 53.333s-23.878 53.333-53.333 53.333c-29.455 0-53.333-23.878-53.333-53.333s23.878-53.333 53.333-53.333z"
+                fill="#000000"
+                fill-opacity="1"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <div class="css-1dbjc4n login">登录</div>
+        </div>
+      </div>
+      <div class="icon-slide_wrapper">
+        <div class="icon-slide_content">
+          <div class="css-1dbjc4n textFather">
+            <div class="text">华为专区</div>
+          </div>
+          <div class="css-1dbjc4n textFather">
+            <div class="text">鸿蒙智联</div>
+          </div>
+          <div class="css-1dbjc4n textFather">
+            <div class="text">耳机</div>
+          </div>
+          <div class="css-1dbjc4n textFather">
+            <div class="text">美食酒饮</div>
+          </div>
+          <div class="css-1dbjc4n textFather">
+            <div class="text">手表</div>
+          </div>
+          <div class="css-1dbjc4n textFather">
+            <div class="text">手机</div>
+          </div>
+          <div class="css-1dbjc4n textFather">
+            <div class="text">手环</div>
+          </div>
+          <div class="css-1dbjc4n textFather">
+            <div class="text">电脑</div>
+          </div>
+          <div class="css-1dbjc4n textFather">
+            <div class="text">平板</div>
+          </div>
+          <div class="css-1dbjc4n textFather">
+            <div class="text">家用电器</div>
+          </div>
+          <div class="css-1dbjc4n textFather">
+            <div class="text">路由器</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-ads_wrapper">
+        <div class="content-ads_container">
+          <div class="content-ads_content">
+            <img class="content-ads_img" src="Images/21.png" />
+            <img class="content-ads_img" src="Images/1.jpg" />
+            <img class="content-ads_img" src="Images/2.jpg" />
+            <img class="content-ads_img" src="Images/3.jpg" />
+            <img class="content-ads_img" src="Images/4.jpg" />
+            <img class="content-ads_img" src="Images/5.jpg" />
+            <img class="content-ads_img" src="Images/6.jpg" />
+            <img class="content-ads_img" src="Images/21.png" />
+            <img class="content-ads_img" src="Images/1.jpg" />
+          </div>
+        </div>
+        <div class="content-ads_dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+
+      <div class="content-icon_wrapper">
+        <div class="content-icon_content-wrapper" id="scroll">
+          <!-- 一列開始-->
+          <div class="content-icon_content-column">
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="./Images/1.png.50.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">智慧办公</div>
+            </div>
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="./Images/f1ba6faeea3742b8b87246e57f3f3012.png.50 (1).webp"
+              />
+              <div dir="auto" class="content-icon_content-text">鸿蒙智联</div>
+            </div>
+          </div>
+          <!-- 一列開始-->
+          <div class="content-icon_content-column">
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="data:image/webp;base64,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"
+              />
+              <div dir="auto" class="content-icon_content-text">智能家居</div>
+            </div>
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/faad41fadb674a5e8dc3f8a47f19a361.png.50.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">华为智选</div>
+            </div>
+          </div>
+          <!-- 一列開始-->
+          <div class="content-icon_content-column">
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="./Images/phone.gif"
+              />
+              <div dir="auto" class="content-icon_content-text">华为手机</div>
+            </div>
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/e4c32b3ecc6747e591597ed40fe0f92d.png.50.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">AITO汽车</div>
+            </div>
+          </div>
+          <!-- 一列開始-->
+          <div class="content-icon_content-column">
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/3C4B3370FF19B2E9221EE5DCBC468A47.png.50.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">影音娱乐</div>
+            </div>
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/6075827d4e6649e482b15fae1594c120.png.50.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">秒杀</div>
+            </div>
+          </div>
+          <!-- 一列開始-->
+          <div class="content-icon_content-column">
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/health.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">华为健康</div>
+            </div>
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/2fa58c6a897d4d5199112ab78cf52f14.png.50.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">直播</div>
+            </div>
+          </div>
+
+          <!-- 一列開始-->
+          <div class="content-icon_content-column">
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/zhong.webp"
+              />
+
+              <div dir="auto" class="content-icon_content-text">众测</div>
+            </div>
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/6F7289C87A0E34292B89460154025140.png.50.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">企业团购</div>
+            </div>
+          </div>
+          <!-- 一列開始-->
+          <div class="content-icon_content-column">
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/D52200613D21EAB29FD47156761DB926.png.50.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">积分商城</div>
+            </div>
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/E4FAA5B741819CD14A643107BF0C76B5.png.50.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">拼团</div>
+            </div>
+          </div>
+          <!-- 一列開始-->
+          <div class="content-icon_content-column">
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/0605b18e3c774be79e56bca1b23dbe44.png.50.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">教育优惠</div>
+            </div>
+            <div
+              data-focusable="true"
+              tabindex="0"
+              class="content-icon_content-item"
+            >
+              <img
+                class="content-icon_content-pic"
+                draggable="false"
+                src="Images/FCF3BE1701406AAFBBD239407B572BCC.png.50.webp"
+              />
+              <div dir="auto" class="content-icon_content-text">智慧出行</div>
+            </div>
+          </div>
+        </div>
+        <!-- 滑动条 -->
+        <div class="content-icon_slide-wrapper">
+          <div class="content-icon_slide"></div>
+        </div>
+      </div>
+
+      <div class="content-new_wrapper">
+        <img
+          class="content-new_img"
+          src="https://res.vmallres.com/cmscdn/CN/2022-10/e18a0e4b632a4601a5981a0575a77666.gif"
+        />
+      </div>
+
+      <div class="content-recons_wrapper">
+        <div class="content-recons_container">
+          <div class="content-recons_title">
+            <div class="content-recons_title_alt">甄选推荐</div>
+            <div class="content-recons_title_more">
+              更多<svg width="17" height="19" viewBox="0 0 1024 1024">
+                <path
+                  d="M329.354 820.029c-6.006 6.002-9.38 14.144-9.38 22.635s3.374 16.633 9.38 22.635c12.508 12.483 32.761 12.483 45.269 0l341.333-340.821c6.003-5.994 9.376-14.13 9.376-22.613s-3.373-16.619-9.376-22.613l-341.333-341.888c-12.508-12.483-32.761-12.483-45.269 0-6.006 6.002-9.38 14.144-9.38 22.635s3.374 16.633 9.38 22.635l318.72 319.232-318.72 318.165z"
+                  fill="#000000"
+                  fill-opacity="0.2"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="content-recons_content">
+            <img class="content-recons_content-img" src="Images/top.webp" />
+            <div class="content-recons_content-desc">
+              <div>MateBook E Go</div>
+              <div class="content-recons_content-desc_tip">
+                性能版新品预订立省200
+              </div>
+              <div class="content-recons_content-desc_price">
+                <div class="content-recons-small_price">
+                  ¥4899<span class="content-recons-small_old-price">¥4999</span>
+                </div>
+
+                <div class="textFather">
+                  <div class="text">华为专区</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-recons_dots">
+            <div class="content-recons_dot active"></div>
+            <div class="content-recons_dot"></div>
+            <div class="content-recons_dot"></div>
+            <div class="content-recons_dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-recons_wrapper">
+        <div class="content-recons_container">
+          <div class="content-recons_title">
+            <div class="content-recons_title_alt">华为手机</div>
+            <div class="content-recons_title_more">
+              更多<svg width="17" height="19" viewBox="0 0 1024 1024">
+                <path
+                  d="M329.354 820.029c-6.006 6.002-9.38 14.144-9.38 22.635s3.374 16.633 9.38 22.635c12.508 12.483 32.761 12.483 45.269 0l341.333-340.821c6.003-5.994 9.376-14.13 9.376-22.613s-3.373-16.619-9.376-22.613l-341.333-341.888c-12.508-12.483-32.761-12.483-45.269 0-6.006 6.002-9.38 14.144-9.38 22.635s3.374 16.633 9.38 22.635l318.72 319.232-318.72 318.165z"
+                  fill="#000000"
+                  fill-opacity="0.2"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="content-recons-small_content">
+            <div class="content-recons-small_column">
+              <div class="content-recons-small_item">
+                <!-- <div> -->
+                <img class="content-recons-small_img" src="Images/1.webp" />
+                <!-- </div> -->
+                <div class="content-recons-small_title">nova 10</div>
+                <span class="content-recons-small_desc">
+                  V1-V5优惠100 | 赠经典耳机
+                </span>
+                <div class="content-recons-small_price">
+                  ¥2949<span class="content-recons-small_old-price">¥2999</span>
+                </div>
+              </div>
+              <div class="content-recons-small_item">
+                <!-- <div> -->
+                <img class="content-recons-small_img" src="Images/2.webp" />
+                <!-- </div> -->
+                <div class="content-recons-small_title">HUAWEI P50</div>
+                <span class="content-recons-small_desc">
+                  V1-V5领券优惠610元
+                </span>
+                <div class="content-recons-small_price">
+                  ¥3908<span class="content-recons-small_old-price">¥4488</span>
+                </div>
+              </div>
+            </div>
+            <div class="content-recons-small_column">
+              <div class="content-recons-small_item">
+                <!-- <div> -->
+                <img class="content-recons-small_img" src="Images/3.webp" />
+                <!-- </div> -->
+                <div class="content-recons-small_title">nova 10z</div>
+                <span class="content-recons-small_desc">
+                  V1-V5领券优惠120元
+                </span>
+                <div class="content-recons-small_price">
+                  ¥1849<span class="content-recons-small_old-price">¥1899</span>
+                </div>
+              </div>
+              <div class="content-recons-small_item">
+                <img class="content-recons-small_img" src="Images/4.webp" />
+                <div class="content-recons-small_title">nova 10</div>
+                <span class="content-recons-small_desc">
+                  直降80元 | V1-V5领10元劵
+                </span>
+                <div class="content-recons-small_price">
+                  ¥1219<span class="content-recons-small_old-price">¥1299</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-likes_wrapper">
+        <div class="content-likes_container">
+          <div class="content-likes_title">猜你喜欢</div>
+          <div class="flex-row" style="justify-content: space-around">
+            <div class="flex-column">
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/1.png" />
+                <div class="content-likes_desc">HUAWEI Mate 50E</div>
+                <div class="content-likes_price">¥3999</div>
+
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">直屏旗舰全款预售</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/3.png" />
+                <div class="content-likes_desc">
+                  HUAWEI Mate 50 Pro 手带支架保护壳
+                </div>
+                <div class="content-likes_price">¥199</div>
+
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/5.png" />
+                <div class="content-likes_desc">华为 Vision 智慧屏</div>
+                <div class="content-likes_price">¥5999</div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin"
+                    >预订优惠500元 | 3期免息</span
+                  >
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/7.png" />
+                <div class="content-likes_desc">
+                  HUAWEI MatePad Pro 12.6英寸 2022
+                </div>
+                <div class="content-likes_price">
+                  ¥5099<span class="content-recons-small_old-price">¥5199</span>
+                </div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">限时直降100元</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/9.png" />
+                <div class="content-likes_desc">
+                  华为 Vision 智慧屏 Z系列 电竞版
+                </div>
+                <div class="content-likes_price">¥7999</div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">赠游戏手柄</span>
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/20.webp" />
+                <div class="content-likes_desc">
+                  HUAWEI 超级快充电源适配器（Max 65W）
+                </div>
+                <div class="content-likes_price">149</div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/13.png" />
+                <div class="content-likes_desc">
+                  【拼团】HUAWEI FreeBuds Pro 2
+                </div>
+                <div class="content-likes_price">
+                  ¥1299<span class="content-recons-small_old-price">¥1299</span>
+                </div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">拼团立省100元</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/15.png" />
+                <div class="content-likes_desc">
+                  HUAWEI MatePad Pro 11英寸 2022
+                </div>
+                <div class="content-likes_price">
+                  ¥3399<span class="content-recons-small_old-price">¥3499</span>
+                </div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">限时直降100元</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/17.png" />
+                <div class="content-likes_desc">
+                  HUAWEI FreeBuds SE 无线耳机
+                </div>
+                <div class="content-likes_price">
+                  ¥399<span class="content-recons-small_old-price">¥369</span>
+                </div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">限时直降30元</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/19.png" />
+                <div class="content-likes_desc">【一分钱拼团】美的破壁机</div>
+                <div class="content-likes_price">
+                  ¥0.01<span class="content-recons-small_old-price"
+                    >¥12999</span
+                  >
+                </div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex-column">
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/2.png" />
+                <div class="content-likes_desc">
+                  华为5A/6A数据线 USB-C 转 USB-C
+                </div>
+                <div class="content-likes_price">
+                  ¥59
+                  <span class="content-recons-small_old-price">¥69</span>
+                </div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">限时直降10元</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/4.png" />
+                <div class="content-likes_desc">HUAWEI MateBook E Go</div>
+                <div class="content-likes_price">
+                  ¥4899<span class="content-recons-small_old-price">¥4999</span>
+                </div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin"
+                    >性能版新品预订立省200</span
+                  >
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/6.png" />
+                <div class="content-likes_desc">nova 10z</div>
+                <div class="content-likes_price">
+                  ¥1649<span class="content-recons-small_old-price">¥1699</span>
+                </div>
+
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">V1-V5领券优惠120元</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/8.png" />
+                <div class="content-likes_desc">
+                  决色 Mate40/pro芳纶碳纤维手机壳
+                </div>
+                <div class="content-likes_price">¥218</div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/10.png" />
+                <div class="content-likes_desc">HUAWEI MateDock 3</div>
+                <div class="content-likes_price">¥399</div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/12.png" />
+                <div class="content-likes_desc">
+                  华为超级快充无线充电器（MAX 27W）
+                </div>
+                <div class="content-likes_price">
+                  ¥179<span class="content-recons-small_old-price">¥199</span>
+                </div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">限时直降20元</span>
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/14.jpg" />
+                <div class="content-likes_desc">
+                  VSITOO轻巧抑菌智能保温杯C3（支持鸿蒙智联）
+                </div>
+                <div class="content-likes_price">¥129</div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/16.png" />
+                <div class="content-likes_desc">
+                  【拼团】华为充电器SuperCharge快充版
+                </div>
+                <div class="content-likes_price">
+                  ¥119<span class="content-recons-small_old-price">¥159</span>
+                </div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">拼团省40元</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/11.png" />
+                <div class="content-likes_desc">
+                  HUAWEI Mate 50 屏幕高透保护膜
+                </div>
+                <div class="content-likes_price">¥49</div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+              <div class="content-likes_item">
+                <img class="content-likes_img" src="Images/18.png" />
+                <div class="content-likes_desc">
+                  绿联 金属折叠桌面手机支架平板通用
+                </div>
+                <div class="content-likes_price">¥49</div>
+                <div class="content-likes_tip">
+                  <span class="border-red-with-margin">赠积分</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+
+      <!-- <div id="b">1</div> -->
+      <div class="footer">
+        <div data-focusable="true" tabindex="0" class="footer_item-wrapper">
+          <img
+            class="footer_item-img"
+            draggable="false"
+            src="./Images/655C627E76D597D20ACAE2FFFE05A943.webp"
+          />
+          <div class="footer_item-text" dir="auto">首页</div>
+        </div>
+        <div data-focusable="true" tabindex="0" class="footer_item-wrapper">
+          <img
+            class="footer_item-img"
+            draggable="false"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAAEgBckRAAAAAXNSR0IArs4c6QAABD9JREFUaAXtWD1sjVEYLhUJCx1IGg2T1CQGBtIwKAtiIIZKRykRiRiESGkqQgxYRCQ2YWhiIgbaQdPEwGSipjZE0qWxkDQRnuf2PCfv997znXtvVHtx3+TJ+3u+7z0/7znn+9raSmhZsN8PfABccsVUULwzNCqyqhbLjV9O8m/GXhR9VvIyu0h8xKGolQntxsEWfPQkbXW9g4ENkfrHRpJtkhXbCvdIBcp8EAIRyTd4FjwK+g59zNp8g6fWGYK9LYQ0DdMEnUBG201WQ5CvAPLTVbUwaBRx/P0QV3x2YSo4y/XKHkT1m8gzkAeB9cZWSMnY86KW6yWErQW6gW0A7cMAM6CNM/8aiOQ7uPCd7sC7bsT3zY/5Eej7nc2ozSJq3mw+flnR9wN4DExQCcSZ2Cgl8K/g14FZZ48qZ8PPiJy0a0uwsvzihfYNL1U9pV7uX8ChyJH1r0oEVtlSc9CJhra0+Rw+eBSYoxJoK/gmKYFzDsatze959Pl9QvE7IQwGpQv8tByOr4P+xNmiygkqTFL0zNubf5I5hinS5Fn/5kQg56VF/9sI+EruwABcBNa4gZiGfs3YeGr2ATrj5HoD4YEUcv+CsiJj7E/gJNAJDAFlVHhJaqsYSLRkBeuOpX0qFccEdwCxF343TTz790z/5gu079ixsTZ76NgYyQV/apLvKNLxmaCPgh8GylYcLweR/DKlYzfg62AKtnd0BloJ3gv4OngL25cQszjM98Bf52wWV6F8CgbK9q6rOBWj9GQlf4D3Y4yYF/aCcaJZXDxUeB6PAfywscRiLGwrqUm+ZVsYWZWsm8SI8UlkTOG2928Wmrq7IDw1RKmbgb1B6GZhq9smI3/F5pfpbVhX22gjv4CsG1tZFTP8AjBLoUWtEWiNwGKMgC9j+07eIS8DZWVtY71sS16+3EmmmBTnP8lhILk15DpwE4108N+FbA98qFXEje8U0B08j8DHg8xLxPEg87S8B/iTMLgj06lJAzfP89FjhNROLbeSp14recYwIXuM2/ZWZkyt5Pk8+07bnr5IuQ7EoGYWWh1Y6tlJ3RiV0zQE3f7OQbbrWzGWs4h3GcNUiazrba06sDck5pKk3C7EBtz69gG14hgrmoHA25Iu+LJ3QeCdPHXZV4zn/Ah4CegW5v1/v17PyHaim5zO0q0sDAM/WTnq74G5YPOMH4xbAM5Gu3c6nXs/l232QzLXgR407ncPrVflMuK3oTrCxAeBRpYPwiM9hDQRNSPkirjPxJ2FXKvoGH4MYJEy0V7gOUCirOT5PTpCYw3ipqD/DMwl2YHcOWCnuJ7kmY+Ns+2tbGPYpoxsnG1fiM91oBDYrEqrA0s9M7ki5r8w/XHNfcan+sADiO1FlA8A3PX4f4dohPjrOEm5bZQN+FFzFKj3HPiM2FdAcseAnVvzHmADUFqY8JF4DkwCPIVngRa1RuBPjMAvg8mldDTfSMEAAAAASUVORK5CYII="
+          />
+          <div dir="auto" class="footer_item-text">分类</div>
+        </div>
+        <div data-focusable="true" tabindex="0" class="footer_item-wrapper">
+          <img
+            class="footer_item-img"
+            draggable="false"
+            src="data:image/png;base64,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"
+          />
+          <div dir="auto" class="footer_item-text">发现</div>
+        </div>
+        <div data-focusable="true" tabindex="0" class="footer_item-wrapper">
+          <img
+            class="footer_item-img"
+            draggable="false"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAAEgBckRAAAAAXNSR0IArs4c6QAABHVJREFUaAXtWVmIjlEY/jHWyL40pAaDQgrZd6FcaJLiRo0SuVBuLGW5GEy4GksNklDcKMmdJcIMJlFkCWMrZE8i21ie53PO3/sd53zb/N+Y9L/1zPuedz3r953vn0wmhHaH2MPNu5sIH5lutdBnpGGwNMSThxnuM3Vb5vd0rl4t0RGS+6LLpSVIliWWwrES2OwIaAX9QdPmK2sYp7Ld1FDWGW3ZnCcbUq6QDSUvtuhSUjVD3lKgGLgNRKbm8PRmISyiQDl8B+cs9AYGKp3JOkKxRAdo434tWLi3RnIdXlicQlWFAR7rbTbX1mgLZ6/75hgewOAKsu750QhobyldpnVy0NQtBLjNJfEIdJeKxiXrE7oB3eomumadEGGPLOoCMoCr8BlYDnAyk8zPUcSdAKzUB1rXUlsDLErGr6DeXGXqHvIPyPcE/6OK9LeF8tpJbitA/UGgiEICWqNiOM3OAtXKqVTxOKwHnA/rAD7BXPQchhLgF3Df5ST0bSDzgcxZ8aZH2NITbdtUVpO7KehscCuXqcAr4Htlkrz8b2eA25TbqhwYCtwDvAMCnhNigZbAHKALMA34ADwBUqF1yCq3Zr2LmC/NXci4EeD54Mi2AXHpLQLWAj8ZaBZ4TSVoAlAFvAPCDiNcfNQZrUrAeTA5RZt8IfEa/eGenWbuIJNqoeCCJyVeNbJkK3Aia00mjJFhtgI3lAOHmoSYs0YH2gpo2wwtJODndIyrwEc4DNFOMbgeNe+IHrkKnNQOMfkk099V4IxytF08zRyyPQKNH1LhKsBvANIWIGqR8V5EJnNIcY8FndLW8LB9Vcl4U34FBZ9nDUdB1xb2ogwoBq6yEUCcRk7ne+Cp9HOtAX0WAbwtDFcczElbYeGULjQ9ggpcFs6c2yB6FGTM2/Iz0KhnQD+JitBL2xdZHfTHgFONdRR6AOwfj3QHxfl8mAX0A0jfgJVATi+tTFxfkgOw5eILZIEy3ALfLpz0gIUqFfErsn5yZS5wGZS+CrwEaAcMAnoCzwDXloMpVeIraY+sELYC9J0OzFVBNeD7lNxQjH2cD0xWBS+CH1Cyt++17OJnYeBhJo0Cot5fvIAc/OFvGFx1TS20QB70LtZ+7Pxp3QCvz2VYpIklyqvoeRkZZQD0l3fgKWj7ZkEmTEHui5y9VF7+znxX1og6AD4FqlUg74D8TG8ocs4+OxB1APSVX4TcRlEeAIyrD7VC8EiVgGfhgpkszgBeIvi6StAGfJyZLIX2ROTUE3UJMl+oPoozAAbKVZjpy5ROgwPQdE4LkscdAL9476gE/AfAbJksx/JU5OuqctaCP1ayj+nl8SlDGhz0cmBAiF+uzE+RiB98f20fFkgyAMaRGMsDNhbgFYPXjVzQFyR5DlwDzgJ8D/2/lHQF+G/3Zca0PEKbS83HXRJiX1YBRUbwDrRvGrpsM+4h1oG+nxGVkoV5sJMSY83OM5etVrYG36pJiPvzDVAIMAd/lawA3gJJiW97vqg6AfznNn9hPgIcB/KUn4G0ZuA3dJKT1SjndAsAAAAASUVORK5CYII="
+          />
+          <div dir="auto" class="footer_item-text">购物车</div>
+        </div>
+        <div data-focusable="true" tabindex="0" class="footer_item-wrapper">
+          <img
+            class="footer_item-img"
+            draggable="false"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAAEgBckRAAAAAXNSR0IArs4c6QAABF1JREFUaAXtWUtPU0EUtqWk2AVhJSmvhDSY6FpX+DNk4UIT3Zi40oiPjS50IxEjceFjo4ksTNQfwA+AFa41kSCEAI2uCIvaBgp+3809N3Nn7p25t7fQGHqTZmbOnPOdx8ycefTUqSRfuVx+Z/AJcWho6InRaRCEWzrYzrGhdwiDvaRUa5J2XPRGWlWtVm86JZ0MusXDw8NXrULj4+ODFBoZGTmtC1PQs1UQohikz7DfxkwhV78Ad6AMOe3b+hJlifWenp7Zzc3NFdZjPzXuUY7mdUmgLuk0tV1QG6zv7e09GBsbm2k2m5MHBwc1vT91O3Aatt8F4tkohFKp9Gh1dfVP0AfnzsGM8wFBqxjOGwRNQG16TudyuaZLyJh8KkpH60FUXVYwkHD1CvgGUC5vbW3Nu2TY71SA7Dl9eHg4Ad45xOmHgIL+HPT+zLHj4DB9CLBasg+KXqk0vW6sBZ2BbUzzOZ3OkJEGL97ofWrbGSIyMxHW6/XQRoNxWNne3p5VwTpSNzyA615CyufzS7DyCxLSX5dlo6Ojlf39/fvkM9axKsz9lgOn0tLUqUiXDw0yBmwwDaDOu7Gx8UunddsnIALGOojzmfsvZtlF9O+g/KQmvjgZ0p0KkOgmkIumI0BqUHIngh4iORVw4WBF7yLv3BNJ0JjobifJR6GFJgBSyrFEBWcfw4NUsohQcZ+wflYFfswjAWD918gOjWhVAN4djT9owoNy0LBUrAo4WyjrxzwEwzNXiBDTSDLIkr4XGRZaLuB9fX2P19bWfsdge2SnAnIpG3+AlQQ8YP6vK0aIKpXKmVqt9jStVxibnziMvdDlQgpU8N7e3pkkOxTPTJhtUzhrTwLcnj6YFvjTrUjS5vncl/fOSyJjrANaLp1pSnj7nfyYyjy/Bp+hIElYAumICsIVOjgYCsAQGpcIjFQk49qFRfUWsUwFojIjRE213a13I9CNwFFHoG05gbfERqPBs6X1oIRlvlIsFuddG3lSxzM74F9vH0Kh94pFxTzx8d0JG1DVb5f956RLbPtfDYeGZ1kdyeQAEq53/hWLUIaeMhR6UG1FJhCOqBhbTQRPLEndGLnJJrmOkEfdkFWMWEWWjkwOAHdAsGW6SNtWarwBhk0mri+TA4jesgBj8V6WuqsE75TwqBhCS1NmWgNUpJ7oYcwujHsfN5U4/8FzAzz9lEU981tWZgdoiH+DvoVqkIlIt3w1ZKnXzjd3C4B0tcUBAWPJKCONXkCUuR/I/N5htDH3v8WNjopxouqpRkCPLqJcbEe0MDoN4LQ0Sk4HWpjf7fCJGInWidUB9b8fRGm3UCh8kNtdu6zUcXg9xbv0dclUcRdukYt1gK9bWHTe2QUgS7i1fxSh4yih/xr08zLvna3i/sKJ3cgQAb5Yeh+2/s9SP65S1anaouu3ORAs0PX19boueNRtVactWRjX+ijDkH1aem6Jwmo3LXYEoGgBC7fjbwy+DQvtdryL142AH4F/mkiyRbBRyYcAAAAASUVORK5CYII="
+          />
+          <div dir="auto" class="footer_item-text">我的</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var slide = document.getElementsByClassName("content-icon_slide")[0];
+      var scrollEle = document.getElementById("scroll");
+      scrollEle.addEventListener("scroll", function () {
+        slide.style.left = (scrollEle.scrollLeft * 20) / 228 + "px";
+        document.getElementById("b").innerHTML = scrollEle.scrollLeft;
+      });
+    </script>
+    <!-- <script>
+          var x = document.getElementsByClassName("content-ads_content")[0];
+          document.getElementById("b").innerHTML = x.width;
+        </script> -->
+
+    <script>
+      var originX = null; // 每次move的起始值，不是每次移动的起始值
+      var initX = null; // 每次移动的起始值，在一次移动中（鼠标只释放一次过程），initX不变
+      var initLeft = null; // 每次移动的起始left
+      var flag = false; // 滑动是否开始
+      var timer = null; // 自动滑动timer
+
+      var containerEle = document.getElementsByClassName(
+        "content-ads_container"
+      )[0];
+      var contentEle = document.getElementsByClassName(
+        "content-ads_content"
+      )[0];
+      var imgNum = contentEle.children.length;
+      // var oneImgWidth = contentEle.children[0].offsetWidth;
+      var oneImgWidth = 382;
+      var sumLength = imgNum * oneImgWidth;
+      var minScrollLength = oneImgWidth / 3;
+
+      // dot移动func
+      function showDots() {
+        var oldLeft = getOldLeft();
+        var target = (oldLeft / oneImgWidth) * -1; // 第几张图，1-7
+        var dotIndex = target - 1; // 0-6
+        var dots = document.getElementsByClassName("content-ads_dots")[0]
+          .children;
+        for (var i = 0; i < dots.length; i++) {
+          var ele = dots[i];
+          if (i !== dotIndex) {
+            ele.style.backgroundColor = "gray";
+            ele.style.width = "6px";
+            // dots[i].classList.remove("active"); //增加表示高亮的类名
+          } else {
+            ele.style.backgroundColor = "red";
+            ele.style.width = "12px";
+            // dots[i].classList.add("active"); //去掉高亮
+          }
+        }
+      }
+
+      // 获取当前left的值
+      function getOldLeft() {
+        var eleLeft = parseInt(contentEle.style.left);
+        if (!eleLeft) {
+          eleLeft = -oneImgWidth;
+        }
+        return eleLeft;
+      }
+
+      // 设置left
+      function movement(offset) {
+        var oldLeft = getOldLeft();
+        var newLeft = oldLeft + offset;
+        contentEle.style.left = newLeft + "px";
+      }
+
+      // 滑动一定距离后，需要调整到某一页的开头
+      function adjustLeft(moveX) {
+        var oldLeft = parseInt(contentEle.style.left);
+
+        var rightEndLeft = -sumLength + oneImgWidth / 2 + oneImgWidth;
+
+        // 左滑
+        if (moveX > 0) {
+          var newLeft = initLeft + oneImgWidth;
+          if (newLeft >= -oneImgWidth / 2) {
+            newLeft = -oneImgWidth * (imgNum - 2);
+          }
+          contentEle.style.left = newLeft + "px";
+          return;
+        }
+
+        // 右滑
+        if (moveX < 0) {
+          var newLeft = initLeft - oneImgWidth;
+          if (newLeft <= rightEndLeft) {
+            newLeft = -oneImgWidth;
+          }
+          contentEle.style.left = newLeft + "px";
+          return;
+        }
+      }
+
+      // 滑动距离过短，恢复成移动前的left
+      function restoreLeft() {
+        if (!initLeft) {
+          return;
+        }
+        contentEle.style.left = initLeft + "px";
+        initLeft = null;
+      }
+
+      // 自动滚动
+      function rullAuto() {
+        timer = setInterval(function () {
+          movement(-oneImgWidth);
+
+          // 调整，是否需要切到第一个
+          var oldLeft = getOldLeft();
+          if (oldLeft <= -(imgNum - 1) * oneImgWidth) {
+            contentEle.style.left = -oneImgWidth + "px";
+          }
+
+          // 展示dot
+          showDots();
+        }, 3000);
+      }
+
+      containerEle.addEventListener("touchstart", function (event) {
+        // 清除定时器
+        clearInterval(timer);
+
+        // 开始处理滑动
+        flag = true;
+
+        originX = event.touches[0].clientX;
+        initX = event.touches[0].clientX;
+        var oldLeft = parseInt(contentEle.style.left);
+        if (!oldLeft) {
+          oldLeft = -oneImgWidth;
+        }
+        initLeft = oldLeft;
+      });
+      containerEle.addEventListener(
+        "touchmove",
+        function (event) {
+          if (!flag) {
+            return;
+          }
+          event.preventDefault();
+          event.stopPropagation();
+
+          var clientX = event.touches[0].clientX;
+
+          var move = clientX - originX; // 左移时是负的
+
+          movement(move);
+          originX = clientX;
+        },
+        { passive: false }
+      );
+
+      containerEle.addEventListener("touchend", function (event) {
+        // 重新启动定时器
+        rullAuto();
+
+        if (!flag) {
+          return;
+        }
+        flag = false;
+        var clientX = event.changedTouches[0].clientX;
+        var moveX = clientX - initX; // 左滑动为正
+        var moveLength = Math.abs(moveX);
+
+        if (!moveLength) {
+          return;
+        }
+
+        if (moveLength <= minScrollLength) {
+          restoreLeft();
+          return;
+        }
+
+        if (moveX > 0) {
+        }
+        adjustLeft(moveX);
+        showDots();
+      });
+
+      // 开启执行
+      rullAuto();
+    </script>
+  </body>
+</html>

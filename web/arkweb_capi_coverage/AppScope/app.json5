@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.open.harmony.arkwebcapicoveragetest",
+    "bundleName": "com.acts.weberrorcode",
     "vendor": "Kaihong",
     "versionCode": 1000000,
     "versionName": "1.0.0",

@@ -17,20 +17,10 @@
 import {Color,$r} from '@ohos.arkui.component'
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect,beforeAll } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeightFlexTest() {
 
@@ -114,10 +104,6 @@ export default function layoutWeightFlexTest() {
     }
   }]
   describe('LayoutWeightFlexTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("layoutWeightFlexTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-    });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       data.testValue.expectValue.width = UIContext.resolveUIContext()!.vp2px(200)
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');

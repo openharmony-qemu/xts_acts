@@ -15,13 +15,11 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver } from '@kit.TestKit';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
 const LOG_TAG = '[ButtonLabelStyleTest]';
@@ -35,12 +33,6 @@ function getLabelStyleTextAlignByKey(key: string): string {
 
 export default function ButtonLabelStyleTest() {
   describe('ButtonLabelStyleTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info(`${LOG_TAG} beforeAll start`);
-      await UtilsTest.startAbility('com.arkui.ace.dialog.button.static', 'EntryAbility');
-      console.info(`${LOG_TAG} beforeAll end`);
-    });
-
     beforeEach(() => {
       console.info(`${LOG_TAG} beforeEach start`);
       const options: router.RouterOptions = {
@@ -62,7 +54,11 @@ export default function ButtonLabelStyleTest() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(300);
+      try {
+        await Utils.sleep(300);
+      } catch (err) {
+        console.info(`${LOG_TAG} afterEach sleep err: ` + JSON.stringify(err));
+      }
       console.info(`${LOG_TAG} afterEach end`);
     });
 

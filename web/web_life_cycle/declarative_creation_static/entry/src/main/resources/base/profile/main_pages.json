@@ -1,5 +1,7 @@
 {
   "src": [
-    "pages/declarativeCreationTwo"
+    "pages/declarativeCreationTwo",
+	"pages/MouseInfoCallbackTest",
+	"pages/OnContextMenuHideCallbackTest"
   ]
 }

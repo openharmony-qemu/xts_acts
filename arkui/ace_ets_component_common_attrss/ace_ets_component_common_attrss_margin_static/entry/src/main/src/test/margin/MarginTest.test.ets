@@ -22,23 +22,12 @@ import Utils, {
   TestValue
 } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { $r, AlignRuleOption, Color, HorizontalAlign, Margin, VerticalAlign } from '@ohos.arkui.component';
 import { jsonx } from 'std/core';
 import inspector from '@ohos.arkui.inspector';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import { UIContext } from '@ohos.arkui.UIContext';
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function marginTest() {
   let setInit: Margin = {
@@ -224,10 +213,6 @@ export default function marginTest() {
   }]
 
   describe('MarginTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("MarginTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-    });
     //Create test cases by config.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       if(data.testValue.describe == "SetAll"){

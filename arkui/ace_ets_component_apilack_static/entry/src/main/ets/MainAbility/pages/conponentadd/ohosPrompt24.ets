@@ -238,7 +238,7 @@ struct promptExample {
               console.info('showDialog success callback, click button: ' + data?.index);
             });
           } catch (error) {
-            console.error(`showDialog args error code is ${(error as Error)?.code}, message is ${(error as Error)?.message}`);
+            console.error(`showDialog args error code is ${(error as Error).code}, message is ${(error as Error).message}`);
           }
           ;
         })
@@ -271,7 +271,7 @@ struct promptExample {
                 console.info('showActionMenu error: ' + err);
               })
           } catch (error) {
-            console.error(`showActionMenu args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
+            console.error(`showActionMenu args error code is ${(error as BusinessError)?.code}, message is ${(error as Error).message}`);
           }
           ;
 
@@ -306,7 +306,7 @@ struct promptExample {
                 console.info('showActionMenu error: ' + err);
               })
           } catch (error) {
-            console.error(`showActionMenu args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
+            console.error(`showActionMenu args error code is ${(error as BusinessError)?.code}, message is ${(error as Error).message}`);
           }
           ;
         })

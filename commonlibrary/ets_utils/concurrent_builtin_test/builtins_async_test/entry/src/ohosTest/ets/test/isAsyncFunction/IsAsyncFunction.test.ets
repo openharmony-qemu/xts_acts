@@ -2427,20 +2427,20 @@ it('testIsAsyncFunctionSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     //   expect(result).assertTrue();
     // });
     //
-    // /**
-    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1050
-    //  * @tc.name testIsAsyncFunctionTaskPoolAsync
-    //  * @tc.desc Test isAsyncFunction with async function in TaskPool
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level2
-    //  */
-    // it('testIsAsyncFunctionTaskPoolAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-    //   const type = new util.types();
-    //   const result: boolean = type.isAsyncFunction(taskPoolAsyncFunc);
-    //   expect(result).assertFalse();
-    // });
-    //
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1050
+     * @tc.name testIsAsyncFunctionTaskPoolAsync
+     * @tc.desc Test isAsyncFunction with async function in TaskPool
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testIsAsyncFunctionTaskPoolAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const type = new util.types();
+      const result: boolean = type.isAsyncFunction(taskPoolAsyncFunc);
+      expect(result).assertTrue();
+    });
+
     //
     // /**
     //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1070

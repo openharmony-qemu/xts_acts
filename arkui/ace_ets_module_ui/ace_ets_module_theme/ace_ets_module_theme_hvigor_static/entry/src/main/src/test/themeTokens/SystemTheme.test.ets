@@ -14,18 +14,12 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { Driver, MouseButton, ON, Point } from '@ohos.UiTest';
+import { afterAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { Resource, ResourceColor } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import { systemTheme } from '../../../ets/MainAbility/pages/themeTokensPages/SystemThemeTestPage';
 import { frameTime, sleep } from '../Utils.test'
@@ -41,9 +35,6 @@ export default function systemThemeTest() {
   let colorValues: Map<string, string> | undefined = new Map<string, string>();
 
   describe('ActsSystemTest', () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       try {

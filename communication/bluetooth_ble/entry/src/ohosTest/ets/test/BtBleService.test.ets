@@ -1563,5 +1563,33 @@ export default function btBleServiceTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_OFF_NOCALLBACK_0100
+     * @tc.desc   Test GattServer off BLEMtuChange without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      try {
+        gattServer.on('BLEMtuChange', (mtu: number)=> {
+          console.info('BLEMtuChange on value' + JSON.stringify(mtu));
+        });
+        gattServer.off('BLEMtuChange');
+        console.info('[bluetooth_js]off BLEMtuChange without callback success');
+        expect(true).assertTrue();
+      } catch (err) {
+        console.error("bluetooth mtu changed off no callback errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]BLEMtuChange is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
   })
 }

@@ -115,6 +115,7 @@ export default function HttpHttpDataTypeTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} request fail err:${JSON.stringify(err)}`);
+              httpRequest.destroy();
               ExpectFail();
               done();
             });
@@ -206,6 +207,7 @@ export default function HttpHttpDataTypeTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} request fail err:${JSON.stringify(err)}`);
+              httpRequest.destroy();
               ExpectFail();
               done();
             });

@@ -74,17 +74,22 @@ export default function AddMonitorSetPath(): void {
     it('AddMonitorSetPath_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorSetPath_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
-      let btn_true = await driver.findComponent(ON.id('AddPathButton')) as Component;
-      await CommonFunc.sleep(1000);
-      await (btn_true?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJsonNew = inspector.getInspectorByKey('AddPathText');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] value first has changed from 5 to 6');
+      try{
+        let driver = await Driver.create();
+        await CommonFunc.sleep(1000);
+        let btn_true = await driver.findComponent(ON.id('AddPathButton'));
+        await CommonFunc.sleep(1000);
+        await (btn_true?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJsonNew = inspector.getInspectorByKey('AddPathText');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] value first has changed from 5 to 6');
+      } catch (err) {
+        console.error('AddMonitorSetPath_static_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });

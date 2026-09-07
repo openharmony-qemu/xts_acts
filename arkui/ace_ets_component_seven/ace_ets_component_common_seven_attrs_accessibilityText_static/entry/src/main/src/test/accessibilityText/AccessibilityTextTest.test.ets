@@ -13,25 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import udmfType from '@ohos.data.uniformTypeDescriptor';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue, SetV } from '../../../ets/MainAbility/common/Utils';
-import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, beforeAll, expect } from '../../../../hypium/index';
-import { AlignRuleOption, VerticalAlign, HorizontalAlign, Position, $r } from '@ohos.arkui.component';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BasePageConfig, PageConfig, TestValue, SetV } from '../../../ets/MainAbility/common/Utils';
+import CommonTest from '../common/CommonTest';
+import { describe, expect } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
-let domain: int= 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 
 export default function AccessibilityTextTest() {
   //A list of components that support the position attribute, which is required.
@@ -74,13 +60,6 @@ export default function AccessibilityTextTest() {
    * Create test suite.
    */
   describe('accessibilityTextTest', () => {
-beforeAll(async (): Promise<void> => {
-  console.info("markAnchorTest beforeAll start");
-  
-  
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-  
-});
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Modify the target component properties.

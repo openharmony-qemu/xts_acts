@@ -893,7 +893,7 @@ export default function builtinsJsonTypeStringifiersTest(): void {
         expect(actual.length).assertEqual(expectedLen[i]);
 
         const containsDash: boolean = actual.indexOf("-") >= 0;
-        expect(containsDash).assertEqual(input < 0);
+        expect(containsDash).assertEqual(input < 0n);
       }
     });
 
@@ -1507,7 +1507,7 @@ export default function builtinsJsonTypeStringifiersTest(): void {
         expect(actual).assertEqual(expected);
 
         const containsDash: boolean = actual.indexOf("-") >= 0;
-        expect(containsDash).assertEqual(input < 0);
+        expect(containsDash).assertEqual(input < 0n);
       }
     });
 

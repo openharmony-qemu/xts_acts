@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,25 +21,10 @@ import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageMa
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-// import config from '@ohos.accessibility.config'
-import accessibility from '@ohos.accessibility';
-import {UtilsTest} from '../Util.test'
-//const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
-const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api12/EntryAbility';
 
 export default function onKeyPreImeTest() {
   describe('onKeyPreImeTest', () => {
-    beforeAll(async (): Promise<void> => {
-
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
-
-    });
     beforeEach(async ():Promise<void> => {
-      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-      // console.info('enable success');
-      // }).catch((err: object) => {
-      //   console.error('failed to enable, ${err}');
-      // })
       console.info("onKeyPreImeTest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/onKeyEvent/OnKeyPreIme",

@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
@@ -73,7 +72,11 @@ export default class CommonTest {
             pageConfig.componentKey = targetView;
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
-            await Utils.pushPage(pageConfig);
+            try {
+              await Utils.pushPage(pageConfig);
+            } catch (err) {
+              console.info('[' + caseTag + '] pushPage err: ' + JSON.stringify(err));
+            }
             try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
@@ -118,12 +121,20 @@ export default class CommonTest {
               console.error(msg);
               console.error(err.stack);
               if (err.name != 'AssertException') {
-                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                try {
+                  await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                } catch (backErr) {
+                  console.info('[' + caseTag + '] back in catch err: ' + JSON.stringify(backErr));
+                }
                 expect().assertFail();
               }
             }
 
-            await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+            try {
+              await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+            } catch (err) {
+              console.info('[' + caseTag + '] back err: ' + JSON.stringify(err));
+            }
 
             console.info('[' + caseTag + '] END');
             done();

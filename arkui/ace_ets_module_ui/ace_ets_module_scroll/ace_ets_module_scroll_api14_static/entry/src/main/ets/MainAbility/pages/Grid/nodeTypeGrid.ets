@@ -36,6 +36,7 @@ export class MyNodeController extends NodeController {
 
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext);
+    this.rootNode = node
     node.commonAttribute
       .width('100%')
       .height('100%')
@@ -70,7 +71,7 @@ export class MyNodeController extends NodeController {
     return node;
   }
 
-  getNodeType() {
+  getNodeType():string {
     let inspectorInfo = this.rootNode?.getFirstChild()?.getNodeType();
     console.info('inspectorInfo ' + JSON.stringify(inspectorInfo));
     return JSON.stringify(inspectorInfo)
@@ -81,8 +82,6 @@ export class MyNodeController extends NodeController {
 @Component
 struct nodeGridTypeIndex {
   private myNodeController: MyNodeController = new MyNodeController();
-  @State node: FrameNode | null = null;
-  @State uiContext: UIContext = this.getUIContext()
   @State type: string = 'getNodeType'
 
   build() {
@@ -95,7 +94,7 @@ struct nodeGridTypeIndex {
         Text(this.type).margin(30)
         Button('getInspectorInfo')
           .onClick((e: ClickEvent) => {
-            this.type = this.myNodeController?.getNodeType()!
+            this.type = this.myNodeController?.getNodeType() ?? 'NodeType'
           })
       }
     }

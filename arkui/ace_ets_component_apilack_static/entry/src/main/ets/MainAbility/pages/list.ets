@@ -59,15 +59,15 @@ struct ListLanes {
   private arr:Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
   private scroller: Scroller = new Scroller()
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear ListLanes start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear ListLanes end`)
   }
 
-  onPageShow() {
+  onPageShow(): void {
     console.info('list page show called');
     let stateChangeEvent: events_emitter.InnerEvent = {
       eventId: 322,

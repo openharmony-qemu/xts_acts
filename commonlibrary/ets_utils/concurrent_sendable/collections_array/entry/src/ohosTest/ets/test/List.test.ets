@@ -21,7 +21,11 @@ import CollectionsArraySupplementTest from './CollectionsArraySupplementTest.tes
 import CollectionsArrayApisTest from './CollectionsArrayApisTest.test';
 import CollectionsArrayExpand1024Test from './CollectionsArrayExpand1024Test.test';
 import TypedArrayExpand1024Test from './TypedArrayExpand1024Test.test';
-
+import CollectionsArrayContainsAllSendableTest from './CollectionsArrayContainsAllSendableTest.test';
+import CollectionsArrayContainsAllBuiltinTest from './CollectionsArrayContainsAllBuiltinTest.test';
+import CollectionsArrayRetainAllSendableTest from './CollectionsArrayRetainAllSendableTest.test';
+import CollectionsArrayRetainAllBuiltinTest from './CollectionsArrayRetainAllBuiltinTest.test';
+import CollectionsArrayRetainAllPredicateTest from './CollectionsArrayRetainAllPredicateTest.test';
 import arrayConstructorSuite from './CollectionsArrayBaseTest/ArrayConstructor.test';
 import arrayTraversalSuite from './CollectionsArrayBaseTest/ArrayTraversal.test';
 import arrayQuerySuite from './CollectionsArrayBaseTest/ArrayQuery.test';
@@ -59,7 +63,11 @@ export default function testsuite() {
   CollectionsArrayApisTest();
   CollectionsArrayExpand1024Test();
   TypedArrayExpand1024Test();
-  
+  CollectionsArrayContainsAllSendableTest();
+  CollectionsArrayContainsAllBuiltinTest();
+  CollectionsArrayRetainAllSendableTest();
+  CollectionsArrayRetainAllBuiltinTest();
+  CollectionsArrayRetainAllPredicateTest();
   arrayConstructorSuite();
   arrayTraversalSuite();
   arrayQuerySuite();

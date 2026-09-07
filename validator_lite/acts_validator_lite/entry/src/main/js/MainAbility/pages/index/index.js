@@ -5,7 +5,8 @@ export default {
   data: {
     passCount: 0,
     failCount: 0,
-    untestedCount: 0
+    untestedCount: 0,
+    reportBtnText: 'Generate Report'
   },
   onShow() {
     this.refreshSummary();
@@ -37,11 +38,13 @@ export default {
   navigateTo(subsystem) {
     let routes = {
       'ArkUI': 'pages/ArkUI/common/index/index',
-                  'PowerManager': 'pages/PowerManager/common/index/index',
+                  'PowerManager': 'pages/PowerManager/power/index',
       'FileManagement': 'pages/FileManagement/file/index',
       'DistributedData': 'pages/DistributedData/storage/index',
       'Startup': 'pages/Startup/deviceInfo/index',
-      'Communication': 'pages/Communication/nfc/index'
+      'Communication': 'pages/Communication/nfc/index',
+      'Sensors': 'pages/Sensors/index/index',
+      'Location': 'pages/Location/index/index'
     };
     let url = routes[subsystem] || 'pages/index/index';
     router.replace({ uri: url });
@@ -51,6 +54,7 @@ export default {
       return;
     }
     this._reporting = true;
+    this.reportBtnText = 'Generating...';
     let items = getApp().data.testItems;
     let passCount = 0;
     let failCount = 0;
@@ -66,12 +70,15 @@ export default {
       }
       totalCount++;
     }
+    console.info('[report_start]');
     this._outputReportLines(items, keys, 0, passCount, failCount, totalCount);
   },
   _outputReportLines(items, keys, index, passCount, failCount, totalCount) {
     if (index >= keys.length) {
-      console.info('[total] ' + totalCount + ' ' + passCount + ' ' + failCount);
+      let totalLine = '[total] ' + totalCount + ' ' + passCount + ' ' + failCount;
+      console.info(totalLine);
       console.info('[end]');
+      console.info('[report_end]');
       app.terminate();
       return;
     }
@@ -87,6 +94,6 @@ export default {
     let self = this;
     setTimeout(function() {
       self._outputReportLines(items, keys, index + 1, passCount, failCount, totalCount);
-    }, 200);
+    }, 100);
   },
 }

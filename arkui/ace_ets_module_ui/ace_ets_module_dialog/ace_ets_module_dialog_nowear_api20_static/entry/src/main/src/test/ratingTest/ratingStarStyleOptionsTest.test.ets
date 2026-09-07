@@ -16,30 +16,18 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { Color,$r } from '@ohos.arkui.component'
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
 
 export default function RatingStarStyleOptionsTest() {
   describe('RatingStarStyleOptionsTest', () => {
     const SLEEP_TIME_1000 = 1000;
-    beforeAll(async (): Promise<void> => {
-      console.info("RatingStarStyleOptionsTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api20.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("RatingStarStyleOptionsTest beforeEach start");
       try {
@@ -68,7 +56,11 @@ export default function RatingStarStyleOptionsTest() {
     it('RatingStarStyle_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'RatingStarStyle_static_0100';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('RatingStarStyleOptionsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('rating_001');
       let obj = JSON.parseJsonElement(strJson);
       let starStyleStr = obj.getElement('$attrs').getString('starStyle');
@@ -78,7 +70,11 @@ export default function RatingStarStyleOptionsTest() {
       expect(starStyleObj.getString('foregroundUri')).assertEqual('resource://RAWFILE/image2.png');
       expect(starStyleObj.getString('secondaryUri')).assertEqual('resource://RAWFILE/image3.png');
       console.info('[' + tagName + '] END============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('RatingStarStyleOptionsTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -91,7 +87,11 @@ export default function RatingStarStyleOptionsTest() {
     it('RatingStarStyle_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'RatingStarStyle_static_0200';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('RatingStarStyleOptionsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('rating_002');
       let obj = JSON.parseJsonElement(strJson);
       let starStyleStr = obj.getElement('$attrs').getString('starStyle');
@@ -101,7 +101,11 @@ export default function RatingStarStyleOptionsTest() {
       expect(starStyleObj.getString('foregroundUri')).assertEqual("resources/rawfile/image2.png");
       expect(starStyleObj.getString('secondaryUri')).assertEqual("resources/rawfile/image3.png");
       console.info('[' + tagName + '] END============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('RatingStarStyleOptionsTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -114,7 +118,11 @@ export default function RatingStarStyleOptionsTest() {
     it('RatingStarStyle_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'RatingStarStyle_static_0300';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('RatingStarStyleOptionsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('rating_003');
       let obj = JSON.parseJsonElement(strJson);
       let starStyleStr = obj.getElement('$attrs').getString('starStyle');
@@ -124,7 +132,11 @@ export default function RatingStarStyleOptionsTest() {
       expect(starStyleObj.getString('foregroundUri')).assertEqual("");
       expect(starStyleObj.getString('secondaryUri')).assertEqual("");
       console.info('[' + tagName + '] END============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('RatingStarStyleOptionsTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 

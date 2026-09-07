@@ -67,7 +67,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
-      expect(b < 2.5).assertTrue();
+      expect(b.doubleValue() < 2.5).assertTrue();
     });
 
     /**
@@ -80,7 +80,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
-      expect(b < 5.9).assertTrue();
+      expect(b.doubleValue() < 5.9).assertTrue();
     });
 
     /**
@@ -93,7 +93,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 10n;
-      expect(b < 10.5).assertTrue();
+      expect(b.doubleValue() < 10.5).assertTrue();
     });
 
     /**
@@ -106,7 +106,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 100n;
-      expect(b < 100.9).assertTrue();
+      expect(b.doubleValue() < 100.9).assertTrue();
     });
 
     /**
@@ -119,7 +119,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
-      expect(b >= 0).assertTrue();
+      expect(b >= 0n).assertTrue();
     });
 
     /**
@@ -132,7 +132,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
-      expect(b >= 1).assertTrue();
+      expect(b >= 1n).assertTrue();
     });
 
     /**
@@ -145,7 +145,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
-      expect(b >= 5).assertTrue();
+      expect(b >= 5n).assertTrue();
     });
 
     /**
@@ -158,7 +158,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 10n;
-      expect(b >= 5).assertTrue();
+      expect(b >= 5n).assertTrue();
     });
 
     /**
@@ -171,7 +171,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 100n;
-      expect(b >= 100).assertTrue();
+      expect(b >= 100n).assertTrue();
     });
 
     /**
@@ -184,7 +184,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 0n;
-      expect(b <= 1).assertTrue();
+      expect(b <= 1n).assertTrue();
     });
 
     /**
@@ -197,7 +197,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
-      expect(b <= 2).assertTrue();
+      expect(b <= 2n).assertTrue();
     });
 
     /**
@@ -210,7 +210,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 3n;
-      expect(b <= 5).assertTrue();
+      expect(b <= 5n).assertTrue();
     });
 
     /**
@@ -223,7 +223,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
-      expect(b <= 5).assertTrue();
+      expect(b <= 5n).assertTrue();
     });
 
     /**
@@ -236,7 +236,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 50n;
-      expect(b <= 100).assertTrue();
+      expect(b <= 100n).assertTrue();
     });
 
     /**
@@ -249,7 +249,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
-      expect(b >= 0.5).assertTrue();
+      expect(b.doubleValue() >= 0.5).assertTrue();
     });
 
     /**
@@ -262,7 +262,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
-      expect(b >= 1.9).assertTrue();
+      expect(b.doubleValue() >= 1.9).assertTrue();
     });
 
     /**
@@ -275,7 +275,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
-      expect(b >= 5.0).assertTrue();
+      expect(b.doubleValue() >= 5.0).assertTrue();
     });
 
     /**
@@ -288,7 +288,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 10n;
-      expect(b >= 5.2).assertTrue();
+      expect(b.doubleValue() >= 5.2).assertTrue();
     });
 
     /**
@@ -301,7 +301,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
-      const actual_outcome: boolean = (b < getOperand1());
+      const actual_outcome: boolean = (b < BigInt(getOperand1()));
       expect(actual_outcome).assertEqual(true);
     });
 
@@ -315,7 +315,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
-      const actual_outcome: boolean = (b < getOperand2());
+      const actual_outcome: boolean = (b < BigInt(getOperand2()));
       expect(actual_outcome).assertEqual(false);
     });
 
@@ -329,7 +329,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
-      const actual_outcome: boolean = (b < getOperand3());
+      const actual_outcome: boolean = (b < BigInt(getOperand3()));
       expect(actual_outcome).assertEqual(false);
     });
 
@@ -343,7 +343,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = -2n;
-      const actual_outcome: boolean = (b < getOperand4());
+      const actual_outcome: boolean = (b < BigInt(getOperand4()));
       expect(actual_outcome).assertEqual(true);
     });
 
@@ -357,7 +357,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
-      const actual_outcome: boolean = (b < getOperand5());
+      const actual_outcome: boolean = (b < BigInt(getOperand5()));
       expect(actual_outcome).assertEqual(true);
     });
 
@@ -371,7 +371,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
-      const actual_outcome: boolean = (b < getOperand6());
+      const actual_outcome: boolean = (b.doubleValue() < getOperand6());
       expect(actual_outcome).assertEqual(true);
     });
 
@@ -385,7 +385,7 @@ export default function NumericBigintRelationalOneTest(): void {
      */
     it("testNumericBigintRelationalOne0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
-      const actual_outcome: boolean = (b < getOperand7());
+      const actual_outcome: boolean = (b < BigInt(getOperand7()));
       expect(actual_outcome).assertEqual(false);
     });
 
@@ -400,7 +400,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 2;
-      const actual_outcome: boolean = (b < x_var);
+      const actual_outcome: boolean = (b < BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -415,7 +415,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 1;
-      const actual_outcome: boolean = (b < x_var);
+      const actual_outcome: boolean = (b < BigInt(x_var));
       expect(actual_outcome == false).assertTrue();
     });
 
@@ -430,7 +430,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 1;
-      const actual_outcome: boolean = (b < x_var);
+      const actual_outcome: boolean = (b < BigInt(x_var));
       expect(actual_outcome == false).assertTrue();
     });
 
@@ -445,7 +445,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = -2n;
       const x_var: number = -1;
-      const actual_outcome: boolean = (b < x_var);
+      const actual_outcome: boolean = (b < BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -460,7 +460,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 2.0;
-      const actual_outcome: boolean = (b < x_var);
+      const actual_outcome: boolean = (b < BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -475,7 +475,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 2.5;
-      const actual_outcome: boolean = (b < x_var);
+      const actual_outcome: boolean = (b.doubleValue() < x_var);
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -490,7 +490,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 2.0;
-      const actual_outcome: boolean = (b < x_var);
+      const actual_outcome: boolean = (b < BigInt(x_var));
       expect(actual_outcome == false).assertTrue();
     });
 
@@ -505,7 +505,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 0;
-      const actual_outcome: boolean = (b > x_var);
+      const actual_outcome: boolean = (b > BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -520,7 +520,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 0n;
       const x_var: number = 1;
-      const actual_outcome: boolean = (b > x_var);
+      const actual_outcome: boolean = (b > BigInt(x_var));
       expect(actual_outcome == false).assertTrue();
     });
 
@@ -535,7 +535,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 1;
-      const actual_outcome: boolean = (b > x_var);
+      const actual_outcome: boolean = (b > BigInt(x_var));
       expect(actual_outcome == false).assertTrue();
     });
 
@@ -550,7 +550,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = -1n;
       const x_var: number = -2;
-      const actual_outcome: boolean = (b > x_var);
+      const actual_outcome: boolean = (b > BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -565,7 +565,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 0.5;
-      const actual_outcome: boolean = (b > x_var);
+      const actual_outcome: boolean = (b.doubleValue() > x_var);
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -580,7 +580,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 1.9;
-      const actual_outcome: boolean = (b > x_var);
+      const actual_outcome: boolean = (b.doubleValue() > x_var);
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -595,7 +595,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
       const x_var: number = 5.0;
-      const actual_outcome: boolean = (b > x_var);
+      const actual_outcome: boolean = (b > BigInt(x_var));
       expect(actual_outcome == false).assertTrue();
     });
 
@@ -610,7 +610,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 0;
-      const actual_outcome: boolean = (b >= x_var);
+      const actual_outcome: boolean = (b >= BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -625,7 +625,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 0n;
       const x_var: number = 1;
-      const actual_outcome: boolean = (b >= x_var);
+      const actual_outcome: boolean = (b >= BigInt(x_var));
       expect(actual_outcome == false).assertTrue();
     });
 
@@ -640,7 +640,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 1;
-      const actual_outcome: boolean = (b >= x_var);
+      const actual_outcome: boolean = (b >= BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -655,7 +655,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = -1n;
       const x_var: number = -2;
-      const actual_outcome: boolean = (b >= x_var);
+      const actual_outcome: boolean = (b >= BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -670,7 +670,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 0.5;
-      const actual_outcome: boolean = (b >= x_var);
+      const actual_outcome: boolean = (b.doubleValue() >= x_var);
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -685,7 +685,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 1.9;
-      const actual_outcome: boolean = (b >= x_var);
+      const actual_outcome: boolean = (b.doubleValue() >= x_var);
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -700,7 +700,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
       const x_var: number = 5.0;
-      const actual_outcome: boolean = (b >= x_var);
+      const actual_outcome: boolean = (b >= BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -715,7 +715,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 2;
-      const actual_outcome: boolean = (b <= x_var);
+      const actual_outcome: boolean = (b <= BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -730,7 +730,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 1;
-      const actual_outcome: boolean = (b <= x_var);
+      const actual_outcome: boolean = (b <= BigInt(x_var));
       expect(actual_outcome == false).assertTrue();
     });
 
@@ -745,7 +745,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 1;
-      const actual_outcome: boolean = (b <= x_var);
+      const actual_outcome: boolean = (b <= BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -760,7 +760,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = -2n;
       const x_var: number = -1;
-      const actual_outcome: boolean = (b <= x_var);
+      const actual_outcome: boolean = (b <= BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -775,7 +775,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 1.1;
-      const actual_outcome: boolean = (b <= x_var);
+      const actual_outcome: boolean = (b.doubleValue() <= x_var);
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -790,7 +790,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 2.5;
-      const actual_outcome: boolean = (b <= x_var);
+      const actual_outcome: boolean = (b.doubleValue() <= x_var);
       expect(actual_outcome == true).assertTrue();
     });
 
@@ -805,7 +805,7 @@ export default function NumericBigintRelationalOneTest(): void {
     it("testNumericBigintRelationalOne0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 2.0;
-      const actual_outcome: boolean = (b <= x_var);
+      const actual_outcome: boolean = (b <= BigInt(x_var));
       expect(actual_outcome == true).assertTrue();
     });
 

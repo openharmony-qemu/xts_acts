@@ -30,7 +30,13 @@ describe('ActsDataAbilityHelperTest', function () {
     }
 
     beforeAll(async (done) => {
-        console.debug('= ACTS_beforeAll ====<begin');
+        console.debug('= ACTS_beforeAll ====<begin')
+        sleep(300);
+        console.debug('= ACTS_beforeAll ====<end');
+        done();
+    })
+    afterAll((done) => {
+        console.debug('= ACTS_afterAll ====<begin')
         try {
             DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
             console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
@@ -41,12 +47,6 @@ describe('ActsDataAbilityHelperTest', function () {
         } catch (err) {
             console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
         }
-        sleep(300);
-        console.debug('= ACTS_beforeAll ====<end');
-        done();
-    })
-    afterAll((done) => {
-        console.debug('= ACTS_afterAll ====<begin');
         console.debug('= ACTS_afterAll ====<end');
         done();
     })
@@ -69,7 +69,37 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_AcquireDataAbilityHelper_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_AcquireDataAbilityHelper_0100====<begin');
+        console.log('ACTS_AcquireDataAbilityHelper_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         console.debug("=ACTS_AcquireDataAbilityHelper_0100 dataAbilityUri====>" + dataAbilityUri)
         try {
             if(DAHelper == null){
@@ -96,7 +126,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_AcquireDataAbilityHelper_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_AcquireDataAbilityHelper_0200====<begin');
+        console.log('ACTS_AcquireDataAbilityHelper_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var abilityHelper = featureAbility.acquireDataAbilityHelper("")
             console.log('ACTS_AcquireDataAbilityHelper_0200 abilityHelper ====>: '
@@ -119,7 +159,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_AcquireDataAbilityHelper_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_AcquireDataAbilityHelper_0300====<begin');
+        console.log('ACTS_AcquireDataAbilityHelper_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var abilityHelper = featureAbility.acquireDataAbilityHelper("error")
             console.log('ACTS_AcquireDataAbilityHelper_0300 abilityHelper ====>: '
@@ -142,7 +192,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_AcquireDataAbilityHelper_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_AcquireDataAbilityHelper_0400====<begin');
+        console.log('ACTS_AcquireDataAbilityHelper_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var abilityHelper = featureAbility.acquireDataAbilityHelper(undefined)
             console.log('ACTS_AcquireDataAbilityHelper_040 abilityHelper ====>: '
@@ -165,7 +225,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_AcquireDataAbilityHelper_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_AcquireDataAbilityHelper_0500====<begin');
+        console.log('ACTS_AcquireDataAbilityHelper_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var abilityHelper = featureAbility.acquireDataAbilityHelper(123456)
             console.log('ACTS_AcquireDataAbilityHelper_0500 abilityHelper ====>: '
@@ -188,7 +258,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_AcquireDataAbilityHelper_0600', Level.LEVEL0, async function (done) {
-      console.log('ACTS_AcquireDataAbilityHelper_0600====<begin');
+      console.log('ACTS_AcquireDataAbilityHelper_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       try {
         var abilityHelper = featureAbility.acquireDataAbilityHelper(null)
         console.log('ACTS_AcquireDataAbilityHelper_0600 abilityHelper ====>: '
@@ -211,7 +291,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_0100====<begin');
+        console.log('ACTS_Insert_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('Insert_0100 DAHelper ====>: ' + DAHelper)
         let valueBucketM
@@ -247,7 +337,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_0200====<begin');
+        console.log('ACTS_Insert_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         let valueBucketM = 'undefined';
@@ -278,7 +378,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_0300====<begin');
+        console.log('ACTS_Insert_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('Insert_0300 DAHelper ====<: ' + JSON.stringify(DAHelper) + "," + DAHelper)
         try {
@@ -313,7 +423,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_0400====<begin');
+        console.log('ACTS_Insert_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -343,7 +463,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_0500====<begin');
+        console.log('ACTS_Insert_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('Insert_0500 DAHelper ====<: ' + JSON.stringify(DAHelper) + "," + DAHelper)
         try {
@@ -378,7 +508,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_0600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_0600====<begin');
+        console.log('ACTS_Insert_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -409,7 +549,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_0700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_0700====<begin');
+        console.log('ACTS_Insert_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('Insert_0700 DAHelper ====<: ' + JSON.stringify(DAHelper) + "," + DAHelper)
         var currentAlertTimeout;
@@ -448,7 +598,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_0800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_0800====<begin');
+        console.log('ACTS_Insert_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         var currentAlertTimeout;
@@ -482,7 +642,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_0900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_0900====<begin');
+        console.log('ACTS_Insert_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('Insert_0900 DAHelper ====<: ' + JSON.stringify(DAHelper) + "," + DAHelper)
         try {
@@ -517,7 +687,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_1000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_1000====<begin');
+        console.log('ACTS_Insert_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -548,7 +728,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_1100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_1100====<begin');
+        console.log('ACTS_Insert_1100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('Insert_1100 DAHelper ====<: ' + JSON.stringify(DAHelper) + "," + DAHelper)
         try {
@@ -583,7 +773,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_1200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_1200====<begin');
+        console.log('ACTS_Insert_1200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -613,7 +813,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_1300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_1300====<begin');
+        console.log('ACTS_Insert_1300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('Insert_1300 DAHelper ====<: ' + JSON.stringify(DAHelper) + "," + DAHelper)
         try {
@@ -648,7 +858,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_1400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_1400====<begin');
+        console.log('ACTS_Insert_1400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -678,7 +898,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_1500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_1500====<begin');
+        console.log('ACTS_Insert_1500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('Insert_1500 DAHelper ====<: ' + JSON.stringify(DAHelper) + "," + DAHelper)
         var valueBucketK = {};
@@ -714,7 +944,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Insert_1600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Insert_1600====<begin');
+        console.log('ACTS_Insert_1600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         var valueBucketK = {};
@@ -745,7 +985,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_0100====<begin');
+        console.log('ACTS_BatchInsert_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         var valueBucketM;
@@ -783,7 +1033,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_0200====<begin');
+        console.log('ACTS_BatchInsert_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         var valueBucketM;
@@ -816,7 +1076,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_0300====<begin');
+        console.log('ACTS_BatchInsert_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         var valueBucketArray = new Array({}, {}, {})
@@ -854,7 +1124,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_0400====<begin');
+        console.log('ACTS_BatchInsert_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         var valueBucketArray = new Array({}, {}, {})
@@ -887,7 +1167,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_0500====<begin');
+        console.log('ACTS_BatchInsert_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -928,7 +1218,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_0600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_0600====<begin');
+        console.log('ACTS_BatchInsert_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         var valueBucketArray = new Array({ "name": "ActsDataAbilityHelperTest", "age": 24, "salary": 2024.20, },
@@ -963,7 +1263,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_0700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_0700====<begin');
+        console.log('ACTS_BatchInsert_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -1004,7 +1314,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_0800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_0800====<begin');
+        console.log('ACTS_BatchInsert_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         var valueBucketArray = new Array({ "name": "ActsDataAbilityHelperTest", "age": 24, "salary": 2024.20, },
@@ -1039,7 +1359,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_0900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_0900====<begin');
+        console.log('ACTS_BatchInsert_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -1080,7 +1410,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_1000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_1000====<begin');
+        console.log('ACTS_BatchInsert_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         var valueBucketArray = new Array({ "name": "ActsDataAbilityHelperTest", "age": 24, "salary": 2024.20, },
@@ -1115,7 +1455,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_1100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_1100====<begin');
+        console.log('ACTS_BatchInsert_1100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -1156,7 +1506,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_1200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_1200====<begin');
+        console.log('ACTS_BatchInsert_1200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         var valueBucketArray = new Array({ "name": "ActsDataAbilityHelperTest", "age": 24, "salary": 2024.20, },
@@ -1191,7 +1551,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_1300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_1300====<begin');
+        console.log('ACTS_BatchInsert_1300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -1232,7 +1602,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_1400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_1400====<begin');
+        console.log('ACTS_BatchInsert_1400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         var valueBucketArray = new Array({ "name": "ActsDataAbilityHelperTest", "age": 24, "salary": 2024.20, },
@@ -1267,7 +1647,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_1500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_1500====<begin');
+        console.log('ACTS_BatchInsert_1500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -1304,7 +1694,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_BatchInsert_1600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_BatchInsert_1600====<begin');
+        console.log('ACTS_BatchInsert_1600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility BatchInsert getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -1336,7 +1736,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_0100====<begin');
+        console.log('ACTS_Query_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("")
         try {
@@ -1368,7 +1778,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_0200====<begin');
+        console.log('ACTS_Query_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("")
         try {
@@ -1402,7 +1822,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_0300====<begin');
+        console.log('ACTS_Query_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("value1", "value2", "value3", "value4")
         try {
@@ -1438,7 +1868,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_0400====<begin');
+        console.log('ACTS_Query_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("value1", "value2", "value3", "value4")
         try {
@@ -1476,7 +1916,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_0500====<begin');
+        console.log('ACTS_Query_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("value1", "value2", "value3", "value4")
         try {
@@ -1512,7 +1962,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_0600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_0600====<begin');
+        console.log('ACTS_Query_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("value1", "value2", "value3", "value4")
         try {
@@ -1550,7 +2010,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_0700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_0700====<begin');
+        console.log('ACTS_Query_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("value1", "value2", "value3", "value4")
         try {
@@ -1586,7 +2056,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_0800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_0800====<begin');
+        console.log('ACTS_Query_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("value1", "value2", "value3", "value4")
         try {
@@ -1624,7 +2104,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_0900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_0900====<begin');
+        console.log('ACTS_Query_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("value1", "value2", "value3", "value4")
         try {
@@ -1660,7 +2150,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_1000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_1000====<begin');
+        console.log('ACTS_Query_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("value1", "value2", "value3", "value4")
         try {
@@ -1698,7 +2198,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_1100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_1100====<begin');
+        console.log('ACTS_Query_1100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("value1", "value2", "value3", "value4")
         try {
@@ -1734,7 +2244,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_1200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_1200====<begin');
+        console.log('ACTS_Query_1200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = new Array("value1", "value2", "value3", "value4")
         try {
@@ -1772,7 +2292,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_1300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_1300====<begin');
+        console.log('ACTS_Query_1300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = "value1";
         try {
@@ -1808,7 +2338,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_1400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Query_1400====<begin');
+        console.log('ACTS_Query_1400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         var columnsArray = "value1";
         try {
@@ -1846,7 +2386,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_1500', Level.LEVEL0, async function (done) {
-      console.log('ACTS_Query_1500====<begin');
+      console.log('ACTS_Query_1500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object");
       try {
           let queryPromise = DAHelper.query(
@@ -1874,7 +2424,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_0100====<begin');
+        console.log('ACTS_Update_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -1916,7 +2476,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_0200====<begin');
+        console.log('ACTS_Update_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         try {
             let valueBucketNull = {};
@@ -1952,7 +2522,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_0300====<begin');
+        console.log('ACTS_Update_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -1997,7 +2577,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_0400====<begin');
+        console.log('ACTS_Update_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2037,7 +2627,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_0500====<begin');
+        console.log('ACTS_Update_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2082,7 +2682,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_0600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_0600====<begin');
+        console.log('ACTS_Update_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2123,7 +2733,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_0700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_0700====<begin');
+        console.log('ACTS_Update_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         var currentAlertTimeout;
@@ -2171,7 +2791,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_0800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_0800====<begin');
+        console.log('ACTS_Update_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         var currentAlertTimeout;
@@ -2214,7 +2844,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_0900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_0900====<begin');
+        console.log('ACTS_Update_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2259,7 +2899,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_1000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_1000====<begin');
+        console.log('ACTS_Update_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2300,7 +2950,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_1100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_1100====<begin');
+        console.log('ACTS_Update_1100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2345,7 +3005,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_1200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_1200====<begin');
+        console.log('ACTS_Update_1200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2385,7 +3055,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_1300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_1300====<begin');
+        console.log('ACTS_Update_1300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2430,7 +3110,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Update_1400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Update_1400====<begin');
+        console.log('ACTS_Update_1400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2470,7 +3160,17 @@ describe('ActsDataAbilityHelperTest', function () {
       * @tc.level  LEVEL0
       */
      it('ACTS_Update_1500', Level.LEVEL0, async function (done) {
-      console.log('ACTS_Update_1500====<begin');
+      console.log('ACTS_Update_1500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object");
       console.log('featureAbility Update getDataAbilityHelper ====>: ' + DAHelper)
       try {
@@ -2510,7 +3210,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_0100====<begin');
+        console.log('ACTS_Delete_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2550,7 +3260,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_0200====<begin');
+        console.log('ACTS_Delete_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2585,7 +3305,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_0300====<begin');
+        console.log('ACTS_Delete_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             let predicates = new ohosDataAbility.DataAbilityPredicates();
             predicates.equalTo('contact_id', 1);
@@ -2627,7 +3357,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_0400====<begin');
+        console.log('ACTS_Delete_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2665,7 +3405,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_0500====<begin');
+        console.log('ACTS_Delete_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             let predicates = new ohosDataAbility.DataAbilityPredicates();
             predicates.equalTo('contact_id', 1);
@@ -2707,7 +3457,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_0600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_0600====<begin');
+        console.log('ACTS_Delete_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2746,7 +3506,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_0700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_0700====<begin');
+        console.log('ACTS_Delete_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         var currentAlertTimeout;
         try {
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -2791,7 +3561,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_0800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_0800====<begin');
+        console.log('ACTS_Delete_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         var currentAlertTimeout;
@@ -2832,7 +3612,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_0900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_0900====<begin');
+        console.log('ACTS_Delete_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             let predicates = new ohosDataAbility.DataAbilityPredicates();
             predicates.equalTo('contact_id', 1);
@@ -2874,7 +3664,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_1000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_1000====<begin');
+        console.log('ACTS_Delete_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2912,7 +3712,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_1100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_1100====<begin');
+        console.log('ACTS_Delete_1100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             let predicates = new ohosDataAbility.DataAbilityPredicates();
             predicates.equalTo('contact_id', 1);
@@ -2954,7 +3764,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_1200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_1200====<begin');
+        console.log('ACTS_Delete_1200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -2992,7 +3812,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_1300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_1300====<begin');
+        console.log('ACTS_Delete_1300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             let predicates = new ohosDataAbility.DataAbilityPredicates();
             predicates.equalTo('contact_id', 1);
@@ -3034,7 +3864,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Delete_1400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_Delete_1400====<begin');
+        console.log('ACTS_Delete_1400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -3072,7 +3912,17 @@ describe('ActsDataAbilityHelperTest', function () {
           * @tc.level  LEVEL0
           */
          it('ACTS_Delete_1500', Level.LEVEL0, async function (done) {
-          console.log('ACTS_Delete_1500====<begin');
+          console.log('ACTS_Delete_1500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
           expect(typeof (DAHelper)).assertEqual("object");
           console.log('featureAbility getDataAbilityHelper ====>: ' + DAHelper)
           try {
@@ -3109,7 +3959,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_0100====<begin');
+        console.log('ACTS_GetFileTypes_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let mimeTypeFilter = '*/*'
         try {
             var promise = DAHelper.getFileTypes(
@@ -3158,7 +4018,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_0200====<begin');
+        console.log('ACTS_GetFileTypes_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getFileTypes getDataAbilityHelper ====>: ' + DAHelper)
         let mimeTypeFilter = '*/*'
@@ -3204,7 +4074,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_0300====<begin');
+        console.log('ACTS_GetFileTypes_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let mimeTypeFilter = 'image/*'
         try {
             var promise = DAHelper.getFileTypes(
@@ -3250,7 +4130,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_0400====<begin');
+        console.log('ACTS_GetFileTypes_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getFileTypes getDataAbilityHelper ====>: ' + DAHelper)
         let mimeTypeFilter = 'image/*'
@@ -3292,7 +4182,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_0500====<begin');
+        console.log('ACTS_GetFileTypes_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let mimeTypeFilter = '*/jpg'
         try {
             var promise = DAHelper.getFileTypes(
@@ -3337,7 +4237,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_0600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_0600====<begin');
+        console.log('ACTS_GetFileTypes_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getFileTypes getDataAbilityHelper ====>: ' + DAHelper)
@@ -3378,7 +4288,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_0700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_0700====<begin');
+        console.log('ACTS_GetFileTypes_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let mimeTypeFilter = '*/*'
         try {
             var promise = DAHelper.getFileTypes(
@@ -3416,7 +4336,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_0800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_0800====<begin');
+        console.log('ACTS_GetFileTypes_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getFileTypes getDataAbilityHelper ====>: ' + DAHelper)
         let mimeTypeFilter = '*/*'
@@ -3450,7 +4380,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_0900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_0900====<begin');
+        console.log('ACTS_GetFileTypes_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var promise = DAHelper.getFileTypes(
                 dataAbilityUri,
@@ -3493,7 +4433,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_1000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_1000====<begin');
+        console.log('ACTS_GetFileTypes_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getFileTypes getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -3533,7 +4483,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_1100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_1100====<begin');
+        console.log('ACTS_GetFileTypes_1100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let mimeTypeFilter = '*/*'
         try {
             var promise = DAHelper.getFileTypes(
@@ -3571,7 +4531,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_1200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_1200====<begin');
+        console.log('ACTS_GetFileTypes_1200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getFileTypes getDataAbilityHelper ====>: ' + DAHelper)
         let mimeTypeFilter = '*/*'
@@ -3605,7 +4575,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_1300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_1300====<begin');
+        console.log('ACTS_GetFileTypes_1300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let mimeTypeFilter = '*/*'
         try {
             var promise = DAHelper.getFileTypes(
@@ -3643,7 +4623,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_1400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_1400====<begin');
+        console.log('ACTS_GetFileTypes_1400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getFileTypes getDataAbilityHelper ====>: ' + DAHelper)
         let mimeTypeFilter = '*/*'
@@ -3677,7 +4667,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_1500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_1500====<begin');
+        console.log('ACTS_GetFileTypes_1500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let mimeTypeFilter = 'asdfasdEDF)(#@*7fasdf546546a1ds3v16a4sd6v54@*(e7';
         try {
             var promise = DAHelper.getFileTypes(
@@ -3715,7 +4715,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_1600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_1600====<begin');
+        console.log('ACTS_GetFileTypes_1600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getFileTypes getDataAbilityHelper ====>: ' + DAHelper)
         let mimeTypeFilter = 'asdfasdEDF)(#@*7fasdf546546a1ds3v16a4sd6v54@*(e7';
@@ -3749,7 +4759,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_1700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_1700====<begin');
+        console.log('ACTS_GetFileTypes_1700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let mimeTypeFilter = 'returnUndefined';
         try {
             var promise = DAHelper.getFileTypes(
@@ -3787,7 +4807,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetFileTypes_1800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetFileTypes_1800====<begin');
+        console.log('ACTS_GetFileTypes_1800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility getFileTypes getDataAbilityHelper ====>: ' + DAHelper)
         let mimeTypeFilter = 'returnUndefined';
@@ -3821,7 +4851,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetType_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetType_0100====<begin');
+        console.log('ACTS_GetType_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var promise = DAHelper.getType(
                 dataAbilityUri,
@@ -3856,7 +4896,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetType_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetType_0200====<begin');
+        console.log('ACTS_GetType_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility GetType getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -3887,7 +4937,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetType_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetType_0300====<begin');
+        console.log('ACTS_GetType_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var promise = DAHelper.getType(
                 undefined,
@@ -3922,7 +4982,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetType_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetType_0400====<begin');
+        console.log('ACTS_GetType_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility GetType getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -3953,7 +5023,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetType_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetType_0500====<begin');
+        console.log('ACTS_GetType_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var promise = DAHelper.getType(
                 123456,
@@ -3988,7 +5068,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetType_0600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetType_0600====<begin');
+        console.log('ACTS_GetType_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility GetType getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -4019,7 +5109,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetType_0700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetType_0700====<begin');
+        console.log('ACTS_GetType_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var promise = DAHelper.getType(
                 "error_uri",
@@ -4054,7 +5154,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetType_0800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetType_0800====<begin');
+        console.log('ACTS_GetType_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility GetType getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -4085,7 +5195,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetType_0900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetType_0900====<begin');
+        console.log('ACTS_GetType_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var promise = DAHelper.getType(
                 dataAbilityUri3,
@@ -4120,7 +5240,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetType_1000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_GetType_1000====<begin');
+        console.log('ACTS_GetType_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility GetType getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -4151,7 +5281,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_0100====<begin');
+        console.log('ACTS_OpenFile_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         var mode = "r";
         try {
@@ -4192,7 +5332,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_0200====<begin');
+        console.log('ACTS_OpenFile_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         var mode = "w";
         try {
@@ -4233,7 +5383,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_0300====<begin');
+        console.log('ACTS_OpenFile_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         var mode = "wt";
         try {
@@ -4275,7 +5435,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_0400====<begin');
+        console.log('ACTS_OpenFile_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         var mode = "wa";
         try {
@@ -4317,7 +5487,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_0500====<begin');
+        console.log('ACTS_OpenFile_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         var mode = "rw";
         try {
@@ -4359,7 +5539,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_0600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_0600====<begin');
+        console.log('ACTS_OpenFile_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         var mode = "rwt";
         try {
@@ -4401,7 +5591,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_0700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_0700====<begin');
+        console.log('ACTS_OpenFile_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility ACTS_OpenFile_0700 OpenFile getDataAbilityHelper ====>: ' + DAHelper)
@@ -4441,7 +5641,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_0800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_0800====<begin');
+        console.log('ACTS_OpenFile_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility ACTS_OpenFile_0800 OpenFile getDataAbilityHelper ====>: ' + DAHelper)
@@ -4481,7 +5691,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_0900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_0900====<begin');
+        console.log('ACTS_OpenFile_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility ACTS_OpenFile_0900 OpenFile getDataAbilityHelper ====>: ' + DAHelper)
@@ -4521,7 +5741,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_1000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_1000====<begin');
+        console.log('ACTS_OpenFile_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility ACTS_OpenFile_1000 OpenFile getDataAbilityHelper ====>: ' + DAHelper)
@@ -4561,7 +5791,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_1100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_1100====<begin');
+        console.log('ACTS_OpenFile_1100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility ACTS_OpenFile_1100 OpenFile getDataAbilityHelper ====>: ' + DAHelper)
@@ -4599,7 +5839,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_1200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_1200====<begin');
+        console.log('ACTS_OpenFile_1200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility ACTS_OpenFile_1200 OpenFile getDataAbilityHelper ====>: ' + DAHelper)
@@ -4637,7 +5887,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_1300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_1300====<begin');
+        console.log('ACTS_OpenFile_1300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         var mode = "rwt";
         try {
@@ -4678,7 +5938,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_1400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_1400====<begin');
+        console.log('ACTS_OpenFile_1400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility ACTS_OpenFile_1400 OpenFile getDataAbilityHelper ====>: ' + DAHelper)
@@ -4716,7 +5986,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_1500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_1500====<begin');
+        console.log('ACTS_OpenFile_1500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             DAHelper.openFile(
                 dataAbilityUri,
@@ -4751,7 +6031,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_1600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_1600====<begin');
+        console.log('ACTS_OpenFile_1600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility ACTS_OpenFile_1600 OpenFile getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -4783,7 +6073,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_1700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_1700====<begin');
+        console.log('ACTS_OpenFile_1700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         var mode = "A1@k#4%$,.<>)(oioiu*((*&(&*giIGT^%&^Ug;sdfk;losd*7873iug8%&^$&%]ERFUy&^%&&R7";
         try {
             DAHelper.openFile(
@@ -4819,7 +6119,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_1800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_1800====<begin');
+        console.log('ACTS_OpenFile_1800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility ACTS_OpenFile_1800 OpenFile getDataAbilityHelper ====>: ' + DAHelper)
         var mode = "A1@k#4%$,.<>)(oioiu*((*&(&*giIGT^%&^Ug;sdfk;losd*7873iug8%&^$&%]ERFUy&^%&&R7";
@@ -4852,7 +6162,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_1900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_1900====<begin');
+        console.log('ACTS_OpenFile_1900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         var mode = "rwt";
         try {
             DAHelper.openFile(
@@ -4888,7 +6208,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OpenFile_2000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OpenFile_2000====<begin');
+        console.log('ACTS_OpenFile_2000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility ACTS_OpenFile_2000 OpenFile getDataAbilityHelper ====>: ' + DAHelper)
         var mode = "rwt";
@@ -4921,7 +6251,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_NormalizeUri_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_NormalizeUri_0100====<begin');
+        console.log('ACTS_NormalizeUri_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility normalizeUri getDataAbilityHelper ====>: ' + DAHelper)
@@ -4959,7 +6299,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_NormalizeUri_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_NormalizeUri_0200====<begin');
+        console.log('ACTS_NormalizeUri_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility normalizeUri getDataAbilityHelper ====>: ' + DAHelper)
@@ -4992,7 +6342,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_NormalizeUri_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_NormalizeUri_0300====<begin');
+        console.log('ACTS_NormalizeUri_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility normalizeUri getDataAbilityHelper ====>: ' + DAHelper)
@@ -5030,7 +6390,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_NormalizeUri_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_NormalizeUri_0400====<begin');
+        console.log('ACTS_NormalizeUri_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility normalizeUri getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -5061,7 +6431,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_NormalizeUri_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_NormalizeUri_0500====<begin');
+        console.log('ACTS_NormalizeUri_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility normalizeUri getDataAbilityHelper ====>: ' + DAHelper)
@@ -5099,7 +6479,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_NormalizeUri_0600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_NormalizeUri_0600====<begin');
+        console.log('ACTS_NormalizeUri_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility normalizeUri getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -5130,7 +6520,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_NormalizeUri_0700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_NormalizeUri_0700====<begin');
+        console.log('ACTS_NormalizeUri_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility normalizeUri getDataAbilityHelper ====>: ' + DAHelper)
@@ -5167,7 +6567,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_NormalizeUri_0800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_NormalizeUri_0800====<begin');
+        console.log('ACTS_NormalizeUri_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility normalizeUri getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -5198,7 +6608,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_NormalizeUri_0900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_NormalizeUri_0900====<begin');
+        console.log('ACTS_NormalizeUri_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility normalizeUri getDataAbilityHelper ====>: ' + DAHelper)
@@ -5235,7 +6655,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_NormalizeUri_1000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_NormalizeUri_1000====<begin');
+        console.log('ACTS_NormalizeUri_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility normalizeUri getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -5266,7 +6696,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_DenormalizeUri_0100====<begin');
+        console.log('ACTS_DenormalizeUri_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility DenormalizeUri getDataAbilityHelper ====>: ' + DAHelper)
@@ -5303,7 +6743,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_DenormalizeUri_0200====<begin');
+        console.log('ACTS_DenormalizeUri_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility DenormalizeUri getDataAbilityHelper ====>: ' + DAHelper)
@@ -5335,7 +6785,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_DenormalizeUri_0300====<begin');
+        console.log('ACTS_DenormalizeUri_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility DenormalizeUri getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -5371,7 +6831,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_DenormalizeUri_0400====<begin');
+        console.log('ACTS_DenormalizeUri_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility DenormalizeUri getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -5402,7 +6872,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_DenormalizeUri_0500====<begin');
+        console.log('ACTS_DenormalizeUri_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility DenormalizeUri getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -5438,7 +6918,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_DenormalizeUri_0600====<begin');
+        console.log('ACTS_DenormalizeUri_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility DenormalizeUri getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -5469,7 +6959,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_DenormalizeUri_0700====<begin');
+        console.log('ACTS_DenormalizeUri_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility DenormalizeUri getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -5505,7 +7005,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_DenormalizeUri_0800====<begin');
+        console.log('ACTS_DenormalizeUri_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility DenormalizeUri getDataAbilityHelper ====>: ' + DAHelper)
         try {
@@ -5536,7 +7046,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_DenormalizeUri_0900====<begin');
+        console.log('ACTS_DenormalizeUri_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility DenormalizeUri getDataAbilityHelper ====>: ' + DAHelper)
@@ -5573,7 +7093,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_1000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_DenormalizeUri_1000====<begin');
+        console.log('ACTS_DenormalizeUri_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         let ret = false;
         expect(typeof (DAHelper)).assertEqual("object");
         console.log('featureAbility DenormalizeUri getDataAbilityHelper ====>: ' + DAHelper)
@@ -5605,7 +7135,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_0100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_0100====<begin');
+        console.log('ACTS_OnOff_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         gSetTimeout = 2000;
         try {
             var currentAlertTimeout;
@@ -5650,7 +7190,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_0200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_0200====<begin');
+        console.log('ACTS_OnOff_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         gSetTimeout = 2000;
         try {
             var currentAlertTimeout;
@@ -5704,7 +7254,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_0300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_0300====<begin');
+        console.log('ACTS_OnOff_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         var currentAlertTimeout;
         var flagCallback01 = 0
         var flagCallback02 = 0
@@ -5779,7 +7339,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_0400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_0400====<begin');
+        console.log('ACTS_OnOff_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         var currentAlertTimeout;
         var flagCallback01 = 0
         var flagCallback02 = 0
@@ -5848,7 +7418,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_0500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_0500====<begin');
+        console.log('ACTS_OnOff_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         var currentAlertTimeout;
         function onAsyncCallback0501(err) {
             console.debug("=ACTS_OnOff_0500 err ====>"
@@ -5934,7 +7514,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_0600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_0600====<begin');
+        console.log('ACTS_OnOff_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var currentAlertTimeout;
             expect(typeof (DAHelper)).assertEqual("object");
@@ -6013,7 +7603,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_0700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_0700====<begin');
+        console.log('ACTS_OnOff_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var currentAlertTimeout;
             expect(typeof (DAHelper)).assertEqual("object");
@@ -6075,7 +7675,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_0800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_0800====<begin');
+        console.log('ACTS_OnOff_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var currentAlertTimeout;
             expect(typeof (DAHelper)).assertEqual("object");
@@ -6115,7 +7725,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_0900', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_0900====<begin');
+        console.log('ACTS_OnOff_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var currentAlertTimeout;
             expect(typeof (DAHelper)).assertEqual("object");
@@ -6169,7 +7789,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1000', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_1000====<begin');
+        console.log('ACTS_OnOff_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var currentAlertTimeout;
             expect(typeof (DAHelper)).assertEqual("object");
@@ -6212,7 +7842,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1100', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_1100====<begin');
+        console.log('ACTS_OnOff_1100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var currentAlertTimeout;
             expect(typeof (DAHelper)).assertEqual("object");
@@ -6267,7 +7907,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1200', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_1200====<begin');
+        console.log('ACTS_OnOff_1200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var currentAlertTimeout;
             expect(typeof (DAHelper)).assertEqual("object");
@@ -6320,7 +7970,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1300', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_1300====<begin');
+        console.log('ACTS_OnOff_1300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             DAHelper.on("dataChange", dataAbilityUri, undefined);
@@ -6354,7 +8014,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1400', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_1400====<begin');
+        console.log('ACTS_OnOff_1400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var currentAlertTimeout;
             expect(typeof (DAHelper)).assertEqual("object");
@@ -6396,7 +8066,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1500', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_1500====<begin');
+        console.log('ACTS_OnOff_1500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var currentAlertTimeout;
             expect(typeof (DAHelper)).assertEqual("object");
@@ -6437,7 +8117,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1600', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_1600====<begin');
+        console.log('ACTS_OnOff_1600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             var currentAlertTimeout;
             expect(typeof (DAHelper)).assertEqual("object");
@@ -6492,7 +8182,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1700', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_1700====<begin');
+        console.log('ACTS_OnOff_1700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         gSetTimeout = 2000;
         try {
             var currentAlertTimeout;
@@ -6550,7 +8250,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1800', Level.LEVEL0, async function (done) {
-        console.log('ACTS_OnOff_1800====<begin');
+        console.log('ACTS_OnOff_1800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         gSetTimeout = 2000;
         try {
             var currentAlertTimeout;
@@ -6605,7 +8315,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Insert_0100', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Insert_0100====<begin');
+        console.debug('ACTS_ExecuteBatch_Insert_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             DAHelper.executeBatch(dataAbilityUri,
@@ -6651,7 +8371,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Insert_0200', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Insert_0200====<begin');
+        console.debug('ACTS_ExecuteBatch_Insert_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             DAHelper.executeBatch(dataAbilityUri,
@@ -6706,7 +8436,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Insert_0300', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Insert_0300====<begin');
+        console.debug('ACTS_ExecuteBatch_Insert_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             DAHelper.executeBatch(dataAbilityUri,
@@ -6761,7 +8501,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Insert_0400', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Insert_0400====<begin');
+        console.debug('ACTS_ExecuteBatch_Insert_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             DAHelper.executeBatch(dataAbilityUri,
@@ -6805,7 +8555,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Insert_0500', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Insert_0500====<begin');
+        console.debug('ACTS_ExecuteBatch_Insert_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             DAHelper.executeBatch(dataAbilityUri,
@@ -6857,7 +8617,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Insert_0600', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Insert_0600====<begin');
+        console.debug('ACTS_ExecuteBatch_Insert_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             DAHelper.executeBatch(dataAbilityUri,
@@ -6908,7 +8678,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Update_0100', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Update_0100====<begin');
+        console.debug('ACTS_ExecuteBatch_Update_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -6969,7 +8749,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Update_0200', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Update_0200====<begin');
+        console.debug('ACTS_ExecuteBatch_Update_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7038,7 +8828,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Update_0300', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Update_0300====<begin');
+        console.debug('ACTS_ExecuteBatch_Update_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7108,7 +8908,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Update_0400', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Update_0400====<begin');
+        console.debug('ACTS_ExecuteBatch_Update_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7165,7 +8975,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Update_0500', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Update_0500====<begin');
+        console.debug('ACTS_ExecuteBatch_Update_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7230,7 +9050,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Update_0600', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Update_0600====<begin');
+        console.debug('ACTS_ExecuteBatch_Update_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7295,7 +9125,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Assert_0100', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Assert_0100====<begin');
+        console.debug('ACTS_ExecuteBatch_Assert_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7347,7 +9187,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Assert_0200', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Assert_0200====<begin');
+        console.debug('ACTS_ExecuteBatch_Assert_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7408,7 +9258,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Assert_0300', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Assert_0300====<begin');
+        console.debug('ACTS_ExecuteBatch_Assert_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7478,7 +9338,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Assert_0400', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Assert_0400====<begin');
+        console.debug('ACTS_ExecuteBatch_Assert_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7527,7 +9397,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Assert_0500', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Assert_0500====<begin');
+        console.debug('ACTS_ExecuteBatch_Assert_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7584,7 +9464,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Assert_0600', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Assert_0600====<begin');
+        console.debug('ACTS_ExecuteBatch_Assert_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7649,7 +9539,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Delete_0100', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Delete_0100====<begin');
+        console.debug('ACTS_ExecuteBatch_Delete_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7709,7 +9609,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Delete_0200', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Delete_0200====<begin');
+        console.debug('ACTS_ExecuteBatch_Delete_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7778,7 +9688,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Delete_0300', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Delete_0300====<begin');
+        console.debug('ACTS_ExecuteBatch_Delete_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7847,7 +9767,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Delete_0400', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Delete_0400====<begin');
+        console.debug('ACTS_ExecuteBatch_Delete_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7904,7 +9834,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Delete_0500', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Delete_0500====<begin');
+        console.debug('ACTS_ExecuteBatch_Delete_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -7969,7 +9909,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_Delete_0600', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_Delete_0600====<begin');
+        console.debug('ACTS_ExecuteBatch_Delete_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8034,7 +9984,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_0100', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_0100====<begin');
+        console.debug('ACTS_ExecuteBatch_0100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8120,7 +10080,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_0200', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_0200====<begin');
+        console.debug('ACTS_ExecuteBatch_0200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8202,7 +10172,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_0300', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_0300====<begin');
+        console.debug('ACTS_ExecuteBatch_0300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8329,7 +10309,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_0400', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_0400====<begin');
+        console.debug('ACTS_ExecuteBatch_0400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8452,7 +10442,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_0500', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_0500====<begin');
+        console.debug('ACTS_ExecuteBatch_0500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8531,7 +10531,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_0600', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_0600====<begin');
+        console.debug('ACTS_ExecuteBatch_0600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8606,7 +10616,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_0700', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_0700====<begin');
+        console.debug('ACTS_ExecuteBatch_0700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8685,7 +10705,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_0800', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_0800====<begin');
+        console.debug('ACTS_ExecuteBatch_0800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8760,7 +10790,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_0900', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_0900====<begin');
+        console.debug('ACTS_ExecuteBatch_0900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8839,7 +10879,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_1000', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_1000====<begin');
+        console.debug('ACTS_ExecuteBatch_1000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8914,7 +10964,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_1100', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_1100====<begin');
+        console.debug('ACTS_ExecuteBatch_1100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -8993,7 +11053,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteBatch_1200', Level.LEVEL0, async function (done) {
-        console.debug('ACTS_ExecuteBatch_1200====<begin');
+        console.debug('ACTS_ExecuteBatch_1200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
         try {
             expect(typeof (DAHelper)).assertEqual("object");
             let predicates = new ohosDataAbility.DataAbilityPredicates();
@@ -9069,7 +11139,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_1900', Level.LEVEL0, async function (done) {
-      console.log('ACTS_Query_1900====<begin');
+      console.log('ACTS_Query_1900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       try {
         expect(typeof (DAHelper)).assertEqual("object");
         DAHelper.query(dataAbilityUri, [])
@@ -9098,7 +11178,17 @@ describe('ActsDataAbilityHelperTest', function () {
      * @tc.level  LEVEL0
      */
     it('ACTS_Query_2000', Level.LEVEL0, async function (done) {
-      console.log('ACTS_Query_2000====<begin');
+      console.log('ACTS_Query_2000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       try {
         expect(typeof (DAHelper)).assertEqual("object");
         DAHelper.query(dataAbilityUri, null)
@@ -9127,6 +11217,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_2100', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_2100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -9165,6 +11265,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_2200', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_2200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -9203,6 +11313,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_2300', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_2300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -9241,6 +11361,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_2400', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_2400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -9279,6 +11409,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_2500', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_2500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -9317,6 +11457,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_2600', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_2600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -9355,6 +11505,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETTYPE_2700', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETTYPE_2700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -9392,6 +11552,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETTYPE_2800', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETTYPE_2800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -9429,6 +11599,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETTYPE_2900', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETTYPE_2900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -9461,6 +11641,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_3000', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_3000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -9493,6 +11683,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_3100', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_3100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -9526,6 +11726,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_3200', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_3200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -9559,6 +11769,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_3300', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_3300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -9592,6 +11812,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_3400', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_3400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -9626,6 +11856,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_3500', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_3500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -9659,6 +11899,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NORMALIZEURI_3600', Level.LEVEL0, async function (done) {
       console.log('ACTS_NORMALIZEURI_3600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -9691,6 +11941,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NORMALIZEURI_3700', Level.LEVEL0, async function (done) {
       console.log('ACTS_NORMALIZEURI_3700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -9723,6 +11983,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NORMALIZEURI_3800', Level.LEVEL0, async function (done) {
       console.log('ACTS_NORMALIZEURI_3800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -9755,6 +12025,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_DENORMALIZEURI_3900', Level.LEVEL0, async function (done) {
       console.log('ACTS_DENORMALIZEURI_3900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -9787,6 +12067,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_DENORMALIZEURI_4000', Level.LEVEL0, async function (done) {
       console.log('ACTS_DENORMALIZEURI_4000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -9819,6 +12109,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_DENORMALIZEURI_4100', Level.LEVEL0, async function (done) {
       console.log('ACTS_DENORMALIZEURI_4100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -9851,6 +12151,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NOTIFYCHANGE_4200', Level.LEVEL0, async function (done) {
       console.log('ACTS_NOTIFYCHANGE_4200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -9883,6 +12193,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NOTIFYCHANGE_4300', Level.LEVEL0, async function (done) {
       console.log('ACTS_NOTIFYCHANGE_4300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -9913,6 +12233,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NOTIFYCHANGE_4400', Level.LEVEL0, async function (done) {
       console.log('ACTS_NOTIFYCHANGE_4400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -9944,6 +12274,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_4500', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_4500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -9976,6 +12316,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_4600', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_4600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10008,6 +12358,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_4700', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_4700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -10040,6 +12400,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_4800', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_4800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10072,6 +12442,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_4900', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_4900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -10104,6 +12484,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_5000', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_5000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10136,6 +12526,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_5100', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_5100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -10168,6 +12568,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_5200', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_5200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10200,6 +12610,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_5300', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_5300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -10232,6 +12652,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_5400', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_5400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10264,6 +12694,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_5500', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_5500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -10296,6 +12736,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_5600', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_5600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10328,6 +12778,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_5700', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_5700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10360,6 +12820,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_8200', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_8200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -10392,6 +12862,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_8300', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_8300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10424,6 +12904,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_8400', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_8400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -10456,6 +12946,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_8500', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_8500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10488,6 +12988,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_8600', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_8600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -10520,6 +13030,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_8700', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_8700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10552,6 +13072,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_8800', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_8800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10584,6 +13114,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_8900', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_8900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -10609,6 +13149,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_9000', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_9000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10634,6 +13184,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_9100', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_9100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -10659,6 +13219,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_9200', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_9200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10684,6 +13254,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_9300', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_9300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -10709,6 +13289,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_OPENFILE_9400', Level.LEVEL0, async function (done) {
       console.log('ACTS_OPENFILE_9400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10734,6 +13324,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETTYPE_9500', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETTYPE_9500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -10758,6 +13358,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETTYPE_9600', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETTYPE_9600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -10782,6 +13392,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETTYPE_9700', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETTYPE_9700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -10806,6 +13426,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_9800', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_9800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -10831,6 +13461,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_9900', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_9900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10856,6 +13496,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_10000', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_10000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -10881,6 +13531,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_10100', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_10100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10906,6 +13566,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_10200', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_10200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -10931,6 +13601,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_GETFILETYPES_10300', Level.LEVEL0, async function (done) {
       console.log('ACTS_GETFILETYPES_10300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -10956,6 +13636,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NORMALIZEURI_10400', Level.LEVEL0, async function (done) {
       console.log('ACTS_NORMALIZEURI_10400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -10979,6 +13669,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NORMALIZEURI_10500', Level.LEVEL0, async function (done) {
       console.log('ACTS_NORMALIZEURI_10500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -11002,6 +13702,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NORMALIZEURI_10600', Level.LEVEL0, async function (done) {
       console.log('ACTS_NORMALIZEURI_10600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -11025,6 +13735,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_DENORMALIZEURI_10700', Level.LEVEL0, async function (done) {
       console.log('ACTS_DENORMALIZEURI_10700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -11048,6 +13768,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_DENORMALIZEURI_10800', Level.LEVEL0, async function (done) {
       console.log('ACTS_DENORMALIZEURI_10800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -11071,6 +13801,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_DENORMALIZEURI_10900', Level.LEVEL0, async function (done) {
       console.log('ACTS_DENORMALIZEURI_10900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -11094,6 +13834,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NOTIFYCHANGE_11000', Level.LEVEL0, async function (done) {
       console.log('ACTS_NOTIFYCHANGE_11000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -11117,6 +13867,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NOTIFYCHANGE_11100', Level.LEVEL0, async function (done) {
       console.log('ACTS_NOTIFYCHANGE_11100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -11140,6 +13900,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_NOTIFYCHANGE_11200', Level.LEVEL0, async function (done) {
       console.log('ACTS_NOTIFYCHANGE_11200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -11163,6 +13933,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_11300', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_11300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -11187,6 +13967,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_11400', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_11400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11211,6 +14001,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_11500', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_11500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -11235,6 +14035,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_11600', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_11600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11259,6 +14069,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_11700', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_11700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -11283,6 +14103,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_INSERT_11800', Level.LEVEL0, async function (done) {
       console.log('ACTS_INSERT_11800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11307,6 +14137,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_11900', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_11900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -11331,6 +14171,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_12000', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_12000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11355,6 +14205,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_12100', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_12100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -11379,6 +14239,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_12200', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_12200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11403,6 +14273,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_12300', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_12300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -11427,6 +14307,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_12400', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_12400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11451,6 +14341,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_BATCHINSERT_12500', Level.LEVEL0, async function (done) {
       console.log('ACTS_BATCHINSERT_12500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11475,6 +14375,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_DELETE_12600', Level.LEVEL0, async function (done) {
       console.log('ACTS_DELETE_12600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -11498,6 +14408,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_DELETE_12700', Level.LEVEL0, async function (done) {
       console.log('ACTS_DELETE_12700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -11521,6 +14441,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_DELETE_12800', Level.LEVEL0, async function (done) {
       console.log('ACTS_DELETE_12800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -11544,6 +14474,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_UPDATE_12900', Level.LEVEL0, async function (done) {
       console.log('ACTS_UPDATE_12900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -11568,6 +14508,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_UPDATE_13000', Level.LEVEL0, async function (done) {
       console.log('ACTS_UPDATE_13000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11592,6 +14542,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_UPDATE_13100', Level.LEVEL0, async function (done) {
       console.log('ACTS_UPDATE_13100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -11616,6 +14576,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_UPDATE_13200', Level.LEVEL0, async function (done) {
       console.log('ACTS_UPDATE_13200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11640,6 +14610,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_UPDATE_13300', Level.LEVEL0, async function (done) {
       console.log('ACTS_UPDATE_13300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -11664,6 +14644,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_UPDATE_13400', Level.LEVEL0, async function (done) {
       console.log('ACTS_UPDATE_13400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11688,6 +14678,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_QUERY_13500', Level.LEVEL0, async function (done) {
       console.log('ACTS_QUERY_13500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -11711,6 +14711,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_QUERY_13600', Level.LEVEL0, async function (done) {
       console.log('ACTS_QUERY_13600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -11734,6 +14744,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_QUERY_13700', Level.LEVEL0, async function (done) {
       console.log('ACTS_QUERY_13700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -11757,6 +14777,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_13800', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_13800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -11783,6 +14813,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_13900', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_13900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11809,6 +14849,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_14000', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_14000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11835,6 +14885,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_14100', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_14100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11861,6 +14921,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_14200', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_14200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -11887,6 +14957,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_14300', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_14300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11913,6 +14993,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_14400', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_14400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11940,6 +15030,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_14500', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_14500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -11966,6 +15066,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_14600', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_14600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -11992,6 +15102,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_14700', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_14700====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -12018,6 +15138,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_14800', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_14800====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -12044,6 +15174,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_CALL_14900', Level.LEVEL0, async function (done) {
       console.log('ACTS_CALL_14900====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -12070,6 +15210,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_15000', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_15000====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = "";
@@ -12094,6 +15244,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_15100', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_15100====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -12118,6 +15278,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_15200', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_15200====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = undefined;
@@ -12142,6 +15312,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_15300', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_15300====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -12166,6 +15346,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_15400', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_15400====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = null;
@@ -12190,6 +15380,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_15500', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_15500====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;
@@ -12214,6 +15414,16 @@ describe('ActsDataAbilityHelperTest', function () {
      */
     it('ACTS_EXECUTEBATCH_15600', Level.LEVEL0, async function (done) {
       console.log('ACTS_EXECUTEBATCH_15600====<begin')
+        try {
+            DAHelper = featureAbility.acquireDataAbilityHelper(dataAbilityUri);
+            console.debug('ACTS_beforeAll DAHelper ====>: ' + DAHelper + " ,JSON. " + JSON.stringify(DAHelper));
+            if(DAHelper == null){
+                console.debug('ACTS_beforeAll DAHelper ====>: DAHelper == null');
+                return;
+            }
+        } catch (err) {
+            console.error('=ACTS_beforeAll acquireDataAbilityHelper catch(err)====>:' + err);
+        }
       expect(typeof (DAHelper)).assertEqual("object")
       try {
         const uri = dataAbilityUri;

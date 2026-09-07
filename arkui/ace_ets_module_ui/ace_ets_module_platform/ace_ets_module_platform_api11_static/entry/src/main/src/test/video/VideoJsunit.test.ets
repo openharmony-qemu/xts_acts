@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -38,10 +37,6 @@ export default function videoJsunit() {
 
 
   describe('VideoAppInfoTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.platform.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/video/Video',
@@ -59,15 +54,23 @@ export default function videoJsunit() {
       } catch (err) {
         console.error("push Video page error " + JSON.stringify(err));
       }
-      await sleep(2)
+      try {
+        await sleep(2)
+      } catch (err) {
+        console.info('videoAppInfoTest sleep err: ' + JSON.stringify(err));
+      }
     });
 
     afterEach(async (): Promise<void> => {
       console.info("Video after each called");
-      await sleep(1)
+      try {
+        await sleep(1)
+      } catch (err) {
+        console.info('videoAppInfoTest sleep err: ' + JSON.stringify(err));
+      }
     });
 
-    
+
     /**
      * @tc.number   videoAppInfoStaticTest001
      * @tc.name     videoAppInfoStaticTest001
@@ -76,7 +79,11 @@ export default function videoJsunit() {
      */
 it('videoAppInfoStaticTest001', Level.LEVEL1, async () => {
       console.info('videoAppInfoTest001 START');
-      await sleep(1)
+      try {
+        await sleep(1)
+      } catch (err) {
+        console.info('videoAppInfoTest001 sleep err: ' + JSON.stringify(err));
+      }
      try{
        let strJson = inspector.getInspectorByKey('Video' + '_video');
        let obj = JSON.parseJsonElement(strJson);

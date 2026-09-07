@@ -14,32 +14,15 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { beforeEach, afterEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Driver, ON } from '@ohos.UiTest';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function LocalizedBorderRadiuses() {
   describe('LocalizedBorderRadiuses', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("LocalizedBorderRadiuses beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api12.static", "EntryAbility")
-      
-    });
     beforeEach(() => {
       console.info("LocalizedBorderRadiuses beforeEach start");
       let options: router.RouterOptions = {
@@ -61,7 +44,11 @@ export default function LocalizedBorderRadiuses() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('LocalizedBorderRadiuses afterEach err: ' + JSON.stringify(err));
+      }
       console.info("LocalizedBorderRadiuses after each called");
     });
 
@@ -76,9 +63,17 @@ export default function LocalizedBorderRadiuses() {
      */
 it('LocalizedBorderRadiuses_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LocalizedBorderRadiuses_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('LocalizedBorderRadiuses_static_0100 err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('LocalizedBorderRadiuses_col');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('LocalizedBorderRadiuses_static_0100 err: ' + JSON.stringify(err));
+      }
       console.info("[ObserverNavDestinationId_0100] obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)));
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('borderRadius').getString('topLeft'))
         .assertEqual('20.00vp')

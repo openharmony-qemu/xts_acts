@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
@@ -26,7 +26,6 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import {UtilsTest} from '../Util.test'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -34,12 +33,6 @@ let testAbilityContext:common.UIAbilityContext;
 export default function CrownEventTest() {
 
   describe('CrownEventTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventnowearapi18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/CrownEvent/index',
@@ -61,7 +54,11 @@ export default function CrownEventTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("CrownEventTest afterEach error: " + err);
+      }
       console.info("CrownEventTest after each called");
     });
 
@@ -73,16 +70,21 @@ export default function CrownEventTest() {
      * @tc.desc     CrownEventTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('CrownEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('CrownEventTest_static_0100 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('onDigitalCrown'));
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('onDigitalCrown');
-      let obj = JSON.parseJsonElement(strJson);
-      expect(0).assertEqual(0);
-      console.info('[CrownEventTest_static_0100] END');
+    it('CrownEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        console.info('CrownEventTest_static_0100 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button1 = await driver.findComponent(ON.id('onDigitalCrown'));
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('onDigitalCrown');
+        let obj = JSON.parseJsonElement(strJson);
+        expect(0).assertEqual(0);
+        console.info('[CrownEventTest_static_0100] END');
+      } catch (err) {
+        console.error('CrownEventTest_static_0100 error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
   })

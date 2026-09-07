@@ -41,7 +41,8 @@ import {
   PreselectedInfo,
   VideoPlayerState,
   ClickResult,
-  CompletedResult
+  CompletedResult,
+  UnselectableItemInfo
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo,
   AlbumPickerController } from '@ohos.file.AlbumPickerComponent';
@@ -270,6 +271,16 @@ function waitForSelectItemInfo(code: number, timeout = 5000): Promise<ItemInfo> 
       resolve(ev?.data?.msg);
     });
   });
+}
+
+function checkUnselectedItemInfo(itemInfo: Object | undefined): boolean {
+  if (itemInfo === undefined || itemInfo === null) {
+    return false;
+  }
+  const info = itemInfo as Record<string, Object>;
+  return (
+    typeof info['dataType'] === 'string' && typeof info['itemType'] === 'string'
+  );
 }
 
 async function clickExitBrowserButton(driver: Driver) {
@@ -5326,6 +5337,172 @@ export default function TextPicker() {
         console.error(`SUB_PHOTO_PICKER_TEST_0800, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
       }
       console.info("SUB_PHOTO_PICKER_TEST_0800 finish");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_0900
+     * @tc.number SUB_PHOTO_PICKER_TEST_0900
+     * @tc.desc   Test onUnselectableAssetClicked callback in Grid View (Thumbnail)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0900', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+
+      console.info('SUB_PHOTO_PICKER_TEST_0900 start');
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.maxSelectNumber = 1;
+      pickerOptions.maxSelectedReminderMode = ReminderMode.MASK;
+      let code: number = EventType.UNSELECTABLE_EVENT_CODE;
+      let receivedData: UnselectableItemInfo | null = null;
+      let callback = (event: events_emitter.EventData) => {
+        let msgData: Object | undefined = event?.data?.msg;
+        if (checkUnselectedItemInfo(msgData)) {
+          receivedData = msgData as UnselectableItemInfo;
+          console.info('SUB_PHOTO_PICKER_TEST_0900 received callback data:', JSON.stringify(receivedData));
+        }
+      };
+
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      };
+      events_emitter.on(event, callback);
+
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      };
+
+      await routeToUrl(options);
+      await CommonFunc.sleep(2000);
+
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+
+      // Select first item by clicking
+      let checkBoxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+      if (!checkBoxes || checkBoxes.length < 2) {
+        console.info('SUB_PHOTO_PICKER_TEST_0900: not enough checkboxes to test');
+        events_emitter.off(event.eventId);
+        router.back();
+        done();
+        return;
+      }
+
+      await checkBoxes[0].click();
+      await CommonFunc.sleep(1000);
+      console.info('SUB_PHOTO_PICKER_TEST_0900: first checkbox clicked');
+
+      await checkBoxes[1].click();
+      await CommonFunc.sleep(1000);
+
+      expect(receivedData).not().assertUndefined();
+      console.info('SUB_PHOTO_PICKER_TEST_0900 finish');
+
+      router.back();
+      events_emitter.off(event.eventId);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_0901
+     * @tc.number SUB_PHOTO_PICKER_TEST_0901
+     * @tc.desc   Test onUnselectableAssetClicked callback in Browser View
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0901', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+
+      console.info('SUB_PHOTO_PICKER_TEST_0901 start');
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.maxSelectNumber = 1;
+      pickerOptions.maxSelectedReminderMode = ReminderMode.MASK;
+      let code: number = EventType.UNSELECTABLE_EVENT_CODE;
+      let receivedData: UnselectableItemInfo | null = null;
+      let callback = (event: events_emitter.EventData) => {
+        let msgData: Object | undefined = event?.data?.msg;
+        if (checkUnselectedItemInfo(msgData)) {
+          receivedData = msgData as UnselectableItemInfo;
+          console.info('SUB_PHOTO_PICKER_TEST_0900 received callback data:', JSON.stringify(receivedData));
+        }
+      };
+
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      };
+      events_emitter.on(event, callback);
+
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      };
+
+      await routeToUrl(options);
+      await CommonFunc.sleep(2000);
+
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+
+      // Select one item in the grid first
+      let checkBoxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+      if (!checkBoxes || checkBoxes.length < 1) {
+        console.info('SUB_PHOTO_PICKER_TEST_0901: no checkboxes found');
+        events_emitter.off(event.eventId);
+        router.back();
+        done();
+        return;
+      }
+
+      await checkBoxes[0].click();
+      await CommonFunc.sleep(1000);
+      console.info('SUB_PHOTO_PICKER_TEST_0901: first checkbox clicked in grid');
+
+      // Enter browser view by clicking an image
+      let gridImages: Array<Component> = await driver.findComponents(ON.type('Image'));
+      if (!gridImages || gridImages.length < 1) {
+        console.info('SUB_PHOTO_PICKER_TEST_0901: no images found to enter browser');
+        events_emitter.off(event.eventId);
+        router.back();
+        done();
+        return;
+      }
+
+      await gridImages[0].click();
+      await CommonFunc.sleep(1500);
+
+      await driver.swipe(800, 500, 200, 500, 200);
+      await CommonFunc.sleep(1000);
+
+      let browserCheckboxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+      if (browserCheckboxes && browserCheckboxes.length > 0) {
+        await browserCheckboxes[0].click();
+        await CommonFunc.sleep(1000);
+      }
+
+      expect(receivedData).not().assertUndefined();
+      console.info('SUB_PHOTO_PICKER_TEST_0901 finish');
+
+      await clickExitBrowserButton(driver);
+      router.back();
+      events_emitter.off(event.eventId);
       done();
     });
   })

@@ -43,7 +43,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function mediaQueryOffJsunit() {
+export default function mediaQueryOffJsunit(): void {
   describe('mediaQueryOffTest', () => {
 
     /**
@@ -54,7 +54,7 @@ export default function mediaQueryOffJsunit() {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info('[mediaQueryOffTest] before each called')
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/mediaQuery'
@@ -72,7 +72,7 @@ export default function mediaQueryOffJsunit() {
     /**
      * run after testcase
      */
-    afterAll(async () => {
+    afterAll(async (): Promise<void> => {
       console.info('[mediaQueryOffTest] after each called')
       await Utils.sleep(1000)
     });
@@ -86,7 +86,7 @@ export default function mediaQueryOffJsunit() {
      * @tc.desc     testmediaQueryOff_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testmediaQueryOff_static_0001', Level.LEVEL0, async () => {
+it('testmediaQueryOff_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('mediaQueryOff testmediaQueryOff0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -107,7 +107,7 @@ it('testmediaQueryOff_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testmediaQueryOff_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testmediaQueryOff_static_0002', Level.LEVEL0, async () => {
+it('testmediaQueryOff_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('mediaQueryOff testmediaQueryOff0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -128,7 +128,7 @@ it('testmediaQueryOff_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testmediaQueryOff_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testmediaQueryOff_static_0003', Level.LEVEL0, async () => {
+it('testmediaQueryOff_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('mediaQueryOff testmediaQueryOff0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -149,7 +149,7 @@ it('testmediaQueryOff_static_0003', Level.LEVEL0, async () => {
      * @tc.desc     testmediaQueryOff_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testmediaQueryOff_static_0004', Level.LEVEL0, async () => {
+it('testmediaQueryOff_static_0004', Level.LEVEL0, async (): Promise<void> => {
       console.info('mediaQueryOff testmediaQueryOff0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -170,7 +170,7 @@ it('testmediaQueryOff_static_0004', Level.LEVEL0, async () => {
      * @tc.desc     testmediaQueryOff_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testmediaQueryOff_static_0005', Level.LEVEL0, async () => {
+it('testmediaQueryOff_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('mediaQueryOff testmediaQueryOff0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -191,7 +191,7 @@ it('testmediaQueryOff_static_0005', Level.LEVEL0, async () => {
      * @tc.desc     testmediaQueryOff_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testmediaQueryOff_static_0006', Level.LEVEL0, async () => {
+it('testmediaQueryOff_static_0006', Level.LEVEL0, async (): Promise<void> => {
       console.info('mediaQueryOff testmediaQueryOff0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -212,7 +212,7 @@ it('testmediaQueryOff_static_0006', Level.LEVEL0, async () => {
      * @tc.desc     testmediaQueryOff_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testmediaQueryOff_static_0007', Level.LEVEL0, async () => {
+it('testmediaQueryOff_static_0007', Level.LEVEL0, async (): Promise<void> => {
       console.info('mediaQueryOff testmediaQueryOff0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -233,7 +233,7 @@ it('testmediaQueryOff_static_0007', Level.LEVEL0, async () => {
      * @tc.desc     testmediaQueryOff_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testmediaQueryOff_static_0009', Level.LEVEL0, async () => {
+it('testmediaQueryOff_static_0009', Level.LEVEL0, async (): Promise<void> => {
       console.info('mediaQueryOff testmediaQueryOff009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -254,7 +254,7 @@ it('testmediaQueryOff_static_0009', Level.LEVEL0, async () => {
      * @tc.desc     testmediaQueryOff_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testmediaQueryOff_static_0010', Level.LEVEL0, async () => {
+it('testmediaQueryOff_static_0010', Level.LEVEL0, async (): Promise<void> => {
       console.info('mediaQueryOff testmediaQueryOff0010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -275,7 +275,7 @@ it('testmediaQueryOff_static_0010', Level.LEVEL0, async () => {
      * @tc.desc     testmediaQueryOff_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('testmediaQueryOff_static_0011', Level.LEVEL0, async () => {
+it('testmediaQueryOff_static_0011', Level.LEVEL0, async (): Promise<void> => {
       console.info('mediaQueryOff testmediaQueryOff0011 START');
       await Utils.sleep(2000);
       console.info("onSelect_0012 click result is: " + JSON.stringify(inspector.sendEventByKey('offText', 10, "")));
@@ -294,7 +294,7 @@ it('testmediaQueryOff_static_0011', Level.LEVEL0, async () => {
      * @tc.desc     testmatchMediaSync0001
      * @tc.level    Level.LEVEL0
      */
-it('testmatchMediaSync0001', Level.LEVEL0, async () => {
+it('testmatchMediaSync0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('matchMediaSync testmatchMediaSync0001 START');
       inspector.sendEventByKey('matchMediaSyncText', 10, "")
       await Utils.sleep(2000);

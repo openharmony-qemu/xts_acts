@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 
 const PAGE_URL = 'MainAbility/pages/Menu/subMenuBuilder';
 const PAGE_NAME = 'subMenuBuilderIndex';
@@ -31,17 +30,26 @@ async function navigatePage(): Promise<void> {
   routerInstance.clear();
   if (routerInstance.getState().name !== PAGE_NAME) {
     routerInstance.replaceUrl({ url: PAGE_URL });
-    await CommonFunc.sleep(1000);
+    await CommonFunc.sleep(800);
   }
 }
 
 export default function SubMenuBuilderTest(): void {
   describe('SubMenuBuilderTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.api26.static', 'EntryAbility');
+    beforeEach(async (): Promise<void> => {
+      try {
+        await navigatePage();
+      } catch (err) {
+        console.info('SubMenuBuilderTest beforeEach err: ' + JSON.stringify(err));
+      }
     });
-    beforeEach(async (): Promise<void> => { await navigatePage(); });
-    afterEach(async (): Promise<void> => { await Utils.sleep(1000); });
+    afterEach(async (): Promise<void> => {
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('SubMenuBuilderTest afterEach err: ' + JSON.stringify(err));
+      }
+    });
 
     /**
      * @tc.name   SUB_ACE_API26_SubMenuBuilder_0100

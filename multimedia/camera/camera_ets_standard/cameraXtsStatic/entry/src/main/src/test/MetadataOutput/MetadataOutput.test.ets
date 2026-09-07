@@ -582,7 +582,7 @@ export default function MetadataOutputStaticTest():void {
                 expect().assertFail();
               } catch (error) {
                 console.error(TAG, testName + ' failed ' + error, error.code);
-                expect(Number(error.code)).assertEqual(401);
+                expect(error.code).assertEqual(401);
               }
             }
           }
@@ -658,7 +658,7 @@ export default function MetadataOutputStaticTest():void {
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(Number(error.code)).assertEqual(7400103);
+        expect(error.code).assertEqual(7400103);
         done();
       }
     })
@@ -689,7 +689,7 @@ export default function MetadataOutputStaticTest():void {
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(Number(error.code)).assertEqual(7400103);
+        expect(error.code).assertEqual(7400103);
         done();
       }
     })

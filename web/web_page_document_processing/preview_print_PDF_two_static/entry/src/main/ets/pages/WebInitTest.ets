@@ -52,14 +52,12 @@ struct webViewController {
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
-    if (eventData != null) {
-      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, RecordData>;
-      if (data != null && data['ACTION'] != null) {
-        let strValue: string = String(data['ACTION']);
-        this.stringObj.str = strValue;
-        console.info(this.stringObj.str)
-      }
+    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+    const data = eventData.data as Record<string, RecordData>;
+    if (data['ACTION'] != null) {
+      let strValue: string = String(data['ACTION']);
+      this.stringObj.str = strValue;
+      console.info(this.stringObj.str)
     }
   }
 
@@ -111,6 +109,30 @@ struct webViewController {
                 break;
               }
 
+              case 'emitSetAudioMutedNullStatic001': {
+                try {
+                  let param: boolean | null = null;
+                  this.controller.setAudioMuted(param as boolean);
+                  Utils.emitEvent(true, 41022701);
+                } catch (error) {
+                  error = error as BusinessError;
+                  Utils.emitEvent(String(error.code), 41022701);
+                }
+                break;
+              }
+
+              case 'emitSetAudioMutedUndefinedStatic001': {
+                try {
+                  let param: boolean | undefined = undefined;
+                  this.controller.setAudioMuted(param as boolean);
+                  Utils.emitEvent(true, 41022702);
+                } catch (error) {
+                  error = error as BusinessError;
+                  Utils.emitEvent(String(error.code), 41022702);
+                }
+                break;
+              }
+
               case 'emitDeleteAllData001': {
                 try {
                   this.controller.loadUrl('resource://rawfile/addOrigin.html')
@@ -149,6 +171,28 @@ struct webViewController {
                   Utils.emitEvent(this.result, 60604);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
+              case 'emitDeleteAllData003': {
+                try {
+                  webView.WebStorage.deleteAllData(null as boolean);
+                  Utils.emitEvent("success", 60607);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 60607);
+                }
+                break;
+              }
+
+              case 'emitDeleteAllData004': {
+                try {
+                  webView.WebStorage.deleteAllData(undefined);
+                  Utils.emitEvent("success", 60608);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 60608);
                 }
                 break;
               }

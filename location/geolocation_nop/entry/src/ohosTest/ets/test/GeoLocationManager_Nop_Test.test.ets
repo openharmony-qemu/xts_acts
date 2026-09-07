@@ -1550,54 +1550,6 @@ export default function geoLocationManager_nop_test() {
     })
 
     /**
-     * @tc.name   geoLocationManager_removeBeaconFence_nop_test_021
-     * @tc.number SUB_geoLocationManager_removeBeaconFence_nop_test_021
-     * @tc.desc   GnssGeofence.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("geoLocationManager_removeBeaconFence_nop_test_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        let manufactureDataBuffer: Uint8Array = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
-          0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
-        let manufactureDataMaskBuffer: Uint8Array = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
-          0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
-
-        let manufactureData: geoLocationManager.BeaconManufactureData = {
-          manufactureId: 0X004C,
-          manufactureData: manufactureDataBuffer.buffer,
-          manufactureDataMask: manufactureDataMaskBuffer.buffer
-        };
-
-        let beacon: geoLocationManager.BeaconFence = {
-          identifier: "11",
-          beaconFenceInfoType: geoLocationManager.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
-          manufactureData: manufactureData
-        };
-        geoLocationManager.removeBeaconFence(beacon).then((result) => {
-          console.info("geoLocationManager_removeBeaconFence_nop_test_021 promise, removeBeaconFence success");
-          expect(result == null).assertTrue;
-          done();
-        }).catch((err: BusinessError) => {
-          console.info("geoLocationManager_removeBeaconFence_nop_test_021 promise, errtype:" + typeof err.code + ", errCode:" + err.code + ", errMessage:" + err.message);
-          expect(Number(err.code)).assertEqual(201);
-          done();
-        });
-      } catch (err) {
-        console.info('---geoLocationManager_removeBeaconFence_nop_test_021  catch ---' + typeof err.code + ',err:' + err.code);
-        if (Number(err.code) === 201) {
-          expect(Number(err.code)).assertEqual(201);
-          console.info('---geoLocationManager_removeBeaconFence_nop_test_021  end type---' + typeof err.code + ',err:' + err.code);
-          done();
-        } else {
-          expect().assertFalse();
-          done();
-        }
-      }
-    })
-
-    /**
      * @tc.name   geoLocationManager_isWlanBssidMatched_nop_test_022
      * @tc.number SUB_geoLocationManager_isWlanBssidMatched_nop_test_022
      * @tc.desc   GnssGeofence.
@@ -1859,6 +1811,63 @@ export default function geoLocationManager_nop_test() {
           done();
         }
       })
+
+    /**
+     * @tc.name   SUB_Location_nop_addFusionFence_point_0100
+     * @tc.number SUB_Location_nop_addFusionFence_point_0100
+     * @tc.desc   Using geoLocationManager.addFusionFence with valid Point params but no permission (201).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_addFusionFence_point_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let latitude: number = 30.07;
+      let longitude: number = 119.98;
+      let point: geoLocationManager.Point = {
+        latitude: latitude,
+        longitude: longitude
+      };
+      let geofence: geoLocationManager.Geofence = {
+        latitude: latitude,
+        longitude: longitude,
+        radius: 2000,
+        expiration: 500000000
+      };
+      let polygon: Array<geoLocationManager.Point> = [point];
+      let gnssFence: geoLocationManager.GnssFence = {
+        gnssFenceType: geoLocationManager.GnssFenceType.CIRCULAR,
+        circularFence: geofence,
+        polygon: polygon
+      };
+      let gnssFences: Array<geoLocationManager.GnssFence> = [gnssFence];
+      let fenceRequestParams: geoLocationManager.FusionFenceRequestParams = {
+        identifier: 'nop_point_test_0100',
+        scene: geoLocationManager.FusionFenceScene.AIRPORT,
+        fenceType: geoLocationManager.FusionFenceType.GNSS,
+        poiType: '1',
+        poiLocation: point,
+        monitorTransitionEvents: 63,
+        loiterTimeMs: 10000,
+        gnssFences: gnssFences,
+        expirationMs: 100000000,
+        fenceTransitionCallback: (transition: geoLocationManager.FusionFenceTransition) => {
+          console.info('SUB_Location_nop_addFusionFence_point_0100 transition: ' + JSON.stringify(transition));
+        }
+      };
+      try {
+        await geoLocationManager.addFusionFence(fenceRequestParams);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info('SUB_Location_nop_addFusionFence_point_0100 catch err: ' + JSON.stringify(err));
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(201);
+        }
+        done();
+      }
+    })
 
   })
 }

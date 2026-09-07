@@ -52,6 +52,15 @@ static napi_value GetRemainingDelayTime(napi_env env, napi_callback_info info)
     return result;
 }
 
+// 测试 delayTime 指针为 nullptr 的情况
+static napi_value GetRemainingDelayTimeWithNull(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t res = OH_BackgroundTaskManager_GetRemainingDelayTime(delaySuspendInfo.requestId, nullptr);
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
 // 取消短时任务
 static napi_value CancelSuspendDelay(napi_env env, napi_callback_info info)
 {
@@ -113,7 +122,7 @@ static napi_value GetTransientTaskInfo(napi_env env, napi_callback_info info)
 static napi_value RequestSuspendDelayWithReasonIsNull(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    int32_t res = OH_BackgroundTaskManager_RequestSuspendDelay("test", OnCallbackCompleted, &delaySuspendInfo);
+    int32_t res = OH_BackgroundTaskManager_RequestSuspendDelay("", OnCallbackCompleted, &delaySuspendInfo);
     if (res == 0) {
         napi_create_int32(env, delaySuspendInfo.requestId, &result);
     } else {
@@ -131,6 +140,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"RequestSuspendDelay", nullptr, RequestSuspendDelay, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetRemainingDelayTime", nullptr, GetRemainingDelayTime, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CancelSuspendDelay", nullptr, CancelSuspendDelay, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetRemainingDelayTimeWithNull", nullptr, GetRemainingDelayTimeWithNull, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetTransientTaskInfo", nullptr, GetTransientTaskInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"RequestSuspendDelayWithReasonIsNull", nullptr, RequestSuspendDelayWithReasonIsNull, nullptr, nullptr, nullptr, napi_default, nullptr },
     };

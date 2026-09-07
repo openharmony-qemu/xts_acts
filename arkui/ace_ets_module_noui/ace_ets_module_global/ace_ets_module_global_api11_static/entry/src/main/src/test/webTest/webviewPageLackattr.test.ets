@@ -24,7 +24,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import emitter from "@ohos.events.emitter"
 import Utils from "../../../ets/MainAbility/common/Utils"
-export default function webViewPageattrLackJsunit() {
+export default function webViewPageattrLackJsunit(): void {
     describe("webviewpageLackattr", () => {
         beforeAll(async (): Promise<void> => {
             console.info("webviewpageLackattr beforeAll start");

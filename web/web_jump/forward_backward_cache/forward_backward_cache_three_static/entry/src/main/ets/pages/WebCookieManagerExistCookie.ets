@@ -336,6 +336,52 @@ struct WebCookieManagerExistCookie {
                 break;
               }
 
+              case 'testExistCookieIncognitoTrueStatic': {
+                try {
+                  webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b', true);
+                  let isCookie = webview.WebCookieManager.existCookie(true)
+                  Utils.emitEvent(isCookie, 100319)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
+              case 'testExistCookieIncognitoFalseStatic': {
+                try {
+                  webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
+                  let isCookie = webview.WebCookieManager.existCookie(false)
+                  Utils.emitEvent(isCookie, 100320)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
+              case 'testExistCookieNullStatic': {
+                try {
+                  webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
+                  let incognito: boolean | null = null;
+                  let isCookie = webview.WebCookieManager.existCookie(incognito as boolean)
+                  Utils.emitEvent(isCookie, 100321)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
+              case 'testExistCookieUndefinedStatic': {
+                try {
+                  webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
+                  let incognito: boolean | undefined = undefined;
+                  let isCookie = webview.WebCookieManager.existCookie(incognito as boolean)
+                  Utils.emitEvent(isCookie, 100322)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
               case 'SwitchNextPageStatic' : {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();

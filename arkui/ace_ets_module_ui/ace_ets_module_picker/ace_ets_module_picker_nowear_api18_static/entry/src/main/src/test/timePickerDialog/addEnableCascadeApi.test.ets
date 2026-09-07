@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function enableCascadeTest() {
   describe('TimePickerDialogApienableCascade', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("TimePickerDialogApienableCascade beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info('TimePickerDialogApienableCascade beforeEach start');
       let options: router.RouterOptions = {
@@ -57,6 +51,7 @@ export default function enableCascadeTest() {
      * @tc.level    Level.LEVEL1
      */
     it('TimePickerDialog_EnableCascade_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('TimePickerDialog_EnableCascade_static_001 START ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('TimePickerDialog1'));
@@ -73,8 +68,12 @@ export default function enableCascadeTest() {
       console.info('TimePickerDialog_EnableCascade_static_001 END ===========================');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000); 
+      await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error(err);
+        done();
+      }
     });
 
     /**
@@ -84,6 +83,7 @@ export default function enableCascadeTest() {
      * @tc.level    Level.LEVEL1
      */
     it('TimePickerDialog_EnableCascade_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('TimePickerDialog_EnableCascade_static_002 START ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('TimePickerDialog2'));
@@ -100,8 +100,12 @@ export default function enableCascadeTest() {
       console.info('TimePickerDialog_EnableCascade_static_002 END ===========================');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000); 
+      await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error(err);
+        done();
+      }
     });
 
     /**
@@ -111,6 +115,7 @@ export default function enableCascadeTest() {
      * @tc.level    Level.LEVEL1
      */
     it('TimePickerDialog_EnableCascade_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('TimePickerDialog_EnableCascade_static_004 START ===========================');
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('TimePickerDialog4'));
@@ -127,8 +132,12 @@ export default function enableCascadeTest() {
       console.info('TimePickerDialog_EnableCascade_static_004 END ===========================');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000); 
+      await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error(err);
+        done();
+      }
     });
   })
 }

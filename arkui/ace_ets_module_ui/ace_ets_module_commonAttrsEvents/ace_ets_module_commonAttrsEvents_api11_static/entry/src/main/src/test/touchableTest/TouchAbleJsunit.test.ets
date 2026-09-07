@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,17 +21,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import { RecordData } from '@ohos.base';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 interface Action {
   ACTION: string
@@ -39,11 +29,6 @@ interface Action {
 
 export default function touchAbleJsunit() {
   describe('touchAbleTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("touchAbleJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("touchAbleJsunit beforeEach start");
@@ -72,16 +57,21 @@ export default function touchAbleJsunit() {
 
     
     /**
-     * @tc.number   testTouchAble_static_001
-     * @tc.name     testTouchAble_static_001
-     * @tc.desc     testTouchAble_static_001
+     * @tc.number   SUB_ArkUI_TouchAble_static_0100
+     * @tc.name     SUB_ArkUI_TouchAble_static_0100
+     * @tc.desc     SUB_ArkUI_TouchAble_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('testTouchAble_static_001', Level.LEVEL0, async (): Promise<void> => {
-      await CommonFunc.sleep(1000)
+ it('SUB_ArkUI_TouchAble_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await CommonFunc.sleep(1000)
+      } catch (err) {
+        console.error("SUB_ArkUI_TouchAble_static_0100 sleep error:" + err);
+      }
       let strJson: string = inspector.getInspectorByKey('ellipse');
-      console.info("[testTouchAble001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("[SUB_ArkUI_TouchAble_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('focusable')).assertEqual(false);
+      done();
     });
 
     
@@ -92,7 +82,11 @@ it('testTouchAble_static_001', Level.LEVEL0, async (): Promise<void> => {
      * @tc.level    Level.LEVEL0
      */
 it('testTouchAble_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("testTouchAble_static_002 sleep error:" + err);
+      }
       let callbackTwo = (eventData: events_emitter.EventData) => {
         console.info("[testTouchAble002] get event state result is: " + JSON.stringify(eventData));
         // let act = eventData.data as Action

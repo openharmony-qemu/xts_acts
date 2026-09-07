@@ -24,6 +24,7 @@ import colorSpaceManager from '@ohos.graphics.colorSpaceManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG = "CameraMacroTest: ";
+const CAMERA_INVALID_ARGUMENT = "7400101"
 
 let mCameraManager: camera.CameraManager;
 let mCameraDevicesArray: Array<camera.CameraDevice>;
@@ -543,6 +544,72 @@ export default function CameraPhotoSessionTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0400
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0400
+     * @tc.desc   Create photo session enable macro when param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0400', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0400--------------");
+      if (mCameraNum == 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0400 FAILED with NoCamera");
+        expect(true).assertFail();
+        done();
+        return;
+      }
+      createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+      await startCameraSession(0, camera.SceneMode.NORMAL_PHOTO);
+      let isSupportedMacro =  mCameraSession.isMacroSupported();
+      console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0400 Success isSupportedMacro = "+ isSupportedMacro );
+      try {
+          if (isSupportedMacro) {
+            mCameraSession.enableMacro(null);
+            console.error(`enableMacro expect fail, but success`);
+            expect().assertFail();
+          }
+      } catch (err) {
+          console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0400 ERROR" + err.code);
+          expect(err.code).assertEqual(CAMERA_INVALID_ARGUMENT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0500
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0500
+     * @tc.desc   Create photo session enable macro when param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0500', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0500--------------");
+      if (mCameraNum == 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0500 FAILED with NoCamera");
+        expect(true).assertFail();
+        done();
+        return;
+      }
+      createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+      await startCameraSession(0, camera.SceneMode.NORMAL_PHOTO);
+      let isSupportedMacro =  mCameraSession.isMacroSupported();
+      console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0500 Success isSupportedMacro = "+ isSupportedMacro );
+      try {
+          if (isSupportedMacro) {
+            mCameraSession.enableMacro(undefined);
+            console.error(`enableMacro expect fail, but success`);
+            expect().assertFail();
+          }
+      } catch (err) {
+          console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0500 ERROR" + err.code);
+          expect(err.code).assertEqual(CAMERA_INVALID_ARGUMENT);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0300
      * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0300
      * @tc.desc   Create photo session enable macro  when Session is not commitconfig
@@ -858,5 +925,38 @@ export default function CameraPhotoSessionTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_OFF_MACRO_STATUS_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_OFF_MACRO_STATUS_0100
+     * @tc.desc   Test PhotoSession off macro status with callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_OFF_MACRO_STATUS_0100', Level.LEVEL0, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_OFF_MACRO_STATUS_0100--------------");
+      if (mCameraNum == 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_OFF_MACRO_STATUS_0100 FAILED with NoCamera");
+        expect(true).assertFail();
+        done();
+        return;
+      }
+      createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+      try {
+
+        let macroStatusChangedCallback = (err: BusinessError, status: boolean): void => {
+          done();
+        }
+
+        mCameraSession.on('macroStatusChanged', macroStatusChangedCallback);
+        mCameraSession.off('macroStatusChanged', macroStatusChangedCallback);
+      } catch (err) {
+        console.info(TAG + " SUB_MULTIMEDIA_CAMERA_OFF_MACRO_STATUS_0100 FAILED" + err.code);
+        expect(true).assertFalse();
+      }
+      done();
+    })
+
   })
 }

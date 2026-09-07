@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, Component } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 export default function expectedUpdateIntervalTest() {
   describe('expectedUpdateIntervalTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api24.static", "EntryAbility");
-    });
 
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -50,8 +46,12 @@ export default function expectedUpdateIntervalTest() {
     });
 
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(1000);
       console.info("expectedUpdateIntervalTest after each called");
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+      }
     });
 
     /**
@@ -63,6 +63,7 @@ export default function expectedUpdateIntervalTest() {
      * @tc.level   LEVEL1
      */
     it('SUB_ArkUI_OnAreaChange_expectedUpdateInterval_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('SUB_ArkUI_OnAreaChange_expectedUpdateInterval_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -77,7 +78,12 @@ export default function expectedUpdateIntervalTest() {
       console.info("[SUB_ArkUI_OnAreaChange_expectedUpdateInterval_0100] content: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('2');
       console.info('SUB_ArkUI_OnAreaChange_expectedUpdateInterval_0100 END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
   });
 }

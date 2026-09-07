@@ -17,13 +17,14 @@ import netfirewalltest from './netfirewall.test';
 import EmptyTest from './Empty.test';
 import netfirewallErroCodeTest from './netfirewallErrorCode.test';
 import TrafficFilterTest from './TrafficFilter.test';
-
+import PacketFilterTest from './PacketFilter.test';
 
 export default function testsuite() {
     if (canIUse("SystemCapability.Communication.NetManager.NetFirewall")) {
         netfirewalltest();
         netfirewallErroCodeTest();
         TrafficFilterTest();
+        PacketFilterTest();
     }
     else {
         EmptyTest();

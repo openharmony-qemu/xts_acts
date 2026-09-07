@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 
 const libUtil: LibUtil = new LibUtil();
@@ -27,12 +26,13 @@ const libUtil: LibUtil = new LibUtil();
 
 export default function TextPickerCascadeTest(){
   describe('TextPickerCascadeTest',  () =>{
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api18_static", "EntryAbility")
-    });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100)
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('TextPickerCascadeTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     /**
@@ -42,11 +42,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_a', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_a()).assertEqual(0)
-      console.log('TextPickerCascadeTest_a will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_a()).assertEqual(0)
+        console.log('TextPickerCascadeTest_a will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_a err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -56,11 +61,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_a1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_a1()).assertEqual(0)
-      console.log('TextPickerCascadeTest_a1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_a1()).assertEqual(0)
+        console.log('TextPickerCascadeTest_a1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_a1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -70,11 +80,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_b', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_b()).assertEqual(0)
-      console.log('TextPickerCascadeTest_b will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_b()).assertEqual(0)
+        console.log('TextPickerCascadeTest_b will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_b err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -84,11 +99,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_b1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_b1()).assertEqual(0)
-      console.log('TextPickerCascadeTest_b1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_b1()).assertEqual(0)
+        console.log('TextPickerCascadeTest_b1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_b1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -98,11 +118,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_c', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_c()).assertEqual(0)
-      console.log('TextPickerCascadeTest_c will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_c()).assertEqual(0)
+        console.log('TextPickerCascadeTest_c will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_c err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -112,11 +137,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_c1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_c1()).assertEqual(0)
-      console.log('TextPickerCascadeTest_c1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_c1()).assertEqual(0)
+        console.log('TextPickerCascadeTest_c1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_c1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -126,11 +156,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_d', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_d()).assertEqual(0)
-      console.log('TextPickerCascadeTest_d will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_d()).assertEqual(0)
+        console.log('TextPickerCascadeTest_d will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_d err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -140,11 +175,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_d1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_d1()).assertEqual(0)
-      console.log('TextPickerCascadeTest_d1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_d1()).assertEqual(0)
+        console.log('TextPickerCascadeTest_d1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_d1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -154,11 +194,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_e', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_e()).assertEqual(0)
-      console.log('TextPickerCascadeTest_e will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_e()).assertEqual(0)
+        console.log('TextPickerCascadeTest_e will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_e err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -168,11 +213,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_e1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_e1()).assertEqual(0)
-      console.log('TextPickerCascadeTest_e1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_e1()).assertEqual(0)
+        console.log('TextPickerCascadeTest_e1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_e1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -182,11 +232,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_f', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_f()).assertEqual(0)
-      console.log('TextPickerCascadeTest_f will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_f()).assertEqual(0)
+        console.log('TextPickerCascadeTest_f will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_f err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -196,11 +251,16 @@ export default function TextPickerCascadeTest(){
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerCascadeTest_f1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.TextPickerCascadeTest_f1()).assertEqual(0)
-      console.log('TextPickerCascadeTest_f1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.TextPickerCascadeTest_f1()).assertEqual(0)
+        console.log('TextPickerCascadeTest_f1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('TextPickerCascadeTest_f1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
 

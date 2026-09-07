@@ -35,14 +35,14 @@ import { RecordData } from '@ohos.base';
 
 let emitKey = "emitUserAgent";
 
-export default function web9Jsunit() {
+export default function web9Jsunit(): void {
 
   describe('web9Jsunit', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/web_api_9',
       }
@@ -62,7 +62,7 @@ export default function web9Jsunit() {
       console.info("web beforeEach start");
 
     })
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       console.info("web afterEach start:" + emitKey);
       try {
         let backData: events_emitter.EventData = {
@@ -90,7 +90,7 @@ export default function web9Jsunit() {
      * @tc.desc     webContextMenuResultTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('webContextMenuResultTest_static_001', Level.LEVEL0, async () => {
+it('webContextMenuResultTest_static_001', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitwebContextMenuResult";
         //Utils.registerContainEvent("webContextMenuResult", true, 1101);
@@ -106,7 +106,7 @@ it('webContextMenuResultTest_static_001', Level.LEVEL0, async () => {
      * @tc.desc     setWebControllerTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('setWebControllerTest_static_002', Level.LEVEL0, async () => {
+it('setWebControllerTest_static_002', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitsetWebController";
         //Utils.registerContainEvent("setWebController", true, 1102);
@@ -122,7 +122,7 @@ it('setWebControllerTest_static_002', Level.LEVEL0, async () => {
      * @tc.desc     setWebControllerTest_static_003
      * @tc.level    Level.LEVEL0
      */
-it('setWebControllerTest_static_003', Level.LEVEL0, async () => {
+it('setWebControllerTest_static_003', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitHitTestValue";
         //Utils.registerContainEvent("HitTestValue", true, 1103);

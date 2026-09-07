@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,11 +31,11 @@ const TAG = '[IOTConnect]';
 @Component
 struct IOTConnect {
   private testPoint: string = '测试点：验证基于BLE协议的设备连接功能，设备发现后可成功建立连接\n\n';
-  private tipsWIFI: string = '操作步骤：\n1、请打开设备的wifi'
-  private tipsBLE: string = '操作步骤：\n1、请打开设备的蓝牙'
+  private tipsWIFI: string = '操作步骤：\n1、请打开设备的wifi';
+  private tipsBLE: string = '操作步骤：\n1、请打开设备的蓝牙';
   private tipsText: string = '\n2、点击<重新扫描设备>按钮开始扫描' +
     '\n3、可用设备列表显示设备信息后，点击设备项开始连接' +
-    '\n4、设备连接成功后，已连接设备列表会显示设备信息，判定用例通过并点击Pass按钮'+
+    '\n4、设备连接成功后，已连接设备列表会显示设备信息，判定用例通过并点击Pass按钮' +
     '\n5、连接失败或设备未被发现，判定用例失败并点击Fail按钮'
   ;
   @State name: string = '';
@@ -55,6 +55,7 @@ struct IOTConnect {
     if (!IotHelper.getInstance().filterDeviceByConfig(iotDevice)) {
       return;
     }
+    Logger.info(`discovery iotDevice: ${JSON.stringify(iotDevice)}`);
     this.deviceDataResource.pushData(iotDevice);
   }
 
@@ -152,18 +153,19 @@ struct IOTConnect {
       Button({ stateEffect: false }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
-          .height('20vp')
+          .height('20vp');
       }
       .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
-      .opacity(0.4)
+      .opacity(0.4);
     } else {
       Button({ stateEffect: true }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
-          .height('20vp')
-      }.width('30%')
+          .height('20vp');
+      }
+      .width('30%')
       .height('30vp')
       .key('passBtn')
       .backgroundColor(Color.Grey)
@@ -173,11 +175,11 @@ struct IOTConnect {
           params: {
             result: 'true ', title: this.name,
           }
-        })
+        });
         promptAction.showToast({
           message: '通过', duration: 1000
         });
-      })
+      });
     }
   }
 
@@ -186,7 +188,7 @@ struct IOTConnect {
     Button() {
       Image($r('app.media.ic_public_fail'))
         .width('20vp')
-        .height('20vp')
+        .height('20vp');
     }
     .width('30%')
     .height('30vp')
@@ -198,11 +200,11 @@ struct IOTConnect {
         params: {
           result: 'false', title: this.name,
         }
-      })
+      });
       promptAction.showToast({
         message: '失败', duration: 1000
       });
-    })
+    });
   }
 
   build() {
@@ -212,7 +214,7 @@ struct IOTConnect {
           Image($r('app.media.ic_public_back'))
             .width('20vp')
             .height('18vp')
-            .margin({ left: '20vp' })
+            .margin({ left: '20vp' });
         }
         .backgroundColor(Color.Black)
         .size({ width: '40vp', height: '30vp' })
@@ -220,36 +222,36 @@ struct IOTConnect {
           router.back({
             url: 'pages/IOT/IOT_index',
             params: { result: 'None', }
-          })
-        })
+          });
+        });
 
         Text(this.name)
           .fontColor(Color.White)
           .fontSize('18fp')
-          .margin({ left: '-20vp' })
+          .margin({ left: '-20vp' });
         Text('hello')
           .fontColor(Color.White)
-          .visibility(Visibility.Hidden)
+          .visibility(Visibility.Hidden);
       }
       .backgroundColor(Color.Black)
       .height('10%')
       .width('100%')
-      .justifyContent(FlexAlign.SpaceBetween)
+      .justifyContent(FlexAlign.SpaceBetween);
 
       if (this.connectType != ConnectType.OFFLINE) {
         Column() {
           Row() {
             Text('已连接设备')
               .fontSize(22)
-              .fontColor('#007DFF')
+              .fontColor('#007DFF');
             if (this.connectType == ConnectType.CONNECTING) {
-              LoadingProgress().width(40).height(40)
+              LoadingProgress().width(40).height(40);
             }
           }
           .width('100%')
           .height(50)
           .justifyContent(FlexAlign.SpaceBetween)
-          .alignItems(VerticalAlign.Center)
+          .alignItems(VerticalAlign.Center);
 
           if (this.connectType == ConnectType.ONLINE) {
             ProductView({ iotDevice: IotHelper.getInstance().getConnectDevice(), connectType: 1 })
@@ -261,11 +263,11 @@ struct IOTConnect {
                 if (connectDevice != undefined) {
                   this.deviceDataResource.pushData(connectDevice);
                 }
-              })
+              });
           }
         }
         .width('100%')
-        .padding({ left: 16, right: 16 })
+        .padding({ left: 16, right: 16 });
       }
 
       List() {
@@ -273,25 +275,25 @@ struct IOTConnect {
           Row() {
             Text('可用设备')
               .fontSize(22)
-              .fontColor('#007DFF')
+              .fontColor('#007DFF');
             if (this.isScanOn) {
-              LoadingProgress().width(40).height(40)
+              LoadingProgress().width(40).height(40);
             }
           }
           .width('100%')
           .height(50)
           .justifyContent(FlexAlign.SpaceBetween)
-          .alignItems(VerticalAlign.Center)
-        }
+          .alignItems(VerticalAlign.Center);
+        };
 
         LazyForEach(this.deviceDataResource, (item: IotDevice, index) => {
           ListItem() {
-            ProductView({ iotDevice: item, connectType: 0 })
+            ProductView({ iotDevice: item, connectType: 0 });
           }
           .onClick(() => {
             this.connectDevice(item);
-          })
-        }, (item: DeviceManager.DeviceInfo) => JSON.stringify(item))
+          });
+        }, (item: DeviceManager.DeviceInfo) => JSON.stringify(item));
       }
       .width('100%')
       .padding({ left: 16, right: 16 })
@@ -302,10 +304,10 @@ struct IOTConnect {
         startMargin: 10,
         endMargin: 10
       })
-      .margin({ top: 10 })
+      .margin({ top: 10 });
 
       if (this.isScanOn) {
-        Blank().margin({ top: '20vp' }).height('20vp')
+        Blank().margin({ top: '20vp' }).height('20vp');
       } else {
         Button(
           '重新扫描设备',
@@ -323,7 +325,7 @@ struct IOTConnect {
             bottom: 10
           })
           .backgroundColor('#e1e5e8')
-          .margin({ top: 20, bottom: 20 })
+          .margin({ top: 20, bottom: 20 });
       }
 
       Row() {
@@ -331,7 +333,7 @@ struct IOTConnect {
         Button() {
           Image($r('app.media.ic_public_help'))
             .width('20vp')
-            .height('20vp')
+            .height('20vp');
         }
         .width('30%')
         .height('30vp')
@@ -347,7 +349,7 @@ struct IOTConnect {
                 }
               }
             }
-          )
+          );
         });
 
         this.FailBtn();
@@ -355,10 +357,10 @@ struct IOTConnect {
       .height('10%')
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
-      .backgroundColor(Color.Black)
+      .backgroundColor(Color.Black);
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(Color.White)
+    .backgroundColor(Color.White);
   }
 }

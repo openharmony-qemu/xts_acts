@@ -23,7 +23,7 @@ import { Driver, ON } from '@kit.TestKit';
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }
@@ -36,7 +36,7 @@ let context: common.UIAbilityContext;
 export default function ActsNotificationAnsGetAppListSortingTest() {
   describe('ActsNotificationAnsGetAppListSortingTest', () => {
     beforeAll(async () => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       notificationManager.requestEnableNotification(context).then(() => {
         console.info(`requestEnableNotification succeeded`);
       }).catch((e: Error) => {
@@ -81,8 +81,8 @@ export default function ActsNotificationAnsGetAppListSortingTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "普通服务提醒",
-            text: "你的普通服务已完成",
+            title: '普通服务提醒',
+            text: '你的普通服务已完成',
           }
         },
       }

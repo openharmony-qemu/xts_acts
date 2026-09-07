@@ -90,14 +90,14 @@ struct PageRouteExample {
     .height('100%')
   }
 
-  speedChange() {
+  speedChange(): void {
     let that = this
     this.interval = setInterval(() => {
       that.angle += that.speed
     }, 15)
   }
 
-  onPageHide() {
+  onPageHide(): void {
     console.info('current page will be hidden, value changed')
     this.state = 'onPageHide'
     try {
@@ -117,7 +117,7 @@ struct PageRouteExample {
     }
   }
 
-  onPageShow() {
+  onPageShow(): void {
     this.speedChange()
   }
 }

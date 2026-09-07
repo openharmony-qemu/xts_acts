@@ -38,6 +38,8 @@
 #define CASE_INDEX_4 4
 #define CASE_INDEX_5 5
 #define CASE_INDEX_6 6
+#define CASE_INDEX_7 7
+#define CASE_INDEX_8 8
 #define TIMEOUT_3000 3000
 
 // 通过netId获取DNS结果。
@@ -488,6 +490,30 @@ static napi_value OHNetConnRegisterNetConnCallback(napi_env env, napi_callback_i
         uint32_t callbackId;
         specifier.caps.bearerTypesSize = 1;
         specifier.caps.bearerTypes[0] = NETCONN_BEARER_CELLULAR;
+        ret = OH_NetConn_RegisterNetConnCallback(&specifier, &netConnCallback, 0, &callbackId);
+        OH_NetConn_UnregisterNetConnCallback(callbackId);
+    } else if (index == CASE_INDEX_6) {
+        NetConn_NetSpecifier specifier{};
+        NetConn_NetConnCallback netConnCallback{};
+        uint32_t callbackId;
+        specifier.caps.bearerTypesSize = 1;
+        specifier.caps.bearerTypes[0] = NETCONN_BEARER_BLUETOOTH;
+        ret = OH_NetConn_RegisterNetConnCallback(&specifier, &netConnCallback, 0, &callbackId);
+        OH_NetConn_UnregisterNetConnCallback(callbackId);
+    } else if (index == CASE_INDEX_7) {
+        NetConn_NetSpecifier specifier{};
+        NetConn_NetConnCallback netConnCallback{};
+        uint32_t callbackId;
+        specifier.caps.bearerTypesSize = 1;
+        specifier.caps.bearerTypes[0] = NETCONN_BEARER_ETHERNET;
+        ret = OH_NetConn_RegisterNetConnCallback(&specifier, &netConnCallback, 0, &callbackId);
+        OH_NetConn_UnregisterNetConnCallback(callbackId);
+    } else if (index == CASE_INDEX_8) {
+        NetConn_NetSpecifier specifier{};
+        NetConn_NetConnCallback netConnCallback{};
+        uint32_t callbackId;
+        specifier.caps.bearerTypesSize = 1;
+        specifier.caps.bearerTypes[0] = NETCONN_BEARER_VPN;
         ret = OH_NetConn_RegisterNetConnCallback(&specifier, &netConnCallback, 0, &callbackId);
         OH_NetConn_UnregisterNetConnCallback(callbackId);
     }

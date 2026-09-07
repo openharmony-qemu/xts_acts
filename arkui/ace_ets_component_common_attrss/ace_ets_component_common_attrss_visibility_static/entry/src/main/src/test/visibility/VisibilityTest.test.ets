@@ -16,21 +16,12 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { Visibility } from '@ohos.arkui.component';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function visibilityTest() {
   let supportView = [
@@ -130,13 +121,6 @@ export default function visibilityTest() {
   }]
 
   describe('VisibilityTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("VisibilityTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void> => {
       await Utils.sleep(1000);
 

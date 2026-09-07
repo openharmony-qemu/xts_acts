@@ -14,31 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { HorizontalAlign } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function RelativeContainer_Level() {
   describe('RelativeContainer_Level', () => {
-    beforeAll(async() => {
-      console.info("RelativeContainer_Level beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("RelativeContainer_Level beforeEach start");
       let options: router.RouterOptions = {
@@ -60,7 +47,11 @@ export default function RelativeContainer_Level() {
       }
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('RelativeContainer_LeTest await err: ' + JSON.stringify(err));
+      }
       console.info("RelativeContainer_Level after each called")
     });
     
@@ -79,7 +70,11 @@ it('SUB_ACE_RelativeContainer_Level_TEST_static_0100', Level.LEVEL0, async (done
         name: 'addalign', value: HorizontalAlign.Start
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('RelativeContainer_LeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let RelativeContainer_Level_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_bt1');
       let RelativeContainer_Level_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_tx2');
@@ -109,7 +104,11 @@ it('SUB_ACE_RelativeContainer_Level_TEST_static_0200', Level.LEVEL0, async (done
         name: 'addalign', value: HorizontalAlign.Center
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('RelativeContainer_LeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let RelativeContainer_Level_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_bt1');
       let RelativeContainer_Level_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_tx2');
@@ -141,7 +140,11 @@ it('SUB_ACE_RelativeContainer_Level_TEST_static_0300', Level.LEVEL0, async (done
         name: 'addalign', value: HorizontalAlign.End
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('RelativeContainer_LeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let RelativeContainer_Level_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_bt1');
       let RelativeContainer_Level_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_tx2');

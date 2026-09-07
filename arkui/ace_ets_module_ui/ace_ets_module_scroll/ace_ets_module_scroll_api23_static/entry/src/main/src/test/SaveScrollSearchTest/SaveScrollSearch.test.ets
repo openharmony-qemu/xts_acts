@@ -15,25 +15,19 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
 
 export default function SaveScrollSearchTest() {
   describe('SaveScrollSearchTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('SaveScrollSearchTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll.api23.static', 'EntryAbility');
-    });
-
-    beforeEach((): void => {
+    beforeEach(async (): Promise<void> => {
       console.info('SaveScrollSearchTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/SaveScrollSearch/SaveScrollSearch',
@@ -45,6 +39,7 @@ export default function SaveScrollSearchTest() {
         console.info('SaveScrollSearchTest state pages: ' + JSON.stringify(pages));
         // Always replace to avoid state carry-over across cases/suites.
         routerInstance.replaceUrl(options);
+        await CommonFunc.sleep(2000);
       } catch (err) {
         console.error('SaveScrollSearchTest replaceUrl error: ' + err);
         expect().assertFail();

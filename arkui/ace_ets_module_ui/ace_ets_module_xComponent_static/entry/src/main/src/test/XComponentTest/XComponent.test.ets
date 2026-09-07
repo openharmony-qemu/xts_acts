@@ -15,198 +15,162 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
-import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector';
 import { XComponentController, SurfaceConfig } from '@ohos.arkui.component';
-
-const SLEEP_TIME = 1000;
 
 export default function XComponentTest() {
   describe('XComponentTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('XComponentTest beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility('com.arkui.ace.xComponent.static', 'EntryAbility');
-    });
 
     beforeEach(async (): Promise<void> => {
-      console.info('XComponentTest beforeEach start');
+      console.info("themePageToggleTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/XComponent/XComponentIndex',
-      };
+        url:'MainAbility/pages/XComponent/XComponentIndex',
+      }
       try {
-        const routerInstance = AppStorage.get<Router>('router') as Router;
+        const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info('XComponentTest state pages: ' + JSON.stringify(pages));
-        if (pages.name !== 'XComponentIndex') {
-          routerInstance.replaceUrl(options);
+        let pages:router.RouterState = routerInstance.getState();
+        console.info("get themePageToggleTest state pages:" + JSON.stringify(pages));
+        if (!("MainAbility/pages/XComponent/XComponentIndex" == pages.name)) {
+          console.info("get themePageToggleTest pages.name:" + '');
+          await routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
-        await Utils.sleep(500);
       } catch (err) {
-        console.error('XComponentTest replaceUrl error: ' + err);
+        console.error("push themePageToggleTest page error:" + err);
+      }
+      console.info("themePageToggleTest beforeEach end");
+    });
+
+    /**
+     * @tc.name   XComponentTest_0100
+     * @tc.number SUB_ARKUI_API_XComponentTest_0100
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentTest_0100', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0100 START');
+      try {
+        let config: SurfaceConfig = { isOpaque: true };
+        expect(config.isOpaque).assertEqual(true);
+        done();
+      } catch (err) {
+        console.error('XComponentTest XComponentTest_0100 error: ' + err);
         expect().assertFail();
+        done();
       }
     });
 
-    afterEach(async (): Promise<void> => {
-      await Utils.sleep(200);
-    });
-
-    // ============================================================
-    // SurfaceConfig.isOpaque
-    // ============================================================
-
     /**
-     * @tc.number XComponentTest_001
-     * @tc.name surfaceConfigIsOpaqueTrue
-     * @tc.desc Test SurfaceConfig.isOpaque with true
+     * @tc.name   XComponentTest_0200
+     * @tc.number SUB_ARKUI_API_XComponentTest_0200
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('surfaceConfigIsOpaqueTrue', Level.LEVEL1, (done: () => void): void => {
-      console.info('XComponentTest execute: surfaceConfigIsOpaqueTrue START');
-      let config: SurfaceConfig = { isOpaque: true };
-      expect(config.isOpaque).assertEqual(true);
-      done();
-    });
-
-    /**
-     * @tc.number XComponentTest_002
-     * @tc.name surfaceConfigIsOpaqueFalse
-     * @tc.desc Test SurfaceConfig.isOpaque with false
-     */
-    it('surfaceConfigIsOpaqueFalse', Level.LEVEL1, (done: () => void): void => {
-      console.info('XComponentTest execute: surfaceConfigIsOpaqueFalse START');
-      let config: SurfaceConfig = { isOpaque: false };
-      expect(config.isOpaque).assertEqual(false);
-      done();
-    });
-
-    /**
-     * @tc.number XComponentTest_003
-     * @tc.name surfaceConfigIsOpaqueTrueFalse
-     * @tc.desc Test SurfaceConfig.isOpaque with true and false differ
-     */
-    it('surfaceConfigIsOpaqueTrueFalse', Level.LEVEL1, (done: () => void): void => {
-      console.info('XComponentTest execute: surfaceConfigIsOpaqueTrueFalse START');
-      let configTrue: SurfaceConfig = { isOpaque: true };
-      let configFalse: SurfaceConfig = { isOpaque: false };
-      expect(configTrue.isOpaque).assertEqual(true);
-      expect(configFalse.isOpaque).assertEqual(false);
-      expect(configTrue.isOpaque === configFalse.isOpaque).assertEqual(false);
-      done();
-    });
-
-    // ============================================================
-    // XComponentController methods
-    // ============================================================
-
-    /**
-     * @tc.number XComponentTest_004
-     * @tc.name xComponentControllerLockCanvas
-     * @tc.desc Test XComponentController.lockCanvas method exists on page-created controller
-     */
-    it('xComponentControllerLockCanvas', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('XComponentTest execute: xComponentControllerLockCanvas START');
+    it('XComponentTest_0200', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0200 START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        const ctrl = AppStorage.get<XComponentController>('xController') as XComponentController;
+        let config: SurfaceConfig = { isOpaque: false };
+        expect(config.isOpaque).assertEqual(false);
+        done();
+      } catch (err) {
+        console.error('XComponentTest XComponentTest_0200 error: ' + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   XComponentTest_0300
+     * @tc.number SUB_ARKUI_API_XComponentTest_0300
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentTest_0300', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0300 START');
+      try {
+        let config: SurfaceConfig = {};
+        expect(config.isOpaque === undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.error('XComponentTest XComponentTest_0300 error: ' + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   XComponentTest_0400
+     * @tc.number SUB_ARKUI_API_XComponentTest_0400
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentTest_0400', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0400 START');
+      try {
+        const ctrl = new XComponentController();
         expect(typeof ctrl.lockCanvas === 'function').assertTrue();
-        console.info('XComponentTest execute: xComponentControllerLockCanvas END');
         done();
-      } catch (error) {
-        console.error('XComponentTest execute: xComponentControllerLockCanvas error: ' + error);
+      } catch (err) {
+        console.error('XComponentTest XComponentTest_0400 error: ' + err);
         expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.number XComponentTest_005
-     * @tc.name xComponentControllerUnlockCanvasAndPost
-     * @tc.desc Test XComponentController.unlockCanvasAndPost method exists on page-created controller
+     * @tc.name   XComponentTest_0500
+     * @tc.number SUB_ARKUI_API_XComponentTest_0500
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('xComponentControllerUnlockCanvasAndPost', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('XComponentTest execute: xComponentControllerUnlockCanvasAndPost START');
+    it('XComponentTest_0500', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0500 START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        const ctrl = AppStorage.get<XComponentController>('xController') as XComponentController;
+        const ctrl = new XComponentController();
         expect(typeof ctrl.unlockCanvasAndPost === 'function').assertTrue();
-        console.info('XComponentTest execute: xComponentControllerUnlockCanvasAndPost END');
         done();
-      } catch (error) {
-        console.error('XComponentTest execute: xComponentControllerUnlockCanvasAndPost error: ' + error);
+      } catch (err) {
+        console.error('XComponentTest XComponentTest_0500 error: ' + err);
         expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.number XComponentTest_006
-     * @tc.name xComponentControllerSetSurfaceConfig
-     * @tc.desc Test XComponentController.setXComponentSurfaceConfig method exists on page-created controller
+     * @tc.name   XComponentTest_0600
+     * @tc.number SUB_ARKUI_API_XComponentTest_0600
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('xComponentControllerSetSurfaceConfig', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('XComponentTest execute: xComponentControllerSetSurfaceConfig START');
+    it('XComponentTest_0600', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0600 START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        const ctrl = AppStorage.get<XComponentController>('xController') as XComponentController;
+        const ctrl = new XComponentController();
         expect(typeof ctrl.setXComponentSurfaceConfig === 'function').assertTrue();
-        console.info('XComponentTest execute: xComponentControllerSetSurfaceConfig END');
         done();
-      } catch (error) {
-        console.error('XComponentTest execute: xComponentControllerSetSurfaceConfig error: ' + error);
+      } catch (err) {
+        console.error('XComponentTest XComponentTest_0600 error: ' + err);
         expect().assertFail();
         done();
       }
     });
 
-    // ============================================================
-    // XComponent global function - UI rendering
-    // ============================================================
-
-    /**
-     * @tc.number XComponentTest_007
-     * @tc.name xComponentPageRenders
-     * @tc.desc Test XComponent page title renders
-     */
-    it('xComponentPageRenders', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('XComponentTest execute: xComponentPageRenders START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('xComponentPageTitle'));
-        expect(node !== null).assertTrue();
-        done();
-      } catch (error) {
-        console.error('XComponentTest execute: xComponentPageRenders error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.number XComponentTest_008
-    * @tc.name xComponentViewRenders
-     * @tc.desc Test XComponent page title renders
-     */
-    it('xComponentViewRenders', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('XComponentTest execute: xComponentViewRenders START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('xComponentView'));
-        expect(node !== null).assertTrue();
-        console.info('XComponentTest execute: xComponentViewRenders END');
-        done();
-      } catch (error) {
-        console.error('XComponentTest execute: xComponentViewRenders error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
   });
 }

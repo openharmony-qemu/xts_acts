@@ -15,20 +15,10 @@
  */
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll  } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign} from '@ohos.arkui.component';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function AlignRulesTest() {
   //A list of components that support the position attribute, which is required.
@@ -252,11 +242,6 @@ export default function AlignRulesTest() {
   // testAlignRulesBadgeSubassemblyVerticalCenterHorizontally
 
   describe('AlignRulesTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("alignRulesTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs02.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     //Create test cases by config.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       // AppStorage.setOrCreate<AlignRuleOption>('_alignRules',  data.testValue.setValue)

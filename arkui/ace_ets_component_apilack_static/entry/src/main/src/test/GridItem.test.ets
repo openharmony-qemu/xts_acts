@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function gridItemOnSelectJsunit() {
+export default function gridItemOnSelectJsunit(): void {
   describe('gridItemOnSelectTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/gridItem',
@@ -59,7 +59,7 @@ export default function gridItemOnSelectJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("gridItemOnSelect after each called");
     });
@@ -73,12 +73,12 @@ export default function gridItemOnSelectJsunit() {
      * @tc.desc     testgridItemOnSelect_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testgridItemOnSelect_static_0001', Level.LEVEL0, async () => {
+it('testgridItemOnSelect_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('testgridItemOnSelect testgridItemOnSelect0001 START');
       await Utils.sleep(2000);
       let callback: (eventData: events_emitter.EventData) => void = (indexEvent: events_emitter.EventData) => {
         console.info("onSelect_0001 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as ESObject)?.getProperty('STATUS').toBoolean()).assertEqual(true);
+        expect(((indexEvent.data) as ESObject).getProperty('STATUS').toBoolean()).assertEqual(true);
 
       }
       let indexEvent: events_emitter.InnerEvent = {

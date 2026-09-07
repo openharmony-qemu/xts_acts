@@ -14,23 +14,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { Driver, ON } from '@ohos.UiTest'
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { CanvasRenderingContext2D, RenderingContextSettings } from '@ohos.arkui.component';
 
 export default function CircleStrokeColorMetricsTest() {
   describe('CircleStrokeColorMetricsTest', () => {
-    beforeAll(async () => {
-      console.info("CircleStrokeColorMetricsTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       console.info("CircleStrokeColorMetricsTest beforeEach start");
       let options: router.RouterOptions = {
@@ -63,31 +57,83 @@ export default function CircleStrokeColorMetricsTest() {
     it('CircleStrokeColorMetricsTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[CircleStrokeColorMetricsTest_0100] START');
       let driver: Driver = Driver.create()
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
 
       let button1 = await driver.findComponent(ON.id('ChangeCircleColorRed'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000)
+      try {
+        await (button1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
 
       let button2 = await driver.findComponent(ON.id('ChangeCircleColorGreen'));
-      await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(2000)
+      try {
+        await (button2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
 
       let button3 = await driver.findComponent(ON.id('ChangeCircleColorBlue'));
-      await (button3?.click() as Promise<void>);
-      await CommonFunc.sleep(2000)
+      try {
+        await (button3?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
 
       let button4 = await driver.findComponent(ON.id('ChangeCircleColorWhite'));
-      await (button4?.click() as Promise<void>);
-      await CommonFunc.sleep(2000)
+      try {
+        await (button4?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
 
       let button5 = await driver.findComponent(ON.id('ChangeCircleColorReduce'));
-      await (button5?.click() as Promise<void>);
-      await CommonFunc.sleep(2000)
+      try {
+        await (button5?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
 
       let button6 = await driver.findComponent(ON.id('ChangeCircleColorAdd'));
-      await (button6?.click() as Promise<void>);
-      await CommonFunc.sleep(2000)
+      try {
+        await (button6?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('CircleStrokeColorMetricsTestTest await err: ' + JSON.stringify(err));
+      }
 
       let strJson1 = inspector.getInspectorByKey('CircleStrokeColorMetrics1');
       expect(JSON.parseJsonElement(strJson1).getString('$type')).assertEqual('Circle');

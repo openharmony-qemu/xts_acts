@@ -21,6 +21,11 @@
         "./src/ohosTest/ets/test/CollectionsArrayConcurrentTest/workers/ArrayEntriesWorker.ets",
         "./src/ohosTest/ets/test/CollectionsArrayConcurrentTest/workers/ArrayPopWorker.ets",
         "./src/ohosTest/ets/test/CollectionsArrayConcurrentTest/workers/ArrayPushWorker.ets",
+        "./src/ohosTest/ets/test/workers/ArrayContainsAllWorker.ets",
+        "./src/ohosTest/ets/test/workers/ArrayRetainAllElementsWorker.ets",
+        "./src/ohosTest/ets/test/workers/ArrayRetainAllPredicateWorker.ets",
+        "./src/ohosTest/ets/test/workers/ArrayContainsAllBuiltinWorker.ets",
+        "./src/ohosTest/ets/test/workers/ArrayRetainAllBuiltinWorker.ets",
       ]
     }
   },

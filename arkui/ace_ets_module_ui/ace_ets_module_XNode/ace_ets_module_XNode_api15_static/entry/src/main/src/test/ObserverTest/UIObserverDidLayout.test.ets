@@ -13,23 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import {UtilsTest,startAbility} from '../Util.test'
 
 export default function UIObserverDidLayoutTest() {
   describe('UIObserverDidLayoutTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("UIObserverDidLayoutTest beforeEach start");
-      await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async () => {
       console.info("UIObserverDidLayoutTest beforeEach start");
       let options: router.RouterOptions = {
@@ -53,12 +46,16 @@ export default function UIObserverDidLayoutTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('UIObserverDidLayoutTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("UIObserverDidLayoutTest after each called");
     });
 
-    
-    
+
+
 
 
 
@@ -72,13 +69,33 @@ it('UIObserverDidLayoutTest_static_0100', Level.LEVEL2, async (done: ()=>void) =
 
       console.info('UIObserverDidLayoutTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('UIObserverDidLayoutTest sleep err: ' + JSON.stringify(err));
+      }
       let button1 = await driver.findComponent(ON.id('didLayout_on_id'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('UIObserverDidLayoutTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('UIObserverDidLayoutTest sleep err: ' + JSON.stringify(err));
+      }
       let button2 = await driver.findComponent(ON.id('didLayout_off_id'));
-      await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('UIObserverDidLayoutTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('UIObserverDidLayoutTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('didLayout_value_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[UIObserverDidLayoutTest_0100] component obj is: " + JSON.stringify(obj));

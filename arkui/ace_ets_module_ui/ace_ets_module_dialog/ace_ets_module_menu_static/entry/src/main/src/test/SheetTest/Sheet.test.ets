@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { SheetType, SheetKeyboardAvoidMode, ModalTransition } from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';
 
@@ -44,35 +42,17 @@ function logLongString(tag: string, longStr: string): void {
 
 export default function SheetTest(): void {
   describe('SheetTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("SheetTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility");
-
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Sheet/SheetIndex',
-      };
-      try {
-        const routerInstance = AppStorage.get<Router>("router") as Router;
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info("SheetTest state pages: " + JSON.stringify(pages));
-        console.info("SheetTest state pages.name: " + pages.name);
-        if (pages.name !== "SheetIndex") {
-          routerInstance.replaceUrl(options);
-        }
-      } catch (err) {
-        console.error("SheetTest replaceUrl error: " + err);
-        expect().assertFail();
-      }
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("SheetTest beforeEach start");
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
-      console.info("SheetTest after each called");
+      try {
+        await Utils.sleep(SLEEP_TIME);
+        console.info("SheetTest after each called");
+      } catch (err) {
+        console.info('Sheet afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**

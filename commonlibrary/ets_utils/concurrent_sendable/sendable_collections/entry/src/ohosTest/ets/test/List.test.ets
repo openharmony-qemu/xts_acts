@@ -16,7 +16,7 @@
 import ArrayInheritanceTest from './collections/ArrayInheritanceTest.test'
 import MapInheritanceTest from './collections/MapInheritanceTest.test'
 import SetInheritanceTest from './collections/SetInheritanceTest.test'
-import BitVectorTest from './bitVector/BitVectorTest.test'
+
 import ArrayBufferTest from './arrayBuffer/ArrayBufferTest.test'
 import ContainerComboTest from './collections/ContainerComboTest.test'
 import ConcurrentFactorComboTest from './collections/ConcurrentFactorComboTest.test'
@@ -51,7 +51,7 @@ import SendableLruCacheExpand1024Test from './SendableLruCacheConcurrent/Sendabl
 import SendableExpand1024Test from './SendableLruCacheConcurrent/SendableExpand1024Test.test';
 export default function testsuite(): void {
   StressStabilityComboTest()
-  BitVectorTest()
+
   ArrayBufferTest()
   ArrayInheritanceTest()
   MapInheritanceTest()

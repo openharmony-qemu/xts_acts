@@ -27,7 +27,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("cnd_init", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cnd_init");
+      const result: number = await testNapi.runTest("cnd_init");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("cnd_signal", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cnd_signal");
+      const result: number = await testNapi.runTest("cnd_signal");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("mtx_init", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mtx_init");
+      const result: number = await testNapi.runTest("mtx_init");
       expect(result).assertEqual(0);
       done();
     });
@@ -68,7 +68,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("mtx_lock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mtx_lock");
+      const result: number = await testNapi.runTest("mtx_lock");
       expect(result).assertEqual(0);
       done();
     });
@@ -81,7 +81,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_atfork", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_atfork");
+      const result: number = await testNapi.runTest("pthread_atfork");
       expect(result).assertEqual(0);
       done();
     });
@@ -94,7 +94,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_attr_destroy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_attr_destroy");
+      const result: number = await testNapi.runTest("pthread_attr_destroy");
       expect(result).assertEqual(0);
       done();
     });
@@ -107,7 +107,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_attr_get", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_attr_get");
+      const result: number = await testNapi.runTest("pthread_attr_get");
       expect(result).assertEqual(0);
       done();
     });
@@ -120,7 +120,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_attr_getstack_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_attr_getstack_test");
+      const result: number = await testNapi.runTest("pthread_attr_getstack_test");
       expect(result).assertEqual(0);
       done();
     });
@@ -133,7 +133,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_attr_init", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_attr_init");
+      const result: number = await testNapi.runTest("pthread_attr_init");
       expect(result).assertEqual(0);
       done();
     });
@@ -146,7 +146,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_attr_setguardsize", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_attr_setguardsize");
+      const result: number = await testNapi.runTest("pthread_attr_setguardsize");
       expect(result).assertEqual(0);
       done();
     });
@@ -159,7 +159,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_attr_setinheritsched", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_attr_setinheritsched");
+      const result: number = await testNapi.runTest("pthread_attr_setinheritsched");
       expect(result).assertEqual(0);
       done();
     });
@@ -172,7 +172,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_attr_setschedparam", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_attr_setschedparam");
+      const result: number = await testNapi.runTest("pthread_attr_setschedparam");
       expect(result).assertEqual(0);
       done();
     });
@@ -185,7 +185,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_attr_setschedpolicy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_attr_setschedpolicy");
+      const result: number = await testNapi.runTest("pthread_attr_setschedpolicy");
       expect(result).assertEqual(0);
       done();
     });
@@ -198,7 +198,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_attr_setscope", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_attr_setscope");
+      const result: number = await testNapi.runTest("pthread_attr_setscope");
       expect(result).assertEqual(0);
       done();
     });
@@ -211,7 +211,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_attr_setstack", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_attr_setstack");
+      const result: number = await testNapi.runTest("pthread_attr_setstack");
       expect(result).assertEqual(0);
       done();
     });
@@ -227,7 +227,7 @@ export default function thread_group_test() {
       "pthread_attr_setstacksize_test",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest("pthread_attr_setstacksize_test");
+        const result: number = await testNapi.runTest("pthread_attr_setstacksize_test");
         expect(result).assertEqual(0);
         done();
       },
@@ -241,7 +241,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_barrier_destroy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_barrier_destroy");
+      const result: number = await testNapi.runTest("pthread_barrier_destroy");
       expect(result).assertEqual(0);
       done();
     });
@@ -254,7 +254,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_barrier_init", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_barrier_init");
+      const result: number = await testNapi.runTest("pthread_barrier_init");
       expect(result).assertEqual(0);
       done();
     });
@@ -267,7 +267,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_barrierattr_init", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_barrierattr_init");
+      const result: number = await testNapi.runTest("pthread_barrierattr_init");
       expect(result).assertEqual(0);
       done();
     });
@@ -283,7 +283,7 @@ export default function thread_group_test() {
       "pthread_barrierattr_setpshared",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest("pthread_barrierattr_setpshared");
+        const result: number = await testNapi.runTest("pthread_barrierattr_setpshared");
         expect(result).assertEqual(0);
         done();
       },
@@ -297,7 +297,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_cond_broadcast", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_cond_broadcast");
+      const result: number = await testNapi.runTest("pthread_cond_broadcast");
       expect(result).assertEqual(0);
       done();
     });
@@ -310,7 +310,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_cond_destroy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_cond_destroy");
+      const result: number = await testNapi.runTest("pthread_cond_destroy");
       expect(result).assertEqual(0);
       done();
     });
@@ -323,7 +323,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_cond_signal", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_cond_signal");
+      const result: number = await testNapi.runTest("pthread_cond_signal");
       expect(result).assertEqual(0);
       done();
     });
@@ -336,7 +336,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_cond_wait", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_cond_wait");
+      const result: number = await testNapi.runTest("pthread_cond_wait");
       expect(result).assertEqual(0);
       done();
     });
@@ -352,7 +352,7 @@ export default function thread_group_test() {
       "pthread_condattr_destroy_test",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest("pthread_condattr_destroy_test");
+        const result: number = await testNapi.runTest("pthread_condattr_destroy_test");
         expect(result).assertEqual(0);
         done();
       },
@@ -366,7 +366,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_condattr_init_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_condattr_init_test");
+      const result: number = await testNapi.runTest("pthread_condattr_init_test");
       expect(result).assertEqual(0);
       done();
     });
@@ -382,7 +382,7 @@ export default function thread_group_test() {
       "pthread_condattr_setclock_sup",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest("pthread_condattr_setclock_sup");
+        const result: number = await testNapi.runTest("pthread_condattr_setclock_sup");
         expect(result).assertEqual(0);
         done();
       },
@@ -396,7 +396,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_condattr_setpshared", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_condattr_setpshared");
+      const result: number = await testNapi.runTest("pthread_condattr_setpshared");
       expect(result).assertEqual(0);
       done();
     });
@@ -409,7 +409,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_getcpuclockid", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_getcpuclockid");
+      const result: number = await testNapi.runTest("pthread_getcpuclockid");
       expect(result).assertEqual(0);
       done();
     });
@@ -422,7 +422,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_key_delete", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_key_delete");
+      const result: number = await testNapi.runTest("pthread_key_delete");
       expect(result).assertEqual(0);
       done();
     });
@@ -435,7 +435,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_mutex_destroy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_mutex_destroy");
+      const result: number = await testNapi.runTest("pthread_mutex_destroy");
       expect(result).assertEqual(0);
       done();
     });
@@ -448,7 +448,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_mutex_init_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_mutex_init_test");
+      const result: number = await testNapi.runTest("pthread_mutex_init_test");
       expect(result).assertEqual(0);
       done();
     });
@@ -461,7 +461,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_mutex_trylock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_mutex_trylock");
+      const result: number = await testNapi.runTest("pthread_mutex_trylock");
       expect(result).assertEqual(0);
       done();
     });
@@ -474,7 +474,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_mutexattr_destroy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_mutexattr_destroy");
+      const result: number = await testNapi.runTest("pthread_mutexattr_destroy");
       expect(result).assertEqual(0);
       done();
     });
@@ -490,7 +490,7 @@ export default function thread_group_test() {
       "pthread_mutexattr_setprotocol",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest("pthread_mutexattr_setprotocol");
+        const result: number = await testNapi.runTest("pthread_mutexattr_setprotocol");
         expect(result).assertEqual(0);
         done();
       },
@@ -504,7 +504,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_mutexattr_setpshared", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_mutexattr_setpshared");
+      const result: number = await testNapi.runTest("pthread_mutexattr_setpshared");
       expect(result).assertEqual(0);
       done();
     });
@@ -517,7 +517,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_mutexattr_settype", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_mutexattr_settype");
+      const result: number = await testNapi.runTest("pthread_mutexattr_settype");
       expect(result).assertEqual(0);
       done();
     });
@@ -530,7 +530,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_rwlock_destroy_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_rwlock_destroy_test");
+      const result: number = await testNapi.runTest("pthread_rwlock_destroy_test");
       expect(result).assertEqual(0);
       done();
     });
@@ -543,7 +543,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_rwlock_rdlock_sup", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_rwlock_rdlock_sup");
+      const result: number = await testNapi.runTest("pthread_rwlock_rdlock_sup");
       expect(result).assertEqual(0);
       done();
     });
@@ -556,7 +556,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_rwlock_tryrdlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_rwlock_tryrdlock");
+      const result: number = await testNapi.runTest("pthread_rwlock_tryrdlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -569,7 +569,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_rwlock_trywrlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_rwlock_trywrlock");
+      const result: number = await testNapi.runTest("pthread_rwlock_trywrlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -582,7 +582,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_rwlockattr_destroy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_rwlockattr_destroy");
+      const result: number = await testNapi.runTest("pthread_rwlockattr_destroy");
       expect(result).assertEqual(0);
       done();
     });
@@ -595,7 +595,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_rwlockattr_init", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_rwlockattr_init");
+      const result: number = await testNapi.runTest("pthread_rwlockattr_init");
       expect(result).assertEqual(0);
       done();
     });
@@ -611,7 +611,7 @@ export default function thread_group_test() {
       "pthread_rwlockattr_setpshared",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest("pthread_rwlockattr_setpshared");
+        const result: number = await testNapi.runTest("pthread_rwlockattr_setpshared");
         expect(result).assertEqual(0);
         done();
       },
@@ -625,7 +625,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_sigmask_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_sigmask_test");
+      const result: number = await testNapi.runTest("pthread_sigmask_test");
       expect(result).assertEqual(0);
       done();
     });
@@ -638,7 +638,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("thrd_yield", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("thrd_yield");
+      const result: number = await testNapi.runTest("thrd_yield");
       expect(result).assertEqual(0);
       done();
     });
@@ -651,7 +651,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("tss_set", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tss_set");
+      const result: number = await testNapi.runTest("tss_set");
       expect(result).assertEqual(0);
       done();
     });
@@ -664,7 +664,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("call_once", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("call_once");
+      const result: number = await testNapi.runTest("call_once");
       expect(result).assertEqual(0);
       done();
     });
@@ -677,7 +677,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("cnd_broadcast", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cnd_broadcast");
+      const result: number = await testNapi.runTest("cnd_broadcast");
       expect(result).assertEqual(0);
       done();
     });
@@ -690,7 +690,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("cnd_timedwait", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cnd_timedwait");
+      const result: number = await testNapi.runTest("cnd_timedwait");
       expect(result).assertEqual(0);
       done();
     });
@@ -703,7 +703,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("cnd_wait", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cnd_wait");
+      const result: number = await testNapi.runTest("cnd_wait");
       expect(result).assertEqual(0);
       done();
     });
@@ -716,7 +716,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("mtx_timedlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mtx_timedlock");
+      const result: number = await testNapi.runTest("mtx_timedlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -729,7 +729,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("mtx_trylock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mtx_trylock");
+      const result: number = await testNapi.runTest("mtx_trylock");
       expect(result).assertEqual(0);
       done();
     });
@@ -742,7 +742,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("mtx_unlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mtx_unlock");
+      const result: number = await testNapi.runTest("mtx_unlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -755,7 +755,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_barrier_wait", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_barrier_wait");
+      const result: number = await testNapi.runTest("pthread_barrier_wait");
       expect(result).assertEqual(0);
       done();
     });
@@ -768,7 +768,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_cond_init", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_cond_init");
+      const result: number = await testNapi.runTest("pthread_cond_init");
       expect(result).assertEqual(0);
       done();
     });
@@ -781,7 +781,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_cond_timedwait_sup", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_cond_timedwait_sup");
+      const result: number = await testNapi.runTest("pthread_cond_timedwait_sup");
       expect(result).assertEqual(0);
       done();
     });
@@ -794,7 +794,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_detach", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_detach");
+      const result: number = await testNapi.runTest("pthread_detach");
       expect(result).assertEqual(0);
       done();
     });
@@ -807,7 +807,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_equal", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_equal");
+      const result: number = await testNapi.runTest("pthread_equal");
       expect(result).assertEqual(0);
       done();
     });
@@ -820,7 +820,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_join", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_join");
+      const result: number = await testNapi.runTest("pthread_join");
       expect(result).assertEqual(0);
       done();
     });
@@ -833,7 +833,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_mutex_timedlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_mutex_timedlock");
+      const result: number = await testNapi.runTest("pthread_mutex_timedlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -846,7 +846,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_rwlock_timedrdlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_rwlock_timedrdlock");
+      const result: number = await testNapi.runTest("pthread_rwlock_timedrdlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -859,7 +859,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_rwlock_timedwrlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_rwlock_timedwrlock");
+      const result: number = await testNapi.runTest("pthread_rwlock_timedwrlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -872,7 +872,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_self", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_self");
+      const result: number = await testNapi.runTest("pthread_self");
       expect(result).assertEqual(0);
       done();
     });
@@ -885,7 +885,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_setschedprio", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_setschedprio");
+      const result: number = await testNapi.runTest("pthread_setschedprio");
       expect(result).assertEqual(0);
       done();
     });
@@ -898,7 +898,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_spin_lock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_spin_lock");
+      const result: number = await testNapi.runTest("pthread_spin_lock");
       expect(result).assertEqual(0);
       done();
     });
@@ -911,7 +911,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_spin_trylock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_spin_trylock");
+      const result: number = await testNapi.runTest("pthread_spin_trylock");
       expect(result).assertEqual(0);
       done();
     });
@@ -924,7 +924,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_spin_unlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_spin_unlock");
+      const result: number = await testNapi.runTest("pthread_spin_unlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -937,7 +937,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("thrd_create", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("thrd_create");
+      const result: number = await testNapi.runTest("thrd_create");
       expect(result).assertEqual(0);
       done();
     });
@@ -950,7 +950,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("thrd_current", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("thrd_current");
+      const result: number = await testNapi.runTest("thrd_current");
       expect(result).assertEqual(0);
       done();
     });
@@ -963,7 +963,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("thrd_detach", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("thrd_detach");
+      const result: number = await testNapi.runTest("thrd_detach");
       expect(result).assertEqual(0);
       done();
     });
@@ -976,7 +976,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("thrd_equal", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("thrd_equal");
+      const result: number = await testNapi.runTest("thrd_equal");
       expect(result).assertEqual(0);
       done();
     });
@@ -989,7 +989,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("thrd_join", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("thrd_join");
+      const result: number = await testNapi.runTest("thrd_join");
       expect(result).assertEqual(0);
       done();
     });
@@ -1002,7 +1002,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("thrd_sleep", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("thrd_sleep");
+      const result: number = await testNapi.runTest("thrd_sleep");
       expect(result).assertEqual(0);
       done();
     });
@@ -1015,7 +1015,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_create", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_create");
+      const result: number = await testNapi.runTest("pthread_create");
       expect(result).assertEqual(0);
       done();
     });
@@ -1028,7 +1028,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_exit", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_exit");
+      const result: number = await testNapi.runTest("pthread_exit");
       expect(result).assertEqual(0);
       done();
     });
@@ -1041,7 +1041,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_getattr_np", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_getattr_np");
+      const result: number = await testNapi.runTest("pthread_getattr_np");
       expect(result).assertEqual(0);
       done();
     });
@@ -1054,7 +1054,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_getschedparam", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_getschedparam");
+      const result: number = await testNapi.runTest("pthread_getschedparam");
       expect(result).assertEqual(0);
       done();
     });
@@ -1067,7 +1067,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_getspecific", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_getspecific");
+      const result: number = await testNapi.runTest("pthread_getspecific");
       expect(result).assertEqual(0);
       done();
     });
@@ -1080,7 +1080,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_key_create", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_key_create");
+      const result: number = await testNapi.runTest("pthread_key_create");
       expect(result).assertEqual(0);
       done();
     });
@@ -1093,7 +1093,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_mutex_lock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_mutex_lock");
+      const result: number = await testNapi.runTest("pthread_mutex_lock");
       expect(result).assertEqual(0);
       done();
     });
@@ -1106,7 +1106,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_mutex_unlock", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_mutex_unlock");
+      const result: number = await testNapi.runTest("pthread_mutex_unlock");
       expect(result).assertEqual(0);
       done();
     });
@@ -1119,7 +1119,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_once", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_once");
+      const result: number = await testNapi.runTest("pthread_once");
       expect(result).assertEqual(0);
       done();
     });
@@ -1132,7 +1132,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_setspecific", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_setspecific");
+      const result: number = await testNapi.runTest("pthread_setspecific");
       expect(result).assertEqual(0);
       done();
     });
@@ -1145,7 +1145,7 @@ export default function thread_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_setschedparam", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_setschedparam");
+      const result: number = await testNapi.runTest("pthread_setschedparam");
       expect(result).assertEqual(0);
       done();
     });

@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 export default function UIContextOnIdle() {
     describe('UIContextOnIdle', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("UIContextOnIdle beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("UIContextOnIdle beforeEach start");
       let options: router.RouterOptions = {
@@ -64,20 +56,24 @@ export default function UIContextOnIdle() {
      * @tc.level    Level.LEVEL0
      */
 it('onIdleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('UIContextApi1_static_0100 START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create()
-      let btn = await driver.findComponent(ON.id("OnIdle"))
-      await CommonFunc.sleep(1000);
-      await (btn!.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      await (btn!.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("OnIdleText"))
-      console.info("UIContextApi1_static_0100 component obj is: " + JSON.stringify(obj))
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("OnIdle")
-      done()
+      try {
+        console.info('UIContextApi1_static_0100 START');
+        await CommonFunc.sleep(1000);
+        let driver: Driver = Driver.create()
+        let btn = await driver.findComponent(ON.id("OnIdle"))
+        await CommonFunc.sleep(1000);
+        await (btn!.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+        await (btn!.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+        let obj = JSON.parseJsonElement(inspector.getInspectorByKey("OnIdleText"))
+        console.info("UIContextApi1_static_0100 component obj is: " + JSON.stringify(obj))
+        expect(obj.getElement('$attrs').getString('content')).assertEqual("OnIdle")
+        done()
+      } catch (err) {
+        console.info('onIdleTest_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

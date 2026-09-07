@@ -26,7 +26,7 @@ import inspector from '@ohos.arkui.inspector';
 
 let testAbilityContext: common.UIAbilityContext;
 
-export default function WebViewEnumAndFontLibrary() {
+export default function WebViewEnumAndFontLibrary(): void {
 
   describe('WebViewEnumAndFontLibraryTest', () => {
 

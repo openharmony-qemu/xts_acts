@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../../hypium/index";
 import router from '@ohos.router';
 import drawing from '@ohos.graphics.drawing';
 import {
@@ -25,23 +25,15 @@ import {
   ResizeDirection,
   PointerMatrix} from '@ohos.UiTest';
 import { EnterKeyType } from '@ohos.arkui.component'
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 const SLEEP_TIME = 1000;
 
 export default function blendNodeTest() {
   describe('blendNodeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("blendNodeTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info('blendNodeTest beforeEach start');
       let options: router.RouterOptions = {

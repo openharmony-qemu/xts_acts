@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,30 +14,16 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function FocusScopeId16() {
   describe('FocusScopeId16', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("FocusScopeId16 beforeEach start");
       let options: router.RouterOptions = {
@@ -59,7 +45,11 @@ export default function FocusScopeId16() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("FocusScopeId16 after each called");
     });
 
@@ -71,24 +61,48 @@ export default function FocusScopeId16() {
      */
     it('FocusScopeId16_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[FocusScopeId16_static_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btn_push = await (driver.findComponent(ON.id('FocusScopeId16_push')) as Promise<Component>);
       await btn_push.click()
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[FocusScopeId16_static_0100] btn_push click');
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btn_push_isFocusedValue = await btn_push.isFocused()
       expect(btn_push_isFocusedValue).assertEqual(true);
@@ -96,17 +110,33 @@ export default function FocusScopeId16() {
 
       let btn_stack = await (driver.findComponent(ON.id('FocusScopeId1_stack')) as Promise<Component>);
       await btn_stack.click()
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[FocusScopeId16_static_0100] btn_stack click');
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btn1 = await (driver.findComponent(ON.id('FocusScopeId16_button1')) as Promise<Component>);
       let btn1_isFocusedValue = await btn1.isFocused()
@@ -114,7 +144,11 @@ export default function FocusScopeId16() {
       console.info('[FocusScopeId16_static_0100] btn1 isFocused');
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btn_pop = await (driver.findComponent(ON.id('FocusScopeId16_pop')) as Promise<Component>);
       let btn_pop_isFocusedValue = await btn_pop.isFocused()
@@ -126,4 +160,3 @@ export default function FocusScopeId16() {
     });
   })
 }
-

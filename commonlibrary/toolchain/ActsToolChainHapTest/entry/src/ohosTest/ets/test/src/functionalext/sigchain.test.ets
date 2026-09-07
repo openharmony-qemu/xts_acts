@@ -27,7 +27,7 @@ export default function FunctionalextSigchainTestGroupTest() {
      * @tc.desc   libc-test sigchain_intercept_pthread_sigmask
      */
     it("sigchain_intercept_pthread_sigmask", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigchain_intercept_pthread_sigmask");
+      const result: number = await testNapi.runTest("sigchain_intercept_pthread_sigmask");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function FunctionalextSigchainTestGroupTest() {
      * @tc.desc   libc-test sigchain_rm_special_handler
      */
     it("sigchain_rm_special_handler", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigchain_rm_special_handler");
+      const result: number = await testNapi.runTest("sigchain_rm_special_handler");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function FunctionalextSigchainTestGroupTest() {
      * @tc.desc   libc-test sigchain_set_pre_validation_ignore_thread_test
      */
     it("sigchain_set_pre_validation_ignore_thread_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigchain_set_pre_validation_ignore_thread_test");
+      const result: number = await testNapi.runTest("sigchain_set_pre_validation_ignore_thread_test");
       expect(result).assertEqual(0);
       done();
     });

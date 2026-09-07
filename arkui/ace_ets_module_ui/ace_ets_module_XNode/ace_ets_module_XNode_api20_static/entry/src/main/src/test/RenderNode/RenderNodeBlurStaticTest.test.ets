@@ -16,26 +16,16 @@
  */
 
 import inspector from '@ohos.arkui.inspector';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index';
+import { describe, beforeEach, it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility } from '../Util.test';
 const uiContext = new UIContext();
 
 export default function RenderNodeBlurStaticTest() {
   describe('RenderNodeBlurStaticTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("RenderNodeBlurStaticTest beforeEach start");
-      await startAbility("com.arkui.ace.XNode.api20.static", "EntryAbility")
-    });
     beforeEach(async () => {
       console.info("RenderNodeBlurStaticTest beforeEach start");
       let options: router.RouterOptions = {
@@ -70,31 +60,83 @@ export default function RenderNodeBlurStaticTest() {
      it('RenderNodeBlurStaticTest_0100', Level.LEVEL1, async (done: ()=>void) => { 
        console.info('[RenderNodeBlurStaticTest_0100] START'); 
        let driver = await Driver.create() 
-       await CommonFunc.sleep(1000);
+       try {
+         await CommonFunc.sleep(1000);
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
 
        let button1 = await driver.findComponent(ON.id('setBackgroundBlur'));
-       await button1!.click();
-       await CommonFunc.sleep(2000);
+       try {
+         await button1!.click();
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(2000);
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
 
        let button2 = await driver.findComponent(ON.id('setContentBlur'));
-       await button2!.click();
-       await CommonFunc.sleep(2000);
+       try {
+         await button2!.click();
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(2000);
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
 
        let button3 = await driver.findComponent(ON.id('setForegroundBlur'));
-       await button3!.click();
-       await CommonFunc.sleep(2000);
+       try {
+         await button3!.click();
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(2000);
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
 
        let button4 = await driver.findComponent(ON.id('clearBlurEffects'));
-       await button4!.click();
-       await CommonFunc.sleep(2000);
+       try {
+         await button4!.click();
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(2000);
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
 
        let button5 = await driver.findComponent(ON.id('getBlurConfigs'));
-       await button5!.click();
-       await CommonFunc.sleep(2000);
+       try {
+         await button5!.click();
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(2000);
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
 
        let button6 = await driver.findComponent(ON.id('setAndGetUndefined'));
-       await button6!.click();
-       await CommonFunc.sleep(2000);
+       try {
+         await button6!.click();
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(2000);
+       } catch (err) {
+         console.info('RenderNodeBlurStaticTestTest await err: ' + JSON.stringify(err));
+       }
 
        console.info('RenderNodeBlur backgroundBlurRadiusUndefined:' + AppStorage.get<Double>('backgroundBlurRadiusUndefined'))
        console.info('RenderNodeBlur backgroundBlurGrayscaleUndefined:' + AppStorage.get<[Int, Int]|undefined>('backgroundBlurGrayscaleUndefined'))

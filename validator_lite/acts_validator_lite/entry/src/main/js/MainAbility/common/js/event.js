@@ -20,7 +20,6 @@ export const commonFunc = function(obj, e) {
     obj.color = 32768;
     obj.flag = true;
   }
-  console.info('click' + JSON.stringify(e));
   obj.pointX = e.globalX;
   obj.pointY = e.globalY;
   obj.timeStamp = e.timestamp;
@@ -34,7 +33,6 @@ export const swipeFunc = function(obj, e) {
     obj.color = 32768;
     obj.flag = true;
   }
-  console.info('swipe' + JSON.stringify(e));
   obj.direction = e.direction;
   obj.distance = e.distance;
   obj.pointX = e.globalX;

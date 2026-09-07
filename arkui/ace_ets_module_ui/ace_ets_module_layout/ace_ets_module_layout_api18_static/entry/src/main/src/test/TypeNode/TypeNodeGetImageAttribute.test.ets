@@ -16,30 +16,20 @@
 
 import {
   describe,
-  beforeAll,
   expect,
   beforeEach,
   afterEach,
-  afterAll,
   it,
   Level
 } from '../../../../hypium/index'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
-import { Driver, ON } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 
 export default function TypeNodeGetImageAttribute() {
   describe('TypeNodeGetImageAttribute', () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility('com.arkui.ace.StateMangagement.api18.static', 'EntryAbility');
-      await UtilsTest.msSleep(1000);
-      console.info('beforeAll case');
-    });
-
     beforeEach(async () => {
       console.info('frameNodeApi beforeEach start');
       let options: router.RouterOptions  = {
@@ -48,20 +38,17 @@ export default function TypeNodeGetImageAttribute() {
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
-        routerInstance.pushUrl(options);
+        await routerInstance.pushUrl(options);
         await CommonFunc.sleep(4000);
       } catch (err) {
         console.error('push frameNodeApi page error:' + err);
+        expect().assertFail();
       }
       console.info('frameNodeApi beforeEach end');
     });
 
     afterEach(() => {
       console.info('afterEach case');
-    });
-
-    afterAll(async () => {
-      console.info('afterAll case');
     });
     /**
      * @tc.number TypeNodeGetImageAttribute_0100
@@ -72,17 +59,23 @@ export default function TypeNodeGetImageAttribute() {
      * @tc.level  Level 1
      */
     it('TypeNodeGetImageAttribute_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[TypeNodeGetImageAttribute_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('[TypeNodeGetImageAttribute_0100] START');
+        await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('getImageAttribute');
-      await CommonFunc.sleep(1000);
-      console.info('[TypeNodeGetImageAttribute_0100] content: ' +
-        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        let strJson = inspector.getInspectorByKey('getImageAttribute');
+        await CommonFunc.sleep(1000);
+        console.info('[TypeNodeGetImageAttribute_0100] content: ' +
+          JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
 
-      let content = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-      expect(content).assertEqual('"90.00%"');
-      done();
+        let content = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
+        expect(content).assertEqual('"90.00%"');
+        done();
+      } catch (err) {
+        console.error('TypeNodeGetImageAttribute_0100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

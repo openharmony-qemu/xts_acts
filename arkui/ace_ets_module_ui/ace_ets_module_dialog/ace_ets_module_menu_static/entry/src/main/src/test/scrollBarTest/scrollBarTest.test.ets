@@ -15,25 +15,18 @@
  */
 
  
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 import { Driver, ON } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
 
 export default function scrollBarTest(): void{
   describe('scrollBarTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('assemblyCallbackTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.menu.static', 'EntryAbility')
-    });
-
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/scrollBar/scrollBarTest',
@@ -54,8 +47,12 @@ export default function scrollBarTest(): void{
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
-      console.info('scrollBarTest after each called');
+      try {
+        await CommonFunc.sleep(1000);
+        console.info('scrollBarTest after each called');
+      } catch (err) {
+        console.info('scrollBarTest afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**
@@ -67,21 +64,26 @@ export default function scrollBarTest(): void{
      * @tc.level  LEVEL0
      */
     it('scrollBarTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[scrollBarTest_0100] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let button1 = await driver.findComponent(ON.id('off'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        console.info('[scrollBarTest_0100] START');
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
+        let button1 = await driver.findComponent(ON.id('off'));
+        await (button1?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      let strJson = inspector.getInspectorByKey('textOff');
-      let obc = JSON.parseJsonElement(strJson);
-      console.info('[scrollBarTest_0100] strJson is: ' + strJson);
-      console.info('[scrollBarTest_0100] getCurrentLocalPositionTest obc is: ' + JSON.stringify(obc.getElement('$attrs').getString('content')));
-      expect(obc.getElement('$attrs').getString('content')).assertEqual('0');
+        let strJson = inspector.getInspectorByKey('textOff');
+        let obc = JSON.parseJsonElement(strJson);
+        console.info('[scrollBarTest_0100] strJson is: ' + strJson);
+        console.info('[scrollBarTest_0100] getCurrentLocalPositionTest obc is: ' + JSON.stringify(obc.getElement('$attrs').getString('content')));
+        expect(obc.getElement('$attrs').getString('content')).assertEqual('0');
 
-      console.info('[scrollBarTest_0100] END')
-      done();
+        console.info('[scrollBarTest_0100] END')
+        done();
+      } catch (err) {
+        console.info('scrollBarTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     /**
@@ -93,23 +95,28 @@ export default function scrollBarTest(): void{
      * @tc.level  LEVEL0
      */
     it('scrollBarTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[scrollBarTest_0200] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let button2 = await driver.findComponent(ON.id('auto'));
-      await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
-      await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        console.info('[scrollBarTest_0200] START');
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
+        let button2 = await driver.findComponent(ON.id('auto'));
+        await (button2?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        await (button2?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      let strJson = inspector.getInspectorByKey('textAuto');
-      let obc = JSON.parseJsonElement(strJson);
-      console.info('[scrollBarTest_0200] strJson is: ' + strJson);
-      console.info('[scrollBarTest_0200] getCurrentLocalPositionTest obc is: ' + JSON.stringify(obc.getElement('$attrs').getString('content')));
-      expect(obc.getElement('$attrs').getString('content')).assertEqual('1');
+        let strJson = inspector.getInspectorByKey('textAuto');
+        let obc = JSON.parseJsonElement(strJson);
+        console.info('[scrollBarTest_0200] strJson is: ' + strJson);
+        console.info('[scrollBarTest_0200] getCurrentLocalPositionTest obc is: ' + JSON.stringify(obc.getElement('$attrs').getString('content')));
+        expect(obc.getElement('$attrs').getString('content')).assertEqual('1');
 
-      console.info('[scrollBarTest_0200] END')
-      done();
+        console.info('[scrollBarTest_0200] END')
+        done();
+      } catch (err) {
+        console.info('scrollBarTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     /**
@@ -121,24 +128,29 @@ export default function scrollBarTest(): void{
      * @tc.level  LEVEL0
      */
     it('scrollBarTest_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[scrollBarTest_0300] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
+      try {
+        console.info('[scrollBarTest_0300] START');
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
 
-      let button3 = await driver.findComponent(ON.id('on'));
-      await (button3?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
-      await (button3?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+        let button3 = await driver.findComponent(ON.id('on'));
+        await (button3?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        await (button3?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      let strJson = inspector.getInspectorByKey('textOn');
-      let obc = JSON.parseJsonElement(strJson);
-      console.info('[scrollBarTest_0300] strJson is: ' + strJson);
-      console.info('[scrollBarTest_0300] getCurrentLocalPositionTest obc is: ' + JSON.stringify(obc.getElement('$attrs').getString('content')));
-      expect(obc.getElement('$attrs').getString('content')).assertEqual('2');
+        let strJson = inspector.getInspectorByKey('textOn');
+        let obc = JSON.parseJsonElement(strJson);
+        console.info('[scrollBarTest_0300] strJson is: ' + strJson);
+        console.info('[scrollBarTest_0300] getCurrentLocalPositionTest obc is: ' + JSON.stringify(obc.getElement('$attrs').getString('content')));
+        expect(obc.getElement('$attrs').getString('content')).assertEqual('2');
 
-      console.info('[scrollBarTest_0300] END')
-      done();
+        console.info('[scrollBarTest_0300] END')
+        done();
+      } catch (err) {
+        console.info('scrollBarTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

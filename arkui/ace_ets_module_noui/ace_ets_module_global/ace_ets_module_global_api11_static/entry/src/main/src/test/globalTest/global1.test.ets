@@ -30,7 +30,7 @@ import { IntentionCode } from '@ohos.multimodalInput.intentionCode'
 import { KeyEvent, MouseEvent, SourceTool, KeyType, KeySource , SourceType, MouseButton, MouseAction } from '@ohos.arkui.component'
 import { sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 
-export default function globalJsunit1() {
+export default function globalJsunit1(): void {
   describe('globalJsunit1', () => {
     beforeAll(async (): Promise<void> => {
       console.info("globalJsunit1 beforeAll start");

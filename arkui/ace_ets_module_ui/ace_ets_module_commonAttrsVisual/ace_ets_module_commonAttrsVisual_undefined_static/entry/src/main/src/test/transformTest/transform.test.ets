@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import {
   Driver, ON
@@ -27,14 +26,6 @@ import {
 
 export default function TransformTest() {
   describe('TransformTest', () => {
-    beforeAll(async ():Promise<void> => {
-      console.info("TransformTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("TransformTest beforeEach start");
       let options: router.RouterOptions = {
@@ -64,9 +55,17 @@ export default function TransformTest() {
     it('TransformUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[TransformUndefinedTest_static_0100] START');
       let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('TransformUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('transformTest');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('TransformUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
 
       console.info("[TransformUndefinedTest_static_0100] $attrs: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -75,11 +74,23 @@ export default function TransformTest() {
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('transform')))
         .assertEqual('{"type":"matrix","matrix":"0.500000,-0.866025,0.000000,0.000000,0.866025,0.500000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,"}');
       let changeBtn = await driver.findComponent(ON.id('transform'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (changeBtn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('TransformUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('TransformUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       console.info("[TransformUndefinedTest_static_0100] click transform");
       strJson = inspector.getInspectorByKey('transformTest');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('TransformUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('transform')))
         .assertEqual('{"type":"matrix","matrix":"1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,"}');
       console.info('[TransformUndefinedTest_static_0100] END');

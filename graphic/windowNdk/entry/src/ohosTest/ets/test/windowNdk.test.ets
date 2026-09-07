@@ -30,6 +30,10 @@ function sleep(ms: number): Promise<string> {
   });
 }
 
+const WINDOW_MANAGER_ERRORCODE_OK = 0;
+const WINDOW_MANAGER_ERRORCODE_INVALID_WINDOW_ID = 1000;
+const WINDOW_MANAGER_ERRORCODE_INVALID_PARAM = 401;
+
 export default function windowNdk() {
   describe('windowNdk', () => {
     let windowStage: window.WindowStage;
@@ -2693,6 +2697,225 @@ export default function windowNdk() {
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_NativeWindowManager_GetKeyEventFilter_OK
+      * @tc.number SUB_WINDOW_GetEventFilter_FUNCTION_0100
+      * @tc.desc   test OH_NativeWindowManager_GetKeyEventFilter with valid windowId
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('test_OH_NativeWindowManager_GetKeyEventFilter_OK', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_NativeWindowManager_GetKeyEventFilter_OK';
+        try {
+          console.info(`${caseName} start`);
+          let result = windowNdkTest.getKeyEventFilter(windowId);
+          console.info(`${caseName} resultCode: ${result.resultCode}`);
+          console.info(`${caseName} hasFilter: ${result.hasFilter}`);
+          expect(result.resultCode).assertEqual(WINDOW_MANAGER_ERRORCODE_OK);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: code=${err.code}, message=${err.message}`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_NativeWindowManager_GetKeyEventFilter_1300002
+      * @tc.number SUB_WINDOW_GetEventFilter_FUNCTION_0200
+      * @tc.desc   test OH_NativeWindowManager_GetKeyEventFilter with invalid windowId
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_OH_NativeWindowManager_GetKeyEventFilter_1300002', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_NativeWindowManager_GetKeyEventFilter_1300002';
+        try {
+          console.info(`${caseName} start`);
+          let result = windowNdkTest.getKeyEventFilter(-1);
+          console.info(`${caseName} resultCode: ${result.resultCode}`);
+          expect(result.resultCode).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_WINDOW_ID);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: code=${err.code}, message=${err.message}`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_NativeWindowManager_GetKeyEventFilter_401
+      * @tc.number SUB_WINDOW_GetEventFilter_FUNCTION_0300
+      * @tc.desc   test OH_NativeWindowManager_GetKeyEventFilter with null param
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_OH_NativeWindowManager_GetKeyEventFilter_401', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_NativeWindowManager_GetKeyEventFilter_401';
+        try {
+          console.info(`${caseName} start`);
+          let result = windowNdkTest.getKeyEventFilterNullParam(windowId);
+          console.info(`${caseName} resultCode: ${result}`);
+          expect(result).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: code=${err.code}, message=${err.message}`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_NativeWindowManager_GetMouseEventFilter_OK
+      * @tc.number SUB_WINDOW_GetEventFilter_FUNCTION_0400
+      * @tc.desc   test OH_NativeWindowManager_GetMouseEventFilter with valid windowId
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('test_OH_NativeWindowManager_GetMouseEventFilter_OK', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_NativeWindowManager_GetMouseEventFilter_OK';
+        try {
+          console.info(`${caseName} start`);
+          let result = windowNdkTest.getMouseEventFilter(windowId);
+          console.info(`${caseName} resultCode: ${result.resultCode}`);
+          console.info(`${caseName} hasFilter: ${result.hasFilter}`);
+          expect(result.resultCode).assertEqual(WINDOW_MANAGER_ERRORCODE_OK);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: code=${err.code}, message=${err.message}`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_NativeWindowManager_GetMouseEventFilter_1300002
+      * @tc.number SUB_WINDOW_GetEventFilter_FUNCTION_0500
+      * @tc.desc   test OH_NativeWindowManager_GetMouseEventFilter with invalid windowId
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_OH_NativeWindowManager_GetMouseEventFilter_1300002', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_NativeWindowManager_GetMouseEventFilter_1300002';
+        try {
+          console.info(`${caseName} start`);
+          let result = windowNdkTest.getMouseEventFilter(-1);
+          console.info(`${caseName} resultCode: ${result.resultCode}`);
+          expect(result.resultCode).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_WINDOW_ID);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: code=${err.code}, message=${err.message}`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_NativeWindowManager_GetMouseEventFilter_401
+      * @tc.number SUB_WINDOW_GetEventFilter_FUNCTION_0600
+      * @tc.desc   test OH_NativeWindowManager_GetMouseEventFilter with null param
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_OH_NativeWindowManager_GetMouseEventFilter_401', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_NativeWindowManager_GetMouseEventFilter_401';
+        try {
+          console.info(`${caseName} start`);
+          let result = windowNdkTest.getMouseEventFilterNullParam(windowId);
+          console.info(`${caseName} resultCode: ${result}`);
+          expect(result).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: code=${err.code}, message=${err.message}`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_NativeWindowManager_GetTouchEventFilter_OK
+      * @tc.number SUB_WINDOW_GetEventFilter_FUNCTION_0700
+      * @tc.desc   test OH_NativeWindowManager_GetTouchEventFilter with valid windowId
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('test_OH_NativeWindowManager_GetTouchEventFilter_OK', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_NativeWindowManager_GetTouchEventFilter_OK';
+        try {
+          console.info(`${caseName} start`);
+          let result = windowNdkTest.getTouchEventFilter(windowId);
+          console.info(`${caseName} resultCode: ${result.resultCode}`);
+          console.info(`${caseName} hasFilter: ${result.hasFilter}`);
+          expect(result.resultCode).assertEqual(WINDOW_MANAGER_ERRORCODE_OK);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: code=${err.code}, message=${err.message}`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_NativeWindowManager_GetTouchEventFilter_1300002
+      * @tc.number SUB_WINDOW_GetEventFilter_FUNCTION_0800
+      * @tc.desc   test OH_NativeWindowManager_GetTouchEventFilter with invalid windowId
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_OH_NativeWindowManager_GetTouchEventFilter_1300002', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_NativeWindowManager_GetTouchEventFilter_1300002';
+        try {
+          console.info(`${caseName} start`);
+          let result = windowNdkTest.getTouchEventFilter(-1);
+          console.info(`${caseName} resultCode: ${result.resultCode}`);
+          expect(result.resultCode).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_WINDOW_ID);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: code=${err.code}, message=${err.message}`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_NativeWindowManager_GetTouchEventFilter_401
+      * @tc.number SUB_WINDOW_GetEventFilter_FUNCTION_0900
+      * @tc.desc   test OH_NativeWindowManager_GetTouchEventFilter with null param
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_OH_NativeWindowManager_GetTouchEventFilter_401', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_NativeWindowManager_GetTouchEventFilter_401';
+        try {
+          console.info(`${caseName} start`);
+          let result = windowNdkTest.getTouchEventFilterNullParam(windowId);
+          console.info(`${caseName} resultCode: ${result}`);
+          expect(result).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: code=${err.code}, message=${err.message}`);
           expect(false).assertTrue();
           done()
         }

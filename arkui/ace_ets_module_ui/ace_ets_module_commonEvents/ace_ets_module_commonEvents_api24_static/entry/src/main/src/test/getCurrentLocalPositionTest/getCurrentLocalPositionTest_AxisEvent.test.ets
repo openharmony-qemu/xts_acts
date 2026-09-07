@@ -14,31 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, Point} from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import {UtilsTest} from '../Util.test'
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function getCurrentLocalPositionTest_AxisEvent(): void {
   describe('getCurrentLocalPositionTest_AxisEvent', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api24.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("==============================");
@@ -61,8 +46,12 @@ export default function getCurrentLocalPositionTest_AxisEvent(): void {
     });
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
       console.info('getCurrentLocalPosition after each called');
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+      }
     });
 
     /**
@@ -74,6 +63,7 @@ export default function getCurrentLocalPositionTest_AxisEvent(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_AxisEvent_getCurrentLocalPosition_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('[getCurrentLocalPositionTest_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -90,7 +80,12 @@ export default function getCurrentLocalPositionTest_AxisEvent(): void {
       expect(obj.getElement('$attrs').getString('content')).assertEqual('getCurrentLocalPosition获取的坐标:x:11,y:11');
 
       console.info('[getCurrentLocalPositionTest_0100] END')
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
   })
 }

@@ -83,7 +83,7 @@ export default function notificationRequestTest() {
       await sleep(200);
 
       await notificationManager.isNotificationEnabled().then((data: boolean) => {
-          console.info('isNotificationEnabled success, data: ' + JSON.stringify(data));
+          console.info("isNotificationEnabled success, data: " + JSON.stringify(data));
           expect(data).assertFalse();
         }).catch((err: BusinessError) => {
           console.error(`isNotificationEnabled fail: ${JSON.stringify(err)}`);
@@ -95,7 +95,7 @@ export default function notificationRequestTest() {
         if (err) {
           console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
         } else {
-          console.info('requestEnableNotification success');
+          console.info("requestEnableNotification success");
         }
       });
 
@@ -131,7 +131,7 @@ export default function notificationRequestTest() {
       await sleep(200);
 
       await notificationManager.isNotificationEnabled().then((data: boolean) => {
-          console.info('isNotificationEnabled success, data: ' + JSON.stringify(data));
+          console.info("isNotificationEnabled success, data: " + JSON.stringify(data));
           expect(data).assertTrue();
         }).catch((err: BusinessError) => {
           console.error(`isNotificationEnabled fail: ${JSON.stringify(err)}`);
@@ -151,10 +151,12 @@ export default function notificationRequestTest() {
         notificationSlotType: notificationManager.SlotType.SOCIAL_COMMUNICATION
       }
       hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case start`);
+      let count = 0
       try {
-        notificationManager.publish(notificationRequest, (data) => {
-          hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(data));
-          expect(data).assertEqual(null);
+        notificationManager.publish(notificationRequest, (err) => {
+          hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish succeed,result is : %{public}s', JSON.stringify(err));
+          count++
+          expect(count).assertEqual(1)
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
           done();
         })
@@ -236,9 +238,9 @@ export default function notificationRequestTest() {
         .createPixelMap(color, opts)
         .then(async (pixelmap) => {
           await pixelmap.getImageInfo().then(imageInfo => {
-            console.log('=====size: ====' + JSON.stringify(imageInfo.size));
+            console.log("=====size: ====" + JSON.stringify(imageInfo.size));
           }).catch((err: BusinessError) => {
-            console.error('Failed to obtain the image pixel map information.' + JSON.stringify(err));
+            console.error("Failed to obtain the image pixel map information." + JSON.stringify(err));
             return;
           })
           let notificationRequest: notificationManager.NotificationRequest = {
@@ -282,7 +284,7 @@ export default function notificationRequestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' Acts_NotificationRequest_0400', Level.LEVEL2, async (done: Function) => {
+    it(" Acts_NotificationRequest_0400", Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationRequest_0400';
 
       let notificationRequest: notificationManager.NotificationRequest = {
@@ -325,7 +327,7 @@ export default function notificationRequestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' Acts_NotificationRequest_0600', Level.LEVEL2, async (done: Function) => {
+    it(" Acts_NotificationRequest_0600", Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationRequest_0600';
 
       const color = new ArrayBuffer(60000);
@@ -345,15 +347,15 @@ export default function notificationRequestTest() {
         .createPixelMap(color, opts)
         .then(async (pixelmap) => {
           await pixelmap.getImageInfo().then(imageInfo => {
-            console.log('=====size: ====' + JSON.stringify(imageInfo.size));
+            console.log("=====size: ====" + JSON.stringify(imageInfo.size));
           }).catch((err: BusinessError) => {
-            console.error('Failed to obtain the image pixel map information.' + JSON.stringify(err));
+            console.error("Failed to obtain the image pixel map information." + JSON.stringify(err));
             return;
           })
           let notificationRequest: notificationManager.NotificationRequest = {
             id: 1,
-            appMessageId: 'appMessageId',
-            sound: 'sound',
+            appMessageId: "appMessageId",
+            sound: "sound",
             content: {
               notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
               normal: {

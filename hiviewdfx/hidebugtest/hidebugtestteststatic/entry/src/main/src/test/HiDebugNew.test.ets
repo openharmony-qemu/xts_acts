@@ -52,13 +52,13 @@ export default function HidebugnewTest() {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_2500 start");
       try {
         let nativeMemInfo = await hidebug.getAppNativeMemInfoAsync();
-        expect(nativeMemInfo.pss >= 0).assertTrue();
-        expect(nativeMemInfo.vss >= 0).assertTrue();
-        expect(nativeMemInfo.rss >= 0).assertTrue();
-        expect(nativeMemInfo.sharedDirty >= 0).assertTrue();
-        expect(nativeMemInfo.privateDirty >= 0).assertTrue();
-        expect(nativeMemInfo.sharedClean >= 0).assertTrue();
-        expect(nativeMemInfo.privateClean >= 0).assertTrue();
+        expect(nativeMemInfo.pss >= 0n).assertTrue();
+        expect(nativeMemInfo.vss >= 0n).assertTrue();
+        expect(nativeMemInfo.rss >= 0n).assertTrue();
+        expect(nativeMemInfo.sharedDirty >= 0n).assertTrue();
+        expect(nativeMemInfo.privateDirty >= 0n).assertTrue();
+        expect(nativeMemInfo.sharedClean >= 0n).assertTrue();
+        expect(nativeMemInfo.privateClean >= 0n).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_2500 nativeMemInfo:" + "\n"
           + "pss: " + nativeMemInfo.pss + "\n"
           + "vss: " + nativeMemInfo.vss + "\n"
@@ -90,13 +90,13 @@ export default function HidebugnewTest() {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_2600 start");
       try {
         let nativeMemInfo = hidebug.getAppNativeMemInfoWithCache(true);
-        expect(nativeMemInfo.pss >= 0).assertTrue();
-        expect(nativeMemInfo.vss >= 0).assertTrue();
-        expect(nativeMemInfo.rss >= 0).assertTrue();
-        expect(nativeMemInfo.sharedDirty >= 0).assertTrue();
-        expect(nativeMemInfo.privateDirty >= 0).assertTrue();
-        expect(nativeMemInfo.sharedClean >= 0).assertTrue();
-        expect(nativeMemInfo.privateClean >= 0).assertTrue();
+        expect(nativeMemInfo.pss >= 0n).assertTrue();
+        expect(nativeMemInfo.vss >= 0n).assertTrue();
+        expect(nativeMemInfo.rss >= 0n).assertTrue();
+        expect(nativeMemInfo.sharedDirty >= 0n).assertTrue();
+        expect(nativeMemInfo.privateDirty >= 0n).assertTrue();
+        expect(nativeMemInfo.sharedClean >= 0n).assertTrue();
+        expect(nativeMemInfo.privateClean >= 0n).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_2600 nativeMemInfo:" + "\n"
           + "pss: " + nativeMemInfo.pss + "\n"
           + "vss: " + nativeMemInfo.vss + "\n"
@@ -127,13 +127,13 @@ export default function HidebugnewTest() {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_2700 start");
       try {
         let nativeMemInfo = hidebug.getAppNativeMemInfoWithCache(false);
-        expect(nativeMemInfo.pss >= 0).assertTrue();
-        expect(nativeMemInfo.vss >= 0).assertTrue();
-        expect(nativeMemInfo.rss >= 0).assertTrue();
-        expect(nativeMemInfo.sharedDirty >= 0).assertTrue();
-        expect(nativeMemInfo.privateDirty >= 0).assertTrue();
-        expect(nativeMemInfo.sharedClean >= 0).assertTrue();
-        expect(nativeMemInfo.privateClean >= 0).assertTrue();
+        expect(nativeMemInfo.pss >= 0n).assertTrue();
+        expect(nativeMemInfo.vss >= 0n).assertTrue();
+        expect(nativeMemInfo.rss >= 0n).assertTrue();
+        expect(nativeMemInfo.sharedDirty >= 0n).assertTrue();
+        expect(nativeMemInfo.privateDirty >= 0n).assertTrue();
+        expect(nativeMemInfo.sharedClean >= 0n).assertTrue();
+        expect(nativeMemInfo.privateClean >= 0n).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_2700 nativeMemInfo:" + "\n"
           + "pss: " + nativeMemInfo.pss + "\n"
           + "vss: " + nativeMemInfo.vss + "\n"
@@ -164,13 +164,13 @@ export default function HidebugnewTest() {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_2900 start");
       try {
         let nativeMemInfo = hidebug.getAppNativeMemInfoWithCache();
-        expect(nativeMemInfo.pss >= 0).assertTrue();
-        expect(nativeMemInfo.vss >= 0).assertTrue();
-        expect(nativeMemInfo.rss >= 0).assertTrue();
-        expect(nativeMemInfo.sharedDirty >= 0).assertTrue();
-        expect(nativeMemInfo.privateDirty >= 0).assertTrue();
-        expect(nativeMemInfo.sharedClean >= 0).assertTrue();
-        expect(nativeMemInfo.privateClean >= 0).assertTrue();
+        expect(nativeMemInfo.pss >= 0n).assertTrue();
+        expect(nativeMemInfo.vss >= 0n).assertTrue();
+        expect(nativeMemInfo.rss >= 0n).assertTrue();
+        expect(nativeMemInfo.sharedDirty >= 0n).assertTrue();
+        expect(nativeMemInfo.privateDirty >= 0n).assertTrue();
+        expect(nativeMemInfo.sharedClean >= 0n).assertTrue();
+        expect(nativeMemInfo.privateClean >= 0n).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_2900 nativeMemInfo:" + "\n"
           + "pss: " + nativeMemInfo.pss + "\n"
           + "vss: " + nativeMemInfo.vss + "\n"
@@ -206,27 +206,27 @@ export default function HidebugnewTest() {
         let nativeMemInfo2 = hidebug.getAppNativeMemInfoWithCache(true);
         await asyncSleep(50);
         let nativeMemInfo3 = hidebug.getAppNativeMemInfoWithCache(true);
-        expect(nativeMemInfo1.pss >= 0).assertTrue();
-        expect(nativeMemInfo1.vss >= 0).assertTrue();
-        expect(nativeMemInfo1.rss >= 0).assertTrue();
-        expect(nativeMemInfo1.sharedDirty >= 0).assertTrue();
-        expect(nativeMemInfo1.privateDirty >= 0).assertTrue();
-        expect(nativeMemInfo1.sharedClean >= 0).assertTrue();
-        expect(nativeMemInfo1.privateClean >= 0).assertTrue();
-        expect(nativeMemInfo2.pss >= 0).assertTrue();
-        expect(nativeMemInfo2.vss >= 0).assertTrue();
-        expect(nativeMemInfo2.rss >= 0).assertTrue();
-        expect(nativeMemInfo2.sharedDirty >= 0).assertTrue();
-        expect(nativeMemInfo2.privateDirty >= 0).assertTrue();
-        expect(nativeMemInfo2.sharedClean >= 0).assertTrue();
-        expect(nativeMemInfo2.privateClean >= 0).assertTrue();
-        expect(nativeMemInfo3.pss >= 0).assertTrue();
-        expect(nativeMemInfo3.vss >= 0).assertTrue();
-        expect(nativeMemInfo3.rss >= 0).assertTrue();
-        expect(nativeMemInfo3.sharedDirty >= 0).assertTrue();
-        expect(nativeMemInfo3.privateDirty >= 0).assertTrue();
-        expect(nativeMemInfo3.sharedClean >= 0).assertTrue();
-        expect(nativeMemInfo3.privateClean >= 0).assertTrue();
+        expect(nativeMemInfo1.pss >= 0n).assertTrue();
+        expect(nativeMemInfo1.vss >= 0n).assertTrue();
+        expect(nativeMemInfo1.rss >= 0n).assertTrue();
+        expect(nativeMemInfo1.sharedDirty >= 0n).assertTrue();
+        expect(nativeMemInfo1.privateDirty >= 0n).assertTrue();
+        expect(nativeMemInfo1.sharedClean >= 0n).assertTrue();
+        expect(nativeMemInfo1.privateClean >= 0n).assertTrue();
+        expect(nativeMemInfo2.pss >= 0n).assertTrue();
+        expect(nativeMemInfo2.vss >= 0n).assertTrue();
+        expect(nativeMemInfo2.rss >= 0n).assertTrue();
+        expect(nativeMemInfo2.sharedDirty >= 0n).assertTrue();
+        expect(nativeMemInfo2.privateDirty >= 0n).assertTrue();
+        expect(nativeMemInfo2.sharedClean >= 0n).assertTrue();
+        expect(nativeMemInfo2.privateClean >= 0n).assertTrue();
+        expect(nativeMemInfo3.pss >= 0n).assertTrue();
+        expect(nativeMemInfo3.vss >= 0n).assertTrue();
+        expect(nativeMemInfo3.rss >= 0n).assertTrue();
+        expect(nativeMemInfo3.sharedDirty >= 0n).assertTrue();
+        expect(nativeMemInfo3.privateDirty >= 0n).assertTrue();
+        expect(nativeMemInfo3.sharedClean >= 0n).assertTrue();
+        expect(nativeMemInfo3.privateClean >= 0n).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_3000 nativeMemInfo1:" + "\n"
           + "pss: " + nativeMemInfo1.pss + "\n"
           + "vss: " + nativeMemInfo1.vss + "\n"
@@ -322,13 +322,13 @@ export default function HidebugnewTest() {
       try {
         for (let i = 0; i < 100; i++) {
           let nativeMemInfo = hidebug.getAppNativeMemInfoWithCache(true);
-          expect(nativeMemInfo.pss >= 0).assertTrue();
-          expect(nativeMemInfo.vss >= 0).assertTrue();
-          expect(nativeMemInfo.rss >= 0).assertTrue();
-          expect(nativeMemInfo.sharedDirty >= 0).assertTrue();
-          expect(nativeMemInfo.privateDirty >= 0).assertTrue();
-          expect(nativeMemInfo.sharedClean >= 0).assertTrue();
-          expect(nativeMemInfo.privateClean >= 0).assertTrue();
+          expect(nativeMemInfo.pss >= 0n).assertTrue();
+          expect(nativeMemInfo.vss >= 0n).assertTrue();
+          expect(nativeMemInfo.rss >= 0n).assertTrue();
+          expect(nativeMemInfo.sharedDirty >= 0n).assertTrue();
+          expect(nativeMemInfo.privateDirty >= 0n).assertTrue();
+          expect(nativeMemInfo.sharedClean >= 0n).assertTrue();
+          expect(nativeMemInfo.privateClean >= 0n).assertTrue();
           console.info("SUB_DFX_DFR_Hiprofiler_Interface_3300 nativeMemInfo:" + i + "\n"
             + "pss: " + nativeMemInfo.pss + "\n"
             + "vss: " + nativeMemInfo.vss + "\n"
@@ -361,13 +361,13 @@ export default function HidebugnewTest() {
       try {
         for (let i = 0; i < 100; i++) {
           let nativeMemInfo = hidebug.getAppNativeMemInfoWithCache(false);
-          expect(nativeMemInfo.pss >= 0).assertTrue();
-          expect(nativeMemInfo.vss >= 0).assertTrue();
-          expect(nativeMemInfo.rss >= 0).assertTrue();
-          expect(nativeMemInfo.sharedDirty >= 0).assertTrue();
-          expect(nativeMemInfo.privateDirty >= 0).assertTrue();
-          expect(nativeMemInfo.sharedClean >= 0).assertTrue();
-          expect(nativeMemInfo.privateClean >= 0).assertTrue();
+          expect(nativeMemInfo.pss >= 0n).assertTrue();
+          expect(nativeMemInfo.vss >= 0n).assertTrue();
+          expect(nativeMemInfo.rss >= 0n).assertTrue();
+          expect(nativeMemInfo.sharedDirty >= 0n).assertTrue();
+          expect(nativeMemInfo.privateDirty >= 0n).assertTrue();
+          expect(nativeMemInfo.sharedClean >= 0n).assertTrue();
+          expect(nativeMemInfo.privateClean >= 0n).assertTrue();
           console.info("SUB_DFX_DFR_Hiprofiler_Interface_3400 nativeMemInfo:" + i + "\n"
             + "pss: " + nativeMemInfo.pss + "\n"
             + "vss: " + nativeMemInfo.vss + "\n"
@@ -400,7 +400,7 @@ export default function HidebugnewTest() {
       try {
         let appVMObjectUsed = hidebug.getAppVMObjectUsedSize();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4100 appVMObjectUsed: " + appVMObjectUsed);
-        expect(appVMObjectUsed >= 0).assertTrue();
+        expect(appVMObjectUsed >= 0n).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4100 success");
         done();
       } catch (err) {
@@ -427,8 +427,8 @@ export default function HidebugnewTest() {
         await asyncSleep(5);
         let appVMObjectUsed2 = hidebug.getAppVMObjectUsedSize();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4200 appVMObjectUsed2: " + appVMObjectUsed2);
-        expect(appVMObjectUsed1 >= 0).assertTrue();
-        expect(appVMObjectUsed2 >= 0).assertTrue();
+        expect(appVMObjectUsed1 >= 0n).assertTrue();
+        expect(appVMObjectUsed2 >= 0n).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4200 success");
         done();
       } catch (err) {
@@ -454,8 +454,8 @@ export default function HidebugnewTest() {
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4300 appVMObjectUsed1: " + appVMObjectUsed1);
         let appVMObjectUsed2 = hidebug.getAppVMObjectUsedSize();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4300 appVMObjectUsed2: " + appVMObjectUsed2);
-        expect(appVMObjectUsed1 >= 0).assertTrue();
-        expect(appVMObjectUsed2 >= 0).assertTrue();
+        expect(appVMObjectUsed1 >= 0n).assertTrue();
+        expect(appVMObjectUsed2 >= 0n).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4300 success");
         done();
       } catch (err) {
@@ -479,7 +479,7 @@ export default function HidebugnewTest() {
       try {
         for (let i = 0; i < 100; i++) {
           let appVMObjectUsed = hidebug.getAppVMObjectUsedSize();
-          expect(appVMObjectUsed >= 0).assertTrue();
+          expect(appVMObjectUsed >= 0n).assertTrue();
           console.info("SUB_DFX_DFR_Hiprofiler_Interface_4400 appVMObjectUsed: " + appVMObjectUsed);
         }
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4400 100 times success");

@@ -14,45 +14,16 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 
 export default function FolderStackTest1() {
   describe('FolderStackTest1', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("FolderStackTest1 beforeAll start");
-
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api12.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("FolderStackTest1 beforeEach start");
@@ -66,25 +37,27 @@ export default function FolderStackTest1() {
         console.info("get FolderStackTest1 state pages:" + "");
         if (!("FolderStackTest1" == pages.name)) {
           console.info("get FolderStackTest1 pages.name:" + "");
-          //let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push FolderStackTest1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push FolderStackTest1 page error:" + err);
+        expect().assertFail();
       }
       console.info("FolderStackTest1 beforeEach end");
-      // done();
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("FolderStackTest1 afterEach sleep error:" + err);
+      }
       console.info("FolderStackTest1 after each called");
     });
 
 
-    
+
     /**
      * @tc.number   FolderStackTest1_static_0100
      * @tc.name     FolderStackTest1_static_0100
@@ -92,16 +65,21 @@ export default function FolderStackTest1() {
      * @tc.level    Level.LEVEL0
      */
     it('FolderStackTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('FolderStackTest1_static_0100 START');
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('FolderStackTest1_static_0100 START');
+        await CommonFunc.sleep(2000);
 
-      let strJson1 = inspector.getInspectorByKey('FolderStackTest1_FolderStack');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(1000);
-      console.info("[FolderStackTest1_static_0100] obj1 is: " + JSON.stringify(obj1));
-      expect(obj1.getElement('$attrs').getString('width')).assertEqual('200.00vp');
+        let strJson1 = inspector.getInspectorByKey('FolderStackTest1_FolderStack');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(1000);
+        console.info("[FolderStackTest1_static_0100] obj1 is: " + JSON.stringify(obj1));
+        expect(obj1.getElement('$attrs').getString('width')).assertEqual('200.00vp');
 
-      console.info('FolderStackTest1_static_0100 END');
+        console.info('FolderStackTest1_static_0100 END');
+      } catch (err) {
+        console.error("FolderStackTest1_static_0100 error:" + err);
+        expect(false).assertTrue();
+      }
       done();
     });
 

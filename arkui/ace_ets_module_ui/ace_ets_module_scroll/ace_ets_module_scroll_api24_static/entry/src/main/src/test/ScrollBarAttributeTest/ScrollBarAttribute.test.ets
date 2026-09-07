@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const PAGE = 'MainAbility/pages/scrollBarAttribute/scrollBarAttribute';
@@ -39,12 +38,6 @@ function arkuiNewErr(suite: string, phase: string, detail: string): void {
 
 export default function ScrollBarAttributeTest() {
   describe('ScrollBarAttributeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      arkuiNewLog(SUITE, 'beforeAll', 'start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll.api24.static', 'EntryAbility');
-      arkuiNewLog(SUITE, 'beforeAll', 'end');
-    });
-
     beforeEach(async (): Promise<void> => {
       arkuiNewLog(SUITE, 'beforeEach', 'start');
       AppStorage.delete('sbAttr_ready');

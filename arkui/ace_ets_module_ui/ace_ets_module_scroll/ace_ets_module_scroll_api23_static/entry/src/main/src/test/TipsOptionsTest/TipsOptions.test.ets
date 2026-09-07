@@ -15,13 +15,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
@@ -42,12 +41,7 @@ function logLongString(tag: string, longStr: string): void {
 
 export default function TipsOptionsTest() {
   describe('TipsOptionsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('TipsOptionsTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll.api23.static', 'EntryAbility');
-    });
-
-    beforeEach((): void => {
+    beforeEach(async (): Promise<void> => {
       console.info('TipsOptionsTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/TipsOptions/TipsOptions',
@@ -59,6 +53,7 @@ export default function TipsOptionsTest() {
         console.info('TipsOptionsTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'TipsOptions') {
           routerInstance.replaceUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('TipsOptionsTest replaceUrl error: ' + err);

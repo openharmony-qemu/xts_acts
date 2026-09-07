@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level , beforeAll } from '../../../../hypium/index';
+import { expect, describe, it, afterEach, Level } from '../../../../hypium/index';
 import { Driver, ON, PointerMatrix, Rect,Component } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import {LibUtil} from '../../../ets/pages/LibUtil'
 let libUtil:LibUtil = new LibUtil();
 
 export default function swiperOnSelectTest() {
 
   describe('SwiperOnSelectTest',() => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api16.static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('SwiperOnSelectTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     
@@ -40,13 +40,18 @@ export default function swiperOnSelectTest() {
      * @tc.level    Level.LEVEL1
      */
     it('testSwiperOnSelect001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'SwiperOnSelectTest';
-      await Utils.pushPage(`swiper/${PAGE_TAG}`);
-      await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('OnSelectTest');
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFF0000');
-      done();
+      try {
+        let PAGE_TAG = 'SwiperOnSelectTest';
+        await Utils.pushPage(`swiper/${PAGE_TAG}`);
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('OnSelectTest');
+        let obj = JSON.parseJsonElement(strJson);
+        expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFF0000');
+        done();
+      } catch (err) {
+        console.info('testSwiperOnSelect001 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

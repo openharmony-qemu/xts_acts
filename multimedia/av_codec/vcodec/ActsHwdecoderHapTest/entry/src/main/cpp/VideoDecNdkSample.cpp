@@ -127,10 +127,6 @@ VDecNdkSample::~VDecNdkSample()
             OH_NativeImage_Destroy(&cNativeImage[i]);
             cNativeImage[i] = nullptr;
         }
-        if (pNativeWindow[i]) {
-            OH_NativeWindow_DestroyNativeWindow(pNativeWindow[i]);
-            pNativeWindow[i] = nullptr;
-        }
     }
     delete this->pImpl;
     Stop();

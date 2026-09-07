@@ -14,23 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function progressButtonPageTest() {
   describe('progressButtonPage', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("progressButtonPageTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.progressButton.nowear.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("progressButtonPageTest beforeEach start");
@@ -44,11 +37,8 @@ export default function progressButtonPageTest() {
         console.info("get progressButtonPageTest state pages:" + JSON.stringify(pages));
         if (!("progressButtonPage" == pages.name)) {
           console.info("get progressButtonPageTest pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push progressButtonPageTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push progressButtonPageTest page error:" + err);
@@ -57,7 +47,11 @@ export default function progressButtonPageTest() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('progressButtonPageTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('progressButtonPage after each called');
     })
 
@@ -72,6 +66,7 @@ export default function progressButtonPageTest() {
      */
 it('progressButtonPageTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[progressButtonPageTest_static_0100] START');
+      try {
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
       // 查看progressButtonPage是否存在以下入口。
@@ -79,6 +74,11 @@ it('progressButtonPageTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | L
       expect(itemText !== null).assertTrue();
       console.info('[progressButtonPageTest_static_0100] END');
       done();
+      } catch (err) {
+        console.error('progressButtonPageTest_static_0100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

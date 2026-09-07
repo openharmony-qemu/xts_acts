@@ -51,6 +51,7 @@ export default function MediaAPIEnumSupplementTest() {
     it('SYSTEM_PRESSURE_LEVEL_ENUM_002', Level.LEVEL1, async (done: Function) => {
       console.info(TAG, '--------SYSTEM_PRESSURE_LEVEL_ENUM_002---------');
       expect(media.AVErrorCode.AVERR_PARAMETER_OUT_OF_RANGE == 5400108).assertTrue();
+      expect(media.AVScreenCaptureFillMode.PRESERVE_ASPECT_RATIO == 0).assertTrue();
       expect(media.AVScreenCaptureFillMode.SCALE_TO_FILL == 1).assertTrue();
       console.info(TAG, '--------SYSTEM_PRESSURE_LEVEL_ENUM_002,end here---------');
       done();

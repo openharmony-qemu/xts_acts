@@ -89,7 +89,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 } catch (error) {
                   let e: BusinessError = error as BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                  if (e.code == 801) {
+                  if (e.code === 801) {
                     console.log(`The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
                     Utils.emitEvent(true, 202503301)
                   } else {
@@ -106,7 +106,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 } catch (error) {
                   let e: BusinessError = error as BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                  if (e.code == 801) {
+                  if (e.code === 801) {
                     console.log(`The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
                     Utils.emitEvent(true, 202503302)
                   } else {
@@ -122,7 +122,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 } catch (error) {
                   let e: BusinessError = error as BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                  if (e.code == 801) {
+                  if (e.code === 801) {
                     console.log(`The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
                     Utils.emitEvent(true, 202503303)
                   } else {
@@ -136,11 +136,34 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 this.controller.refresh()
                 Utils.emitEvent(true,7701)
                 Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == true, 7701)
+                break;
               }
               case "emitWebViewCookieTrackEnableFalse": {
                 this.controller.enableIntelligentTrackingPrevention(false)
                 this.controller.refresh()
                 Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == false, 1278)
+                break;
+              }
+              case "emitEnableIntelligentTrackingPreventionNullStatic001": {
+                try {
+                  let param: boolean | null = null;
+                  this.controller.enableIntelligentTrackingPrevention(param as boolean);
+                  Utils.emitEvent(true, 41023001)
+                } catch (error) {
+                  error = error as BusinessError;
+                  Utils.emitEvent(String(error.code), 41023001)
+                }
+                break;
+              }
+              case "emitEnableIntelligentTrackingPreventionUndefinedStatic001": {
+                try {
+                  let param: boolean | undefined = undefined;
+                  this.controller.enableIntelligentTrackingPrevention(param as boolean);
+                  Utils.emitEvent(true, 41023002)
+                } catch (error) {
+                  error = error as BusinessError;
+                  Utils.emitEvent(String(error.code), 41023002)
+                }
                 break;
               }
               case "emitCookieTrackClearTrackingPrevention": {

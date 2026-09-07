@@ -202,12 +202,12 @@ export default function HttpClientCertTest() {
               },
               (err: BusinessError, data: http.HttpResponse) => {
                 if (err) {
-                  console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
+                  console.info(`${caseName} httpRequest fail ${JSON.stringify(data)}`);
                   ExpectTrue(err?.code == 2300058);
                   httpRequest.destroy();
                   done();
                 } else {
-                  console.info(`${caseName} request failed err: ${JSON.stringify(err)}`);
+                  console.info(`${caseName} request success`);
                   ExpectFail();
                   httpRequest.destroy();
                   done();

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level,afterAll } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level,afterAll } from '../../../../hypium/index';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,25 +21,10 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import { RecordData } from '@ohos.base';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function enableJsunit() {
   describe('enableTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("enableJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("enableJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -61,7 +46,11 @@ export default function enableJsunit() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("enable afterEach error:" + err);
+      }
       console.info("enable after each called");
     });
     // afterAll(() => {
@@ -78,7 +67,11 @@ export default function enableJsunit() {
      */
 it('testEnable_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEnable01] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("testEnable01 sleep error:" + err);
+      }
       let strJson: string = inspector.getInspectorByKey('enabled');
       console.info("[testEnable01] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enabled')).assertEqual(true);
@@ -110,7 +103,11 @@ it('testEnable_static_03', Level.LEVEL0, async (done: () => void): Promise<void>
       } catch (err) {
         console.log("[testEnable03] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error("testEnable03 sleep error:" + err);
+      }
       let strJson: string = inspector.getInspectorByKey('enabled');
       console.info("[testEnable03] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enabled')).assertEqual(true);
@@ -142,7 +139,11 @@ it('testEnable_static_04', Level.LEVEL0, async (done: () => void): Promise<void>
       } catch (err) {
         console.log("testEnable04 change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error("testEnable04 sleep error:" + err);
+      }
       let objNew: string = inspector.getInspectorByKey('enabled');
       console.info("testEnable04 component objNew is: " + JSON.stringify(JSON.parseJsonElement(objNew)));
       expect(JSON.parseJsonElement(objNew).getElement('$attrs').getBoolean('enabled')).assertEqual(true);
@@ -174,9 +175,17 @@ it('testEnable_static_02', Level.LEVEL0, async (done: () => void): Promise<void>
       } catch (err) {
         console.log("[testEnable02] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error("testEnable02 sleep error:" + err);
+      }
       let strJson: string = inspector.getInspectorByKey('enabled');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error("testEnable02 sleep2 error:" + err);
+      }
       console.info("[testEnable02] obj is: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enabled'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enabled')).assertEqual(false);
