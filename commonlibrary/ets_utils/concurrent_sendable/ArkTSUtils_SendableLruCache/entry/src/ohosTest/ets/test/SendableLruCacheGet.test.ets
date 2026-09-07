@@ -217,6 +217,79 @@ export default function SendableLruCacheGetTest() {
         }
       }
     })
+  
+  /**
+     * @tc.name   sendableLruCacheEmptyString001
+     * @tc.number SUB_UTILS_SENDABLE_LRU_CACHE_EMPTY_STRING_001
+     * @tc.desc   Test SendableLruCache with empty string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('sendableLruCacheEmptyString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG: string = 'sendableLruCacheEmptyString001';
+      try {
+        let cache = new ArkTSUtils.SendableLruCache<string, number>();
+
+        // Add a value with empty string key
+        cache.put("", 100);
+        let getResult = cache.get("");
+        expect(getResult).assertEqual(100);
+
+        // Test contains with empty string key
+        let containsResult = cache.contains("");
+        expect(containsResult).assertTrue();
+
+        // Test remove with empty string key
+        let removeResult = cache.remove("");
+        expect(removeResult).assertEqual(100);
+
+        // Verify removal
+        let afterRemoveResult = cache.get("");
+        expect(afterRemoveResult).assertUndefined();
+      } catch (error) {
+        console.error(`${TAG} catch error: ${error}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    
+    /**
+     * @tc.name   sendableLruCacheRemoveReturnValidation001
+     * @tc.number SUB_UTILS_SENDABLE_LRU_CACHE_REMOVE_RETURN_VALIDATION_001
+     * @tc.desc   Test SendableLruCache.remove return type validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('sendableLruCacheRemoveReturnValidation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const TAG: string = 'sendableLruCacheRemoveReturnValidation001';
+        try {
+          let cache = new ArkTSUtils.SendableLruCache<string, number>();
+
+          // Add some values
+          cache.put("key1", 100);
+          cache.put("key2", 200);
+
+          // Test removing existing key
+          let result1 = cache.remove("key1");
+          expect(result1).assertEqual(100);
+
+          // Test removing non-existing key
+          let result2 = cache.remove("nonExistentKey");
+          expect(result2).assertUndefined();
+
+          // Verify key was actually removed
+          let result3 = cache.get("key1");
+          expect(result3).assertUndefined();
+        } catch (error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect().assertFail();
+        }
+        done()
+      })
 
   })
 }

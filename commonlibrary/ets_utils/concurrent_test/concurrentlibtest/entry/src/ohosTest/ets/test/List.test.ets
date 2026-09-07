@@ -14,7 +14,6 @@
 */
 
 
-import arkTSUtilsTest from './arkTSUtils/ArkTSUtils.test';
 import TaskPoolTest from './taskpool/TaskPool.test';
 import TaskPoolErrorCodeTest from './taskpool/TaskpoolErrorCode.test';
 import TaskPoolCoverageTest from './taskpool/TaskPoolCoverage.test';
@@ -24,7 +23,6 @@ import workerErrorCodeTest from './worker/WorkerErrorCode.test';
 import WorkerCoverageTest from './worker/WorkerCoverage.test';
 import concurrencyReturnCoveredTest from './returnCovered/concurrencyReturnCoveredTest.test';
 import concurrencyCoveredSupplement from './returnCovered/concurrencyCoveredSupplement.test';
-import utilsCoverageTest from './arkTSUtils/UtilsCoverageTest.test';
 import containerSerializeTest from './serialize/containerSerialize.test';
 
 import threadWorkerInheritanceTest from './inheritance/ThreadWorkerInheritanceTest.test';
@@ -37,7 +35,6 @@ import onMessageErrorTest from './inheritance/OnMessageErrorTest.test';
 import onMessageTest from './inheritance/OnMessageTest.test';
 
 export default function testsuite() {
-  arkTSUtilsTest();
   TaskPoolTest();
   TaskPoolErrorCodeTest();
   TaskPoolCoverageTest();
@@ -47,7 +44,6 @@ export default function testsuite() {
   WorkerCoverageTest();
   concurrencyReturnCoveredTest();
   concurrencyCoveredSupplement();
-  utilsCoverageTest();
   containerSerializeTest();
 
   threadWorkerInheritanceTest();

@@ -29,6 +29,8 @@ import AsyncLockArkTSUtilsSubsetTest from "./AsyncLockArkTSUtilsSubset.test";
 import AsyncLockUtilsCoverageSubsetTest from "./AsyncLockUtilsCoverageSubset.test";
 
 export default function testsuite() {
+  AsyncLockArkTSUtilsSubsetTest();
+  AsyncLockUtilsCoverageSubsetTest();
   LockTest();
   AsynclockDifferentTest();
   AsynclockSameTest();
@@ -41,6 +43,4 @@ export default function testsuite() {
   AsyncLocktest();
   ConcurrentAsyncLockTest();
   AsyncLockConcurrencyBaseTest();
-  AsyncLockArkTSUtilsSubsetTest();
-  AsyncLockUtilsCoverageSubsetTest();
 }

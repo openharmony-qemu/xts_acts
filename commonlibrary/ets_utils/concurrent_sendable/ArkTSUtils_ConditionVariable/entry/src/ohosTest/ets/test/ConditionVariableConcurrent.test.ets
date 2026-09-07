@@ -21,7 +21,7 @@ export default function conditionVariableConcurrentTest() {
   describe('ConditionVariableConcurrentTest', () => {
 
     beforeEach(async () => {
-      await sleep(1000);
+      await sleep(100);
     })
 
     /**

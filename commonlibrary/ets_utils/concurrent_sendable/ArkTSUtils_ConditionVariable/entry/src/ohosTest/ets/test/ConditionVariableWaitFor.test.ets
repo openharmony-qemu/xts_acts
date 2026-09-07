@@ -20,7 +20,7 @@ export default function conditionVariableWaitForTest() {
   describe('ConditionVariableWaitForTest', () => {
 
     beforeEach(async () => {
-      await sleep(1000);
+      await sleep(100);
     })
 
     /**

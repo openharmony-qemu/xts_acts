@@ -18,8 +18,12 @@ import asonParseRoundTripTest from './ASONParseRoundTrip.test';
 import asonParseTransformTest from './ASONParseTransform.test';
 import asonParseCompareTest from './ASONParseCompare.test';
 import asonStringifyTest from './ASONStringify.test';
+import arkTSUtilsASONTest from './ArkTSUtilsASON.test';
+import arkTSUtilsIsSendableTest from './ArkTSUtilsIsSendable.test';
 
 export default function testsuite() {
+  arkTSUtilsIsSendableTest()
+  arkTSUtilsASONTest()
   asonParseBasicTest();
   asonParseRoundTripTest();
   asonParseTransformTest();

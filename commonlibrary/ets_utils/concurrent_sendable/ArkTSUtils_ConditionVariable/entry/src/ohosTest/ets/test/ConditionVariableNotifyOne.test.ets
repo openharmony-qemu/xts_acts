@@ -20,7 +20,7 @@ export default function conditionVariableNotifyOneTest() {
   describe('ConditionVariableNotifyOneTest', () => {
 
     beforeEach(async () => {
-      await sleep(1000);
+      await sleep(100);
     })
 
     /**

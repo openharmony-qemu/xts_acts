@@ -20,8 +20,51 @@ export default function conditionVariableNotifyTest() {
   describe('ConditionVariableNotifyTest', () => {
 
     beforeEach(async () => {
-      await sleep(1000);
+      await sleep(100);
     })
+
+    /**
+     * @tc.name   conditionVariableRequestEmptyString001
+     * @tc.number SUB_UTILS_CONDITION_VARIABLE_REQUEST_EMPTY_STRING_001
+     * @tc.desc   Test ConditionVariable.request with empty string parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('conditionVariableRequestEmptyString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const TAG: string = 'conditionVariableRequestEmptyString001';
+        try {
+          // Test with empty string parameter
+          let conditionVar = ArkTSUtils.locks.ConditionVariable.request("");
+          expect(conditionVar instanceof ArkTSUtils.locks.ConditionVariable).assertTrue();
+        } catch (error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect().assertFail();
+        }
+        done()
+      })
+      
+    /**
+     * @tc.name   conditionVariableRequestReturnValidation001
+     * @tc.number SUB_UTILS_CONDITION_VARIABLE_REQUEST_RETURN_VALIDATION_001
+     * @tc.desc   Test ConditionVariable.request return type validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('conditionVariableRequestReturnValidation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const TAG: string = 'conditionVariableRequestReturnValidation001';
+        try {
+          let conditionVar = ArkTSUtils.locks.ConditionVariable.request("testCondition");
+          expect(conditionVar instanceof ArkTSUtils.locks.ConditionVariable).assertTrue();
+        } catch (error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect().assertFail();
+        }
+        done()
+      })
 
     /**
      * @tc.name   ActsLocksTestConditionVariableNotify001
