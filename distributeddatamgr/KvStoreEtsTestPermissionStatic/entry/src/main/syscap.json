@@ -4,7 +4,8 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.DistributedDataManager.KVStore.DistributedKVStore"
+                    "SystemCapability.DistributedDataManager.KVStore.DistributedKVStore",
+                    "SystemCapability.DistributedDataManager.KVStore.Core"
                 ]
             }
         ]
