@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,7 +29,7 @@ const ExpectTrue = (n: boolean) => {
   }
 }
 
-export default function EmptyTest() {
+export default function EmptyTest(): void {
 
   describe("EmptyTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');

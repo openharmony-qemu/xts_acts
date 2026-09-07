@@ -19,6 +19,9 @@ import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import data from '@ohos.telephony.data';
+import common from '@ohos.app.ability.common';
+import { AppStorage } from '@ohos.arkui.stateManagement'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'DataTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -48,7 +51,7 @@ const apnInfoParameter: data.ApnInfo = {
     mmsproxy: 'mmsproxy'
 }
 
-export default function dataTest() {
+export default function dataTest(): void {
 
     describe("DataTest", (): void => {
         const ERR_SLOT_ID = 3;
@@ -479,6 +482,43 @@ export default function dataTest() {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 ExpectFail();
+                done();
+            }
+        })
+
+        /**
+         * @tc.number  SUB_Telephony_Data_ShowSystemApnSettings_0100
+         * @tc.name    testTelephonyDataShowSystemApnSettingsApn0100
+         * @tc.desc    showSystemApnSettings.
+         * @tc.size    MediumTest
+         * @tc.type    Function
+         * @tc.level   level 3
+         */
+        it('testTelephonyDataShowSystemApnSettingsApn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataShowSystemApnSettingsApn0100';
+            hilog.info(domain, tag, '%{public}s', caseName + ' start');
+            try {
+                let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+                let cmd = "aa start -a EntryAbility -b com.ohos.cellulardata.static";
+                let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+                hilog.info(domain, tag, '%{public}s', 'user:' + JSON.stringify(user))
+                if (user !== undefined) {
+                    cmd += ' -u ' + user;
+                }
+                abilityDelegator.executeShellCommand(cmd);
+                await Utils.msSleep(4000);
+                let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+                hilog.info(domain, tag, '%{public}s', 'get UIAbilityContext end');
+                hilog.info(domain, tag, '%{public}s', caseName + ' Context is ' + context);
+                await data.showSystemApnSettings(context);
+                hilog.info(domain, tag, '%{public}s', caseName + ' showSystemApnSettings result: true');
+                ExpectTrue(true);
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                done();
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', caseName + ' caught exception->' + JSON.stringify(error));
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
                 done();
             }
         })
