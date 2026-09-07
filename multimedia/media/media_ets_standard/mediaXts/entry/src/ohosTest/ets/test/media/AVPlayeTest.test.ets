@@ -5575,7 +5575,7 @@ export default function AVPlayerTest() {
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL0
       */
-    it('SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100', Level.LEVEL0, (done:Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100', Level.LEVEL0, async (done:Function) => {
         try {
             let avPlayer = await media.createAVPlayer();
             let callback = (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
