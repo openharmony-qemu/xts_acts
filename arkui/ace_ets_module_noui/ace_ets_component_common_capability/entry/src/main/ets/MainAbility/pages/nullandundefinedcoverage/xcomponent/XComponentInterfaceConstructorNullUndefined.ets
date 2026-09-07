@@ -36,7 +36,7 @@ struct XComponentInterfaceConstructorNullUndefinedTest {
           .height('5%')
 
         // Test XComponentInterface constructor with valid XComponentOptions (since 12)
-        XComponent({ type: XComponentType.SURFACE, controller: this.xComponentController } as XComponentOptions)
+        XComponent({ type: XComponentType.TEXTURE, controller: this.xComponentController } as XComponentOptions)
           .id('xcomponent_options_valid')
           .width('100%')
           .height('5%')
@@ -56,7 +56,7 @@ struct XComponentInterfaceConstructorNullUndefinedTest {
           .height('5%')
 
         // Test XComponentInterface constructor with valid NativeXComponentParameters (since 19)
-        XComponent({ type: XComponentType.SURFACE } as NativeXComponentParameters)
+        XComponent({ type: XComponentType.TEXTURE } as NativeXComponentParameters)
           .id('xcomponent_params_valid')
           .width('100%')
           .height('5%')

@@ -56,7 +56,7 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
 
     /**
      * @tc.name   xComponentInterface_options_null_001
-     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_OPTIONS_NULL_001
+     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_OPTIONS_NULL_0001
      * @tc.desc   测试XComponentInterface constructor(since 12)第1个参数options传入null，组件可正常渲染
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -75,7 +75,7 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
 
     /**
      * @tc.name   xComponentInterface_options_undefined_001
-     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_OPTIONS_UNDEFINED_001
+     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_OPTIONS_UNDEFINED_0002
      * @tc.desc   测试XComponentInterface constructor(since 12)第1个参数options传入undefined，组件可正常渲染
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -94,7 +94,7 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
 
     /**
      * @tc.name   xComponentInterface_options_valid_001
-     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_OPTIONS_VALID_001
+     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_OPTIONS_VALID_0003
      * @tc.desc   测试XComponentInterface constructor(since 12)第1个参数options传入正常XComponentOptions对象，组件正常渲染
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
 
     /**
      * @tc.name   xComponentInterface_params_null_001
-     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_NULL_001
+     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_NULL_0004
      * @tc.desc   测试XComponentInterface constructor(since 19)第1个参数params传入null，组件可正常渲染
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -134,7 +134,7 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
 
     /**
      * @tc.name   xComponentInterface_params_undefined_001
-     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_UNDEFINED_001
+     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_UNDEFINED_0005
      * @tc.desc   测试XComponentInterface constructor(since 19)第1个参数params传入undefined，组件可正常渲染
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -153,7 +153,7 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
 
     /**
      * @tc.name   xComponentInterface_params_valid_001
-     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_VALID_001
+     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_VALID_0006
      * @tc.desc   测试XComponentInterface constructor(since 19)第1个参数params传入正常NativeXComponentParameters对象，组件正常渲染
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
