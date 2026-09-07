@@ -32,6 +32,7 @@ group("concurrent_test") {
       "taskpoolasyncrunnertest:ActsTaskpoolAsyncrunnerTest",
       "taskpoolexecutedelayedtest:ActsTaskPoolExecuteDelayedTest",
       "taskpoolsequencerunnertest:ActsTaskPoolSequenceRunnerTest",
+      "taskpoolsplittest:ActsTaskPoolSplitTest",
       "taskpoolsupplementtest:ActsTaskPoolSupplementTest",
       "taskpooltaskgrouptest:ActsTaskPoolTaskGroupTest",
       "collections_all_test:ActsCollections_All_Test",
