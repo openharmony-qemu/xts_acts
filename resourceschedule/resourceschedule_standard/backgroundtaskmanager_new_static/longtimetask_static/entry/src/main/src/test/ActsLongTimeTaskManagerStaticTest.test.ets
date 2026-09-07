@@ -3634,6 +3634,68 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8600
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8600
+     * @tc.desc   Test that the ContinuousTaskRequest get backgroundTaskModes function normal call
+     * @tc.level  LEVEL3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8600 begin---');
+
+        try {
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_LOCATION];
+          continuousTaskRequest.backgroundTaskModes = modeList;
+          let getModes: Array<backgroundTaskManager.BackgroundTaskMode> = continuousTaskRequest.backgroundTaskModes;
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8600 Operation get backgroundTaskModes succeeded. getModes: ` + JSON.stringify(getModes));
+          expect(getModes.length === 1).assertTrue();
+          expect(getModes[0] === backgroundTaskManager.BackgroundTaskMode.MODE_LOCATION).assertTrue();
+          expect(getModes[0]).assertEqual(4);
+          done();
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8600 Operation get backgroundTaskModes failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8600 end---');
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8700
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8700
+     * @tc.desc   Test that the ContinuousTaskRequest get backgroundTaskSubmodes function normal call
+     * @tc.level  LEVEL3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8700 begin---');
+
+        try {
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+          continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+          let getSubModes: Array<backgroundTaskManager.BackgroundTaskSubmode> = continuousTaskRequest.backgroundTaskSubmodes;
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8700 Operation get backgroundTaskSubmodes succeeded. getSubModes: ` + JSON.stringify(getSubModes));
+          expect(getSubModes.length === 1).assertTrue();
+          expect(getSubModes[0] === backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION).assertTrue();
+          expect(getSubModes[0]).assertEqual(2);
+          done();
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8700 Operation get backgroundTaskSubmodes failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8700 end---');
+      })
+
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800
      * @tc.desc   Test that the ContinuousTaskRequest get wantAgent function normal call
