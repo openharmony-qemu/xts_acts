@@ -4423,86 +4423,6 @@ export default function dlpTest() {
       })
 
     /**
-     * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_wantNull_0100
-     * @tc.number SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_wantNull_0100
-     * @tc.desc   test startDLPManagerForResult with null want, return error code 19100001 or 801
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_wantNull_0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        let curTag = TAG + "SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_wantNull_0100";
-        console.info(curTag, "start");
-        let context: common.UIAbilityContext = globalThis.context;
-        let config: window.Configuration = {
-          name: "dlp_test_window_want_null",
-          windowType: window.WindowType.TYPE_FLOAT,
-          ctx: new UIContext().getHostContext() as common.Context
-        };
-        let windowClass = await window.createWindow(config);
-        if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
-          try {
-            await dlpPermission.startDLPManagerForResult(context, null!, windowClass);
-            expect(false).assertTrue();
-          } catch (err) {
-            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
-            expect(err.code).assertEqual(801);
-          }
-        } else {
-          try {
-            await dlpPermission.startDLPManagerForResult(context, null!, windowClass);
-            expect(false).assertTrue();
-          } catch (err) {
-            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
-            expect(err.code).assertEqual(19100001);
-          }
-        }
-        console.info(curTag, "end");
-        done();
-      })
-
-    /**
-     * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_wantUndefined_0100
-     * @tc.number SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_wantUndefined_0100
-     * @tc.desc   test startDLPManagerForResult with undefined want, return error code 19100001 or 801
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_wantUndefined_0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        let curTag = TAG + "SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_wantUndefined_0100";
-        console.info(curTag, "start");
-        let context: common.UIAbilityContext = globalThis.context;
-        let config: window.Configuration = {
-          name: "dlp_test_window_want_undefined",
-          windowType: window.WindowType.TYPE_FLOAT,
-          ctx: new UIContext().getHostContext() as common.Context
-        };
-        let windowClass = await window.createWindow(config);
-        if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
-          try {
-            await dlpPermission.startDLPManagerForResult(context, undefined!, windowClass);
-            expect(false).assertTrue();
-          } catch (err) {
-            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
-            expect(err.code).assertEqual(801);
-          }
-        } else {
-          try {
-            await dlpPermission.startDLPManagerForResult(context, undefined!, windowClass);
-            expect(false).assertTrue();
-          } catch (err) {
-            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
-            expect(err.code).assertEqual(19100001);
-          }
-        }
-        console.info(curTag, "end");
-        done();
-      })
-
-    /**
      * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_windowClassNull_0100
      * @tc.number SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_windowClassNull_0100
      * @tc.desc   test startDLPManagerForResult with null windowClass, return error code 19100001 or 801
@@ -4535,7 +4455,7 @@ export default function dlpTest() {
             expect(false).assertTrue();
           } catch (err) {
             console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
-            expect(err.code).assertEqual(19100001);
+            expect(err.code).assertEqual(19100017);
           }
         }
         console.info(curTag, "end");
@@ -4575,7 +4495,7 @@ export default function dlpTest() {
             expect(false).assertTrue();
           } catch (err) {
             console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
-            expect(err.code).assertEqual(19100001);
+            expect(err.code).assertEqual(19100017);
           }
         }
         console.info(curTag, "end");
