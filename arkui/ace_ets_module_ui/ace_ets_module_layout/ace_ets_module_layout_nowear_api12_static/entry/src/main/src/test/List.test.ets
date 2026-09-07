@@ -13,13 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import FolderStackTest1 from './FolderStack/FolderStackTest1.test';
 import FolderStackTest2 from './FolderStack/FolderStackTest2.test';
 import ChipApi1 from './Chip/ChipApi1.test';
 import ChipGroupApi1 from './ChipGroup/ChipGroupApi1.test';
+import FoldSplitContainerTest1 from './FoldSplitContainer/FoldSplitContainerTest1.test';
+import FoldSplitContainerTest2 from './FoldSplitContainer/FoldSplitContainerTest2.test';
 
 export default function testsuite() {
   FolderStackTest1();
   FolderStackTest2();
-  ChipApi1()
+  ChipApi1();
+  ChipGroupApi1();
+  FoldSplitContainerTest1();
+  FoldSplitContainerTest2();
 }
