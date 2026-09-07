@@ -36,7 +36,8 @@
             "type": "ShellKit",
             "run-command": [
                 "power-shell wakeup",
-                "power-shell setmode 602"
+                "power-shell setmode 602",
+                "uitest uiInput dircFling 2"
             ]
         }
     ]
