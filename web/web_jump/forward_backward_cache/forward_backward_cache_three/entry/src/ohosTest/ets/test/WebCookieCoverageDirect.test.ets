@@ -14,38 +14,70 @@
  */
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import webview from '@ohos.web.webview';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function webCookieCoverageDirect() {
   describe('webCookieCoverageDirect', () => {
     /**
-     * @tc.name   testConfigCookieSyncParamCoverage
+     * @tc.name   SUB_WEB_CONFIGCOOKIESYNC_DIRECT_0100
      * @tc.number SUB_WEB_CONFIGCOOKIESYNC_DIRECT_0100
      * @tc.desc   configCookieSync empty/null/undefined param coverage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConfigCookieSyncParamCoverage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      try { webview.WebCookieManager.configCookieSync('', 'a=b'); } catch (e) { console.info('url empty ' + (e as BusinessError).code); }
-      try { webview.WebCookieManager.configCookieSync(null, 'a=b'); } catch (e) { console.info('url null ' + (e as BusinessError).code); }
-      try { webview.WebCookieManager.configCookieSync(undefined, 'a=b'); } catch (e) { console.info('url undef ' + (e as BusinessError).code); }
-      try { webview.WebCookieManager.configCookieSync('https://www.example.com', ''); } catch (e) { console.info('val empty ' + (e as BusinessError).code); }
-      try { webview.WebCookieManager.configCookieSync('https://www.example.com', null); } catch (e) { console.info('val null ' + (e as BusinessError).code); }
-      try { webview.WebCookieManager.configCookieSync('https://www.example.com', undefined); } catch (e) { console.info('val undef ' + (e as BusinessError).code); }
-      try { webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b', false); } catch (e) { console.info('incognito false ' + (e as BusinessError).code); }
-      done();
-    })
+    it('SUB_WEB_CONFIGCOOKIESYNC_DIRECT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const codeOf = (e: Object): number => {
+          return Number(JSON.parse(JSON.stringify(e))['code']);
+        };
+        try {
+          webview.WebCookieManager.configCookieSync('', 'a=b');
+        } catch (e) {
+          console.info('url empty ' + codeOf(e));
+        }
+        try {
+          webview.WebCookieManager.configCookieSync(null, 'a=b');
+        } catch (e) {
+          console.info('url null ' + codeOf(e));
+        }
+        try {
+          webview.WebCookieManager.configCookieSync(undefined, 'a=b');
+        } catch (e) {
+          console.info('url undef ' + codeOf(e));
+        }
+        try {
+          webview.WebCookieManager.configCookieSync('https://www.example.com', '');
+        } catch (e) {
+          console.info('val empty ' + codeOf(e));
+        }
+        try {
+          webview.WebCookieManager.configCookieSync('https://www.example.com', null);
+        } catch (e) {
+          console.info('val null ' + codeOf(e));
+        }
+        try {
+          webview.WebCookieManager.configCookieSync('https://www.example.com', undefined);
+        } catch (e) {
+          console.info('val undef ' + codeOf(e));
+        }
+        try {
+          webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b', false);
+        } catch (e) {
+          console.info('incognito false ' + codeOf(e));
+        }
+        done();
+      })
 
     /**
-     * @tc.name   testFetchCookiePartitionedDirect
+     * @tc.name   SUB_WEB_FETCHCOOKIE_DIRECT_0100
      * @tc.number SUB_WEB_FETCHCOOKIE_DIRECT_0100
      * @tc.desc   fetchCookie/fetchCookieSync 3-arg + return + error 17100002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testFetchCookiePartitionedDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_WEB_FETCHCOOKIE_DIRECT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       let syncOk: boolean = false;
       try {
         let syncRet: string = webview.WebCookieManager.fetchCookieSync('https://www.example.com', false, true);
@@ -70,5 +102,88 @@ export default function webCookieCoverageDirect() {
       expect(syncOk).assertTrue();
       done();
     })
+
+    /**
+     * @tc.name   SUB_WEB_FETCHCOOKIESYNC_PARAMSPEC_0100
+     * @tc.number SUB_WEB_FETCHCOOKIESYNC_PARAMSPEC_0100
+     * @tc.desc   fetchCookieSync empty/null/undefined + incognito true + null args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_FETCHCOOKIESYNC_PARAMSPEC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          webview.WebCookieManager.fetchCookieSync('');
+        } catch (e) {
+          console.info('fetchCookieSync("") ' + JSON.parse(JSON.stringify(e))['code']);
+        }
+        try {
+          webview.WebCookieManager.fetchCookieSync(null);
+        } catch (e) {
+          console.info('fetchCookieSync(null) ' + JSON.parse(JSON.stringify(e))['code']);
+        }
+        try {
+          webview.WebCookieManager.fetchCookieSync(undefined);
+        } catch (e) {
+          console.info('fetchCookieSync(undefined) ' + JSON.parse(JSON.stringify(e))['code']);
+        }
+        try {
+          let ret: string = webview.WebCookieManager.fetchCookieSync('https://www.example.com', true);
+          expect(typeof ret).assertEqual('string');
+        } catch (e) {
+          console.info('fetchCookieSync incognito true ' + JSON.parse(JSON.stringify(e))['code']);
+        }
+        try {
+          webview.WebCookieManager.fetchCookieSync('https://www.example.com', null, true);
+        } catch (e) {
+          console.info('fetchCookieSync p2 null ' + JSON.parse(JSON.stringify(e))['code']);
+        }
+        try {
+          webview.WebCookieManager.fetchCookieSync('https://www.example.com', undefined, false);
+        } catch (e) {
+          console.info('fetchCookieSync p2 undef ' + JSON.parse(JSON.stringify(e))['code']);
+        }
+        try {
+          webview.WebCookieManager.fetchCookieSync('https://www.example.com', false, null);
+        } catch (e) {
+          console.info('fetchCookieSync p3 null ' + JSON.parse(JSON.stringify(e))['code']);
+        }
+        try {
+          webview.WebCookieManager.fetchCookieSync('https://www.example.com', true, undefined);
+        } catch (e) {
+          console.info('fetchCookieSync p3 undef ' + JSON.parse(JSON.stringify(e))['code']);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_WEB_FETCHCOOKIE_PARAMSPEC_0100
+     * @tc.number SUB_WEB_FETCHCOOKIE_PARAMSPEC_0100
+     * @tc.desc   fetchCookie empty/null/undefined + true/false + null args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_FETCHCOOKIE_PARAMSPEC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const race = async (p: Promise<string>): Promise<void> => {
+          try {
+            await Promise.race([p, new Promise<string>((r) => setTimeout(() => r(''), 1200))]);
+          } catch (e) {
+            console.info('fetchCookie race ' + JSON.parse(JSON.stringify(e))['code']);
+          }
+        };
+        await race(webview.WebCookieManager.fetchCookie('', false, false));
+        await race(webview.WebCookieManager.fetchCookie(null, false, true));
+        await race(webview.WebCookieManager.fetchCookie(undefined, true, false));
+        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', true, false));
+        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', false, false));
+        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', null, true));
+        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', undefined, false));
+        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', true, null));
+        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', false, undefined));
+        done();
+      })
   })
 }
