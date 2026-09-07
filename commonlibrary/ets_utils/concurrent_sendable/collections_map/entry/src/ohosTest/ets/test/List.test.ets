@@ -25,6 +25,7 @@ import CollectionsMapPutTest from "./CollectionsMapPutTest.test";
 import CollectionsMapPutAllSendableTest from "./CollectionsMapPutAllSendableTest.test";
 import CollectionsMapPutAllBuiltinTest from "./CollectionsMapPutAllBuiltinTest.test";
 import CollectionsMapRemoveTest from "./CollectionsMapRemoveTest.test";
+import CollectionsMapNewApiTypeTest from "./CollectionsMapNewApiTypeTest.test";
 import CollectionsMapValuesTest from "./CollectionsMapValuesTest.test";
 import collectionsMapConstructorTest01 from './CollectionsMapConstructorTest01.test';
 import collectionsMapClearSizeTest from './CollectionsMapClearSize.test';
@@ -49,6 +50,7 @@ export default function testsuite() {
   CollectionsMapPutAllSendableTest();
   CollectionsMapPutAllBuiltinTest();
   CollectionsMapRemoveTest();
+  CollectionsMapNewApiTypeTest();
   CollectionsMapValuesTest();
   collectionsMapConstructorTest01();
   collectionsMapClearSizeTest();
