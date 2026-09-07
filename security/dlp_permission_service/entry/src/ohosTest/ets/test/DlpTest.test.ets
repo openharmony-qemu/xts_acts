@@ -4869,9 +4869,12 @@ export default function dlpTest() {
           try {
             plugin.connectServer("testId", "testData", (callback) =>{
               console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 connectServer success");
-              expect(fasle).assertTrue();
+              expect(callback != null).assertTrue();
             })
+            await dlpPermission.DlpConnManager.registerPlugin(plugin);
+            expect(false).assertTrue();
           } catch (err) {
+            console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 connectServer failed, err.code " + err.code);
             expect(err.code).assertEqual(801);
           }
         } else {
@@ -4880,9 +4883,11 @@ export default function dlpTest() {
               console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 connectServer success");
               expect(callback != null).assertTrue();
             })
+            await dlpPermission.DlpConnManager.registerPlugin(plugin);
+            expect(false).assertTrue();
           } catch (err) {
             console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 connectServer failed, err.code " + err.code);
-            expect(false).assertTrue();
+            expect(err.code).assertEqual(19100011);
           }
         }
         done();
