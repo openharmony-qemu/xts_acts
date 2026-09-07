@@ -13,12 +13,16 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Hypium, Level } from '@ohos/hypium'
 import testsuite from '../test/List.test'
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 export default class TestAbility extends Ability {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     globalThis.abilityContext = this.context;
     console.info('TestAbility onCreate')
     let abilityDelegatorArguments: any
@@ -32,9 +36,9 @@ export default class TestAbility extends Ability {
     console.log('TestAbility onDestroy')
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     console.log('TestAbility onWindowStageCreate')
-    windowStage.setUIContent(this.context, 'TestAbility/pages/index', null)
+    windowStage.loadContent('TestAbility/pages/index', null)
   }
 
   onWindowStageDestroy() {
