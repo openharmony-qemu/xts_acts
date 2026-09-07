@@ -570,16 +570,16 @@ export default function CollectionsArrayContainsAllBuiltinTest(): void {
       });
 
     /**
-     * @tc.name   collectionsArrayContainsAllTest6300
-     * @tc.number SUB_COLLECTIONS_ARRAY_CONTAINS_ALL_6300
+      * @tc.name   collectionsArrayContainsAllTest6500
+      * @tc.number SUB_COLLECTIONS_ARRAY_CONTAINS_ALL_6500
      * @tc.desc   Verify containsAll with BuiltinArray input created in Worker sub-thread.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('collectionsArrayContainsAllTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('collectionsArrayContainsAllTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function): Promise<void> => {
-        const caseName: string = 'collectionsArrayContainsAllTest6300';
+        const caseName: string = 'collectionsArrayContainsAllTest6500';
         console.info(`${caseName}, test start`);
         try {
           const arr: collections.Array<number> = new collections.Array<number>();

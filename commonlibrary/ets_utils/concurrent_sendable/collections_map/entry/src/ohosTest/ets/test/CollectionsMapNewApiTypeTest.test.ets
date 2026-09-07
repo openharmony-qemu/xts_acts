@@ -37,13 +37,6 @@ function sleep(time: number): Promise<void> {
 @Sendable class SendableAddFn { execute(x: number): number { return x + 1; } }
 const enum SendableEnum { Success = 0, Failure = 1, Pending = 2 }
 
-// number test values
-const NUM_VALUES: number[] = [100, 1.5e-10, Number.MAX_SAFE_INTEGER, NaN, -1, Number.MIN_SAFE_INTEGER, 0, -0, 0x12, 0o77, 0b1010, Infinity, -Infinity, 3.141592653589793, -0.001, -0.01];
-const NUM_IDS: string[] = ['normal', 'scientific', 'max_safe', 'nan', 'neg1', 'min_safe', 'zero', 'neg_zero', 'hex', 'octal', 'binary', 'infinity', 'neg_infinity', 'pi', 'neg_float', 'neg_001'];
-// string test values
-const STR_VALUES: string[] = ['key1', 'key!@#', '😀🎉🔥', ''];
-const STR_IDS: string[] = ['normal', 'special', 'emoji', 'empty'];
-
 export default function CollectionsMapNewApiTypeTest() {
   describe('CollectionsMapNewApiTypeTest', () => {
     beforeAll(() => { console.info('[CollectionsMapNewApiTypeTest] beforeAll'); });
@@ -52,73 +45,824 @@ export default function CollectionsMapNewApiTypeTest() {
     afterAll(() => { console.info('[CollectionsMapNewApiTypeTest] afterAll'); });
 
     // ==================== number 类型 (16个) ====================
-    for (let idx = 0; idx < NUM_VALUES.length; idx++) {
-      const num: number = NUM_VALUES[idx];
-      const id: string = NUM_IDS[idx];
-      const tcNum: string = '0' + String(idx + 1).padStart(3, '0') + '00';
-      it('testNewApiNumber_' + id, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-        const caseName: string = 'testNewApiNumber_' + id;
-        console.info(caseName + ', test start');
-        let map: collections.Map<number, string> = new collections.Map<number, string>();
-        // put new key
-        const r1: string | undefined = map.put(num, 'val_' + id);
-        expect(r1).assertEqual(undefined);
-        expect(map.size).assertEqual(1);
-        // put overwrite
-        const r2: string | undefined = map.put(num, 'new_' + id);
-        expect(r2).assertEqual('val_' + id);
-        // containsValue
-        expect(map.containsValue('new_' + id)).assertTrue();
-        expect(map.containsValue('not_exist')).assertFalse();
-        // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
-        let src: collections.Map<number, string> = new collections.Map<number, string>();
-        src.set(99990 + idx, 'src_' + id);
-        map.putAll(src);
-        expect(map.size).assertEqual(2);
-        // putAll(Map)
-        let bsrc: Map<number, string> = new Map<number, string>();
-        bsrc.set(99995 + idx, 'bsrc_' + id);
-        map.putAll(bsrc);
-        expect(map.size).assertEqual(3);
-        // remove
-        const r3: string | undefined = map.remove(num);
-        expect(r3).assertEqual('new_' + id);
-        const r4: string | undefined = map.remove(num);
-        expect(r4).assertEqual(undefined);
-        console.info(caseName + ', test end');
-      });
-    }
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_0100
+     * @tc.name   testNewApiNumber_normal
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_normal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = 100;
+      const id: string = 'normal';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(99990, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(99995, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_0200
+     * @tc.name   testNewApiNumber_scientific
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type scientific notation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_scientific', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = 1.5e-10;
+      const id: string = 'scientific';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(99991, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(99996, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_0300
+     * @tc.name   testNewApiNumber_max_safe
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type max safe integer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_max_safe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = Number.MAX_SAFE_INTEGER;
+      const id: string = 'max_safe';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(99992, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(99997, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_0400
+     * @tc.name   testNewApiNumber_nan
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type NaN.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_nan', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = NaN;
+      const id: string = 'nan';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(99993, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(99998, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_0500
+     * @tc.name   testNewApiNumber_neg1
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type negative one.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_neg1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = -1;
+      const id: string = 'neg1';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(99994, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(99999, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_0600
+     * @tc.name   testNewApiNumber_min_safe
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type min safe integer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_min_safe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = Number.MIN_SAFE_INTEGER;
+      const id: string = 'min_safe';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(99995, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(100000, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_0700
+     * @tc.name   testNewApiNumber_zero
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type zero.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_zero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = 0;
+      const id: string = 'zero';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(99996, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(100001, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_0800
+     * @tc.name   testNewApiNumber_neg_zero
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type negative zero.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_neg_zero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = -0;
+      const id: string = 'neg_zero';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(99997, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(100002, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_0900
+     * @tc.name   testNewApiNumber_hex
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type hex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_hex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = 0x12;
+      const id: string = 'hex';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(99998, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(100003, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_1000
+     * @tc.name   testNewApiNumber_octal
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type octal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_octal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = 0o77;
+      const id: string = 'octal';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(99999, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(100004, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_1100
+     * @tc.name   testNewApiNumber_binary
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type binary.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_binary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = 0b1010;
+      const id: string = 'binary';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(100000, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(100005, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_1200
+     * @tc.name   testNewApiNumber_infinity
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_infinity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = Infinity;
+      const id: string = 'infinity';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(100001, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(100006, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_1300
+     * @tc.name   testNewApiNumber_neg_infinity
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type negative infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_neg_infinity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = -Infinity;
+      const id: string = 'neg_infinity';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(100002, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(100007, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_1400
+     * @tc.name   testNewApiNumber_pi
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type pi.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_pi', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = 3.141592653589793;
+      const id: string = 'pi';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(100003, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(100008, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_1500
+     * @tc.name   testNewApiNumber_neg_float
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type negative float.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_neg_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = -0.001;
+      const id: string = 'neg_float';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(100004, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(100009, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_1600
+     * @tc.name   testNewApiNumber_neg_001
+     * @tc.desc   Verify put/containsValue/putAll/remove with number type negative 0.01.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiNumber_neg_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const num: number = -0.01;
+      const id: string = 'neg_001';
+      const caseName: string = 'testNewApiNumber_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<number, string> = new collections.Map<number, string>();
+      // put new key
+      const r1: string | undefined = map.put(num, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      expect(map.size).assertEqual(1);
+      // put overwrite
+      const r2: string | undefined = map.put(num, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      // containsValue
+      expect(map.containsValue('new_' + id)).assertTrue();
+      expect(map.containsValue('not_exist')).assertFalse();
+      // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
+      let src: collections.Map<number, string> = new collections.Map<number, string>();
+      src.set(100005, 'src_' + id);
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      // putAll(Map)
+      let bsrc: Map<number, string> = new Map<number, string>();
+      bsrc.set(100010, 'bsrc_' + id);
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      // remove
+      const r3: string | undefined = map.remove(num);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(num);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
 
     // ==================== string 类型 (4个) ====================
-    for (let idx = 0; idx < STR_VALUES.length; idx++) {
-      const str: string = STR_VALUES[idx];
-      const id: string = STR_IDS[idx];
-      it('testNewApiString_' + id, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-        const caseName: string = 'testNewApiString_' + id;
-        console.info(caseName + ', test start');
-        let map: collections.Map<string, string> = new collections.Map<string, string>();
-        const r1: string | undefined = map.put(str, 'val_' + id);
-        expect(r1).assertEqual(undefined);
-        const r2: string | undefined = map.put(str, 'new_' + id);
-        expect(r2).assertEqual('val_' + id);
-        expect(map.containsValue('new_' + id)).assertTrue();
-        let src: collections.Map<string, string> = new collections.Map<string, string>();
-        src.set(str + '_x', 'src');
-        map.putAll(src);
-        expect(map.size).assertEqual(2);
-        let bsrc: Map<string, string> = new Map<string, string>();
-        bsrc.set(str + '_y', 'bsrc');
-        map.putAll(bsrc);
-        expect(map.size).assertEqual(3);
-        const r3: string | undefined = map.remove(str);
-        expect(r3).assertEqual('new_' + id);
-        const r4: string | undefined = map.remove(str);
-        expect(r4).assertEqual(undefined);
-        console.info(caseName + ', test end');
-      });
-    }
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_1700
+     * @tc.name   testNewApiString_normal
+     * @tc.desc   Verify put/containsValue/putAll/remove with string type normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiString_normal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const str: string = 'key1';
+      const id: string = 'normal';
+      const caseName: string = 'testNewApiString_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<string, string> = new collections.Map<string, string>();
+      const r1: string | undefined = map.put(str, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      const r2: string | undefined = map.put(str, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      expect(map.containsValue('new_' + id)).assertTrue();
+      let src: collections.Map<string, string> = new collections.Map<string, string>();
+      src.set(str + '_x', 'src');
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      let bsrc: Map<string, string> = new Map<string, string>();
+      bsrc.set(str + '_y', 'bsrc');
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      const r3: string | undefined = map.remove(str);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(str);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_1800
+     * @tc.name   testNewApiString_special
+     * @tc.desc   Verify put/containsValue/putAll/remove with string type special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiString_special', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const str: string = 'key!@#';
+      const id: string = 'special';
+      const caseName: string = 'testNewApiString_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<string, string> = new collections.Map<string, string>();
+      const r1: string | undefined = map.put(str, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      const r2: string | undefined = map.put(str, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      expect(map.containsValue('new_' + id)).assertTrue();
+      let src: collections.Map<string, string> = new collections.Map<string, string>();
+      src.set(str + '_x', 'src');
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      let bsrc: Map<string, string> = new Map<string, string>();
+      bsrc.set(str + '_y', 'bsrc');
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      const r3: string | undefined = map.remove(str);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(str);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_1900
+     * @tc.name   testNewApiString_emoji
+     * @tc.desc   Verify put/containsValue/putAll/remove with string type emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiString_emoji', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const str: string = '😀🎉🔥';
+      const id: string = 'emoji';
+      const caseName: string = 'testNewApiString_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<string, string> = new collections.Map<string, string>();
+      const r1: string | undefined = map.put(str, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      const r2: string | undefined = map.put(str, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      expect(map.containsValue('new_' + id)).assertTrue();
+      let src: collections.Map<string, string> = new collections.Map<string, string>();
+      src.set(str + '_x', 'src');
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      let bsrc: Map<string, string> = new Map<string, string>();
+      bsrc.set(str + '_y', 'bsrc');
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      const r3: string | undefined = map.remove(str);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(str);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_2000
+     * @tc.name   testNewApiString_empty
+     * @tc.desc   Verify put/containsValue/putAll/remove with string type empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNewApiString_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const str: string = '';
+      const id: string = 'empty';
+      const caseName: string = 'testNewApiString_' + id;
+      console.info(caseName + ', test start');
+      let map: collections.Map<string, string> = new collections.Map<string, string>();
+      const r1: string | undefined = map.put(str, 'val_' + id);
+      expect(r1).assertEqual(undefined);
+      const r2: string | undefined = map.put(str, 'new_' + id);
+      expect(r2).assertEqual('val_' + id);
+      expect(map.containsValue('new_' + id)).assertTrue();
+      let src: collections.Map<string, string> = new collections.Map<string, string>();
+      src.set(str + '_x', 'src');
+      map.putAll(src);
+      expect(map.size).assertEqual(2);
+      let bsrc: Map<string, string> = new Map<string, string>();
+      bsrc.set(str + '_y', 'bsrc');
+      map.putAll(bsrc);
+      expect(map.size).assertEqual(3);
+      const r3: string | undefined = map.remove(str);
+      expect(r3).assertEqual('new_' + id);
+      const r4: string | undefined = map.remove(str);
+      expect(r4).assertEqual(undefined);
+      console.info(caseName + ', test end');
+    });
 
     // ==================== boolean 类型 (2个) ====================
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_2100
+     * @tc.name   testNewApiBoolean_true
+     * @tc.desc   Verify put/containsValue/putAll/remove with boolean type true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiBoolean_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiBoolean_true';
       console.info(caseName + ', test start');
@@ -139,6 +883,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_2200
+     * @tc.name   testNewApiBoolean_false
+     * @tc.desc   Verify put/containsValue/putAll/remove with boolean type false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiBoolean_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiBoolean_false';
       console.info(caseName + ', test start');
@@ -160,6 +912,14 @@ export default function CollectionsMapNewApiTypeTest() {
     });
 
     // ==================== undefined / null 类型 ====================
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_2300
+     * @tc.name   testNewApiUndefined
+     * @tc.desc   Verify put/containsValue/putAll/remove with undefined type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiUndefined';
       console.info(caseName + ', test start');
@@ -180,6 +940,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_2400
+     * @tc.name   testNewApiNull
+     * @tc.desc   Verify put/containsValue/putAll/remove with null type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiNull';
       console.info(caseName + ', test start');
@@ -201,6 +969,14 @@ export default function CollectionsMapNewApiTypeTest() {
     });
 
     // ==================== Sendable 对象类型 ====================
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_2500
+     * @tc.name   testNewApiTestPerson
+     * @tc.desc   Verify put/containsValue/putAll/remove with TestPerson type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiTestPerson', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiTestPerson';
       console.info(caseName + ', test start');
@@ -223,6 +999,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_2600
+     * @tc.name   testNewApiEmptyClass
+     * @tc.desc   Verify put/containsValue/putAll/remove with EmptyClass type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiEmptyClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiEmptyClass';
       console.info(caseName + ', test start');
@@ -244,6 +1028,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_2700
+     * @tc.name   testNewApiComplexIndexSignature
+     * @tc.desc   Verify put/containsValue/putAll/remove with ComplexIndexSignature type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiComplexIndexSignature', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiComplexIndexSignature';
       console.info(caseName + ', test start');
@@ -266,6 +1058,14 @@ export default function CollectionsMapNewApiTypeTest() {
     });
 
     // ==================== collections.Array 作为 value ====================
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_2800
+     * @tc.name   testNewApiArrayValue
+     * @tc.desc   Verify put/containsValue/putAll/remove with collections.Array value type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiArrayValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiArrayValue';
       console.info(caseName + ', test start');
@@ -291,6 +1091,14 @@ export default function CollectionsMapNewApiTypeTest() {
     });
 
     // ==================== Sendable 函数类型 ====================
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_2900
+     * @tc.name   testNewApiSendableNormalFn
+     * @tc.desc   Verify put/containsValue/putAll/remove with SendableNormalFn type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiSendableNormalFn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiSendableNormalFn';
       console.info(caseName + ', test start');
@@ -313,6 +1121,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_3000
+     * @tc.name   testNewApiSendableArrowFn
+     * @tc.desc   Verify put/containsValue/putAll/remove with SendableArrowFn type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiSendableArrowFn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiSendableArrowFn';
       console.info(caseName + ', test start');
@@ -336,6 +1152,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_3100
+     * @tc.name   testNewApiSendableAsyncFn
+     * @tc.desc   Verify put/containsValue/putAll/remove with SendableAsyncFn type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiSendableAsyncFn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiSendableAsyncFn';
       console.info(caseName + ', test start');
@@ -359,6 +1183,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_3200
+     * @tc.name   testNewApiSendableAddFn
+     * @tc.desc   Verify put/containsValue/putAll/remove with SendableAddFn type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiSendableAddFn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiSendableAddFn';
       console.info(caseName + ', test start');
@@ -383,6 +1215,14 @@ export default function CollectionsMapNewApiTypeTest() {
     });
 
     // ==================== Sendable 类类型 ====================
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_3300
+     * @tc.name   testNewApiSendableClassBasic
+     * @tc.desc   Verify put/containsValue/putAll/remove with SendableClassBasic type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiSendableClassBasic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiSendableClassBasic';
       console.info(caseName + ', test start');
@@ -404,6 +1244,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_3400
+     * @tc.name   testNewApiSendableClassComplex
+     * @tc.desc   Verify put/containsValue/putAll/remove with SendableClassComplex type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiSendableClassComplex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiSendableClassComplex';
       console.info(caseName + ', test start');
@@ -425,6 +1273,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_3500
+     * @tc.name   testNewApiSendableClassExtended
+     * @tc.desc   Verify put/containsValue/putAll/remove with SendableClassExtended type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiSendableClassExtended', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiSendableClassExtended';
       console.info(caseName + ', test start');
@@ -447,6 +1303,14 @@ export default function CollectionsMapNewApiTypeTest() {
     });
 
     // ==================== const enum 类型 ====================
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_3600
+     * @tc.name   testNewApiSendableEnum
+     * @tc.desc   Verify put/containsValue/putAll/remove with SendableEnum type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiSendableEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiSendableEnum';
       console.info(caseName + ', test start');
@@ -469,6 +1333,14 @@ export default function CollectionsMapNewApiTypeTest() {
     });
 
     // ==================== ArkTSUtils 类型 ====================
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_3700
+     * @tc.name   testNewApiAsyncLock
+     * @tc.desc   Verify put/containsValue/putAll/remove with AsyncLock type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiAsyncLock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiAsyncLock';
       console.info(caseName + ', test start');
@@ -492,6 +1364,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_3800
+     * @tc.name   testNewApiConditionVariable
+     * @tc.desc   Verify put/containsValue/putAll/remove with ConditionVariable type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiConditionVariable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiConditionVariable';
       console.info(caseName + ', test start');
@@ -515,6 +1395,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_3900
+     * @tc.name   testNewApiSendableLruCache
+     * @tc.desc   Verify put/containsValue/putAll/remove with SendableLruCache type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiSendableLruCache', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiSendableLruCache';
       console.info(caseName + ', test start');
@@ -541,6 +1429,14 @@ export default function CollectionsMapNewApiTypeTest() {
     });
 
     // ==================== 嵌套容器类型 ====================
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_4000
+     * @tc.name   testNewApiNestedMap
+     * @tc.desc   Verify put/containsValue/putAll/remove with nested Map type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiNestedMap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiNestedMap';
       console.info(caseName + ', test start');
@@ -566,6 +1462,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_4100
+     * @tc.name   testNewApiNestedSet
+     * @tc.desc   Verify put/containsValue/putAll/remove with nested Set type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiNestedSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiNestedSet';
       console.info(caseName + ', test start');
@@ -591,6 +1495,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_4200
+     * @tc.name   testNewApiNestedArray
+     * @tc.desc   Verify put/containsValue/putAll/remove with nested Array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiNestedArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiNestedArray';
       console.info(caseName + ', test start');
@@ -617,6 +1529,14 @@ export default function CollectionsMapNewApiTypeTest() {
     });
 
     // ==================== 边界类型 ====================
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_4300
+     * @tc.name   testNewApiLargeObject
+     * @tc.desc   Verify put/containsValue/putAll/remove with LargeObject type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiLargeObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiLargeObject';
       console.info(caseName + ', test start');
@@ -640,6 +1560,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_4400
+     * @tc.name   testNewApiLargeArray
+     * @tc.desc   Verify put/containsValue/putAll/remove with large Array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiLargeArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiLargeArray';
       console.info(caseName + ', test start');
@@ -664,6 +1592,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_4500
+     * @tc.name   testNewApiDeepNested
+     * @tc.desc   Verify put/containsValue/putAll/remove with deep nested object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiDeepNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiDeepNested';
       console.info(caseName + ', test start');
@@ -689,6 +1625,14 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number SUB_COLLECTIONS_MAP_NEW_API_TYPE_4600
+     * @tc.name   testNewApiCircularRef
+     * @tc.desc   Verify put/containsValue/putAll/remove with circular reference type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNewApiCircularRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = 'testNewApiCircularRef';
       console.info(caseName + ', test start');
