@@ -242,6 +242,21 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_004
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_004
+     * @tc.desc    OHEffectFilterInfoGetSupportedBufferTypes EFFECT_ERROR_PARAM_INVALID
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_004', Level.LEVEL0, () => {
+      const testName = 'SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_004'
+      console.info(TAG, testName,'Start',);
+      let result: number = testNapi.OHEffectFilterInfoGetSupportedBufferTypesSuppTest(CASE_INDEX_4);
+      console.info(TAG,testName, 'Success', JSON.stringify(result));
+      expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
+    });
+    /**
      * @tc.number  SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_001
      * @tc.name    SUB_OH_EFFECT_FILTER_INFO_SET_SUPPORTED_FORMATS_001
      * @tc.desc    OHEffectFilterInfoSetSupportedFormats EFFECT_SUCCESS
@@ -322,6 +337,20 @@ export default function ImageEffectInfoSupplementTest() {
     it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_003', Level.LEVEL0, () => {
       console.info(TAG,'Start')
       let result: number = testNapi.OHEffectFilterInfoGetSupportedFormatsSuppTest(CASE_INDEX_3);
+      console.info(TAG, 'Success', JSON.stringify(result));
+      expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
+    });
+    /**
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_004
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_004
+     * @tc.desc    OHEffectFilterInfoGetSupportedFormats EFFECT_ERROR_PARAM_INVALID
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_004', Level.LEVEL0, () => {
+      console.info(TAG,'Start')
+      let result: number = testNapi.OHEffectFilterInfoGetSupportedFormatsSuppTest(CASE_INDEX_4);
       console.info(TAG, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
