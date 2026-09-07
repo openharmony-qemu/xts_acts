@@ -1,0 +1,199 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { LightWeightSet } from '@kit.ArkTS';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { SYMBOL_C } from '../../../js/hashmap/SymbolValues';
+
+class UnionClassItem {
+  id: number;
+  label: string;
+
+  constructor(id: number, label: string) {
+    this.id = id;
+    this.label = label;
+  }
+}
+
+interface UnionObjectItem { id: number; label: string; }
+type UnionFunctionItem = (value: number) => number;
+type UnionItem = number | string | boolean | bigint | Object | UnionClassItem | Date |
+  UnionFunctionItem | Map<string, number> | Set<number> | Array<number> | UnionObjectItem | RegExp;
+const UNION_CLASS: UnionClassItem = new UnionClassItem(1, 'class');
+const UNION_DATE: Date = new Date('2026-03-05');
+const UNION_FUNCTION: UnionFunctionItem = (value: number): number => value + 1;
+const UNION_MAP: Map<string, number> = new Map<string, number>();
+UNION_MAP.set('map', 1);
+const UNION_SET: Set<number> = new Set<number>([1]);
+const UNION_ARRAY: Array<number> = [1, 2, 3];
+const UNION_OBJECT: UnionObjectItem = { id: 1, label: 'object' };
+const UNION_REGEXP: RegExp = /abc/gi;
+const VALID_VALUES: Array<UnionItem> = [
+  100, -99, 'test', true, 100n, SYMBOL_C, UNION_CLASS, UNION_DATE,
+  UNION_FUNCTION, UNION_MAP, UNION_SET, UNION_ARRAY, UNION_OBJECT, UNION_REGEXP,
+];
+type UnionInvalidValue = null | undefined;
+type AllValue = UnionItem | UnionInvalidValue;
+const ALL_VALUES: Array<AllValue> = [...VALID_VALUES, null, undefined];
+type Value = UnionItem;
+
+export default function LightWeightSetUnionTest(): void {
+  describe('LightWeightSetUnionTest', (): void => {
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_UNION_TEST_0100
+     * @tc.name      testLightWeightSetUnionTest0100
+     * @tc.desc      Verify LightWeightSet construction, add, membership, length, and empty-state behavior with Union values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLightWeightSetUnionTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valueA: Value = VALID_VALUES[0];
+      const valueB: Value = VALID_VALUES[1];
+      const set: LightWeightSet<Value> = new LightWeightSet<Value>();
+      expect(set.length).assertEqual(0);
+      expect(set.isEmpty()).assertTrue();
+      expect(set.add(valueA)).assertTrue();
+      expect(set.add(valueA)).assertFalse();
+      expect(set.add(valueB)).assertTrue();
+      expect(set.length).assertEqual(2);
+      expect(set.has(valueA)).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_UNION_TEST_0200
+     * @tc.name      testLightWeightSetUnionTest0200
+     * @tc.desc      Verify LightWeightSet bulk addition, membership, and capacity behavior with Union values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLightWeightSetUnionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valueA: Value = VALID_VALUES[0];
+      const valueB: Value = VALID_VALUES[1];
+      const valueC: Value = VALID_VALUES[2];
+      const set: LightWeightSet<Value> = new LightWeightSet<Value>();
+      const source: LightWeightSet<Value> = new LightWeightSet<Value>();
+      source.add(valueA);
+      source.add(valueB);
+      set.add(valueC);
+      expect(set.addAll(source)).assertTrue();
+      expect(set.length).assertEqual(3);
+      expect(set.hasAll(source)).assertTrue();
+      set.increaseCapacityTo(16);
+      expect(set.has(valueC)).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_UNION_TEST_0300
+     * @tc.name      testLightWeightSetUnionTest0300
+     * @tc.desc      Verify LightWeightSet indexed access, removal, and empty-state behavior with Union values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLightWeightSetUnionTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valueA: Value = VALID_VALUES[0];
+      const valueB: Value = VALID_VALUES[1];
+      const set: LightWeightSet<Value> = new LightWeightSet<Value>();
+      set.add(valueA);
+      set.add(valueB);
+      const valueAIndex: number = set.getIndexOf(valueA);
+      const valueBIndex: number = set.getIndexOf(valueB);
+      expect(valueAIndex >= 0 && valueAIndex < set.length).assertTrue();
+      expect(valueBIndex >= 0 && valueBIndex < set.length).assertTrue();
+      expect(valueAIndex !== valueBIndex).assertTrue();
+      expect(set.getValueAt(valueAIndex) === valueA).assertTrue();
+      expect(set.getValueAt(valueBIndex) === valueB).assertTrue();
+      expect(set.remove(valueA) === valueA).assertTrue();
+      expect(set.removeAt(0)).assertTrue();
+      expect(set.length).assertEqual(0);
+      expect(set.isEmpty()).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_UNION_TEST_0400
+     * @tc.name      testLightWeightSetUnionTest0400
+     * @tc.desc      Verify LightWeightSet equality, conversion, iteration, callback, and clear behavior with Union values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLightWeightSetUnionTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valueA: Value = VALID_VALUES[0];
+      const valueB: Value = VALID_VALUES[1];
+      const set: LightWeightSet<Value> = new LightWeightSet<Value>();
+      set.add(valueA);
+      set.add(valueB);
+      const comparisonArray: Array<Value> = [valueA, valueB];
+      expect(set.equal(comparisonArray)).assertTrue();
+      const text: String = set.toString();
+      expect(typeof text).assertEqual('string');
+      const array: Array<Value> = set.toArray();
+      expect(array.length).assertEqual(2);
+      const arrayFirst: Value = array[0];
+      const arraySecond: Value = array[1];
+      expect(arrayFirst === valueA || arrayFirst === valueB).assertTrue();
+      expect(arraySecond === valueA || arraySecond === valueB).assertTrue();
+      expect(arrayFirst !== arraySecond).assertTrue();
+      const values: IterableIterator<Value> = set.values();
+      const firstValue: Value = values.next().value;
+      const secondValue: Value = values.next().value;
+      expect(firstValue === valueA || firstValue === valueB).assertTrue();
+      expect(secondValue === valueA || secondValue === valueB).assertTrue();
+      expect(firstValue !== secondValue).assertTrue();
+      const entries: IterableIterator<[Value, Value]> = set.entries();
+      const firstEntry: [Value, Value] = entries.next().value;
+      const secondEntry: [Value, Value] = entries.next().value;
+      expect(firstEntry[0] === firstEntry[1]).assertTrue();
+      expect(secondEntry[0] === secondEntry[1]).assertTrue();
+      expect(firstEntry[0] === valueA || firstEntry[0] === valueB).assertTrue();
+      expect(secondEntry[0] === valueA || secondEntry[0] === valueB).assertTrue();
+      let callbackCount: number = 0;
+      set.forEach((value?: Value): void => {
+        callbackCount++;
+        expect(value === undefined).assertFalse();
+      });
+      expect(callbackCount).assertEqual(2);
+      let iteratorCount: number = 0;
+      for (const value of set) {
+        expect(set.has(value)).assertTrue();
+        iteratorCount++;
+      }
+      expect(iteratorCount).assertEqual(2);
+      set.clear();
+      expect(set.isEmpty()).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_UNION_TEST_0500
+     * @tc.name      testLightWeightSetUnionTest0500
+     * @tc.desc      Verify LightWeightSet dynamic-value access and iterator behavior with Union values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLightWeightSetUnionTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const dynamicSet: LightWeightSet<AllValue> = new LightWeightSet<AllValue>();
+      const dynamicValue: AllValue = ALL_VALUES[ALL_VALUES.length - 1];
+      expect(dynamicSet.add(dynamicValue)).assertTrue();
+      expect(dynamicSet.has(dynamicValue)).assertTrue();
+      expect(dynamicSet.getValueAt(0)).assertEqual(dynamicValue);
+      const iterator: IterableIterator<AllValue> = dynamicSet[Symbol.iterator]();
+      expect(iterator.next().value).assertEqual(dynamicValue);
+      expect(iterator.next().done).assertTrue();
+    });
+  });
+}
