@@ -68,11 +68,13 @@ ani_int test_WeakRef_Create_MultiThread(ani_env *env, [[maybe_unused]] ani_objec
             }
             ani_string str{};
             ani_wref wref{};
-            if (tEnv->String_NewUTF8("weak", sizeof("weak") - 1, &str) == ANI_OK &&
-                tEnv->WeakReference_Create(static_cast<ani_ref>(str), &wref) == ANI_OK) {
-                tEnv->WeakReference_Delete(wref);
-                successCount.fetch_add(1);
+            if (tEnv->String_NewUTF8("weak", sizeof("weak") - 1, &str) != ANI_OK ||
+                tEnv->WeakReference_Create(static_cast<ani_ref>(str), &wref) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            tEnv->WeakReference_Delete(wref);
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -150,11 +152,13 @@ ani_int test_WeakRef_Delete_MultiThread(ani_env *env, [[maybe_unused]] ani_objec
             }
             ani_string str{};
             ani_wref wref{};
-            if (tEnv->String_NewUTF8("del", sizeof("del") - 1, &str) == ANI_OK &&
-                tEnv->WeakReference_Create(static_cast<ani_ref>(str), &wref) == ANI_OK &&
-                tEnv->WeakReference_Delete(wref) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->String_NewUTF8("del", sizeof("del") - 1, &str) != ANI_OK ||
+                tEnv->WeakReference_Create(static_cast<ani_ref>(str), &wref) != ANI_OK ||
+                tEnv->WeakReference_Delete(wref) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -207,12 +211,14 @@ ani_int test_WeakRef_GetReference_MultiThread(ani_env *env, [[maybe_unused]] ani
             ani_wref wref{};
             ani_boolean wasReleased = ANI_TRUE;
             ani_ref ref{};
-            if (tEnv->String_NewUTF8("getref", sizeof("getref") - 1, &str) == ANI_OK &&
-                tEnv->WeakReference_Create(static_cast<ani_ref>(str), &wref) == ANI_OK &&
-                tEnv->WeakReference_GetReference(wref, &wasReleased, &ref) == ANI_OK) {
-                tEnv->WeakReference_Delete(wref);
-                successCount.fetch_add(1);
+            if (tEnv->String_NewUTF8("getref", sizeof("getref") - 1, &str) != ANI_OK ||
+                tEnv->WeakReference_Create(static_cast<ani_ref>(str), &wref) != ANI_OK ||
+                tEnv->WeakReference_GetReference(wref, &wasReleased, &ref) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            tEnv->WeakReference_Delete(wref);
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -528,12 +534,14 @@ ani_int test_Array_GetLength_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
             ani_ref undef{};
             ani_array arr{};
             ani_size len = 0;
-            if (tEnv->GetUndefined(&undef) == ANI_OK &&
-                tEnv->Array_New(PART2_THREE_ITEM_ARRAY, undef, &arr) == ANI_OK &&
-                tEnv->Array_GetLength(arr, &len) == ANI_OK &&
-                len == PART2_THREE_ITEM_ARRAY) {
-                successCount.fetch_add(1);
+            if (tEnv->GetUndefined(&undef) != ANI_OK ||
+                tEnv->Array_New(PART2_THREE_ITEM_ARRAY, undef, &arr) != ANI_OK ||
+                tEnv->Array_GetLength(arr, &len) != ANI_OK ||
+                len != PART2_THREE_ITEM_ARRAY) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -561,10 +569,12 @@ ani_int test_Array_New_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
             }
             ani_ref undef{};
             ani_array arr{};
-            if (tEnv->GetUndefined(&undef) == ANI_OK &&
-                tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->GetUndefined(&undef) != ANI_OK ||
+                tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -621,12 +631,14 @@ ani_int test_Array_Set_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
             ani_ref undef{};
             ani_array arr{};
             ani_string str{};
-            if (tEnv->GetUndefined(&undef) == ANI_OK &&
-                tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) == ANI_OK &&
-                tEnv->String_NewUTF8("set", sizeof("set") - 1, &str) == ANI_OK &&
-                tEnv->Array_Set(arr, 0, static_cast<ani_ref>(str)) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->GetUndefined(&undef) != ANI_OK ||
+                tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) != ANI_OK ||
+                tEnv->String_NewUTF8("set", sizeof("set") - 1, &str) != ANI_OK ||
+                tEnv->Array_Set(arr, 0, static_cast<ani_ref>(str)) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -655,11 +667,13 @@ ani_int test_Array_Get_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
             ani_ref undef{};
             ani_array arr{};
             ani_ref ref{};
-            if (tEnv->GetUndefined(&undef) == ANI_OK &&
-                tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) == ANI_OK &&
-                tEnv->Array_Get(arr, 0, &ref) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->GetUndefined(&undef) != ANI_OK ||
+                tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) != ANI_OK ||
+                tEnv->Array_Get(arr, 0, &ref) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -698,12 +712,14 @@ ani_int test_Array_Push_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
             ani_ref undef{};
             ani_array arr{};
             ani_string str{};
-            if (tEnv->GetUndefined(&undef) == ANI_OK &&
-                tEnv->Array_New(0, undef, &arr) == ANI_OK &&
-                tEnv->String_NewUTF8("push", sizeof("push") - 1, &str) == ANI_OK &&
-                tEnv->Array_Push(arr, static_cast<ani_ref>(str)) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->GetUndefined(&undef) != ANI_OK ||
+                tEnv->Array_New(0, undef, &arr) != ANI_OK ||
+                tEnv->String_NewUTF8("push", sizeof("push") - 1, &str) != ANI_OK ||
+                tEnv->Array_Push(arr, static_cast<ani_ref>(str)) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -739,11 +755,13 @@ ani_int test_Array_Pop_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
             ani_ref undef{};
             ani_array arr{};
             ani_ref ref{};
-            if (tEnv->GetUndefined(&undef) == ANI_OK &&
-                tEnv->Array_New(1, undef, &arr) == ANI_OK &&
-                tEnv->Array_Pop(arr, &ref) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->GetUndefined(&undef) != ANI_OK ||
+                tEnv->Array_New(1, undef, &arr) != ANI_OK ||
+                tEnv->Array_Pop(arr, &ref) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -869,10 +887,12 @@ ani_int test_Reference_Delete_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
                 return;
             }
             ani_string str{};
-            if (tEnv->String_NewUTF8("del", sizeof("del") - 1, &str) == ANI_OK &&
-                tEnv->Reference_Delete(static_cast<ani_ref>(str)) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->String_NewUTF8("del", sizeof("del") - 1, &str) != ANI_OK ||
+                tEnv->Reference_Delete(static_cast<ani_ref>(str)) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -941,11 +961,13 @@ ani_int test_Reference_IsNull_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             }
             ani_ref nullRef{};
             ani_boolean isNull = ANI_FALSE;
-            if (tEnv->GetNull(&nullRef) == ANI_OK &&
-                tEnv->Reference_IsNull(nullRef, &isNull) == ANI_OK &&
-                isNull == ANI_TRUE) {
-                successCount.fetch_add(1);
+            if (tEnv->GetNull(&nullRef) != ANI_OK ||
+                tEnv->Reference_IsNull(nullRef, &isNull) != ANI_OK ||
+                isNull != ANI_TRUE) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -980,11 +1002,13 @@ ani_int test_Reference_IsUndefined_MultiThread(ani_env *env, [[maybe_unused]] an
             }
             ani_ref undefRef{};
             ani_boolean isUndef = ANI_FALSE;
-            if (tEnv->GetUndefined(&undefRef) == ANI_OK &&
-                tEnv->Reference_IsUndefined(undefRef, &isUndef) == ANI_OK &&
-                isUndef == ANI_TRUE) {
-                successCount.fetch_add(1);
+            if (tEnv->GetUndefined(&undefRef) != ANI_OK ||
+                tEnv->Reference_IsUndefined(undefRef, &isUndef) != ANI_OK ||
+                isUndef != ANI_TRUE) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1047,11 +1071,13 @@ ani_int test_Reference_IsNullishValue_MultiThread(ani_env *env, [[maybe_unused]]
             }
             ani_ref nullRef{};
             ani_boolean isNullish = ANI_FALSE;
-            if (tEnv->GetNull(&nullRef) == ANI_OK &&
-                tEnv->Reference_IsNullishValue(nullRef, &isNullish) == ANI_OK &&
-                isNullish == ANI_TRUE) {
-                successCount.fetch_add(1);
+            if (tEnv->GetNull(&nullRef) != ANI_OK ||
+                tEnv->Reference_IsNullishValue(nullRef, &isNullish) != ANI_OK ||
+                isNullish != ANI_TRUE) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1087,11 +1113,13 @@ ani_int test_Reference_Equals_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_string str1{};
             ani_string str2{};
             ani_boolean isEqual = ANI_FALSE;
-            if (tEnv->String_NewUTF8("hello", sizeof("hello") - 1, &str1) == ANI_OK &&
-                tEnv->String_NewUTF8("hello", sizeof("hello") - 1, &str2) == ANI_OK &&
-                tEnv->Reference_Equals(static_cast<ani_ref>(str1), static_cast<ani_ref>(str2), &isEqual) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->String_NewUTF8("hello", sizeof("hello") - 1, &str1) != ANI_OK ||
+                tEnv->String_NewUTF8("hello", sizeof("hello") - 1, &str2) != ANI_OK ||
+                tEnv->Reference_Equals(static_cast<ani_ref>(str1), static_cast<ani_ref>(str2), &isEqual) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1120,11 +1148,14 @@ ani_int test_Reference_StrictEquals_MultiThread(ani_env *env, [[maybe_unused]] a
             ani_string str1{};
             ani_string str2{};
             ani_boolean isEqual = ANI_FALSE;
-            if (tEnv->String_NewUTF8("world", sizeof("world") - 1, &str1) == ANI_OK &&
-                tEnv->String_NewUTF8("world", sizeof("world") - 1, &str2) == ANI_OK &&
-                tEnv->Reference_StrictEquals(static_cast<ani_ref>(str1), static_cast<ani_ref>(str2), &isEqual) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->String_NewUTF8("world", sizeof("world") - 1, &str1) != ANI_OK ||
+                tEnv->String_NewUTF8("world", sizeof("world") - 1, &str2) != ANI_OK ||
+                tEnv->Reference_StrictEquals(static_cast<ani_ref>(str1), static_cast<ani_ref>(str2), &isEqual) !=
+                    ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }

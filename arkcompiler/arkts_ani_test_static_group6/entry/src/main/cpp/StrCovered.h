@@ -50,9 +50,11 @@ ani_int test_Str_NewUTF16_MultiThread(ani_env *env, [[maybe_unused]] ani_object 
                 return;
             }
             ani_string str{};
-            if (tEnv->String_NewUTF16(P4_HELLO_UTF16, P4_HELLO_SIZE, &str) == ANI_OK && str != nullptr) {
-                successCount.fetch_add(1);
+            if (tEnv->String_NewUTF16(P4_HELLO_UTF16, P4_HELLO_SIZE, &str) != ANI_OK || str == nullptr) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -81,9 +83,11 @@ ani_int test_Str_GetUTF16Size_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_string str{};
             if (tEnv->String_NewUTF8("hello", P4_HELLO_SIZE, &str) == ANI_OK && str != nullptr) {
                 ani_size sz = 0;
-                if (tEnv->String_GetUTF16Size(str, &sz) == ANI_OK && sz == P4_HELLO_SIZE) {
-                    successCount.fetch_add(1);
+                if (tEnv->String_GetUTF16Size(str, &sz) != ANI_OK || sz != P4_HELLO_SIZE) {
+                    vm->DetachCurrentThread();
+                    return;
                 }
+                successCount.fetch_add(1);
             }
             vm->DetachCurrentThread();
         });
@@ -114,10 +118,12 @@ ani_int test_Str_GetUTF16_MultiThread(ani_env *env, [[maybe_unused]] ani_object 
             if (tEnv->String_NewUTF8("hello", P4_HELLO_SIZE, &str) == ANI_OK && str != nullptr) {
                 uint16_t buf[P4_BUF_COUNT] = {0};
                 ani_size written = 0;
-                if (tEnv->String_GetUTF16(str, buf, P4_BUF_COUNT, &written) == ANI_OK && written == P4_HELLO_SIZE &&
-                    std::memcmp(buf, P4_HELLO_UTF16, static_cast<size_t>(P4_HELLO_SIZE) * sizeof(uint16_t)) == 0) {
-                    successCount.fetch_add(1);
+                if (tEnv->String_GetUTF16(str, buf, P4_BUF_COUNT, &written) != ANI_OK || written != P4_HELLO_SIZE ||
+                    std::memcmp(buf, P4_HELLO_UTF16, static_cast<size_t>(P4_HELLO_SIZE) * sizeof(uint16_t)) != 0) {
+                    vm->DetachCurrentThread();
+                    return;
                 }
+                successCount.fetch_add(1);
             }
             vm->DetachCurrentThread();
         });
@@ -148,11 +154,13 @@ ani_int test_Str_GetUTF16SubString_MultiThread(ani_env *env, [[maybe_unused]] an
             if (tEnv->String_NewUTF8("hello", P4_HELLO_SIZE, &str) == ANI_OK && str != nullptr) {
                 uint16_t buf[P4_BUF_COUNT] = {0};
                 ani_size written = 0;
-                if (tEnv->String_GetUTF16SubString(str, 0, P4_HELLO_SIZE, buf, P4_BUF_COUNT, &written) == ANI_OK &&
-                    written == P4_HELLO_SIZE &&
-                    std::memcmp(buf, P4_HELLO_UTF16, static_cast<size_t>(P4_HELLO_SIZE) * sizeof(uint16_t)) == 0) {
-                    successCount.fetch_add(1);
+                if (tEnv->String_GetUTF16SubString(str, 0, P4_HELLO_SIZE, buf, P4_BUF_COUNT, &written) != ANI_OK ||
+                    written != P4_HELLO_SIZE ||
+                    std::memcmp(buf, P4_HELLO_UTF16, static_cast<size_t>(P4_HELLO_SIZE) * sizeof(uint16_t)) != 0) {
+                    vm->DetachCurrentThread();
+                    return;
                 }
+                successCount.fetch_add(1);
             }
             vm->DetachCurrentThread();
         });
@@ -182,9 +190,11 @@ ani_int test_Str_GetUTF8Size_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
             ani_string str{};
             if (tEnv->String_NewUTF8("hello", P4_HELLO_SIZE, &str) == ANI_OK && str != nullptr) {
                 ani_size sz = 0;
-                if (tEnv->String_GetUTF8Size(str, &sz) == ANI_OK && sz == P4_HELLO_SIZE) {
-                    successCount.fetch_add(1);
+                if (tEnv->String_GetUTF8Size(str, &sz) != ANI_OK || sz != P4_HELLO_SIZE) {
+                    vm->DetachCurrentThread();
+                    return;
                 }
+                successCount.fetch_add(1);
             }
             vm->DetachCurrentThread();
         });
@@ -215,10 +225,12 @@ ani_int test_Str_GetUTF8_MultiThread(ani_env *env, [[maybe_unused]] ani_object o
             if (tEnv->String_NewUTF8("hello", P4_HELLO_SIZE, &str) == ANI_OK && str != nullptr) {
                 char buf[P4_BUF_COUNT] = {0};
                 ani_size written = 0;
-                if (tEnv->String_GetUTF8(str, buf, P4_BUF_COUNT, &written) == ANI_OK && written == P4_HELLO_SIZE &&
-                    std::memcmp(buf, "hello", P4_HELLO_SIZE) == 0) {
-                    successCount.fetch_add(1);
+                if (tEnv->String_GetUTF8(str, buf, P4_BUF_COUNT, &written) != ANI_OK || written != P4_HELLO_SIZE ||
+                    std::memcmp(buf, "hello", P4_HELLO_SIZE) != 0) {
+                    vm->DetachCurrentThread();
+                    return;
                 }
+                successCount.fetch_add(1);
             }
             vm->DetachCurrentThread();
         });
@@ -249,10 +261,12 @@ ani_int test_Str_GetUTF8SubString_MultiThread(ani_env *env, [[maybe_unused]] ani
             if (tEnv->String_NewUTF8("hello", P4_HELLO_SIZE, &str) == ANI_OK && str != nullptr) {
                 char buf[P4_BUF_COUNT] = {0};
                 ani_size written = 0;
-                if (tEnv->String_GetUTF8SubString(str, 0, P4_HELLO_SIZE, buf, P4_BUF_COUNT, &written) == ANI_OK &&
-                    written == P4_HELLO_SIZE && std::memcmp(buf, "hello", P4_HELLO_SIZE) == 0) {
-                    successCount.fetch_add(1);
+                if (tEnv->String_GetUTF8SubString(str, 0, P4_HELLO_SIZE, buf, P4_BUF_COUNT, &written) != ANI_OK ||
+                    written != P4_HELLO_SIZE || std::memcmp(buf, "hello", P4_HELLO_SIZE) != 0) {
+                    vm->DetachCurrentThread();
+                    return;
                 }
+                successCount.fetch_add(1);
             }
             vm->DetachCurrentThread();
         });

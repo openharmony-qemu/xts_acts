@@ -368,11 +368,13 @@ ani_int test_GlobalRef_Delete_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             }
             ani_ref ref{};
             ani_ref gref{};
-            if (tEnv->GetUndefined(&ref) == ANI_OK &&
-                tEnv->GlobalReference_Create(ref, &gref) == ANI_OK &&
-                tEnv->GlobalReference_Delete(gref) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->GetUndefined(&ref) != ANI_OK ||
+                tEnv->GlobalReference_Create(ref, &gref) != ANI_OK ||
+                tEnv->GlobalReference_Delete(gref) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -494,9 +496,11 @@ ani_int test_ArrayBuffer_MultiThread(ani_env *env, [[maybe_unused]] ani_object o
             }
             void *data = nullptr;
             ani_arraybuffer ab{};
-            if (tEnv->CreateArrayBuffer(ARRAY_BUFFER_LARGE_SIZE, &data, &ab) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->CreateArrayBuffer(ARRAY_BUFFER_LARGE_SIZE, &data, &ab) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -728,9 +732,11 @@ ani_int test_Type_GetSuperClass_MultiThread(ani_env *env, [[maybe_unused]] ani_o
             }
             ani_type tType = static_cast<ani_type>(clsGref);
             ani_class superClass{};
-            if (tEnv->Type_GetSuperClass(tType, &superClass) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->Type_GetSuperClass(tType, &superClass) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -797,9 +803,11 @@ ani_int test_Type_IsAssignableFrom_MultiThread(ani_env *env, [[maybe_unused]] an
             }
             ani_boolean result = ANI_FALSE;
             if (tEnv->Type_IsAssignableFrom(static_cast<ani_type>(derivedGref), static_cast<ani_type>(baseGref),
-                                            &result) == ANI_OK) {
-                successCount.fetch_add(1);
+                                            &result) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -893,9 +901,11 @@ ani_int test_Enum_GetItemByName_MultiThread(ani_env *env, [[maybe_unused]] ani_o
             }
             ani_enum_item item{};
             ani_enum tEnm = static_cast<ani_enum>(enumGref);
-            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -932,9 +942,11 @@ ani_int test_Enum_GetItemByIndex_MultiThread(ani_env *env, [[maybe_unused]] ani_
             }
             ani_enum_item item{};
             ani_enum tEnm = static_cast<ani_enum>(enumGref);
-            if (tEnv->Enum_GetEnumItemByIndex(tEnm, 0, &item) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->Enum_GetEnumItemByIndex(tEnm, 0, &item) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1064,9 +1076,11 @@ ani_int test_GetVersion_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
                 return;
             }
             uint32_t version = 0;
-            if (tEnv->GetVersion(&version) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->GetVersion(&version) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1111,9 +1125,11 @@ ani_int test_GetVM_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
                 return;
             }
             ani_vm *tVm = nullptr;
-            if (tEnv->GetVM(&tVm) == ANI_OK && tVm != nullptr) {
-                successCount.fetch_add(1);
+            if (tEnv->GetVM(&tVm) != ANI_OK || tVm == nullptr) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1152,9 +1168,11 @@ ani_int test_GetNull_MultiThread(ani_env *env, [[maybe_unused]] ani_object objec
                 return;
             }
             ani_ref nullRef{};
-            if (tEnv->GetNull(&nullRef) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->GetNull(&nullRef) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1187,9 +1205,11 @@ ani_int test_GetUndefined_MultiThread(ani_env *env, [[maybe_unused]] ani_object 
                 return;
             }
             ani_ref undefRef{};
-            if (tEnv->GetUndefined(&undefRef) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->GetUndefined(&undefRef) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1404,10 +1424,12 @@ ani_int test_EnumItem_GetEnum_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_enum_item item{};
             ani_enum tEnm = static_cast<ani_enum>(enumGref);
             ani_enum resultEnum{};
-            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) == ANI_OK &&
-                tEnv->EnumItem_GetEnum(item, &resultEnum) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) != ANI_OK ||
+                tEnv->EnumItem_GetEnum(item, &resultEnum) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1459,10 +1481,12 @@ ani_int test_EnumItem_GetValue_Int_MultiThread(ani_env *env, [[maybe_unused]] an
             ani_enum_item item{};
             ani_enum tEnm = static_cast<ani_enum>(enumGref);
             ani_int value = 0;
-            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) == ANI_OK &&
-                tEnv->EnumItem_GetValue_Int(item, &value) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) != ANI_OK ||
+                tEnv->EnumItem_GetValue_Int(item, &value) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1513,11 +1537,13 @@ ani_int test_EnumItem_GetValue_String_MultiThread(ani_env *env, [[maybe_unused]]
             }
             ani_enum_item item{};
             ani_enum tEnm = static_cast<ani_enum>(enumGref);
-            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) == ANI_OK) {
-                ani_string strVal{};
-                tEnv->EnumItem_GetValue_String(item, &strVal);
-                successCount.fetch_add(1);
+            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            ani_string strVal{};
+            tEnv->EnumItem_GetValue_String(item, &strVal);
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1569,10 +1595,12 @@ ani_int test_EnumItem_GetName_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_enum_item item{};
             ani_enum tEnm = static_cast<ani_enum>(enumGref);
             ani_string nameStr{};
-            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) == ANI_OK &&
-                tEnv->EnumItem_GetName(item, &nameStr) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) != ANI_OK ||
+                tEnv->EnumItem_GetName(item, &nameStr) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1624,10 +1652,12 @@ ani_int test_EnumItem_GetIndex_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
             ani_enum_item item{};
             ani_enum tEnm = static_cast<ani_enum>(enumGref);
             ani_size idx = 99;
-            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) == ANI_OK &&
-                tEnv->EnumItem_GetIndex(item, &idx) == ANI_OK) {
-                successCount.fetch_add(1);
+            if (tEnv->Enum_GetEnumItemByName(tEnm, "Ready", &item) != ANI_OK ||
+                tEnv->EnumItem_GetIndex(item, &idx) != ANI_OK) {
+                vm->DetachCurrentThread();
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }

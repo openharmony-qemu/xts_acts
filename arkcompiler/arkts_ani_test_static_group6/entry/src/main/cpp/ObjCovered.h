@@ -201,12 +201,15 @@ ani_int test_ObjNew_MultiThread(ani_env *env, [[maybe_unused]] ani_object object
             ani_class cls{};
             ani_method ctor{};
             ani_object obj{};
-            if (tEnv->FindClass(P8_FOO_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                obj != nullptr) {
-                successCount.fetch_add(1);
+            if (tEnv->FindClass(P8_FOO_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                obj == nullptr) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -298,13 +301,16 @@ ani_int test_ObjGetType_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
             ani_method ctor{};
             ani_object obj{};
             ani_type type{};
-            if (tEnv->FindClass(P8_FOO_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                tEnv->Object_GetType(obj, &type) == ANI_OK &&
-                type != nullptr) {
-                successCount.fetch_add(1);
+            if (tEnv->FindClass(P8_FOO_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                tEnv->Object_GetType(obj, &type) != ANI_OK ||
+                type == nullptr) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -373,13 +379,16 @@ ani_int test_ObjInstanceOf_MultiThread(ani_env *env, [[maybe_unused]] ani_object
             ani_method ctor{};
             ani_object obj{};
             ani_boolean isInstance = ANI_FALSE;
-            if (tEnv->FindClass(P8_FOO_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                tEnv->Object_InstanceOf(obj, cls, &isInstance) == ANI_OK &&
-                isInstance == ANI_TRUE) {
-                successCount.fetch_add(1);
+            if (tEnv->FindClass(P8_FOO_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                tEnv->Object_InstanceOf(obj, cls, &isInstance) != ANI_OK ||
+                isInstance != ANI_TRUE) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -459,14 +468,17 @@ ani_int test_ObjGetField_Boolean_MultiThread(ani_env *env, [[maybe_unused]] ani_
             ani_method ctor{};
             ani_object obj{};
             ani_field field{};
-            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                tEnv->Class_FindField(cls, "booleanField", &field) == ANI_OK) {
-                ani_boolean val = ANI_FALSE;
-                tEnv->Object_GetField_Boolean(obj, field, &val);
-                // 不检查返回值，只确保不崩溃
+            if (tEnv->FindClass(P8_FT_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                tEnv->Class_FindField(cls, "booleanField", &field) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_boolean val = ANI_FALSE;
+            tEnv->Object_GetField_Boolean(obj, field, &val);
+            // 不检查返回值，只确保不崩溃
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -507,13 +519,16 @@ ani_int test_ObjGetField_Char_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_method ctor{};
             ani_object obj{};
             ani_field field{};
-            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                tEnv->Class_FindField(cls, "charField", &field) == ANI_OK) {
-                ani_char val{};
-                tEnv->Object_GetField_Char(obj, field, &val);
+            if (tEnv->FindClass(P8_FT_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                tEnv->Class_FindField(cls, "charField", &field) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_char val{};
+            tEnv->Object_GetField_Char(obj, field, &val);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -554,13 +569,16 @@ ani_int test_ObjGetField_Byte_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_method ctor{};
             ani_object obj{};
             ani_field field{};
-            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                tEnv->Class_FindField(cls, "byteField", &field) == ANI_OK) {
-                ani_byte val{};
-                tEnv->Object_GetField_Byte(obj, field, &val);
+            if (tEnv->FindClass(P8_FT_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                tEnv->Class_FindField(cls, "byteField", &field) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_byte val{};
+            tEnv->Object_GetField_Byte(obj, field, &val);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -601,13 +619,16 @@ ani_int test_ObjGetField_Short_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
             ani_method ctor{};
             ani_object obj{};
             ani_field field{};
-            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                tEnv->Class_FindField(cls, "shortField", &field) == ANI_OK) {
-                ani_short val{};
-                tEnv->Object_GetField_Short(obj, field, &val);
+            if (tEnv->FindClass(P8_FT_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                tEnv->Class_FindField(cls, "shortField", &field) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_short val{};
+            tEnv->Object_GetField_Short(obj, field, &val);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -648,13 +669,16 @@ ani_int test_ObjGetField_Int_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
             ani_method ctor{};
             ani_object obj{};
             ani_field field{};
-            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                tEnv->Class_FindField(cls, "intField", &field) == ANI_OK) {
-                ani_int val{};
-                tEnv->Object_GetField_Int(obj, field, &val);
+            if (tEnv->FindClass(P8_FT_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                tEnv->Class_FindField(cls, "intField", &field) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_int val{};
+            tEnv->Object_GetField_Int(obj, field, &val);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -695,13 +719,16 @@ ani_int test_ObjGetField_Long_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_method ctor{};
             ani_object obj{};
             ani_field field{};
-            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                tEnv->Class_FindField(cls, "longField", &field) == ANI_OK) {
-                ani_long val{};
-                tEnv->Object_GetField_Long(obj, field, &val);
+            if (tEnv->FindClass(P8_FT_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                tEnv->Class_FindField(cls, "longField", &field) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_long val{};
+            tEnv->Object_GetField_Long(obj, field, &val);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -742,13 +769,16 @@ ani_int test_ObjGetField_Float_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
             ani_method ctor{};
             ani_object obj{};
             ani_field field{};
-            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                tEnv->Class_FindField(cls, "floatField", &field) == ANI_OK) {
-                ani_float val{};
-                tEnv->Object_GetField_Float(obj, field, &val);
+            if (tEnv->FindClass(P8_FT_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                tEnv->Class_FindField(cls, "floatField", &field) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_float val{};
+            tEnv->Object_GetField_Float(obj, field, &val);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -789,13 +819,16 @@ ani_int test_ObjGetField_Double_MultiThread(ani_env *env, [[maybe_unused]] ani_o
             ani_method ctor{};
             ani_object obj{};
             ani_field field{};
-            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                tEnv->Class_FindField(cls, "doubleField", &field) == ANI_OK) {
-                ani_double val{};
-                tEnv->Object_GetField_Double(obj, field, &val);
+            if (tEnv->FindClass(P8_FT_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                tEnv->Class_FindField(cls, "doubleField", &field) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_double val{};
+            tEnv->Object_GetField_Double(obj, field, &val);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -836,13 +869,16 @@ ani_int test_ObjGetField_Ref_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
             ani_method ctor{};
             ani_object obj{};
             ani_field field{};
-            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK &&
-                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
-                tEnv->Class_FindField(cls, "stringField", &field) == ANI_OK) {
-                ani_ref ref{};
-                tEnv->Object_GetField_Ref(obj, field, &ref);
+            if (tEnv->FindClass(P8_FT_CLASS, &cls) != ANI_OK ||
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) != ANI_OK ||
+                tEnv->Object_New(cls, ctor, &obj) != ANI_OK ||
+                tEnv->Class_FindField(cls, "stringField", &field) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_ref ref{};
+            tEnv->Object_GetField_Ref(obj, field, &ref);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -890,12 +926,15 @@ ani_int test_ObjSetField_Boolean_MultiThread(ani_env *env, [[maybe_unused]] ani_
             ani_method ct{};
             ani_object obj{};
             ani_field f{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK &&
-                tE->Class_FindField(c, "booleanField", &f) == ANI_OK) {
-                tE->Object_SetField_Boolean(obj, f, ANI_FALSE);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK ||
+                tE->Class_FindField(c, "booleanField", &f) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetField_Boolean(obj, f, ANI_FALSE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -937,12 +976,15 @@ ani_int test_ObjSetField_Char_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_method ct{};
             ani_object obj{};
             ani_field f{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK &&
-                tE->Class_FindField(c, "charField", &f) == ANI_OK) {
-                tE->Object_SetField_Char(obj, f, static_cast<ani_char>('Z'));
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK ||
+                tE->Class_FindField(c, "charField", &f) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetField_Char(obj, f, static_cast<ani_char>('Z'));
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -984,12 +1026,15 @@ ani_int test_ObjSetField_Byte_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_method ct{};
             ani_object obj{};
             ani_field f{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK &&
-                tE->Class_FindField(c, "byteField", &f) == ANI_OK) {
-                tE->Object_SetField_Byte(obj, f, P8_BYTE_VALUE);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK ||
+                tE->Class_FindField(c, "byteField", &f) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetField_Byte(obj, f, P8_BYTE_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1031,12 +1076,15 @@ ani_int test_ObjSetField_Short_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
             ani_method ct{};
             ani_object obj{};
             ani_field f{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK &&
-                tE->Class_FindField(c, "shortField", &f) == ANI_OK) {
-                tE->Object_SetField_Short(obj, f, P8_SHORT_FIELD_VALUE);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK ||
+                tE->Class_FindField(c, "shortField", &f) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetField_Short(obj, f, P8_SHORT_FIELD_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1078,12 +1126,15 @@ ani_int test_ObjSetField_Int_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
             ani_method ct{};
             ani_object obj{};
             ani_field f{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK &&
-                tE->Class_FindField(c, "intField", &f) == ANI_OK) {
-                tE->Object_SetField_Int(obj, f, P8_INT_VALUE);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK ||
+                tE->Class_FindField(c, "intField", &f) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetField_Int(obj, f, P8_INT_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1125,12 +1176,15 @@ ani_int test_ObjSetField_Long_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_method ct{};
             ani_object obj{};
             ani_field f{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK &&
-                tE->Class_FindField(c, "longField", &f) == ANI_OK) {
-                tE->Object_SetField_Long(obj, f, 99999LL);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK ||
+                tE->Class_FindField(c, "longField", &f) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetField_Long(obj, f, 99999LL);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1172,12 +1226,15 @@ ani_int test_ObjSetField_Float_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
             ani_method ct{};
             ani_object obj{};
             ani_field f{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK &&
-                tE->Class_FindField(c, "floatField", &f) == ANI_OK) {
-                tE->Object_SetField_Float(obj, f, 3.14f);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK ||
+                tE->Class_FindField(c, "floatField", &f) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetField_Float(obj, f, 3.14f);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1219,12 +1276,15 @@ ani_int test_ObjSetField_Double_MultiThread(ani_env *env, [[maybe_unused]] ani_o
             ani_method ct{};
             ani_object obj{};
             ani_field f{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK &&
-                tE->Class_FindField(c, "doubleField", &f) == ANI_OK) {
-                tE->Object_SetField_Double(obj, f, P8_DOUBLE_FIELD_VALUE);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK ||
+                tE->Class_FindField(c, "doubleField", &f) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetField_Double(obj, f, P8_DOUBLE_FIELD_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1269,13 +1329,16 @@ ani_int test_ObjSetField_Ref_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
             ani_object obj{};
             ani_field f{};
             ani_string ns{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK &&
-                tE->Class_FindField(c, "stringField", &f) == ANI_OK &&
-                tE->String_NewUTF8("newVal", sizeof("newVal") - 1, &ns) == ANI_OK) {
-                tE->Object_SetField_Ref(obj, f, static_cast<ani_ref>(ns));
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK ||
+                tE->Class_FindField(c, "stringField", &f) != ANI_OK ||
+                tE->String_NewUTF8("newVal", sizeof("newVal") - 1, &ns) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetField_Ref(obj, f, static_cast<ani_ref>(ns));
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1321,12 +1384,15 @@ ani_int test_ObjGetFieldByName_Boolean_MultiThread(ani_env *env, [[maybe_unused]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_boolean v{};
-                tE->Object_GetFieldByName_Boolean(obj, "booleanField", &v);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_boolean v{};
+            tE->Object_GetFieldByName_Boolean(obj, "booleanField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1366,12 +1432,15 @@ ani_int test_ObjGetFieldByName_Char_MultiThread(ani_env *env, [[maybe_unused]] a
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_char v{};
-                tE->Object_GetFieldByName_Char(obj, "charField", &v);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_char v{};
+            tE->Object_GetFieldByName_Char(obj, "charField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1411,12 +1480,15 @@ ani_int test_ObjGetFieldByName_Byte_MultiThread(ani_env *env, [[maybe_unused]] a
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_byte v{};
-                tE->Object_GetFieldByName_Byte(obj, "byteField", &v);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_byte v{};
+            tE->Object_GetFieldByName_Byte(obj, "byteField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1456,12 +1528,15 @@ ani_int test_ObjGetFieldByName_Short_MultiThread(ani_env *env, [[maybe_unused]] 
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_short v{};
-                tE->Object_GetFieldByName_Short(obj, "shortField", &v);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_short v{};
+            tE->Object_GetFieldByName_Short(obj, "shortField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1501,12 +1576,15 @@ ani_int test_ObjGetFieldByName_Int_MultiThread(ani_env *env, [[maybe_unused]] an
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_int v{};
-                tE->Object_GetFieldByName_Int(obj, "intField", &v);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_int v{};
+            tE->Object_GetFieldByName_Int(obj, "intField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1546,12 +1624,15 @@ ani_int test_ObjGetFieldByName_Long_MultiThread(ani_env *env, [[maybe_unused]] a
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_long v{};
-                tE->Object_GetFieldByName_Long(obj, "longField", &v);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_long v{};
+            tE->Object_GetFieldByName_Long(obj, "longField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1591,12 +1672,15 @@ ani_int test_ObjGetFieldByName_Float_MultiThread(ani_env *env, [[maybe_unused]] 
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_float v{};
-                tE->Object_GetFieldByName_Float(obj, "floatField", &v);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_float v{};
+            tE->Object_GetFieldByName_Float(obj, "floatField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1636,12 +1720,15 @@ ani_int test_ObjGetFieldByName_Double_MultiThread(ani_env *env, [[maybe_unused]]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_double v{};
-                tE->Object_GetFieldByName_Double(obj, "doubleField", &v);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_double v{};
+            tE->Object_GetFieldByName_Double(obj, "doubleField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1680,12 +1767,15 @@ ani_int test_ObjGetFieldByName_Ref_MultiThread(ani_env *env, [[maybe_unused]] an
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_ref r{};
-                tE->Object_GetFieldByName_Ref(obj, "stringField", &r);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_ref r{};
+            tE->Object_GetFieldByName_Ref(obj, "stringField", &r);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1730,11 +1820,14 @@ ani_int test_ObjSetFieldByName_Boolean_MultiThread(ani_env *env, [[maybe_unused]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetFieldByName_Boolean(obj, "booleanField", ANI_FALSE);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetFieldByName_Boolean(obj, "booleanField", ANI_FALSE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1775,11 +1868,14 @@ ani_int test_ObjSetFieldByName_Char_MultiThread(ani_env *env, [[maybe_unused]] a
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetFieldByName_Char(obj, "charField", static_cast<ani_char>('Z'));
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetFieldByName_Char(obj, "charField", static_cast<ani_char>('Z'));
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1820,11 +1916,14 @@ ani_int test_ObjSetFieldByName_Byte_MultiThread(ani_env *env, [[maybe_unused]] a
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetFieldByName_Byte(obj, "byteField", P8_BYTE_VALUE);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetFieldByName_Byte(obj, "byteField", P8_BYTE_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1865,11 +1964,14 @@ ani_int test_ObjSetFieldByName_Short_MultiThread(ani_env *env, [[maybe_unused]] 
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetFieldByName_Short(obj, "shortField", P8_SHORT_FIELD_VALUE);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetFieldByName_Short(obj, "shortField", P8_SHORT_FIELD_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1910,11 +2012,14 @@ ani_int test_ObjSetFieldByName_Int_MultiThread(ani_env *env, [[maybe_unused]] an
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetFieldByName_Int(obj, "intField", P8_INT_VALUE);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetFieldByName_Int(obj, "intField", P8_INT_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -1955,11 +2060,14 @@ ani_int test_ObjSetFieldByName_Long_MultiThread(ani_env *env, [[maybe_unused]] a
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetFieldByName_Long(obj, "longField", 99999LL);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetFieldByName_Long(obj, "longField", 99999LL);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2000,11 +2108,14 @@ ani_int test_ObjSetFieldByName_Float_MultiThread(ani_env *env, [[maybe_unused]] 
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetFieldByName_Float(obj, "floatField", 3.14f);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetFieldByName_Float(obj, "floatField", 3.14f);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2045,11 +2156,14 @@ ani_int test_ObjSetFieldByName_Double_MultiThread(ani_env *env, [[maybe_unused]]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetFieldByName_Double(obj, "doubleField", P8_DOUBLE_FIELD_VALUE);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetFieldByName_Double(obj, "doubleField", P8_DOUBLE_FIELD_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2092,12 +2206,15 @@ ani_int test_ObjSetFieldByName_Ref_MultiThread(ani_env *env, [[maybe_unused]] an
             ani_method ct{};
             ani_object obj{};
             ani_string ns{};
-            if (tE->FindClass(P8_FT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK &&
-                tE->String_NewUTF8("nv", sizeof("nv") - 1, &ns) == ANI_OK) {
-                tE->Object_SetFieldByName_Ref(obj, "stringField", ns);
+            if (tE->FindClass(P8_FT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK ||
+                tE->String_NewUTF8("nv", sizeof("nv") - 1, &ns) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetFieldByName_Ref(obj, "stringField", ns);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2144,12 +2261,15 @@ ani_int test_ObjGetPropertyByName_Boolean_MultiThread(ani_env *env, [[maybe_unus
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_boolean v{};
-                tE->Object_GetPropertyByName_Boolean(obj, "booleanField", &v);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_boolean v{};
+            tE->Object_GetPropertyByName_Boolean(obj, "booleanField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2192,12 +2312,15 @@ ani_int test_ObjGetPropertyByName_Char_MultiThread(ani_env *env, [[maybe_unused]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_char v{};
-                tE->Object_GetPropertyByName_Char(obj, "charField", &v);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_char v{};
+            tE->Object_GetPropertyByName_Char(obj, "charField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2240,12 +2363,15 @@ ani_int test_ObjGetPropertyByName_Byte_MultiThread(ani_env *env, [[maybe_unused]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_byte v{};
-                tE->Object_GetPropertyByName_Byte(obj, "byteField", &v);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_byte v{};
+            tE->Object_GetPropertyByName_Byte(obj, "byteField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2288,12 +2414,15 @@ ani_int test_ObjGetPropertyByName_Short_MultiThread(ani_env *env, [[maybe_unused
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_short v{};
-                tE->Object_GetPropertyByName_Short(obj, "shortField", &v);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_short v{};
+            tE->Object_GetPropertyByName_Short(obj, "shortField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2336,12 +2465,15 @@ ani_int test_ObjGetPropertyByName_Int_MultiThread(ani_env *env, [[maybe_unused]]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_int v{};
-                tE->Object_GetPropertyByName_Int(obj, "intField", &v);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_int v{};
+            tE->Object_GetPropertyByName_Int(obj, "intField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2384,12 +2516,15 @@ ani_int test_ObjGetPropertyByName_Long_MultiThread(ani_env *env, [[maybe_unused]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_long v{};
-                tE->Object_GetPropertyByName_Long(obj, "longField", &v);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_long v{};
+            tE->Object_GetPropertyByName_Long(obj, "longField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2432,12 +2567,15 @@ ani_int test_ObjGetPropertyByName_Float_MultiThread(ani_env *env, [[maybe_unused
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_float v{};
-                tE->Object_GetPropertyByName_Float(obj, "floatField", &v);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_float v{};
+            tE->Object_GetPropertyByName_Float(obj, "floatField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2480,12 +2618,15 @@ ani_int test_ObjGetPropertyByName_Double_MultiThread(ani_env *env, [[maybe_unuse
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_double v{};
-                tE->Object_GetPropertyByName_Double(obj, "doubleField", &v);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_double v{};
+            tE->Object_GetPropertyByName_Double(obj, "doubleField", &v);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2527,12 +2668,15 @@ ani_int test_ObjGetPropertyByName_Ref_MultiThread(ani_env *env, [[maybe_unused]]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_ref r{};
-                tE->Object_GetPropertyByName_Ref(obj, "stringField", &r);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_ref r{};
+            tE->Object_GetPropertyByName_Ref(obj, "stringField", &r);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2580,11 +2724,14 @@ ani_int test_ObjSetPropertyByName_Boolean_MultiThread(ani_env *env, [[maybe_unus
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetPropertyByName_Boolean(obj, "booleanField", ANI_FALSE);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetPropertyByName_Boolean(obj, "booleanField", ANI_FALSE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2628,11 +2775,14 @@ ani_int test_ObjSetPropertyByName_Char_MultiThread(ani_env *env, [[maybe_unused]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetPropertyByName_Char(obj, "charField", static_cast<ani_char>('Z'));
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetPropertyByName_Char(obj, "charField", static_cast<ani_char>('Z'));
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2676,11 +2826,14 @@ ani_int test_ObjSetPropertyByName_Byte_MultiThread(ani_env *env, [[maybe_unused]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetPropertyByName_Byte(obj, "byteField", P8_BYTE_VALUE);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetPropertyByName_Byte(obj, "byteField", P8_BYTE_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2724,11 +2877,14 @@ ani_int test_ObjSetPropertyByName_Short_MultiThread(ani_env *env, [[maybe_unused
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetPropertyByName_Short(obj, "shortField", P8_SHORT_FIELD_VALUE);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetPropertyByName_Short(obj, "shortField", P8_SHORT_FIELD_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2772,11 +2928,14 @@ ani_int test_ObjSetPropertyByName_Int_MultiThread(ani_env *env, [[maybe_unused]]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetPropertyByName_Int(obj, "intField", P8_INT_VALUE);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetPropertyByName_Int(obj, "intField", P8_INT_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2820,11 +2979,14 @@ ani_int test_ObjSetPropertyByName_Long_MultiThread(ani_env *env, [[maybe_unused]
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetPropertyByName_Long(obj, "longField", 99999LL);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetPropertyByName_Long(obj, "longField", 99999LL);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2868,11 +3030,14 @@ ani_int test_ObjSetPropertyByName_Float_MultiThread(ani_env *env, [[maybe_unused
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetPropertyByName_Float(obj, "floatField", 3.14f);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetPropertyByName_Float(obj, "floatField", 3.14f);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2916,11 +3081,14 @@ ani_int test_ObjSetPropertyByName_Double_MultiThread(ani_env *env, [[maybe_unuse
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                tE->Object_SetPropertyByName_Double(obj, "doubleField", P8_DOUBLE_FIELD_VALUE);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetPropertyByName_Double(obj, "doubleField", P8_DOUBLE_FIELD_VALUE);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -2966,12 +3134,15 @@ ani_int test_ObjSetPropertyByName_Ref_MultiThread(ani_env *env, [[maybe_unused]]
             ani_method ct{};
             ani_object obj{};
             ani_string ns{};
-            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK &&
-                tE->String_NewUTF8("nv", sizeof("nv") - 1, &ns) == ANI_OK) {
-                tE->Object_SetPropertyByName_Ref(obj, "stringField", ns);
+            if (tE->FindClass(P8_PROPERTY_TYPES_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK ||
+                tE->String_NewUTF8("nv", sizeof("nv") - 1, &ns) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_SetPropertyByName_Ref(obj, "stringField", ns);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -3020,10 +3191,13 @@ ani_int test_ObjCallByName_Boolean_MultiThread(ani_env *env, [[maybe_unused]] an
                 return;
             }
             ani_object boxed{};
-            if (tE->Primitive_Box_Boolean(ANI_TRUE, &boxed) == ANI_OK) {
-                ani_boolean r{};
-                tE->Object_CallMethodByName_Boolean(boxed, "toBoolean", ":z", &r);
+            if (tE->Primitive_Box_Boolean(ANI_TRUE, &boxed) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_boolean r{};
+            tE->Object_CallMethodByName_Boolean(boxed, "toBoolean", ":z", &r);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -3068,10 +3242,13 @@ ani_int test_ObjCallByName_Byte_MultiThread(ani_env *env, [[maybe_unused]] ani_o
                 return;
             }
             ani_object boxed{};
-            if (tE->Primitive_Box_Byte(P8_BYTE_VALUE, &boxed) == ANI_OK) {
-                ani_byte r{};
-                tE->Object_CallMethodByName_Byte(boxed, "toByte", ":b", &r);
+            if (tE->Primitive_Box_Byte(P8_BYTE_VALUE, &boxed) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_byte r{};
+            tE->Object_CallMethodByName_Byte(boxed, "toByte", ":b", &r);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -3116,10 +3293,13 @@ ani_int test_ObjCallByName_Char_MultiThread(ani_env *env, [[maybe_unused]] ani_o
                 return;
             }
             ani_object boxed{};
-            if (tE->Primitive_Box_Char(static_cast<ani_char>('A'), &boxed) == ANI_OK) {
-                ani_char r{};
-                tE->Object_CallMethodByName_Char(boxed, "toChar", ":c", &r);
+            if (tE->Primitive_Box_Char(static_cast<ani_char>('A'), &boxed) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_char r{};
+            tE->Object_CallMethodByName_Char(boxed, "toChar", ":c", &r);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -3164,10 +3344,13 @@ ani_int test_ObjCallByName_Short_MultiThread(ani_env *env, [[maybe_unused]] ani_
                 return;
             }
             ani_object boxed{};
-            if (tE->Primitive_Box_Short(P8_SHORT_BOX_VALUE, &boxed) == ANI_OK) {
-                ani_short r{};
-                tE->Object_CallMethodByName_Short(boxed, "toShort", ":s", &r);
+            if (tE->Primitive_Box_Short(P8_SHORT_BOX_VALUE, &boxed) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_short r{};
+            tE->Object_CallMethodByName_Short(boxed, "toShort", ":s", &r);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -3212,10 +3395,13 @@ ani_int test_ObjCallByName_Long_MultiThread(ani_env *env, [[maybe_unused]] ani_o
                 return;
             }
             ani_object boxed{};
-            if (tE->Primitive_Box_Long(12345678901234LL, &boxed) == ANI_OK) {
-                ani_long r{};
-                tE->Object_CallMethodByName_Long(boxed, "toLong", ":l", &r);
+            if (tE->Primitive_Box_Long(12345678901234LL, &boxed) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_long r{};
+            tE->Object_CallMethodByName_Long(boxed, "toLong", ":l", &r);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -3260,10 +3446,13 @@ ani_int test_ObjCallByName_Float_MultiThread(ani_env *env, [[maybe_unused]] ani_
                 return;
             }
             ani_object boxed{};
-            if (tE->Primitive_Box_Float(3.14f, &boxed) == ANI_OK) {
-                ani_float r{};
-                tE->Object_CallMethodByName_Float(boxed, "toFloat", ":f", &r);
+            if (tE->Primitive_Box_Float(3.14f, &boxed) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_float r{};
+            tE->Object_CallMethodByName_Float(boxed, "toFloat", ":f", &r);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -3308,10 +3497,13 @@ ani_int test_ObjCallByName_Double_MultiThread(ani_env *env, [[maybe_unused]] ani
                 return;
             }
             ani_object boxed{};
-            if (tE->Primitive_Box_Double(P8_DOUBLE_BOX_VALUE, &boxed) == ANI_OK) {
-                ani_double r{};
-                tE->Object_CallMethodByName_Double(boxed, "toDouble", ":d", &r);
+            if (tE->Primitive_Box_Double(P8_DOUBLE_BOX_VALUE, &boxed) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_double r{};
+            tE->Object_CallMethodByName_Double(boxed, "toDouble", ":d", &r);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -3357,12 +3549,15 @@ ani_int test_ObjCallByName_Int_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_CONCRETE_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_int r = 0;
-                tE->Object_CallMethodByName_Int(obj, "compute", "i:i", &r, P8_COMPUTE_INPUT);
+            if (tE->FindClass(P8_CONCRETE_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_int r = 0;
+            tE->Object_CallMethodByName_Int(obj, "compute", "i:i", &r, P8_COMPUTE_INPUT);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -3408,12 +3603,15 @@ ani_int test_ObjCallByName_Ref_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_BASE_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", ":", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj) == ANI_OK) {
-                ani_ref r{};
-                tE->Object_CallMethodByName_Ref(obj, "stableMethod", ":C{std.core.String}", &r);
+            if (tE->FindClass(P8_BASE_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", ":", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            ani_ref r{};
+            tE->Object_CallMethodByName_Ref(obj, "stableMethod", ":C{std.core.String}", &r);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
@@ -3459,11 +3657,14 @@ ani_int test_ObjCallByName_Void_MultiThread(ani_env *env, [[maybe_unused]] ani_o
             ani_class c{};
             ani_method ct{};
             ani_object obj{};
-            if (tE->FindClass(P8_POINT_CLASS, &c) == ANI_OK &&
-                tE->Class_FindMethod(c, "<ctor>", "ii:", &ct) == ANI_OK &&
-                tE->Object_New(c, ct, &obj, P8_POINT_X, P8_POINT_Y) == ANI_OK) {
-                tE->Object_CallMethodByName_Void(obj, "move", "ii:", 1, 1);
+            if (tE->FindClass(P8_POINT_CLASS, &c) != ANI_OK ||
+                tE->Class_FindMethod(c, "<ctor>", "ii:", &ct) != ANI_OK ||
+                tE->Object_New(c, ct, &obj, P8_POINT_X, P8_POINT_Y) != ANI_OK) {
+                vm->DetachCurrentThread();
+                completed.fetch_add(1);
+                return;
             }
+            tE->Object_CallMethodByName_Void(obj, "move", "ii:", 1, 1);
             vm->DetachCurrentThread();
             completed.fetch_add(1);
         });

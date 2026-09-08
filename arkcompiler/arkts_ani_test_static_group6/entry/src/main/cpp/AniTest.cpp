@@ -250,7 +250,8 @@ namespace {
         // --- VM Management tests ---
         ani_native_function{"test_VmCreateVM_Normal", ":i", reinterpret_cast<void *>(test_VmCreateVM_Normal)},
         ani_native_function{"test_VmCreateVM_Abnormal", ":i", reinterpret_cast<void *>(test_VmCreateVM_Abnormal)},
-        ani_native_function{"test_VmGetCreatedVmList_Normal", ":i", reinterpret_cast<void *>(test_VmGetCreatedVmList_Normal)},
+        ani_native_function{"test_VmGetCreatedVmList_Normal", ":i",
+            reinterpret_cast<void *>(test_VmGetCreatedVmList_Normal)},
         ani_native_function{"test_VmGetCreatedVmList_Abnormal", ":i",
             reinterpret_cast<void *>(test_VmGetCreatedVmList_Abnormal)},
         ani_native_function{"test_Vm_Constructor_Normal", ":i", reinterpret_cast<void *>(test_Vm_Constructor_Normal)},
