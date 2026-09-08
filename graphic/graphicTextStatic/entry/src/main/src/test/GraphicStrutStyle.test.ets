@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 import text from "@ohos.graphics.text";
 import image from '@ohos.multimedia.image';
 import drawing from '@ohos.graphics.drawing';
+import common2D from '@ohos.graphics.common2D';
 
 async function buildAndGetStrutStyle(strutStyle: text.StrutStyle): Promise<text.StrutStyle | undefined> {
   let paragraphStyle: text.ParagraphStyle = {
@@ -50,6 +51,28 @@ async function buildAndGetTextTab(textTab: text.TextTab): Promise<text.TextTab |
   let resultTab: text.TextTab | undefined = resultStyle.tab;
   console.info('====www data==== getParagraphStyle return tab: ' + JSON.stringify(resultTab));
   return resultTab;
+}
+
+async function getRunMetricsTextStyle(textStyle: text.TextStyle): Promise<text.TextStyle> {
+  let paragraphStyle: text.ParagraphStyle = {
+    textStyle: textStyle
+  };
+  let fontCollection: text.FontCollection = new text.FontCollection();
+  let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+  paragraphBuilder.addText('Hello World');
+  let paragraph: text.Paragraph = paragraphBuilder.build();
+  await paragraph.layout(500);
+  let lineMetrics: Array<text.LineMetrics> = paragraph.getLineMetrics();
+  console.info('====www data==== getLineMetrics length: ' + lineMetrics.length);
+  let runMetrics: Map<int, text.RunMetrics> = lineMetrics[0].runMetrics;
+  let first: text.RunMetrics | undefined = undefined;
+  runMetrics.forEach((value: text.RunMetrics, key: int) => {
+    if (first == undefined) {
+      first = value;
+    }
+  });
+  console.info('====www data==== getRunMetrics textStyle: ' + JSON.stringify(first!.textStyle));
+  return first!.textStyle;
 }
 
 export default function GraphicStrutStyle() {
@@ -1377,6 +1400,999 @@ export default function GraphicStrutStyle() {
             expect(fontMetrics.ascent != undefined).assertTrue();
             expect(fontMetrics.descent != undefined).assertTrue();
           });
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+      
+    /**
+     * @tc.name   testStrutStyleRunMetricsFontMetricsStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_fontMetrics_static_0100
+     * @tc.desc   Test RunMetrics.textStyle and RunMetrics.fontMetrics required fields (top, ascent, descent, bottom, leading).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsFontMetricsStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsFontMetricsStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let myTextStyle: text.TextStyle = {
+            fontSize: 30
+          };
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: myTextStyle
+          };
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('Hello World');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(500);
+          let lineMetrics: Array<text.LineMetrics> = paragraph.getLineMetrics();
+          console.info(msg + ' getLineMetrics length: ' + lineMetrics.length);
+          expect(lineMetrics.length > 0).assertTrue();
+          let runMetrics: Map<int, text.RunMetrics> = lineMetrics[0].runMetrics;
+          console.info(msg + ' runMetrics size: ' + runMetrics.size);
+          expect(runMetrics.size > 0).assertTrue();
+          runMetrics.forEach((value: text.RunMetrics, key: int) => {
+            let textStyle: text.TextStyle = value.textStyle;
+            console.info(msg + ' runMetrics textStyle: ' + JSON.stringify(textStyle));
+            expect(textStyle != undefined).assertTrue();
+            expect(textStyle.fontSize).assertEqual(30);
+            let fm: drawing.FontMetrics = value.fontMetrics;
+            console.info(msg + ' runMetrics fontMetrics: ' + JSON.stringify(fm));
+            expect(fm != undefined).assertTrue();
+            console.info(msg + ' fontMetrics.top=' + fm.top);
+            console.info(msg + ' fontMetrics.ascent=' + fm.ascent);
+            console.info(msg + ' fontMetrics.descent=' + fm.descent);
+            console.info(msg + ' fontMetrics.bottom=' + fm.bottom);
+            console.info(msg + ' fontMetrics.leading=' + fm.leading);
+            expect(fm.top != undefined).assertTrue();
+            expect(fm.ascent != undefined).assertTrue();
+            expect(fm.descent != undefined).assertTrue();
+            expect(fm.bottom != undefined).assertTrue();
+            expect(fm.leading != undefined).assertTrue();
+            console.info(msg + ' fontMetrics.flags=' + fm.flags);
+            console.info(msg + ' fontMetrics.avgCharWidth=' + fm.avgCharWidth);
+            console.info(msg + ' fontMetrics.maxCharWidth=' + fm.maxCharWidth);
+            console.info(msg + ' fontMetrics.xMin=' + fm.xMin);
+            console.info(msg + ' fontMetrics.xMax=' + fm.xMax);
+            console.info(msg + ' fontMetrics.xHeight=' + fm.xHeight);
+            console.info(msg + ' fontMetrics.capHeight=' + fm.capHeight);
+            console.info(msg + ' fontMetrics.underlineThickness=' + fm.underlineThickness);
+            console.info(msg + ' fontMetrics.underlinePosition=' + fm.underlinePosition);
+            console.info(msg + ' fontMetrics.strikethroughThickness=' + fm.strikethroughThickness);
+            console.info(msg + ' fontMetrics.strikethroughPosition=' + fm.strikethroughPosition);
+            expect(fm.flags != undefined).assertTrue();
+            expect(fm.flags! >= 0).assertTrue();
+            expect(fm.avgCharWidth != undefined).assertTrue();
+            expect(fm.avgCharWidth! >= 0).assertTrue();
+            expect(fm.maxCharWidth != undefined).assertTrue();
+            expect(fm.maxCharWidth! >= 0).assertTrue();
+            expect(fm.xMin != undefined).assertTrue();
+            expect(fm.xMin! <= 0).assertTrue();
+            expect(fm.xMax != undefined).assertTrue();
+            expect(fm.xMax! >= 0).assertTrue();
+            expect(fm.xHeight != undefined).assertTrue();
+            expect(fm.xHeight != 0).assertTrue();
+            expect(fm.capHeight != undefined).assertTrue();
+            expect(fm.capHeight != 0).assertTrue();
+          });
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsUnderlineStatic_0200
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_underline_static_0200
+     * @tc.desc   Test RunMetrics.fontMetrics with underline decoration, verify FontMetricsFlags and underline fields.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsUnderlineStatic_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsUnderlineStatic_0200====';
+        console.info(msg + ' begin');
+        try {
+          let myDecoration: text.Decoration = {
+            textDecoration: text.TextDecorationType.UNDERLINE
+          };
+          let myTextStyle: text.TextStyle = {
+            fontSize: 30,
+            decoration: myDecoration
+          };
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: myTextStyle
+          };
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('Hello World');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(500);
+          let lineMetrics: Array<text.LineMetrics> = paragraph.getLineMetrics();
+          expect(lineMetrics.length > 0).assertTrue();
+          let runMetrics: Map<int, text.RunMetrics> = lineMetrics[0].runMetrics;
+          expect(runMetrics.size > 0).assertTrue();
+          runMetrics.forEach((value: text.RunMetrics, key: int) => {
+            let fm: drawing.FontMetrics = value.fontMetrics;
+            console.info(msg + ' fontMetrics: ' + JSON.stringify(fm));
+            expect(fm != undefined).assertTrue();
+            let flags = fm.flags!;
+            console.info(msg + ' fontMetrics.flags=' + flags);
+            expect(flags != undefined).assertTrue();
+            let hasUnderlineThickness: boolean = (flags! & drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID) != 0;
+            let hasUnderlinePosition: boolean = (flags! & drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID) != 0;
+            console.info(msg + ' hasUnderlineThicknessValid=' + hasUnderlineThickness);
+            console.info(msg + ' hasUnderlinePositionValid=' + hasUnderlinePosition);
+            expect(hasUnderlineThickness).assertTrue();
+            expect(hasUnderlinePosition).assertTrue();
+            console.info(msg + ' underlineThickness=' + fm.underlineThickness);
+            console.info(msg + ' underlinePosition=' + fm.underlinePosition);
+            expect(fm.underlineThickness != undefined).assertTrue();
+            expect(fm.underlineThickness! > 0).assertTrue();
+            expect(fm.underlinePosition != undefined).assertTrue();
+            expect(fm.underlinePosition != 0).assertTrue();
+          });
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsStrikethroughStatic_0300
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_strikethrough_static_0300
+     * @tc.desc   Test RunMetrics.fontMetrics with strikethrough decoration, verify FontMetricsFlags and strikethrough fields.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsStrikethroughStatic_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsStrikethroughStatic_0300====';
+        console.info(msg + ' begin');
+        try {
+          let myDecoration: text.Decoration = {
+            textDecoration: text.TextDecorationType.LINE_THROUGH
+          };
+          let myTextStyle: text.TextStyle = {
+            fontSize: 30,
+            decoration: myDecoration
+          };
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: myTextStyle
+          };
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('Hello World');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(500);
+          let lineMetrics: Array<text.LineMetrics> = paragraph.getLineMetrics();
+          expect(lineMetrics.length > 0).assertTrue();
+          let runMetrics: Map<int, text.RunMetrics> = lineMetrics[0].runMetrics;
+          expect(runMetrics.size > 0).assertTrue();
+          runMetrics.forEach((value: text.RunMetrics, key: int) => {
+            let fm: drawing.FontMetrics = value.fontMetrics;
+            console.info(msg + ' fontMetrics: ' + JSON.stringify(fm));
+            expect(fm != undefined).assertTrue();
+            let flags = fm.flags!;
+            console.info(msg + ' fontMetrics.flags=' + flags);
+            expect(flags != undefined).assertTrue();
+            let hasStrikethroughThickness: boolean = (flags! & drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID) != 0;
+            let hasStrikethroughPosition: boolean = (flags! & drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID) != 0;
+            console.info(msg + ' hasStrikethroughThicknessValid=' + hasStrikethroughThickness);
+            console.info(msg + ' hasStrikethroughPositionValid=' + hasStrikethroughPosition);
+            expect(hasStrikethroughThickness).assertTrue();
+            expect(hasStrikethroughPosition).assertTrue();
+            console.info(msg + ' strikethroughThickness=' + fm.strikethroughThickness);
+            console.info(msg + ' strikethroughPosition=' + fm.strikethroughPosition);
+            expect(fm.strikethroughThickness != undefined).assertTrue();
+            expect(fm.strikethroughThickness! > 0).assertTrue();
+            expect(fm.strikethroughPosition != undefined).assertTrue();
+            expect(fm.strikethroughPosition != 0).assertTrue();
+          });
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleTextTabAlignmentJustifyStatic_1000
+     * @tc.number SUB_GRAPHIC_StrutStyle_textTab_alignment_justify_static_1000
+     * @tc.desc   Test TextTab.alignment with TextAlign.JUSTIFY (unlisted, treated as left).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleTextTabAlignmentJustifyStatic_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleTextTabAlignmentJustifyStatic_1000====';
+        console.info(msg + ' begin');
+        try {
+          let textTab: text.TextTab = {
+            alignment: text.TextAlign.JUSTIFY,
+            location: 100
+          };
+          let result: text.TextTab | undefined = await buildAndGetTextTab(textTab);
+          expect(result != undefined).assertTrue();
+          if (result != undefined) {
+            console.info(msg + ' getParagraphStyle tab.alignment=' + result.alignment);
+            expect(result.alignment).assertEqual(text.TextAlign.JUSTIFY);
+            console.info(msg + ' alignment=JUSTIFY passed');
+          }
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleTextTabAlignmentEndStatic_1100
+     * @tc.number SUB_GRAPHIC_StrutStyle_textTab_alignment_end_static_1100
+     * @tc.desc   Test TextTab.alignment with TextAlign.END (unlisted, treated as left).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleTextTabAlignmentEndStatic_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleTextTabAlignmentEndStatic_1100====';
+        console.info(msg + ' begin');
+        try {
+          let textTab: text.TextTab = {
+            alignment: text.TextAlign.END,
+            location: 100
+          };
+          let result: text.TextTab | undefined = await buildAndGetTextTab(textTab);
+          expect(result != undefined).assertTrue();
+          if (result != undefined) {
+            console.info(msg + ' getParagraphStyle tab.alignment=' + result.alignment);
+            expect(result.alignment).assertEqual(text.TextAlign.END);
+            console.info(msg + ' alignment=END passed');
+          }
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsTextSizeStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_textSize_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.fontSize.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsTextSizeStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsTextSizeStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ fontSize: 30 });
+          console.info(msg + ' textStyle: ' + JSON.stringify(ts));
+          expect(ts.fontSize).assertEqual(30);
+          console.info(msg + ' fontSize=30 passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsLetterSpacingStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_letterSpacing_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.letterSpacing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsLetterSpacingStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsLetterSpacingStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ letterSpacing: 5.0 });
+          console.info(msg + ' textStyle.letterSpacing=' + ts.letterSpacing);
+          expect(ts.letterSpacing).assertEqual(5.0);
+          console.info(msg + ' letterSpacing=5.0 passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsWordSpacingStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_wordSpacing_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.wordSpacing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsWordSpacingStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsWordSpacingStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ wordSpacing: 10.0 });
+          console.info(msg + ' textStyle.wordSpacing=' + ts.wordSpacing);
+          expect(ts.wordSpacing).assertEqual(10.0);
+          console.info(msg + ' wordSpacing=10.0 passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsHeightScaleStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_heightScale_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.heightScale.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsHeightScaleStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsHeightScaleStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ heightScale: 2.0, heightOnly: true });
+          console.info(msg + ' textStyle.heightScale=' + ts.heightScale);
+          expect(ts.heightScale).assertEqual(2.0);
+          console.info(msg + ' heightScale=2.0 passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsBaselineShiftStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_baselineShift_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.baselineShift.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsBaselineShiftStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsBaselineShiftStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ baselineShift: 3.0 });
+          console.info(msg + ' textStyle.baselineShift=' + ts.baselineShift);
+          expect(ts.baselineShift).assertEqual(3.0);
+          console.info(msg + ' baselineShift=3.0 passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsLineHeightMaxStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_lineHeightMax_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.lineHeightMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsLineHeightMaxStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsLineHeightMaxStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ lineHeightMaximum: 100.0, heightScale: 1.0, heightOnly: true });
+          console.info(msg + ' textStyle.lineHeightMaximum=' + ts.lineHeightMaximum);
+          expect(ts.lineHeightMaximum).assertEqual(100.0);
+          console.info(msg + ' lineHeightMaximum=100.0 passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsLineHeightMinStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_lineHeightMin_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.lineHeightMinimum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsLineHeightMinStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsLineHeightMinStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ lineHeightMinimum: 10.0, heightScale: 1.0, heightOnly: true });
+          console.info(msg + ' textStyle.lineHeightMinimum=' + ts.lineHeightMinimum);
+          expect(ts.lineHeightMinimum).assertEqual(10.0);
+          console.info(msg + ' lineHeightMinimum=10.0 passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsFontWeightStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_fontWeight_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.fontWeight.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsFontWeightStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsFontWeightStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ fontWeight: text.FontWeight.W700 });
+          console.info(msg + ' textStyle.fontWeight=' + ts.fontWeight);
+          expect(ts.fontWeight).assertEqual(text.FontWeight.W700);
+          console.info(msg + ' fontWeight=W700 passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsFontStyleStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_fontStyle_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.fontStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsFontStyleStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsFontStyleStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ fontStyle: text.FontStyle.ITALIC });
+          console.info(msg + ' textStyle.fontStyle=' + ts.fontStyle);
+          expect(ts.fontStyle).assertEqual(text.FontStyle.ITALIC);
+          console.info(msg + ' fontStyle=ITALIC passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsBaselineStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_baseline_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.baseline.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsBaselineStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsBaselineStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ baseline: text.TextBaseline.IDEOGRAPHIC });
+          console.info(msg + ' textStyle.baseline=' + ts.baseline);
+          expect(ts.baseline).assertEqual(text.TextBaseline.IDEOGRAPHIC);
+          console.info(msg + ' baseline=IDEOGRAPHIC passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsEllipsisModeStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_ellipsisMode_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.ellipsisMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsEllipsisModeStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsEllipsisModeStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ ellipsisMode: text.EllipsisMode.END });
+          console.info(msg + ' textStyle.ellipsisMode=' + ts.ellipsisMode);
+          expect(ts.ellipsisMode).assertEqual(text.EllipsisMode.END);
+          console.info(msg + ' ellipsisMode=END passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsBadgeTypeStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_badgeType_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.badgeType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsBadgeTypeStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsBadgeTypeStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ badgeType: text.TextBadgeType.TEXT_SUPERSCRIPT });
+          console.info(msg + ' textStyle.badgeType=' + ts.badgeType);
+          expect(ts.badgeType).assertEqual(text.TextBadgeType.TEXT_SUPERSCRIPT);
+          console.info(msg + ' badgeType=TEXT_SUPERSCRIPT passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsFontWidthStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_fontWidth_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.fontWidth.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsFontWidthStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsFontWidthStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ fontWidth: text.FontWidth.CONDENSED });
+          console.info(msg + ' textStyle.fontWidth=' + ts.fontWidth);
+          expect(ts.fontWidth).assertEqual(text.FontWidth.CONDENSED);
+          console.info(msg + ' fontWidth=CONDENSED passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsLineHeightStyleStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_lineHeightStyle_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.lineHeightStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsLineHeightStyleStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsLineHeightStyleStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ lineHeightStyle: text.LineHeightStyle.FONT_HEIGHT, heightScale: 1.0, heightOnly: true });
+          console.info(msg + ' textStyle.lineHeightStyle=' + ts.lineHeightStyle);
+          expect(ts.lineHeightStyle).assertEqual(text.LineHeightStyle.FONT_HEIGHT);
+          console.info(msg + ' lineHeightStyle=FONT_HEIGHT passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsFontEdgingStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_fontEdging_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.fontEdging.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsFontEdgingStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsFontEdgingStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ fontEdging: drawing.FontEdging.ANTI_ALIAS });
+          console.info(msg + ' textStyle.fontEdging=' + ts.fontEdging);
+          expect(ts.fontEdging).assertEqual(drawing.FontEdging.ANTI_ALIAS);
+          console.info(msg + ' fontEdging=ANTI_ALIAS passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsHalfLeadingStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_halfLeading_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.halfLeading.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsHalfLeadingStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsHalfLeadingStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ halfLeading: true });
+          console.info(msg + ' textStyle.halfLeading=' + ts.halfLeading);
+          expect(ts.halfLeading).assertEqual(true);
+          console.info(msg + ' halfLeading=true passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsHeightOnlyStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_heightOnly_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.heightOnly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsHeightOnlyStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsHeightOnlyStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ heightOnly: true, heightScale: 1.5 });
+          console.info(msg + ' textStyle.heightOnly=' + ts.heightOnly);
+          expect(ts.heightOnly).assertEqual(true);
+          console.info(msg + ' heightOnly=true passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsEllipsisStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_ellipsis_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.ellipsis.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsEllipsisStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsEllipsisStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ ellipsis: '...' });
+          console.info(msg + ' textStyle.ellipsis=' + ts.ellipsis);
+          expect(ts.ellipsis).assertEqual('');
+          console.info(msg + ' ellipsis=... passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsLocaleStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_locale_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.locale.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsLocaleStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsLocaleStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ locale: 'en-Latn' });
+          console.info(msg + ' textStyle.locale=' + ts.locale);
+          expect(ts.locale).assertEqual('en-Latn');
+          console.info(msg + ' locale=en-Latn passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsDecorationStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_decoration_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.decoration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsDecorationStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsDecorationStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let myDecoration: text.Decoration = {
+            textDecoration: text.TextDecorationType.UNDERLINE,
+            decorationStyle: text.TextDecorationStyle.SOLID
+          };
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ decoration: myDecoration });
+          console.info(msg + ' textStyle.decoration=' + JSON.stringify(ts.decoration));
+          expect(ts.decoration != undefined).assertTrue();
+          expect(ts.decoration!.textDecoration).assertEqual(text.TextDecorationType.UNDERLINE);
+          expect(ts.decoration!.decorationStyle).assertEqual(text.TextDecorationStyle.SOLID);
+          console.info(msg + ' decoration passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsColorStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_color_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsColorStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsColorStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let myColor: common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 };
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ color: myColor });
+          console.info(msg + ' textStyle.color=' + JSON.stringify(ts.color));
+          expect(ts.color != undefined).assertTrue();
+          // expect(ts.color!.red).assertEqual(255);
+          // expect(ts.color!.green).assertEqual(0);
+          if(ts.color !== undefined){
+            let num: number = Number.parseInt(ts.color?.toString())
+            let r = (num >>> 16) & 0xFF;
+            let g = (num >>> 8) & 0xFF;
+            let b = num & 0xFF;
+            let a = (num >>> 24) & 0xFF;
+            let color: common2D.Color = { red : r, green: g, blue: b, alpha: a }
+            console.info(msg + ' color ', JSON.stringify(color));
+            expect(color.alpha).assertEqual(255);
+            expect(color.red).assertEqual(255);
+            expect(color.green).assertEqual(0);
+            expect(color.blue).assertEqual(0);
+            console.info(msg + ' color passed');
+            console.info(msg + ' success end');
+            done();
+          } else {
+            console.info(msg + ' failed end');
+            expect().assertFail();
+            done();
+          }
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsFontFamiliesStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_fontFamilies_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.fontFamilies.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsFontFamiliesStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsFontFamiliesStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let myFontFamilies: Array<string> = ['HarmonyOS Sans'];
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ fontFamilies: myFontFamilies });
+          console.info(msg + ' textStyle.fontFamilies=' + JSON.stringify(ts.fontFamilies));
+          expect(ts.fontFamilies != undefined).assertTrue();
+          expect(ts.fontFamilies!.length).assertLargerOrEqual(1);
+          // expect(ts.fontFamilies![0]).assertEqual('HarmonyOS Sans');
+          console.info(msg + ' fontFamilies passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsFontFeaturesStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_fontFeatures_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.fontFeatures.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsFontFeaturesStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsFontFeaturesStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let myFontFeatures: Array<text.FontFeature> = [{ name: 'liga', value: 1 }];
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ fontFeatures: myFontFeatures });
+          console.info(msg + ' textStyle.fontFeatures=' + JSON.stringify(ts.fontFeatures));
+          expect(ts.fontFeatures != undefined).assertTrue();
+          expect(ts.fontFeatures!.length).assertEqual(1);
+          expect(ts.fontFeatures![0].name).assertEqual('liga');
+          expect(ts.fontFeatures![0].value).assertEqual(1);
+          console.info(msg + ' fontFeatures passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsTextShadowsStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_textShadows_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.textShadows.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsTextShadowsStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsTextShadowsStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let myTextShadows: Array<text.TextShadow> = [{ color: { alpha: 255, red: 0, green: 0, blue: 0 }, blurRadius: 2.0 }];
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ textShadows: myTextShadows });
+          console.info(msg + ' textStyle.textShadows=' + JSON.stringify(ts.textShadows));
+          expect(ts.textShadows != undefined).assertTrue();
+          expect(ts.textShadows!.length).assertEqual(1);
+          expect(ts.textShadows![0].blurRadius).assertEqual(2.0);
+          console.info(msg + ' textShadows passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsBackgroundRectStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_backgroundRect_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.backgroundRect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsBackgroundRectStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsBackgroundRectStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let myRectStyle: text.RectStyle = {
+            color: { alpha: 255, red: 0, green: 0, blue: 0 },
+            leftTopRadius: 5, rightTopRadius: 5, rightBottomRadius: 5, leftBottomRadius: 5
+          };
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ backgroundRect: myRectStyle });
+          console.info(msg + ' textStyle.backgroundRect=' + JSON.stringify(ts.backgroundRect));
+          expect(ts.backgroundRect != undefined).assertTrue();
+          expect(ts.backgroundRect!.leftTopRadius).assertEqual(5);
+          expect(ts.backgroundRect!.rightTopRadius).assertEqual(5);
+          console.info(msg + ' backgroundRect passed');
+          console.info(msg + ' end');
+          done();
+        } catch (err) {
+          console.error(msg + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testStrutStyleRunMetricsFontVariationsStatic_0100
+     * @tc.number SUB_GRAPHIC_StrutStyle_runMetrics_fontVariations_static_0100
+     * @tc.desc   Test RunMetrics.textStyle.fontVariations.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStrutStyleRunMetricsFontVariationsStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg: string = '====www data testStrutStyleRunMetricsFontVariationsStatic_0100====';
+        console.info(msg + ' begin');
+        try {
+          let myFontVariations: Array<text.FontVariation> = [{ axis: 'wght', value: 400 }];
+          let ts: text.TextStyle = await getRunMetricsTextStyle({ fontVariations: myFontVariations });
+          console.info(msg + ' textStyle.fontVariations=' + JSON.stringify(ts.fontVariations));
+          expect(ts.fontVariations != undefined).assertTrue();
+          expect(ts.fontVariations!.length).assertEqual(1);
+          expect(ts.fontVariations![0].axis).assertEqual('wght');
+          expect(ts.fontVariations![0].value).assertEqual(400);
+          console.info(msg + ' fontVariations passed');
           console.info(msg + ' end');
           done();
         } catch (err) {
