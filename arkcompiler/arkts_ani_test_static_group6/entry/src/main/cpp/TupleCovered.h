@@ -889,7 +889,7 @@ ani_int test_Tuple_SetItem_Ref_Abnormal([[maybe_unused]] ani_env *env, [[maybe_u
 // Section 20: Combo and Boundary (6 tests)
 // ============================================================
 
-static ani_boolean TupleGetApiPointersValid(ani_env *env)
+ani_boolean TupleGetApiPointersValid(ani_env *env)
 {
     if (env->c_api->TupleValue_GetItem_Boolean == nullptr) {
         return ANI_FALSE;
@@ -921,7 +921,7 @@ static ani_boolean TupleGetApiPointersValid(ani_env *env)
     return ANI_TRUE;
 }
 
-static ani_boolean TupleSetApiPointersValid(ani_env *env)
+ani_boolean TupleSetApiPointersValid(ani_env *env)
 {
     if (env->c_api->TupleValue_SetItem_Boolean == nullptr) {
         return ANI_FALSE;
