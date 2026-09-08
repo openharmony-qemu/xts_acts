@@ -65,13 +65,13 @@ export default function FreezeV1Test() {
     
     
 /**
-     * @tc.number   SUB_ARKUI_API_FreezeTest_001
-     * @tc.name     SUB_ARKUI_API_FreezeTest_001
-     * @tc.desc     SUB_ARKUI_API_FreezeTest_001
+     * @tc.number   SUB_ARKUI_API_FreezeTest_0100
+     * @tc.name     SUB_ARKUI_API_FreezeTest_0100
+     * @tc.desc     SUB_ARKUI_API_FreezeTest_0100
      * @tc.level    Level.LEVEL0
      */
-it('SUB_ARKUI_API_FreezeTest_001', Level.LEVEL0, async () => {
-      console.info('FreezeTest_001 START');
+it('SUB_ARKUI_API_FreezeTest_0100', Level.LEVEL0, async () => {
+      console.info('SUB_ARKUI_API_FreezeTest_0100 START');
       let driver =  Driver.create()
       let changeIndex = await driver.findComponent(ON.id('changeIndex'));
       await (changeIndex?.click() as Promise<void>) ;
@@ -91,20 +91,20 @@ it('SUB_ARKUI_API_FreezeTest_001', Level.LEVEL0, async () => {
         }
       }
       observer1.onceToastShow(callback1)
-      console.info('FreezeTest_001 END');
+      console.info('SUB_ARKUI_API_FreezeTest_0100 END');
     });
 
 
     
     
 /**
-     * @tc.number   SUB_ARKUI_API_FreezeTest_0100
-     * @tc.name     SUB_ARKUI_API_FreezeTest_0100
-     * @tc.desc     SUB_ARKUI_API_FreezeTest_0100
+     * @tc.number   SUB_ARKUI_API_FreezeTest_0200
+     * @tc.name     SUB_ARKUI_API_FreezeTest_0200
+     * @tc.desc     SUB_ARKUI_API_FreezeTest_0200
      * @tc.level    Level.LEVEL0
      */
-it('SUB_ARKUI_API_FreezeTest_0100', Level.LEVEL0, async () => {
-      console.info('FreezeTest_002 START');
+it('SUB_ARKUI_API_FreezeTest_0200', Level.LEVEL0, async () => {
+      console.info('SUB_ARKUI_API_FreezeTest_0200 START');
       let driver =  Driver.create()
       let changeIndex0 = await driver.findComponent(ON.id('changeIndex0'));
       await (changeIndex0?.click() as Promise<void>) ;
@@ -120,7 +120,7 @@ it('SUB_ARKUI_API_FreezeTest_0100', Level.LEVEL0, async () => {
         }
       }
       observer1.onceToastShow(callback1)
-      console.info('FreezeTest_002 END');
+      console.info('SUB_ARKUI_API_FreezeTest_0200 END');
     });
   })
 }

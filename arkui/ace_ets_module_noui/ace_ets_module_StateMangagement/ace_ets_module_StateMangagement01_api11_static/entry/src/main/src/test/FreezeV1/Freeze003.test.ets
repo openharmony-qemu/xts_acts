@@ -80,13 +80,13 @@ export default function FreezeV1Test03() {
     
     
 /**
-     * @tc.number   SUB_ARKUI_API_FreezeTest_static_0100
-     * @tc.name     SUB_ARKUI_API_FreezeTest_static_0100
-     * @tc.desc     SUB_ARKUI_API_FreezeTest_static_0100
+     * @tc.number   SUB_ARKUI_API_FreezeTest03_static_0100
+     * @tc.name     SUB_ARKUI_API_FreezeTest03_static_0100
+     * @tc.desc     SUB_ARKUI_API_FreezeTest03_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('SUB_ARKUI_API_FreezeTest_static_0100', Level.LEVEL0, async () => {
-      console.info('FreezeTest_static_001 START');
+it('SUB_ARKUI_API_FreezeTest03_static_0100', Level.LEVEL0, async () => {
+      console.info('SUB_ARKUI_API_FreezeTest03_static_0100 START');
       let driver =  Driver.create();
 
       let changeMessage = await driver.findComponent(ON.id('changeMessage'));
@@ -108,19 +108,19 @@ it('SUB_ARKUI_API_FreezeTest_static_0100', Level.LEVEL0, async () => {
       }
       observer1.onceToastShow(callback1)
 
-      console.info('FreezeTest_static_001 END');
+      console.info('SUB_ARKUI_API_FreezeTest03_static_0100 END');
     });
 
     
     
 /**
-     * @tc.number   SUB_ARKUI_API_FreezeTest_static_0200
-     * @tc.name     SUB_ARKUI_API_FreezeTest_static_0200
-     * @tc.desc     SUB_ARKUI_API_FreezeTest_static_0200
+     * @tc.number   SUB_ARKUI_API_FreezeTest03_static_0200
+     * @tc.name     SUB_ARKUI_API_FreezeTest03_static_0200
+     * @tc.desc     SUB_ARKUI_API_FreezeTest03_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('SUB_ARKUI_API_FreezeTest_static_0200', Level.LEVEL0, async () => {
-      console.info('FreezeTest_static_002 START');
+it('SUB_ARKUI_API_FreezeTest03_static_0200', Level.LEVEL0, async () => {
+      console.info('SUB_ARKUI_API_FreezeTest03_static_0200 START');
       let driver =  Driver.create();
       let nextPage1 = await driver.findComponent(ON.id('NextPage1'));
       await (nextPage1?.click() as Promise<void>) ;
@@ -140,19 +140,19 @@ it('SUB_ARKUI_API_FreezeTest_static_0200', Level.LEVEL0, async () => {
       }
       observer1.onceToastShow(callback1)
 
-      console.info('FreezeTest_static_002 END');
+      console.info('SUB_ARKUI_API_FreezeTest03_static_0200 END');
     });
 
     
     
 /**
-     * @tc.number   SUB_ARKUI_API_FreezeTest_static_0300
-     * @tc.name     SUB_ARKUI_API_FreezeTest_static_0300
-     * @tc.desc     SUB_ARKUI_API_FreezeTest_static_0300
+     * @tc.number   SUB_ARKUI_API_FreezeTest03_static_0300
+     * @tc.name     SUB_ARKUI_API_FreezeTest03_static_0300
+     * @tc.desc     SUB_ARKUI_API_FreezeTest03_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('SUB_ARKUI_API_FreezeTest_static_0300', Level.LEVEL0, async () => {
-      console.info('FreezeTest_static_003 START');
+it('SUB_ARKUI_API_FreezeTest03_static_0300', Level.LEVEL0, async () => {
+      console.info('SUB_ARKUI_API_FreezeTest03_static_0300 START');
       let driver =  Driver.create();
       let nextPage2 = await driver.findComponent(ON.id('NextPage2'));
       await (nextPage2?.click() as Promise<void>) ;
@@ -172,19 +172,19 @@ it('SUB_ARKUI_API_FreezeTest_static_0300', Level.LEVEL0, async () => {
       }
       observer1.onceToastShow(callback1)
 
-      console.info('FreezeTest_static_003 END');
+      console.info('SUB_ARKUI_API_FreezeTest03_static_0300 END');
     });
 
     
     
 /**
-     * @tc.number   SUB_ARKUI_API_FreezeTest_static_0400
-     * @tc.name     SUB_ARKUI_API_FreezeTest_static_0400
-     * @tc.desc     SUB_ARKUI_API_FreezeTest_static_0400
+     * @tc.number   SUB_ARKUI_API_FreezeTest03_static_0400
+     * @tc.name     SUB_ARKUI_API_FreezeTest03_static_0400
+     * @tc.desc     SUB_ARKUI_API_FreezeTest03_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('SUB_ARKUI_API_FreezeTest_static_0400', Level.LEVEL0, async () => {
-      console.info('FreezeTest_static_004 START');
+it('SUB_ARKUI_API_FreezeTest03_static_0400', Level.LEVEL0, async () => {
+      console.info('SUB_ARKUI_API_FreezeTest03_static_0400 START');
       let driver =  Driver.create();
       let backPage3 = await driver.findComponent(ON.id('BackPage3'));
       await (backPage3?.click() as Promise<void>) ;
@@ -201,19 +201,19 @@ it('SUB_ARKUI_API_FreezeTest_static_0400', Level.LEVEL0, async () => {
       }
       observer1.onceToastShow(callback1)
 
-      console.info('FreezeTest_static_004 END');
+      console.info('SUB_ARKUI_API_FreezeTest03_static_0400 END');
     });
 
     
     
 /**
-     * @tc.number   SUB_ARKUI_API_FreezeTest_static_0500
-     * @tc.name     SUB_ARKUI_API_FreezeTest_static_0500
-     * @tc.desc     SUB_ARKUI_API_FreezeTest_static_0500
+     * @tc.number   SUB_ARKUI_API_FreezeTest03_static_0500
+     * @tc.name     SUB_ARKUI_API_FreezeTest03_static_0500
+     * @tc.desc     SUB_ARKUI_API_FreezeTest03_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_stSUB_ARKUI_API_FreezeTest_static_0500atic_0053', Level.LEVEL0, async () => {
-      console.info('FreezeTest_static_005 START');
+it('SUB_ARKUI_API_FreezeTest03_static_0500', Level.LEVEL0, async () => {
+      console.info('SUB_ARKUI_API_FreezeTest03_static_0500 START');
       let driver =  Driver.create();
       let backPage2 = await driver.findComponent(ON.id('BackPage2'));
       await (backPage2?.click() as Promise<void>) ;
@@ -229,7 +229,7 @@ it('FreezeTest_stSUB_ARKUI_API_FreezeTest_static_0500atic_0053', Level.LEVEL0, a
         }
       }
       observer1.onceToastShow(callback1);
-      console.info('FreezeTest_static_005 END');
+      console.info('SUB_ARKUI_API_FreezeTest03_static_0500 END');
     });
   })
 }
