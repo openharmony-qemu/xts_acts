@@ -28,6 +28,7 @@ import ImageSourceNativeCodeTest from './ImageSourceNativeCode.test'
 import  ImageEffectErrorCodeTest from  './ImageEffectErrorCode.test'
 import ImageKitErrorCodeTest from './ImageKitErroerCodeTest.test.ets'
 import ImageProcessingTest from './ImageProcessingTest.test.ets'
+import ImageEnumTest from './ImageEnum.test.ets'
 
 let testContext: common.UIAbilityContext = AppStorage.get('thisContext') as common.UIAbilityContext;
 const cameraManager = camera.getCameraManager(testContext);
@@ -47,6 +48,7 @@ export default function testsuite() {
     ImageEffectErrorCodeTest();
     ImageKitErrorCodeTest();
     ImageProcessingTest();
+    ImageEnumTest();
   } else {
     imagepixelmapmdk()
     imagereceivermdk()
@@ -61,5 +63,6 @@ export default function testsuite() {
     ImageEffectErrorCodeTest();
     ImageKitErrorCodeTest();
     ImageProcessingTest();
+    ImageEnumTest();
   }
 }

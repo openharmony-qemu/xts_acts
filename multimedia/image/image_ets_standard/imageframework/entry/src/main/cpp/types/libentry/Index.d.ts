@@ -573,6 +573,8 @@ export const imageFormatYcbcr422Sp: () => number;
 
 export const imageFormatJPEG: () => number;
 
+export const imageComponentFormatEnum: () => number;
+
 export const imageComponentFormatYUVY: (a: image.Image) => number;
 
 export const imageComponentFormatYUVU: (a: image.Image) => number;
