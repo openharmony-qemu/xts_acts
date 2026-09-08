@@ -63,7 +63,7 @@ public:
     uint32_t defaultHeight = 1080;
     uint32_t defaultFrameRate = 30;
     uint32_t defaultRotation = 0;
-    uint32_t defaultPixelFormat = 1;
+    uint32_t defaultPixelFormat = 2;
     bool beforeEosInput = false;
     bool beforeEosInputInput = false;
     bool afterEosDestoryCodec = true;
@@ -103,7 +103,8 @@ public:
     void StopInloop();
     void StopOutloop();
     bool IsRender();
-    bool MdCompare(unsigned char *buffer, int len, const char *source[]);
+    bool MdCompare(uint8_t source[]);
+    std::vector<uint8_t> LoadHashFile();
     VDecSignal *signal_;
     uint32_t errCount = 0;
     uint32_t outCount = 0;
@@ -114,6 +115,7 @@ public:
     int64_t endTime = 0;
     bool setParameters = false;
     OH_AVCodec *vdec_;
+    bool noCaleHash = false;
 
 private:
     std::atomic<bool> isRunning_ { false };

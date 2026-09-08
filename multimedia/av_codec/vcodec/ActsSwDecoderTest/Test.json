@@ -32,7 +32,8 @@
       "push": [
         "./resource/media/codec/video_decoder/1920_1080_10_30Mb.h264->/data/app/el2/100/base/com.example.actsswdecodertest/haps/entry_test/files/",
         "./resource/media/codec/video_decoder/1280_720_30_10Mb.h264->/data/app/el2/100/base/com.example.actsswdecodertest/haps/entry_test/files/",
-        "./resource/media/codec/video_decoder/resolutionChange.h264->/data/app/el2/100/base/com.example.actsswdecodertest/haps/entry_test/files/"
+        "./resource/media/codec/video_decoder/resolutionChange.h264->/data/app/el2/100/base/com.example.actsswdecodertest/haps/entry_test/files/",
+        "./resource/media/codec/video_decoder/hash_val.json->/data/app/el2/100/base/com.example.actsswdecodertest/haps/entry_test/files/"
       ]
     }
   ]

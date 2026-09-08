@@ -18,10 +18,13 @@
 #include <sys/time.h>
 #include <unistd.h>
 #include <utility>
-#include "include/Sha512StubTest.h"
+#include <CryptoArchitectureKit/crypto_digest.h>
+#include "include/JsonWrapper.h"
+#include <sstream>
 using namespace OHOS;
 using namespace OHOS::Media;
 using namespace std;
+#define SHA512_DIGEST_LENGTH 64
 namespace {
 constexpr int64_t NANOS_IN_SECOND = 1000000000L;
 constexpr int64_t MICRO_IN_SECOND = 1000000L;
@@ -54,8 +57,7 @@ constexpr int32_t K_PUSH_DATA_OK = 1;
 constexpr int32_t K_PUSH_DATA_EOS = 3;
 constexpr uint32_t K_USLEEP_RETRY_DELAY_US = 500;
 
-SHA512_CTX g_c;
-unsigned char g_md[SHA512_DIGEST_LENGTH];
+OH_CryptoDigest *g_c;
 VDecAPI11Sample* g_decSample = nullptr;
 
 void clearIntqueue(std::queue<uint32_t>& q)
@@ -185,12 +187,67 @@ void VDecAPI11Sample::FlushBuffer()
     outLock.unlock();
 }
 
-bool VDecAPI11Sample::MdCompare(unsigned char buffer[], int len, const char* source[])
+std::vector<uint8_t> VDecAPI11Sample::LoadHashFile()
 {
-    bool result = true;
-    for (int i = 0; i < len; i++) {
+    std::vector<uint8_t> ret;
+    JsonWrapper jsonData;
+    if (!jsonData.LoadFromFile("/data/storage/el2/base/haps/entry_test/files/hash_val.json")) {
+        return ret;
     }
-    return result;
+    std::__fs::filesystem::path filePath = inpDir;
+    std::string pixFmt = defualtPixelFormat == AV_PIXEL_FORMAT_NV12 ? "nv12" : "nv21";
+    std::string fileName = filePath.filename();
+    std::string hashValue = jsonData.GetString(fileName, pixFmt);
+    std::stringstream ss(hashValue);
+    std::string item;
+    while (std::getline(ss, item, ',')) {
+    if (!item.empty()) {
+        ret.push_back(stol(item, nullptr, SIXTEEN));
+    }
+    }
+    return ret;
+}
+
+static void DumpHashValue(std::vector<uint8_t> &srcHashVal, uint8_t outputHashVal[])
+{
+    OHPrintf("--------------output hash value----------------\n");
+    std::string line;
+    char buf[8];
+    for (int i = 1; i < SHA512_DIGEST_LENGTH + 1;i++) {
+        snprintf(buf, sizeof(buf), "%02x,", outputHashVal[i - 1]);
+        line += buf;
+        if (i % SIXTEEN == 0) {
+            OHPrintf("%s", line.c_str());
+            line.clear();
+        }
+    }
+    OHPrintf("--------------standard hash value----------------\n");
+    line.clear();
+    for (int i = 1; i < SHA512_DIGEST_LENGTH + 1; i++) {
+        snprintf(buf, sizeof(buf), "%02x,", srcHashVal[i - 1]);
+        line += buf;
+        if (i % SIXTEEN == 0) {
+            OHPrintf("%s", line.c_str());
+            line.clear();
+        }
+    }
+}
+
+bool VDecAPI11Sample::MdCompare(uint8_t source[])
+{
+    std::vector<uint8_t> srcHashVal = LoadHashFile();
+    DumpHashValue(srcHashVal, source);
+    if (srcHashVal.size() != SHA512_DIGEST_LENGTH) {
+        cout << "get hash value failed, size" << srcHashVal.size() << endl;
+        return false;
+    }
+    for (int32_t i = 0; i < SHA512_DIGEST_LENGTH; i++) {
+        if (source[i] != srcHashVal[i]) {
+            cout << "decoded hash value mismatch" << endl;
+            return false;
+        }
+    }
+    return true;
 }
 
 int64_t VDecAPI11Sample::GetSystemTimeUs()
@@ -810,9 +867,12 @@ int32_t VDecAPI11Sample::CheckAttrFlag(OH_AVCodecBufferAttr attr)
     if (attr.flags & AVCODEC_BUFFER_FLAGS_EOS) {
         cout << "AVCODEC_BUFFER_FLAGS_EOS" << endl;
         AutoSwitchSurface();
-        SHA512_Final(g_md, &g_c);
-        OpensslCleanse(&g_c, sizeof(g_c));
-        MdCompare(g_md, SHA512_DIGEST_LENGTH, fileSourcesha256);
+        Crypto_DataBlob g_out = { .data = nullptr, .len = 0 };
+        OH_CryptoDigest_Final(g_c, &g_out);
+        OH_DigestCrypto_Destroy(g_c);
+        if (!noCaleHash && !sfOutput && !MdCompare(g_out.data)) {
+            errCount++;
+        }
         return -1;
     }
     if (attr.flags == AVCODEC_BUFFER_FLAGS_CODEC_DATA) {
@@ -878,7 +938,7 @@ void VDecAPI11Sample::OutputFuncTest()
     if (outputYuvFlag) {
         outFile = fopen(outDir, "wb");
     }
-    SHA512_Init(&g_c);
+    OH_CryptoDigest_Create("SHA512", &g_c);
     bool flag = true;
     while (flag) {
         OH_AVCodecBufferAttr attr;
@@ -916,7 +976,7 @@ void VDecAPI11Sample::SyncOutputFunc()
     if (outputYuvFlag) {
         outFile = fopen(outDir, "wb");
     }
-    SHA512_Init(&g_c);
+    OH_CryptoDigest_Create("SHA512", &g_c);
     bool flag = true;
     while (flag) {
         if (!isRunning_.load()) {
@@ -1002,7 +1062,11 @@ void VDecAPI11Sample::ProcessOutputData(OH_AVBuffer* buffer, uint32_t index, int
                              uvSize) != EOK) {
                 cout << "Fatal: memory copy failed UV" << endl;
             }
-            SHA512_Update(&g_c, cropBuffer, size);
+            Crypto_DataBlob blob;
+            blob.data = cropBuffer;
+            blob.len = size;
+            OH_CryptoDigest_Update(g_c, &blob);
+            OHPrintf("dwlswd size: %d", size);
             delete[] cropBuffer;
         }
         if (OH_VideoDecoder_FreeOutputBuffer(vdec_, index) != AV_ERR_OK) {
