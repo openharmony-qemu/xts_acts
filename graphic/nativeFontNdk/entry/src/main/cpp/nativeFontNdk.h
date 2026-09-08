@@ -387,4 +387,7 @@ napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0700(napi_env env, nap
 napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0800(napi_env env, napi_callback_info info);
 napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0900(napi_env env, napi_callback_info info);
 napi_value OHDrawingSetTypographyStyleAttributeDoubleFirstLineHeadIndent0100(napi_env env, napi_callback_info info);
+napi_value TestSetTextHighContrast001(napi_env env, napi_callback_info info);
+napi_value TestSetTextHighContrast002(napi_env env, napi_callback_info info);
+napi_value TestTypographyUpdateDecorationColor001(napi_env env, napi_callback_info info);
 #endif // NATIVEFONTNDK_USELESS_H
