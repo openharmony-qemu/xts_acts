@@ -22,6 +22,7 @@
 #include <cstdio>
 #include <cstring>
 #include <cstdlib>
+#include <dlfcn.h>
 #include <cwctype>
 #include <cwchar>
 #include <iconv.h>
@@ -35,15 +36,19 @@
 #define PARAM_1 1
 #define BUFF_SIZE 256
 
-extern "C" int set_iconv_icu_enable(void);
-extern "C" int set_wctype_icu_enable(void);
-
 static pthread_once_t g_icu_init_once = PTHREAD_ONCE_INIT;
 
 static void DoIcuInit()
 {
-    set_iconv_icu_enable();
-    set_wctype_icu_enable();
+    typedef int (*enable_func)(void);
+    void *handle = dlopen(nullptr, RTLD_LAZY);
+    if (handle) {
+        enable_func fn1 = (enable_func)dlsym(handle, "set_iconv_icu_enable");
+        if (fn1) { fn1(); }
+        enable_func fn2 = (enable_func)dlsym(handle, "set_wctype_icu_enable");
+        if (fn2) { fn2(); }
+        dlclose(handle);
+    }
 }
 
 static void EnsureIcuInit()
