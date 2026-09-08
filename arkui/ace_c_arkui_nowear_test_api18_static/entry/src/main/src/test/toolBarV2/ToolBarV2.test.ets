@@ -454,8 +454,8 @@ export default function ToolBarV2Test(): void {
           },
           icon: itemImage,
           state: ToolBarV2ItemState.ENABLE,
-          accessibilityText: 'accessibility_text',
-          accessibilityDescription: 'test_description',
+          accessibilityText: 'ToolBarV2 Item Button',
+          accessibilityDescription: 'Click to perform toolbar item action',
           accessibilityLevel: 'yes'
         };
         const item: ToolBarV2Item = new ToolBarV2Item(options);
@@ -621,10 +621,10 @@ export default function ToolBarV2Test(): void {
         const itemText: ToolBarV2ItemText = new ToolBarV2ItemText(textOptions);
         const options: ToolBarV2ItemOptions = {
           content: itemText,
-          accessibilityText: 'accessibility_text'
+          accessibilityText: 'ToolBarV2 Item Button'
         };
         const item: ToolBarV2Item = new ToolBarV2Item(options);
-        expect(item.accessibilityText).assertEqual('accessibility_text');
+        expect(item.accessibilityText).assertEqual('ToolBarV2 Item Button');
         done();
       } catch (err) {
         console.info('testItemAccessibilityText001 err: ' + JSON.stringify(err));
@@ -646,10 +646,10 @@ export default function ToolBarV2Test(): void {
         const itemText: ToolBarV2ItemText = new ToolBarV2ItemText(textOptions);
         const options: ToolBarV2ItemOptions = {
           content: itemText,
-          accessibilityDescription: 'test_description'
+          accessibilityDescription: 'Click to perform toolbar item action'
         };
         const item: ToolBarV2Item = new ToolBarV2Item(options);
-        expect(item.accessibilityDescription).assertEqual('test_description');
+        expect(item.accessibilityDescription).assertEqual('Click to perform toolbar item action');
         done();
       } catch (err) {
         console.info('testItemAccessibilityDescription001 err: ' + JSON.stringify(err));
