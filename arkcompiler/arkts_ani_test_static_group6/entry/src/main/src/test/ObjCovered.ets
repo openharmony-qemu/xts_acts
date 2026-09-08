@@ -1973,4 +1973,732 @@ export default function extendedTestsPart8(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-
+    it("test_ObjCallByName_Byte_Normal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Byte_Normal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_BYTE_ABNORMAL
+     * @tc.name      test_ObjCallByName_Byte_Abnormal
+     * @tc.desc      Verify test_ObjCallByName_Byte_Abnormal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Byte_Abnormal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Byte_Abnormal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_BYTE_MULTITHREAD
+     * @tc.name      test_ObjCallByName_Byte_MultiThread
+     * @tc.desc      Verify test_ObjCallByName_Byte_MultiThread
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Byte_MultiThread", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Byte_MultiThread();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_CHAR_NORMAL
+     * @tc.name      test_ObjCallByName_Char_Normal
+     * @tc.desc      Verify test_ObjCallByName_Char_Normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Char_Normal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Char_Normal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_CHAR_ABNORMAL
+     * @tc.name      test_ObjCallByName_Char_Abnormal
+     * @tc.desc      Verify test_ObjCallByName_Char_Abnormal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Char_Abnormal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Char_Abnormal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_CHAR_MULTITHREAD
+     * @tc.name      test_ObjCallByName_Char_MultiThread
+     * @tc.desc      Verify test_ObjCallByName_Char_MultiThread
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Char_MultiThread", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Char_MultiThread();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_SHORT_NORMAL
+     * @tc.name      test_ObjCallByName_Short_Normal
+     * @tc.desc      Verify test_ObjCallByName_Short_Normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Short_Normal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Short_Normal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_SHORT_ABNORMAL
+     * @tc.name      test_ObjCallByName_Short_Abnormal
+     * @tc.desc      Verify test_ObjCallByName_Short_Abnormal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Short_Abnormal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Short_Abnormal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_SHORT_MULTITHREAD
+     * @tc.name      test_ObjCallByName_Short_MultiThread
+     * @tc.desc      Verify test_ObjCallByName_Short_MultiThread
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Short_MultiThread", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Short_MultiThread();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_LONG_NORMAL
+     * @tc.name      test_ObjCallByName_Long_Normal
+     * @tc.desc      Verify test_ObjCallByName_Long_Normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Long_Normal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Long_Normal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_LONG_ABNORMAL
+     * @tc.name      test_ObjCallByName_Long_Abnormal
+     * @tc.desc      Verify test_ObjCallByName_Long_Abnormal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Long_Abnormal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Long_Abnormal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_LONG_MULTITHREAD
+     * @tc.name      test_ObjCallByName_Long_MultiThread
+     * @tc.desc      Verify test_ObjCallByName_Long_MultiThread
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Long_MultiThread", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Long_MultiThread();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_FLOAT_NORMAL
+     * @tc.name      test_ObjCallByName_Float_Normal
+     * @tc.desc      Verify test_ObjCallByName_Float_Normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Float_Normal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Float_Normal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_FLOAT_ABNORMAL
+     * @tc.name      test_ObjCallByName_Float_Abnormal
+     * @tc.desc      Verify test_ObjCallByName_Float_Abnormal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Float_Abnormal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Float_Abnormal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_FLOAT_MULTITHREAD
+     * @tc.name      test_ObjCallByName_Float_MultiThread
+     * @tc.desc      Verify test_ObjCallByName_Float_MultiThread
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Float_MultiThread", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Float_MultiThread();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_DOUBLE_NORMAL
+     * @tc.name      test_ObjCallByName_Double_Normal
+     * @tc.desc      Verify test_ObjCallByName_Double_Normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Double_Normal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Double_Normal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_DOUBLE_ABNORMAL
+     * @tc.name      test_ObjCallByName_Double_Abnormal
+     * @tc.desc      Verify test_ObjCallByName_Double_Abnormal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Double_Abnormal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Double_Abnormal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_DOUBLE_MULTITHREAD
+     * @tc.name      test_ObjCallByName_Double_MultiThread
+     * @tc.desc      Verify test_ObjCallByName_Double_MultiThread
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Double_MultiThread", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Double_MultiThread();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_INT_NORMAL
+     * @tc.name      test_ObjCallByName_Int_Normal
+     * @tc.desc      Verify test_ObjCallByName_Int_Normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Int_Normal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Int_Normal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_INT_ABNORMAL
+     * @tc.name      test_ObjCallByName_Int_Abnormal
+     * @tc.desc      Verify test_ObjCallByName_Int_Abnormal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Int_Abnormal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Int_Abnormal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_INT_MULTITHREAD
+     * @tc.name      test_ObjCallByName_Int_MultiThread
+     * @tc.desc      Verify test_ObjCallByName_Int_MultiThread
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Int_MultiThread", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Int_MultiThread();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_REF_NORMAL
+     * @tc.name      test_ObjCallByName_Ref_Normal
+     * @tc.desc      Verify test_ObjCallByName_Ref_Normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Ref_Normal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Ref_Normal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_REF_ABNORMAL
+     * @tc.name      test_ObjCallByName_Ref_Abnormal
+     * @tc.desc      Verify test_ObjCallByName_Ref_Abnormal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Ref_Abnormal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Ref_Abnormal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_REF_MULTITHREAD
+     * @tc.name      test_ObjCallByName_Ref_MultiThread
+     * @tc.desc      Verify test_ObjCallByName_Ref_MultiThread
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Ref_MultiThread", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Ref_MultiThread();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_VOID_NORMAL
+     * @tc.name      test_ObjCallByName_Void_Normal
+     * @tc.desc      Verify test_ObjCallByName_Void_Normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Void_Normal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Void_Normal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_VOID_ABNORMAL
+     * @tc.name      test_ObjCallByName_Void_Abnormal
+     * @tc.desc      Verify test_ObjCallByName_Void_Abnormal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Void_Abnormal", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Void_Abnormal();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_VOID_MULTITHREAD
+     * @tc.name      test_ObjCallByName_Void_MultiThread
+     * @tc.desc      Verify test_ObjCallByName_Void_MultiThread
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Void_MultiThread", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Void_MultiThread();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELD_INT_BOUNDARY_MIN
+     * @tc.name      test_ObjGetField_Int_Boundary_Min
+     * @tc.desc      Verify test_ObjGetField_Int_Boundary_Min
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetField_Int_Boundary_Min", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetField_Int_Boundary_Min();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELD_INT_BOUNDARY_MAX
+     * @tc.name      test_ObjGetField_Int_Boundary_Max
+     * @tc.desc      Verify test_ObjGetField_Int_Boundary_Max
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetField_Int_Boundary_Max", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetField_Int_Boundary_Max();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELD_LONG_BOUNDARY_MIN
+     * @tc.name      test_ObjGetField_Long_Boundary_Min
+     * @tc.desc      Verify test_ObjGetField_Long_Boundary_Min
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetField_Long_Boundary_Min", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetField_Long_Boundary_Min();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELD_LONG_BOUNDARY_MAX
+     * @tc.name      test_ObjGetField_Long_Boundary_Max
+     * @tc.desc      Verify test_ObjGetField_Long_Boundary_Max
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetField_Long_Boundary_Max", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetField_Long_Boundary_Max();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELD_FLOAT_BOUNDARY_NAN
+     * @tc.name      test_ObjGetField_Float_Boundary_NaN
+     * @tc.desc      Verify test_ObjGetField_Float_Boundary_NaN
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetField_Float_Boundary_NaN", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetField_Float_Boundary_NaN();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELD_FLOAT_BOUNDARY_INFINITY
+     * @tc.name      test_ObjGetField_Float_Boundary_Infinity
+     * @tc.desc      Verify test_ObjGetField_Float_Boundary_Infinity
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetField_Float_Boundary_Infinity", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetField_Float_Boundary_Infinity();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELD_DOUBLE_BOUNDARY_NAN
+     * @tc.name      test_ObjGetField_Double_Boundary_NaN
+     * @tc.desc      Verify test_ObjGetField_Double_Boundary_NaN
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetField_Double_Boundary_NaN", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetField_Double_Boundary_NaN();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELD_DOUBLE_BOUNDARY_INFINITY
+     * @tc.name      test_ObjGetField_Double_Boundary_Infinity
+     * @tc.desc      Verify test_ObjGetField_Double_Boundary_Infinity
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetField_Double_Boundary_Infinity", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetField_Double_Boundary_Infinity();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJSETFIELD_INT_BOUNDARY_MIN
+     * @tc.name      test_ObjSetField_Int_Boundary_Min
+     * @tc.desc      Verify test_ObjSetField_Int_Boundary_Min
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjSetField_Int_Boundary_Min", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjSetField_Int_Boundary_Min();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJSETFIELD_INT_BOUNDARY_MAX
+     * @tc.name      test_ObjSetField_Int_Boundary_Max
+     * @tc.desc      Verify test_ObjSetField_Int_Boundary_Max
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjSetField_Int_Boundary_Max", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjSetField_Int_Boundary_Max();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJSETFIELD_FLOAT_BOUNDARY_NAN
+     * @tc.name      test_ObjSetField_Float_Boundary_NaN
+     * @tc.desc      Verify test_ObjSetField_Float_Boundary_NaN
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjSetField_Float_Boundary_NaN", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjSetField_Float_Boundary_NaN();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJSETFIELD_DOUBLE_BOUNDARY_NAN
+     * @tc.name      test_ObjSetField_Double_Boundary_NaN
+     * @tc.desc      Verify test_ObjSetField_Double_Boundary_NaN
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjSetField_Double_Boundary_NaN", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjSetField_Double_Boundary_NaN();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELD_BOOLEAN_BOUNDARY_FALSE
+     * @tc.name      test_ObjGetField_Boolean_Boundary_False
+     * @tc.desc      Verify test_ObjGetField_Boolean_Boundary_False
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetField_Boolean_Boundary_False", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetField_Boolean_Boundary_False();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELD_REF_BOUNDARY_NULL
+     * @tc.name      test_ObjGetField_Ref_Boundary_Null
+     * @tc.desc      Verify test_ObjGetField_Ref_Boundary_Null
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetField_Ref_Boundary_Null", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetField_Ref_Boundary_Null();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELDBYNAME_INT_BOUNDARY_MIN
+     * @tc.name      test_ObjGetFieldByName_Int_Boundary_Min
+     * @tc.desc      Verify test_ObjGetFieldByName_Int_Boundary_Min
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetFieldByName_Int_Boundary_Min", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetFieldByName_Int_Boundary_Min();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETFIELDBYNAME_INT_BOUNDARY_MAX
+     * @tc.name      test_ObjGetFieldByName_Int_Boundary_Max
+     * @tc.desc      Verify test_ObjGetFieldByName_Int_Boundary_Max
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetFieldByName_Int_Boundary_Max", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetFieldByName_Int_Boundary_Max();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJSETFIELDBYNAME_INT_BOUNDARY_MIN
+     * @tc.name      test_ObjSetFieldByName_Int_Boundary_Min
+     * @tc.desc      Verify test_ObjSetFieldByName_Int_Boundary_Min
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjSetFieldByName_Int_Boundary_Min", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjSetFieldByName_Int_Boundary_Min();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJSETFIELDBYNAME_INT_BOUNDARY_MAX
+     * @tc.name      test_ObjSetFieldByName_Int_Boundary_Max
+     * @tc.desc      Verify test_ObjSetFieldByName_Int_Boundary_Max
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjSetFieldByName_Int_Boundary_Max", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjSetFieldByName_Int_Boundary_Max();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_INT_BOUNDARY_MIN
+     * @tc.name      test_ObjCallByName_Int_Boundary_Min
+     * @tc.desc      Verify test_ObjCallByName_Int_Boundary_Min
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Int_Boundary_Min", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Int_Boundary_Min();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_INT_BOUNDARY_MAX
+     * @tc.name      test_ObjCallByName_Int_Boundary_Max
+     * @tc.desc      Verify test_ObjCallByName_Int_Boundary_Max
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Int_Boundary_Max", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Int_Boundary_Max();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJCALLBYNAME_INT_BOUNDARY_ZERO
+     * @tc.name      test_ObjCallByName_Int_Boundary_Zero
+     * @tc.desc      Verify test_ObjCallByName_Int_Boundary_Zero
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjCallByName_Int_Boundary_Zero", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjCallByName_Int_Boundary_Zero();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_OBJGETTYPE_BOUNDARY_NULLOBJECT
+     * @tc.name      test_ObjGetType_Boundary_NullObject
+     * @tc.desc      Verify test_ObjGetType_Boundary_NullObject
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_ObjGetType_Boundary_NullObject", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_ObjGetType_Boundary_NullObject();
+      expect(result).assertEqual(1);
+      done();
+    });
+  })
+}
