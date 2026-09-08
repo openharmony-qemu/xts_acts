@@ -2223,28 +2223,11 @@ export default function GraphicStrutStyle() {
           let ts: text.TextStyle = await getRunMetricsTextStyle({ color: myColor });
           console.info(msg + ' textStyle.color=' + JSON.stringify(ts.color));
           expect(ts.color != undefined).assertTrue();
-          // expect(ts.color!.red).assertEqual(255);
-          // expect(ts.color!.green).assertEqual(0);
-          if(ts.color !== undefined){
-            let num: number = Number.parseInt(ts.color?.toString())
-            let r = (num >>> 16) & 0xFF;
-            let g = (num >>> 8) & 0xFF;
-            let b = num & 0xFF;
-            let a = (num >>> 24) & 0xFF;
-            let color: common2D.Color = { red : r, green: g, blue: b, alpha: a }
-            console.info(msg + ' color ', JSON.stringify(color));
-            expect(color.alpha).assertEqual(255);
-            expect(color.red).assertEqual(255);
-            expect(color.green).assertEqual(0);
-            expect(color.blue).assertEqual(0);
-            console.info(msg + ' color passed');
-            console.info(msg + ' success end');
-            done();
-          } else {
-            console.info(msg + ' failed end');
-            expect().assertFail();
-            done();
-          }
+          expect(ts.color!.red).assertEqual(255);
+          expect(ts.color!.green).assertEqual(0);
+          expect(ts.color!.blue).assertEqual(0);
+          expect(ts.color!.alpha).assertEqual(255);
+          done();
         } catch (err) {
           console.error(msg + ' error: ' + JSON.stringify(err));
           expect().assertFail();
