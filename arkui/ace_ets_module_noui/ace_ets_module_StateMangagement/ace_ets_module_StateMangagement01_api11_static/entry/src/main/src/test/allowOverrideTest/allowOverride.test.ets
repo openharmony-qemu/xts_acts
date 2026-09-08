@@ -52,12 +52,12 @@ export default function allowOverride() {
     
     
 /**
-     * @tc.number   allowOverride_static_0100
-     * @tc.name     allowOverride_static_0100
-     * @tc.desc     allowOverride_static_0100
+     * @tc.number   SUB_ARKUI_API_allowOverride_static_0100
+     * @tc.name     SUB_ARKUI_API_allowOverride_static_0100
+     * @tc.desc     SUB_ARKUI_API_allowOverride_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('allowOverride_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_allowOverride_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('allowOverride_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('allowOverride_Consume');

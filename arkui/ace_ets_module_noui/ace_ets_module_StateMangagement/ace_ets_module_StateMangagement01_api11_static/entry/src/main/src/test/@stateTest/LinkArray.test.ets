@@ -49,12 +49,12 @@ export default function LinkArray() {
     
     
 /**
-     * @tc.number   LinkArray_0100
-     * @tc.name     LinkArray_0100
-     * @tc.desc     LinkArray_0100
+     * @tc.number   SUB_ARKUI_API_LinkArray_0100
+     * @tc.name     SUB_ARKUI_API_LinkArray_0100
+     * @tc.desc     SUB_ARKUI_API_LinkArray_0100
      * @tc.level    Level.LEVEL0
      */
- it('LinkArray_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('SUB_ARKUI_API_LinkArray_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArray_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -72,12 +72,12 @@ export default function LinkArray() {
     
     
 /**
-     * @tc.number   LinkArray_0200
-     * @tc.name     LinkArray_0200
-     * @tc.desc     LinkArray_0200
+     * @tc.number   SUB_ARKUI_API_LinkArray_0200
+     * @tc.name     SUB_ARKUI_API_LinkArray_0200
+     * @tc.desc     SUB_ARKUI_API_LinkArray_0200
      * @tc.level    Level.LEVEL0
      */
-it('LinkArray_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_LinkArray_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArray_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -95,12 +95,12 @@ it('LinkArray_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
     
     
 /**
-     * @tc.number   LinkArray_0300
-     * @tc.name     LinkArray_0300
-     * @tc.desc     LinkArray_0300
+     * @tc.number   SUB_ARKUI_API_LinkArray_0300
+     * @tc.name     SUB_ARKUI_API_LinkArray_0300
+     * @tc.desc     SUB_ARKUI_API_LinkArray_0300
      * @tc.level    Level.LEVEL0
      */
-it('LinkArray_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_LinkArray_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArray_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -118,12 +118,12 @@ it('LinkArray_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
     
     
 /**
-     * @tc.number   LinkArray_0400
-     * @tc.name     LinkArray_0400
-     * @tc.desc     LinkArray_0400
-     * @tc.level    Level.LEVEL0
+     * @tc.number   SUB_ARKUI_API_LinkArray_0400
+     * @tc.name     SUB_ARKUI_API_LinkArray_0400
+     * @tc.desc     SUB_ARKUI_API_LinkArray_0400
+     * @tc.level    SUB_ARKUI_API_Level.LEVEL0
      */
-it('LinkArray_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_LinkArray_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkArray_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

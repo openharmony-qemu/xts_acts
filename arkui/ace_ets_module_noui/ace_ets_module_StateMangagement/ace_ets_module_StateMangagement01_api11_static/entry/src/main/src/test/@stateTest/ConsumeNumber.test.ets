@@ -52,12 +52,12 @@ export default function ConsumeNumber() {
     
     
 /**
-     * @tc.number   ConsumeNumber_0100
-     * @tc.name     ConsumeNumber_0100
-     * @tc.desc     ConsumeNumber_0100
+     * @tc.number   SUB_ARKUI_API_ConsumeNumber_0100
+     * @tc.name     SUB_ARKUI_API_ConsumeNumber_0100
+     * @tc.desc     SUB_ARKUI_API_ConsumeNumber_0100
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeNumber_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_ConsumeNumber_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ConsumeNumber_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -75,12 +75,12 @@ it('ConsumeNumber_0100', Level.LEVEL0, async (done: () => void): Promise<void> =
     
     
 /**
-     * @tc.number   ConsumeNumber_0200
-     * @tc.name     ConsumeNumber_0200
-     * @tc.desc     ConsumeNumber_0200
+     * @tc.number   SUB_ARKUI_API_ConsumeNumber_0200
+     * @tc.name     SUB_ARKUI_API_ConsumeNumber_0200
+     * @tc.desc     SUB_ARKUI_API_ConsumeNumber_0200
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeNumber_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_ConsumeNumber_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ConsumeNumber_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -98,12 +98,12 @@ it('ConsumeNumber_0200', Level.LEVEL0, async (done: () => void): Promise<void> =
     
     
 /**
-     * @tc.number   ConsumeNumber_0300
-     * @tc.name     ConsumeNumber_0300
-     * @tc.desc     ConsumeNumber_0300
+     * @tc.number   SUB_ARKUI_API_ConsumeNumber_0300
+     * @tc.name     SUB_ARKUI_API_ConsumeNumber_0300
+     * @tc.desc     SUB_ARKUI_API_ConsumeNumber_0300
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeNumber_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_ConsumeNumber_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ConsumeNumber_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -121,12 +121,12 @@ it('ConsumeNumber_0300', Level.LEVEL0, async (done: () => void): Promise<void> =
     
     
 /**
-     * @tc.number   ConsumeNumber_0400
-     * @tc.name     ConsumeNumber_0400
-     * @tc.desc     ConsumeNumber_0400
+     * @tc.number   SUB_ARKUI_API_ConsumeNumber_0400
+     * @tc.name     SUB_ARKUI_API_ConsumeNumber_0400
+     * @tc.desc     SUB_ARKUI_API_ConsumeNumber_0400
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeNumber_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_ConsumeNumber_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ConsumeNumber_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -144,12 +144,12 @@ it('ConsumeNumber_0400', Level.LEVEL0, async (done: () => void): Promise<void> =
     
     
 /**
-     * @tc.number   ConsumeNumber_0500
-     * @tc.name     ConsumeNumber_0500
-     * @tc.desc     ConsumeNumber_0500
+     * @tc.number   SUB_ARKUI_API_ConsumeNumber_0500
+     * @tc.name     SUB_ARKUI_API_ConsumeNumber_0500
+     * @tc.desc     SUB_ARKUI_API_ConsumeNumber_0500
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeNumber_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_ConsumeNumber_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ConsumeNumber_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

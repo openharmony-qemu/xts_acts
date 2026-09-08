@@ -80,12 +80,12 @@ export default function FreezeV1Test03() {
     
     
 /**
-     * @tc.number   FreezeTest_static_0013
-     * @tc.name     FreezeTest_static_0013
-     * @tc.desc     FreezeTest_static_0013
+     * @tc.number   SUB_ARKUI_API_FreezeTest_static_0100
+     * @tc.name     SUB_ARKUI_API_FreezeTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_FreezeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_0013', Level.LEVEL0, async () => {
+it('SUB_ARKUI_API_FreezeTest_static_0100', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_001 START');
       let driver =  Driver.create();
 
@@ -114,12 +114,12 @@ it('FreezeTest_static_0013', Level.LEVEL0, async () => {
     
     
 /**
-     * @tc.number   FreezeTest_static_0023
-     * @tc.name     FreezeTest_static_0023
-     * @tc.desc     FreezeTest_static_0023
+     * @tc.number   SUB_ARKUI_API_FreezeTest_static_0200
+     * @tc.name     SUB_ARKUI_API_FreezeTest_static_0200
+     * @tc.desc     SUB_ARKUI_API_FreezeTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_0023', Level.LEVEL0, async () => {
+it('SUB_ARKUI_API_FreezeTest_static_0200', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_002 START');
       let driver =  Driver.create();
       let nextPage1 = await driver.findComponent(ON.id('NextPage1'));
@@ -146,12 +146,12 @@ it('FreezeTest_static_0023', Level.LEVEL0, async () => {
     
     
 /**
-     * @tc.number   FreezeTest_static_0033
-     * @tc.name     FreezeTest_static_0033
-     * @tc.desc     FreezeTest_static_0033
+     * @tc.number   SUB_ARKUI_API_FreezeTest_static_0300
+     * @tc.name     SUB_ARKUI_API_FreezeTest_static_0300
+     * @tc.desc     SUB_ARKUI_API_FreezeTest_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_0033', Level.LEVEL0, async () => {
+it('SUB_ARKUI_API_FreezeTest_static_0300', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_003 START');
       let driver =  Driver.create();
       let nextPage2 = await driver.findComponent(ON.id('NextPage2'));
@@ -178,12 +178,12 @@ it('FreezeTest_static_0033', Level.LEVEL0, async () => {
     
     
 /**
-     * @tc.number   FreezeTest_static_0043
-     * @tc.name     FreezeTest_static_0043
-     * @tc.desc     FreezeTest_static_0043
+     * @tc.number   SUB_ARKUI_API_FreezeTest_static_0400
+     * @tc.name     SUB_ARKUI_API_FreezeTest_static_0400
+     * @tc.desc     SUB_ARKUI_API_FreezeTest_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_0043', Level.LEVEL0, async () => {
+it('SUB_ARKUI_API_FreezeTest_static_0400', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_004 START');
       let driver =  Driver.create();
       let backPage3 = await driver.findComponent(ON.id('BackPage3'));
@@ -207,12 +207,12 @@ it('FreezeTest_static_0043', Level.LEVEL0, async () => {
     
     
 /**
-     * @tc.number   FreezeTest_static_0053
-     * @tc.name     FreezeTest_static_0053
-     * @tc.desc     FreezeTest_static_0053
+     * @tc.number   SUB_ARKUI_API_FreezeTest_static_0500
+     * @tc.name     SUB_ARKUI_API_FreezeTest_static_0500
+     * @tc.desc     SUB_ARKUI_API_FreezeTest_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_0053', Level.LEVEL0, async () => {
+it('FreezeTest_stSUB_ARKUI_API_FreezeTest_static_0500atic_0053', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_005 START');
       let driver =  Driver.create();
       let backPage2 = await driver.findComponent(ON.id('BackPage2'));

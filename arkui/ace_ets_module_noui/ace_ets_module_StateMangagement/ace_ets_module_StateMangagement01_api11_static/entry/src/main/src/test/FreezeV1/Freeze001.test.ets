@@ -65,12 +65,12 @@ export default function FreezeV1Test() {
     
     
 /**
-     * @tc.number   FreezeTest_001
-     * @tc.name     FreezeTest_001
-     * @tc.desc     FreezeTest_001
+     * @tc.number   SUB_ARKUI_API_FreezeTest_001
+     * @tc.name     SUB_ARKUI_API_FreezeTest_001
+     * @tc.desc     SUB_ARKUI_API_FreezeTest_001
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_001', Level.LEVEL0, async () => {
+it('SUB_ARKUI_API_FreezeTest_001', Level.LEVEL0, async () => {
       console.info('FreezeTest_001 START');
       let driver =  Driver.create()
       let changeIndex = await driver.findComponent(ON.id('changeIndex'));
@@ -98,12 +98,12 @@ it('FreezeTest_001', Level.LEVEL0, async () => {
     
     
 /**
-     * @tc.number   FreezeTest_002
-     * @tc.name     FreezeTest_002
-     * @tc.desc     FreezeTest_002
+     * @tc.number   SUB_ARKUI_API_FreezeTest_0100
+     * @tc.name     SUB_ARKUI_API_FreezeTest_0100
+     * @tc.desc     SUB_ARKUI_API_FreezeTest_0100
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_002', Level.LEVEL0, async () => {
+it('SUB_ARKUI_API_FreezeTest_0100', Level.LEVEL0, async () => {
       console.info('FreezeTest_002 START');
       let driver =  Driver.create()
       let changeIndex0 = await driver.findComponent(ON.id('changeIndex0'));

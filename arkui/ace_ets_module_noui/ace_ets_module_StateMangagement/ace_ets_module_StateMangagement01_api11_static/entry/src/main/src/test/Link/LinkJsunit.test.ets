@@ -83,12 +83,12 @@ export default function linkJsunit() {
     
     
 /**
-     * @tc.number   linkTest_static_001
-     * @tc.name     linkTest_static_001
-     * @tc.desc     linkTest_static_001
+     * @tc.number   SUB_ARKUI_API_linkTest_static_0100
+     * @tc.name     SUB_ARKUI_API_linkTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_linkTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('linkTest_static_001', Level.LEVEL0, async () => {
+it('SUB_ARKUI_API_linkTest_static_0100', Level.LEVEL0, async () => {
       console.info('linkTest_static_001 START');
       await sleep(1)
       let strJson = inspector.getInspectorByKey('Button');
@@ -105,12 +105,12 @@ it('linkTest_static_001', Level.LEVEL0, async () => {
     
     
 /**
-     * @tc.number   linkTest_static_002
-     * @tc.name     linkTest_static_002
-     * @tc.desc     linkTest_static_002
+     * @tc.number   SUB_ARKUI_API_linkTest_static_0200
+     * @tc.name     SUB_ARKUI_API_linkTest_static_0200
+     * @tc.desc     SUB_ARKUI_API_linkTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('linkTest_static_002', Level.LEVEL0, async () => {
+it('SUB_ARKUI_API_linkTest_static_0200', Level.LEVEL0, async () => {
       console.info('linkTest_static_002 START');
       let strJson = inspector.getInspectorByKey('Button1');
       let obj = JSON.parseJsonElement(strJson);

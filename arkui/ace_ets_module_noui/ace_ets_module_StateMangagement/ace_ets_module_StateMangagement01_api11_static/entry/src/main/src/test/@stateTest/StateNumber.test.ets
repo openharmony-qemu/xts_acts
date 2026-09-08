@@ -49,12 +49,12 @@ export default function StateNumber() {
     
     
 /**
-     * @tc.number   StateNumber_0100
-     * @tc.name     StateNumber_0100
-     * @tc.desc     StateNumber_0100
+     * @tc.number   SUB_ARKUI_API_StateNumber_0100
+     * @tc.name     SUB_ARKUI_API_StateNumber_0100
+     * @tc.desc     SUB_ARKUI_API_StateNumber_0100
      * @tc.level    Level.LEVEL0
      */
- it('StateNumber_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('SUB_ARKUI_API_StateNumber_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateNumber_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -72,12 +72,12 @@ export default function StateNumber() {
     
     
 /**
-     * @tc.number   StateNumber_0200
-     * @tc.name     StateNumber_0200
-     * @tc.desc     StateNumber_0200
+     * @tc.number   SUB_ARKUI_API_StateNumber_0200
+     * @tc.name     SUB_ARKUI_API_StateNumber_0200
+     * @tc.desc     SUB_ARKUI_API_StateNumber_0200
      * @tc.level    Level.LEVEL0
      */
- it('StateNumber_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('SUB_ARKUI_API_StateNumber_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateNumber_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -95,12 +95,12 @@ export default function StateNumber() {
     
     
 /**
-     * @tc.number   StateNumber_0300
-     * @tc.name     StateNumber_0300
-     * @tc.desc     StateNumber_0300
+     * @tc.number   SUB_ARKUI_API_StateNumber_0300
+     * @tc.name     SUB_ARKUI_API_StateNumber_0300
+     * @tc.desc     SUB_ARKUI_API_StateNumber_0300
      * @tc.level    Level.LEVEL0
      */
- it('StateNumber_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('SUB_ARKUI_API_StateNumber_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateNumber_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -118,12 +118,12 @@ export default function StateNumber() {
     
     
 /**
-     * @tc.number   StateNumber_0400
-     * @tc.name     StateNumber_0400
-     * @tc.desc     StateNumber_0400
+     * @tc.number   SUB_ARKUI_API_StateNumber_0400
+     * @tc.name     SUB_ARKUI_API_StateNumber_0400
+     * @tc.desc     SUB_ARKUI_API_StateNumber_0400
      * @tc.level    Level.LEVEL0
      */
- it('StateNumber_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('SUB_ARKUI_API_StateNumber_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateNumber_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -141,12 +141,12 @@ export default function StateNumber() {
     
     
 /**
-     * @tc.number   StateNumber_0500
-     * @tc.name     StateNumber_0500
-     * @tc.desc     StateNumber_0500
+     * @tc.number   SUB_ARKUI_API_StateNumber_0500
+     * @tc.name     SUB_ARKUI_API_StateNumber_0500
+     * @tc.desc     SUB_ARKUI_API_StateNumber_0500
      * @tc.level    Level.LEVEL0
      */
- it('StateNumber_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('SUB_ARKUI_API_StateNumber_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateNumber_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

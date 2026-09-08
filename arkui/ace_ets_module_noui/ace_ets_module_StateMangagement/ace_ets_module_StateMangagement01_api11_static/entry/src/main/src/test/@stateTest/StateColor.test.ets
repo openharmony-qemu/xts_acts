@@ -51,12 +51,12 @@ export default function StateColor() {
     
     
 /**
-     * @tc.number   StateColor_0100
-     * @tc.name     StateColor_0100
-     * @tc.desc     StateColor_0100
+     * @tc.number   SUB_ARKUI_API_StateColor_0100
+     * @tc.name     SUB_ARKUI_API_StateColor_0100
+     * @tc.desc     SUB_ARKUI_API_StateColor_0100
      * @tc.level    Level.LEVEL0
      */
-it('StateColor_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_StateColor_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -74,12 +74,12 @@ it('StateColor_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
     
     
 /**
-     * @tc.number   StateColor_0200
-     * @tc.name     StateColor_0200
-     * @tc.desc     StateColor_0200
+     * @tc.number   SUB_ARKUI_API_StateColor_0200
+     * @tc.name     SUB_ARKUI_API_StateColor_0200
+     * @tc.desc     SUB_ARKUI_API_StateColor_0200
      * @tc.level    Level.LEVEL0
      */
-it('StateColor_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_StateColor_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -97,12 +97,12 @@ it('StateColor_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
     
     
 /**
-     * @tc.number   StateColor_0300
-     * @tc.name     StateColor_0300
-     * @tc.desc     StateColor_0300
+     * @tc.number   SUB_ARKUI_API_StateColor_0300
+     * @tc.name     SUB_ARKUI_API_StateColor_0300
+     * @tc.desc     SUB_ARKUI_API_StateColor_0300
      * @tc.level    Level.LEVEL0
      */
-it('StateColor_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_StateColor_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -120,12 +120,12 @@ it('StateColor_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
     
     
 /**
-     * @tc.number   StateColor_0400
-     * @tc.name     StateColor_0400
-     * @tc.desc     StateColor_0400
+     * @tc.number   SUB_ARKUI_API_StateColor_0400
+     * @tc.name     SUB_ARKUI_API_StateColor_0400
+     * @tc.desc     SUB_ARKUI_API_StateColor_0400
      * @tc.level    Level.LEVEL0
      */
-it('StateColor_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_StateColor_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -141,39 +141,17 @@ it('StateColor_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       done();
     });
     
-    
-/**
-     * @tc.number   StateColor_0500
-     * @tc.name     StateColor_0500
-     * @tc.desc     StateColor_0500
-     * @tc.level    Level.LEVEL0
-     */
-// it('StateColor_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-//       console.info('StateColor_0100 START');
-//       let driver = Driver.create()
-//       await CommonFunc.sleep(1000);
-//       let button = await driver.findComponent(ON.id('StateColor_state5'));
-//       await (button?.click() as Promise<void>);
-//       await CommonFunc.sleep(1000);
-//       let strJson = inspector.getInspectorByKey('StateColor');
-//       let obj = JSON.parseJsonElement(strJson);
-//       console.info("[StateColor_0100] component obj is: " + JSON.stringify(obj));
-//       console.info("[StateColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-//       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Null]" number is null');
-//       console.info('[StateColor_0100] END');
-//       done();
-//     });
 
 
     
     
 /**
-     * @tc.number   StateColor_0600
-     * @tc.name     StateColor_0600
-     * @tc.desc     StateColor_0600
+     * @tc.number   SUB_ARKUI_API_StateColor_0600
+     * @tc.name     SUB_ARKUI_API_StateColor_0600
+     * @tc.desc     SUB_ARKUI_API_StateColor_0600
      * @tc.level    Level.LEVEL0
      */
-it('StateColor_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_StateColor_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

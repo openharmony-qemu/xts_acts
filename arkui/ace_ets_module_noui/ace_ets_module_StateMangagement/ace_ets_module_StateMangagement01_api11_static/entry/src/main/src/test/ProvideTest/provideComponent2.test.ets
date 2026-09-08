@@ -51,12 +51,12 @@ export default function provideComponent2() {
     
     
 /**
-     * @tc.number   provideComponentTwoTest_static_0100
-     * @tc.name     provideComponentTwoTest_static_0100
-     * @tc.desc     provideComponentTwoTest_static_0100
+     * @tc.number   SUB_ARKUI_API_provideComponentTwoTest_static_0100
+     * @tc.name     SUB_ARKUI_API_provideComponentTwoTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_provideComponentTwoTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('provideComponentTwoTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_provideComponentTwoTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('provideComponentTwoTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('provideComponent2');

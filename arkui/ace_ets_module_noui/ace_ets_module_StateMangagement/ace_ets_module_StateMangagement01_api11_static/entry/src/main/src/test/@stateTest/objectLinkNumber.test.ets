@@ -52,12 +52,12 @@ export default function objectLinkNumber() {
     
     
 /**
-     * @tc.number   objectLinkNumber_0100
-     * @tc.name     objectLinkNumber_0100
-     * @tc.desc     objectLinkNumber_0100
+     * @tc.number   SUB_ARKUI_API_objectLinkNumber_0100
+     * @tc.name     SUB_ARKUI_API_objectLinkNumber_0100
+     * @tc.desc     SUB_ARKUI_API_objectLinkNumber_0100
      * @tc.level    Level.LEVEL0
      */
-it('objectLinkNumber_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_objectLinkNumber_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('objectLinkNumber_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -75,12 +75,12 @@ it('objectLinkNumber_0100', Level.LEVEL0, async (done: () => void): Promise<void
     
     
 /**
-     * @tc.number   objectLinkNumber_0200
-     * @tc.name     objectLinkNumber_0200
-     * @tc.desc     objectLinkNumber_0200
+     * @tc.number   SUB_ARKUI_API_objectLinkNumber_0200
+     * @tc.name     SUB_ARKUI_API_objectLinkNumber_0200
+     * @tc.desc     SUB_ARKUI_API_objectLinkNumber_0200
      * @tc.level    Level.LEVEL0
      */
-it('objectLinkNumber_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_objectLinkNumber_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('objectLinkNumber_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -98,12 +98,12 @@ it('objectLinkNumber_0200', Level.LEVEL0, async (done: () => void): Promise<void
     
     
 /**
-     * @tc.number   objectLinkNumber_0300
-     * @tc.name     objectLinkNumber_0300
-     * @tc.desc     objectLinkNumber_0300
+     * @tc.number   SUB_ARKUI_API_objectLinkNumber_0300
+     * @tc.name     SUB_ARKUI_API_objectLinkNumber_0300
+     * @tc.desc     SUB_ARKUI_API_objectLinkNumber_0300
      * @tc.level    Level.LEVEL0
      */
-it('objectLinkNumber_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_objectLinkNumber_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('objectLinkNumber_0300 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -121,12 +121,12 @@ it('objectLinkNumber_0300', Level.LEVEL0, async (done: () => void): Promise<void
     
     
 /**
-     * @tc.number   objectLinkNumber_0400
-     * @tc.name     objectLinkNumber_0400
-     * @tc.desc     objectLinkNumber_0400
+     * @tc.number   SUB_ARKUI_API_objectLinkNumber_0400
+     * @tc.name     SUB_ARKUI_API_objectLinkNumber_0400
+     * @tc.desc     SUB_ARKUI_API_objectLinkNumber_0400
      * @tc.level    Level.LEVEL0
      */
-it('objectLinkNumber_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_objectLinkNumber_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('objectLinkNumber_0400 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

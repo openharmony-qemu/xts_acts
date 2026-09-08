@@ -55,12 +55,12 @@ export default function PersistentTest0040() {
     
     
 /**
-     * @tc.number   PersistentTest0040_static_001
-     * @tc.name     PersistentTest0040_static_001
-     * @tc.desc     PersistentTest0040_static_001
+     * @tc.number   SUB_ARKUI_API_PersistentTest0040_static_0100
+     * @tc.name     SUB_ARKUI_API_PersistentTest0040_static_0100
+     * @tc.desc     SUB_ARKUI_API_PersistentTest0040_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('PersistentTest0040_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_PersistentTest0040_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[PersistentTest0040_static_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

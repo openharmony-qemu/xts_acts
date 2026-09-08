@@ -51,12 +51,12 @@ export default function PropArray1() {
     
     
 /**
-     * @tc.number   PropArray_static_0500
-     * @tc.name     PropArray_static_0500
-     * @tc.desc     PropArray_static_0500
+     * @tc.number   SUB_ARKUI_API_PropArray_static_0500
+     * @tc.name     SUB_ARKUI_API_PropArray_static_0500
+     * @tc.desc     SUB_ARKUI_API_PropArray_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('PropArray_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_PropArray_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropArray_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -74,12 +74,12 @@ it('PropArray_static_0500', Level.LEVEL0, async (done: () => void): Promise<void
     
     
 /**
-     * @tc.number   PropArray_static_0600
-     * @tc.name     PropArray_static_0600
-     * @tc.desc     PropArray_static_0600
+     * @tc.number   SUB_ARKUI_API_PropArray_static_0600
+     * @tc.name     SUB_ARKUI_API_PropArray_static_0600
+     * @tc.desc     SUB_ARKUI_API_PropArray_static_0600
      * @tc.level    Level.LEVEL0
      */
-it('PropArray_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_PropArray_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropArray_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -97,12 +97,12 @@ it('PropArray_static_0600', Level.LEVEL0, async (done: () => void): Promise<void
     
     
 /**
-     * @tc.number   PropArray_static_0700
-     * @tc.name     PropArray_static_0700
-     * @tc.desc     PropArray_static_0700
+     * @tc.number   SUB_ARKUI_API_PropArray_static_0700
+     * @tc.name     SUB_ARKUI_API_PropArray_static_0700
+     * @tc.desc     SUB_ARKUI_API_PropArray_static_0700
      * @tc.level    Level.LEVEL0
      */
-it('PropArray_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_PropArray_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropArray_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -120,12 +120,12 @@ it('PropArray_static_0700', Level.LEVEL0, async (done: () => void): Promise<void
     
     
 /**
-     * @tc.number   PropArray_static_0800
-     * @tc.name     PropArray_static_0800
-     * @tc.desc     PropArray_static_0800
+     * @tc.number   SUB_ARKUI_API_PropArray_static_0800
+     * @tc.name     SUB_ARKUI_API_PropArray_static_0800
+     * @tc.desc     SUB_ARKUI_API_PropArray_static_0800
      * @tc.level    Level.LEVEL0
      */
-it('PropArray_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_PropArray_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PropArray_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -143,12 +143,12 @@ it('PropArray_static_0800', Level.LEVEL0, async (done: () => void): Promise<void
     
     
 /**
-     * @tc.number   PropArray_static_0900
-     * @tc.name     PropArray_static_0900
-     * @tc.desc     PropArray_static_0900
+     * @tc.number   SUB_ARKUI_API_PropArray_static_0900
+     * @tc.name     SUB_ARKUI_API_PropArray_static_0900
+     * @tc.desc     SUB_ARKUI_API_PropArray_static_0900
      * @tc.level    Level.LEVEL0
      */
-it('PropArray_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_PropArray_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateArray_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

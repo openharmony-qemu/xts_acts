@@ -52,12 +52,12 @@ export default function provideBrother2() {
     
     
 /**
-     * @tc.number   provideBrotherTwoTest_static_0100
-     * @tc.name     provideBrotherTwoTest_static_0100
-     * @tc.desc     provideBrotherTwoTest_static_0100
+     * @tc.number   SUB_ARKUI_API_provideBrotherTwoTest_static_0100
+     * @tc.name     SUB_ARKUI_API_provideBrotherTwoTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_provideBrotherTwoTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('provideBrotherTwoTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_provideBrotherTwoTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('provideBrotherTwoTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('provideBrother2');

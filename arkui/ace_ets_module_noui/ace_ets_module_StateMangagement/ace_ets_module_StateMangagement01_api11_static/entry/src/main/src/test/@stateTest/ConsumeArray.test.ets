@@ -50,13 +50,13 @@ export default function ConsumeArray() {
       
     
 /**
-     * @tc.number   ConsumeArray_0100
-     * @tc.name     ConsumeArray_0100
-     * @tc.desc     ConsumeArray_0100
+     * @tc.number   SUB_ARKUI_API_ConsumeArray_0100
+     * @tc.name     SUB_ARKUI_API_ConsumeArray_0100
+     * @tc.desc     SUB_ARKUI_API_ConsumeArray_0100
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeArray_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ConsumeArray_0100 START');
+it('SUB_ARKUI_API_ConsumeArray_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_API_ConsumeArray_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ConsumeArray_state1'));
@@ -64,22 +64,22 @@ it('ConsumeArray_0100', Level.LEVEL0, async (done: () => void): Promise<void> =>
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArray');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ConsumeArray_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ConsumeArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[SUB_ARKUI_API_ConsumeArray_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[SUB_ARKUI_API_ConsumeArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Array]" number is [10]');
-      console.info('[ConsumeArray_0100] END');
+      console.info('[SUB_ARKUI_API_ConsumeArray_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   ConsumeArray_0200
-     * @tc.name     ConsumeArray_0200
-     * @tc.desc     ConsumeArray_0200
+     * @tc.number   SUB_ARKUI_API_ConsumeArray_0200
+     * @tc.name     SUB_ARKUI_API_ConsumeArray_0200
+     * @tc.desc     SUB_ARKUI_API_ConsumeArray_0200
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeArray_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ConsumeArray_0100 START');
+it('SUB_ARKUI_API_ConsumeArray_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_API_ConsumeArray_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ConsumeArray_state2'));
@@ -87,22 +87,22 @@ it('ConsumeArray_0200', Level.LEVEL0, async (done: () => void): Promise<void> =>
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArray');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ConsumeArray_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ConsumeArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[SUB_ARKUI_API_ConsumeArray_0200] component obj is: " + JSON.stringify(obj));
+      console.info("[SUB_ARKUI_API_ConsumeArray_0200] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Array]" number is [true]');
-      console.info('[ConsumeArray_0100] END');
+      console.info('[SUB_ARKUI_API_ConsumeArray_0200] END');
       done();
     });
     
     
 /**
-     * @tc.number   ConsumeArray_0300
-     * @tc.name     ConsumeArray_0300
-     * @tc.desc     ConsumeArray_0300
+     * @tc.number   SUB_ARKUI_API_ConsumeArray_0300
+     * @tc.name     SUB_ARKUI_API_ConsumeArray_0300
+     * @tc.desc     SUB_ARKUI_API_ConsumeArray_0300
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeArray_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ConsumeArray_0100 START');
+it('SUB_ARKUI_API_ConsumeArray_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_API_ConsumeArray_0300 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ConsumeArray_state3'));
@@ -110,22 +110,22 @@ it('ConsumeArray_0300', Level.LEVEL0, async (done: () => void): Promise<void> =>
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArray');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ConsumeArray_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ConsumeArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[SUB_ARKUI_API_ConsumeArray_0300] component obj is: " + JSON.stringify(obj));
+      console.info("[SUB_ARKUI_API_ConsumeArray_0300] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Boolean]" number is true');
-      console.info('[ConsumeArray_0100] END');
+      console.info('[SUB_ARKUI_API_ConsumeArray_0300] END');
       done();
     });
     
     
 /**
-     * @tc.number   ConsumeArray_0400
-     * @tc.name     ConsumeArray_0400
-     * @tc.desc     ConsumeArray_0400
+     * @tc.number   SUB_ARKUI_API_ConsumeArray_0400
+     * @tc.name     SUB_ARKUI_API_ConsumeArray_0400
+     * @tc.desc     SUB_ARKUI_API_ConsumeArray_0400
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeArray_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ConsumeArray_0100 START');
+it('SUB_ARKUI_API_ConsumeArray_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_API_ConsumeArray_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ConsumeArray_state4'));
@@ -133,10 +133,10 @@ it('ConsumeArray_0400', Level.LEVEL0, async (done: () => void): Promise<void> =>
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArrayNew');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ConsumeArray_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ConsumeArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[SUB_ARKUI_API_ConsumeArray_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[SUB_ARKUI_API_ConsumeArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Array]" number is 200');
-      console.info('[ConsumeArray_0100] END');
+      console.info('[SUB_ARKUI_API_ConsumeArray_0100] END');
       done();
     });
 
