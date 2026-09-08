@@ -164,7 +164,6 @@
     "pages/ArkUI/ModalTransition",
     "pages/ArkUI/BindContentCoverOption",
     "pages/ArkUI/EnableShowHideWithContentCover",
-    "pages/ArkUI/ImageAnimationControllerPage",
     "pages/ArkUI/AnimatedDrawableDescriptorFrameDurations",
     "pages/ArkUI/GetDarkModeTest",
     "pages/ArkUI/TabBarIndicatorPixmap",
