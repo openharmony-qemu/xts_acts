@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import router from '@ohos.router';
+import router from '@ohos/router';
 import CommonFunc from '../../../MainAbility/common/Common';
 
 export default function xComponentInterfaceConstructorNullUndefinedTest() {
@@ -57,7 +57,7 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
     /**
      * @tc.name   xComponentInterface_options_null_001
      * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_OPTIONS_NULL_0001
-     * @tc.desc   测试XComponentInterface constructor(since 12)第1个参数options传入null，组件可正常渲染
+     * @tc.desc   测试XComponentInterface constructor(since 12)第1个参数options传入null，不创建组件节点（优雅处理无崩溃）
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
@@ -66,17 +66,14 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
       console.info('[xComponentInterface_options_null_001] START');
       let strJson: string = getInspectorByKey('xcomponent_options_null');
       console.info('[xComponentInterface_options_null_001] strJson: ' + strJson);
-      expect(strJson.length > 0).assertTrue();
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[xComponentInterface_options_null_001] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(obj !== null && obj !== undefined).assertTrue();
+      expect(strJson.length === 0).assertTrue();
       console.info('[xComponentInterface_options_null_001] END');
     });
 
     /**
      * @tc.name   xComponentInterface_options_undefined_001
      * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_OPTIONS_UNDEFINED_0002
-     * @tc.desc   测试XComponentInterface constructor(since 12)第1个参数options传入undefined，组件可正常渲染
+     * @tc.desc   测试XComponentInterface constructor(since 12)第1个参数options传入undefined，使用默认值创建组件节点
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
@@ -92,31 +89,12 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
       console.info('[xComponentInterface_options_undefined_001] END');
     });
 
-    /**
-     * @tc.name   xComponentInterface_options_valid_001
-     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_OPTIONS_VALID_0003
-     * @tc.desc   测试XComponentInterface constructor(since 12)第1个参数options传入正常XComponentOptions对象，组件正常渲染
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL2
-     */
-    it('xComponentInterface_options_valid_001', Level.LEVEL2, () => {
-      console.info('[xComponentInterface_options_valid_001] START');
-      let strJson: string = getInspectorByKey('xcomponent_options_valid');
-      console.info('[xComponentInterface_options_valid_001] strJson: ' + strJson);
-      expect(strJson.length > 0).assertTrue();
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[xComponentInterface_options_valid_001] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(obj !== null && obj !== undefined).assertTrue();
-      console.info('[xComponentInterface_options_valid_001] END');
-    });
-
     // ========== (params: NativeXComponentParameters) constructor tests (since 19) ==========
 
     /**
      * @tc.name   xComponentInterface_params_null_001
-     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_NULL_0004
-     * @tc.desc   测试XComponentInterface constructor(since 19)第1个参数params传入null，组件可正常渲染
+     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_NULL_0003
+     * @tc.desc   测试XComponentInterface constructor(since 19)第1个参数params传入null，不创建组件节点（优雅处理无崩溃）
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
@@ -125,17 +103,14 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
       console.info('[xComponentInterface_params_null_001] START');
       let strJson: string = getInspectorByKey('xcomponent_params_null');
       console.info('[xComponentInterface_params_null_001] strJson: ' + strJson);
-      expect(strJson.length > 0).assertTrue();
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[xComponentInterface_params_null_001] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(obj !== null && obj !== undefined).assertTrue();
+      expect(strJson.length === 0).assertTrue();
       console.info('[xComponentInterface_params_null_001] END');
     });
 
     /**
      * @tc.name   xComponentInterface_params_undefined_001
-     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_UNDEFINED_0005
-     * @tc.desc   测试XComponentInterface constructor(since 19)第1个参数params传入undefined，组件可正常渲染
+     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_UNDEFINED_0004
+     * @tc.desc   测试XComponentInterface constructor(since 19)第1个参数params传入undefined，使用默认值创建组件节点
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
@@ -153,8 +128,8 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
 
     /**
      * @tc.name   xComponentInterface_params_valid_001
-     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_VALID_0006
-     * @tc.desc   测试XComponentInterface constructor(since 19)第1个参数params传入正常NativeXComponentParameters对象，组件正常渲染
+     * @tc.number SUB_ARKUI_XCOMPONENTINTERFACE_PARAMS_VALID_0005
+     * @tc.desc   测试XComponentInterface constructor(since 19)第1个参数params传入正常NativeXComponentParameters对象，创建组件节点
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2

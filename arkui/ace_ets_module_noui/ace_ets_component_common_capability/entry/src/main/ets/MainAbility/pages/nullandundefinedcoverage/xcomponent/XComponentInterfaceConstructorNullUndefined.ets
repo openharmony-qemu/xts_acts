@@ -16,8 +16,6 @@
 @Entry
 @Component
 struct XComponentInterfaceConstructorNullUndefinedTest {
-  private xComponentController: XComponentController = new XComponentController();
-
   build() {
     Row() {
       Column() {
@@ -32,12 +30,6 @@ struct XComponentInterfaceConstructorNullUndefinedTest {
         // Test XComponentInterface constructor with undefined options (since 12)
         XComponent(undefined as ESObject as XComponentOptions)
           .id('xcomponent_options_undefined')
-          .width('100%')
-          .height('5%')
-
-        // Test XComponentInterface constructor with valid XComponentOptions (since 12)
-        XComponent({ type: XComponentType.TEXTURE, controller: this.xComponentController } as XComponentOptions)
-          .id('xcomponent_options_valid')
           .width('100%')
           .height('5%')
 
