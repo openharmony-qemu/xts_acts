@@ -17,6 +17,7 @@ import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "..
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import {
+  Point,
   Driver,
   Component,
   UiWindow,
@@ -84,11 +85,9 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210', Level.LEVEL0, 
       let startX: number = Math.round(left + width * 0.8);
       let endX: number = Math.round(left + width * 0.2);
       for (let i: int = 0; i < 5; i++) {
-        await driver.fling({
-          x: startX, y: centerY
-        }, {
-          x: endX, y: centerY
-        }, 5, 1000);
+        let fromPoint: Point = { x: startX, y: centerY } as Point;
+        let toPoint: Point = { x: endX, y: centerY } as Point;
+        await driver.fling(fromPoint, toPoint, 5, 1000);
         await CommonFunc.sleep(1000);
       }
       await CommonFunc.sleep(1000);
