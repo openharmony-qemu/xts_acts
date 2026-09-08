@@ -364,11 +364,11 @@ export const ActsGameControllerGamePadAxisEventGetGasAxisValue03: () => number;
 
 export const ActsGameControllerGamePadAxisEventGetActionTime03: () => number;
 
-export const ActsGamePadButtonUnknownRegisterButtonInputMonitor01: () => number;
+export const ActsGamePadButtonNonstandardRegisterButtonInputMonitor01: () => number;
 
-export const ActsGamePadButtonUnknownRegisterButtonInputMonitor02: () => number;
+export const ActsGamePadButtonNonstandardRegisterButtonInputMonitor02: () => number;
 
-export const ActsGamePadButtonUnknownUnregisterButtonInputMonitor01: () => number;
+export const ActsGamePadButtonNonstandardUnregisterButtonInputMonitor01: () => number;
 
 export const ActsGameDeviceDeviceInfoGetVendor01: () => number;
 

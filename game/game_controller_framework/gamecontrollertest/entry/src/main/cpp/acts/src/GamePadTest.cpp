@@ -527,26 +527,26 @@ int32_t ActsGamePadRightThumbstickUnregisterAxisInputMonitor01()
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGamePadButtonUnknownRegisterButtonInputMonitor01()
+int32_t ActsGamePadButtonNonstandardRegisterButtonInputMonitor01()
 {
     GameController_ErrorCode code =
-        OH_GamePad_ButtonUnknown_RegisterButtonInputMonitor(ButtonInputMonitorCallbackTest01);
+        OH_GamePad_ButtonNonstandard_RegisterButtonInputMonitor(ButtonInputMonitorCallbackTest01);
 
-    OH_GamePad_ButtonUnknown_UnregisterButtonInputMonitor();
+    OH_GamePad_ButtonNonstandard_UnregisterButtonInputMonitor();
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGamePadButtonUnknownRegisterButtonInputMonitor02()
+int32_t ActsGamePadButtonNonstandardRegisterButtonInputMonitor02()
 {
-    GameController_ErrorCode code = OH_GamePad_ButtonUnknown_RegisterButtonInputMonitor(nullptr);
+    GameController_ErrorCode code = OH_GamePad_ButtonNonstandard_RegisterButtonInputMonitor(nullptr);
     return static_cast<int32_t>(code);
 }
 
-int32_t ActsGamePadButtonUnknownUnregisterButtonInputMonitor01()
+int32_t ActsGamePadButtonNonstandardUnregisterButtonInputMonitor01()
 {
-    OH_GamePad_ButtonUnknown_RegisterButtonInputMonitor(ButtonInputMonitorCallbackTest01);
+    OH_GamePad_ButtonNonstandard_RegisterButtonInputMonitor(ButtonInputMonitorCallbackTest01);
 
-    GameController_ErrorCode code = OH_GamePad_ButtonUnknown_UnregisterButtonInputMonitor();
+    GameController_ErrorCode code = OH_GamePad_ButtonNonstandard_UnregisterButtonInputMonitor();
     return static_cast<int32_t>(code);
 }
 

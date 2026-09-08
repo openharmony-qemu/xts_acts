@@ -1139,53 +1139,53 @@ export default function CApiGamePadTest() {
       });
 
     /**
-     * @tc.name   OH_GamePad_ButtonUnknown_RegisterButtonInputMonitor01
-     * @tc.number SUB_game_game_controller_framework_ButtonUnknown_RegisterButtonInputMonitor_0001
+     * @tc.name   OH_GamePad_ButtonNonstandard_RegisterButtonInputMonitor01
+     * @tc.number SUB_game_game_controller_framework_ButtonNonstandard_RegisterButtonInputMonitor_0001
      * @tc.desc   register success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OH_GamePad_ButtonUnknown_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('OH_GamePad_ButtonNonstandard_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
         if (SyscapChecker.canNotUse()) {
           return;
         }
-        let ret: number = GC.ActsGamePadButtonUnknownRegisterButtonInputMonitor01();
+        let ret: number = GC.ActsGamePadButtonNonstandardRegisterButtonInputMonitor01();
         expect(ret).assertEqual(0);
       });
 
     /**
-     * @tc.name   OH_GamePad_ButtonUnknown_RegisterButtonInputMonitor02
-     * @tc.number SUB_game_game_controller_framework_ButtonUnknown_RegisterButtonInputMonitor_0002
+     * @tc.name   OH_GamePad_ButtonNonstandard_RegisterButtonInputMonitor02
+     * @tc.number SUB_game_game_controller_framework_ButtonNonstandard_RegisterButtonInputMonitor_0002
      * @tc.desc   when callback is null, register failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OH_GamePad_ButtonUnknown_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('OH_GamePad_ButtonNonstandard_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
         if (SyscapChecker.canNotUse()) {
           return;
         }
-        let ret: number = GC.ActsGamePadButtonUnknownRegisterButtonInputMonitor02();
+        let ret: number = GC.ActsGamePadButtonNonstandardRegisterButtonInputMonitor02();
         expect(ret).assertEqual(401);
       });
 
     /**
-     * @tc.name   OH_GamePad_ButtonUnknown_UnregisterButtonInputMonitor01
-     * @tc.number SUB_game_game_controller_framework_ButtonUnknown_UnregisterButtonInputMonitor_0001
+     * @tc.name   OH_GamePad_ButtonNonstandard_UnregisterButtonInputMonitor01
+     * @tc.number SUB_game_game_controller_framework_ButtonNonstandard_UnregisterButtonInputMonitor_0001
      * @tc.desc   unregister success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OH_GamePad_ButtonUnknown_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('OH_GamePad_ButtonNonstandard_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
         if (SyscapChecker.canNotUse()) {
           return;
         }
-        let ret: number = GC.ActsGamePadButtonUnknownUnregisterButtonInputMonitor01();
+        let ret: number = GC.ActsGamePadButtonNonstandardUnregisterButtonInputMonitor01();
         expect(ret).assertEqual(0);
       });
   })
