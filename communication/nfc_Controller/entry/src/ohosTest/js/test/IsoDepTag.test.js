@@ -463,7 +463,7 @@ export default function nfcIsoDepTagTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0705
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0705
-         * @tc.desc   isDefaultService second param boundary test with undefined, expect return undefined.
+         * @tc.desc   isDefaultService second param boundary test with invalid string out of CardType definition, expect return undefined.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
