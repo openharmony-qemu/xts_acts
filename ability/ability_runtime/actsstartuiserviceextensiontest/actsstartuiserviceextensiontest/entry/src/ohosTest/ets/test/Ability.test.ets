@@ -14,7 +14,6 @@
 */
 
 import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium';
-import { Driver, ON } from '@ohos.UiTest';
 
 import { BusinessError } from '@ohos.base';
 import { wantConstant } from '@kit.AbilityKit';
