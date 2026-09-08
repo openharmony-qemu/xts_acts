@@ -212,7 +212,7 @@ static napi_value SetlocaleSlash(napi_env env, napi_callback_info info)
 {
     EnsureIcuInit();
     char *r = setlocale(LC_ALL, "zh_HK/Big5");
-    int32_t ret = NO_ERR;
+    int32_t ret = FAIL;
     if (r) {
         struct lconv *lc = localeconv();
         if (lc && lc->decimal_point && strcmp(lc->decimal_point, ".") == 0) {
@@ -225,18 +225,18 @@ static napi_value SetlocaleSlash(napi_env env, napi_callback_info info)
 /* TC-009~TC-013: wctype分类测试 */
 static int32_t TestWctypeAll(wint_t c, locale_t loc)
 {
-    if (iswalnum_l(c, loc) < 0) { return FAIL; }
-    if (iswalpha_l(c, loc) < 0) { return FAIL; }
-    if (iswblank_l(c, loc) < 0) { return FAIL; }
-    if (iswcntrl_l(c, loc) < 0) { return FAIL; }
-    if (iswdigit_l(c, loc) < 0) { return FAIL; }
-    if (iswgraph_l(c, loc) < 0) { return FAIL; }
-    if (iswlower_l(c, loc) < 0) { return FAIL; }
-    if (iswprint_l(c, loc) < 0) { return FAIL; }
-    if (iswpunct_l(c, loc) < 0) { return FAIL; }
-    if (iswspace_l(c, loc) < 0) { return FAIL; }
-    if (iswupper_l(c, loc) < 0) { return FAIL; }
-    if (iswxdigit_l(c, loc) < 0) { return FAIL; }
+    if (!iswalnum_l(c, loc)) { return FAIL; }
+    if (!iswalpha_l(c, loc)) { return FAIL; }
+    if (!iswcntrl_l(c, loc)) { return FAIL; }
+    if (!iswgraph_l(c, loc)) { return FAIL; }
+    if (!iswprint_l(c, loc)) { return FAIL; }
+    if (iswblank_l(c, loc)) { return FAIL; }
+    if (iswdigit_l(c, loc)) { return FAIL; }
+    if (iswlower_l(c, loc)) { return FAIL; }
+    if (iswpunct_l(c, loc)) { return FAIL; }
+    if (iswspace_l(c, loc)) { return FAIL; }
+    if (iswupper_l(c, loc)) { return FAIL; }
+    if (iswxdigit_l(c, loc)) { return FAIL; }
     return NO_ERR;
 }
 
@@ -529,7 +529,7 @@ static napi_value StrtodLStructLayout(napi_env env, napi_callback_info info)
         wcstod_l(L"3.14", &wp, loc);
         size_t dpOff = offsetof(struct lconv, decimal_point);
         size_t csOff = offsetof(struct lconv, currency_symbol);
-        if (fabs(r1 - 3.14) < 1e-9 && erangeOk && dpOff >= 0 && csOff > 0) {
+        if (fabs(r1 - 3.14) < 1e-9 && erangeOk && csOff > 0) {
             ret = NO_ERR;
         }
         freelocale(loc);
@@ -1131,10 +1131,10 @@ static napi_value UselocaleRestoreGlobal(napi_env env, napi_callback_info info)
     if (locHk) {
         uselocale(locHk);
         int32_t r1 = iswalpha_l(0x7CA4, uselocale((locale_t)0));
-        locale_t restored = uselocale(LC_GLOBAL_LOCALE);
+        uselocale(LC_GLOBAL_LOCALE);
         int32_t r2 = iswalpha_l(0x7CA4, uselocale((locale_t)0));
         if (r1 && r2 == 0) { ret = NO_ERR; }
-        if (restored) { freelocale(restored); }
+        freelocale(locHk);
     }
     return MakeResult(env, ret);
 }
