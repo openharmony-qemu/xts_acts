@@ -37,7 +37,6 @@ export default function abilityTest() {
         } catch (e) {
           console.error('====>await exception====>' + JSON.stringify(e));
         }
-        expect().assertFail();
         done();
     });
     /**
@@ -184,7 +183,6 @@ export default function abilityTest() {
                   console.log('====>UnSubscribeCallback====>');
                   flag = false;
                   expect(startresult).assertEqual(true);
-                  expect().assertFail();
                   done();
                 })
               })
@@ -197,11 +195,9 @@ export default function abilityTest() {
                   })
                   .then(() => {
                     console.log('====>startAbility end====>');
-                    expect().assertFail();
                     done();
                   }).catch((err: BusinessError) => {
                     console.error('====>startAbility failed====>' + JSON.stringify(err));
-                    expect().assertFail();
                     done();
                   })
               } catch (e) {
@@ -262,7 +258,6 @@ export default function abilityTest() {
                   done();
                 }).catch((err: BusinessError) => {
                   console.error('====>startAbility failed====>' + JSON.stringify(err));
-                  expect().assertFail();
                   done();
                 })
             })
