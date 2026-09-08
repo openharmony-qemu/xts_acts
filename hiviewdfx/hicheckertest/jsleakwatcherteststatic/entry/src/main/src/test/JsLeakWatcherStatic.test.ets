@@ -73,6 +73,44 @@ export default function JsLeakWatcherStaticTest():void {
       }
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0200 end");
     })
+
+    /**
+     * @tc.name   testJsLeakWatcher03
+     * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_0300
+     * @tc.desc   验证check和dump接口正常传参
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testJsLeakWatcher03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0300 start");
+      try {
+        jsLeakWatcher.enable(true);
+        console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0300 enable success')
+        let obj: Object = new Object();
+        jsLeakWatcher.watch(obj, 'test_watch')
+        console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0300 watch success')
+        let check = jsLeakWatcher.check();
+        console.log('check hash name msg : ' + check)
+        expect(check).assertContain("hash");
+        expect(check).assertContain("\"name\":\"Object\"");
+        expect(check).assertContain("\"msg\":\"test_watch\"");
+        console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0300 check success')
+        let path = jsLeakWatcher.dump('/data/storage/el2/base/');
+        console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0300 dump success");
+        console.log('jsleaklist: ' + path[0] + ', heapsnapshot: ' + path[1])
+        expect(path.length>0).assertTrue();
+        expect(path[0]).assertContain(".jsleaklist");
+        expect(path[1]).assertContain(".heapsnapshot");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_jsLeakWatcher_Interface_0300 > err code: ${err.code}, err msg: ${err.message}`)
+        console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0300 fail!");
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0300 end");
+    })
     
     
     /**
