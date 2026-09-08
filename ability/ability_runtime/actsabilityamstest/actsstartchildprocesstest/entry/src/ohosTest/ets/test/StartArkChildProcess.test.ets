@@ -22,7 +22,6 @@ import hilog from '@ohos.hilog';
 
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import DemoProcess from '../process/DemoProcess';
-import { Driver } from '@kit.TestKit';
 
 export default function startArkChildProcess() {
   describe('startArkChildProcess', () => {
@@ -39,8 +38,7 @@ export default function startArkChildProcess() {
         console.error('findComponent failed: ' + JSON.stringify(err));
       }
 
-      let driver = Driver.create()
-      await driver.delayMs(2000)
+      await driver.delayMs(2000);
       context = getContext() as common.UIAbilityContext;
       hilog.info(0x0000, 'testTag', '%{public}s',
         `Succeeded in starting SpecifiedAbility11ww11` + JSON.stringify(context));
