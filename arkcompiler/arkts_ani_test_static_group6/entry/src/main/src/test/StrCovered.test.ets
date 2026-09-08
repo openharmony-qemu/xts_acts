@@ -31,7 +31,7 @@ export default function extendedTestsPart4(): void {
     }
 
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_NEWUTF16_MULTITHREAD
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_NEWUTF16_MULTITHREAD_0100
      * @tc.name      test_Str_NewUTF16_MultiThread
      * @tc.desc      Verify test_Str_NewUTF16_MultiThread
      * @tc.size      MediumTest
@@ -46,7 +46,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16SIZE_MULTITHREAD
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16SIZE_MULTITHREAD_0200
      * @tc.name      test_Str_GetUTF16Size_MultiThread
      * @tc.desc      Verify test_Str_GetUTF16Size_MultiThread
      * @tc.size      MediumTest
@@ -61,7 +61,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16_MULTITHREAD
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16_MULTITHREAD_0300
      * @tc.name      test_Str_GetUTF16_MultiThread
      * @tc.desc      Verify test_Str_GetUTF16_MultiThread
      * @tc.size      MediumTest
@@ -76,7 +76,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16SUBSTRING_MULTITHREAD
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16SUBSTRING_MULTITHREAD_0400
      * @tc.name      test_Str_GetUTF16SubString_MultiThread
      * @tc.desc      Verify test_Str_GetUTF16SubString_MultiThread
      * @tc.size      MediumTest
@@ -91,7 +91,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8SIZE_MULTITHREAD
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8SIZE_MULTITHREAD_0500
      * @tc.name      test_Str_GetUTF8Size_MultiThread
      * @tc.desc      Verify test_Str_GetUTF8Size_MultiThread
      * @tc.size      MediumTest
@@ -106,7 +106,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8_MULTITHREAD
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8_MULTITHREAD_0600
      * @tc.name      test_Str_GetUTF8_MultiThread
      * @tc.desc      Verify test_Str_GetUTF8_MultiThread
      * @tc.size      MediumTest
@@ -121,7 +121,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8SUBSTRING_MULTITHREAD
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8SUBSTRING_MULTITHREAD_0700
      * @tc.name      test_Str_GetUTF8SubString_MultiThread
      * @tc.desc      Verify test_Str_GetUTF8SubString_MultiThread
      * @tc.size      MediumTest
@@ -136,7 +136,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_NEWUTF8_SIZEZERO
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_NEWUTF8_SIZEZERO_0800
      * @tc.name      test_Str_NewUTF8_SizeZero
      * @tc.desc      Verify test_Str_NewUTF8_SizeZero
      * @tc.size      MediumTest
@@ -151,7 +151,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_NEWUTF16_SIZEZERO
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_NEWUTF16_SIZEZERO_0900
      * @tc.name      test_Str_NewUTF16_SizeZero
      * @tc.desc      Verify test_Str_NewUTF16_SizeZero
      * @tc.size      MediumTest
@@ -166,7 +166,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8_BUFFERZERO
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8_BUFFERZERO_1000
      * @tc.name      test_Str_GetUTF8_BufferZero
      * @tc.desc      Verify test_Str_GetUTF8_BufferZero
      * @tc.size      MediumTest
@@ -181,7 +181,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8_BUFFERSMALL
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8_BUFFERSMALL_1100
      * @tc.name      test_Str_GetUTF8_BufferSmall
      * @tc.desc      Verify test_Str_GetUTF8_BufferSmall
      * @tc.size      MediumTest
@@ -196,7 +196,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16_BUFFERZERO
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16_BUFFERZERO_1200
      * @tc.name      test_Str_GetUTF16_BufferZero
      * @tc.desc      Verify test_Str_GetUTF16_BufferZero
      * @tc.size      MediumTest
@@ -211,7 +211,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16_BUFFERSMALL
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16_BUFFERSMALL_1300
      * @tc.name      test_Str_GetUTF16_BufferSmall
      * @tc.desc      Verify test_Str_GetUTF16_BufferSmall
      * @tc.size      MediumTest
@@ -226,7 +226,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8SUBSTRING_OFFSETATEND
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8SUBSTRING_OFFSETATEND_1400
      * @tc.name      test_Str_GetUTF8SubString_OffsetAtEnd
      * @tc.desc      Verify test_Str_GetUTF8SubString_OffsetAtEnd
      * @tc.size      MediumTest
@@ -241,7 +241,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8SUBSTRING_OFFSETSIZEOVERFLOW
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8SUBSTRING_OFFSETSIZEOVERFLOW_1500
      * @tc.name      test_Str_GetUTF8SubString_OffsetSizeOverflow
      * @tc.desc      Verify test_Str_GetUTF8SubString_OffsetSizeOverflow
      * @tc.size      MediumTest
@@ -256,7 +256,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8SUBSTRING_SIZEZERO
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF8SUBSTRING_SIZEZERO_1600
      * @tc.name      test_Str_GetUTF8SubString_SizeZero
      * @tc.desc      Verify test_Str_GetUTF8SubString_SizeZero
      * @tc.size      MediumTest
@@ -271,7 +271,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16SUBSTRING_OFFSETATEND
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16SUBSTRING_OFFSETATEND_1700
      * @tc.name      test_Str_GetUTF16SubString_OffsetAtEnd
      * @tc.desc      Verify test_Str_GetUTF16SubString_OffsetAtEnd
      * @tc.size      MediumTest
@@ -286,7 +286,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16SUBSTRING_OFFSETSIZEOVERFLOW
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16SUBSTRING_OFFSETSIZEOVERFLOW_1800
      * @tc.name      test_Str_GetUTF16SubString_OffsetSizeOverflow
      * @tc.desc      Verify test_Str_GetUTF16SubString_OffsetSizeOverflow
      * @tc.size      MediumTest
@@ -301,7 +301,7 @@ export default function extendedTestsPart4(): void {
       done();
     });
     /**
-     * @tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16SUBSTRING_SIZEZERO
+@tc.number    SUB_TC_ANI_EXT_TEST_STR_GETUTF16SUBSTRING_SIZEZERO_1900
      * @tc.name      test_Str_GetUTF16SubString_SizeZero
      * @tc.desc      Verify test_Str_GetUTF16SubString_SizeZero
      * @tc.size      MediumTest

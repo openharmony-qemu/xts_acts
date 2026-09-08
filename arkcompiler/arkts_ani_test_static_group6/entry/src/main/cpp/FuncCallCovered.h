@@ -580,13 +580,14 @@ ani_int test_FuncCall_ObjCall_Long_A_MultiThread(ani_env *env, [[maybe_unused]] 
         threads.emplace_back([&successCount, vm, cls, method, obj]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                ani_value args[1]{};
-                ani_long result = 0;
-                tEnv->Object_CallMethod_Long_A(obj, method, &result, args);
-                successCount.fetch_add(1);
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            ani_value args[1]{};
+            ani_long result = 0;
+            tEnv->Object_CallMethod_Long_A(obj, method, &result, args);
+            successCount.fetch_add(1);
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {

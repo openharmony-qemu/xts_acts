@@ -194,7 +194,7 @@ export default function vmManagementTest(): void {
     });
 
     /**
-     * @tc.number    SUB_TC_ANI_G_0100_ABN
+     * @tc.number    SUB_TC_ANI_G_0200
      * @tc.name      test_VmGetEnv_Abnormal
      * @tc.desc      Verify GetEnv with abnormal parameters (invalid version).
      * @tc.size      MediumTest

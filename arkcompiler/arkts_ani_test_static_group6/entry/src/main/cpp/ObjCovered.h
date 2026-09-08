@@ -835,23 +835,20 @@ ani_int test_ObjGetField_Ref_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
         threads.emplace_back([&completed, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                ani_class cls{};
-                if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK) {
-                    ani_method ctor{};
-                    if (tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK) {
-                        ani_object obj{};
-                        if (tEnv->Object_New(cls, ctor, &obj) == ANI_OK) {
-                            ani_field field{};
-                            if (tEnv->Class_FindField(cls, "stringField", &field) == ANI_OK) {
-                                ani_ref ref{};
-                                tEnv->Object_GetField_Ref(obj, field, &ref);
-                            }
-                        }
-                    }
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                completed.fetch_add(1);
+                return;
             }
+            ani_class cls{};
+            ani_method ctor{};
+            ani_object obj{};
+            ani_field field{};
+            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK && tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
+                tEnv->Object_New(cls, ctor, &obj) == ANI_OK && tEnv->Class_FindField(cls, "stringField", &field) == ANI_OK) {
+                ani_ref ref{};
+                tEnv->Object_GetField_Ref(obj, field, &ref);
+            }
+            vm->DetachCurrentThread();
             completed.fetch_add(1);
         });
     }

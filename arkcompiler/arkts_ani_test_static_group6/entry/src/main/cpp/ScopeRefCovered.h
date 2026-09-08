@@ -1090,19 +1090,18 @@ ani_int test_Reference_Equals_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                ani_string str1{};
-                ani_string str2{};
-                if (tEnv->String_NewUTF8("hello", sizeof("hello") - 1, &str1) == ANI_OK &&
-                    tEnv->String_NewUTF8("hello", sizeof("hello") - 1, &str2) == ANI_OK) {
-                    ani_boolean isEqual = ANI_FALSE;
-                    if (tEnv->Reference_Equals(static_cast<ani_ref>(str1), static_cast<ani_ref>(str2), &isEqual) ==
-                        ANI_OK) {
-                        successCount.fetch_add(1);
-                    }
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            ani_string str1{};
+            ani_string str2{};
+            ani_boolean isEqual = ANI_FALSE;
+            if (tEnv->String_NewUTF8("hello", sizeof("hello") - 1, &str1) == ANI_OK &&
+                tEnv->String_NewUTF8("hello", sizeof("hello") - 1, &str2) == ANI_OK &&
+                tEnv->Reference_Equals(static_cast<ani_ref>(str1), static_cast<ani_ref>(str2), &isEqual) == ANI_OK) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
