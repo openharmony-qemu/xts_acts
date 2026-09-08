@@ -343,6 +343,29 @@ napi_value JsImageFormatJPEG(napi_env env, napi_callback_info info)
     return ret;
 }
 
+napi_value JsImageComponentFormatEnum(napi_env env, napi_callback_info info)
+{
+    napi_value ret = nullptr;
+    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_Y != 1) {
+        napi_create_int32(env, -1, &ret);
+        return ret;
+    }
+    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_U != 2) {
+        napi_create_int32(env, -1, &ret);
+        return ret;
+    }
+    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_V != 3) {
+        napi_create_int32(env, -1, &ret);
+        return ret;
+    }
+    if (OHOS_IMAGE_COMPONENT_FORMAT_JPEG != 4) {
+        napi_create_int32(env, -1, &ret);
+        return ret;
+    }
+    napi_create_int32(env, 0, &ret);
+    return ret;
+}
+
 napi_value JsImageComponentFormatYUVY(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
