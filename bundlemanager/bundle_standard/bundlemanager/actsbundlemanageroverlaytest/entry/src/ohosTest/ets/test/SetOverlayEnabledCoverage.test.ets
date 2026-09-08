@@ -39,13 +39,13 @@ export default function setOverlayEnabledCoverage() {
             expect().assertFail();
             done();
           }).catch((e: BusinessError) => {
-            console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1000 catch' + JSON.stringify(e));
-            expect(e.code).assertEqual(ERROR_CODE);
+            console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1000 promise catch' + JSON.stringify(e));
+            expect().assertFail();
             done();
           });
         } catch (e) {
           console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1000 catch' + JSON.stringify(e));
-          expect().assertFail();
+          expect((e as BusinessError).code).assertEqual(ERROR_CODE);
           done();
         }
       });
@@ -66,13 +66,13 @@ export default function setOverlayEnabledCoverage() {
             expect().assertFail();
             done();
           }).catch((e: BusinessError) => {
-            console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1100 catch' + JSON.stringify(e));
-            expect(e.code).assertEqual(ERROR_CODE);
+            console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1100 promise catch' + JSON.stringify(e));
+            expect().assertFail();
             done();
           });
         } catch (e) {
           console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1100 catch' + JSON.stringify(e));
-          expect().assertFail();
+          expect((e as BusinessError).code).assertEqual(ERROR_CODE);
           done();
         }
       });
