@@ -42,6 +42,9 @@
       },
       {
         "name": "ohos.permission.START_ABILIIES_FROM_BACKGROUND"
+      },
+      {
+        "name": "ohos.permission.SYSTEM_FLOAT_WINDOW"
       }
     ],
     "abilities": [
