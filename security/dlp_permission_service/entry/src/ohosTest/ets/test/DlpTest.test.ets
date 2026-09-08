@@ -22,7 +22,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { deviceInfo } from '@kit.BasicServicesKit';
 import { fileIo } from '@kit.CoreFileKit';
-import { window } from '@kit.ArkUI'
+import window from '@ohos.window';
 
 let checkDlpNotSupported = () => {
   return !canIUse("SystemCapability.Security.DataLossPrevention");
@@ -4789,29 +4789,32 @@ export default function dlpTest() {
     it('SUB_Security_DataSecurity_DLP_connectServer_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let plugin: dlpPermission.DlpConnPlugin = new DataCapsulePlugin();
+        let isDevBoard: boolean = checkDeviceIsDevBoard();
         if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
           try {
-            plugin.connectServer("testId", "testData", (callback) =>{
-              console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 connectServer success");
-              expect(callback != null).assertTrue();
-            })
             await dlpPermission.DlpConnManager.registerPlugin(plugin);
             expect(false).assertTrue();
           } catch (err) {
-            console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 connectServer failed, err.code " + err.code);
+            console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 registerPlugin failed, err.code " + err.code);
             expect(err.code).assertEqual(801);
           }
         } else {
-          try {
-            plugin.connectServer("testId", "testData", (callback) =>{
-              console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 connectServer success");
-              expect(callback != null).assertTrue();
-            })
-            await dlpPermission.DlpConnManager.registerPlugin(plugin);
-            expect(false).assertTrue();
-          } catch (err) {
-            console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 connectServer failed, err.code " + err.code);
-            expect(err.code).assertEqual(19100011);
+          if (isDevBoard) {
+            try {
+              let result = await dlpPermission.DlpConnManager.registerPlugin(plugin);
+              expect(result != undefined).assertTrue();
+            } catch (err) {
+              console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 registerPlugin failed, err.code " + err.code);
+              expect(false).assertTrue();
+            }
+          } else {
+            try {
+              await dlpPermission.DlpConnManager.registerPlugin(plugin);
+              expect(false).assertTrue();
+            } catch (err) {
+              console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 registerPlugin failed, err.code " + err.code);
+              expect(err.code).assertEqual(19100011);
+            }
           }
         }
         done();
