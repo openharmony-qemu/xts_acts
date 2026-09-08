@@ -715,7 +715,6 @@ export default function HidebugRawheapTest() {
             try {
                 hidebug.dumpJsHeapData("heapData_test", false);
                 console.info('SUB_DFX_DFR_Hiprofiler_Rawheap_Static_2000 success');
-                expect(true).assertTrue();
                 done();
             } catch (err) {
                 console.info('SUB_DFX_DFR_Hiprofiler_Rawheap_Static_2000 catch error: %{public}s', JSON.stringify(err));
@@ -796,7 +795,6 @@ export default function HidebugRawheapTest() {
             try {
                 hidebug.dumpJsHeapData("a", true);
                 console.info('SUB_DFX_DFR_Hiprofiler_Rawheap_Static_2300 success');
-                expect(true).assertTrue();
                 done();
             } catch (err) {
                 console.info('SUB_DFX_DFR_Hiprofiler_Rawheap_Static_2300 catch error: %{public}s', JSON.stringify(err));
