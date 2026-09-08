@@ -178,7 +178,7 @@ describe('HidebugToDevJsTest', function () {
                 console.info(`SUB_DFX_DFT_HiDebug_CPU_Js_0200 > cpuUsage =: ${appThreadCpuUsage[ii].cpuUsage}`)
                 console.info(`SUB_DFX_DFT_HiDebug_CPU_Js_0200 > threadName =: ${appThreadCpuUsage[ii].threadName}`)
                 expect(appThreadCpuUsage[ii].cpuUsage >= 0 && appThreadCpuUsage[ii].cpuUsage <= 100).assertTrue();
-                expect(appThreadCpuUsage[ii].threadName).assertInstanceOf('String');
+                expect(typeof appThreadCpuUsage[ii].threadName === 'string').assertTrue();
             }
             done()
         } catch (err) {
