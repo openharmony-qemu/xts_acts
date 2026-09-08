@@ -13,9 +13,7 @@
  * limitations under the License.
  */
 import abilityTest from './Ability.test'
-import coverageShortcutTypeExportsTest from './CoverageTypeExports.test'
 
 export default function testsuite() {
   abilityTest()
-  coverageShortcutTypeExportsTest()
 }

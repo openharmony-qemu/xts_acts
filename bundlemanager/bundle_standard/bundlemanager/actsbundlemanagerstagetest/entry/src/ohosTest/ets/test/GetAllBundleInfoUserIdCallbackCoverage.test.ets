@@ -42,30 +42,19 @@ export default function getAllBundleInfoUserIdCallbackCoverageTest() {
       (done: Function) => {
         try {
           bundle.getAllBundleInfo(null, USER_ID, (err: BusinessError | number, data: Object) => {
-            try {
-              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_UserIdCallback_FlagNull_9120 err: ' +
-                JSON.stringify(err) + ' data: ' + JSON.stringify(data));
-              if (err) {
-                expect(getErrorCode(err)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
-              } else {
-                expect().assertFail();
-              }
-              done();
-            } catch (assertError) {
-              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_UserIdCallback_FlagNull_9120 assert caught: ' +
-                JSON.stringify(assertError));
-              done();
+            console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_UserIdCallback_FlagNull_9120 err: ' +
+              JSON.stringify(err) + ' data: ' + JSON.stringify(data));
+            if (err) {
+              expect(getErrorCode(err)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
+            } else {
+              expect().assertFail();
             }
+            done();
           });
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_UserIdCallback_FlagNull_9120 catch: ' +
             JSON.stringify(error));
-          try {
-            expect(getErrorCode(error as BusinessError | number)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
-          } catch (assertError) {
-            console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_UserIdCallback_FlagNull_9120 assert caught: ' +
-              JSON.stringify(assertError));
-          }
+          expect().assertFail();
           done();
         }
       });
@@ -82,30 +71,19 @@ export default function getAllBundleInfoUserIdCallbackCoverageTest() {
       (done: Function) => {
         try {
           bundle.getAllBundleInfo(undefined, USER_ID, (err: BusinessError | number, data: Object) => {
-            try {
-              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_UserIdCallback_FlagUndefined_9121 err: ' +
-                JSON.stringify(err) + ' data: ' + JSON.stringify(data));
-              if (err) {
-                expect(getErrorCode(err)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
-              } else {
-                expect().assertFail();
-              }
-              done();
-            } catch (assertError) {
-              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_UserIdCallback_FlagUndefined_9121 assert caught: ' +
-                JSON.stringify(assertError));
-              done();
+            console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_UserIdCallback_FlagUndefined_9121 err: ' +
+              JSON.stringify(err) + ' data: ' + JSON.stringify(data));
+            if (err) {
+              expect(getErrorCode(err)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
+            } else {
+              expect().assertFail();
             }
+            done();
           });
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_UserIdCallback_FlagUndefined_9121 catch: ' +
             JSON.stringify(error));
-          try {
-            expect(getErrorCode(error as BusinessError | number)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
-          } catch (assertError) {
-            console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_UserIdCallback_FlagUndefined_9121 assert caught: ' +
-              JSON.stringify(assertError));
-          }
+          expect().assertFail();
           done();
         }
       });

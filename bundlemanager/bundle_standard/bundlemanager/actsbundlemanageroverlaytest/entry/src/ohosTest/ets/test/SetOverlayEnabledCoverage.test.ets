@@ -45,7 +45,7 @@ export default function setOverlayEnabledCoverage() {
           });
         } catch (e) {
           console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1000 catch' + JSON.stringify(e));
-          expect((e as BusinessError).code).assertEqual(ERROR_CODE);
+          expect().assertFail();
           done();
         }
       });
@@ -72,7 +72,7 @@ export default function setOverlayEnabledCoverage() {
           });
         } catch (e) {
           console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1100 catch' + JSON.stringify(e));
-          expect((e as BusinessError).code).assertEqual(ERROR_CODE);
+          expect().assertFail();
           done();
         }
       });

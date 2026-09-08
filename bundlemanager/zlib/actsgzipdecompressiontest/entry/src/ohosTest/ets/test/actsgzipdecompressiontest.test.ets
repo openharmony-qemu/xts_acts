@@ -3157,14 +3157,17 @@ export default function ActsGzipDecompressionTest() {
             console.log("=====SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910 Start=====");
             let gzip = zlib.createGZipSync();
             await gzip.gzopen(allfilePath, "wb");
+            const format: string = "name is %s, age is %d";
+            const emptyArgs: Array<string | number> = [];
+            const nonEmptyArgs: Array<string | number> = ['Tom', '23'];
             try {
-                let emptyArgsLen = await gzip.gzprintf("name is %s, age is %d");
+                let emptyArgsLen = await gzip.gzprintf(format, ...emptyArgs);
                 expect(emptyArgsLen).assertEqual(21);
             } catch (errData) {
                 expect().assertFail();
             }
             try {
-                let withArgsLen = await gzip.gzprintf("name is %s, age is %d", "Tom", 23);
+                let withArgsLen = await gzip.gzprintf(format, ...nonEmptyArgs);
                 expect(withArgsLen).assertEqual(22);
             } catch (errData) {
                 expect().assertFail();
