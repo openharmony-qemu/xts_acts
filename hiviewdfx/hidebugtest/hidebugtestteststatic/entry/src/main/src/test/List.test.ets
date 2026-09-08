@@ -19,7 +19,7 @@ import HidebugnewTest from "./HiDebugNew.test";
 import hidebugStrongTest from "./HiDeBugEx.test"
 import hidebugGetRssInfoTest from "./HidebugGetRssInfo.test"
 import HidebugStaticTest from "./HiDeBugStatic.test";
-improt HidebugRawheapTest from "./HiDebugRawheap.test"
+import HidebugRawheapTest from "./HiDebugRawheap.test"
 
 export default function testsuite() {
     HidebugJsTest();
