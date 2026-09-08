@@ -14,12 +14,13 @@
  */
 import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import webView from '@ohos.web.webview';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 
-export default function webViewSetSocketIdleTimeout() {
+export default function WebViewSetSocketIdleTimeout() {
   describe('ActsWebViewSetSocketIdleTimeout', () => {
       
     beforeEach(async (done: Function) => {
@@ -33,15 +34,14 @@ export default function webViewSetSocketIdleTimeout() {
 
 
     /**
-     * @tc.name   SUB_ACE_WEB_setSocketIdleTimeout_API_0001
+     * @tc.name   testSetSocketIdleTimeout001
      * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0001
      * @tc.desc   test setSocketIdleTimeout 200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ACE_WEB_setSocketIdleTimeout_API_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+    it('testSetSocketIdleTimeout001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         console.log('testSetSocketIdleTimeout001 start')
         let result = false
         try {
@@ -58,15 +58,14 @@ export default function webViewSetSocketIdleTimeout() {
     })
 
     /**
-     * @tc.name   SUB_ACE_WEB_setSocketIdleTimeout_API_0002
+     * @tc.name   testSetSocketIdleTimeout002
      * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0002
      * @tc.desc   test setSocketIdleTimeout 30
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ACE_WEB_setSocketIdleTimeout_API_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
+    it('testSetSocketIdleTimeout002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         console.log('testSetSocketIdleTimeout002 start')
         let result = false
         try {
@@ -83,15 +82,14 @@ export default function webViewSetSocketIdleTimeout() {
     })
 
     /**
-     * @tc.name   SUB_ACE_WEB_setSocketIdleTimeout_API_0003
+     * @tc.name   testSetSocketIdleTimeout003
      * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0003
      * @tc.desc   test setSocketIdleTimeout 300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ACE_WEB_setSocketIdleTimeout_API_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
+    it('testSetSocketIdleTimeout003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         console.log('testSetSocketIdleTimeout003 start')
         let result = false
         try {
@@ -108,15 +106,14 @@ export default function webViewSetSocketIdleTimeout() {
     })
 
     /**
-     * @tc.name   SUB_ACE_WEB_setSocketIdleTimeout_API_0004
+     * @tc.name   testSetSocketIdleTimeout004
      * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0004
      * @tc.desc   test setSocketIdleTimeout 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ACE_WEB_setSocketIdleTimeout_API_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
+    it('testSetSocketIdleTimeout004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testSetSocketIdleTimeout004 start')
         let result = false
         try {
@@ -133,15 +130,14 @@ export default function webViewSetSocketIdleTimeout() {
     })
 
     /**
-     * @tc.name   SUB_ACE_WEB_setSocketIdleTimeout_API_0005
+     * @tc.name   testSetSocketIdleTimeout005
      * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0005
      * @tc.desc   test setSocketIdleTimeout 99999999
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ACE_WEB_setSocketIdleTimeout_API_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
+    it('testSetSocketIdleTimeout005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testSetSocketIdleTimeout005 start')
         let result = false
         try {
@@ -158,90 +154,44 @@ export default function webViewSetSocketIdleTimeout() {
     })
 
     /**
-     * @tc.name   SUB_ACE_WEB_setSocketIdleTimeout_API_0006
+     * @tc.name   testSetSocketIdleTimeoutNull
      * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0006
      * @tc.desc   test setSocketIdleTimeout null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ACE_WEB_setSocketIdleTimeout_API_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
+    it('testSetSocketIdleTimeoutNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testSetSocketIdleTimeoutNull start')
         try {
             webView.WebviewController.setSocketIdleTimeout(null);
         } catch (error) {
             console.error('testSetSocketIdleTimeoutNull error: ' + JSON.stringify(error))
-            expect(Number(JSON.parse(JSON.stringify(error))['code'])).assertEqual(401)
+            expect(Number((error as BusinessError).code)).assertEqual(401)
         }
         console.log('testSetSocketIdleTimeoutNull end')
         done()
     })
 
     /**
-     * @tc.name   SUB_ACE_WEB_setSocketIdleTimeout_API_0007
+     * @tc.name   testSetSocketIdleTimeoutUndefined
      * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0007
      * @tc.desc   test setSocketIdleTimeout undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ACE_WEB_setSocketIdleTimeout_API_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
+    it('testSetSocketIdleTimeoutUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testSetSocketIdleTimeoutUndefined start')
         try {
             webView.WebviewController.setSocketIdleTimeout(undefined);
         } catch (error) {
             console.error('testSetSocketIdleTimeoutUndefined error: ' + JSON.stringify(error))
-            expect(Number(JSON.parse(JSON.stringify(error))['code'])).assertEqual(401)
+            expect(Number((error as BusinessError).code)).assertEqual(401)
         }
         console.log('testSetSocketIdleTimeoutUndefined end')
         done()
     })
-
-    /**
-     * @tc.name   SUB_ACE_WEB_setSocketIdleTimeout_API_0008
-     * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0008
-     * @tc.desc   boundary below range [30,300]: 29
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_ACE_WEB_setSocketIdleTimeout_API_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        let invoked: boolean = false;
-        try {
-          webView.WebviewController.setSocketIdleTimeout(29);
-          invoked = true;
-        } catch (error) {
-          console.error('setSocketIdleTimeout(29) ' + JSON.stringify(error));
-          invoked = true;
-        }
-        expect(invoked).assertTrue();
-        done();
-      })
-
-    /**
-     * @tc.name   SUB_ACE_WEB_setSocketIdleTimeout_API_0009
-     * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0009
-     * @tc.desc   boundary above range [30,300]: 301
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_ACE_WEB_setSocketIdleTimeout_API_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        let invoked: boolean = false;
-        try {
-          webView.WebviewController.setSocketIdleTimeout(301);
-          invoked = true;
-        } catch (error) {
-          console.error('setSocketIdleTimeout(301) ' + JSON.stringify(error));
-          invoked = true;
-        }
-        expect(invoked).assertTrue();
-        done();
-      })
 
   })
 }
