@@ -23,6 +23,7 @@
     "MainAbility/pages/drawableDescriptor/DrawableDescriptorReleaseTest",
     "MainAbility/pages/drawableDescriptor/PixelMapDrawableDescriptorConstructor",
     "MainAbility/pages/drawableDescriptor/SetHdrComposition",
+    "MainAbility/pages/drawableDescriptor/GetMaskClipPath",
     "MainAbility/pages/ImageAnimator/ImageAnimatorAttributeModifier",
     "MainAbility/pages/image/ImageAttributeModifier"
   ]

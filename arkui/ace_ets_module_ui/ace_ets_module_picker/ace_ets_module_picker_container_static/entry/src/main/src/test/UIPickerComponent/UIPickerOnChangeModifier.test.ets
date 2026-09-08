@@ -13,25 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, afterEach, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Component, Driver, ON, MouseButton, Rect } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 export default function UIPickerOnChangeModifierTest() {
   describe('UIPickerOnChangeModifierTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("UIPickerOnChangeModifierTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.container.static", "EntryAbility")
-      await UtilsTest.msSleep(1000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info('UIPickerOnChangeModifierTest beforeEach start');
