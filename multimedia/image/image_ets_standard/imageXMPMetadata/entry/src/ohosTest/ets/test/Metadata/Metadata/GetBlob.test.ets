@@ -162,8 +162,8 @@ export default function GetBlobTest() {
         done();
       } catch (err) {
         console.error(`${testTag} Error processing err: ${err}`);
-        expect(false).assertTrue();
-        done();
+        expect().assertFail();
+          done();
       }
     });
  
@@ -195,7 +195,7 @@ export default function GetBlobTest() {
           done();
         } catch (err) {
           console.error(`${testTag} Error processing err: ${err}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
         
@@ -233,13 +233,12 @@ export default function GetBlobTest() {
             result = result && exifArrayBuffer != undefined;
           }
           expect(result).assertTrue();
-          done();
         } catch (err) {
           console.error(`${testTag} Error processing err: ${err}`);
-          expect(false).assertTrue();
-          done();
+          expect().assertFail();
         } finally {
           await imageSourceApi?.release();
+          done();
         }
       }
     });
@@ -272,8 +271,7 @@ export default function GetBlobTest() {
         done();
       } catch (err) {
         console.error(`${testTag} Error processing err: ${err}`);
-        result = false;
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });

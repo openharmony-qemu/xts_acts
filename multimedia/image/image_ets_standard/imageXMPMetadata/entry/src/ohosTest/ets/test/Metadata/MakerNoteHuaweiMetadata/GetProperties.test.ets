@@ -36,11 +36,11 @@ async function getPropertiesPromiseTest(done: Function, testName: string, path: 
       for(let i = 0; i < repeat; i++){
         let verifyResult: boolean;
         if(path === "CUVAHdr.jpg"){
-        verifyResult = await verifyExifPropertiesByArray(makerNoteHuaweiMetadata, attributeKey, CUVAHdrExpectedValue);
+          verifyResult = await verifyExifPropertiesByArray(makerNoteHuaweiMetadata, attributeKey, CUVAHdrExpectedValue);
         } else if (path === 'CUVAHdrMulti.jpg'){
-        verifyResult = await verifyExifPropertiesByArray(makerNoteHuaweiMetadata, attributeKey, CUVAHdrMultiExpectedValue);
+          verifyResult = await verifyExifPropertiesByArray(makerNoteHuaweiMetadata, attributeKey, CUVAHdrMultiExpectedValue);
         } else {
-        verifyResult = await verifyExifPropertiesByArray(makerNoteHuaweiMetadata, attributeKey, testExifExpectedValue);
+          verifyResult = await verifyExifPropertiesByArray(makerNoteHuaweiMetadata, attributeKey, testExifExpectedValue);
         }
         result = verifyResult && result;
       }

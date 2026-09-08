@@ -156,7 +156,7 @@ export default function MakerNoteGetBlobTest() {
         done();
       } catch (err) {
         console.error(`${testTag} Error processing err: ${err}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -189,7 +189,7 @@ export default function MakerNoteGetBlobTest() {
           done();
         } catch (err) {
           console.error(`${testTag} Error processing err: ${err}`);
-          expect(result).assertTrue();
+          expect().assertFail();
           done();
         }
       }
@@ -225,7 +225,7 @@ export default function MakerNoteGetBlobTest() {
         done();
       } catch (err) {
         console.error(`${testTag} Error processing err: ${err}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });

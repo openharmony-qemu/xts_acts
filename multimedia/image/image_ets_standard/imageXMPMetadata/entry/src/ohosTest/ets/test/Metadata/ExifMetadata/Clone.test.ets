@@ -46,7 +46,7 @@ async function clonePromiseTest(done: Function, testName: string, path: string,
             result = result && verifyResult;
         }
     }
-    retrun result;
+    return result;
 }
  
 export default function ExifCloneTest() {

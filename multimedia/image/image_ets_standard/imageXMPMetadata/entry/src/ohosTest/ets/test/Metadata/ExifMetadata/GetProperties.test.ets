@@ -23,6 +23,7 @@ const TAG = 'getProperties';
 async function getPropertiesPromiseTest(done: Function, testName: string, path: string,
   attributeKey: Array<image.PropertyKey> | null, repeat: number): Promise<boolean> {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    let result = true;
     const resourceMgr = testContext.resourceManager;
     const rawFile = await resourceMgr.getRawFileContent(path);
     let ops: image.SourceOptions = {

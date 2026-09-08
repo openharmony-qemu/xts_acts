@@ -156,7 +156,7 @@ export default function ExifGetBlobTest() {
         done();
       } catch (err) {
         console.error(`${testTag} Error processing err: ${err}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -189,8 +189,7 @@ export default function ExifGetBlobTest() {
           done();
         } catch (err) {
           console.error(`${testTag} Error processing err: ${err}`);
-          result = false;
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
       }
@@ -226,7 +225,7 @@ export default function ExifGetBlobTest() {
         done();
       } catch (err) {
         console.error(`${testTag} Error processing err: ${err}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });

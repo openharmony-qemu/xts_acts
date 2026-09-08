@@ -44,7 +44,7 @@ async function getAllPropertiesPromiseTest(done: Function, testName: string, pat
           result = result && verifyResult;
       }
   }
-  retrun result;
+  return result;
 } 
  
 export default function ExifGetAllPropertiesTest() {

@@ -16,7 +16,7 @@
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import { allPropertyKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByMetadata } from '../ImageProperties.test'
+import { allPropertyKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByArray } from '../ImageProperties.test'
  
 const TAG = 'getAllProperties';
  
@@ -37,11 +37,11 @@ async function getAllPropertiesPromiseTest(done: Function, testName: string, pat
       for(let i = 0; i < repeat; i++){
           let verifyResult: boolean;
           if(path === "CUVAHdr.jpg"){
-          verifyResult = await verifyExifPropertiesByMetadata(metaData, allPropertyKeys, CUVAHdrExpectedValue, path, "metadata getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByArray(metaData, allPropertyKeys, CUVAHdrExpectedValue, path, "metadata getAllPropertiesPromiseTest");
           } else if (path === 'CUVAHdrMulti.jpg'){
-          verifyResult = await verifyExifPropertiesByMetadata(metaData, allPropertyKeys, CUVAHdrMultiExpectedValue, path, "metadata getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByArray(metaData, allPropertyKeys, CUVAHdrMultiExpectedValue, path, "metadata getAllPropertiesPromiseTest");
           } else {
-          verifyResult = await verifyExifPropertiesByMetadata(metaData, allPropertyKeys, testExifExpectedValue, path, "metadata getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByArray(metaData, allPropertyKeys, testExifExpectedValue, path, "metadata getAllPropertiesPromiseTest");
           }
           console.info(TAG, `expect result: ${verifyResult}`);
           result = verifyResult && result;
