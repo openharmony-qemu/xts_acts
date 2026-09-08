@@ -37,6 +37,7 @@ import SegmentBtnMaterialTest0070 from './segmentButton/SegmentBtnMaterialTest00
 import segmentButtonEnableStateAnimation from './segmentButton/segmentButtonEnableStateAnimation.test';
 import TabSegmentButtonV2Animation from './segmentButtonV2/TabSegmentButtonV2Animation.test';
 import EnableStateAnimationIndexTest from './migratedActs/EnableStateAnimationIndex.test';
+import SegmentButtonV2HybridTest from './segmentButtonV2/SegmentButtonV2Hybrid.test';
 
 export default function testsuite() {
   SegmentButtonBorderTest();
@@ -62,4 +63,5 @@ export default function testsuite() {
   SegmentBtnMaterialTest0070();
   TabSegmentButtonV2Animation();
   segmentButtonEnableStateAnimation();
+  SegmentButtonV2HybridTest();
 }

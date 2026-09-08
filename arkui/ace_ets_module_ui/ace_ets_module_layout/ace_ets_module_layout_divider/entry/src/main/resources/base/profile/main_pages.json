@@ -5,6 +5,7 @@
         "MainAbility/pages/Divider/dividerUI",
         "MainAbility/pages/Divider/dividerr",
         "MainAbility/pages/Divider/dividerPage",
-        "MainAbility/pages/Divider/DividerLineCapNullUndefined"
+        "MainAbility/pages/Divider/DividerLineCapNullUndefined",
+        "MainAbility/pages/Divider/DividerVerticalStrokeWidthNullUndefined"
     ]
 }
