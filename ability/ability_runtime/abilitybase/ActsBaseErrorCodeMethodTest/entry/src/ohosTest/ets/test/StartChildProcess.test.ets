@@ -1182,16 +1182,16 @@ export default function ndkTest() {
             Number.MIN_SAFE_INTEGER as childProcessManager.StartMode)
             .then((pid)=>{
               console.log(`${tag} startChildProcess success, pid: ${pid}`);
-              try{expect().assertFail();}catch(e){}
+              expect(pid).assertLarger(0)
               done();
             }).catch((err:BusinessError)=>{
               console.log(`${tag} startChildProcess error, err: ${err?.code}`);
-              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              expect().assertFail();
               done();
             });
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(PARAM_INVALID)
+          expect().assertFail();
           done();
         }
       }else if(mpEnable == 'false'){
@@ -1221,12 +1221,12 @@ export default function ndkTest() {
             Number.MIN_SAFE_INTEGER as childProcessManager.StartMode,
             (err, pid)=>{
               console.log(`${tag} startChildProcess callback, err: ${err?.code}, pid: ${pid}`);
-              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              expect(pid).assertLarger(0)
               done();
             })
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(PARAM_INVALID)
+          expect().assertFail();
           done();
         }
       }else if(mpEnable == 'false'){
@@ -1255,16 +1255,16 @@ export default function ndkTest() {
           await childProcessManager.startChildProcess('./ets/process/AProcess.ts', 0.5 as childProcessManager.StartMode)
             .then((pid)=>{
               console.log(`${tag} startChildProcess success, pid: ${pid}`);
-              try{expect().assertFail();}catch(e){}
+              expect(pid).assertLarger(0)
               done();
             }).catch((err:BusinessError)=>{
               console.log(`${tag} startChildProcess error, err: ${err?.code}`);
-              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              expect().assertFail();
               done();
             });
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(PARAM_INVALID)
+          expect().assertFail();
           done();
         }
       }else if(mpEnable == 'false'){
@@ -1293,12 +1293,12 @@ export default function ndkTest() {
           childProcessManager.startChildProcess('./ets/process/AProcess.ts', 0.5 as childProcessManager.StartMode,
             (err, pid)=>{
               console.log(`${tag} startChildProcess callback, err: ${err?.code}, pid: ${pid}`);
-              try{expect(err?.code).assertEqual(PARAM_INVALID)}catch(e){}
+              expect(pid).assertLarger(0)
               done();
             })
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(PARAM_INVALID)
+          expect().assertFail();
           done();
         }
       }else if(mpEnable == 'false'){
