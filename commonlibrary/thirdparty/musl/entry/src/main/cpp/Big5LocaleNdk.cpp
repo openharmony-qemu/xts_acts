@@ -38,23 +38,17 @@
 extern "C" int set_iconv_icu_enable(void);
 extern "C" int set_wctype_icu_enable(void);
 
-static int32_t g_icu_inited = 0;
+static pthread_once_t g_icu_init_once = PTHREAD_ONCE_INIT;
+
+static void DoIcuInit()
+{
+    set_iconv_icu_enable();
+    set_wctype_icu_enable();
+}
 
 static void EnsureIcuInit()
 {
-    if (g_icu_inited) {
-        return;
-    }
-    set_iconv_icu_enable();
-    set_wctype_icu_enable();
-    g_icu_inited = 1;
-}
-
-static int CreateResult(napi_env env, int32_t val)
-{
-    napi_value result = nullptr;
-    napi_create_int32(env, val, &result);
-    return val;
+    pthread_once(&g_icu_init_once, DoIcuInit);
 }
 
 static napi_value MakeResult(napi_env env, int32_t val)
@@ -72,6 +66,7 @@ static napi_value SetlocaleBig5Localeconv(napi_env env, napi_callback_info info)
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
         strncpy(origBuf, orig, BUFF_SIZE - 1);
+        origBuf[BUFF_SIZE - 1] = '\0';
     }
     char *r = setlocale(LC_ALL, "zh_HK.Big5");
     int32_t ret = FAIL;
@@ -97,6 +92,7 @@ static napi_value SetlocaleLowercase(napi_env env, napi_callback_info info)
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
         strncpy(origBuf, orig, BUFF_SIZE - 1);
+        origBuf[BUFF_SIZE - 1] = '\0';
     }
     char *r = setlocale(LC_ALL, "zh_hk.Big5");
     int32_t ret = (r == nullptr) ? NO_ERR : FAIL;
@@ -125,6 +121,7 @@ static napi_value SetlocaleIcuMissing(napi_env env, napi_callback_info info)
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
         strncpy(origBuf, orig, BUFF_SIZE - 1);
+        origBuf[BUFF_SIZE - 1] = '\0';
     }
     char *r = setlocale(LC_ALL, "zh_HK.Big5");
     int32_t ret = FAIL;
@@ -150,6 +147,7 @@ static napi_value SetlocaleHkscsLocaleconv(napi_env env, napi_callback_info info
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
         strncpy(origBuf, orig, BUFF_SIZE - 1);
+        origBuf[BUFF_SIZE - 1] = '\0';
     }
     char *r1 = setlocale(LC_ALL, "zh_HK.Big5");
     int32_t ret = FAIL;
@@ -158,6 +156,7 @@ static napi_value SetlocaleHkscsLocaleconv(napi_env env, napi_callback_info info
         char dp1[BUFF_SIZE] = {0};
         if (lc1 && lc1->decimal_point) {
             strncpy(dp1, lc1->decimal_point, BUFF_SIZE - 1);
+            dp1[BUFF_SIZE - 1] = '\0';
         }
         char *r2 = setlocale(LC_ALL, "zh_HK.Big5-HKSCS");
         if (r2) {
@@ -188,11 +187,23 @@ static napi_value SetlocaleHkscsLowercase(napi_env env, napi_callback_info info)
 static napi_value SetlocaleEnvCleared(napi_env env, napi_callback_info info)
 {
     EnsureIcuInit();
+    const char *envAll = getenv("LC_ALL");
+    const char *envCtype = getenv("LC_CTYPE");
+    const char *envLang = getenv("LANG");
+    char saveAll[256] = {0};
+    char saveCtype[256] = {0};
+    char saveLang[256] = {0};
+    if (envAll) { strncpy(saveAll, envAll, 255); saveAll[255] = '\0'; }
+    if (envCtype) { strncpy(saveCtype, envCtype, 255); saveCtype[255] = '\0'; }
+    if (envLang) { strncpy(saveLang, envLang, 255); saveLang[255] = '\0'; }
     unsetenv("LC_ALL");
     unsetenv("LC_CTYPE");
     unsetenv("LANG");
     char *r = setlocale(LC_ALL, "zh_HK.Big5");
     int32_t ret = (r != nullptr) ? NO_ERR : FAIL;
+    if (saveAll[0]) { setenv("LC_ALL", saveAll, 1); } else { unsetenv("LC_ALL"); }
+    if (saveCtype[0]) { setenv("LC_CTYPE", saveCtype, 1); } else { unsetenv("LC_CTYPE"); }
+    if (saveLang[0]) { setenv("LANG", saveLang, 1); } else { unsetenv("LANG"); }
     return MakeResult(env, ret);
 }
 
@@ -252,6 +263,7 @@ static napi_value WctypeSetlocaleYue(napi_env env, napi_callback_info info)
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
         strncpy(origBuf, orig, BUFF_SIZE - 1);
+        origBuf[BUFF_SIZE - 1] = '\0';
     }
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "zh_HK.Big5")) {
@@ -272,6 +284,7 @@ static napi_value WctypeHkscsSupplementary(napi_env env, napi_callback_info info
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
         strncpy(origBuf, orig, BUFF_SIZE - 1);
+        origBuf[BUFF_SIZE - 1] = '\0';
     }
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "zh_HK.Big5-HKSCS")) {
@@ -308,6 +321,7 @@ static napi_value WctypeAsciiConsistent(napi_env env, napi_callback_info info)
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
         strncpy(origBuf, orig, BUFF_SIZE - 1);
+        origBuf[BUFF_SIZE - 1] = '\0';
     }
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "zh_HK.Big5")) {
@@ -439,6 +453,7 @@ static napi_value LocaleconvBig5Fields(napi_env env, napi_callback_info info)
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
         strncpy(origBuf, orig, BUFF_SIZE - 1);
+        origBuf[BUFF_SIZE - 1] = '\0';
     }
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "zh_HK.Big5")) {
@@ -463,6 +478,7 @@ static napi_value LocaleconvStaticInvalidation(napi_env env, napi_callback_info 
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) { strncpy(origBuf, orig, BUFF_SIZE - 1); }
+    origBuf[BUFF_SIZE - 1] = '\0';
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "zh_HK.Big5")) {
         localeconv();
@@ -481,6 +497,7 @@ static napi_value HkscsVariantConsistency(napi_env env, napi_callback_info info)
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) { strncpy(origBuf, orig, BUFF_SIZE - 1); }
+    origBuf[BUFF_SIZE - 1] = '\0';
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "zh_HK.Big5-HKSCS")) {
         locale_t loc = uselocale((locale_t)0);
@@ -743,6 +760,7 @@ static napi_value RegressZhCnLocaleconv(napi_env env, napi_callback_info info)
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) { strncpy(origBuf, orig, BUFF_SIZE - 1); }
+    origBuf[BUFF_SIZE - 1] = '\0';
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "zh_CN")) {
         struct lconv *lc = localeconv();
@@ -787,6 +805,7 @@ static napi_value RegressEnUsLocaleconv(napi_env env, napi_callback_info info)
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) { strncpy(origBuf, orig, BUFF_SIZE - 1); }
+    origBuf[BUFF_SIZE - 1] = '\0';
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "en_US.UTF-8")) {
         struct lconv *lc = localeconv();
@@ -831,6 +850,7 @@ static napi_value RegressZhCnUtf8Localeconv(napi_env env, napi_callback_info inf
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) { strncpy(origBuf, orig, BUFF_SIZE - 1); }
+    origBuf[BUFF_SIZE - 1] = '\0';
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "zh_CN.UTF-8")) {
         struct lconv *lc = localeconv();
@@ -901,7 +921,7 @@ static void *ThreadWctypeFunc(void *arg)
 {
     ThreadArg *ta = (ThreadArg *)arg;
     for (int32_t i = 0; i < 1000; i++) {
-        int r = iswalpha_l(0x7CA4, ta->loc);
+        int32_t r = iswalpha_l(0x7CA4, ta->loc);
         if (ta->expectedNonZero && r == 0) { ta->ok = 0; return nullptr; }
         if (!ta->expectedNonZero && r != 0) { ta->ok = 0; return nullptr; }
     }
@@ -1062,6 +1082,7 @@ static napi_value SetlocaleNullQuery(napi_env env, napi_callback_info info)
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) { strncpy(origBuf, orig, BUFF_SIZE - 1); }
+    origBuf[BUFF_SIZE - 1] = '\0';
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "zh_HK.Big5")) {
         char *q = setlocale(LC_ALL, nullptr);
