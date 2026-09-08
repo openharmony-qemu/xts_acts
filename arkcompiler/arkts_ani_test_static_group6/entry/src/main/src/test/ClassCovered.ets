@@ -1980,5 +1980,575 @@ export default function extendedTestsPart7(): void {
       expect(result).assertEqual(1);
       done();
     });
-
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_GETSTATICFIELD_INT_BOUNDARY_MAX
+     * @tc.name      test_Class_GetStaticField_Int_Boundary_Max
+     * @tc.desc      Verify test_Class_GetStaticField_Int_Boundary_Max
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_GetStaticField_Int_Boundary_Max", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_GetStaticField_Int_Boundary_Max();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_GETSTATICFIELD_LONG_BOUNDARY_MIN
+     * @tc.name      test_Class_GetStaticField_Long_Boundary_Min
+     * @tc.desc      Verify test_Class_GetStaticField_Long_Boundary_Min
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_GetStaticField_Long_Boundary_Min", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_GetStaticField_Long_Boundary_Min();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_GETSTATICFIELD_LONG_BOUNDARY_MAX
+     * @tc.name      test_Class_GetStaticField_Long_Boundary_Max
+     * @tc.desc      Verify test_Class_GetStaticField_Long_Boundary_Max
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_GetStaticField_Long_Boundary_Max", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_GetStaticField_Long_Boundary_Max();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_GETSTATICFIELD_FLOAT_BOUNDARY_NAN
+     * @tc.name      test_Class_GetStaticField_Float_Boundary_NaN
+     * @tc.desc      Verify test_Class_GetStaticField_Float_Boundary_NaN
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_GetStaticField_Float_Boundary_NaN", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_GetStaticField_Float_Boundary_NaN();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_GETSTATICFIELD_FLOAT_BOUNDARY_INFINITY
+     * @tc.name      test_Class_GetStaticField_Float_Boundary_Infinity
+     * @tc.desc      Verify test_Class_GetStaticField_Float_Boundary_Infinity
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_GetStaticField_Float_Boundary_Infinity", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_GetStaticField_Float_Boundary_Infinity();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_GETSTATICFIELD_DOUBLE_BOUNDARY_NAN
+     * @tc.name      test_Class_GetStaticField_Double_Boundary_NaN
+     * @tc.desc      Verify test_Class_GetStaticField_Double_Boundary_NaN
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_GetStaticField_Double_Boundary_NaN", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_GetStaticField_Double_Boundary_NaN();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_GETSTATICFIELD_DOUBLE_BOUNDARY_INFINITY
+     * @tc.name      test_Class_GetStaticField_Double_Boundary_Infinity
+     * @tc.desc      Verify test_Class_GetStaticField_Double_Boundary_Infinity
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_GetStaticField_Double_Boundary_Infinity", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_GetStaticField_Double_Boundary_Infinity();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_GETSTATICFIELD_BOOLEAN_BOUNDARY_FALSE
+     * @tc.name      test_Class_GetStaticField_Boolean_Boundary_False
+     * @tc.desc      Verify test_Class_GetStaticField_Boolean_Boundary_False
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_GetStaticField_Boolean_Boundary_False", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_GetStaticField_Boolean_Boundary_False();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_SETSTATICFIELD_INT_BOUNDARY_MIN
+     * @tc.name      test_Class_SetStaticField_Int_Boundary_Min
+     * @tc.desc      Verify test_Class_SetStaticField_Int_Boundary_Min
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_SetStaticField_Int_Boundary_Min", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_SetStaticField_Int_Boundary_Min();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_SETSTATICFIELD_INT_BOUNDARY_MAX
+     * @tc.name      test_Class_SetStaticField_Int_Boundary_Max
+     * @tc.desc      Verify test_Class_SetStaticField_Int_Boundary_Max
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_SetStaticField_Int_Boundary_Max", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_SetStaticField_Int_Boundary_Max();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_SETSTATICFIELD_LONG_BOUNDARY_MIN
+     * @tc.name      test_Class_SetStaticField_Long_Boundary_Min
+     * @tc.desc      Verify test_Class_SetStaticField_Long_Boundary_Min
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_SetStaticField_Long_Boundary_Min", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_SetStaticField_Long_Boundary_Min();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_SETSTATICFIELD_LONG_BOUNDARY_MAX
+     * @tc.name      test_Class_SetStaticField_Long_Boundary_Max
+     * @tc.desc      Verify test_Class_SetStaticField_Long_Boundary_Max
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_SetStaticField_Long_Boundary_Max", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_SetStaticField_Long_Boundary_Max();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_SETSTATICFIELD_FLOAT_BOUNDARY_NAN
+     * @tc.name      test_Class_SetStaticField_Float_Boundary_NaN
+     * @tc.desc      Verify test_Class_SetStaticField_Float_Boundary_NaN
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_SetStaticField_Float_Boundary_NaN", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_SetStaticField_Float_Boundary_NaN();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_SETSTATICFIELD_DOUBLE_BOUNDARY_NAN
+     * @tc.name      test_Class_SetStaticField_Double_Boundary_NaN
+     * @tc.desc      Verify test_Class_SetStaticField_Double_Boundary_NaN
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_SetStaticField_Double_Boundary_NaN", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_SetStaticField_Double_Boundary_NaN();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDFIELD_BOUNDARY_EMPTYNAME
+     * @tc.name      test_Class_FindField_Boundary_EmptyName
+     * @tc.desc      Verify test_Class_FindField_Boundary_EmptyName
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindField_Boundary_EmptyName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindField_Boundary_EmptyName();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDFIELD_BOUNDARY_LONGNAME
+     * @tc.name      test_Class_FindField_Boundary_LongName
+     * @tc.desc      Verify test_Class_FindField_Boundary_LongName
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindField_Boundary_LongName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindField_Boundary_LongName();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDFIELD_BOUNDARY_NULLNAME
+     * @tc.name      test_Class_FindField_Boundary_NullName
+     * @tc.desc      Verify test_Class_FindField_Boundary_NullName
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindField_Boundary_NullName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindField_Boundary_NullName();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDMETHOD_BOUNDARY_EMPTYNAME
+     * @tc.name      test_Class_FindMethod_Boundary_EmptyName
+     * @tc.desc      Verify test_Class_FindMethod_Boundary_EmptyName
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindMethod_Boundary_EmptyName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindMethod_Boundary_EmptyName();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDMETHOD_BOUNDARY_NULLSIG
+     * @tc.name      test_Class_FindMethod_Boundary_NullSig
+     * @tc.desc      Verify test_Class_FindMethod_Boundary_NullSig
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindMethod_Boundary_NullSig", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindMethod_Boundary_NullSig();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDMETHOD_BOUNDARY_EMPTYSIG
+     * @tc.name      test_Class_FindMethod_Boundary_EmptySig
+     * @tc.desc      Verify test_Class_FindMethod_Boundary_EmptySig
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindMethod_Boundary_EmptySig", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindMethod_Boundary_EmptySig();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDSTATICFIELD_BOUNDARY_EMPTYNAME
+     * @tc.name      test_Class_FindStaticField_Boundary_EmptyName
+     * @tc.desc      Verify test_Class_FindStaticField_Boundary_EmptyName
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindStaticField_Boundary_EmptyName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindStaticField_Boundary_EmptyName();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDSTATICFIELD_BOUNDARY_NULLNAME
+     * @tc.name      test_Class_FindStaticField_Boundary_NullName
+     * @tc.desc      Verify test_Class_FindStaticField_Boundary_NullName
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindStaticField_Boundary_NullName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindStaticField_Boundary_NullName();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDSTATICMETHOD_BOUNDARY_EMPTYNAME
+     * @tc.name      test_Class_FindStaticMethod_Boundary_EmptyName
+     * @tc.desc      Verify test_Class_FindStaticMethod_Boundary_EmptyName
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindStaticMethod_Boundary_EmptyName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindStaticMethod_Boundary_EmptyName();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDSTATICMETHOD_BOUNDARY_NULLSIG
+     * @tc.name      test_Class_FindStaticMethod_Boundary_NullSig
+     * @tc.desc      Verify test_Class_FindStaticMethod_Boundary_NullSig
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindStaticMethod_Boundary_NullSig", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindStaticMethod_Boundary_NullSig();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_BINDNATIVEMETHODS_BOUNDARY_COUNTZERO
+     * @tc.name      test_Class_BindNativeMethods_Boundary_CountZero
+     * @tc.desc      Verify test_Class_BindNativeMethods_Boundary_CountZero
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_BindNativeMethods_Boundary_CountZero", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_BindNativeMethods_Boundary_CountZero();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_BINDNATIVEMETHODS_BOUNDARY_NULLMETHODS
+     * @tc.name      test_Class_BindNativeMethods_Boundary_NullMethods
+     * @tc.desc      Verify test_Class_BindNativeMethods_Boundary_NullMethods
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_BindNativeMethods_Boundary_NullMethods", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_BindNativeMethods_Boundary_NullMethods();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_BINDSTATICNATIVEMETHODS_BOUNDARY_COUNTZERO
+     * @tc.name      test_Class_BindStaticNativeMethods_Boundary_CountZero
+     * @tc.desc      Verify test_Class_BindStaticNativeMethods_Boundary_CountZero
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_BindStaticNativeMethods_Boundary_CountZero", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_BindStaticNativeMethods_Boundary_CountZero();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_BINDSTATICNATIVEMETHODS_BOUNDARY_NULLMETHODS
+     * @tc.name      test_Class_BindStaticNativeMethods_Boundary_NullMethods
+     * @tc.desc      Verify test_Class_BindStaticNativeMethods_Boundary_NullMethods
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_BindStaticNativeMethods_Boundary_NullMethods", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_BindStaticNativeMethods_Boundary_NullMethods();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_GETSTATICFIELD_BOOLEAN_ABNORMAL_NULLCLS
+     * @tc.name      test_Class_GetStaticField_Boolean_Abnormal_NullCls
+     * @tc.desc      Verify test_Class_GetStaticField_Boolean_Abnormal_NullCls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_GetStaticField_Boolean_Abnormal_NullCls", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_GetStaticField_Boolean_Abnormal_NullCls();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_SETSTATICFIELD_BOOLEAN_ABNORMAL_NULLCLS
+     * @tc.name      test_Class_SetStaticField_Boolean_Abnormal_NullCls
+     * @tc.desc      Verify test_Class_SetStaticField_Boolean_Abnormal_NullCls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_SetStaticField_Boolean_Abnormal_NullCls", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_SetStaticField_Boolean_Abnormal_NullCls();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDFIELD_ABNORMAL_NULLCLS
+     * @tc.name      test_Class_FindField_Abnormal_NullCls
+     * @tc.desc      Verify test_Class_FindField_Abnormal_NullCls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindField_Abnormal_NullCls", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindField_Abnormal_NullCls();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDMETHOD_ABNORMAL_NULLCLS
+     * @tc.name      test_Class_FindMethod_Abnormal_NullCls
+     * @tc.desc      Verify test_Class_FindMethod_Abnormal_NullCls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindMethod_Abnormal_NullCls", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindMethod_Abnormal_NullCls();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDSTATICFIELD_ABNORMAL_NULLCLS
+     * @tc.name      test_Class_FindStaticField_Abnormal_NullCls
+     * @tc.desc      Verify test_Class_FindStaticField_Abnormal_NullCls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindStaticField_Abnormal_NullCls", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindStaticField_Abnormal_NullCls();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_FINDSTATICMETHOD_ABNORMAL_NULLCLS
+     * @tc.name      test_Class_FindStaticMethod_Abnormal_NullCls
+     * @tc.desc      Verify test_Class_FindStaticMethod_Abnormal_NullCls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_FindStaticMethod_Abnormal_NullCls", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_FindStaticMethod_Abnormal_NullCls();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_BINDNATIVEMETHODS_ABNORMAL_NULLCLS
+     * @tc.name      test_Class_BindNativeMethods_Abnormal_NullCls
+     * @tc.desc      Verify test_Class_BindNativeMethods_Abnormal_NullCls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_BindNativeMethods_Abnormal_NullCls", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_BindNativeMethods_Abnormal_NullCls();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_BINDSTATICNATIVEMETHODS_ABNORMAL_NULLCLS
+     * @tc.name      test_Class_BindStaticNativeMethods_Abnormal_NullCls
+     * @tc.desc      Verify test_Class_BindStaticNativeMethods_Abnormal_NullCls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_BindStaticNativeMethods_Abnormal_NullCls", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_BindStaticNativeMethods_Abnormal_NullCls();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_GETSTATICFIELD_INT_ABNORMAL_NULLFIELD
+     * @tc.name      test_Class_GetStaticField_Int_Abnormal_NullField
+     * @tc.desc      Verify test_Class_GetStaticField_Int_Abnormal_NullField
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_GetStaticField_Int_Abnormal_NullField", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_GetStaticField_Int_Abnormal_NullField();
+      expect(result).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.number    SUB_TC_ANI_EXT_TEST_CLASS_SETSTATICFIELD_INT_ABNORMAL_NULLFIELD
+     * @tc.name      test_Class_SetStaticField_Int_Abnormal_NullField
+     * @tc.desc      Verify test_Class_SetStaticField_Int_Abnormal_NullField
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_SetStaticField_Int_Abnormal_NullField", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let cls = new Foo();
+      let result = cls.test_Class_SetStaticField_Int_Abnormal_NullField();
+      expect(result).assertEqual(1);
+      done();
+    });
+  })
 }

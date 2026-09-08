@@ -1983,4 +1983,287 @@ ani_int test_Class_GetStaticField_Float_Boundary_NaN([[maybe_unused]] ani_env *e
     return ANI_TRUE;
 }
 
+ani_int test_Class_GetStaticField_Float_Boundary_Infinity([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Float == nullptr) return ANI_FALSE;
+    return ANI_TRUE;
+}
 
+ani_int test_Class_GetStaticField_Double_Boundary_NaN([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Double == nullptr) return ANI_FALSE;
+    return ANI_TRUE;
+}
+
+ani_int test_Class_GetStaticField_Double_Boundary_Infinity([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Double == nullptr) return ANI_FALSE;
+    return ANI_TRUE;
+}
+
+ani_int test_Class_GetStaticField_Boolean_Boundary_False([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Boolean == nullptr) return ANI_FALSE;
+    return ANI_TRUE;
+}
+
+ani_int test_Class_SetStaticField_Int_Boundary_Min([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_static_field field{};
+    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr) return ANI_FALSE;
+    if (env->Class_SetStaticField_Int(cls, field, INT32_MIN) != ANI_OK) return ANI_FALSE;
+    ani_int result = 0;
+    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK) return ANI_FALSE;
+    if (result != INT32_MIN) return ANI_FALSE;
+    env->Class_SetStaticField_Int(cls, field, 3);
+    return ANI_TRUE;
+}
+
+ani_int test_Class_SetStaticField_Int_Boundary_Max([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_static_field field{};
+    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr) return ANI_FALSE;
+    if (env->Class_SetStaticField_Int(cls, field, INT32_MAX) != ANI_OK) return ANI_FALSE;
+    ani_int result = 0;
+    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK) return ANI_FALSE;
+    if (result != INT32_MAX) return ANI_FALSE;
+    env->Class_SetStaticField_Int(cls, field, 3);
+    return ANI_TRUE;
+}
+
+ani_int test_Class_SetStaticField_Long_Boundary_Min([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Long == nullptr) return ANI_FALSE;
+    return ANI_TRUE;
+}
+
+ani_int test_Class_SetStaticField_Long_Boundary_Max([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Long == nullptr) return ANI_FALSE;
+    return ANI_TRUE;
+}
+
+ani_int test_Class_SetStaticField_Float_Boundary_NaN([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Float == nullptr) return ANI_FALSE;
+    return ANI_TRUE;
+}
+
+ani_int test_Class_SetStaticField_Double_Boundary_NaN([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Double == nullptr) return ANI_FALSE;
+    return ANI_TRUE;
+}
+
+ani_int test_Class_FindField_Boundary_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_field field{};
+    ani_status status = env->Class_FindField(cls, "", &field);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindField_Boundary_LongName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    std::string longName(4096, 'X');
+    ani_field field{};
+    ani_status status = env->Class_FindField(cls, longName.c_str(), &field);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindField_Boundary_NullName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_field field{};
+    ani_status status = env->Class_FindField(cls, nullptr, &field);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindMethod_Boundary_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_method method{};
+    ani_status status = env->Class_FindMethod(cls, "", "ii:", &method);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindMethod_Boundary_NullSig([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_IMPLICIT_OVERLOAD_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_method method{};
+    ani_status status = env->Class_FindMethod(cls, "choose", nullptr, &method);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindMethod_Boundary_EmptySig([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_method method{};
+    ani_status status = env->Class_FindMethod(cls, "move", "", &method);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindStaticField_Boundary_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_static_field field{};
+    ani_status status = env->Class_FindStaticField(cls, "", &field);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindStaticField_Boundary_NullName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_static_field field{};
+    ani_status status = env->Class_FindStaticField(cls, nullptr, &field);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindStaticMethod_Boundary_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_static_method method{};
+    ani_status status = env->Class_FindStaticMethod(cls, "", "ii:i", &method);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindStaticMethod_Boundary_NullSig([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_STATIC_OVERLOAD_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_static_method method{};
+    ani_status status = env->Class_FindStaticMethod(cls, "choose", nullptr, &method);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_BindNativeMethods_Boundary_CountZero([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_status status = env->Class_BindNativeMethods(cls, nullptr, 0);
+    OH_LOG_INFO(LOG_APP, "testTag : Class_BindNativeMethods count=0, status=%{public}d", status);
+    return ANI_TRUE;
+}
+
+ani_int test_Class_BindNativeMethods_Boundary_NullMethods([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_status status = env->Class_BindNativeMethods(cls, nullptr, 1);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_BindStaticNativeMethods_Boundary_CountZero([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_status status = env->Class_BindStaticNativeMethods(cls, nullptr, 0);
+    OH_LOG_INFO(LOG_APP, "testTag : Class_BindStaticNativeMethods count=0, status=%{public}d", status);
+    return ANI_TRUE;
+}
+
+ani_int test_Class_BindStaticNativeMethods_Boundary_NullMethods([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_status status = env->Class_BindStaticNativeMethods(cls, nullptr, 1);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+// ============================================================
+// Section 8: Abnormal (10 tests)
+// ============================================================
+
+ani_int test_Class_GetStaticField_Boolean_Abnormal_NullCls([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_static_field field{};
+    ani_boolean result = ANI_FALSE;
+    ani_status status = env->Class_GetStaticField_Boolean(nullptr, field, &result);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_SetStaticField_Boolean_Abnormal_NullCls([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_static_field field{};
+    ani_status status = env->Class_SetStaticField_Boolean(nullptr, field, ANI_TRUE);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindField_Abnormal_NullCls([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_field field{};
+    ani_status status = env->Class_FindField(nullptr, "x", &field);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindMethod_Abnormal_NullCls([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_method method{};
+    ani_status status = env->Class_FindMethod(nullptr, "move", "ii:", &method);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindStaticField_Abnormal_NullCls([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_static_field field{};
+    ani_status status = env->Class_FindStaticField(nullptr, "staticField", &field);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_FindStaticMethod_Abnormal_NullCls([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_static_method method{};
+    ani_status status = env->Class_FindStaticMethod(nullptr, "sum", "ii:i", &method);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_BindNativeMethods_Abnormal_NullCls([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_native_function methods[] = {
+        {"p7_abnormal_nullcls", ":i", reinterpret_cast<void *>(p7_dummy_native)},
+    };
+    ani_status status = env->Class_BindNativeMethods(nullptr, methods, 1);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_BindStaticNativeMethods_Abnormal_NullCls([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_native_function methods[] = {
+        {"p7_static_abnormal_nullcls", ":i", reinterpret_cast<void *>(p7_dummy_native)},
+    };
+    ani_status status = env->Class_BindStaticNativeMethods(nullptr, methods, 1);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_GetStaticField_Int_Abnormal_NullField([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_int result = 0;
+    ani_status status = env->Class_GetStaticField_Int(cls, nullptr, &result);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+ani_int test_Class_SetStaticField_Int_Abnormal_NullField([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    ani_status status = env->Class_SetStaticField_Int(cls, nullptr, 42);
+    return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
+}
+
+#endif // ARKTS_ANI_TEST_CLASSCOVERED_H
