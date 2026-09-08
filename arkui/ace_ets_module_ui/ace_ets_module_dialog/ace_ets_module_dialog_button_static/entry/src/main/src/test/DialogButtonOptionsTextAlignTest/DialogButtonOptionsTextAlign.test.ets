@@ -46,7 +46,6 @@ export default function DialogButtonOptionsTextAlignTest() {
       };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
         routerInstance.replaceUrl(options);
         await Utils.sleep(600);
       } catch (err) {
