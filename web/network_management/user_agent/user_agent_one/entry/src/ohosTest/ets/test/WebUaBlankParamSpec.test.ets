@@ -159,26 +159,36 @@ export default function webUaBlankParamSpec() {
     it('SUB_ACE_WEB_UAMETA_BOOL_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let meta: webview.UserAgentMetadata = new webview.UserAgentMetadata();
+        let hit = 0;
         try {
           meta.setMobile(null);
+          hit++;
         } catch (error) {
           logCode('setMobile(null)', error);
+          hit++;
         }
         try {
           meta.setMobile(undefined);
+          hit++;
         } catch (error) {
           logCode('setMobile(undefined)', error);
+          hit++;
         }
         try {
           meta.setWow64(null);
+          hit++;
         } catch (error) {
           logCode('setWow64(null)', error);
+          hit++;
         }
         try {
           meta.setWow64(undefined);
+          hit++;
         } catch (error) {
           logCode('setWow64(undefined)', error);
+          hit++;
         }
+        expect(hit).assertEqual(4);
         done();
       })
 
@@ -192,16 +202,22 @@ export default function webUaBlankParamSpec() {
      */
     it('SUB_ACE_WEB_UA_CLIENTHINTS_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
+        let hit = 0;
         try {
           webview.WebviewController.setUserAgentClientHintsEnabled(null);
+          hit++;
         } catch (error) {
           logCode('setUserAgentClientHintsEnabled(null)', error);
+          hit++;
         }
         try {
           webview.WebviewController.setUserAgentClientHintsEnabled(undefined);
+          hit++;
         } catch (error) {
           logCode('setUserAgentClientHintsEnabled(undefined)', error);
+          hit++;
         }
+        expect(hit).assertEqual(2);
         done();
       })
 

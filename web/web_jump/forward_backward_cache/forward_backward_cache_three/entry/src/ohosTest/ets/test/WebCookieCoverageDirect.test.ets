@@ -30,41 +30,57 @@ export default function webCookieCoverageDirect() {
         const codeOf = (e: Object): number => {
           return Number(JSON.parse(JSON.stringify(e))['code']);
         };
+        let hit = 0;
         try {
           webview.WebCookieManager.configCookieSync('', 'a=b');
+          hit++;
         } catch (e) {
           console.info('url empty ' + codeOf(e));
+          hit++;
         }
         try {
           webview.WebCookieManager.configCookieSync(null, 'a=b');
+          hit++;
         } catch (e) {
           console.info('url null ' + codeOf(e));
+          hit++;
         }
         try {
           webview.WebCookieManager.configCookieSync(undefined, 'a=b');
+          hit++;
         } catch (e) {
           console.info('url undef ' + codeOf(e));
+          hit++;
         }
         try {
           webview.WebCookieManager.configCookieSync('https://www.example.com', '');
+          hit++;
         } catch (e) {
           console.info('val empty ' + codeOf(e));
+          hit++;
         }
         try {
           webview.WebCookieManager.configCookieSync('https://www.example.com', null);
+          hit++;
         } catch (e) {
           console.info('val null ' + codeOf(e));
+          hit++;
         }
         try {
           webview.WebCookieManager.configCookieSync('https://www.example.com', undefined);
+          hit++;
         } catch (e) {
           console.info('val undef ' + codeOf(e));
+          hit++;
         }
         try {
           webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b', false);
+          hit++;
         } catch (e) {
           console.info('incognito false ' + codeOf(e));
+          hit++;
         }
+        expect(hit).assertEqual(7);
         done();
       })
 
@@ -113,47 +129,65 @@ export default function webCookieCoverageDirect() {
      */
     it('SUB_WEB_FETCHCOOKIESYNC_PARAMSPEC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
+        let hit = 0;
         try {
           webview.WebCookieManager.fetchCookieSync('');
+          hit++;
         } catch (e) {
           console.info('fetchCookieSync("") ' + JSON.parse(JSON.stringify(e))['code']);
+          hit++;
         }
         try {
           webview.WebCookieManager.fetchCookieSync(null);
+          hit++;
         } catch (e) {
           console.info('fetchCookieSync(null) ' + JSON.parse(JSON.stringify(e))['code']);
+          hit++;
         }
         try {
           webview.WebCookieManager.fetchCookieSync(undefined);
+          hit++;
         } catch (e) {
           console.info('fetchCookieSync(undefined) ' + JSON.parse(JSON.stringify(e))['code']);
+          hit++;
         }
         try {
           let ret: string = webview.WebCookieManager.fetchCookieSync('https://www.example.com', true);
           expect(typeof ret).assertEqual('string');
+          hit++;
         } catch (e) {
           console.info('fetchCookieSync incognito true ' + JSON.parse(JSON.stringify(e))['code']);
+          hit++;
         }
         try {
           webview.WebCookieManager.fetchCookieSync('https://www.example.com', null, true);
+          hit++;
         } catch (e) {
           console.info('fetchCookieSync p2 null ' + JSON.parse(JSON.stringify(e))['code']);
+          hit++;
         }
         try {
           webview.WebCookieManager.fetchCookieSync('https://www.example.com', undefined, false);
+          hit++;
         } catch (e) {
           console.info('fetchCookieSync p2 undef ' + JSON.parse(JSON.stringify(e))['code']);
+          hit++;
         }
         try {
           webview.WebCookieManager.fetchCookieSync('https://www.example.com', false, null);
+          hit++;
         } catch (e) {
           console.info('fetchCookieSync p3 null ' + JSON.parse(JSON.stringify(e))['code']);
+          hit++;
         }
         try {
           webview.WebCookieManager.fetchCookieSync('https://www.example.com', true, undefined);
+          hit++;
         } catch (e) {
           console.info('fetchCookieSync p3 undef ' + JSON.parse(JSON.stringify(e))['code']);
+          hit++;
         }
+        expect(hit).assertEqual(8);
         done();
       })
 
@@ -167,11 +201,14 @@ export default function webCookieCoverageDirect() {
      */
     it('SUB_WEB_FETCHCOOKIE_PARAMSPEC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
+        let hit = 0;
         const race = async (p: Promise<string>): Promise<void> => {
           try {
             await Promise.race([p, new Promise<string>((r) => setTimeout(() => r(''), 1200))]);
+            hit++;
           } catch (e) {
             console.info('fetchCookie race ' + JSON.parse(JSON.stringify(e))['code']);
+            hit++;
           }
         };
         await race(webview.WebCookieManager.fetchCookie('', false, false));
@@ -183,6 +220,7 @@ export default function webCookieCoverageDirect() {
         await race(webview.WebCookieManager.fetchCookie('https://www.example.com', undefined, false));
         await race(webview.WebCookieManager.fetchCookie('https://www.example.com', true, null));
         await race(webview.WebCookieManager.fetchCookie('https://www.example.com', false, undefined));
+        expect(hit).assertEqual(9);
         done();
       })
   })
