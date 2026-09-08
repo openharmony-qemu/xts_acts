@@ -31,6 +31,13 @@ constexpr const char *P7_BASE_DESC = "entry.src.main.src.ets.Index.ClassDefCompl
 constexpr const char *P7_POINT_DESC = "entry.src.main.src.ets.Index.ClassDefCompletePoint";
 constexpr const char *P7_IMPLICIT_OVERLOAD_DESC = "entry.src.main.src.ets.Index.ClassDefCompleteImplicitMethodOverload";
 constexpr const char *P7_STATIC_OVERLOAD_DESC = "entry.src.main.src.ets.Index.ClassDefCompleteStaticOverload";
+constexpr ani_int P7_STATIC_INT_FIELD_DEFAULT = 3;
+constexpr ani_int P7_STATIC_INT_FIELD_TEST_VALUE = 42;
+constexpr ani_int P7_SUM_ARG_ONE = 3;
+constexpr ani_int P7_SUM_ARG_TWO = 4;
+constexpr ani_int P7_SUM_EXPECTED = 7;
+constexpr ani_size P7_TWO_ARG_COUNT = 2;
+constexpr ani_size P7_LONG_NAME_LENGTH = 4096;
 
 ani_int p7_dummy_native([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
@@ -44,9 +51,11 @@ ani_int p7_dummy_native([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_obje
 ani_int test_Class_FindField_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_field field{};
-    if (env->Class_FindField(cls, "x", &field) != ANI_OK || field == nullptr) return ANI_FALSE;
+    if (env->Class_FindField(cls, "x", &field) != ANI_OK || field == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
@@ -60,7 +69,8 @@ ani_int test_Class_FindField_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_int test_Class_FindField_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_field field{};
     ani_status status = env->Class_FindField(cls, "", &field);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -69,7 +79,8 @@ ani_int test_Class_FindField_EmptyName([[maybe_unused]] ani_env *env, [[maybe_un
 ani_int test_Class_FindField_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -84,16 +95,20 @@ ani_int test_Class_FindField_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_FindStaticField_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_field field{};
-    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr) return ANI_FALSE;
+    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
@@ -107,7 +122,8 @@ ani_int test_Class_FindStaticField_Abnormal([[maybe_unused]] ani_env *env, [[may
 ani_int test_Class_FindStaticField_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_field field{};
     ani_status status = env->Class_FindStaticField(cls, "", &field);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -116,7 +132,8 @@ ani_int test_Class_FindStaticField_EmptyName([[maybe_unused]] ani_env *env, [[ma
 ani_int test_Class_FindStaticField_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -131,14 +148,17 @@ ani_int test_Class_FindStaticField_MultiThread(ani_env *env, [[maybe_unused]] an
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_FindField_NotExist([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_field field{};
     ani_status status = env->Class_FindField(cls, "nonexistent_field", &field);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -147,8 +167,9 @@ ani_int test_Class_FindField_NotExist([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_int test_Class_FindField_LongName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
-    std::string longName(4096, 'A');
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
+    std::string longName(P7_LONG_NAME_LENGTH, 'A');
     ani_field field{};
     ani_status status = env->Class_FindField(cls, longName.c_str(), &field);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -157,7 +178,8 @@ ani_int test_Class_FindField_LongName([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_int test_Class_FindStaticField_NotExist([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_field field{};
     ani_status status = env->Class_FindStaticField(cls, "nonexistent_static", &field);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -166,8 +188,9 @@ ani_int test_Class_FindStaticField_NotExist([[maybe_unused]] ani_env *env, [[may
 ani_int test_Class_FindStaticField_LongName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
-    std::string longName(4096, 'B');
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
+    std::string longName(P7_LONG_NAME_LENGTH, 'B');
     ani_static_field field{};
     ani_status status = env->Class_FindStaticField(cls, longName.c_str(), &field);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -180,9 +203,11 @@ ani_int test_Class_FindStaticField_LongName([[maybe_unused]] ani_env *env, [[may
 ani_int test_Class_FindMethod_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_method method{};
-    if (env->Class_FindMethod(cls, "move", "ii:", &method) != ANI_OK || method == nullptr) return ANI_FALSE;
+    if (env->Class_FindMethod(cls, "move", "ii:", &method) != ANI_OK || method == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
@@ -196,7 +221,8 @@ ani_int test_Class_FindMethod_Abnormal([[maybe_unused]] ani_env *env, [[maybe_un
 ani_int test_Class_FindMethod_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_method method{};
     ani_status status = env->Class_FindMethod(cls, "", "ii:", &method);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -205,7 +231,8 @@ ani_int test_Class_FindMethod_EmptyName([[maybe_unused]] ani_env *env, [[maybe_u
 ani_int test_Class_FindMethod_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -220,16 +247,20 @@ ani_int test_Class_FindMethod_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_FindStaticMethod_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_method method{};
-    if (env->Class_FindStaticMethod(cls, "sum", "ii:i", &method) != ANI_OK || method == nullptr) return ANI_FALSE;
+    if (env->Class_FindStaticMethod(cls, "sum", "ii:i", &method) != ANI_OK || method == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
@@ -243,7 +274,8 @@ ani_int test_Class_FindStaticMethod_Abnormal([[maybe_unused]] ani_env *env, [[ma
 ani_int test_Class_FindStaticMethod_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_method method{};
     ani_status status = env->Class_FindStaticMethod(cls, "", "ii:i", &method);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -252,7 +284,8 @@ ani_int test_Class_FindStaticMethod_EmptyName([[maybe_unused]] ani_env *env, [[m
 ani_int test_Class_FindStaticMethod_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -267,14 +300,17 @@ ani_int test_Class_FindStaticMethod_MultiThread(ani_env *env, [[maybe_unused]] a
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_FindMethod_NotExist([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_method method{};
     ani_status status = env->Class_FindMethod(cls, "nonexistent_method", "ii:", &method);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -283,7 +319,8 @@ ani_int test_Class_FindMethod_NotExist([[maybe_unused]] ani_env *env, [[maybe_un
 ani_int test_Class_FindMethod_NullSig([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_IMPLICIT_OVERLOAD_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_IMPLICIT_OVERLOAD_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_method method{};
     ani_status status = env->Class_FindMethod(cls, "choose", nullptr, &method);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -292,7 +329,8 @@ ani_int test_Class_FindMethod_NullSig([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_int test_Class_FindStaticMethod_NotExist([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_method method{};
     ani_status status = env->Class_FindStaticMethod(cls, "nonexistent_static_method", "ii:i", &method);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -301,7 +339,8 @@ ani_int test_Class_FindStaticMethod_NotExist([[maybe_unused]] ani_env *env, [[ma
 ani_int test_Class_FindStaticMethod_NullSig([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_STATIC_OVERLOAD_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_STATIC_OVERLOAD_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_method method{};
     ani_status status = env->Class_FindStaticMethod(cls, "choose", nullptr, &method);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -313,16 +352,19 @@ ani_int test_Class_FindStaticMethod_NullSig([[maybe_unused]] ani_env *env, [[may
 
 ani_int test_Class_GetStaticField_Boolean_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Boolean == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Boolean == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Boolean_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -337,22 +379,27 @@ ani_int test_Class_GetStaticField_Boolean_MultiThread(ani_env *env, [[maybe_unus
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_GetStaticField_Char_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Char == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Char == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Char_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -367,22 +414,27 @@ ani_int test_Class_GetStaticField_Char_MultiThread(ani_env *env, [[maybe_unused]
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_GetStaticField_Byte_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Byte == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Byte == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Byte_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -397,22 +449,27 @@ ani_int test_Class_GetStaticField_Byte_MultiThread(ani_env *env, [[maybe_unused]
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_GetStaticField_Short_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Short == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Short == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Short_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -427,25 +484,31 @@ ani_int test_Class_GetStaticField_Short_MultiThread(ani_env *env, [[maybe_unused
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_GetStaticField_Int_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_field field{};
-    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr) return ANI_FALSE;
+    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr)
+        return ANI_FALSE;
     ani_int result = 0;
-    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK) return ANI_FALSE;
-    return result == 3 ? ANI_TRUE : ANI_FALSE;
+    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK)
+        return ANI_FALSE;
+    return result == P7_STATIC_INT_FIELD_DEFAULT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_GetStaticField_Int_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -460,22 +523,27 @@ ani_int test_Class_GetStaticField_Int_MultiThread(ani_env *env, [[maybe_unused]]
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_GetStaticField_Long_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Long == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Long == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Long_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -490,22 +558,27 @@ ani_int test_Class_GetStaticField_Long_MultiThread(ani_env *env, [[maybe_unused]
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_GetStaticField_Float_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Float == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Float == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Float_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -520,22 +593,27 @@ ani_int test_Class_GetStaticField_Float_MultiThread(ani_env *env, [[maybe_unused
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_GetStaticField_Double_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Double == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Double == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Double_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -550,22 +628,27 @@ ani_int test_Class_GetStaticField_Double_MultiThread(ani_env *env, [[maybe_unuse
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_GetStaticField_Ref_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Ref == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Ref == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Ref_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -580,7 +663,9 @@ ani_int test_Class_GetStaticField_Ref_MultiThread(ani_env *env, [[maybe_unused]]
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
@@ -590,16 +675,19 @@ ani_int test_Class_GetStaticField_Ref_MultiThread(ani_env *env, [[maybe_unused]]
 
 ani_int test_Class_SetStaticField_Boolean_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Boolean == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Boolean == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Boolean_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -614,22 +702,27 @@ ani_int test_Class_SetStaticField_Boolean_MultiThread(ani_env *env, [[maybe_unus
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_SetStaticField_Char_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Char == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Char == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Char_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -644,22 +737,27 @@ ani_int test_Class_SetStaticField_Char_MultiThread(ani_env *env, [[maybe_unused]
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_SetStaticField_Byte_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Byte == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Byte == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Byte_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -674,22 +772,27 @@ ani_int test_Class_SetStaticField_Byte_MultiThread(ani_env *env, [[maybe_unused]
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_SetStaticField_Short_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Short == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Short == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Short_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -704,28 +807,36 @@ ani_int test_Class_SetStaticField_Short_MultiThread(ani_env *env, [[maybe_unused
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_SetStaticField_Int_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_field field{};
-    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr) return ANI_FALSE;
-    if (env->Class_SetStaticField_Int(cls, field, 42) != ANI_OK) return ANI_FALSE;
+    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr)
+        return ANI_FALSE;
+    if (env->Class_SetStaticField_Int(cls, field, P7_STATIC_INT_FIELD_TEST_VALUE) != ANI_OK)
+        return ANI_FALSE;
     ani_int result = 0;
-    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK) return ANI_FALSE;
-    if (result != 42) return ANI_FALSE;
-    env->Class_SetStaticField_Int(cls, field, 3);
+    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK)
+        return ANI_FALSE;
+    if (result != P7_STATIC_INT_FIELD_TEST_VALUE)
+        return ANI_FALSE;
+    env->Class_SetStaticField_Int(cls, field, P7_STATIC_INT_FIELD_DEFAULT);
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Int_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -740,22 +851,27 @@ ani_int test_Class_SetStaticField_Int_MultiThread(ani_env *env, [[maybe_unused]]
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_SetStaticField_Long_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Long == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Long == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Long_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -770,22 +886,27 @@ ani_int test_Class_SetStaticField_Long_MultiThread(ani_env *env, [[maybe_unused]
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_SetStaticField_Float_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Float == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Float == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Float_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -800,22 +921,27 @@ ani_int test_Class_SetStaticField_Float_MultiThread(ani_env *env, [[maybe_unused
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_SetStaticField_Double_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Double == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Double == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Double_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -830,22 +956,27 @@ ani_int test_Class_SetStaticField_Double_MultiThread(ani_env *env, [[maybe_unuse
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_SetStaticField_Ref_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Ref == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Ref == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Ref_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -860,7 +991,9 @@ ani_int test_Class_SetStaticField_Ref_MultiThread(ani_env *env, [[maybe_unused]]
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
@@ -871,7 +1004,8 @@ ani_int test_Class_SetStaticField_Ref_MultiThread(ani_env *env, [[maybe_unused]]
 ani_int test_Class_BindNativeMethods_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_native_function methods[] = {
         {"p7_bind_native", ":i", reinterpret_cast<void *>(p7_dummy_native)},
     };
@@ -892,7 +1026,8 @@ ani_int test_Class_BindNativeMethods_Abnormal([[maybe_unused]] ani_env *env, [[m
 ani_int test_Class_BindNativeMethods_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_native_function methods[] = {
         {"", ":i", reinterpret_cast<void *>(p7_dummy_native)},
     };
@@ -904,7 +1039,8 @@ ani_int test_Class_BindNativeMethods_EmptyName([[maybe_unused]] ani_env *env, [[
 ani_int test_Class_BindNativeMethods_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -919,14 +1055,17 @@ ani_int test_Class_BindNativeMethods_MultiThread(ani_env *env, [[maybe_unused]] 
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_BindStaticNativeMethods_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_native_function methods[] = {
         {"p7_bind_static", ":i", reinterpret_cast<void *>(p7_dummy_native)},
     };
@@ -947,7 +1086,8 @@ ani_int test_Class_BindStaticNativeMethods_Abnormal([[maybe_unused]] ani_env *en
 ani_int test_Class_BindStaticNativeMethods_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_native_function methods[] = {
         {"", ":i", reinterpret_cast<void *>(p7_dummy_native)},
     };
@@ -959,7 +1099,8 @@ ani_int test_Class_BindStaticNativeMethods_EmptyName([[maybe_unused]] ani_env *e
 ani_int test_Class_BindStaticNativeMethods_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -974,7 +1115,9 @@ ani_int test_Class_BindStaticNativeMethods_MultiThread(ani_env *env, [[maybe_unu
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
@@ -983,20 +1126,24 @@ ani_int test_Class_BindStaticNativeMethods_MultiThread(ani_env *env, [[maybe_unu
 // ============================================================
 
 // --- Boolean base ---
-ani_int test_Class_CallStaticMethodByName_Boolean_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Boolean_Normal([[maybe_unused]] ani_env *env,
+                                                         [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_boolean result = ANI_FALSE;
     ani_status status = env->Class_CallStaticMethodByName_Boolean(cls, "or", "zz:z", &result, ANI_TRUE, ANI_FALSE);
-    if (status != ANI_OK) return ANI_FALSE;
+    if (status != ANI_OK)
+        return ANI_FALSE;
     return result == ANI_TRUE ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Boolean_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1011,28 +1158,34 @@ ani_int test_Class_CallStaticMethodByName_Boolean_MultiThread(ani_env *env, [[ma
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Boolean _A ---
-ani_int test_Class_CallStaticMethodByName_Boolean_A_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Boolean_A_Normal([[maybe_unused]] ani_env *env,
+                                                           [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
-    ani_value args[2];
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
+    ani_value args[P7_TWO_ARG_COUNT];
     args[0].z = ANI_TRUE;
     args[1].z = ANI_FALSE;
     ani_boolean result = ANI_FALSE;
     ani_status status = env->Class_CallStaticMethodByName_Boolean_A(cls, "or", "zz:z", &result, args);
-    if (status != ANI_OK) return ANI_FALSE;
+    if (status != ANI_OK)
+        return ANI_FALSE;
     return result == ANI_TRUE ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Boolean_A_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1047,23 +1200,29 @@ ani_int test_Class_CallStaticMethodByName_Boolean_A_MultiThread(ani_env *env, [[
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Boolean _V ---
-ani_int test_Class_CallStaticMethodByName_Boolean_V_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Boolean_V_Normal([[maybe_unused]] ani_env *env,
+                                                           [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Boolean_V == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Boolean_V == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Boolean_V_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1078,23 +1237,28 @@ ani_int test_Class_CallStaticMethodByName_Boolean_V_MultiThread(ani_env *env, [[
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Char base ---
 ani_int test_Class_CallStaticMethodByName_Char_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Char == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Char == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Char_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1109,23 +1273,29 @@ ani_int test_Class_CallStaticMethodByName_Char_MultiThread(ani_env *env, [[maybe
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Char _A ---
-ani_int test_Class_CallStaticMethodByName_Char_A_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Char_A_Normal([[maybe_unused]] ani_env *env,
+                                                        [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Char_A == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Char_A == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Char_A_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1140,23 +1310,29 @@ ani_int test_Class_CallStaticMethodByName_Char_A_MultiThread(ani_env *env, [[may
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Char _V ---
-ani_int test_Class_CallStaticMethodByName_Char_V_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Char_V_Normal([[maybe_unused]] ani_env *env,
+                                                        [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Char_V == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Char_V == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Char_V_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1171,23 +1347,28 @@ ani_int test_Class_CallStaticMethodByName_Char_V_MultiThread(ani_env *env, [[may
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Byte base ---
 ani_int test_Class_CallStaticMethodByName_Byte_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Byte == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Byte == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Byte_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1202,23 +1383,29 @@ ani_int test_Class_CallStaticMethodByName_Byte_MultiThread(ani_env *env, [[maybe
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Byte _A ---
-ani_int test_Class_CallStaticMethodByName_Byte_A_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Byte_A_Normal([[maybe_unused]] ani_env *env,
+                                                        [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Byte_A == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Byte_A == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Byte_A_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1233,23 +1420,29 @@ ani_int test_Class_CallStaticMethodByName_Byte_A_MultiThread(ani_env *env, [[may
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Byte _V ---
-ani_int test_Class_CallStaticMethodByName_Byte_V_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Byte_V_Normal([[maybe_unused]] ani_env *env,
+                                                        [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Byte_V == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Byte_V == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Byte_V_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1264,23 +1457,29 @@ ani_int test_Class_CallStaticMethodByName_Byte_V_MultiThread(ani_env *env, [[may
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Short base ---
-ani_int test_Class_CallStaticMethodByName_Short_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Short_Normal([[maybe_unused]] ani_env *env,
+                                                       [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Short == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Short == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Short_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1295,23 +1494,29 @@ ani_int test_Class_CallStaticMethodByName_Short_MultiThread(ani_env *env, [[mayb
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Short _A ---
-ani_int test_Class_CallStaticMethodByName_Short_A_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Short_A_Normal([[maybe_unused]] ani_env *env,
+                                                         [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Short_A == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Short_A == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Short_A_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1326,23 +1531,29 @@ ani_int test_Class_CallStaticMethodByName_Short_A_MultiThread(ani_env *env, [[ma
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Short _V ---
-ani_int test_Class_CallStaticMethodByName_Short_V_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Short_V_Normal([[maybe_unused]] ani_env *env,
+                                                         [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Short_V == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Short_V == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Short_V_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1357,7 +1568,9 @@ ani_int test_Class_CallStaticMethodByName_Short_V_MultiThread(ani_env *env, [[ma
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
@@ -1365,17 +1578,21 @@ ani_int test_Class_CallStaticMethodByName_Short_V_MultiThread(ani_env *env, [[ma
 ani_int test_Class_CallStaticMethodByName_Int_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_int result = 0;
-    ani_status status = env->Class_CallStaticMethodByName_Int(cls, "sum", "ii:i", &result, 3, 4);
-    if (status != ANI_OK) return ANI_FALSE;
-    return result == 7 ? ANI_TRUE : ANI_FALSE;
+    ani_status status =
+        env->Class_CallStaticMethodByName_Int(cls, "sum", "ii:i", &result, P7_SUM_ARG_ONE, P7_SUM_ARG_TWO);
+    if (status != ANI_OK)
+        return ANI_FALSE;
+    return result == P7_SUM_EXPECTED ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Int_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1390,28 +1607,34 @@ ani_int test_Class_CallStaticMethodByName_Int_MultiThread(ani_env *env, [[maybe_
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Int _A ---
-ani_int test_Class_CallStaticMethodByName_Int_A_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Int_A_Normal([[maybe_unused]] ani_env *env,
+                                                       [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
-    ani_value args[2];
-    args[0].i = 3;
-    args[1].i = 4;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
+    ani_value args[P7_TWO_ARG_COUNT];
+    args[0].i = P7_SUM_ARG_ONE;
+    args[1].i = P7_SUM_ARG_TWO;
     ani_int result = 0;
     ani_status status = env->Class_CallStaticMethodByName_Int_A(cls, "sum", "ii:i", &result, args);
-    if (status != ANI_OK) return ANI_FALSE;
-    return result == 7 ? ANI_TRUE : ANI_FALSE;
+    if (status != ANI_OK)
+        return ANI_FALSE;
+    return result == P7_SUM_EXPECTED ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Int_A_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1426,23 +1649,29 @@ ani_int test_Class_CallStaticMethodByName_Int_A_MultiThread(ani_env *env, [[mayb
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Int _V ---
-ani_int test_Class_CallStaticMethodByName_Int_V_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Int_V_Normal([[maybe_unused]] ani_env *env,
+                                                       [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Int_V == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Int_V == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Int_V_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1457,23 +1686,28 @@ ani_int test_Class_CallStaticMethodByName_Int_V_MultiThread(ani_env *env, [[mayb
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Long base ---
 ani_int test_Class_CallStaticMethodByName_Long_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Long == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Long == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Long_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1488,23 +1722,29 @@ ani_int test_Class_CallStaticMethodByName_Long_MultiThread(ani_env *env, [[maybe
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Long _A ---
-ani_int test_Class_CallStaticMethodByName_Long_A_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Long_A_Normal([[maybe_unused]] ani_env *env,
+                                                        [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Long_A == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Long_A == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Long_A_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1519,23 +1759,29 @@ ani_int test_Class_CallStaticMethodByName_Long_A_MultiThread(ani_env *env, [[may
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Long _V ---
-ani_int test_Class_CallStaticMethodByName_Long_V_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Long_V_Normal([[maybe_unused]] ani_env *env,
+                                                        [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Long_V == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Long_V == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Long_V_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1550,23 +1796,29 @@ ani_int test_Class_CallStaticMethodByName_Long_V_MultiThread(ani_env *env, [[may
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Float base ---
-ani_int test_Class_CallStaticMethodByName_Float_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Float_Normal([[maybe_unused]] ani_env *env,
+                                                       [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Float == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Float == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Float_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1581,23 +1833,29 @@ ani_int test_Class_CallStaticMethodByName_Float_MultiThread(ani_env *env, [[mayb
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Float _A ---
-ani_int test_Class_CallStaticMethodByName_Float_A_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Float_A_Normal([[maybe_unused]] ani_env *env,
+                                                         [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Float_A == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Float_A == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Float_A_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1612,23 +1870,29 @@ ani_int test_Class_CallStaticMethodByName_Float_A_MultiThread(ani_env *env, [[ma
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Float _V ---
-ani_int test_Class_CallStaticMethodByName_Float_V_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Float_V_Normal([[maybe_unused]] ani_env *env,
+                                                         [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Float_V == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Float_V == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Float_V_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1643,23 +1907,29 @@ ani_int test_Class_CallStaticMethodByName_Float_V_MultiThread(ani_env *env, [[ma
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Double base ---
-ani_int test_Class_CallStaticMethodByName_Double_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Double_Normal([[maybe_unused]] ani_env *env,
+                                                        [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Double == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Double == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Double_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1674,23 +1944,29 @@ ani_int test_Class_CallStaticMethodByName_Double_MultiThread(ani_env *env, [[may
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Double _A ---
-ani_int test_Class_CallStaticMethodByName_Double_A_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Double_A_Normal([[maybe_unused]] ani_env *env,
+                                                          [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Double_A == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Double_A == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Double_A_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1705,23 +1981,29 @@ ani_int test_Class_CallStaticMethodByName_Double_A_MultiThread(ani_env *env, [[m
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Double _V ---
-ani_int test_Class_CallStaticMethodByName_Double_V_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Double_V_Normal([[maybe_unused]] ani_env *env,
+                                                          [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Double_V == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Double_V == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Double_V_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1736,7 +2018,9 @@ ani_int test_Class_CallStaticMethodByName_Double_V_MultiThread(ani_env *env, [[m
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
@@ -1744,18 +2028,21 @@ ani_int test_Class_CallStaticMethodByName_Double_V_MultiThread(ani_env *env, [[m
 ani_int test_Class_CallStaticMethodByName_Ref_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_ref result{};
-    ani_status status = env->Class_CallStaticMethodByName_Ref(cls, "new_Foo",
-        ":C{entry.src.main.src.ets.Index.Foo}", &result);
-    if (status != ANI_OK) return ANI_FALSE;
+    ani_status status =
+        env->Class_CallStaticMethodByName_Ref(cls, "new_Foo", ":C{entry.src.main.src.ets.Index.Foo}", &result);
+    if (status != ANI_OK)
+        return ANI_FALSE;
     return result != nullptr ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Ref_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1770,27 +2057,33 @@ ani_int test_Class_CallStaticMethodByName_Ref_MultiThread(ani_env *env, [[maybe_
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Ref _A ---
-ani_int test_Class_CallStaticMethodByName_Ref_A_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Ref_A_Normal([[maybe_unused]] ani_env *env,
+                                                       [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_ref result{};
     ani_value args[1] = {};
-    ani_status status = env->Class_CallStaticMethodByName_Ref_A(cls, "new_Foo",
-        ":C{entry.src.main.src.ets.Index.Foo}", &result, args);
-    if (status != ANI_OK) return ANI_FALSE;
+    ani_status status =
+        env->Class_CallStaticMethodByName_Ref_A(cls, "new_Foo", ":C{entry.src.main.src.ets.Index.Foo}", &result, args);
+    if (status != ANI_OK)
+        return ANI_FALSE;
     return result != nullptr ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Ref_A_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1805,23 +2098,29 @@ ani_int test_Class_CallStaticMethodByName_Ref_A_MultiThread(ani_env *env, [[mayb
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Ref _V ---
-ani_int test_Class_CallStaticMethodByName_Ref_V_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Ref_V_Normal([[maybe_unused]] ani_env *env,
+                                                       [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Ref_V == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Ref_V == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Ref_V_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1836,23 +2135,28 @@ ani_int test_Class_CallStaticMethodByName_Ref_V_MultiThread(ani_env *env, [[mayb
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Void base ---
 ani_int test_Class_CallStaticMethodByName_Void_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Void == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Void == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Void_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1867,23 +2171,29 @@ ani_int test_Class_CallStaticMethodByName_Void_MultiThread(ani_env *env, [[maybe
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Void _A ---
-ani_int test_Class_CallStaticMethodByName_Void_A_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Void_A_Normal([[maybe_unused]] ani_env *env,
+                                                        [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Void_A == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Void_A == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Void_A_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1898,23 +2208,29 @@ ani_int test_Class_CallStaticMethodByName_Void_A_MultiThread(ani_env *env, [[may
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 // --- Void _V ---
-ani_int test_Class_CallStaticMethodByName_Void_V_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_CallStaticMethodByName_Void_V_Normal([[maybe_unused]] ani_env *env,
+                                                        [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Void_V == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_CallStaticMethodByName_Void_V == nullptr)
+        return ANI_FALSE;
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_CallStaticMethodByName_Void_V_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) return ANI_FALSE;
+    if (env->GetVM(&vm) != ANI_OK)
+        return ANI_FALSE;
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
     for (int i = 0; i < P7_THREAD_COUNT; i++) {
@@ -1929,7 +2245,9 @@ ani_int test_Class_CallStaticMethodByName_Void_V_MultiThread(ani_env *env, [[may
             }
         });
     }
-    for (auto &t : threads) { t.join(); }
+    for (auto &t : threads) {
+        t.join();
+    }
     return successCount.load() == P7_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
@@ -1937,132 +2255,165 @@ ani_int test_Class_CallStaticMethodByName_Void_V_MultiThread(ani_env *env, [[may
 // Section 7: Boundary (30 tests)
 // ============================================================
 
-ani_int test_Class_GetStaticField_Boolean_Boundary_DefaultValue([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_GetStaticField_Boolean_Boundary_DefaultValue([[maybe_unused]] ani_env *env,
+                                                                [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Boolean == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Boolean == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Int_Boundary_Min([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_field field{};
-    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr) return ANI_FALSE;
+    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr)
+        return ANI_FALSE;
     ani_int result = 0;
-    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK) return ANI_FALSE;
+    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK)
+        return ANI_FALSE;
     return result >= INT32_MIN ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_GetStaticField_Int_Boundary_Max([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_field field{};
-    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr) return ANI_FALSE;
+    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr)
+        return ANI_FALSE;
     ani_int result = 0;
-    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK) return ANI_FALSE;
+    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK)
+        return ANI_FALSE;
     return result <= INT32_MAX ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Class_GetStaticField_Long_Boundary_Min([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Long == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Long == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Long_Boundary_Max([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Long == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Long == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Float_Boundary_NaN([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Float == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Float == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
-ani_int test_Class_GetStaticField_Float_Boundary_Infinity([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_GetStaticField_Float_Boundary_Infinity([[maybe_unused]] ani_env *env,
+                                                          [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Float == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Float == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_GetStaticField_Double_Boundary_NaN([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Double == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Double == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
-ani_int test_Class_GetStaticField_Double_Boundary_Infinity([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_GetStaticField_Double_Boundary_Infinity([[maybe_unused]] ani_env *env,
+                                                           [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Double == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Double == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
-ani_int test_Class_GetStaticField_Boolean_Boundary_False([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_GetStaticField_Boolean_Boundary_False([[maybe_unused]] ani_env *env,
+                                                         [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Boolean == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_GetStaticField_Boolean == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Int_Boundary_Min([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_field field{};
-    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr) return ANI_FALSE;
-    if (env->Class_SetStaticField_Int(cls, field, INT32_MIN) != ANI_OK) return ANI_FALSE;
+    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr)
+        return ANI_FALSE;
+    if (env->Class_SetStaticField_Int(cls, field, INT32_MIN) != ANI_OK)
+        return ANI_FALSE;
     ani_int result = 0;
-    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK) return ANI_FALSE;
-    if (result != INT32_MIN) return ANI_FALSE;
-    env->Class_SetStaticField_Int(cls, field, 3);
+    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK)
+        return ANI_FALSE;
+    if (result != INT32_MIN)
+        return ANI_FALSE;
+    env->Class_SetStaticField_Int(cls, field, P7_STATIC_INT_FIELD_DEFAULT);
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Int_Boundary_Max([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_field field{};
-    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr) return ANI_FALSE;
-    if (env->Class_SetStaticField_Int(cls, field, INT32_MAX) != ANI_OK) return ANI_FALSE;
+    if (env->Class_FindStaticField(cls, "staticField", &field) != ANI_OK || field == nullptr)
+        return ANI_FALSE;
+    if (env->Class_SetStaticField_Int(cls, field, INT32_MAX) != ANI_OK)
+        return ANI_FALSE;
     ani_int result = 0;
-    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK) return ANI_FALSE;
-    if (result != INT32_MAX) return ANI_FALSE;
-    env->Class_SetStaticField_Int(cls, field, 3);
+    if (env->Class_GetStaticField_Int(cls, field, &result) != ANI_OK)
+        return ANI_FALSE;
+    if (result != INT32_MAX)
+        return ANI_FALSE;
+    env->Class_SetStaticField_Int(cls, field, P7_STATIC_INT_FIELD_DEFAULT);
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Long_Boundary_Min([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Long == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Long == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Long_Boundary_Max([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Long == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Long == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Float_Boundary_NaN([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Float == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Float == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_SetStaticField_Double_Boundary_NaN([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Double == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr || env->c_api->Class_SetStaticField_Double == nullptr)
+        return ANI_FALSE;
     return ANI_TRUE;
 }
 
 ani_int test_Class_FindField_Boundary_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_field field{};
     ani_status status = env->Class_FindField(cls, "", &field);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -2071,8 +2422,9 @@ ani_int test_Class_FindField_Boundary_EmptyName([[maybe_unused]] ani_env *env, [
 ani_int test_Class_FindField_Boundary_LongName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
-    std::string longName(4096, 'X');
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
+    std::string longName(P7_LONG_NAME_LENGTH, 'X');
     ani_field field{};
     ani_status status = env->Class_FindField(cls, longName.c_str(), &field);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -2081,7 +2433,8 @@ ani_int test_Class_FindField_Boundary_LongName([[maybe_unused]] ani_env *env, [[
 ani_int test_Class_FindField_Boundary_NullName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_field field{};
     ani_status status = env->Class_FindField(cls, nullptr, &field);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -2090,7 +2443,8 @@ ani_int test_Class_FindField_Boundary_NullName([[maybe_unused]] ani_env *env, [[
 ani_int test_Class_FindMethod_Boundary_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_method method{};
     ani_status status = env->Class_FindMethod(cls, "", "ii:", &method);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -2099,7 +2453,8 @@ ani_int test_Class_FindMethod_Boundary_EmptyName([[maybe_unused]] ani_env *env, 
 ani_int test_Class_FindMethod_Boundary_NullSig([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_IMPLICIT_OVERLOAD_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_IMPLICIT_OVERLOAD_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_method method{};
     ani_status status = env->Class_FindMethod(cls, "choose", nullptr, &method);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -2108,7 +2463,8 @@ ani_int test_Class_FindMethod_Boundary_NullSig([[maybe_unused]] ani_env *env, [[
 ani_int test_Class_FindMethod_Boundary_EmptySig([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_POINT_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_method method{};
     ani_status status = env->Class_FindMethod(cls, "move", "", &method);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -2117,7 +2473,8 @@ ani_int test_Class_FindMethod_Boundary_EmptySig([[maybe_unused]] ani_env *env, [
 ani_int test_Class_FindStaticField_Boundary_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_field field{};
     ani_status status = env->Class_FindStaticField(cls, "", &field);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -2126,16 +2483,19 @@ ani_int test_Class_FindStaticField_Boundary_EmptyName([[maybe_unused]] ani_env *
 ani_int test_Class_FindStaticField_Boundary_NullName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_field field{};
     ani_status status = env->Class_FindStaticField(cls, nullptr, &field);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 
-ani_int test_Class_FindStaticMethod_Boundary_EmptyName([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_FindStaticMethod_Boundary_EmptyName([[maybe_unused]] ani_env *env,
+                                                       [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_method method{};
     ani_status status = env->Class_FindStaticMethod(cls, "", "ii:i", &method);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -2144,42 +2504,51 @@ ani_int test_Class_FindStaticMethod_Boundary_EmptyName([[maybe_unused]] ani_env 
 ani_int test_Class_FindStaticMethod_Boundary_NullSig([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_STATIC_OVERLOAD_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_STATIC_OVERLOAD_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_static_method method{};
     ani_status status = env->Class_FindStaticMethod(cls, "choose", nullptr, &method);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 
-ani_int test_Class_BindNativeMethods_Boundary_CountZero([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_BindNativeMethods_Boundary_CountZero([[maybe_unused]] ani_env *env,
+                                                        [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_status status = env->Class_BindNativeMethods(cls, nullptr, 0);
     OH_LOG_INFO(LOG_APP, "testTag : Class_BindNativeMethods count=0, status=%{public}d", status);
     return ANI_TRUE;
 }
 
-ani_int test_Class_BindNativeMethods_Boundary_NullMethods([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_BindNativeMethods_Boundary_NullMethods([[maybe_unused]] ani_env *env,
+                                                          [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_status status = env->Class_BindNativeMethods(cls, nullptr, 1);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 
-ani_int test_Class_BindStaticNativeMethods_Boundary_CountZero([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_BindStaticNativeMethods_Boundary_CountZero([[maybe_unused]] ani_env *env,
+                                                              [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_status status = env->Class_BindStaticNativeMethods(cls, nullptr, 0);
     OH_LOG_INFO(LOG_APP, "testTag : Class_BindStaticNativeMethods count=0, status=%{public}d", status);
     return ANI_TRUE;
 }
 
-ani_int test_Class_BindStaticNativeMethods_Boundary_NullMethods([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_BindStaticNativeMethods_Boundary_NullMethods([[maybe_unused]] ani_env *env,
+                                                                [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_CLASS_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_status status = env->Class_BindStaticNativeMethods(cls, nullptr, 1);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
@@ -2188,7 +2557,8 @@ ani_int test_Class_BindStaticNativeMethods_Boundary_NullMethods([[maybe_unused]]
 // Section 8: Abnormal (10 tests)
 // ============================================================
 
-ani_int test_Class_GetStaticField_Boolean_Abnormal_NullCls([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_GetStaticField_Boolean_Abnormal_NullCls([[maybe_unused]] ani_env *env,
+                                                           [[maybe_unused]] ani_object object)
 {
     ani_static_field field{};
     ani_boolean result = ANI_FALSE;
@@ -2196,7 +2566,8 @@ ani_int test_Class_GetStaticField_Boolean_Abnormal_NullCls([[maybe_unused]] ani_
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 
-ani_int test_Class_SetStaticField_Boolean_Abnormal_NullCls([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_SetStaticField_Boolean_Abnormal_NullCls([[maybe_unused]] ani_env *env,
+                                                           [[maybe_unused]] ani_object object)
 {
     ani_static_field field{};
     ani_status status = env->Class_SetStaticField_Boolean(nullptr, field, ANI_TRUE);
@@ -2240,7 +2611,8 @@ ani_int test_Class_BindNativeMethods_Abnormal_NullCls([[maybe_unused]] ani_env *
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 
-ani_int test_Class_BindStaticNativeMethods_Abnormal_NullCls([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_BindStaticNativeMethods_Abnormal_NullCls([[maybe_unused]] ani_env *env,
+                                                            [[maybe_unused]] ani_object object)
 {
     ani_native_function methods[] = {
         {"p7_static_abnormal_nullcls", ":i", reinterpret_cast<void *>(p7_dummy_native)},
@@ -2249,20 +2621,24 @@ ani_int test_Class_BindStaticNativeMethods_Abnormal_NullCls([[maybe_unused]] ani
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 
-ani_int test_Class_GetStaticField_Int_Abnormal_NullField([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_GetStaticField_Int_Abnormal_NullField([[maybe_unused]] ani_env *env,
+                                                         [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
     ani_int result = 0;
     ani_status status = env->Class_GetStaticField_Int(cls, nullptr, &result);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 
-ani_int test_Class_SetStaticField_Int_Abnormal_NullField([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Class_SetStaticField_Int_Abnormal_NullField([[maybe_unused]] ani_env *env,
+                                                         [[maybe_unused]] ani_object object)
 {
     ani_class cls{};
-    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr) return ANI_FALSE;
-    ani_status status = env->Class_SetStaticField_Int(cls, nullptr, 42);
+    if (env->FindClass(P7_BASE_DESC, &cls) != ANI_OK || cls == nullptr)
+        return ANI_FALSE;
+    ani_status status = env->Class_SetStaticField_Int(cls, nullptr, P7_STATIC_INT_FIELD_TEST_VALUE);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 

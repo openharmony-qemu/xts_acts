@@ -141,8 +141,8 @@ ani_int test_VmGetCreatedVMs_Normal([[maybe_unused]] ani_env *env, [[maybe_unuse
         return ANI_TRUE;
     }
     if (status != ANI_OK) {
-        OH_LOG_INFO(LOG_APP, "testTag : ANI_GetCreatedVMs failed, status=%{public}d count=%{public}zu",
-                    status, actualCount);
+        OH_LOG_INFO(LOG_APP, "testTag : ANI_GetCreatedVMs failed, status=%{public}d count=%{public}zu", status,
+                    actualCount);
         return ANI_FALSE;
     }
     ani_size checkCount = actualCount < 16 ? actualCount : 16;
@@ -643,8 +643,8 @@ ani_int test_VmDestroyVM_WithAttachedThread(ani_env *env, [[maybe_unused]] ani_o
     if (env->GetVM(&vm) != ANI_OK || vm == nullptr) {
         return ANI_FALSE;
     }
-    if (vm->c_api == nullptr || vm->c_api->DestroyVM == nullptr ||
-        vm->c_api->AttachCurrentThread == nullptr || vm->c_api->DetachCurrentThread == nullptr) {
+    if (vm->c_api == nullptr || vm->c_api->DestroyVM == nullptr || vm->c_api->AttachCurrentThread == nullptr ||
+        vm->c_api->DetachCurrentThread == nullptr) {
         return ANI_FALSE;
     }
     OH_LOG_INFO(LOG_APP, "testTag : DestroyVM_WithAttachedThread verified, all c_api pointers valid");

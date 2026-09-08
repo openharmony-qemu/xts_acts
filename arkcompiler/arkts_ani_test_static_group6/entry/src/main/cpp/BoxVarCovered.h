@@ -27,6 +27,17 @@
 
 constexpr int P3_THREAD_COUNT = 4;
 constexpr const char *P3_MODULE_DESC = "entry.src.main.src.ets.Index";
+constexpr ani_size P3_SCOPE_CAPACITY_SMALL = 4;
+constexpr ani_size P3_SCOPE_CAPACITY_MEDIUM = 8;
+constexpr ani_size P3_SCOPE_CAPACITY_LARGE = 16;
+constexpr ani_size P3_ENSURE_REFERENCE_COUNT = 10;
+constexpr int P3_NESTED_SCOPE_TRIALS = 100;
+constexpr ani_size P3_LONG_MESSAGE_LENGTH = 4096;
+constexpr ani_byte P3_BYTE_VALUE = 42;
+constexpr ani_short P3_SHORT_VALUE = 12345;
+constexpr ani_int P3_INT_VALUE = 123456789;
+constexpr ani_double P3_DOUBLE_VALUE = 3.141592653589793;
+constexpr ani_double P3_DOUBLE_VAR_VALUE = 3.14159;
 
 ani_error CreateErrorP3(ani_env *env)
 {
@@ -43,7 +54,7 @@ ani_error CreateErrorP3(ani_env *env)
         if (env->Class_FindMethod(errorCls, "<ctor>", "C{std.core.String}:", &ctorStr) == ANI_OK &&
             ctorStr != nullptr) {
             ani_string msg{};
-            if (env->String_NewUTF8("err", 3, &msg) == ANI_OK && msg != nullptr) {
+            if (env->String_NewUTF8("err", sizeof("err") - 1, &msg) == ANI_OK && msg != nullptr) {
                 ani_object errObj{};
                 if (env->Object_New(errorCls, ctorStr, &errObj, msg) == ANI_OK && errObj != nullptr) {
                     return reinterpret_cast<ani_error>(errObj);
@@ -63,8 +74,7 @@ ani_error CreateErrorWithMsgP3(ani_env *env, const char *text, ani_size len)
         return nullptr;
     }
     ani_method ctorStr{};
-    if (env->Class_FindMethod(errorCls, "<ctor>", "C{std.core.String}:", &ctorStr) != ANI_OK ||
-        ctorStr == nullptr) {
+    if (env->Class_FindMethod(errorCls, "<ctor>", "C{std.core.String}:", &ctorStr) != ANI_OK || ctorStr == nullptr) {
         ani_method ctor{};
         if (env->Class_FindMethod(errorCls, "<ctor>", ":", &ctor) == ANI_OK && ctor != nullptr) {
             ani_object errObj{};
@@ -103,7 +113,7 @@ ani_int test_EnsureEnoughRefs_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                tEnv->EnsureEnoughReferences(10);
+                tEnv->EnsureEnoughReferences(P3_ENSURE_REFERENCE_COUNT);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -117,10 +127,10 @@ ani_int test_EnsureEnoughRefs_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
 
 ani_int test_EnsureEnoughRefs_Combo([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->CreateLocalScope(16) != ANI_OK) {
+    if (env->CreateLocalScope(P3_SCOPE_CAPACITY_LARGE) != ANI_OK) {
         return ANI_FALSE;
     }
-    ani_status s = env->EnsureEnoughReferences(8);
+    ani_status s = env->EnsureEnoughReferences(P3_SCOPE_CAPACITY_MEDIUM);
     if (env->DestroyLocalScope() != ANI_OK) {
         return ANI_FALSE;
     }
@@ -142,7 +152,7 @@ ani_int test_CreateLocalScope_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->CreateLocalScope(8) == ANI_OK) {
+                if (tEnv->CreateLocalScope(P3_SCOPE_CAPACITY_MEDIUM) == ANI_OK) {
                     tEnv->DestroyLocalScope();
                 }
                 successCount.fetch_add(1);
@@ -158,11 +168,11 @@ ani_int test_CreateLocalScope_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
 
 ani_int test_CreateLocalScope_Combo([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->CreateLocalScope(8) != ANI_OK) {
+    if (env->CreateLocalScope(P3_SCOPE_CAPACITY_MEDIUM) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_string str{};
-    ani_status s = env->String_NewUTF8("combo", 5, &str);
+    ani_status s = env->String_NewUTF8("combo", sizeof("combo") - 1, &str);
     OH_LOG_INFO(LOG_APP, "testTag : CreateLocalScope_Combo string status=%{public}d", s);
     if (env->DestroyLocalScope() != ANI_OK) {
         return ANI_FALSE;
@@ -172,7 +182,7 @@ ani_int test_CreateLocalScope_Combo([[maybe_unused]] ani_env *env, [[maybe_unuse
 
 ani_int test_DestroyLocalScope_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->CreateLocalScope(8) != ANI_OK) {
+    if (env->CreateLocalScope(P3_SCOPE_CAPACITY_MEDIUM) != ANI_OK) {
         return ANI_FALSE;
     }
     if (env->DestroyLocalScope() != ANI_OK) {
@@ -196,7 +206,7 @@ ani_int test_DestroyLocalScope_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->CreateLocalScope(8) == ANI_OK) {
+                if (tEnv->CreateLocalScope(P3_SCOPE_CAPACITY_MEDIUM) == ANI_OK) {
                     tEnv->DestroyLocalScope();
                 }
                 successCount.fetch_add(1);
@@ -212,13 +222,13 @@ ani_int test_DestroyLocalScope_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
 
 ani_int test_DestroyLocalScope_Combo([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->CreateLocalScope(8) != ANI_OK) {
+    if (env->CreateLocalScope(P3_SCOPE_CAPACITY_MEDIUM) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_ref ref{};
     env->GetUndefined(&ref);
     ani_string str{};
-    env->String_NewUTF8("use", 3, &str);
+    env->String_NewUTF8("use", sizeof("use") - 1, &str);
     if (env->DestroyLocalScope() != ANI_OK) {
         return ANI_FALSE;
     }
@@ -240,7 +250,7 @@ ani_int test_CreateEscapeLocalScope_MultiThread(ani_env *env, [[maybe_unused]] a
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->CreateEscapeLocalScope(8) == ANI_OK) {
+                if (tEnv->CreateEscapeLocalScope(P3_SCOPE_CAPACITY_MEDIUM) == ANI_OK) {
                     ani_ref ref{};
                     tEnv->GetUndefined(&ref);
                     ani_ref out{};
@@ -259,7 +269,7 @@ ani_int test_CreateEscapeLocalScope_MultiThread(ani_env *env, [[maybe_unused]] a
 
 ani_int test_DestroyEscapeLocalScope_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->CreateEscapeLocalScope(8) != ANI_OK) {
+    if (env->CreateEscapeLocalScope(P3_SCOPE_CAPACITY_MEDIUM) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_ref ref{};
@@ -296,7 +306,7 @@ ani_int test_DestroyEscapeLocalScope_MultiThread(ani_env *env, [[maybe_unused]] 
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->CreateEscapeLocalScope(8) == ANI_OK) {
+                if (tEnv->CreateEscapeLocalScope(P3_SCOPE_CAPACITY_MEDIUM) == ANI_OK) {
                     ani_ref ref{};
                     tEnv->GetUndefined(&ref);
                     ani_ref out{};
@@ -315,7 +325,7 @@ ani_int test_DestroyEscapeLocalScope_MultiThread(ani_env *env, [[maybe_unused]] 
 
 ani_int test_DestroyEscapeLocalScope_Combo([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->CreateEscapeLocalScope(8) != ANI_OK) {
+    if (env->CreateEscapeLocalScope(P3_SCOPE_CAPACITY_MEDIUM) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_ref ref{};
@@ -359,7 +369,7 @@ ani_int test_EnsureEnoughRefs_RefMax([[maybe_unused]] ani_env *env, [[maybe_unus
 
 ani_int test_EnsureEnoughRefs_ExceedCapacity([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->CreateLocalScope(4) != ANI_OK) {
+    if (env->CreateLocalScope(P3_SCOPE_CAPACITY_SMALL) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_status s = env->EnsureEnoughReferences(static_cast<ani_size>(INT32_MAX));
@@ -372,8 +382,8 @@ ani_int test_CreateLocalScope_NestedDeep([[maybe_unused]] ani_env *env, [[maybe_
 {
     int created = 0;
     bool ok = true;
-    for (int i = 0; i < 100; i++) {
-        if (env->CreateLocalScope(4) != ANI_OK) {
+    for (int i = 0; i < P3_NESTED_SCOPE_TRIALS; i++) {
+        if (env->CreateLocalScope(P3_SCOPE_CAPACITY_SMALL) != ANI_OK) {
             ok = false;
             break;
         }
@@ -782,7 +792,7 @@ ani_int test_ThrowError_Boundary_EmptyMsg([[maybe_unused]] ani_env *env, [[maybe
 
 ani_int test_ThrowError_Boundary_LongMsg([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    std::string longMsg(4096, 'x');
+    std::string longMsg(P3_LONG_MESSAGE_LENGTH, 'x');
     ani_error err = CreateErrorWithMsgP3(env, longMsg.c_str(), static_cast<ani_size>(longMsg.size()));
     if (err == nullptr) {
         err = CreateErrorP3(env);
@@ -885,7 +895,7 @@ ani_int test_BoxByte_MultiThread(ani_env *env, [[maybe_unused]] ani_object objec
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_object boxed{};
-                if (tEnv->Primitive_Box_Byte(42, &boxed) == ANI_OK && boxed != nullptr) {
+                if (tEnv->Primitive_Box_Byte(P3_BYTE_VALUE, &boxed) == ANI_OK && boxed != nullptr) {
                     successCount.fetch_add(1);
                 }
                 vm->DetachCurrentThread();
@@ -941,7 +951,7 @@ ani_int test_BoxDouble_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_object boxed{};
-                if (tEnv->Primitive_Box_Double(3.141592653589793, &boxed) == ANI_OK && boxed != nullptr) {
+                if (tEnv->Primitive_Box_Double(P3_DOUBLE_VALUE, &boxed) == ANI_OK && boxed != nullptr) {
                     successCount.fetch_add(1);
                 }
                 vm->DetachCurrentThread();
@@ -997,7 +1007,7 @@ ani_int test_BoxInt_MultiThread(ani_env *env, [[maybe_unused]] ani_object object
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_object boxed{};
-                if (tEnv->Primitive_Box_Int(123456789, &boxed) == ANI_OK && boxed != nullptr) {
+                if (tEnv->Primitive_Box_Int(P3_INT_VALUE, &boxed) == ANI_OK && boxed != nullptr) {
                     successCount.fetch_add(1);
                 }
                 vm->DetachCurrentThread();
@@ -1053,7 +1063,7 @@ ani_int test_BoxShort_MultiThread(ani_env *env, [[maybe_unused]] ani_object obje
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_object boxed{};
-                if (tEnv->Primitive_Box_Short(12345, &boxed) == ANI_OK && boxed != nullptr) {
+                if (tEnv->Primitive_Box_Short(P3_SHORT_VALUE, &boxed) == ANI_OK && boxed != nullptr) {
                     successCount.fetch_add(1);
                 }
                 vm->DetachCurrentThread();
@@ -1112,9 +1122,9 @@ ani_int test_UnboxByte_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_object boxed{};
-                if (tEnv->Primitive_Box_Byte(42, &boxed) == ANI_OK) {
+                if (tEnv->Primitive_Box_Byte(P3_BYTE_VALUE, &boxed) == ANI_OK) {
                     ani_byte out = 0;
-                    if (tEnv->Primitive_Unbox_Byte(boxed, &out) == ANI_OK && out == 42) {
+                    if (tEnv->Primitive_Unbox_Byte(boxed, &out) == ANI_OK && out == P3_BYTE_VALUE) {
                         successCount.fetch_add(1);
                     }
                 }
@@ -1174,9 +1184,9 @@ ani_int test_UnboxDouble_MultiThread(ani_env *env, [[maybe_unused]] ani_object o
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_object boxed{};
-                if (tEnv->Primitive_Box_Double(3.141592653589793, &boxed) == ANI_OK) {
+                if (tEnv->Primitive_Box_Double(P3_DOUBLE_VALUE, &boxed) == ANI_OK) {
                     ani_double out = 0.0;
-                    if (tEnv->Primitive_Unbox_Double(boxed, &out) == ANI_OK && out == 3.141592653589793) {
+                    if (tEnv->Primitive_Unbox_Double(boxed, &out) == ANI_OK && out == P3_DOUBLE_VALUE) {
                         successCount.fetch_add(1);
                     }
                 }
@@ -1236,9 +1246,9 @@ ani_int test_UnboxInt_MultiThread(ani_env *env, [[maybe_unused]] ani_object obje
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_object boxed{};
-                if (tEnv->Primitive_Box_Int(123456789, &boxed) == ANI_OK) {
+                if (tEnv->Primitive_Box_Int(P3_INT_VALUE, &boxed) == ANI_OK) {
                     ani_int out = 0;
-                    if (tEnv->Primitive_Unbox_Int(boxed, &out) == ANI_OK && out == 123456789) {
+                    if (tEnv->Primitive_Unbox_Int(boxed, &out) == ANI_OK && out == P3_INT_VALUE) {
                         successCount.fetch_add(1);
                     }
                 }
@@ -1298,9 +1308,9 @@ ani_int test_UnboxShort_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_object boxed{};
-                if (tEnv->Primitive_Box_Short(12345, &boxed) == ANI_OK) {
+                if (tEnv->Primitive_Box_Short(P3_SHORT_VALUE, &boxed) == ANI_OK) {
                     ani_short out = 0;
-                    if (tEnv->Primitive_Unbox_Short(boxed, &out) == ANI_OK && out == 12345) {
+                    if (tEnv->Primitive_Unbox_Short(boxed, &out) == ANI_OK && out == P3_SHORT_VALUE) {
                         successCount.fetch_add(1);
                     }
                 }
@@ -1420,11 +1430,11 @@ ani_int test_BoxUnbox_RoundTrip([[maybe_unused]] ani_env *env, [[maybe_unused]] 
     }
 
     ani_object k{};
-    if (env->Primitive_Box_Byte(42, &k) != ANI_OK) {
+    if (env->Primitive_Box_Byte(P3_BYTE_VALUE, &k) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_byte kv = 0;
-    if (env->Primitive_Unbox_Byte(k, &kv) != ANI_OK || kv != 42) {
+    if (env->Primitive_Unbox_Byte(k, &kv) != ANI_OK || kv != P3_BYTE_VALUE) {
         return ANI_FALSE;
     }
 
@@ -1438,20 +1448,20 @@ ani_int test_BoxUnbox_RoundTrip([[maybe_unused]] ani_env *env, [[maybe_unused]] 
     }
 
     ani_object ss{};
-    if (env->Primitive_Box_Short(12345, &ss) != ANI_OK) {
+    if (env->Primitive_Box_Short(P3_SHORT_VALUE, &ss) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_short sv = 0;
-    if (env->Primitive_Unbox_Short(ss, &sv) != ANI_OK || sv != 12345) {
+    if (env->Primitive_Unbox_Short(ss, &sv) != ANI_OK || sv != P3_SHORT_VALUE) {
         return ANI_FALSE;
     }
 
     ani_object ii{};
-    if (env->Primitive_Box_Int(123456789, &ii) != ANI_OK) {
+    if (env->Primitive_Box_Int(P3_INT_VALUE, &ii) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_int iv = 0;
-    if (env->Primitive_Unbox_Int(ii, &iv) != ANI_OK || iv != 123456789) {
+    if (env->Primitive_Unbox_Int(ii, &iv) != ANI_OK || iv != P3_INT_VALUE) {
         return ANI_FALSE;
     }
 
@@ -1474,11 +1484,11 @@ ani_int test_BoxUnbox_RoundTrip([[maybe_unused]] ani_env *env, [[maybe_unused]] 
     }
 
     ani_object dd{};
-    if (env->Primitive_Box_Double(3.141592653589793, &dd) != ANI_OK) {
+    if (env->Primitive_Box_Double(P3_DOUBLE_VALUE, &dd) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_double dv = 0.0;
-    if (env->Primitive_Unbox_Double(dd, &dv) != ANI_OK || dv != 3.141592653589793) {
+    if (env->Primitive_Unbox_Double(dd, &dv) != ANI_OK || dv != P3_DOUBLE_VALUE) {
         return ANI_FALSE;
     }
 
@@ -1515,7 +1525,7 @@ ani_int test_Var_SetValue_Int_Normal([[maybe_unused]] ani_env *env, [[maybe_unus
     ani_variable var{};
     if (env->FindModule(P3_MODULE_DESC, &mod) == ANI_OK && mod != nullptr) {
         if (env->Module_FindVariable(mod, "name", &var) == ANI_OK && var != nullptr) {
-            if (env->Variable_SetValue_Int(var, 123456789) != ANI_OK) {
+            if (env->Variable_SetValue_Int(var, P3_INT_VALUE) != ANI_OK) {
                 return ANI_FALSE;
             }
             return ANI_TRUE;
@@ -1534,7 +1544,7 @@ ani_int test_Var_SetValue_Double_Normal([[maybe_unused]] ani_env *env, [[maybe_u
     ani_variable var{};
     if (env->FindModule(P3_MODULE_DESC, &mod) == ANI_OK && mod != nullptr) {
         if (env->Module_FindVariable(mod, "name", &var) == ANI_OK && var != nullptr) {
-            if (env->Variable_SetValue_Double(var, 3.14159) != ANI_OK) {
+            if (env->Variable_SetValue_Double(var, P3_DOUBLE_VAR_VALUE) != ANI_OK) {
                 return ANI_FALSE;
             }
             return ANI_TRUE;

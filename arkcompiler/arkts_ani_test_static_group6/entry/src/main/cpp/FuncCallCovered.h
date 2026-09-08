@@ -24,6 +24,8 @@
 
 constexpr int P5_THREAD_COUNT = 4;
 constexpr const char *P5_METHOD_FORMS = "entry.src.main.src.ets.Index.ClassDefCompleteMethodForms";
+constexpr ani_int P5_CALL_ARG_VALUE = 5;
+constexpr ani_int P5_VERIFY_ARG_VALUE = 7;
 
 ani_boolean P5CreateInstance(ani_env *env, ani_class *outCls, ani_method *outMethod, ani_object *outObj)
 {
@@ -88,7 +90,7 @@ ani_int test_FuncCall_ObjCall_Boolean_MultiThread(ani_env *env, [[maybe_unused]]
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_boolean result = ANI_FALSE;
-                tEnv->Object_CallMethod_Boolean(obj, method, &result, 5);
+                tEnv->Object_CallMethod_Boolean(obj, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -180,7 +182,7 @@ ani_int test_FuncCall_ObjCall_Byte_MultiThread(ani_env *env, [[maybe_unused]] an
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_byte result = 0;
-                tEnv->Object_CallMethod_Byte(obj, method, &result, 5);
+                tEnv->Object_CallMethod_Byte(obj, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -272,7 +274,7 @@ ani_int test_FuncCall_ObjCall_Char_MultiThread(ani_env *env, [[maybe_unused]] an
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_char result = 0;
-                tEnv->Object_CallMethod_Char(obj, method, &result, 5);
+                tEnv->Object_CallMethod_Char(obj, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -364,7 +366,7 @@ ani_int test_FuncCall_ObjCall_Short_MultiThread(ani_env *env, [[maybe_unused]] a
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_short result = 0;
-                tEnv->Object_CallMethod_Short(obj, method, &result, 5);
+                tEnv->Object_CallMethod_Short(obj, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -456,7 +458,7 @@ ani_int test_FuncCall_ObjCall_Int_MultiThread(ani_env *env, [[maybe_unused]] ani
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_int result = 0;
-                tEnv->Object_CallMethod_Int(obj, method, &result, 5);
+                tEnv->Object_CallMethod_Int(obj, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -548,7 +550,7 @@ ani_int test_FuncCall_ObjCall_Long_MultiThread(ani_env *env, [[maybe_unused]] an
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_long result = 0;
-                tEnv->Object_CallMethod_Long(obj, method, &result, 5);
+                tEnv->Object_CallMethod_Long(obj, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -640,7 +642,7 @@ ani_int test_FuncCall_ObjCall_Float_MultiThread(ani_env *env, [[maybe_unused]] a
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_float result = 0.0f;
-                tEnv->Object_CallMethod_Float(obj, method, &result, 5);
+                tEnv->Object_CallMethod_Float(obj, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -732,7 +734,7 @@ ani_int test_FuncCall_ObjCall_Double_MultiThread(ani_env *env, [[maybe_unused]] 
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_double result = 0.0;
-                tEnv->Object_CallMethod_Double(obj, method, &result, 5);
+                tEnv->Object_CallMethod_Double(obj, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -824,7 +826,7 @@ ani_int test_FuncCall_ObjCall_Ref_MultiThread(ani_env *env, [[maybe_unused]] ani
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_ref result{};
-                tEnv->Object_CallMethod_Ref(obj, method, &result, 5);
+                tEnv->Object_CallMethod_Ref(obj, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -915,7 +917,7 @@ ani_int test_FuncCall_ObjCall_Void_MultiThread(ani_env *env, [[maybe_unused]] an
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                tEnv->Object_CallMethod_Void(obj, method, 5);
+                tEnv->Object_CallMethod_Void(obj, method, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -1009,7 +1011,7 @@ ani_int test_FuncCall_StaticCall_Boolean_MultiThread(ani_env *env, [[maybe_unuse
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_boolean result = ANI_FALSE;
-                tEnv->Class_CallStaticMethod_Boolean(cls, method, &result, 5);
+                tEnv->Class_CallStaticMethod_Boolean(cls, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -1099,7 +1101,7 @@ ani_int test_FuncCall_StaticCall_Byte_MultiThread(ani_env *env, [[maybe_unused]]
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_byte result = 0;
-                tEnv->Class_CallStaticMethod_Byte(cls, method, &result, 5);
+                tEnv->Class_CallStaticMethod_Byte(cls, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -1189,7 +1191,7 @@ ani_int test_FuncCall_StaticCall_Char_MultiThread(ani_env *env, [[maybe_unused]]
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_char result = 0;
-                tEnv->Class_CallStaticMethod_Char(cls, method, &result, 5);
+                tEnv->Class_CallStaticMethod_Char(cls, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -1279,7 +1281,7 @@ ani_int test_FuncCall_StaticCall_Short_MultiThread(ani_env *env, [[maybe_unused]
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_short result = 0;
-                tEnv->Class_CallStaticMethod_Short(cls, method, &result, 5);
+                tEnv->Class_CallStaticMethod_Short(cls, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -1369,7 +1371,7 @@ ani_int test_FuncCall_StaticCall_Int_MultiThread(ani_env *env, [[maybe_unused]] 
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_int result = 0;
-                tEnv->Class_CallStaticMethod_Int(cls, method, &result, 5);
+                tEnv->Class_CallStaticMethod_Int(cls, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -1459,7 +1461,7 @@ ani_int test_FuncCall_StaticCall_Long_MultiThread(ani_env *env, [[maybe_unused]]
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_long result = 0;
-                tEnv->Class_CallStaticMethod_Long(cls, method, &result, 5);
+                tEnv->Class_CallStaticMethod_Long(cls, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -1549,7 +1551,7 @@ ani_int test_FuncCall_StaticCall_Float_MultiThread(ani_env *env, [[maybe_unused]
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_float result = 0.0f;
-                tEnv->Class_CallStaticMethod_Float(cls, method, &result, 5);
+                tEnv->Class_CallStaticMethod_Float(cls, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -1639,7 +1641,7 @@ ani_int test_FuncCall_StaticCall_Double_MultiThread(ani_env *env, [[maybe_unused
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_double result = 0.0;
-                tEnv->Class_CallStaticMethod_Double(cls, method, &result, 5);
+                tEnv->Class_CallStaticMethod_Double(cls, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -1729,7 +1731,7 @@ ani_int test_FuncCall_StaticCall_Ref_MultiThread(ani_env *env, [[maybe_unused]] 
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_ref result{};
-                tEnv->Class_CallStaticMethod_Ref(cls, method, &result, 5);
+                tEnv->Class_CallStaticMethod_Ref(cls, method, &result, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -1818,7 +1820,7 @@ ani_int test_FuncCall_StaticCall_Void_MultiThread(ani_env *env, [[maybe_unused]]
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                tEnv->Class_CallStaticMethod_Void(cls, method, 5);
+                tEnv->Class_CallStaticMethod_Void(cls, method, P5_CALL_ARG_VALUE);
                 successCount.fetch_add(1);
                 vm->DetachCurrentThread();
             }
@@ -1915,7 +1917,8 @@ ani_int test_FuncCall_StaticCall_Combo(ani_env *env, [[maybe_unused]] ani_object
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_int result = 0;
-                if (tEnv->Class_CallStaticMethod_Int(cls, method, &result, 7) == ANI_OK && result == 7) {
+                if (tEnv->Class_CallStaticMethod_Int(cls, method, &result, P5_VERIFY_ARG_VALUE) == ANI_OK &&
+                    result == P5_VERIFY_ARG_VALUE) {
                     successCount.fetch_add(1);
                 }
                 vm->DetachCurrentThread();

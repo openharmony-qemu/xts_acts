@@ -110,10 +110,8 @@ ani_int test_Str_GetUTF16_MultiThread(ani_env *env, [[maybe_unused]] ani_object 
                 if (tEnv->String_NewUTF8("hello", P4_HELLO_SIZE, &str) == ANI_OK && str != nullptr) {
                     uint16_t buf[P4_BUF_COUNT] = {0};
                     ani_size written = 0;
-                    if (tEnv->String_GetUTF16(str, buf, P4_BUF_COUNT, &written) == ANI_OK &&
-                        written == P4_HELLO_SIZE &&
-                        std::memcmp(buf, P4_HELLO_UTF16,
-                                    static_cast<size_t>(P4_HELLO_SIZE) * sizeof(uint16_t)) == 0) {
+                    if (tEnv->String_GetUTF16(str, buf, P4_BUF_COUNT, &written) == ANI_OK && written == P4_HELLO_SIZE &&
+                        std::memcmp(buf, P4_HELLO_UTF16, static_cast<size_t>(P4_HELLO_SIZE) * sizeof(uint16_t)) == 0) {
                         successCount.fetch_add(1);
                     }
                 }
@@ -147,8 +145,7 @@ ani_int test_Str_GetUTF16SubString_MultiThread(ani_env *env, [[maybe_unused]] an
                     ani_size written = 0;
                     if (tEnv->String_GetUTF16SubString(str, 0, P4_HELLO_SIZE, buf, P4_BUF_COUNT, &written) == ANI_OK &&
                         written == P4_HELLO_SIZE &&
-                        std::memcmp(buf, P4_HELLO_UTF16,
-                                    static_cast<size_t>(P4_HELLO_SIZE) * sizeof(uint16_t)) == 0) {
+                        std::memcmp(buf, P4_HELLO_UTF16, static_cast<size_t>(P4_HELLO_SIZE) * sizeof(uint16_t)) == 0) {
                         successCount.fetch_add(1);
                     }
                 }
@@ -211,8 +208,8 @@ ani_int test_Str_GetUTF8_MultiThread(ani_env *env, [[maybe_unused]] ani_object o
                 if (tEnv->String_NewUTF8("hello", P4_HELLO_SIZE, &str) == ANI_OK && str != nullptr) {
                     char buf[P4_BUF_COUNT] = {0};
                     ani_size written = 0;
-                    if (tEnv->String_GetUTF8(str, buf, P4_BUF_COUNT, &written) == ANI_OK &&
-                        written == P4_HELLO_SIZE && std::memcmp(buf, "hello", P4_HELLO_SIZE) == 0) {
+                    if (tEnv->String_GetUTF8(str, buf, P4_BUF_COUNT, &written) == ANI_OK && written == P4_HELLO_SIZE &&
+                        std::memcmp(buf, "hello", P4_HELLO_SIZE) == 0) {
                         successCount.fetch_add(1);
                     }
                 }
@@ -301,8 +298,8 @@ ani_int test_Str_GetUTF8_BufferSmall(ani_env *env, [[maybe_unused]] ani_object o
     char buf[1] = {0};
     ani_size written = 0;
     ani_status status = env->String_GetUTF8(str, buf, 1, &written);
-    OH_LOG_INFO(LOG_APP, "testTag : Str_GetUTF8_BufferSmall status=%{public}d written=%{public}d",
-                status, static_cast<int>(written));
+    OH_LOG_INFO(LOG_APP, "testTag : Str_GetUTF8_BufferSmall status=%{public}d written=%{public}d", status,
+                static_cast<int>(written));
     return (status == ANI_BUFFER_TO_SMALL || status == ANI_INVALID_ARGS || status == ANI_OK) ? ANI_TRUE : ANI_FALSE;
 }
 
@@ -328,8 +325,8 @@ ani_int test_Str_GetUTF16_BufferSmall(ani_env *env, [[maybe_unused]] ani_object 
     uint16_t buf[1] = {0};
     ani_size written = 0;
     ani_status status = env->String_GetUTF16(str, buf, 1, &written);
-    OH_LOG_INFO(LOG_APP, "testTag : Str_GetUTF16_BufferSmall status=%{public}d written=%{public}d",
-                status, static_cast<int>(written));
+    OH_LOG_INFO(LOG_APP, "testTag : Str_GetUTF16_BufferSmall status=%{public}d written=%{public}d", status,
+                static_cast<int>(written));
     return (status == ANI_BUFFER_TO_SMALL || status == ANI_INVALID_ARGS || status == ANI_OK) ? ANI_TRUE : ANI_FALSE;
 }
 
@@ -368,8 +365,8 @@ ani_int test_Str_GetUTF8SubString_SizeZero(ani_env *env, [[maybe_unused]] ani_ob
     char buf[P4_BUF_COUNT] = {0};
     ani_size written = 0;
     ani_status status = env->String_GetUTF8SubString(str, 0, 0, buf, P4_BUF_COUNT, &written);
-    OH_LOG_INFO(LOG_APP, "testTag : Str_GetUTF8SubString_SizeZero status=%{public}d written=%{public}d",
-                status, static_cast<int>(written));
+    OH_LOG_INFO(LOG_APP, "testTag : Str_GetUTF8SubString_SizeZero status=%{public}d written=%{public}d", status,
+                static_cast<int>(written));
     return ANI_TRUE;
 }
 
@@ -383,7 +380,7 @@ ani_int test_Str_GetUTF16SubString_OffsetAtEnd(ani_env *env, [[maybe_unused]] an
     ani_size written = 0;
     ani_status status = env->String_GetUTF16SubString(str, P4_HELLO_SIZE, 0, buf, P4_BUF_COUNT, &written);
     OH_LOG_INFO(LOG_APP, "testTag : Str_GetUTF16SubString_OffsetAtEnd status=%{public}d", status);
-     return status == ANI_OK ? ANI_TRUE : ANI_FALSE;
+    return status == ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Str_GetUTF16SubString_OffsetSizeOverflow(ani_env *env, [[maybe_unused]] ani_object object)
@@ -408,8 +405,8 @@ ani_int test_Str_GetUTF16SubString_SizeZero(ani_env *env, [[maybe_unused]] ani_o
     uint16_t buf[P4_BUF_COUNT] = {0};
     ani_size written = 0;
     ani_status status = env->String_GetUTF16SubString(str, 0, 0, buf, P4_BUF_COUNT, &written);
-    OH_LOG_INFO(LOG_APP, "testTag : Str_GetUTF16SubString_SizeZero status=%{public}d written=%{public}d",
-                status, static_cast<int>(written));
+    OH_LOG_INFO(LOG_APP, "testTag : Str_GetUTF16SubString_SizeZero status=%{public}d written=%{public}d", status,
+                static_cast<int>(written));
     return ANI_TRUE;
 }
 

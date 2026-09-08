@@ -27,6 +27,10 @@ constexpr int THREAD_COUNT = 4;
 constexpr const char *MODULE_DESC = "entry.src.main.src.ets.Index";
 constexpr const char *ENUM_DESC = "entry.src.main.src.ets.Index.ClassDefCompleteStatus";
 constexpr const char *NS_DESC = "entry.src.main.src.ets.Index.Convert";
+constexpr int GLOBAL_REF_CREATE_LIMIT_TRIALS = 1000;
+constexpr ani_size ARRAY_BUFFER_SMALL_SIZE = 10;
+constexpr ani_size ARRAY_BUFFER_LARGE_SIZE = 16;
+constexpr ani_int ENUM_INDEX_OUT_OF_RANGE = 100;
 
 bool ConsumeUnhandledErrorPart1(ani_env *env)
 {
@@ -58,8 +62,7 @@ ani_error CreateAniError(ani_env *env)
     }
 
     ani_method ctorStr{};
-    if (env->Class_FindMethod(errorCls, "<ctor>", "C{std.core.String}:", &ctorStr) == ANI_OK &&
-        ctorStr != nullptr) {
+    if (env->Class_FindMethod(errorCls, "<ctor>", "C{std.core.String}:", &ctorStr) == ANI_OK && ctorStr != nullptr) {
         const char *msgText = "ani promise reject";
         ani_string msg{};
         if (env->String_NewUTF8(msgText, strlen(msgText), &msg) == ANI_OK && msg != nullptr) {
@@ -405,12 +408,11 @@ ani_int test_GlobalRef_Create_Limit([[maybe_unused]] ani_env *env, [[maybe_unuse
     }
     std::vector<ani_ref> globalRefs;
     ani_status status = ANI_OK;
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < GLOBAL_REF_CREATE_LIMIT_TRIALS; i++) {
         ani_ref gref{};
         status = env->GlobalReference_Create(ref, &gref);
         if (status != ANI_OK) {
-            OH_LOG_INFO(LOG_APP, "testTag : GlobalReference_Create limit at %{public}d, status=%{public}d", i,
-                        status);
+            OH_LOG_INFO(LOG_APP, "testTag : GlobalReference_Create limit at %{public}d, status=%{public}d", i, status);
             break;
         }
         globalRefs.push_back(gref);
@@ -418,8 +420,7 @@ ani_int test_GlobalRef_Create_Limit([[maybe_unused]] ani_env *env, [[maybe_unuse
     for (ani_ref &gref : globalRefs) {
         env->GlobalReference_Delete(gref);
     }
-    OH_LOG_INFO(LOG_APP, "testTag : GlobalReference_Create limit test completed, count=%{public}zu",
-                globalRefs.size());
+    OH_LOG_INFO(LOG_APP, "testTag : GlobalReference_Create limit test completed, count=%{public}zu", globalRefs.size());
     return ANI_TRUE;
 }
 
@@ -469,7 +470,7 @@ ani_int test_GlobalRef_Delete_Twice([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_int test_ArrayBuffer_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_arraybuffer ab{};
-    ani_status status = env->CreateArrayBuffer(10, nullptr, &ab);
+    ani_status status = env->CreateArrayBuffer(ARRAY_BUFFER_SMALL_SIZE, nullptr, &ab);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 
@@ -489,7 +490,7 @@ ani_int test_ArrayBuffer_MultiThread(ani_env *env, [[maybe_unused]] ani_object o
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 void *data = nullptr;
                 ani_arraybuffer ab{};
-                if (tEnv->CreateArrayBuffer(16, &data, &ab) == ANI_OK) {
+                if (tEnv->CreateArrayBuffer(ARRAY_BUFFER_LARGE_SIZE, &data, &ab) == ANI_OK) {
                     successCount.fetch_add(1);
                 }
                 vm->DetachCurrentThread();
@@ -506,7 +507,7 @@ ani_int test_ArrayBuffer_GetInfo_Abnormal([[maybe_unused]] ani_env *env, [[maybe
 {
     void *data = nullptr;
     ani_arraybuffer ab{};
-    if (env->CreateArrayBuffer(10, &data, &ab) != ANI_OK) {
+    if (env->CreateArrayBuffer(ARRAY_BUFFER_SMALL_SIZE, &data, &ab) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_status status = env->ArrayBuffer_GetInfo(ab, nullptr, nullptr);
@@ -744,8 +745,8 @@ ani_int test_Type_IsAssignableFrom_Normal([[maybe_unused]] ani_env *env, [[maybe
         return ANI_FALSE;
     }
     ani_boolean result = ANI_FALSE;
-    ani_status status = env->Type_IsAssignableFrom(static_cast<ani_type>(derivedCls),
-                                                   static_cast<ani_type>(baseCls), &result);
+    ani_status status =
+        env->Type_IsAssignableFrom(static_cast<ani_type>(derivedCls), static_cast<ani_type>(baseCls), &result);
     if (status != ANI_OK) {
         return ANI_FALSE;
     }
@@ -786,8 +787,8 @@ ani_int test_Type_IsAssignableFrom_MultiThread(ani_env *env, [[maybe_unused]] an
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_boolean result = ANI_FALSE;
-                if (tEnv->Type_IsAssignableFrom(static_cast<ani_type>(derivedGref),
-                                                static_cast<ani_type>(baseGref), &result) == ANI_OK) {
+                if (tEnv->Type_IsAssignableFrom(static_cast<ani_type>(derivedGref), static_cast<ani_type>(baseGref),
+                                                &result) == ANI_OK) {
                     successCount.fetch_add(1);
                 }
                 vm->DetachCurrentThread();
@@ -827,8 +828,8 @@ ani_int test_Type_IsAssignableFrom_Unrelated([[maybe_unused]] ani_env *env, [[ma
         return ANI_FALSE;
     }
     ani_boolean result = ANI_TRUE;
-    ani_status status = env->Type_IsAssignableFrom(static_cast<ani_type>(pointCls),
-                                                   static_cast<ani_type>(baseCls), &result);
+    ani_status status =
+        env->Type_IsAssignableFrom(static_cast<ani_type>(pointCls), static_cast<ani_type>(baseCls), &result);
     if (status != ANI_OK) {
         return ANI_FALSE;
     }
@@ -941,7 +942,7 @@ ani_int test_Enum_GetItemByIndex_OutOfRange([[maybe_unused]] ani_env *env, [[may
         return ANI_FALSE;
     }
     ani_enum_item item{};
-    ani_status status = env->Enum_GetEnumItemByIndex(enm, 100, &item);
+    ani_status status = env->Enum_GetEnumItemByIndex(enm, ENUM_INDEX_OUT_OF_RANGE, &item);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 

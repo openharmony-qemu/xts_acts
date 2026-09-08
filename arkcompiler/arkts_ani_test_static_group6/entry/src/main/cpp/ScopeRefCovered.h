@@ -27,6 +27,11 @@ constexpr const char *PART2_MODULE_DESC = "entry.src.main.src.ets.Index";
 constexpr const char *PART2_NS_DESC = "entry.src.main.src.ets.Index.Convert";
 constexpr const char *PART2_CLASS_DESC = "entry.src.main.src.ets.Index.Foo";
 constexpr const char *PART2_ENUM_DESC = "entry.src.main.src.ets.Index.COLOR";
+constexpr int PART2_THREAD_COUNT = 4;
+constexpr ani_size PART2_TWO_ITEM_ARRAY = 2;
+constexpr ani_size PART2_THREE_ITEM_ARRAY = 3;
+constexpr ani_size PART2_LOCAL_SCOPE_CAPACITY = 16;
+constexpr ani_size PART2_LONG_DESC_LENGTH = 4096;
 
 bool ConsumeUnhandledErrorPart2(ani_env *env)
 {
@@ -54,13 +59,13 @@ ani_int test_WeakRef_Create_MultiThread(ani_env *env, [[maybe_unused]] ani_objec
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_string str{};
-                if (tEnv->String_NewUTF8("weak", 4, &str) == ANI_OK) {
+                if (tEnv->String_NewUTF8("weak", sizeof("weak") - 1, &str) == ANI_OK) {
                     ani_wref wref{};
                     if (tEnv->WeakReference_Create(static_cast<ani_ref>(str), &wref) == ANI_OK) {
                         tEnv->WeakReference_Delete(wref);
@@ -74,13 +79,13 @@ ani_int test_WeakRef_Create_MultiThread(ani_env *env, [[maybe_unused]] ani_objec
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_WeakRef_Create_Combo([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_string str{};
-    if (env->String_NewUTF8("combo", 5, &str) != ANI_OK) {
+    if (env->String_NewUTF8("combo", sizeof("combo") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_wref wref{};
@@ -107,7 +112,7 @@ ani_int test_WeakRef_Create_Combo([[maybe_unused]] ani_env *env, [[maybe_unused]
 ani_int test_WeakRef_Delete_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_string str{};
-    if (env->String_NewUTF8("normal", 6, &str) != ANI_OK) {
+    if (env->String_NewUTF8("normal", sizeof("normal") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_wref wref{};
@@ -136,13 +141,13 @@ ani_int test_WeakRef_Delete_MultiThread(ani_env *env, [[maybe_unused]] ani_objec
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_string str{};
-                if (tEnv->String_NewUTF8("del", 3, &str) == ANI_OK) {
+                if (tEnv->String_NewUTF8("del", sizeof("del") - 1, &str) == ANI_OK) {
                     ani_wref wref{};
                     if (tEnv->WeakReference_Create(static_cast<ani_ref>(str), &wref) == ANI_OK) {
                         if (tEnv->WeakReference_Delete(wref) == ANI_OK) {
@@ -157,13 +162,13 @@ ani_int test_WeakRef_Delete_MultiThread(ani_env *env, [[maybe_unused]] ani_objec
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_WeakRef_Delete_Combo([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_string str{};
-    if (env->String_NewUTF8("delcombo", 8, &str) != ANI_OK) {
+    if (env->String_NewUTF8("delcombo", sizeof("delcombo") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_wref wref{};
@@ -192,13 +197,13 @@ ani_int test_WeakRef_GetReference_MultiThread(ani_env *env, [[maybe_unused]] ani
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_string str{};
-                if (tEnv->String_NewUTF8("getref", 6, &str) == ANI_OK) {
+                if (tEnv->String_NewUTF8("getref", sizeof("getref") - 1, &str) == ANI_OK) {
                     ani_wref wref{};
                     if (tEnv->WeakReference_Create(static_cast<ani_ref>(str), &wref) == ANI_OK) {
                         ani_boolean wasReleased = ANI_TRUE;
@@ -216,13 +221,13 @@ ani_int test_WeakRef_GetReference_MultiThread(ani_env *env, [[maybe_unused]] ani
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_WeakRef_GetReference_Combo([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_string str{};
-    if (env->String_NewUTF8("getcombo", 8, &str) != ANI_OK) {
+    if (env->String_NewUTF8("getcombo", sizeof("getcombo") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_wref wref{};
@@ -259,7 +264,7 @@ ani_int test_WeakRef_Create_NullRef([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_int test_WeakRef_Delete_Twice([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_string str{};
-    if (env->String_NewUTF8("twice", 5, &str) != ANI_OK) {
+    if (env->String_NewUTF8("twice", sizeof("twice") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_wref wref{};
@@ -271,8 +276,7 @@ ani_int test_WeakRef_Delete_Twice([[maybe_unused]] ani_env *env, [[maybe_unused]
     }
     ani_status status = env->WeakReference_Delete(wref);
     bool hadError = ConsumeUnhandledErrorPart2(env);
-    OH_LOG_INFO(LOG_APP, "testTag : WeakRef delete twice status=%{public}d, hadError=%{public}d",
-                status, hadError);
+    OH_LOG_INFO(LOG_APP, "testTag : WeakRef delete twice status=%{public}d, hadError=%{public}d", status, hadError);
     if (status != ANI_OK || hadError) {
         return ANI_TRUE;
     }
@@ -282,7 +286,7 @@ ani_int test_WeakRef_Delete_Twice([[maybe_unused]] ani_env *env, [[maybe_unused]
 ani_int test_WeakRef_GetReference_AfterGC([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_string str{};
-    if (env->String_NewUTF8("gc", 2, &str) != ANI_OK) {
+    if (env->String_NewUTF8("gc", sizeof("gc") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_wref wref{};
@@ -292,8 +296,8 @@ ani_int test_WeakRef_GetReference_AfterGC([[maybe_unused]] ani_env *env, [[maybe
     ani_boolean wasReleased = ANI_FALSE;
     ani_ref ref{};
     ani_status status = env->WeakReference_GetReference(wref, &wasReleased, &ref);
-    OH_LOG_INFO(LOG_APP, "testTag : WeakRef GetReference after GC, status=%{public}d, wasReleased=%{public}d",
-                status, wasReleased);
+    OH_LOG_INFO(LOG_APP, "testTag : WeakRef GetReference after GC, status=%{public}d, wasReleased=%{public}d", status,
+                wasReleased);
     env->WeakReference_Delete(wref);
     return ANI_TRUE;
 }
@@ -331,7 +335,7 @@ ani_int test_FindModule_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
     std::atomic<ani_int> finishedCount(0);
     std::atomic<ani_int> attachFailCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&finishedCount, &attachFailCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -350,7 +354,7 @@ ani_int test_FindModule_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
     for (auto &t : threads) {
         t.join();
     }
-    return (finishedCount.load() == 4 && attachFailCount.load() == 0) ? ANI_TRUE : ANI_FALSE;
+    return (finishedCount.load() == PART2_THREAD_COUNT && attachFailCount.load() == 0) ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_FindNamespace_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -370,7 +374,7 @@ ani_int test_FindNamespace_MultiThread(ani_env *env, [[maybe_unused]] ani_object
     std::atomic<ani_int> finishedCount(0);
     std::atomic<ani_int> attachFailCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&finishedCount, &attachFailCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -389,7 +393,7 @@ ani_int test_FindNamespace_MultiThread(ani_env *env, [[maybe_unused]] ani_object
     for (auto &t : threads) {
         t.join();
     }
-    return (finishedCount.load() == 4 && attachFailCount.load() == 0) ? ANI_TRUE : ANI_FALSE;
+    return (finishedCount.load() == PART2_THREAD_COUNT && attachFailCount.load() == 0) ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_FindClass_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
@@ -402,7 +406,7 @@ ani_int test_FindClass_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
     std::atomic<ani_int> finishedCount(0);
     std::atomic<ani_int> attachFailCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&finishedCount, &attachFailCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -421,7 +425,7 @@ ani_int test_FindClass_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
     for (auto &t : threads) {
         t.join();
     }
-    return (finishedCount.load() == 4 && attachFailCount.load() == 0) ? ANI_TRUE : ANI_FALSE;
+    return (finishedCount.load() == PART2_THREAD_COUNT && attachFailCount.load() == 0) ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_FindEnum_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
@@ -434,7 +438,7 @@ ani_int test_FindEnum_MultiThread(ani_env *env, [[maybe_unused]] ani_object obje
     std::atomic<ani_int> finishedCount(0);
     std::atomic<ani_int> attachFailCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&finishedCount, &attachFailCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -453,7 +457,7 @@ ani_int test_FindEnum_MultiThread(ani_env *env, [[maybe_unused]] ani_object obje
     for (auto &t : threads) {
         t.join();
     }
-    return (finishedCount.load() == 4 && attachFailCount.load() == 0) ? ANI_TRUE : ANI_FALSE;
+    return (finishedCount.load() == PART2_THREAD_COUNT && attachFailCount.load() == 0) ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_FindClass_EmptyDesc([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -486,7 +490,7 @@ ani_int test_FindEnum_EmptyDesc([[maybe_unused]] ani_env *env, [[maybe_unused]] 
 
 ani_int test_FindClass_LongDesc([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    std::string longDesc(4096, 'A');
+    std::string longDesc(PART2_LONG_DESC_LENGTH, 'A');
     ani_class cls{};
     ani_status status = env->FindClass(longDesc.c_str(), &cls);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -494,7 +498,7 @@ ani_int test_FindClass_LongDesc([[maybe_unused]] ani_env *env, [[maybe_unused]] 
 
 ani_int test_FindModule_LongDesc([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    std::string longDesc(4096, 'A');
+    std::string longDesc(PART2_LONG_DESC_LENGTH, 'A');
     ani_module mod{};
     ani_status status = env->FindModule(longDesc.c_str(), &mod);
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
@@ -520,7 +524,7 @@ ani_int test_Array_GetLength_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -528,9 +532,9 @@ ani_int test_Array_GetLength_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
                 ani_ref undef{};
                 if (tEnv->GetUndefined(&undef) == ANI_OK) {
                     ani_array arr{};
-                    if (tEnv->Array_New(3, undef, &arr) == ANI_OK) {
+                    if (tEnv->Array_New(PART2_THREE_ITEM_ARRAY, undef, &arr) == ANI_OK) {
                         ani_size len = 0;
-                        if (tEnv->Array_GetLength(arr, &len) == ANI_OK && len == 3) {
+                        if (tEnv->Array_GetLength(arr, &len) == ANI_OK && len == PART2_THREE_ITEM_ARRAY) {
                             successCount.fetch_add(1);
                         }
                     }
@@ -542,7 +546,7 @@ ani_int test_Array_GetLength_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Array_New_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
@@ -554,7 +558,7 @@ ani_int test_Array_New_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -562,7 +566,7 @@ ani_int test_Array_New_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
                 ani_ref undef{};
                 if (tEnv->GetUndefined(&undef) == ANI_OK) {
                     ani_array arr{};
-                    if (tEnv->Array_New(2, undef, &arr) == ANI_OK) {
+                    if (tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) == ANI_OK) {
                         successCount.fetch_add(1);
                     }
                 }
@@ -573,7 +577,7 @@ ani_int test_Array_New_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Array_Set_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -587,7 +591,7 @@ ani_int test_Array_Set_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] an
         return ANI_FALSE;
     }
     ani_string str{};
-    if (env->String_NewUTF8("elem", 4, &str) != ANI_OK) {
+    if (env->String_NewUTF8("elem", sizeof("elem") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_status status = env->Array_Set(arr, 0, static_cast<ani_ref>(str));
@@ -613,7 +617,7 @@ ani_int test_Array_Set_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -621,9 +625,9 @@ ani_int test_Array_Set_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
                 ani_ref undef{};
                 if (tEnv->GetUndefined(&undef) == ANI_OK) {
                     ani_array arr{};
-                    if (tEnv->Array_New(2, undef, &arr) == ANI_OK) {
+                    if (tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) == ANI_OK) {
                         ani_string str{};
-                        if (tEnv->String_NewUTF8("set", 3, &str) == ANI_OK) {
+                        if (tEnv->String_NewUTF8("set", sizeof("set") - 1, &str) == ANI_OK) {
                             if (tEnv->Array_Set(arr, 0, static_cast<ani_ref>(str)) == ANI_OK) {
                                 successCount.fetch_add(1);
                             }
@@ -637,7 +641,7 @@ ani_int test_Array_Set_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Array_Get_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
@@ -649,7 +653,7 @@ ani_int test_Array_Get_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -657,7 +661,7 @@ ani_int test_Array_Get_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
                 ani_ref undef{};
                 if (tEnv->GetUndefined(&undef) == ANI_OK) {
                     ani_array arr{};
-                    if (tEnv->Array_New(2, undef, &arr) == ANI_OK) {
+                    if (tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) == ANI_OK) {
                         ani_ref ref{};
                         if (tEnv->Array_Get(arr, 0, &ref) == ANI_OK) {
                             successCount.fetch_add(1);
@@ -671,7 +675,7 @@ ani_int test_Array_Get_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Array_Push_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -693,7 +697,7 @@ ani_int test_Array_Push_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -703,7 +707,7 @@ ani_int test_Array_Push_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
                     ani_array arr{};
                     if (tEnv->Array_New(0, undef, &arr) == ANI_OK) {
                         ani_string str{};
-                        if (tEnv->String_NewUTF8("push", 4, &str) == ANI_OK) {
+                        if (tEnv->String_NewUTF8("push", sizeof("push") - 1, &str) == ANI_OK) {
                             if (tEnv->Array_Push(arr, static_cast<ani_ref>(str)) == ANI_OK) {
                                 successCount.fetch_add(1);
                             }
@@ -717,7 +721,7 @@ ani_int test_Array_Push_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Array_Pop_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -736,7 +740,7 @@ ani_int test_Array_Pop_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -758,7 +762,7 @@ ani_int test_Array_Pop_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Array_New_LengthZero([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -779,11 +783,11 @@ ani_int test_Array_Get_OutOfRange([[maybe_unused]] ani_env *env, [[maybe_unused]
         return ANI_FALSE;
     }
     ani_array arr{};
-    if (env->Array_New(2, undef, &arr) != ANI_OK) {
+    if (env->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_ref ref{};
-    ani_status status = env->Array_Get(arr, 2, &ref);
+    ani_status status = env->Array_Get(arr, PART2_TWO_ITEM_ARRAY, &ref);
     bool hadError = ConsumeUnhandledErrorPart2(env);
     return (status != ANI_OK || hadError) ? ANI_TRUE : ANI_FALSE;
 }
@@ -799,7 +803,7 @@ ani_int test_Array_Get_FirstElement([[maybe_unused]] ani_env *env, [[maybe_unuse
         return ANI_FALSE;
     }
     ani_string str{};
-    if (env->String_NewUTF8("first", 5, &str) != ANI_OK) {
+    if (env->String_NewUTF8("first", sizeof("first") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     if (env->Array_Set(arr, 0, static_cast<ani_ref>(str)) != ANI_OK) {
@@ -817,14 +821,14 @@ ani_int test_Array_Set_OutOfRange([[maybe_unused]] ani_env *env, [[maybe_unused]
         return ANI_FALSE;
     }
     ani_array arr{};
-    if (env->Array_New(2, undef, &arr) != ANI_OK) {
+    if (env->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_string str{};
-    if (env->String_NewUTF8("oor", 3, &str) != ANI_OK) {
+    if (env->String_NewUTF8("oor", sizeof("oor") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
-    ani_status status = env->Array_Set(arr, 2, static_cast<ani_ref>(str));
+    ani_status status = env->Array_Set(arr, PART2_TWO_ITEM_ARRAY, static_cast<ani_ref>(str));
     bool hadError = ConsumeUnhandledErrorPart2(env);
     return (status != ANI_OK || hadError) ? ANI_TRUE : ANI_FALSE;
 }
@@ -869,13 +873,13 @@ ani_int test_Reference_Delete_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_string str{};
-                if (tEnv->String_NewUTF8("del", 3, &str) == ANI_OK) {
+                if (tEnv->String_NewUTF8("del", sizeof("del") - 1, &str) == ANI_OK) {
                     if (tEnv->Reference_Delete(static_cast<ani_ref>(str)) == ANI_OK) {
                         successCount.fetch_add(1);
                     }
@@ -887,13 +891,13 @@ ani_int test_Reference_Delete_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Reference_Delete_Combo([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_string str{};
-    if (env->String_NewUTF8("combo", 5, &str) != ANI_OK) {
+    if (env->String_NewUTF8("combo", sizeof("combo") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_size sz = 0;
@@ -921,7 +925,7 @@ ani_int test_Reference_IsNull_Normal([[maybe_unused]] ani_env *env, [[maybe_unus
         return ANI_FALSE;
     }
     ani_string str{};
-    if (env->String_NewUTF8("valid", 5, &str) != ANI_OK) {
+    if (env->String_NewUTF8("valid", sizeof("valid") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_boolean isNotNull = ANI_TRUE;
@@ -940,7 +944,7 @@ ani_int test_Reference_IsNull_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -959,7 +963,7 @@ ani_int test_Reference_IsNull_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Reference_IsUndefined_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -978,7 +982,7 @@ ani_int test_Reference_IsUndefined_MultiThread(ani_env *env, [[maybe_unused]] an
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -997,7 +1001,7 @@ ani_int test_Reference_IsUndefined_MultiThread(ani_env *env, [[maybe_unused]] an
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Reference_IsNullishValue_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -1025,7 +1029,7 @@ ani_int test_Reference_IsNullishValue_Normal([[maybe_unused]] ani_env *env, [[ma
         return ANI_FALSE;
     }
     ani_string str{};
-    if (env->String_NewUTF8("valid", 5, &str) != ANI_OK) {
+    if (env->String_NewUTF8("valid", sizeof("valid") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     isNullish = ANI_TRUE;
@@ -1044,7 +1048,7 @@ ani_int test_Reference_IsNullishValue_MultiThread(ani_env *env, [[maybe_unused]]
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
@@ -1063,7 +1067,7 @@ ani_int test_Reference_IsNullishValue_MultiThread(ani_env *env, [[maybe_unused]]
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Reference_Equals_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -1082,18 +1086,18 @@ ani_int test_Reference_Equals_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_string str1{};
                 ani_string str2{};
-                if (tEnv->String_NewUTF8("hello", 5, &str1) == ANI_OK &&
-                    tEnv->String_NewUTF8("hello", 5, &str2) == ANI_OK) {
+                if (tEnv->String_NewUTF8("hello", sizeof("hello") - 1, &str1) == ANI_OK &&
+                    tEnv->String_NewUTF8("hello", sizeof("hello") - 1, &str2) == ANI_OK) {
                     ani_boolean isEqual = ANI_FALSE;
-                    if (tEnv->Reference_Equals(static_cast<ani_ref>(str1), static_cast<ani_ref>(str2),
-                                               &isEqual) == ANI_OK) {
+                    if (tEnv->Reference_Equals(static_cast<ani_ref>(str1), static_cast<ani_ref>(str2), &isEqual) ==
+                        ANI_OK) {
                         successCount.fetch_add(1);
                     }
                 }
@@ -1104,7 +1108,7 @@ ani_int test_Reference_Equals_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Reference_StrictEquals_MultiThread(ani_env *env, [[maybe_unused]] ani_object object)
@@ -1116,18 +1120,18 @@ ani_int test_Reference_StrictEquals_MultiThread(ani_env *env, [[maybe_unused]] a
     }
     std::atomic<ani_int> successCount(0);
     std::vector<std::thread> threads;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < PART2_THREAD_COUNT; i++) {
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
             if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
                 ani_string str1{};
                 ani_string str2{};
-                if (tEnv->String_NewUTF8("world", 5, &str1) == ANI_OK &&
-                    tEnv->String_NewUTF8("world", 5, &str2) == ANI_OK) {
+                if (tEnv->String_NewUTF8("world", sizeof("world") - 1, &str1) == ANI_OK &&
+                    tEnv->String_NewUTF8("world", sizeof("world") - 1, &str2) == ANI_OK) {
                     ani_boolean isEqual = ANI_FALSE;
                     if (tEnv->Reference_StrictEquals(static_cast<ani_ref>(str1), static_cast<ani_ref>(str2),
-                                                    &isEqual) == ANI_OK) {
+                                                     &isEqual) == ANI_OK) {
                         successCount.fetch_add(1);
                     }
                 }
@@ -1138,13 +1142,13 @@ ani_int test_Reference_StrictEquals_MultiThread(ani_env *env, [[maybe_unused]] a
     for (auto &t : threads) {
         t.join();
     }
-    return successCount.load() == 4 ? ANI_TRUE : ANI_FALSE;
+    return successCount.load() == PART2_THREAD_COUNT ? ANI_TRUE : ANI_FALSE;
 }
 
 ani_int test_Reference_Delete_Twice([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_string str{};
-    if (env->String_NewUTF8("twice", 5, &str) != ANI_OK) {
+    if (env->String_NewUTF8("twice", sizeof("twice") - 1, &str) != ANI_OK) {
         return ANI_FALSE;
     }
     if (env->Reference_Delete(static_cast<ani_ref>(str)) != ANI_OK) {
@@ -1152,8 +1156,7 @@ ani_int test_Reference_Delete_Twice([[maybe_unused]] ani_env *env, [[maybe_unuse
     }
     ani_status status = env->Reference_Delete(static_cast<ani_ref>(str));
     bool hadError = ConsumeUnhandledErrorPart2(env);
-    OH_LOG_INFO(LOG_APP, "testTag : Reference_Delete twice status=%{public}d, hadError=%{public}d",
-                status, hadError);
+    OH_LOG_INFO(LOG_APP, "testTag : Reference_Delete twice status=%{public}d, hadError=%{public}d", status, hadError);
     if (status != ANI_OK || hadError) {
         return ANI_TRUE;
     }
@@ -1162,11 +1165,11 @@ ani_int test_Reference_Delete_Twice([[maybe_unused]] ani_env *env, [[maybe_unuse
 
 ani_int test_Reference_Delete_AfterScopeDestroy([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->CreateLocalScope(16) != ANI_OK) {
+    if (env->CreateLocalScope(PART2_LOCAL_SCOPE_CAPACITY) != ANI_OK) {
         return ANI_FALSE;
     }
     ani_string str{};
-    if (env->String_NewUTF8("scope", 5, &str) != ANI_OK) {
+    if (env->String_NewUTF8("scope", sizeof("scope") - 1, &str) != ANI_OK) {
         env->DestroyLocalScope();
         return ANI_FALSE;
     }
@@ -1207,8 +1210,8 @@ ani_int test_Reference_Equals_NullVsUndefined([[maybe_unused]] ani_env *env, [[m
     if (status != ANI_OK || hadError) {
         return ANI_FALSE;
     }
-    OH_LOG_INFO(LOG_APP, "testTag : Reference_Equals null vs undefined result=%{public}d, status=%{public}d",
-                result, status);
+    OH_LOG_INFO(LOG_APP, "testTag : Reference_Equals null vs undefined result=%{public}d, status=%{public}d", result,
+                status);
     return (result == ANI_FALSE || result == ANI_TRUE) ? ANI_TRUE : ANI_FALSE;
 }
 

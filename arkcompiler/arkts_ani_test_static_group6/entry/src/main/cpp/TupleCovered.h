@@ -42,12 +42,13 @@ ani_int test_Tuple_GetNumberOfItems_MultiThread(ani_env *env, [[maybe_unused]] a
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetNumberOfItems != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetNumberOfItems != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -80,12 +81,13 @@ ani_int test_Tuple_GetItem_Boolean_MultiThread(ani_env *env, [[maybe_unused]] an
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Boolean != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Boolean != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -108,7 +110,8 @@ ani_int test_Tuple_GetItem_Boolean_Boundary_IndexZero([[maybe_unused]] ani_env *
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 
-ani_int test_Tuple_GetItem_Boolean_Boundary_OutOfRange([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Tuple_GetItem_Boolean_Boundary_OutOfRange([[maybe_unused]] ani_env *env,
+                                                       [[maybe_unused]] ani_object object)
 {
     ani_boolean result = ANI_FALSE;
     ani_status status = env->TupleValue_GetItem_Boolean(nullptr, 100, &result);
@@ -132,12 +135,13 @@ ani_int test_Tuple_GetItem_Char_MultiThread(ani_env *env, [[maybe_unused]] ani_o
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Char != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Char != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -184,12 +188,13 @@ ani_int test_Tuple_GetItem_Byte_MultiThread(ani_env *env, [[maybe_unused]] ani_o
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Byte != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Byte != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -236,12 +241,13 @@ ani_int test_Tuple_GetItem_Short_MultiThread(ani_env *env, [[maybe_unused]] ani_
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Short != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Short != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -288,12 +294,13 @@ ani_int test_Tuple_GetItem_Int_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Int != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Int != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -340,12 +347,13 @@ ani_int test_Tuple_GetItem_Long_MultiThread(ani_env *env, [[maybe_unused]] ani_o
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Long != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Long != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -392,12 +400,13 @@ ani_int test_Tuple_GetItem_Float_MultiThread(ani_env *env, [[maybe_unused]] ani_
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Float != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Float != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -444,12 +453,13 @@ ani_int test_Tuple_GetItem_Double_MultiThread(ani_env *env, [[maybe_unused]] ani
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Double != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Double != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -496,12 +506,13 @@ ani_int test_Tuple_GetItem_Ref_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Ref != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_GetItem_Ref != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -548,12 +559,13 @@ ani_int test_Tuple_SetItem_Boolean_MultiThread(ani_env *env, [[maybe_unused]] an
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Boolean != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Boolean != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -585,12 +597,13 @@ ani_int test_Tuple_SetItem_Char_MultiThread(ani_env *env, [[maybe_unused]] ani_o
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Char != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Char != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -622,12 +635,13 @@ ani_int test_Tuple_SetItem_Byte_MultiThread(ani_env *env, [[maybe_unused]] ani_o
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Byte != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Byte != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -659,12 +673,13 @@ ani_int test_Tuple_SetItem_Short_MultiThread(ani_env *env, [[maybe_unused]] ani_
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Short != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Short != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -696,12 +711,13 @@ ani_int test_Tuple_SetItem_Int_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Int != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Int != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -733,12 +749,13 @@ ani_int test_Tuple_SetItem_Long_MultiThread(ani_env *env, [[maybe_unused]] ani_o
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Long != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Long != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -770,12 +787,13 @@ ani_int test_Tuple_SetItem_Float_MultiThread(ani_env *env, [[maybe_unused]] ani_
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Float != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Float != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -807,12 +825,13 @@ ani_int test_Tuple_SetItem_Double_MultiThread(ani_env *env, [[maybe_unused]] ani
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Double != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Double != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -844,12 +863,13 @@ ani_int test_Tuple_SetItem_Ref_MultiThread(ani_env *env, [[maybe_unused]] ani_ob
         threads.emplace_back([&successCount, vm]() {
             ani_env *tEnv = nullptr;
             ani_options options{0, nullptr};
-            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) == ANI_OK) {
-                if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Ref != nullptr) {
-                    successCount.fetch_add(1);
-                }
-                vm->DetachCurrentThread();
+            if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &tEnv) != ANI_OK) {
+                return;
             }
+            if (tEnv->c_api != nullptr && tEnv->c_api->TupleValue_SetItem_Ref != nullptr) {
+                successCount.fetch_add(1);
+            }
+            vm->DetachCurrentThread();
         });
     }
     for (auto &t : threads) {
@@ -874,25 +894,44 @@ ani_int test_Tuple_Combo([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_obj
     if (env->c_api == nullptr) {
         return ANI_FALSE;
     }
-    if (env->c_api->TupleValue_GetNumberOfItems == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Boolean == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Char == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Byte == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Short == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Int == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Long == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Float == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Double == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Ref == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Boolean == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Char == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Byte == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Short == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Int == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Long == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Float == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Double == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Ref == nullptr) return ANI_FALSE;
+    if (env->c_api->TupleValue_GetNumberOfItems == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Boolean == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Char == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Byte == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Short == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Int == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Long == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Float == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Double == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Ref == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Boolean == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Char == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Byte == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Short == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Int == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Long == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Float == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Double == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Ref == nullptr)
+        return ANI_FALSE;
     OH_LOG_INFO(LOG_APP, "testTag : TupleValue combo all c_api pointers valid");
     return ANI_TRUE;
 }
@@ -906,37 +945,58 @@ ani_int test_Tuple_Boundary_NegativeIndex([[maybe_unused]] ani_env *env, [[maybe
 
 ani_int test_Tuple_Boundary_AllGetTypePointers([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Boolean == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Char == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Byte == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Short == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Int == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Long == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Float == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Double == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Ref == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Boolean == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Char == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Byte == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Short == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Int == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Long == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Float == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Double == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_GetItem_Ref == nullptr)
+        return ANI_FALSE;
     OH_LOG_INFO(LOG_APP, "testTag : TupleValue all 9 GetItem c_api pointers valid");
     return ANI_TRUE;
 }
 
 ani_int test_Tuple_Boundary_AllSetTypePointers([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    if (env->c_api == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Boolean == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Char == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Byte == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Short == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Int == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Long == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Float == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Double == nullptr) return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Ref == nullptr) return ANI_FALSE;
+    if (env->c_api == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Boolean == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Char == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Byte == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Short == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Int == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Long == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Float == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Double == nullptr)
+        return ANI_FALSE;
+    if (env->c_api->TupleValue_SetItem_Ref == nullptr)
+        return ANI_FALSE;
     OH_LOG_INFO(LOG_APP, "testTag : TupleValue all 9 SetItem c_api pointers valid");
     return ANI_TRUE;
 }
 
-ani_int test_Tuple_GetNumberOfItems_Boundary_ZeroItems([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Tuple_GetNumberOfItems_Boundary_ZeroItems([[maybe_unused]] ani_env *env,
+                                                       [[maybe_unused]] ani_object object)
 {
     ani_size result = 99;
     ani_status status = env->TupleValue_GetNumberOfItems(nullptr, &result);
@@ -965,8 +1025,8 @@ ani_int test_Tuple_GetItem_Boundary_AllTypesRoundTrip([[maybe_unused]] ani_env *
     ani_status s8 = env->TupleValue_GetItem_Double(nullptr, 0, &dResult);
     ani_status s9 = env->TupleValue_GetItem_Ref(nullptr, 0, &rResult);
 
-    if (s1 != ANI_OK && s2 != ANI_OK && s3 != ANI_OK && s4 != ANI_OK &&
-        s5 != ANI_OK && s6 != ANI_OK && s7 != ANI_OK && s8 != ANI_OK && s9 != ANI_OK) {
+    if (s1 != ANI_OK && s2 != ANI_OK && s3 != ANI_OK && s4 != ANI_OK && s5 != ANI_OK && s6 != ANI_OK && s7 != ANI_OK &&
+        s8 != ANI_OK && s9 != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : TupleValue all 9 GetItem types fail on nullptr as expected");
         return ANI_TRUE;
     }
