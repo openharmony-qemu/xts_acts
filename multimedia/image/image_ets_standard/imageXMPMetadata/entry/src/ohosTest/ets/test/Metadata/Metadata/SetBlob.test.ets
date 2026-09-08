@@ -385,7 +385,7 @@ export default function SetBlobTest() {
         await metadataModify.setBlob(emptyArrayBuffer);
         expect().assertFail();
       } catch (error) {
-        expect(error.code === INVALID_PARAMETER).assertTrue();
+        expect(error.code == INVALID_PARAMETER).assertTrue();
       } finally {
         await imageSourceApi?.release();
         done();
@@ -414,7 +414,7 @@ export default function SetBlobTest() {
         await metadataModify.setBlob(null);
         expect().assertFail();
       } catch (error) {
-        expect(error.code === INVALID_PARAMETER).assertTrue();
+        expect(error.code == INVALID_PARAMETER).assertTrue();
       } finally {
         await imageSourceApi?.release();
         done();
@@ -443,7 +443,7 @@ export default function SetBlobTest() {
         await metadataModify.setBlob(undefined);
         expect().assertFail();
       } catch (error) {
-        expect(error.code === INVALID_PARAMETER).assertTrue();
+        expect(error.code == INVALID_PARAMETER).assertTrue();
       } finally {
         await imageSourceApi?.release();
         done();
