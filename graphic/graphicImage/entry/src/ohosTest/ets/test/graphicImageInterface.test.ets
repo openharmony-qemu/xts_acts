@@ -32,43 +32,43 @@ export default function graphicImageInterfaceTest() {
      */
     it('testCreatePremultipliedPixelMap_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
-      let msg = " =testCreatePremultipliedPixelMap_callback= "
-      console.log(" www data 1" + msg + " begin ")
-      const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
-      let bufferArr = new Uint8Array(color);
-      for (let i = 0; i < bufferArr.length; i += 4) {
+        let msg = " =testCreatePremultipliedPixelMap_callback= "
+        console.log(" www data 1" + msg + " begin ")
+        const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
           bufferArr[i] = 255;
           bufferArr[i+1] = 255;
           bufferArr[i+2] = 122;
           bufferArr[i+3] = 122;
-      }
-      let opts2: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 2}
-      let opts3: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 3}
-      console.log(" www data 1.1" + msg)
-      try {
-        console.log(msg + " succeed in try createPixelMapSync ")
-        let srcPixelmap = image.createPixelMapSync(color, opts2);
-        let dstPixelMap = image.createPixelMapSync(opts3);
-        console.log(" www data 1.2" + msg)
-        image.createPremultipliedPixelMap(dstPixelMap, srcPixelmap, (error: BusinessError) => {
-          if(error) {
+        }
+        let opts2: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 2}
+        let opts3: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 3}
+        console.log(" www data 1.1" + msg)
+        try {
+          console.log(msg + " succeed in try createPixelMapSync ")
+          let srcPixelmap = image.createPixelMapSync(color, opts2);
+          let dstPixelMap = image.createPixelMapSync(opts3);
+          console.log(" www data 1.2" + msg)
+          image.createPremultipliedPixelMap(dstPixelMap, srcPixelmap, (error: BusinessError) => {
+            if(error) {
               console.error(msg + ` Failed to convert pixelmap. code is ${error.code}, message is ${error.message} `);
               expect().assertFail()
               done()
-          } else {
+            } else {
               console.log(" www data 1.3" + msg)
               console.info(msg + ' Succeeded in converting pixelmap.');
               srcPixelmap.release();
               dstPixelMap.release();
               done()
-          }
-        })
-      } catch (err) {
-        console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
-        expect().assertFail()
-        done()
-      }
-    })
+            }
+          })
+        } catch (err) {
+          console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
+          expect().assertFail()
+          done()
+        }
+      })
 
     /**
      * @tc.name   testCreatePremultipliedPixelMap_promise
@@ -80,41 +80,41 @@ export default function graphicImageInterfaceTest() {
      */
     it('testCreatePremultipliedPixelMap_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
-      let msg = " =testCreatePremultipliedPixelMap_promise= "
-      console.log(" www data 2" + msg + " begin ")
-      const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
-      let bufferArr = new Uint8Array(color);
-      for (let i = 0; i < bufferArr.length; i += 4) {
+        let msg = " =testCreatePremultipliedPixelMap_promise= "
+        console.log(" www data 2" + msg + " begin ")
+        const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
           bufferArr[i] = 255;
           bufferArr[i+1] = 255;
           bufferArr[i+2] = 122;
           bufferArr[i+3] = 122;
-      }
-      let opts2: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 2}
-      let opts3: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 3}
-      console.log(" www data 2.1" + msg)
-      try {
-        console.log(msg + " succeed in try createPixelMapSync ")
-        let srcPixelmap = image.createPixelMapSync(color, opts2);
-        let dstPixelMap = image.createPixelMapSync(opts3);
-        console.log(" www data 2.2" + msg)
-        image.createPremultipliedPixelMap(dstPixelMap, srcPixelmap).then(async () => {
+        }
+        let opts2: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 2}
+        let opts3: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 3}
+        console.log(" www data 2.1" + msg)
+        try {
+          console.log(msg + " succeed in try createPixelMapSync ")
+          let srcPixelmap = image.createPixelMapSync(color, opts2);
+          let dstPixelMap = image.createPixelMapSync(opts3);
+          console.log(" www data 2.2" + msg)
+          image.createPremultipliedPixelMap(dstPixelMap, srcPixelmap).then(async () => {
             console.log(" www data 2.3" + msg)
             console.info(msg + ' Succeeded in converting pixelmap.');
             await srcPixelmap.release();
             await dstPixelMap.release();
             done()
-        }).catch((error: BusinessError) => {
+          }).catch((error: BusinessError) => {
             console.error(msg + ` Failed to convert pixelmap. code is ${error.code}, message is ${error.message}`);
             expect().assertFail()
             done()
-        })
-      } catch (err) {
-        console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
-        expect().assertFail()
-        done()
-      }
-    })
+          })
+        } catch (err) {
+          console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
+          expect().assertFail()
+          done()
+        }
+      })
 
     /**
      * @tc.name   testCreateUnpremultipliedPixelMap_callback
@@ -126,43 +126,43 @@ export default function graphicImageInterfaceTest() {
      */
     it('testCreateUnpremultipliedPixelMap_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
-      let msg = " =testCreateUnpremultipliedPixelMap_callback= "
-      console.log(" www data 3" + msg + " begin ")
-      const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
-      let bufferArr = new Uint8Array(color);
-      for (let i = 0; i < bufferArr.length; i += 4) {
+        let msg = " =testCreateUnpremultipliedPixelMap_callback= "
+        console.log(" www data 3" + msg + " begin ")
+        const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
           bufferArr[i] = 255;
           bufferArr[i+1] = 255;
           bufferArr[i+2] = 122;
           bufferArr[i+3] = 122;
-      }
-      let opts2: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 2}
-      let opts3: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 3}
-      console.log(" www data 3.1" + msg)
-      try {
-        console.log(msg + " succeed in try createPixelMapSync ")
-        let srcPixelmap = image.createPixelMapSync(color, opts2);
-        let dstPixelMap = image.createPixelMapSync(opts3);
-        console.log(" www data 3.2" + msg)
-        image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap, (error: BusinessError) => {
-          if(error) {
+        }
+        let opts2: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 2}
+        let opts3: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 3}
+        console.log(" www data 3.1" + msg)
+        try {
+          console.log(msg + " succeed in try createPixelMapSync ")
+          let srcPixelmap = image.createPixelMapSync(color, opts2);
+          let dstPixelMap = image.createPixelMapSync(opts3);
+          console.log(" www data 3.2" + msg)
+          image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap, (error: BusinessError) => {
+            if(error) {
               console.error(msg + ` Failed to convert pixelmap. code is ${error.code}, message is ${error.message} `);
               expect().assertFail()
               done()
-          } else {
+            } else {
               console.log(" www data 3.3" + msg)
               console.info(msg + ' Succeeded in converting pixelmap.');
               srcPixelmap.release();
               dstPixelMap.release();
               done()
-          }
-        })
-      } catch (err) {
-        console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
-        expect().assertFail()
-        done()
-      }
-    })
+            }
+          })
+        } catch (err) {
+          console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
+          expect().assertFail()
+          done()
+        }
+      })
 
     /**
      * @tc.name   testCreateUnpremultipliedPixelMap_promise
@@ -174,41 +174,41 @@ export default function graphicImageInterfaceTest() {
      */
     it('testCreateUnpremultipliedPixelMap_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
-      let msg = " =testCreateUnpremultipliedPixelMap_promise= "
-      console.log(" www data 4" + msg + " begin ")
-      const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
-      let bufferArr = new Uint8Array(color);
-      for (let i = 0; i < bufferArr.length; i += 4) {
+        let msg = " =testCreateUnpremultipliedPixelMap_promise= "
+        console.log(" www data 4" + msg + " begin ")
+        const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
           bufferArr[i] = 255;
           bufferArr[i+1] = 255;
           bufferArr[i+2] = 122;
           bufferArr[i+3] = 122;
-      }
-      let opts2: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 2}
-      let opts3: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 3}
-      console.log(" www data 4.1" + msg)
-      try {
-        console.log(msg + " succeed in try createPixelMapSync ")
-        let srcPixelmap = image.createPixelMapSync(color, opts2);
-        let dstPixelMap = image.createPixelMapSync(opts3);
-        console.log(" www data 4.2" + msg)
-        image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap).then(async () => {
+        }
+        let opts2: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 2}
+        let opts3: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 2, width: 2 } , alphaType: 3}
+        console.log(" www data 4.1" + msg)
+        try {
+          console.log(msg + " succeed in try createPixelMapSync ")
+          let srcPixelmap = image.createPixelMapSync(color, opts2);
+          let dstPixelMap = image.createPixelMapSync(opts3);
+          console.log(" www data 4.2" + msg)
+          image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap).then(async () => {
             console.log(" www data 4.3" + msg)
             console.info(msg + ' Succeeded in converting pixelmap.');
             await srcPixelmap.release();
             await dstPixelMap.release();
             done()
-        }).catch((error: BusinessError) => {
+          }).catch((error: BusinessError) => {
             console.error(msg + ` Failed to convert pixelmap. code is ${error.code}, message is ${error.message}`);
             expect().assertFail()
             done()
-        })
-      } catch (err) {
-        console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
-        expect().assertFail()
-        done()
-      }
-    })
+          })
+        } catch (err) {
+          console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
+          expect().assertFail()
+          done()
+        }
+      })
 
     /**
      * @tc.name   testWriteBufferToPixelsSync
@@ -227,14 +227,14 @@ export default function graphicImageInterfaceTest() {
         try {
           console.info(msg + ' Succeeded in createPixelMap.');
           if (pixelMap != undefined) {
-              pixelMap.writeBufferToPixelsSync(color);
-              console.info(msg + ' Succeeded in writeBufferToPixelsSync.');
-              await pixelMap.release();
-              done()
+            pixelMap.writeBufferToPixelsSync(color);
+            console.info(msg + ' Succeeded in writeBufferToPixelsSync.');
+            await pixelMap.release();
+            done()
           }else{
-              console.info(msg + ' pixelMap == undefined');
-              expect().assertFail()
-              done()
+            console.info(msg + ' pixelMap == undefined');
+            expect().assertFail()
+            done()
           }
         } catch (err) {
           console.log(msg + " Faild in writeBufferToPixelsSync " + JSON.stringify(err))
@@ -243,9 +243,9 @@ export default function graphicImageInterfaceTest() {
           done()
         }
       }).catch((error: BusinessError) => {
-          console.error(msg + ` Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
-          expect().assertFail()
-          done()
+        console.error(msg + ` Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail()
+        done()
       })
     })
 
@@ -336,29 +336,29 @@ export default function graphicImageInterfaceTest() {
      */
     it('testCreateAlphaPixelmapSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
-      let msg = " =testCreateAlphaPixelmapSync_image= "
-      const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
-      let opts: image.InitializationOptions = {
-        editable: true, pixelFormat: 3, size: {
-          height: 4, width: 6
+        let msg = " =testCreateAlphaPixelmapSync_image= "
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
+        let opts: image.InitializationOptions = {
+          editable: true, pixelFormat: 3, size: {
+            height: 4, width: 6
+          }
         }
-      }
-      try {
-        image.createPixelMap(color, opts).then(async (pixelMap: image.PixelMap) => {
-          let pixelmap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
-          await pixelmap.release();
-          done()
-        }).catch((error: BusinessError) => {
-          console.error(msg + `Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
+        try {
+          image.createPixelMap(color, opts).then(async (pixelMap: image.PixelMap) => {
+            let pixelmap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
+            await pixelmap.release();
+            done()
+          }).catch((error: BusinessError) => {
+            console.error(msg + `Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
+            expect().assertFail()
+            done()
+          })
+        } catch (err) {
+          console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
           expect().assertFail()
           done()
-        })
-      } catch (err) {
-        console.log(msg + " Faild in createPixelMapSync " + JSON.stringify(err))
-        expect().assertFail()
-        done()
-      }
-    })
+        }
+      })
 
     /**
      * @tc.name   testTranslateSync_image
@@ -527,7 +527,7 @@ export default function graphicImageInterfaceTest() {
         done()
       })
     })
-    
+
     /**
      * @tc.name    createPixelMapCb_InvalidSrcPixelFormat_0200
      * @tc.number  SUB_GRAPHIC_Image_createPixelMapCb_InvalidSrcPixelFormat_0200
@@ -838,7 +838,7 @@ export default function graphicImageInterfaceTest() {
           done();
         } catch (err) {
           console.info('www data createPixelMapUsingAllocator_InvalidSrcPixelFormat_0200 error ' + err.code);
-          expect(err.code).assertEqual(7600201);
+          expect(Number(err.code)).assertEqual(7600201);
           done();
         }
       })
@@ -868,7 +868,7 @@ export default function graphicImageInterfaceTest() {
           done();
         } catch (err) {
           console.info('www data createPixelMapUsingAllocator_InvalidPixelFormat_0200 error ' + err.code);
-          expect(err.code).assertEqual(7600201);
+          expect(Number(err.code)).assertEqual(7600201);
           done();
         }
       })
@@ -957,7 +957,7 @@ export default function graphicImageInterfaceTest() {
           done();
         } catch (err) {
           console.info('www data createPixelMapUsingAllocatorSync_InvalidSrcPixelFormat_0200 error ' + err.code);
-          expect(err.code).assertEqual(7600201);
+          expect(Number(err.code)).assertEqual(7600201);
           done();
         }
       })
@@ -987,7 +987,7 @@ export default function graphicImageInterfaceTest() {
           done();
         } catch (err) {
           console.info('www data createPixelMapUsingAllocatorSync_InvalidPixelFormat_0200 error ' + err.code);
-          expect(err.code).assertEqual(7600201);
+          expect(Number(err.code)).assertEqual(7600201);
           done();
         }
       })
@@ -1250,7 +1250,7 @@ export default function graphicImageInterfaceTest() {
           done();
         } catch (err) {
           console.info('www data getMetadata_InvalidHdrMetadataKey_0200 error ' + err.code);
-          expect(err.code).assertEqual(62980173);
+          expect(Number(err.code)).assertEqual(62980173);
           done();
         }
       })
@@ -1317,7 +1317,7 @@ export default function graphicImageInterfaceTest() {
           done();
         } catch (err) {
           console.info('www data createCroppedAndScaledPixelMapSync_InvalidRegion_0200 error ' + err.code);
-          expect(err.code).assertEqual(7600201);
+          expect(Number(err.code)).assertEqual(7600201);
           done();
         }
       })
@@ -1353,7 +1353,7 @@ export default function graphicImageInterfaceTest() {
           done();
         } catch (err) {
           console.info('www data createCroppedAndScaledPixelMapSync_InvalidRegion_0300 error ' + err.code);
-          expect(err.code).assertEqual(7600201);
+          expect(Number(err.code)).assertEqual(7600201);
           done();
         }
       })
@@ -1389,7 +1389,7 @@ export default function graphicImageInterfaceTest() {
           done();
         } catch (err) {
           console.info('www data createCroppedAndScaledPixelMap_InvalidRegion_0200 error ' + err.code);
-          expect(err.code).assertEqual(7600201);
+          expect(Number(err.code)).assertEqual(7600201);
           done();
         }
       })
@@ -1425,7 +1425,7 @@ export default function graphicImageInterfaceTest() {
           done();
         } catch (err) {
           console.info('www data createCroppedAndScaledPixelMap_InvalidRegion_0300 error ' + err.code);
-          expect(err.code).assertEqual(7600201);
+          expect(Number(err.code)).assertEqual(7600201);
           done();
         }
       })
