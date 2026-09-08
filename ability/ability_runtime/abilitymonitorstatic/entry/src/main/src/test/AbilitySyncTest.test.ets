@@ -53,6 +53,13 @@ export default function abilityTestSync(): void {
       commonEventManager.createSubscriber(commonEventSubscribeInfo).then((sub: commonEventManager.CommonEventSubscriber) => {
         console.log('====>createSubscribe success');
         commonEventManager.subscribe(sub, (err: BusinessError<void> | null, msg: commonEventManager.CommonEventData | undefined) => {
+          if (err && err.code) {
+            console.log('====>subscribe error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+            return;
+          }
+
           console.log('====>SUB_Ability_AbilityRuntime_AddAbilityMonitorSync_Static_0100--subscribe success, msg is:' + JSON.stringify(msg));
           commonEventManager.unsubscribe(sub);
           expect(CallbackFlag).assertEqual(1)
@@ -89,6 +96,10 @@ export default function abilityTestSync(): void {
           abilityName: 'MainAbility5'
         }).then(async (): Promise<void> => {
         console.log('====>SUB_Ability_AbilityRuntime_AddAbilityMonitorSync_Static_0100--startAbility success====>');
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
+        done();
       });
     })
 
@@ -134,6 +145,10 @@ export default function abilityTestSync(): void {
           abilityName: 'MainAbility5'
         }).then(async (): Promise<void> => {
         console.log('====>SUB_Ability_AbilityRuntime_AddAbilityMonitorSync_Static_0200--startAbility success====>');
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
+        done();
       })
     })
 
@@ -176,6 +191,10 @@ export default function abilityTestSync(): void {
           abilityName: 'MainAbility5'
         }).then(async (): Promise<void> => {
         console.log('====>SUB_Ability_AbilityRuntime_AddAbilityMonitorSync_Static_0300--startAbility success====>');
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
+        done();
       })
     })
 
@@ -216,6 +235,10 @@ export default function abilityTestSync(): void {
         abilityName: 'MainAbility5'
       }).then(async (): Promise<void> => {
         console.log('====>SUB_Ability_AbilityRuntime_AddAbilityMonitorSync_Static_0400--startAbility success====>');
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
+        done();
       })
     })
 
@@ -258,6 +281,10 @@ export default function abilityTestSync(): void {
           abilityName: 'MainAbility5'
         }).then(async (): Promise<void> => {
         console.log('====>SUB_Ability_AbilityRuntime_AddAbilityMonitorSync_Static_0500--startAbility success====>');
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
+        done();
       })
     })
 
@@ -300,6 +327,10 @@ export default function abilityTestSync(): void {
           abilityName: 'MainAbility5'
         }).then(async (): Promise<void> => {
         console.log('====>SUB_Ability_AbilityRuntime_AddAbilityMonitorSync_Static_0600--startAbility success====>');
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
+        done();
       })
     })
 
@@ -347,6 +378,10 @@ export default function abilityTestSync(): void {
         await Utils.msSleep(100);
         expect(CallbackFlag).assertEqual(0);
         done();
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
+        done();
       })
     })
 
@@ -364,6 +399,13 @@ export default function abilityTestSync(): void {
       commonEventManager.createSubscriber(commonEventSubscribeInfo).then((sub: commonEventManager.CommonEventSubscriber) => {
         console.log('====>createSubscribe success');
         commonEventManager.subscribe(sub, (err: BusinessError<void> | null, msg: commonEventManager.CommonEventData | undefined) => {
+          if (err && err.code) {
+            console.log('====>subscribe error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+            return;
+          }
+
           console.log('====>SUB_Ability_AbilityRuntime_RemoveAbilityMonitorSync_Static_0200--subscribe success, msg is:' + JSON.stringify(msg));
           commonEventManager.unsubscribe(sub);
           expect(CallbackFlag).assertEqual(0)
@@ -404,6 +446,10 @@ export default function abilityTestSync(): void {
         console.log('====>SUB_Ability_AbilityRuntime_RemoveAbilityMonitorSync_Static_0200 startAbility end====>');
         await Utils.msSleep(100);
         expect(CallbackFlag).assertEqual(0);
+        done();
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
         done();
       })
     })
@@ -450,6 +496,10 @@ export default function abilityTestSync(): void {
         await Utils.msSleep(100);
         expect(CallbackFlag).assertEqual(0);
         done();
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
+        done();
       })
     })
 
@@ -494,6 +544,10 @@ export default function abilityTestSync(): void {
         console.log('====>SUB_Ability_AbilityRuntime_RemoveAbilityMonitorSync_Static_0400 startAbility end====>');
         await Utils.msSleep(500);
         expect(CallbackFlag).assertEqual(0);
+        done();
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
         done();
       })
     })
@@ -540,6 +594,10 @@ export default function abilityTestSync(): void {
         await Utils.msSleep(100);
         expect(CallbackFlag).assertEqual(0);
         done();
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
+        done();
       })
     })
 
@@ -585,6 +643,10 @@ export default function abilityTestSync(): void {
         await Utils.msSleep(500);
         expect(CallbackFlag).assertEqual(0);
         done();
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
+        done();
       })
     })
 
@@ -597,6 +659,7 @@ export default function abilityTestSync(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitorSync_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let removedOk: boolean = false;
 
       let onAbilityCreate = () => {
         console.log('====>SUB_Ability_AbilityRuntime_RemoveAbilityMonitorSync_Static_0700 onAbilityCreate====>');
@@ -608,11 +671,13 @@ export default function abilityTestSync(): void {
           abilityName: 'WrongName',
           onAbilityCreate: onAbilityCreate
         })
+        removedOk = true;
         console.log('====>SUB_Ability_AbilityRuntime_RemoveAbilityMonitorSync_Static_0700 success====>');
-        expect(true).assertTrue()
+        expect(removedOk).assertTrue();
         done();
       } catch (err) {
-        console.log('====>SUB_Ability_AbilityRuntime_RemoveAbilityMonitorSync_Static_0700 fail====>');
+        console.log('====>SUB_Ability_AbilityRuntime_RemoveAbilityMonitorSync_Static_0700 fail====>' +
+          JSON.stringify(err));
         expect().assertFail()
         done();
       }
@@ -659,6 +724,10 @@ export default function abilityTestSync(): void {
         console.log('====>SUB_Ability_AbilityRuntime_RemoveAbilityMonitorSync_Static_0800 startAbility end====>');
         await Utils.msSleep(100);
         expect(CallbackFlag).assertEqual(0);
+        done();
+      }).catch((e: Error) => {
+        console.log('====>startAbility rejected: ' + JSON.stringify(e));
+        expect().assertFail();
         done();
       })
     })
