@@ -212,14 +212,14 @@ static void DumpHashValue(std::vector<uint8_t> &srcHashVal, uint8_t outputHashVa
 {
     OHPrintf("--------------output hash value----------------\n");
     for (int i = 1; i < SHA512_DIGEST_LENGTH + 1;i++) {
-        OHPrintf("%02x,", (unsigned)outputHashVal[i - 1]);
+        OHPrintf("%02x,", static_cast<unsigned>(outputHashVal[i - 1]));
         if (i % SIXTEEN == 0) {
             OHPrintf("\n");
         }
     }
     OHPrintf("--------------standard hash value----------------\n");
     for (int i = 1; i < SHA512_DIGEST_LENGTH + 1; i++) {
-        OHPrintf("%02x,", (unsigned)srcHashVal[i - 1]);
+        OHPrintf("%02x,", static_cast<unsigned>(srcHashVal[i - 1]));
         if (i % SIXTEEN == 0) {
             OHPrintf("\n");
         }
