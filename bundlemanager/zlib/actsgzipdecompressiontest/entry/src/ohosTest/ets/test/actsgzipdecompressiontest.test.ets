@@ -3161,13 +3161,13 @@ export default function ActsGzipDecompressionTest() {
             const emptyArgs: Array<string | number> = [];
             const nonEmptyArgs: Array<string | number> = ['Tom', 23];
             try {
-                let emptyArgsLen = await gzip.gzprintf(format, emptyArgs);
+                let emptyArgsLen = await gzip.gzprintf(format, ...emptyArgs);
                 expect(emptyArgsLen).assertEqual(21);
             } catch (errData) {
                 expect().assertFail();
             }
             try {
-                let withArgsLen = await gzip.gzprintf(format, nonEmptyArgs);
+                let withArgsLen = await gzip.gzprintf(format, ...nonEmptyArgs);
                 expect(withArgsLen).assertEqual(22);
             } catch (errData) {
                 expect().assertFail();
