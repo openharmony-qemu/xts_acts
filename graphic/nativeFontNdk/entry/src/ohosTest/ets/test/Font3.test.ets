@@ -590,5 +590,50 @@ export default function Font3Test() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testSetTextHighContrast001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTextHighContrast_0100
+     * @tc.desc   test OH_Drawing_SetTextHighContrast with all enum values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetTextHighContrast001',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = nativeFontNdk.testSetTextHighContrast001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testSetTextHighContrast002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTextHighContrast_0200
+     * @tc.desc   test OH_Drawing_SetTextHighContrast with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetTextHighContrast002',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let result: number = nativeFontNdk.testSetTextHighContrast002();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testTypographyUpdateDecorationColor001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyUpdateDecorationColor_0100
+     * @tc.desc   test OH_Drawing_TypographyUpdateDecorationColor with nullptr and valid typography
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTypographyUpdateDecorationColor001',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = nativeFontNdk.testTypographyUpdateDecorationColor001();
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }

@@ -355,3 +355,6 @@ export const ohDrawingGetTypographyStyleAttributeDoubleArray0700: () => number;
 export const ohDrawingGetTypographyStyleAttributeDoubleArray0800: () => number;
 export const ohDrawingGetTypographyStyleAttributeDoubleArray0900: () => number;
 export const ohDrawingSetTypographyStyleAttributeDoubleFirstLineHeadIndent0100: () => number;
+export const testSetTextHighContrast001: () => number;
+export const testSetTextHighContrast002: () => number;
+export const testTypographyUpdateDecorationColor001: () => number;

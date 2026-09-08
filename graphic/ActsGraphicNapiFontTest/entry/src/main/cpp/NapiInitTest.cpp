@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -276,8 +276,8 @@ static int ExecuteFontMgrMatchFamilyStyleCharacterCase(int32_t caseNum)
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterEmptyBcp47,
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight900,
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight100,
-        OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth1,
-        OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth9,
+        nullptr,
+        nullptr,
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterStyleOblique,
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterFamilyNameNull,
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterFamilyWeightExceedMaxValue,
@@ -290,11 +290,11 @@ static int ExecuteFontMgrMatchFamilyStyleCharacterCase(int32_t caseNum)
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight700,
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight800,
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Width1,
-        OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth2,
-        OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth3,
-        OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth4,
+        nullptr,
+        nullptr,
+        nullptr,
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth6,
-        OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth7,
+        nullptr,
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth8,
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Width9,
         OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterStyle0,
@@ -320,6 +320,55 @@ static napi_value OHDrawingFontMgrMatchFamilyStyleCharacter(napi_env env, napi_c
         napi_create_int32(env, result, &resultValue);
         return resultValue;
     });
+}
+
+// OHDrawingFontMgrMatchFamilyStyleCharacterWidth direct call functions (no caseNum dispatch)
+static napi_value OHDrawingFontMgrMatchFamilyStyleCharacterWidth1(napi_env env, napi_callback_info info)
+{
+    int result = OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth1();
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value OHDrawingFontMgrMatchFamilyStyleCharacterWidth2(napi_env env, napi_callback_info info)
+{
+    int result = OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth2();
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value OHDrawingFontMgrMatchFamilyStyleCharacterWidth3(napi_env env, napi_callback_info info)
+{
+    int result = OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth3();
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value OHDrawingFontMgrMatchFamilyStyleCharacterWidth4(napi_env env, napi_callback_info info)
+{
+    int result = OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth4();
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value OHDrawingFontMgrMatchFamilyStyleCharacterWidth7(napi_env env, napi_callback_info info)
+{
+    int result = OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth7();
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value OHDrawingFontMgrMatchFamilyStyleCharacterWidth9(napi_env env, napi_callback_info info)
+{
+    int result = OHOS::Rosen::Drawing::TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth9();
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
 }
 
 // NativeFontTest_FontMeasureText functions
@@ -904,6 +953,12 @@ static const napi_property_descriptor g_graphicDescriptors[] = {
     DECL_NAPI_DESC(OHDrawingCopyTypographyStyle),
     DECL_NAPI_DESC(OHDrawingFontMgrTest),
     DECL_NAPI_DESC(OHDrawingFontMgrMatchFamilyStyleCharacter),
+    DECL_NAPI_DESC(OHDrawingFontMgrMatchFamilyStyleCharacterWidth1),
+    DECL_NAPI_DESC(OHDrawingFontMgrMatchFamilyStyleCharacterWidth2),
+    DECL_NAPI_DESC(OHDrawingFontMgrMatchFamilyStyleCharacterWidth3),
+    DECL_NAPI_DESC(OHDrawingFontMgrMatchFamilyStyleCharacterWidth4),
+    DECL_NAPI_DESC(OHDrawingFontMgrMatchFamilyStyleCharacterWidth7),
+    DECL_NAPI_DESC(OHDrawingFontMgrMatchFamilyStyleCharacterWidth9),
     DECL_NAPI_DESC(NativeFontTest_FontMeasureText),
     DECL_NAPI_DESC(NativeDrawingRegisterFontTest),
     DECL_NAPI_DESC(OH_Drawing_FontCollectionTest),
