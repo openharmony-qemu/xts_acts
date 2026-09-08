@@ -889,49 +889,84 @@ ani_int test_Tuple_SetItem_Ref_Abnormal([[maybe_unused]] ani_env *env, [[maybe_u
 // Section 20: Combo and Boundary (6 tests)
 // ============================================================
 
+static ani_boolean TupleGetApiPointersValid(ani_env *env)
+{
+    if (env->c_api->TupleValue_GetItem_Boolean == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_GetItem_Char == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_GetItem_Byte == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_GetItem_Short == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_GetItem_Int == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_GetItem_Long == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_GetItem_Float == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_GetItem_Double == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_GetItem_Ref == nullptr) {
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
+static ani_boolean TupleSetApiPointersValid(ani_env *env)
+{
+    if (env->c_api->TupleValue_SetItem_Boolean == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_SetItem_Char == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_SetItem_Byte == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_SetItem_Short == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_SetItem_Int == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_SetItem_Long == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_SetItem_Float == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_SetItem_Double == nullptr) {
+        return ANI_FALSE;
+    }
+    if (env->c_api->TupleValue_SetItem_Ref == nullptr) {
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
 ani_int test_Tuple_Combo([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     if (env->c_api == nullptr) {
         return ANI_FALSE;
     }
-    if (env->c_api->TupleValue_GetNumberOfItems == nullptr)
+    if (env->c_api->TupleValue_GetNumberOfItems == nullptr) {
         return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Boolean == nullptr)
+    }
+    if (!TupleGetApiPointersValid(env)) {
         return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Char == nullptr)
+    }
+    if (!TupleSetApiPointersValid(env)) {
         return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Byte == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Short == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Int == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Long == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Float == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Double == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_GetItem_Ref == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Boolean == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Char == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Byte == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Short == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Int == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Long == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Float == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Double == nullptr)
-        return ANI_FALSE;
-    if (env->c_api->TupleValue_SetItem_Ref == nullptr)
-        return ANI_FALSE;
+    }
     OH_LOG_INFO(LOG_APP, "testTag : TupleValue combo all c_api pointers valid");
     return ANI_TRUE;
 }
@@ -1015,22 +1050,35 @@ ani_int test_Tuple_GetItem_Boundary_AllTypesRoundTrip([[maybe_unused]] ani_env *
     ani_double dResult = 0;
     ani_ref rResult{};
 
-    ani_status s1 = env->TupleValue_GetItem_Boolean(nullptr, 0, &bResult);
-    ani_status s2 = env->TupleValue_GetItem_Char(nullptr, 0, &cResult);
-    ani_status s3 = env->TupleValue_GetItem_Byte(nullptr, 0, &byResult);
-    ani_status s4 = env->TupleValue_GetItem_Short(nullptr, 0, &sResult);
-    ani_status s5 = env->TupleValue_GetItem_Int(nullptr, 0, &iResult);
-    ani_status s6 = env->TupleValue_GetItem_Long(nullptr, 0, &lResult);
-    ani_status s7 = env->TupleValue_GetItem_Float(nullptr, 0, &fResult);
-    ani_status s8 = env->TupleValue_GetItem_Double(nullptr, 0, &dResult);
-    ani_status s9 = env->TupleValue_GetItem_Ref(nullptr, 0, &rResult);
-
-    if (s1 != ANI_OK && s2 != ANI_OK && s3 != ANI_OK && s4 != ANI_OK && s5 != ANI_OK && s6 != ANI_OK && s7 != ANI_OK &&
-        s8 != ANI_OK && s9 != ANI_OK) {
-        OH_LOG_INFO(LOG_APP, "testTag : TupleValue all 9 GetItem types fail on nullptr as expected");
-        return ANI_TRUE;
+    if (env->TupleValue_GetItem_Boolean(nullptr, 0, &bResult) == ANI_OK) {
+        return ANI_FALSE;
     }
-    return ANI_FALSE;
+    if (env->TupleValue_GetItem_Char(nullptr, 0, &cResult) == ANI_OK) {
+        return ANI_FALSE;
+    }
+    if (env->TupleValue_GetItem_Byte(nullptr, 0, &byResult) == ANI_OK) {
+        return ANI_FALSE;
+    }
+    if (env->TupleValue_GetItem_Short(nullptr, 0, &sResult) == ANI_OK) {
+        return ANI_FALSE;
+    }
+    if (env->TupleValue_GetItem_Int(nullptr, 0, &iResult) == ANI_OK) {
+        return ANI_FALSE;
+    }
+    if (env->TupleValue_GetItem_Long(nullptr, 0, &lResult) == ANI_OK) {
+        return ANI_FALSE;
+    }
+    if (env->TupleValue_GetItem_Float(nullptr, 0, &fResult) == ANI_OK) {
+        return ANI_FALSE;
+    }
+    if (env->TupleValue_GetItem_Double(nullptr, 0, &dResult) == ANI_OK) {
+        return ANI_FALSE;
+    }
+    if (env->TupleValue_GetItem_Ref(nullptr, 0, &rResult) == ANI_OK) {
+        return ANI_FALSE;
+    }
+    OH_LOG_INFO(LOG_APP, "testTag : TupleValue all 9 GetItem types fail on nullptr as expected");
+    return ANI_TRUE;
 }
 
 #endif // ARKTS_ANI_TEST_TUPLECOVERED_H

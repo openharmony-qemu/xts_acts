@@ -865,8 +865,10 @@ ani_int test_ObjGetField_Ref_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
             ani_method ctor{};
             ani_object obj{};
             ani_field field{};
-            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK && tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
-                tEnv->Object_New(cls, ctor, &obj) == ANI_OK && tEnv->Class_FindField(cls, "stringField", &field) == ANI_OK) {
+            if (tEnv->FindClass(P8_FT_CLASS, &cls) == ANI_OK &&
+                tEnv->Class_FindMethod(cls, "<ctor>", ":", &ctor) == ANI_OK &&
+                tEnv->Object_New(cls, ctor, &obj) == ANI_OK &&
+                tEnv->Class_FindField(cls, "stringField", &field) == ANI_OK) {
                 ani_ref ref{};
                 tEnv->Object_GetField_Ref(obj, field, &ref);
             }

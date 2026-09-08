@@ -22,7 +22,7 @@
 #include <dlfcn.h>
 
 using AniCreateVmFunc = ani_status (*)(const ani_options *options, uint32_t version, ani_vm **result);
-using AniGetCreatedVMsFunc = ani_status (*)(ani_vm **vms_buffer, ani_size vms_buffer_length, ani_size *result);
+using AniGetCreatedVmListFunc = ani_status (*)(ani_vm **vmListBuffer, ani_size vmListBufferLength, ani_size *result);
 
 AniCreateVmFunc ResolveAniCreateVM()
 {
@@ -44,11 +44,11 @@ AniCreateVmFunc ResolveAniCreateVM()
     return reinterpret_cast<AniCreateVmFunc>(symbol);
 }
 
-AniGetCreatedVMsFunc ResolveAniGetCreatedVMs()
+AniGetCreatedVmListFunc ResolveAniGetCreatedVmList()
 {
     void *symbol = dlsym(RTLD_DEFAULT, "ANI_GetCreatedVMs");
     if (symbol != nullptr) {
-        return reinterpret_cast<AniGetCreatedVMsFunc>(symbol);
+        return reinterpret_cast<AniGetCreatedVmListFunc>(symbol);
     }
     void *handle = dlopen("libarkruntime.so", RTLD_NOW | RTLD_GLOBAL);
     if (handle == nullptr) {
@@ -61,7 +61,7 @@ AniGetCreatedVMsFunc ResolveAniGetCreatedVMs()
     if (symbol == nullptr) {
         return nullptr;
     }
-    return reinterpret_cast<AniGetCreatedVMsFunc>(symbol);
+    return reinterpret_cast<AniGetCreatedVmListFunc>(symbol);
 }
 
 ani_status CallANICreateVM(const ani_options *options, uint32_t version, ani_vm **result)
@@ -76,16 +76,16 @@ ani_status CallANICreateVM(const ani_options *options, uint32_t version, ani_vm 
     return createVm(options, version, result);
 }
 
-ani_status CallANIGetCreatedVMs(ani_vm **vms_buffer, ani_size vms_buffer_length, ani_size *result)
+ani_status CallANIGetCreatedVmList(ani_vm **vmListBuffer, ani_size vmListBufferLength, ani_size *result)
 {
-    AniGetCreatedVMsFunc getVMs = ResolveAniGetCreatedVMs();
-    if (getVMs == nullptr) {
+    AniGetCreatedVmListFunc getVmList = ResolveAniGetCreatedVmList();
+    if (getVmList == nullptr) {
         if (result != nullptr) {
             *result = 0;
         }
         return ANI_NOT_FOUND;
     }
-    return getVMs(vms_buffer, vms_buffer_length, result);
+    return getVmList(vmListBuffer, vmListBufferLength, result);
 }
 
 // ============================================================
@@ -123,11 +123,11 @@ ani_int test_VmCreateVM_Normal(ani_env *env, [[maybe_unused]] ani_object object)
 }
 
 // SUB_TC_ANI_AG_0100: ANI_GetCreatedVMs normal
-ani_int test_VmGetCreatedVMs_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_VmGetCreatedVmList_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_size actualCount = 0;
-    ani_vm *vms[16] = {};
-    ani_status status = CallANIGetCreatedVMs(vms, 16, &actualCount);
+    ani_vm *vmList[16] = {};
+    ani_status status = CallANIGetCreatedVmList(vmList, 16, &actualCount);
     if (status == ANI_NOT_FOUND) {
         OH_LOG_INFO(LOG_APP, "testTag : ANI_GetCreatedVMs symbol not found, verifying current VM");
         ani_vm *vm = nullptr;
@@ -147,7 +147,7 @@ ani_int test_VmGetCreatedVMs_Normal([[maybe_unused]] ani_env *env, [[maybe_unuse
     }
     ani_size checkCount = actualCount < 16 ? actualCount : 16;
     for (ani_size i = 0; i < checkCount; i++) {
-        if (vms[i] == nullptr) {
+        if (vmList[i] == nullptr) {
             OH_LOG_INFO(LOG_APP, "testTag : ANI_GetCreatedVMs returned null VM at index=%{public}zu", i);
             return ANI_FALSE;
         }
@@ -309,9 +309,9 @@ ani_int test_VmCreateVM_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]]
 }
 
 // SUB_TC_ANI_AG_0200: ANI_GetCreatedVMs abnormal (nullptr)
-ani_int test_VmGetCreatedVMs_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_VmGetCreatedVmList_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    ani_status status = CallANIGetCreatedVMs(nullptr, 10, nullptr);
+    ani_status status = CallANIGetCreatedVmList(nullptr, 10, nullptr);
     if (status != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : ANI_GetCreatedVMs abnormal returned error as expected, status=%{public}d",
                     status);
@@ -491,37 +491,37 @@ ani_int test_VmAttach_VersionMax(ani_env *env, [[maybe_unused]] ani_object objec
 }
 
 // SUB_TC_ANI_BV_AGCV_0100: ANI_GetCreatedVMs buffer_length=0
-ani_int test_VmGetCreatedVMs_BufferZero([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_VmGetCreatedVmList_BufferZero([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_size actualCount = 0;
-    ani_status status = CallANIGetCreatedVMs(nullptr, 0, &actualCount);
+    ani_status status = CallANIGetCreatedVmList(nullptr, 0, &actualCount);
     if (actualCount > 0) {
-        OH_LOG_INFO(LOG_APP, "testTag : GetCreatedVMs buffer=0 returned count=%{public}u", actualCount);
+        OH_LOG_INFO(LOG_APP, "testTag : createdVmList buffer=0 returned count=%{public}u", actualCount);
         return ANI_TRUE;
     }
     if (status != ANI_OK) {
-        OH_LOG_INFO(LOG_APP, "testTag : GetCreatedVMs buffer=0 returned error, status=%{public}d", status);
+        OH_LOG_INFO(LOG_APP, "testTag : createdVmList buffer=0 returned error, status=%{public}d", status);
         return ANI_TRUE;
     }
-    OH_LOG_INFO(LOG_APP, "testTag : GetCreatedVMs buffer=0 succeeded with count=0");
+    OH_LOG_INFO(LOG_APP, "testTag : createdVmList buffer=0 succeeded with count=0");
     return ANI_TRUE;
 }
 
 // SUB_TC_ANI_BV_AGCV_0200: ANI_GetCreatedVMs buffer too small
-ani_int test_VmGetCreatedVMs_BufferSmall([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_VmGetCreatedVmList_BufferSmall([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_size actualCount = 0;
-    ani_vm *vms[1] = {};
-    ani_status status = CallANIGetCreatedVMs(vms, 1, &actualCount);
+    ani_vm *vmList[1] = {};
+    ani_status status = CallANIGetCreatedVmList(vmList, 1, &actualCount);
     if (actualCount >= 1) {
-        OH_LOG_INFO(LOG_APP, "testTag : GetCreatedVMs buffer=1 returned count=%{public}u", actualCount);
+        OH_LOG_INFO(LOG_APP, "testTag : createdVmList buffer=1 returned count=%{public}u", actualCount);
         return ANI_TRUE;
     }
     if (status != ANI_OK) {
-        OH_LOG_INFO(LOG_APP, "testTag : GetCreatedVMs buffer=1 returned error, status=%{public}d", status);
+        OH_LOG_INFO(LOG_APP, "testTag : createdVmList buffer=1 returned error, status=%{public}d", status);
         return ANI_TRUE;
     }
-    OH_LOG_INFO(LOG_APP, "testTag : GetCreatedVMs buffer=1 returned count=%{public}u", actualCount);
+    OH_LOG_INFO(LOG_APP, "testTag : createdVmList buffer=1 returned count=%{public}u", actualCount);
     return ANI_TRUE;
 }
 

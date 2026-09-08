@@ -351,7 +351,6 @@ ani_int test_FindModule_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
             OH_LOG_INFO(LOG_APP, "testTag : FindModule multi-thread status=%{public}d", status);
             finishedCount.fetch_add(1);
             vm->DetachCurrentThread();
-
         });
     }
     for (auto &t : threads) {
@@ -390,7 +389,6 @@ ani_int test_FindNamespace_MultiThread(ani_env *env, [[maybe_unused]] ani_object
             OH_LOG_INFO(LOG_APP, "testTag : FindNamespace multi-thread status=%{public}d", status);
             finishedCount.fetch_add(1);
             vm->DetachCurrentThread();
-
         });
     }
     for (auto &t : threads) {
@@ -422,7 +420,6 @@ ani_int test_FindClass_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
             OH_LOG_INFO(LOG_APP, "testTag : FindClass multi-thread status=%{public}d", status);
             finishedCount.fetch_add(1);
             vm->DetachCurrentThread();
-
         });
     }
     for (auto &t : threads) {
@@ -454,7 +451,6 @@ ani_int test_FindEnum_MultiThread(ani_env *env, [[maybe_unused]] ani_object obje
             OH_LOG_INFO(LOG_APP, "testTag : FindEnum multi-thread status=%{public}d", status);
             finishedCount.fetch_add(1);
             vm->DetachCurrentThread();
-
         });
     }
     for (auto &t : threads) {

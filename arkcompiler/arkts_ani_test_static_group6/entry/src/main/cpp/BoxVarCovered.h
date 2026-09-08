@@ -1418,80 +1418,136 @@ ani_int test_UnboxDouble_Boundary_NaN([[maybe_unused]] ani_env *env, [[maybe_unu
     return std::isnan(out) ? ANI_TRUE : ANI_FALSE;
 }
 
+static ani_boolean RoundTripCheck_Boolean(ani_env *env)
+{
+    ani_object boxed{};
+    if (env->Primitive_Box_Boolean(ANI_TRUE, &boxed) != ANI_OK) {
+        return ANI_FALSE;
+    }
+    ani_boolean out = ANI_FALSE;
+    if (env->Primitive_Unbox_Boolean(boxed, &out) != ANI_OK || out != ANI_TRUE) {
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
+static ani_boolean RoundTripCheck_Byte(ani_env *env)
+{
+    ani_object boxed{};
+    if (env->Primitive_Box_Byte(P3_BYTE_VALUE, &boxed) != ANI_OK) {
+        return ANI_FALSE;
+    }
+    ani_byte out = 0;
+    if (env->Primitive_Unbox_Byte(boxed, &out) != ANI_OK || out != P3_BYTE_VALUE) {
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
+static ani_boolean RoundTripCheck_Char(ani_env *env)
+{
+    ani_object boxed{};
+    if (env->Primitive_Box_Char(static_cast<ani_char>('A'), &boxed) != ANI_OK) {
+        return ANI_FALSE;
+    }
+    ani_char out = 0;
+    if (env->Primitive_Unbox_Char(boxed, &out) != ANI_OK || out != static_cast<ani_char>('A')) {
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
+static ani_boolean RoundTripCheck_Short(ani_env *env)
+{
+    ani_object boxed{};
+    if (env->Primitive_Box_Short(P3_SHORT_VALUE, &boxed) != ANI_OK) {
+        return ANI_FALSE;
+    }
+    ani_short out = 0;
+    if (env->Primitive_Unbox_Short(boxed, &out) != ANI_OK || out != P3_SHORT_VALUE) {
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
+static ani_boolean RoundTripCheck_Int(ani_env *env)
+{
+    ani_object boxed{};
+    if (env->Primitive_Box_Int(P3_INT_VALUE, &boxed) != ANI_OK) {
+        return ANI_FALSE;
+    }
+    ani_int out = 0;
+    if (env->Primitive_Unbox_Int(boxed, &out) != ANI_OK || out != P3_INT_VALUE) {
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
+static ani_boolean RoundTripCheck_Long(ani_env *env)
+{
+    ani_object boxed{};
+    if (env->Primitive_Box_Long(12345678901234LL, &boxed) != ANI_OK) {
+        return ANI_FALSE;
+    }
+    ani_long out = 0;
+    if (env->Primitive_Unbox_Long(boxed, &out) != ANI_OK || out != 12345678901234LL) {
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
+static ani_boolean RoundTripCheck_Float(ani_env *env)
+{
+    ani_object boxed{};
+    if (env->Primitive_Box_Float(3.14159f, &boxed) != ANI_OK) {
+        return ANI_FALSE;
+    }
+    ani_float out = 0.0f;
+    if (env->Primitive_Unbox_Float(boxed, &out) != ANI_OK || out != 3.14159f) {
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
+static ani_boolean RoundTripCheck_Double(ani_env *env)
+{
+    ani_object boxed{};
+    if (env->Primitive_Box_Double(P3_DOUBLE_VALUE, &boxed) != ANI_OK) {
+        return ANI_FALSE;
+    }
+    ani_double out = 0.0;
+    if (env->Primitive_Unbox_Double(boxed, &out) != ANI_OK || out != P3_DOUBLE_VALUE) {
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
 ani_int test_BoxUnbox_RoundTrip([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    ani_object bb{};
-    if (env->Primitive_Box_Boolean(ANI_TRUE, &bb) != ANI_OK) {
+    if (!RoundTripCheck_Boolean(env)) {
         return ANI_FALSE;
     }
-    ani_boolean bv = ANI_FALSE;
-    if (env->Primitive_Unbox_Boolean(bb, &bv) != ANI_OK || bv != ANI_TRUE) {
+    if (!RoundTripCheck_Byte(env)) {
         return ANI_FALSE;
     }
-
-    ani_object k{};
-    if (env->Primitive_Box_Byte(P3_BYTE_VALUE, &k) != ANI_OK) {
+    if (!RoundTripCheck_Char(env)) {
         return ANI_FALSE;
     }
-    ani_byte kv = 0;
-    if (env->Primitive_Unbox_Byte(k, &kv) != ANI_OK || kv != P3_BYTE_VALUE) {
+    if (!RoundTripCheck_Short(env)) {
         return ANI_FALSE;
     }
-
-    ani_object cc{};
-    if (env->Primitive_Box_Char(static_cast<ani_char>('A'), &cc) != ANI_OK) {
+    if (!RoundTripCheck_Int(env)) {
         return ANI_FALSE;
     }
-    ani_char cv = 0;
-    if (env->Primitive_Unbox_Char(cc, &cv) != ANI_OK || cv != static_cast<ani_char>('A')) {
+    if (!RoundTripCheck_Long(env)) {
         return ANI_FALSE;
     }
-
-    ani_object ss{};
-    if (env->Primitive_Box_Short(P3_SHORT_VALUE, &ss) != ANI_OK) {
+    if (!RoundTripCheck_Float(env)) {
         return ANI_FALSE;
     }
-    ani_short sv = 0;
-    if (env->Primitive_Unbox_Short(ss, &sv) != ANI_OK || sv != P3_SHORT_VALUE) {
+    if (!RoundTripCheck_Double(env)) {
         return ANI_FALSE;
     }
-
-    ani_object ii{};
-    if (env->Primitive_Box_Int(P3_INT_VALUE, &ii) != ANI_OK) {
-        return ANI_FALSE;
-    }
-    ani_int iv = 0;
-    if (env->Primitive_Unbox_Int(ii, &iv) != ANI_OK || iv != P3_INT_VALUE) {
-        return ANI_FALSE;
-    }
-
-    ani_object ll{};
-    if (env->Primitive_Box_Long(12345678901234LL, &ll) != ANI_OK) {
-        return ANI_FALSE;
-    }
-    ani_long lv = 0;
-    if (env->Primitive_Unbox_Long(ll, &lv) != ANI_OK || lv != 12345678901234LL) {
-        return ANI_FALSE;
-    }
-
-    ani_object ff{};
-    if (env->Primitive_Box_Float(3.14159f, &ff) != ANI_OK) {
-        return ANI_FALSE;
-    }
-    ani_float fv = 0.0f;
-    if (env->Primitive_Unbox_Float(ff, &fv) != ANI_OK || fv != 3.14159f) {
-        return ANI_FALSE;
-    }
-
-    ani_object dd{};
-    if (env->Primitive_Box_Double(P3_DOUBLE_VALUE, &dd) != ANI_OK) {
-        return ANI_FALSE;
-    }
-    ani_double dv = 0.0;
-    if (env->Primitive_Unbox_Double(dd, &dv) != ANI_OK || dv != P3_DOUBLE_VALUE) {
-        return ANI_FALSE;
-    }
-
     OH_LOG_INFO(LOG_APP, "testTag : BoxUnbox_RoundTrip all 8 types succeeded");
     return ANI_TRUE;
 }
