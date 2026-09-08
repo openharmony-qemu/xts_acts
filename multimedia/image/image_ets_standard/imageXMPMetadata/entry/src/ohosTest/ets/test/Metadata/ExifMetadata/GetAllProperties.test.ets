@@ -16,12 +16,13 @@
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import { exifKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByMetadata } from '../ImageProperties.test'
+import { exifKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByArray } from '../ImageProperties.test'
  
 const TAG = 'getAllProperties';
  
-async function getAllPropertiesPromiseTest(done: Function, testName: string, path: string, repeat: number) {
+async function getAllPropertiesPromiseTest(done: Function, testName: string, path: string, repeat: number): Promise<boolean> {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let result = true;
   const resourceMgr = testContext.resourceManager;
   const rawFile = await resourceMgr.getRawFileContent(path);
   let ops: image.SourceOptions = {
@@ -32,18 +33,18 @@ async function getAllPropertiesPromiseTest(done: Function, testName: string, pat
   let exifMetadata = imageMetadata.exifMetadata;
   if (exifMetadata != null) {
       for(let i = 0; i < repeat; i++){
-          let result: boolean;
+          let verifyResult: boolean;
           if(path === "CUVAHdr.jpg"){
-          result = await verifyExifPropertiesByMetadata(exifMetadata, exifKeys, CUVAHdrExpectedValue, path, "exif getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByArray(exifMetadata, exifKeys, CUVAHdrExpectedValue, path, "exif getAllPropertiesPromiseTest");
           } else if (path === 'CUVAHdrMulti.jpg'){
-          result = await verifyExifPropertiesByMetadata(exifMetadata, exifKeys, CUVAHdrMultiExpectedValue, path, "exif getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByArray(exifMetadata, exifKeys, CUVAHdrMultiExpectedValue, path, "exif getAllPropertiesPromiseTest");
           } else {
-          result = await verifyExifPropertiesByMetadata(exifMetadata, exifKeys, testExifExpectedValue, path, "exif getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByArray(exifMetadata, exifKeys, testExifExpectedValue, path, "exif getAllPropertiesPromiseTest");
           }
-          expect(result).assertTrue();
+          result = result && verifyResult;
       }
   }
-  done();
+  retrun result;
 } 
  
 export default function ExifGetAllPropertiesTest() {
@@ -68,7 +69,7 @@ export default function ExifGetAllPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0001
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0001
-     * @tc.desc   getAllProperties
+     * @tc.desc   exif metadata getAllProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -77,7 +78,9 @@ export default function ExifGetAllPropertiesTest() {
         const testName = 'SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0001';
         try{
             const path = 'CUVAHdr.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 1);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -88,7 +91,7 @@ export default function ExifGetAllPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0002
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0002
-     * @tc.desc   getAllProperties
+     * @tc.desc   exif metadata getAllProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -97,7 +100,9 @@ export default function ExifGetAllPropertiesTest() {
         const testName = 'SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0002';
         try{
             const path = 'CUVAHdrMulti.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 1);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -108,7 +113,7 @@ export default function ExifGetAllPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0003
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0003
-     * @tc.desc   getAllProperties
+     * @tc.desc   exif metadata getAllProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -117,7 +122,9 @@ export default function ExifGetAllPropertiesTest() {
         const testName = 'SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0003';
         try {
             const path = 'test_exif.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 1);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -128,7 +135,7 @@ export default function ExifGetAllPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0004
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0004
-     * @tc.desc   getAllProperties
+     * @tc.desc   exif metadata getAllProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -137,7 +144,9 @@ export default function ExifGetAllPropertiesTest() {
         const testName = 'SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_ALL_PROPERTIES_0004';
         try {
             const path = 'test_exif.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 100);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 100);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();

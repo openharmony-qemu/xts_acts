@@ -1079,7 +1079,7 @@ const testExifExpectedValue = new Map<string, ModifyRule>([
 ])
 
 
-async function verifyExifPropertiesByMetadata(
+async function verifyExifPropertiesByArray(
     metadata: image.Metadata | image.ExifMetadata | image.MakerNoteHuaweiMetadata,
     keys: Array<image.PropertyKey> | null,
     expectedMap: Map<string, ModifyRule>,
@@ -1109,7 +1109,7 @@ async function verifyExifPropertiesByMetadata(
     return result;
 }
 
-async function verifyExifPropertiesByMetadata1(
+async function verifyExifPropertiesByMap(
     metadata: image.Metadata | image.ExifMetadata | image.MakerNoteHuaweiMetadata,
     keys: image.PropertyKey[] | null,
     expectedRecord: Record<image.PropertyKey, string | null>,
@@ -1152,8 +1152,8 @@ export{
     CUVAHdrExpectedValue,
     CUVAHdrMultiExpectedValue,
     testExifExpectedValue,
-    verifyExifPropertiesByMetadata,
-    verifyExifPropertiesByMetadata1,
+    verifyExifPropertiesByArray,
+    verifyExifPropertiesByMap,
     convert
 };
 

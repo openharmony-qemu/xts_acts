@@ -16,12 +16,13 @@
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import { makerNoteKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByMetadata } from '../ImageProperties.test'
+import { makerNoteKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByArray } from '../ImageProperties.test'
  
 const TAG = 'getAllProperties';
  
-async function getAllPropertiesPromiseTest(done: Function, testName: string, path: string, repeat: number) {
+async function getAllPropertiesPromiseTest(done: Function, testName: string, path: string, repeat: number): Promise<boolean> {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let result = true;
   const resourceMgr = testContext.resourceManager;
   const rawFile = await resourceMgr.getRawFileContent(path);
   let ops: image.SourceOptions = {
@@ -32,19 +33,19 @@ async function getAllPropertiesPromiseTest(done: Function, testName: string, pat
   let makerNoteHuaweiMetadata = imageMetadata.makerNoteHuaweiMetadata;
   if (makerNoteHuaweiMetadata != null) {
       for(let i = 0; i < repeat; i++){
-          let result: boolean;
+          let verifyResult: boolean;
           if(path === "CUVAHdr.jpg"){
-          result = await verifyExifPropertiesByMetadata(makerNoteHuaweiMetadata, makerNoteKeys, CUVAHdrExpectedValue, path, "makernote getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByArray(makerNoteHuaweiMetadata, makerNoteKeys, CUVAHdrExpectedValue, path, "makernote getAllPropertiesPromiseTest");
           } else if (path === 'CUVAHdrMulti.jpg'){
-          result = await verifyExifPropertiesByMetadata(makerNoteHuaweiMetadata, makerNoteKeys, CUVAHdrMultiExpectedValue, path, "makernote getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByArray(makerNoteHuaweiMetadata, makerNoteKeys, CUVAHdrMultiExpectedValue, path, "makernote getAllPropertiesPromiseTest");
           } else {
-          result = await verifyExifPropertiesByMetadata(makerNoteHuaweiMetadata, makerNoteKeys, testExifExpectedValue, path, "makernote getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByArray(makerNoteHuaweiMetadata, makerNoteKeys, testExifExpectedValue, path, "makernote getAllPropertiesPromiseTest");
           }
-          console.info(TAG, `get expect all result: ${result}`);
-          expect(result).assertTrue();
+          console.info(TAG, `get expect all result: ${verifyResult}`);
+          result = verifyResult && result;
       } 
   }
-  done();
+  return result;
 } 
  
 export default function MakerNoteGetAllPropertiesTest() {
@@ -78,7 +79,9 @@ export default function MakerNoteGetAllPropertiesTest() {
         const testName = 'SUB_MULTIMEDIA_IMAGE_MAKER_NOTE_METADATA_GET_ALL_PROPERTIES_0001';
         try{
             const path = 'CUVAHdr.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 1);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -98,7 +101,9 @@ export default function MakerNoteGetAllPropertiesTest() {
             const testName = 'SUB_MULTIMEDIA_IMAGE_MAKER_NOTE_METADATA_GET_ALL_PROPERTIES_0002';
         try{
             const path = 'CUVAHdrMulti.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 1);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -118,7 +123,9 @@ export default function MakerNoteGetAllPropertiesTest() {
             const testName = 'SUB_MULTIMEDIA_IMAGE_MAKER_NOTE_METADATA_GET_ALL_PROPERTIES_0003';
         try {
             const path = 'test_exif.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 1);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -138,7 +145,9 @@ export default function MakerNoteGetAllPropertiesTest() {
             const testName = 'SUB_MULTIMEDIA_IMAGE_MAKER_NOTE_METADATA_GET_ALL_PROPERTIES_0004';
         try {
             const path = 'test_exif.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 100);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 100);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();

@@ -16,13 +16,14 @@
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import {CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByMetadata} from '../ImageProperties.test'
+import {CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByArray} from '../ImageProperties.test'
  
 const TAG = 'clone';
  
 async function clonePromiseTest(done: Function, testName: string, path: string,
-  attributeKey: Array<image.PropertyKey> | null, repeat: number) {
+  attributeKey: Array<image.PropertyKey> | null, repeat: number): Promise<boolean> {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    let result = true;
     const resourceMgr = testContext.resourceManager;
     const rawFile = await resourceMgr.getRawFileContent(path);
     let ops: image.SourceOptions = {
@@ -34,18 +35,18 @@ async function clonePromiseTest(done: Function, testName: string, path: string,
     if (exifMetadata != null) {
         for(let i = 0; i < repeat; i++){
             let new_metadata = await exifMetadata.clone();
-            let result: boolean;
+            let verifyResult: boolean;
             if(path === "CUVAHdr.jpg"){
-            result = await verifyExifPropertiesByMetadata(new_metadata, attributeKey, CUVAHdrExpectedValue);
+            verifyResult = await verifyExifPropertiesByArray(new_metadata, attributeKey, CUVAHdrExpectedValue);
             } else if (path === 'CUVAHdrMulti.jpg'){
-            result = await verifyExifPropertiesByMetadata(new_metadata, attributeKey, CUVAHdrMultiExpectedValue);
+            verifyResult = await verifyExifPropertiesByArray(new_metadata, attributeKey, CUVAHdrMultiExpectedValue);
             } else {
-            result = await verifyExifPropertiesByMetadata(new_metadata, attributeKey, testExifExpectedValue);
+            verifyResult = await verifyExifPropertiesByArray(new_metadata, attributeKey, testExifExpectedValue);
             }
-            expect(result).assertTrue();
+            result = result && verifyResult;
         }
     }
-    done();
+    retrun result;
 }
  
 export default function ExifCloneTest() {
@@ -70,7 +71,7 @@ export default function ExifCloneTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_CLONE_0001
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_CLONE_0001
-     * @tc.desc   clone
+     * @tc.desc   exif metadata clone
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -80,7 +81,9 @@ export default function ExifCloneTest() {
         try {
             const path = 'CUVAHdr.jpg';
             let attributeKey = [image.PropertyKey.IMAGE_WIDTH, image.PropertyKey.IMAGE_LENGTH];
-            await clonePromiseTest(done, testName, path, attributeKey, 1);
+            let result = await clonePromiseTest(done, testName, path, attributeKey, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -91,7 +94,7 @@ export default function ExifCloneTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_CLONE_0002
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_CLONE_0002
-     * @tc.desc   clone
+     * @tc.desc   exif metadata clone
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -101,7 +104,9 @@ export default function ExifCloneTest() {
         try {
             const path = 'CUVAHdrMulti.jpg';
             let attributeKey = [image.PropertyKey.IMAGE_WIDTH];
-            await clonePromiseTest(done, testName, path, attributeKey, 1);
+            let result = await clonePromiseTest(done, testName, path, attributeKey, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -112,7 +117,7 @@ export default function ExifCloneTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_CLONE_0003
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_CLONE_0003
-     * @tc.desc   clone
+     * @tc.desc   exif metadata clone
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -122,7 +127,9 @@ export default function ExifCloneTest() {
         try {
             const path = 'test_exif.jpg';
             let attributeKey = [image.PropertyKey.IMAGE_LENGTH];
-            await clonePromiseTest(done, testName, path, attributeKey, 1);
+            let result = await clonePromiseTest(done, testName, path, attributeKey, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -133,7 +140,7 @@ export default function ExifCloneTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_CLONE_0004
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_CLONE_0004
-     * @tc.desc   clone
+     * @tc.desc   exif metadata clone
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -143,7 +150,9 @@ export default function ExifCloneTest() {
         try {
             const path = 'test_exif.jpg';
             let attributeKey = [image.PropertyKey.IMAGE_LENGTH];
-            await clonePromiseTest(done, testName, path, attributeKey, 100);
+            let result = await clonePromiseTest(done, testName, path, attributeKey, 100);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();

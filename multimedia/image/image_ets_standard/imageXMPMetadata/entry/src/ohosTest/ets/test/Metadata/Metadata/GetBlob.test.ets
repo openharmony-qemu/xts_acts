@@ -153,20 +153,18 @@ export default function GetBlobTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_METADATA_GETBLOB_PROMISE_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_METADATA_GETBLOB_PROMISE_0100"
-      let result = false;
       const imageSourceApi = await getImageSource("test_exif_v2.jpg", "fd");
       let metadata = await getMetadataFromPicture(imageSourceApi);
       try {
         let exifArrayBuffer: ArrayBuffer = await metadata.getBlob();
         console.info(`${testTag} Read successfully for exifArrayBuffer: ${exifArrayBuffer}`);
-        result = (exifArrayBuffer != undefined && exifArrayBuffer.byteLength > 0);
+        expect(exifArrayBuffer != undefined && exifArrayBuffer.byteLength > 0).assertTrue();
+        done();
       } catch (err) {
         console.error(`${testTag} Error processing err: ${err}`);
-        result = false;
+        expect(false).assertTrue();
+        done();
       }
-      console.info(`${testTag} getImagePropertyArray result is: ${result}`);
-      expect(result).assertTrue();
-      done();
     });
  
     /**
@@ -183,7 +181,6 @@ export default function GetBlobTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_METADATA_GETBLOB_PROMISE_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_METADATA_GETBLOB_PROMISE_0200"
-      let result = false;
       let fileName = "test_exif_v2.heic";
       if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
         console.info(`${testTag} device is not support decode heif!`);
@@ -194,14 +191,14 @@ export default function GetBlobTest() {
         try {
           let exifArrayBuffer: ArrayBuffer = await metadata.getBlob();
           console.info(`${testTag} Read successfully for exifArrayBuffer: ${exifArrayBuffer}`);
-          result = (exifArrayBuffer != undefined && exifArrayBuffer.byteLength > 0);
+          expect(exifArrayBuffer != undefined && exifArrayBuffer.byteLength > 0).assertTrue();
+          done();
         } catch (err) {
           console.error(`${testTag} Error processing err: ${err}`);
-          result = false;
+          expect(false).assertTrue();
+          done();
         }
-        console.info(`${testTag} getBlob result is: ${result}`);
-        expect(result).assertTrue();
-        done();
+        
       }
     });
  
@@ -235,15 +232,15 @@ export default function GetBlobTest() {
             console.info(`${testTag} Read successfully for exifArrayBuffer: ${exifArrayBuffer}`);
             result = result && exifArrayBuffer != undefined;
           }
+          expect(result).assertTrue();
+          done();
         } catch (err) {
           console.error(`${testTag} Error processing err: ${err}`);
-          result = false;
+          expect(false).assertTrue();
+          done();
         } finally {
           await imageSourceApi?.release();
         }
-        console.info(`${testTag} getBlob result is: ${result}`);
-        expect(result).assertTrue();
-        done();
       }
     });
  
@@ -271,13 +268,14 @@ export default function GetBlobTest() {
             console.info(`${testTag} Read successfully for exifArrayBuffer: ${exifArrayBuffer}`);
             result = (exifArrayBuffer != undefined && exifArrayBuffer.byteLength > 0);
         }
+        expect(result).assertTrue();
+        done();
       } catch (err) {
         console.error(`${testTag} Error processing err: ${err}`);
         result = false;
+        expect(false).assertTrue();
+        done();
       }
-      console.info(`${testTag} getImagePropertyArray result is: ${result}`);
-      expect(result).assertTrue();
-      done();
     });
  
   });

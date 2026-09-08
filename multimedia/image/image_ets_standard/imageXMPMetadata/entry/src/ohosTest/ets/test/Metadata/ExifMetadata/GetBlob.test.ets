@@ -147,20 +147,18 @@ export default function ExifGetBlobTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GETBLOB_PROMISE_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GETBLOB_PROMISE_0100"
-      let result = true;
       const imageSourceApi = await getImageSource("test_exif_v2.jpg", "fd");
       try {
         const imageMetadata: image.ImageMetadata = await imageSourceApi.readImageMetadata();
         let exifArrayBuffer: ArrayBuffer = await imageMetadata.exifMetadata!.getBlob();
         console.info(`${testTag} readImageMetadata successfully for exifArrayBuffer: ${exifArrayBuffer}`);
-        result = (exifArrayBuffer != undefined && exifArrayBuffer!.byteLength > 0);
+        expect(exifArrayBuffer != undefined && exifArrayBuffer!.byteLength > 0).assertTrue();
+        done();
       } catch (err) {
         console.error(`${testTag} Error processing err: ${err}`);
-        result = false;
+        expect(false).assertTrue();
+        done();
       }
-      console.info(`${testTag} readImageMetadata getBlob result is: ${result}`);
-      expect(result).assertTrue();
-      done();
     });
  
     /**
@@ -177,7 +175,6 @@ export default function ExifGetBlobTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GETBLOB_PROMISE_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GETBLOB_PROMISE_0200"
-      let result = true;
       let fileName = "test_exif_v2.heic";
       if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
         console.info(`${testTag} device is not support decode heif!`);
@@ -188,14 +185,14 @@ export default function ExifGetBlobTest() {
           const imageMetadata: image.ImageMetadata = await imageSourceApi.readImageMetadata();
           let exifArrayBuffer: ArrayBuffer = await imageMetadata.exifMetadata!.getBlob();
           console.info(`${testTag} readImageMetadata successfully for exifArrayBuffer: ${exifArrayBuffer}`);
-          result = (exifArrayBuffer != undefined && exifArrayBuffer!.byteLength > 0);
+          expect(exifArrayBuffer != undefined && exifArrayBuffer!.byteLength > 0).assertTrue();
+          done();
         } catch (err) {
           console.error(`${testTag} Error processing err: ${err}`);
           result = false;
+          expect(false).assertTrue();
+          done();
         }
-        console.info(`${testTag} getBlob result is: ${result}`);
-        expect(result).assertTrue();
-        done();
       }
     });
  
@@ -225,14 +222,13 @@ export default function ExifGetBlobTest() {
             console.info(`${testTag} readImageMetadata successfully for exifArrayBuffer: ${exifArrayBuffer}`);
             result = (exifArrayBuffer != undefined && exifArrayBuffer!.byteLength > 0) && result; 
         }
+        expect(result).assertTrue();
+        done();
       } catch (err) {
         console.error(`${testTag} Error processing err: ${err}`);
-        result = false;
+        expect(false).assertTrue();
+        done();
       }
-      console.info(`${testTag} readImageMetadata getBlob result is: ${result}`);
-      expect(result).assertTrue();
-      done();
     });
- 
   });
 }

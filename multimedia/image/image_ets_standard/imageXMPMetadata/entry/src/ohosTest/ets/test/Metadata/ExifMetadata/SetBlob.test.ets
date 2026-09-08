@@ -56,20 +56,6 @@ const PROPERTY_NOT_EXIST = 7700204;
 const INVALID_PARAMETER = 7600206;
 type MetadataScalar = string | number | number[] | object | undefined | null | boolean;
  
-function handleError(testTag: string, err: GenericError | Array<GenericError>, expectedErrorCode: number): boolean {
-  if (Array.isArray(err)) {
-    for (let error of err) {
-      console.error(`${testTag} failed.err: ${error.code} errorMessage: ${error.message}`);
-      return error.code == expectedErrorCode;
-    }
-  } else {
-    let error: GenericError = err;
-    console.error(`${testTag} failed.err: ${error.code} errorMessage: ${error.message}`);
-    return error.code == expectedErrorCode;
-  }
-  return false;
-}
- 
 export default function ExifSetBlobTest() {
   describe("ExifSetBlobTest", () => {
  
@@ -316,13 +302,13 @@ export default function ExifSetBlobTest() {
       }
       try {
         await exifMetadata.setBlob(emptyArrayBuffer);
+        expect().assertFail();
       } catch (error) {
-        result = handleError(testTag, error as GenericError | Array<GenericError>, INVALID_PARAMETER);
+        expect(error.code === INVALID_PARAMETER).assertTrue();
       } finally {
         await imageSourceApi?.release();
+        done();
       }
-      expect(result).assertTrue();
-      done();
     });
  
     /**
@@ -352,14 +338,13 @@ export default function ExifSetBlobTest() {
       }
       try {
         await exifMetadata.setBlob(null);
+        expect().assertFail();
       } catch (error) {
-        result = handleError(testTag, error as GenericError | Array<GenericError>, INVALID_PARAMETER);
+        expect(error.code === INVALID_PARAMETER).assertTrue();
       } finally {
         await imageSourceApi?.release();
+        done();
       }
-      expect(result).assertTrue();
-      done();
- 
     });
  
     /**
@@ -389,13 +374,13 @@ export default function ExifSetBlobTest() {
       }
       try {
         await exifMetadata.setBlob(undefined);
+        expect().assertFail();
       } catch (error) {
-        result = handleError(testTag, error as GenericError | Array<GenericError>, INVALID_PARAMETER);
+        expect(error.code === INVALID_PARAMETER).assertTrue();
       } finally {
         await imageSourceApi?.release();
+        done();
       }
-      expect(result).assertTrue();
-      done();
     });
  
   });

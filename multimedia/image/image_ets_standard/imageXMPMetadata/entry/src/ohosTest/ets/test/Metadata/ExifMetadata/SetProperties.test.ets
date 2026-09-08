@@ -16,13 +16,14 @@
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import {CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByMetadata1, convert} from '../ImageProperties.test'
+import {CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByMap, convert} from '../ImageProperties.test'
 
 const TAG = 'setProperties';
  
 async function setPropertiesPromiseTest(done: Function, testName: string, path: string,
-  setkey: Map<image.PropertyKey, string | null>, repeat: number) {
+  setkey: Map<image.PropertyKey, string | null>, repeat: number): Promise<boolean> {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    let result = true;
     const resourceMgr = testContext.resourceManager;
     const rawFile = await resourceMgr.getRawFileContent(path);
     let ops: image.SourceOptions = {
@@ -38,11 +39,11 @@ async function setPropertiesPromiseTest(done: Function, testName: string, path: 
             let record = await convert(setkey);
             await exifMetadata.setProperties(record);
             const allKeys: image.PropertyKey[] = Object.keys(record) as image.PropertyKey[];
-            let result = await verifyExifPropertiesByMetadata1(exifMetadata, allKeys, record);
-            expect(result).assertTrue();
+            let verifyResult = await verifyExifPropertiesByMap(exifMetadata, allKeys, record);
+            result = verifyResult && result;
         }
     }
-    done();
+    return result;
 }
  
 async function setPropertiesAbnormalPromiseTest(done: Function, testName: string, path: string,
@@ -93,7 +94,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0001
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0001
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -105,7 +106,9 @@ export default function ExifSetPropertiesTest() {
             let setkey: Map<image.PropertyKey, string | null> = new Map();
             setkey[image.PropertyKey.IMAGE_WIDTH] = "300";
             setkey[image.PropertyKey.IMAGE_LENGTH] = "300";
-            await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            let result = await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -116,7 +119,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0002
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0002
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -128,7 +131,9 @@ export default function ExifSetPropertiesTest() {
             let setkey: Map<image.PropertyKey, string | null> = new Map();
             setkey[image.PropertyKey.IMAGE_WIDTH] = "1000";
             setkey[image.PropertyKey.IMAGE_LENGTH] = "1000";
-            await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            let result = await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -139,7 +144,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0003
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0003
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -151,7 +156,9 @@ export default function ExifSetPropertiesTest() {
             let setkey: Map<image.PropertyKey, string | null> = new Map();
             setkey[image.PropertyKey.IMAGE_WIDTH] = "0";
             setkey[image.PropertyKey.IMAGE_LENGTH] = "1000";
-            await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            let result = await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -162,7 +169,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0004
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0004
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -174,7 +181,9 @@ export default function ExifSetPropertiesTest() {
             let setkey: Map<image.PropertyKey, string | null> = new Map();
             setkey[image.PropertyKey.IMAGE_WIDTH] = "1000";
             setkey[image.PropertyKey.IMAGE_LENGTH] = "0";
-            await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            let result = await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -185,7 +194,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0005
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0005
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -197,7 +206,9 @@ export default function ExifSetPropertiesTest() {
             let setkey: Map<image.PropertyKey, string | null> = new Map();
             setkey[image.PropertyKey.IMAGE_WIDTH] = "0";
             setkey[image.PropertyKey.IMAGE_LENGTH] = "0";
-            await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            let result = await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -208,7 +219,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0006
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0006
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -220,7 +231,9 @@ export default function ExifSetPropertiesTest() {
             let setkey: Map<image.PropertyKey, string | null> = new Map();
             setkey[image.PropertyKey.IMAGE_WIDTH] = "200";
             setkey[image.PropertyKey.IMAGE_LENGTH] = "300";
-            await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            let result = await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -231,7 +244,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0007
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0007
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -241,7 +254,9 @@ export default function ExifSetPropertiesTest() {
         try{
             const path = 'test_exif.jpg';
             let setkey: Map<image.PropertyKey, string | null> = new Map();
-            await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            let result = await setPropertiesPromiseTest(done, testName, path, setkey, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -252,7 +267,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0008
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_0008
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -264,7 +279,9 @@ export default function ExifSetPropertiesTest() {
             let setkey: Map<image.PropertyKey, string | null> = new Map();
             setkey[image.PropertyKey.IMAGE_WIDTH] = "200";
             setkey[image.PropertyKey.IMAGE_LENGTH] = "300";
-            await setPropertiesPromiseTest(done, testName, path, setkey, 100);
+            let result = await setPropertiesPromiseTest(done, testName, path, setkey, 100);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -275,7 +292,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0001
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0001
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -295,7 +312,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0002
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0002
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -314,7 +331,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0003
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0003
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -333,7 +350,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0004
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0004
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -352,7 +369,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0005
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0005
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -369,7 +386,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0006
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0006
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -386,7 +403,7 @@ export default function ExifSetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0007
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_SETPROPERTIES_ERROR_TEST_0007
-     * @tc.desc   setProperties
+     * @tc.desc   exif metadata setProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

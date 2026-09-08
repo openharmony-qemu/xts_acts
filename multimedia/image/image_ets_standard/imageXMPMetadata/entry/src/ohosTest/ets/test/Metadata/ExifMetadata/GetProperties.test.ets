@@ -16,12 +16,12 @@
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import { exifKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByMetadata } from '../ImageProperties.test'
+import { exifKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByArray } from '../ImageProperties.test'
  
 const TAG = 'getProperties';
  
 async function getPropertiesPromiseTest(done: Function, testName: string, path: string,
-  attributeKey: Array<image.PropertyKey> | null, repeat: number) {
+  attributeKey: Array<image.PropertyKey> | null, repeat: number): Promise<boolean> {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const resourceMgr = testContext.resourceManager;
     const rawFile = await resourceMgr.getRawFileContent(path);
@@ -33,18 +33,18 @@ async function getPropertiesPromiseTest(done: Function, testName: string, path: 
     let exifMetadata = imageMetadata.exifMetadata;
     if (exifMetadata != null) {
       for(let i = 0; i < repeat; i++){
-        let result: boolean;
+        let verifyResult: boolean;
         if(path === "CUVAHdr.jpg"){
-        result = await verifyExifPropertiesByMetadata(exifMetadata, attributeKey, CUVAHdrExpectedValue);
+        verifyResult = await verifyExifPropertiesByArray(exifMetadata, attributeKey, CUVAHdrExpectedValue);
         } else if (path === 'CUVAHdrMulti.jpg'){
-        result = await verifyExifPropertiesByMetadata(exifMetadata, attributeKey, CUVAHdrMultiExpectedValue);
+        verifyResult = await verifyExifPropertiesByArray(exifMetadata, attributeKey, CUVAHdrMultiExpectedValue);
         } else {
-        result = await verifyExifPropertiesByMetadata(exifMetadata, attributeKey, testExifExpectedValue);
+        verifyResult = await verifyExifPropertiesByArray(exifMetadata, attributeKey, testExifExpectedValue);
         }
-        expect(result).assertTrue();
+        result = result && verifyResult;
       }
     }
-    done();
+    return result;
 }
  
 async function getPropertiesAbnormalPromiseTest(done: Function, testName: string, path: string,
@@ -98,7 +98,7 @@ export default function ExifGetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_0001
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_0001
-     * @tc.desc   getProperties
+     * @tc.desc   exif metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -108,7 +108,9 @@ export default function ExifGetPropertiesTest() {
       try{
         const path = 'CUVAHdr.jpg';
         let attributeKey = [image.PropertyKey.IMAGE_WIDTH, image.PropertyKey.IMAGE_LENGTH];
-        await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        let result = await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        expect(result).assertTrue();
+        done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
         expect().assertFail();
@@ -119,7 +121,7 @@ export default function ExifGetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_0002
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_0002
-     * @tc.desc   getProperties
+     * @tc.desc   exif metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -129,7 +131,9 @@ export default function ExifGetPropertiesTest() {
       try{
         const path = 'CUVAHdrMulti.jpg';
         let attributeKey = [image.PropertyKey.IMAGE_WIDTH];
-        await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        let result = await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        expect(result).assertTrue();
+        done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
         expect().assertFail();
@@ -140,7 +144,7 @@ export default function ExifGetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_0003
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_0003
-     * @tc.desc   getProperties
+     * @tc.desc   exif metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -150,7 +154,9 @@ export default function ExifGetPropertiesTest() {
       try{
         const path = 'test_exif.jpg';
         let attributeKey = [image.PropertyKey.IMAGE_LENGTH];
-        await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        let result = await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        expect(result).assertTrue();
+        done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
         expect().assertFail();
@@ -161,7 +167,7 @@ export default function ExifGetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_0004
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_0004
-     * @tc.desc   getProperties
+     * @tc.desc   exif metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -170,7 +176,9 @@ export default function ExifGetPropertiesTest() {
         const testName = 'SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_0004';
       try{
         const path = 'test_exif.jpg';
-        await getPropertiesPromiseTest(done, testName, path, exifKeys, 1);
+        let result = await getPropertiesPromiseTest(done, testName, path, exifKeys, 1);
+        expect(result).assertTrue();
+        done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
         expect().assertFail();
@@ -181,7 +189,7 @@ export default function ExifGetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_0005
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_0005
-     * @tc.desc   getProperties
+     * @tc.desc   exif metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -191,7 +199,9 @@ export default function ExifGetPropertiesTest() {
       try{
         const path = 'CUVAHdr.jpg';
         let attributeKey = [image.PropertyKey.IMAGE_WIDTH, image.PropertyKey.IMAGE_LENGTH];
-        await getPropertiesPromiseTest(done, testName, path, attributeKey, 100);
+        let result = await getPropertiesPromiseTest(done, testName, path, attributeKey, 100);
+        expect(result).assertTrue();
+        done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
         expect().assertFail();
@@ -202,7 +212,7 @@ export default function ExifGetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_ERROR_TEST_0001
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_ERROR_TEST_0001
-     * @tc.desc   getProperties
+     * @tc.desc   exif metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -219,7 +229,7 @@ export default function ExifGetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_ERROR_TEST_0002
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_ERROR_TEST_0002
-     * @tc.desc   getProperties
+     * @tc.desc   exif metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -236,7 +246,7 @@ export default function ExifGetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_ERROR_TEST_0003
      * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_METADATA_GET_PROPERTIES_ERROR_TEST_0003
-     * @tc.desc   getProperties
+     * @tc.desc   exif metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

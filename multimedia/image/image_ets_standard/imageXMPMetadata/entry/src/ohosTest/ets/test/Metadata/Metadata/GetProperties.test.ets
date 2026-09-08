@@ -16,13 +16,14 @@
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import { allPropertyKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByMetadata } from '../ImageProperties.test'
+import { allPropertyKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByArray } from '../ImageProperties.test'
 
 const TAG = 'getProperties';
 
 async function getPropertiesPromiseTest(done: Function, testName: string, path: string,
-  attributeKey: Array<image.PropertyKey> | null, repeat: number) {
+  attributeKey: Array<image.PropertyKey> | null, repeat: number): Promise<boolean> {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    let result = true;
     const resourceMgr = testContext.resourceManager;
     const rawFile = await resourceMgr.getRawFileContent(path);
     let ops: image.SourceOptions = {
@@ -35,19 +36,19 @@ async function getPropertiesPromiseTest(done: Function, testName: string, path: 
     let metaData: image.Metadata | null = await pictureObj.getMetadata(metadataType);
     if (metaData != null) {
       for(let i = 0; i < repeat; i++){
-        let result: boolean;
+        let verifyResult: boolean;
         if(path === "CUVAHdr.jpg"){
-        result = await verifyExifPropertiesByMetadata(metaData, attributeKey, CUVAHdrExpectedValue);
+        verifyResult = await verifyExifPropertiesByArray(metaData, attributeKey, CUVAHdrExpectedValue);
         } else if (path === 'CUVAHdrMulti.jpg'){
-        result = await verifyExifPropertiesByMetadata(metaData, attributeKey, CUVAHdrMultiExpectedValue);
+        verifyResult = await verifyExifPropertiesByArray(metaData, attributeKey, CUVAHdrMultiExpectedValue);
         } else {
-        result = await verifyExifPropertiesByMetadata(metaData, attributeKey, testExifExpectedValue);
+        verifyResult = await verifyExifPropertiesByArray(metaData, attributeKey, testExifExpectedValue);
         }
-        console.info(TAG, `expect result: ${result}`);
-        expect(result).assertTrue();
+        console.info(TAG, `expect result: ${verifyResult}`);
+        result = verifyResult && result;
       }
     }
-    done();
+    return result;
 }
 
 async function getPropertiesAbnormalPromiseTest(done: Function, testName: string, path: string,
@@ -103,7 +104,7 @@ export default function GetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_0001
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_0001
-     * @tc.desc   getProperties
+     * @tc.desc   metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -113,7 +114,9 @@ export default function GetPropertiesTest() {
       try{
         const path = 'CUVAHdr.jpg';
         let attributeKey = [image.PropertyKey.IMAGE_WIDTH, image.PropertyKey.IMAGE_LENGTH];
-        await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        let result = await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        expect(result).assertTrue();
+        done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
         expect().assertFail();
@@ -124,7 +127,7 @@ export default function GetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_0002
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_0002
-     * @tc.desc   getProperties
+     * @tc.desc   metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -134,7 +137,9 @@ export default function GetPropertiesTest() {
       try{
         const path = 'CUVAHdrMulti.jpg';
         let attributeKey = [image.PropertyKey.IMAGE_WIDTH];
-        await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        let result = await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        expect(result).assertTrue();
+        done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
         expect().assertFail();
@@ -145,7 +150,7 @@ export default function GetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_0003
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_0003
-     * @tc.desc   getProperties
+     * @tc.desc   metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -155,7 +160,9 @@ export default function GetPropertiesTest() {
       try{
         const path = 'test_exif.jpg';
         let attributeKey = [image.PropertyKey.IMAGE_LENGTH];
-        await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        let result = await getPropertiesPromiseTest(done, testName, path, attributeKey, 1);
+        expect(result).assertTrue();
+        done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
         expect().assertFail();
@@ -166,7 +173,7 @@ export default function GetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_0004
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_0004
-     * @tc.desc   getProperties
+     * @tc.desc   metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -175,7 +182,9 @@ export default function GetPropertiesTest() {
     const testName = 'SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_0004';
       try{
         const path = 'test_exif.jpg';
-        await getPropertiesPromiseTest(done, testName, path, allPropertyKeys, 1);
+        let result = await getPropertiesPromiseTest(done, testName, path, allPropertyKeys, 1);
+        expect(result).assertTrue();
+        done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
         expect().assertFail();
@@ -186,7 +195,7 @@ export default function GetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_0005
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_0005
-     * @tc.desc   getProperties
+     * @tc.desc   metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -196,7 +205,9 @@ export default function GetPropertiesTest() {
       try{
         const path = 'CUVAHdr.jpg';
         let attributeKey = [image.PropertyKey.IMAGE_WIDTH, image.PropertyKey.IMAGE_LENGTH];
-        await getPropertiesPromiseTest(done, testName, path, attributeKey, 100);
+        let result = await getPropertiesPromiseTest(done, testName, path, attributeKey, 100);
+        expect(result).assertTrue();
+        done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
         expect().assertFail();
@@ -207,7 +218,7 @@ export default function GetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_ERROR_TEST_0001
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_ERROR_TEST_0001
-     * @tc.desc   getProperties
+     * @tc.desc   metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -224,7 +235,7 @@ export default function GetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_ERROR_TEST_0002
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_ERROR_TEST_0002
-     * @tc.desc   getProperties
+     * @tc.desc   metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -241,7 +252,7 @@ export default function GetPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_ERROR_TEST_0003
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_PROPERTIES_ERROR_TEST_0003
-     * @tc.desc   getProperties
+     * @tc.desc   metadata getProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

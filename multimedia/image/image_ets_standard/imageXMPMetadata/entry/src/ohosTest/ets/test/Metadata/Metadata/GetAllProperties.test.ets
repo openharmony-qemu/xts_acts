@@ -20,8 +20,9 @@ import { allPropertyKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testE
  
 const TAG = 'getAllProperties';
  
-async function getAllPropertiesPromiseTest(done: Function, testName: string, path: string, repeat: number) {
+async function getAllPropertiesPromiseTest(done: Function, testName: string, path: string, repeat: number): Promise<boolean> {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let result = true;
   const resourceMgr = testContext.resourceManager;
   const rawFile = await resourceMgr.getRawFileContent(path);
   let ops: image.SourceOptions = {
@@ -34,19 +35,19 @@ async function getAllPropertiesPromiseTest(done: Function, testName: string, pat
   let metaData: image.Metadata | null = await pictureObj.getMetadata(metadataType);
   if (metaData != null) {
       for(let i = 0; i < repeat; i++){
-          let result: boolean;
+          let verifyResult: boolean;
           if(path === "CUVAHdr.jpg"){
-          result = await verifyExifPropertiesByMetadata(metaData, allPropertyKeys, CUVAHdrExpectedValue, path, "metadata getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByMetadata(metaData, allPropertyKeys, CUVAHdrExpectedValue, path, "metadata getAllPropertiesPromiseTest");
           } else if (path === 'CUVAHdrMulti.jpg'){
-          result = await verifyExifPropertiesByMetadata(metaData, allPropertyKeys, CUVAHdrMultiExpectedValue, path, "metadata getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByMetadata(metaData, allPropertyKeys, CUVAHdrMultiExpectedValue, path, "metadata getAllPropertiesPromiseTest");
           } else {
-          result = await verifyExifPropertiesByMetadata(metaData, allPropertyKeys, testExifExpectedValue, path, "metadata getAllPropertiesPromiseTest");
+          verifyResult = await verifyExifPropertiesByMetadata(metaData, allPropertyKeys, testExifExpectedValue, path, "metadata getAllPropertiesPromiseTest");
           }
-          console.info(TAG, `expect result: ${result}`);
-          expect(result).assertTrue();
+          console.info(TAG, `expect result: ${verifyResult}`);
+          result = verifyResult && result;
       }
   }
-  done();
+  return result;
 } 
  
 export default function GetAllPropertiesTest() {
@@ -71,7 +72,7 @@ export default function GetAllPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0001
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0001
-     * @tc.desc   getAllProperties
+     * @tc.desc   metadata getAllProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -80,7 +81,9 @@ export default function GetAllPropertiesTest() {
         const testName = 'SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0001';
         try{
             const path = 'CUVAHdr.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 1);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -91,7 +94,7 @@ export default function GetAllPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0002
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0002
-     * @tc.desc   getAllProperties
+     * @tc.desc   metadata getAllProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -100,7 +103,9 @@ export default function GetAllPropertiesTest() {
         const testName = 'SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0002';
         try{
             const path = 'CUVAHdrMulti.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 1);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -111,7 +116,7 @@ export default function GetAllPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0003
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0003
-     * @tc.desc   getAllProperties
+     * @tc.desc   metadata getAllProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -120,7 +125,9 @@ export default function GetAllPropertiesTest() {
         const testName = 'SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0003';
         try {
             const path = 'test_exif.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 1);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 1);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();
@@ -131,7 +138,7 @@ export default function GetAllPropertiesTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0004
      * @tc.number SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0004
-     * @tc.desc   getAllProperties
+     * @tc.desc   metadata getAllProperties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -140,7 +147,9 @@ export default function GetAllPropertiesTest() {
         const testName = 'SUB_MULTIMEDIA_IMAGE_METADATA_GET_ALL_PROPERTIES_0004';
         try {
             const path = 'test_exif.jpg';
-            await getAllPropertiesPromiseTest(done, testName, path, 100);
+            let result = await getAllPropertiesPromiseTest(done, testName, path, 100);
+            expect(result).assertTrue();
+            done();
         } catch (error) {
             console.info(TAG, `failed; error: ${error},${error.code}`, testName);
             expect().assertFail();

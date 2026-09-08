@@ -50,20 +50,6 @@ let isSupportHEIFDecode: boolean;
 const PROPERTY_NOT_EXIST = 7700204;
 const INVALID_PARAMETER = 7600206;
  
-function handleError(testTag: string, err: GenericError | Array<GenericError>, expectedErrorCode: number): boolean {
-  if (Array.isArray(err)) {
-    for (let error of err) {
-      console.error(`${testTag} failed.err: ${error.code} errorMessage: ${error.message}`);
-      return error.code == expectedErrorCode;
-    }
-  } else {
-    let error: GenericError = err;
-    console.error(`${testTag} failed.err: ${error.code} errorMessage: ${error.message}`);
-    return error.code == expectedErrorCode;
-  }
-  return false;
-}
- 
 export default function SetBlobTest() {
   describe("SetBlobTest", () => {
  
@@ -397,15 +383,13 @@ export default function SetBlobTest() {
       let metadataModify = await getMetadataFromPicture(imageSourceApi);
       try {
         await metadataModify.setBlob(emptyArrayBuffer);
+        expect().assertFail();
       } catch (error) {
-        result = handleError(testTag, error as GenericError | Array<GenericError>, INVALID_PARAMETER);
+        expect(error.code === INVALID_PARAMETER).assertTrue();
       } finally {
         await imageSourceApi?.release();
+        done();
       }
- 
-      console.info(`${testTag} setBlob result is: ${result}`);
-      expect(result).assertTrue();
-      done();
     });
  
     /**
@@ -428,15 +412,13 @@ export default function SetBlobTest() {
       let metadataModify = await getMetadataFromPicture(imageSourceApi);
       try {
         await metadataModify.setBlob(null);
+        expect().assertFail();
       } catch (error) {
-        result = handleError(testTag, error as GenericError | Array<GenericError>, INVALID_PARAMETER);
+        expect(error.code === INVALID_PARAMETER).assertTrue();
       } finally {
         await imageSourceApi?.release();
+        done();
       }
- 
-      console.info(`${testTag} setBlob result is: ${result}`);
-      expect(result).assertTrue();
-      done();
     });
  
     /**
@@ -459,15 +441,13 @@ export default function SetBlobTest() {
       let metadataModify = await getMetadataFromPicture(imageSourceApi);
       try {
         await metadataModify.setBlob(undefined);
+        expect().assertFail();
       } catch (error) {
-        result = handleError(testTag, error as GenericError | Array<GenericError>, INVALID_PARAMETER);
+        expect(error.code === INVALID_PARAMETER).assertTrue();
       } finally {
         await imageSourceApi?.release();
+        done();
       }
- 
-      console.info(`${testTag} setBlob result is: ${result}`);
-      expect(result).assertTrue();
-      done();
     });
  
  

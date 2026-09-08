@@ -38,7 +38,7 @@ export default function MakerNoteCreateInstanceTest(): void {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_MAKER_NOTE_METADATA_CREATE_INSTANCE_0001
      * @tc.number SUB_MULTIMEDIA_IMAGE_MAKER_NOTE_METADATA_CREATE_INSTANCE_0001
-     * @tc.desc   clone
+     * @tc.desc   maker note metadata createInstance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -61,7 +61,7 @@ export default function MakerNoteCreateInstanceTest(): void {
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_MAKER_NOTE_METADATA_CREATE_INSTANCE_0002
      * @tc.number SUB_MULTIMEDIA_IMAGE_MAKER_NOTE_METADATA_CREATE_INSTANCE_0002
-     * @tc.desc   clone
+     * @tc.desc   maker note metadata createInstance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
