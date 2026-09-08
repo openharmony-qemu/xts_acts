@@ -412,6 +412,78 @@ export default function nfcIsoDepTagTest() {
             }
         })
 
+        /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0703
+         * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0703
+         * @tc.desc   isDefaultService second param boundary test with null, expect return undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_0703', Level.LEVEL0, function ()  {
+            let cardEmulationnfc;
+            let elementName = {
+                "bundleName": "com.test.cardemulation",
+                "abilityName": "com.test.cardemulation.MainAbiliey",
+            }
+            try {
+                cardEmulationnfc = cardEmulation.isDefaultService(elementName, null);
+                console.info('[NFC_test] cardEmulationnfc7 0703 isDefaultService type->' + cardEmulationnfc);
+                expect(cardEmulationnfc).assertUndefined();
+            } catch (error) {
+                console.info('[NFC_test] cardEmulationnfc7 0703 error' + error + "/" + error.code)
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0704
+         * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0704
+         * @tc.desc   isDefaultService second param boundary test with undefined, expect return undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_0704', Level.LEVEL0, function ()  {
+            let cardEmulationnfc;
+            let elementName = {
+                "bundleName": "com.test.cardemulation",
+                "abilityName": "com.test.cardemulation.MainAbiliey",
+            }
+            try {
+                cardEmulationnfc = cardEmulation.isDefaultService(elementName, undefined);
+                console.info('[NFC_test] cardEmulationnfc7 0704 isDefaultService type->' + cardEmulationnfc);
+                expect(cardEmulationnfc).assertUndefined();
+            } catch (error) {
+                console.info('[NFC_test] cardEmulationnfc7 0704 error' + error + "/" + error.code)
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0705
+         * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0705
+         * @tc.desc   isDefaultService second param boundary test with undefined, expect return undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_0705', Level.LEVEL0, function ()  {
+            let cardEmulationnfc;
+            let elementName = {
+                "bundleName": "com.test.cardemulation",
+                "abilityName": "com.test.cardemulation.MainAbiliey",
+            }
+            try {
+                cardEmulationnfc = cardEmulation.isDefaultService(elementName, "test");
+                console.info('[NFC_test] cardEmulationnfc7 0705 isDefaultService type->' + cardEmulationnfc);
+                expect(cardEmulationnfc).assertUndefined();
+            } catch (error) {
+                console.info('[NFC_test] cardEmulationnfc7 0705 error' + error + "/" + error.code)
+                expect().assertFail();
+            }
+        })
+
          /**
           * @tc.name   SUB_Communication_NFC_Enumerated_js_0800
           * @tc.number SUB_Communication_NFC_Enumerated_js_0800

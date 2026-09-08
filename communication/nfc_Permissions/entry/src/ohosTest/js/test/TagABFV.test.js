@@ -65,6 +65,7 @@ export default function nfcTagABFVTest() {
             try {
                 let recvNfcTagFunc = tagInfo => {
                     console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                    expect(tagInfo.suppertedProfiles.length > 0).assertTrue();
                     expect(tagInfo.uid.length > 0).assertTrue();
                     expect(tagInfo.technology.length > 0).assertTrue();
                     expect(tagInfo != null).assertTrue();
