@@ -78,6 +78,15 @@ import MapEntriesPart03Test2 from './map/MapEntriesPart03Test2.test';
 import MapForEachPart03Test2 from './map/MapForEachPart03Test2.test';
 import MapGetPart03Test2 from './map/MapGetPart03Test2.test';
 import MapHasPart03Test2 from './map/MapHasPart03Test2.test';
+import MapOverviewPart04Test2 from './map/MapOverviewPart04Test2.test';
+import MapOverviewPart05Test2 from './map/MapOverviewPart05Test2.test';
+import MapSetPart04Test2 from './map/MapSetPart04Test2.test';
+import MapSetPart05Test2 from './map/MapSetPart05Test2.test';
+import ReadonlyMapForEachPart03Test2 from './map/ReadonlyMapForEachPart03Test2.test';
+import ReadonlyMapGetPart03Test2 from './map/ReadonlyMapGetPart03Test2.test';
+import ReadonlyMapHasPart03Test2 from './map/ReadonlyMapHasPart03Test2.test';
+import RecordIndexSetPart03Test2 from './map/RecordIndexSetPart03Test2.test';
+import RecordIndexSetPart04Test2 from './map/RecordIndexSetPart04Test2.test';
 
 
 export default function testsuite(): void {
@@ -144,4 +153,13 @@ export default function testsuite(): void {
   MapForEachPart03Test2();
   MapGetPart03Test2();
   MapHasPart03Test2();
+  MapOverviewPart04Test2();
+  MapOverviewPart05Test2();
+  MapSetPart04Test2();
+  MapSetPart05Test2();
+  ReadonlyMapForEachPart03Test2();
+  ReadonlyMapGetPart03Test2();
+  ReadonlyMapHasPart03Test2();
+  RecordIndexSetPart03Test2();
+  RecordIndexSetPart04Test2();
 }
