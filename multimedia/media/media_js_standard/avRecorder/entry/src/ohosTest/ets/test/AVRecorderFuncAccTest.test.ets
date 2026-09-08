@@ -17,6 +17,8 @@ import media from '@ohos.multimedia.media'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { Permissions } from '@ohos.abilityAccessCtrl';
 import Common from './Common';
+import { audio } from '@kit.AudioKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 export default function AVRecorderFuncAccTest() {
   describe('AVRecorderFuncAccTest', () => {
@@ -1997,7 +1999,229 @@ export default function AVRecorderFuncAccTest() {
       await commonFun.avRecorderReliabilitTest54(avConfig, avRecorder, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0700 end')
       done();
-    })        
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_AUDIOCAPTURERCHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_AUDIOCAPTURERCHANGE_0100
+     * @tc.desc   Recorder on_audioCapturerChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_AUDIOCAPTURERCHANGE_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_AUDIOCAPTURERCHANGE_0100 start')
+      await media.createAVRecorder().then((recorder) => {
+        if (recorder != null) {
+          avRecorder = recorder;
+          console.info('createAVRecorder success');
+        } else {
+          console.info('createAVRecorder fail');
+          expect().assertFail();
+        }
+      }).catch((error: BusinessError) => {
+        console.info(`createAVRecorder catchCallback, error:${error}`);
+        expect().assertFail();
+      });
+      try {
+        avRecorder!.on('audioCapturerChange', (audioCapturerChangeInfo: audio.AudioCapturerChangeInfo) => {
+          console.info('audioCapturerChange called');
+        });
+        avRecorder!.on('audioCapturerChange', (audioCapturerChangeInfo: audio.AudioCapturerChangeInfo) => {
+          console.info('audioCapturerChange called');
+        });
+      } catch (err) {
+        console.error('avRecorder on_audioCapturerChange failed, error: ' + err.message + err.code);
+        expect().assertFail();
+      }
+      avRecorder!.off('audioCapturerChange');
+      await avRecorder!.release();
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_AUDIOCAPTURERCHANGE_0100 end')
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_PHOTOASSETAVAILABLE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_PHOTOASSETAVAILABLE_0100
+     * @tc.desc   Recorder on_photoAssetAvailable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_PHOTOASSETAVAILABLE_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_PHOTOASSETAVAILABLE_0100 start')
+      await media.createAVRecorder().then((recorder) => {
+        if (recorder != null) {
+          avRecorder = recorder;
+          console.info('createAVRecorder success');
+        } else {
+          console.info('createAVRecorder fail');
+          expect().assertFail();
+        }
+      }).catch((error: BusinessError) => {
+        console.info(`createAVRecorder catchCallback, error:${error}`);
+        expect().assertFail();
+      });
+      try {
+        avRecorder!.on('photoAssetAvailable', (asset: photoAccessHelper.PhotoAsset) => {
+          console.info('photoAssetAvailable called');
+        });
+        avRecorder!.on('photoAssetAvailable', (asset: photoAccessHelper.PhotoAsset) => {
+          console.info('photoAssetAvailable called');
+        });
+      } catch (err) {
+        console.error('avRecorder on_photoAssetAvailable failed, error: ' + err.message + err.code);
+        expect().assertFail();
+      }
+      avRecorder!.off('photoAssetAvailable');
+      await avRecorder!.release();
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_PHOTOASSETAVAILABLE_0100 end')
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_STATECHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_STATECHANGE_0100
+     * @tc.desc   Recorder on_stateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_STATECHANGE_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_STATECHANGE_0100 start')
+      await media.createAVRecorder().then((recorder) => {
+        if (recorder != null) {
+          avRecorder = recorder;
+          console.info('createAVRecorder success');
+        } else {
+          console.info('createAVRecorder fail');
+          expect().assertFail();
+        }
+      }).catch((error: BusinessError) => {
+        console.info(`createAVRecorder catchCallback, error:${error}`);
+        expect().assertFail();
+      });
+      try {
+        avRecorder!.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+          console.info('case state has changed, new state is: ' + state + ', and reason is: ' + reason);
+        });
+        avRecorder!.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+          console.info('case state has changed, new state is: ' + state + ', and reason is: ' + reason);
+        });
+      } catch (err) {
+        console.error('avRecorder on_stateChange failed, error: ' + err.message + err.code);
+        expect().assertFail();
+      }
+      avRecorder!.off('stateChange');
+      await avRecorder!.release();
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_STATECHANGE_0100 end')
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_ERROR_0100
+     * @tc.desc   Recorder on_error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_ERROR_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_ERROR_0100 start')
+      await media.createAVRecorder().then((recorder) => {
+        if (recorder != null) {
+          avRecorder = recorder;
+          console.info('createAVRecorder success');
+        } else {
+          console.info('createAVRecorder fail');
+          expect().assertFail();
+        }
+      }).catch((error: BusinessError) => {
+        console.info(`createAVRecorder catchCallback, error:${error}`);
+        expect().assertFail();
+      });
+      try {
+        avRecorder!.on('error', (err: BusinessError) => {
+          console.error(`Failed to record. Code: ${err.code}, message: ${err.message}`);
+        });
+        avRecorder!.on('error', (err: BusinessError) => {
+          console.error(`Failed to record. Code: ${err.code}, message: ${err.message}`);
+        });
+      } catch (err) {
+        console.error('avRecorder on_error failed, error: ' + err.message + err.code);
+        expect().assertFail();
+      }
+      avRecorder!.off('error');
+      await avRecorder!.release();
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ON_ERROR_0100 end')
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_AUDIOCAPTURERCHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_AUDIOCAPTURERCHANGE_0100
+     * @tc.desc   Recorder off_audioCapturerChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_AUDIOCAPTURERCHANGE_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_AUDIOCAPTURERCHANGE_0100 start')
+      await media.createAVRecorder().then((recorder) => {
+        if (recorder != null) {
+          avRecorder = recorder;
+          console.info('createAVRecorder success');
+        } else {
+          console.info('createAVRecorder fail');
+          expect().assertFail();
+        }
+      }).catch((error: BusinessError) => {
+        console.info(`createAVRecorder catchCallback, error:${error}`);
+        expect().assertFail();
+      });
+      try {
+        let callback = (audioCapturerChangeInfo: audio.AudioCapturerChangeInfo) => {
+          console.log('SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_AUDIOCAPTURERCHANGE_0100 OFF_AUDIOCAPTURERCHANGE callback called');          
+        };
+        avRecorder!.off('audioCapturerChange', callback);
+      } catch (err) {
+        console.error('avRecorder off_audioCapturerChange failed, error: ' + err.message + err.code);
+        expect().assertFail();
+      }
+      await avRecorder!.release();
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_AUDIOCAPTURERCHANGE_0100 end')
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_PHOTOASSETAVAILABLE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_PHOTOASSETAVAILABLE_0100
+     * @tc.desc   Recorder off_photoAssetAvailable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_PHOTOASSETAVAILABLE_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_PHOTOASSETAVAILABLE_0100 start')
+      await media.createAVRecorder().then((recorder) => {
+        if (recorder != null) {
+          avRecorder = recorder;
+          console.info('createAVRecorder success');
+        } else {
+          console.info('createAVRecorder fail');
+          expect().assertFail();
+        }
+      }).catch((error: BusinessError) => {
+        console.info(`createAVRecorder catchCallback, error:${error}`);
+        expect().assertFail();
+      });
+      try {
+        let callback = (asset: photoAccessHelper.PhotoAsset) => {
+          console.log('SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_PHOTOASSETAVAILABLE_0100 OFF_PHOTOASSETAVAILABLE callback called');          
+        };
+        avRecorder!.off('photoAssetAvailable', callback);
+      } catch (err) {
+        console.error('avRecorder off_photoAssetAvailable failed, error: ' + err.message + err.code);
+        expect().assertFail();
+      }
+      await avRecorder!.release();
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_OFF_PHOTOASSETAVAILABLE_0100 end')
+      done();
+    })
   })
 }
 

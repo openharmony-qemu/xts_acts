@@ -2651,6 +2651,7 @@ export default function AVPlayerLocalTest() {
        * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_PLAYER_DRM_SETDECRYPTIONCONFIG_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        let avPlayer = await media.createAVPlayer();        
         let systemName:string;
         let isClearPlay = drm.isMediaKeySystemSupported("com.clearplay.drm");
         if (isClearPlay) {
