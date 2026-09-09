@@ -736,9 +736,10 @@ static napi_value IconvUtf8ToBig5Unrepresentable(napi_env env, napi_callback_inf
         char out[16] = {0};
         char *outp = out;
         size_t outlen = sizeof(out);
+        errno = 0;
         size_t r = iconv(cd, &inp, &inlen, &outp, &outlen);
         iconv_close(cd);
-        if (r == static_cast<size_t>(-1)) {
+        if (r == static_cast<size_t>(-1) && errno == EILSEQ) {
             ret = NO_ERR;
         }
     }
