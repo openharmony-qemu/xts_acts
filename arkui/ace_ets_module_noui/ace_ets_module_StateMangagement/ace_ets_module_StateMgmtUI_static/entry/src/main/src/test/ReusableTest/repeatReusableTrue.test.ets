@@ -27,49 +27,44 @@ import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-export default function repeatReusableTrue(): void {
-  describe('repeatReusableTrue', () => {
-    beforeAll(async (): Promise<void> => {
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMgmtV104.static", "EntryAbility")
-
-    })
+export default function RepeatReusableTrue(): void {
+  describe('RepeatReusableTrue', () => {
     beforeEach(async (): Promise<void> => {
-      console.info("repeatReusableTrue beforeEach start");
+      console.info("RepeatReusableTrue beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/Reusable/repeatReusableTrue",
+        url: "MainAbility/pages/Reusable/RepeatReusableTrue",
       }
       try {
-        const repeatReusableTrue = AppStorage.get<Router>("router") as Router
-        repeatReusableTrue.clear();
-        let pages:router.RouterState = repeatReusableTrue.getState();
-        console.info("get repeatReusableTrue state pages: " + JSON.stringify(pages));
-        if (!("repeatReusableTrue" == pages.name)) {
-          console.info("get repeatReusableTrue state pages.name: " + JSON.stringify(pages.name));
-          // let result = await repeatReusableTrue.pushUrl(options);
-          repeatReusableTrue.pushUrl(options);
+        const RepeatReusableTrue = AppStorage.get<Router>("router") as Router
+        RepeatReusableTrue.clear();
+        let pages:router.RouterState = RepeatReusableTrue.getState();
+        console.info("get RepeatReusableTrue state pages: " + JSON.stringify(pages));
+        if (!("RepeatReusableTrue" == pages.name)) {
+          console.info("get RepeatReusableTrue state pages.name: " + JSON.stringify(pages.name));
+          // let result = await RepeatReusableTrue.pushUrl(options);
+          RepeatReusableTrue.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push repeatReusableTrue success: " + JSON.stringify(result));
+          // console.info("push RepeatReusableTrue success: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push repeatReusableTrue page error:" + err);
+        console.error("push RepeatReusableTrue page error:" + err);
       }
-      console.info("repeatReusableTrue beforeEach end");
+      console.info("RepeatReusableTrue beforeEach end");
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      console.info("repeatReusableTrue after each called");
+      console.info("RepeatReusableTrue after each called");
     });
 
     
     /**
-     * @tc.number   repeatreusabletrue_static_001
-     * @tc.name     repeatreusabletrue_static_001
-     * @tc.desc     repeatreusabletrue_static_001
+     * @tc.number   SUB_ARKUI_RepeatReusableTrue_static_0100
+     * @tc.name     SUB_ARKUI_RepeatReusableTrue_static_0100
+     * @tc.desc     SUB_ARKUI_RepeatReusableTrue_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('repeatreusabletrue_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[repeatreusabletrue_001] START');
+    it('SUB_ARKUI_RepeatReusableTrue_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_RepeatReusableTrue_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -78,7 +73,7 @@ export default function repeatReusableTrue(): void {
       await CommonFunc.sleep(5000);
       let text = await driver.findComponent(ON.text('[a] index99: item_99'))
       expect(text != null).assertTrue()
-      console.info('[repeatreusabletrue_001] END');
+      console.info('[SUB_ARKUI_RepeatReusableTrue_static_0100] END');
       done();
     });
   })
