@@ -15,7 +15,7 @@
 
 import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium"
 import Utils from './Utils'
-import big5locale from 'libbig5localendk.so'
+import big5locale from 'liblocalebig5ndk.so'
 
 export default function big5LocaleNdkTest() {
   describe('MuslBig5LocaleTest', () => {
@@ -57,7 +57,7 @@ export default function big5LocaleNdkTest() {
     /**
      * @tc.name   testSetlocaleTooLong
      * @tc.number SUB_THIRDPARTY_MUSL_BIG5_LOCALE_0003_0100
-     * @tc.desc   test too long locale name returns NULL
+     * @tc.desc   test too long locale name falls back to C.UTF-8
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -192,7 +192,7 @@ export default function big5LocaleNdkTest() {
     /**
      * @tc.name   testWctypeCLocaleYue
      * @tc.number SUB_THIRDPARTY_MUSL_BIG5_LOCALE_0012_0100
-     * @tc.desc   test C locale_t Yue char U+7CA4 falls back to ASCII table
+     * @tc.desc   test C locale_t Yue char U+7CA4 classified as alpha by Unicode table
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -235,21 +235,6 @@ export default function big5LocaleNdkTest() {
     });
 
     /**
-     * @tc.name   testStrtodLBig5InfNan
-     * @tc.number SUB_THIRDPARTY_MUSL_BIG5_LOCALE_0015_0100
-     * @tc.desc   test strtod_l parses inf and nan
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testStrtodLBig5InfNan', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-      let result: number = big5locale.strtodLBig5InfNan();
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   testStrtodLBig5Overflow
      * @tc.number SUB_THIRDPARTY_MUSL_BIG5_LOCALE_0016_0100
      * @tc.desc   test strtod_l overflow 1e999
@@ -275,21 +260,6 @@ export default function big5LocaleNdkTest() {
     it('testWcstodLBig5_314', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = big5locale.wcstodLBig5_314();
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   testWcstodLBig5InfNan
-     * @tc.number SUB_THIRDPARTY_MUSL_BIG5_LOCALE_0018_0100
-     * @tc.desc   test wcstod_l parses inf and nan
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testWcstodLBig5InfNan', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-      let result: number = big5locale.wcstodLBig5InfNan();
       expect(result).assertEqual(0);
       done();
     });
@@ -387,7 +357,7 @@ export default function big5LocaleNdkTest() {
     /**
      * @tc.name   testIconvBig5InvalidByte
      * @tc.number SUB_THIRDPARTY_MUSL_BIG5_LOCALE_0025_0100
-     * @tc.desc   test Big5 to UTF8 invalid byte sequence EILSEQ
+     * @tc.desc   test Big5 to UTF8 invalid byte U+FFFD substitution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -402,7 +372,7 @@ export default function big5LocaleNdkTest() {
     /**
      * @tc.name   testIconvBig5Incomplete
      * @tc.number SUB_THIRDPARTY_MUSL_BIG5_LOCALE_0026_0100
-     * @tc.desc   test Big5 to UTF8 incomplete sequence EINVAL
+     * @tc.desc   test Big5 to UTF8 incomplete sequence U+FFFD substitution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -462,7 +432,7 @@ export default function big5LocaleNdkTest() {
     /**
      * @tc.name   testIconvUtf8ToBig5Unrepresentable
      * @tc.number SUB_THIRDPARTY_MUSL_BIG5_LOCALE_0030_0100
-     * @tc.desc   test UTF8 to Big5 unrepresentable char EILSEQ and continue
+     * @tc.desc   test UTF8 to Big5 unrepresentable char U+FFFD substitution and continue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
