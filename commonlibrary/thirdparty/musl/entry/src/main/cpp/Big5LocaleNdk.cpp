@@ -573,9 +573,7 @@ static napi_value StrtodLStructLayout(napi_env env, napi_callback_info info)
         strtod_l("1e999", &ep, loc);
         wchar_t *wp = nullptr;
         wcstod_l(L"3.14", &wp, loc);
-        size_t dpOff = offsetof(struct lconv, decimal_point);
-        size_t csOff = offsetof(struct lconv, currency_symbol);
-        if (fabs(r1 - PI_VAL) < EPSILON_1E9 && csOff > 0) {
+        if (fabs(r1 - PI_VAL) < EPSILON_1E9) {
             ret = NO_ERR;
         }
         freelocale(loc);
