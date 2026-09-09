@@ -21,6 +21,7 @@ import { taskpoolTest } from '../MainAbility/utils/taskpool'
 import resourceManager from '@ohos.resourceManager'
 import { rpc } from '@kit.IPCKit';
 import { colorSpaceManager } from '@kit.ArkGraphics2D'
+import sendableImage from '@ohos.multimedia.sendableImage';
 
 class MySequence implements rpc.Parcelable {
   pixel_map: image.PixelMap;
@@ -873,5 +874,848 @@ export default function imagePixelMapErrorCodeTest() {
         })
       }
     });
+
+    /**
+     * @tc.name    readPixelsToBufferSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_readPixelsToBufferSync_0100
+     * @tc.desc    Test readPixelsToBufferSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('readPixelsToBufferSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data readPixelsToBufferSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        const srcBuffer: ArrayBuffer = new ArrayBuffer(pixelMap.getPixelBytesNumber());
+        taskpoolTest(pixelMap);
+        try {
+          pixelMap.readPixelsToBufferSync(srcBuffer);
+          console.info(msgStr + ' readPixelsToBufferSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} readPixelsToBufferSync failed: ${err.code}`);
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} readPixelsToBufferSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    readPixelsSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_readPixelsSync_0100
+     * @tc.desc    Test readPixelsSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('readPixelsSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data readPixelsSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          const area: image.PositionArea = {
+            pixels: new ArrayBuffer(8),
+            offset: 0,
+            stride: 8,
+            region: {
+              size: {
+                height: 1, width: 2
+              }, x: 0, y: 0
+            }
+          };
+          pixelMap.readPixelsSync(area);
+          console.info(msgStr + ' readPixelsSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} readPixelsSync failed: ${err.code}`);
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} readPixelsSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    writePixelsSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_writePixelsSync_0100
+     * @tc.desc    Test writePixelsSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('writePixelsSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data writePixelsSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          const area: image.PositionArea = {
+            pixels: new ArrayBuffer(8),
+            offset: 0,
+            stride: 8,
+            region: {
+              size: {
+                height: 1, width: 2
+              }, x: 0, y: 0
+            }
+          };
+          pixelMap.writePixelsSync(area);
+          console.info(msgStr + ' writePixelsSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} writePixelsSync failed: ${err.code}`);
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} writePixelsSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    writeBufferToPixels_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_writeBufferToPixels_0100
+     * @tc.desc    Test writeBufferToPixels throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('writeBufferToPixels_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data writeBufferToPixels_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          const buffer: ArrayBuffer = new ArrayBuffer(96);
+          await pixelMap.writeBufferToPixels(buffer);
+          console.info(msgStr + ' writeBufferToPixels success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} writeBufferToPixels failed: ${err}`);
+          console.error(`${msgStr} writeBufferToPixels failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} writeBufferToPixels_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name    getImageInfoSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_getImageInfoSync_0100
+     * @tc.desc    Test getImageInfoSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('getImageInfoSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data getImageInfoSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          pixelMap.getImageInfoSync();
+          console.info(msgStr + ' getImageInfoSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} getImageInfoSync failed: ${err}`);
+          console.error(`${msgStr} getImageInfoSync failed: ${err.code}`);
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} getImageInfoSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name    opacitySync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_opacitySync_0100
+     * @tc.desc    Test opacitySync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('opacitySync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data opacitySync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          pixelMap.opacitySync(1.0);
+          console.info(msgStr + ' opacitySync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} opacitySync failed: ${err}`);
+          console.error(`${msgStr} opacitySync failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} opacitySync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    createAlphaPixelmapSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_createAlphaPixelmapSync_0100
+     * @tc.desc    Test createAlphaPixelmapSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('createAlphaPixelmapSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data createAlphaPixelmapSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          pixelMap.createAlphaPixelmapSync();
+          console.info(msgStr + ' createAlphaPixelmapSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} createAlphaPixelmapSync failed: ${err}`);
+          console.error(`${msgStr} createAlphaPixelmapSync failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} createAlphaPixelmapSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    scaleSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_scaleSync_0100
+     * @tc.desc    Test scaleSync(x, y) throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('scaleSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data scaleSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          pixelMap.scaleSync(1, 2);
+          console.info(msgStr + ' scaleSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} scaleSync failed: ${err}`);
+          console.error(`${msgStr} scaleSync failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} scaleSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    scale_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_scale_0100
+     * @tc.desc    Test scale throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('scale_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data scale_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          await pixelMap.scale(1, 2, 0);
+          console.info(msgStr + ' scale success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} scale failed: ${err}`);
+          console.error(`${msgStr} scale failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} scale_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    scaleSync_0200
+     * @tc.number  SUB_GRAPHIC_PixelMap_scaleSync_0200
+     * @tc.desc    Test scaleSync(x, y, level) throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('scaleSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data scaleSync_0200 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          pixelMap.scaleSync(1, 2, 0);
+          console.info(msgStr + ' scaleSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} scaleSync failed: ${err}`);
+          console.error(`${msgStr} scaleSync failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} scaleSync_0200 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    createScaledPixelMap_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_createScaledPixelMap_0100
+     * @tc.desc    Test createScaledPixelMap throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('createScaledPixelMap_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data createScaledPixelMap_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          await pixelMap.createScaledPixelMap(1, 2, 0);
+          console.info(msgStr + ' createScaledPixelMap success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} createScaledPixelMap failed: ${err}`);
+          console.error(`${msgStr} createScaledPixelMap failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} createScaledPixelMap_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    createScaledPixelMapSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_createScaledPixelMapSync_0100
+     * @tc.desc    Test createScaledPixelMapSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('createScaledPixelMapSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data createScaledPixelMapSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          pixelMap.createScaledPixelMapSync(1, 2, 0);
+          console.info(msgStr + ' createScaledPixelMapSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} createScaledPixelMapSync failed: ${err}`);
+          console.error(`${msgStr} createScaledPixelMapSync failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} createScaledPixelMapSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    translateSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_translateSync_0100
+     * @tc.desc    Test translateSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('translateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data translateSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          pixelMap.translateSync(1, 2);
+          console.info(msgStr + ' translateSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} translateSync failed: ${err}`);
+          console.error(`${msgStr} translateSync failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} translateSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    rotateSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_rotateSync_0100
+     * @tc.desc    Test rotateSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('rotateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data rotateSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          pixelMap.rotateSync(50);
+          console.info(msgStr + ' rotateSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} rotateSync failed: ${err}`);
+          console.error(`${msgStr} rotateSync failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} rotateSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    flipSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_flipSync_0100
+     * @tc.desc    Test flipSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('flipSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data flipSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          pixelMap.flipSync(true, false);
+          console.info(msgStr + ' flipSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} flipSync failed: ${err}`);
+          console.error(`${msgStr} flipSync failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} flipSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    cropSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_cropSync_0100
+     * @tc.desc    Test cropSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('cropSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data cropSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
+          pixelMap.cropSync(region);
+          console.info(msgStr + ' cropSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} cropSync failed: ${err}`);
+          console.error(`${msgStr} cropSync failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} cropSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    cloneSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_cloneSync_0100
+     * @tc.desc    Test cloneSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('cloneSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data cloneSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          pixelMap.cloneSync();
+          console.info(msgStr + ' cloneSync success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} cloneSync failed: ${err}`);
+          console.error(`${msgStr} cloneSync failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} cloneSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    clone_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_clone_0100
+     * @tc.desc    Test clone throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('clone_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data clone_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          await pixelMap.clone();
+          console.info(msgStr + ' clone success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} clone failed: ${err}`);
+          console.error(`${msgStr} clone failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} clone_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    getMetadata_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_getMetadata_0100
+     * @tc.desc    Test getMetadata throws error 62980173 for a non-DMA pixelMap
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("getMetadata_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let context = getContext();
+      let resourceMgr = context.resourceManager;
+      const fileData = await resourceMgr.getRawFileContent("512.jpg");
+      let bufferData: ArrayBuffer = fileData.buffer.slice(0);
+      let imageSource = image.createImageSource(bufferData);
+      let pixelMap: PixelMap = imageSource.createPixelMapSync();
+      console.info('www data is true ' + pixelMap.isStrideAlignment);
+      try {
+        let staticMetaData = pixelMap.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
+        console.info('Succeeded to getMetaData');
+        expect().assertFail();
+        done();
+      } catch(err){
+        console.error(`www data Failed to getMetaData. code is ${err.code}, message is ${err.message}`);
+        expect(Number(err.code)).assertEqual(62980173);
+        await pixelMap.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    getMetadata_0200
+     * @tc.number  SUB_GRAPHIC_PixelMap_getMetadata_0200
+     * @tc.desc    Test getMetadata throws error 501 when DMA pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("getMetadata_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      const opts: image.InitializationOptions = {
+        editable: true,
+        srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+      };
+      console.info('www data Succeeded to getMetaData', 111);
+      let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+      taskpoolTest(pixelMap);
+      try {
+        console.info('www data Succeeded to getMetaData', 222);
+        pixelMap.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
+        console.info('www data Succeeded to getMetaData', 333);
+        expect().assertFail();
+        done();
+      } catch(err){
+        console.error(`www data Failed to getMetaData. code is ${err.code}, message is ${err.message}`);
+        expect(Number(err.code)).assertEqual(501);
+        await pixelMap.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    getMetadata_0300
+     * @tc.number  SUB_GRAPHIC_PixelMap_getMetadata_0300
+     * @tc.desc    Test getMetadata throws error 62980302 for a DMA pixelMap with RGBA_8888 format
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("getMetadata_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      const opts: image.InitializationOptions = {
+        editable: true,
+        srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+      };
+      console.info('www data Succeeded to getMetaData', 111);
+      let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+      try {
+        console.info('www data Succeeded to getMetaData', 222);
+        let staticMetaData = pixelMap.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
+        console.info('www data Succeeded to getMetaData', 333);
+        expect().assertFail();
+        done();
+      } catch(err){
+        console.error(`www data Failed to getMetaData. code is ${err.code}, message is ${err.message}`);
+        expect(Number(err.code)).assertEqual(62980302);
+        await pixelMap.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    getMetadata_0400
+     * @tc.number  SUB_GRAPHIC_PixelMap_getMetadata_0400
+     * @tc.desc    Test getMetadata throws error 62980302 for a DMA pixelMap with BGRA_8888 format
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("getMetadata_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      const opts: image.InitializationOptions = {
+        editable: true,
+        srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+        pixelFormat: image.PixelMapFormat.BGRA_8888,
+        size: { height: 4, width: 6 },
+      };
+      console.info('www data Succeeded to getMetaData', 111);
+      let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+      try {
+        console.info('www data Succeeded to getMetaData', 222);
+        let staticMetaData = pixelMap.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
+        console.info('www data Succeeded to getMetaData', 333);
+        expect().assertFail();
+        done();
+      } catch(err){
+        console.error(`www data Failed to getMetaData. code is ${err.code}, message is ${err.message}`);
+        expect(Number(err.code)).assertEqual(62980302);
+        await pixelMap.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testConvertToPixelMap_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_testConvertToPixelMap_0100
+     * @tc.desc    Test sendableImage.convertToPixelMap throws error 62980104 with null input
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("testConvertToPixelMap_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      try {
+        console.info('www data Succeeded to getMetaData', 222);
+        let pixelMap = sendableImage.convertToPixelMap(null as ESObject);
+        console.info('www data Succeeded to getMetaData', 333);
+        expect().assertFail();
+        done();
+      } catch(err){
+        console.error(`www data Failed to getMetaData. code is ${err.code}, message is ${err.message}`);
+        console.error(`www data Failed to getMetaData. code is ${err.code}`, typeof(err.code));
+        expect(Number(err.code)).assertEqual(62980104);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testConvertToPixelMap_0200
+     * @tc.number  SUB_GRAPHIC_PixelMap_testConvertToPixelMap_0200
+     * @tc.desc    Test sendableImage.convertToPixelMap throws error 62980104 with undefined input
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("testConvertToPixelMap_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      try {
+        console.info('www data Succeeded to getMetaData', 222);
+        let pixelMap = sendableImage.convertToPixelMap(undefined as ESObject);
+        console.info('www data Succeeded to getMetaData', 333);
+        expect().assertFail();
+        done();
+      } catch(err){
+        console.error(`www data Failed to getMetaData. code is ${err.code}, message is ${err.message}`);
+        console.error(`www data Failed to getMetaData. code is ${err.code}`, typeof(err.code));
+        expect(Number(err.code)).assertEqual(62980104);
+        done();
+      }
+    });
+    
   })
 }
