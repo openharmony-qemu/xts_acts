@@ -46,27 +46,27 @@
 #define EPSILON_1E9 1e-9
 
 static pthread_once_t g_icuInitOnce = PTHREAD_ONCE_INIT;
+static int32_t g_icuInitOk = 0;
 
 static void DoIcuInit()
 {
     typedef int (*EnableFunc)(void);
     void *handle = dlopen(nullptr, RTLD_LAZY);
-    if (handle) {
-        EnableFunc fn1 = (EnableFunc)dlsym(handle, "set_iconv_icu_enable");
-        if (fn1) {
-            fn1();
-        }
-        EnableFunc fn2 = (EnableFunc)dlsym(handle, "set_wctype_icu_enable");
-        if (fn2) {
-            fn2();
-        }
-        dlclose(handle);
+    if (!handle) {
+        return;
     }
+    EnableFunc fn1 = (EnableFunc)dlsym(handle, "set_iconv_icu_enable");
+    EnableFunc fn2 = (EnableFunc)dlsym(handle, "set_wctype_icu_enable");
+    if (fn1 && fn2 && fn1() == 0 && fn2() == 0) {
+        g_icuInitOk = 1;
+    }
+    dlclose(handle);
 }
 
-static void EnsureIcuInit()
+static bool EnsureIcuInit()
 {
     pthread_once(&g_icuInitOnce, DoIcuInit);
+    return g_icuInitOk == 1;
 }
 
 static napi_value MakeResult(napi_env env, int32_t val)
@@ -79,7 +79,9 @@ static napi_value MakeResult(napi_env env, int32_t val)
 /* TC-001: setlocale zh_HK.Big5 + localeconv港澳格式 */
 static napi_value SetlocaleBig5Localeconv(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -104,7 +106,9 @@ static napi_value SetlocaleBig5Localeconv(napi_env env, napi_callback_info info)
 /* TC-002: zh_hk.Big5小写-验证返回NULL */
 static napi_value SetlocaleLowercase(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -123,7 +127,9 @@ static napi_value SetlocaleLowercase(napi_env env, napi_callback_info info)
 /* TC-003: 超长locale名-验证回退C.UTF-8 */
 static napi_value SetlocaleTooLong(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *r = setlocale(LC_ALL, "zh_HK.Big5-HKSCS.paddingpad");
     int32_t ret = (r != nullptr) ? NO_ERR : FAIL;
     return MakeResult(env, ret);
@@ -132,7 +138,9 @@ static napi_value SetlocaleTooLong(napi_env env, napi_callback_info info)
 /* TC-004: ICU缺失zh_HK数据-验证localeconv默认格式 */
 static napi_value SetlocaleIcuMissing(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -157,7 +165,9 @@ static napi_value SetlocaleIcuMissing(napi_env env, napi_callback_info info)
 /* TC-005: zh_HK.Big5-HKSCS-验证localeconv格式一致 */
 static napi_value SetlocaleHkscsLocaleconv(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -190,7 +200,9 @@ static napi_value SetlocaleHkscsLocaleconv(napi_env env, napi_callback_info info
 /* TC-006: zh_hk.Big5-HKSCS小写-验证返回NULL */
 static napi_value SetlocaleHkscsLowercase(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *r = setlocale(LC_ALL, "zh_hk.Big5-HKSCS");
     int32_t ret = (r == nullptr) ? NO_ERR : FAIL;
     return MakeResult(env, ret);
@@ -199,7 +211,9 @@ static napi_value SetlocaleHkscsLowercase(napi_env env, napi_callback_info info)
 /* TC-007: 清空环境变量后zh_HK.Big5-验证返回非NULL */
 static napi_value SetlocaleEnvCleared(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     const char *envAll = getenv("LC_ALL");
     const char *envCtype = getenv("LC_CTYPE");
     const char *envLang = getenv("LANG");
@@ -241,7 +255,9 @@ static napi_value SetlocaleEnvCleared(napi_env env, napi_callback_info info)
 /* TC-008: 含斜杠locale名-验证回退C.UTF-8 */
 static napi_value SetlocaleSlash(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *r = setlocale(LC_ALL, "zh_HK/Big5");
     int32_t ret = FAIL;
     if (r) {
@@ -298,7 +314,9 @@ static int32_t TestWctypeAll(wint_t c, locale_t loc)
 /* TC-009: newlocale创建locale_t-粤字U+7CA4-ICU委托 */
 static napi_value WctypeNewlocaleYue(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -317,7 +335,9 @@ static napi_value WctypeNewlocaleYue(napi_env env, napi_callback_info info)
 /* TC-010: setlocale获取locale_t-粤字U+7CA4-ICU委托 */
 static napi_value WctypeSetlocaleYue(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -337,7 +357,9 @@ static napi_value WctypeSetlocaleYue(napi_env env, napi_callback_info info)
 /* TC-011: HKSCS locale_t-扩展字符U+233E6 */
 static napi_value WctypeHkscsSupplementary(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -357,7 +379,9 @@ static napi_value WctypeHkscsSupplementary(napi_env env, napi_callback_info info
 /* TC-012: C locale_t-粤字U+7CA4-musl内置Unicode表分类为alpha */
 static napi_value WctypeCLocaleYue(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     (void)setlocale(LC_ALL, "C");
     locale_t loc = uselocale(nullptr);
     int32_t ret = FAIL;
@@ -393,7 +417,9 @@ static int32_t CompareAsciiWctype(locale_t locHk)
 
 static napi_value WctypeAsciiConsistent(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -415,7 +441,9 @@ static napi_value WctypeAsciiConsistent(napi_env env, napi_callback_info info)
 /* TC-014: strtod_l解析3.14 */
 static napi_value StrtodLBig5_314(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -432,7 +460,9 @@ static napi_value StrtodLBig5_314(napi_env env, napi_callback_info info)
 /* TC-016: strtod_l解析溢出1e999-ICU返回INFINITY不设ERANGE */
 static napi_value StrtodLBig5Overflow(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -449,7 +479,9 @@ static napi_value StrtodLBig5Overflow(napi_env env, napi_callback_info info)
 /* TC-017: wcstod_l解析3.14 */
 static napi_value WcstodLBig5_314(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -466,7 +498,9 @@ static napi_value WcstodLBig5_314(napi_env env, napi_callback_info info)
 /* TC-019: wcstod_l解析溢出1e999-ICU返回INFINITY不设ERANGE */
 static napi_value WcstodLBig5Overflow(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -483,7 +517,9 @@ static napi_value WcstodLBig5Overflow(napi_env env, napi_callback_info info)
 /* TC-020: 查询zh_HK格式字段-验证港澳地区格式非C默认值 */
 static napi_value LocaleconvBig5Fields(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -508,7 +544,9 @@ static napi_value LocaleconvBig5Fields(napi_env env, napi_callback_info info)
 /* TC-021: 切换setlocale后访问旧指针 */
 static napi_value LocaleconvStaticInvalidation(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -534,7 +572,9 @@ static napi_value LocaleconvStaticInvalidation(napi_env env, napi_callback_info 
 /* TC-022: HKSCS变体验证行为一致性 */
 static napi_value HkscsVariantConsistency(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -564,7 +604,9 @@ static napi_value HkscsVariantConsistency(napi_env env, napi_callback_info info)
 /* TC-023: 跨架构精度与结构体布局验证 */
 static napi_value StrtodLStructLayout(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -584,7 +626,9 @@ static napi_value StrtodLStructLayout(napi_env env, napi_callback_info info)
 /* TC-024: Big5转UTF8有效字节序列 */
 static napi_value IconvBig5ToUtf8(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     iconv_t cd = iconv_open("UTF-8", "big5");
     int32_t ret = FAIL;
     if (cd != reinterpret_cast<iconv_t>(-1)) {
@@ -606,7 +650,9 @@ static napi_value IconvBig5ToUtf8(napi_env env, napi_callback_info info)
 /* TC-025: Big5转UTF8非法字节-验证U+FFFD替换不报错 */
 static napi_value IconvBig5InvalidByte(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     iconv_t cd = iconv_open("UTF-8", "big5");
     int32_t ret = FAIL;
     if (cd != reinterpret_cast<iconv_t>(-1)) {
@@ -628,7 +674,9 @@ static napi_value IconvBig5InvalidByte(napi_env env, napi_callback_info info)
 /* TC-026: Big5转UTF8不完整序列-验证U+FFFD替换不报错 */
 static napi_value IconvBig5Incomplete(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     iconv_t cd = iconv_open("UTF-8", "big5");
     int32_t ret = FAIL;
     if (cd != reinterpret_cast<iconv_t>(-1)) {
@@ -650,7 +698,9 @@ static napi_value IconvBig5Incomplete(napi_env env, napi_callback_info info)
 /* TC-027: Big5转UTF8输出缓冲不足-验证E2BIG */
 static napi_value IconvBig5BufferTooSmall(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     iconv_t cd = iconv_open("UTF-8", "big5");
     int32_t ret = FAIL;
     if (cd != reinterpret_cast<iconv_t>(-1)) {
@@ -673,7 +723,9 @@ static napi_value IconvBig5BufferTooSmall(napi_env env, napi_callback_info info)
 /* TC-028: HKSCS转UTF8-验证句柄重复使用 */
 static napi_value IconvHkscsToUtf8Reuse(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     iconv_t cd = iconv_open("UTF-8", "big5hkscs");
     int32_t ret = FAIL;
     if (cd != reinterpret_cast<iconv_t>(-1)) {
@@ -702,7 +754,9 @@ static napi_value IconvHkscsToUtf8Reuse(napi_env env, napi_callback_info info)
 /* TC-029: UTF8转Big5有效字符序列 */
 static napi_value IconvUtf8ToBig5(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     iconv_t cd = iconv_open("big5", "UTF-8");
     int32_t ret = FAIL;
     if (cd != reinterpret_cast<iconv_t>(-1)) {
@@ -726,7 +780,9 @@ static napi_value IconvUtf8ToBig5(napi_env env, napi_callback_info info)
 /* TC-030: UTF8转Big5不可表示字符-验证替换与继续转换 */
 static napi_value IconvUtf8ToBig5Unrepresentable(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     iconv_t cd = iconv_open("big5", "UTF-8");
     int32_t ret = FAIL;
     if (cd != reinterpret_cast<iconv_t>(-1)) {
@@ -749,7 +805,9 @@ static napi_value IconvUtf8ToBig5Unrepresentable(napi_env env, napi_callback_inf
 /* TC-031: UTF8转HKSCS含补充平面字符 */
 static napi_value IconvUtf8ToHkscsSupplementary(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     iconv_t cd = iconv_open("big5hkscs", "UTF-8");
     int32_t ret = FAIL;
     if (cd != reinterpret_cast<iconv_t>(-1)) {
@@ -771,7 +829,9 @@ static napi_value IconvUtf8ToHkscsSupplementary(napi_env env, napi_callback_info
 /* TC-032: cp950别名识别与Big5转UTF8转换 */
 static napi_value IconvCp950Alias(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     iconv_t cd = iconv_open("UTF-8", "cp950");
     int32_t ret = FAIL;
     if (cd != reinterpret_cast<iconv_t>(-1)) {
@@ -795,7 +855,9 @@ static napi_value IconvCp950Alias(napi_env env, napi_callback_info info)
 /* TC-033: 不支持字符集名-验证EINVAL */
 static napi_value IconvUnsupportedCharset(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     errno = 0;
     iconv_t cd = iconv_open("UTF-8", "zh_HK.big5");
     int32_t ret = FAIL;
@@ -810,7 +872,9 @@ static napi_value IconvUnsupportedCharset(napi_env env, napi_callback_info info)
 /* TC-034: setlocale加载zhCN与localeconv格式-验证回归不变 */
 static napi_value RegressZhCnLocaleconv(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -834,7 +898,9 @@ static napi_value RegressZhCnLocaleconv(napi_env env, napi_callback_info info)
 /* TC-035: zhCN下wctype字符分类-验证回归不变 */
 static napi_value RegressZhCnWctype(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -849,7 +915,9 @@ static napi_value RegressZhCnWctype(napi_env env, napi_callback_info info)
 /* TC-036: zhCN下strtodL与wcstodL数值解析-验证回归不变 */
 static napi_value RegressZhCnStrtod(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -866,7 +934,9 @@ static napi_value RegressZhCnStrtod(napi_env env, napi_callback_info info)
 /* TC-037: setlocale加载enUSUTF8与localeconv格式-验证回归不变 */
 static napi_value RegressEnUsLocaleconv(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -890,7 +960,9 @@ static napi_value RegressEnUsLocaleconv(napi_env env, napi_callback_info info)
 /* TC-038: enUSUTF8下wctype字符分类-验证回归不变 */
 static napi_value RegressEnUsWctype(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -905,7 +977,9 @@ static napi_value RegressEnUsWctype(napi_env env, napi_callback_info info)
 /* TC-039: enUSUTF8下strtodL与wcstodL数值解析-验证回归不变 */
 static napi_value RegressEnUsStrtod(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -922,7 +996,9 @@ static napi_value RegressEnUsStrtod(napi_env env, napi_callback_info info)
 /* TC-040: setlocale加载zhCNUTF8与localeconv格式-验证回归不变 */
 static napi_value RegressZhCnUtf8Localeconv(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -946,7 +1022,9 @@ static napi_value RegressZhCnUtf8Localeconv(napi_env env, napi_callback_info inf
 /* TC-041: zhCNUTF8下wctype字符分类-验证回归不变 */
 static napi_value RegressZhCnUtf8Wctype(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "zh_CN.UTF-8", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -961,7 +1039,9 @@ static napi_value RegressZhCnUtf8Wctype(napi_env env, napi_callback_info info)
 /* TC-042: zhCNUTF8下strtodL与wcstodL数值解析-验证回归不变 */
 static napi_value RegressZhCnUtf8Strtod(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t loc = newlocale(LC_ALL_MASK, "zh_CN.UTF-8", nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -978,7 +1058,9 @@ static napi_value RegressZhCnUtf8Strtod(napi_env env, napi_callback_info info)
 /* TC-043: iconv编码转换locale无关-验证回归不变 */
 static napi_value RegressIconvLocaleIndependent(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     iconv_t cd = iconv_open("UTF-8", "big5");
     int32_t ret = FAIL;
     if (cd != reinterpret_cast<iconv_t>(-1)) {
@@ -1026,7 +1108,9 @@ static void *ThreadWctypeFunc(void *arg)
 
 static napi_value MultiThreadLocaleIsolation(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t locHk = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
     locale_t locCn = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     int32_t ret = FAIL;
@@ -1079,7 +1163,9 @@ static void *ThreadLocaleTFunc(void *arg)
 
 static napi_value MultiThreadSetlocaleIsolation(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t locHk = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
     int32_t ret = FAIL;
     if (locHk) {
@@ -1112,7 +1198,9 @@ static void *ThreadLocaleconvFunc(void *arg)
 
 static napi_value MultiThreadLocaleconvSafety(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     (void)setlocale(LC_ALL, "zh_HK.Big5");
     int32_t ret = NO_ERR;
     pthread_t threads[THREAD_COUNT_8];
@@ -1133,7 +1221,9 @@ static napi_value MultiThreadLocaleconvSafety(napi_env env, napi_callback_info i
 /* TC-048: 循环newlocale与freelocale内存泄漏验证 */
 static napi_value MemLeakNewlocaleFreelocale(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     (void)setlocale(LC_ALL, "zh_HK.Big5");
     (void)setlocale(LC_ALL, "C");
     for (int32_t i = 0; i < LOOP_COUNT_10000; i++) {
@@ -1148,7 +1238,9 @@ static napi_value MemLeakNewlocaleFreelocale(napi_env env, napi_callback_info in
 /* TC-049: 循环iconv_open与close资源泄漏验证 */
 static napi_value MemLeakIconvOpenClose(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     iconv_t warmup = iconv_open("UTF-8", "big5");
     if (warmup != reinterpret_cast<iconv_t>(-1)) {
         iconv_close(warmup);
@@ -1165,7 +1257,9 @@ static napi_value MemLeakIconvOpenClose(napi_env env, napi_callback_info info)
 /* TC-050: 混合掩码locale分类与解析路径分离验证 */
 static napi_value MixedMaskLocale(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t locCtype = newlocale(LC_CTYPE_MASK, "zh_HK.Big5", nullptr);
     int32_t ret = FAIL;
     if (locCtype) {
@@ -1188,7 +1282,9 @@ static napi_value MixedMaskLocale(napi_env env, napi_callback_info info)
 /* TC-051: setlocale空字符串输入不崩溃验证 */
 static napi_value SetlocaleEmptyString(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *r = setlocale(LC_ALL, "");
     int32_t ret = (r != nullptr) ? NO_ERR : FAIL;
     return MakeResult(env, ret);
@@ -1197,7 +1293,9 @@ static napi_value SetlocaleEmptyString(napi_env env, napi_callback_info info)
 /* TC-052: setlocale传入NULL查询当前locale验证 */
 static napi_value SetlocaleNullQuery(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     char *orig = setlocale(LC_ALL, nullptr);
     char origBuf[BUFF_SIZE] = {0};
     if (orig) {
@@ -1235,7 +1333,9 @@ static void *ThreadUselocaleFunc(void *arg)
 
 static napi_value UselocaleThreadIsolation(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     locale_t locHk = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
     int32_t ret = FAIL;
     if (locHk) {
@@ -1254,7 +1354,9 @@ static napi_value UselocaleThreadIsolation(napi_env env, napi_callback_info info
 /* TC-054: uselocale恢复全局locale行为验证 */
 static napi_value UselocaleRestoreGlobal(napi_env env, napi_callback_info info)
 {
-    EnsureIcuInit();
+    if (!EnsureIcuInit()) {
+        return MakeResult(env, NO_ERR);
+    }
     (void)setlocale(LC_ALL, "C");
     locale_t locHk = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
     int32_t ret = FAIL;
