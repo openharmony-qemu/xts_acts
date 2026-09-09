@@ -587,7 +587,7 @@ static napi_value IconvBig5ToUtf8(napi_env env, napi_callback_info info)
     EnsureIcuInit();
     iconv_t cd = iconv_open("UTF-8", "big5");
     int32_t ret = FAIL;
-    if (cd != static_cast<iconv_t>(-1)) {
+    if (cd != reinterpret_cast<iconv_t>(-1)) {
         char in[] = "\xca\xfd";
         char *inp = in;
         size_t inlen = 2;
@@ -609,7 +609,7 @@ static napi_value IconvBig5InvalidByte(napi_env env, napi_callback_info info)
     EnsureIcuInit();
     iconv_t cd = iconv_open("UTF-8", "big5");
     int32_t ret = FAIL;
-    if (cd != static_cast<iconv_t>(-1)) {
+    if (cd != reinterpret_cast<iconv_t>(-1)) {
         char in[] = "\x80";
         char *inp = in;
         size_t inlen = 1;
@@ -631,7 +631,7 @@ static napi_value IconvBig5Incomplete(napi_env env, napi_callback_info info)
     EnsureIcuInit();
     iconv_t cd = iconv_open("UTF-8", "big5");
     int32_t ret = FAIL;
-    if (cd != static_cast<iconv_t>(-1)) {
+    if (cd != reinterpret_cast<iconv_t>(-1)) {
         char in[] = "\xa4";
         char *inp = in;
         size_t inlen = 1;
@@ -653,7 +653,7 @@ static napi_value IconvBig5BufferTooSmall(napi_env env, napi_callback_info info)
     EnsureIcuInit();
     iconv_t cd = iconv_open("UTF-8", "big5");
     int32_t ret = FAIL;
-    if (cd != static_cast<iconv_t>(-1)) {
+    if (cd != reinterpret_cast<iconv_t>(-1)) {
         char in[] = "\xca\xfd";
         char *inp = in;
         size_t inlen = 2;
@@ -676,7 +676,7 @@ static napi_value IconvHkscsToUtf8Reuse(napi_env env, napi_callback_info info)
     EnsureIcuInit();
     iconv_t cd = iconv_open("UTF-8", "big5hkscs");
     int32_t ret = FAIL;
-    if (cd != static_cast<iconv_t>(-1)) {
+    if (cd != reinterpret_cast<iconv_t>(-1)) {
         char in1[] = "\x87\x40";
         char *inp1 = in1;
         size_t inlen1 = 2;
@@ -705,7 +705,7 @@ static napi_value IconvUtf8ToBig5(napi_env env, napi_callback_info info)
     EnsureIcuInit();
     iconv_t cd = iconv_open("big5", "UTF-8");
     int32_t ret = FAIL;
-    if (cd != static_cast<iconv_t>(-1)) {
+    if (cd != reinterpret_cast<iconv_t>(-1)) {
         char in[] = "\xe4\xb8\xad";
         char *inp = in;
         size_t inlen = 3;
@@ -729,7 +729,7 @@ static napi_value IconvUtf8ToBig5Unrepresentable(napi_env env, napi_callback_inf
     EnsureIcuInit();
     iconv_t cd = iconv_open("big5", "UTF-8");
     int32_t ret = FAIL;
-    if (cd != static_cast<iconv_t>(-1)) {
+    if (cd != reinterpret_cast<iconv_t>(-1)) {
         char in[] = "\xc3\xa9\xe4\xb8\xad";
         char *inp = in;
         size_t inlen = 5;
@@ -751,7 +751,7 @@ static napi_value IconvUtf8ToHkscsSupplementary(napi_env env, napi_callback_info
     EnsureIcuInit();
     iconv_t cd = iconv_open("big5hkscs", "UTF-8");
     int32_t ret = FAIL;
-    if (cd != static_cast<iconv_t>(-1)) {
+    if (cd != reinterpret_cast<iconv_t>(-1)) {
         char in[] = "\xf0\xa3\x8f\xa6";
         char *inp = in;
         size_t inlen = 4;
@@ -773,7 +773,7 @@ static napi_value IconvCp950Alias(napi_env env, napi_callback_info info)
     EnsureIcuInit();
     iconv_t cd = iconv_open("UTF-8", "cp950");
     int32_t ret = FAIL;
-    if (cd != static_cast<iconv_t>(-1)) {
+    if (cd != reinterpret_cast<iconv_t>(-1)) {
         char in[] = "\xa4\xa4";
         char *inp = in;
         size_t inlen = 2;
@@ -798,7 +798,7 @@ static napi_value IconvUnsupportedCharset(napi_env env, napi_callback_info info)
     errno = 0;
     iconv_t cd = iconv_open("UTF-8", "zh_HK.big5");
     int32_t ret = FAIL;
-    if (cd == static_cast<iconv_t>(-1) && errno == EINVAL) {
+    if (cd == reinterpret_cast<iconv_t>(-1) && errno == EINVAL) {
         ret = NO_ERR;
     }
     return MakeResult(env, ret);
@@ -980,7 +980,7 @@ static napi_value RegressIconvLocaleIndependent(napi_env env, napi_callback_info
     EnsureIcuInit();
     iconv_t cd = iconv_open("UTF-8", "big5");
     int32_t ret = FAIL;
-    if (cd != static_cast<iconv_t>(-1)) {
+    if (cd != reinterpret_cast<iconv_t>(-1)) {
         char in[] = "\xa4\xa4";
         char *inp = in;
         size_t inlen = 2;
@@ -1147,12 +1147,12 @@ static napi_value MemLeakIconvOpenClose(napi_env env, napi_callback_info info)
 {
     EnsureIcuInit();
     iconv_t warmup = iconv_open("UTF-8", "big5");
-    if (warmup != static_cast<iconv_t>(-1)) {
+    if (warmup != reinterpret_cast<iconv_t>(-1)) {
         iconv_close(warmup);
     }
     for (int32_t i = 0; i < LOOP_COUNT_10000; i++) {
         iconv_t cd = iconv_open("UTF-8", "big5");
-        if (cd != static_cast<iconv_t>(-1)) {
+        if (cd != reinterpret_cast<iconv_t>(-1)) {
             iconv_close(cd);
         }
     }
@@ -1272,6 +1272,9 @@ static napi_value UselocaleRestoreGlobal(napi_env env, napi_callback_info info)
 }
 
 /* ---- NAPI module registration ---- */
+
+static void InitPartA(napi_env env, napi_value exports);
+static void InitPartB(napi_env env, napi_value exports);
 
 static inline napi_property_descriptor MakeDesc(const char *name, napi_callback func)
 {
