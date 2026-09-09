@@ -526,7 +526,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_onFontObserver_static_2400
-     * @tc.number SSUB_Global_FontManager_OnFontObserver_Static_JS_2400
+     * @tc.number SUB_Global_FontManager_OnFontObserver_Static_JS_2400
      * @tc.desc   test onFontObserver duplicate register
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

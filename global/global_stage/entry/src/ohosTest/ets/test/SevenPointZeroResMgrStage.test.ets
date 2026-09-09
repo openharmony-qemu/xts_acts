@@ -384,7 +384,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_Global_FontManager_OffFontObserver_JS_0100
+     * @tc.number  SUB_Global_FontManager_OnFontObserver_JS_0100
      * @tc.name    test_onFontObserver_noPermission_0100
      * @tc.desc    no permission
      * @tc.size    MEDIUM
