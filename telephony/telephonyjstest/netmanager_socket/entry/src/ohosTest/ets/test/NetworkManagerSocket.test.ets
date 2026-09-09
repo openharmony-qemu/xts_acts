@@ -21,13 +21,13 @@ let instance = undefined;
 
 
 
-let options:socket.TLSConnectOptions = {
-  ALPNProtocols: ["spdy/1", "http/1.1"],
+let options: socket.TLSConnectOptions = {
+  ALPNProtocols: ["http/1.1"],
   address: {
-    address: "192.168.31.96",
-    port: 5555,
+    address: "www.example.com",
+    port: 443,
     family: 1
-  } ,
+  },
   secureOptions: {
     key: "key",
     cert: "cert",
@@ -44,12 +44,14 @@ export default function networkManagerSocketTest() {
 
   describe("Telephony_NetworkManager_SocketTest", () => {
     beforeAll(async () => {
-      console.log('Telephony_NetworkManager_ActsNetworkManagerSocketTest beforeAll start');
-      console.log('Telephony_NetworkManager_ActsNetworkManagerSocketTest beforeAll end');
+      const caseName = 'Telephony_NetworkManager_ActsNetworkManagerSocketTest';
+      console.log(`${caseName} + beforeAll start`);
+      console.log(`${caseName} + beforeAll end`);
     });
     afterAll(async () => {
-      console.log('Telephony_NetworkManager_ActsNetworkManagerSocketTest afterAll start');
-      console.log('Telephony_NetworkManager_ActsNetworkManagerSocketTest afterAll end');
+      const caseName = 'Telephony_NetworkManager_ActsNetworkManagerSocketTest';
+      console.log(`${caseName} + afterAll start`);
+      console.log(`${caseName} + afterAll end`);
     });
     /**
      * @tc.name   Telephony_NetworkManager_constructTLSSocketInstance_0100
@@ -60,11 +62,15 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_constructTLSSocketInstance_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      if (instance != null) {
-        expect(instance).assertInstanceOf('Object');
+      try {
+        const caseName = 'Telephony_NetworkManager_constructTLSSocketInstance_0100';
+        console.log(`${caseName} + start`);
+        let tlsInstance = socket.constructTLSSocketInstance();
+        console.log(`${caseName} + , TLS Socket instance created, isNull=` + (tlsInstance == null));
+        expect(tlsInstance != null).assertEqual(true);
+        console.log(`${caseName} + end`);
         done();
-      } else {
+      } catch (err) {
         expect().assertFail();
         done();
       }
@@ -78,29 +84,48 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_connect_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.connect(options, (err) => {
-        expect(options.ALPNProtocols != undefined).assertEqual(true);
-        expect(options.address != undefined).assertEqual(true);
-        expect(options.secureOptions != undefined).assertEqual(true);
-        expect(options.secureOptions.key != undefined).assertEqual(true);
-        expect(options.secureOptions.cert != undefined).assertEqual(true);
-        expect(options.secureOptions.ca != undefined).assertEqual(true);
-        expect(options.secureOptions.password != undefined).assertEqual(true);
-        expect(options.secureOptions.protocols != undefined).assertEqual(true);
-        // expect(options.secureOptions.protocols[0] == "TLSv1.2").assertEqual(true);
-        // expect(options.secureOptions.protocols[1] == "TLSv1.3").assertEqual(true);
-        expect(options.secureOptions.useRemoteCipherPrefer != undefined).assertEqual(true);
-        expect(options.secureOptions.signatureAlgorithms != undefined).assertEqual(true);
-        expect(options.secureOptions.cipherSuite != undefined).assertEqual(true);
-        if (err == undefined) {
-          expect().assertFail();
-          done();
-        } else {
-          expect(err != undefined).assertEqual(true);
-          done();
-        }
-      });
+      try {
+        const caseName = 'Telephony_NetworkManager_connect_Async_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.connect(options, (err) => {
+          console.log(`${caseName} + ALPNProtocols=` + JSON.stringify(options.ALPNProtocols));
+          expect(options.ALPNProtocols != undefined).assertEqual(true);
+          console.log(`${caseName} + address=` + JSON.stringify(options.address));
+          expect(options.address != undefined).assertEqual(true);
+          console.log(`${caseName} + secureOptions=` + JSON.stringify(options.secureOptions));
+          expect(options.secureOptions != undefined).assertEqual(true);
+          console.log(`${caseName} + secureOptions.key=` + JSON.stringify(options.secureOptions.key));
+          expect(options.secureOptions.key != undefined).assertEqual(true);
+          console.log(`${caseName} + secureOptions.cert=` + JSON.stringify(options.secureOptions.cert));
+          expect(options.secureOptions.cert != undefined).assertEqual(true);
+          console.log(`${caseName} + secureOptions.ca=` + JSON.stringify(options.secureOptions.ca));
+          expect(options.secureOptions.ca != undefined).assertEqual(true);
+          console.log(`${caseName} + secureOptions.password=` + JSON.stringify(options.secureOptions.password));
+          expect(options.secureOptions.password != undefined).assertEqual(true);
+          console.log(`${caseName} + secureOptions.protocols=` + JSON.stringify(options.secureOptions.protocols));
+          expect(options.secureOptions.protocols != undefined).assertEqual(true);
+          console.log(`${caseName} + secureOptions.useRemoteCipherPrefer=` + JSON.stringify(options.secureOptions.useRemoteCipherPrefer));
+          expect(options.secureOptions.useRemoteCipherPrefer != undefined).assertEqual(true);
+          console.log(`${caseName} + secureOptions.signatureAlgorithms=` + JSON.stringify(options.secureOptions.signatureAlgorithms));
+          expect(options.secureOptions.signatureAlgorithms != undefined).assertEqual(true);
+          console.log(`${caseName} + secureOptions.cipherSuite=` + JSON.stringify(options.secureOptions.cipherSuite));
+          expect(options.secureOptions.cipherSuite != undefined).assertEqual(true);
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          if (err == undefined) {
+            expect().assertFail();
+            done();
+          } else {
+            console.log(`${caseName} + err.code=` + err.code);
+            expect(err != undefined).assertEqual(true);
+            expect(err.code).assertEqual(2303600);
+            done();
+          }
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_connect_Promise_0100
@@ -111,14 +136,25 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_connect_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.connect(options).then(() => {
+      try {
+        const caseName = 'Telephony_NetworkManager_connect_Promise_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.connect(options).then(() => {
+          console.log(`${caseName} + end, success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
+          expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          done();
+        });
+      } catch (err) {
         expect().assertFail();
         done();
-      }).catch((err:BusinessError) => {
-        expect(err != undefined).assertEqual(true);
-        done();
-      });
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_close_Async_0100
@@ -129,16 +165,21 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_close_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.close((err) => {
-        if (err == undefined) {
-          expect().assertFail();
-          done();
-        } else {
+      try {
+        const caseName = 'Telephony_NetworkManager_close_Async_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.close((err: BusinessError) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
           done();
-        }
-      });
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_close_Promise_0100
@@ -149,14 +190,25 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_close_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.close().then(() => {
+      try {
+        const caseName = 'Telephony_NetworkManager_close_Promise_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.close().then(() => {
+          console.log(`${caseName} + end, success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
+          expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          done();
+        });
+      } catch (err) {
         expect().assertFail();
         done();
-      }).catch((err:BusinessError) => {
-        expect(err != undefined).assertEqual(true);
-        done();
-      });
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_getCertificate_Async_0100
@@ -167,17 +219,22 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getCertificate_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.getCertificate((err, X509CertRawData) => {
-        if (err == undefined) {
-          expect().assertFail();
-          done();
-        } else {
-          expect(X509CertRawData).assertEqual(undefined);
+      try {
+        const caseName = 'Telephony_NetworkManager_getCertificate_Async_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.getCertificate((err: BusinessError, data) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          expect(data).assertEqual(undefined);
           done();
-        }
-      });
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_getCertificate_Promise_0100
@@ -188,15 +245,25 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getCertificate_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.getCertificate().then((data) => {
-        expect(data).assertEqual(undefined);
+      try {
+        const caseName = 'Telephony_NetworkManager_getCertificate_Promise_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.getCertificate().then((data) => {
+          console.log(`${caseName} + end, success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
+          expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          done();
+        });
+      } catch (err) {
         expect().assertFail();
         done();
-      }).catch((err:BusinessError) => {
-        expect(err != undefined).assertEqual(true);
-        done();
-      });
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_getRemoteCertificate_Async_0100
@@ -207,17 +274,22 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getRemoteCertificate_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.getRemoteCertificate((err, data) => {
-        if (err == undefined) {
-          expect().assertFail();
-          done();
-        } else {
-          expect(data).assertEqual(undefined);
+      try {
+        const caseName = 'Telephony_NetworkManager_getRemoteCertificate_Async_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.getRemoteCertificate((err: BusinessError, data) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          expect(data).assertEqual(undefined);
           done();
-        }
-      });
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_getRemoteCertificate_Promise_0100
@@ -228,15 +300,25 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getRemoteCertificate_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.getRemoteCertificate().then((data) => {
-        expect(data).assertEqual(undefined);
+      try {
+        const caseName = 'Telephony_NetworkManager_getRemoteCertificate_Promise_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.getRemoteCertificate().then((data) => {
+          console.log(`${caseName} + end, success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
+          expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          done();
+        });
+      } catch (err) {
         expect().assertFail();
         done();
-      }).catch((err:BusinessError) => {
-        expect(err != undefined).assertEqual(true);
-        done();
-      });
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_getProtocol_Async_0100
@@ -247,17 +329,22 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getProtocol_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.getProtocol((err, data) => {
-        if (err == undefined) {
-          expect().assertFail();
-          done();
-        } else {
-          expect(data).assertEqual(undefined);
+      try {
+        const caseName = 'Telephony_NetworkManager_getProtocol_Async_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.getProtocol((err: BusinessError, data) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          expect(data).assertEqual(undefined);
           done();
-        }
-      });
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_getProtocol_Promise_0100
@@ -268,15 +355,25 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getProtocol_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.getProtocol().then((data) => {
-        expect(data).assertEqual(undefined);
+      try {
+        const caseName = 'Telephony_NetworkManager_getProtocol_Promise_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.getProtocol().then((data) => {
+          console.log(`${caseName} + end, success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
+          expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          done();
+        });
+      } catch (err) {
         expect().assertFail();
         done();
-      }).catch((err:BusinessError) => {
-        expect(err != undefined).assertEqual(true);
-        done();
-      });
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_getCipherSuites_Async_0100
@@ -287,17 +384,22 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getCipherSuites_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.getCipherSuite((err, data) => {
-        if (err == undefined) {
-          expect().assertFail();
-          done();
-        } else {
-          expect(data).assertEqual(undefined);
+      try {
+        const caseName = 'Telephony_NetworkManager_getCipherSuites_Async_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.getCipherSuite((err: BusinessError, data) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          expect(data).assertEqual(undefined);
           done();
-        }
-      });
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_getCipherSuites_Promise_0100
@@ -308,15 +410,25 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getCipherSuites_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.getCipherSuite().then((data) => {
-        expect(data).assertEqual(undefined);
+      try {
+        const caseName = 'Telephony_NetworkManager_getCipherSuites_Promise_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.getCipherSuite().then((data) => {
+          console.log(`${caseName} + end, success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
+          expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          done();
+        });
+      } catch (err) {
         expect().assertFail();
         done();
-      }).catch((err:BusinessError) => {
-        expect(err != undefined).assertEqual(true);
-        done();
-      });
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_getSignatureAlgorithms_Async_0100
@@ -327,17 +439,22 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getSignatureAlgorithms_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.getSignatureAlgorithms((err, data) => {
-        if (err == undefined) {
-          expect().assertFail();
-          done();
-        } else {
-          expect(data).assertEqual(undefined);
+      try {
+        const caseName = 'Telephony_NetworkManager_getSignatureAlgorithms_Async_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.getSignatureAlgorithms((err: BusinessError, data) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          expect(data).assertEqual(undefined);
           done();
-        }
-      });
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_getSignatureAlgorithms_Promise_0100
@@ -348,15 +465,25 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getSignatureAlgorithms_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.getSignatureAlgorithms().then((data) => {
-        expect(data).assertEqual(undefined);
+      try {
+        const caseName = 'Telephony_NetworkManager_getSignatureAlgorithms_Promise_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.getSignatureAlgorithms().then((data) => {
+          console.log(`${caseName} + end, success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
+          expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          done();
+        });
+      } catch (err) {
         expect().assertFail();
         done();
-      }).catch((err:BusinessError) => {
-        expect(err != undefined).assertEqual(true);
-        done();
-      });
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_send_Async_0100
@@ -367,16 +494,21 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_send_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.send(sendData, (err) => {
-        if (err == undefined) {
-          expect().assertFail();
-          done();
-        } else {
+      try {
+        const caseName = 'Telephony_NetworkManager_send_Async_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.send(sendData, (err: BusinessError) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
           done();
-        }
-      });
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
     });
     /**
      * @tc.name   Telephony_NetworkManager_send_Promise_0100
@@ -387,14 +519,25 @@ export default function networkManagerSocketTest() {
      * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_send_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let instance = socket.constructTLSSocketInstance();
-      instance.send(sendData).then(() => {
+      try {
+        const caseName = 'Telephony_NetworkManager_send_Promise_0100';
+        console.log(`${caseName} + start`);
+        let instance = socket.constructTLSSocketInstance();
+        instance.send(sendData).then(() => {
+          console.log(`${caseName} + end, success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} + end, err=` + JSON.stringify(err));
+          console.log(`${caseName} + err.code=` + err.code);
+          expect(err != undefined).assertEqual(true);
+          expect(err.code).assertEqual(2303600);
+          done();
+        });
+      } catch (err) {
         expect().assertFail();
         done();
-      }).catch((err:BusinessError) => {
-        expect(err != undefined).assertEqual(true);
-        done();
-      });
+      }
     });
     /**
      * @tc.name   Telephony_TLSSocket_on_message_0100
@@ -406,14 +549,18 @@ export default function networkManagerSocketTest() {
      */
     it('Telephony_TLSSocket_on_message_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
+        const caseName = 'Telephony_TLSSocket_on_message_0100';
+        console.log(`${caseName} + start`);
         let tls = socket.constructTLSSocketInstance();
-        tls.on('message', value => {
-          console.log('message: ' + JSON.stringify(value.message));
-          console.log('remoteInfo: ' + JSON.stringify(value.remoteInfo));
+        expect(tls != null).assertEqual(true);
+        tls.on('message', (value: socket.SocketMessageInfo) => {
+          console.log(`${caseName} + , message: ` + JSON.stringify(value.message));
+          console.log(`${caseName} + , remoteInfo: ` + JSON.stringify(value.remoteInfo));
         });
+        console.log(`${caseName} + end`);
         done();
       } catch (err) {
-        expect(true).assertFalse();
+        expect().assertFail();
         done();
       }
     });
@@ -427,41 +574,88 @@ export default function networkManagerSocketTest() {
      */
     it('Telephony_TLSSocket_off_message_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
+        const caseName = 'Telephony_TLSSocket_off_message_0100';
+        console.log(`${caseName} + start`);
         let tls = socket.constructTLSSocketInstance();
-        tls.on('message',value => {
-          console.log('message: ' + JSON.stringify(value.message));
-          console.log('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-        });
-        tls.off('message',value=>{
-          console.log('message: ' + JSON.stringify(value.message));
-          console.log('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-        })
+        expect(tls != null).assertEqual(true);
+        let callback = (value: socket.SocketMessageInfo) => {
+          console.log(`${caseName} + , message: ` + JSON.stringify(value.message));
+          console.log(`${caseName} + , remoteInfo: ` + JSON.stringify(value.remoteInfo));
+        };
+        tls.on('message', callback);
+        tls.off('message', callback);
+        console.log(`${caseName} + end`);
         done();
       } catch (err) {
-        expect(true).assertFalse();
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.name   Telephony_TLSSocket_off_message_0200
+     * @tc.number Telephony_TLSSocket_off_message_0200
+     * @tc.desc   Function test - off('message') without callback parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Telephony_TLSSocket_off_message_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const caseName = 'Telephony_TLSSocket_off_message_0200';
+        console.log(`${caseName} + start`);
+        let tls = socket.constructTLSSocketInstance();
+        expect(tls != null).assertEqual(true);
+        let callback = (value: socket.SocketMessageInfo) => {
+          console.log(`${caseName} + , message: ` + JSON.stringify(value.message));
+          console.log(`${caseName} + , remoteInfo: ` + JSON.stringify(value.remoteInfo));
+        };
+        tls.on('message', callback);
+        tls.off('message');
+        console.log(`${caseName} + end`);
+        done();
+      } catch (err) {
+        expect().assertFail();
         done();
       }
     });
     /**
      * @tc.name   Telephony_TLSSocket_on_connect_on_close_0100
      * @tc.number Telephony_TLSSocket_on_connect_on_close_0100
-     * @tc.desc   Function test
+     * @tc.desc   Function test - connect to real server to trigger events
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('Telephony_TLSSocket_on_connect_on_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
+        const caseName = 'Telephony_TLSSocket_on_connect_on_close_0100';
+        console.log(`${caseName} + start`);
         let tls = socket.constructTLSSocketInstance();
+        expect(tls != null).assertEqual(true);
         tls.on('connect', () => {
-          console.log("on connect success");
+          console.log(`${caseName} + , on connect success`);
+          tls.close((err: BusinessError) => {
+            console.log(`${caseName} + , close callback, err=` + JSON.stringify(err));
+          });
         });
         tls.on('close', () => {
-          console.log("on close success");
+          console.log(`${caseName} + , on close success`);
+          console.log(`${caseName} + end`);
+          done();
         });
-        done();
+        tls.connect(options, (err: BusinessError) => {
+          console.log(`${caseName} + , connect callback, err=` + JSON.stringify(err));
+          if (err == undefined) {
+            console.log(`${caseName} + connect success`);
+          } else {
+            console.log(`${caseName} + , connect error code=` + err.code);
+            expect(err.code).assertEqual(2303600);
+            console.log(`${caseName} + end`);
+            done();
+          }
+        });
       } catch (err) {
-        expect(true).assertFalse();
+        expect().assertFail();
         done();
       }
     });
@@ -475,41 +669,68 @@ export default function networkManagerSocketTest() {
      */
     it('Telephony_TLSSocket_off_connect_off_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
+        const caseName = 'Telephony_TLSSocket_off_connect_off_close_0100';
+        console.log(`${caseName} + start`);
         let tls = socket.constructTLSSocketInstance();
+        expect(tls != null).assertEqual(true);
         let callback1 = () => {
-          console.log("on connect success");
+          console.log(`${caseName} + , on connect success`);
         };
         tls.on('connect', callback1);
         tls.off('connect', callback1);
         tls.off('connect');
         let callback2 = () => {
-          console.log("on close success");
+          console.log(`${caseName} + , on close success`);
         };
         tls.on('close', callback2);
         tls.off('close', callback2);
+        console.log(`${caseName} + end`);
         done();
       } catch (err) {
-        expect(true).assertFalse();
+        expect().assertFail();
         done();
       }
     });
     /**
      * @tc.name   Telephony_TLSSocket_on_error_0100
      * @tc.number Telephony_TLSSocket_on_error_0100
-     * @tc.desc   Function test
+     * @tc.desc   Function test - trigger error event by connecting to invalid address
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('Telephony_TLSSocket_on_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
+        const caseName = 'Telephony_TLSSocket_on_error_0100';
+        console.log(`${caseName} + start`);
         let tls = socket.constructTLSSocketInstance();
-        tls.on('error', err => {
-          console.log("on error, err:" + JSON.stringify(err));
+        expect(tls != null).assertEqual(true);
+        tls.on('error', (err: BusinessError) => {
+          console.log(`${caseName} + , on error, err:` + JSON.stringify(err));
+          console.log(`${caseName} + , on error code=` + err.code);
         });
-        done();
+        let badOptions: socket.TLSConnectOptions = {
+          address: {
+            address: "0.0.0.0",
+            port: 1,
+            family: 1
+          },
+          secureOptions: {
+            protocols: [socket.Protocol.TLSv12, socket.Protocol.TLSv13],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          }
+        };
+        tls.connect(badOptions, (err: BusinessError) => {
+          console.log(`${caseName} + , connect callback, err=` + JSON.stringify(err));
+          console.log(`${caseName} + , connect error code=` + err.code);
+          expect(err.code).assertEqual(2303600);
+          console.log(`${caseName} + end`);
+          done();
+        });
       } catch (err) {
-        expect(true).assertFalse();
+        expect().assertFail();
         done();
       }
     });
@@ -523,15 +744,19 @@ export default function networkManagerSocketTest() {
      */
     it('Telephony_TLSSocket_off_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
+        const caseName = 'Telephony_TLSSocket_off_error_0100';
+        console.log(`${caseName} + start`);
         let tls = socket.constructTLSSocketInstance();
-        let callback = (err:BusinessError) => {
-          console.log("on error, err:" + JSON.stringify(err));
+        expect(tls != null).assertEqual(true);
+        let callback = (err: BusinessError) => {
+          console.log(`${caseName} + , on error, err:` + JSON.stringify(err));
         };
         tls.on('error', callback);
         tls.off('error', callback);
+        console.log(`${caseName} + end`);
         done();
       } catch (err) {
-        expect(true).assertFalse();
+        expect().assertFail();
         done();
       }
     });
