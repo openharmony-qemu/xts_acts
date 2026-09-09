@@ -96,7 +96,7 @@ export default class CommonTest {
               }
               // console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
               // AppStorage.setOrCreate<SetValue>('_backdropBlur', data.testValue.setValue);
-              // await Utils.sleep(1000);
+              await Utils.sleep(1000);
 
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
