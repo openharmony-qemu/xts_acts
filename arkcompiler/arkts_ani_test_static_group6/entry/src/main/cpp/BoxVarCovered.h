@@ -1131,14 +1131,16 @@ ani_int test_UnboxBoolean_MultiThread(ani_env *env, [[maybe_unused]] ani_object 
                 return;
             }
             ani_object boxed{};
-            if (tEnv->Primitive_Box_Boolean(ANI_TRUE, &boxed) == ANI_OK) {
-                ani_boolean out = ANI_FALSE;
-                if (tEnv->Primitive_Unbox_Boolean(boxed, &out) != ANI_OK || out != ANI_TRUE) {
-                    vm->DetachCurrentThread();
-                    return;
-                }
-                successCount.fetch_add(1);
+            if (!(tEnv->Primitive_Box_Boolean(ANI_TRUE, &boxed) == ANI_OK)) {
+                vm->DetachCurrentThread();
+                return;
             }
+            ani_boolean out = ANI_FALSE;
+            if (tEnv->Primitive_Unbox_Boolean(boxed, &out) != ANI_OK || out != ANI_TRUE) {
+                vm->DetachCurrentThread();
+                return;
+            }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1198,14 +1200,16 @@ ani_int test_UnboxChar_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
                 return;
             }
             ani_object boxed{};
-            if (tEnv->Primitive_Box_Char(static_cast<ani_char>('A'), &boxed) == ANI_OK) {
-                ani_char out = 0;
-                if (tEnv->Primitive_Unbox_Char(boxed, &out) != ANI_OK || out != static_cast<ani_char>('A')) {
-                    vm->DetachCurrentThread();
-                    return;
-                }
-                successCount.fetch_add(1);
+            if (!(tEnv->Primitive_Box_Char(static_cast<ani_char>('A'), &boxed) == ANI_OK)) {
+                vm->DetachCurrentThread();
+                return;
             }
+            ani_char out = 0;
+            if (tEnv->Primitive_Unbox_Char(boxed, &out) != ANI_OK || out != static_cast<ani_char>('A')) {
+                vm->DetachCurrentThread();
+                return;
+            }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1232,14 +1236,16 @@ ani_int test_UnboxDouble_MultiThread(ani_env *env, [[maybe_unused]] ani_object o
                 return;
             }
             ani_object boxed{};
-            if (tEnv->Primitive_Box_Double(P3_DOUBLE_VALUE, &boxed) == ANI_OK) {
-                ani_double out = 0.0;
-                if (tEnv->Primitive_Unbox_Double(boxed, &out) != ANI_OK || out != P3_DOUBLE_VALUE) {
-                    vm->DetachCurrentThread();
-                    return;
-                }
-                successCount.fetch_add(1);
+            if (!(tEnv->Primitive_Box_Double(P3_DOUBLE_VALUE, &boxed) == ANI_OK)) {
+                vm->DetachCurrentThread();
+                return;
             }
+            ani_double out = 0.0;
+            if (tEnv->Primitive_Unbox_Double(boxed, &out) != ANI_OK || out != P3_DOUBLE_VALUE) {
+                vm->DetachCurrentThread();
+                return;
+            }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1266,14 +1272,16 @@ ani_int test_UnboxFloat_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
                 return;
             }
             ani_object boxed{};
-            if (tEnv->Primitive_Box_Float(3.14159f, &boxed) == ANI_OK) {
-                ani_float out = 0.0f;
-                if (tEnv->Primitive_Unbox_Float(boxed, &out) != ANI_OK || out != 3.14159f) {
-                    vm->DetachCurrentThread();
-                    return;
-                }
-                successCount.fetch_add(1);
+            if (!(tEnv->Primitive_Box_Float(3.14159f, &boxed) == ANI_OK)) {
+                vm->DetachCurrentThread();
+                return;
             }
+            ani_float out = 0.0f;
+            if (tEnv->Primitive_Unbox_Float(boxed, &out) != ANI_OK || out != 3.14159f) {
+                vm->DetachCurrentThread();
+                return;
+            }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1300,14 +1308,16 @@ ani_int test_UnboxInt_MultiThread(ani_env *env, [[maybe_unused]] ani_object obje
                 return;
             }
             ani_object boxed{};
-            if (tEnv->Primitive_Box_Int(P3_INT_VALUE, &boxed) == ANI_OK) {
-                ani_int out = 0;
-                if (tEnv->Primitive_Unbox_Int(boxed, &out) != ANI_OK || out != P3_INT_VALUE) {
-                    vm->DetachCurrentThread();
-                    return;
-                }
-                successCount.fetch_add(1);
+            if (!(tEnv->Primitive_Box_Int(P3_INT_VALUE, &boxed) == ANI_OK)) {
+                vm->DetachCurrentThread();
+                return;
             }
+            ani_int out = 0;
+            if (tEnv->Primitive_Unbox_Int(boxed, &out) != ANI_OK || out != P3_INT_VALUE) {
+                vm->DetachCurrentThread();
+                return;
+            }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1334,14 +1344,16 @@ ani_int test_UnboxLong_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
                 return;
             }
             ani_object boxed{};
-            if (tEnv->Primitive_Box_Long(12345678901234LL, &boxed) == ANI_OK) {
-                ani_long out = 0;
-                if (tEnv->Primitive_Unbox_Long(boxed, &out) != ANI_OK || out != 12345678901234LL) {
-                    vm->DetachCurrentThread();
-                    return;
-                }
-                successCount.fetch_add(1);
+            if (!(tEnv->Primitive_Box_Long(12345678901234LL, &boxed) == ANI_OK)) {
+                vm->DetachCurrentThread();
+                return;
             }
+            ani_long out = 0;
+            if (tEnv->Primitive_Unbox_Long(boxed, &out) != ANI_OK || out != 12345678901234LL) {
+                vm->DetachCurrentThread();
+                return;
+            }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }
@@ -1368,14 +1380,16 @@ ani_int test_UnboxShort_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
                 return;
             }
             ani_object boxed{};
-            if (tEnv->Primitive_Box_Short(P3_SHORT_VALUE, &boxed) == ANI_OK) {
-                ani_short out = 0;
-                if (tEnv->Primitive_Unbox_Short(boxed, &out) != ANI_OK || out != P3_SHORT_VALUE) {
-                    vm->DetachCurrentThread();
-                    return;
-                }
-                successCount.fetch_add(1);
+            if (!(tEnv->Primitive_Box_Short(P3_SHORT_VALUE, &boxed) == ANI_OK)) {
+                vm->DetachCurrentThread();
+                return;
             }
+            ani_short out = 0;
+            if (tEnv->Primitive_Unbox_Short(boxed, &out) != ANI_OK || out != P3_SHORT_VALUE) {
+                vm->DetachCurrentThread();
+                return;
+            }
+            successCount.fetch_add(1);
             vm->DetachCurrentThread();
         });
     }

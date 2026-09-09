@@ -536,8 +536,7 @@ ani_int test_Array_GetLength_MultiThread(ani_env *env, [[maybe_unused]] ani_obje
             ani_size len = 0;
             if (tEnv->GetUndefined(&undef) != ANI_OK ||
                 tEnv->Array_New(PART2_THREE_ITEM_ARRAY, undef, &arr) != ANI_OK ||
-                tEnv->Array_GetLength(arr, &len) != ANI_OK ||
-                len != PART2_THREE_ITEM_ARRAY) {
+                tEnv->Array_GetLength(arr, &len) != ANI_OK || len != PART2_THREE_ITEM_ARRAY) {
                 vm->DetachCurrentThread();
                 return;
             }
@@ -569,8 +568,7 @@ ani_int test_Array_New_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
             }
             ani_ref undef{};
             ani_array arr{};
-            if (tEnv->GetUndefined(&undef) != ANI_OK ||
-                tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) != ANI_OK) {
+            if (tEnv->GetUndefined(&undef) != ANI_OK || tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) != ANI_OK) {
                 vm->DetachCurrentThread();
                 return;
             }
@@ -631,8 +629,7 @@ ani_int test_Array_Set_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
             ani_ref undef{};
             ani_array arr{};
             ani_string str{};
-            if (tEnv->GetUndefined(&undef) != ANI_OK ||
-                tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) != ANI_OK ||
+            if (tEnv->GetUndefined(&undef) != ANI_OK || tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) != ANI_OK ||
                 tEnv->String_NewUTF8("set", sizeof("set") - 1, &str) != ANI_OK ||
                 tEnv->Array_Set(arr, 0, static_cast<ani_ref>(str)) != ANI_OK) {
                 vm->DetachCurrentThread();
@@ -667,8 +664,7 @@ ani_int test_Array_Get_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
             ani_ref undef{};
             ani_array arr{};
             ani_ref ref{};
-            if (tEnv->GetUndefined(&undef) != ANI_OK ||
-                tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) != ANI_OK ||
+            if (tEnv->GetUndefined(&undef) != ANI_OK || tEnv->Array_New(PART2_TWO_ITEM_ARRAY, undef, &arr) != ANI_OK ||
                 tEnv->Array_Get(arr, 0, &ref) != ANI_OK) {
                 vm->DetachCurrentThread();
                 return;
@@ -712,8 +708,7 @@ ani_int test_Array_Push_MultiThread(ani_env *env, [[maybe_unused]] ani_object ob
             ani_ref undef{};
             ani_array arr{};
             ani_string str{};
-            if (tEnv->GetUndefined(&undef) != ANI_OK ||
-                tEnv->Array_New(0, undef, &arr) != ANI_OK ||
+            if (tEnv->GetUndefined(&undef) != ANI_OK || tEnv->Array_New(0, undef, &arr) != ANI_OK ||
                 tEnv->String_NewUTF8("push", sizeof("push") - 1, &str) != ANI_OK ||
                 tEnv->Array_Push(arr, static_cast<ani_ref>(str)) != ANI_OK) {
                 vm->DetachCurrentThread();
@@ -755,8 +750,7 @@ ani_int test_Array_Pop_MultiThread(ani_env *env, [[maybe_unused]] ani_object obj
             ani_ref undef{};
             ani_array arr{};
             ani_ref ref{};
-            if (tEnv->GetUndefined(&undef) != ANI_OK ||
-                tEnv->Array_New(1, undef, &arr) != ANI_OK ||
+            if (tEnv->GetUndefined(&undef) != ANI_OK || tEnv->Array_New(1, undef, &arr) != ANI_OK ||
                 tEnv->Array_Pop(arr, &ref) != ANI_OK) {
                 vm->DetachCurrentThread();
                 return;
@@ -961,8 +955,7 @@ ani_int test_Reference_IsNull_MultiThread(ani_env *env, [[maybe_unused]] ani_obj
             }
             ani_ref nullRef{};
             ani_boolean isNull = ANI_FALSE;
-            if (tEnv->GetNull(&nullRef) != ANI_OK ||
-                tEnv->Reference_IsNull(nullRef, &isNull) != ANI_OK ||
+            if (tEnv->GetNull(&nullRef) != ANI_OK || tEnv->Reference_IsNull(nullRef, &isNull) != ANI_OK ||
                 isNull != ANI_TRUE) {
                 vm->DetachCurrentThread();
                 return;
@@ -1002,8 +995,7 @@ ani_int test_Reference_IsUndefined_MultiThread(ani_env *env, [[maybe_unused]] an
             }
             ani_ref undefRef{};
             ani_boolean isUndef = ANI_FALSE;
-            if (tEnv->GetUndefined(&undefRef) != ANI_OK ||
-                tEnv->Reference_IsUndefined(undefRef, &isUndef) != ANI_OK ||
+            if (tEnv->GetUndefined(&undefRef) != ANI_OK || tEnv->Reference_IsUndefined(undefRef, &isUndef) != ANI_OK ||
                 isUndef != ANI_TRUE) {
                 vm->DetachCurrentThread();
                 return;
@@ -1071,8 +1063,7 @@ ani_int test_Reference_IsNullishValue_MultiThread(ani_env *env, [[maybe_unused]]
             }
             ani_ref nullRef{};
             ani_boolean isNullish = ANI_FALSE;
-            if (tEnv->GetNull(&nullRef) != ANI_OK ||
-                tEnv->Reference_IsNullishValue(nullRef, &isNullish) != ANI_OK ||
+            if (tEnv->GetNull(&nullRef) != ANI_OK || tEnv->Reference_IsNullishValue(nullRef, &isNullish) != ANI_OK ||
                 isNullish != ANI_TRUE) {
                 vm->DetachCurrentThread();
                 return;
