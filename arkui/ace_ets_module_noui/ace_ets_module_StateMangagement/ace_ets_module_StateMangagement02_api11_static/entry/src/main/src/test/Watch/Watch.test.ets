@@ -70,11 +70,11 @@ it('WatchTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       let strJson = inspector.getInspectorByKey('totalText');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[WatchTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Total: 17.00 â‚?);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('Total: 17.00 â‚¬');
       strJson = inspector.getInspectorByKey('priceText');
       obj = JSON.parseJsonElement(strJson);
       console.info("[WatchTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Price: 17.00 â‚?);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('Price: 17.00 â‚¬');
       console.info('[WatchTest_static_0100] END');
       done();
     });
