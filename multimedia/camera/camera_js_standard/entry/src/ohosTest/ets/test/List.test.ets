@@ -48,6 +48,7 @@ import CameraMacroTest from './CameraMacroTest.test.ets'
 import CameraPhotoQualityPrioritizationTest from './CameraPhotoQualityPrioritization.test.ets'
 import CameraPreviewBandwidthCompressionTest from './CameraPreviewBandwidthCompressionTest.test.ets'
 import CameraCapturePhotoWithCompressionQuality from './CameraCapturePhotoWithCompressionQuality.test.ets'
+import CameraSupportedHook from './CameraSupportedHook.test.ets'
 
 let TAG = 'CameraModuleTest: '
 let testContext: common.UIAbilityContext = AppStorage.get('thisContext') as common.UIAbilityContext;
@@ -95,5 +96,7 @@ export default function cameraKit() {
     CameraPhotoQualityPrioritizationTest()
     CameraPreviewBandwidthCompressionTest()
     CameraCapturePhotoWithCompressionQuality()
+    //最后执行接口切面测试套
+    CameraSupportedHook();
   }
 }
