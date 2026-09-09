@@ -15,7 +15,7 @@
 
 import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium"
 import Utils from './Utils'
-import big5locale from 'liblocalebig5ndk.so'
+import localebig5 from 'liblocalebig5ndk.so'
 
 export default function big5LocaleNdkTest() {
   describe('MuslBig5LocaleTest', () => {
@@ -34,7 +34,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testSetlocaleBig5Localeconv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.setlocaleBig5Localeconv();
+      let result: number = localebig5.setlocaleBig5Localeconv();
       expect(result).assertEqual(0);
       done();
     });
@@ -49,7 +49,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testSetlocaleLowercase', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.setlocaleLowercase();
+      let result: number = localebig5.setlocaleLowercase();
       expect(result).assertEqual(0);
       done();
     });
@@ -64,7 +64,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testSetlocaleTooLong', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.setlocaleTooLong();
+      let result: number = localebig5.setlocaleTooLong();
       expect(result).assertEqual(0);
       done();
     });
@@ -79,7 +79,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testSetlocaleIcuMissing', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.setlocaleIcuMissing();
+      let result: number = localebig5.setlocaleIcuMissing();
       expect(result).assertEqual(0);
       done();
     });
@@ -94,7 +94,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testSetlocaleHkscsLocaleconv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.setlocaleHkscsLocaleconv();
+      let result: number = localebig5.setlocaleHkscsLocaleconv();
       expect(result).assertEqual(0);
       done();
     });
@@ -109,7 +109,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testSetlocaleHkscsLowercase', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.setlocaleHkscsLowercase();
+      let result: number = localebig5.setlocaleHkscsLowercase();
       expect(result).assertEqual(0);
       done();
     });
@@ -124,7 +124,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testSetlocaleEnvCleared', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.setlocaleEnvCleared();
+      let result: number = localebig5.setlocaleEnvCleared();
       expect(result).assertEqual(0);
       done();
     });
@@ -139,7 +139,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testSetlocaleSlash', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.setlocaleSlash();
+      let result: number = localebig5.setlocaleSlash();
       expect(result).assertEqual(0);
       done();
     });
@@ -154,7 +154,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testWctypeNewlocaleYue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.wctypeNewlocaleYue();
+      let result: number = localebig5.wctypeNewlocaleYue();
       expect(result).assertEqual(0);
       done();
     });
@@ -169,7 +169,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testWctypeSetlocaleYue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.wctypeSetlocaleYue();
+      let result: number = localebig5.wctypeSetlocaleYue();
       expect(result).assertEqual(0);
       done();
     });
@@ -184,7 +184,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testWctypeHkscsSupplementary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.wctypeHkscsSupplementary();
+      let result: number = localebig5.wctypeHkscsSupplementary();
       expect(result).assertEqual(0);
       done();
     });
@@ -199,7 +199,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testWctypeCLocaleYue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.wctypeCLocaleYue();
+      let result: number = localebig5.wctypeCLocaleYue();
       expect(result).assertEqual(0);
       done();
     });
@@ -214,7 +214,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testWctypeAsciiConsistent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.wctypeAsciiConsistent();
+      let result: number = localebig5.wctypeAsciiConsistent();
       expect(result).assertEqual(0);
       done();
     });
@@ -229,7 +229,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testStrtodLBig5_314', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.strtodLBig5_314();
+      let result: number = localebig5.strtodLBig5_314();
       expect(result).assertEqual(0);
       done();
     });
@@ -244,7 +244,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testStrtodLBig5Overflow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.strtodLBig5Overflow();
+      let result: number = localebig5.strtodLBig5Overflow();
       expect(result).assertEqual(0);
       done();
     });
@@ -259,7 +259,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testWcstodLBig5_314', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.wcstodLBig5_314();
+      let result: number = localebig5.wcstodLBig5_314();
       expect(result).assertEqual(0);
       done();
     });
@@ -274,7 +274,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testWcstodLBig5Overflow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.wcstodLBig5Overflow();
+      let result: number = localebig5.wcstodLBig5Overflow();
       expect(result).assertEqual(0);
       done();
     });
@@ -289,7 +289,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testLocaleconvBig5Fields', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.localeconvBig5Fields();
+      let result: number = localebig5.localeconvBig5Fields();
       expect(result).assertEqual(0);
       done();
     });
@@ -304,7 +304,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testLocaleconvStaticInvalidation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.localeconvStaticInvalidation();
+      let result: number = localebig5.localeconvStaticInvalidation();
       expect(result).assertEqual(0);
       done();
     });
@@ -319,7 +319,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testHkscsVariantConsistency', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.hkscsVariantConsistency();
+      let result: number = localebig5.hkscsVariantConsistency();
       expect(result).assertEqual(0);
       done();
     });
@@ -334,7 +334,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testStrtodLStructLayout', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.strtodLStructLayout();
+      let result: number = localebig5.strtodLStructLayout();
       expect(result).assertEqual(0);
       done();
     });
@@ -349,7 +349,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testIconvBig5ToUtf8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.iconvBig5ToUtf8();
+      let result: number = localebig5.iconvBig5ToUtf8();
       expect(result).assertEqual(0);
       done();
     });
@@ -364,7 +364,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testIconvBig5InvalidByte', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.iconvBig5InvalidByte();
+      let result: number = localebig5.iconvBig5InvalidByte();
       expect(result).assertEqual(0);
       done();
     });
@@ -379,7 +379,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testIconvBig5Incomplete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.iconvBig5Incomplete();
+      let result: number = localebig5.iconvBig5Incomplete();
       expect(result).assertEqual(0);
       done();
     });
@@ -394,7 +394,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testIconvBig5BufferTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.iconvBig5BufferTooSmall();
+      let result: number = localebig5.iconvBig5BufferTooSmall();
       expect(result).assertEqual(0);
       done();
     });
@@ -409,7 +409,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testIconvHkscsToUtf8Reuse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.iconvHkscsToUtf8Reuse();
+      let result: number = localebig5.iconvHkscsToUtf8Reuse();
       expect(result).assertEqual(0);
       done();
     });
@@ -424,7 +424,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testIconvUtf8ToBig5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.iconvUtf8ToBig5();
+      let result: number = localebig5.iconvUtf8ToBig5();
       expect(result).assertEqual(0);
       done();
     });
@@ -439,7 +439,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testIconvUtf8ToBig5Unrepresentable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.iconvUtf8ToBig5Unrepresentable();
+      let result: number = localebig5.iconvUtf8ToBig5Unrepresentable();
       expect(result).assertEqual(0);
       done();
     });
@@ -454,7 +454,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testIconvUtf8ToHkscsSupplementary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.iconvUtf8ToHkscsSupplementary();
+      let result: number = localebig5.iconvUtf8ToHkscsSupplementary();
       expect(result).assertEqual(0);
       done();
     });
@@ -469,7 +469,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testIconvCp950Alias', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.iconvCp950Alias();
+      let result: number = localebig5.iconvCp950Alias();
       expect(result).assertEqual(0);
       done();
     });
@@ -484,7 +484,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testIconvUnsupportedCharset', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.iconvUnsupportedCharset();
+      let result: number = localebig5.iconvUnsupportedCharset();
       expect(result).assertEqual(0);
       done();
     });
@@ -499,7 +499,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testRegressZhCnLocaleconv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.regressZhCnLocaleconv();
+      let result: number = localebig5.regressZhCnLocaleconv();
       expect(result).assertEqual(0);
       done();
     });
@@ -514,7 +514,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testRegressZhCnWctype', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.regressZhCnWctype();
+      let result: number = localebig5.regressZhCnWctype();
       expect(result).assertEqual(0);
       done();
     });
@@ -529,7 +529,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testRegressZhCnStrtod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.regressZhCnStrtod();
+      let result: number = localebig5.regressZhCnStrtod();
       expect(result).assertEqual(0);
       done();
     });
@@ -544,7 +544,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testRegressEnUsLocaleconv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.regressEnUsLocaleconv();
+      let result: number = localebig5.regressEnUsLocaleconv();
       expect(result).assertEqual(0);
       done();
     });
@@ -559,7 +559,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testRegressEnUsWctype', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.regressEnUsWctype();
+      let result: number = localebig5.regressEnUsWctype();
       expect(result).assertEqual(0);
       done();
     });
@@ -574,7 +574,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testRegressEnUsStrtod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.regressEnUsStrtod();
+      let result: number = localebig5.regressEnUsStrtod();
       expect(result).assertEqual(0);
       done();
     });
@@ -589,7 +589,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testRegressZhCnUtf8Localeconv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.regressZhCnUtf8Localeconv();
+      let result: number = localebig5.regressZhCnUtf8Localeconv();
       expect(result).assertEqual(0);
       done();
     });
@@ -604,7 +604,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testRegressZhCnUtf8Wctype', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.regressZhCnUtf8Wctype();
+      let result: number = localebig5.regressZhCnUtf8Wctype();
       expect(result).assertEqual(0);
       done();
     });
@@ -619,7 +619,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testRegressZhCnUtf8Strtod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.regressZhCnUtf8Strtod();
+      let result: number = localebig5.regressZhCnUtf8Strtod();
       expect(result).assertEqual(0);
       done();
     });
@@ -634,7 +634,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testRegressIconvLocaleIndependent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.regressIconvLocaleIndependent();
+      let result: number = localebig5.regressIconvLocaleIndependent();
       expect(result).assertEqual(0);
       done();
     });
@@ -649,7 +649,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testMultiThreadLocaleIsolation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.multiThreadLocaleIsolation();
+      let result: number = localebig5.multiThreadLocaleIsolation();
       expect(result).assertEqual(0);
       done();
     });
@@ -664,7 +664,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testMultiThreadSetlocaleIsolation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.multiThreadSetlocaleIsolation();
+      let result: number = localebig5.multiThreadSetlocaleIsolation();
       expect(result).assertEqual(0);
       done();
     });
@@ -679,7 +679,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testMultiThreadLocaleconvSafety', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.multiThreadLocaleconvSafety();
+      let result: number = localebig5.multiThreadLocaleconvSafety();
       expect(result).assertEqual(0);
       done();
     });
@@ -694,7 +694,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testMemLeakNewlocaleFreelocale', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.memLeakNewlocaleFreelocale();
+      let result: number = localebig5.memLeakNewlocaleFreelocale();
       expect(result).assertEqual(0);
       done();
     });
@@ -709,7 +709,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testMemLeakIconvOpenClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.memLeakIconvOpenClose();
+      let result: number = localebig5.memLeakIconvOpenClose();
       expect(result).assertEqual(0);
       done();
     });
@@ -724,7 +724,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testMixedMaskLocale', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.mixedMaskLocale();
+      let result: number = localebig5.mixedMaskLocale();
       expect(result).assertEqual(0);
       done();
     });
@@ -739,7 +739,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testSetlocaleEmptyString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.setlocaleEmptyString();
+      let result: number = localebig5.setlocaleEmptyString();
       expect(result).assertEqual(0);
       done();
     });
@@ -754,7 +754,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testSetlocaleNullQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.setlocaleNullQuery();
+      let result: number = localebig5.setlocaleNullQuery();
       expect(result).assertEqual(0);
       done();
     });
@@ -769,7 +769,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testUselocaleThreadIsolation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.uselocaleThreadIsolation();
+      let result: number = localebig5.uselocaleThreadIsolation();
       expect(result).assertEqual(0);
       done();
     });
@@ -784,7 +784,7 @@ export default function big5LocaleNdkTest() {
      */
     it('testUselocaleRestoreGlobal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: number = big5locale.uselocaleRestoreGlobal();
+      let result: number = localebig5.uselocaleRestoreGlobal();
       expect(result).assertEqual(0);
       done();
     });
