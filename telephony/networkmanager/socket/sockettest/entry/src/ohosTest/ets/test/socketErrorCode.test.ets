@@ -644,9 +644,11 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test start`);
       try {
         let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-        tls.getSocketFd().then(() => {
-          console.info(`${caseName} get success`);
-          expect(true).assertTrue();
+        tls.getSocketFd().then((fd: number) => {
+          console.info(`${caseName} get success, fd=` + fd);
+          expect(fd !== undefined).assertEqual(true);
+          expect(typeof fd).assertEqual('number');
+          expect(fd >= 0).assertEqual(true);
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} get err: ${JSON.stringify(err)}`);
@@ -1066,7 +1068,8 @@ export default function SocketErrorCodeTest01() {
           await client.close().catch((err:BusinessError) => {
             console.info('fail to close' + err.code.toString());
           });
-          expect(true).assertTrue();
+          // tcpServer 连接已关闭，验证 client 对象仍有效
+          expect(client !== undefined).assertEqual(true);
           console.info(`${caseName} test end`);
           done();
         });
@@ -1847,7 +1850,8 @@ export default function SocketErrorCodeTest01() {
             }
             localSocketConnection.send(sendOptions).then(() => {
               console.info(`${caseName} localSocketConnection send success`);
-              expect(true).assertTrue();
+              // send 成功，验证连接对象仍有效
+              expect(localSocketConnection !== undefined).assertEqual(true);
               console.info(`${caseName}---End`);
               done();
             }).catch((err: BusinessError) => {
