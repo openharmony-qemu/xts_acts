@@ -632,6 +632,37 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   Sub_InputMethod_IMF_AttachCallback_0101
+     * @tc.number SUB_InputMethod_IMF_AttachCallback_0101
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_AttachCallback_0101', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_AttachCallback_0101';
+      let CallBack = (error: BusinessError, data: ESObject) => {
+        console.info(`${CASE_NAME} CallBack success, error: ${error}`);
+        expect().assertFail();
+        done();
+      };
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: inputMethod.TextInputType.NONE, enterKeyType: inputMethod.EnterKeyType.NONE, placeholder: '', abilityName: ''
+        },
+        newEditBox: true,
+        capitalizeMode: inputMethod.CapitalizeMode.NONE
+      };
+      try {
+        inputMethod.getController().attach(null, ATTRIBUTE, CallBack);
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   Sub_InputMethod_IMF_AttachCallback_0200
      * @tc.number Sub_InputMethod_IMF_AttachCallback_0200
      * @tc.desc   Function test
@@ -656,6 +687,37 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   Sub_InputMethod_IMF_AttachCallback_0201
+     * @tc.number SUB_InputMethod_IMF_AttachCallback_0201
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_AttachCallback_0201', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_AttachCallback_0201';
+      let CallBack = (error: BusinessError, data: ESObject) => {
+        console.info(`${CASE_NAME} CallBack success, error: ${error}`);
+        expect().assertFail();
+        done();
+      };
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: inputMethod.TextInputType.NONE, enterKeyType: inputMethod.EnterKeyType.NONE, placeholder: '', abilityName: ''
+        },
+        newEditBox: true,
+        capitalizeMode: inputMethod.CapitalizeMode.NONE
+      };
+      try {
+        inputMethod.getController().attach(undefined, ATTRIBUTE, CallBack);
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   Sub_InputMethod_IMF_AttachCallback_0300
      * @tc.number Sub_InputMethod_IMF_AttachCallback_0300
      * @tc.desc   Function test
@@ -672,10 +734,9 @@ export default function inputMethodTest() {
       };
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.NONE, enterKeyType: inputMethod.EnterKeyType.NONE, placeholder: '', abilityName: ''
+          textInputType: inputMethod.TextInputType.DATETIME, enterKeyType: inputMethod.EnterKeyType.NEXT
         },
-        newEditBox: true,
-        capitalizeMode: inputMethod.CapitalizeMode.NONE
+        capitalizeMode: 4
       };
       try {
         inputMethod.getController().attach(true, ATTRIBUTE, CallBack);
@@ -1092,6 +1153,35 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   Sub_InputMethod_IMF_AttachPromise_0101
+     * @tc.number SUB_InputMethod_IMF_AttachPromise_0101
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_AttachPromise_0101', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_0101';
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: inputMethod.TextInputType.NONE, enterKeyType: inputMethod.EnterKeyType.NONE, placeholder: '', abilityName: ''
+        },
+        newEditBox: true,
+        capitalizeMode: inputMethod.CapitalizeMode.NONE
+      };
+      try {
+        await inputMethod.getController().attach(null, ATTRIBUTE);
+        console.info(`${CASE_NAME} attach success`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   Sub_InputMethod_IMF_AttachPromise_0200
      * @tc.number Sub_InputMethod_IMF_AttachPromise_0200
      * @tc.desc   Function test
@@ -1114,6 +1204,35 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   Sub_InputMethod_IMF_AttachPromise_0201
+     * @tc.number SUB_InputMethod_IMF_AttachPromise_0201
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_AttachPromise_0201', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_0201';
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: inputMethod.TextInputType.NONE, enterKeyType: inputMethod.EnterKeyType.NONE, placeholder: '', abilityName: ''
+        },
+        newEditBox: true,
+        capitalizeMode: inputMethod.CapitalizeMode.NONE
+      };
+      try {
+        await inputMethod.getController().attach(undefined, ATTRIBUTE);
+        console.info(`${CASE_NAME} attach success`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   Sub_InputMethod_IMF_AttachPromise_0300
      * @tc.number Sub_InputMethod_IMF_AttachPromise_0300
      * @tc.desc   Function test
@@ -1125,10 +1244,9 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_0300';
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.NONE, enterKeyType: inputMethod.EnterKeyType.NONE, placeholder: '', abilityName: ''
+          textInputType: inputMethod.TextInputType.DATETIME, enterKeyType: inputMethod.EnterKeyType.NEXT
         },
-        newEditBox: true,
-        capitalizeMode: inputMethod.CapitalizeMode.NONE
+        capitalizeMode: 4
       };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
@@ -1508,6 +1626,33 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   Sub_InputMethod_IMF_AttachPromise_1701
+     * @tc.number SUB_InputMethod_IMF_AttachPromise_1701
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_AttachPromise_1701', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_1701';
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: false
+        }
+      };
+      try {
+        await inputMethod.getController().attach(null, ATTRIBUTE, inputMethod.RequestKeyboardReason.NONE);
+        console.info(`${CASE_NAME} attach success`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   Sub_InputMethod_IMF_AttachPromise_1800
      * @tc.number Sub_InputMethod_IMF_AttachPromise_1800
      * @tc.desc   Function test
@@ -1530,6 +1675,33 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   Sub_InputMethod_IMF_AttachPromise_1801
+     * @tc.number SUB_InputMethod_IMF_AttachPromise_1801
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_AttachPromise_1801', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_1801';
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: false
+        }
+      };
+      try {
+        await inputMethod.getController().attach(undefined, ATTRIBUTE, inputMethod.RequestKeyboardReason.NONE);
+        console.info(`${CASE_NAME} attach success`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   Sub_InputMethod_IMF_AttachPromise_1900
      * @tc.number Sub_InputMethod_IMF_AttachPromise_1900
      * @tc.desc   Function test
@@ -1541,10 +1713,9 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_1900';
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.NONE, enterKeyType: inputMethod.EnterKeyType.NONE, placeholder: '', abilityName: ''
+          textInputType: inputMethod.TextInputType.DATETIME, enterKeyType: inputMethod.EnterKeyType.NEXT
         },
-        newEditBox: true,
-        capitalizeMode: inputMethod.CapitalizeMode.NONE
+        capitalizeMode: 4
       };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE, inputMethod.RequestKeyboardReason.NONE);
