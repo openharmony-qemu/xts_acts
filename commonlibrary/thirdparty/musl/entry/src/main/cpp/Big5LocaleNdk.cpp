@@ -214,16 +214,13 @@ static napi_value SetlocaleEnvCleared(napi_env env, napi_callback_info info)
     unsetenv("LANG");
     char *r = setlocale(LC_ALL, "zh_HK.Big5");
     int32_t ret = (r != nullptr) ? NO_ERR : FAIL;
-    if (saveAll[0]) { setenv("LC_ALL", saveAll, 1); }
-    else {
+    if (saveAll[0]) { setenv("LC_ALL", saveAll, 1); } else {
          unsetenv("LC_ALL");
     }
-    if (saveCtype[0]) { setenv("LC_CTYPE", saveCtype, 1); }
-    else {
+    if (saveCtype[0]) { setenv("LC_CTYPE", saveCtype, 1); } else {
          unsetenv("LC_CTYPE");
     }
-    if (saveLang[0]) { setenv("LANG", saveLang, 1); }
-    else {
+    if (saveLang[0]) { setenv("LANG", saveLang, 1); } else {
          unsetenv("LANG");
     }
     return MakeResult(env, ret);
@@ -346,6 +343,16 @@ static int32_t CompareAsciiAlpha(locale_t locHk, locale_t locC)
 }
 
 /* TC-013: zh_HK.Big5下ASCII字符-与C locale分类一致 */
+static int32_t CompareAsciiWctype(locale_t locHk)
+{
+    (void)setlocale(LC_ALL, "C");
+    locale_t locC = uselocale(nullptr);
+    if (locC == nullptr) {
+        return FAIL;
+    }
+    return CompareAsciiAlpha(locHk, locC);
+}
+
 static napi_value WctypeAsciiConsistent(napi_env env, napi_callback_info info)
 {
     EnsureIcuInit();
@@ -518,8 +525,8 @@ static napi_value LocaleconvStaticInvalidation(napi_env env, napi_callback_info 
         struct lconv *lc2 = localeconv();
         if (lc2) { ret = NO_ERR; }
     }
-    if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
-    else {
+    if (origBuf[0]) { setlocale(LC_ALL, origBuf);
+    } else {
          (void)setlocale(LC_ALL, "C");
     }
     return MakeResult(env, ret);
@@ -543,8 +550,8 @@ static napi_value HkscsVariantConsistency(napi_env env, napi_callback_info info)
             double r2 = wcstod_l(L"3.14", &wp, loc);
             if (fabs(r1 - PI_VAL) < EPSILON_1E9 && fabs(r2 - PI_VAL) < EPSILON_1E9) { ret = NO_ERR; }
         }
-        if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
-        else {
+        if (origBuf[0]) { setlocale(LC_ALL, origBuf);
+    } else {
              (void)setlocale(LC_ALL, "C");
     }
     }
@@ -804,8 +811,8 @@ static napi_value RegressZhCnLocaleconv(napi_env env, napi_callback_info info)
         struct lconv *lc = localeconv();
         if (lc && lc->decimal_point) { ret = NO_ERR; }
     }
-    if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
-    else {
+    if (origBuf[0]) { setlocale(LC_ALL, origBuf);
+    } else {
          (void)setlocale(LC_ALL, "C");
     }
     return MakeResult(env, ret);
@@ -852,8 +859,8 @@ static napi_value RegressEnUsLocaleconv(napi_env env, napi_callback_info info)
         struct lconv *lc = localeconv();
         if (lc && lc->decimal_point) { ret = NO_ERR; }
     }
-    if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
-    else {
+    if (origBuf[0]) { setlocale(LC_ALL, origBuf);
+    } else {
          (void)setlocale(LC_ALL, "C");
     }
     return MakeResult(env, ret);
@@ -900,8 +907,8 @@ static napi_value RegressZhCnUtf8Localeconv(napi_env env, napi_callback_info inf
         struct lconv *lc = localeconv();
         if (lc && lc->decimal_point) { ret = NO_ERR; }
     }
-    if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
-    else {
+    if (origBuf[0]) { setlocale(LC_ALL, origBuf);
+    } else {
          (void)setlocale(LC_ALL, "C");
     }
     return MakeResult(env, ret);
@@ -992,8 +999,10 @@ static napi_value MultiThreadLocaleIsolation(napi_env env, napi_callback_info in
         pthread_join(t2, nullptr);
         if (arg1.ok && arg2.ok) { ret = NO_ERR; }
     }
-    if (locHk) { freelocale(locHk); }
-    if (locCn) { freelocale(locCn); }
+    if (locHk) { freelocale(locHk);
+    }
+    if (locCn) { freelocale(locCn);
+    }
     return MakeResult(env, ret);
 }
 
@@ -1077,7 +1086,8 @@ static napi_value MemLeakNewlocaleFreelocale(napi_env env, napi_callback_info in
     (void)slr2;
     for (int32_t i = 0; i < LOOP_COUNT_10000; i++) {
         locale_t loc = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
-        if (loc) { freelocale(loc); }
+        if (loc) { freelocale(loc);
+    }
     }
     return MakeResult(env, NO_ERR);
 }
@@ -1137,8 +1147,8 @@ static napi_value SetlocaleNullQuery(napi_env env, napi_callback_info info)
     if (setlocale(LC_ALL, "zh_HK.Big5")) {
         char *q = setlocale(LC_ALL, nullptr);
         if (q && strcmp(q, "zh_HK.Big5") == 0) { ret = NO_ERR; }
-        if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
-        else {
+        if (origBuf[0]) { setlocale(LC_ALL, origBuf);
+    } else {
              (void)setlocale(LC_ALL, "C");
     }
     }
