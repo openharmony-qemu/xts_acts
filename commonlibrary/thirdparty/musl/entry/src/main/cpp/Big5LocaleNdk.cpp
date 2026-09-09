@@ -90,11 +90,9 @@ static napi_value SetlocaleBig5Localeconv(napi_env env, napi_callback_info info)
         }
     }
     if (origBuf[0]) {
-        setlocale(LC_ALL, origBuf);
-    }
-    else {
+        setlocale(LC_ALL, origBuf);} else {
         
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
     }
     return MakeResult(env, ret);
 }
@@ -112,11 +110,9 @@ static napi_value SetlocaleLowercase(napi_env env, napi_callback_info info)
     char *r = setlocale(LC_ALL, "zh_hk.Big5");
     int32_t ret = (r == nullptr) ? NO_ERR : FAIL;
     if (origBuf[0]) {
-        setlocale(LC_ALL, origBuf);
-    }
-    else {
+        setlocale(LC_ALL, origBuf);} else {
         
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
     }
     return MakeResult(env, ret);
 }
@@ -149,11 +145,9 @@ static napi_value SetlocaleIcuMissing(napi_env env, napi_callback_info info)
         }
     }
     if (origBuf[0]) {
-        setlocale(LC_ALL, origBuf);
-    }
-    else {
+        setlocale(LC_ALL, origBuf);} else {
         
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
     }
     return MakeResult(env, ret);
 }
@@ -186,11 +180,9 @@ static napi_value SetlocaleHkscsLocaleconv(napi_env env, napi_callback_info info
         }
     }
     if (origBuf[0]) {
-        setlocale(LC_ALL, origBuf);
-    }
-    else {
+        setlocale(LC_ALL, origBuf);} else {
         
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
     }
     return MakeResult(env, ret);
 }
@@ -224,13 +216,16 @@ static napi_value SetlocaleEnvCleared(napi_env env, napi_callback_info info)
     int32_t ret = (r != nullptr) ? NO_ERR : FAIL;
     if (saveAll[0]) { setenv("LC_ALL", saveAll, 1); }
     else {
-         unsetenv("LC_ALL"); }
+         unsetenv("LC_ALL");
+    }
     if (saveCtype[0]) { setenv("LC_CTYPE", saveCtype, 1); }
     else {
-         unsetenv("LC_CTYPE"); }
+         unsetenv("LC_CTYPE");
+    }
     if (saveLang[0]) { setenv("LANG", saveLang, 1); }
     else {
-         unsetenv("LANG"); }
+         unsetenv("LANG");
+    }
     return MakeResult(env, ret);
 }
 
@@ -328,7 +323,7 @@ static napi_value WctypeHkscsSupplementary(napi_env env, napi_callback_info info
 static napi_value WctypeCLocaleYue(napi_env env, napi_callback_info info)
 {
     EnsureIcuInit();
-    setlocale(LC_ALL, "C");
+    (void)setlocale(LC_ALL, "C");
     locale_t loc = uselocale(nullptr);
     int32_t ret = FAIL;
     if (loc) {
@@ -363,7 +358,7 @@ static napi_value WctypeAsciiConsistent(napi_env env, napi_callback_info info)
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "zh_HK.Big5")) {
         locale_t locHk = uselocale(nullptr);
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
         locale_t locC = uselocale(nullptr);
         if (locHk && locC) {
             ret = NO_ERR;
@@ -501,11 +496,9 @@ static napi_value LocaleconvBig5Fields(napi_env env, napi_callback_info info)
         }
     }
     if (origBuf[0]) {
-        setlocale(LC_ALL, origBuf);
-    }
-    else {
+        setlocale(LC_ALL, origBuf);} else {
         
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
     }
     return MakeResult(env, ret);
 }
@@ -521,13 +514,14 @@ static napi_value LocaleconvStaticInvalidation(napi_env env, napi_callback_info 
     int32_t ret = FAIL;
     if (setlocale(LC_ALL, "zh_HK.Big5")) {
         localeconv();
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
         struct lconv *lc2 = localeconv();
         if (lc2) { ret = NO_ERR; }
     }
     if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
     else {
-         setlocale(LC_ALL, "C"); }
+         (void)setlocale(LC_ALL, "C");
+    }
     return MakeResult(env, ret);
 }
 
@@ -551,7 +545,8 @@ static napi_value HkscsVariantConsistency(napi_env env, napi_callback_info info)
         }
         if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
         else {
-             setlocale(LC_ALL, "C"); }
+             (void)setlocale(LC_ALL, "C");
+    }
     }
     return MakeResult(env, ret);
 }
@@ -728,8 +723,8 @@ static napi_value IconvUtf8ToBig5Unrepresentable(napi_env env, napi_callback_inf
         errno = 0;
         size_t r = iconv(cd, &inp, &inlen, &outp, &outlen);
         if (r == static_cast<size_t>(-1) && errno == EILSEQ) {
-            inp += 2;
-            inlen -= 2;
+            inp += UTF8_LEN_2;
+            inlen -= UTF8_LEN_2;
             outp = out;
             outlen = sizeof(out);
             errno = 0;
@@ -811,7 +806,8 @@ static napi_value RegressZhCnLocaleconv(napi_env env, napi_callback_info info)
     }
     if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
     else {
-         setlocale(LC_ALL, "C"); }
+         (void)setlocale(LC_ALL, "C");
+    }
     return MakeResult(env, ret);
 }
 
@@ -858,7 +854,8 @@ static napi_value RegressEnUsLocaleconv(napi_env env, napi_callback_info info)
     }
     if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
     else {
-         setlocale(LC_ALL, "C"); }
+         (void)setlocale(LC_ALL, "C");
+    }
     return MakeResult(env, ret);
 }
 
@@ -905,7 +902,8 @@ static napi_value RegressZhCnUtf8Localeconv(napi_env env, napi_callback_info inf
     }
     if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
     else {
-         setlocale(LC_ALL, "C"); }
+         (void)setlocale(LC_ALL, "C");
+    }
     return MakeResult(env, ret);
 }
 
@@ -1003,12 +1001,10 @@ static napi_value MultiThreadLocaleIsolation(napi_env env, napi_callback_info in
 static void *ThreadSetlocaleFunc(void *arg)
 {
     for (int32_t i = 0; i < LOOP_COUNT_1000; i++) {
-        if (i % 2 == 0) {
-            setlocale(LC_ALL, "zh_HK.Big5");
-        }
-        else {
+        if (i % UTF8_LEN_2 == 0) {
+            setlocale(LC_ALL, "zh_HK.Big5");} else {
             
-            setlocale(LC_ALL, "C");
+            (void)setlocale(LC_ALL, "C");
         }
         usleep(1);
     }
@@ -1067,7 +1063,7 @@ static napi_value MultiThreadLocaleconvSafety(napi_env env, napi_callback_info i
         pthread_join(threads[i], &r);
         if (r != nullptr) { ret = FAIL; }
     }
-    setlocale(LC_ALL, "C");
+    (void)setlocale(LC_ALL, "C");
     return MakeResult(env, ret);
 }
 
@@ -1112,9 +1108,7 @@ static napi_value MixedMaskLocale(napi_env env, napi_callback_info info)
             char *ep = nullptr;
             double r = strtod_l("3.14", &ep, locMixed);
             if (alpha && fabs(r - PI_VAL) < EPSILON_1E9) { ret = NO_ERR; }
-            freelocale(locMixed);
-        }
-        else {
+            freelocale(locMixed);} else {
             
             freelocale(locCtype);
         }
@@ -1145,7 +1139,8 @@ static napi_value SetlocaleNullQuery(napi_env env, napi_callback_info info)
         if (q && strcmp(q, "zh_HK.Big5") == 0) { ret = NO_ERR; }
         if (origBuf[0]) { setlocale(LC_ALL, origBuf); }
         else {
-             setlocale(LC_ALL, "C"); }
+             (void)setlocale(LC_ALL, "C");
+    }
     }
     return MakeResult(env, ret);
 }
@@ -1156,7 +1151,6 @@ static void *ThreadUselocaleFunc(void *arg)
     locale_t locHk = reinterpret_cast<locale_t>(arg);
     uselocale(locHk);
     int32_t r1 = iswalpha_l(0x7CA4, uselocale(nullptr));
-    setlocale(LC_ALL, "C");
     (void)setlocale(LC_ALL, "C");
     int32_t r2 = iswalpha_l(0x7CA4, uselocale(nullptr));
     if (r1 == 0 || r2 == 0) { return reinterpret_cast<void *>(1); }
@@ -1184,7 +1178,7 @@ static napi_value UselocaleThreadIsolation(napi_env env, napi_callback_info info
 static napi_value UselocaleRestoreGlobal(napi_env env, napi_callback_info info)
 {
     EnsureIcuInit();
-    setlocale(LC_ALL, "C");
+    (void)setlocale(LC_ALL, "C");
     locale_t locHk = newlocale(LC_ALL_MASK, "zh_HK.Big5", nullptr);
     int32_t ret = FAIL;
     if (locHk) {
