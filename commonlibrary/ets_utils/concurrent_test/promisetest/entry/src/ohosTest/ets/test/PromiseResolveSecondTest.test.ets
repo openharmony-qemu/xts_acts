@@ -66,13 +66,13 @@ export default function PromiseResolveSecondTest() {
           });
         };
         const outerPromises = [
-          asyncOperation(1, 600),
-          asyncOperation(2, 900),
+          asyncOperation(1, 500),
+          asyncOperation(2, 1100),
           asyncOperation(3, 300)
         ];
         taskPromises.push(asyncOperation(1, 600));
-        taskPromises.push(asyncOperation(2, 900));
-        taskPromises.push(asyncOperation(3, 300));
+        taskPromises.push(asyncOperation(2, 1200));
+        taskPromises.push(asyncOperation(3, 400));
         Promise.resolve()
           .then(() => {
             return Promise.race(outerPromises);
@@ -82,9 +82,9 @@ export default function PromiseResolveSecondTest() {
             successMessage = `Outer Promise.race result: ${outerResult}`;
             console.log(successMessage);
             const innerPromises = [
-              asyncOperation(outerResult / 2 * 4, 400),
-              asyncOperation(outerResult / 2 * 5, 600),
-              asyncOperation(outerResult / 2 * 6, 500)
+              asyncOperation(outerResult / 2 * 4, 500),
+              asyncOperation(outerResult / 2 * 5, 1000),
+              asyncOperation(outerResult / 2 * 6, 700)
             ];
             return Promise.race(innerPromises);
           })
@@ -100,7 +100,7 @@ export default function PromiseResolveSecondTest() {
           });
         arr.push(7);
         await Promise.all(taskPromises);
-        await sleep(200);
+        await sleep(300);
         expect(JSON.stringify(arr)).assertEqual('[7,3,4,3,1,1,12,5,18,2,2,15]');
         expect(successMessage).assertEqual('Inner Promise.race result: 24');
         console.info(`${caseName} test end`);
