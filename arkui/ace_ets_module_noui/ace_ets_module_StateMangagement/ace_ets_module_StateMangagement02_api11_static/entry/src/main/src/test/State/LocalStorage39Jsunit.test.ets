@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,22 +26,12 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-
 export default function LocalStorage39Jsunit() {
   describe('LocalStorage39Jsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("LocalStorage39Jsunit beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
-      
-    });
-
-    beforeEach(async (): Promise<void> => {
+beforeEach(async (): Promise<void> => {
       console.info("LocalStorage39Jsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/State/LocalStorage39',
@@ -70,7 +60,7 @@ export default function LocalStorage39Jsunit() {
      * @tc.level    Level.LEVEL0
      */
 it('LocalStorage39Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      //Size获取AppStorage中存在键值对的个数
+      //Size获取AppStorage中存在键值对的个�?
       console.info('[LocalStorage39Jsunit_static_0200] START');
       let driver = Driver.create()
       let Storage12Button1 = await driver.findComponent(ON.id('LocalStorage39_button4'));
@@ -125,7 +115,7 @@ it('LocalStorage39Jsunit_static_0600', Level.LEVEL0, async (done: () => void): P
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[LocalStorage39Jsunit_static_0600] obj1 is: " + JSON.stringify(obj1));
       await CommonFunc.sleep(1000);
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('get PropA：1');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('get PropA�?');
       console.info('[LocalStorage39Jsunit_static_0600] END');
       done();
     });

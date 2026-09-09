@@ -24,17 +24,12 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function useSharedStorageTest() {
   describe('useSharedStorageTest', () => {
     beforeAll(async () => {
-
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility")
 
@@ -60,7 +55,6 @@ export default function useSharedStorageTest() {
         console.error("push useSharedStorageTest page error: " + err);
       }
     });
-
 
     
     

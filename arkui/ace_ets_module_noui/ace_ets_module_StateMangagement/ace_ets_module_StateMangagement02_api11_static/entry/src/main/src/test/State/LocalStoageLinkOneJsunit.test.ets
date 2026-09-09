@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,10 +26,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
 import events_emitter from '@ohos.events.emitter';
 import accessibility from '@ohos.accessibility';
-let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;;
 
@@ -38,14 +36,7 @@ const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function LocalStoageLinkOneJsunit() {
   describe('LocalStoageLinkOneJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("LocalStoageLinkOneJsunit beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
-      
-    });
-
-    beforeEach(async (): Promise<void> => {
+beforeEach(async (): Promise<void> => {
       console.info("LocalStoageLinkOneJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/State/LocalStoageLinkOne",
@@ -91,7 +82,6 @@ it('LocalStoageLinkOneJsunit_static_0100', Level.LEVEL0, async (done: () => void
       done();
     });
 
-
     /**
      * @tc.number   LocalStoageLinkOneJsunit_static_0200
      * @tc.name     LocalStoageLinkOneJsunit_static_0200
@@ -115,7 +105,6 @@ it('LocalStoageLinkOneJsunit_static_0200', Level.LEVEL0, async (done: () => void
       done();
     });
 
-
     /**
      * @tc.number   LocalStoageLinkOneJsunit_static_0300
      * @tc.name     LocalStoageLinkOneJsunit_static_0300
@@ -138,7 +127,6 @@ it('LocalStoageLinkOneJsunit_static_0300', Level.LEVEL0, async (done: () => void
       console.info('[LocalStoageLinkOneJsunit_static_0300] END');
       done();
     });
-
 
     /**
      * @tc.number   LocalStoageLinkOneJsunit_static_0400

@@ -22,27 +22,14 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function Monitor0280Test() {
   describe('Monitor0280Test', () => {
 
-    beforeAll(async (): Promise<void> => {
-      console.info("Monitor0280Test beforeEach start");
-
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-
-    });
-
-    beforeEach(async (): Promise<void> => {
+        beforeEach(async (): Promise<void> => {
       console.info("Monitor0280Test beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Monitor/Monitor0280",
@@ -64,7 +51,6 @@ export default function Monitor0280Test() {
       }
       console.info("Monitor0280Test beforeEach end");
     });
-
 
     afterEach(async () => {
       await CommonFunc.sleep(1000);

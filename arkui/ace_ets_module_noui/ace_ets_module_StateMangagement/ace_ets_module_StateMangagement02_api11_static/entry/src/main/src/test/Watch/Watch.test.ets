@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,20 +26,11 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function WatchTest() {
   describe('WatchTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("WatchTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
-      
-    });
-
-    beforeEach(async (): Promise<void> => {
+beforeEach(async (): Promise<void> => {
       console.info("WatchTest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Watch/Watch",
@@ -79,11 +70,11 @@ it('WatchTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       let strJson = inspector.getInspectorByKey('totalText');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[WatchTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Total: 17.00 â‚¬');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('Total: 17.00 â‚?);
       strJson = inspector.getInspectorByKey('priceText');
       obj = JSON.parseJsonElement(strJson);
       console.info("[WatchTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Price: 17.00 â‚¬');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('Price: 17.00 â‚?);
       console.info('[WatchTest_static_0100] END');
       done();
     });
