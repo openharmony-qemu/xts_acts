@@ -123,7 +123,7 @@ ani_int test_VmCreateVM_Normal(ani_env *env, [[maybe_unused]] ani_object object)
 }
 
 // SUB_TC_ANI_AG_0100: ANI_GetCreatedVMs normal
-ani_int test_VmGetCreatedVmList_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_VmGetCreatedVMs_Normal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_size actualCount = 0;
     ani_vm *vmList[16] = {};
@@ -309,7 +309,7 @@ ani_int test_VmCreateVM_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]]
 }
 
 // SUB_TC_ANI_AG_0200: ANI_GetCreatedVMs abnormal (nullptr)
-ani_int test_VmGetCreatedVmList_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_VmGetCreatedVMs_Abnormal([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_status status = CallANIGetCreatedVmList(nullptr, 10, nullptr);
     if (status != ANI_OK) {
@@ -491,7 +491,7 @@ ani_int test_VmAttach_VersionMax(ani_env *env, [[maybe_unused]] ani_object objec
 }
 
 // SUB_TC_ANI_BV_AGCV_0100: ANI_GetCreatedVMs buffer_length=0
-ani_int test_VmGetCreatedVmList_BufferZero([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_VmGetCreatedVMs_BufferZero([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_size actualCount = 0;
     ani_status status = CallANIGetCreatedVmList(nullptr, 0, &actualCount);
@@ -508,7 +508,7 @@ ani_int test_VmGetCreatedVmList_BufferZero([[maybe_unused]] ani_env *env, [[mayb
 }
 
 // SUB_TC_ANI_BV_AGCV_0200: ANI_GetCreatedVMs buffer too small
-ani_int test_VmGetCreatedVmList_BufferSmall([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_VmGetCreatedVMs_BufferSmall([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_size actualCount = 0;
     ani_vm *vmList[1] = {};

@@ -1141,8 +1141,8 @@ ani_int test_Reference_StrictEquals_MultiThread(ani_env *env, [[maybe_unused]] a
             ani_boolean isEqual = ANI_FALSE;
             if (tEnv->String_NewUTF8("world", sizeof("world") - 1, &str1) != ANI_OK ||
                 tEnv->String_NewUTF8("world", sizeof("world") - 1, &str2) != ANI_OK ||
-                tEnv->Reference_StrictEquals(static_cast<ani_ref>(str1), static_cast<ani_ref>(str2), &isEqual) !=
-                    ANI_OK) {
+                tEnv->Reference_StrictEquals(static_cast<ani_ref>(str1), static_cast<ani_ref>(str2),
+                &isEqual) != ANI_OK) {
                 vm->DetachCurrentThread();
                 return;
             }
