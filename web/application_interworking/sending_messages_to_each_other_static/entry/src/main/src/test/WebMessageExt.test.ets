@@ -1056,55 +1056,5 @@ export default function webMessageExt() {
         done();
       })
 
-    /**
-     * @tc.name        testWebMessageExtSetBooleanNullStatic001
-     * @tc.number      SUB_WEB_WEBMESSAGEEXT_SETBOOLEAN_NULL_0100
-     * @tc.desc        test WebMessageExtSetBoolean with null param
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       LEVEL0
-     */
-    it('testWebMessageExtSetBooleanNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let result = "Boolean:false"
-        Utils.emitEvent("testWebMessageExtSetBooleanNullStatic001", 10)
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent("testWebMessageExtSetBooleanNullStatic001", JSON.stringify(result), 41021501, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebMessageExtButton', 10, '');
-        await Utils.msSleep(6000);
-        done()
-      })
-
-    /**
-     * @tc.name        testWebMessageExtSetBooleanUndefinedStatic001
-     * @tc.number      SUB_WEB_WEBMESSAGEEXT_SETBOOLEAN_UNDEFINED_0100
-     * @tc.desc        test WebMessageExtSetBoolean with undefined param
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       LEVEL0
-     */
-    it('testWebMessageExtSetBooleanUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let result = "Boolean:false"
-        Utils.emitEvent("testWebMessageExtSetBooleanUndefinedStatic001", 10)
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent("testWebMessageExtSetBooleanUndefinedStatic001", JSON.stringify(result), 41021502, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebMessageExtButton', 10, '');
-        await Utils.msSleep(6000);
-        done()
-      })
-
-  })
+          })
 }

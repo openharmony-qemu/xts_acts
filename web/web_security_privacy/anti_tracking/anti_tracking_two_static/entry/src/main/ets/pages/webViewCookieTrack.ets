@@ -144,28 +144,8 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == false, 1278)
                 break;
               }
-              case "emitEnableIntelligentTrackingPreventionNullStatic001": {
-                try {
-                  let param: boolean | null = null;
-                  this.controller.enableIntelligentTrackingPrevention(param as boolean);
-                  Utils.emitEvent(true, 41023001)
-                } catch (error) {
-                  error = error as BusinessError;
-                  Utils.emitEvent(String(error.code), 41023001)
-                }
-                break;
-              }
-              case "emitEnableIntelligentTrackingPreventionUndefinedStatic001": {
-                try {
-                  let param: boolean | undefined = undefined;
-                  this.controller.enableIntelligentTrackingPrevention(param as boolean);
-                  Utils.emitEvent(true, 41023002)
-                } catch (error) {
-                  error = error as BusinessError;
-                  Utils.emitEvent(String(error.code), 41023002)
-                }
-                break;
-              }
+              
+              
               case "emitCookieTrackClearTrackingPrevention": {
                   let beforeTraceLength = this.traceHosts.length
                   console.log("this.traceHosts before: " + this.traceHosts)

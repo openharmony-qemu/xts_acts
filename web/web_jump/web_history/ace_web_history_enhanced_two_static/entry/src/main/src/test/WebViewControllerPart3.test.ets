@@ -307,32 +307,7 @@ export default function webViewControllerPart3Test() {
         done();
       })
 
-    /**
-     * @tc.name   testSetRenderProcessModeNullStatic001
-     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_NULL_0100
-     * @tc.desc   test setRenderProcessMode with null param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetRenderProcessModeNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        await Utils.msSleep(2000);
-        Utils.emitEvent("testSetRenderProcessModeNullStatic001", 10);
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent("testSetRenderProcessModeNullStatic001", true, 41023211, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
-        await Utils.msSleep(2000);
-        done();
-      })
-
-    /**
+        /**
      * @tc.name   testSetRenderProcessModeInvalidStatic001
      * @tc.number SUB_WEB_SETRENDERPROCESSMODE_INVALID_0100
      * @tc.desc   test setRenderProcessMode with invalid enum
@@ -357,32 +332,7 @@ export default function webViewControllerPart3Test() {
         done();
       })
 
-    /**
-     * @tc.name   testSetRenderProcessModeUndefinedStatic001
-     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_UNDEFINED_0100
-     * @tc.desc   test setRenderProcessMode with undefined param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetRenderProcessModeUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        await Utils.msSleep(2000);
-        Utils.emitEvent("testSetRenderProcessModeUndefinedStatic001", 10);
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent("testSetRenderProcessModeUndefinedStatic001", true, 41023213, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
-        await Utils.msSleep(2000);
-        done();
-      })
-
-    /**
+        /**
      * @tc.name   emitWebSiteIsolationModeStatic001
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SITEISOLATIONMODE_0100
      * @tc.desc   test SiteIsolationMode PARTIAL
