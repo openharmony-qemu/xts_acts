@@ -15,9 +15,9 @@
 
 import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium"
 import Utils from './Utils'
-import localebig5 from 'liblocalebig5ndk.so'
+import localebig5 from 'liblocalebig5.so'
 
-export default function big5LocaleNdkTest() {
+export default function big5LocaleTest() {
   describe('MuslBig5LocaleTest', () => {
 
     beforeEach(async () => {
