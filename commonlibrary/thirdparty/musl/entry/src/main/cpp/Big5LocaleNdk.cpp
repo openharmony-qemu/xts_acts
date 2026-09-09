@@ -661,9 +661,9 @@ static napi_value IconvBig5BufferTooSmall(napi_env env, napi_callback_info info)
         char *outp = out;
         size_t outlen = sizeof(out);
         errno = 0;
-        iconv(cd, &inp, &inlen, &outp, &outlen);
+        size_t r = iconv(cd, &inp, &inlen, &outp, &outlen);
         iconv_close(cd);
-        if (r == static_cast<size_t>(-1)) {
+        if (r == static_cast<size_t>(-1) && errno == E2BIG) {
             ret = NO_ERR;
         }
     }
