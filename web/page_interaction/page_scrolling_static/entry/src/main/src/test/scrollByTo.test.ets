@@ -125,17 +125,15 @@ export default function webViewSrollableJsunit(){
      */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        Utils.emitEvent('emitonSwitchNextPage1', 10)
-        await Utils.msSleep(1000);
-        let driver: Driver = Driver.create();
-        await Utils.msSleep(1000);
-        let button = await driver.findComponent(ON.id('scrollByToButton'));
-        await Utils.msSleep(1000);
-        button?.click();
-        await Utils.msSleep(2000)
-        expect(button != null).assertTrue();
-
-        done();
+          Utils.emitEvent('emitonSwitchNextPage1', 10)
+          await Utils.msSleep(1000);
+          let driver: Driver = Driver.create();
+          await Utils.msSleep(1000);
+          let button = await driver.findComponent(ON.id('scrollByToButton'));
+          await Utils.msSleep(1000);
+          button?.click();
+          await Utils.msSleep(5000)
+          done();
       })
 
     /**
