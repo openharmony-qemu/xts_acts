@@ -6,6 +6,7 @@ import SetTextSelectionClearPolicyTest from './UIContext/SetTextSelectionClearPo
 import TextSymbolWithEnvFontScaleTest from './WithEnvTest/TextSymbolWithEnvFontScale.test';
 import TextMenuItemIdTest from './TextMenuItemIdTest/TextMenuItemId.test';
 import DisableMenuItemsTest from './UIContext/DisableMenuItems.test';
+import CustomKeyboardContinueTest from './UIContext/CustomKeyboardContinueTest.test';
 import LayoutManagerEncodingTest from './LayoutManagerTest/LayoutManagerEncoding.test';
 
 export default function testsuite() {
@@ -15,5 +16,6 @@ export default function testsuite() {
   SetTextSelectionClearPolicyTest();
   TextSymbolWithEnvFontScaleTest();
   DisableMenuItemsTest();
+  CustomKeyboardContinueTest();
   LayoutManagerEncodingTest();
 }
