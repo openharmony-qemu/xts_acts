@@ -31,6 +31,7 @@ import common from '@ohos.app.ability.common';
 export default function addAssetsTest () {
   describe('addAssetsTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    const invalidArgErrorCode = 13900020;
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
@@ -213,6 +214,32 @@ export default function addAssetsTest () {
       }
     });
 
+    /**
+     * @tc.name   addAssets_callback_007
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ADD_ASSETS_0700
+     * @tc.desc   add '' to user album,error code 13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('addAssets_callback_007', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'addAssets_callback_007';
+      try {
+        const album:ESObject = await helper.createAlbum(testNum);
+        album.addAssets('', async (err:BusinessError) => {
+          if (!err) {
+            expect(false).assertTrue();
+          }
+          done();
+        })
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error code: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    });
+
     //promise
     /**
      * @tc.name   addAssets_promise_001
@@ -336,6 +363,28 @@ export default function addAssetsTest () {
       } catch (error) {
         console.info(`${testNum} failed; error code: ${error.code}`);
         expect(error.code).assertEqual('14000011');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   addAssets_promise_007
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_ADD_ASSETS_0700
+     * @tc.desc   add '' to user album,error code 13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('addAssets_promise_007', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'addAssets_promise_007';
+      try {
+        const album:ESObject = await helper.createAlbum(testNum);
+        await album.addAssets('');
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error code: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
         done();
       }
     });
