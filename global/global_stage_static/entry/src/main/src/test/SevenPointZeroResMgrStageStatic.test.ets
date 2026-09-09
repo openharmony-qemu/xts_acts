@@ -363,7 +363,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1200
+     * @tc.number  SUB_Global_FontManager_OnFontObserver_Static_JS_0100
      * @tc.name    onFontObserver_noPermission_static_test_0100
      * @tc.desc    no permission
      * @tc.size    MEDIUM
@@ -380,7 +380,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1200
+     * @tc.number  SUB_Global_FontManager_InstallScopeFont_Static_JS_0100
      * @tc.name    installScopeFont_noPermission_static_test_0100
      * @tc.desc    no permission
      * @tc.size    MEDIUM
@@ -398,7 +398,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1200
+     * @tc.number  SUB_Global_FontManager_UninstallScopeFont_Static_JS_0100
      * @tc.name    uninstallScopeFont_noPermission_static_test_0100
      * @tc.desc    no permission
      * @tc.size    MEDIUM
@@ -416,7 +416,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1200
+     * @tc.number  SUB_Global_FontManager_GetFontScope_Static_JS_0100
      * @tc.name    getFontScope_noPermission_static_test_0100
      * @tc.desc    no permission
      * @tc.size    MEDIUM
@@ -434,7 +434,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1200
+     * @tc.number  SUB_Global_FontManager_OffFontObserver_Static_JS_0100
      * @tc.name    offFontObserver_noPermission_static_test_0100
      * @tc.desc    no permission
      * @tc.size    MEDIUM

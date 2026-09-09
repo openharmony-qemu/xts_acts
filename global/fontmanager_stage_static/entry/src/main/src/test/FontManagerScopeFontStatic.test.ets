@@ -58,7 +58,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_installScopeFont_static_0100
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0100
      * @tc.desc   test installScopeFont with null url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -76,7 +76,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_installScopeFont_static_0200
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0200
      * @tc.desc   test installScopeFont with undefined url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -94,7 +94,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_installScopeFont_static_0300
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0300
      * @tc.desc   test installScopeFont with empty string url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -112,7 +112,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_installScopeFont_static_0400
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1400
+     * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0400
      * @tc.desc   test installScopeFont with not exist path
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -130,7 +130,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_installScopeFont_static_0500
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0500
      * @tc.desc   test installScopeFont with invalid scope
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -148,7 +148,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_installScopeFont_static_0600
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1800
+     * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0600
      * @tc.desc   test installScopeFont app scope without observer registered
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -166,7 +166,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_installScopeFont_static_0700
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1500
+     * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0700
      * @tc.desc   test installScopeFont with unsupported font file
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -184,7 +184,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_installScopeFont_static_0800
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1600
+     * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0800
      * @tc.desc   test installScopeFont duplicate install
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -262,7 +262,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_uninstallScopeFont_static_1100
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_UninstallScopeFont_Static_JS_1100
      * @tc.desc   test uninstallScopeFont with null url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -280,7 +280,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_uninstallScopeFont_static_1200
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_UninstallScopeFont_Static_JS_1200
      * @tc.desc   test uninstallScopeFont with undefined url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -298,7 +298,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_uninstallScopeFont_static_1300
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_UninstallScopeFont_Static_JS_1300
      * @tc.desc   test uninstallScopeFont with empty string url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -316,7 +316,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_uninstallScopeFont_static_1400
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1900
+     * @tc.number SUB_Global_FontManager_UninstallScopeFont_Static_JS_1400
      * @tc.desc   test uninstallScopeFont not installed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -358,7 +358,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_getFontScope_static_1600
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_GetFontScope_Static_JS_1600
      * @tc.desc   test getFontScope with null url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -376,7 +376,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_getFontScope_static_1700
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_GetFontScope_Static_JS_1700
      * @tc.desc   test getFontScope with undefined url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -394,7 +394,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_getFontScope_static_1800
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1900
+     * @tc.number SUB_Global_FontManager_GetFontScope_Static_JS_1800
      * @tc.desc   test getFontScope not installed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -472,7 +472,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_onFontObserver_static_2100
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_OnFontObserver_Static_JS_2100
      * @tc.desc   test onFontObserver with null observer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -490,7 +490,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_onFontObserver_static_2200
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_OnFontObserver_Static_JS_2200
      * @tc.desc   test onFontObserver with undefined observer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -508,7 +508,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_onFontObserver_static_2300
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_1300
+     * @tc.number SUB_Global_FontManager_OnFontObserver_Static_JS_2300
      * @tc.desc   test onFontObserver with empty object observer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -526,7 +526,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_onFontObserver_static_2400
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_2000
+     * @tc.number SSUB_Global_FontManager_OnFontObserver_Static_JS_2400
      * @tc.desc   test onFontObserver duplicate register
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -574,7 +574,7 @@ export default function fontManagerScopeFontTest() {
 
     /**
      * @tc.name   test_offFontObserver_static_2600
-     * @tc.number SUB_Global_ResourceManage_Third-partyAppsFontInstall&Uninstallation_2200
+     * @tc.number SUB_Global_FontManager_OffFontObserver_Static_JS_2600
      * @tc.desc   test offFontObserver not registered
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -608,6 +608,24 @@ export default function fontManagerScopeFontTest() {
         expect(value).assertEqual(undefined);
       } catch (error) {
         expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getFontScope_Static_2800
+     * @tc.number SUB_Global_FontManager_GetFontScope_Static_JS_2800
+     * @tc.desc   test getFontScope with empty url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_getFontScope_Static_2800', Level.LEVEL2, async (done: Function) => {
+      try {
+        await fontManager.getFontScope('');
+        expect(false).assertTrue();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
       }
       done();
     });
