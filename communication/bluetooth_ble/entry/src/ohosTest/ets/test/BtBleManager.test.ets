@@ -1194,7 +1194,7 @@ export default function btBleManagerTest() {
         console.error(`[bluetooth_js]descriptorRead failed, code is ${error.code},message is ${error.message}`);
         if (error.code == 801) {
           console.info('[bluetooth_js]descriptorRead is not support');
-          expect(err.code).assertEqual(801);
+          expect(error.code).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(2900099);
         }
@@ -1308,7 +1308,7 @@ export default function btBleManagerTest() {
         console.error(`[bluetooth_js]characteristicWrite failed, code is ${error.code},message is ${error.message}`);
         if (error.code == 801) {
           console.info('[bluetooth_js]characteristicWrite is not support');
-          expect(err.code).assertEqual(801);
+          expect(error.code).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(2900099);
         }
@@ -1334,7 +1334,7 @@ export default function btBleManagerTest() {
         console.error(`[bluetooth_js]characteristicWrite failed, code is ${error.code},message is ${error.message}`);
         if (error.code == 801) {
           console.info('[bluetooth_js]characteristicWrite is not support');
-          expect(err.code).assertEqual(801);
+          expect(error.code).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(2900099);
         }
@@ -1438,7 +1438,7 @@ export default function btBleManagerTest() {
             message is ${error.message}`);
         if (error.code == 801) {
           console.info('[bluetooth_js]descriptorWrite is not support');
-          expect(err.code).assertEqual(801);
+          expect(error.code).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(2900099);
         }
@@ -1464,7 +1464,7 @@ export default function btBleManagerTest() {
             message is ${error.message}`);
         if (error.code == 801) {
           console.info('[bluetooth_js]descriptorWrite is not support');
-          expect(err.code).assertEqual(801);
+          expect(error.code).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(2900099);
         }
