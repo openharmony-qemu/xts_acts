@@ -424,8 +424,8 @@ export default function nfcIsoDepTagTest() {
             let cardEmulationnfc;
             let elementName = {
                 "bundleName": "com.test.cardemulation",
-                "abilityName": "com.test.cardemulation.MainAbiliey",
-            }
+                "abilityName": "com.test.cardemulation.MainAbility",
+            };
             try {
                 cardEmulationnfc = cardEmulation.isDefaultService(elementName, null);
                 console.info('[NFC_test] cardEmulationnfc7 0703 isDefaultService type->' + cardEmulationnfc);
@@ -448,8 +448,8 @@ export default function nfcIsoDepTagTest() {
             let cardEmulationnfc;
             let elementName = {
                 "bundleName": "com.test.cardemulation",
-                "abilityName": "com.test.cardemulation.MainAbiliey",
-            }
+                "abilityName": "com.test.cardemulation.MainAbility",
+            };
             try {
                 cardEmulationnfc = cardEmulation.isDefaultService(elementName, undefined);
                 console.info('[NFC_test] cardEmulationnfc7 0704 isDefaultService type->' + cardEmulationnfc);
@@ -472,8 +472,8 @@ export default function nfcIsoDepTagTest() {
             let cardEmulationnfc;
             let elementName = {
                 "bundleName": "com.test.cardemulation",
-                "abilityName": "com.test.cardemulation.MainAbiliey",
-            }
+                "abilityName": "com.test.cardemulation.MainAbility",
+            };
             try {
                 cardEmulationnfc = cardEmulation.isDefaultService(elementName, "test");
                 console.info('[NFC_test] cardEmulationnfc7 0705 isDefaultService type->' + cardEmulationnfc);

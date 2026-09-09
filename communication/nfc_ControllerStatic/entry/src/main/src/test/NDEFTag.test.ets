@@ -1151,7 +1151,7 @@ export default function nfcNDEFTagTest() {
           expect(ndefTypeString).assertEqual("");
         } catch (error) {
           let err: Error = error as Error;
-          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2005 error is :' + err.message);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2005 error is ' + err.message);
           expect().assertFail();
         }
       } else {
