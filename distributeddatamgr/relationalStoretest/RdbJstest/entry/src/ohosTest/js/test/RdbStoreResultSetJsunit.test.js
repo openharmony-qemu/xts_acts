@@ -2042,7 +2042,8 @@ describe('rdbResultSetTest', function () {
             if (COLOUNM_NAMES == resultSet.columnNames){
                 expect(1).assertEqual(0);
             }else{
-                expect(0).assertEqual(0);
+                let num = 0
+                expect(num).assertEqual(0);
             }
             resultSet = null;
             done();
