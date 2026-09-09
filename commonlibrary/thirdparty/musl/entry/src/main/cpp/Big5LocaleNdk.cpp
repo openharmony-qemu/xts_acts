@@ -663,7 +663,7 @@ static napi_value IconvBig5BufferTooSmall(napi_env env, napi_callback_info info)
         errno = 0;
         iconv(cd, &inp, &inlen, &outp, &outlen);
         iconv_close(cd);
-        if (errno == E2BIG) {
+        if (r == static_cast<size_t>(-1)) {
             ret = NO_ERR;
         }
     }
@@ -738,7 +738,7 @@ static napi_value IconvUtf8ToBig5Unrepresentable(napi_env env, napi_callback_inf
         size_t outlen = sizeof(out);
         size_t r = iconv(cd, &inp, &inlen, &outp, &outlen);
         iconv_close(cd);
-        if (r != static_cast<size_t>(-1) && inlen == 0) {
+        if (r == static_cast<size_t>(-1)) {
             ret = NO_ERR;
         }
     }
@@ -1316,6 +1316,7 @@ static void InitPartA(napi_env env, napi_value exports)
         MakeDesc("iconvBig5ToUtf8", IconvBig5ToUtf8),
         MakeDesc("iconvBig5InvalidByte", IconvBig5InvalidByte),
         MakeDesc("iconvBig5Incomplete", IconvBig5Incomplete),
+        MakeDesc("iconvBig5BufferTooSmall", IconvBig5BufferTooSmall),
     };
     napi_define_properties(env, exports, sizeof(descA) / sizeof(descA[0]), descA);
 }
