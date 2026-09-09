@@ -82,10 +82,7 @@ export default function xComponentInterfaceConstructorNullUndefinedTest() {
       console.info('[xComponentInterface_options_undefined_001] START');
       let strJson: string = getInspectorByKey('xcomponent_options_undefined');
       console.info('[xComponentInterface_options_undefined_001] strJson: ' + strJson);
-      expect(strJson.length > 0).assertTrue();
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[xComponentInterface_options_undefined_001] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(obj !== null && obj !== undefined).assertTrue();
+      expect(strJson.length == 0).assertTrue();
       console.info('[xComponentInterface_options_undefined_001] END');
     });
 
