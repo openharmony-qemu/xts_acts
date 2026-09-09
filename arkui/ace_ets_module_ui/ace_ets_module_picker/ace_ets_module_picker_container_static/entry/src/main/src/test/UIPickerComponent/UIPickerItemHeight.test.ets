@@ -13,23 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 const SLEEP_TIME_L = 1000;
 export default function UIPickerItemHeightTest() {
   describe('UIPickerItemHeightTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("UIPickerItemHeightTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.container.static", "EntryAbility")
-      await UtilsTest.msSleep(1000)
-    });
 
     beforeEach(async () => {
       console.info('UIPickerItemHeightTest beforeEach start');

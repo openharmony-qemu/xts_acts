@@ -33,6 +33,7 @@ import ImageRequestDownloadInfoTest from './imageTest/ImageRequestDownloadInfo.t
 import DrawableDescriptorReleaseTest from './drawableDescriptorTest/DrawableDescriptorRelease.test';
 import PixelMapDrawableDescriptorConstructorTest from './drawableDescriptorTest/PixelMapDrawableDescriptorConstructor.test';
 import SetHdrCompositionTest from './drawableDescriptorTest/SetHdrComposition.test';
+import GetMaskClipPathTest from './drawableDescriptorTest/GetMaskClipPath.test';
 import ImageAnimatorAttributeModifierTest from './ImageAnimatorTest/ImageAnimatorAttributeModifier.test';
 import ImageAttributeModifierTest from './imageTest/ImageAttributeModifier.test';
 
@@ -55,6 +56,7 @@ export default function testsuite() {
   DrawableDescriptorReleaseTest();
   PixelMapDrawableDescriptorConstructorTest();
   SetHdrCompositionTest();
+  GetMaskClipPathTest();
   ImageAnimatorAttributeModifierTest();
   ImageAttributeModifierTest();
 }

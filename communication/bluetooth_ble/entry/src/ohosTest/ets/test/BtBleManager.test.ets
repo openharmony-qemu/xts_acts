@@ -17,6 +17,7 @@ import { BusinessError } from '@ohos.base';
 import bluetoothBle from '@ohos.bluetooth.ble';
 import btAccess from '@ohos.bluetooth.access';
 import connection from '@ohos.bluetooth.connection';
+import { util } from '@kit.ArkTS'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 let gattS: bluetoothBle.GattServer;
@@ -386,7 +387,8 @@ export default function btBleManagerTest() {
       console.info('bluetooth ble create gattclientdevice result:' + gattC);
       try{
         let deviceName = connection.getLocalName()
-        nLength = deviceName.length
+        let textEncoder = new util.TextEncoder();
+        nLength = textEncoder.encodeInto(deviceName).length
         console.info(`deviceName.length = ${nLength}`)
       }catch (err){
         expect(Number(err.code)).assertEqual(801)

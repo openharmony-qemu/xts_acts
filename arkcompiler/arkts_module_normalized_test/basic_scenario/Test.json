@@ -11,10 +11,10 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsModuleNormalizedBasicScenarioMainTest-library2-default-signed.hsp",
-                "ActsModuleNormalizedBasicScenarioMainTest-library-default-signed.hsp",
-                "ActsModuleNormalizedBasicScenarioMainTest-library3-default-signed.hsp",
-                "ActsModuleNormalizedBasicScenarioMainTest-entry-default-signed.hap",
+                "ActsModuleNormalizedBasicScenarioMain-library2-default-signed.hsp",
+                "ActsModuleNormalizedBasicScenarioMain-library-default-signed.hsp",
+                "ActsModuleNormalizedBasicScenarioMain-library3-default-signed.hsp",
+                "ActsModuleNormalizedBasicScenarioMain-entry-default-signed.hap",
                 "ActsModuleNormalizedBasicScenarioTest.hap"
             ],
             "type": "AppInstallKit",

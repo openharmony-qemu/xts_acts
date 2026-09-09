@@ -26,6 +26,7 @@ import TextTailIndentsTest from "./TextCommonTest/TextTailIndents.test"
 import ParagraphStyleTailIndentsTest from "./TextCommonTest/ParagraphStyleTailIndents.test"
 import LinearGradientTest from "./StyledStringTest/LinearGradient.test"
 import RadialGradientTest from "./StyledStringTest/RadialGradient.test"
+import LineSpacingOptionsTest from "./StyledStringTest/LineSpacingOptions.test"
 import TextLayoutManagerWithEncodingTest from "./TextCommonTest/TextLayoutManagerWithEncoding.test"
 
 export default function testsuite() {
@@ -43,5 +44,6 @@ export default function testsuite() {
   ParagraphStyleTailIndentsTest();
   LinearGradientTest();
   RadialGradientTest();
+  LineSpacingOptionsTest();
   TextLayoutManagerWithEncodingTest();
 }

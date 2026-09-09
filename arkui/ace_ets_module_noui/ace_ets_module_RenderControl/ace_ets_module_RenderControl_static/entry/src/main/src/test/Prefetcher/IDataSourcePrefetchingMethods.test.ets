@@ -16,7 +16,6 @@
 
 import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
@@ -26,8 +25,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function IDataSourcePrefetchingMethods(): void {
   describe('IDataSourcePrefetchingMethods', () => {
     beforeAll(async () => {
-      await UtilsTest.startAbility("com.arkui.ace.RenderControl.static", "EntryAbility");
-      await UtilsTest.msSleep(1000)
       console.info("frameNodeApi IDataSourcePrefetchingMethods start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Prefetcher/IDataSourcePrefetchingMethods',

@@ -76,7 +76,8 @@ it('IsShowFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
 
-        driver?.click(200, 200);
+        let buttonC = await driver.findComponent(ON.text('菜单选项'));
+        await (buttonC?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
       } catch (err) {
         console.info('IsShowFalse_0100 err: ' + JSON.stringify(err));

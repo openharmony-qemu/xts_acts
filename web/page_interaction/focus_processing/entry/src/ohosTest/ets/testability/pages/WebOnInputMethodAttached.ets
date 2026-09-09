@@ -28,10 +28,10 @@ const callbackEvent: OnInputmethodAttachedCallback  = ()=> {
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
+  inputMethodController = inputMethod.getController()
   @State str: string = "";
   @State text:string = ''
   @State userAgentPC:string = "";
-  inputMethodController = inputMethod.getController()
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   @State isOnConsoleEnd: number = -1;
@@ -68,14 +68,24 @@ struct WebComponent {
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitOnInputMethodAttached01": {
-              this.flag = 1;
-              // 页面仅设置状态；模拟输入由测试侧串行执行，避免与测试并发使用 UiTest（17000002）
-              Utils.emitEvent(true, 20250420);
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent(true, 20250420)
+              } else {
+                 this.flag = 1;
+                 // 页面仅设置状态；模拟输入由测试侧串行执行，避免与测试并发使用 UiTest（17000002）
+                 Utils.emitEvent(true, 20250420);
+              }
               break;
             }
             case "emitOnInputMethodAttached02": {
-              this.flag = 2;
-              Utils.emitEvent(true, 20250421);
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent(true, 20250421)
+              } else {
+                this.flag = 2;
+                Utils.emitEvent(true, 20250421);
+              }
               break;
             }
           }
@@ -88,6 +98,7 @@ struct WebComponent {
         .onInputmethodAttached(() => {
           console.log('inputmethod attached');
           inputMethod.getController().showTextInput();
+		      this.inputMethodController.hideTextInput();
           if(this.flag == 1) {
             Utils.emitEvent(true, 20250418)
           } else if(this.flag == 2) {

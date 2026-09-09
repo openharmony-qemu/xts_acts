@@ -17,6 +17,7 @@ import dividerUIJsunit from './DividerTest/dividerUIJsunit.test.ets';
 import dividerJsunitt from './DividerTest/DividerJsunitt.test.ets';
 import DividerJsunit from './DividerTest/DividerJsunit1.test.ets';
 import dividerLineCapNullUndefinedTest from './DividerTest/DividerLineCapNullUndefined.test';
+import DividerVerticalStrokeWidthNullUndefinedTest from './DividerTest/DividerVerticalStrokeWidthNullUndefinedTest.test';
 
 export default function testsuite() {
   dividerJsunit()
@@ -24,4 +25,5 @@ export default function testsuite() {
   dividerJsunitt();
   DividerJsunit();
   dividerLineCapNullUndefinedTest();
+  DividerVerticalStrokeWidthNullUndefinedTest();
 }

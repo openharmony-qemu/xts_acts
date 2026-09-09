@@ -17,22 +17,12 @@
 import { AlignItems, AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, RectValue, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { AlignRuleOption, HorizontalAlign, ItemAlign, VerticalAlign } from '@ohos.arkui.component';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function flexBasisTest() {
   let supportView: Array<string> = new Array<string>(
@@ -100,11 +90,6 @@ export default function flexBasisTest() {
     }]
 
   describe('FlexBasisTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("flexBasisTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
-    });
-
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
       async (data: BasePageConfig): Promise<void> => {
 

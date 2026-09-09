@@ -17,6 +17,8 @@
 #include "native_drawing/drawing_font_collection.h"
 #include "native_drawing/drawing_text_declaration.h"
 #include "native_drawing/drawing_text_typography.h"
+#include "native_drawing/drawing_text_global.h"
+#include "native_drawing/drawing_color.h"
 #include "native_drawing/drawing_text_font_descriptor.h"
 #include "nativeFontNdk.h"
 #include "napi/native_api.h"
@@ -83,6 +85,11 @@ const int TWO_SIX_TWO_ZEROS_NIGHT = 26200009;
 const int TWO_SIX_TWO_ZEROS_TEN = 26200010;
 const int TWO_SIX_TWO_ZEROS_ELEVEN = 26200011;
 const int INVALID_ATTRIBUTE_ID = 9999;
+constexpr int32_t INVALID_TEXT_HIGH_CONTRAST = 99;
+constexpr uint8_t COLOR_ALPHA = 0xFF;
+constexpr uint8_t COLOR_RED = 0x00;
+constexpr uint8_t COLOR_GREEN = 0xFF;
+constexpr uint8_t COLOR_BLUE = 0xFF;
 } // namespace
 
 std::string g_systemPushPath = "/system/fonts/NotoSans[wdth,wght].ttf";
@@ -2089,6 +2096,57 @@ napi_value OHDrawingSetTypographyStyleAttributeDoubleFirstLineHeadIndent0100(nap
     NAPI_ASSERT_NO_MES(getValue == indentValue);
     OH_Drawing_DestroyTypographyStyle(typoStyle);
     typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value TestSetTextHighContrast001(napi_env env, napi_callback_info info)
+{
+    OH_Drawing_SetTextHighContrast(TEXT_FOLLOW_SYSTEM_HIGH_CONTRAST);
+    OH_Drawing_SetTextHighContrast(TEXT_APP_DISABLE_HIGH_CONTRAST);
+    OH_Drawing_SetTextHighContrast(TEXT_APP_ENABLE_HIGH_CONTRAST);
+    napi_value result = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value TestSetTextHighContrast002(napi_env env, napi_callback_info info)
+{
+    OH_Drawing_SetTextHighContrast(static_cast<OH_Drawing_TextHighContrast>(INVALID_TEXT_HIGH_CONTRAST));
+    napi_value result = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value TestTypographyUpdateDecorationColor001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle *typoStyle = OH_Drawing_CreateTypographyStyle();
+    OH_Drawing_TextStyle *txtStyle = OH_Drawing_CreateTextStyle();
+    OH_Drawing_TypographyCreate *handler =
+        OH_Drawing_CreateTypographyHandler(typoStyle, OH_Drawing_CreateFontCollection());
+    NAPI_ASSERT_NO_MES(handler != nullptr);
+    OH_Drawing_SetTextStyleFontSize(txtStyle, DEFAULT_FONT_SIZE);
+    OH_Drawing_TypographyHandlerPushTextStyle(handler, txtStyle);
+    OH_Drawing_TypographyHandlerAddText(handler, "text");
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    NAPI_ASSERT_NO_MES(typography != nullptr);
+    OH_Drawing_TypographyLayout(typography, SMALL_CONSTRAINT_WIDTH);
+
+    uint32_t color = OH_Drawing_ColorSetArgb(COLOR_ALPHA, COLOR_RED, COLOR_GREEN, COLOR_BLUE);
+    OH_Drawing_TypographyUpdateDecorationColor(nullptr, color);
+    OH_Drawing_TypographyUpdateDecorationColor(typography, 0);
+    OH_Drawing_TypographyUpdateDecorationColor(typography, color);
+
+    OH_Drawing_DestroyTypography(typography);
+    OH_Drawing_DestroyTypographyHandler(handler);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    OH_Drawing_DestroyTextStyle(txtStyle);
+    typography = nullptr;
+    handler = nullptr;
+    typoStyle = nullptr;
+    txtStyle = nullptr;
+
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }

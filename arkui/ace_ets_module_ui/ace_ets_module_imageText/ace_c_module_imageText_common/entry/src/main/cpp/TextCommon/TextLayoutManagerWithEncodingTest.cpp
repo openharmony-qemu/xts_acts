@@ -201,6 +201,21 @@ static napi_value GetGlyphRangeForCharacterRangeWithEncodingTest_009(napi_env en
     NAPI_END(text);
 }
 
+static napi_value GetGlyphRangeForCharacterRangeWithEncodingTest_010(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    auto layoutManager = GetLayoutManagerFromNode(text);
+    OH_Drawing_Range* outGlyphRange = nullptr;
+    OH_Drawing_Range* outActualCharRange = nullptr;
+    struct { size_t start; size_t end; } rangeData = {0, 1};
+    OH_Drawing_Range *charRange = reinterpret_cast<OH_Drawing_Range *>(&rangeData);
+    auto ret = OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRangeWithEncoding(
+        layoutManager, charRange, static_cast<OH_ArkUI_TextEncoding>(TEXT_ENCODING_INVALID),
+        &outGlyphRange, &outActualCharRange);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END(text);
+}
+
 static napi_value GetCharacterRangeForGlyphRangeWithEncodingTest_001(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
@@ -314,6 +329,21 @@ static napi_value GetCharacterRangeForGlyphRangeWithEncodingTest_009(napi_env en
     auto ret = OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRangeWithEncoding(
         layoutManager, nullptr, OH_ARKUI_TEXT_ENCODING_UTF8, &outCharRange, &outActualGlyphRange);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END(text);
+}
+
+static napi_value GetCharacterRangeForGlyphRangeWithEncodingTest_010(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    auto layoutManager = GetLayoutManagerFromNode(text);
+    OH_Drawing_Range* outGlyphRange = nullptr;
+    OH_Drawing_Range* outActualCharRange = nullptr;
+    struct { size_t start; size_t end; } rangeData = {0, 1};
+    OH_Drawing_Range *charRange = reinterpret_cast<OH_Drawing_Range *>(&rangeData);
+    auto ret = OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRangeWithEncoding(
+        layoutManager, charRange, static_cast<OH_ArkUI_TextEncoding>(TEXT_ENCODING_INVALID),
+        &outGlyphRange, &outActualCharRange);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END(text);
 }
 

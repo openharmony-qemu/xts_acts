@@ -26,22 +26,17 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 export default function ButtonTest() {
   describe('ActsButtonTest', () => {
     //Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeEach(() => {
-      console.info('TextLineSpacingTest beforeEach start');
+    beforeEach(async () => {
+      console.info('ActsButtonTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Button/ButtonIndex',
       }
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info('get TextLineSpacingTest state pages: ' + JSON.stringify(pages));
-        if (!('TextLineSpacing' == pages.name)) {
-          console.info('get TextLineSpacingTest state pages.name: ' + JSON.stringify(pages.name));
-          routerInstance.replaceUrl(options);
-        }
+        await routerInstance.replaceUrl(options);
+        await Utils.sleep(1000);
       } catch (err) {
-        console.error('push TextLineSpacingTest page error: ' + err);
+        console.error('push ActsButtonTest page error: ' + err);
         expect().assertFail();
       }
     })

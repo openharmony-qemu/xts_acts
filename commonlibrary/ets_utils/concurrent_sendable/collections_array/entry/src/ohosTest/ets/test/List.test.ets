@@ -35,6 +35,7 @@ import arrayModifySuite from './CollectionsArrayBaseTest/ArrayModify.test';
 import arrayInheritanceSuite from './CollectionsArrayBaseTest/ArrayInheritance.test';
 import arrayAnnotationSuite from './CollectionsArrayBaseTest/ArrayAnnotation.test';
 import arrayConcurrentSuite from './CollectionsArrayBaseTest/ArrayConcurrent.test';
+import arrayContainsRetainAllSuite from './CollectionsArrayBaseTest/ArrayContainsRetainAll.test';
 import arrayConcurrentCreateFromTest from './CollectionsArrayConcurrentTest/ArrayConcurrentCreateFromTest.test';
 import arrayConcurrentDataTypeTest from './CollectionsArrayConcurrentTest/ArrayConcurrentDataTypeTest.test';
 import arrayConcurrentFillCopyWithinTest from './CollectionsArrayConcurrentTest/ArrayConcurrentFillCopyWithinTest.test';
@@ -76,6 +77,7 @@ export default function testsuite() {
   arrayInheritanceSuite();
   arrayAnnotationSuite();
   arrayConcurrentSuite();
+  arrayContainsRetainAllSuite();
   arrayConcurrentCreateFromTest();
   arrayConcurrentDataTypeTest();
   arrayConcurrentFillCopyWithinTest();

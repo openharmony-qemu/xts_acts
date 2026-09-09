@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -266,7 +266,7 @@ export default function NativeDrawingFontMgrTest() {
      * @tc.level  LEVEL1
      */
     it('testOHDrawingFontMgrMatchFamilyStyleCharacterWidth1', Level.LEVEL1, () => {
-      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacter(4);
+      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacterWidth1();
       expect(result).assertEqual(0);
     })
 
@@ -279,7 +279,7 @@ export default function NativeDrawingFontMgrTest() {
      * @tc.level  LEVEL1
      */
     it('testOHDrawingFontMgrMatchFamilyStyleCharacterWidth9', Level.LEVEL1, () => {
-      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacter(5);
+      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacterWidth9();
       expect(result).assertEqual(0);
     })
 
@@ -448,7 +448,7 @@ export default function NativeDrawingFontMgrTest() {
      * @tc.level  LEVEL1
      */
     it('testOHDrawingFontMgrMatchFamilyStyleCharacterWidth2', Level.LEVEL1, () => {
-      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacter(18);
+      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacterWidth2();
       expect(result).assertEqual(0);
     })
 
@@ -461,7 +461,7 @@ export default function NativeDrawingFontMgrTest() {
      * @tc.level  LEVEL1
      */
     it('testOHDrawingFontMgrMatchFamilyStyleCharacterWidth3', Level.LEVEL1, () => {
-      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacter(19);
+      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacterWidth3();
       expect(result).assertEqual(0);
     })
 
@@ -474,7 +474,7 @@ export default function NativeDrawingFontMgrTest() {
      * @tc.level  LEVEL1
      */
     it('testOHDrawingFontMgrMatchFamilyStyleCharacterWidth4', Level.LEVEL1, () => {
-      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacter(20);
+      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacterWidth4();
       expect(result).assertEqual(0);
     })
 
@@ -500,7 +500,7 @@ export default function NativeDrawingFontMgrTest() {
      * @tc.level  LEVEL1
      */
     it('testOHDrawingFontMgrMatchFamilyStyleCharacterWidth7', Level.LEVEL1, () => {
-      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacter(22);
+      const result = libGraphicDrawing.OHDrawingFontMgrMatchFamilyStyleCharacterWidth7();
       expect(result).assertEqual(0);
     })
 
