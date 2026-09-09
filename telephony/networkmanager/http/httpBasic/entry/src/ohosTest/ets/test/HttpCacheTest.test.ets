@@ -58,7 +58,7 @@ export default  function HttpCacheTest() {
             }).then((data) =>{
               console.info(`${caseName} get data is: `+ JSON.stringify(data));
               httpRequest.destroy();
-              ExpectTrue(data.responseCode === http.ResponseCode.OK || data.responseCode > 500);
+              ExpectTrue(data.responseCode === http.ResponseCode.OK);
               console.info(`${caseName}---end`);
               done();
             });
@@ -97,7 +97,7 @@ export default  function HttpCacheTest() {
             }).then((data) =>{
               httpRequest.destroy();
               console.info(`${caseName} get data is: `+ JSON.stringify(data));
-              ExpectTrue(data.responseCode === http.ResponseCode.OK || data.responseCode > 500);
+              ExpectTrue(data.responseCode === http.ResponseCode.OK);
               done();
             });
           }else{
@@ -136,7 +136,7 @@ export default  function HttpCacheTest() {
               usingCache: true
             }).then((data) =>{
               cache.flush().then(()=> {
-                ExpectTrue(true);
+                ExpectTrue(cache !== undefined);
                 httpRequest.destroy();
                 console.info(`${caseName}-flush success --end`);
                 done();
@@ -227,7 +227,7 @@ export default  function HttpCacheTest() {
             }).then((data)=> {
               cache.delete().then(()=>{
                 httpRequest.destroy();
-                ExpectTrue(true);
+                ExpectTrue(cache !== undefined);
                 console.info(`${caseName}---end`);
                 done();
               }).catch((err: BusinessError)=>{

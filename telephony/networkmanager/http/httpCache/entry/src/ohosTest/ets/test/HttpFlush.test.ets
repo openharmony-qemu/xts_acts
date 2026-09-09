@@ -69,7 +69,7 @@ export default function HttpFlushTest() {
                 done();
               } else {
                 console.info(`${caseName} failed err: ${JSON.stringify(err)}`);
-                ExpectTrue(true);
+                ExpectTrue(httpResponseCache !== undefined);
                 done();
               }
             });
@@ -104,7 +104,7 @@ export default function HttpFlushTest() {
             console.info(`${caseName} Network connected`);
             let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache();
             httpResponseCache.flush().then(() => {
-              ExpectTrue(true);
+              ExpectTrue(httpResponseCache !== undefined);
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} flush fail err:${JSON.stringify(err)}`);
@@ -779,64 +779,64 @@ export default function HttpFlushTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpResponseCacheFlush1300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
-      const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1300';
-      console.info(`${caseName}---Start`);
-      try {
+    it('testNetworkMgrHttpHttpResponseCacheFlush1300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      (done: Function) => {
+        const caseName: string = 'testNetworkMgrHttpHttpResponseCacheFlush1300';
+        console.info(`${caseName}---Start`);
+
+        let httpRequest: http.HttpRequest | null = null;
+        let httpResponseCache: http.HttpResponseCache | null = null;
+
+        // 检查网络连接
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-          if (data.netId == 0) {
+          if (data.netId === 0) {
             console.info(`${caseName} Please connect to the network`);
             ExpectFail();
             done();
-          } else {
-            console.info(`${caseName} Network connected`);
-            let httpRequest: http.HttpRequest = http.createHttp();
-            let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache();
-            httpRequest.request(XTS_TEST_SECOND_HTTP_URL, (err: Error, data: http.HttpResponse) => {
-              if (err) {
-                console.info(`${caseName} request fail err : ${JSON.stringify(err)}`);
-                ExpectFail();
-                done();
-              } else {
-                console.info(`${caseName} request success data : ${JSON.stringify(JSON.stringify(data))}`);
-                httpRequest.request(XTS_TEST_HTTP_URL, (err: Error) => {
-                  if (err) {
-                    console.info(`${caseName} secondRequest fail err : ${JSON.stringify(err)}`);
-                    ExpectFail();
-                    done();
-                  } else {
-                    httpResponseCache.flush().then(() => {
-                      httpRequest.request(XTS_TEST_SECOND_HTTP_URL);
-                      httpRequest.request(XTS_TEST_HTTP_URL, (err: Error, data: http.HttpResponse) => {
-                        if (err) {
-                          console.info(`${caseName} baidu fail err : ${JSON.stringify(err)}`);
-                          ExpectFail();
-                          done();
-                        } else {
-                          console.info(`${caseName} baidu tcpTiming: ${data?.performanceTiming.tcpTiming}`);
-                          ExpectTrue(data?.performanceTiming.tcpTiming == 0);
-                          httpRequest.destroy();
-                          done();
-                        }
-                      });
-                    }).catch((err: BusinessError) => {
-                      console.info(`${caseName} flush fail err:${JSON.stringify(err)}`);
-                      ExpectFail();
-                      done();
-                    });
-                  }
-                });
-              }
-            });
+            return;
           }
+
+          console.info(`${caseName} Network connected`);
+          httpRequest = http.createHttp();
+          httpResponseCache = http.createHttpResponseCache();
+
+          // 第一次请求
+          httpRequest.request(XTS_TEST_SECOND_HTTP_URL)
+            .then(() => {
+              console.info(`${caseName} first request success`);
+              // 第二次请求
+              return httpRequest!.request(XTS_TEST_HTTP_URL);
+            })
+            .then(() => {
+              console.info(`${caseName} second request success`);
+              // flush 缓存到文件系统
+              return httpResponseCache!.flush();
+            })
+            .then(() => {
+              console.info(`${caseName} flush success`);
+              // flush 后再次请求，验证缓存命中（tcpTiming == 0）
+              return httpRequest!.request(XTS_TEST_SECOND_HTTP_URL);
+            })
+            .then(() => {
+              return httpRequest!.request(XTS_TEST_HTTP_URL);
+            })
+            .then((data: http.HttpResponse) => {
+              console.info(`${caseName} third request success, tcpTiming: ${data?.performanceTiming.tcpTiming}`);
+              ExpectTrue(data?.performanceTiming.tcpTiming === 0);
+              // 清理并结束
+              httpRequest?.destroy();
+              done();
+            })
+            .catch((err: BusinessError) => {
+              console.info(`${caseName} fail err: ${JSON.stringify(err)}`);
+              ExpectFail();
+              httpRequest?.destroy();
+              done();
+            });
         });
-      } catch (err) {
-        console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-      console.info(`${caseName}---End`);
-    });
+        console.info(`${caseName}---End`);
+      });
 
     /**
      * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush1400
