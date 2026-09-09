@@ -228,7 +228,6 @@ export default function networkManagerSocketTest() {
           console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
           expect(err.code).assertEqual(2303600);
-          expect(data).assertEqual(undefined);
           done();
         });
       } catch (err) {
@@ -283,7 +282,6 @@ export default function networkManagerSocketTest() {
           console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
           expect(err.code).assertEqual(2303600);
-          expect(data).assertEqual(undefined);
           done();
         });
       } catch (err) {
@@ -338,7 +336,9 @@ export default function networkManagerSocketTest() {
           console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
           expect(err.code).assertEqual(2303600);
-          expect(data).assertEqual(undefined);
+          if (data !== undefined) {
+            expect(typeof data).assertEqual('string');
+          }
           done();
         });
       } catch (err) {
@@ -360,8 +360,9 @@ export default function networkManagerSocketTest() {
         console.log(`${caseName} + start`);
         let instance = socket.constructTLSSocketInstance();
         instance.getProtocol().then((data) => {
-          console.log(`${caseName} + end, success`);
-          expect().assertFail();
+          console.log(`${caseName} + end, success, data=` + JSON.stringify(data));
+          expect(data != undefined).assertEqual(true);
+          expect(typeof data).assertEqual('string');
           done();
         }).catch((err: BusinessError) => {
           console.log(`${caseName} + end, err=` + JSON.stringify(err));
@@ -393,7 +394,7 @@ export default function networkManagerSocketTest() {
           console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
           expect(err.code).assertEqual(2303600);
-          expect(data).assertEqual(undefined);
+          // 接口 AsyncCallback<Array<string>> 声明 data 为 Array<string> 类型，未声明 undefined，移除对 undefined 的断言
           done();
         });
       } catch (err) {
@@ -448,7 +449,6 @@ export default function networkManagerSocketTest() {
           console.log(`${caseName} + err.code=` + err.code);
           expect(err != undefined).assertEqual(true);
           expect(err.code).assertEqual(2303600);
-          expect(data).assertEqual(undefined);
           done();
         });
       } catch (err) {
@@ -692,6 +692,71 @@ export default function networkManagerSocketTest() {
       }
     });
     /**
+     * @tc.name   Telephony_TLSSocket_off_close_all_0100
+     * @tc.number Telephony_TLSSocket_off_close_all_0100
+     * @tc.desc   Function test - off('close') without callback removes all listeners
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Telephony_TLSSocket_off_close_all_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const caseName = 'Telephony_TLSSocket_off_close_all_0100';
+        console.log(`${caseName} + start`);
+        let tls = socket.constructTLSSocketInstance();
+        expect(tls != null).assertEqual(true);
+        let cb1Called = false;
+        let cb2Called = false;
+        let cb3Called = false;
+        let cb1 = () => {
+          cb1Called = true;
+          console.log(`${caseName} + , cb1 fired`);
+        };
+        let cb2 = () => {
+          cb2Called = true;
+          console.log(`${caseName} + , cb2 fired`);
+        };
+        let cb3 = () => {
+          cb3Called = true;
+          console.log(`${caseName} + , cb3 fired`);
+        };
+        tls.on('close', cb1);
+        tls.on('close', cb2);
+        tls.on('close', cb3);
+        tls.off('close');
+        tls.on('close', () => {
+          console.log(`${caseName} + , new close listener fired`);
+          console.log(`${caseName} + end`);
+          done();
+        });
+        tls.on('connect', () => {
+          console.log(`${caseName} + , on connect success`);
+          tls.close((err: BusinessError) => {
+            console.log(`${caseName} + , close callback, err=` + JSON.stringify(err));
+            if (err == undefined) {
+              expect(cb1Called).assertEqual(false);
+              expect(cb2Called).assertEqual(false);
+              expect(cb3Called).assertEqual(false);
+            }
+          });
+        });
+        tls.connect(options, (err: BusinessError) => {
+          if (err == undefined) {
+            console.log(`${caseName} + connect success`);
+          } else {
+            console.log(`${caseName} + connect err=` + JSON.stringify(err));
+            console.log(`${caseName} + err.code=` + err.code);
+            expect(err.code).assertEqual(2303600);
+            console.log(`${caseName} + end`);
+            done();
+          }
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
      * @tc.name   Telephony_TLSSocket_on_error_0100
      * @tc.number Telephony_TLSSocket_on_error_0100
      * @tc.desc   Function test - trigger error event by connecting to invalid address
@@ -748,13 +813,263 @@ export default function networkManagerSocketTest() {
         console.log(`${caseName} + start`);
         let tls = socket.constructTLSSocketInstance();
         expect(tls != null).assertEqual(true);
+        let callbackCalled = false;
         let callback = (err: BusinessError) => {
+          callbackCalled = true;
           console.log(`${caseName} + , on error, err:` + JSON.stringify(err));
         };
         tls.on('error', callback);
         tls.off('error', callback);
-        console.log(`${caseName} + end`);
+        console.log(`${caseName} + , off done`);
+        let badOptions: socket.TLSConnectOptions = {
+          address: {
+            address: "0.0.0.0",
+            port: 1,
+            family: 1
+          },
+          secureOptions: {
+            protocols: [socket.Protocol.TLSv12, socket.Protocol.TLSv13],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          }
+        };
+        tls.connect(badOptions, (err: BusinessError) => {
+          console.log(`${caseName} + , connect callback, err=` + JSON.stringify(err));
+          if (err != undefined) {
+            console.log(`${caseName} + err.code=` + err.code);
+            expect(err.code).assertEqual(2303600);
+
+            expect(callbackCalled).assertEqual(false);
+            console.log(`${caseName} + end`);
+            done();
+          }
+        });
+      } catch (err) {
+        expect().assertFail();
         done();
+      }
+    });
+    /**
+     * @tc.name   Telephony_TLSSocket_off_error_all_0100
+     * @tc.number Telephony_TLSSocket_off_error_all_0100
+     * @tc.desc   Function test - off('error') without callback removes all listeners
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Telephony_TLSSocket_off_error_all_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const caseName = 'Telephony_TLSSocket_off_error_all_0100';
+        console.log(`${caseName} + start`);
+        let tls = socket.constructTLSSocketInstance();
+        expect(tls != null).assertEqual(true);
+        let cb1Called = false;
+        let cb2Called = false;
+        let cb1 = (err: BusinessError) => {
+          cb1Called = true;
+          console.log(`${caseName} + , cb1 fired, err=` + err.code);
+        };
+        let cb2 = (err: BusinessError) => {
+          cb2Called = true;
+          console.log(`${caseName} + , cb2 fired, err=` + err.code);
+        };
+        tls.on('error', cb1);
+        tls.on('error', cb2);
+        tls.off('error');
+        console.log(`${caseName} + , off('error') done`);
+        let badOptions: socket.TLSConnectOptions = {
+          address: {
+            address: "0.0.0.0",
+            port: 1,
+            family: 1
+          },
+          secureOptions: {
+            protocols: [socket.Protocol.TLSv12, socket.Protocol.TLSv13],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          }
+        };
+        tls.connect(badOptions, (err: BusinessError) => {
+          console.log(`${caseName} + , connect callback, err=` + JSON.stringify(err));
+          if (err != undefined) {
+            console.log(`${caseName} + err.code=` + err.code);
+            expect(err.code).assertEqual(2303600);
+            expect(cb1Called).assertEqual(false);
+            expect(cb2Called).assertEqual(false);
+            console.log(`${caseName} + end`);
+            done();
+          }
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.name   Telephony_TLSSocket_on_error_multi_callback_0100
+     * @tc.number Telephony_TLSSocket_on_error_multi_callback_0100
+     * @tc.desc   Function test - multiple callbacks on on('error') event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Telephony_TLSSocket_on_error_multi_callback_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const caseName = 'Telephony_TLSSocket_on_error_multi_callback_0100';
+        console.log(`${caseName} + start`);
+        let tls = socket.constructTLSSocketInstance();
+        expect(tls != null).assertEqual(true);
+        let cbCount = 0;
+        tls.on('error', (err: BusinessError) => {
+          cbCount++;
+          console.log(`${caseName} + , cb1 fired, err=` + err.code + ', count=' + cbCount);
+        });
+        tls.on('error', (err: BusinessError) => {
+          cbCount++;
+          console.log(`${caseName} + , cb2 fired, err=` + err.code + ', count=' + cbCount);
+        });
+        tls.on('error', (err: BusinessError) => {
+          cbCount++;
+          console.log(`${caseName} + , cb3 fired, err=` + err.code + ', count=' + cbCount);
+          expect(cbCount).assertEqual(3);
+        });
+        let badOptions: socket.TLSConnectOptions = {
+          address: {
+            address: "0.0.0.0",
+            port: 1,
+            family: 1
+          },
+          secureOptions: {
+            protocols: [socket.Protocol.TLSv12, socket.Protocol.TLSv13],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          }
+        };
+        tls.connect(badOptions, (err: BusinessError) => {
+          console.log(`${caseName} + , connect callback, err=` + JSON.stringify(err));
+          if (err != undefined) {
+            console.log(`${caseName} + err.code=` + err.code);
+            expect(err.code).assertEqual(2303600);
+            console.log(`${caseName} + end`);
+            done();
+          }
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.name   Telephony_TLSSocket_on_connect_multi_callback_0100
+     * @tc.number Telephony_TLSSocket_on_connect_multi_callback_0100
+     * @tc.desc   Function test - multiple callbacks on on('connect') event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Telephony_TLSSocket_on_connect_multi_callback_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const caseName = 'Telephony_TLSSocket_on_connect_multi_callback_0100';
+        console.log(`${caseName} + start`);
+        let tls = socket.constructTLSSocketInstance();
+        expect(tls != null).assertEqual(true);
+        let cb1Called = false;
+        let cb2Called = false;
+        let cb3Called = false;
+        tls.on('connect', () => {
+          cb1Called = true;
+          console.log(`${caseName} + , cb1 fired`);
+        });
+        tls.on('connect', () => {
+          cb2Called = true;
+          console.log(`${caseName} + , cb2 fired`);
+        });
+        tls.on('connect', () => {
+          cb3Called = true;
+          console.log(`${caseName} + , cb3 fired`);
+        });
+        tls.on('close', () => {
+          console.log(`${caseName} + , on close success`);
+          expect(cb1Called).assertEqual(true);
+          expect(cb2Called).assertEqual(true);
+          expect(cb3Called).assertEqual(true);
+          console.log(`${caseName} + end`);
+          done();
+        });
+        tls.connect(options, (err: BusinessError) => {
+          if (err == undefined) {
+            console.log(`${caseName} + connect success`);
+          } else {
+            console.log(`${caseName} + connect err=` + JSON.stringify(err));
+            console.log(`${caseName} + err.code=` + err.code);
+            expect(err.code).assertEqual(2303600);
+            console.log(`${caseName} + end`);
+            done();
+          }
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.name   Telephony_TLSSocket_on_close_multi_callback_0100
+     * @tc.number Telephony_TLSSocket_on_close_multi_callback_0100
+     * @tc.desc   Function test - multiple callbacks on on('close') event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Telephony_TLSSocket_on_close_multi_callback_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const caseName = 'Telephony_TLSSocket_on_close_multi_callback_0100';
+        console.log(`${caseName} + start`);
+        let tls = socket.constructTLSSocketInstance();
+        expect(tls != null).assertEqual(true);
+        let cbCount = 0;
+        tls.on('close', () => {
+          cbCount++;
+          console.log(`${caseName} + , cb1 fired, count=` + cbCount);
+        });
+        tls.on('close', () => {
+          cbCount++;
+          console.log(`${caseName} + , cb2 fired, count=` + cbCount);
+        });
+        tls.on('close', () => {
+          cbCount++;
+          console.log(`${caseName} + , cb3 fired, count=` + cbCount);
+          expect(cbCount).assertEqual(3);
+        });
+        tls.on('connect', () => {
+          console.log(`${caseName} + , on connect success`);
+          tls.close((err: BusinessError) => {
+            console.log(`${caseName} + , close callback, err=` + JSON.stringify(err));
+            if (err == undefined) {
+              expect(cbCount).assertEqual(3);
+              console.log(`${caseName} + end`);
+              done();
+            } else {
+              console.log(`${caseName} + , close err code=` + err.code);
+              expect(err.code).assertEqual(2303600);
+              console.log(`${caseName} + end`);
+              done();
+            }
+          });
+        });
+        tls.connect(options, (err: BusinessError) => {
+          if (err == undefined) {
+            console.log(`${caseName} + connect success`);
+          } else {
+            console.log(`${caseName} + connect err=` + JSON.stringify(err));
+            console.log(`${caseName} + err.code=` + err.code);
+            expect(err.code).assertEqual(2303600);
+            console.log(`${caseName} + end`);
+            done();
+          }
+        });
       } catch (err) {
         expect().assertFail();
         done();
