@@ -482,24 +482,30 @@ export default function webBlankApiCoverage() {
     it('SUB_WEB_FETCHCOOKIE_PARAMSPEC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let hit = 0;
-        const race = async (p: Promise<string>): Promise<void> => {
+        // factory：fetchCookie(null/undefined) 会同步抛 401，须在 race 内调用才能吞掉
+        const race = async (factory: () => Promise<string>): Promise<void> => {
           try {
-            await Promise.race([p, new Promise<string>((r) => setTimeout(() => r(''), 1200))]);
+            await Promise.race([
+              factory(),
+              new Promise<string>((r) => setTimeout(() => r(''), 1200))
+            ]);
             hit++;
           } catch (e) {
             console.info('fetchCookie race ' + errCode(e));
             hit++;
           }
         };
-        await race(webview.WebCookieManager.fetchCookie('', false, false));
-        await race(webview.WebCookieManager.fetchCookie(null, false, true));
-        await race(webview.WebCookieManager.fetchCookie(undefined, true, false));
-        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', true, false));
-        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', false, false));
-        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', null, true));
-        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', undefined, false));
-        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', true, null));
-        await race(webview.WebCookieManager.fetchCookie('https://www.example.com', false, undefined));
+        await race(() => webview.WebCookieManager.fetchCookie('', false, false));
+        await race(() => webview.WebCookieManager.fetchCookie(null, false, true));
+        await race(() => webview.WebCookieManager.fetchCookie(undefined, true, false));
+        await race(() => webview.WebCookieManager.fetchCookie('https://www.example.com', true, false));
+        await race(() => webview.WebCookieManager.fetchCookie('https://www.example.com', false, false));
+        await race(() => webview.WebCookieManager.fetchCookie('https://www.example.com', null, true));
+        await race(() =>
+          webview.WebCookieManager.fetchCookie('https://www.example.com', undefined, false));
+        await race(() => webview.WebCookieManager.fetchCookie('https://www.example.com', true, null));
+        await race(() =>
+          webview.WebCookieManager.fetchCookie('https://www.example.com', false, undefined));
         expect(hit).assertEqual(9);
         done();
       })
