@@ -27,7 +27,7 @@ export default function lock_info_group_test() {
      * @tc.level  LEVEL1
      */
     it("pthread_internal_lock_info", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_internal_lock_info");
+      const result: number = await testNapi.runTest("pthread_internal_lock_info");
       expect(result).assertEqual(0);
       done();
     });
