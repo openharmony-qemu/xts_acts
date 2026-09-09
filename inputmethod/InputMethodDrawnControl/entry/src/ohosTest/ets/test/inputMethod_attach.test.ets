@@ -734,9 +734,10 @@ export default function inputMethodTest() {
       };
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.DATETIME, enterKeyType: inputMethod.EnterKeyType.NEXT
+          textInputType: inputMethod.TextInputType.NONE, enterKeyType: inputMethod.EnterKeyType.NONE, placeholder: '', abilityName: ''
         },
-        capitalizeMode: 4
+        newEditBox: true,
+        capitalizeMode: inputMethod.CapitalizeMode.NONE
       };
       try {
         inputMethod.getController().attach(true, ATTRIBUTE, CallBack);
@@ -858,7 +859,8 @@ export default function inputMethodTest() {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
           textInputType: inputMethod.TextInputType.DATETIME, enterKeyType: inputMethod.EnterKeyType.NEXT
-        }
+        },
+        capitalizeMode: 4
       };
       try {
         inputMethod.getController().attach(true, ATTRIBUTE, CallBack);
@@ -1244,9 +1246,10 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_0300';
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.DATETIME, enterKeyType: inputMethod.EnterKeyType.NEXT
+          textInputType: inputMethod.TextInputType.NONE, enterKeyType: inputMethod.EnterKeyType.NONE, placeholder: '', abilityName: ''
         },
-        capitalizeMode: 4
+        newEditBox: true,
+        capitalizeMode: inputMethod.CapitalizeMode.NONE
       };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
@@ -1356,7 +1359,8 @@ export default function inputMethodTest() {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
           textInputType: inputMethod.TextInputType.DATETIME, enterKeyType: inputMethod.EnterKeyType.NEXT
-        }
+        },
+        capitalizeMode: 4
       };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
@@ -1713,9 +1717,10 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_1900';
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.DATETIME, enterKeyType: inputMethod.EnterKeyType.NEXT
+          textInputType: inputMethod.TextInputType.NONE, enterKeyType: inputMethod.EnterKeyType.NONE, placeholder: '', abilityName: ''
         },
-        capitalizeMode: 4
+        newEditBox: true,
+        capitalizeMode: inputMethod.CapitalizeMode.NONE
       };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE, inputMethod.RequestKeyboardReason.NONE);
@@ -1825,7 +1830,8 @@ export default function inputMethodTest() {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
           textInputType: inputMethod.TextInputType.DATETIME, enterKeyType: inputMethod.EnterKeyType.NEXT
-        }
+        },
+        capitalizeMode: 4
       };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE, inputMethod.RequestKeyboardReason.NONE);
