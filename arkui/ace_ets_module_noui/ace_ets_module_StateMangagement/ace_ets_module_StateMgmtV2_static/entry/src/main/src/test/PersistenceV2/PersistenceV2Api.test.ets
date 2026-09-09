@@ -16,7 +16,6 @@
  
 import {
   describe,
-  beforeAll,
   expect,
   beforeEach,
   afterEach,
@@ -25,7 +24,6 @@ import {
   Level
 } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
@@ -34,11 +32,6 @@ import { Router } from '@ohos.arkui.UIContext';
  
 export default function PersistenceV2Api(): void {
   describe('PersistenceV2Api', () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility("com.arkui.ace.StateMgmtV2.static", "EntryAbility");
-      await UtilsTest.msSleep(1000);
-      console.info("beforeAll case");
-    });
  
     beforeEach(async (): Promise<void> => {
       console.info("PersistenceV2Api beforeEach start");

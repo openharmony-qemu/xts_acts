@@ -13,24 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 import { Driver, ON } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
 
 export default function CustomEnvIndex(): void {
   describe('CustomEnvIndexTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] CustomEnvIndex beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.StateMgmtV2.static", "EntryAbility");
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("==============================");
