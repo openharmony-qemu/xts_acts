@@ -1097,15 +1097,15 @@ async function verifyExifPropertiesByArray(
         let key = keyArray[i];
         const rule: ModifyRule | undefined = expectedMap.get(key);
         if(rule === undefined) {
-            result = result && false;
-            continue;
+            result = false;
+            break;
         }
         const actualValue: string | null = allProperties[key];
         hilog.info(0x0000, 'testTag', `expect key: ${rule.key}, actualValue: ${actualValue}, expectValue: ${rule.expectValue}`)
         result = result && (actualValue === rule.expectValue);
         hilog.info(0x0000, 'testTag', `${imageName} ${key} ${method} expect RESULT: ${actualValue === rule.expectValue}`)
     }
-    console.log(`expect all result: ${result}`)
+    console.log(`expect result: ${result}`)
     return result;
 }
 
