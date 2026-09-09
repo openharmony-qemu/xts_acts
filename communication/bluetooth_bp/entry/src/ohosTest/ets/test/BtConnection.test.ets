@@ -3940,7 +3940,7 @@ describe('btConnectionTest', () => {
             message is ${error.message}`);
             if (error.code == 801) {
                 console.info('[bluetooth_js]batteryChange is not support');
-                expect(err.code).assertEqual(801);
+                expect(error.code).assertEqual(801);
             } else {
                 expect(Number(error.code)).assertEqual(2900099);
             }
