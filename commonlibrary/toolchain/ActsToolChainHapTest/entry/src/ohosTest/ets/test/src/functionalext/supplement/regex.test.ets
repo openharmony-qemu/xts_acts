@@ -27,7 +27,7 @@ export default function regex_group_test() {
      * @tc.level  LEVEL1
      */
     it("regexec", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("regexec");
+      const result: number = await testNapi.runTest("regexec");
       expect(result).assertEqual(0);
       done();
     });

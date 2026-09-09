@@ -27,7 +27,7 @@ export default function FunctionalextThreadTestGroupTest() {
      * @tc.desc   libc-test pthread_guard_size
      */
     it("pthread_guard_size", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_guard_size");
+      const result: number = await testNapi.runTest("pthread_guard_size");
       expect(result).assertEqual(0);
       done();
     });
