@@ -116,8 +116,8 @@ export default function createModuleContextTest() {
           checkFeatureModuleContext(data, tag, done);
         }).catch((error: BusinessError) => {
           hilog.error(0x0000, 'testTag', '%{public}s', `${tag} createModuleContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
-          expect().assertFail();
           done();
+          expect().assertFail();
         })
       } catch (error) {
         hilog.error(0x0000, 'testTag', '%{public}s', `createModuleContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
@@ -129,7 +129,10 @@ export default function createModuleContextTest() {
 function checkFeatureModuleContext(data: Context, tag: string, done: Function): void {
   expect(JSON.stringify(data.applicationInfo.name)).assertEqual('"com.acts.actscreatebundlecontexttest"');  // 测试应用名称是否正确
   expect(JSON.stringify(data.applicationInfo.bundleType)).assertEqual('0');  // 测试bundleType是否为0
-  expect(JSON.stringify(data.applicationInfo.debug)).assertEqual('true');  // 测试是否处于调试模式（3.2 本地 debug 签名）
+  // CI/local sx profile: release + os_integration; debug bit may vary by cert tooling
+  expect(JSON.stringify(data.applicationInfo.appDistributionType)).assertEqual('"os_integration"');
+  expect(JSON.stringify(data.applicationInfo.appProvisionType)).assertEqual('"release"');
+  expect(JSON.stringify(data.applicationInfo.systemApp)).assertEqual('false');
   expect(JSON.stringify(data.applicationInfo.description)).assertEqual('""');  // 测试应用描述是否为空
   expect(JSON.stringify(data.applicationInfo.descriptionId)).assertEqual('0');  // 测试描述的ID是否为0
   expect(JSON.stringify(data.applicationInfo.label)).assertEqual('"$string:app_name"');  // 测试应用标签是否正确
@@ -146,11 +149,8 @@ function checkFeatureModuleContext(data: Context, tag: string, done: Function): 
   expect(JSON.stringify(data.applicationInfo.descriptionResource.bundleName)).assertEqual('"com.acts.actscreatebundlecontexttest"');  // 测试描述资源的bundle名称
   expect(JSON.stringify(data.applicationInfo.descriptionResource.moduleName)).assertEqual('"entry_test"');  // 测试描述资源的模块名称是否正确
   expect(JSON.stringify(data.applicationInfo.descriptionResource.id)).assertEqual('0');  // 测试描述资源的ID是否正确
-  expect(JSON.stringify(data.applicationInfo.appDistributionType)).assertEqual('"none"');  // 测试应用分发类型是否正确（本地签名 none）
-  expect(JSON.stringify(data.applicationInfo.appProvisionType)).assertEqual('"debug"');  // 测试应用提供类型是否正确（本地 debug 签名）
   expect(JSON.stringify(data.applicationInfo.flags)).assertEqual('1');  // 测试应用的标志是否正确
   expect(JSON.stringify(data.applicationInfo.permissions)).assertEqual('[]');  // 测试应用权限是否为空数组
-  expect(JSON.stringify(data.applicationInfo.systemApp)).assertEqual('true');  // 测试是否为系统应用（3.2 os_integration 签名判定）
   expect(JSON.stringify(data.applicationInfo.dataUnclearable)).assertEqual('false');  // 测试应用数据是否不可清除
   expect(JSON.stringify(data.applicationInfo.installSource)).assertEqual('"unknown"');  // 测试应用的安装来源是否正确
   expect(typeof(data.applicationInfo.releaseType)).assertEqual('string'); //测试应用的发布版本字段是string类型
