@@ -1004,14 +1004,14 @@ export default function createAssetTest() {
      */
     it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_007';
-      const photoType: photoAccessHelper.PhotoType = photoType.IMAGE;
+      const type: photoAccessHelper.PhotoType = photoType.IMAGE;
       const extension = 'jpg';
       const options: photoAccessHelper.CreateOptions = {
         title: testTitle,
         subtype: null as ESObject
       };
       try {
-        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        let uri: string = await phAccessHelper.createAsset(type, extension, options);
         console.info(TAG, testName, `createAsset success; uri: ${uri}`);
         expect(uri.includes(testTitle)).assertTrue();
         done();
@@ -1032,14 +1032,14 @@ export default function createAssetTest() {
      */
     it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_008';
-      const photoType: photoAccessHelper.PhotoType = photoType.IMAGE;
+      const type: photoAccessHelper.PhotoType = photoType.IMAGE;
       const extension = 'jpg';
       const options: photoAccessHelper.CreateOptions = {
         title: testTitle,
         subtype: '' as ESObject
       };
       try {
-        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        let uri: string = await phAccessHelper.createAsset(type, extension, options);
         console.info(TAG, testName, `createAsset success; uri: ${uri}`);
         expect(uri.includes(testTitle)).assertTrue();
         done();
@@ -1060,14 +1060,14 @@ export default function createAssetTest() {
      */
     it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009';
-      const photoType: photoAccessHelper.PhotoType = photoType.IMAGE;
+      const phottypeoType: photoAccessHelper.PhotoType = photoType.IMAGE;
       const extension = 'jpg';
       const options: photoAccessHelper.CreateOptions = {
         title: testTitle,
         subtype: -1
       };
       try {
-        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        let uri: string = await phAccessHelper.createAsset(type, extension, options);
         console.info(TAG, testName, `createAsset success; uri: ${uri}`);
         expect(uri.includes(testTitle)).assertTrue();
         done();
