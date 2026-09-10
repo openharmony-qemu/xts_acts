@@ -799,6 +799,32 @@ struct webMessageExt {
               break;
             }
 
+            case "testWebMessageExtSetArrayEmpty001": {
+              try {
+                if (this.nativePort) {
+                  let arr = [] as Array<string|Double|Long|boolean>;
+                  this.message.setType(webView.WebMessageType.ARRAY);
+                  this.message.setArray(arr);
+                  this.nativePort.postMessageEventExt(this.message);
+                }
+                setTimeout(() => {
+                  this.controller.runJavaScript("postArrayBufferToHtml()", (error, result) => {
+                    if (error) {
+                      console.log(`The postArrayBufferToHtml() return value is: ${error}`);
+                    }
+                    console.log(`The postArrayBufferToHtml() return value is: ${result}`);
+                    if (result) {
+                      Utils.emitEvent(result, 100009)
+                    }
+                  })
+                }, 1000)
+              } catch (error) {
+                console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
+                Utils.emitEvent(error.code, 100009)
+              }
+              break;
+            }
+
             case "testWebMessageExtSetArrayErrorCode001": {
               try {
                 if (this.nativePort) {

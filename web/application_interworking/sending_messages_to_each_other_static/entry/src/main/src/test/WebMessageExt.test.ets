@@ -947,6 +947,30 @@ export default function webMessageExt() {
     })
 
     /**
+    * @tc.name        testWebMessageExtSetArrayEmptyStatic001
+    * @tc.number      SUB_WEB_WEBMESSAGEEXT_SETARRAY_0102
+    * @tc.desc        test WebMessageExtSetArrayEmpty
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('testWebMessageExtSetArrayEmptyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let result = "Array len:0, value:";
+      Utils.emitEvent("testWebMessageExtSetArrayEmpty001", 10)
+      await Utils.msSleep(2000);
+      Utils.registerBaseEvent("testWebMessageExtSetArrayEmpty001", JSON.stringify(result), 100009, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebMessageExtButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
     * @tc.name        testWebMessageExtSetArrayErrorCodeStatic001
     * @tc.number      SUB_WEB_WEBMESSAGEEXT_SETARRAY_0100
     * @tc.desc        test WebMessageExtSetArray ErrorCode 17100014
