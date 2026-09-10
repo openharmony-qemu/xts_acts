@@ -4712,6 +4712,7 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        expect().assertFail();
         done();
       }
     });
