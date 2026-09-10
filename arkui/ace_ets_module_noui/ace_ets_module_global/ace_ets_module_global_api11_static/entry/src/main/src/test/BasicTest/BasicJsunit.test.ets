@@ -18,7 +18,7 @@ import { Callback } from '@ohos.arkui.component'
 function callbackTest(callback: Callback<void>): void {
   callback(undefined);
 }
-export default function basicJsunit(): void {
+export default function basicJsunit() {
   describe('basicTest', () => {
     let callback: Callback<void> = (data:undefined):void => {
       console.log(data);

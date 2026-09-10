@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function pathNewTest(): void {
+export default function pathNewTest() {
   describe('pathNewTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/path',
@@ -60,7 +60,7 @@ export default function pathNewTest(): void {
       }
     });
 
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.sleep(1000);
       console.info("pathNe after each called");
     });
@@ -74,7 +74,7 @@ export default function pathNewTest(): void {
      * @tc.desc     testpathNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testpathNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testpathNe_static_0001', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Path');
@@ -95,7 +95,7 @@ it('testpathNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     testpathNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testpathNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
+it('testpathNe_static_0002', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Path');
@@ -116,7 +116,7 @@ it('testpathNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     testpathNe_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testpathNe_static_0003', Level.LEVEL0, async (): Promise<void> => {
+it('testpathNe_static_0003', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Path');

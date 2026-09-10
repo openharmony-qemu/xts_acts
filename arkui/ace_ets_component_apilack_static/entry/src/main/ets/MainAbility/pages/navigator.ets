@@ -35,11 +35,11 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct NavigatorTarget {
-  aboutToAppear(): void {
+  aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear NavigatorTarget start`)
   }
 
-  aboutToDisappear(): void {
+  aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear NavigatorTarget end`)
   }
 

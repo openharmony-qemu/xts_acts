@@ -34,7 +34,7 @@ import {
 @Entry
 @Component
 struct Index {
-  aboutToAppear(): void {
+  aboutToAppear() {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);

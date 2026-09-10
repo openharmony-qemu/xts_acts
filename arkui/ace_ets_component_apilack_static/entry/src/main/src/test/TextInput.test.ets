@@ -32,13 +32,13 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function textInputOnEditChangeJsunit(): void {
+export default function textInputOnEditChangeJsunit() {
   describe('textInputOnEditChangeTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/textInput',
@@ -59,7 +59,7 @@ export default function textInputOnEditChangeJsunit(): void {
       }
     });
 
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.sleep(1000);
       console.info("textInputOnEditChange after each called");
     });
@@ -73,7 +73,7 @@ export default function textInputOnEditChangeJsunit(): void {
      * @tc.desc     testtextInputOnEditChange_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testtextInputOnEditChange_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testtextInputOnEditChange_static_0001', Level.LEVEL0, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
@@ -94,7 +94,7 @@ it('testtextInputOnEditChange_static_0001', Level.LEVEL0, async (): Promise<void
      * @tc.desc     testtextInputOnEditChange_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testtextInputOnEditChange_static_0002', Level.LEVEL0, async (): Promise<void> => {
+it('testtextInputOnEditChange_static_0002', Level.LEVEL0, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
@@ -115,7 +115,7 @@ it('testtextInputOnEditChange_static_0002', Level.LEVEL0, async (): Promise<void
      * @tc.desc     testtextInputOnEditChange_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testtextInputOnEditChange_static_0003', Level.LEVEL0, async (): Promise<void> => {
+it('testtextInputOnEditChange_static_0003', Level.LEVEL0, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
@@ -136,7 +136,7 @@ it('testtextInputOnEditChange_static_0003', Level.LEVEL0, async (): Promise<void
      * @tc.desc     testtextInputOnEditChange_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testtextInputOnEditChange_static_0004', Level.LEVEL0, async (): Promise<void> => {
+it('testtextInputOnEditChange_static_0004', Level.LEVEL0, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
@@ -157,7 +157,7 @@ it('testtextInputOnEditChange_static_0004', Level.LEVEL0, async (): Promise<void
      * @tc.desc     testtextInputOnEditChange_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testtextInputOnEditChange_static_0005', Level.LEVEL0, async (): Promise<void> => {
+it('testtextInputOnEditChange_static_0005', Level.LEVEL0, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
@@ -178,7 +178,7 @@ it('testtextInputOnEditChange_static_0005', Level.LEVEL0, async (): Promise<void
      * @tc.desc     testtextInputOnEditChange_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testtextInputOnEditChange_static_0006', Level.LEVEL0, async (): Promise<void> => {
+it('testtextInputOnEditChange_static_0006', Level.LEVEL0, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
@@ -200,7 +200,7 @@ it('testtextInputOnEditChange_static_0006', Level.LEVEL0, async (): Promise<void
      * @tc.desc     testtextInputOnEditChange_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testtextInputOnEditChange_static_0009', Level.LEVEL0, async (): Promise<void> => {
+it('testtextInputOnEditChange_static_0009', Level.LEVEL0, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
@@ -221,7 +221,7 @@ it('testtextInputOnEditChange_static_0009', Level.LEVEL0, async (): Promise<void
      * @tc.desc     testtextInputOnEditChange_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testtextInputOnEditChange_static_0010', Level.LEVEL0, async (): Promise<void> => {
+it('testtextInputOnEditChange_static_0010', Level.LEVEL0, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onEditChangeText');
@@ -242,7 +242,7 @@ it('testtextInputOnEditChange_static_0010', Level.LEVEL0, async (): Promise<void
      * @tc.desc     testtextInputCopyOption_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testtextInputCopyOption_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testtextInputCopyOption_static_0001', Level.LEVEL0, async () => {
       console.info('textInputCopyOption testtextInputCopyOption0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('textInputCopyOptionText');
@@ -263,7 +263,7 @@ it('testtextInputCopyOption_static_0001', Level.LEVEL0, async (): Promise<void> 
      * @tc.desc     testtextInputShowPasswordIcon_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testtextInputShowPasswordIcon_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testtextInputShowPasswordIcon_static_0001', Level.LEVEL0, async () => {
       console.info('textInputShowPasswordIcon testtextInputShowPasswordIcon0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('showPasswordIconText');
