@@ -91,12 +91,10 @@ function fn(a = 10, b = 20) {
 
 export default function ToolchainSyntaxVerification() {
   describe('ToolchainSyntaxVerification', () => {
-    beforeEach(async (done: Function) => {
-      console.info("ToolchainSyntaxVerification beforeEach start");
-      done();
+    beforeEach(async () => {
     });
+    
     afterEach(async () => {
-      console.info("ToolchainSyntaxVerification after each called");
     });
 
     /**
