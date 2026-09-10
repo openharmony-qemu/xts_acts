@@ -2044,23 +2044,25 @@ describe('relationalStoreResultSetTest', function () {
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-     it('testcolumnNames0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+     it('testcolumnNames0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
         console.info(TAG + '************* testcolumnNames0001 start *************');
         {
-            let predicates = await new data_Rdb.RdbPredicates('test')
-            let resultSet = await rdbStore.query(predicates)
-            if (COLOUNM_NAMES == resultSet.columnNames){
-                expect(1).assertEqual(0);
-            }else{
-                let num = 0;
-                expect(num).assertEqual(0);
-            }
+          try{
+            let predicates = await new dataRdb.RdbPredicates('test');
+            let resultSet = await rdbStore.query(predicates);
+            console.info(TAG + 'resultSet.columnNames:' + JSON.stringify(resultSet.columnNames));
+            expect(resultSet.columnNames[0]).assertEqual("id")
             resultSet.close();
             done();
-            console.info(TAG + '************* testcolumnNames0001 end *************');
+          }catch (err){
+            console.error(TAG + `testcolumnNames0001, code:${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+          console.info(TAG + '************* testcolumnNames0001 end *************');
         }
-    })
-
+      })
+    
      /**
       * @tc.name   testBigData0001
       * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_8200
