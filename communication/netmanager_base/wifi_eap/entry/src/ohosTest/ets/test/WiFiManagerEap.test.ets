@@ -79,8 +79,9 @@ export default function wifiEapTest(){
                 console.info("SUB_Communication_Netmanager_Eap_js_0100 regCustomEapHandler success");
                 expect(true).assertTrue();
             }catch(error){
-                console.error(`SUB_Communication_Netmanager_Eap_js_0100 regCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code===201){
+                console.error(`SUB_Communication_Netmanager_Eap_js_0100 regCustomEapHandler failed,code is ${error.code}`);
+                console.error(`SUB_Communication_Netmanager_Eap_js_0100 regCustomEapHandler failed,message is ${error.message}`);
+                if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0100 eap register permission denied`);
                     expect(true).assertTrue();
                 }else if(error.code==33200006){
@@ -150,8 +151,9 @@ export default function wifiEapTest(){
                     console.info("SUB_Communication_Netmanager_Eap_js_0200 unregCustomEapHandler success");
                     expect(true).assertTrue();
                 }catch(error){
-                    console.error(`SUB_Communication_Netmanager_Eap_js_0200 unregCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                    if(error.code===201){
+                    console.error(`SUB_Communication_Netmanager_Eap_js_0200 unregCustomEapHandler failed,code is ${error.code}`);
+                    console.error(`SUB_Communication_Netmanager_Eap_js_0200 unregCustomEapHandler failed,message is ${error.message}`);
+                    if(error.code==201){
                         console.error(`SUB_Communication_Netmanager_Eap_js_0200 eap unregister permission denied`);
                         expect(true).assertTrue();
                     }else if(error.code==33200006){
@@ -399,8 +401,9 @@ export default function wifiEapTest(){
                 console.info("SUB_Communication_Netmanager_Eap_js_0500 startEthEap success");
                 expect(true).assertTrue();
             }catch(error){
-                console.error(`SUB_Communication_Netmanager_Eap_js_0500 startEthEap failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code===201){
+                console.error(`SUB_Communication_Netmanager_Eap_js_0500 startEthEap failed,code is ${error.code}`);
+                console.error(`SUB_Communication_Netmanager_Eap_js_0500 startEthEap failed,message is ${error.message}`);
+                if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0500 eap startEthEap permission denied`);
                     expect(true).assertTrue();
                 }else if(error.code==33200001){
@@ -449,7 +452,8 @@ export default function wifiEapTest(){
                 console.info("SUB_Communication_Netmanager_Eap_js_0600 logOffEthEap success");
                 expect(true).assertTrue();
             }catch(error){
-                console.error(`SUB_Communication_Netmanager_Eap_js_0600 logOffEthEap failed,code is ${error.code}, message is ${error.message}`);
+                console.error(`SUB_Communication_Netmanager_Eap_js_0600 logOffEthEap failed,code is ${error.code}`);
+                console.error(`SUB_Communication_Netmanager_Eap_js_0600 logOffEthEap failed,message is ${error.message}`);
                 if(error.code===201){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0600 eap logOffEthEap permission denied`);
                     expect(true).assertTrue();
