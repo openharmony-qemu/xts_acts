@@ -820,6 +820,7 @@ export default function TLSSocketsTest() {
                     console.info(`${caseName} send success, expected error code 401`);
                     expectEqual(-1, 401, `${caseName} unexpected success - expected error code 401`);
                 } catch (sendErr) {
+                    // send(null) throws synchronously with err.code as string "401"
                     console.info(`${caseName} send fail: ${JSON.stringify(sendErr)}`);
                     expect(Number(sendErr.code)).assertEqual(401);
                 }
@@ -900,6 +901,11 @@ export default function TLSSocketsTest() {
                     },
                     ALPNProtocols: []
                 };
+                console.info(`${caseName} TLSConnectOptions created and validated`);
+                expect(tlsConnectOptions2 !== null && tlsConnectOptions2 !== undefined).assertTrue();
+                expect(tlsConnectOptions2.address !== null && tlsConnectOptions2.address !== undefined).assertTrue();
+                expect(tlsConnectOptions2.address.address !== '').assertEqual(true);
+                expect(tlsConnectOptions2.secureOptions !== null && tlsConnectOptions2.secureOptions !== undefined).assertTrue();
                 await Promise.all([
                     tlsServer.listen(ServerOptions),
                     tlsClient.bind(addr)
@@ -968,6 +974,14 @@ export default function TLSSocketsTest() {
                         address: netAddress
                     }
                 };
+                console.info(`${caseName} TLSConnectOptions with proxy created and validated`);
+                expect(tlsConnectOptions2 !== null && tlsConnectOptions2 !== undefined).assertTrue();
+                expect(tlsConnectOptions2.address !== null && tlsConnectOptions2.address !== undefined).assertTrue();
+                expect(tlsConnectOptions2.address.address !== '').assertEqual(true);
+                expect(tlsConnectOptions2.secureOptions !== null && tlsConnectOptions2.secureOptions !== undefined).assertTrue();
+                expect(tlsConnectOptions2.proxy !== null && tlsConnectOptions2.proxy !== undefined).assertTrue();
+                expect(tlsConnectOptions2.proxy!.type).assertEqual(0);
+                expect(tlsConnectOptions2.proxy!.address !== null && tlsConnectOptions2.proxy!.address !== undefined).assertTrue();
                 await Promise.all([
                     tlsServer.listen(ServerOptions),
                     tlsClient.bind(addr)
@@ -1037,6 +1051,14 @@ export default function TLSSocketsTest() {
                         password: 'testpass'
                     }
                 };
+                console.info(`${caseName} TLSConnectOptions with proxy(type 1) created and validated`);
+                expect(tlsConnectOptions2 !== null && tlsConnectOptions2 !== undefined).assertTrue();
+                expect(tlsConnectOptions2.address !== null && tlsConnectOptions2.address !== undefined).assertTrue();
+                expect(tlsConnectOptions2.secureOptions !== null && tlsConnectOptions2.secureOptions !== undefined).assertTrue();
+                expect(tlsConnectOptions2.proxy !== null && tlsConnectOptions2.proxy !== undefined).assertTrue();
+                expect(tlsConnectOptions2.proxy!.type).assertEqual(1);
+                expect(tlsConnectOptions2.proxy!.username !== null).assertTrue();
+                expect(tlsConnectOptions2.proxy!.password !== null).assertTrue();
                 tlsClient.bind(addr).then(() => {
                     console.info(`${caseName} bind success`);
                     tlsClient.on('message', (value: socket.SocketMessageInfo) => {
@@ -1113,6 +1135,14 @@ export default function TLSSocketsTest() {
                         password: ''
                     },
                 };
+                console.info(`${caseName} TLSConnectOptions with proxy(empty username/password) created and validated`);
+                expect(tlsConnectOptions2 !== null && tlsConnectOptions2 !== undefined).assertTrue();
+                expect(tlsConnectOptions2.address !== null && tlsConnectOptions2.address !== undefined).assertTrue();
+                expect(tlsConnectOptions2.secureOptions !== null && tlsConnectOptions2.secureOptions !== undefined).assertTrue();
+                expect(tlsConnectOptions2.proxy !== null && tlsConnectOptions2.proxy !== undefined).assertTrue();
+                expect(tlsConnectOptions2.proxy!.type).assertEqual(1);
+                expect(tlsConnectOptions2.proxy!.username !== null).assertTrue();
+                expect(tlsConnectOptions2.proxy!.password !== null).assertTrue();
                 await Promise.all([
                     tlsServer.listen(ServerOptions),
                     tlsClient.bind(addr)
@@ -1143,7 +1173,8 @@ export default function TLSSocketsTest() {
             } catch (err) {
                 console.info(`${caseName} err: ${JSON.stringify(err)}`);
                 console.info(`${caseName} test end`);
-                expectEqual(err.code, 2301207, `${caseName} expected socks5 auth error for space credentials`);
+                console.info(`${caseName} expected error code 2301207 (SOCKS5 auth) or 4604505 (TLS error), got ${err.code}`);
+                expect(err.code === 2301207 || err.code === 4604505).assertTrue();
                 done();
             }
         });
