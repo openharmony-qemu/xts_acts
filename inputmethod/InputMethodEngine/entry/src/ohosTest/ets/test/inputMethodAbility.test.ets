@@ -21,6 +21,7 @@ import display from '@ohos.display';
 import { Driver, ON, MatchPattern, Component, Rect } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { InputMethodSubtype } from '@kit.IMEKit';
 
 export default function inputMethodAbility() {
   describe('inputMethodAbility', () => {
@@ -3249,6 +3250,228 @@ export default function inputMethodAbility() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_onOffSelectByMovement_0100
+     * @tc.number SUB_Misc_inputMethod_onOffSelectByMovement_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Misc_inputMethod_onOffSelectByMovement_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('====>-----------------SUB_Misc_inputMethod_onOffSelectByMovement_0100 start-----------------------');
+      let num: string = '1';
+      let callback = (movement: inputMethod.Movement) => {
+        num += '2';
+        console.info('====>SUB_Misc_inputMethod_onOffSelectByMovement_0100 callback1 movement:' + JSON.stringify(movement));
+        inputMethodController.off('selectByMovement', callback);
+      }
+      let callback1 = (movement: inputMethod.Movement) => {
+        num += '3';
+        console.info('====>SUB_Misc_inputMethod_onOffSelectByMovement_0100 callback2 movement:' + JSON.stringify(movement));
+        inputMethodController.off('selectByMovement', callback1);
+      }
+      let callback2 = (movement: inputMethod.Movement) => {
+        num += '4';
+        console.info('====>SUB_Misc_inputMethod_onOffSelectByMovement_0100 callback3 movement:' + JSON.stringify(movement));
+        inputMethodController.off('selectByMovement', callback2);
+      }
+      inputMethodController.on('selectByMovement', callback);
+      inputMethodController.on('selectByMovement', callback1);
+      inputMethodController.on('selectByMovement', callback2);
+      commonEventManager.publish('inputMethodAbilityTest', { code: 120 }, (err) => {
+        console.info('====>SUB_Misc_inputMethod_onOffSelectByMovement_0100 publish err:' + JSON.stringify(err));
+      });
+      setTimeout(() => {
+        expect(num === '1234').assertTrue();
+        console.info('====>SUB_Misc_inputMethod_onOffSelectByMovement_0100 end num:' + num);
+        done();
+      }, 1000);
+    });
+
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onOffSelectByRange_0100
+     * @tc.number SUB_Misc_inputMethod_onOffSelectByRange_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Misc_inputMethod_onOffSelectByRange_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('====>-----------------SUB_Misc_inputMethod_onOffSelectByRange_0100 start-----------------------');
+      let num: string = '1';
+      let callback = (range: inputMethod.Range) => {
+        num += '2';
+        console.info('====>SUB_Misc_inputMethod_onOffSelectByRange_0100 callback1 range:' + JSON.stringify(range));
+        inputMethodController.off('selectByRange', callback);
+      }
+      let callback1 = (range: inputMethod.Range) => {
+        num += '3';
+        console.info('====>SUB_Misc_inputMethod_onOffSelectByRange_0100 callback2 range:' + JSON.stringify(range));
+        inputMethodController.off('selectByRange', callback1);
+      }
+      let callback2 = (range: inputMethod.Range) => {
+        num += '4';
+        console.info('====>SUB_Misc_inputMethod_onOffSelectByRange_0100 callback3 range:' + JSON.stringify(range));
+        inputMethodController.off('selectByRange', callback2);
+      }
+      inputMethodController.on('selectByRange', callback);
+      inputMethodController.on('selectByRange', callback1);
+      inputMethodController.on('selectByRange', callback2);
+      commonEventManager.publish('inputMethodAbilityTest', { code: 130 }, (err) => {
+        console.info('====>SUB_Misc_inputMethod_onOffSelectByRange_0100 publish err:' + JSON.stringify(err));
+      });
+      setTimeout(() => {
+        expect(num === '1234').assertTrue();
+        console.info('====>SUB_Misc_inputMethod_onOffSelectByRange_0100 end num:' + num);
+        done();
+      }, 1000);
+    });
+
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onOffGetLeftTextOfCursor_0100
+     * @tc.number SUB_Misc_inputMethod_onOffGetLeftTextOfCursor_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Misc_inputMethod_onOffGetLeftTextOfCursor_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('====>-----------------SUB_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 start-----------------------');
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: 0, enterKeyType: 0
+        }
+      }
+      await inputMethod.getController().attach(true, ATTRIBUTE);
+      let num: string = '1';
+      let callback = (length: number) => {
+        num += '2';
+        console.info('====>SUB_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 callback1 length:' + length);
+        inputMethodController.off('getLeftTextOfCursor', callback);
+        return num;
+      }
+      let callback1 = (length: number) => {
+        num += '3';
+        console.info('====>SUB_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 callback2 length:' + length);
+        inputMethodController.off('getLeftTextOfCursor', callback1);
+        return num;
+      }
+      let callback2 = (length: number) => {
+        num += '4';
+        console.info('====>SUB_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 callback3 length:' + length);
+        inputMethodController.off('getLeftTextOfCursor', callback2);
+        return num;
+      }
+      inputMethodController.on('getLeftTextOfCursor', callback);
+      inputMethodController.on('getLeftTextOfCursor', callback1);
+      inputMethodController.on('getLeftTextOfCursor', callback2);
+      commonEventManager.publish('inputMethodAbilityTest', { code: 430 }, (err) => {
+        console.info('====>SUB_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 publish err:' + JSON.stringify(err));
+      });
+      setTimeout(() => {
+        expect(num === '1234').assertTrue();
+        console.info('====>SUB_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 end num:' + num);
+        done();
+      }, 1000);
+    });
+
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onOffGetRightTextOfCursor_0100
+     * @tc.number SUB_Misc_inputMethod_onOffGetRightTextOfCursor_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_Misc_inputMethod_onOffGetRightTextOfCursor_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('====>-----------------SUB_Misc_inputMethod_onOffGetRightTextOfCursor_0100 start-----------------------');
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: 0, enterKeyType: 0
+        }
+      }
+      await inputMethod.getController().attach(true, ATTRIBUTE);
+      let num: string = '1';
+      let callback = (length: number) => {
+        num += '2';
+        console.info('====>SUB_Misc_inputMethod_onOffGetRightTextOfCursor_0100 callback1 length:' + length);
+        inputMethodController.off('getRightTextOfCursor', callback);
+        return num;
+      }
+      let callback1 = (length: number) => {
+        num += '3';
+        console.info('====>SUB_Misc_inputMethod_onOffGetRightTextOfCursor_0100 callback2 length:' + length);
+        inputMethodController.off('getRightTextOfCursor', callback1);
+        return num;
+      }
+      let callback2 = (length: number) => {
+        num += '4';
+        console.info('====>SUB_Misc_inputMethod_onOffGetRightTextOfCursor_0100 callback3 length:' + length);
+        inputMethodController.off('getRightTextOfCursor', callback2);
+        return num;
+      }
+      inputMethodController.on('getRightTextOfCursor', callback);
+      inputMethodController.on('getRightTextOfCursor', callback1);
+      inputMethodController.on('getRightTextOfCursor', callback2);
+      commonEventManager.publish('inputMethodAbilityTest', { code: 431 }, (err) => {
+        console.info('====>SUB_Misc_inputMethod_onOffGetRightTextOfCursor_0100 publish err:' + JSON.stringify(err));
+      });
+      setTimeout(() => {
+        expect(num === '1234').assertTrue();
+        console.info('====>SUB_Misc_inputMethod_onOffGetRightTextOfCursor_0100 end num:' + num);
+        done();
+      }, 1000);
+    });
+
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onOffGetTextIndexAtCursor_0100
+     * @tc.number SUB_Misc_inputMethod_onOffGetTextIndexAtCursor_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_Misc_inputMethod_onOffGetTextIndexAtCursor_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('====>-----------------SUB_Misc_inputMethod_onOffGetTextIndexAtCursor_0100 start-----------------------');
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: 0, enterKeyType: 0
+        }
+      }
+      await inputMethod.getController().attach(true, ATTRIBUTE);
+      let num: string = '1';
+      let callback = () => {
+        num += '2';
+        console.info('====>SUB_Misc_inputMethod_onOffGetTextIndexAtCursor_0100 callback1');
+        inputMethodController.off('getTextIndexAtCursor', callback);
+        return 0;
+      }
+      let callback1 = () => {
+        num += '3';
+        console.info('====>SUB_Misc_inputMethod_onOffGetTextIndexAtCursor_0100 callback2');
+        inputMethodController.off('getTextIndexAtCursor', callback1);
+        return 1;
+      }
+      let callback2 = () => {
+        num += '4';
+        console.info('====>SUB_Misc_inputMethod_onOffGetTextIndexAtCursor_0100 callback3');
+        inputMethodController.off('getTextIndexAtCursor', callback2);
+        return 2;
+      }
+      inputMethodController.on('getTextIndexAtCursor', callback);
+      inputMethodController.on('getTextIndexAtCursor', callback1);
+      inputMethodController.on('getTextIndexAtCursor', callback2);
+      commonEventManager.publish('inputMethodAbilityTest', { code: 432 }, (err) => {
+        console.info('====>SUB_Misc_inputMethod_onOffGetTextIndexAtCursor_0100 publish err:' + JSON.stringify(err));
+      });
+      setTimeout(() => {
+        expect(num === '1234').assertTrue();
+        console.info('====>SUB_Misc_inputMethod_onOffGetTextIndexAtCursor_0100 end num:' + num);
+        done();
+      }, 1000);
+    });
+
+    /**
      * @tc.name   Sub_Misc_inputMethod_offSelectByRange_0130
      * @tc.number Sub_Misc_inputMethod_offSelectByRange_0130
      * @tc.desc   Function test
@@ -3392,6 +3615,65 @@ export default function inputMethodAbility() {
       } catch (err) {
         console.info("====>Sub_Misc_inputMethod_onImeChange_0150 switchInputMethod fail" + JSON.stringify(err));
       }
+    });
+
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onOffImeChange_0100
+     * @tc.number SUB_Misc_inputMethod_onOffImeChange_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_Misc_inputMethod_onOffImeChange_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('====>-----------------SUB_Misc_inputMethod_onOffImeChange_0100 start-----------------------');
+      let inputStageService: subtype = {
+        id: 'inputStageService',
+        name: 'com.acts.inputmethodengine.test',
+        mode: 'lower',
+        locale: '',
+        language: '',
+        icon: '',
+        iconId: 0,
+        extra: {}
+      };
+      let inputDemoService: subtype = {
+        id: "InputDemoService",
+        name: "com.acts.inputmethodengine.test",
+        mode: "lower",
+        locale: '',
+        language: '',
+        icon: '',
+        iconId: 0,
+        extra: {}
+      };
+      let num: string = '1';
+      let inputMethodSetting = inputMethod.getSetting();
+      let callback = (inputMethodProperty: inputMethod.InputMethodProperty, inputMethodSubtype: InputMethodSubtype) => {
+        num += '2';
+        console.info('====>SUB_Misc_inputMethod_onOffImeChange_0100 callback1 inputMethodProperty:' + JSON.stringify(inputMethodProperty) + ' inputMethodSubtype:' + JSON.stringify(inputMethodSubtype));
+        inputMethodSetting.off('imeChange', callback);
+      }
+      let callback1 = (inputMethodProperty: inputMethod.InputMethodProperty, inputMethodSubtype: InputMethodSubtype) => {
+        num += '3';
+        console.info('====>SUB_Misc_inputMethod_onOffImeChange_0100 callback2 inputMethodProperty:' + JSON.stringify(inputMethodProperty) + ' inputMethodSubtype:' + JSON.stringify(inputMethodSubtype));
+        inputMethodSetting.off('imeChange', callback1);
+      }
+      let callback2 = (inputMethodProperty: inputMethod.InputMethodProperty, inputMethodSubtype: InputMethodSubtype) => {
+        num += '4';
+        console.info('====>SUB_Misc_inputMethod_onOffImeChange_0100 callback3 inputMethodProperty:' + JSON.stringify(inputMethodProperty) + ' inputMethodSubtype:' + JSON.stringify(inputMethodSubtype));
+        inputMethodSetting.off('imeChange', callback2);
+      }
+      inputMethodSetting.on('imeChange', callback);
+      inputMethodSetting.on('imeChange', callback1);
+      inputMethodSetting.on('imeChange', callback2);
+      await inputMethod.switchCurrentInputMethodSubtype(inputStageService);
+      await inputMethod.switchCurrentInputMethodSubtype(inputDemoService);
+      setTimeout(() => {
+        expect(num === '1234').assertTrue();
+        console.info('====>SUB_Misc_inputMethod_onOffImeChange_0100 end num:' + num);
+        done();
+      }, 1000);
     });
 
     /**

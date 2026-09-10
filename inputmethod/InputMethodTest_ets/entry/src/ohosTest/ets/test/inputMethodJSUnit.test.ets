@@ -543,5 +543,28 @@ export default function inputMethodJSUnit() {
       }
     });
 
+    /**
+     * @tc.name SUB_InputMethod_IMF_Enable_0301
+     * @tc.number SUB_InputMethod_IMF_Enable_0301
+     * @tc.desc List input methods sync.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('SUB_InputMethod_IMF_Enable_0301', Level.LEVEL2, (done: Function) => {
+      console.info('====>-----------------SUB_InputMethod_IMF_Enable_0301 start-----------------------');
+      let inputMethodSetting = inputMethod.getSetting();
+      try {
+        let Enable_List = inputMethodSetting.getInputMethodsSync(null);
+        console.info(`====>SUB_InputMethod_IMF_Enable_0301 getInputMethodsSync success: ${JSON.stringify(Enable_List)}`);
+        done();
+      } catch (err) {
+        console.info(`====>SUB_InputMethod_IMF_Enable_0301 Failed err.code:${err.code},err.message:${err.message}`);
+        expect(err.code === 401).assertTrue();
+        done();
+        console.info('====>--------------SUB_InputMethod_IMF_Enable_0301 Test end-----------------------');
+      }
+    });
+
   });
 };
