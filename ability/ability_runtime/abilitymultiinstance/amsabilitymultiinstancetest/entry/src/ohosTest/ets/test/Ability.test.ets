@@ -25,11 +25,11 @@ import systemParameterEnhance from '@ohos.systemParameterEnhance';
 let deviceSupport  = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
-interface Params {
-  startId: number;
-  stepNum: number;
-  nextStep: number;
-  step: string[];
+class Params {
+  startId: number = 0
+  stepNum: number = 0
+  nextStep: number = 0
+  step: string[] = []
 }
 
 let subscriberInfoMultiInstance: commonEventManager.CommonEventSubscribeInfo = {
