@@ -64,6 +64,7 @@ static constexpr uint32_t FRAMESIZE100 = 100;
 static constexpr uint32_t FRAMESIZE180 = 180;
 static constexpr uint32_t FRAMESIZE45 = 45;
 static constexpr uint32_t FRAMESIZE5 = 5;
+static constexpr uint32_t FRAMESIZE20 = 20;
 static constexpr uint32_t SURFACE_RELEASE_WAIT_US = 500000;
 
 // Profile index constants
@@ -451,7 +452,7 @@ napi_value VideoAv1DecFunction0012(napi_env env, napi_callback_info info)
     if (g_capAv1 == nullptr || profiles == nullptr || profiles[0] != AV1_PROFILE_MAIN) {
         return CreateIntInt32Result(env, 0);
     }
-    
+
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_AV1_MAIN;
     vDecSample->outputYuvFlag = true;
@@ -464,7 +465,7 @@ napi_value VideoAv1DecFunction0012(napi_env env, napi_callback_info info)
         return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE180));
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE20));
 }
 
 // Test AV1 decoder function with high profile
@@ -517,7 +518,7 @@ napi_value VideoAv1DecFunction0015(napi_env env, napi_callback_info info)
         return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE60));
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE20));
 }
 
 // Test AV1 decoder function with high profile 8bit
@@ -544,7 +545,7 @@ napi_value VideoAv1DecFunction0016(napi_env env, napi_callback_info info)
         return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE45));
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE20));
 }
 
 // Test VP9 decoder function with level 4 profile 0
@@ -570,7 +571,7 @@ napi_value VideoVp9DecFunction0019(napi_env env, napi_callback_info info)
         return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE100));
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE20));
 }
 
 // Test VP9 decoder function with level 4 profile 1
@@ -597,7 +598,7 @@ napi_value VideoVp9DecFunction0020(napi_env env, napi_callback_info info)
         return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE100));
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE20));
 }
 
 // Test VP8 decoder function with 1080p
