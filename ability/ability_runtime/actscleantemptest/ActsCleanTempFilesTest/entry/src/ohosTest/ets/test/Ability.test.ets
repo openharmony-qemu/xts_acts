@@ -15,7 +15,7 @@
 
 import commonEvent from '@ohos.commonEventManager';
 import delegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level, afterEach } from '@ohos/hypium';
 import { getContext } from '../common/getContext';
 import common from '@ohos.app.ability.common';
 
@@ -31,8 +31,22 @@ let actsRegister: commonEvent.CommonEventSubscribeInfo = {
     'Acts_CleanTempFiles_0402']
 };
 
+/** 清掉 rely，避免上条用例残留 startAbility → 16000017 START_ABILITY_WAITTING */
+async function stopRelyApp(): Promise<void> {
+  const cmd = 'aa force-stop com.acts.cleancachefilesreply';
+  try {
+    await abilityDelegator.executeShellCommand(cmd);
+  } catch (e) {
+    console.warn('force-stop rely: ' + JSON.stringify(e));
+  }
+  await sleep(1500);
+}
+
 export default function abilityTest() {
   describe('ActsCleanTempFilesTest', () => {
+    afterEach(async () => {
+      await stopRelyApp();
+    });
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0100
