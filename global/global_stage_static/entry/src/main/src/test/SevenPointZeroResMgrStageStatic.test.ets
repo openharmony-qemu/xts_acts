@@ -387,9 +387,9 @@ export default function SevenPointZeroResMgrStageStaticTest() {
      * @tc.type    Function
      * @tc.level   Level 2
      */
-    it("installScopeFont_noPermission_static_test_0100", Level.LEVEL2, async (done: Function) => {
+    it("installScopeFont_noPermission_static_test_0100", Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await fontManager.installScopeFont(resContext.resourceDir + '/' + 'TestFont_Sans.ttf', 1);
+        await fontManager.installScopeFont(resContext.resourceDir + '/' + 'TestFont_Sans.ttf', fontManager.FontScope.SESSION);
       } catch (error) {
         hilog.info(domain, tag, 'installScopeFont_noPermission_static_test_0100 error code: ' + error.code);
         expect((error as BusinessError).code).assertEqual(201);
@@ -405,7 +405,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
      * @tc.type    Function
      * @tc.level   Level 2
      */
-    it("uninstallScopeFont_noPermission_static_test_0100", Level.LEVEL2, async (done: Function) => {
+    it("uninstallScopeFont_noPermission_static_test_0100", Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await fontManager.uninstallScopeFont(resContext.resourceDir + '/' + 'TestFont_Sans.ttf');
       } catch (error) {
@@ -423,7 +423,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
      * @tc.type    Function
      * @tc.level   Level 2
      */
-    it("getFontScope_noPermission_static_test_0100", Level.LEVEL2, async (done: Function) => {
+    it("getFontScope_noPermission_static_test_0100", Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await fontManager.getFontScope(resContext.resourceDir + '/' + 'TestFont_Sans.ttf');
       } catch (error) {

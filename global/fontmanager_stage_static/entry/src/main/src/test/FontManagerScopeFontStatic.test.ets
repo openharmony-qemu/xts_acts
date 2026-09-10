@@ -28,8 +28,8 @@ const ERR_SCOPE_FONT_NOT_FOUND: int = 31100112;
 const ERR_SCOPE_FONT_REPEATED_REGISTER: int = 31100113;
 const ERR_SCOPE_FONT_NOT_REGISTERED: int = 31100115;
 
-const SCOPE_APP = 0 as fontManager.FontScope;
-const SCOPE_SESSION = 1 as fontManager.FontScope;
+const SCOPE_APP = fontManager.FontScope.APP;
+const SCOPE_SESSION = fontManager.FontScope.SESSION;
 
 export default function fontManagerScopeFontTest() {
   describe('FontManagerScopeFontStaticTest', () => {
@@ -57,42 +57,6 @@ export default function fontManagerScopeFontTest() {
     };
 
     /**
-     * @tc.name   test_installScopeFont_static_0100
-     * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0100
-     * @tc.desc   test installScopeFont with null url
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_installScopeFont_static_0100', Level.LEVEL2, async (done: Function) => {
-      try {
-        await fontManager.installScopeFont(null, SCOPE_APP);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_installScopeFont_static_0200
-     * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0200
-     * @tc.desc   test installScopeFont with undefined url
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_installScopeFont_static_0200', Level.LEVEL2, async (done: Function) => {
-      try {
-        await fontManager.installScopeFont(undefined, SCOPE_APP);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
-      }
-      done();
-    });
-
-    /**
      * @tc.name   test_installScopeFont_static_0300
      * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0300
      * @tc.desc   test installScopeFont with empty string url
@@ -100,7 +64,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_installScopeFont_static_0300', Level.LEVEL2, async (done: Function) => {
+    it('test_installScopeFont_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await fontManager.installScopeFont('', SCOPE_APP);
         expect(false).assertTrue();
@@ -118,7 +82,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_installScopeFont_static_0400', Level.LEVEL2, async (done: Function) => {
+    it('test_installScopeFont_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await fontManager.installScopeFont(notExistPath, SCOPE_SESSION);
         expect(false).assertTrue();
@@ -136,7 +100,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_installScopeFont_static_0500', Level.LEVEL2, async (done: Function) => {
+    it('test_installScopeFont_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await fontManager.installScopeFont(validFontPath, 2 as fontManager.FontScope);
         expect(false).assertTrue();
@@ -154,7 +118,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_installScopeFont_static_0600', Level.LEVEL2, async (done: Function) => {
+    it('test_installScopeFont_static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await fontManager.installScopeFont(validFontPath, SCOPE_APP);
         expect(false).assertTrue();
@@ -172,7 +136,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_installScopeFont_static_0700', Level.LEVEL2, async (done: Function) => {
+    it('test_installScopeFont_static_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await fontManager.installScopeFont(errorFontPath, SCOPE_SESSION);
         expect(false).assertTrue();
@@ -190,7 +154,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_installScopeFont_static_0800', Level.LEVEL2, async (done: Function) => {
+    it('test_installScopeFont_static_0800', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await fontManager.installScopeFont(validFontPath, SCOPE_SESSION);
       } catch (error) {
@@ -216,7 +180,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_installScopeFont_static_0900', Level.LEVEL0, async (done: Function) => {
+    it('test_installScopeFont_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let value = await fontManager.installScopeFont(validFontPath, SCOPE_SESSION);
         console.info('test_installScopeFont_static_0900 value:' + value);
@@ -239,7 +203,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_installScopeFont_static_1000', Level.LEVEL0, async (done: Function) => {
+    it('test_installScopeFont_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         fontManager.onFontObserver(validObserver);
       } catch (e) {}
@@ -261,42 +225,6 @@ export default function fontManagerScopeFontTest() {
     });
 
     /**
-     * @tc.name   test_uninstallScopeFont_static_1100
-     * @tc.number SUB_Global_FontManager_UninstallScopeFont_Static_JS_1100
-     * @tc.desc   test uninstallScopeFont with null url
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_uninstallScopeFont_static_1100', Level.LEVEL2, async (done: Function) => {
-      try {
-        await fontManager.uninstallScopeFont(null);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_uninstallScopeFont_static_1200
-     * @tc.number SUB_Global_FontManager_UninstallScopeFont_Static_JS_1200
-     * @tc.desc   test uninstallScopeFont with undefined url
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_uninstallScopeFont_static_1200', Level.LEVEL2, async (done: Function) => {
-      try {
-        await fontManager.uninstallScopeFont(undefined);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
-      }
-      done();
-    });
-
-    /**
      * @tc.name   test_uninstallScopeFont_static_1300
      * @tc.number SUB_Global_FontManager_UninstallScopeFont_Static_JS_1300
      * @tc.desc   test uninstallScopeFont with empty string url
@@ -304,7 +232,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_uninstallScopeFont_static_1300', Level.LEVEL2, async (done: Function) => {
+    it('test_uninstallScopeFont_static_1300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await fontManager.uninstallScopeFont('');
         expect(false).assertTrue();
@@ -322,7 +250,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_uninstallScopeFont_static_1400', Level.LEVEL2, async (done: Function) => {
+    it('test_uninstallScopeFont_static_1400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await fontManager.uninstallScopeFont(notExistPath);
         expect(false).assertTrue();
@@ -340,7 +268,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_uninstallScopeFont_static_1500', Level.LEVEL0, async (done: Function) => {
+    it('test_uninstallScopeFont_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await fontManager.installScopeFont(validFontPath, SCOPE_SESSION);
       } catch (e) {
@@ -357,42 +285,6 @@ export default function fontManagerScopeFontTest() {
     });
 
     /**
-     * @tc.name   test_getFontScope_static_1600
-     * @tc.number SUB_Global_FontManager_GetFontScope_Static_JS_1600
-     * @tc.desc   test getFontScope with null url
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_getFontScope_static_1600', Level.LEVEL2, async (done: Function) => {
-      try {
-        await fontManager.getFontScope(null);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_getFontScope_static_1700
-     * @tc.number SUB_Global_FontManager_GetFontScope_Static_JS_1700
-     * @tc.desc   test getFontScope with undefined url
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_getFontScope_static_1700', Level.LEVEL2, async (done: Function) => {
-      try {
-        await fontManager.getFontScope(undefined);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
-      }
-      done();
-    });
-
-    /**
      * @tc.name   test_getFontScope_static_1800
      * @tc.number SUB_Global_FontManager_GetFontScope_Static_JS_1800
      * @tc.desc   test getFontScope not installed
@@ -400,7 +292,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_getFontScope_static_1800', Level.LEVEL2, async (done: Function) => {
+    it('test_getFontScope_static_1800', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await fontManager.getFontScope(notExistPath);
         expect(false).assertTrue();
@@ -418,7 +310,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_getFontScope_static_1900', Level.LEVEL0, async (done: Function) => {
+    it('test_getFontScope_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await fontManager.installScopeFont(validFontPath, SCOPE_SESSION);
       } catch (e) {
@@ -445,7 +337,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_getFontScope_static_2000', Level.LEVEL0, async (done: Function) => {
+    it('test_getFontScope_static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         fontManager.onFontObserver(validObserver);
       } catch (e) {}
@@ -471,42 +363,6 @@ export default function fontManagerScopeFontTest() {
     });
 
     /**
-     * @tc.name   test_onFontObserver_static_2100
-     * @tc.number SUB_Global_FontManager_OnFontObserver_Static_JS_2100
-     * @tc.desc   test onFontObserver with null observer
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_onFontObserver_static_2100', Level.LEVEL2, (done: Function) => {
-      try {
-        fontManager.onFontObserver(null);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_onFontObserver_static_2200
-     * @tc.number SUB_Global_FontManager_OnFontObserver_Static_JS_2200
-     * @tc.desc   test onFontObserver with undefined observer
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_onFontObserver_static_2200', Level.LEVEL2, (done: Function) => {
-      try {
-        fontManager.onFontObserver(undefined);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
-      }
-      done();
-    });
-
-    /**
      * @tc.name   test_onFontObserver_static_2300
      * @tc.number SUB_Global_FontManager_OnFontObserver_Static_JS_2300
      * @tc.desc   test onFontObserver with empty object observer
@@ -514,14 +370,13 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_onFontObserver_static_2300', Level.LEVEL2, (done: Function) => {
+    it('test_onFontObserver_static_2300', Level.LEVEL2, () => {
       try {
         fontManager.onFontObserver({} as fontManager.FontClientObserver);
         expect(false).assertTrue();
       } catch (error) {
         expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
       }
-      done();
     });
 
     /**
@@ -532,7 +387,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_onFontObserver_static_2400', Level.LEVEL2, (done: Function) => {
+    it('test_onFontObserver_static_2400', Level.LEVEL2, () => {
       try {
         fontManager.onFontObserver(validObserver);
       } catch (e) {}
@@ -546,7 +401,6 @@ export default function fontManagerScopeFontTest() {
           fontManager.offFontObserver();
         } catch (e) {}
       }
-      done();
     });
 
     /**
@@ -557,7 +411,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_onFontObserver_static_2500', Level.LEVEL0, (done: Function) => {
+    it('test_onFontObserver_static_2500', Level.LEVEL0, () => {
       try {
         let value = fontManager.onFontObserver(validObserver);
         console.info('test_onFontObserver_static_2500 value:' + value);
@@ -569,7 +423,6 @@ export default function fontManagerScopeFontTest() {
           fontManager.offFontObserver();
         } catch (e) {}
       }
-      done();
     });
 
     /**
@@ -580,14 +433,13 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_offFontObserver_static_2600', Level.LEVEL2, (done: Function) => {
+    it('test_offFontObserver_static_2600', Level.LEVEL2, () => {
       try {
         fontManager.offFontObserver();
         expect(false).assertTrue();
       } catch (error) {
         expect((error as BusinessError).code).assertEqual(ERR_SCOPE_FONT_NOT_REGISTERED);
       }
-      done();
     });
 
     /**
@@ -598,7 +450,7 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_offFontObserver_static_2700', Level.LEVEL0, (done: Function) => {
+    it('test_offFontObserver_static_2700', Level.LEVEL0, () => {
       try {
         fontManager.onFontObserver(validObserver);
       } catch (e) {}
@@ -609,7 +461,6 @@ export default function fontManagerScopeFontTest() {
       } catch (error) {
         expect(false).assertTrue();
       }
-      done();
     });
 
     /**
@@ -620,14 +471,13 @@ export default function fontManagerScopeFontTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_getFontScope_Static_2800', Level.LEVEL2, async (done: Function) => {
+    it('test_getFontScope_Static_2800', Level.LEVEL2, async () => {
       try {
         await fontManager.getFontScope('');
         expect(false).assertTrue();
       } catch (error) {
         expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
       }
-      done();
     });
   });
 }

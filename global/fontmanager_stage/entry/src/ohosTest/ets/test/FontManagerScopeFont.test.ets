@@ -26,8 +26,8 @@ const ERR_SCOPE_FONT_NOT_FOUND = 31100112;
 const ERR_SCOPE_FONT_REPEATED_REGISTER = 31100113;
 const ERR_SCOPE_FONT_NOT_REGISTERED = 31100115;
 
-const SCOPE_APP = 0 as fontManager.FontScope;
-const SCOPE_SESSION = 1 as fontManager.FontScope;
+const SCOPE_APP = fontManager.FontScope.APP;
+const SCOPE_SESSION = fontManager.FontScope.SESSION;
 
 export default function fontManagerScopeFontTest() {
   describe('FontManagerScopeFontTest', () => {
