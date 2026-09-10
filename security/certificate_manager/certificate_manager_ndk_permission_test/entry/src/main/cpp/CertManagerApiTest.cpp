@@ -112,10 +112,15 @@ static napi_value OHCertManagerNativeApiPrivatePermission0100(napi_env env, napi
     OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length()+1), (uint8_t*)identity.c_str()};
 
     OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
+    if (credential == nullptr) {
+        napi_throw_error(env, nullptr, "malloc credential error");
+        return nullptr;
+    }
     
     int32_t ohResult = OH_CertManager_GetPrivateCertificate(&keyUri, credential);
     
     OH_CertManager_FreeCredential(credential);
+    free(credential);
     napi_value ret;
     napi_create_int32(env, -1, &ret);
     if (ohResult == OH_CM_HAS_NO_PERMISSION) {
@@ -152,10 +157,15 @@ static napi_value OHCertManagerNativeApiPublicPermission0100(napi_env env, napi_
     OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length()+1), (uint8_t*)identity.c_str()};
 
     OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
+    if (credential == nullptr) {
+        napi_throw_error(env, nullptr, "malloc credential error");
+        return nullptr;
+    }
     
     int32_t ohResult = OH_CertManager_GetPublicCertificate(&keyUri, credential);
     
     OH_CertManager_FreeCredential(credential);
+    free(credential);
     napi_value ret;
     napi_create_int32(env, -1, &ret);
     if (ohResult == OH_CM_HAS_NO_PERMISSION) {
