@@ -23,7 +23,7 @@ struct AccessibilityThirdFramework {
     '\n' +
     '预期结果：\n' +
     '若支持屏幕朗读，则下滑期间绿框会在两个灰色区域中绘制。若不支持屏幕朗读，直接按照失败处理走豁免。';
-  @State Vue: boolean = false;
+  @State vueStatus: boolean = false;
   @State step1: boolean = false;
   @State step2: boolean = false;
   @State active: boolean = false;
@@ -45,8 +45,8 @@ struct AccessibilityThirdFramework {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
+    if (this.vueStatus == false) {
+      Button({ stateEffect: this.vueStatus }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -60,7 +60,7 @@ struct AccessibilityThirdFramework {
 
       })
     } else {
-      Button({ stateEffect: this.Vue }) {
+      Button({ stateEffect: this.vueStatus }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -114,7 +114,7 @@ struct AccessibilityThirdFramework {
   onPageShow() {
     this.intervalNum = setInterval(() => {
       if (this.step1 && this.step2) {
-        this.Vue = true;
+        this.vueStatus = true;
       }
     }, 500)
   }
