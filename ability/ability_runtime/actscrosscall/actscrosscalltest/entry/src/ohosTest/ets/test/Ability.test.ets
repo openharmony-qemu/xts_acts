@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import commonEvent from '@ohos.commonEventManager'
-import {BusinessError} from '@ohos.base';
+import {BusinessError} from "@ohos.base";
 import Want from '@ohos.app.ability.Want';
 import { Caller } from '@ohos.app.ability.UIAbility';
 
@@ -251,7 +251,7 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0500 subscribeCallBack data:' + JSON.stringify(data));
           if (data.event === 'ACTS_CROSS_CALL_EVENT') {
             flag = true;
-            expect(data.parameters!.message.code).assertEqual(201)
+            expect(data.parameters!.message.code).assertEqual(202)
             commonEvent.unsubscribe(subscriber, () => {
               console.info('====>Acts_CrossUserCall_0500 unSubscribeCallback');
               done();
@@ -301,7 +301,7 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0600 subscribeCallBack data:' + JSON.stringify(data));
           if (data.event === 'ACTS_CROSS_CALL_EVENT') {
             flag = true;
-            expect(data.parameters!.message.code).assertEqual(201);
+            expect(data.parameters!.message.code).assertEqual(202);
             commonEvent.unsubscribe(subscriber, () => {
               console.info('====>Acts_CrossUserCall_0600 unSubscribeCallback');
               done();
@@ -442,10 +442,10 @@ export default function abilityTest() {
      */
     it('Acts_CrossUserCall_0900', Level.LEVEL0, async (done: Function) => {
       globalThis.abilityContext.startAbilityByCallWithAccount(null, -1).then((caller:Caller) => {
-        console.info('====>Acts_CrossUserCall_0900 caller: ' + caller);
+        console.info("====>Acts_CrossUserCall_0900 caller: " + caller);
         done();
       }).catch((err:BusinessError) => {
-        console.info('====>Acts_CrossUserCall_0900 err: ' + JSON.stringify(err));
+        console.info("====>Acts_CrossUserCall_0900 err: " + JSON.stringify(err));
         expect(err.code).assertEqual(401);
         done();
       })
@@ -462,7 +462,7 @@ export default function abilityTest() {
     it('Acts_CrossUserCall_1000', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
-      console.info('====>Acts_CrossUserCall_1000');
+      console.info("====>Acts_CrossUserCall_1000");
       commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_1000 Create Subscribe');
         subscriber = data;
@@ -478,15 +478,15 @@ export default function abilityTest() {
           }
         });
         let want:Want = {
-          bundleName: 'com.acts.actscallability',
-          abilityName: 'ServiceAbility',
-          moduleName: 'entry',
-          action: 'Acts_CrossUserCall_1000'
+          bundleName: "com.acts.actscallability",
+          abilityName: "ServiceAbility",
+          moduleName: "entry",
+          action: "Acts_CrossUserCall_1000"
         }
         globalThis.abilityContext.startAbility(want).then(() => {
-          console.info('====>Acts_CrossUserCall_1000 StartServiceAbility OK');
+          console.info("====>Acts_CrossUserCall_1000 StartServiceAbility OK");
         }).catch((err:BusinessError) => {
-          console.info('====>Acts_CrossUserCall_1000 StartServiceAbility err:' + JSON.stringify(err));
+          console.info("====>Acts_CrossUserCall_1000 StartServiceAbility err:" + JSON.stringify(err));
         })
       })
 
@@ -511,10 +511,10 @@ export default function abilityTest() {
      */
     it('Acts_CrossUserCall_1100', Level.LEVEL0, (done:Function) => {
       globalThis.abilityContext.startAbilityByCallWithAccount(undefined, -1).then((caller:Caller) => {
-        console.info('====>Acts_CrossUserCall_1100 caller:  ' + caller);
+        console.info("====>Acts_CrossUserCall_1100 caller:  " + caller);
         done();
       }).catch((err:BusinessError) => {
-        console.info('====>Acts_CrossUserCall_1100 err: ' + err.code + typeof(err.code));
+        console.info("====>Acts_CrossUserCall_1100 err: " + err.code + typeof(err.code));
         expect(err.code).assertEqual(401);
         done();
       })
@@ -547,15 +547,15 @@ export default function abilityTest() {
         });
         console.info('====>Acts_CrossUserCall_1200 Create Subscribe2');
         let want:Want = {
-          bundleName: 'com.acts.actscallability',
-          abilityName: 'ServiceAbility',
-          moduleName: 'entry',
-          action: 'Acts_CrossUserCall_1200'
+          bundleName: "com.acts.actscallability",
+          abilityName: "ServiceAbility",
+          moduleName: "entry",
+          action: "Acts_CrossUserCall_1200"
         }
         globalThis.abilityContext.startAbility(want).then(() => {
-          console.info('====>Acts_CrossUserCall_1200 StartServiceAbility OK');
+          console.info("====>Acts_CrossUserCall_1200 StartServiceAbility OK");
         }).catch((err:BusinessError) => {
-          console.info('====>Acts_CrossUserCall_1200 StartServiceAbility err:  ' + JSON.stringify((err.code)));
+          console.info("====>Acts_CrossUserCall_1200 StartServiceAbility err:  " + JSON.stringify((err.code)));
         })
       })
 
@@ -580,14 +580,14 @@ export default function abilityTest() {
      */
     it('Acts_CrossUserCall_1300', Level.LEVEL0, () => {
       let want:Want = {
-        bundleName: 'com.xxxx.xxxx',
-        abilityName: 'xxxx',
-        moduleName: 'xxxxxx'
+        bundleName: "com.xxxx.xxxx",
+        abilityName: "xxxx",
+        moduleName: "xxxxxx"
       }
       globalThis.abilityContext.startAbilityByCallWithAccount(want, 100).then((caller:Caller) => {
-        console.info('====>Acts_CrossUserCall_1300 caller: ' + caller);
+        console.info("====>Acts_CrossUserCall_1300 caller: " + caller);
       }).catch((err:BusinessError) => {
-        console.info('====>Acts_CrossUserCall_1300 err: ' + err.code + typeof(err.code));
+        console.info("====>Acts_CrossUserCall_1300 err: " + err.code + typeof(err.code));
         expect(err.code).assertEqual(16000001);
       })
     })
@@ -618,15 +618,15 @@ export default function abilityTest() {
           }
         });
         let want:Want = {
-          bundleName: 'com.acts.actscallability',
-          abilityName: 'ServiceAbility',
-          moduleName: 'entry',
-          action: 'Acts_CrossUserCall_1400'
+          bundleName: "com.acts.actscallability",
+          abilityName: "ServiceAbility",
+          moduleName: "entry",
+          action: "Acts_CrossUserCall_1400"
         }
         globalThis.abilityContext.startAbility(want).then(() => {
-          console.info('====>Acts_CrossUserCall_1400 StartServiceAbility OK');
+          console.info("====>Acts_CrossUserCall_1400 StartServiceAbility OK");
         }).catch((err:BusinessError) => {
-          console.info('====>Acts_CrossUserCall_1400 StartServiceAbility err: ' + JSON.stringify((err.code)));
+          console.info("====>Acts_CrossUserCall_1400 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
       })
 
@@ -653,8 +653,8 @@ export default function abilityTest() {
       let want:Want = {
         bundleName: 'com.acts.calleeabilityrely',
         abilityName: 'EntryAbility',
-        moduleName: 'entry',
-        action: 'Acts_CrossUserCall_1500'
+        moduleName: "entry",
+        action: "Acts_CrossUserCall_1500"
       }
       globalThis.abilityContext.startAbilityByCallWithAccount(want, null).then((caller:Caller) => {
         console.info('====>Acts_CrossUserCall_1500 startAbilityByCallWithAccount OK:' + JSON.stringify(caller));
@@ -694,15 +694,15 @@ export default function abilityTest() {
         });
         console.info('====>Acts_CrossUserCall_1600 Create Subscribe2');
         let want:Want = {
-          bundleName: 'com.acts.actscallability',
-          abilityName: 'ServiceAbility',
-          moduleName: 'entry',
-          action: 'Acts_CrossUserCall_1600'
+          bundleName: "com.acts.actscallability",
+          abilityName: "ServiceAbility",
+          moduleName: "entry",
+          action: "Acts_CrossUserCall_1600"
         }
         globalThis.abilityContext.startAbility(want).then(() => {
-          console.info('====>Acts_CrossUserCall_1600 StartServiceAbility OK');
+          console.info("====>Acts_CrossUserCall_1600 StartServiceAbility OK");
         }).catch((err:BusinessError) => {
-          console.info('====>Acts_CrossUserCall_1600 StartServiceAbility err: ' + JSON.stringify((err.code)));
+          console.info("====>Acts_CrossUserCall_1600 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
       })
 
@@ -727,10 +727,10 @@ export default function abilityTest() {
      */
     it('Acts_CrossUserCall_1700', Level.LEVEL0, async (done: Function) => {
       let want:Want = {
-        bundleName: 'com.acts.actscallability',
-        abilityName: 'ServiceAbility',
-        moduleName: 'entry',
-        action: 'Acts_CrossUserCall_1700'
+        bundleName: "com.acts.actscallability",
+        abilityName: "ServiceAbility",
+        moduleName: "entry",
+        action: "Acts_CrossUserCall_1700"
       }
       globalThis.abilityContext.startAbilityByCallWithAccount(want, undefined).then((caller:Caller) => {
         console.info('====>Acts_CrossUserCall_1700 startAbilityByCallWithAccount OK :' + JSON.stringify(caller));
@@ -770,15 +770,15 @@ export default function abilityTest() {
         });
         console.info('====>Acts_CrossUserCall_1800 Create Subscribe2');
         let want:Want = {
-          bundleName: 'com.acts.actscallability',
-          abilityName: 'ServiceAbility',
-          moduleName: 'entry',
-          action: 'Acts_CrossUserCall_1800'
+          bundleName: "com.acts.actscallability",
+          abilityName: "ServiceAbility",
+          moduleName: "entry",
+          action: "Acts_CrossUserCall_1800"
         }
         globalThis.abilityContext.startAbility(want).then(() => {
-          console.info('====>Acts_CrossUserCall_1800 StartServiceAbility OK');
+          console.info("====>Acts_CrossUserCall_1800 StartServiceAbility OK");
         }).catch((err:BusinessError) => {
-          console.info('====>Acts_CrossUserCall_1800 StartServiceAbility err: ' + JSON.stringify((err.code)));
+          console.info("====>Acts_CrossUserCall_1800 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
       })
 
@@ -803,10 +803,10 @@ export default function abilityTest() {
      */
     it('Acts_CrossUserCall_1900', Level.LEVEL0, async (done: Function) => {
       let want:Want = {
-        bundleName: 'com.acts.actscallability',
-        abilityName: 'ServiceAbility',
-        moduleName: 'entry',
-        action: 'Acts_CrossUserCall_1900'
+        bundleName: "com.acts.actscallability",
+        abilityName: "ServiceAbility",
+        moduleName: "entry",
+        action: "Acts_CrossUserCall_1900"
       }
       globalThis.abilityContext.startAbilityByCallWithAccount(want, 9527).then((caller:Caller) => {
         console.info('====>Acts_CrossUserCall_1900 startAbilityByCallWithAccount OK :' + JSON.stringify(caller));
@@ -845,15 +845,15 @@ export default function abilityTest() {
           }
         });
         let want:Want = {
-          bundleName: 'com.acts.actscallability',
-          abilityName: 'ServiceAbility',
-          moduleName: 'entry',
-          action: 'Acts_CrossUserCall_2000'
+          bundleName: "com.acts.actscallability",
+          abilityName: "ServiceAbility",
+          moduleName: "entry",
+          action: "Acts_CrossUserCall_2000"
         }
         globalThis.abilityContext.startAbility(want).then(() => {
-          console.info('====>Acts_CrossUserCall_2000 StartServiceAbility OK');
+          console.info("====>Acts_CrossUserCall_2000 StartServiceAbility OK");
         }).catch((err:BusinessError) => {
-          console.info('====>Acts_CrossUserCall_2000 StartServiceAbility err: ' + JSON.stringify((err.code)));
+          console.info("====>Acts_CrossUserCall_2000 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
       })
 

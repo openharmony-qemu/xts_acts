@@ -16,22 +16,22 @@
 import hilog from '@ohos.hilog';
 import featureAbility from '@ohos.ability.featureAbility';
 import bundle from '@ohos.bundle';
-import commonEvent from '@ohos.commonEventManager';
+import commonEvent from '@ohos.commonEvent';
 import { BusinessError } from '@ohos.base';
-const eventFaDisplayOrientation0300 = 'eventFaDisplayOrientation0300';
-const eventFaDisplayOrientation0300LifeCircle = 'eventFaDisplayOrientation0300LifeCircle';
-const eventFaDisplayOrientation0400 = 'eventFaDisplayOrientation0400';
-const eventFaDisplayOrientation0400LifeCircle = 'eventFaDisplayOrientation0400LifeCircle';
-const eventFaDisplayOrientation0700 = 'eventFaDisplayOrientation0700';
-const eventFaDisplayOrientation0800 = 'eventFaDisplayOrientation0800';
-const eventFaDisplayOrientation0900 = 'eventFaDisplayOrientation0900';
+const Event_FA_DisplayOrientation_0300 = 'Event_FA_DisplayOrientation_0300';
+const Event_FA_DisplayOrientation_0300_LifeCircle = 'Event_FA_DisplayOrientation_0300_LifeCircle';
+const Event_FA_DisplayOrientation_0400 = 'Event_FA_DisplayOrientation_0400';
+const Event_FA_DisplayOrientation_0400_LifeCircle = 'Event_FA_DisplayOrientation_0400_LifeCircle';
+const Event_FA_DisplayOrientation_0700 = 'Event_FA_DisplayOrientation_0700';
+const Event_FA_DisplayOrientation_0800 = 'Event_FA_DisplayOrientation_0800';
+const Event_FA_DisplayOrientation_0900 = 'Event_FA_DisplayOrientation_0900';
 let lifeCircleData: string[] = [];
 
-let publishEvent = (event: string, parameter: boolean) => {
+let publishEvent = (event: string, value: ESObject) => {
   commonEvent.publish(event,
     {
       parameters: {
-        data: parameter
+        data: value
       }
     }, (err, data) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `publish event: ${event}`);
@@ -51,7 +51,7 @@ class FourthAbility {
     lifeCircleData[1] = 'onActive';
     featureAbility.getWant((error, want) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `get want: ${JSON.stringify(want)}`);
-      let number = want.parameters?.number as number;
+      let number = want.parameters?.number;
       switch (number) {
         case 1:
           hilog.info(0x0000, 'testTag', '%{public}s', 'case 1 ---->');
@@ -61,9 +61,9 @@ class FourthAbility {
                 featureAbility.getContext().setDisplayOrientation(bundle.DisplayOrientation.LANDSCAPE, () => {
                     featureAbility.getContext().getDisplayOrientation((err, data) => {
                       if (bundle.DisplayOrientation.LANDSCAPE == data) {
-                        publishEvent(eventFaDisplayOrientation0800, true);
+                        publishEvent(Event_FA_DisplayOrientation_0800, true);
                       } else {
-                        publishEvent(eventFaDisplayOrientation0800, false);
+                        publishEvent(Event_FA_DisplayOrientation_0800, false);
                       }
                       featureAbility.terminateSelf();
                     })
@@ -79,9 +79,9 @@ class FourthAbility {
                 featureAbility.getContext().setDisplayOrientation(bundle.DisplayOrientation.PORTRAIT, () => {
                     featureAbility.getContext().getDisplayOrientation((err, data) => {
                       if (bundle.DisplayOrientation.PORTRAIT == data) {
-                        publishEvent(eventFaDisplayOrientation0900, true);
+                        publishEvent(Event_FA_DisplayOrientation_0900, true);
                       } else {
-                        publishEvent(eventFaDisplayOrientation0900, false);
+                        publishEvent(Event_FA_DisplayOrientation_0900, false);
                       }
                       featureAbility.terminateSelf();
                     })
@@ -222,9 +222,9 @@ class FourthAbility {
                         hilog.info(0x0000, 'testTag', '%{public}s', `7-getDisplayOrientation main-2 data: ${data},
                             orientation: ${bundle.DisplayOrientation.LANDSCAPE}`);
                         if (bundle.DisplayOrientation.LANDSCAPE == data && lifeCircleData.length == 2) {
-                          publishEvent(eventFaDisplayOrientation0300, true);
+                          publishEvent(Event_FA_DisplayOrientation_0300, true);
                         } else {
-                          publishEvent(eventFaDisplayOrientation0300, false);
+                          publishEvent(Event_FA_DisplayOrientation_0300, false);
                         }
                         featureAbility.terminateSelf();
                       })
@@ -246,9 +246,9 @@ class FourthAbility {
                         hilog.info(0x0000, 'testTag', '%{public}s', `8-getDisplayOrientation main-2 data: ${data},
                             orientation: ${bundle.DisplayOrientation.PORTRAIT}`);
                         if (bundle.DisplayOrientation.PORTRAIT == data  && lifeCircleData.length == 2) {
-                          publishEvent(eventFaDisplayOrientation0400, true);
+                          publishEvent(Event_FA_DisplayOrientation_0400, true);
                         } else {
-                          publishEvent(eventFaDisplayOrientation0400, false);
+                          publishEvent(Event_FA_DisplayOrientation_0400, false);
                         }
                         featureAbility.terminateSelf();
                       })
@@ -264,7 +264,7 @@ class FourthAbility {
           && bundle.DisplayOrientation.PORTRAIT == 2 && bundle.DisplayOrientation.FOLLOW_RECENT == 3) {
             result = true;
           }
-          publishEvent(eventFaDisplayOrientation0700, result);
+          publishEvent(Event_FA_DisplayOrientation_0700, result);
           featureAbility.terminateSelf();
           break;
 
