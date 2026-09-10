@@ -18,6 +18,7 @@ import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import connection from '@ohos.net.connection';
+import sharing from 'ohos.net.sharing';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'ConnectionTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -664,6 +665,35 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_2000
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_2000
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionCreateNetConnection_static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_2000";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        let netCon: connection.NetConnection = connection.createNetConnection({
+          netCapabilities: {
+            bearerTypes: [connection.NetBearType.BEARER_BLUETOOTH]
+          }
+        });
+        ExpectTrue(netCon != undefined);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+
+    /**
      * @tc.name   testNetworkMgrConnectionGetDefaultNetCallback_static_0100
      * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Callback_0100
      * @tc.desc   test obtain the default activated data network and use the callback method as an asynchronous method
@@ -844,6 +874,34 @@ export default function ConnectionPublicTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let netHandle: connection.NetHandle = connection.getDefaultNetSync();
+        if(netHandle != undefined){
+          ExpectTrue(netHandle.netId != 0);
+        }else{
+          ExpectFail();
+        }
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetSync_static_0300
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNetSync_0300
+     * @tc.desc   test use synchronization method to obtain default activated data network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetDefaultNetSync_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetDefaultNetSync_static_0300";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        let netHandle: sharing.NetHandle = connection.getDefaultNetSync();
         if(netHandle != undefined){
           ExpectTrue(netHandle.netId != 0);
         }else{

@@ -983,5 +983,26 @@ export default function ConnectionWithoutPermissionTest() {
               done();
             });
         });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetNop0100
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Nop_0100
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetDefaultNetNop0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      hilog.info(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetDefaultNetNop0100 begin');
+      try {
+        let netHandle = connection.getDefaultNetSync();
+        console.info(`testNetworkMgrConnectionGetDefaultNetNop0100 resolved unexpectedly`);
+        ExpectFail();        
+      } catch (error) {
+        hilog.error(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetDefaultNetNop0100 failed ' + JSON.stringify(error));
+        ExpectTrue(err.code == 201);
+        done();
+      }
+    });        
   });
 }
