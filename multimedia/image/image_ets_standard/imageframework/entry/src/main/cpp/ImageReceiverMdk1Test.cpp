@@ -19,8 +19,6 @@
 #include "hilog/log.h"
 #include "multimedia/image_framework/image/image_receiver_native.h"
 #include <map>
-#include <stddef.h>
-#include <stdbool.h>
 
 #define IMAGE_LOG_TAG "IMAGE_RECEIVER_TAGLOG"
 #define IMAGE_LOG_DOMAIN 0x3200
