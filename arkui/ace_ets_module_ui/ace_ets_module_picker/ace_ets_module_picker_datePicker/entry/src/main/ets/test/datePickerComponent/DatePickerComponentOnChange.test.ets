@@ -69,7 +69,7 @@ export default function DatePickerComponentOnChangeTest() {
       let bounds = await datePickerComp.getBounds();
       let centerX: number = bounds.left + (bounds.right - bounds.left) / 2;
       let centerY: number = bounds.top + (bounds.bottom - bounds.top) / 2;
-      await driver.swipe(centerX, centerY, centerX, centerY + 200, 600);
+      await driver.swipe(centerX, centerY, centerX, centerY + 100, 600);
       await CommonFunc.sleep(1500);
 
       let strJson1 = getInspectorByKey('text_onChange_triggered');
