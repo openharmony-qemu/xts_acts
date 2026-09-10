@@ -4109,6 +4109,56 @@ export default function PhotoTest() {
       console.info(TAG + "oHgetExposureDuration ret:", ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
-
+    /**
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0100
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0100
+     * @tc.desc   Test OH_CaptureSession_GetWhiteBalanceRange when the second paran null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0100', Level.LEVEL2, () => {
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.getWhiteBalanceRange(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "getWhiteBalanceRange ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0200
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0200
+     * @tc.desc   Test OH_CaptureSession_GetWhiteBalanceRange when the third paran null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0200', Level.LEVEL2, () => {
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.getWhiteBalanceRange(Parameter_Setting.THIRD_PARAMETER_ERROR);
+      console.info(TAG + "getWhiteBalanceRange ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_0100
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_0100
+     * @tc.desc   Test OH_CaptureSession_GetWhiteBalance when the second paran null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_0100', Level.LEVEL2, () => {
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.getWhiteBalance(Parameter_Setting.THIRD_PARAMETER_ERROR);
+      console.info(TAG + "getWhiteBalance ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
   })
 }
