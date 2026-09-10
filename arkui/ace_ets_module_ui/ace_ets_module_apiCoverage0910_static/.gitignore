@@ -9,6 +9,7 @@
 /.clang-format
 /.clang-tidy
 **/.test
-/.appanalyzerautosign/
+/.appanalyzer
+autosign/
 # local vendored static hypium (do not commit)
 entry/src/hypium/
