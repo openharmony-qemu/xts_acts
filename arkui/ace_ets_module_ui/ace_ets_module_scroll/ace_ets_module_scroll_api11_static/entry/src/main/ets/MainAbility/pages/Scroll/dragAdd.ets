@@ -145,7 +145,7 @@ struct Index {
           .draggable(true)
           .margin({ left: 15 } as Margin)
           .border({ color: Color.Black, width: 1 })
-          .allowDrop([udmfType.UniformDataType.IMAGE])
+          .allowDrop([udmfType.UniformDataType.IMAGE] as Array<udmfType.UniformDataType>)
           .onDrop((dragEvent: DragEvent): void => {
             this.getDataFromUdmfRetry(dragEvent, (event) => {
               let records: Array<unifiedDataChannel.UnifiedRecord> = event.getData()!.getRecords()!;
@@ -168,7 +168,7 @@ struct Index {
           .height(100)
           .border({ color: Color.Black, width: 1 })
           .margin(15)
-          .allowDrop([udmfType.UniformDataType.TEXT])
+          .allowDrop([udmfType.UniformDataType.TEXT] as Array<udmfType.UniformDataType>)
           .onDrop((dragEvent: DragEvent): void => {
             console.info("the getDisplayX " + dragEvent.getDisplayX());
             console.info("the getDisplayY " + dragEvent.getDisplayY());
@@ -193,7 +193,7 @@ struct Index {
           .width('100%')
           .height(200)
           .controls(true)
-          .allowDrop([udmfType.UniformDataType.VIDEO])
+          .allowDrop([udmfType.UniformDataType.VIDEO] as Array<udmfType.UniformDataType>)
 
         Column() {
           Text(this.abstractContent).fontSize(20).width('100%')
@@ -203,7 +203,7 @@ struct Index {
         .height(100)
         .margin(20)
         .border({ color: Color.Black, width: 1 })
-        .allowDrop([udmfType.UniformDataType.PLAIN_TEXT])
+        .allowDrop([udmfType.UniformDataType.PLAIN_TEXT]as Array<udmfType.UniformDataType>)
         .onDrop((dragEvent: DragEvent): void => {
           this.getDataFromUdmfRetry(dragEvent, event => {
             let records: Array<unifiedDataChannel.UnifiedRecord> = event.getData()!.getRecords()!;
