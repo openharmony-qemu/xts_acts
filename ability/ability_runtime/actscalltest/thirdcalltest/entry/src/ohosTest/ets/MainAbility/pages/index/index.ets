@@ -12,26 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
-import { Hypium, Level } from '@ohos/hypium'
-import testsuite from '../../../test/List.test'
-import router from '@ohos.router';
-
 
 @Entry
 @Component
-struct Index {
-
-  aboutToAppear(){
-    console.info("start run testcase!!!!")
-    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-    console.info('start run testcase!!!')
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+struct MainAbilityIndex {
+  aboutToAppear() {
+    // 勿在此调用 Hypium：TestAbility 已 hypiumTest；二次跑套件 → mark blocked
+    console.info('ThirdCallTest MainAbility Index aboutToAppear')
   }
 
   build() {
-    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center,
+      justifyContent: FlexAlign.Center }) {
       Text('Hello World')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
@@ -45,7 +37,6 @@ struct Index {
       })
       .backgroundColor('#0D9FFB')
       .onClick(() => {
-
       })
     }
     .width('100%')

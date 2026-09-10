@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct Index {
+struct MainAbilityIndex {
   aboutToAppear() {
     console.info('SystemCallTest MainAbility Index aboutToAppear');
   }
