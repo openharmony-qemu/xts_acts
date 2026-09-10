@@ -701,11 +701,10 @@ export default function albumGetAssetsTest () {
         fetchColumns: ['Invalid argument'],
         predicates: predicates
       }
+      const fetchResult = await helper.getAlbums(albumType.SYSTEM, albumSubtype.IMAGE);
+      const album = await fetchResult.getFirstObject();
+      fetchResult.close();
       try {
-        const fetchResult = await helper.getAlbums(albumType.SYSTEM, albumSubtype.IMAGE);
-        const album = await fetchResult.getFirstObject();
-        fetchResult.close();
-        const fetchOps: ESObject = undefined;
         album.getAssets(fetchOps);
         expect(false).assertTrue();
         done();
