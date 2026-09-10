@@ -259,5 +259,27 @@ export default function ImageEnumTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_OHOS_OH_Image_Release_001
+     * @tc.number SUB_OHOS_OH_Image_Release_001
+     * @tc.desc   OH_Image_Release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_OHOS_OH_Image_Release_001', Level.LEVEL1, async (done: Function) => {
+      let testNum = 'SUB_OHOS_OH_Image_Release_001';
+      try {
+        let result = ndkTest.imageRelease(latestImage);
+        console.info(testNum + 'result is ' + result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error(testNum + "fail: " + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
   })
 }
