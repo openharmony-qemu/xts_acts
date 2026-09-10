@@ -20,15 +20,28 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest, startAbility } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function IfElseTest0100() {
   describe('IfElseTest0100', () => {
-        beforeEach(async (): Promise<void> => {
+    beforeAll(async (): Promise<void> => {
+      console.info("IfElseTest0100 beforeEach start");
+
+
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
+
+    });
+
+    beforeEach(async (): Promise<void> => {
       console.info("IfElseTest0100 beforeEach start");
       let options: router.RouterOptions = {
         url:"MainAbility/pages/IfElse/IfElse0100",
