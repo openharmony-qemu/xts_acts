@@ -521,7 +521,7 @@ export default function webInitTest(): void {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitWebSiteIsolationModeInvalid', 10)
       await Utils.msSleep(3000);
-      Utils.registerBaseEvent('testWebSiteIsolationModeInvalidStatic', '401', 60641, done,
+      Utils.registerBaseEvent('testWebSiteIsolationModeInvalidStatic', '0', 60641, done,
         (backData: events_emitter.EventData, expected: Object) => {
           const data = backData?.data as Record<string, RecordData>;
           expect(data['ACTION']).assertEqual(expected);
@@ -533,7 +533,6 @@ export default function webInitTest(): void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebErrorPageButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
   })
 }

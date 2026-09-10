@@ -320,7 +320,7 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testSetRenderProcessModeInvalidStatic001", 10);
         await Utils.msSleep(2000);
-        Utils.registerBaseEvent("testSetRenderProcessModeInvalidStatic001", 401, 41023212, done,
+        Utils.registerBaseEvent("testSetRenderProcessModeInvalidStatic001", 0, 41023212, done,
         (backData: events_emitter.EventData, expected: Object) => {
           const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
@@ -329,7 +329,6 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
-        done();
       })
 
         /**

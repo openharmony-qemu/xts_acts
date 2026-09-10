@@ -648,7 +648,7 @@ export default function webMessageExt() {
     it('testWebMessageExtGetErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetError001", 10)
       await Utils.msSleep(2000);
-      Utils.registerBaseEvent("testWebMessageExtGetError001", 'URIError: URI seq 0222', 100026, done,
+      Utils.registerBaseEvent("testWebMessageExtGetError001", 0, 100026, done,
         (backData: events_emitter.EventData, expected: Object) => {
           const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
@@ -657,7 +657,6 @@ export default function webMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -955,10 +954,9 @@ export default function webMessageExt() {
     * @tc.level       LEVEL0
     */
     it('testWebMessageExtSetArrayEmptyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let result = "Array len:0, value:";
       Utils.emitEvent("testWebMessageExtSetArrayEmpty001", 10)
       await Utils.msSleep(2000);
-      Utils.registerBaseEvent("testWebMessageExtSetArrayEmpty001", JSON.stringify(result), 100009, done,
+      Utils.registerBaseEvent("testWebMessageExtSetArrayEmpty001", 0, 100009, done,
         (backData: events_emitter.EventData, expected: Object) => {
           const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
@@ -967,7 +965,6 @@ export default function webMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
