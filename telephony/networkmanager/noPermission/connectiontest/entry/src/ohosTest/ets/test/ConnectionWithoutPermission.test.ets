@@ -1000,7 +1000,7 @@ export default function ConnectionWithoutPermissionTest() {
         ExpectFail();        
       } catch (error) {
         hilog.error(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetDefaultNetNop0100 failed ' + JSON.stringify(error));
-        ExpectTrue(err.code == 201);
+        ExpectTrue(error.code == 201);
         done();
       }
     });        
