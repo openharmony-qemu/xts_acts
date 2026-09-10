@@ -1357,6 +1357,70 @@ export default function MulticastSocket() {
     });
 
     /**
+     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401
+     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetMulticastTTL_401
+     * @tc.desc   SetMulticastTTL with null parameter (Promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401';
+      console.info(`${caseName} test start`);
+      try {
+        expectEqual(String(null), 'null');
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setMulticastTTL(null).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expectFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expectEqual(Number(err.code), 401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expectEqual(Number(err.code), 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401U
+     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetMulticastTTL_401U
+     * @tc.desc   SetMulticastTTL with undefined parameter (Promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401U';
+      console.info(`${caseName} test start`);
+      try {
+        expectEqual(String(undefined), 'undefined');
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setMulticastTTL(undefined).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expectFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expectEqual(Number(err.code), 401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expectEqual(Number(err.code), 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrSocketMulticastSocketGetSocketFd0100
      * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_GetSocketFd_0100
      * @tc.desc   Get Socket FD after successful addMembership
@@ -1840,6 +1904,126 @@ export default function MulticastSocket() {
     });
 
     /**
+     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401
+     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetLoopbackMode_401
+     * @tc.desc   SetLoopbackMode with null parameter (callback), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401';
+      console.info(`${caseName} test start`);
+      try {
+        expectEqual(String(null), 'null');
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setLoopbackMode(null, (err: BusinessError) => {
+          console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
+          expectEqual(Number(err.code), 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectEqual(Number(err.code), 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401U
+     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetLoopbackMode_401U
+     * @tc.desc   SetLoopbackMode with undefined parameter (callback), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401U';
+      console.info(`${caseName} test start`);
+      try {
+        expectEqual(String(undefined), 'undefined');
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setLoopbackMode(undefined, (err: BusinessError) => {
+          console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
+          expectEqual(Number(err.code), 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectEqual(Number(err.code), 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401P
+     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetLoopbackMode_401P
+     * @tc.desc   SetLoopbackMode with null parameter (Promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401P', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401P';
+      console.info(`${caseName} test start`);
+      try {
+        expectEqual(String(null), 'null');
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setLoopbackMode(null).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expectFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expectEqual(Number(err.code), 401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expectEqual(Number(err.code), 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401PU
+     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetLoopbackMode_401PU
+     * @tc.desc   SetLoopbackMode with undefined parameter (Promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401PU', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401PU';
+      console.info(`${caseName} test start`);
+      try {
+        expectEqual(String(undefined), 'undefined');
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setLoopbackMode(undefined).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expectFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expectEqual(Number(err.code), 401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expectEqual(Number(err.code), 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrSocketMulticastSocketGetLoopbackMode0100
      * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_GetLoopbackMode_0100
      * @tc.desc   Get the loopback mode flag in multicast communication
@@ -2148,7 +2332,7 @@ export default function MulticastSocket() {
         multicast.send(null, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} err: ${JSON.stringify(err)}`);
-            expectEqual(err.code, 401);
+            expectEqual(Number(err.code), 401);
           } else {
             expectFail();
           }
@@ -2182,7 +2366,7 @@ export default function MulticastSocket() {
         multicast.send(undefined, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} err: ${JSON.stringify(err)}`);
-            expectEqual(err.code, 401);
+            expectEqual(Number(err.code), 401);
           } else {
             expectFail();
           }
@@ -2303,7 +2487,7 @@ export default function MulticastSocket() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expectEqual(Number(err.code), 401);
           console.info(`${caseName} test end`);
           done();
         });
@@ -2337,7 +2521,7 @@ export default function MulticastSocket() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expectEqual(Number(err.code), 401);
           console.info(`${caseName} test end`);
           done();
         });
@@ -2554,6 +2738,91 @@ export default function MulticastSocket() {
       await closeReuseAddressSocket(caseName, 'socketA', socketA);
       console.info(`${caseName} test end`);
       done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketNopMulticastSocketAddMembership0401
+     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_AddMembership_0401
+     * @tc.desc   AddMembership with null address parameter (sync throw), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopMulticastSocketAddMembership0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketAddMembership0401';
+      console.info(`${caseName} test start`);
+      try {
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.addMembership(null, (err: BusinessError) => {
+          console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
+          expectEqual(Number(err.code), 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectEqual(Number(err.code), 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketNopMulticastSocketDropMembership0401
+     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_DropMembership_0401
+     * @tc.desc   DropMembership with null address parameter (callback), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopMulticastSocketDropMembership0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketDropMembership0401';
+      console.info(`${caseName} test start`);
+      try {
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.dropMembership(null, (err: BusinessError) => {
+          console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
+          expectEqual(Number(err.code), 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectEqual(Number(err.code), 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketNopMulticastSocketDropMembership401
+     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_DropMembership_401
+     * @tc.desc   DropMembership with null address parameter (Promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopMulticastSocketDropMembership401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketDropMembership401';
+      console.info(`${caseName} test start`);
+      try {
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.dropMembership(null).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expectFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expectEqual(Number(err.code), 401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expectEqual(Number(err.code), 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
     });
   });
 }
