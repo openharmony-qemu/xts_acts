@@ -1060,7 +1060,7 @@ export default function createAssetTest() {
      */
     it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009';
-      const phottypeoType: photoAccessHelper.PhotoType = photoType.IMAGE;
+      const type: photoAccessHelper.PhotoType = photoType.IMAGE;
       const extension = 'jpg';
       const options: photoAccessHelper.CreateOptions = {
         title: testTitle,
