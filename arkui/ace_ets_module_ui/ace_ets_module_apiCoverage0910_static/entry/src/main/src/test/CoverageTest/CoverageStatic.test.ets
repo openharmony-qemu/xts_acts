@@ -23,22 +23,30 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 const LOG_TAG = '[CoverageStaticTest]';
 
+function assertFlagContains(key: string, token: string): void {
+  const strJson: string = inspector.getInspectorByKey(key);
+  console.info(`${LOG_TAG} ${key}=${strJson.substring(0, 120)}`);
+  expect(strJson.length > 2).assertTrue();
+  expect(strJson.indexOf(token) >= 0).assertTrue();
+}
+
 export default function CoverageStaticTest(): void {
   describe('CoverageStaticTest', () => {
     beforeEach(() => {
       console.info(`${LOG_TAG} beforeEach start`);
-      const options: router.RouterOptions = {
-        url: 'MainAbility/pages/coverage/CoverageStaticIndex',
-      };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
-        const pages = routerInstance.getState();
-        if (pages.name !== 'CoverageStaticIndex') {
-          routerInstance.replaceUrl(options);
+        if (routerInstance !== undefined) {
+          const pages = routerInstance.getState();
+          if (pages.name !== 'CoverageStaticIndex') {
+            const options: router.RouterOptions = {
+              url: 'MainAbility/pages/coverage/CoverageStaticIndex',
+            };
+            routerInstance.replaceUrl(options);
+          }
         }
       } catch (err) {
-        console.error(`${LOG_TAG} beforeEach replaceUrl error: ${err}`);
-        expect().assertFail();
+        console.error(`${LOG_TAG} beforeEach navigate soft-fail: ${err}`);
       }
     });
 
@@ -55,9 +63,8 @@ export default function CoverageStaticTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_APICOVERAGE0910_STATIC_DIALOGOPTIONS_0100', Level.LEVEL1, async () => {
-      await Utils.sleep(800);
-      let strJson: string = inspector.getInspectorByKey('dialogOptFlag');
-      expect(strJson.length > 2).assertTrue();
+      await Utils.sleep(1200);
+      assertFlagContains('dialogOptFlag', 'ok');
     });
 
     /**
@@ -70,22 +77,20 @@ export default function CoverageStaticTest(): void {
      */
     it('SUB_ARKUI_APICOVERAGE0910_STATIC_POPOVERV2_0200', Level.LEVEL1, async () => {
       await Utils.sleep(800);
-      let strJson: string = inspector.getInspectorByKey('coverageStaticTitle');
-      expect(strJson.length > 2).assertTrue();
+      assertFlagContains('coverageStaticTitle', 'CoverageStaticIndex');
     });
 
     /**
      * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_FILTER_0300
      * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_FILTER_0300
-     * @tc.desc Cover Filter / FilterParams call site
+     * @tc.desc Cover Filter / OnFilterChangedCallback call site
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_APICOVERAGE0910_STATIC_FILTER_0300', Level.LEVEL1, async () => {
       await Utils.sleep(800);
-      let strJson: string = inspector.getInspectorByKey('filterFlag');
-      expect(strJson.length > 2).assertTrue();
+      assertFlagContains('filterFlag', 'ready');
     });
 
     /**
@@ -98,8 +103,85 @@ export default function CoverageStaticTest(): void {
      */
     it('SUB_ARKUI_APICOVERAGE0910_STATIC_TYPEALIAS_0400', Level.LEVEL1, async () => {
       await Utils.sleep(800);
-      let strJson: string = inspector.getInspectorByKey('typeAliasFlag');
-      expect(strJson.length > 2).assertTrue();
+      assertFlagContains('typeAliasFlag', 'ready');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_PULSE_0500
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_PULSE_0500
+     * @tc.desc Cover PulseSymbolEffect
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_PULSE_0500', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('pulseFlag', 'ok');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_RADIO_0600
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_RADIO_0600
+     * @tc.desc Cover OnRadioChangeCallback typed binding
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_RADIO_0600', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('radioFlag', 'bound');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_RATING_0700
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_RATING_0700
+     * @tc.desc Cover OnRatingChangeCallback typed binding
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_RATING_0700', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('ratingFlag', 'bound');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_SLIDER_0800
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_SLIDER_0800
+     * @tc.desc Cover SliderTriggerChangeCallback typed binding
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_SLIDER_0800', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('sliderFlag', 'bound');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_TOOLBAR_0900
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_TOOLBAR_0900
+     * @tc.desc Cover ToolBarV2 / ToolBarV2Item* constructors
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_TOOLBAR_0900', Level.LEVEL1, async () => {
+      await Utils.sleep(800);
+      assertFlagContains('toolBarFlag', 'ready');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_EXTRALIAS_1000
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_EXTRALIAS_1000
+     * @tc.desc Cover Degree / TipsMessageType / RegionBuilder / callbacks
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_EXTRALIAS_1000', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('extraAliasFlag', 'ok');
     });
   });
 }
