@@ -362,7 +362,7 @@ export default function createAssetTest() {
 
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_006
-     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_053
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0053
      * @tc.desc   callback, image, with options, subtype-> null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -382,7 +382,7 @@ export default function createAssetTest() {
 
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_007
-     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_054
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0054
      * @tc.desc   callback, image, with options-> null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -399,7 +399,7 @@ export default function createAssetTest() {
 
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_008
-     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_055
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0055
      * @tc.desc   callback, image, with options,subtype -> null,success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -435,7 +435,7 @@ export default function createAssetTest() {
 
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_009
-     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_056
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0056
      * @tc.desc   callback, image, with options,subtype -> '',success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -471,7 +471,7 @@ export default function createAssetTest() {
 
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_010
-     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_057
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0057
      * @tc.desc   callback, image, with options,subtype -> -1,success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -979,7 +979,7 @@ export default function createAssetTest() {
 
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_006
-     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_058
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0058
      * @tc.desc   promise, image, with options -> null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -996,7 +996,7 @@ export default function createAssetTest() {
 
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_007
-     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_059
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0059
      * @tc.desc   promise, image, with options -> null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1024,7 +1024,7 @@ export default function createAssetTest() {
 
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_008
-     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_060
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0060
      * @tc.desc   promise, image, with options -> '', success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1052,7 +1052,7 @@ export default function createAssetTest() {
 
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009
-     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_061
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0061
      * @tc.desc   promise, image, with options -> -1, success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
