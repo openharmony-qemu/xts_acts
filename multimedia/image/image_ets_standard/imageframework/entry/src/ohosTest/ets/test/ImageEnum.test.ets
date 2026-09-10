@@ -128,15 +128,15 @@ export default function ImageEnumTest() {
     });
 
     /**
-     * @tc.name   SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_001
-     * @tc.number SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_001
+     * @tc.name   SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0100
+     * @tc.number SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0100
      * @tc.desc   OHOS_IMAGE_COMPONENT_FORMAT_YUV_Y、U、V、JPEG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_001', Level.LEVEL1, async (done: Function) => {
-      let testNum = 'SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_001';
+    it('SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0100', Level.LEVEL1, async (done: Function) => {
+      let testNum = 'SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0100';
       try {
         let ret: number = ndkTest.imageComponentFormatEnum();
         console.info(testNum + 'ret is ' + ret);
@@ -150,15 +150,15 @@ export default function ImageEnumTest() {
     });
 
     /**
-     * @tc.name   SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_002
-     * @tc.number SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_002
+     * @tc.name   SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0200
+     * @tc.number SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0200
      * @tc.desc   OHOS_IMAGE_COMPONENT_FORMAT_YUV_Y
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_002', Level.LEVEL1, async (done: Function) => {
-      let testNum = 'SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_002';
+    it('SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0200', Level.LEVEL1, async (done: Function) => {
+      let testNum = 'SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0200';
       try {
         let ret: number = ndkTest.imageComponentFormatYUVY(latestImage);
         console.info(testNum + 'ret is ' + ret);
@@ -172,15 +172,15 @@ export default function ImageEnumTest() {
     });
 
     /**
-     * @tc.name   SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_003
-     * @tc.number SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_003
+     * @tc.name   SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0300
+     * @tc.number SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0300
      * @tc.desc   OHOS_IMAGE_COMPONENT_FORMAT_YUV_U
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_003', Level.LEVEL1, async (done: Function) => {
-      let testNum = 'SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_003';
+    it('SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0300', Level.LEVEL1, async (done: Function) => {
+      let testNum = 'SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0300';
       try {
         let ret: number = ndkTest.imageComponentFormatYUVU(latestImage);
         console.info(testNum + 'ret is ' + ret);
@@ -194,15 +194,15 @@ export default function ImageEnumTest() {
     });
 
     /**
-     * @tc.name   SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_004
-     * @tc.number SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_004
+     * @tc.name   SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0400
+     * @tc.number SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0400
      * @tc.desc   OHOS_IMAGE_COMPONENT_FORMAT_YUV_V
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_004', Level.LEVEL1, async (done: Function) => {
-      let testNum = 'SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_004';
+    it('SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0400', Level.LEVEL1, async (done: Function) => {
+      let testNum = 'SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0400';
       try {
         let ret: number = ndkTest.imageComponentFormatYUVV(latestImage);
         console.info(testNum + 'ret is ' + ret);
@@ -216,15 +216,15 @@ export default function ImageEnumTest() {
     });
 
     /**
-     * @tc.name   SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_005
-     * @tc.number SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_005
+     * @tc.name   SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0500
+     * @tc.number SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0500
      * @tc.desc   OHOS_IMAGE_COMPONENT_FORMAT_JPEG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_005', Level.LEVEL1, async (done: Function) => {
-      let testNum = 'SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_005';
+    it('SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0500', Level.LEVEL1, async (done: Function) => {
+      let testNum = 'SUB_OH_IMAGE_COMPINENT_FORMAT_ENUM_0500';
       try {
         let ret: number = ndkTest.imageComponentFormatJPEG(latestImage);
         console.info(testNum + 'ret is ' + ret);
@@ -238,15 +238,15 @@ export default function ImageEnumTest() {
     });
 
     /**
-     * @tc.name   SUB_OHOS_IMAGE_RECT_001
-     * @tc.number SUB_OHOS_IMAGE_RECT_001
+     * @tc.name   SUB_OHOS_IMAGE_RECT_0100
+     * @tc.number SUB_OHOS_IMAGE_RECT_0100
      * @tc.desc   struct OhosImageRect {...}
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_OHOS_IMAGE_RECT_001', Level.LEVEL1, async (done: Function) => {
-      let testNum = 'SUB_OHOS_IMAGE_RECT_001';
+    it('SUB_OHOS_IMAGE_RECT_0100', Level.LEVEL1, async (done: Function) => {
+      let testNum = 'SUB_OHOS_IMAGE_RECT_0100';
       try {
         let result = ndkTest.imageClipRect(latestImage);
         console.info(testNum + 'result is ' + result);
@@ -260,15 +260,15 @@ export default function ImageEnumTest() {
     });
 
     /**
-     * @tc.name   SUB_OHOS_OH_Image_Release_001
-     * @tc.number SUB_OHOS_OH_Image_Release_001
+     * @tc.name   SUB_OHOS_OH_Image_Release_0100
+     * @tc.number SUB_OHOS_OH_Image_Release_0100
      * @tc.desc   OH_Image_Release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_OHOS_OH_Image_Release_001', Level.LEVEL1, async (done: Function) => {
-      let testNum = 'SUB_OHOS_OH_Image_Release_001';
+    it('SUB_OHOS_OH_Image_Release_0100', Level.LEVEL1, async (done: Function) => {
+      let testNum = 'SUB_OHOS_OH_Image_Release_0100';
       try {
         let result = ndkTest.imageRelease(latestImage);
         console.info(testNum + 'result is ' + result);
