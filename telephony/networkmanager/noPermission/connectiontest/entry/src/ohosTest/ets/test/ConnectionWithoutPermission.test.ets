@@ -983,6 +983,5 @@ export default function ConnectionWithoutPermissionTest() {
               done();
             });
         });
-      
   });
 }
