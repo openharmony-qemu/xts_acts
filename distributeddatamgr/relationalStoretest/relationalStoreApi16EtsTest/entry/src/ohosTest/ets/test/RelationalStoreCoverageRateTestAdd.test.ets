@@ -404,7 +404,7 @@ export default function RelationalStoreCoverageRateTestAddTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + `Unregister observer failed, code is ${err.code}, message is ${err.message}`);
-        expect('401').assertEqual(String(err.code));
+        expect('401').assertEqual(err.code);
       }
       await store.close();
       await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1.name);
@@ -443,7 +443,7 @@ export default function RelationalStoreCoverageRateTestAddTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + `Unregister observer failed, code is ${err.code}, message is ${err.message}`);
-        expect('14800014').assertEqual(String(err.code));
+        expect('14800014').assertEqual(err.code);
       }
       await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1.name);
       done();
