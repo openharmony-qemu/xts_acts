@@ -24,22 +24,15 @@ const TAG = LOG_TAG + 'requestContent';
 
 type TestFunction = (movingPhoto: photoAccessHelper.MovingPhoto) => Promise<void>
 
+let testRequestContent: TestFunction = async () => {}
+
 class MovingPhotoHandler implements photoAccessHelper.MediaAssetDataHandler<photoAccessHelper.MovingPhoto> {
-  private testFunction: TestFunction = async () => {}
   async onDataPrepared(movingPhoto: photoAccessHelper.MovingPhoto) {
     if (movingPhoto === undefined) {
       console.error('Error occurred when preparing data');
       return;
     }
-    try {
-      await this.testFunction(movingPhoto)
-      console.log("moving photo contents retrieved successfully");
-    } catch (err) {
-      console.error(`failed to retrieve contents of moving photo, error code is ${err.code}, message is ${err.message}`);
-    }
-  }
-  changeMainTest(testFunction: TestFunction){
-    this.testFunction = testFunction
+    testRequestContent(movingPhoto)
   }
 }
 
@@ -57,17 +50,15 @@ async function getUriPromiseTest(testName: string, requestOptions: photoAccessHe
   console.log(`moving photo lengthL ${assetResult.getCount()}`)
   let asset: photoAccessHelper.PhotoAsset = await assetResult.getLastObject();
   const handler = new MovingPhotoHandler();
-  handler.changeMainTest(testFunction)
+  testRequestContent = testFunction
   try {
     console.log(TAG, JSON.stringify(asset), JSON.stringify(requestOptions), JSON.stringify(handler))
     let requestId: string =
       await photoAccessHelper.MediaAssetManager.requestMovingPhoto(testContext, asset, requestOptions, handler);
     console.info("moving photo requested successfully, requestId: " + requestId);
-    return true
   } catch (err) {
     console.error(TAG, testName,
       `failed to request moving photo, error code is ${err.code}, message is ${err.message}`);
-    return false
   }
 }
 
@@ -88,7 +79,6 @@ async function createMovingPhoto(testNum: string, testContext: common.UIAbilityC
 export default function MovingPhotoRequestContentTest() {
 
   let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
 
   describe('MovingPhotoRequestContentTest', () => {
 
@@ -129,11 +119,20 @@ export default function MovingPhotoRequestContentTest() {
       const videoPath = '1vp9_320x240_30.mp4';
       await copyImageToSandbox(fileName, path);
       await copyImageToSandbox(videoFileName, videoPath);
-      const result = await getUriPromiseTest(testName, requestOptions, async (movingPhoto) => {
-        const imageFileUri = fileUri.getUriFromPath(context.filesDir + "/" + 'test6.gif');
-        let videoFileUri: string = fileUri.getUriFromPath(context.filesDir + "/" + '1vp9_320x240_30.mp4');
-        await movingPhoto.requestContent(imageFileUri, videoFileUri);
-      });
+      const result: boolean = await new Promise((resolve) => {
+        getUriPromiseTest(testName, requestOptions, async (movingPhoto) => {
+          const imageFileUri = fileUri.getUriFromPath(context.filesDir + "/" + 'test6.gif');
+          let videoFileUri: string = fileUri.getUriFromPath(context.filesDir + "/" + '1vp9_320x240_30.mp4');
+          try {
+            await movingPhoto.requestContent(imageFileUri, videoFileUri);
+            console.log("moving photo contents retrieved successfully");
+            resolve(true)
+          } catch (err) {
+            console.error(`failed to retrieve contents of moving photo, error code is ${err.code}, message is ${err.message}`);
+            resolve(false)
+          }
+        });
+      })
       expect(result).assertTrue()
       done()
     })
@@ -151,9 +150,18 @@ export default function MovingPhotoRequestContentTest() {
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
       };
-      const result = await getUriPromiseTest(testName, requestOptions, async (movingPhoto) => {
-        await movingPhoto.requestContent(photoAccessHelper.ResourceType.VIDEO_RESOURCE);
-      });
+      const result: boolean = await new Promise((resolve) => {
+        getUriPromiseTest(testName, requestOptions, async (movingPhoto) => {        
+          try {
+            await movingPhoto.requestContent(photoAccessHelper.ResourceType.VIDEO_RESOURCE);
+            console.log("moving photo contents retrieved successfully");
+            resolve(true)
+          } catch (err) {
+            console.error(`failed to retrieve contents of moving photo, error code is ${err.code}, message is ${err.message}`);
+            resolve(false)
+          }
+        });
+      })
       expect(result).assertTrue()
       done()
     })
@@ -171,11 +179,20 @@ export default function MovingPhotoRequestContentTest() {
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
       };
-      const result = await getUriPromiseTest(testName, requestOptions, async (movingPhoto) => {
-        const resourceType: photoAccessHelper.ResourceType = null as ESObject
-        await movingPhoto.requestContent(resourceType);
-      });
-      expect(result).assertTrue()
+      const result: boolean = await new Promise((resolve) => {
+        getUriPromiseTest(testName, requestOptions, async (movingPhoto) => {        
+          try {
+            const resourceType: photoAccessHelper.ResourceType = null as ESObject
+            await movingPhoto.requestContent(resourceType);
+            console.log("moving photo contents retrieved successfully");
+            resolve(true)
+          } catch (err) {
+            console.error(`failed to retrieve contents of moving photo, error code is ${err.code}, message is ${err.message}`);
+            resolve(false)
+          }
+        });
+      })
+      expect(result).assertFalse()
       done()
     })
 
@@ -192,18 +209,27 @@ export default function MovingPhotoRequestContentTest() {
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
       };
-      const result = await getUriPromiseTest(testName, requestOptions, async (movingPhoto) => {
-        const resourceType: photoAccessHelper.ResourceType = undefined as ESObject
-        await movingPhoto.requestContent(resourceType);
-      });
-      expect(result).assertTrue()
+      const result: boolean = await new Promise((resolve) => {
+        getUriPromiseTest(testName, requestOptions, async (movingPhoto) => {        
+          try {
+            const resourceType: photoAccessHelper.ResourceType = undefined as ESObject
+            await movingPhoto.requestContent(resourceType);
+            console.log("moving photo contents retrieved successfully");
+            resolve(true)
+          } catch (err) {
+            console.error(`failed to retrieve contents of moving photo, error code is ${err.code}, message is ${err.message}`);
+            resolve(false)
+          }
+        });
+      })
+      expect(result).assertFalse()
       done()
     })
 
     /**
      * @tc.name   SUB_MovingPhoto_requestContent_promise_0005
      * @tc.number SUB_MovingPhoto_requestContent_promise_0005
-     * @tc.desc   MovingPhoto_requestContent ResourceType - undefined
+     * @tc.desc   MovingPhoto_requestContent ResourceType - OTHER_RESOURCE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -213,11 +239,20 @@ export default function MovingPhotoRequestContentTest() {
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
       };
-      const result = await getUriPromiseTest(testName, requestOptions, async (movingPhoto) => {
-        const resourceType: photoAccessHelper.ResourceType = 'OTHER_RESOURCE' as ESObject
-        await movingPhoto.requestContent(resourceType);
-      });
-      expect(result).assertTrue()
+      const result: boolean = await new Promise((resolve) => {
+        getUriPromiseTest(testName, requestOptions, async (movingPhoto) => {        
+          try {
+            const resourceType: photoAccessHelper.ResourceType = 'OTHER_RESOURCE' as ESObject
+            await movingPhoto.requestContent(resourceType);
+            console.log("moving photo contents retrieved successfully");
+            resolve(true)
+          } catch (err) {
+            console.error(`failed to retrieve contents of moving photo, error code is ${err.code}, message is ${err.message}`);
+            resolve(false)
+          }
+        });
+      })
+      expect(result).assertFalse()
       done()
     })
   })
