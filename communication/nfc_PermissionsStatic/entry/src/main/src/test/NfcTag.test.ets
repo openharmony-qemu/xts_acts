@@ -167,9 +167,11 @@ export default function nfcTagTest() {
       let AsyncCallback:(err: BusinessError<void> | null, data: tag.TagInfo | undefined) => void = (
         err: BusinessError<void> | null, data: tag.TagInfo | undefined) => {
         if (data !== undefined && data !== null) {
-          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400 uid length: ' + data.uid.length);
-          expect(data.uid.length >= 0).assertTrue();
-          expect(data.technology.length >= 0).assertTrue();
+          let uid: Array<int> = data.uid;
+          let technology: Array<int> = data.technology;
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400 uid readable unexpectedly -> ' + uid);
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400 technology readable unexpectedly -> ' + technology);
+          expect().assertFail();
         }
         hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400 registerForegroundDispatch finish ');
       }
