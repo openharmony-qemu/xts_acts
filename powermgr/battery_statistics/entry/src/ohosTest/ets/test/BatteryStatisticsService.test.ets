@@ -15,8 +15,9 @@
 
 import batteryStatistics from '@ohos.batteryStatistics';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { BusinessError } from '@ohos.base';
 
-export default function BatteryStatisticsServiceTest() {
+export default function BatteryStatisticsServiceTest(): void {
   describe('BatteryStatisticsServiceTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -40,21 +41,24 @@ export default function BatteryStatisticsServiceTest() {
     })
 
     /**
-     * @tc.name   BatteryStatisticsServiceTest_0100
+     * @tc.name   SUB_PowerSystem_BatteryStatisticsService_JSTest_0010
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0010
      * @tc.desc   BatteryStatisticsService stop test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('BatteryStatisticsServiceTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
-      let TAG = 'BatteryStatisticsServiceTest_0100';
+    it('SUB_PowerSystem_BatteryStatisticsService_JSTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let TAG = 'SUB_PowerSystem_BatteryStatisticsService_JSTest_0010';
       try {
         batteryStatistics.getBatteryStats()
-          .then(data => {
+          .then((data: ESObject) => {
             console.info(`${TAG} data: ${data}`);
+            expect().assertFail();
+            done();
           })
-          .catch(error => {
+          .catch((error: BusinessError) => {
             console.error(`${TAG} error: ${JSON.stringify(error)}`);
             expect(error.code).assertEqual(4600101);
             done();
@@ -67,17 +71,18 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
-     * @tc.name   BatteryStatisticsServiceTest_0200
+     * @tc.name   SUB_PowerSystem_BatteryStatisticsService_JSTest_0020
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0020
      * @tc.desc   BatteryStatisticsService stop test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('BatteryStatisticsServiceTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
-      let TAG = 'BatteryStatisticsServiceTest_0200';
+    it('SUB_PowerSystem_BatteryStatisticsService_JSTest_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let TAG = 'SUB_PowerSystem_BatteryStatisticsService_JSTest_0020';
       try {
-        batteryStatistics.getBatteryStats((error, data) => {
+        batteryStatistics.getBatteryStats((error: BusinessError, data: ESObject) => {
           console.info(`${TAG} data: ${data}`);
           console.error(`${TAG} error: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(4600101);
@@ -91,18 +96,20 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
-     * @tc.name   BatteryStatisticsServiceTest_0300
+     * @tc.name   SUB_PowerSystem_BatteryStatisticsService_JSTest_0030
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0030
      * @tc.desc   BatteryStatisticsService stop test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('BatteryStatisticsServiceTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
-      let TAG = 'BatteryStatisticsServiceTest_0300';
+    it('SUB_PowerSystem_BatteryStatisticsService_JSTest_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let TAG = 'SUB_PowerSystem_BatteryStatisticsService_JSTest_0030';
       try {
         let value = batteryStatistics.getAppPowerValue(10021);
         console.info(`${TAG} value: ${value}`);
+        done();
       } catch (error) {
         console.error(`${TAG} error: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(4600101);
@@ -111,18 +118,20 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
-     * @tc.name   BatteryStatisticsServiceTest_0400
+     * @tc.name   SUB_PowerSystem_BatteryStatisticsService_JSTest_0040
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0040
      * @tc.desc   BatteryStatisticsService stop test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('BatteryStatisticsServiceTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
-      let TAG = 'BatteryStatisticsServiceTest_0400';
+    it('SUB_PowerSystem_BatteryStatisticsService_JSTest_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let TAG = 'SUB_PowerSystem_BatteryStatisticsService_JSTest_0040';
       try {
         let percent = batteryStatistics.getAppPowerPercent(10021);
         console.info(`${TAG} percent: ${percent}`);
+        done();
       } catch (error) {
         console.error(`${TAG} error: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(4600101);
@@ -131,18 +140,20 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
-     * @tc.name   BatteryStatisticsServiceTest_0500
+     * @tc.name   SUB_PowerSystem_BatteryStatisticsService_JSTest_0050
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0050
      * @tc.desc   BatteryStatisticsService stop test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('BatteryStatisticsServiceTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
-      let TAG = 'BatteryStatisticsServiceTest_0500';
+    it('SUB_PowerSystem_BatteryStatisticsService_JSTest_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let TAG = 'SUB_PowerSystem_BatteryStatisticsService_JSTest_0050';
       try {
         let powerValue = batteryStatistics.getHardwareUnitPowerValue(batteryStatistics.ConsumptionType.CONSUMPTION_TYPE_SCREEN);
         console.info(`${TAG} powerValue: ${powerValue}`);
+        done();
       } catch (error) {
         console.error(`${TAG} error: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(4600101);
@@ -151,18 +162,20 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
-     * @tc.name   BatteryStatisticsServiceTest_0600
+     * @tc.name   SUB_PowerSystem_BatteryStatisticsService_JSTest_0060
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0060
      * @tc.desc   BatteryStatisticsService stop test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('BatteryStatisticsServiceTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
-      let TAG = 'BatteryStatisticsServiceTest_0600';
+    it('SUB_PowerSystem_BatteryStatisticsService_JSTest_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let TAG = 'SUB_PowerSystem_BatteryStatisticsService_JSTest_0060';
       try {
         let powerPercent = batteryStatistics.getHardwareUnitPowerPercent(batteryStatistics.ConsumptionType.CONSUMPTION_TYPE_SCREEN);
         console.info(`${TAG} powerPercent: ${powerPercent}`);
+        done();
       } catch (error) {
         console.error(`${TAG} error: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(4600101);
