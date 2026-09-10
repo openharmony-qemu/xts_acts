@@ -18,7 +18,7 @@ import featureAbility from '@ohos.ability.featureAbility';
 import bundle from '@ohos.bundle';
 import commonEvent from '@ohos.commonEventManager';
 
-const eventFaDisplayOrientation1000 = 'eventFaDisplayOrientation1000';
+const eventFaDisplayOrientation1000 = 'Event_FA_DisplayOrientation_1000';
 
 let publishEvent = (event: string, parameter: boolean) => {
   commonEvent.publish(event,
