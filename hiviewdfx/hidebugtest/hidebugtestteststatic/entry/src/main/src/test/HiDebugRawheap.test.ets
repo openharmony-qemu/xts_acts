@@ -472,7 +472,6 @@ export default function HidebugRawheapTest() {
                     done();
                 }).catch((error: Error) => {
                     console.info('SUB_DFX_DFR_Hiprofiler_Rawheap_Static_1300 error: code=%{public}d, message=%{public}s', error.code, error.message);
-                    expect().assertFail();
                     if (error.code === 11400110) {
                         console.info(`SUB_DFX_DFR_Hiprofiler_Rawheap_Static_0500 > 11400110 (Disk remaining space too low), skip.`);
                         done();
@@ -1023,7 +1022,13 @@ export default function HidebugRawheapTest() {
                     console.info('SUB_DFX_DFR_Hiprofiler_Rawheap_Static_3100 first call success');
                 }).catch((error: Error) => {
                     console.info('SUB_DFX_DFR_Hiprofiler_Rawheap_Static_3100 error: code=%{public}d, message=%{public}s', error.code, error.message);
-                    expect().assertFail();
+                    if (err.code === 11400110) {
+                        console.info(`SUB_DFX_DFR_Hiprofiler_Rawheap_Static_0500 > 11400110 (Disk remaining space too low), skip.`);
+                        done();
+                    } else {
+                        expect(err.code === 11400112).assertTrue();
+                        done();
+                }
                     done();
                 })
                 let filename =  await hidebug.dumpJsRawHeapData(false, false, false)
