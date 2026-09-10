@@ -317,7 +317,6 @@ export default function abilityTest() {
               .assertEqual('release the first caller successful, release the second caller successful.');
             commonEvent.unsubscribe(subscriber, () => {
               console.info('====>Acts_SingleInstanceCallFunction_0700 unSubscribeCallback');
-              expect().assertFail();
               done();
             });
           }
@@ -358,7 +357,6 @@ export default function abilityTest() {
             expect(data.parameters!.num).assertEqual(KILL_TWO);
             commonEvent.unsubscribe(subscriber, () => {
               console.info('====>Acts_SingleInstanceCallFunction_0800 unSubscribeCallback');
-              expect().assertFail();
               done();
             });
           }
@@ -464,7 +462,6 @@ export default function abilityTest() {
           if (eventCount === 2) {
             commonEvent.unsubscribe(subscriber, () => {
               console.debug('====>Acts_SingleInstanceCallFunction_1000 unSubscribeCallback');
-              expect().assertFail();
               done();
             });
           }
