@@ -40,7 +40,6 @@ struct DatePickerComponentOnScrollStop {
       })
         .id('datePickerComponent_onScrollStop')
         .width('100%')
-        .height('30%')
 
       Text(`onScrollStopTriggered: ${this.onScrollStopTriggered}`)
         .id('text_onScrollStop_triggered')
