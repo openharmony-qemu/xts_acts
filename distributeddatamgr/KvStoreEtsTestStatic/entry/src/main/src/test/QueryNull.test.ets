@@ -494,7 +494,7 @@ export default function QueryNull(){
       console.info(TAG + ' --------- SUB_DDM_SKV_QueryNull_inNumber_0103 begin---------  ');
       try {
         let query: factory.Query | null = new factory.Query();
-        query.inNumber("", [1,2]);
+        query.inNumber("", [1,2] as double[]);
         console.info(TAG + "query is " + query.getSqlLike());
         query.reset();
         console.info(TAG + "query is " + query.getSqlLike());
@@ -522,7 +522,7 @@ export default function QueryNull(){
       console.info(TAG + ' --------- SUB_DDM_SKV_QueryNull_notInNumber_0103 begin---------  ');
       try {
         let query: factory.Query | null = new factory.Query();
-        query.notInNumber("", [1,2]);
+        query.notInNumber("", [1,2] as double[]);
         console.info(TAG + "query is " + query.getSqlLike());
         query.reset();
         console.info(TAG + "query is " + query.getSqlLike());
@@ -911,13 +911,13 @@ export default function QueryNull(){
         qRes = query.isNull("value");
         expect(qRes!=undefined).assertTrue();
 
-        qRes = query.inNumber("field", [0, 1]);
+        qRes = query.inNumber("field", [0, 1] as double[]);
         expect(qRes!=undefined).assertTrue();
 
         qRes = query.inString("field", ['test1', 'test2']);
         expect(qRes!=undefined).assertTrue();
 
-        qRes = query.notInNumber("field", [0, 1]);
+        qRes = query.notInNumber("field", [0, 1] as double[]);
         expect(qRes!=undefined).assertTrue();
 
         qRes = query.notInString("field", ['test1', 'test2']);

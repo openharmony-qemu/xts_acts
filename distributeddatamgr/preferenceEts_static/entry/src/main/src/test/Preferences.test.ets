@@ -1775,7 +1775,7 @@ export default function preferenceTest() {
         await mPreferences!.flush();
         const stringArr = new Array<string>('1', '2', '3');
         await mPreferences!.put(KEY_TEST_STRING_ARRAY_ELEMENT, stringArr);
-        await mPreferences!.get(KEY_TEST_STRING_ARRAY_ELEMENT, ['123', '321']).then((pre : dataPreferences.ValueType): void => {
+        await mPreferences!.get(KEY_TEST_STRING_ARRAY_ELEMENT, ['123', '321'] as Array<string>).then((pre : dataPreferences.ValueType): void => {
           let preTemp = pre as Array<string>;
           for (let i = 0; i < stringArr.length; i++) {
             expect(stringArr[i]).assertEqual(preTemp[i]);

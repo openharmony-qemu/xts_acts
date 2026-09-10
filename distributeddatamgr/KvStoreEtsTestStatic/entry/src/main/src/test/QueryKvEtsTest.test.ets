@@ -720,7 +720,7 @@ export default function queryTest(){
         query = new ddm.Query();
         console.info("typeof([1, 2, 97])" + typeof([1, 2, 97]))
         console.info("typeof([1, 2, 97][0])" + typeof([1, 2, 97][0]))
-        query.inNumber("key", [1, 2, 97]);
+        query.inNumber("key", [1, 2, 97] as double[]);
         console.info("inNumber([1, 2, 97])  => " + query.getSqlLike());
         query.reset();
         query.inNumber("key1", [-1, 3, 987654.123, 0xabc123456] as double[]);
@@ -809,8 +809,8 @@ export default function queryTest(){
       try {
         query = new ddm.Query();
         expect("").assertEqual(query.getSqlLike());
-        query.notInNumber("key", [1, 2]);
-        query.notInNumber("key", [1000]);
+        query.notInNumber("key", [1, 2] as double[]);
+        query.notInNumber("key", [1000] as double[]);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
       } catch (e) {
