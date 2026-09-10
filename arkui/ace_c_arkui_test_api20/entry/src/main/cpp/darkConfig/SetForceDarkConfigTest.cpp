@@ -245,4 +245,48 @@ static napi_value TestSetForceDarkConfigNodeTypeGrid(napi_env env, napi_callback
     NAPI_END;
 }
 
+static napi_value TestGetNodeTypeParam(napi_env env, napi_callback_info info)
+{
+    NAPI_START(column, ARKUI_NODE_COLUMN);
+    ArkUI_NativeNodeAPI_1 *g_nodeAPI = nullptr;
+    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, g_nodeAPI);
+    auto g_handle1 = g_nodeAPI->createNode(ARKUI_NODE_ARC_ALPHABET_INDEXER);
+    auto result1 = OH_ArkUI_NodeUtils_GetNodeType(g_handle1);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "OH_ArkUI_NodeUtils_GetNodeType ARKUI_NODE_ARC_ALPHABET_INDEXER result=%{public}d", result1);
+    ASSERT_EQ(result1, ARKUI_NODE_ARC_ALPHABET_INDEXER);
+    
+    auto g_handle2 = g_nodeAPI->createNode(ARKUI_NODE_ARC_LIST);
+    auto result2 = OH_ArkUI_NodeUtils_GetNodeType(g_handle2);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "OH_ArkUI_NodeUtils_GetNodeType ARKUI_NODE_ARC_LIST result=%{public}d", result2);
+    ASSERT_EQ(result2, ARKUI_NODE_ARC_LIST);
+    
+    auto g_handle3 = g_nodeAPI->createNode(ARKUI_NODE_ARC_LIST_ITEM);
+    auto result3 = OH_ArkUI_NodeUtils_GetNodeType(g_handle3);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "OH_ArkUI_NodeUtils_GetNodeType ARKUI_NODE_ARC_LIST_ITEM result=%{public}d", g_handle3);
+    ASSERT_EQ(result3, ARKUI_NODE_ARC_LIST_ITEM);
+    
+    auto g_handle4 = g_nodeAPI->createNode(ARKUI_NODE_ARC_SCROLL_BAR);
+    auto result4 = OH_ArkUI_NodeUtils_GetNodeType(g_handle4);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "OH_ArkUI_NodeUtils_GetNodeType ARKUI_NODE_ARC_SCROLL_BAR result=%{public}d", result4);
+    ASSERT_EQ(result4, ARKUI_NODE_ARC_SCROLL_BAR);
+    
+    auto g_handle5 = g_nodeAPI->createNode(ARKUI_NODE_TEXT_EDITOR);
+    auto result5 = OH_ArkUI_NodeUtils_GetNodeType(g_handle5);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "OH_ArkUI_NodeUtils_GetNodeType ARKUI_NODE_TEXT_EDITOR result=%{public}d", result5);
+    ASSERT_EQ(result5, ARKUI_NODE_TEXT_EDITOR);
+    
+    auto g_handle6 = g_nodeAPI->createNode(ARKUI_NODE_ARC_SWIPER);
+    auto result6 = OH_ArkUI_NodeUtils_GetNodeType(g_handle6);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "OH_ArkUI_NodeUtils_GetNodeType ARKUI_NODE_ARC_SWIPER result=%{public}d", result6);
+    ASSERT_EQ(result6, ARKUI_NODE_ARC_SWIPER);
+
+    NAPI_END;
+}
+
 } // namespace ArkUICapiTest
