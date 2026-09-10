@@ -13,14 +13,14 @@
  * limitations under the License.
  */
 //父组件传递对象给子组件的@Param变量，修改父组件的属性值
-class RawObject {
+export class RawObject {
   name: string;
   constructor(name: string) {
     this.name = name;
   }
 }
 @ObservedV2
-class ObservedObject {
+export class ObservedObject {
   @Trace name: string;
   constructor(name: string) {
     this.name = name;
