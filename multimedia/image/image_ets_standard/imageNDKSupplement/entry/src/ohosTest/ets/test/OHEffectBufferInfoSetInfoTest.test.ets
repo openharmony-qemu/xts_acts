@@ -427,15 +427,15 @@ export default function OHEffectBufferInfoSetInfoTest() {
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_005
-     * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_005
+     * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_0500
+     * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_0500
      * @tc.desc    OHEffectBufferInfoGetRowSize-EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_005', Level.LEVEL0, () => {
-      const testName = "SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_005"
+    it('SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_0500', Level.LEVEL0, () => {
+      const testName = "SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_0500"
       console.info(TAG, testName, 'Start',);
       let result: number = testNapi.OHEffectBufferInfoGetRowSizeTest(CASE_INDEX_5);
       console.info(TAG, testName, 'Success', JSON.stringify(result));
