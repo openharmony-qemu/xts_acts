@@ -23,7 +23,9 @@ struct AccessibilityThirdFramework {
     '\n' +
     '预期结果：\n' +
     '若支持屏幕朗读，则下滑期间绿框会在黑色区域中绘制。若不支持屏幕朗读，直接按照失败处理走豁免。';
-  @State Vue: boolean = true;
+  @State Vue: boolean = false;
+  @State step1: boolean = false;
+  @State step2: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -111,8 +113,7 @@ struct AccessibilityThirdFramework {
 
   onPageShow() {
     this.intervalNum = setInterval(() => {
-      if (this.text1 === 'HOVER_ENTER' && this.text2 === 'HOVER_MOVE' && this.text3 === 'HOVER_EXIT' &&
-        this.text4 === 'HOVER_CANCEL') {
+      if (this.step1 && this.step2) {
         this.Vue = true;
       }
     }, 500)
@@ -162,6 +163,9 @@ struct AccessibilityThirdFramework {
           .borderRadius(8)
           .backgroundColor(0x317aff)
           .width('30%')
+          .onClick(() => {
+            this.step1 = true
+          })
 
         // 业务代码
         Column() {
@@ -191,6 +195,9 @@ struct AccessibilityThirdFramework {
           .borderRadius(8)
           .backgroundColor(0x317aff)
           .width('30%')
+          .onClick(() => {
+            this.step2 = true
+          })
       }.height('80%')
       .width('100%')
       .backgroundColor(Color.White)

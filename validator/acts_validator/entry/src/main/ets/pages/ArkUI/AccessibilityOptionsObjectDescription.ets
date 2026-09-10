@@ -36,6 +36,8 @@ struct AccessibilityOptionsObjectDescription {
   @State checkbox1Flag: boolean = true;
   @State checkbox2Flag: boolean = true;
   @State vueStatus: boolean = false;
+  @State step1: boolean = false;
+  @State step2: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -109,6 +111,14 @@ struct AccessibilityOptionsObjectDescription {
     FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
+  onPageShow() {
+    this.intervalNum = setInterval(() => {
+      if (this.step1 && this.step2) {
+        this.vueStatus = true;
+      }
+    }, 500)
+  }
+
   onPageHide() {
     clearInterval(this.intervalNum)
   }
@@ -173,7 +183,6 @@ struct AccessibilityOptionsObjectDescription {
               .onClick(async () => {
                 this.yesEnable = true
                 this.onAccessibilityHoverEnable = true
-                this.vueStatus=true
               })
           }
         }
@@ -197,7 +206,7 @@ struct AccessibilityOptionsObjectDescription {
                   .shape(CheckBoxShape.CIRCLE)
                   .onChange((value: boolean) => {
                     console.info('Checkbox3 change is' + value);
-                    this.vueStatus=true
+                    this.step1 = true
                   })
                   .id("checkBoxTest1")
               }
@@ -222,14 +231,14 @@ struct AccessibilityOptionsObjectDescription {
                   .shape(CheckBoxShape.CIRCLE)
                   .onChange((value: boolean) => {
                     console.info('Checkbox3 change is' + value);
-                    this.vueStatus=true
+                    this.step2 = true
                   })
                 Toggle({ type: ToggleType.Switch, isOn: true })
                   .selectedColor('#007DFF')
                   .switchPointColor('#FFFFFF')
                   .onChange((isOn: boolean) => {
                     console.info('Component status:' + isOn);
-                    this.vueStatus=true
+                    this.step2 = true
                   })
                   .id("toggleTest1")
 

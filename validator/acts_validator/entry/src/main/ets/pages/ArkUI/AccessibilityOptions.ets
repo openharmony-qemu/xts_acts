@@ -35,6 +35,12 @@ struct AccessibilityOptions {
     '5、绿框绘制在组件上，屏幕朗读朗读“有accessibility有text btn123按钮”\n' +
     '6、绿框绘制在组件上，屏幕朗读朗读“btn123按钮”';
   @State vueStatus: boolean = false;
+  @State step1: boolean = false;
+  @State step2: boolean = false;
+  @State step3: boolean = false;
+  @State step4: boolean = false;
+  @State step5: boolean = false;
+  @State step6: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -108,6 +114,14 @@ struct AccessibilityOptions {
     FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
+  onPageShow() {
+    this.intervalNum = setInterval(() => {
+      if (this.step1 && this.step2 && this.step3 && this.step4 && this.step5 && this.step6) {
+        this.vueStatus = true;
+      }
+    }, 500)
+  }
+
   onPageHide() {
     clearInterval(this.intervalNum)
   }
@@ -172,7 +186,6 @@ struct AccessibilityOptions {
               .onClick(async () => {
                 this.yesEnable = true
                 this.onAccessibilityHoverEnable = true
-                this.vueStatus=true
               })
           }
         }
@@ -183,11 +196,41 @@ struct AccessibilityOptions {
             .borderRadius(5)
             .accessibilityText("有accessibility有text优先读accessibility")
             .accessibilityLevel("yes").height('9%')
+            .onAccessibilityHover((isHover: boolean) => {
+              if (isHover) {
+                this.step1 = true
+              }
+            })
           Button().accessibilityLevel("yes").accessibilityText("accessibility无text 读accessibility").height('9%')
+            .onAccessibilityHover((isHover: boolean) => {
+              if (isHover) {
+                this.step2 = true
+              }
+            })
           Button("无accessibility有text 读text").accessibilityLevel("yes").height('9%')
+            .onAccessibilityHover((isHover: boolean) => {
+              if (isHover) {
+                this.step3 = true
+              }
+            })
           Button().height('9%')
+            .onAccessibilityHover((isHover: boolean) => {
+              if (isHover) {
+                this.step4 = true
+              }
+            })
           Button('btnl23').accessibilityText("有accessibility有text btn123").accessibilityLevel("yes").height('9%')
+            .onAccessibilityHover((isHover: boolean) => {
+              if (isHover) {
+                this.step5 = true
+              }
+            })
           Button('btn123').accessibilityLevel("yes").height('9%')
+            .onAccessibilityHover((isHover: boolean) => {
+              if (isHover) {
+                this.step6 = true
+              }
+            })
         }
         .accessibilityGroup(true, { accessibilityPreferred: true })
       }.height('70%')

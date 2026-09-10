@@ -39,6 +39,18 @@ struct AccessibilityProperty {
     '11、绿框绘制在组件上，屏幕朗读朗读“accessibilitySelected false Checked undefined”\n' +
     '12、绿框绘制在组件上，屏幕朗读朗读“accessibilitySelected undefined Checked undefined”';
   @State vueStatus: boolean = false;
+  @State step1: boolean = false;
+  @State step2: boolean = false;
+  @State step3: boolean = false;
+  @State step4: boolean = false;
+  @State step5: boolean = false;
+  @State step6: boolean = false;
+  @State step7: boolean = false;
+  @State step8: boolean = false;
+  @State step9: boolean = false;
+  @State step10: boolean = false;
+  @State step11: boolean = false;
+  @State step12: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -112,6 +124,15 @@ struct AccessibilityProperty {
     FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
+  onPageShow() {
+    this.intervalNum = setInterval(() => {
+      if (this.step1 && this.step2 && this.step3 && this.step4 && this.step5 && this.step6 &&
+        this.step7 && this.step8 && this.step9 && this.step10 && this.step11 && this.step12) {
+        this.vueStatus = true;
+      }
+    }, 500)
+  }
+
   onPageHide() {
     clearInterval(this.intervalNum)
   }
@@ -176,29 +197,58 @@ struct AccessibilityProperty {
               .onClick(async () => {
                 this.yesEnable = true
                 this.onAccessibilityHoverEnable = true
-                this.vueStatus=true
               })
           }
         }
 
-        Text('checkable测试(true)').accessibilityChecked(true);
-        Text('checkable测试(false)').accessibilityChecked(false);
-        Text('checkable测试(undefined)').accessibilityChecked(undefined);
+        Text('checkable测试(true)').accessibilityChecked(true)
+          .onAccessibilityHover((isHover: boolean) => {
+            if (isHover) {
+              this.step1 = true
+            }
+          });
+        Text('checkable测试(false)').accessibilityChecked(false)
+          .onAccessibilityHover((isHover: boolean) => {
+            if (isHover) {
+              this.step2 = true
+            }
+          });
+        Text('checkable测试(undefined)').accessibilityChecked(undefined)
+          .onAccessibilityHover((isHover: boolean) => {
+            if (isHover) {
+              this.step3 = true
+            }
+          });
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected true')
             .accessibilitySelected(true)
         }
+        .onAccessibilityHover((isHover: boolean) => {
+          if (isHover) {
+            this.step4 = true
+          }
+        })
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected false')
             .accessibilitySelected(false)
         }
+        .onAccessibilityHover((isHover: boolean) => {
+          if (isHover) {
+            this.step5 = true
+          }
+        })
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected undefined')
             .accessibilitySelected(undefined)
         }
+        .onAccessibilityHover((isHover: boolean) => {
+          if (isHover) {
+            this.step6 = true
+          }
+        })
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
@@ -213,6 +263,11 @@ struct AccessibilityProperty {
             .accessibilitySelected(undefined)
           Text('accessibilityChecked true Select undefined')
         }
+        .onAccessibilityHover((isHover: boolean) => {
+          if (isHover) {
+            this.step7 = true
+          }
+        })
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
@@ -227,6 +282,11 @@ struct AccessibilityProperty {
             .accessibilitySelected(undefined)
           Text('accessibilityChecked false Select undefined')
         }
+        .onAccessibilityHover((isHover: boolean) => {
+          if (isHover) {
+            this.step8 = true
+          }
+        })
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
@@ -241,24 +301,44 @@ struct AccessibilityProperty {
             .accessibilitySelected(undefined)
           Text('accessibilityChecked undefined Select undefined')
         }
+        .onAccessibilityHover((isHover: boolean) => {
+          if (isHover) {
+            this.step9 = true
+          }
+        })
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected true Checked undefined')
             .accessibilitySelected(true)
             .accessibilityChecked(undefined)
         }
+        .onAccessibilityHover((isHover: boolean) => {
+          if (isHover) {
+            this.step10 = true
+          }
+        })
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected false Checked undefined')
             .accessibilitySelected(false)
             .accessibilityChecked(undefined)
         }
+        .onAccessibilityHover((isHover: boolean) => {
+          if (isHover) {
+            this.step11 = true
+          }
+        })
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected undefined Checked undefined')
             .accessibilitySelected(undefined)
             .accessibilityChecked(undefined)
         }
+        .onAccessibilityHover((isHover: boolean) => {
+          if (isHover) {
+            this.step12 = true
+          }
+        })
       }.height('70%')
       .width('100%')
       .backgroundColor(Color.White)
