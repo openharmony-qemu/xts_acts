@@ -135,7 +135,6 @@ export default function webViewControllerJsunit2() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webcomponent',10,'');
       await Utils.msSleep(8000);
-      done();
     })
 
     /**
@@ -155,7 +154,6 @@ export default function webViewControllerJsunit2() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webcomponent',10,'');
       await Utils.msSleep(8000);
-      done();
     })
 
     /**
