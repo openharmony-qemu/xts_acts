@@ -27,12 +27,12 @@ import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-export default function RepeatReusableFalse(): void {
+export default function RepeatReusableFalse1(): void {
   describe('RepeatReusableFalse', () => {
     beforeEach(async (): Promise<void> => {
       console.info("RepeatReusableFalse beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/Reusable/RepeatReusableFalse",
+        url: "MainAbility/pages/Reusable/RepeatReusableFalse1",
       }
       try {
         const RepeatReusableFalse = AppStorage.get<Router>("router") as Router

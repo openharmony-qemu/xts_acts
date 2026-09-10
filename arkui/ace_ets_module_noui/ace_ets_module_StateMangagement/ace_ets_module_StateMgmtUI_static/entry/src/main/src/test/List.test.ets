@@ -38,8 +38,8 @@ import ExtendableStackBuiltInTest from './ExtendBuiltIn/ExtendableStackBuiltInTe
 import ExtendableStackBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableStackBuiltInUndefinedTest.test';
 import ExtendableTextBuiltInTest from './ExtendBuiltIn/ExtendableTextBuiltInTest.test';
 import ExtendableToggleBuiltInTest from './ExtendBuiltIn/ExtendableToggleBuiltInTest.test';
-import RepeatReusableFalse from './ReusableTest/RepeatReusableFalse.test';
-import RepeatReusableTrue from './ReusableTest/RepeatReusableTrue.test';
+import RepeatReusableFalse1 from './ReusableTest/RepeatReusableFalse1.test';
+import RepeatReusableTrue1 from './ReusableTest/RepeatReusableTrue1.test';
 import SVDeepListenMakeObservedTest from './stateVariableDeepListen/SVDeepListenMakeObservedTest.test';
 import SVDeepListenMakeObservedFalseTest from './stateVariableDeepListen/SVDeepListenMakeObservedFalseTest.test';
 import SVDeepListenObservedAndObjectlinkTest
@@ -84,8 +84,8 @@ export default function testsuite() {
   StaticCoverageDecoratorTest();
   StaticCoverageStorageTest();
   StaticCoverageUtilsTest();
-  //RepeatReusableFalse(); 
-  //RepeatReusableTrue(); 
+  //RepeatReusableFalse1(); 
+  //RepeatReusableTrue1(); 
   GlobalReusePool004Test();
   SVDeepListenMakeObservedTest();
   SVDeepListenMakeObservedFalseTest();
