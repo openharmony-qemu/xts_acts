@@ -436,15 +436,17 @@ export default function rdbrootDirTest() {
         rootDir: "/data/storage/el2/database",
         customDir: "relationalstore/rdb"
       }
+      let num = 0;
       data_relationalStore.deleteRdbStore(context, STORE_CONFIG1, async(err) => {
         if (err) {
           console.log(TAG+ "catch err: failed, err: code=" + err.code + " message=" + err.message)
           expect().assertFail();
           done()
         } else {
+          num += 1;
           rdbStore = undefined
           console.log(TAG + "delete rdbstore success"+rdbStore);
-          expect(rdbStore).assertEqual(undefined)
+          expect(num).assertEqual(1)
           done()
         }
       })
