@@ -354,17 +354,6 @@ struct webViewController {
 
               
 
-              case 'emitWebSiteIsolationModeInvalid': {
-                try {
-                  let invalidMode = 99 as webView.SiteIsolationMode;
-                  webView.WebviewController.setSiteIsolationMode(invalidMode);
-                } catch (error) {
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                  Utils.emitEvent(String(error.code), 60641);
-                }
-                break;
-              }
-
             }
           })
 

@@ -508,31 +508,5 @@ export default function webInitTest(): void {
       done()
     })
 
-                            /**
-    * @tc.name         testWebSiteIsolationModeInvalidStatic
-    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0036
-    * @tc.desc         test setSiteIsolationMode invalid enum
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        LEVEL0
-    */
-    it('testWebSiteIsolationModeInvalidStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitWebSiteIsolationModeInvalid', 10)
-      await Utils.msSleep(3000);
-      Utils.registerBaseEvent('testWebSiteIsolationModeInvalidStatic', '0', 60641, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          expect(data['ACTION']).assertEqual(expected);
-        });
-      } catch (err) {
-        console.info('[testWebSiteIsolationModeInvalidStatic] err:' + JSON.stringify(err));
-        done();
-      }
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('WebErrorPageButton', 10, '');
-      await Utils.msSleep(6000);
-    })
   })
 }

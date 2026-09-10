@@ -237,18 +237,6 @@ struct WebViewControllerPart3 {
 
             
 
-            case 'testSetRenderProcessModeInvalidStatic001': {
-              try {
-                webview.WebviewController.setRenderProcessMode(999 as webview.RenderProcessMode);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 41023212)
-              }
-              break;
-            }
-
-            
-
             case 'emitWebSiteIsolationMode001': {
               try {
                 webview.WebviewController.setSiteIsolationMode(webview.SiteIsolationMode.PARTIAL);

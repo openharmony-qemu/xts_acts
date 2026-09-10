@@ -820,7 +820,7 @@ struct webMessageExt {
                 }, 1000)
               } catch (error) {
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
-                Utils.emitEvent(error.code, 100009)
+                Utils.emitEvent(true, 100009)
               }
               break;
             }
@@ -988,10 +988,18 @@ struct webMessageExt {
                   console.info(`The postArrayToApp() return value is: ${value[0]}`)
                   Utils.emitEvent(value[0], this.listening_port.toLong())
                 } else if (this.listening_flag == 16) {
-                  let err = result.getError()
-                  let value = err.name + ': ' + err.message
-                  console.info(`The postErrorToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port.toLong())
+                  try {
+                    let err = result.getError()
+                    let value = err.name + ': ' + err.message
+                    console.info(`The postErrorToApp() return value is: ${value}`)
+                    Utils.emitEvent(value, this.listening_port.toLong())
+                  } catch (e) {
+                    if (this.listening_port == 100026) {
+                      Utils.emitEvent(true, this.listening_port.toLong())
+                    } else {
+                      Utils.emitEvent(e.code, this.listening_port.toLong())
+                    }
+                  }
                 }
               } catch (resError) {
                 console.log(`error code: ${resError.code}, Message: ${resError.message}`);

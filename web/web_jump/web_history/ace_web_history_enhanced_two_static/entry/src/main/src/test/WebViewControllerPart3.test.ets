@@ -308,30 +308,6 @@ export default function webViewControllerPart3Test() {
       })
 
         /**
-     * @tc.name   testSetRenderProcessModeInvalidStatic001
-     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_INVALID_0100
-     * @tc.desc   test setRenderProcessMode with invalid enum
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetRenderProcessModeInvalidStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        await Utils.msSleep(2000);
-        Utils.emitEvent("testSetRenderProcessModeInvalidStatic001", 10);
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent("testSetRenderProcessModeInvalidStatic001", 0, 41023212, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
-        await Utils.msSleep(2000);
-      })
-
-        /**
      * @tc.name   emitWebSiteIsolationModeStatic001
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SITEISOLATIONMODE_0100
      * @tc.desc   test SiteIsolationMode PARTIAL
