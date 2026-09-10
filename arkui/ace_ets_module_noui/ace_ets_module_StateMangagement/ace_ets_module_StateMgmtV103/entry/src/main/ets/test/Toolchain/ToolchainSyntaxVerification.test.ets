@@ -107,7 +107,7 @@ export default function ToolchainSyntaxVerification() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_TOOLCHAIN_WRITING_0100', Level.LEVEL2, () => {
+    it('SUB_ARKUI_TOOLCHAIN_WRITING_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0100] START');
       try {
         const name: string = 'test'
@@ -125,6 +125,7 @@ export default function ToolchainSyntaxVerification() {
       }
 
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0100] END');
+      done()
     });
 
     /**
@@ -135,7 +136,7 @@ export default function ToolchainSyntaxVerification() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_TOOLCHAIN_WRITING_0200', Level.LEVEL2, () => {
+    it('SUB_ARKUI_TOOLCHAIN_WRITING_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0200] START');
       try {
         const multiplyAB = new MathUtils(2,3)
@@ -145,6 +146,7 @@ export default function ToolchainSyntaxVerification() {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0200 error:" + err);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0200] END');
+      done()
     });
 
     /**
@@ -155,7 +157,7 @@ export default function ToolchainSyntaxVerification() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_TOOLCHAIN_WRITING_0300', Level.LEVEL2, () => {
+    it('SUB_ARKUI_TOOLCHAIN_WRITING_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0300] START');
       try {
         expect(arrowFunction().double).assertEqual(10);
@@ -166,6 +168,7 @@ export default function ToolchainSyntaxVerification() {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0300 error:" + err);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0300] END');
+      done()
     });
 
     /**
@@ -176,7 +179,7 @@ export default function ToolchainSyntaxVerification() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_TOOLCHAIN_WRITING_0400', Level.LEVEL2, () => {
+    it('SUB_ARKUI_TOOLCHAIN_WRITING_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0400] START');
       try {
         const obj: MyClass | null = new MyClass();
@@ -186,6 +189,7 @@ export default function ToolchainSyntaxVerification() {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0400 error:" + err);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0400] END');
+      done()
     });
 
     /**
@@ -196,7 +200,7 @@ export default function ToolchainSyntaxVerification() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_TOOLCHAIN_WRITING_0500', Level.LEVEL2, () => {
+    it('SUB_ARKUI_TOOLCHAIN_WRITING_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0500] START');
       try {
         const foo: string | null | undefined = 'Hello';
@@ -207,6 +211,7 @@ export default function ToolchainSyntaxVerification() {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0500 error:" + err);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0500] END');
+      done()
     });
 
     /**
@@ -217,7 +222,7 @@ export default function ToolchainSyntaxVerification() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_TOOLCHAIN_WRITING_0600', Level.LEVEL2, () => {
+    it('SUB_ARKUI_TOOLCHAIN_WRITING_0600', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0600] START');
       try {
         expect(fn(1)).assertEqual(21);
@@ -226,6 +231,7 @@ export default function ToolchainSyntaxVerification() {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0600 error:" + err);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0600] END');
+      done()
     });
 
     /**
@@ -236,7 +242,7 @@ export default function ToolchainSyntaxVerification() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_TOOLCHAIN_WRITING_0700', Level.LEVEL2, () => {
+    it('SUB_ARKUI_TOOLCHAIN_WRITING_0700', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0700] START');
       try {
         let message: string = 'Hello World';
@@ -246,6 +252,7 @@ export default function ToolchainSyntaxVerification() {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0700 error:" + err);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0700] END');
+      done()
     });
 
     /**
@@ -256,7 +263,7 @@ export default function ToolchainSyntaxVerification() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_TOOLCHAIN_WRITING_0800', Level.LEVEL2, () => {
+    it('SUB_ARKUI_TOOLCHAIN_WRITING_0800', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0800] START');
       try {
         expect(arrayMerge().firstArr.toString()).assertEqual('1,2');
@@ -268,6 +275,7 @@ export default function ToolchainSyntaxVerification() {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0800 error:" + err);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0800] END');
+      done()
     });
   })
 }
