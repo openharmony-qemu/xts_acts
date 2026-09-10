@@ -15,12 +15,11 @@
 
 import hilog from '@ohos.hilog';
 
-class ApplicationLifecycle {
-  onCreate(): void {
+export default {
+  onCreate() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Application onCreate');
-  }
-  onDestroy(): void {
+  },
+  onDestroy() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Application onDestroy');
-  }
+  },
 }
-export default new ApplicationLifecycle()
