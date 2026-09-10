@@ -574,14 +574,14 @@ export default function removeAssetsTest () {
 
     /**
       * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1500
-      * @tc.name   removeAssets_callback_015
+      * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_CALLBACK_015
       * @tc.desc   remove asset from source enhancement album,error code 13900020
       * @tc.size   MEDIUM
       * @tc.type   Function
       * @tc.level  Level 2
     */
-    it('removeAssets_callback_015', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'removeAssets_callback_015';
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_CALLBACK_015', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_CALLBACK_015';
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SOURCE, albumSubtype.SOURCE_GENERIC);
         let assetNames: Array<string> = [
@@ -1263,14 +1263,14 @@ export default function removeAssetsTest () {
 
     /**
       * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1500
-      * @tc.name   removeAssets_promise_015
+      * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_015
       * @tc.desc   remove asset from source enhancement album,error code 13900020
       * @tc.size   MEDIUM
       * @tc.type   Function
       * @tc.level  Level 2
     */
-    it('removeAssets_callback_015', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'removeAssets_promise_015';
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_015', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_015';
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SOURCE, albumSubtype.SOURCE_GENERIC);
         let assetNames: Array<string> = [

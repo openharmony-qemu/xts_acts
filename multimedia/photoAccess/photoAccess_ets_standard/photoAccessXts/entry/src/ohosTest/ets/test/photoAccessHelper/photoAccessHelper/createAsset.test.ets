@@ -361,15 +361,15 @@ export default function createAssetTest() {
     })
 
     /**
-     * @tc.name   createAsset_callback_image_ops_abnormal_006
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_006
      * @tc.number PHOTO_ACCESS_HELPER_CREATE_ASSET_053
      * @tc.desc   callback, image, with options, subtype-> null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
      */
-    it('createAsset_callback_image_ops_abnormal_006', Level.LEVEL4, async (done: Function) => {
-      const testName = 'createAsset_callback_image_ops_abnormal_006';
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_006', Level.LEVEL4, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_006';
       console.info(TAG, testName);
       const type = null;
       const extension = 'jpg';
@@ -381,15 +381,15 @@ export default function createAssetTest() {
     })
 
     /**
-     * @tc.name   createAsset_callback_image_ops_abnormal_007
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_007
      * @tc.number PHOTO_ACCESS_HELPER_CREATE_ASSET_054
      * @tc.desc   callback, image, with options-> null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
      */
-    it('createAsset_callback_image_ops_abnormal_007', Level.LEVEL4, async (done: Function) => {
-      const testName = 'createAsset_callback_image_ops_abnormal_007';
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_007', Level.LEVEL4, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_007';
       console.info(TAG, testName);
       const type = null;
       const extension = 'jpg';
@@ -398,15 +398,15 @@ export default function createAssetTest() {
     })
 
     /**
-     * @tc.name   createAsset_callback_image_ops_abnormal_008
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_008
      * @tc.number PHOTO_ACCESS_HELPER_CREATE_ASSET_055
      * @tc.desc   callback, image, with options,subtype -> null,success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
      */
-    it('createAsset_callback_image_ops_abnormal_008', Level.LEVEL4, async (done: Function) => {
-      const testName = 'createAsset_callback_image_ops_abnormal_008';
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_008', Level.LEVEL4, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_008';
       console.info(TAG, testName);
       const type: photoAccessHelper.PhotoType = photoType.IMAGE;
       const extension = 'jpg';
@@ -434,15 +434,15 @@ export default function createAssetTest() {
     })
 
     /**
-     * @tc.name   createAsset_callback_image_ops_abnormal_009
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_009
      * @tc.number PHOTO_ACCESS_HELPER_CREATE_ASSET_056
      * @tc.desc   callback, image, with options,subtype -> '',success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
      */
-    it('createAsset_callback_image_ops_abnormal_009', Level.LEVEL4, async (done: Function) => {
-      const testName = 'createAsset_callback_image_ops_abnormal_009';
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_009', Level.LEVEL4, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_009';
       console.info(TAG, testName);
       const type: photoAccessHelper.PhotoType = photoType.IMAGE;
       const extension = 'jpg';
@@ -470,15 +470,15 @@ export default function createAssetTest() {
     })
 
     /**
-     * @tc.name   createAsset_callback_image_ops_abnormal_010
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_010
      * @tc.number PHOTO_ACCESS_HELPER_CREATE_ASSET_057
      * @tc.desc   callback, image, with options,subtype -> -1,success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
      */
-    it('createAsset_callback_image_ops_abnormal_010', Level.LEVEL4, async (done: Function) => {
-      const testName = 'createAsset_callback_image_ops_abnormal_010';
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_010', Level.LEVEL4, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_010';
       console.info(TAG, testName);
       const type: photoAccessHelper.PhotoType = photoType.IMAGE;
       const extension = 'jpg';
@@ -978,15 +978,15 @@ export default function createAssetTest() {
     })
 
     /**
-     * @tc.name   createAsset_promise_image_ops_abnormal_006
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_006
      * @tc.number PHOTO_ACCESS_HELPER_CREATE_ASSET_058
      * @tc.desc   promise, image, with options -> null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('createAsset_promise_image_ops_abnormal_006', Level.LEVEL0, async (done: Function) => {
-      const testName = 'createAsset_promise_image_ops_abnormal_006';
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_006';
       console.info(TAG, testName);
       const type: photoAccessHelper.PhotoType = photoType.IMAGE;
       const extension = 'jpg';
@@ -995,15 +995,15 @@ export default function createAssetTest() {
     })
 
     /**
-     * @tc.name   createAsset_promise_image_ops_abnormal_007
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_007
      * @tc.number PHOTO_ACCESS_HELPER_CREATE_ASSET_059
      * @tc.desc   promise, image, with options -> null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('createAsset_promise_image_ops_abnormal_007', Level.LEVEL0, async (done: Function) => {
-      const testName = 'createAsset_promise_image_ops_abnormal_007';
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_007';
       const photoType: photoAccessHelper.PhotoType = photoType.IMAGE;
       const extension = 'jpg';
       const options: photoAccessHelper.CreateOptions = {
@@ -1023,15 +1023,15 @@ export default function createAssetTest() {
     })
 
     /**
-     * @tc.name   createAsset_promise_image_ops_abnormal_008
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_008
      * @tc.number PHOTO_ACCESS_HELPER_CREATE_ASSET_060
      * @tc.desc   promise, image, with options -> '', success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('createAsset_promise_image_ops_abnormal_008', Level.LEVEL0, async (done: Function) => {
-      const testName = 'createAsset_promise_image_ops_abnormal_008';
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_008';
       const photoType: photoAccessHelper.PhotoType = photoType.IMAGE;
       const extension = 'jpg';
       const options: photoAccessHelper.CreateOptions = {
@@ -1051,15 +1051,15 @@ export default function createAssetTest() {
     })
 
     /**
-     * @tc.name   createAsset_promise_image_ops_abnormal_009
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009
      * @tc.number PHOTO_ACCESS_HELPER_CREATE_ASSET_061
      * @tc.desc   promise, image, with options -> -1, success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('createAsset_promise_image_ops_abnormal_009', Level.LEVEL0, async (done: Function) => {
-      const testName = 'createAsset_promise_image_ops_abnormal_009';
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009';
       const photoType: photoAccessHelper.PhotoType = photoType.IMAGE;
       const extension = 'jpg';
       const options: photoAccessHelper.CreateOptions = {

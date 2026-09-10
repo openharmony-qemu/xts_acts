@@ -699,15 +699,15 @@ export default function albumCommitModifyTest () {
     })
 
         /**
-     * @tc.name   album_commitModify_promise_007
-     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0400
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_007
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0700
      * @tc.desc   commitModify with source album source generic album
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('album_commitModify_promise_007', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'album_commitModify_promise_007';
+    it('SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_007', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_007';
       let fetchResult: ESObject = await helper.getAlbums(albumType.SOURCE, albumSubtype.SOURCE_GENERIC);
       console.info(`${testNum} fetchResult count is ${fetchResult.getCount()}`);
       let album: photoAccessHelper.Album = await fetchResult.getLastObject();
