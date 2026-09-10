@@ -370,14 +370,14 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_005
-     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_005
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_0500
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_0500
      * @tc.desc    OHEffectFilterInfoGetSupportedFormats EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_005', Level.LEVEL0, () => {
+    it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_FORMATS_0500', Level.LEVEL0, () => {
       console.info(TAG,'Start')
       let result: number = testNapi.OHEffectFilterInfoGetSupportedFormatsSuppTest(CASE_INDEX_5);
       console.info(TAG, 'Success', JSON.stringify(result));
