@@ -37,15 +37,15 @@ export default function showDefaultSelectedIconTest() {
     });
 
     /**
-     * @tc.name   showDefaultSelectedIcon_value_0001
-     * @tc.number showDefaultSelectedIcon_value_0001
+     * @tc.name   SUB_ACE_Select_showDefaultSelectedIcon_0100
+     * @tc.number SUB_ACE_Select_showDefaultSelectedIcon_0100
      * @tc.desc   set showDefaultSelectedIcon:false,levelUniqueId: Normal value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('showDefaultSelectedIcon_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info('showDefaultSelectedIcon_value_0001 START');
+    it('SUB_ACE_Select_showDefaultSelectedIcon_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0100 START');
       let driver: Driver = Driver.create();
       await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
@@ -53,23 +53,23 @@ export default function showDefaultSelectedIconTest() {
       await button.click();
       await Utils.sleep(SLEEP_TIME);
       let selectValue = getInspectorByKey('select');
-      console.info('showDefaultSelectedIcon_value_0001' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0100 ' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
       expect(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon).assertEqual('false'); 
       await Utils.sleep(SLEEP_TIME);
-      console.info('showDefaultSelectedIcon_value_0001 END');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0100 END');
       done();
     });
 
     /**
-     * @tc.name   showDefaultSelectedIcon_value_0002
-     * @tc.number showDefaultSelectedIcon_value_0002
+     * @tc.name   SUB_ACE_Select_showDefaultSelectedIcon_0200
+     * @tc.number SUB_ACE_Select_showDefaultSelectedIcon_0200
      * @tc.desc   set showDefaultSelectedIcon:true,levelUniqueId: Normal value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('showDefaultSelectedIcon_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info('showDefaultSelectedIcon_value_0002 START');
+    it('SUB_ACE_Select_showDefaultSelectedIcon_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0200 START');
       let driver: Driver = Driver.create();
       await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
@@ -77,23 +77,23 @@ export default function showDefaultSelectedIconTest() {
       await button.click();
       await Utils.sleep(SLEEP_TIME);
       let selectValue = getInspectorByKey('select');
-      console.info('showDefaultSelectedIcon_value_0002' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0200' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
       expect(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon).assertEqual('true');
       await Utils.sleep(SLEEP_TIME);
-      console.info('showDefaultSelectedIcon_value_0002 END');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0200 END');
       done();
     });
 
     /**
-     * @tc.name   showDefaultSelectedIcon_value_0003
-     * @tc.number showDefaultSelectedIcon_value_0003
+     * @tc.name   SUB_ACE_Select_showDefaultSelectedIcon_0300
+     * @tc.number SUB_ACE_Select_showDefaultSelectedIcon_0300
      * @tc.desc   set showDefaultSelectedIcon:undefined,levelUniqueId: Abnormal value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('showDefaultSelectedIcon_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info('showDefaultSelectedIcon_value_0003 START');
+    it('SUB_ACE_Select_showDefaultSelectedIcon_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0300 START');
       let driver: Driver = Driver.create();
       await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
@@ -101,23 +101,23 @@ export default function showDefaultSelectedIconTest() {
       await button.click();
       await Utils.sleep(SLEEP_TIME);
       let selectValue = getInspectorByKey('select');
-      console.info('showDefaultSelectedIcon_value_0003' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0300' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
       expect(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon).assertEqual('false');
       await Utils.sleep(SLEEP_TIME);
-      console.info('showDefaultSelectedIcon_value_0003 END');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0300 END');
       done();
     });
 
     /**
-     * @tc.name   showDefaultSelectedIcon_value_0004
-     * @tc.number showDefaultSelectedIcon_value_0004
+     * @tc.name   SUB_ACE_Select_showDefaultSelectedIcon_0400
+     * @tc.number SUB_ACE_Select_showDefaultSelectedIcon_0400
      * @tc.desc   set showDefaultSelectedIcon:undefined,levelUniqueId: Abnormal value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('showDefaultSelectedIcon_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info('showDefaultSelectedIcon_value_0004 START');
+    it('SUB_ACE_Select_showDefaultSelectedIcon_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0400 START');
       let driver: Driver = Driver.create();
       await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
@@ -125,10 +125,10 @@ export default function showDefaultSelectedIconTest() {
       await button.click();
       await Utils.sleep(SLEEP_TIME);
       let selectValue = getInspectorByKey('select');
-      console.info('showDefaultSelectedIcon_value_0004' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0400' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
       expect(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon).assertEqual('false');
       await Utils.sleep(SLEEP_TIME);
-      console.info('showDefaultSelectedIcon_value_0004 END');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0400 END');
       done();
     });
   })
