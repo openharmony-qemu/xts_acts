@@ -799,34 +799,6 @@ struct webMessageExt {
               break;
             }
 
-            case "testWebMessageExtSetArrayEmpty001": {
-              try {
-                if (this.nativePort) {
-                  let arr = [] as Array<string|Double|Long|boolean>;
-                  this.message.setType(webView.WebMessageType.ARRAY);
-                  this.message.setArray(arr);
-                  this.nativePort.postMessageEventExt(this.message);
-                }
-                setTimeout(() => {
-                  this.controller.runJavaScript("postArrayBufferToHtml()", (error, result) => {
-                    if (error) {
-                      console.log(`The postArrayBufferToHtml() return value is: ${error}`);
-                    }
-                    console.log(`The postArrayBufferToHtml() return value is: ${result}`);
-                    if (result) {
-                      Utils.emitEvent(result, 100009)
-                    }
-                  })
-                  Utils.emitEvent("1", 100009)
-                }, 1000)
-              } catch (error) {
-                console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
-                Utils.emitEvent(error.code, 100009)
-              }
-              break;
-            }
-
-
             case "testWebMessageExtSetArrayErrorCode001": {
               try {
                 if (this.nativePort) {
@@ -990,7 +962,8 @@ struct webMessageExt {
                   console.info(`The postArrayToApp() return value is: ${value[0]}`)
                   Utils.emitEvent(value[0], this.listening_port.toLong())
                 } else if (this.listening_flag == 16) {
-                  let value = result.getError().message
+                  let err = result.getError()
+                  let value = err.name + ': ' + err.message
                   console.info(`The postErrorToApp() return value is: ${value}`)
                   Utils.emitEvent(value, this.listening_port.toLong())
                 }

@@ -20,7 +20,7 @@ import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError, Callback, RecordData } from '@ohos.base';
+import { Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { canIUse } from '@internal.full.global'
 export class StringFields {
@@ -359,7 +359,6 @@ struct webViewController {
                   let invalidMode = 99 as webView.SiteIsolationMode;
                   webView.WebviewController.setSiteIsolationMode(invalidMode);
                 } catch (error) {
-                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(String(error.code), 60641);
                 }

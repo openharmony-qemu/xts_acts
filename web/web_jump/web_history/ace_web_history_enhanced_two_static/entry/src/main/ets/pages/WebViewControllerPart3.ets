@@ -241,7 +241,7 @@ struct WebViewControllerPart3 {
               try {
                 webview.WebviewController.setRenderProcessMode(999 as webview.RenderProcessMode);
               } catch (error) {
-                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 41023212)
               }
               break;
