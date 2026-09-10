@@ -45,7 +45,7 @@ export default function dragControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   notifyDragStartRequestNullV3001
-     * @tc.number SUB_ARKUI_DRAGCONTROLLER_NOTIFYDRAGSTARTREQUEST_PARAM_001
+     * @tc.number SUB_ARKUI_DRAGCONTROLLER_NOTIFYDRAGSTARTREQUEST_PARAM_0001
      * @tc.desc   Test DragController.notifyDragStartRequest with null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -68,7 +68,7 @@ export default function dragControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   notifyDragStartRequestUndefinedV3002
-     * @tc.number SUB_ARKUI_DRAGCONTROLLER_NOTIFYDRAGSTARTREQUEST_PARAM_002
+     * @tc.number SUB_ARKUI_DRAGCONTROLLER_NOTIFYDRAGSTARTREQUEST_PARAM_0002
      * @tc.desc   Test DragController.notifyDragStartRequest with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -91,7 +91,7 @@ export default function dragControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   notifyDragStartRequestOutOfRangeV3003
-     * @tc.number SUB_ARKUI_DRAGCONTROLLER_NOTIFYDRAGSTARTREQUEST_PARAM_003
+     * @tc.number SUB_ARKUI_DRAGCONTROLLER_NOTIFYDRAGSTARTREQUEST_PARAM_0003
      * @tc.desc   Test DragController.notifyDragStartRequest with out of range enum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -114,7 +114,7 @@ export default function dragControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   setDragEventStrictReportingEnabledNullV3004
-     * @tc.number SUB_ARKUI_DRAGCONTROLLER_SETDRAGEVENTSTRICTREPORTINGENABLED_PARAM_004
+     * @tc.number SUB_ARKUI_DRAGCONTROLLER_SETDRAGEVENTSTRICTREPORTINGENABLED_PARAM_0004
      * @tc.desc   Test DragController.setDragEventStrictReportingEnabled with null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function dragControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   setDragEventStrictReportingEnabledUndefinedV3005
-     * @tc.number SUB_ARKUI_DRAGCONTROLLER_SETDRAGEVENTSTRICTREPORTINGENABLED_PARAM_005
+     * @tc.number SUB_ARKUI_DRAGCONTROLLER_SETDRAGEVENTSTRICTREPORTINGENABLED_PARAM_0005
      * @tc.desc   Test DragController.setDragEventStrictReportingEnabled with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -160,7 +160,7 @@ export default function dragControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   enableDropDisallowedBadgeNullV3006
-     * @tc.number SUB_ARKUI_DRAGCONTROLLER_ENABLEDROPDISALLOWEDBADGE_PARAM_006
+     * @tc.number SUB_ARKUI_DRAGCONTROLLER_ENABLEDROPDISALLOWEDBADGE_PARAM_0006
      * @tc.desc   Test DragController.enableDropDisallowedBadge with null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -183,7 +183,7 @@ export default function dragControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   enableDropDisallowedBadgeUndefinedV3007
-     * @tc.number SUB_ARKUI_DRAGCONTROLLER_ENABLEDROPDISALLOWEDBADGE_PARAM_007
+     * @tc.number SUB_ARKUI_DRAGCONTROLLER_ENABLEDROPDISALLOWEDBADGE_PARAM_0007
      * @tc.desc   Test DragController.enableDropDisallowedBadge with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

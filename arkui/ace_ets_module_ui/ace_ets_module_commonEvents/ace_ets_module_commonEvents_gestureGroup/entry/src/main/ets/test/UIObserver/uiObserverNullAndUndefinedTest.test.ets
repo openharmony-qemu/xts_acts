@@ -45,7 +45,7 @@ export default function uiObserverNullAndUndefinedTest() {
 
     /**
      * @tc.name   removeGlobalGestureListenerNullV3001
-     * @tc.number SUB_ARKUI_UIOBSERVER_REMOVEGLOBALGESTURELISTENER_PARAM_001
+     * @tc.number SUB_ARKUI_UIOBSERVER_REMOVEGLOBALGESTURELISTENER_PARAM_0001
      * @tc.desc   Test UIObserver.removeGlobalGestureListener with null type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -68,7 +68,7 @@ export default function uiObserverNullAndUndefinedTest() {
 
     /**
      * @tc.name   removeGlobalGestureListenerUndefinedV3002
-     * @tc.number SUB_ARKUI_UIOBSERVER_REMOVEGLOBALGESTURELISTENER_PARAM_002
+     * @tc.number SUB_ARKUI_UIOBSERVER_REMOVEGLOBALGESTURELISTENER_PARAM_0002
      * @tc.desc   Test UIObserver.removeGlobalGestureListener with undefined type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -91,7 +91,7 @@ export default function uiObserverNullAndUndefinedTest() {
 
     /**
      * @tc.name   removeGlobalGestureListenerOutOfRangeV3003
-     * @tc.number SUB_ARKUI_UIOBSERVER_REMOVEGLOBALGESTURELISTENER_PARAM_003
+     * @tc.number SUB_ARKUI_UIOBSERVER_REMOVEGLOBALGESTURELISTENER_PARAM_0003
      * @tc.desc   Test UIObserver.removeGlobalGestureListener with out of range enum type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -114,7 +114,7 @@ export default function uiObserverNullAndUndefinedTest() {
 
     /**
      * @tc.name   nodeRenderStateMultiCallbackRenderInV3004
-     * @tc.number SUB_ARKUI_UIOBSERVER_NODERENDERSTATE_MULTI_CALLBACK_004
+     * @tc.number SUB_ARKUI_UIOBSERVER_NODERENDERSTATE_MULTI_CALLBACK_0004
      * @tc.desc   Test UIObserver.on nodeRenderState multi callback fire RENDER_IN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function uiObserverNullAndUndefinedTest() {
 
     /**
      * @tc.name   nodeRenderStateMultiCallbackRenderOutV3005
-     * @tc.number SUB_ARKUI_UIOBSERVER_NODERENDERSTATE_MULTI_CALLBACK_005
+     * @tc.number SUB_ARKUI_UIOBSERVER_NODERENDERSTATE_MULTI_CALLBACK_0005
      * @tc.desc   Test UIObserver.on nodeRenderState multi callback fire RENDER_OUT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -167,7 +167,7 @@ export default function uiObserverNullAndUndefinedTest() {
 
     /**
      * @tc.name   nodeRenderStateOffAllV3006
-     * @tc.number SUB_ARKUI_UIOBSERVER_NODERENDERSTATE_OFF_ALL_006
+     * @tc.number SUB_ARKUI_UIOBSERVER_NODERENDERSTATE_OFF_ALL_0006
      * @tc.desc   Test UIObserver.off nodeRenderState remove all callbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

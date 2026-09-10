@@ -43,7 +43,7 @@ export default function recognizerAndTouchableNullAndUndefinedTest() {
 
     /**
      * @tc.name   setEnabledNullV3001
-     * @tc.number SUB_ARKUI_GESTURERECOGNIZER_SETENABLED_PARAM_001
+     * @tc.number SUB_ARKUI_GESTURERECOGNIZER_SETENABLED_PARAM_0001
      * @tc.desc   Test GestureRecognizer.setEnabled with null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -65,7 +65,7 @@ export default function recognizerAndTouchableNullAndUndefinedTest() {
 
     /**
      * @tc.name   setEnabledUndefinedV3002
-     * @tc.number SUB_ARKUI_GESTURERECOGNIZER_SETENABLED_PARAM_002
+     * @tc.number SUB_ARKUI_GESTURERECOGNIZER_SETENABLED_PARAM_0002
      * @tc.desc   Test GestureRecognizer.setEnabled with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -87,7 +87,7 @@ export default function recognizerAndTouchableNullAndUndefinedTest() {
 
     /**
      * @tc.name   touchableNullV3003
-     * @tc.number SUB_ARKUI_COMMONMETHOD_TOUCHABLE_PARAM_003
+     * @tc.number SUB_ARKUI_COMMONMETHOD_TOUCHABLE_PARAM_0003
      * @tc.desc   Test CommonMethod.touchable with null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -110,7 +110,7 @@ export default function recognizerAndTouchableNullAndUndefinedTest() {
 
     /**
      * @tc.name   touchableUndefinedV3004
-     * @tc.number SUB_ARKUI_COMMONMETHOD_TOUCHABLE_PARAM_004
+     * @tc.number SUB_ARKUI_COMMONMETHOD_TOUCHABLE_PARAM_0004
      * @tc.desc   Test CommonMethod.touchable with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

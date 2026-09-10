@@ -110,7 +110,7 @@ import FocusControlRequestFocusTest from './focusControl/requestFocusNullAndUnde
 import focusControllerTest from './UIContext/FocusControllerNullandundefined/FocusControllerTest.test';
 import nextFocusNullAndUndefinedTest from './nextFocus/nextFocusNullAndUndefinedTest.test';
 import focusPropertyNullAndUndefinedTest from './FocusProperty/focusPropertyNullAndUndefinedTest.test';
-import focusControllerNullAndUndefinedTest from './focusController/focusControllerNullAndUndefinedTest.test';
+import focusControllerNullAndUndefinedTest from './focusController/FocusControllerNullAndUndefinedTest.test';
 
 export default function testsuite() {
     // activeApiTest();

@@ -45,7 +45,7 @@ import allowDropNullAndUndefinedTest from './AllowDrop/allowDropNullAndUndefined
 import setDataLoadParamsNullAndUndefinedTest from './DragEvent/setDataLoadParamsNullAndUndefinedTest.test';
 import setDataNullAndUndefinedTest from './DragEvent/setDataNullAndUndefinedTest.test';
 import startDataLoadingNullAndUndefinedTest from './DragEvent/startDataLoadingNullAndUndefinedTest.test';
-import dragControllerNullAndUndefinedTest from './DragController/dragControllerNullAndUndefinedTest.test';
+import dragControllerNullAndUndefinedTest from './DragController/DragControllerNullAndUndefinedTest.test';
 
 export default function testsuite() {
     dragAdaptationTest();

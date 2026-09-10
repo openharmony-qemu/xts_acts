@@ -45,7 +45,7 @@ export default function focusControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   activateIsActiveNullV3001
-     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_ACTIVATE_PARAM_001
+     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_ACTIVATE_PARAM_0001
      * @tc.desc   Test FocusController.activate with isActive null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -68,7 +68,7 @@ export default function focusControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   activateIsActiveUndefinedV3002
-     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_ACTIVATE_PARAM_002
+     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_ACTIVATE_PARAM_0002
      * @tc.desc   Test FocusController.activate with isActive undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -91,7 +91,7 @@ export default function focusControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   activateAutoInactiveNullV3003
-     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_ACTIVATE_PARAM_003
+     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_ACTIVATE_PARAM_0003
      * @tc.desc   Test FocusController.activate with autoInactive null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -114,7 +114,7 @@ export default function focusControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   activateAutoInactiveUndefinedV3004
-     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_ACTIVATE_PARAM_004
+     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_ACTIVATE_PARAM_0004
      * @tc.desc   Test FocusController.activate with autoInactive undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function focusControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   setAutoFocusTransferNullV3005
-     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_SETAUTOFOCUTRANSFER_PARAM_005
+     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_SETAUTOFOCUTRANSFER_PARAM_0005
      * @tc.desc   Test FocusController.setAutoFocusTransfer with null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -160,7 +160,7 @@ export default function focusControllerNullAndUndefinedTest() {
 
     /**
      * @tc.name   setAutoFocusTransferUndefinedV3006
-     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_SETAUTOFOCUTRANSFER_PARAM_006
+     * @tc.number SUB_ARKUI_FOCUSCONTROLLER_SETAUTOFOCUTRANSFER_PARAM_0006
      * @tc.desc   Test FocusController.setAutoFocusTransfer with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

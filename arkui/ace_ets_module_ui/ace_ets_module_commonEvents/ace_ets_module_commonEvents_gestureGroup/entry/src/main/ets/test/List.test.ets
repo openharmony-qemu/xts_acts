@@ -25,7 +25,7 @@ import tagHandlerNullAndUndefinedTest from './GestureHandler/Tag/tagHandlerNullA
 import allowedTypesNullAndUndefinedTest from './GestureInterface/AllowedTypes/allowedTypesNullAndUndefinedTest.test';
 import tagNullAndUndefinedTest from './GestureInterface/Tag/tagNullAndUndefinedTest.test';
 import removeGestureByTagNullAndUndefinedTest from './RemoveGestureByTag/removeGestureByTagNullAndUndefinedTest.test';
-import uiObserverNullAndUndefinedTest from './UIObserver/uiObserverNullAndUndefinedTest.test';
+import uiObserverNullAndUndefinedTest from './UIObserver/UiObserverNullAndUndefinedTest.test';
 
 export default function testsuite() {
   gestureParallelJsunit()
