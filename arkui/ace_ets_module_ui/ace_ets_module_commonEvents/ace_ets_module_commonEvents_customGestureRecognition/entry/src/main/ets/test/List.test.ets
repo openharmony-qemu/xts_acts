@@ -42,6 +42,7 @@ import RotationRecognizer from './GestureRecognizer/RotationRecognizer.test';
 import SwipeRecognizer from './GestureRecognizer/SwipeRecognizer.test';
 import TapRecognizer from './GestureRecognizer/TapRecognizer.test';
 import onTouchTestDoneTest from './GestureRecognizerTest/onTouchTestDone.test';
+import recognizerAndTouchableNullAndUndefinedTest from './GestureRecognizer/recognizerAndTouchableNullAndUndefinedTest.test';
 
 export default function testsuite() {
   GestureClick();
@@ -74,4 +75,5 @@ export default function testsuite() {
   SwipeRecognizer();
   TapRecognizer();
   onTouchTestDoneTest();
+  recognizerAndTouchableNullAndUndefinedTest();
 }
