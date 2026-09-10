@@ -242,15 +242,15 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_004
-     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_004
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_0400
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_0400
      * @tc.desc    OHEffectFilterInfoGetSupportedBufferTypes EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_004', Level.LEVEL0, () => {
-      const testName = 'SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_004'
+    it('SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_0400', Level.LEVEL0, () => {
+      const testName = 'SUB_OH_EFFECT_FILTER_INFO_GET_SUPPORTED_BUFFER_TYPES_0400'
       console.info(TAG, testName,'Start',);
       let result: number = testNapi.OHEffectFilterInfoGetSupportedBufferTypesSuppTest(CASE_INDEX_4);
       console.info(TAG,testName, 'Success', JSON.stringify(result));
