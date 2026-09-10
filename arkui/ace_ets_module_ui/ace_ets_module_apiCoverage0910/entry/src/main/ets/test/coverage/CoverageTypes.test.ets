@@ -71,7 +71,7 @@ export default function coverageTypesTest() {
     /**
      * @tc.number SUB_ARKUI_APICOVERAGE0910_COMMONSTATE_0300
      * @tc.name SUB_ARKUI_APICOVERAGE0910_COMMONSTATE_0300
-     * @tc.desc Cover PromptActionCommonState / CommonController state alias
+     * @tc.desc Cover PromptActionCommonState / CommonController / DialogController
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
@@ -131,6 +131,80 @@ export default function coverageTypesTest() {
         content.indexOf('out') >= 0).assertTrue();
       let target: string = getInspectorByKey('transitionTarget');
       expect(target.length > 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_RATINGCB_0700
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_RATINGCB_0700
+     * @tc.desc Cover OnRatingChangeCallback binding
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_RATINGCB_0700', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('ratingFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('bound');
+      expect(getInspectorByKey('ratingCoverage').length > 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_SELECTCB_0800
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_SELECTCB_0800
+     * @tc.desc Cover OnSelectCallback binding
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_SELECTCB_0800', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('selectFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('bound');
+      expect(getInspectorByKey('selectCoverage').length > 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_SLIDERCB_0900
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_SLIDERCB_0900
+     * @tc.desc Cover SliderTriggerChangeCallback binding
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_SLIDERCB_0900', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('sliderFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('bound');
+      expect(getInspectorByKey('sliderCoverage').length > 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_EXTRALIAS_1000
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_EXTRALIAS_1000
+     * @tc.desc Cover Pivot / Matrix4Transit type aliases
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_EXTRALIAS_1000', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('extraAliasFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_POPUPCB_1100
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_POPUPCB_1100
+     * @tc.desc Cover PopupStateChangeCallback / PopupOptions / showInSubWindow
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_POPUPCB_1100', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('popupFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('bound');
+      expect(getInspectorByKey('btnPopup').length > 0).assertTrue();
       done();
     });
   });
