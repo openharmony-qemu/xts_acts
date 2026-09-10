@@ -174,10 +174,11 @@ export default function nfcTagABFVTest() {
             try {
                 let recvNfcTagFunc = tagInfo => {
                     console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
-                    expect(tagInfo.supportedProfiles.length > 0).assertTrue();
-                    expect(tagInfo.uid.length > 0).assertTrue();
-                    expect(tagInfo.technology.length > 0).assertTrue();
-                    expect(tagInfo != null).assertTrue();
+                    let uid = tagInfo.uid;
+                    let technology = tagInfo.technology;
+                    console.info('[NFC_test] uid readable unexoectedly -> ' + uid);
+                    console.info('[NFC_test] technology readable unexoectedly -> ' + technology);
+                    expect().assertFail();
                 }
                 tag.registerForegroundDispatch(elementName, discTech, recvNfcTagFunc);
                 console.info('[NFC_test] nfc registerForegroundDispatch pass')

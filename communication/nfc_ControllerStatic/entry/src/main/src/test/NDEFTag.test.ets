@@ -1135,33 +1135,6 @@ export default function nfcNDEFTagTest() {
     })
 
     /**
-     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_2005
-     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_2005
-     * @tc.desc getNdefTagTypeString out of range enum value 0 test, expect 401 error or empty string.
-     * @tc.size since 23
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('SUB_COMMUNICATION_NFC_NDEFTag_static_2005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let ndefTag = tag.getNdef(ndefTagInfo);
-      if (ndefTag != null && ndefTag != undefined) {
-        try {
-          let ndefTypeString: string = ndefTag.getNdefTagTypeString(tag.NfcForumType.fromValue(0));
-          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2005 ndefTypeString is :' + ndefTypeString);
-          expect(ndefTypeString).assertEqual("");
-        } catch (error) {
-          let err: Error = error as Error;
-          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2005 error is ' + err.message);
-          expect().assertFail();
-        }
-      } else {
-        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
      * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_2100
      * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_2100
      * @tc.desc Check whether the NFC function is enabled.

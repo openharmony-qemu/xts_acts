@@ -645,6 +645,44 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0901
+         * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0901
+         * @tc.desc   HceService off hceCmd wirh only type parameter (without callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_0901', Level.LEVEL0, function ()  {
+            let hceService = new cardEmulation.HceService();
+            console.info('[NFC_test]09 hceService state is' + hceService )
+            const apduCallback = (err, data) => {
+                if (err){
+                  console.error('[NFC_test]0900 apduCallback err is' + err );
+                }else{
+                    console.log('[NFC_test]0900 got apdu data ' + data );
+                }
+            };
+            let hceElementName = {
+                bundleName: "ohos.acts.communication.nfc.nfcdevice",
+                abilityName: ".TestAbility",
+                moduleName: "nfc_standard_test"
+            }
+            let aidList = ["A0000000031010", "A0000000031011"]
+            try {
+                hceService.start(hceElementName, aidList);
+                console.info('[NFC_test]0901 hceService start success ');
+                hceService.on("hceCmd", apduCallback);
+                console.info('[NFC_test]0901 hceService on hceCmd success ');
+                hceService.off("hceCmd");
+                console.info('[NFC_test]0901 hceService off hceCmd without callback success ');
+                hceService.stop(hceElementName);
+            } catch (error) {
+                console.info('[NFC_test]0901 hceService on/off error' + error + "/" + error.code);
+                expect(801).assertEqual(error.code);
+            }
+        })
+
+        /**
          * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1000
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1000
          * @tc.desc   Whether to support a certain type of card HceService transmit
