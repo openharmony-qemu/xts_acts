@@ -627,6 +627,8 @@ std::vector<napi_property_descriptor> desc = {
      nullptr, napi_default, nullptr},
     {"jsPackingOptionsGetDesiredDynamicRangeBadParameter", nullptr, JSPackingOptionsGetDesiredDynamicRangeBadParameter,
      nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"jsPackingOptionsGetDesiredDynamicRangeBadParameterRange", nullptr, JSPackingOptionsGetDesiredDynamicRangeBadParameterRange,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
     {"jsPackingOptionsRelease", nullptr, JSPackingOptionsRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"jsPackingOptionsReleaseBadParameter", nullptr, JSPackingOptionsReleaseBadParameter, nullptr, nullptr, nullptr,
      napi_default, nullptr},
