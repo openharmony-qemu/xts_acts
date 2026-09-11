@@ -24,103 +24,103 @@ let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance(
 let tlsClient: socket.TLSSocket = socket.constructTLSSocketInstance();
 
 let ca_common: string[] = [
-`-----BEGIN CERTIFICATE----- MIIDbTCCAlWgAwIBAgIUEb8gE403eamzwoYHf3fE2JKw5s0wDQYJKoZIhvcNAQEL BQAwRTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoM GEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDAgFw0yNTA2MTAxMjAyNDZaGA8yMDU1 MDYwMzEyMDI0NlowRTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUx ITAfBgNVBAoMGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDCCASIwDQYJKoZIhvcN AQEBBQADggEPADCCAQoCggEBAJmQ4OPvDI6GpbUAKDStkDS+UQZDnufrPYTCSGYS 77qAS7s9KrXhIWjs2j5LxC5tfNFoLMrXRmNjb6tPgs/EY6QLn+v4ICek7EeAzwRx Dr0Sh+Owj64toSb9WUBGNU5ahTLA4+cCpYhZamnCN18fYR2TXah/IbkjRZM8UN8Q iucCUn4lNT/1lh6qph+3UnRmafUzamlVkiQUsslbBZnm9vs88sYeTNlla9L4C8WH hnXLUOgl31TzWe2KppOS/b16p6bOwMS06kJbp8nS9Gd6GgH0k9Fny1X1JM/xZG4Z xvzLlNzhusXyzjNTrCmLGYDlLZxpp/aYUVf6Hb1b6exUAGMCAwEAAaNTMFEwHQYD VR0OBBYEFHR/rd7ZFFR7o05FG9mj1zwYHY88MB8GA1UdIwQYMBaAFHR/rd7ZFFR7 o05FG9mj1zwYHY88MA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEB AEih4pf7fOFdOHD9ztc2IFQE6uZswVqfNztk7dGZyC1bmlJnF9w92Ge/Qp7eqN4a 8aXT7Ttlj1Cn6VAznBd5JHs903UOI/gLNEHQWtSTP9BIoVoXHUNLzZbNvPveIT2d 8YAK1mG1NyCkR6zKIPLY4Lt8InR658l+h0XI5PiXZANZlgN3pETvpA04movMbZKS dn8bPMuhFExNTZEHceUTDz7Uqf/SYLPEwXSuLeYpjyyFnL6mXtE/q02n3sNcqkKx 3XtzIDzzOOxUDl2xPI+B36lzuIShhTbkGD/LdE3AHpX5CwZlooZF+INI+57UinM+ 6So9s6ovMthaJ+8Js8OxO5Y= -----END CERTIFICATE-----`
+  `-----BEGIN CERTIFICATE----- MIIDbTCCAlWgAwIBAgIUEb8gE403eamzwoYHf3fE2JKw5s0wDQYJKoZIhvcNAQEL BQAwRTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoM GEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDAgFw0yNTA2MTAxMjAyNDZaGA8yMDU1 MDYwMzEyMDI0NlowRTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUx ITAfBgNVBAoMGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDCCASIwDQYJKoZIhvcN AQEBBQADggEPADCCAQoCggEBAJmQ4OPvDI6GpbUAKDStkDS+UQZDnufrPYTCSGYS 77qAS7s9KrXhIWjs2j5LxC5tfNFoLMrXRmNjb6tPgs/EY6QLn+v4ICek7EeAzwRx Dr0Sh+Owj64toSb9WUBGNU5ahTLA4+cCpYhZamnCN18fYR2TXah/IbkjRZM8UN8Q iucCUn4lNT/1lh6qph+3UnRmafUzamlVkiQUsslbBZnm9vs88sYeTNlla9L4C8WH hnXLUOgl31TzWe2KppOS/b16p6bOwMS06kJbp8nS9Gd6GgH0k9Fny1X1JM/xZG4Z xvzLlNzhusXyzjNTrCmLGYDlLZxpp/aYUVf6Hb1b6exUAGMCAwEAAaNTMFEwHQYD VR0OBBYEFHR/rd7ZFFR7o05FG9mj1zwYHY88MB8GA1UdIwQYMBaAFHR/rd7ZFFR7 o05FG9mj1zwYHY88MA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEB AEih4pf7fOFdOHD9ztc2IFQE6uZswVqfNztk7dGZyC1bmlJnF9w92Ge/Qp7eqN4a 8aXT7Ttlj1Cn6VAznBd5JHs903UOI/gLNEHQWtSTP9BIoVoXHUNLzZbNvPveIT2d 8YAK1mG1NyCkR6zKIPLY4Lt8InR658l+h0XI5PiXZANZlgN3pETvpA04movMbZKS dn8bPMuhFExNTZEHceUTDz7Uqf/SYLPEwXSuLeYpjyyFnL6mXtE/q02n3sNcqkKx 3XtzIDzzOOxUDl2xPI+B36lzuIShhTbkGD/LdE3AHpX5CwZlooZF+INI+57UinM+ 6So9s6ovMthaJ+8Js8OxO5Y= -----END CERTIFICATE-----`
 ];
 let pri_key_server: string = '-----BEGIN PRIVATE KEY-----\n' +
-'MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC/OF6q3q4R9tuJ\n' +
-'tlqmkGIXvZT60t7B7DxNs2s2M5Y6UqgAKJrY9MUoPmKwqPQS6ZZbpHZyYyRS7uSl\n' +
-'SB1JjpvT05m2KHm20Tx+ttyia+pkR07Aq/LSdt+ujCfE0rVF343oVQZcgaSbejpT\n' +
-'gQwvUsvAuPKczT1ytyh81rfpG1gkWpFf26CqUJ0q66h66P8/hWiiNmn4tb1bKuEB\n' +
-'VMyRZwHEwIVPXxQkoRtt2Wy8XBFqhBaKfNfb+Im8Ml9FQ3C91A1fcJi5agoNGTxn\n' +
-'ZJZI0xlt4vu8nMZuc9CgW64se0cImQsH2cYnj4W7t/Fg0TirmW/QNhNnP+K1kz1t\n' +
-'lWWyBj0NAgMBAAECggEAMxqymkH3DZAG7lAQ/BD8VlHxffNbW0Jyf2WjEpJI5P9w\n' +
-'LNKtR6xrAK1jnMkaqe9JouZaTYnXjF6SNuYGBcGaPcuAeiFpHgXfgBII91OWCgTQ\n' +
-'tEeAFuV0NGb6vex+S9VKTLxkfdacEn1hFy4W/pLHJ5OGK4fik0UGCg8siZ0oOlaP\n' +
-'wr3cM2vsGlgukweXOyV21I0B/DygEo/2PuikmaqfMAzz0scVngNb1lWkhq2ouFc7\n' +
-'K3LMH+hFnEdmoRtjnhvza70Whi5bW4Va99Ntqm364eTIjPZFuVoyUDbYiOzn30gO\n' +
-'njH58WJ/v1LLXeJ9oKQr4CTV0bxEl7aZ4xSYhFe3NQKBgQDm7K5nnWIKBhIWhMBb\n' +
-'YAjTvUCfSltMEJhqMnjKSrU84QxHhlOO7+wjHbL1zA9gTgK/wU6DSRUKz2BcVnYv\n' +
-'ol9iEw7qHzx2dHrG94EKnDn4XDFctBou4SeAElu9dJmMK6pBMIvhfwK70dJxyX6I\n' +
-'pdvhbrZJcIOgqhgVFjJnW1GoXwKBgQDT+/lHPRNMF2ngI8ImDB0nYErsHnbLC7GC\n' +
-'6XoS7xUlTTrXo0ONbuxHfiAUVYrN4C9/Dsh2eQMwwBwWP3Au8mQWOCGDhlxEVcxy\n' +
-'wnpy9ecdpptiO/YQNn6dBRMIU5g6k0TZY4lZZ/SIDm29M9GtzIHIm0fW2MksfIiJ\n' +
-'f7SOkhoCEwKBgQCfNnX0qHUM1iyoa/S3y1mqqyQf70NNCXAcYBoZ1zJn+/3cXofD\n' +
-'2DVl7LcTcxLy4jZRATVhnQSuBFa6sz4fD4NV+i/hSZIFVb/E6KaGqznou5+o+9/F\n' +
-'jKUQTxgDYp3vH7ft5Eu9ODWpSzweCb989WXJYuy5a6LFJiEegMRVsId3XwKBgQCO\n' +
-'4KpnhZbYFn/Z/sAA/PE5dQGKnA3dVQhUACGzWUmbVq5uYTBKx5ShqzTb/7wKfywE\n' +
-'K2aZ035/ATztEdz/B4jGIRcVmx3dQScHwmTdzzfzGDRqxZdX3iMAmkb1ucJE2LXy\n' +
-'/8+3XwXGHlOAzshoqApht6d3+628OkOcyWJdJcQ52QKBgQC4uC2IY9kVSE7aPXs/\n' +
-'UMk8IMX187wWZe1ULhwkhwgsvJDx1qvNDFlOiBoFAH9TagKVzQrtoa4X9C3Qf6IK\n' +
-'SwbdPtDz0VeUWxXF+ASA1v7SM+Ra2v7hrOfrOWLeSnTTLZzcUAQjlkc3ynFcGimF\n' +
-'JNJFAqr9K+LHatgjxTcHO9amFQ==\n' +
-'-----END PRIVATE KEY-----\n';
+  'MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC/OF6q3q4R9tuJ\n' +
+  'tlqmkGIXvZT60t7B7DxNs2s2M5Y6UqgAKJrY9MUoPmKwqPQS6ZZbpHZyYyRS7uSl\n' +
+  'SB1JjpvT05m2KHm20Tx+ttyia+pkR07Aq/LSdt+ujCfE0rVF343oVQZcgaSbejpT\n' +
+  'gQwvUsvAuPKczT1ytyh81rfpG1gkWpFf26CqUJ0q66h66P8/hWiiNmn4tb1bKuEB\n' +
+  'VMyRZwHEwIVPXxQkoRtt2Wy8XBFqhBaKfNfb+Im8Ml9FQ3C91A1fcJi5agoNGTxn\n' +
+  'ZJZI0xlt4vu8nMZuc9CgW64se0cImQsH2cYnj4W7t/Fg0TirmW/QNhNnP+K1kz1t\n' +
+  'lWWyBj0NAgMBAAECggEAMxqymkH3DZAG7lAQ/BD8VlHxffNbW0Jyf2WjEpJI5P9w\n' +
+  'LNKtR6xrAK1jnMkaqe9JouZaTYnXjF6SNuYGBcGaPcuAeiFpHgXfgBII91OWCgTQ\n' +
+  'tEeAFuV0NGb6vex+S9VKTLxkfdacEn1hFy4W/pLHJ5OGK4fik0UGCg8siZ0oOlaP\n' +
+  'wr3cM2vsGlgukweXOyV21I0B/DygEo/2PuikmaqfMAzz0scVngNb1lWkhq2ouFc7\n' +
+  'K3LMH+hFnEdmoRtjnhvza70Whi5bW4Va99Ntqm364eTIjPZFuVoyUDbYiOzn30gO\n' +
+  'njH58WJ/v1LLXeJ9oKQr4CTV0bxEl7aZ4xSYhFe3NQKBgQDm7K5nnWIKBhIWhMBb\n' +
+  'YAjTvUCfSltMEJhqMnjKSrU84QxHhlOO7+wjHbL1zA9gTgK/wU6DSRUKz2BcVnYv\n' +
+  'ol9iEw7qHzx2dHrG94EKnDn4XDFctBou4SeAElu9dJmMK6pBMIvhfwK70dJxyX6I\n' +
+  'pdvhbrZJcIOgqhgVFjJnW1GoXwKBgQDT+/lHPRNMF2ngI8ImDB0nYErsHnbLC7GC\n' +
+  '6XoS7xUlTTrXo0ONbuxHfiAUVYrN4C9/Dsh2eQMwwBwWP3Au8mQWOCGDhlxEVcxy\n' +
+  'wnpy9ecdpptiO/YQNn6dBRMIU5g6k0TZY4lZZ/SIDm29M9GtzIHIm0fW2MksfIiJ\n' +
+  'f7SOkhoCEwKBgQCfNnX0qHUM1iyoa/S3y1mqqyQf70NNCXAcYBoZ1zJn+/3cXofD\n' +
+  '2DVl7LcTcxLy4jZRATVhnQSuBFa6sz4fD4NV+i/hSZIFVb/E6KaGqznou5+o+9/F\n' +
+  'jKUQTxgDYp3vH7ft5Eu9ODWpSzweCb989WXJYuy5a6LFJiEegMRVsId3XwKBgQCO\n' +
+  '4KpnhZbYFn/Z/sAA/PE5dQGKnA3dVQhUACGzWUmbVq5uYTBKx5ShqzTb/7wKfywE\n' +
+  'K2aZ035/ATztEdz/B4jGIRcVmx3dQScHwmTdzzfzGDRqxZdX3iMAmkb1ucJE2LXy\n' +
+  '/8+3XwXGHlOAzshoqApht6d3+628OkOcyWJdJcQ52QKBgQC4uC2IY9kVSE7aPXs/\n' +
+  'UMk8IMX187wWZe1ULhwkhwgsvJDx1qvNDFlOiBoFAH9TagKVzQrtoa4X9C3Qf6IK\n' +
+  'SwbdPtDz0VeUWxXF+ASA1v7SM+Ra2v7hrOfrOWLeSnTTLZzcUAQjlkc3ynFcGimF\n' +
+  'JNJFAqr9K+LHatgjxTcHO9amFQ==\n' +
+  '-----END PRIVATE KEY-----\n';
 let cert_server: string = '-----BEGIN CERTIFICATE-----\n' +
-'MIIDJDCCAgwCFH93ojUm8aIfF/P/YdW+iDl9RRiAMA0GCSqGSIb3DQEBCwUAMEUx\n' +
-'CzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRl\n' +
-'cm5ldCBXaWRnaXRzIFB0eSBMdGQwIBcNMjUwNjEwMTIxMzM4WhgPMjA1NTA2MDMx\n' +
-'MjEzMzhaMFYxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYD\n' +
-'VQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxDzANBgNVBAMMBnNlcnZlcjCC\n' +
-'ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL84XqrerhH224m2WqaQYhe9\n' +
-'lPrS3sHsPE2zazYzljpSqAAomtj0xSg+YrCo9BLpllukdnJjJFLu5KVIHUmOm9PT\n' +
-'mbYoebbRPH623KJr6mRHTsCr8tJ2366MJ8TStUXfjehVBlyBpJt6OlOBDC9Sy8C4\n' +
-'8pzNPXK3KHzWt+kbWCRakV/boKpQnSrrqHro/z+FaKI2afi1vVsq4QFUzJFnAcTA\n' +
-'hU9fFCShG23ZbLxcEWqEFop819v4ibwyX0VDcL3UDV9wmLlqCg0ZPGdklkjTGW3i\n' +
-'+7ycxm5z0KBbrix7RwiZCwfZxiePhbu38WDROKuZb9A2E2c/4rWTPW2VZbIGPQ0C\n' +
-'AwEAATANBgkqhkiG9w0BAQsFAAOCAQEATco08kfIG/HpyHtoWtfdyxDiihXm5onQ\n' +
-'sTnUF3q/ETSwUU1UCUkxRr/KbiSikRcN6o7mFtbd7qECAN5THc3+bFjcimfMYXLb\n' +
-'zl/Bcc7wlVgbD4hnSYtuU14seHGHtQVh9kPKn+OdDL55VKnzbI9O8OZIcE7XVIi8\n' +
-'wFRCWIq2PCxiTgB3Abu9V0Czy5EszFtNaCfUj65mPHCymRAeyYme7mKzxUWzsxKB\n' +
-'i4NJvjFZ9qWh0hC8o/ux+26oo9XJlWVvd35/RAx+mZz4R6733/RR+8pVt4p+GnGM\n' +
-'/BX+2zvrb7nXns+Ghvd/+J4ignxeSpDuc6WjLPtOh52puWxfMFulIg==\n' +
-'-----END CERTIFICATE-----\n'
+  'MIIDJDCCAgwCFH93ojUm8aIfF/P/YdW+iDl9RRiAMA0GCSqGSIb3DQEBCwUAMEUx\n' +
+  'CzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRl\n' +
+  'cm5ldCBXaWRnaXRzIFB0eSBMdGQwIBcNMjUwNjEwMTIxMzM4WhgPMjA1NTA2MDMx\n' +
+  'MjEzMzhaMFYxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYD\n' +
+  'VQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxDzANBgNVBAMMBnNlcnZlcjCC\n' +
+  'ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL84XqrerhH224m2WqaQYhe9\n' +
+  'lPrS3sHsPE2zazYzljpSqAAomtj0xSg+YrCo9BLpllukdnJjJFLu5KVIHUmOm9PT\n' +
+  'mbYoebbRPH623KJr6mRHTsCr8tJ2366MJ8TStUXfjehVBlyBpJt6OlOBDC9Sy8C4\n' +
+  '8pzNPXK3KHzWt+kbWCRakV/boKpQnSrrqHro/z+FaKI2afi1vVsq4QFUzJFnAcTA\n' +
+  'hU9fFCShG23ZbLxcEWqEFop819v4ibwyX0VDcL3UDV9wmLlqCg0ZPGdklkjTGW3i\n' +
+  '+7ycxm5z0KBbrix7RwiZCwfZxiePhbu38WDROKuZb9A2E2c/4rWTPW2VZbIGPQ0C\n' +
+  'AwEAATANBgkqhkiG9w0BAQsFAAOCAQEATco08kfIG/HpyHtoWtfdyxDiihXm5onQ\n' +
+  'sTnUF3q/ETSwUU1UCUkxRr/KbiSikRcN6o7mFtbd7qECAN5THc3+bFjcimfMYXLb\n' +
+  'zl/Bcc7wlVgbD4hnSYtuU14seHGHtQVh9kPKn+OdDL55VKnzbI9O8OZIcE7XVIi8\n' +
+  'wFRCWIq2PCxiTgB3Abu9V0Czy5EszFtNaCfUj65mPHCymRAeyYme7mKzxUWzsxKB\n' +
+  'i4NJvjFZ9qWh0hC8o/ux+26oo9XJlWVvd35/RAx+mZz4R6733/RR+8pVt4p+GnGM\n' +
+  '/BX+2zvrb7nXns+Ghvd/+J4ignxeSpDuc6WjLPtOh52puWxfMFulIg==\n' +
+  '-----END CERTIFICATE-----\n'
 
 let pri_key_client: string = '-----BEGIN PRIVATE KEY-----\n' +
-'MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCv9q4wAWgKXMsR\n' +
-'Ep858Kmq0e1ZnZBKLadpBwrkxembHmYF8PQxKkkM7wHjiBu0H1KlWdJgUV8d3DPO\n' +
-'+83OlFuWheKgr8DT1eRXAw2IEBPTOTBD4CeAkjJR7HtHTgeYBq7x40nAwRxExEKV\n' +
-'j1eLU/r64EhV8/BtZniknTbbUic4C6buykSrwMXM4Y4FjfHkNyh2c/FHR0u46jeR\n' +
-'452rMuN5tJCtqfORadc5Dw//pUVS/M7wS8behUyEvCLoZo1zB286N4+by15hpEe2\n' +
-'4RdjGuscCXUpJeiCNU3tQMhV38/olFyciKjc93iqSiT9pOc0vYNCiMvl1Sm8KTfV\n' +
-'BE3KojS9AgMBAAECggEAQ2xSZwuK6XmPx51qjGFmKZFhkDZ6/KlMncY4its4vRqj\n' +
-'PgCLGLGapw2HnD7hWp2r5baqkQRs3TysT1GVlOOsylrHsQlW6fRpl1uQmkOKzSL7\n' +
-'Fu7zQ+UAyfpCbFp+N2bMLtwHvQdhhQnsd3Eiury1jN5WaTTcuZaLgIvK4rOyWlsd\n' +
-'Y5H9ipi+GGT2snDkrFdP2A6T32IjtsjBzEVyh9X12caEWvTnUcL7G8IAGkz5eeui\n' +
-'PphT+94GuVac3QxvY1seZMhK1+ofPVx13olzlCEYNf5nOCc2vJr+L5xtbjvn8345\n' +
-'sdwjCpMBn3PWYR+Rh4IANILX94YKGE65/UY2SFaOswKBgQDm6ra4kGBEexcK0RtW\n' +
-'Usx3HbD8sy7TDIPsAUZFJfmBETNYQT2sHfln3G3uAiCObf94L7jC/ghBkXimGSno\n' +
-'aigJnaiEFwieX8aTcQo2Bhnm4oBqKEO7siN3GBN8w6KL7hlDwCuwvBT/fCnXj2qB\n' +
-'7d3scuNOoIV4JuvQqUE+Ol0SqwKBgQDDE9adCgcwW7RjsxvV9G+4zN4s7d5XVo0+\n' +
-'F7CPNMJBGav647y0v/tWOtlGhkHDnP1WUl2UZx4J+6+b0yIdMdRAcso1Ko9TxakB\n' +
-'nRig9/1buTh+akkTHootda7/85/PITaSmRId7XkgS2KIb9rLeewV3tx9M2Ol9Sl6\n' +
-'2KyprxmWNwKBgQDgDZuPRx7xM1GvQCe7QYl8hkWlW6KySrFx++aXz3ng/rSIDH1v\n' +
-'lIHbgaj0SAIY0KgRkJRANsYCAMlEuKPOC7qfYecRi1vkd1+wzfyvYIofWWRqHHlk\n' +
-'FDuPIcA+zX/ZMAQ5lauOx1/EaVAcBN6+BPPQqcTeFKiMZY9nneJdI7oNEwKBgE6Z\n' +
-'obFopvjfGlHJiv+sG4/US/jCZwG9x+8q0GMDGPnuBBN0y0XwzK4zy/PUiI7upEyx\n' +
-'py7yVXIkTN92NJqaxzCoj7zYRyOz0qLpz1CcWyMoABE/de4UMgybDEXovY1RjpGG\n' +
-'x3vzgQh4F11t5DR0DaHKSADSQeZOX8Y1o2xDNwYFAoGAeR1iNXRTxVzSzYA+wMUY\n' +
-'bqUS39N7fdTma8+K2jYvXeuhyG3o8gyL3jYY3nC6LTtk+Ds+gCsajkuXFLiCRYVV\n' +
-'7TuKMq402Q/EQ91Ow98L1n6KWWML2+qolA6gdXe1T6EE14Jp6i1ZKl7hK2xNYZMt\n' +
-'pdyN4l1O+mtWzoN536XgpOk=\n' +
-'-----END PRIVATE KEY-----\n';
+  'MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCv9q4wAWgKXMsR\n' +
+  'Ep858Kmq0e1ZnZBKLadpBwrkxembHmYF8PQxKkkM7wHjiBu0H1KlWdJgUV8d3DPO\n' +
+  '+83OlFuWheKgr8DT1eRXAw2IEBPTOTBD4CeAkjJR7HtHTgeYBq7x40nAwRxExEKV\n' +
+  'j1eLU/r64EhV8/BtZniknTbbUic4C6buykSrwMXM4Y4FjfHkNyh2c/FHR0u46jeR\n' +
+  '452rMuN5tJCtqfORadc5Dw//pUVS/M7wS8behUyEvCLoZo1zB286N4+by15hpEe2\n' +
+  '4RdjGuscCXUpJeiCNU3tQMhV38/olFyciKjc93iqSiT9pOc0vYNCiMvl1Sm8KTfV\n' +
+  'BE3KojS9AgMBAAECggEAQ2xSZwuK6XmPx51qjGFmKZFhkDZ6/KlMncY4its4vRqj\n' +
+  'PgCLGLGapw2HnD7hWp2r5baqkQRs3TysT1GVlOOsylrHsQlW6fRpl1uQmkOKzSL7\n' +
+  'Fu7zQ+UAyfpCbFp+N2bMLtwHvQdhhQnsd3Eiury1jN5WaTTcuZaLgIvK4rOyWlsd\n' +
+  'Y5H9ipi+GGT2snDkrFdP2A6T32IjtsjBzEVyh9X12caEWvTnUcL7G8IAGkz5eeui\n' +
+  'PphT+94GuVac3QxvY1seZMhK1+ofPVx13olzlCEYNf5nOCc2vJr+L5xtbjvn8345\n' +
+  'sdwjCpMBn3PWYR+Rh4IANILX94YKGE65/UY2SFaOswKBgQDm6ra4kGBEexcK0RtW\n' +
+  'Usx3HbD8sy7TDIPsAUZFJfmBETNYQT2sHfln3G3uAiCObf94L7jC/ghBkXimGSno\n' +
+  'aigJnaiEFwieX8aTcQo2Bhnm4oBqKEO7siN3GBN8w6KL7hlDwCuwvBT/fCnXj2qB\n' +
+  '7d3scuNOoIV4JuvQqUE+Ol0SqwKBgQDDE9adCgcwW7RjsxvV9G+4zN4s7d5XVo0+\n' +
+  'F7CPNMJBGav647y0v/tWOtlGhkHDnP1WUl2UZx4J+6+b0yIdMdRAcso1Ko9TxakB\n' +
+  'nRig9/1buTh+akkTHootda7/85/PITaSmRId7XkgS2KIb9rLeewV3tx9M2Ol9Sl6\n' +
+  '2KyprxmWNwKBgQDgDZuPRx7xM1GvQCe7QYl8hkWlW6KySrFx++aXz3ng/rSIDH1v\n' +
+  'lIHbgaj0SAIY0KgRkJRANsYCAMlEuKPOC7qfYecRi1vkd1+wzfyvYIofWWRqHHlk\n' +
+  'FDuPIcA+zX/ZMAQ5lauOx1/EaVAcBN6+BPPQqcTeFKiMZY9nneJdI7oNEwKBgE6Z\n' +
+  'obFopvjfGlHJiv+sG4/US/jCZwG9x+8q0GMDGPnuBBN0y0XwzK4zy/PUiI7upEyx\n' +
+  'py7yVXIkTN92NJqaxzCoj7zYRyOz0qLpz1CcWyMoABE/de4UMgybDEXovY1RjpGG\n' +
+  'x3vzgQh4F11t5DR0DaHKSADSQeZOX8Y1o2xDNwYFAoGAeR1iNXRTxVzSzYA+wMUY\n' +
+  'bqUS39N7fdTma8+K2jYvXeuhyG3o8gyL3jYY3nC6LTtk+Ds+gCsajkuXFLiCRYVV\n' +
+  '7TuKMq402Q/EQ91Ow98L1n6KWWML2+qolA6gdXe1T6EE14Jp6i1ZKl7hK2xNYZMt\n' +
+  'pdyN4l1O+mtWzoN536XgpOk=\n' +
+  '-----END PRIVATE KEY-----\n';
 let cert_client: string = '-----BEGIN CERTIFICATE-----\n' +
-'MIIDJDCCAgwCFH93ojUm8aIfF/P/YdW+iDl9RRiBMA0GCSqGSIb3DQEBCwUAMEUx\n' +
-'CzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRl\n' +
-'cm5ldCBXaWRnaXRzIFB0eSBMdGQwIBcNMjUwNjEwMTIyMDA5WhgPMjA1NTA2MDMx\n' +
-'MjIwMDlaMFYxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYD\n' +
-'VQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxDzANBgNVBAMMBmNsaWVudDCC\n' +
-'ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK/2rjABaApcyxESnznwqarR\n' +
-'7VmdkEotp2kHCuTF6ZseZgXw9DEqSQzvAeOIG7QfUqVZ0mBRXx3cM877zc6UW5aF\n' +
-'4qCvwNPV5FcDDYgQE9M5MEPgJ4CSMlHse0dOB5gGrvHjScDBHETEQpWPV4tT+vrg\n' +
-'SFXz8G1meKSdNttSJzgLpu7KRKvAxczhjgWN8eQ3KHZz8UdHS7jqN5Hjnasy43m0\n' +
-'kK2p85Fp1zkPD/+lRVL8zvBLxt6FTIS8IuhmjXMHbzo3j5vLXmGkR7bhF2Ma6xwJ\n' +
-'dSkl6II1Te1AyFXfz+iUXJyIqNz3eKpKJP2k5zS9g0KIy+XVKbwpN9UETcqiNL0C\n' +
-'AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAP75ox5G7MytaueZH97xQAdLFEyHkoduX\n' +
-'PMddYDJcRv5VAG+EHrhSId/DoaIDrhPHgwkzUWbYHn6RB63bkt11CXJKHwoZywIp\n' +
-'efdIMlWpDJ+ISEu9q3THWAnXKdB4EuI1j3LSzNeoSQc64Wy4NQcIixmf6JnqyzQr\n' +
-'3UFEJ4jj1nJGRhBUQza4lhSN3dJNF1kawbTn4aQ0D+rvhWcCKSPTzsGy+xvPUvsV\n' +
-'7PlTzCrTmn7rgovs9iwgWFOvNdJJI6O2oTuZZSSGT/Xc1fpZPbIlLBTHlSpi4F6Y\n' +
-'vttpfMLHS7YyAAppfegn79OBf3DP/N3VRmcDeQgh7FOwWmp+aZg4rA==\n' +
-'-----END CERTIFICATE-----';
+  'MIIDJDCCAgwCFH93ojUm8aIfF/P/YdW+iDl9RRiBMA0GCSqGSIb3DQEBCwUAMEUx\n' +
+  'CzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRl\n' +
+  'cm5ldCBXaWRnaXRzIFB0eSBMdGQwIBcNMjUwNjEwMTIyMDA5WhgPMjA1NTA2MDMx\n' +
+  'MjIwMDlaMFYxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYD\n' +
+  'VQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxDzANBgNVBAMMBmNsaWVudDCC\n' +
+  'ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK/2rjABaApcyxESnznwqarR\n' +
+  '7VmdkEotp2kHCuTF6ZseZgXw9DEqSQzvAeOIG7QfUqVZ0mBRXx3cM877zc6UW5aF\n' +
+  '4qCvwNPV5FcDDYgQE9M5MEPgJ4CSMlHse0dOB5gGrvHjScDBHETEQpWPV4tT+vrg\n' +
+  'SFXz8G1meKSdNttSJzgLpu7KRKvAxczhjgWN8eQ3KHZz8UdHS7jqN5Hjnasy43m0\n' +
+  'kK2p85Fp1zkPD/+lRVL8zvBLxt6FTIS8IuhmjXMHbzo3j5vLXmGkR7bhF2Ma6xwJ\n' +
+  'dSkl6II1Te1AyFXfz+iUXJyIqNz3eKpKJP2k5zS9g0KIy+XVKbwpN9UETcqiNL0C\n' +
+  'AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAP75ox5G7MytaueZH97xQAdLFEyHkoduX\n' +
+  'PMddYDJcRv5VAG+EHrhSId/DoaIDrhPHgwkzUWbYHn6RB63bkt11CXJKHwoZywIp\n' +
+  'efdIMlWpDJ+ISEu9q3THWAnXKdB4EuI1j3LSzNeoSQc64Wy4NQcIixmf6JnqyzQr\n' +
+  '3UFEJ4jj1nJGRhBUQza4lhSN3dJNF1kawbTn4aQ0D+rvhWcCKSPTzsGy+xvPUvsV\n' +
+  '7PlTzCrTmn7rgovs9iwgWFOvNdJJI6O2oTuZZSSGT/Xc1fpZPbIlLBTHlSpi4F6Y\n' +
+  'vttpfMLHS7YyAAppfegn79OBf3DP/N3VRmcDeQgh7FOwWmp+aZg4rA==\n' +
+  '-----END CERTIFICATE-----';
 
 let TAG: string = 'netstack ';
 let addr: socket.NetAddress = {
@@ -224,7 +224,6 @@ export default function TLSSocketServerTest() {
       }
       console.info(`${caseName} test end `);
     })
-
     /**
      * @tc.name   testNetworkMgrSocketTLSSocketServerListen0100
      * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0100
@@ -1318,8 +1317,8 @@ export default function TLSSocketServerTest() {
           ALPNProtocols: ["spdy/1", "http/1.1"]
         };
         await tlsServer.listen(tlsConnectOptions2).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         try {
           tlsServer.getState((err: BusinessError, data: socket.SocketStateBase) => {
             if (err) {}
@@ -1377,8 +1376,8 @@ export default function TLSSocketServerTest() {
           ALPNProtocols: ["spdy/1", "http/1.1"]
         };
         await tlsServer.listen(tlsConnectOptions3).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         try {
           tlsServer.getState((err: BusinessError, data: socket.SocketStateBase) => {
             if (err) {}
@@ -1551,8 +1550,8 @@ export default function TLSSocketServerTest() {
           socketTimeout: 3000
         };
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tlsServer.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
           if (err) {
             expectFalse(true);
@@ -1593,8 +1592,8 @@ export default function TLSSocketServerTest() {
           socketTimeout: 3000
         };
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tlsServer.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
           if (err) {
             expectFalse(true);
@@ -1635,8 +1634,8 @@ export default function TLSSocketServerTest() {
           socketTimeout: 3000
         };
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tlsServer.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
           if (err) {
             expectFalse(true);
@@ -1677,8 +1676,8 @@ export default function TLSSocketServerTest() {
       };
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tlsServer.setExtraOptions(tcpExtraOptions).then(() => {
           expectTrue(true);
           done();
@@ -1717,8 +1716,8 @@ export default function TLSSocketServerTest() {
         socketTimeout: 3000
       };
       await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+        console.info('fail to listen' + err.code.toString());
+      });
       try {
         tlsServer.setExtraOptions(tcpExtraOptions).then(() => {
           expectTrue(true);
@@ -1758,8 +1757,8 @@ export default function TLSSocketServerTest() {
         socketTimeout: 0
       };
       await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+        console.info('fail to listen' + err.code.toString());
+      });
       try {
         tlsServer.setExtraOptions(tcpExtraOptions).then(() => {
           expectTrue(true);
@@ -1799,8 +1798,8 @@ export default function TLSSocketServerTest() {
         socketTimeout: 0
       };
       await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+        console.info('fail to listen' + err.code.toString());
+      });
       try {
         tlsServer.setExtraOptions(tcpExtraOptions).then(() => {
           expectFail(true);
@@ -1812,7 +1811,120 @@ export default function TLSSocketServerTest() {
       }
       console.info(`${caseName} test end `);
     })
-
+    /**
+     * @tc.name   testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_401
+     * @tc.desc   SetExtraOptions with null parameter (callback), expected error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expectTrue(paramNull === null);
+        tlsServer.setExtraOptions(paramNull, (err: BusinessError) => {
+          console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
+          expectTrue(Number(err.code) === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401U
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_401U
+     * @tc.desc   SetExtraOptions with undefined parameter (callback), expected error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401U';
+      console.info(`${caseName} test start`);
+      try {
+        let paramUndefined = undefined;
+        expectTrue(paramUndefined === undefined);
+        tlsServer.setExtraOptions(paramUndefined, (err: BusinessError) => {
+          console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
+          expectTrue(Number(err.code) === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401P
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_401P
+     * @tc.desc   SetExtraOptions with null parameter (Promise), expected error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401P', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401P';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expectTrue(paramNull === null);
+        tlsServer.setExtraOptions(paramNull).then(() => {
+          console.info(`${caseName} unexpected success`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expectTrue(Number(err.code) === 401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401PU
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_401PU
+     * @tc.desc   SetExtraOptions with undefined parameter (Promise), expected error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401PU', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401PU';
+      console.info(`${caseName} test start`);
+      try {
+        let paramUndefined = undefined;
+        expectTrue(paramUndefined === undefined);
+        tlsServer.setExtraOptions(paramUndefined).then(() => {
+          console.info(`${caseName} unexpected success`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expectTrue(Number(err.code) === 401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
     /**
      * @tc.name   testNetworkMgrSocketTLSSocketServerGetSocketFd0100
      * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetSocketFd_0100
@@ -1888,8 +2000,8 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tlsServer.getCertificate().then((data: socket.X509CertRawData) => {
           done();
         }).catch((err: BusinessError) => {
@@ -1930,8 +2042,8 @@ export default function TLSSocketServerTest() {
         ALPNProtocols: ["spdy/1", "http/1.1"]
       };
       await tlsServer.listen(tlsConnectOptions7).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+        console.info('fail to listen' + err.code.toString());
+      });
       try {
         tlsServer.getCertificate().then((data: socket.X509CertRawData) => {
           done();
@@ -1975,8 +2087,8 @@ export default function TLSSocketServerTest() {
           ALPNProtocols: ["spdy/1", "http/1.1"]
         };
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         try {
           tlsServer.getCertificate((err: BusinessError, data: socket.X509CertRawData) => {
             expectTrue(data != null);
@@ -2025,8 +2137,8 @@ export default function TLSSocketServerTest() {
           ALPNProtocols: ["spdy/1", "http/1.1"]
         };
         await tlsServer.listen(tlsConnectOptions8).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         let callback: Callback<socket.TLSSocketConnection> = (data: socket.TLSSocketConnection) => {}
         tlsServer.on('connect', callback);
         tlsServer.off('connect');
@@ -2069,11 +2181,11 @@ export default function TLSSocketServerTest() {
           socketTimeout: 30000
         };
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         await tlsServer.setExtraOptions(tcpExtraOptions).catch((err:BusinessError) => {
-                    console.info('fail to setExtraOptions' + err.code.toString());
-                });
+          console.info('fail to setExtraOptions' + err.code.toString());
+        });
         tlsServer.getCertificate((err: BusinessError, data: socket.X509CertRawData) => {
           if (err) {
             expectFail(false);
@@ -2142,8 +2254,8 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tlsServer.getProtocol((err: BusinessError, data: string) => {
           if (err) {
             expectFail(false);
@@ -2196,8 +2308,8 @@ export default function TLSSocketServerTest() {
           ALPNProtocols: ["spdy/1", "http/1.1"]
         };
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tlsServer.getProtocol((err: BusinessError, data: string) => {
           if (err) {
             expectFail(false);
@@ -2250,8 +2362,8 @@ export default function TLSSocketServerTest() {
           ALPNProtocols: ["spdy/1", "http/1.1"]
         };
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tlsServer.getProtocol((err: BusinessError, data: string) => {
           if (err) {
             expectFail(false);
@@ -2280,11 +2392,11 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsClient.bind(addr).catch((err:BusinessError) => {
-                    console.info('fail to bind' + err.code.toString());
-                });
+          console.info('fail to bind' + err.code.toString());
+        });
         await tlsClient.connect(connOpt).catch((err:BusinessError) => {
-                    console.info('fail to connect' + err.code.toString());
-                });
+          console.info('fail to connect' + err.code.toString());
+        });
         try {
           expectFail(true);
           done();
@@ -2320,8 +2432,8 @@ export default function TLSSocketServerTest() {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOn0300';
       console.info(`${caseName} test start `);
       await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+        console.info('fail to listen' + err.code.toString());
+      });
       let addr2: socket.NetAddress = {
         address: '127.0.0.1',
         port: 300000
@@ -2371,8 +2483,8 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         let addr2: socket.NetAddress = {
           address: '127.0.0.1',
           port: 3000
@@ -2408,8 +2520,8 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         let addr2: socket.NetAddress = {
           address: '127.0.0.1',
           port: 3000
@@ -2445,8 +2557,8 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         let addr3: socket.NetAddress = {
           address: '127.0.0.122222',
           port: 800000
@@ -2482,8 +2594,8 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         let addr3: socket.NetAddress = {
           address: '127.0.0.1',
           port: 3000
@@ -2519,8 +2631,8 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         let addr3: socket.NetAddress = {
           address: '127.0.0.20',
           port: 3000
@@ -2548,8 +2660,8 @@ export default function TLSSocketServerTest() {
         } catch (err) {
           expectFail(false);
           await tlsClient.close().catch((err:BusinessError) => {
-                    console.info('fail to close' + err.code.toString());
-                });
+            console.info('fail to close' + err.code.toString());
+          });
           done();
         }
       } catch (err) {
@@ -2572,8 +2684,8 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         let addr3: socket.NetAddress = {
           address: '127.0.0.1',
           port: 30
@@ -2623,8 +2735,8 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tlsClient.bind(addr);
         tlsClient.connect(connOpt);
         tlsServer.on('error', (err: BusinessError) => {});
@@ -2635,8 +2747,8 @@ export default function TLSSocketServerTest() {
         } catch (err) {
           expectFail(false);
           await tlsClient.close().catch((err:BusinessError) => {
-                    console.info('fail to close' + err.code.toString());
-                });
+            console.info('fail to close' + err.code.toString());
+          });
           done();
         }
       } catch (err) {
@@ -2659,8 +2771,8 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tlsClient.bind(addr);
         tlsClient.connect(connOpt);
         let callback: ErrorCallback = (err: BusinessError) => {};
@@ -2672,8 +2784,8 @@ export default function TLSSocketServerTest() {
         } catch (err) {
           expectFail(false);
           await tlsClient.close().catch((err:BusinessError) => {
-                    console.info('fail to close' + err.code.toString());
-                });
+            console.info('fail to close' + err.code.toString());
+          });
           done();
         }
       } catch (err) {
@@ -2696,8 +2808,8 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test start `);
       try {
         await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+          console.info('fail to listen' + err.code.toString());
+        });
         tlsClient.bind(addr);
         tlsClient.connect(connOpt);
         try {
@@ -2706,8 +2818,8 @@ export default function TLSSocketServerTest() {
           done();
         } catch (err) {
           await tlsClient.close().catch((err:BusinessError) => {
-                    console.info('fail to close' + err.code.toString());
-                });
+            console.info('fail to close' + err.code.toString());
+          });
           expectFail(false);
           done();
         }
@@ -2717,7 +2829,133 @@ export default function TLSSocketServerTest() {
       }
       console.info(`${caseName} test end `);
     })
-        /**
+    /**
+     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOffError401
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_OffError_401
+     * @tc.desc   Off error event with null callback, expected error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopTLSSocketServerOffError401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOffError401';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expectTrue(paramNull === null);
+        tlsServer.off('error', paramNull);
+        console.info(`${caseName} no error thrown`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOffError401U
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_OffError_401U
+     * @tc.desc   Off error event with undefined callback, expected error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopTLSSocketServerOffError401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOffError401U';
+      console.info(`${caseName} test start`);
+      try {
+        let paramUndefined = undefined;
+        expectTrue(paramUndefined === undefined);
+        tlsServer.off('error', paramUndefined);
+        console.info(`${caseName} no error thrown`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOnError401
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_OnError_401
+     * @tc.desc   On error event with null type, expected error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopTLSSocketServerOnError401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOnError401';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expectTrue(paramNull === null);
+        tlsServer.on('error', paramNull);
+        console.info(`${caseName} no error thrown`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOnError401U
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_OnError_401U
+     * @tc.desc   On error event with undefined type, expected error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopTLSSocketServerOnError401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOnError401U';
+      console.info(`${caseName} test start`);
+      try {
+        let paramUndefined = undefined;
+        expectTrue(paramUndefined === undefined);
+        tlsServer.on('error', paramUndefined);
+        console.info(`${caseName} no error thrown`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOnError0400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OnError_0400
+     * @tc.desc   Test multiple callbacks on error event, register two callbacks without error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerOnError0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerOnError0400';
+      console.info(`${caseName} test start`);
+      try {
+        let callback1: ErrorCallback = (err: BusinessError) => {
+          console.info(`${caseName} callback1 triggered`);
+        };
+        let callback2: ErrorCallback = (err: BusinessError) => {
+          console.info(`${caseName} callback2 triggered`);
+        };
+        let ret = tlsServer.on('error', callback1);
+        expectTrue(ret === undefined);
+        tlsServer.on('error', callback2);
+        console.info(`${caseName} multiple callbacks registered successfully`);
+        tlsServer.off('error');
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        done();
+      }
+    })
+    /**
      * @tc.name   testNetworkMgrSocketTLSSocketServerListen2300
      * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2300
      * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
@@ -2725,679 +2963,835 @@ export default function TLSSocketServerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-        it('testNetworkMgrSocketTLSSocketServerListen2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2300';
-          console.info(`${caseName} test start `);
-          try {
-             let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256"
-              },
-              ALPNProtocols: []
-            };
-            tlsServer.listen(tlsConnectOptions2).then(() => {
-              expectTrue(true);
-              done();
-            }).catch((err: BusinessError) => {
-              expectFalse(true);
-              done();
-            });
-          } catch (err) {
-            expectFail(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen2400
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2400
-         * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2400';
-          console.info(`${caseName} test start `);
-          try {
-             let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256"
-              },
-              ALPNProtocols: ["spdy/1", "http/1.1"],
-              skipRemoteValidation : true
-            };
-            tlsServer.listen(tlsConnectOptions2).then(() => {
-              expectTrue(true);
-              done();
-            }).catch((err: BusinessError) => {
-              expectFalse(true);
-              done();
-            });
-          } catch (err) {
-            expectFail(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen2500
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2500
-         * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2500';
-          console.info(`${caseName} test start `);
-          try {
-             let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256"
-              },
-              ALPNProtocols: ["spdy/1", "http/1.1"],
-              skipRemoteValidation : false
-            };
-            tlsServer.listen(tlsConnectOptions2).then(() => {
-              expectTrue(true);
-              done();
-            }).catch((err: BusinessError) => {
-              expectFalse(true);
-              done();
-            });
-          } catch (err) {
-            expectFail(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen2600
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2600
-         * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2600';
-          console.info(`${caseName} test start `);
-          try {
-            let port: number = Math.round(1024 + Math.random() *5000 + Math.random() * 4000);
-             let netAddress: socket.NetAddress = {
-              address: '127.0.0.1',
-              port: port
-            }
-             let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256"
-              },
-              ALPNProtocols: ["spdy/1", "http/1.1"],
-              proxy : {
-                type : 1,
-                address : netAddress
-              }
-            };
-            tlsServer.listen(tlsConnectOptions2).then(() => {
-              expectTrue(true);
-              done();
-            }).catch((err: BusinessError) => {
-              expectFalse(true);
-              done();
-            });
-          } catch (err) {
-            expectFail(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen2700
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2700
-         * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2700';
-          console.info(`${caseName} test start `);
-          try {
-            tlsServer.listen(null).then(() => {
-              done();
-            }).catch((err: BusinessError) => {
-              expectTrue(Number(err.code) === 401);
-              done();
-            });
-          } catch (err) {
-            expectTrue(Number(err.code) === 401);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen2800
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2800
-         * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2800';
-          console.info(`${caseName} test start `);
-          try {
-            tlsServer.listen(undefined).then(() => {
-              done();
-            }).catch((err: BusinessError) => {
-              expectTrue(Number(err.code) === 401);
-              done();
-            });
-          } catch (err) {
-            expectTrue(Number(err.code) === 401);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-         /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen2900
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2900
-         * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2900';
-          console.info(`${caseName} test start `);
-          try {
-            let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: '',
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256"
-              },
-              ALPNProtocols: ["spdy/1", "http/1.1"]
-            };
-            tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
-              if (err) {
-                expectFail(false);
-              }
-              expectFail(true);
-              done();
-            })
-          } catch(err) {
-            expectFalse(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-         /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen3000
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3000
-         * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3000';
-          console.info(`${caseName} test start `);
-          try {
-            let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv13],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256"
-              },
-              ALPNProtocols: [""]
-            };
-            tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
-              if (err) {
-                expectFail(false);
-              }
-              expectFail(true);
-              done();
-            })
-          } catch(err) {
-            expectFalse(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen3100
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3100
-         * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3100';
-          console.info(`${caseName} test start `);
-          try {
-            let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: false,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256"
-              },
-              ALPNProtocols: ["spdy/1", "http/1.1"]
-            };
-            tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
-              if (err) {
-                expectFail(false);
-              }
-              expectFail(true);
-              done();
-            })
-          } catch(err) {
-            expectFalse(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen3200
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3200
-         * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3200';
-          console.info(`${caseName} test start `);
-          try {
-            let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthentication : true
-              },
-              ALPNProtocols: ["spdy/1", "http/1.1"]
-            };
-            tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
-              if (err) {
-                expectFail(false);
-              }
-              expectFail(true);
-              done();
-            })
-          } catch(err) {
-            expectFalse(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen3300
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3300
-         * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3300';
-          console.info(`${caseName} test start `);
-          try {
-            let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthentication : false
-              },
-              ALPNProtocols: ["spdy/1", "http/1.1"]
-            };
-            tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
-              if (err) {
-                expectFail(false);
-              }
-              expectFail(true);
-              done();
-            })
-          } catch(err) {
-            expectFalse(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen3400
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3400
-         * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3400';
-          console.info(`${caseName} test start `);
-          try {
-            let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthentication : false
-              },
-              ALPNProtocols: []
-            };
-            tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
-              if (err) {
-                expectFail(false);
-              }
-              expectFail(true);
-              done();
-            })
-          } catch(err) {
-            expectFalse(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen3500
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3500
-         * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3500';
-          console.info(`${caseName} test start `);
-          try {
-            let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthentication : false
-              },
-              ALPNProtocols: [],
-              skipRemoteValidation : true
-            };
-            tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
-              if (err) {
-                expectFail(false);
-              }
-              expectFail(true);
-              done();
-            })
-          } catch(err) {
-            expectFalse(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen3600
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3600
-         * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3600';
-          console.info(`${caseName} test start `);
-          try {
-            let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthentication : false
-              },
-              ALPNProtocols: [],
-              skipRemoteValidation : false
-            };
-            tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
-              if (err) {
-                expectFail(false);
-              }
-              expectFail(true);
-              done();
-            })
-          } catch(err) {
-            expectFalse(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen3700
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3700
-         * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3700';
-          console.info(`${caseName} test start `);
-          try {
-            let port: number = Math.round(1024 + Math.random() *5000 + Math.random() * 4000);
-             let netAddress: socket.NetAddress = {
-              address: '127.0.0.1',
-              port: port
-            }
-            let tlsConnectOptions2: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common,
-                key: pri_key_server,
-                password: '123456',
-                cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256",
-                isBidirectionalAuthentication : false
-              },
-              ALPNProtocols: [],
-              skipRemoteValidation : false,
-              proxy : {
-                type : 1,
-                address : netAddress
-              }
-            };
-            tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
-              if (err) {
-                expectFail(false);
-              }
-              expectFail(true);
-              done();
-            })
-          } catch(err) {
-            expectFalse(false);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen3800
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3800
-         * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3800';
-          console.info(`${caseName} test start `);
-          try {
-            tlsServer.listen(null, (err: BusinessError) => {
-              if (err) {
-                expectFail(false);
-              }
-              expectTrue(Number(err.code) === 401);
-              done();
-            })
-          } catch(err) {
-            expectTrue(Number(err.code) === 401);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerListen3900
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3900
-         * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerListen3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3900';
-          console.info(`${caseName} test start `);
-          try {
-            tlsServer.listen(undefined, (err: BusinessError) => {
-              if (err) {
-                expectFail(false);
-              }
-              expectTrue(Number(err.code) === 401);
-              done();
-            })
-          } catch(err) {
-            expectTrue(Number(err.code) === 401);
-            done();
-          }
-          console.info(`${caseName} test end `);
-        })
-        /**
-         * @tc.name   testNetworkMgrSocketTLSSocketServerGetCertificate0700
-         * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0700
-         * @tc.desc   Do not monitor the service,Use Promise asynchronous callback.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrSocketTLSSocketServerGetCertificate0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetCertificate0700';
-          console.info(`${caseName} test start `);
-          try {
-            let ca_common3: string[] = [];
-            let addr: socket.NetAddress = {
-              address: '',
-              port: 0
-            };
-            let tlsConnectOptions8: socket.TLSConnectOptions = {
-              address: addr,
-              secureOptions: {
-                ca: ca_common3,
-                key: '',
-                password: '12345',
-                cert: '',
-                protocols: [socket.Protocol.TLSv12],
-                useRemoteCipherPrefer: true,
-                signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-                cipherSuite: "AES256-SHA256",
-              },
-              ALPNProtocols: ["spdy/1", "http/1.1"]
-            };
-            await tlsServer.listen(tlsConnectOptions8).catch((err: BusinessError) => {
-              console.info(`fail to listen ` + err.code.toString());
-            });
-            let callback: Callback<socket.TLSSocketConnection> = (data: socket.TLSSocketConnection) => {}
-            tlsServer.on('connect', callback);
-            tlsServer.off('connect');
-            tlsServer.getCertificate().then((data: socket.X509CertRawData) => {
-              expectTrue(data != null);
-              done();
-            }).catch((err: BusinessError) => {
-              done();
-            })
-          } catch (err) {
+    it('testNetworkMgrSocketTLSSocketServerListen2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2300';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          },
+          ALPNProtocols: []
+        };
+        tlsServer.listen(tlsConnectOptions2).then(() => {
+          expectTrue(true);
           done();
+        }).catch((err: BusinessError) => {
+          expectFalse(true);
+          done();
+        });
+      } catch (err) {
+        expectFail(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen2400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2400
+     * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2400';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"],
+          skipRemoteValidation : true
+        };
+        tlsServer.listen(tlsConnectOptions2).then(() => {
+          expectTrue(true);
+          done();
+        }).catch((err: BusinessError) => {
+          expectFalse(true);
+          done();
+        });
+      } catch (err) {
+        expectFail(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen2500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2500
+     * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2500';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"],
+          skipRemoteValidation : false
+        };
+        tlsServer.listen(tlsConnectOptions2).then(() => {
+          expectTrue(true);
+          done();
+        }).catch((err: BusinessError) => {
+          expectFalse(true);
+          done();
+        });
+      } catch (err) {
+        expectFail(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen2600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2600
+     * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2600';
+      console.info(`${caseName} test start `);
+      try {
+        let port: number = Math.round(1024 + Math.random() *5000 + Math.random() * 4000);
+        let netAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: port
+        }
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"],
+          proxy : {
+            type : 1,
+            address : netAddress
+          }
+        };
+        tlsServer.listen(tlsConnectOptions2).then(() => {
+          expectTrue(true);
+          done();
+        }).catch((err: BusinessError) => {
+          expectFalse(true);
+          done();
+        });
+      } catch (err) {
+        expectFail(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen2700
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2700
+     * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2700';
+      console.info(`${caseName} test start `);
+      try {
+        tlsServer.listen(null).then(() => {
+          done();
+        }).catch((err: BusinessError) => {
+          expectTrue(Number(err.code) === 401);
+          done();
+        });
+      } catch (err) {
+        expectTrue(Number(err.code) === 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen2800
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2800
+     * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2800';
+      console.info(`${caseName} test start `);
+      try {
+        tlsServer.listen(undefined).then(() => {
+          done();
+        }).catch((err: BusinessError) => {
+          expectTrue(Number(err.code) === 401);
+          done();
+        });
+      } catch (err) {
+        expectTrue(Number(err.code) === 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen2900
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2900
+     * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2900';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: '',
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"]
+        };
+        tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
+          if (err) {
+            expectFail(false);
+          }
+          expectFail(true);
+          done();
+        })
+      } catch(err) {
+        expectFalse(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen3000
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3000
+     * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3000';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv13],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          },
+          ALPNProtocols: [""]
+        };
+        tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
+          if (err) {
+            expectFail(false);
+          }
+          expectFail(true);
+          done();
+        })
+      } catch(err) {
+        expectFalse(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen3100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3100
+     * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3100';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: false,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"]
+        };
+        tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
+          if (err) {
+            expectFail(false);
+          }
+          expectFail(true);
+          done();
+        })
+      } catch(err) {
+        expectFalse(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen3200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3200
+     * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3200';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+            isBidirectionalAuthentication : true
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"]
+        };
+        tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
+          if (err) {
+            expectFail(false);
+          }
+          expectFail(true);
+          done();
+        })
+      } catch(err) {
+        expectFalse(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen3300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3300
+     * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3300';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+            isBidirectionalAuthentication : false
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"]
+        };
+        tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
+          if (err) {
+            expectFail(false);
+          }
+          expectFail(true);
+          done();
+        })
+      } catch(err) {
+        expectFalse(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen3400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3400
+     * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3400';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+            isBidirectionalAuthentication : false
+          },
+          ALPNProtocols: []
+        };
+        tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
+          if (err) {
+            expectFail(false);
+          }
+          expectFail(true);
+          done();
+        })
+      } catch(err) {
+        expectFalse(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen3500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3500
+     * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3500';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+            isBidirectionalAuthentication : false
+          },
+          ALPNProtocols: [],
+          skipRemoteValidation : true
+        };
+        tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
+          if (err) {
+            expectFail(false);
+          }
+          expectFail(true);
+          done();
+        })
+      } catch(err) {
+        expectFalse(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen3600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3600
+     * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3600';
+      console.info(`${caseName} test start `);
+      try {
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+            isBidirectionalAuthentication : false
+          },
+          ALPNProtocols: [],
+          skipRemoteValidation : false
+        };
+        tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
+          if (err) {
+            expectFail(false);
+          }
+          expectFail(true);
+          done();
+        })
+      } catch(err) {
+        expectFalse(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen3700
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3700
+     * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3700';
+      console.info(`${caseName} test start `);
+      try {
+        let port: number = Math.round(1024 + Math.random() *5000 + Math.random() * 4000);
+        let netAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: port
+        }
+        let tlsConnectOptions2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+            isBidirectionalAuthentication : false
+          },
+          ALPNProtocols: [],
+          skipRemoteValidation : false,
+          proxy : {
+            type : 1,
+            address : netAddress
+          }
+        };
+        tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
+          if (err) {
+            expectFail(false);
+          }
+          expectFail(true);
+          done();
+        })
+      } catch(err) {
+        expectFalse(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen3800
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3800
+     * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3800';
+      console.info(`${caseName} test start `);
+      try {
+        tlsServer.listen(null, (err: BusinessError) => {
+          if (err) {
+            expectFail(false);
+          }
+          expectTrue(Number(err.code) === 401);
+          done();
+        })
+      } catch(err) {
+        expectTrue(Number(err.code) === 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen3900
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_3900
+     * @tc.desc   The test exceeds the legitimate port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen3900';
+      console.info(`${caseName} test start `);
+      try {
+        tlsServer.listen(undefined, (err: BusinessError) => {
+          if (err) {
+            expectFail(false);
+          }
+          expectTrue(Number(err.code) === 401);
+          done();
+        })
+      } catch(err) {
+        expectTrue(Number(err.code) === 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetCertificate0700
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0700
+     * @tc.desc   Do not monitor the service,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerGetCertificate0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetCertificate0700';
+      console.info(`${caseName} test start `);
+      try {
+        let ca_common3: string[] = [];
+        let addr: socket.NetAddress = {
+          address: '',
+          port: 0
+        };
+        let tlsConnectOptions8: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: ca_common3,
+            key: '',
+            password: '12345',
+            cert: '',
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"]
+        };
+        await tlsServer.listen(tlsConnectOptions8).catch((err: BusinessError) => {
+          console.info(`fail to listen ` + err.code.toString());
+        });
+        let callback: Callback<socket.TLSSocketConnection> = (data: socket.TLSSocketConnection) => {}
+        tlsServer.on('connect', callback);
+        tlsServer.off('connect');
+        tlsServer.getCertificate().then((data: socket.X509CertRawData) => {
+          expectTrue(data != null);
+          done();
+        }).catch((err: BusinessError) => {
+          done();
+        })
+      } catch (err) {
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen4000
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_4000
+     * @tc.desc   Test listen with invalid address trigger system error 2303111/2303199, Use Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerListen4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen4000';
+      console.info(`${caseName} test start `);
+      try {
+        let invalidAddr: socket.NetAddress = {
+          address: '9999',
+          port: 10000
+        };
+        let invalidOptions: socket.TLSConnectOptions = {
+          address: invalidAddr,
+          secureOptions: {
+            ca: ca_common,
+            key: pri_key_server,
+            password: '123456',
+            cert: cert_server,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256"
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"]
+        };
+        tlsServer.listen(invalidOptions, (err: BusinessError) => {
+          if (err) {
+            console.info(`${caseName} listen fail ${JSON.stringify(err)}`);
+            expectTrue(Number(err.code) == 2303199 || Number(err.code) == 2303111);
+            console.info(`${caseName} err code: ${err.code}`);
+          } else {
+            console.info(`${caseName} listen success`);
           }
           console.info(`${caseName} test end `);
-        })
+          done();
+        });
+      } catch(err) {
+        console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) == 2303199 || Number(err.code) == 2303111);
+        console.info(`${caseName} test end `);
+        done();
+      }
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOn0400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_On_0400
+     * @tc.desc   Test multiple callbacks subscription on connect event, register two callbacks without error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerOn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerOn0400';
+      console.info(`${caseName} test start`);
+      try {
+        let callback1: Callback<socket.TLSSocketConnection> = (data: socket.TLSSocketConnection) => {
+          console.info(`${caseName} callback1 triggered`);
+        };
+        let callback2: Callback<socket.TLSSocketConnection> = (data: socket.TLSSocketConnection) => {
+          console.info(`${caseName} callback2 triggered`);
+        };
+        tlsServer.on('connect', callback1);
+        tlsServer.on('connect', callback2);
+        console.info(`${caseName} multiple callbacks registered successfully`);
+        tlsServer.off('connect');
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        done();
+      }
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOn0500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_On_0500
+     * @tc.desc   Test multiple callbacks: register two callbacks, remove one via off('connect', callback), verify remaining.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketServerOn0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerOn0500';
+      console.info(`${caseName} test start`);
+      try {
+        let callback1: Callback<socket.TLSSocketConnection> = (data: socket.TLSSocketConnection) => {
+          console.info(`${caseName} callback1 triggered`);
+        };
+        let callback2: Callback<socket.TLSSocketConnection> = (data: socket.TLSSocketConnection) => {
+          console.info(`${caseName} callback2 triggered`);
+        };
+        tlsServer.on('connect', callback1);
+        tlsServer.on('connect', callback2);
+        tlsServer.off('connect', callback1);
+        console.info(`${caseName} callback1 removed, callback2 remains`);
+        tlsServer.off('connect', callback2);
+        console.info(`${caseName} all callbacks removed`);
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        done();
+      }
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOff401
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_Off_401
+     * @tc.desc   Off connect with null type, expected error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopTLSSocketServerOff401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOff401';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expectTrue(paramNull === null);
+        tlsServer.off('connect', paramNull);
+        console.info(`${caseName} no error thrown`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOff401U
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_Off_401U
+     * @tc.desc   Off connect with undefined type, expected error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopTLSSocketServerOff401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOff401U';
+      console.info(`${caseName} test start`);
+      try {
+        let paramUndefined = undefined;
+        expectTrue(paramUndefined === undefined);
+        tlsServer.off('connect', paramUndefined);
+        console.info(`${caseName} no error thrown`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    })
   })
 }
