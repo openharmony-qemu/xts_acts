@@ -607,6 +607,8 @@ std::vector<napi_property_descriptor> desc = {
      nullptr},
     {"jsPackingOptionsGetQualityBadParameter", nullptr, JSPackingOptionsGetQualityBadParameter, nullptr, nullptr,
      nullptr, napi_default, nullptr},
+    {"jSPackingOptionsGetQualityBadParameterQuality", nullptr, JSPackingOptionsGetQualityBadParameterQuality, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
     {"jsPackingOptionsSetQuality", nullptr, JSPackingOptionsSetQuality, nullptr, nullptr, nullptr, napi_default,
      nullptr},
     {"jsPackingOptionsSetQualityBadParameter", nullptr, JSPackingOptionsSetQualityBadParameter, nullptr, nullptr,
