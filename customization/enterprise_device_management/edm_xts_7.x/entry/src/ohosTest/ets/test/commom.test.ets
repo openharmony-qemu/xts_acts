@@ -275,6 +275,18 @@ const TEST_PERMISSION_LIST_1: Array<string> = ['ohos.permission.APPROXIMATELY_LO
 
 const TEST_PERMISSION_1: string = 'ohos.permission.APPROXIMATELY_LOCATION';
 
+const IP_LIST_1: Array<string> = ["192.168.1.1", "10.0.0.1"];
+const IP_LIST_2: Array<string> = ["172.16.0.1"];
+const IP_LIST_SINGLE: Array<string> = ["192.168.1.1"];
+let IP_LIST_OVER_MAX: Array<string> = [];
+
+function ipListOverMaxInit() {
+  IP_LIST_OVER_MAX = [];
+  for (let i = 0; i < 101; i++) {
+    IP_LIST_OVER_MAX.push(`10.0.0.${i + 1}`);
+  }
+}
+
 const APP_IDS_AND_IDENTIFIER_1: Array<string> = [
   "test_appid_1",
   "1234567890123456789",
@@ -336,5 +348,6 @@ export {
   TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, TEST_INVALID_APP_INSTANCE, APP_IDS_AND_IDENTIFIER_1,
   OTHER_WANT, NOT_EXIST_WANT, MARKET_APPS, ERROR_MARKET_APPS, BLUETOOTH_STATE, WIFI_STATE,
   getBluetoothState, setBluetoothState, getWifiState, setWifiState, getErrorCode, getInvalidPixelMap,
-  INVALID_PIXEL_MAP, SYSTEM_CORE_PERMISSION_DOWNLOAD, TEST_REAL_APP_ID_1
+  INVALID_PIXEL_MAP, SYSTEM_CORE_PERMISSION_DOWNLOAD, TEST_REAL_APP_ID_1,
+  IP_LIST_1, IP_LIST_2, IP_LIST_SINGLE, IP_LIST_OVER_MAX, ipListOverMaxInit
 }
