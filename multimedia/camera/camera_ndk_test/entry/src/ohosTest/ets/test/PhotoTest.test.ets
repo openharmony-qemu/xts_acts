@@ -4112,7 +4112,7 @@ export default function PhotoTest() {
     /**
      * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0100
      * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0100
-     * @tc.desc   Test OH_CaptureSession_GetWhiteBalanceRange when the second paran null
+     * @tc.desc   Test OH_CaptureSession_GetWhiteBalanceRange when the second paran null - 7400101
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -4129,7 +4129,7 @@ export default function PhotoTest() {
     /**
      * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0200
      * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0200
-     * @tc.desc   Test OH_CaptureSession_GetWhiteBalanceRange when the third paran null
+     * @tc.desc   Test OH_CaptureSession_GetWhiteBalanceRange when the third paran null - 7400101
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -4146,7 +4146,7 @@ export default function PhotoTest() {
     /**
      * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_0100
      * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_0100
-     * @tc.desc   Test OH_CaptureSession_GetWhiteBalance when the second paran null
+     * @tc.desc   Test OH_CaptureSession_GetWhiteBalance when the second paran null - 7400101
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
