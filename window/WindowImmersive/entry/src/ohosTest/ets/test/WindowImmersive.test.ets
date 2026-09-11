@@ -2578,7 +2578,7 @@ export default function windowImmersiveTest() {
 
     /**
      * @tc.name   test_setSystemAvoidAreaEnabled_UNDEFINED
-     * @tc.number SUB_BASIC_WMS_setSystemAvoidAreaEnabled_ErrorCode_0200
+     * @tc.number SUB_BASIC_WMS_setSystemAvoidAreaEnabled_ErrorCode_0600
      * @tc.desc   setSystemAvoidAreaEnabled接口验证401_传入undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
