@@ -22,7 +22,6 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import emitter from '@ohos.events.emitter';
-import bundle from '@ohos.bundle.bundleManager';
 import { Driver, ON } from '@ohos.UiTest';
 
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -36,8 +35,6 @@ let innerEvent: emitter.InnerEvent = {
   eventId: 1,
   priority: emitter.EventPriority.HIGH
 };
-
-let targetVersion: number = 12;
 
 let TAG: string = 'AbilityDelegatorStageTest';
 export default function abilityDelegatorStage(): void {
@@ -56,17 +53,7 @@ export default function abilityDelegatorStage(): void {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1270 beforeAll');
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-
-      bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).then(data => {
-        console.info('getBundleInfoForSelf' + JSON.stringify(data));
-        targetVersion = data.targetVersion;
-        console.info('getBundleInfoForSelf targetVersion=' + targetVersion);
-        done();
-      }).catch((err: Error) => {
-        console.info('getBundleInfoForSelf fail' + JSON.stringify(err));
-        console.info('getBundleInfoForSelf fail targetVersion=' + targetVersion);
-        done();
-      })
+      done();
     });
 
     afterEach(async (done: () => void) => {
@@ -93,11 +80,7 @@ export default function abilityDelegatorStage(): void {
         }, (err: BusinessError<void> | null, data: void | undefined): void => {
           console.info('startAbility callback err ' + JSON.stringify(err?.code));
           if (err?.code) {
-            if (targetVersion >= 20) {
-              expect(err?.code).assertEqual(16000001);
-            } else {
-              expect(err?.code).assertEqual(2097152);
-            }
+            expect(err?.code).assertEqual(16000001);
             done();
           } else {
             expect(false).assertTrue();
@@ -135,11 +118,7 @@ export default function abilityDelegatorStage(): void {
         }).catch((err: Error) => {
           hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
             'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1280 failed');
-          if (targetVersion >= 20) {
-            expect(err?.code).assertEqual(16000001);
-          } else {
-            expect(err?.code).assertEqual(2097152);
-          }
+          expect(err?.code).assertEqual(16000001);
           done();
         })
       } catch (error) {

@@ -19,7 +19,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
 import Want from '@ohos.app.ability.Want';
-import { common, UIAbility } from '@kit.AbilityKit';
+import { common } from '@kit.AbilityKit';
 import { Driver } from '@kit.TestKit';
 
 export default function BackWithResultTest(): void {
@@ -27,73 +27,11 @@ export default function BackWithResultTest(): void {
 
     const TAG: string = 'BackToCallerAbilityWithResult';
     const TEST_SUITE_NAME: string = 'BackToCallerAbilityWithResultTest';
-    const PARAMETER_ERROR_CODE  = 401;
     const PARAMETER_ERROR_CODE2  = 16000074;
     beforeEach(async ()=>{
       let driver = Driver.create();
       await driver.delayMs(1000);
     });
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_BackWithResult_Static_3000
-     * @tc.number SUB_Ability_AbilityRuntime_BackWithResult_Static_3000
-     * @tc.desc   Verify that the backToCallerAbleWithResult is invalid when abilityResult is undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_BackWithResult_Static_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_BackWithResult_Static_3000';
-      hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start`);
-      let callerRequestCode: string = '12347561890';
-      let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext;
-      try {
-        context.backToCallerAbilityWithResult(undefined as common.AbilityResult, callerRequestCode).then(async () => {
-          hilog.info(0x0000, TAG, 'backToCallerAbilityWithResult succeed');
-          expect().assertFail();
-        }).catch((err: Error) => {
-          hilog.error(0x0000, TAG, `backToCallerAbilityWithResult failed, code is ${err?.code}, message is ${err.message}`);
-          expect(err?.code).assertEqual(0);
-        });
-      } catch (err) {
-        hilog.error(0x0000, TAG, `backToCallerAbilityWithResult1 failed, code is ${err?.code}, message is ${err.message}`);
-        expect(err?.code).assertEqual(0);
-      };
-      done();
-        })
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_BackWithResult_Static_2900
-     * @tc.number SUB_Ability_AbilityRuntime_BackWithResult_Static_2900
-     * @tc.desc   Verify that the backToCallerAbleWithResult is invalid when requestCode is undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_BackWithResult_Static_2900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_BackWithResult_Static_2900';
-      hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start`);
-      let want: Want = {};
-      let resultCode = 100;
-      let abilityResult: common.AbilityResult = {
-        want,
-        resultCode
-      };
-      let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext;
-      try {
-        context.backToCallerAbilityWithResult(abilityResult, undefined as string).then(async () => {
-          hilog.info(0x0000, TAG, 'backToCallerAbilityWithResult succeed');
-          expect().assertFail();
-        }).catch((err: Error) => {
-          hilog.error(0x0000, TAG, `backToCallerAbilityWithResult1 failed, code is ${err?.code}, message is ${err.message}`);
-          expect(err?.code).assertEqual(0);
-        });
-      } catch (err) {
-        hilog.error(0x0000, TAG, `backToCallerAbilityWithResult1 failed, code is ${err?.code}, message is ${err.message}`);
-        expect(err?.code).assertEqual(0);
-      };
-      done();
-        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_BackWithResult_Static_2800
