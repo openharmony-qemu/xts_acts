@@ -163,6 +163,8 @@ std::vector<napi_property_descriptor> desc = {
      napi_default, nullptr},
     {"AuxiliaryPictureInfoGetRowStrideSuccess", nullptr, AuxiliaryPictureInfoGetRowStrideSuccess, nullptr, nullptr,
      nullptr, napi_default, nullptr},
+    {"AuxiliaryPictureInfoGetRowStrideBadParameter", nullptr, AuxiliaryPictureInfoGetRowStrideBadParameter, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
     {"AuxiliaryPictureInfoSetRowStrideSuccess", nullptr, AuxiliaryPictureInfoSetRowStrideSuccess, nullptr, nullptr,
      nullptr, napi_default, nullptr},
     {"AuxiliaryPictureInfoGetPixelFormatSuccess", nullptr, AuxiliaryPictureInfoGetPixelFormatSuccess, nullptr, nullptr,

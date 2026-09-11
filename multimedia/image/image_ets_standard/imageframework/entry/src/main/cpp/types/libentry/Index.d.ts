@@ -231,6 +231,8 @@ export const AuxiliaryPictureInfoSetSizeSuccess: () => number;
 
 export const AuxiliaryPictureInfoGetRowStrideSuccess: () => number;
 
+export const AuxiliaryPictureInfoGetRowStrideBadParameter: () => number;
+
 export const AuxiliaryPictureInfoSetRowStrideSuccess: () => number;
 
 export const AuxiliaryPictureInfoGetPixelFormatSuccess: () => number;
