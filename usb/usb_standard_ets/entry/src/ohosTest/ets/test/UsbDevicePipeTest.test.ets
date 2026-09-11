@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,10 +14,10 @@
  */
 
 import usbMgr from '@ohos.usbManager';
-import { Driver, ON, MatchPattern } from '@ohos.UiTest';
+import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { isFilteredDevice } from './FilterUtils';
 import parameter from '@ohos.systemparameter';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 let deviceList: Array<usbMgr.USBDevice>;
 let testDevice: usbMgr.USBDevice | null = null;
@@ -111,12 +111,18 @@ async function ensurePermission(deviceName: string): Promise<void> {
 function findBulkEndpoints(param: TransferTestParam): void {
   for (let i = 0; i < param.config.interfaces.length; i++) {
     let iface = param.config.interfaces[i];
-    if (iface.endpoints.length === 0) continue;
-    if (iface.clazz !== 10 || iface.subClass !== 0 || iface.protocol !== 2) continue;
+    if (iface.endpoints.length === 0) {
+      continue;
+    }
+    if (iface.clazz !== 10 || iface.subClass !== 0 || iface.protocol !== 2) {
+      continue;
+    }
 
     for (let j = 0; j < iface.endpoints.length; j++) {
       let endpoint = iface.endpoints[j];
-      if (endpoint.type !== usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK) continue;
+      if (endpoint.type !== usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK) {
+        continue;
+      }
       if (endpoint.direction === usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) {
         param.maxOutSize = endpoint.maxPacketSize;
         param.outEndpoint = endpoint;
@@ -149,7 +155,8 @@ function getTransferTestParam(localPipe: usbMgr.USBDevicePipe): TransferTestPara
   return param;
 }
 
-function buildControlTransferParam(bmRequestType: number, bRequest: number, wValue: number, wIndex: number, wLength: number): usbMgr.USBDeviceRequestParams {
+function buildControlTransferParam(bmRequestType: number, bRequest: number, wValue: number, wIndex: number,
+  wLength: number): usbMgr.USBDeviceRequestParams {
   return {
     bmRequestType: bmRequestType,
     bRequest: bRequest,
@@ -227,7 +234,6 @@ export default function UsbDevicePipeTest() {
         testParam = getTransferTestParam(localPipe);
         if (!testParam.targetInterface || !testParam.inEndpoint) {
           console.info(`${TAG} ${SKIP_TAG} testBulkTransfer001, bulk endpoint not found, skip`);
-          done();
           return;
         }
         testParam.isClaimed = usbMgr.claimInterface(localPipe, testParam.targetInterface, true);
@@ -238,11 +244,9 @@ export default function UsbDevicePipeTest() {
         console.info(`${TAG} readData buffer: ${ab2str(tmpUint8Array)}`);
         console.info(`${TAG} bulkTransfer result: ${data}`);
         expect(data).assertLargerOrEqual(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testBulkTransfer001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         if (localPipe && testParam?.targetInterface) {
           usbMgr.releaseInterface(localPipe, testParam.targetInterface);
@@ -250,6 +254,7 @@ export default function UsbDevicePipeTest() {
         if (localPipe) {
           usbMgr.closePipe(localPipe);
         }
+        done();
       }
     })
 
@@ -277,7 +282,6 @@ export default function UsbDevicePipeTest() {
         testParam = getTransferTestParam(localPipe);
         if (!testParam.targetInterface || !testParam.outEndpoint) {
           console.info(`${TAG} ${SKIP_TAG} testBulkTransfer002, bulk endpoint not found, skip`);
-          done();
           return;
         }
         testParam.isClaimed = usbMgr.claimInterface(localPipe, testParam.targetInterface, true);
@@ -293,14 +297,17 @@ export default function UsbDevicePipeTest() {
         console.info(`${TAG} bulkTransfer result: ${data}`);
         console.info(`${TAG} send data: ${testParam.sendData}`);
         expect(data).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testBulkTransfer002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe && testParam?.targetInterface) { usbMgr.releaseInterface(localPipe, testParam.targetInterface); }
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe && testParam?.targetInterface) {
+          usbMgr.releaseInterface(localPipe, testParam.targetInterface);
+        }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -328,7 +335,6 @@ export default function UsbDevicePipeTest() {
         testParam = getTransferTestParam(localPipe);
         if (!testParam.targetInterface || !testParam.outEndpoint) {
           console.info(`${TAG} ${SKIP_TAG} testBulkTransfer003, bulk endpoint not found, skip`);
-          done();
           return;
         }
         testParam.isClaimed = usbMgr.claimInterface(localPipe, testParam.targetInterface, true);
@@ -344,14 +350,17 @@ export default function UsbDevicePipeTest() {
         console.info(`${TAG} bulkTransfer result: ${data}`);
         console.info(`${TAG} send data: ${testParam.sendData}`);
         expect(data).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testBulkTransfer003 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe && testParam?.targetInterface) { usbMgr.releaseInterface(localPipe, testParam.targetInterface); }
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe && testParam?.targetInterface) {
+          usbMgr.releaseInterface(localPipe, testParam.targetInterface);
+        }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -379,7 +388,6 @@ export default function UsbDevicePipeTest() {
         testParam = getTransferTestParam(localPipe);
         if (!testParam.targetInterface || !testParam.outEndpoint) {
           console.info(`${TAG} ${SKIP_TAG} testBulkTransfer004, bulk endpoint not found, skip`);
-          done();
           return;
         }
         testParam.isClaimed = usbMgr.claimInterface(localPipe, testParam.targetInterface, true);
@@ -395,14 +403,17 @@ export default function UsbDevicePipeTest() {
         console.info(`${TAG} bulkTransfer result: ${data}`);
         console.info(`${TAG} send data: ${testParam.sendData}`);
         expect(data).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testBulkTransfer004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe && testParam?.targetInterface) { usbMgr.releaseInterface(localPipe, testParam.targetInterface); }
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe && testParam?.targetInterface) {
+          usbMgr.releaseInterface(localPipe, testParam.targetInterface);
+        }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -430,7 +441,6 @@ export default function UsbDevicePipeTest() {
         testParam = getTransferTestParam(localPipe);
         if (!testParam.targetInterface || !testParam.outEndpoint) {
           console.info(`${TAG} ${SKIP_TAG} testBulkTransfer005, bulk endpoint not found, skip`);
-          done();
           return;
         }
         testParam.isClaimed = usbMgr.claimInterface(localPipe, testParam.targetInterface, true);
@@ -446,14 +456,17 @@ export default function UsbDevicePipeTest() {
         console.info(`${TAG} bulkTransfer result: ${data}`);
         console.info(`${TAG} send data: ${testParam.sendData}`);
         expect(data).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testBulkTransfer005 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe && testParam?.targetInterface) { usbMgr.releaseInterface(localPipe, testParam.targetInterface); }
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe && testParam?.targetInterface) {
+          usbMgr.releaseInterface(localPipe, testParam.targetInterface);
+        }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -486,13 +499,14 @@ export default function UsbDevicePipeTest() {
             usbMgr.releaseInterface(localPipe, targetInterface);
           }
         }
-        done();
       } catch (error) {
         console.error(`${TAG} testClaimInterface001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -525,13 +539,14 @@ export default function UsbDevicePipeTest() {
             usbMgr.releaseInterface(localPipe, targetInterface);
           }
         }
-        done();
       } catch (error) {
         console.error(`${TAG} testClaimInterface003 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -564,13 +579,14 @@ export default function UsbDevicePipeTest() {
             usbMgr.releaseInterface(localPipe, targetInterface);
           }
         }
-        done();
       } catch (error) {
         console.error(`${TAG} testClaimInterface004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -603,13 +619,14 @@ export default function UsbDevicePipeTest() {
             usbMgr.releaseInterface(localPipe, targetInterface);
           }
         }
-        done();
       } catch (error) {
         console.error(`${TAG} testClaimInterface005 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -646,18 +663,21 @@ export default function UsbDevicePipeTest() {
           console.info(`${TAG} setConfiguration result: ${ret}`);
           expect(ret).assertEqual(0);
         }
-        done();
       } catch (error) {
         console.error(`${TAG} testSetConfiguration001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         if (localPipe && originalConfig) {
-          try { usbMgr.setConfiguration(localPipe, originalConfig); } catch (e) {
+          try {
+            usbMgr.setConfiguration(localPipe, originalConfig);
+          } catch (e) {
             console.error(`${TAG} testSetConfiguration001 restore config err: ${JSON.stringify(e)}`);
           }
         }
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -688,13 +708,14 @@ export default function UsbDevicePipeTest() {
           console.info(`${TAG} setConfiguration result: ${ret}`);
           expect(ret).assertLess(0);
         }
-        done();
       } catch (error) {
         console.error(`${TAG} testSetConfiguration002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -727,13 +748,14 @@ export default function UsbDevicePipeTest() {
           expect(ret).assertEqual(0);
           usbMgr.releaseInterface(localPipe, targetInterface);
         }
-        done();
       } catch (error) {
         console.error(`${TAG} testSetInterface001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -767,13 +789,14 @@ export default function UsbDevicePipeTest() {
           expect(ret !== 0).assertTrue();
           usbMgr.releaseInterface(localPipe, deviceList[0].configs[j].interfaces[0]);
         }
-        done();
       } catch (error) {
         console.error(`${TAG} testSetInterface002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -797,18 +820,20 @@ export default function UsbDevicePipeTest() {
       let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(6, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE,
-          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) | (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
+          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
+            (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
             | (usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE & 0x1f), (2 << 8), 0);
         let data = await usbMgr.controlTransfer(localPipe, controlParam, 5000);
         console.info(`${TAG} controlTransfer result: ${data}`);
         expect(data).assertLargerOrEqual(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testControlTransfer001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -832,18 +857,20 @@ export default function UsbDevicePipeTest() {
       let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(0, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE,
-          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) | (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
+          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
+            (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
             | (usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE & 0x1f), 0, 0);
         let data = await usbMgr.controlTransfer(localPipe, controlParam, 5000);
         console.info(`${TAG} controlTransfer result: ${data}`);
         expect(data).assertLargerOrEqual(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testControlTransfer002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -867,18 +894,20 @@ export default function UsbDevicePipeTest() {
       let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(0, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE,
-          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) | (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
+          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
+            (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
             | (usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE & 0x1f), 0, 0);
         let data = await usbMgr.controlTransfer(localPipe, controlParam);
         console.info(`${TAG} controlTransfer result: ${data}`);
         expect(data).assertLargerOrEqual(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testControlTransfer005 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -902,18 +931,20 @@ export default function UsbDevicePipeTest() {
       let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(8, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE,
-          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) | (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
+          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
+            (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
             | (usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE & 0x1f), 0, 0);
         let data = await usbMgr.controlTransfer(localPipe, controlParam, 5000);
         console.info(`${TAG} controlTransfer result: ${data}`);
         expect(data).assertLargerOrEqual(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testControlTransfer006 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -937,25 +968,27 @@ export default function UsbDevicePipeTest() {
       let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(10, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE,
-          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) | (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
+          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
+            (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
             | (usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE & 0x1f), 0, 1);
         let data = await usbMgr.controlTransfer(localPipe, controlParam, 5000);
         console.info(`${TAG} controlTransfer result: ${data}`);
         expect(data).assertLargerOrEqual(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testControlTransfer007 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
     /**
      * @tc.name   testControlTransfer008
      * @tc.number SUB_USB_HostManager_TranFunc_0500
-     * @tc.desc   controlTransfer ClearFeature target=DEVICE should return data >= 0
+     * @tc.desc   controlTransfer ClearFeature target=DEVICE should return data >= 0 or -1 (STALL)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -972,18 +1005,20 @@ export default function UsbDevicePipeTest() {
       let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(1, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE,
-          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) | (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
+          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) |
+            (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
             | (usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE & 0x1f), 0, 0);
         let data = await usbMgr.controlTransfer(localPipe, controlParam, 5000);
         console.info(`${TAG} controlTransfer result: ${data}`);
-        expect(data).assertLargerOrEqual(0);
-        done();
+        expect(data === -1 || data >= 0).assertTrue();
       } catch (error) {
         console.error(`${TAG} testControlTransfer008 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -1007,25 +1042,27 @@ export default function UsbDevicePipeTest() {
       let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(255, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE,
-          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) | (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
+          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
+            (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_STANDARD << 5)
             | (usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE & 0x1f), (2 << 8), 0);
         let data = await usbMgr.controlTransfer(localPipe, controlParam, 5000);
         console.info(`${TAG} controlTransfer result: ${data}`);
         expect(data).assertLargerOrEqual(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testControlTransfer009 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
     /**
      * @tc.name   testControlTransfer010
      * @tc.number SUB_USB_HostManager_TranFunc_0700
-     * @tc.desc   controlTransfer ClearFeature reqType=CLASS should return data >= 0
+     * @tc.desc   controlTransfer ClearFeature reqType=CLASS should return data >= 0 or -1 (STALL)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1042,25 +1079,27 @@ export default function UsbDevicePipeTest() {
       let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(255, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT,
-          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) | (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_CLASS << 5)
+          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) |
+            (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_CLASS << 5)
             | (usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT & 0x1f), (2 << 8), 0);
         let data = await usbMgr.controlTransfer(localPipe, controlParam, 5000);
         console.info(`${TAG} controlTransfer result: ${data}`);
-        expect(data).assertLargerOrEqual(0);
-        done();
+        expect(data === -1 || data >= 0).assertTrue();
       } catch (error) {
         console.error(`${TAG} testControlTransfer010 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
     /**
      * @tc.name   testControlTransfer011
      * @tc.number SUB_USB_HostManager_TranFunc_0800
-     * @tc.desc   controlTransfer ClearFeature reqType=VENDOR should return data >= 0
+     * @tc.desc   controlTransfer ClearFeature reqType=VENDOR should return data >= 0 or -1 (STALL)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1077,25 +1116,27 @@ export default function UsbDevicePipeTest() {
       let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(255, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER,
-          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) | (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_VENDOR << 5)
+          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) |
+            (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_VENDOR << 5)
             | (usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER & 0x1f), (2 << 8), 0);
         let data = await usbMgr.controlTransfer(localPipe, controlParam, 5000);
         console.info(`${TAG} controlTransfer result: ${data}`);
-        expect(data).assertLargerOrEqual(0);
-        done();
+        expect(data === -1 || data >= 0).assertTrue();
       } catch (error) {
         console.error(`${TAG} testControlTransfer011 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
     /**
      * @tc.name   testControlTransfer012
      * @tc.number SUB_USB_HostManager_TranFunc_0900
-     * @tc.desc   controlTransfer ClearFeature reqType=CLASS value=0 should return data >= 0
+     * @tc.desc   controlTransfer ClearFeature reqType=CLASS value=0 should return data >= 0 or -1 (STALL)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1112,18 +1153,20 @@ export default function UsbDevicePipeTest() {
       let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(255, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER,
-          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) | (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_CLASS << 5)
+          (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) |
+            (usbMgr.USBControlRequestType.USB_REQUEST_TYPE_CLASS << 5)
             | (usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER & 0x1f), 0, 0);
         let data = await usbMgr.controlTransfer(localPipe, controlParam, 5000);
         console.info(`${TAG} controlTransfer result: ${data}`);
-        expect(data).assertLargerOrEqual(0);
-        done();
+        expect(data === -1 || data >= 0).assertTrue();
       } catch (error) {
         console.error(`${TAG} testControlTransfer012 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
   })
