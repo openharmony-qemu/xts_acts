@@ -17,12 +17,12 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, expect, Level } f
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
-import * as a11yKit from '@kit.AccessibilityKit';
+import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
 import { Driver,ON } from '@ohos.UiTest'
 import wifiMg from '@ohos.wifiManager';
 let driver = Driver.create();
-const CAPACITY = ['retrieve', 'gesture'];
+const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 
@@ -83,7 +83,7 @@ export default function webResourceError() {
         throw (err as Error);
         done();
       }
-      a11yKit.config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
