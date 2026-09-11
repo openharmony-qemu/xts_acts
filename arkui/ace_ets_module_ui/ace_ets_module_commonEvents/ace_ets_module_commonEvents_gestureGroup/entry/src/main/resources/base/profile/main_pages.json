@@ -13,6 +13,6 @@
         "MainAbility/pages/GestureInterface/AllowedTypes/AllowedTypesNullAndUndefined",
         "MainAbility/pages/GestureHandler/Tag/TagHandlerNullAndUndefined",
         "MainAbility/pages/GestureHandler/AllowedTypes/AllowedTypesHandlerNullAndUndefined",
-        "MainAbility/pages/UIContext/UIObserver/UIObserverNullAndUndefined"
+        "MainAbility/pages/uIContext/UIObserver/UIObserverNullAndUndefined"
     ]
 }

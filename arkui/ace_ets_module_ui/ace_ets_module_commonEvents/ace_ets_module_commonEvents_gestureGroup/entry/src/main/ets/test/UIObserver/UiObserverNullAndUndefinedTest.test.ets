@@ -23,7 +23,7 @@ export default function uiObserverNullAndUndefinedTest() {
     beforeAll(async () => {
       console.info("uiObserverNullAndUndefinedTest beforeAll start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/UIContext/UIObserver/UIObserverNullAndUndefined',
+        url: 'MainAbility/pages/uIContext/UIObserver/UIObserverNullAndUndefined',
       }
       try {
         router.clear();
