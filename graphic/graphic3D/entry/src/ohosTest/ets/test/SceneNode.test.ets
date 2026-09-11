@@ -374,6 +374,22 @@ export default function sceneNodeTest() {
           console.info(msg + " setEnabled with undefined index threw error: " + JSON.stringify(undefinedErr));
         }
 
+        // Test null parameter for setEnabled (value)
+        try {
+          node?.layerMask.setEnabled(3, null);
+          console.info(msg + " setEnabled with null value executed");
+        } catch (nullValueErr) {
+          console.info(msg + " setEnabled with null value threw error: " + JSON.stringify(nullValueErr));
+        }
+
+        // Test undefined parameter for setEnabled (value)
+        try {
+          node?.layerMask.setEnabled(3, undefined);
+          console.info(msg + " setEnabled with undefined value executed");
+        } catch (undefinedValueErr) {
+          console.info(msg + " setEnabled with undefined value threw error: " + JSON.stringify(undefinedValueErr));
+        }
+
         done();
       } catch (err) {
         console.info(msg + " Failed in node?.layerMask.setEnabled(3, false) " + JSON.stringify(err));
