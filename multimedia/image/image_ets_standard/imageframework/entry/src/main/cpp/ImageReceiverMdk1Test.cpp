@@ -347,24 +347,24 @@ napi_value JsImageComponentFormatEnum(napi_env env, napi_callback_info info)
 {
     napi_value ret = nullptr;
     
-    const int32_t YUV_Y_VALUE = 1;
-    const int32_t YUV_U_VALUE = 2;
-    const int32_t YUV_V_VALUE = 3;
-    const int32_t JPEG_VALUE = 4;
+    const int32_t yuvYValue = 1;
+    const int32_t yuvUValue = 2;
+    const int32_t yuvVValue = 3;
+    const int32_t jpegValue = 4;
     
-    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_Y != YUV_Y_VALUE) {
+    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_Y != yuvYValue) {
         napi_create_int32(env, -1, &ret);
         return ret;
     }
-    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_U != YUV_U_VALUE) {
+    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_U != yuvUValue) {
         napi_create_int32(env, -1, &ret);
         return ret;
     }
-    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_V != YUV_V_VALUE) {
+    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_V != yuvVValue) {
         napi_create_int32(env, -1, &ret);
         return ret;
     }
-    if (OHOS_IMAGE_COMPONENT_FORMAT_JPEG != JPEG_VALUE) {
+    if (OHOS_IMAGE_COMPONENT_FORMAT_JPEG != jpegValue) {
         napi_create_int32(env, -1, &ret);
         return ret;
     }
