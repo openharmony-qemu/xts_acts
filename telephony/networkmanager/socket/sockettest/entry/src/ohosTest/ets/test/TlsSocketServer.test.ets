@@ -3680,7 +3680,7 @@ export default function TLSSocketServerTest() {
         });
       } catch(err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
-        expectTrue(err.code == '2303199' || err.code == '2303111');
+        expectTrue(err.code === 2303199 || err.code === 2303111);
         console.info(`${caseName} test end `);
         done();
       }
