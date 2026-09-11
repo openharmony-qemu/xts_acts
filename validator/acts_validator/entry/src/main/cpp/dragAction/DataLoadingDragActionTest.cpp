@@ -84,6 +84,17 @@ static void OnEventReceive(ArkUI_NodeEvent* event)
     }
 }
 
+napi_value Manager::IsDragActionCompleted(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    auto manager = Manager::GetInstance();
+    napi_value result = nullptr;
+    napi_get_boolean(env, manager ? manager->isCompleted_ : false, &result);
+    return result;
+}
+
 napi_value Manager::DragEventGetDisplayId(napi_env env, napi_callback_info info) {
 
     if ((env == nullptr) || (info == nullptr)) {
@@ -154,7 +165,7 @@ napi_value Manager::DragEventGetDisplayId(napi_env env, napi_callback_info info)
             nodeAPI->registerNodeEvent(button, NODE_ON_TOUCH_INTERCEPT, buttonTouch, nullptr);
             OH_NativeXComponent_AttachNativeRootNode(component, button);
 
-            nodeAPI->registerNodeEventReceiver([](ArkUI_NodeEvent *event) {
+            nodeAPI->addNodeEventReceiver(button, [](ArkUI_NodeEvent *event) {
                 auto eventType = OH_ArkUI_NodeEvent_GetEventType(event);
                 auto targetId = OH_ArkUI_NodeEvent_GetTargetId(event);
                 ArkUI_NodeHandle node = OH_ArkUI_NodeEvent_GetNodeHandle(event);
@@ -248,6 +259,7 @@ napi_value Manager::DragEventGetDisplayId(napi_env env, napi_callback_info info)
                         returnValue = OH_ArkUI_StartDrag(action1);
                         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "dragTest",
                                      "OH_ArkUI_StartDrag returnValue = %{public}d", returnValue);
+                        Manager::GetInstance()->isCompleted_ = true;
                         OH_ArkUI_DragAction_Dispose(action1);
                                 OH_UdmfDataLoadParams_Destroy(dataLoadParams);
                                 OH_UdmfDataLoadInfo_Destroy(info);

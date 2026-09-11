@@ -118,6 +118,7 @@ struct SmartGestureMonitor003 {
       if (node) {
         resolution.selectedProposal = new PageSwitchActionProposal(node, 1);
         this.pushLog('consumeScroll -> monitor_switch_area');
+        this.isOk = true;
       }
     }
     return resolution;
@@ -224,7 +225,12 @@ struct SmartGestureMonitor003 {
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
+    .opacity(this.isOk ? 1 : 0.4)
+    .enabled(this.isOk)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
+      globalThis.arkResult = 'true ';
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -248,6 +254,7 @@ struct SmartGestureMonitor003 {
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -262,11 +269,15 @@ struct SmartGestureMonitor003 {
 
   aboutToAppear() {
     FirstDialog.ChooseDialog(this.stepTips, this.name);
-    this.controller().registerMonitor(this.passThroughCallback);
-    this.controller().registerMonitor(this.passThroughCallback);
-    this.controller().registerMonitor(this.passThroughCallback);
-    this.controller().unregisterMonitor(this.passThroughCallback);
-    this.getUIContext().getSmartGestureController().enableSmartTapAndSlideGestures(true);
+    try {
+      this.controller().registerMonitor(this.passThroughCallback);
+      this.controller().registerMonitor(this.passThroughCallback);
+      this.controller().registerMonitor(this.passThroughCallback);
+      this.controller().unregisterMonitor(this.passThroughCallback);
+      this.getUIContext().getSmartGestureController().enableSmartTapAndSlideGestures(true);
+    } catch (e) {
+      console.error('SmartGesture not supported on this device: ' + JSON.stringify(e));
+    }
   }
 
   onPageHide() {
@@ -290,6 +301,7 @@ struct SmartGestureMonitor003 {
         .backgroundColor(Color.Black)
         .size({ width: '10%', height: '10%' })
         .onClick(() => {
+          globalThis.arkTitle = this.name;
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
             params: { result: 'None' }

@@ -35,17 +35,20 @@ namespace NativeXComponentSample {
         static Manager *GetInstance() { return &Manager::manager_; }
     
         static napi_value DragEventGetDisplayId(napi_env env, napi_callback_info info);
+        static napi_value IsDragEventCompleted(napi_env env, napi_callback_info info);
         void SetNativeXComponent(std::string &id, OH_NativeXComponent *nativeXComponent);
         OH_NativeXComponent *GetNativeXComponent(const std::string &id);
 
         Container *GetContainer(std::string &id);
         void Export(napi_env env, napi_value exports);
+        void MarkCompleted() { isCompleted_ = true; }
 
     private:
         static Manager manager_;
 
         std::unordered_map<std::string, OH_NativeXComponent *> nativeXComponentMap_;
         std::unordered_map<std::string, Container *> containerMap_;
+        bool isCompleted_ = false;
     };
 } // namespace NativeXComponentSample
 #endif // NATIVE_XCOMPONENT_PLUGIN_MANAGER_H

@@ -172,6 +172,7 @@ napi_value Manager::CreateNativeNode(napi_env env, napi_callback_info info) {
                         std::string capsLockText = "CapsLock: " + capsLockState;
                         ArkUI_AttributeItem updatedTEXT_Item1 = {.string = capsLockText.c_str()};
                         nodeAPI->setAttribute(text1, NODE_TEXT_CONTENT, &updatedTEXT_Item1);
+                        Manager::GetInstance()->isCompleted_ = true;
                         break;
                     }
                     }
@@ -182,6 +183,17 @@ napi_value Manager::CreateNativeNode(napi_env env, napi_callback_info info) {
         }
     }
     return nullptr;
+}
+
+napi_value Manager::IsKeyEventCompleted(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    auto manager = Manager::GetInstance();
+    napi_value result = nullptr;
+    napi_get_boolean(env, manager ? manager->isCompleted_ : false, &result);
+    return result;
 }
 
 napi_value Manager::UpdateNativeNode(napi_env env, napi_callback_info info) {
