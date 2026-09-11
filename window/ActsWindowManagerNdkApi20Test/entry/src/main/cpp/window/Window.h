@@ -26,6 +26,7 @@ extern int32_t g_displayId;
 
 bool MouseEventFilter(Input_MouseEvent* mouseEvent);
 bool TouchEventFilter(Input_TouchEvent* touchEvent);
+bool KeyEventFilter(Input_KeyEvent* keyEvent);
 
 napi_value GetWindowId(napi_env env, napi_callback_info info);
 napi_value GetMainWindowId(napi_env env, napi_callback_info info);
