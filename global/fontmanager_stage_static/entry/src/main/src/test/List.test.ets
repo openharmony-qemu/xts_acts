@@ -14,6 +14,6 @@
  * limitations under the License.
  */
 import fontManagerScopeFontTest from './FontManagerScopeFontStatic.test';
-export default function testsuite() {
+export default function testsuite():void {
     fontManagerScopeFontTest();
 }

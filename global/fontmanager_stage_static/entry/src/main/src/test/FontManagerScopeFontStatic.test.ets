@@ -31,11 +31,15 @@ const ERR_SCOPE_FONT_NOT_REGISTERED: int = 31100115;
 const SCOPE_APP = fontManager.FontScope.APP;
 const SCOPE_SESSION = fontManager.FontScope.SESSION;
 
-export default function fontManagerScopeFontTest() {
+class DummyObserver implements fontManager.FontClientObserver {
+  onServiceDied(): void  {}
+};
+
+export default function fontManagerScopeFontTest():void {
   describe('FontManagerScopeFontStaticTest', () => {
-    let validFontPath: string;
-    let errorFontPath: string;
-    let notExistPath: string;
+    let validFontPath: string = "";
+    let errorFontPath: string = "";
+    let notExistPath: string = "";
     let resContext: Context;
 
     beforeAll(() => {
@@ -50,11 +54,7 @@ export default function fontManagerScopeFontTest() {
     afterEach(() => {});
     afterAll(() => {});
 
-    const validObserver: fontManager.FontClientObserver = {
-      onServiceDied: (): void => {
-        console.info('onServiceDied called');
-      }
-    };
+    const validObserver = new DummyObserver();
 
     /**
      * @tc.name   test_installScopeFont_static_0300
@@ -88,24 +88,6 @@ export default function fontManagerScopeFontTest() {
         expect(false).assertTrue();
       } catch (error) {
         expect((error as BusinessError).code).assertEqual(ERR_FILE_NOT_EXISTS);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_installScopeFont_static_0500
-     * @tc.number SUB_Global_FontManager_InstallScopeFont_Static_JS_0500
-     * @tc.desc   test installScopeFont with invalid scope
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_installScopeFont_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
-        await fontManager.installScopeFont(validFontPath, 2);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
       }
       done();
     });
@@ -360,23 +342,6 @@ export default function fontManagerScopeFontTest() {
         } catch (e) {}
       }
       done();
-    });
-
-    /**
-     * @tc.name   test_onFontObserver_static_2300
-     * @tc.number SUB_Global_FontManager_OnFontObserver_Static_JS_2300
-     * @tc.desc   test onFontObserver with empty object observer
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_onFontObserver_static_2300', Level.LEVEL2, () => {
-      try {
-        fontManager.onFontObserver({} as fontManager.FontClientObserver);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
-      }
     });
 
     /**

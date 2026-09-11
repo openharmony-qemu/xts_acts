@@ -39,7 +39,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
     hilog.info(0x0000, 'testTag', '%{public}s', '*************start SevenPointZeroResMgrStageStaticTest*************');
     let resContext: Context;
     let res: resourceManager.ResourceManager | undefined;
-    let validFontPath: string;
+    let validFontPath: string = "";
 
     beforeAll(async () => {
       console.info("beforeAll case");
