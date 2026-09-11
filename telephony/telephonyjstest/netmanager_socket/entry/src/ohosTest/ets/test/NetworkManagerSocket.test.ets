@@ -593,7 +593,7 @@ export default function networkManagerSocketTest() {
     });
     /**
      * @tc.name   Telephony_TLSSocket_off_message_0200
-     * @tc.number Telephony_TLSSocket_off_message_0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_OffMessage_0200
      * @tc.desc   Function test - off('message') without callback parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -693,7 +693,7 @@ export default function networkManagerSocketTest() {
     });
     /**
      * @tc.name   Telephony_TLSSocket_off_close_all_0100
-     * @tc.number Telephony_TLSSocket_off_close_all_0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_OffCloseAll_0100
      * @tc.desc   Function test - off('close') without callback removes all listeners
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -852,7 +852,7 @@ export default function networkManagerSocketTest() {
     });
     /**
      * @tc.name   Telephony_TLSSocket_off_error_all_0100
-     * @tc.number Telephony_TLSSocket_off_error_all_0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_OffErrorAll_0100
      * @tc.desc   Function test - off('error') without callback removes all listeners
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -909,7 +909,7 @@ export default function networkManagerSocketTest() {
     });
     /**
      * @tc.name   Telephony_TLSSocket_on_error_multi_callback_0100
-     * @tc.number Telephony_TLSSocket_on_error_multi_callback_0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_OnErrorMultiCallback_0100
      * @tc.desc   Function test - multiple callbacks on on('error') event
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -964,7 +964,7 @@ export default function networkManagerSocketTest() {
     });
     /**
      * @tc.name   Telephony_TLSSocket_on_connect_multi_callback_0100
-     * @tc.number Telephony_TLSSocket_on_connect_multi_callback_0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_OnConnectMultiCallback_0100
      * @tc.desc   Function test - multiple callbacks on on('connect') event
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1017,7 +1017,7 @@ export default function networkManagerSocketTest() {
     });
     /**
      * @tc.name   Telephony_TLSSocket_on_close_multi_callback_0100
-     * @tc.number Telephony_TLSSocket_on_close_multi_callback_0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_OnCloseMultiCallback_0100
      * @tc.desc   Function test - multiple callbacks on on('close') event
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
