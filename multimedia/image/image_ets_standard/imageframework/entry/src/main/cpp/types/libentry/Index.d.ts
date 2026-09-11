@@ -667,6 +667,8 @@ export const jsPackingOptionsGetDesiredDynamicRange: (packing: image.PackingOpti
 
 export const jsPackingOptionsGetDesiredDynamicRangeBadParameter: () => number;
 
+export const jsPackingOptionsGetDesiredDynamicRangeBadParameterRange: (packing: image.PackingOption) => number;
+
 export const jsPackingOptionsSetDesiredDynamicRange: (packing: image.PackingOption, dynamicRange: number) => number;
 
 export const jsPackingOptionsSetDesiredDynamicRangeBadParameter: () => number;
