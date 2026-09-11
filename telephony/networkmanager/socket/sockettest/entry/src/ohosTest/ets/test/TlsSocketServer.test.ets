@@ -204,15 +204,15 @@ export default function TLSSocketServerTest() {
     })
 
     /**
-     * @tc.name   testNetworkMgrSocketconstructTLSSocketServerInstance0100
-     * @tc.number SUB_NetworkMgr_Socket_constructTLSSocketServerInstance_0100
+     * @tc.name   testNetworkMgrSocketTLSSocketServerConstructInstance0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_ConstructInstance_0100
      * @tc.desc   Create and return a TLSSocketServer object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketconstructTLSSocketServerInstance0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketconstructTLSSocketServerInstance0100';
+    it('testNetworkMgrSocketTLSSocketServerConstructInstance0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerConstructInstance0100';
       console.info(`${caseName} test start `);
       try {
         let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
@@ -1812,15 +1812,15 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.name   testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_Null_0401
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptions0401
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_Null_0401
      * @tc.desc   SetExtraOptions with null parameter (callback), expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401';
+    it('testNetworkMgrSocketTLSSocketServerSetExtraOptions0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptions0401';
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
@@ -1839,15 +1839,15 @@ export default function TLSSocketServerTest() {
       }
     });
     /**
-     * @tc.name   testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401U
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_401U
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptions0402
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_Undefined_0402
      * @tc.desc   SetExtraOptions with undefined parameter (callback), expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401U';
+    it('testNetworkMgrSocketTLSSocketServerSetExtraOptions0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptions0402';
       console.info(`${caseName} test start`);
       try {
         let paramUndefined = undefined;
@@ -1866,15 +1866,15 @@ export default function TLSSocketServerTest() {
       }
     });
     /**
-     * @tc.name   testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401P
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_NullPromise_0403
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptions0403
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_NullPromise_0403
      * @tc.desc   SetExtraOptions with null parameter (Promise), expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401P', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401P';
+    it('testNetworkMgrSocketTLSSocketServerSetExtraOptions0403', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptions0403';
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
@@ -1896,15 +1896,15 @@ export default function TLSSocketServerTest() {
       }
     });
     /**
-     * @tc.name   testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401PU
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_401PU
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptions0404
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_UndefinedPromise_0404
      * @tc.desc   SetExtraOptions with undefined parameter (Promise), expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401PU', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401PU';
+    it('testNetworkMgrSocketTLSSocketServerSetExtraOptions0404', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptions0404';
       console.info(`${caseName} test start`);
       try {
         let paramUndefined = undefined;
@@ -2830,15 +2830,15 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOffError401
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_OffError_401
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOffError0401
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OffError_Null_0401
      * @tc.desc   Off error event with null callback, expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopTLSSocketServerOffError401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOffError401';
+    it('testNetworkMgrSocketTLSSocketServerOffError0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerOffError0401';
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
@@ -2854,15 +2854,15 @@ export default function TLSSocketServerTest() {
       }
     })
     /**
-     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOffError401U
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_OffError_Undefined_0402
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOffError0402
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OffError_Undefined_0402
      * @tc.desc   Off error event with undefined callback, expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopTLSSocketServerOffError401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOffError401U';
+    it('testNetworkMgrSocketTLSSocketServerOffError0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerOffError0402';
       console.info(`${caseName} test start`);
       try {
         let paramUndefined = undefined;
@@ -2878,15 +2878,15 @@ export default function TLSSocketServerTest() {
       }
     })
     /**
-     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOnError401
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_OnError_401
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOnError0401
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OnError_Null_0401
      * @tc.desc   On error event with null type, expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopTLSSocketServerOnError401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOnError401';
+    it('testNetworkMgrSocketTLSSocketServerOnError0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerOnError0401';
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
@@ -2902,15 +2902,15 @@ export default function TLSSocketServerTest() {
       }
     })
     /**
-     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOnError401U
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_OnError_401U
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOnError0402
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OnError_Undefined_0402
      * @tc.desc   On error event with undefined type, expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopTLSSocketServerOnError401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOnError401U';
+    it('testNetworkMgrSocketTLSSocketServerOnError0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerOnError0402';
       console.info(`${caseName} test start`);
       try {
         let paramUndefined = undefined;
@@ -3670,7 +3670,7 @@ export default function TLSSocketServerTest() {
         tlsServer.listen(invalidOptions, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} listen fail ${JSON.stringify(err)}`);
-            expectTrue(Number(err.code) == 2303199 || Number(err.code) == 2303111);
+            expectTrue(err.code === 2303199 || err.code === 2303111);
             console.info(`${caseName} err code: ${err.code}`);
           } else {
             console.info(`${caseName} listen success`);
@@ -3680,7 +3680,7 @@ export default function TLSSocketServerTest() {
         });
       } catch(err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
-        expectTrue(Number(err.code) == 2303199 || Number(err.code) == 2303111);
+        expectTrue(err.code == '2303199' || err.code == '2303111');
         console.info(`${caseName} test end `);
         done();
       }
@@ -3733,7 +3733,8 @@ export default function TLSSocketServerTest() {
         let callback2: Callback<socket.TLSSocketConnection> = (data: socket.TLSSocketConnection) => {
           console.info(`${caseName} callback2 triggered`);
         };
-        tlsServer.on('connect', callback1);
+        let ret = tlsServer.on('connect', callback1);
+        expectTrue(ret === undefined);
         tlsServer.on('connect', callback2);
         tlsServer.off('connect', callback1);
         console.info(`${caseName} callback1 removed, callback2 remains`);
@@ -3747,15 +3748,15 @@ export default function TLSSocketServerTest() {
       }
     })
     /**
-     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOff401
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_Off_401
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOff0401
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Off_Null_0401
      * @tc.desc   Off connect with null type, expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopTLSSocketServerOff401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOff401';
+    it('testNetworkMgrSocketTLSSocketServerOff0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerOff0401';
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
@@ -3771,15 +3772,15 @@ export default function TLSSocketServerTest() {
       }
     })
     /**
-     * @tc.name   testNetworkMgrSocketNopTLSSocketServerOff401U
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_Off_Undefined_0402
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOff0402
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Off_Undefined_0402
      * @tc.desc   Off connect with undefined type, expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopTLSSocketServerOff401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopTLSSocketServerOff401U';
+    it('testNetworkMgrSocketTLSSocketServerOff0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerOff0402';
       console.info(`${caseName} test start`);
       try {
         let paramUndefined = undefined;
