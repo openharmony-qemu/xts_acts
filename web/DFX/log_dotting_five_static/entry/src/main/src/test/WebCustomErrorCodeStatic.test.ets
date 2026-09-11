@@ -15,6 +15,7 @@
  */
 
 import { Level, Size, TestType, beforeAll, beforeEach, describe, it, expect } from '../../../hypium/index';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -61,7 +62,6 @@ export default function webCustomErrorCodeStatic(): void {
      */
     it('testGetCustomErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        expect(32159).assertEqual(32159);
         await Utils.msSleep(1000);
         Utils.emitEvent('SwitchNextPageStaticWebCustomErrorCode', 10);
         await Utils.msSleep(2000);
@@ -69,7 +69,11 @@ export default function webCustomErrorCodeStatic(): void {
         await Utils.msSleep(2000);
         Utils.emitEvent('testGetCustomErrorCodeStatic001', 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent('testGetCustomErrorCodeStatic001', 32159, 36025, done);
+        Utils.registerBaseEvent('testGetCustomErrorCodeStatic001', 32159, 36025, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, Object>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCustomErrorCodeStaticButton', 10, '');
         await Utils.msSleep(4000);

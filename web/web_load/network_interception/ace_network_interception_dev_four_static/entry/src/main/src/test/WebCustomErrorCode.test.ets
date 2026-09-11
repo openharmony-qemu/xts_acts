@@ -15,6 +15,7 @@
  */
 
 import { Level, Size, TestType, beforeAll, describe, it, expect } from '../../../hypium/index';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -59,11 +60,14 @@ export default function WebCustomErrorCode(): void {
      */
     it('testSetGetCustomErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        expect(CUSTOM_ERROR_CODE).assertEqual(32159);
         await Utils.msSleep(2000)
         Utils.emitEvent("WebSchemeHandlerResponse_setCustomErrorCode", 10)
         await Utils.msSleep(2000)
-        Utils.registerEvent("WebSchemeHandlerResponse_setCustomErrorCode", CUSTOM_ERROR_CODE, 8820, done);
+        Utils.registerBaseEvent("WebSchemeHandlerResponse_setCustomErrorCode", CUSTOM_ERROR_CODE, 8820, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, Object>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
         await Utils.msSleep(2000)
         inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
         await Utils.msSleep(2000);
@@ -80,11 +84,14 @@ export default function WebCustomErrorCode(): void {
      */
     it('testDidFailCustomErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        expect(CUSTOM_ERROR_CODE).assertEqual(32159);
         await Utils.msSleep(2000)
         Utils.emitEvent("testDidFailCustomErrorCodeStatic001", 10)
         await Utils.msSleep(2000)
-        Utils.registerEvent("testDidFailCustomErrorCodeStatic001", CUSTOM_ERROR_CODE, 8822, done);
+        Utils.registerBaseEvent("testDidFailCustomErrorCodeStatic001", CUSTOM_ERROR_CODE, 8822, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, Object>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
         await Utils.msSleep(2000)
         inspector.sendEventByKey('WebCustomErrorCode', 10, '');
         await Utils.msSleep(4000);
@@ -101,11 +108,14 @@ export default function WebCustomErrorCode(): void {
      */
     it('testDidFailInvalidHandlerStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        expect(17100021).assertLarger(0);
         await Utils.msSleep(2000)
         Utils.emitEvent("testDidFailInvalidHandlerStatic001", 10)
         await Utils.msSleep(2000)
-        Utils.registerEvent("testDidFailInvalidHandlerStatic001", 17100021, 8824, done);
+        Utils.registerBaseEvent("testDidFailInvalidHandlerStatic001", 17100021, 8824, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, Object>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
         await Utils.msSleep(2000)
         inspector.sendEventByKey('WebCustomErrorCode', 10, '');
         await Utils.msSleep(4000);

@@ -18,13 +18,13 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils.test';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
-import { accessibility as a11yKit, config } from '@kit.AccessibilityKit';
+import * as a11yKit from '@kit.AccessibilityKit';
 import wifiMg from '@ohos.wifiManager';
 
 const EVENT_ID_SET_EMIT_KEY = 203000;
 const CUSTOM_ERROR_CODE = 32159;
 const driver = Driver.create();
-const CAPACITY: a11yKit.Capability[] = ['retrieve', 'gesture'];
+const CAPACITY = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function WebCustomErrorCode() {
@@ -57,7 +57,7 @@ export default function WebCustomErrorCode() {
         throw (err as Error);
         done();
       }
-      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      a11yKit.config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info('enable success');
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);

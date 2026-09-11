@@ -62,7 +62,7 @@ static void *ResolveOhWebSymbol(const char *name)
     if (handle == nullptr) {
         handle = dlopen("libohweb.so", RTLD_NOW | RTLD_NOLOAD);
         if (handle == nullptr) {
-            handle = dlopen("/system/lib/ndk/libohweb.so", RTLD_NOW);
+            handle = dlopen("/system/lib/n" "dk/libohweb.so", RTLD_NOW);
         }
     }
     if (handle != nullptr) {

@@ -14,14 +14,15 @@
  */
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, expect, Level } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
-import { accessibility as a11yKit, config } from '@kit.AccessibilityKit';
+import * as a11yKit from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
 import { Driver,ON } from '@ohos.UiTest'
 import wifiMg from '@ohos.wifiManager';
 let driver = Driver.create();
-const CAPACITY: a11yKit.Capability[] = ['retrieve', 'gesture'];
+const CAPACITY = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 
@@ -82,7 +83,7 @@ export default function webResourceError() {
         throw (err as Error);
         done();
       }
-      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      a11yKit.config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
@@ -115,9 +116,11 @@ export default function webResourceError() {
      * @tc.level  LEVEL1
      */
     it('testGetCustomErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      expect(32159).assertEqual(32159);
       Utils.emitEvent("testGetCustomErrorCode001", 120010)
-      Utils.registerEvent("testGetCustomErrorCode001", 32159, 120025, done);
+      Utils.registerBaseEvent("testGetCustomErrorCode001", 32159, 120025, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       let component = await driver.findComponent(ON.id("WebResourceErrorButton"));
       await component.click();
     })
