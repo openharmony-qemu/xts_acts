@@ -585,7 +585,7 @@ napi_value UnregisterMouseEventFilterOkOrServiceError(napi_env env, napi_callbac
 napi_value UnregisterMouseEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
+    int32_t result = OH_NativeWindowManager_UnregisterMouseEventFilter(g_mainWindowId + 999);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "UnregisterMouseEventFilterInvaildWindowId: %{public}d", result);
     if (result == INVAILD_WINDOW_ID) {
@@ -619,17 +619,10 @@ napi_value RegisterTouchEventFilterOkOrServiceError(napi_env env, napi_callback_
 napi_value RegisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
+    int32_t result = OH_NativeWindowManager_RegisterTouchEventFilter(g_mainWindowId + 999, TouchEventFilter);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "RegisterTouchEventFilterInvaildWindowId: %{public}d", result);
-    if (result == INVAILD_WINDOW_ID) {
-        napi_create_int32(env, 1, &retValue);
-        return retValue;
-    } else if (result == SERVICE_ERROR) {
-        napi_create_int32(env, 1, &retValue);
-        return retValue;
-    }
-    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 

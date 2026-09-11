@@ -811,8 +811,8 @@ export default function WindowTest() {
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info(`====>SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERTOUCHEVENTFILTER_0200 start<====`);
-        let Result: number = windowndkapi20.RegisterTouchEventFilterInvaildWindowId();
-        expect(1).assertEqual(Result);
+        let result: number = windowndkapi20.RegisterTouchEventFilterInvaildWindowId();
+        expect(result).assertEqual(INVAILD_WINDOW_ID);
         done()
       } catch (err) {
         console.error(`====>SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERTOUCHEVENTFILTER_0200 catch err: ` + err);
