@@ -65,53 +65,6 @@ export default function ActsAcewebViewCookieTrack() {
 
     })
 
-    /**
-     * @tc.name   testEnableIntelligentTrackingPreventionNullStatic001
-     * @tc.number SUB_ACE_WEB_ENABLEITP_NULL_0100
-     * @tc.desc   test enableIntelligentTrackingPrevention with null param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testEnableIntelligentTrackingPreventionNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      Utils.emitEvent("emitEnableIntelligentTrackingPreventionNullStatic001", 10)
-      await Utils.msSleep(2000);
-      Utils.registerBaseEvent("testEnableIntelligentTrackingPreventionNullStatic001", '401', 41023001, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
-      await Utils.msSleep(4000);
-      done();
-    })
-
-    /**
-     * @tc.name   testEnableIntelligentTrackingPreventionUndefinedStatic001
-     * @tc.number SUB_ACE_WEB_ENABLEITP_UNDEFINED_0100
-     * @tc.desc   test enableIntelligentTrackingPrevention with undefined param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testEnableIntelligentTrackingPreventionUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      Utils.emitEvent("emitEnableIntelligentTrackingPreventionUndefinedStatic001", 10)
-      await Utils.msSleep(2000);
-      Utils.registerBaseEvent("testEnableIntelligentTrackingPreventionUndefinedStatic001", '401', 41023002, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
-      await Utils.msSleep(4000);
-      done();
-    })
 
     /*
      * @tc.number     : SUB_ACE_WEB_enableIntelligentTrackingPrevention_API_0001

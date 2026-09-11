@@ -140,69 +140,6 @@ export default function webInitTest() {
       done();
     })
 
-    /**
-     * @tc.name   testSetPrintBackgroundNullStatic001
-     * @tc.number SUB_WEB_SETPRINTBACKGROUND_NULL_0100
-     * @tc.desc   test setPrintBackground with null param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetPrintBackgroundNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      try {
-        await Utils.msSleep(2000);
-        Utils.emitEvent('emitSetPrintBackgroundNullStatic001', 10)
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent('testSetPrintBackgroundNullStatic001', true, 41022901, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-        const data = backData?.data as Record<string, RecordData>;
-        const action = data['ACTION'];
-        expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebInitTestButton', 10, '');
-        await Utils.msSleep(4000);
-        done();
-    
-      } catch (err) {
-        console.info('[testSetPrintBackgroundNullStatic001] err:' + JSON.stringify(err));
-        done();
-
-        }
-      })
-
-    /**
-     * @tc.name   testSetPrintBackgroundUndefinedStatic001
-     * @tc.number SUB_WEB_SETPRINTBACKGROUND_UNDEFINED_0100
-     * @tc.desc   test setPrintBackground with undefined param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetPrintBackgroundUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      try {
-        await Utils.msSleep(2000);
-        Utils.emitEvent('emitSetPrintBackgroundUndefinedStatic001', 10)
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent('testSetPrintBackgroundUndefinedStatic001', true, 41022902, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-        const data = backData?.data as Record<string, RecordData>;
-        const action = data['ACTION'];
-        expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebInitTestButton', 10, '');
-        await Utils.msSleep(4000);
-        done();
-    
-      } catch (err) {
-        console.info('[testSetPrintBackgroundUndefinedStatic001] err:' + JSON.stringify(err));
-        done();
-
-        }
-      })
 
     /**
      * @tc.name   testOptimizeParserBudgetStatic

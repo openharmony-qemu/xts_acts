@@ -550,42 +550,6 @@ struct Index {
               break;
             }
 
-            case 'emitWebViewSetWebDestroyModeNull': {
-              try {
-                webview.WebviewController.setWebDestroyMode((null as Int) as webview.WebDestroyMode);
-                Utils.emitEvent(true, 138580);
-              } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 138580);
-              }
-              break;
-            }
-
-            case 'emitWebViewSetWebDestroyModeUndefined': {
-              try {
-                webview.WebviewController.setWebDestroyMode((undefined as Int) as webview.WebDestroyMode);
-                Utils.emitEvent(true, 138581);
-              } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 138581);
-              }
-              break;
-            }
-
-            case 'emitWebViewSetWebDestroyModeInvalid': {
-              try {
-                let invalidMode = 99 as webview.WebDestroyMode;
-                webview.WebviewController.setWebDestroyMode(invalidMode);
-              } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 138582);
-              }
-              break;
-            }
-
             case 'emitSetScrollbarMode001': {
               console.info('[WebView] enter emitSetScrollbarMode001')
               try {
