@@ -68,6 +68,7 @@ napi_value JSPackingOptionsSetDesiredDynamicRange(napi_env env, napi_callback_in
 napi_value JSPackingOptionsSetDesiredDynamicRangeBadParameter(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsGetDesiredDynamicRange(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsGetDesiredDynamicRangeBadParameter(napi_env env, napi_callback_info info);
+napi_value JSPackingOptionsGetDesiredDynamicRangeBadParameterRange(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsRelease(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsReleaseBadParameter(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsForSequenceCreate(napi_env env, napi_callback_info info);
