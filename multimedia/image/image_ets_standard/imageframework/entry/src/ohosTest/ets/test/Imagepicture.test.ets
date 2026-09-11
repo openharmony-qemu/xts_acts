@@ -482,16 +482,16 @@ export default function PerformanceAnalysisKit() {
       done()
     })
     /**
-     * @tc.name   AuxiliaryPictureInfoGetRowStrideBadParameter0100
-     * @tc.number AuxiliaryPictureInfoGetRowStrideBadParameter0100
+     * @tc.name   SUB_Image_AuxiliaryPictureInfo_GetRowStrideBadParameter_0100
+     * @tc.number SUB_Image_AuxiliaryPictureInfo_GetRowStrideBadParameter_0100
      * @tc.desc   test AUXILIARYPICTUREINFOGETROWSTRIDE BadParameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AuxiliaryPictureInfoGetRowStrideBadParameter0100', Level.LEVEL1, async (done: Function) => {
+    it('SUB_Image_AuxiliaryPictureInfo_GetRowStrideBadParameter_0100', Level.LEVEL1, async (done: Function) => {
       let ret = PerformanceAnalysisKitNdk.AuxiliaryPictureInfoGetRowStrideBadParameter()
-      console.error("====>AuxiliaryPictureInfoGetRowStrideBadParameter0100 err: " + ret)
+      console.error("====>SUB_Image_AuxiliaryPictureInfo_GetRowStrideBadParameter_0100 err: " + ret)
       expect(ret).assertEqual(0)
       done()
     })
