@@ -108,46 +108,13 @@ export default function MovingPhotoRequestContentTest() {
     /**
      * @tc.name   SUB_MovingPhoto_requestContent_promise_0001
      * @tc.number SUB_MovingPhoto_requestContent_promise_0001
-     * @tc.desc   MovingPhoto_requestContent
+     * @tc.desc   MovingPhoto_requestContent ResourceType - VIDEO_RESOURCE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_MovingPhoto_requestContent_promise_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MovingPhoto_requestContent_promise_0001';
-      let requestOptions: photoAccessHelper.RequestOptions = {
-        deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
-      };
-      const fileName = 'test6.gif';
-      const path = 'test6.gif';
-      const videoFileName = '1vp9_320x240_30.mp4';
-      const videoPath = '1vp9_320x240_30.mp4';
-      await copyImageToSandbox(fileName, path);
-      await copyImageToSandbox(videoFileName, videoPath);
-      try {
-        const imageFileUri = fileUri.getUriFromPath(context.filesDir + "/" + 'test6.gif');
-        const videoFileUri: string = fileUri.getUriFromPath(context.filesDir + "/" + '1vp9_320x240_30.mp4');
-        const movingPhoto: photoAccessHelper.MovingPhoto = await getUriPromiseTest(testName, requestOptions)
-        await movingPhoto.requestContent(imageFileUri, videoFileUri);
-        console.log("moving photo contents retrieved successfully");
-        expect(true).assertTrue()
-      } catch (err) {
-        console.error(`failed to retrieve contents of moving photo, error code is ${err.code}, message is ${err.message}`);
-        expect(false).assertTrue()
-      }
-      done()
-    })
-
-    /**
-     * @tc.name   SUB_MovingPhoto_requestContent_promise_0002
-     * @tc.number SUB_MovingPhoto_requestContent_promise_0002
-     * @tc.desc   MovingPhoto_requestContent ResourceType - VIDEO_RESOURCE
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MovingPhoto_requestContent_promise_0002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MovingPhoto_requestContent_promise_0002';
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
       };
@@ -164,15 +131,15 @@ export default function MovingPhotoRequestContentTest() {
     })
 
     /**
-     * @tc.name   SUB_MovingPhoto_requestContent_promise_0003
-     * @tc.number SUB_MovingPhoto_requestContent_promise_0003
+     * @tc.name   SUB_MovingPhoto_requestContent_promise_0002
+     * @tc.number SUB_MovingPhoto_requestContent_promise_0002
      * @tc.desc   MovingPhoto_requestContent ResourceType - null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MovingPhoto_requestContent_promise_0003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MovingPhoto_requestContent_promise_0003';
+    it('SUB_MovingPhoto_requestContent_promise_0002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MovingPhoto_requestContent_promise_0002';
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
       };
@@ -190,15 +157,15 @@ export default function MovingPhotoRequestContentTest() {
     })
 
     /**
-     * @tc.name   SUB_MovingPhoto_requestContent_promise_0004
-     * @tc.number SUB_MovingPhoto_requestContent_promise_0004
+     * @tc.name   SUB_MovingPhoto_requestContent_promise_0003
+     * @tc.number SUB_MovingPhoto_requestContent_promise_0003
      * @tc.desc   MovingPhoto_requestContent ResourceType - undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MovingPhoto_requestContent_promise_0004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MovingPhoto_requestContent_promise_0004';
+    it('SUB_MovingPhoto_requestContent_promise_0003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MovingPhoto_requestContent_promise_0003';
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
       };
@@ -216,15 +183,15 @@ export default function MovingPhotoRequestContentTest() {
     })
 
     /**
-     * @tc.name   SUB_MovingPhoto_requestContent_promise_0005
-     * @tc.number SUB_MovingPhoto_requestContent_promise_0005
+     * @tc.name   SUB_MovingPhoto_requestContent_promise_0004
+     * @tc.number SUB_MovingPhoto_requestContent_promise_0004
      * @tc.desc   MovingPhoto_requestContent ResourceType - OTHER_RESOURCE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MovingPhoto_requestContent_promise_0005', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MovingPhoto_requestContent_promise_0005';
+    it('SUB_MovingPhoto_requestContent_promise_0004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MovingPhoto_requestContent_promise_0004';
       let requestOptions: photoAccessHelper.RequestOptions = {
         deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
       };
