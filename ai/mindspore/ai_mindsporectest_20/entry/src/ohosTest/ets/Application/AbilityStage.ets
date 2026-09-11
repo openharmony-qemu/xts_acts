@@ -18,7 +18,7 @@ import AbilityStage from '@ohos.app.ability.AbilityStage';
 export default class MyAbilityStage extends AbilityStage {
   onCreate(): void {
     console.log('[Demo] MyAbilityStage onCreate');
-    globalThis.stageOnCreateRun = 1;
-    globalThis.stageContext = this.context;
+    AppStorage.setOrCreate('stageOnCreateRun', 1);
+    AppStorage.setOrCreate('stageContext', this.context);
   }
 }

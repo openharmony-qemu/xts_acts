@@ -51,7 +51,7 @@ function shapeEqual(actual: number[], expected: number[]): boolean {
 
 async function Predict_fun(model_obj: mindSporeLite.Model): Promise<boolean> {
   const modelInputs = model_obj.getInputs();
-  setRandomInputs("Predict_fun", modelInputs)
+  setRandomInputs('Predict_fun', modelInputs)
   let modelOutputs = await model_obj.predict(modelInputs);
   expect(modelOutputs).not().assertUndefined();
   expect(modelOutputs).not().assertNull();
@@ -118,6 +118,7 @@ class FakeMSTensor implements mindSporeLite.MSTensor {
 export default function resizeTest() {
   describe('ResizeTest', () => {
     beforeAll(async () => {
+      try {
       console.info('[rawfile_copy_to_sandbox] start copying models');
       try {
         const dir = globalThis.abilityContext.filesDir + '/';
@@ -128,6 +129,10 @@ export default function resizeTest() {
       }
       const dir = globalThis.abilityContext.filesDir + '/';
       console.info('[rawfile_copy_to_sandbox] sandbox path: ' + dir);
+      } catch (error) {
+        console.error('beforeAll failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     })
 
     beforeEach(() => {
@@ -940,7 +945,7 @@ export default function resizeTest() {
     // 1. 输入数量校验：单输入传多dims应失败，多输入传少dims应失败
     // 2. dims 数组长度：必须与模型输入数一致
     // 3. 多输入可各输入不同shape，单输入只有1个shape
-    // 4. 多输入部分传入应失败，单输入无"部分"概念
+    // 4. 多输入部分传入应失败，单输入无'部分'概念
     // ============================================================
 
     /**
@@ -1024,7 +1029,7 @@ export default function resizeTest() {
     /**
      * @tc.name   SUB_AI_MindSpore_ArkTS_Resize_Single_Input_Partial_Resize_N_A_0030
      * @tc.number SUB_AI_MindSpore_ArkTS_Resize_Single_Input_Partial_Resize_N_A_0030
-     * @tc.desc   Single-input model has no "partial resize" concept; passing 0 inputs fails.
+     * @tc.desc   Single-input model has no 'partial resize' concept; passing 0 inputs fails.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
