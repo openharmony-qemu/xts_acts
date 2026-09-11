@@ -335,7 +335,7 @@ export default function JsLeakWatcherTest() {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_4200 start");
       try {
         jsLeakWatcher.enable(undefined);
-        console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_4200 dump undefined')
+        console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_4200 enable undefined')
         expect(false).assertTrue();
         done();
       } catch (err) {
