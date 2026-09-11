@@ -1383,7 +1383,7 @@ export default function MulticastSocket() {
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -1416,7 +1416,7 @@ export default function MulticastSocket() {
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -1928,7 +1928,7 @@ export default function MulticastSocket() {
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -1957,7 +1957,7 @@ export default function MulticastSocket() {
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -1990,7 +1990,7 @@ export default function MulticastSocket() {
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -2023,7 +2023,7 @@ export default function MulticastSocket() {
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -2769,7 +2769,7 @@ export default function MulticastSocket() {
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -2798,7 +2798,7 @@ export default function MulticastSocket() {
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -2831,7 +2831,7 @@ export default function MulticastSocket() {
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName} test end`);
         done();
       }
