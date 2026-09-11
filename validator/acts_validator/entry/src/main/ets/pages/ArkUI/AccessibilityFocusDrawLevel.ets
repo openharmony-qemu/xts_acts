@@ -35,12 +35,7 @@ struct AccessibilityFocusDrawLevel {
     '2、依次播报 “文本1”,界面无绿框聚焦; “文本2”,界面有绿框聚焦在最上层文本6上; “文本3”,界面无绿框聚焦; “文本4”,界面无绿框聚焦;\n' +
     '“文本5”,界面有绿框聚焦在文本5上; “文本6”,界面有绿框聚焦在文本6上;\n';
   @State vueStatus: boolean = false;
-  @State step1: boolean = false;
-  @State step2: boolean = false;
-  @State step3: boolean = false;
-  @State step4: boolean = false;
-  @State step5: boolean = false;
-  @State step6: boolean = false;
+  @State stepCount: number = 0;
   @State testResult1: boolean = false;
   @State yesEnable: boolean = false;
   @State intervalNum: number = 0;
@@ -115,7 +110,7 @@ struct AccessibilityFocusDrawLevel {
 
   onPageShow() {
     this.intervalNum = setInterval(() => {
-      if (this.step1 && this.step2 && this.step3 && this.step4 && this.step5 && this.step6) {
+      if (this.stepCount >= 6) {
         this.vueStatus = true;
       }
     }, 500)
@@ -201,9 +196,9 @@ struct AccessibilityFocusDrawLevel {
                   .fontColor('#2D2D2D')
                   .fontWeight(FontWeight.Medium)
                   .accessibilityFocusDrawLevel(FocusDrawLevel.SELF)
-                  .onAccessibilityHover((isHover: boolean) => {
-                    if (isHover) {
-                      this.step1 = true
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 0) {
+                      this.stepCount = 1
                     }
                   })
                 Text('文本2')
@@ -211,9 +206,9 @@ struct AccessibilityFocusDrawLevel {
                   .fontColor('#2D2D2D')
                   .fontWeight(FontWeight.Medium)
                   .accessibilityFocusDrawLevel(FocusDrawLevel.TOP)
-                  .onAccessibilityHover((isHover: boolean) => {
-                    if (isHover) {
-                      this.step2 = true
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 1) {
+                      this.stepCount = 2
                     }
                   })
               }
@@ -225,9 +220,9 @@ struct AccessibilityFocusDrawLevel {
                   .fontColor('#FFFFFF')
                   .fontWeight(FontWeight.Medium)
                   .accessibilityFocusDrawLevel(null)
-                  .onAccessibilityHover((isHover: boolean) => {
-                    if (isHover) {
-                      this.step3 = true
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 2) {
+                      this.stepCount = 3
                     }
                   })
                 Text('文本4')
@@ -235,9 +230,9 @@ struct AccessibilityFocusDrawLevel {
                   .fontColor('#FFFFFF')
                   .fontWeight(FontWeight.Medium)
                   .accessibilityFocusDrawLevel(undefined)
-                  .onAccessibilityHover((isHover: boolean) => {
-                    if (isHover) {
-                      this.step4 = true
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 3) {
+                      this.stepCount = 4
                     }
                   })
               }
@@ -248,18 +243,18 @@ struct AccessibilityFocusDrawLevel {
                   .fontSize(18)
                   .fontColor('#FFFFFF')
                   .fontWeight(FontWeight.Medium)
-                  .onAccessibilityHover((isHover: boolean) => {
-                    if (isHover) {
-                      this.step5 = true
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 4) {
+                      this.stepCount = 5
                     }
                   })
                 Text('文本6')
                   .fontSize(18)
                   .fontColor('#FFFFFF')
                   .fontWeight(FontWeight.Medium)
-                  .onAccessibilityHover((isHover: boolean) => {
-                    if (isHover) {
-                      this.step6 = true
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 5) {
+                      this.stepCount = 6
                     }
                   })
               }
