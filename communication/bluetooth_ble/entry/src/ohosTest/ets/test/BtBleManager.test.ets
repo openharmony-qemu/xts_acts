@@ -1051,7 +1051,7 @@ export default function btBleManagerTest() {
         console.info("characteristicReadOn errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]characteristicRead is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect(Number(err.code)).assertEqual(2900099);
         }
@@ -1077,7 +1077,7 @@ export default function btBleManagerTest() {
         console.info("characteristicReadOff errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]characteristicRead is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect(Number(err.code)).assertEqual(2900099);
         }
@@ -1169,7 +1169,7 @@ export default function btBleManagerTest() {
         console.error(`[bluetooth_js]descriptorRead failed, code is ${error.code},message is ${error.message}`);
         if (error.code == 801) {
           console.info('[bluetooth_js]descriptorRead is not support');
-          expect(true).assertTrue();
+          expect(error.code).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(2900099);
         }
@@ -1194,7 +1194,7 @@ export default function btBleManagerTest() {
         console.error(`[bluetooth_js]descriptorRead failed, code is ${error.code},message is ${error.message}`);
         if (error.code == 801) {
           console.info('[bluetooth_js]descriptorRead is not support');
-          expect(true).assertTrue();
+          expect(error.code).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(2900099);
         }
@@ -1308,7 +1308,7 @@ export default function btBleManagerTest() {
         console.error(`[bluetooth_js]characteristicWrite failed, code is ${error.code},message is ${error.message}`);
         if (error.code == 801) {
           console.info('[bluetooth_js]characteristicWrite is not support');
-          expect(true).assertTrue();
+          expect(error.code).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(2900099);
         }
@@ -1334,7 +1334,7 @@ export default function btBleManagerTest() {
         console.error(`[bluetooth_js]characteristicWrite failed, code is ${error.code},message is ${error.message}`);
         if (error.code == 801) {
           console.info('[bluetooth_js]characteristicWrite is not support');
-          expect(true).assertTrue();
+          expect(error.code).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(2900099);
         }
@@ -1438,7 +1438,7 @@ export default function btBleManagerTest() {
             message is ${error.message}`);
         if (error.code == 801) {
           console.info('[bluetooth_js]descriptorWrite is not support');
-          expect(true).assertTrue();
+          expect(error.code).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(2900099);
         }
@@ -1464,7 +1464,7 @@ export default function btBleManagerTest() {
             message is ${error.message}`);
         if (error.code == 801) {
           console.info('[bluetooth_js]descriptorWrite is not support');
-          expect(true).assertTrue();
+          expect(error.code).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(2900099);
         }
@@ -1701,7 +1701,7 @@ export default function btBleManagerTest() {
         console.info("bluetooth mtu changed errCode:" + err.code + ",bluetooth mtu changed errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]BLEMtuChange is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
         }
@@ -1733,7 +1733,7 @@ export default function btBleManagerTest() {
         console.info("bluetooth mtu changed off errCode:" + err.code + ",bluetooth mtu changed off errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]BLEMtuChange is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
         }

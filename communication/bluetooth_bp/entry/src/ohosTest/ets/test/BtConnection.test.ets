@@ -227,7 +227,7 @@ describe('btConnectionTest', () => {
             message is ${error.message}`);
             if (error.code == 801) {
                 console.info('[bluetooth_js]pinRequired is not support');
-                expect(true).assertTrue();
+                expect(error.code).assertEqual(801);
             } else {
                 expect(Number(error.code)).assertEqual(2900099);
             }
@@ -617,7 +617,7 @@ describe('btConnectionTest', () => {
             console.info("errCode:" + err.code + ",errMessage:" + err.message);
             if (err.code == 801) {
                 console.info('[bluetooth_js]pairDevice is not support');
-                expect(true).assertTrue();
+                expect(err.code).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2900099);
             }
@@ -644,7 +644,7 @@ describe('btConnectionTest', () => {
             console.info("setDevicePairingConfirmation errCode:" + err.code + ",errMessage:" + err.message);
             if (err.code == 801) {
                 console.info('[bluetooth_js]setDevicePairingConfirmation is not support');
-                expect(true).assertTrue();
+                expect(err.code).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2900099);
             }
@@ -1159,7 +1159,7 @@ describe('btConnectionTest', () => {
             console.info("errCode:" + err.code + ",errMessage:" + err.message);
             if (err.code == 801) {
                 console.info('[bluetooth_js]pairDevice is not support');
-                expect(true).assertTrue();
+                expect(err.code).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2900099);
             }
@@ -1698,7 +1698,7 @@ describe('btConnectionTest', () => {
         console.info(`[bluetooth_js]BluetoothDiscovery error, code is ${error.code},message is ${error.message}`);
         if (error.code == 801) {
             console.info('[bluetooth_js]BluetoothDiscovery is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
         } else {
             expect(Number(error.code)).assertEqual(2900099);
         }
@@ -3940,7 +3940,7 @@ describe('btConnectionTest', () => {
             message is ${error.message}`);
             if (error.code == 801) {
                 console.info('[bluetooth_js]batteryChange is not support');
-                expect(true).assertTrue();
+                expect(error.code).assertEqual(801);
             } else {
                 expect(Number(error.code)).assertEqual(2900099);
             }
@@ -3953,7 +3953,7 @@ describe('btConnectionTest', () => {
             message is ${error.message}`);
             if (error.code == 801) {
                 console.info('[bluetooth_js]batteryChange is not support');
-                expect(true).assertTrue();
+                expect(error.code).assertEqual(801);
             } else {
                 expect(Number(error.code)).assertEqual(2900099);
             }
