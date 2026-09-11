@@ -2013,6 +2013,10 @@ export const testListSwipeActionCreate: () => number;
 
 export const testListSwipeActionSetActionAreaDistance001: () => number;
 
+export const testListSwipeActionSetActionAreaDistance002: () => number;
+
+export const testListSwipeActionSetActionAreaDistance003: () => number;
+
 export const testListSwipeActionOptionCreate: () => number;
 
 export const testListSwipeActionItem006: () => number;

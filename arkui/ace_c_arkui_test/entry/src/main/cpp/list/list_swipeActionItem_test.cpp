@@ -56,6 +56,32 @@ static napi_value listSwipeActionSetActionAreaDistance001(napi_env env, napi_cal
     NAPI_END;
 }
 
+static napi_value listSwipeActionSetActionAreaDistance002(napi_env env, napi_callback_info info)
+{
+    NAPI_START(list, ARKUI_NODE_LIST);
+    ArkUI_ListItemSwipeActionItem* item = nullptr;
+    float distance = PARAM_10;
+    OH_ArkUI_ListItemSwipeActionItem_SetActionAreaDistance(item, distance);
+    auto ret = OH_ArkUI_ListItemSwipeActionItem_GetActionAreaDistance(item);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ListItemSwipeActionItem",
+        "listSwipeActionSetActionAreaDistance002 nullptr ret=%{public}f", ret);
+    ASSERT_EQ(ret, SUCCESS);
+    NAPI_END;
+}
+
+static napi_value listSwipeActionSetActionAreaDistance003(napi_env env, napi_callback_info info)
+{
+    NAPI_START(list, ARKUI_NODE_LIST);
+    auto listSwipeActionItem = OH_ArkUI_ListItemSwipeActionItem_Create();
+    float distance = PARAM_NEGATIVE_10;
+    OH_ArkUI_ListItemSwipeActionItem_SetActionAreaDistance(listSwipeActionItem, distance);
+    auto ret = OH_ArkUI_ListItemSwipeActionItem_GetActionAreaDistance(listSwipeActionItem);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ListItemSwipeActionItem",
+        "listSwipeActionSetActionAreaDistance003 distance ret=%{public}f", ret);
+    ASSERT_EQ(ret, distance);
+    NAPI_END;
+}
+
 static napi_value listSwipeActionOptionCreate(napi_env env, napi_callback_info info)
 {
     auto ret = OH_ArkUI_ListItemSwipeActionOption_Create();
