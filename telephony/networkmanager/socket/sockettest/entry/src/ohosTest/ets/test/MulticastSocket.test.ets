@@ -1369,21 +1369,21 @@ export default function MulticastSocket() {
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
-        expectTrue(paramNull === null);
+        expect(paramNull === null).assertTrue();
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.setMulticastTTL(paramNull).then(() => {
           console.info(`${caseName} unexpected success`);
-          expectFail();
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expect(err.code).assertEqual(401);
           console.info(`${caseName} test end`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectTrue(err.code !== 401);
+        expect(err.code !== 401).assertTrue();
         console.info(`${caseName} test end`);
         done();
       }
@@ -1402,21 +1402,21 @@ export default function MulticastSocket() {
       console.info(`${caseName} test start`);
       try {
         let paramUndefined = undefined;
-        expectTrue(paramUndefined === undefined);
+        expect(paramUndefined === undefined).assertTrue();
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.setMulticastTTL(paramUndefined).then(() => {
           console.info(`${caseName} unexpected success`);
-          expectFail();
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expect(err.code).assertEqual(401);
           console.info(`${caseName} test end`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectTrue(err.code !== 401);
+        expect(err.code !== 401).assertTrue();
         console.info(`${caseName} test end`);
         done();
       }
@@ -1918,17 +1918,17 @@ export default function MulticastSocket() {
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
-        expectTrue(paramNull === null);
+        expect(paramNull === null).assertTrue();
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.setLoopbackMode(paramNull, (err: BusinessError) => {
           console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expect(err.code).assertEqual(401);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code !== 401);
+        expect(err.code !== 401).assertTrue();
         console.info(`${caseName} test end`);
         done();
       }
@@ -1947,17 +1947,17 @@ export default function MulticastSocket() {
       console.info(`${caseName} test start`);
       try {
         let paramUndefined = undefined;
-        expectTrue(paramUndefined === undefined);
+        expect(paramUndefined === undefined).assertTrue();
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.setLoopbackMode(paramUndefined, (err: BusinessError) => {
           console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expect(err.code).assertEqual(401);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code !== 401);
+        expect(err.code !== 401).assertTrue();
         console.info(`${caseName} test end`);
         done();
       }
@@ -1976,21 +1976,21 @@ export default function MulticastSocket() {
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
-        expectTrue(paramNull === null);
+        expect(paramNull === null).assertTrue();
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.setLoopbackMode(paramNull).then(() => {
           console.info(`${caseName} unexpected success`);
-          expectFail();
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expect(err.code).assertEqual(401);
           console.info(`${caseName} test end`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectTrue(err.code !== 401);
+        expect(err.code !== 401).assertTrue();
         console.info(`${caseName} test end`);
         done();
       }
@@ -2009,21 +2009,21 @@ export default function MulticastSocket() {
       console.info(`${caseName} test start`);
       try {
         let paramUndefined = undefined;
-        expectTrue(paramUndefined === undefined);
+        expect(paramUndefined === undefined).assertTrue();
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.setLoopbackMode(paramUndefined).then(() => {
           console.info(`${caseName} unexpected success`);
-          expectFail();
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expect(err.code).assertEqual(401);
           console.info(`${caseName} test end`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectTrue(err.code !== 401);
+        expect(err.code !== 401).assertTrue();
         console.info(`${caseName} test end`);
         done();
       }
@@ -2759,17 +2759,17 @@ export default function MulticastSocket() {
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
-        expectTrue(paramNull === null);
+        expect(paramNull === null).assertTrue();
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.addMembership(paramNull, (err: BusinessError) => {
           console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expect(err.code).assertEqual(401);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code !== 401);
+        expect(err.code !== 401).assertTrue();
         console.info(`${caseName} test end`);
         done();
       }
@@ -2817,21 +2817,21 @@ export default function MulticastSocket() {
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
-        expectTrue(paramNull === null);
+        expect(paramNull === null).assertTrue();
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.dropMembership(paramNull).then(() => {
           console.info(`${caseName} unexpected success`);
-          expectFail();
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expect(err.code).assertEqual(401);
           console.info(`${caseName} test end`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectTrue(err.code !== 401);
+        expect(err.code !== 401).assertTrue();
         console.info(`${caseName} test end`);
         done();
       }
