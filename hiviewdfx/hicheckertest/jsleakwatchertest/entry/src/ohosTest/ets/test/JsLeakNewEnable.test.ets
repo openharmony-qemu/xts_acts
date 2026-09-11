@@ -925,5 +925,32 @@ export default function JsLeakWatcherNewTest() {
       }
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_3500 end");
     })
+
+    /**
+     * @tc.name   testJsLeakWatcher36
+     * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_3600
+     * @tc.desc   验证enableLeakWatcher接口isEnabled参数传入null值返回错误码10801001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testJsLeakWatcher36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_3600 start");
+      try {
+        let config : Array<string> = [];
+        jsLeakWatcher.enableLeakWatcher(null, config, (filepath : Array<string>) => {
+          console.log('testJsLeakWatcher leakListFileName: ' + filepath[0]);
+          console.log('testJsLeakWatcher heapDumpFileName: ' + filepath[1]);
+        });
+        console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_3600 isEnabled null')
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_jsLeakWatcher_Interface_3600 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(err.code == 10801001).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_3600 end");
+    })
   })
 }
