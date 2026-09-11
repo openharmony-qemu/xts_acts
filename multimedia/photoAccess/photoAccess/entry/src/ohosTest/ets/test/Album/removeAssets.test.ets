@@ -1024,7 +1024,7 @@ export default function removeAssetsTest () {
     });
 
     /**
-     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1500
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0700
      * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_007
      * @tc.desc   removeAssets from favorite album,error code 13900020
      * @tc.size   MEDIUM
