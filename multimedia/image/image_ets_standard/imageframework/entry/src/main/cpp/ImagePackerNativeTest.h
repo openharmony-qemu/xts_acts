@@ -58,6 +58,7 @@ napi_value JSPackingOptionsGetMimeTypeNull(napi_env env, napi_callback_info info
 napi_value JSPackingOptionsGetMimeTypeNullInvalidParameter(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsGetQuality(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsGetQualityBadParameter(napi_env env, napi_callback_info info);
+napi_value JSPackingOptionsGetQualityBadParameterQuality(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsSetQuality(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsSetQualityBadParameter(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsSetNeedsPackProperties(napi_env env, napi_callback_info info);
