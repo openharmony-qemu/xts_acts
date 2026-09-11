@@ -838,7 +838,7 @@ export default function CameraPhotoSesionProfessionAbilityTest() {
       await startCameraSession();
       let ret = cameraObj.oHgetIso(Parameter_Setting.SECOND_PARAMETER_ERROR);
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500 ret is "+ret);
-      expect(ret).assertEqual(CAMERA_OK)
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
