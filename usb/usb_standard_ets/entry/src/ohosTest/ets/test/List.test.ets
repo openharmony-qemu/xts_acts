@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-import UsbSystemApiNormalJsTest from './UsbSystemApiNormalJsTest.test';
-import UsbSceneEtsTest from './UsbSceneEtsTest.test'
+import UsbSystemApiPermissionTest from './UsbSystemApiPermissionTest.test';
+import UsbControlTransferSceneTest from './UsbControlTransferSceneTest.test'
 import UsbApiBulkTransferTest from './UsbApiBulkTransferTest.test';
 import UsbApiInterruptTransferTest from './UsbApiInterruptTransferTest.test';
 import UsbApiIsochronousTransferTest from './UsbApiIsochronousTransferTest.test';
-import UsbAccessoryEtsTest from './UsbAccessoryEtsTest.test';
+import UsbAccessoryTest from './UsbAccessoryTest.test';
 import UsbCoreApiTest from './UsbCoreApiTest.test';
 import UsbCoreCompatTest from './UsbCoreCompatTest.test';
 import UsbDevicePipeTest from './UsbDevicePipeTest.test';
@@ -30,8 +30,8 @@ import UsbApiDeprecatedAddEtsTest from './UsbApiDeprecatedAddEtsTest.test';
 import UsbApiInputParaTest from './UsbApiInputParaTest.test';
 
 export default function testsuite() {
-  UsbSystemApiNormalJsTest()
-  UsbSceneEtsTest()
+  UsbSystemApiPermissionTest()
+  UsbControlTransferSceneTest()
   UsbApiBulkTransferTest()
   UsbApiInterruptTransferTest()
   UsbApiIsochronousTransferTest()
@@ -41,7 +41,7 @@ export default function testsuite() {
   UsbDevicePipeCompatTest()
   UsbApiParamExceEtsTest()
   UsbApiTransferCompatEtsTest()
-  UsbAccessoryEtsTest()
+  UsbAccessoryTest()
   UsbApiDeprecatedEtsTest()
   UsbApiDeprecatedAddEtsTest()
   UsbApiInputParaTest()
