@@ -1415,5 +1415,4 @@ napi_value UnregisterKeyEventFilterInvalidWindowId(napi_env env, napi_callback_i
     return retValue;
 }
 
-
 }
