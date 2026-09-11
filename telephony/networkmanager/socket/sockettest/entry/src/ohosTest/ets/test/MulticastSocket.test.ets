@@ -1357,15 +1357,15 @@ export default function MulticastSocket() {
     });
 
     /**
-     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401
-     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetMulticastTTL_Null_0401
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetMulticastTTL0401
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetMulticastTTL_Null_0401
      * @tc.desc   SetMulticastTTL with null parameter (Promise), expected error code 401 (Parameter error)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401';
+    it('testNetworkMgrSocketMulticastSocketSetMulticastTTL0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetMulticastTTL0401';
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
@@ -1390,15 +1390,15 @@ export default function MulticastSocket() {
     });
 
     /**
-     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401U
-     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetMulticastTTL_Undefined_0402
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetMulticastTTL0402
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetMulticastTTL_Undefined_0402
      * @tc.desc   SetMulticastTTL with undefined parameter (Promise), expected error code 401 (Parameter error)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetMulticastTTL401U';
+    it('testNetworkMgrSocketMulticastSocketSetMulticastTTL0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetMulticastTTL0402';
       console.info(`${caseName} test start`);
       try {
         let paramUndefined = undefined;
@@ -1906,15 +1906,15 @@ export default function MulticastSocket() {
     });
 
     /**
-     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401
-     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetLoopbackMode_Null_0401
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetLoopbackMode0401
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetLoopbackMode_Null_0401
      * @tc.desc   SetLoopbackMode with null parameter (callback), expected error code 401 (Parameter error)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401';
+    it('testNetworkMgrSocketMulticastSocketSetLoopbackMode0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetLoopbackMode0401';
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
@@ -1935,15 +1935,15 @@ export default function MulticastSocket() {
     });
 
     /**
-     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401U
-     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetLoopbackMode_Undefined_0402
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetLoopbackMode0402
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetLoopbackMode_Undefined_0402
      * @tc.desc   SetLoopbackMode with undefined parameter (callback), expected error code 401 (Parameter error)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401U', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401U';
+    it('testNetworkMgrSocketMulticastSocketSetLoopbackMode0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetLoopbackMode0402';
       console.info(`${caseName} test start`);
       try {
         let paramUndefined = undefined;
@@ -1964,15 +1964,15 @@ export default function MulticastSocket() {
     });
 
     /**
-     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401P
-     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetLoopbackMode_NullPromise_0403
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetLoopbackMode0403
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetLoopbackMode_NullPromise_0403
      * @tc.desc   SetLoopbackMode with null parameter (Promise), expected error code 401 (Parameter error)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401P', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401P';
+    it('testNetworkMgrSocketMulticastSocketSetLoopbackMode0403', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetLoopbackMode0403';
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
@@ -1997,15 +1997,15 @@ export default function MulticastSocket() {
     });
 
     /**
-     * @tc.name   testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401PU
-     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_SetLoopbackMode_UndefinedPromise_0404
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetLoopbackMode0404
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetLoopbackMode_UndefinedPromise_0404
      * @tc.desc   SetLoopbackMode with undefined parameter (Promise), expected error code 401 (Parameter error)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401PU', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketSetLoopbackMode401PU';
+    it('testNetworkMgrSocketMulticastSocketSetLoopbackMode0404', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetLoopbackMode0404';
       console.info(`${caseName} test start`);
       try {
         let paramUndefined = undefined;
@@ -2747,15 +2747,15 @@ export default function MulticastSocket() {
     });
 
     /**
-     * @tc.name   testNetworkMgrSocketNopMulticastSocketAddMembership0401
-     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_AddMembership_0401
+     * @tc.name   testNetworkMgrSocketMulticastSocketAddMembership0401
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_AddMembership_0401
      * @tc.desc   AddMembership with null address parameter (sync throw), expected error code 401 (Parameter error)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopMulticastSocketAddMembership0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketAddMembership0401';
+    it('testNetworkMgrSocketMulticastSocketAddMembership0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketAddMembership0401';
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
@@ -2776,15 +2776,15 @@ export default function MulticastSocket() {
     });
 
     /**
-     * @tc.name   testNetworkMgrSocketNopMulticastSocketDropMembership0401
-     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_DropMembership_0401
+     * @tc.name   testNetworkMgrSocketMulticastSocketDropMembership0401
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_DropMembership_0401
      * @tc.desc   DropMembership with null address parameter (callback), expected error code 401 (Parameter error)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopMulticastSocketDropMembership0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketDropMembership0401';
+    it('testNetworkMgrSocketMulticastSocketDropMembership0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketDropMembership0401';
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
@@ -2805,15 +2805,15 @@ export default function MulticastSocket() {
     });
 
     /**
-     * @tc.name   testNetworkMgrSocketNopMulticastSocketDropMembership401
-     * @tc.number SUB_NetworkMgr_Socket_Nop_MulticastSocket_DropMembership_Null_0402
+     * @tc.name   testNetworkMgrSocketMulticastSocketDropMembership0402
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_DropMembership_Null_0402
      * @tc.desc   DropMembership with null address parameter (Promise), expected error code 401 (Parameter error)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketNopMulticastSocketDropMembership401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketNopMulticastSocketDropMembership401';
+    it('testNetworkMgrSocketMulticastSocketDropMembership0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketDropMembership0402';
       console.info(`${caseName} test start`);
       try {
         let paramNull = null;
