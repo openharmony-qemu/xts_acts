@@ -1170,21 +1170,20 @@ export default function windowErrCode401_4() {
     })
 
     /**
-     * @tc.name   testConvertOrientationAndRotation_0200
-     * @tc.number testConvertOrientationAndRotation_0200
-     * @tc.desc   testConvertOrientationAndRotation_0200
-     * @tc.type   FUNCTION
+     * @tc.name   SUB_BASIC_WMS_testConvertOrientationAndRotation_0200  
+     * @tc.desc   SUB_BASIC_WMS_testConvertOrientationAndRotation_0200
+     * @tc.type   SUB_BASIC_WMS_testConvertOrientationAndRotation_0200
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testConvertOrientationAndRotation_0200', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testConvertOrientationAndRotation_0200";
+    it('SUB_BASIC_WMS_testConvertOrientationAndRotation_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_BASIC_WMS_testConvertOrientationAndRotation_0200";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       let windowClass = windowStage.getMainWindowSync()
       if (!windowClass) {
         console.error(msgStr + 'Failed to get main window.');
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
       try {
@@ -1211,21 +1210,21 @@ export default function windowErrCode401_4() {
     })
 
     /**
-     * @tc.name   testConvertOrientationAndRotation_0300
-     * @tc.number testConvertOrientationAndRotation_0300
-     * @tc.desc   testConvertOrientationAndRotation_0300
+     * @tc.name   SUB_BASIC_WMS_testConvertOrientationAndRotation_0300
+     * @tc.number SUB_BASIC_WMS_testConvertOrientationAndRotation_0300
+     * @tc.desc   SUB_BASIC_WMS_testConvertOrientationAndRotation_0300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testConvertOrientationAndRotation_0300', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testConvertOrientationAndRotation_0300";
+    it('SUB_BASIC_WMS_testConvertOrientationAndRotation_0300', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_BASIC_WMS_testConvertOrientationAndRotation_0300";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       let windowClass = windowStage.getMainWindowSync()
       if (!windowClass) {
         console.error(msgStr + 'Failed to get main window.');
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
       try {
