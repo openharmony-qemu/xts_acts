@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,23 +13,24 @@
  * limitations under the License.
  */
 
-import { beforeAll, afterAll, describe, it, expect, TestType, Size, Level } from "@ohos/hypium"
-import usbMgr from "@ohos.usbManager"
+import { afterAll, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import usbMgr from '@ohos.usbManager';
 import { isFilteredDevice } from './FilterUtils';
-import bundleManager from '@ohos.bundle.bundleManager'
+import bundleManager from '@ohos.bundle.bundleManager';
 
 
 export default function UsbSystemApiPermissionTest() {
-  
+
 
   describe('UsbSystemApiPermissionTest', () => {
 
     const TAG: string = "[UsbSystemApiPermissionTest]";
     const SKIP_TAG: string = "[SKIP]";
     let rawDeviceList = usbMgr.getDevices();
-    let deviceList: Array<usbMgr.USBDevice> = rawDeviceList ? rawDeviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId)) : [];
+    let deviceList: Array<usbMgr.USBDevice> =
+      rawDeviceList ? rawDeviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId)) : [];
     let isDeviceConnected: boolean = false;
-    
+
 
     beforeAll(async () => {
       console.info(`${TAG} beforeAll start`);
@@ -41,7 +42,7 @@ export default function UsbSystemApiPermissionTest() {
     afterAll(() => {
       console.info(`${TAG} afterAll`);
     })
-  
+
 
     /**
      * @tc.name   testSystemApiAddDeviceAccessRight
@@ -53,24 +54,27 @@ export default function UsbSystemApiPermissionTest() {
      */
     it('testSystemApiAddDeviceAccessRight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testSystemApiAddDeviceAccessRight, skip`);
-        done();
-        return;
-      }
-      try {
-        let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
-        let bundleInfo = await bundleManager.getBundleInfoForSelf(bundleFlags);
-        let tokenIdStr = bundleInfo.appInfo.accessTokenId.toString();
-        usbMgr.addDeviceAccessRight(tokenIdStr, deviceList[0].name);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testSystemApiAddDeviceAccessRight catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(202);
-        done();
-      }
-    });
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testSystemApiAddDeviceAccessRight, skip`);
+          done();
+          return;
+        }
+        try {
+          let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
+          let bundleInfo = await bundleManager.getBundleInfoForSelf(bundleFlags);
+          let tokenIdStr = bundleInfo.appInfo.accessTokenId.toString();
+          try {
+            usbMgr.addDeviceAccessRight(tokenIdStr, deviceList[0].name);
+            expect().assertFail();
+          } catch (error) {
+            console.error(`${TAG} testSystemApiAddDeviceAccessRight catch err: ${JSON.stringify(error)}`);
+            expect(error.code).assertEqual(202);
+          }
+          done();
+        } catch (err) {
+          done(err);
+        }
+      });
 
     /**
      * @tc.name   testSystemApiGetFunctionsFromString
@@ -81,18 +85,16 @@ export default function UsbSystemApiPermissionTest() {
      * @tc.level  LEVEL3
      */
     it('testSystemApiGetFunctionsFromString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-      let strMaskCode = 'hdc';
-      try {
-        usbMgr.getFunctionsFromString(strMaskCode);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testSystemApiGetFunctionsFromString catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(202);
-        done();
-      }
-    });
+      () => {
+        let strMaskCode = 'hdc';
+        try {
+          usbMgr.getFunctionsFromString(strMaskCode);
+          expect().assertFail();
+        } catch (error) {
+          console.error(`${TAG} testSystemApiGetFunctionsFromString catch err: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        }
+      });
 
     /**
      * @tc.name   testSystemApiGetStringFromFunctions
@@ -103,18 +105,16 @@ export default function UsbSystemApiPermissionTest() {
      * @tc.level  LEVEL3
      */
     it('testSystemApiGetStringFromFunctions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-      let maskCode: number = 4; // 4 = USBFunctionType.HDC
-      try {
-        usbMgr.getStringFromFunctions(maskCode);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testSystemApiGetStringFromFunctions catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(202);
-        done();
-      }
-    });
+      () => {
+        let maskCode: number = 4; // 4 = USBFunctionType.HDC
+        try {
+          usbMgr.getStringFromFunctions(maskCode);
+          expect().assertFail();
+        } catch (error) {
+          console.error(`${TAG} testSystemApiGetStringFromFunctions catch err: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        }
+      });
 
     /**
      * @tc.name   testSystemApiSetDeviceFunctions
@@ -126,17 +126,20 @@ export default function UsbSystemApiPermissionTest() {
      */
     it('testSystemApiSetDeviceFunctions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-      let maskCode: number = 4; // 4 = USBFunctionType.HDC
-      try {
-        await usbMgr.setDeviceFunctions(maskCode);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testSystemApiSetDeviceFunctions catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(202);
-        done();
-      }
-    });
+        let maskCode: number = 4; // 4 = USBFunctionType.HDC
+        try {
+          try {
+            await usbMgr.setDeviceFunctions(maskCode);
+            expect().assertFail();
+          } catch (error) {
+            console.error(`${TAG} testSystemApiSetDeviceFunctions catch err: ${JSON.stringify(error)}`);
+            expect(error.code).assertEqual(202);
+          }
+          done();
+        } catch (err) {
+          done(err);
+        }
+      });
 
     /**
      * @tc.name   testSystemApiGetDeviceFunctions
@@ -147,17 +150,15 @@ export default function UsbSystemApiPermissionTest() {
      * @tc.level  LEVEL3
      */
     it('testSystemApiGetDeviceFunctions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-      try {
-        usbMgr.getDeviceFunctions();
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testSystemApiGetDeviceFunctions catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(202);
-        done();
-      }
-    });
+      () => {
+        try {
+          usbMgr.getDeviceFunctions();
+          expect().assertFail();
+        } catch (error) {
+          console.error(`${TAG} testSystemApiGetDeviceFunctions catch err: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        }
+      });
 
     /**
      * @tc.name   testSystemApiGetPortList
@@ -168,17 +169,15 @@ export default function UsbSystemApiPermissionTest() {
      * @tc.level  LEVEL3
      */
     it('testSystemApiGetPortList', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-      try {
-        usbMgr.getPortList();
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testSystemApiGetPortList catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(202);
-        done();
-      }
-    });
+      () => {
+        try {
+          usbMgr.getPortList();
+          expect().assertFail();
+        } catch (error) {
+          console.error(`${TAG} testSystemApiGetPortList catch err: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        }
+      });
 
     /**
      * @tc.name   testSystemApiGetPortSupportModes
@@ -189,18 +188,16 @@ export default function UsbSystemApiPermissionTest() {
      * @tc.level  LEVEL3
      */
     it('testSystemApiGetPortSupportModes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-      let portId: number = 1;
-      try {
-        usbMgr.getPortSupportModes(portId);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testSystemApiGetPortSupportModes catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(202);
-        done();
-      }
-    });
+      () => {
+        let portId: number = 1;
+        try {
+          usbMgr.getPortSupportModes(portId);
+          expect().assertFail();
+        } catch (error) {
+          console.error(`${TAG} testSystemApiGetPortSupportModes catch err: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        }
+      });
 
     /**
      * @tc.name   testSystemApiSetPortRoleTypes
@@ -212,19 +209,21 @@ export default function UsbSystemApiPermissionTest() {
      */
     it('testSystemApiSetPortRoleTypes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-      let portId: number = 1;
-      let powerRole: number = 2; // 2 = PowerRoleType.SINK
-      let dataRole: number = 2; // 2 = DataRoleType.DEVICE
-      try {
-        await usbMgr.setPortRoleTypes(portId, powerRole, dataRole);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testSystemApiSetPortRoleTypes catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(202);
-        done();
-      }
-    });
-
+        let portId: number = 1;
+        let powerRole: number = 2; // 2 = PowerRoleType.SINK
+        let dataRole: number = 2; // 2 = DataRoleType.DEVICE
+        try {
+          try {
+            await usbMgr.setPortRoleTypes(portId, powerRole, dataRole);
+            expect().assertFail();
+          } catch (error) {
+            console.error(`${TAG} testSystemApiSetPortRoleTypes catch err: ${JSON.stringify(error)}`);
+            expect(error.code).assertEqual(202);
+          }
+          done();
+        } catch (err) {
+          done(err);
+        }
+      });
   })
 }
