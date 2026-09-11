@@ -408,6 +408,33 @@ export default function newSEServicetest() {
                 expect().assertFail();
             }
         })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_1700
+         * @tc.number SUB_Communication_NFC_secureElement_js_1700
+         * @tc.desc   Close omapi.off with only type parameter, without optional callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_secureElement_js_1700', Level.LEVEL0, function (){
+            try{
+                let getOmapiOnData = secureElement.on('stateChanged', seStateOnCb);
+                console.info("[NFC_test]17 getOmapiOnData is " + getOmapiOnData);
+            }catch(error){
+                console.info("[NFC_test]17 omapi on error catch Code: " + error.code + "/" +error);
+                expect().assertFail();
+            }
+
+            try{
+                sleep(900);
+                let getOmapiOffData = secureElement.off('stateChanged');
+                console.info("[NFC_test]17 off with only type param, getOmapiOffData is " + getOmapiOffData);
+            }catch(error){
+                console.info("[NFC_test]17 omapi off only type param error catch Code: " + error.code + "/" +error);
+                expect(401).assertEqual(error.code)
+            }
+        })
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }
