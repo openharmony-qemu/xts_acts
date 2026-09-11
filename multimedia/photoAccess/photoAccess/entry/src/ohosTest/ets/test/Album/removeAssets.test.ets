@@ -1240,8 +1240,8 @@ export default function removeAssetsTest () {
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_013', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_013';
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_014', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_014';
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.CLOUD_ENHANCEMENT);
         let assetNames: Array<string> = [
