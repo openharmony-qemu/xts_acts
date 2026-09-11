@@ -20,11 +20,12 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { emitter } from '@kit.BasicServicesKit';
 import bundle from '@ohos.bundle.bundleManager';
+import { Want } from '@kit.AbilityKit';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
 let eventData: emitter.EventData = {
   data: {
-    "content": "close",
+    'content': 'close',
   }
 };
 
