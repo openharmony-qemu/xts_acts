@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,8 +14,8 @@
  */
 
 import usbMgr from '@ohos.usbManager';
-import { Driver, ON, MatchPattern } from '@ohos.UiTest';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { Driver, MatchPattern, ON } from '@ohos.UiTest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 const TAG: string = "[UsbAccessoryTest]";
 const SKIP_TAG: string = "[SKIP]";
@@ -135,19 +135,14 @@ export default function UsbAccessoryTest() {
         console.info(`${TAG} ${SKIP_TAG} testAccessoryGetListVerify, skip`);
         return;
       }
-      try {
-        accessoryList = usbMgr.getAccessoryList();
-        console.info(`${TAG} accessoryList: ${JSON.stringify(accessoryList)}`);
-        expect(accessoryList.length).assertEqual(1);
-        expect(typeof(accessory.manufacturer)).assertEqual('string');
-        expect(typeof(accessory.product)).assertEqual('string');
-        expect(typeof(accessory.description)).assertEqual('string');
-        expect(typeof(accessory.version)).assertEqual('string');
-        expect(typeof(accessory.serialNumber)).assertEqual('string');
-      } catch (error) {
-        console.error(`${TAG} testAccessoryGetListVerify catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-      }
+      accessoryList = usbMgr.getAccessoryList();
+      console.info(`${TAG} accessoryList: ${JSON.stringify(accessoryList)}`);
+      expect(accessoryList.length).assertEqual(1);
+      expect(typeof (accessory.manufacturer)).assertEqual('string');
+      expect(typeof (accessory.product)).assertEqual('string');
+      expect(typeof (accessory.description)).assertEqual('string');
+      expect(typeof (accessory.version)).assertEqual('string');
+      expect(typeof (accessory.serialNumber)).assertEqual('string');
     })
 
     /**
@@ -164,14 +159,9 @@ export default function UsbAccessoryTest() {
         console.info(`${TAG} ${SKIP_TAG} testAccessoryGetListEmpty, accessory exists, skip`);
         return;
       }
-      try {
-        let res = usbMgr.getAccessoryList();
-        console.info(`${TAG} accessoryList length: ${res.length}`);
-        expect(res.length).assertEqual(0);
-      } catch (error) {
-        console.error(`${TAG} testAccessoryGetListEmpty catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-      }
+      let res = usbMgr.getAccessoryList();
+      console.info(`${TAG} accessoryList length: ${res.length}`);
+      expect(res.length).assertEqual(0);
     })
 
     /**
@@ -182,23 +172,24 @@ export default function UsbAccessoryTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testAccessoryRequestRightInvalidParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testAccessoryRequestRightInvalidParam start`);
-      if (!hasAccessory) {
-        console.info(`${TAG} ${SKIP_TAG} testAccessoryRequestRightInvalidParam, skip`);
-        done();
-        return;
-      }
-      try {
-        await usbMgr.requestAccessoryRight(fakeAccessory);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testAccessoryRequestRightInvalidParam catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(14401001);
-        done();
-      }
-    })
+    it('testAccessoryRequestRightInvalidParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testAccessoryRequestRightInvalidParam start`);
+        if (!hasAccessory) {
+          console.info(`${TAG} ${SKIP_TAG} testAccessoryRequestRightInvalidParam, skip`);
+          done();
+          return;
+        }
+        try {
+          await usbMgr.requestAccessoryRight(fakeAccessory);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error(`${TAG} testAccessoryRequestRightInvalidParam catch err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(14401001);
+          done();
+        }
+      })
 
     /**
      * @tc.name   testAccessoryRequestRightAllow
@@ -223,10 +214,10 @@ export default function UsbAccessoryTest() {
         expect(hasRight).assertTrue();
         usbMgr.cancelAccessoryRight(accessory);
         done();
-      } catch (error) {
-        console.error(`${TAG} testAccessoryRequestRightAllow catch err: ${JSON.stringify(error)}`);
+      } catch (err) {
+        console.error(`${TAG} testAccessoryRequestRightAllow catch err: ${JSON.stringify(err)}`);
         expect().assertFail();
-        done();
+        done(err);
       }
     })
 
@@ -238,26 +229,27 @@ export default function UsbAccessoryTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testAccessoryRequestRightReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testAccessoryRequestRightReject start`);
-      if (!hasAccessory) {
-        console.info(`${TAG} ${SKIP_TAG} testAccessoryRequestRightReject, skip`);
-        done();
-        return;
-      }
-      try {
-        const rightPromise = usbMgr.requestAccessoryRight(accessory);
-        await clickRejectButton();
-        let hasRight = await rightPromise;
-        console.info(`${TAG} requestAccessoryRight result: ${hasRight}`);
-        expect(hasRight).assertFalse();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testAccessoryRequestRightReject catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      }
-    })
+    it('testAccessoryRequestRightReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testAccessoryRequestRightReject start`);
+        if (!hasAccessory) {
+          console.info(`${TAG} ${SKIP_TAG} testAccessoryRequestRightReject, skip`);
+          done();
+          return;
+        }
+        try {
+          const rightPromise = usbMgr.requestAccessoryRight(accessory);
+          await clickRejectButton();
+          let hasRight = await rightPromise;
+          console.info(`${TAG} requestAccessoryRight result: ${hasRight}`);
+          expect(hasRight).assertFalse();
+          done();
+        } catch (err) {
+          console.error(`${TAG} testAccessoryRequestRightReject catch err: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done(err);
+        }
+      })
 
     /**
      * @tc.name   testAccessoryHasRightInvalidParam
@@ -267,21 +259,18 @@ export default function UsbAccessoryTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testAccessoryHasRightInvalidParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testAccessoryHasRightInvalidParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testAccessoryHasRightInvalidParam start`);
       if (!hasAccessory) {
         console.info(`${TAG} ${SKIP_TAG} testAccessoryHasRightInvalidParam, skip`);
-        done();
         return;
       }
       try {
         usbMgr.hasAccessoryRight(fakeAccessory);
         expect().assertFail();
-        done();
       } catch (error) {
         console.error(`${TAG} testAccessoryHasRightInvalidParam catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(14401001);
-        done();
       }
     })
 
@@ -293,26 +282,27 @@ export default function UsbAccessoryTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testAccessoryHasRightAfterGrant', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testAccessoryHasRightAfterGrant start`);
-      if (!hasAccessory) {
-        console.info(`${TAG} ${SKIP_TAG} testAccessoryHasRightAfterGrant, skip`);
-        done();
-        return;
-      }
-      try {
-        await requestAccessoryRight(accessory);
-        let ret = usbMgr.hasAccessoryRight(accessory);
-        console.info(`${TAG} hasAccessoryRight after grant: ${ret}`);
-        expect(ret).assertTrue();
-        usbMgr.cancelAccessoryRight(accessory);
-        done();
-      } catch (error) {
-        console.error(`${TAG} testAccessoryHasRightAfterGrant catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      }
-    })
+    it('testAccessoryHasRightAfterGrant', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testAccessoryHasRightAfterGrant start`);
+        if (!hasAccessory) {
+          console.info(`${TAG} ${SKIP_TAG} testAccessoryHasRightAfterGrant, skip`);
+          done();
+          return;
+        }
+        try {
+          await requestAccessoryRight(accessory);
+          let ret = usbMgr.hasAccessoryRight(accessory);
+          console.info(`${TAG} hasAccessoryRight after grant: ${ret}`);
+          expect(ret).assertTrue();
+          usbMgr.cancelAccessoryRight(accessory);
+          done();
+        } catch (err) {
+          console.error(`${TAG} testAccessoryHasRightAfterGrant catch err: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done(err);
+        }
+      })
 
     /**
      * @tc.name   testAccessoryHasRightAfterCancel
@@ -322,26 +312,27 @@ export default function UsbAccessoryTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testAccessoryHasRightAfterCancel', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testAccessoryHasRightAfterCancel start`);
-      if (!hasAccessory) {
-        console.info(`${TAG} ${SKIP_TAG} testAccessoryHasRightAfterCancel, skip`);
-        done();
-        return;
-      }
-      try {
-        await requestAccessoryRight(accessory);
-        usbMgr.cancelAccessoryRight(accessory);
-        let ret = usbMgr.hasAccessoryRight(accessory);
-        console.info(`${TAG} hasAccessoryRight after cancel: ${ret}`);
-        expect(ret).assertFalse();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testAccessoryHasRightAfterCancel catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      }
-    })
+    it('testAccessoryHasRightAfterCancel', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testAccessoryHasRightAfterCancel start`);
+        if (!hasAccessory) {
+          console.info(`${TAG} ${SKIP_TAG} testAccessoryHasRightAfterCancel, skip`);
+          done();
+          return;
+        }
+        try {
+          await requestAccessoryRight(accessory);
+          usbMgr.cancelAccessoryRight(accessory);
+          let ret = usbMgr.hasAccessoryRight(accessory);
+          console.info(`${TAG} hasAccessoryRight after cancel: ${ret}`);
+          expect(ret).assertFalse();
+          done();
+        } catch (err) {
+          console.error(`${TAG} testAccessoryHasRightAfterCancel catch err: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done(err);
+        }
+      })
 
     /**
      * @tc.name   testAccessoryOpenInvalidParam
@@ -351,21 +342,18 @@ export default function UsbAccessoryTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testAccessoryOpenInvalidParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testAccessoryOpenInvalidParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testAccessoryOpenInvalidParam start`);
       if (!hasAccessory) {
         console.info(`${TAG} ${SKIP_TAG} testAccessoryOpenInvalidParam, skip`);
-        done();
         return;
       }
       try {
         usbMgr.openAccessory(fakeAccessory);
         expect().assertFail();
-        done();
       } catch (error) {
         console.error(`${TAG} testAccessoryOpenInvalidParam catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(14401001);
-        done();
       }
     })
 
@@ -390,15 +378,15 @@ export default function UsbAccessoryTest() {
         console.info(`${TAG} accHandle: ${JSON.stringify(accHandle)}`);
         let accFd = accHandle.accessoryFd;
         console.info(`${TAG} accessoryFd: ${accFd}`);
-        expect(typeof(accFd)).assertEqual("number");
+        expect(typeof (accFd)).assertEqual("number");
         expect(accFd).assertLarger(0);
         usbMgr.closeAccessory(accHandle!);
         usbMgr.cancelAccessoryRight(accessory);
         done();
-      } catch (error) {
-        console.error(`${TAG} testAccessoryOpenSuccess catch err: ${JSON.stringify(error)}`);
+      } catch (err) {
+        console.error(`${TAG} testAccessoryOpenSuccess catch err: ${JSON.stringify(err)}`);
         expect().assertFail();
-        done();
+        done(err);
       }
     })
 
@@ -424,9 +412,9 @@ export default function UsbAccessoryTest() {
         usbMgr.openAccessory(accessory);
         expect().assertFail();
         done();
-      } catch (error) {
-        console.error(`${TAG} testAccessoryOpenReopen catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(14401003);
+      } catch (err) {
+        console.error(`${TAG} testAccessoryOpenReopen catch err: ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(14401003);
         done();
       } finally {
         if (accHandle) {
@@ -460,9 +448,9 @@ export default function UsbAccessoryTest() {
         usbMgr.openAccessory(accessory);
         expect().assertFail();
         done();
-      } catch (error) {
-        console.error(`${TAG} testAccessoryOpenNoPermission catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(14400001);
+      } catch (err) {
+        console.error(`${TAG} testAccessoryOpenNoPermission catch err: ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(14400001);
         done();
       } finally {
         if (!usbMgr.hasAccessoryRight(accessory)) {
@@ -494,10 +482,10 @@ export default function UsbAccessoryTest() {
         usbMgr.closeAccessory(accHandle!);
         console.info(`${TAG} closeAccessory success`);
         done();
-      } catch (error) {
-        console.error(`${TAG} testAccessoryCloseSuccess catch err: ${JSON.stringify(error)}`);
+      } catch (err) {
+        console.error(`${TAG} testAccessoryCloseSuccess catch err: ${JSON.stringify(err)}`);
         expect().assertFail();
-        done();
+        done(err);
       } finally {
         usbMgr.cancelAccessoryRight(accessory);
       }
@@ -511,22 +499,19 @@ export default function UsbAccessoryTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testAccessoryCloseInvalidFd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testAccessoryCloseInvalidFd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testAccessoryCloseInvalidFd start`);
       if (!hasAccessory) {
         console.info(`${TAG} ${SKIP_TAG} testAccessoryCloseInvalidFd, skip`);
-        done();
         return;
       }
-      let accHandle: usbMgr.USBAccessoryHandle = {accessoryFd: 0};
+      let accHandle: usbMgr.USBAccessoryHandle = { accessoryFd: 0 };
       try {
         usbMgr.closeAccessory(accHandle!);
         expect().assertFail();
-        done();
       } catch (error) {
         console.error(`${TAG} testAccessoryCloseInvalidFd catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(14400004);
-        done();
       }
     })
 
