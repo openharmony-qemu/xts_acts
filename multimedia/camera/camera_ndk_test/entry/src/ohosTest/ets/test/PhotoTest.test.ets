@@ -4156,7 +4156,7 @@ export default function PhotoTest() {
       createPhotoOutput();
       addPhotoOutput();
       sessionCommitConfig();
-      let ret: number = cameraObj.getWhiteBalance(Parameter_Setting.THIRD_PARAMETER_ERROR);
+      let ret: number = cameraObj.getWhiteBalance(Parameter_Setting.SECOND_PARAMETER_ERROR);
       console.info(TAG + "getWhiteBalance ret:", ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
