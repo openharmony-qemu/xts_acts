@@ -36,14 +36,12 @@ export default function CoverageStaticTest(): void {
       console.info(`${LOG_TAG} beforeEach start`);
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
-        if (routerInstance !== undefined) {
-          const pages = routerInstance.getState();
-          if (pages.name !== 'CoverageStaticIndex') {
-            const options: router.RouterOptions = {
-              url: 'MainAbility/pages/coverage/CoverageStaticIndex',
-            };
-            routerInstance.replaceUrl(options);
-          }
+        const pages = routerInstance.getState();
+        if (pages.name !== 'CoverageStaticIndex') {
+          const options: router.RouterOptions = {
+            url: 'MainAbility/pages/coverage/CoverageStaticIndex',
+          };
+          routerInstance.replaceUrl(options);
         }
       } catch (err) {
         console.error(`${LOG_TAG} beforeEach navigate soft-fail: ${err}`);

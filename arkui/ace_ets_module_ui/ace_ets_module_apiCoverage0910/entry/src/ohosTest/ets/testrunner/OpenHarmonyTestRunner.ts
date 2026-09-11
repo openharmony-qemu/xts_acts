@@ -17,6 +17,11 @@ import hilog from '@ohos.hilog';
 import TestRunner from '@ohos.application.testRunner';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
+interface ShellCmdResult {
+    stdResult?: string;
+    exitCode?: number;
+}
+
 var abilityDelegator = undefined
 var abilityDelegatorArguments = undefined
 
@@ -57,7 +62,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         }
         hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
         abilityDelegator.executeShellCommand(cmd,
-            (err: Error, d: Object) => {
+            (err: Error, d: ShellCmdResult) => {
                 hilog.info(0x0000, 'testTag', 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
                 hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.stdResult ?? '');
                 hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.exitCode ?? '');

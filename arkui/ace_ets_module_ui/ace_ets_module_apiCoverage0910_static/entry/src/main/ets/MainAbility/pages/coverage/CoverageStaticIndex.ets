@@ -38,6 +38,8 @@ import { Local, AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 import { ColorMetrics } from '@ohos.arkui.node';
 
+type OnFilterChangedCallback = (filterResults: Array<FilterResult>) => void;
+
 @Entry
 @ComponentV2
 struct CoverageStaticIndex {
@@ -66,6 +68,9 @@ struct CoverageStaticIndex {
   private additionParam: FilterParams = {
     name: '更多',
     options: ['X', 'Y']
+  };
+  private filterCb: OnFilterChangedCallback = (results: FilterResult[]): void => {
+    this.filterFlag = results.length > 0 ? 'changed' : 'ready';
   };
   private visibleCb: PopoverDialogV2OnVisibleChange = (visible: boolean): void => {
     this.isShow = visible;
@@ -116,6 +121,7 @@ struct CoverageStaticIndex {
     m1.identity();
     m2.identity();
     this.typeAliasFlag = 'ready';
+    this.filterCb([]);
     this.filterFlag = 'ready';
     this.radioFlag = 'bound';
     this.ratingFlag = 'bound';
@@ -215,10 +221,6 @@ struct CoverageStaticIndex {
           multiFilters: this.filterParam,
           additionFilters: this.additionParam,
           filterType: FilterType.LIST_FILTER,
-          onFilterChanged: (results: FilterResult[]): void => {
-            // OnFilterChangedCallback
-            this.filterFlag = results.length >= 0 ? 'changed' : 'fail';
-          },
           container: this.filterBody
         })
 
