@@ -2049,7 +2049,7 @@ describe('relationalStoreResultSetTest', function () {
         console.info(TAG + '************* testcolumnNames0001 start *************');
         {
           try{
-            let predicates = await new dataRdb.RdbPredicates('test');
+            let predicates = await new data_Rdb.RdbPredicates('test');
             let resultSet = await rdbStore.query(predicates);
             console.info(TAG + 'resultSet.columnNames:' + JSON.stringify(resultSet.columnNames));
             expect(resultSet.columnNames[0]).assertEqual("id")
