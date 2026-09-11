@@ -1813,7 +1813,7 @@ export default function TLSSocketServerTest() {
     })
     /**
      * @tc.name   testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_401
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_Null_0401
      * @tc.desc   SetExtraOptions with null parameter (callback), expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1867,7 +1867,7 @@ export default function TLSSocketServerTest() {
     });
     /**
      * @tc.name   testNetworkMgrSocketNopTLSSocketServerSetExtraOptions401P
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_401P
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_SetExtraOptions_NullPromise_0403
      * @tc.desc   SetExtraOptions with null parameter (Promise), expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2855,7 +2855,7 @@ export default function TLSSocketServerTest() {
     })
     /**
      * @tc.name   testNetworkMgrSocketNopTLSSocketServerOffError401U
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_OffError_401U
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_OffError_Undefined_0402
      * @tc.desc   Off error event with undefined callback, expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3703,7 +3703,8 @@ export default function TLSSocketServerTest() {
         let callback2: Callback<socket.TLSSocketConnection> = (data: socket.TLSSocketConnection) => {
           console.info(`${caseName} callback2 triggered`);
         };
-        tlsServer.on('connect', callback1);
+        let ret = tlsServer.on('connect', callback1);
+        expectTrue(ret === undefined);
         tlsServer.on('connect', callback2);
         console.info(`${caseName} multiple callbacks registered successfully`);
         tlsServer.off('connect');
@@ -3771,7 +3772,7 @@ export default function TLSSocketServerTest() {
     })
     /**
      * @tc.name   testNetworkMgrSocketNopTLSSocketServerOff401U
-     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_Off_401U
+     * @tc.number SUB_NetworkMgr_Socket_Nop_TLSSocketServer_Off_Undefined_0402
      * @tc.desc   Off connect with undefined type, expected error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
