@@ -111,7 +111,7 @@ struct AccessibilityOptions {
 
   onPageShow() {
     this.intervalNum = setInterval(() => {
-      if (this.stepCount >= 6) {
+      if (this.stepCount >= 5) {
         this.vueStatus = true;
       }
     }, 500)
@@ -209,21 +209,16 @@ struct AccessibilityOptions {
               }
             })
           Button().height('9%')
+          Button('btnl23').accessibilityText("有accessibility有text btn123").accessibilityLevel("yes").height('9%')
             .onAccessibilityFocus((isFocus: boolean) => {
               if (isFocus && this.stepCount === 3) {
                 this.stepCount = 4
               }
             })
-          Button('btnl23').accessibilityText("有accessibility有text btn123").accessibilityLevel("yes").height('9%')
+          Button('btn123').accessibilityLevel("yes").height('9%')
             .onAccessibilityFocus((isFocus: boolean) => {
               if (isFocus && this.stepCount === 4) {
                 this.stepCount = 5
-              }
-            })
-          Button('btn123').accessibilityLevel("yes").height('9%')
-            .onAccessibilityFocus((isFocus: boolean) => {
-              if (isFocus && this.stepCount === 5) {
-                this.stepCount = 6
               }
             })
         }
