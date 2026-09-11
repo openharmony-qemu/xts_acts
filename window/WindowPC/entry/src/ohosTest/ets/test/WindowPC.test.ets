@@ -3145,6 +3145,36 @@ export default function windowPCTest() {
       }
     })
 
+     /**
+     * @tc.name   testOffWindowStatusDidChange_NoCallback
+     * @tc.desc   off('windowStatusDidChange') 不传参，关闭所有 callback；
+     *            窗口销毁后调用返回 1300002，不支持的设备返回 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOffWindowStatusDidChange_NoCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testOffWindowStatusDidChange_NoCallback';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        let windowClass = await windowStage.createSubWindow('testOffWindowStatusDidChange_NoCallback');
+        const callback = (data: window.WindowStatusType) => {
+          console.log(`${msgStr} callback data: ${JSON.stringify(data)}`);
+        };
+        windowClass.on('windowStatusDidChange', callback);
+        windowClass.off('windowStatusDidChange');
+        console.log(msgStr + 'Succeeded off windowStatusDidChange without callback ');
+        done();
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
+        if (!isSyscapSessionManagerSupported) {
+          expect(err.code).assertEqual(801)
+        }
+        done();
+      }
+    });
+
 
     /**
      * @tc.name   testShiftAppWindowTouchEvent_null

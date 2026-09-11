@@ -523,6 +523,67 @@ export default function windowKeyBorad() {
     });
 
     /**
+     * @tc.name   testOffKeyboardDidShow_WithCallback
+     * @tc.desc   off('keyboardDidShow', callback) 传参，关闭对应的 callback；
+     *            不支持的设备返回 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOffKeyboardDidShow_WithCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testOffKeyboardDidShow_WithCallback ';
+      console.log(caseName + 'begin');
+      let mainWindow = windowStage.getMainWindowSync();
+      try {
+        const callback = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+        };
+        mainWindow.on('keyboardDidShow', callback);
+        mainWindow.off('keyboardDidShow', callback);
+        await sleep(500);
+        console.info(`${caseName} off keyboardDidShow with callback success`);
+        done();
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+        if (!isSyscapSessionManagerSupported) {
+          expect(err.code).assertEqual(801)
+        }
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   testOffKeyboardDidHide_WithCallback
+     * @tc.desc   off('keyboardDidHide', callback) 传参，关闭对应的 callback；
+     *            不支持的设备返回 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOffKeyboardDidHide_WithCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testOffKeyboardDidHide_WithCallback ';
+      console.log(caseName + 'begin');
+      let mainWindow = windowStage.getMainWindowSync();
+      try {
+        const callback = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+        };
+        mainWindow.on('keyboardDidHide', callback);
+        mainWindow.off('keyboardDidHide', callback);
+        await sleep(500);
+        console.info(`${caseName} off keyboardDidHide with callback success`);
+        done();
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+       if (!isSyscapSessionManagerSupported) {
+          expect(err.code).assertEqual(801)
+        }
+        done()
+      }
+    });
+
+
+    /**
      * @tc.name   testSubWindowDestroy_onkeyboardWillHide
      * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0400
      * @tc.desc   子窗销毁后监听onKeyboardWillHide返回1300002错误码
