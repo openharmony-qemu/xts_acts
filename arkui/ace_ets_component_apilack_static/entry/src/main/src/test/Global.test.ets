@@ -50,14 +50,14 @@ import { sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 
 import RectValue from './RectValue.test';
 
-export default function globalJsunit(): void {
+export default function globalJsunit() {
   describe('globalJsunit', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       console.info("global beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/global',
@@ -77,7 +77,7 @@ export default function globalJsunit(): void {
       }
     });
 
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.sleep(1000);
     });
 
@@ -90,7 +90,7 @@ export default function globalJsunit(): void {
      * @tc.desc     testglobal_getInspectorTree_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testglobal_getInspectorTree_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testglobal_getInspectorTree_static_0001', Level.LEVEL0, async () => {
       console.info('testglobal_getInspectorTree0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorTree();
@@ -108,7 +108,7 @@ it('testglobal_getInspectorTree_static_0001', Level.LEVEL0, async (): Promise<vo
      * @tc.desc     testglobal_sendKeyEvent_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testglobal_sendKeyEvent_static_0002', Level.LEVEL0, async (): Promise<void> => {
+it('testglobal_sendKeyEvent_static_0002', Level.LEVEL0, async () => {
       console.info('testglobal_sendKeyEvent0002 START');
       await Utils.sleep(2000);
       let KeyEvent: KeyEvent = {
@@ -142,7 +142,7 @@ it('testglobal_sendKeyEvent_static_0002', Level.LEVEL0, async (): Promise<void> 
      * @tc.desc     testglobal_sendMouseEvent_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testglobal_sendMouseEvent_static_0003', Level.LEVEL0, async (): Promise<void> => {
+it('testglobal_sendMouseEvent_static_0003', Level.LEVEL0, async () => {
       console.info('testglobal_sendMouseEvent0003 START');
       await Utils.sleep(2000);
       let rect = Utils.getComponentRect('ListItem');

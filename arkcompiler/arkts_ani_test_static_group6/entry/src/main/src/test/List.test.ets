@@ -24,6 +24,15 @@ import methodCallTest from "./ActsMethodCall.test";
 import methodOverloadTest from "./ActsMethodOverload.test";
 import enumOperationsTest from "./ActsEnumOperations.test";
 import genericClassTest from "./ActsGenericClass.test";
+import vmManagementTest from "./VmCovered.test";
+import extendedTestsPart1 from "./ModuleWeakRefCovered.test";
+import extendedTestsPart2 from "./ScopeRefCovered.test";
+import extendedTestsPart3 from "./BoxVarCovered.test";
+import extendedTestsPart4 from "./StrCovered.test";
+import extendedTestsPart5 from "./FuncCallCovered.test";
+import extendedTestsPart6 from "./TupleCovered.test";
+import extendedTestsPart7 from "./ClassCovered.test";
+import extendedTestsPart8 from "./ObjCovered.test";
 
 export default function testsuite() :void{
     versionInfoTest();
@@ -41,4 +50,19 @@ export default function testsuite() :void{
     methodOverloadTest();
     enumOperationsTest();
     genericClassTest();
+
+    // ANI VM Management test
+    vmManagementTest();
+
+    // Extended tests
+    extendedTestsPart1();
+    extendedTestsPart2();
+    extendedTestsPart3();
+
+    // Extended tests part 4-8
+    extendedTestsPart4();
+    extendedTestsPart5();
+    extendedTestsPart6();
+    extendedTestsPart7();
+    extendedTestsPart8();
 }

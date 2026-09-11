@@ -70,7 +70,7 @@ struct CommonBackgroundBlurStyle {
     height: 0
   } as SizeResult;
 
-  onPlaceChildren(selfLayoutInfo: GeometryInfo, children: Array<Layoutable>, constraint: ConstraintSizeOptions): void {
+  onPlaceChildren(selfLayoutInfo: GeometryInfo, children: Array<Layoutable>, constraint: ConstraintSizeOptions) {
     let startPos = 300;
     let pos = startPos - children[0].measureResult.height;
     children[0].layout({ x: pos, y: pos })
@@ -91,11 +91,11 @@ struct CommonBackgroundBlurStyle {
     return this.result;
   }
 
-  aboutToAppear(): void {
+  aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear CommonBackgroundBlurStyle start`)
   }
 
-  aboutToDisappear(): void {
+  aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear CommonBackgroundBlurStyle end`)
   }
 
@@ -112,7 +112,7 @@ struct CommonBackgroundBlurStyle {
     instance.backgroundColor(Color.Blue);
   };
 
-  // buttonTab(): void {
+  // buttonTab() {
   //   let keyEventDown: inputEventClient.KeyEvent = {
   //     isPressed: true,
   //     keyCode: 2049,
@@ -130,7 +130,7 @@ struct CommonBackgroundBlurStyle {
   //   let res2 = inputEventClient.injectEvent({ KeyEvent: keyEventUp });
   // }
   //
-  // buttonOnKey(): void {
+  // buttonOnKey() {
   //   let keyEventDown: inputEventClient.KeyEvent = {
   //     isPressed: true,
   //     keyCode: 2054,

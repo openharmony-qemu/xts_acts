@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Driver, ON, Rect } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { startAbility, UtilsTest } from '../Util.test';
+
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,12 +26,6 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function counterDirectionTest() {
   describe('counterDirectionTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("counterDirectionTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("counterDirectionTest beforeEach start");
       let options: router.RouterOptions = {

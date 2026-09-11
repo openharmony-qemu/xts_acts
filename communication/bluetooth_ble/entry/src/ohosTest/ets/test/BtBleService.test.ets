@@ -538,7 +538,7 @@ export default function btBleServiceTest() {
         console.error("bluetooth mtu changed on errCode:" + err.code + ",bluetooth mtu changed on errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]BLEMtuChange is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect(Number(err.code)).assertEqual(2900099);
         }
@@ -569,7 +569,7 @@ export default function btBleServiceTest() {
         console.error("bluetooth mtu changed off errCode:" + err.code + ",bluetooth mtu changed off errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]BLEMtuChange is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect(Number(err.code)).assertEqual(2900099);
         }
@@ -1089,7 +1089,7 @@ export default function btBleServiceTest() {
         console.error("bluetooth mtu changed on errCode:" + err.code + ",bluetooth mtu changed on errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]BLEMtuChange is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect(Number(err.code)).assertEqual(401);
         }

@@ -27,7 +27,7 @@ struct SelectExample12 {
     Column() {
       Column(){
         Button('showDefaultSelectedIcon数值切换')
-          .key('showDefaultSelectedIcon_button')
+          .id('showDefaultSelectedIconButton')
           .onClick(() => {
            this.countIndex = (this.countIndex + 1) % this.countList.length;
           })
@@ -39,7 +39,7 @@ struct SelectExample12 {
           { value: 'bbb', icon: $r('app.media.app_icon') },
           { value: 'ccc', icon: $r('app.media.app_icon') },
           { value: 'ddd', icon: $r('app.media.app_icon') }])
-          .key('showDefaultSelectedIcon_select')
+          .key('select')
           .showDefaultSelectedIcon(this.countList[this.countIndex])
       }
     }.width('100%')

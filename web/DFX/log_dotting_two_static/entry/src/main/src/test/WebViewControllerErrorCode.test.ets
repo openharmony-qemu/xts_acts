@@ -138,23 +138,18 @@ export default function webViewControllerErrorCode() {
     * @tc.type       Function
     * @tc.level      LEVEL0
     */
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+   it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
-          await Utils.msSleep(2000);
-          Utils.emitEvent('SwitchNextPageStatic', 10)
-          await Utils.msSleep(1000);
-          let driver: Driver = Driver.create();
-          let button = await driver.findComponent(ON.id('WebViewControllerErrorCodeButton'));
-          expect(button != null).assertTrue();
-          inspector.sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
-          await Utils.msSleep(6000);
-          done();
-        } catch (err) {
-          console.info('[SwitchNextPageStatic] err:' + JSON.stringify(err));
-          done();
-        }
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+        await Utils.msSleep(6000);
+        done();
       })
+
+
+
 
     /**
      * @tc.name   testPageUpNullStatic001

@@ -18,7 +18,8 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver, ON } from "@kit.TestKit";
+import { Driver, ON, MatchPattern } from "@kit.TestKit";
+import { MouseButton } from '@ohos.UiTest';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -41,7 +42,7 @@ export default function webViewSrollableJsunit() {
           console.info("get WebOnInputMethodAttached state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
           console.info("push WebOnInputMethodAttached page success " + JSON.stringify(result));
-          await driver.waitForComponent(ON.id("WebOnInputMethodAttachedButton"), 10000);
+          await Utils.sleep(3000);
         }
       } catch (err) {
         console.error("push WebOnInputMethodAttached page error: " + err);
@@ -68,7 +69,22 @@ export default function webViewSrollableJsunit() {
      * @tc.level  LEVEL0
      */
     it('emitOnInputMethodAttached01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+      if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
       Utils.emitEvent("emitOnInputMethodAttached01", EVENT_ID_SET_SUITE_KEY);
+      try {
+        let buttonOne = await driver.findComponent(ON.text('小艺输入法',MatchPattern.CONTAINS));
+        console.log('656577666777' + buttonOne);
+        if(buttonOne!== null) {
+          console.log('8786778808888')
+          let scroll = await driver.findComponent(ON.type('Scroll'));
+          await scroll.scrollToBottom();
+          await Utils.sleep(3000);
+          let buttonTwo = await driver.findComponent(ON.text('同意'));
+          await buttonTwo.click()
+        }
+      } catch (err) {
+        console.log('234325' + err);
+      }
       let isReturn = false;
       Utils.registerEvent("emitOnInputMethodAttached01", true, 20250418, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebOnInputMethodAttachedButton","emitOnInputMethodAttached01");
@@ -84,6 +100,14 @@ export default function webViewSrollableJsunit() {
       await submitButton.click();
       await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached01" + '_returnCheck', true, 1000);
       done();
+    } else {
+      Utils.emitEvent("emitOnInputMethodAttached01", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("emitOnInputMethodAttached01", true, 20250420, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebOnInputMethodAttachedButton","emitOnInputMethodAttached01");
+      await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached01" + '_returnCheck', true, 1000);
+      done();
+      }
     })
 
 
@@ -96,6 +120,7 @@ export default function webViewSrollableJsunit() {
      * @tc.level  LEVEL1
      */
     it('emitOnInputMethodAttached02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async  (done: Function) =>{
+      if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
       Utils.emitEvent("emitOnInputMethodAttached02", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
       Utils.registerEvent("emitOnInputMethodAttached02", true, 20250419,  () => { isReturn = true });
@@ -111,6 +136,14 @@ export default function webViewSrollableJsunit() {
       await submitButton.click();
       await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached02" + '_returnCheck', true, 1000);
       done();
+      } else {
+        Utils.emitEvent("emitOnInputMethodAttached02", EVENT_ID_SET_SUITE_KEY);
+        let isReturn = false;
+        Utils.registerEvent("emitOnInputMethodAttached02", true, 20250421, () => { isReturn = true });
+        await Utils.waitAndClickComponent(driver, "WebOnInputMethodAttachedButton","emitOnInputMethodAttached02");
+        await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached02" + '_returnCheck', true, 1000);
+        done();
+      }
     })
 
   })

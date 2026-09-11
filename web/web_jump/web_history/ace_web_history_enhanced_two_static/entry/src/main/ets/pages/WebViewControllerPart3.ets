@@ -234,9 +234,6 @@ struct WebViewControllerPart3 {
               }
               break;
             }
-
-            
-
             case 'emitWebSiteIsolationMode001': {
               try {
                 webview.WebviewController.setSiteIsolationMode(webview.SiteIsolationMode.PARTIAL);

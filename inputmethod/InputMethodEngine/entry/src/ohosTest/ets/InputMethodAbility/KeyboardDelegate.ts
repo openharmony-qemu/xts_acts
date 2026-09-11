@@ -372,6 +372,18 @@ export class KeyboardDelegate {
           console.info(TAG + '====>SUB_InputMethod_IME_onoffsecurityModeChanged_0200 event:' + data.event);
           that.SUB_InputMethod_IME_onoffsecurityModeChanged_0200();
           break;
+        case 430:
+          console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 event:' + data.event);
+          that.Sub_Misc_inputMethod_onOffGetLeftTextOfCursor_0100();
+          break;
+        case 431:
+          console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetRightTextOfCursor_0100 event:' + data.event);
+          that.Sub_Misc_inputMethod_onOffGetRightTextOfCursor_0100();
+          break;
+        case 432:
+          console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetTextIndexAtCursor_0100 event:' + data.event);
+          that.Sub_Misc_inputMethod_onOffGetTextIndexAtCursor_0100();
+          break;
       }
     }
 
@@ -430,7 +442,7 @@ export class KeyboardDelegate {
   public async offInputStop_test() {
     console.info(TAG + '====>inputMethodAbility_test_091.offInputStop_test callback');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     this.mContext.destroy((err) => {
       console.info(TAG + '====>inputMethodAbility offInputStop_test destroy err: ' + JSON.stringify(err));
@@ -457,7 +469,7 @@ export class KeyboardDelegate {
     } else {
       console.info(TAG + '====>inputMethodAbility_test_getInputMethodAbility_001 failed');
       var commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
     }
     commoneventmanager.publish("inputMethodAbility_test_getInputMethodAbility_001", commonEventPublishData,
@@ -474,7 +486,7 @@ export class KeyboardDelegate {
     } else {
       console.info(TAG + '====>inputMethodAbility_test_getKeyboardDelegate_001 failed');
       var commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
     }
     commoneventmanager.publish("inputMethodAbility_test_getKeyboardDelegate_001", commonEventPublishData,
@@ -490,7 +502,7 @@ export class KeyboardDelegate {
       if (err) {
         console.info(TAG + '====>inputMethodAbility_test_028 sendKeyFunction err:' + JSON.stringify(err));
         commonEventPublishData = {
-          data: "FAILED"
+          data: 'FAILED'
         };
       } else {
         console.info(TAG + '====>inputMethodAbility_test_028 sendKeyFunction value:' + JSON.stringify(value));
@@ -500,7 +512,7 @@ export class KeyboardDelegate {
           };
         } else {
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         }
       }
@@ -521,7 +533,7 @@ export class KeyboardDelegate {
       };
     } else {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
     }
     commoneventmanager.publish("inputMethodAbility_test_029", commonEventPublishData, this.publishCallback);
@@ -534,7 +546,7 @@ export class KeyboardDelegate {
       if (err) {
         console.info(TAG + '====>inputMethodAbility_test_030 deleteForward err:' + JSON.stringify(err));
         commonEventPublishData = {
-          data: "FAILED"
+          data: 'FAILED'
         };
       } else {
         console.info(TAG + '====>inputMethodAbility_test_030 deleteForward value:' + JSON.stringify(value));
@@ -544,7 +556,7 @@ export class KeyboardDelegate {
           };
         } else {
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         }
       }
@@ -563,7 +575,7 @@ export class KeyboardDelegate {
       };
     } else {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
     }
     commoneventmanager.publish("inputMethodAbility_test_031", commonEventPublishData, this.publishCallback);
@@ -576,7 +588,7 @@ export class KeyboardDelegate {
       if (err) {
         console.info(TAG + '====>inputMethodAbility_test_032 deleteBackward err:' + JSON.stringify(err));
         commonEventPublishData = {
-          data: "FAILED"
+          data: 'FAILED'
         };
       } else {
         console.info(TAG + '====>inputMethodAbility_test_032 deleteBackward value:' + JSON.stringify(value));
@@ -586,7 +598,7 @@ export class KeyboardDelegate {
           };
         } else {
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         }
       }
@@ -605,7 +617,7 @@ export class KeyboardDelegate {
       };
     } else {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
     }
     commoneventmanager.publish("inputMethodAbility_test_033", commonEventPublishData, this.publishCallback);
@@ -618,7 +630,7 @@ export class KeyboardDelegate {
       if (err) {
         console.info(TAG + '====>inputMethodAbility_test_034 insertText err:' + JSON.stringify(err));
         commonEventPublishData = {
-          data: "FAILED"
+          data: 'FAILED'
         };
       } else {
         console.info(TAG + '====>inputMethodAbility_test_034 insertText value:' + JSON.stringify(value));
@@ -628,7 +640,7 @@ export class KeyboardDelegate {
           };
         } else {
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         }
       }
@@ -647,7 +659,7 @@ export class KeyboardDelegate {
       };
     } else {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
     }
     commoneventmanager.publish("inputMethodAbility_test_035", commonEventPublishData, this.publishCallback);
@@ -660,7 +672,7 @@ export class KeyboardDelegate {
       if (err) {
         console.info(TAG + '====>inputMethodAbility_test_036 getForward err:' + JSON.stringify(err));
         commonEventPublishData = {
-          data: "FAILED"
+          data: 'FAILED'
         };
       } else {
         console.info(TAG + '====>inputMethodAbility_test_036 getForward value:' + JSON.stringify(value));
@@ -670,7 +682,7 @@ export class KeyboardDelegate {
           };
         } else {
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         }
       }
@@ -689,7 +701,7 @@ export class KeyboardDelegate {
       };
     } else {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
     }
     commoneventmanager.publish("inputMethodAbility_test_037", commonEventPublishData, this.publishCallback);
@@ -702,7 +714,7 @@ export class KeyboardDelegate {
       if (err) {
         console.info(TAG + '====>inputMethodAbility_test_038 getEditorAttribute err:' + JSON.stringify(err));
         commonEventPublishData = {
-          data: "FAILED"
+          data: 'FAILED'
         };
       } else {
         console.info(TAG + '====>inputMethodAbility_test_038 getEditorAttribute value:' + JSON.stringify(Attribute));
@@ -719,7 +731,7 @@ export class KeyboardDelegate {
           };
         } else {
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         }
       }
@@ -745,7 +757,7 @@ export class KeyboardDelegate {
       };
     } else {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
     }
     commoneventmanager.publish("inputMethodAbility_test_039", commonEventPublishData, this.publishCallback);
@@ -759,7 +771,7 @@ export class KeyboardDelegate {
         if (err) {
           console.info(TAG + '====>inputMethodAbility_test_040 hideKeyboard err:' + JSON.stringify(err));
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         } else {
           commonEventPublishData = {
@@ -770,7 +782,7 @@ export class KeyboardDelegate {
       });
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>inputMethodAbility_test_040 hideKeyboard throw_err:');
       commoneventmanager.publish("inputMethodAbility_test_040", commonEventPublishData, this.publishCallback);
@@ -788,7 +800,7 @@ export class KeyboardDelegate {
       };
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>inputMethodAbility_test_041 hideKeyboard catch err:' + JSON.stringify(err));
     }
@@ -802,7 +814,7 @@ export class KeyboardDelegate {
       if (err) {
         console.info(TAG + '====>inputMethodAbility_test_042 getBackward err:' + JSON.stringify(err));
         commonEventPublishData = {
-          data: "FAILED"
+          data: 'FAILED'
         };
       } else {
         console.info(TAG + '====>inputMethodAbility_test_042 getBackward value:' + JSON.stringify(value));
@@ -833,7 +845,7 @@ export class KeyboardDelegate {
         if (err) {
           console.info(TAG + '====>inputMethodAbility_test_045 CURSOR_UP err:' + JSON.stringify(err));
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         } else {
           console.info(TAG + '====>inputMethodAbility_test_045 CURSOR_UP value:' + JSON.stringify(value));
@@ -854,7 +866,7 @@ export class KeyboardDelegate {
       if (err) {
         console.info(TAG + '====>inputMethodAbility_test_046 CURSOR_DOWN err:' + JSON.stringify(err));
         commonEventPublishData = {
-          data: "FAILED"
+          data: 'FAILED'
         };
       } else {
         console.info(TAG + '====>inputMethodAbility_test_046 CURSOR_DOWN value:' + JSON.stringify(value));
@@ -896,7 +908,7 @@ export class KeyboardDelegate {
         if (err) {
           console.info(TAG + '====>inputMethodAbility_test_049 hide err:' + JSON.stringify(err));
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         } else {
           commonEventPublishData = {
@@ -907,7 +919,7 @@ export class KeyboardDelegate {
       });
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>inputMethodAbility_test_049 hide throw_err:');
       commoneventmanager.publish("inputMethodAbility_test_040", commonEventPublishData, this.publishCallback);
@@ -925,7 +937,7 @@ export class KeyboardDelegate {
       };
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>inputMethodAbility_test_050 hideKeyboard catch err:' + JSON.stringify(err));
     }
@@ -935,7 +947,7 @@ export class KeyboardDelegate {
 
   async inputMethodAbility_test_070() {
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     console.info(TAG + '====>receive inputMethodAbility_test_070 success');
     let count = 0;
@@ -964,7 +976,7 @@ export class KeyboardDelegate {
 
   async inputMethodAbility_test_071() {
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     console.info(TAG + '====>receive inputMethodAbility_test_071 success');
     let count = 0;
@@ -990,7 +1002,7 @@ export class KeyboardDelegate {
 
   async inputMethodAbility_test_072() {
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     console.info(TAG + '====>receive inputMethodAbility_test_072 success');
     let count = 0;
@@ -1013,7 +1025,7 @@ export class KeyboardDelegate {
 
   async inputMethodAbility_test_074() {
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     console.info(TAG + '====>receive inputMethodAbility_test_074 success');
     inputMethodAbility.on('setCallingWindow', (wid) => {
@@ -1039,7 +1051,7 @@ export class KeyboardDelegate {
         if (err) {
           console.info(TAG + '====>inputMethodAbility_test_101 selectByRange err:' + JSON.stringify(err));
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         } else {
           commonEventPublishData = {
@@ -1050,7 +1062,7 @@ export class KeyboardDelegate {
       });
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>inputMethodAbility_test_101 selectByRange throw_err:');
       commoneventmanager.publish("inputMethodAbility_test_101", commonEventPublishData, this.publishCallback);
@@ -1069,7 +1081,7 @@ export class KeyboardDelegate {
       };
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>inputMethodAbility_test_102 selectByRange catch err:' + JSON.stringify(err));
     }
@@ -1084,7 +1096,7 @@ export class KeyboardDelegate {
         if (err) {
           console.info(TAG + '====>inputMethodAbility_test_103 getTextIndexAtCursor err:' + JSON.stringify(err));
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         } else {
           console.info(TAG + '====>inputMethodAbility_test_103 getTextIndexAtCursor success' + JSON.stringify(value));
@@ -1094,7 +1106,7 @@ export class KeyboardDelegate {
             };
           } else {
             commonEventPublishData = {
-              data: "FAILED"
+              data: 'FAILED'
             };
           }
         }
@@ -1102,7 +1114,7 @@ export class KeyboardDelegate {
       });
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>inputMethodAbility_test_103 getTextIndexAtCursor throw_err:');
       commoneventmanager.publish("inputMethodAbility_test_103", commonEventPublishData, this.publishCallback);
@@ -1121,12 +1133,12 @@ export class KeyboardDelegate {
         };
       } else {
         commonEventPublishData = {
-          data: "FAILED"
+          data: 'FAILED'
         };
       }
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>inputMethodAbility_test_104 getTextIndexAtCursor catch err:');
     }
@@ -1142,7 +1154,7 @@ export class KeyboardDelegate {
         if (err) {
           console.info(TAG + '====>inputMethodAbility_test_105 selectByMovement err:' + JSON.stringify(err));
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         } else {
           console.info(TAG + '====>inputMethodAbility_test_105 selectByMovement success');
@@ -1154,7 +1166,7 @@ export class KeyboardDelegate {
       });
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>inputMethodAbility_test_105 selectByMovement throw_err:');
       commoneventmanager.publish("inputMethodAbility_test_105", commonEventPublishData, this.publishCallback);
@@ -1173,7 +1185,7 @@ export class KeyboardDelegate {
       };
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>inputMethodAbility_test_106 getTextIndexAtCursor catch err:');
     }
@@ -1283,7 +1295,7 @@ export class KeyboardDelegate {
           console.info(TAG + '====>Sub_Misc_inputMethod_sendExtendAction_0170 sendExtendAction err:' +
           JSON.stringify(err));
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         } else {
           console.info(TAG + '====>Sub_Misc_inputMethod_sendExtendAction_0170 sendExtendAction success');
@@ -1296,7 +1308,7 @@ export class KeyboardDelegate {
       });
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>Sub_Misc_inputMethod_sendExtendAction_0170 getTextIndexAtCursor throw_err:');
       commoneventmanager.publish("Sub_Misc_inputMethod_sendExtendAction_0170", commonEventPublishData,
@@ -1315,7 +1327,7 @@ export class KeyboardDelegate {
       };
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>Sub_Misc_inputMethod_sendExtendAction_0180 sendExtendAction catch err:');
     }
@@ -1326,7 +1338,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_getForward_sync_0200() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_getForward_sync_0200 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     let str = this.InputClient.getForwardSync(1);
     console.info(TAG + '====>Sub_Misc_inputMethod_getForward_sync_0200 getForwardSync str: ' + JSON.stringify(str));
@@ -1342,7 +1354,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_getForward_sync_0201() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_getForward_sync_0201 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     }
     try {
       // @ts-ignore
@@ -1363,7 +1375,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_getBackward_sync_0210() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_getBackward_sync_0210 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     let str = this.InputClient.getBackwardSync(1);
     console.info(TAG + '====>Sub_Misc_inputMethod_getBackward_sync_0210 getBackwardSync str: ' + JSON.stringify(str));
@@ -1379,7 +1391,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_getBackward_sync_0211() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_getBackward_sync_0211 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       // @ts-ignore
@@ -1400,7 +1412,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_getTextIndexAtCursor_sync_0220() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_getTextIndexAtCursor_sync_0220 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     let num = this.InputClient.getTextIndexAtCursorSync();
     console.info(TAG + '====>Sub_Misc_inputMethod_getTextIndexAtCursor_sync_0220 getTextIndexAtCursorSync num: ' +
@@ -1417,7 +1429,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_getTextIndexAtCursor_sync_0221() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_getTextIndexAtCursor_sync_0221 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       // @ts-ignore
@@ -1437,7 +1449,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_getEditorAttribute_sync_0230() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_getEditorAttribute_sync_0230 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     let obj = this.InputClient.getEditorAttributeSync();
     console.info(TAG + '====>Sub_Misc_inputMethod_getEditorAttribute_sync_0230 getEditorAttributeSync enterKeyType: ' +
@@ -1460,7 +1472,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_getEditorAttribute_sync_0231() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_getEditorAttribute_sync_0231 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       // @ts-ignore
@@ -1480,7 +1492,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_getEditorAttribute_sync_0233() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_getEditorAttribute_sync_0233 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     let attribute = this.InputClient.getEditorAttributeSync();
     console.info(TAG + '====>Sub_Misc_inputMethod_getEditorAttribute_sync_0233 getEditorAttributeSync: ' +
@@ -1504,7 +1516,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_moveCursor_sync_0240() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_moveCursor_sync_0240 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       this.InputClient.moveCursorSync(inputMethodEngine.CURSOR_UP);
@@ -1522,7 +1534,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_moveCursor_sync_0241() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_moveCursor_sync_0241 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       // @ts-ignore
@@ -1543,7 +1555,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_deleteForward_sync_0250() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_deleteForward_sync_0250 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       this.InputClient.deleteForwardSync(1);
@@ -1562,7 +1574,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_deleteForward_sync_0251() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_deleteForward_sync_0251 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       // @ts-ignore
@@ -1584,7 +1596,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_deleteBackward_sync_0260() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_deleteBackward_sync_0260 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       this.InputClient.deleteBackwardSync(1);
@@ -1603,7 +1615,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_deleteBackward_sync_0261() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_deleteBackward_sync_0261 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       // @ts-ignore
@@ -1625,7 +1637,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_insertText_sync_0270() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_insertText_sync_0270 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     this.InputClient.insertTextSync('test');
     console.info(TAG + '====>Sub_Misc_inputMethod_insertText_sync_0270 insertTextSync');
@@ -1639,7 +1651,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_insertText_sync_0271() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_insertText_sync_0271 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       // @ts-ignore
@@ -1661,7 +1673,7 @@ export class KeyboardDelegate {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_selectByRange_sync_0280 data');
     let range = { start: 0, end: 1 };
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       this.InputClient.selectByRangeSync(range);
@@ -1680,7 +1692,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_selectByRange_sync_0281() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_selectByRange_sync_0281 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       // @ts-ignore
@@ -1703,7 +1715,7 @@ export class KeyboardDelegate {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_selectByMovement_sync_0290 data');
     let movement = { direction: inputMethodEngine.CURSOR_DOWN };
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       this.InputClient.selectByMovementSync(movement);
@@ -1722,7 +1734,7 @@ export class KeyboardDelegate {
   async Sub_Misc_inputMethod_selectByMovement_sync_0291() {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_selectByMovement_sync_0291 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       // @ts-ignore
@@ -1751,7 +1763,7 @@ export class KeyboardDelegate {
           console.info(TAG + '====>Sub_Misc_Request_InputMethod_selectContext_0400 selectByRange err:' +
           JSON.stringify(err));
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         } else {
           commonEventPublishData = {
@@ -1764,7 +1776,7 @@ export class KeyboardDelegate {
       });
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>Sub_Misc_Request_InputMethod_selectContext_0400 selectByRange throw_err:');
       commoneventmanager.publish('Sub_Misc_Request_InputMethod_selectContext_0400', commonEventPublishData,
@@ -1786,7 +1798,7 @@ export class KeyboardDelegate {
           };
         } else {
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
           console.info(TAG + '====>Sub_Misc_Request_InputMethod_selectContext_0500 selectByRange success');
         }
@@ -1795,7 +1807,7 @@ export class KeyboardDelegate {
       });
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>Sub_Misc_Request_InputMethod_selectContext_0500 selectByRange throw_err:');
       commoneventmanager.publish('Sub_Misc_Request_InputMethod_selectContext_0500', commonEventPublishData,
@@ -1813,7 +1825,7 @@ export class KeyboardDelegate {
           console.info(TAG + '====>Sub_Misc_Request_InputMethod_selectContext_0600 selectByRange err:' +
           JSON.stringify(err));
           commonEventPublishData = {
-            data: "FAILED"
+            data: 'FAILED'
           };
         } else {
           commonEventPublishData = {
@@ -1826,7 +1838,7 @@ export class KeyboardDelegate {
       });
     } catch (err) {
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
       };
       console.info(TAG + '====>Sub_Misc_Request_InputMethod_selectContext_0600 selectByRange throw_err:');
       commoneventmanager.publish('Sub_Misc_Request_InputMethod_selectContext_0600', commonEventPublishData,
@@ -1837,14 +1849,14 @@ export class KeyboardDelegate {
   async SUB_InputMethod_IsTextPreviewSupport_0100() {
     console.info(TAG + '====>receive SUB_InputMethod_IsTextPreviewSupport_0100 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       let range: inputMethodEngine.Range = { start: -1, end: -2 }
       await this.InputClient.setPreviewText('adc|03', range);
       console.info(TAG + '====>SUB_InputMethod_IsTextPreviewSupport_0100 setPreviewText success:');
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
 
       };
     } catch (err) {
@@ -1863,14 +1875,14 @@ export class KeyboardDelegate {
   async SUB_InputMethod_IsTextPreviewSupport_0200() {
     console.info(TAG + '====>receive SUB_InputMethod_IsTextPreviewSupport_0200 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     let range: inputMethodEngine.Range = { start: -1, end: -4 }
     try {
       this.InputClient.setPreviewTextSync('adc|03', range);
       console.info(TAG + '====>SUB_InputMethod_IsTextPreviewSupport_0100 setPreviewText success:');
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
 
       };
     } catch (err) {
@@ -1889,7 +1901,7 @@ export class KeyboardDelegate {
   async SUB_InputMethod_IsTextPreviewSupport_0300() {
     console.info(TAG + '====>receive SUB_InputMethod_IsTextPreviewSupport_0300 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       await this.InputClient.finishTextPreview();
@@ -1908,7 +1920,7 @@ export class KeyboardDelegate {
   async SUB_InputMethod_IsTextPreviewSupport_0400() {
     console.info(TAG + '====>receive SUB_InputMethod_IsTextPreviewSupport_0400 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       this.InputClient.finishTextPreviewSync();
@@ -1928,7 +1940,7 @@ export class KeyboardDelegate {
   async SUB_InputMethod_IME_PrivateDateTransferred_0500() {
     console.info(TAG + '====>receive SUB_InputMethod_IME_PrivateDateTransferred_0500 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     let record: Record<string, inputMethodEngine.CommandDataType> = {
       "valueString1": "abcdefg",
@@ -1941,7 +1953,7 @@ export class KeyboardDelegate {
       await this.InputClient.sendPrivateCommand(record);
       console.info(TAG + '====>SUB_InputMethod_IME_PrivateDateTransferred_0500 setPreviewText success:');
       commonEventPublishData = {
-        data: "FAILED"
+        data: 'FAILED'
 
       };
     } catch (err) {
@@ -1960,7 +1972,7 @@ export class KeyboardDelegate {
   async SUB_InputMethod_IME_PrivateDateTransferred_0600() {
     console.info(TAG + '====>receive SUB_InputMethod_IME_PrivateDateTransferred_0600 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       inputMethodAbility.on('privateCommand', async (record: Record<string, inputMethodEngine.CommandDataType>) => {
@@ -1984,7 +1996,7 @@ export class KeyboardDelegate {
   async SUB_InputMethod_IME_PrivateDateTransferred_1100() {
     console.info(TAG + '====>receive SUB_InputMethod_IME_PrivateDateTransferred_1100 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     let want: Want = {
       bundleName: 'aaa',
@@ -2008,7 +2020,7 @@ export class KeyboardDelegate {
   async SUB_InputMethod_IME_onoffsecurityModeChanged_0100() {
     console.info(TAG + '====>receive SUB_InputMethod_IME_onoffsecurityModeChanged_0100 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     try {
       inputMethodAbility.on('securityModeChange', (securityMode: inputMethodEngine.SecurityMode) => {
@@ -2028,7 +2040,7 @@ export class KeyboardDelegate {
   async SUB_InputMethod_IME_onoffsecurityModeChanged_0200() {
     console.info(TAG + '====>receive SUB_InputMethod_IME_onoffsecurityModeChanged_0200 data');
     let commonEventPublishData = {
-      data: "FAILED"
+      data: 'FAILED'
     };
     let securityChangeCallback = (securityMode: inputMethodEngine.SecurityMode) => {
       console.log(`InputMethodAbility securityModeChange, security is ${securityMode}`);
@@ -2044,5 +2056,50 @@ export class KeyboardDelegate {
       console.info(TAG + '====>SUB_InputMethod_IME_onoffsecurityModeChanged_0200 on(privateCommand) err: ' + JSON.stringify(err));
     }
     commoneventmanager.publish("SUB_InputMethod_IME_onoffsecurityModeChanged_0200", commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_Misc_inputMethod_onOffGetLeftTextOfCursor_0100() {
+    console.info(TAG + '====>receive Sub_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 success');
+    let length: number = 1;
+    try {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 getForward start');
+      await this.InputClient.getForward(length);
+      await this.InputClient.getForward(length);
+      await this.InputClient.getForward(length);
+      console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 getForward success');
+    } catch (err) {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 getForward catch err:' +
+        JSON.stringify(err));
+    }
+  }
+
+  async Sub_Misc_inputMethod_onOffGetRightTextOfCursor_0100() {
+    console.info(TAG + '====>receive Sub_Misc_inputMethod_onOffGetRightTextOfCursor_0100 success');
+    let length: number = 1;
+    try {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetRightTextOfCursor_0100 getBackward start');
+      await this.InputClient.getBackward(length);
+      await this.InputClient.getBackward(length);
+      await this.InputClient.getBackward(length);
+      console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetLeftTextOfCursor_0100 getBackward success');
+    } catch (err) {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetRightTextOfCursor_0100 getBackward catch err:' +
+        JSON.stringify(err));
+    }
+  }
+
+  async Sub_Misc_inputMethod_onOffGetTextIndexAtCursor_0100() {
+    console.info(TAG + '====>receive Sub_Misc_inputMethod_onOffGetTextIndexAtCursor_0100 success');
+    let length: number = 1;
+    try {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetTextIndexAtCursor_0100 getTextIndexAtCursor start');
+      await this.InputClient.getTextIndexAtCursor();
+      await this.InputClient.getTextIndexAtCursor();
+      await this.InputClient.getTextIndexAtCursor();
+      console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetTextIndexAtCursor_0100 getTextIndexAtCursor success');
+    } catch (err) {
+      console.info(TAG + '====>Sub_Misc_inputMethod_onOffGetTextIndexAtCursor_0100 getTextIndexAtCursor catch err:' +
+        JSON.stringify(err));
+    }
   }
 }

@@ -45,12 +45,13 @@ function getContext(): Context {
 export default function mindSporeTest() {
 
   beforeAll(async () => {
-    let context = getContext()
-    let dir = context.filesDir + "/";
     try {
-      let ml_face_model_file = dir + "ml_face_isface.ms";
-      let ml_face_model_file1 = dir + "ml_face_isface.input";
-      context.resourceManager.getRawFileContent("ml_face_isface.ms", (error, model_buffer) => {
+    let context = getContext()
+    let dir = context.filesDir + '/';
+    try {
+      let ml_face_model_file = dir + 'ml_face_isface.ms';
+      let ml_face_model_file1 = dir + 'ml_face_isface.input';
+      context.resourceManager.getRawFileContent('ml_face_isface.ms', (error, model_buffer) => {
         if (error) {
           console.log(
             `[rawfile_copy_to_sandbox] ml_face_isface.ms is
@@ -59,46 +60,55 @@ export default function mindSporeTest() {
           let file = fs.openSync(ml_face_model_file, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
           fs.writeSync(file.fd, model_buffer.buffer);
           fs.closeSync(file);
-          console.log("[rawfile_copy_to_sandbox] ml_face_isface.ms is copy success");
+          console.log('[rawfile_copy_to_sandbox] ml_face_isface.ms is copy success');
         }
       });
-      context.resourceManager.getRawFileContent("ml_face_isface.input", (error, model_buffer) => {
+      context.resourceManager.getRawFileContent('ml_face_isface.input', (error, model_buffer) => {
         let file1 = fs.openSync(ml_face_model_file1, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
         fs.writeSync(file1.fd, model_buffer.buffer);
         fs.closeSync(file1);
       });
     } catch (error) {
-      console.info("[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed" + error);
+      console.info('[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed' + error);
     }
 
-    console.info("[rawfile_copy_to_sandbox] sandbox path:" + dir);
+    console.info('[rawfile_copy_to_sandbox] sandbox path:' + dir);
     await Utils.sleep(500)
+    } catch (error) {
+      console.error('beforeAll failed: ' + JSON.stringify(error));
+      expect(false).assertTrue();
+    }
   })
 
   beforeEach(async () => {
-    let dir = getContext().filesDir + "/";
+    try {
+    let dir = getContext().filesDir + '/';
 
-    let ml_face_model = dir + "ml_face_isface.ms";
-    let ml_face_model_input = dir + "ml_face_isface.input";
+    let ml_face_model = dir + 'ml_face_isface.ms';
+    let ml_face_model_input = dir + 'ml_face_isface.input';
     await fs.stat(ml_face_model).then(async (res) => {
       if (res) {
-        console.info("MindSporeDemo ml_face_isface.ms file exists");
+        console.info('MindSporeDemo ml_face_isface.ms file exists');
         console.info(`MindSporeDemo ml_face_isface.ms size:${res.size}`);
       }
     }).catch((err: BusinessError) => {
-      console.info("MindSporeDemo ml_face_isface.ms file does not exists! access failed with error message: " +
-      err.message + ", error code: " + err.code);
+      console.info('MindSporeDemo ml_face_isface.ms file does not exists! access failed with error message: ' +
+      err.message + ', error code: ' + err.code);
     });
     await Utils.sleep(500)
     await fs.stat(ml_face_model_input).then(async (res) => {
       if (res) {
-        console.info("MindSporeDemo ml_face_isface.input file exists");
+        console.info('MindSporeDemo ml_face_isface.input file exists');
         console.info(`MindSporeDemo ml_face_isface.input size:${res.size}`);
       }
     }).catch((err: BusinessError) => {
-      console.info("MindSporeDemo ml_face_isface.input file does not exists! access failed with error message: " +
-      err.message + ", error code: " + err.code);
+      console.info('MindSporeDemo ml_face_isface.input file does not exists! access failed with error message: ' +
+      err.message + ', error code: ' + err.code);
     });
+    } catch (error) {
+      console.error('beforeEach failed: ' + JSON.stringify(error));
+      expect(false).assertTrue();
+    }
   })
 
   describe('MindSporeTest', () => {
@@ -113,7 +123,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextCreate001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextCreateOne();
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -128,7 +138,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextDestroy001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextDestroyOne();
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -143,7 +153,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextSetThreadNum001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadNumOne(2);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(2);
       done()
     });
@@ -158,7 +168,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextSetThreadNum002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadNumTwo(2);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(0);
       done()
     });
@@ -173,7 +183,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextSetThreadNum003', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadNumOne(666666);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(666666);
       done()
     });
@@ -188,7 +198,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextGetThreadNum001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetThreadNumOne(1);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -203,7 +213,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextGetThreadNum002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetThreadNumTwo();
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(0);
       done()
     });
@@ -218,7 +228,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextSetThreadAffinityMode001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityModeOne(0);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(0);
       done()
     });
@@ -233,7 +243,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextSetThreadAffinityMode002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityModeOne(1);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -248,7 +258,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextSetThreadAffinityMode003', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityModeOne(2);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(2);
       done()
     });
@@ -263,7 +273,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextSetThreadAffinityMode004', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityModeTwo(2);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(0);
       done()
     });
@@ -278,7 +288,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextSetThreadAffinityMode005', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityModeOne(6);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(0);
       done()
     });
@@ -293,7 +303,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextGetThreadAffinityMode001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetThreadAffinityModeOne(1);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -308,7 +318,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeContextGetThreadAffinityMode002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetThreadAffinityModeTwo();
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(0);
       done()
     });
@@ -323,7 +333,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoCreate001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoCreateOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -338,7 +348,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoGetDeviceType001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetDeviceTypeOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -353,7 +363,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoGetDeviceType002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetDeviceTypeTwo(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -368,7 +378,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoGetDeviceType003', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetDeviceTypeThree(OH_AI_DeviceType.OH_AI_DEVICETYPE_INVALID);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -383,7 +393,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoGetDeviceType004', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetDeviceTypeFour();
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -398,7 +408,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoDestroy001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoDestroyOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -412,9 +422,9 @@ export default function mindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProvider001', Level.LEVEL0, async (done: Function) => {
-      let value_data = "CPU";
+      let value_data = 'CPU';
       let data = mindSpore.oHAIDeviceInfoSetProviderOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU, value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(value_data);
       done()
     });
@@ -428,9 +438,9 @@ export default function mindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProvider002', Level.LEVEL0, async (done: Function) => {
-      let value_data = "NNRT";
+      let value_data = 'NNRT';
       let data = mindSpore.oHAIDeviceInfoSetProviderTwo(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT, value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(value_data);
       done()
     });
@@ -444,9 +454,9 @@ export default function mindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProvider003', Level.LEVEL0, async (done: Function) => {
-      let value_data = "INVALID";
+      let value_data = 'INVALID';
       let data = mindSpore.oHAIDeviceInfoSetProviderThree(OH_AI_DeviceType.OH_AI_DEVICETYPE_INVALID, value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -460,9 +470,9 @@ export default function mindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProvider004', Level.LEVEL0, async (done: Function) => {
-      let value_data = "INVALID";
+      let value_data = 'INVALID';
       let data = mindSpore.oHAIDeviceInfoSetProviderFour(OH_AI_DeviceType.OH_AI_DEVICETYPE_INVALID, value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -476,9 +486,9 @@ export default function mindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetProvider001', Level.LEVEL0, async (done: Function) => {
-      let value_data = "CPU";
+      let value_data = 'CPU';
       let data = mindSpore.oHAIDeviceInfoGetProviderOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU, value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(value_data);
       done()
     });
@@ -493,7 +503,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoGetProvider002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetProviderTwo();
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -507,9 +517,9 @@ export default function mindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProviderDevice001', Level.LEVEL0, async (done: Function) => {
-      let value_data = "CPU";
+      let value_data = 'CPU';
       let data = mindSpore.oHAIDeviceInfoSetProviderDeviceOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU, value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(value_data);
       done()
     });
@@ -523,9 +533,9 @@ export default function mindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProviderDevice002', Level.LEVEL0, async (done: Function) => {
-      let value_data = "NNRT";
+      let value_data = 'NNRT';
       let data = mindSpore.oHAIDeviceInfoSetProviderDeviceTwo(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT, value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(value_data);
       done()
     });
@@ -539,9 +549,9 @@ export default function mindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProviderDevice003', Level.LEVEL0, async (done: Function) => {
-      let value_data = "INVALID";
+      let value_data = 'INVALID';
       let data = mindSpore.oHAIDeviceInfoSetProviderDeviceThree(OH_AI_DeviceType.OH_AI_DEVICETYPE_INVALID, value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -555,9 +565,9 @@ export default function mindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetProviderDevice001', Level.LEVEL0, async (done: Function) => {
-      let value_data = "CPU";
+      let value_data = 'CPU';
       let data = mindSpore.oHAIDeviceInfoGetProviderDeviceOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU, value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(value_data);
       done()
     });
@@ -572,7 +582,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoGetProviderDevice002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetProviderDeviceTwo();
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -587,7 +597,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoSetEnableFP16001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetEnableFP16One(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -602,7 +612,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoSetEnableFP16002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetEnableFP16Two(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -617,7 +627,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoSetEnableFP16003', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetEnableFP16Three();
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -632,7 +642,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoGetEnableFP16001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetEnableFP16One(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -647,7 +657,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoGetEnableFP16002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetEnableFP16Two();
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -663,7 +673,7 @@ export default function mindSporeTest() {
     it('testMindSporeDeviceInfoSetDeviceId001', Level.LEVEL0, async (done: Function) => {
       let value_data = 111;
       let data = mindSpore.oHAIDeviceInfoSetDeviceIdOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT, value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(value_data);
       done()
     });
@@ -679,7 +689,7 @@ export default function mindSporeTest() {
     it('testMindSporeDeviceInfoSetDeviceId002', Level.LEVEL0, async (done: Function) => {
       let value_data = 111;
       let data = mindSpore.oHAIDeviceInfoSetDeviceIdTwo(value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -695,7 +705,7 @@ export default function mindSporeTest() {
     it('testMindSporeDeviceInfoGetDeviceId001', Level.LEVEL0, async (done: Function) => {
       let value_data = 222;
       let data = mindSpore.oHAIDeviceInfoGetDeviceIdOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT, value_data);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(value_data);
       done()
     });
@@ -710,7 +720,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoGetDeviceId002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetDeviceIdTwo();
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });
@@ -726,7 +736,7 @@ export default function mindSporeTest() {
     it('testMindSporeDeviceInfoSetPerformanceMode001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPerformanceModeOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT,
         OH_AI_PerformanceMode.OH_AI_PERFORMANCE_NONE);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(OH_AI_PerformanceMode.OH_AI_PERFORMANCE_NONE);
       done()
     });
@@ -742,7 +752,7 @@ export default function mindSporeTest() {
     it('testMindSporeDeviceInfoSetPerformanceMode002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPerformanceModeTwo(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT,
         OH_AI_PerformanceMode.OH_AI_PERFORMANCE_LOW);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(OH_AI_PerformanceMode.OH_AI_PERFORMANCE_LOW);
       done()
     });
@@ -758,7 +768,7 @@ export default function mindSporeTest() {
     it('testMindSporeDeviceInfoSetPerformanceMode003', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPerformanceModeThree(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT,
         OH_AI_PerformanceMode.OH_AI_PERFORMANCE_MEDIUM);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(OH_AI_PerformanceMode.OH_AI_PERFORMANCE_MEDIUM);
       done()
     });
@@ -774,7 +784,7 @@ export default function mindSporeTest() {
     it('testMindSporeDeviceInfoSetPerformanceMode004', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPerformanceModeFour(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT,
         OH_AI_PerformanceMode.OH_AI_PERFORMANCE_HIGH);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(OH_AI_PerformanceMode.OH_AI_PERFORMANCE_HIGH);
       done()
     });
@@ -790,7 +800,7 @@ export default function mindSporeTest() {
     it('testMindSporeDeviceInfoSetPerformanceMode005', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPerformanceModeFive(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT,
         OH_AI_PerformanceMode.OH_AI_PERFORMANCE_EXTREME);
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(OH_AI_PerformanceMode.OH_AI_PERFORMANCE_EXTREME);
       done()
     });
@@ -1017,7 +1027,7 @@ export default function mindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetName001', Level.LEVEL0, async (done: Function) => {
-      let value_data = "new_data";
+      let value_data = 'new_data';
       let data = mindSpore.oHAITensorSetNameOne(value_data);
       expect(data).assertEqual(value_data);
       done()
@@ -1032,7 +1042,7 @@ export default function mindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetName001', Level.LEVEL0, async (done: Function) => {
-      let value_data = "new_get_data";
+      let value_data = 'new_get_data';
       let data = mindSpore.oHAITensorGetNameOne(value_data);
       expect(data).assertEqual(value_data);
       done()
@@ -1469,7 +1479,7 @@ export default function mindSporeTest() {
      */
     it('testMindSporeDeviceInfoCreate002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoCreateTwo();
-      console.info("Test NAPI data= " + JSON.stringify(data));
+      console.info('Test NAPI data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
       done()
     });

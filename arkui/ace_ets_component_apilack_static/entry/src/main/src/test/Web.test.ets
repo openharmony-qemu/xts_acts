@@ -32,13 +32,13 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function webGetTitleJsunit(): void {
+export default function webGetTitleJsunit() {
   describe('webGetTitleTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/web',
@@ -59,7 +59,7 @@ export default function webGetTitleJsunit(): void {
       }
     });
 
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.sleep(1000);
       console.info("webGetTitle after each called");
     });
@@ -73,7 +73,7 @@ export default function webGetTitleJsunit(): void {
      * @tc.desc     testwebGetTitle_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testwebGetTitle_static_0001', Level.LEVEL0, async (): Promise<void> => {
+it('testwebGetTitle_static_0001', Level.LEVEL0, async () => {
       console.info('webGetTitle testwebGetTitle0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('getTitleText');
@@ -93,7 +93,7 @@ it('testwebGetTitle_static_0001', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     testwebGetTitle_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testwebGetTitle_static_0002', Level.LEVEL0, async (): Promise<void> => {
+it('testwebGetTitle_static_0002', Level.LEVEL0, async () => {
       console.info('webGetTitle testwebGetTitle0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('getTitleText');
@@ -113,7 +113,7 @@ it('testwebGetTitle_static_0002', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     testwebGetTitle_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testwebGetTitle_static_0003', Level.LEVEL0, async (): Promise<void> => {
+it('testwebGetTitle_static_0003', Level.LEVEL0, async () => {
       console.info('webGetTitle testwebGetTitle0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('getTitleText');
@@ -133,7 +133,7 @@ it('testwebGetTitle_static_0003', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     testwebGetTitle_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testwebGetTitle_static_0004', Level.LEVEL0, async (): Promise<void> => {
+it('testwebGetTitle_static_0004', Level.LEVEL0, async () => {
       console.info('webGetTitle testwebGetTitle0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('getTitleText');
@@ -153,7 +153,7 @@ it('testwebGetTitle_static_0004', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     testwebGetTitle_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testwebGetTitle_static_0005', Level.LEVEL0, async (): Promise<void> => {
+it('testwebGetTitle_static_0005', Level.LEVEL0, async () => {
       console.info('webGetTitle testwebGetTitle0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('getTitleText');
@@ -173,7 +173,7 @@ it('testwebGetTitle_static_0005', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     testwebGetTitle_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testwebGetTitle_static_0006', Level.LEVEL0, async (): Promise<void> => {
+it('testwebGetTitle_static_0006', Level.LEVEL0, async () => {
       console.info('webGetTitle testwebGetTitle0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('getTitleText');
@@ -193,7 +193,7 @@ it('testwebGetTitle_static_0006', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     testwebGetTitle_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testwebGetTitle_static_0007', Level.LEVEL0, async (): Promise<void> => {
+it('testwebGetTitle_static_0007', Level.LEVEL0, async () => {
       console.info('webGetTitle testwebGetTitle0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('getTitleText');
@@ -213,7 +213,7 @@ it('testwebGetTitle_static_0007', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     testwebGetTitle_static_0008
      * @tc.level    Level.LEVEL0
      */
-it('testwebGetTitle_static_0008', Level.LEVEL0, async (): Promise<void> => {
+it('testwebGetTitle_static_0008', Level.LEVEL0, async () => {
       console.info('webGetTitle testwebGetTitle0008 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('getTitleText');
@@ -233,7 +233,7 @@ it('testwebGetTitle_static_0008', Level.LEVEL0, async (): Promise<void> => {
      * @tc.desc     testwebGetTitle_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testwebGetTitle_static_0009', Level.LEVEL0, async (): Promise<void> => {
+it('testwebGetTitle_static_0009', Level.LEVEL0, async () => {
       console.info('webGetTitle testwebGetTitle0009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('getTitleText');

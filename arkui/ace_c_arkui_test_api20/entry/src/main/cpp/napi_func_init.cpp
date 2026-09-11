@@ -41,6 +41,8 @@ namespace ArkUICapiTest
                 nullptr, nullptr, nullptr, napi_default, nullptr},
             {"TestSetForceDarkConfigNodeTypeGrid", nullptr, TestSetForceDarkConfigNodeTypeGrid,
                 nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestGetNodeTypeParam", nullptr, TestGetNodeTypeParam,
+                nullptr, nullptr, nullptr, napi_default, nullptr},
             {"TestInitModuleForArkTSEnv", nullptr, TestInitModuleForArkTSEnv, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"AccessibilityProviderCreateTest", nullptr, AccessibilityProviderCreateTest, nullptr, nullptr, nullptr,

@@ -22,11 +22,7 @@ import Logger from '../../../model/Logger';
 import connection from '@ohos.bluetooth.connection';
 import access from '@ohos.bluetooth.access';
 import { BusinessError } from '@ohos.base';
-import emitter from '@ohos.events.emitter';
 
-let innerEvent11: emitter.InnerEvent = {
-  eventId: 11
-};
 const TAG = '[Screenshot]';
 const TIME: number = 0 // 设备可被发现的持续时间
 const isCore = canIUse('SystemCapability.Communication.Bluetooth.Core');
@@ -37,11 +33,11 @@ struct StandardBluetooth {
   @State FillColor: string = '#FF000000';
   @State X: number = 0;
   @State name: string = 'StandardBluetooth';
-  @State StepTips: string = '操作步骤：\n1、请打开蓝牙' + '\n2、自己创建一个蓝牙' + '\n3、查看应用是否扫描到自己创建的蓝牙MAC地址'
-    + '\n4、选择点击蓝牙后进行配对' + '\n预期结果：列表能扫描到自己的蓝牙，能配对成功则通过' +
-    '\n注：\n1、若点击MAC地址后长时间无弹窗或弹窗弹出后点击配对无反应，请将蓝牙关闭再开启，并重新点击其他MAC号重试'
-    + '\n2、配对设备MAC地址与真实地址不一致的情况下，可以先使用对端设备与测试设备进行配对，查看应用中已配对的MAC地址，确认后可按照上述步骤进行操作';
-  @State Vue: boolean = false;
+  @State StepTips: string = '操作步骤：\n1、请打开蓝牙' + '\n2、自己创建一个蓝牙' + '\n3、查看应用是否扫描到自己创建的蓝牙MAC地址' +
+    '\n4、选择点击蓝牙后进行配对' + '\n预期结果：列表能扫描到自己的蓝牙，能配对成功则通过' +
+    '\n注：\n1、若点击MAC地址后长时间无弹窗或弹窗弹出后点击配对无反应，请将蓝牙关闭再开启，并重新点击其他MAC号重试' + 
+    '\n2、配对设备MAC地址与真实地址不一致的情况下，可以先使用对端设备与测试设备进行配对，查看应用中已配对的MAC地址，确认后可按照上述步骤进行操作';
+  @State isPassed: boolean = false;
   @State btnState: boolean = false;
   @State isOn: boolean = false;
   @State deviceList: Array<string> = [];
@@ -107,6 +103,7 @@ struct StandardBluetooth {
         Logger.info(TAG, `data = ${JSON.stringify(data)}`)
         if (data.state === connection.BondState.BOND_STATE_BONDED) {
           Logger.info(TAG, `BOND_STATE_BONDED`)
+          this.isPassed = true
           let index = this.discoveryList.indexOf(data.deviceId)
           this.discoveryList.splice(index, 1)
           this.deviceList = connection.getPairedDevices()
@@ -139,12 +136,8 @@ struct StandardBluetooth {
   }
 
   async onPageShow() {
-    emitter.on(innerEvent11, (res) => {
-      if(res.data !== undefined) {
-        this.Vue = res.data.flag
-        console.info('emitter.on =11=this.Vue ' + this.Vue);
-      }
-    });
+    // 配对确认(PIN弹窗点击配对)不应直接点亮pass按钮，
+    // 仅当 bondStateChange 返回 BOND_STATE_BONDED(配对成功)时才点亮
   }
 
   async onPageHide() {
@@ -177,43 +170,28 @@ struct StandardBluetooth {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('20%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .opacity(0.4)
-      .onClick(() => {
-
-      })
+    Button({ stateEffect: this.isPassed }) {
+      Image($r('app.media.ic_public_pass'))
+        .width('20vp')
+        .height('20vp')
     }
-    else {
-      Button({ stateEffect: this.Vue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('20%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .onClick(() => {
-        router.back({
-          url: 'pages/Bluetooth/BlueTooth_index',
-          params: {
-            result: 'true ', title: this.name,
-          }
-        })
-        promptAction.showToast({
-          message: '通过', duration: 1000
-        });
+    .margin({ bottom: '20vp' })
+    .width('20%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .opacity(this.isPassed ? 1 : 0.4)
+    .enabled(this.isPassed)
+    .onClick(() => {
+      router.back({
+        url: 'pages/Bluetooth/BlueTooth_index',
+        params: {
+          result: 'true ', title: this.name,
+        }
       })
-    }
+      promptAction.showToast({
+        message: '通过', duration: 1000
+      });
+    })
   }
 
   @Builder
@@ -471,7 +449,7 @@ struct StandardBluetooth {
     router.replaceUrl({
       url: 'pages/Bluetooth/BlueTooth_index',
       params: {
-        'Vue': this.Vue
+        'isPassed': this.isPassed
       }
     })
   }

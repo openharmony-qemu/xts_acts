@@ -56,8 +56,7 @@ export default function webViewControllerRemoveCacheTest() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-
-            /**
+    /**
      * @tc.name   testRemoveCacheStatic002
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_REMOVECACHE_0200
      * @tc.desc   test removeCache false

@@ -307,7 +307,8 @@ export default function webViewControllerPart3Test() {
         done();
       })
 
-        /**
+
+    /**
      * @tc.name   emitWebSiteIsolationModeStatic001
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SITEISOLATIONMODE_0100
      * @tc.desc   test SiteIsolationMode PARTIAL

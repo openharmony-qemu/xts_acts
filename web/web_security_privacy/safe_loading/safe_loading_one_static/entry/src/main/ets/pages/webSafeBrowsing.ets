@@ -118,10 +118,6 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               }
               break;
             }
-
-            
-
-            
           }
         })
 

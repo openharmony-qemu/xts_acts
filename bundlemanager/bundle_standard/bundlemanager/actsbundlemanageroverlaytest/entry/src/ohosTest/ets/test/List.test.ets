@@ -14,11 +14,13 @@
  */
 
 import SetOverlayEnabled from './SetOverlayEnabled.test';
+import SetOverlayEnabledCoverage from './SetOverlayEnabledCoverage.test';
 import GetOverlayModuleInfo from './GetOverlayModuleInfo.test';
 import GetTargetOverlayModuleInfos from './GetTargetOverlayModuleInfos.test';
 
 export default function testsuite() {
   SetOverlayEnabled();
+  SetOverlayEnabledCoverage();
   GetOverlayModuleInfo();
   GetTargetOverlayModuleInfos();
 }

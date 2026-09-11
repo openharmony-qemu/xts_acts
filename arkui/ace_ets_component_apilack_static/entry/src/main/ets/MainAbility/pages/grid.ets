@@ -45,15 +45,15 @@ struct GridMaxCount {
   @State edgeEffect: EdgeEffect = EdgeEffect.None;
   @StorageLink('alwaysEnabled') alwaysEnabled: boolean = true
 
-  aboutToAppear(): void {
+  aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear GridMaxCount start`)
   }
 
-  aboutToDisappear(): void {
+  aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear GridMaxCount end`)
   }
 
-  onPageShow(): void {
+  onPageShow() {
     console.info('list page show called');
     AppStorage.setOrCreate<boolean>('alwaysEnabled', true);
   }

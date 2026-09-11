@@ -4,7 +4,8 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Security.CertificateManager"
+                    "SystemCapability.Security.CertificateManager",
+                    "SystemCapability.Account.OsAccount"
                 ]
             }
         ]

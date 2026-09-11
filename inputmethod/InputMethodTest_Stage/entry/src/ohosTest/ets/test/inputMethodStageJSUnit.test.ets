@@ -84,6 +84,7 @@ export default function inputMethodStageJSUnit() {
         label: "",
         icon: "",
         iconId: 124,
+        enabledState: 3,
         extra: {}
       }
 
@@ -127,6 +128,7 @@ export default function inputMethodStageJSUnit() {
         label: "",
         icon: "",
         iconId: 124,
+        enabledState: 3,
         extra: {}
       }
 
@@ -176,6 +178,7 @@ export default function inputMethodStageJSUnit() {
         label: "",
         icon: "",
         iconId: 124,
+        enabledState: 3,
         extra: {}
       }
 
@@ -220,6 +223,7 @@ export default function inputMethodStageJSUnit() {
         label: "",
         icon: "",
         iconId: 124,
+        enabledState: 3,
         extra: {}
       }
 

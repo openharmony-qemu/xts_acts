@@ -98,8 +98,6 @@ struct webViewController {
                 }
                 break;
               }
-              
-              
             }
           })
       }

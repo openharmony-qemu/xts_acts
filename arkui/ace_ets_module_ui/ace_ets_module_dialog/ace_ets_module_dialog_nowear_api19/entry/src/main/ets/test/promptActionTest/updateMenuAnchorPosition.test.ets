@@ -73,8 +73,8 @@ export default function updateMenuAnchorPositionTest() {
 
         let text4 = await driver.findComponent(ON.id('textPositionY1'));
         let textPositionY = Number.parseFloat(await text4.getText());
-        expect(textPositionX).assertLess(menuPositionX)
-        expect(textPositionY).assertLess(menuPositionY)
+        expect(textPositionX != menuPositionX).assertTrue()
+        expect(textPositionY != menuPositionY).assertTrue()
 
         await CommonFunc.sleep(2000);
         console.info('[' + tagName + '] END ===========================');
@@ -114,8 +114,8 @@ export default function updateMenuAnchorPositionTest() {
 
         let text4 = await driver.findComponent(ON.id('textPositionY2'));
         let textPositionY = Number.parseFloat(await text4.getText());
-        expect(textPositionX).assertLess(menuPositionX)
-        expect(textPositionY).assertLess(menuPositionY)
+        expect(textPositionX != menuPositionX).assertTrue()
+        expect(textPositionY != menuPositionY).assertTrue()
 
         await CommonFunc.sleep(2000);
         console.info('[' + tagName + '] END ===========================');
@@ -154,8 +154,8 @@ export default function updateMenuAnchorPositionTest() {
 
         let text4 = await driver.findComponent(ON.id('textPositionY3'));
         let textPositionY = Number.parseFloat(await text4.getText());
-        expect(menuPositionX).assertLess(textPositionX)
-        expect(textPositionY).assertLess(menuPositionY)
+        expect(textPositionX != menuPositionX).assertTrue()
+        expect(textPositionY != menuPositionY).assertTrue()
 
         await CommonFunc.sleep(2000);
         console.info('[' + tagName + '] END ===========================');

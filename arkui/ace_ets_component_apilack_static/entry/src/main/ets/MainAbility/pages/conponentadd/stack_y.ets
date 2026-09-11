@@ -78,11 +78,11 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct StackAlignContent {
-  aboutToAppear(): void {
+  aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear StackAlignContent start`)
   }
 
-  aboutToDisappear(): void {
+  aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear StackAlignContent end`)
   }
 

@@ -33,7 +33,7 @@ struct imageDownloadInfo {
   ]
   @State errInfo: string = ''
   @State name: string = 'ImageDownloadInfo';
-  @State StepTips: string = '操作步骤：进入当前页面等待16秒(时间不固定，依赖网络)后，页面顶部会出现打印信息' + '\n' + '预期结果：打印信息中有dnsServers等关键字';
+  @State StepTips: string = '操作步骤：进入当前页面等待16秒(时间不固定，依赖网络)后，页面会出现打印信息，点击确认按钮确认结果' + '\n' + '预期结果：打印信息中有dnsServers等关键字';
   @State Vue: boolean = false;
 
   @Builder

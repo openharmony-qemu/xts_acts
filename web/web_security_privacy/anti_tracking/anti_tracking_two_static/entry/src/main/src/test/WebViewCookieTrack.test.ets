@@ -65,7 +65,8 @@ export default function ActsAcewebViewCookieTrack() {
 
     })
 
-            /*
+
+    /*
      * @tc.number     : SUB_ACE_WEB_enableIntelligentTrackingPrevention_API_0001
      * @tc.name       : testWebViewCookieTrackEnableTrueStatic
      * @tc.desc       : test enableIntelligentTrackingPrevention true

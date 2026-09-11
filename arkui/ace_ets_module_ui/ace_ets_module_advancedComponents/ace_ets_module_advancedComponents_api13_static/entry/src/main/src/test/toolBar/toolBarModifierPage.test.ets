@@ -14,23 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level, Size, TestType, beforeAll } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function toolBarModifierPage() {
   describe('toolBarModifierPage', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("toolBarModifierPage beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("toolBarModifierPage beforeEach start");
       let options: router.RouterOptions = {
@@ -49,6 +42,8 @@ export default function toolBarModifierPage() {
       } catch (err) {
         console.error("push toolBarModifierPage page error:" + err);
       }
+
+      await Utils.sleep(1000);
       console.info("toolBarModifierPage beforeEach end");
     });
 

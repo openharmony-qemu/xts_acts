@@ -17,6 +17,8 @@ import columnSplitJsunit from './ColumnSplitRowSplit/ColumnSplitJsunit.test';
 import rowSplitJsunit from './ColumnSplitRowSplit/RowSplitJsunit.test';
 import ColumnSplitJsunit from './ColumnSplitRowSplit/ColumnSplitJsunit.test.ets';
 import ColumnSplitDividerNullUndefinedTest from './ColumnSplitRowSplit/ColumnSplitDividerNullUndefined.test';
+import ColumnSplitCommonApiNullUndefinedTest from './ColumnSplitRowSplit/ColumnSplitCommonApiNullUndefinedTest.test';
+import RowSplitCommonApiNullUndefinedTest from './ColumnSplitRowSplit/RowSplitCommonApiNullUndefinedTest.test';
 
 
 export default function testsuite() {
@@ -24,4 +26,6 @@ export default function testsuite() {
   rowSplitJsunit()
   ColumnSplitJsunit();
   ColumnSplitDividerNullUndefinedTest();
+  ColumnSplitCommonApiNullUndefinedTest();
+  RowSplitCommonApiNullUndefinedTest();
 }

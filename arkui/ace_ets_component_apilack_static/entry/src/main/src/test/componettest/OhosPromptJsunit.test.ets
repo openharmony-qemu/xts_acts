@@ -44,14 +44,14 @@ import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function ohosPromptJsunit(): void {
+export default function ohosPromptJsunit() {
   describe('appInfoTest_four_3', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       console.info("OhosPrompt beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/ohosPromptg',
@@ -71,7 +71,7 @@ export default function ohosPromptJsunit(): void {
       }
     });
 
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.sleep(1000);
       console.info("OhosPrompt each called");
     });
@@ -84,11 +84,11 @@ export default function ohosPromptJsunit(): void {
      * @tc.desc     test_OhosPrompt_static_001
      * @tc.level    Level.LEVEL0
      */
-it('test_OhosPrompt_static_001', Level.LEVEL0, async (): Promise<void> => {
+it('test_OhosPrompt_static_001', Level.LEVEL0, async () => {
       await Utils.sleep(1000)
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("[test_OhosPrompt_001] get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as ESObject).getProperty('matrix1').toString()).assertEqual("[100, 10]")
+        expect(((eventData.data) as ESObject)?.getProperty('matrix1').toString()).assertEqual("[100, 10]")
       }
       let innerEvent: events_emitter.InnerEvent = {
         eventId: 142,

@@ -154,6 +154,5 @@ export default function ActsAceWebSafeBrowsing() {
       await Utils.msSleep(2000);
       done();
     })
-
-          })
+  })
 }

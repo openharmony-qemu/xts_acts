@@ -40,7 +40,6 @@ export default function ButtonLabelStyleTest() {
       };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
         const pages = routerInstance.getState();
         console.info(`${LOG_TAG} beforeEach routerState=${JSON.stringify(pages)}`);
         if (pages.name !== 'buttonLabelStyle') {

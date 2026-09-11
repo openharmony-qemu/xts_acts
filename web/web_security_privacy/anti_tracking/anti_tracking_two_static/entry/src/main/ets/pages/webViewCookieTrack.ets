@@ -144,8 +144,6 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == false, 1278)
                 break;
               }
-              
-              
               case "emitCookieTrackClearTrackingPrevention": {
                   let beforeTraceLength = this.traceHosts.length
                   console.log("this.traceHosts before: " + this.traceHosts)

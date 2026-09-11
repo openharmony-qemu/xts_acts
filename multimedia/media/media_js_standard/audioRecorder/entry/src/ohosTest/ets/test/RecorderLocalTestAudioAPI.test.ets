@@ -1788,5 +1788,205 @@ export default function RecorderLocalTestAudioAPI() {
       }
       done();
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_PRAPARE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_PRAPARE_0100
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_PRAPARE_0100', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on('prepare', () => {
+            console.info('prepare called');
+          });
+          audioRecorder.on('prepare', () => {
+            console.info('prepare called');
+          });
+        } catch (err) {
+          console.error('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_PRAPARE_0100 failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_START_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_START_0100
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_START_0100', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on('start', () => {
+            console.info('audio recorder start called');
+          });
+          audioRecorder.on('start', () => {
+            console.info('audio recorder start called');
+          });
+        } catch (err) {
+          console.error('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_START_0100 failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_PAUSE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_PAUSE_0100
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_PAUSE_0100', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on('pause', () => {
+            console.info('audio recorder pause called');
+          });
+          audioRecorder.on('pause', () => {
+            console.info('audio recorder pause called');
+          });
+        } catch (err) {
+          console.error('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_PAUSE_0100 failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RESUME_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RESUME_0100
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RESUME_0100', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on('resume', () => {
+            console.info('audio recorder resume called');
+          });
+          audioRecorder.on('resume', () => {
+            console.info('audio recorder resume called');
+          });
+        } catch (err) {
+          console.error('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RESUME_0100 failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_STOP_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_STOP_0100
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_STOP_0100', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on('stop', () => {
+            console.info('audio recorder stop called');
+          });
+          audioRecorder.on('stop', () => {
+            console.info('audio recorder stop called');
+          });
+        } catch (err) {
+          console.error('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_STOP_0100 failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RELEASE_0100
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RELEASE_0100', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on('release', () => {
+            console.info('audio recorder release called');
+          });
+          audioRecorder.on('release', () => {
+            console.info('audio recorder release called');
+          });
+        } catch (err) {
+          console.error('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RELEASE_0100 failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RESET_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RESET_0100
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RESET_0100', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on('reset', () => {
+            console.info('audio recorder reset called');
+          });
+          audioRecorder.on('reset', () => {
+            console.info('audio recorder reset called');
+          });
+        } catch (err) {
+          console.error('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_RESET_0100 failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_ERROR_0100
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_ERROR_0100', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on('error', (error: BusinessError) => {
+            console.error(`audio error called, error code: ${error.code}, message: ${error.message}`);
+          });
+          audioRecorder.on('error', (error: BusinessError) => {
+            console.error(`audio error called, error code: ${error.code}, message: ${error.message}`);
+          });
+        } catch (err) {
+          console.error('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_ON_ERROR_0100 failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
+    });
   })
 }

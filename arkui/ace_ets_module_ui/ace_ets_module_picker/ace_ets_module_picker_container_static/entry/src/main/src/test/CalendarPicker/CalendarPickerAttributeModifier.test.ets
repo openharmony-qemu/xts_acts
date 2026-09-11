@@ -13,25 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 const SLEEP_TIME_L = 1000;
 export default function CalendarPickerAttributeModifierTest() {
   describe('CalendarPickerAttributeModifierTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("CalendarPickerAttributeModifierTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.container.static", "EntryAbility")
-      await UtilsTest.msSleep(SLEEP_TIME_L)
-    });
 
     beforeEach(async () => {
       console.info('CalendarPickerAttributeModifierTest beforeEach start');

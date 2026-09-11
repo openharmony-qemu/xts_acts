@@ -18,6 +18,9 @@ import certManager from '@ohos.security.certManager';
 import buffer from '@ohos.buffer';
 import CertManagerApi from 'libentry.so'
 import { bundleManager } from '@kit.AbilityKit'
+import account_osAccount from '@ohos.account.osAccount';
+
+let userId: number;
 
 let priEccCredData = buffer.from([
   0x30, 0x82, 0x04, 0x6a, 0x02, 0x01, 0x03, 0x30, 0x82, 0x04, 0x30, 0x06, 0x09, 0x2a, 0x86, 0x48,
@@ -164,8 +167,10 @@ export default function CertManagerApiTest() {
     it('SUB_Security_CertManager_Ukey_2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('SUB_Security_CertManager_Ukey_2005 start');
 
+      const accountMgr = account_osAccount.getAccountManager();
+      userId = await accountMgr.getOsAccountLocalId();
       let result1 = bundleManager.getBundleInfoForSelfSync(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
-      let keyUri = "oh:t=ak;o=appCertAliasDemoEcc1;u=100;a="+result1.appInfo.uid;
+      let keyUri = "oh:t=ak;o=appCertAliasDemoEcc1;u=" + userId + ";a=" + result1.appInfo.uid;
       try {
         let result: number = CertManagerApi.OHCertManagerNativeApiPrivateErr0200(keyUri);
         expect(result).assertEqual(0);

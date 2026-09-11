@@ -94,7 +94,6 @@ export default function ArcButtonTest() {
       };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
         let pages = routerInstance.getState();
         arkuiNewLog(SUITE, 'beforeEach', 'routerState=' + JSON.stringify(pages));
         if (!('ArcButtonIndex' === pages.name)) {

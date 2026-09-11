@@ -16,6 +16,8 @@
 import bluetooth from '@ohos.bluetooth.ble';
 import btAccess from '@ohos.bluetooth.access';
 import { BusinessError } from '@ohos.base';
+import { util } from '@kit.ArkTS'
+
 import connection from '@ohos.bluetooth.connection';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
@@ -123,7 +125,8 @@ export default function bluetoothAdvertisingTest() {
       await clickRequestPermission(PERMISSION_TEXT);
       try {
         let deviceName = connection.getLocalName()
-        nLength = deviceName.length
+        let textEncoder = new util.TextEncoder();
+        nLength = textEncoder.encodeInto(deviceName).length
         console.info(`deviceName.length = ${nLength}`)
       }catch (err){
         expect(Number(err.code)).assertEqual(801)
@@ -204,7 +207,7 @@ export default function bluetoothAdvertisingTest() {
         console.info("01errCode:" + err.code + ",01errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
         }
@@ -648,7 +651,7 @@ export default function bluetoothAdvertisingTest() {
         console.info("13errCode:" + err.code + ",13errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
         }
@@ -715,7 +718,7 @@ export default function bluetoothAdvertisingTest() {
         console.info("14errCode:" + err.code + ",14errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
         }
@@ -803,7 +806,7 @@ export default function bluetoothAdvertisingTest() {
         console.info("16errCode:" + err.code + ",16errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         }
       }
       await sleep(2000);
@@ -2148,7 +2151,7 @@ export default function bluetoothAdvertisingTest() {
         console.info(`${caseName} [bluetooth_js] errCode:` + err.code + ",01errMessage:" + err.message);
         if (err.code === 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           if (nLength > 24) {
             expect(err.code === 2902054).assertTrue();
@@ -2246,7 +2249,7 @@ export default function bluetoothAdvertisingTest() {
         console.info("01errCode:" + err.code + ",01errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
         }

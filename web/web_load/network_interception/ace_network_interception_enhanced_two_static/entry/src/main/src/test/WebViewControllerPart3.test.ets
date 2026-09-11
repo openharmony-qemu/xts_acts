@@ -55,7 +55,8 @@ export default function webViewControllerPart3Test() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-            /**
+
+    /**
      * @tc.name   testSetNetworkAvailableStatic001
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0100
      * @tc.desc   test setNetworkAvailable

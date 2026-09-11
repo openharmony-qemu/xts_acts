@@ -47,7 +47,6 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
       };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
         routerInstance.replaceUrl(options);
         await Utils.sleep(1000);
       } catch (err) {

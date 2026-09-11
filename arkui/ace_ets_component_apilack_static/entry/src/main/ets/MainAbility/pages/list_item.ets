@@ -43,11 +43,11 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct List_itemOnSelect {
-  aboutToAppear(): void {
+  aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear List_itemOnSelect start`)
   }
 
-  aboutToDisappear(): void {
+  aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear List_itemOnSelect end`)
   }
 

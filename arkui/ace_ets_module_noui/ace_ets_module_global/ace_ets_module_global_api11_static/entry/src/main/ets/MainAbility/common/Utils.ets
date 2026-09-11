@@ -15,23 +15,10 @@
  */
 import RectValue from './Rect';
 import { __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  TouchObject,
-  TouchType
-} from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
-import { State, AppStorage } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,  TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { State,AppStorage } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector'
 import { sendTouchEvent } from "@ohos.arkui.Test";
-import emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
 
 export default class Utils {
   static rect_left: number = 0;
@@ -46,19 +33,19 @@ export default class Utils {
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
     let rectInfo = parts.map((part: string) => {
-      return part.split(",").map((item: string): double => parseFloat(item.trim()));
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
     });
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
       "windowRect Top: " + AppStorage.get<number>("winTop"));
     return {
-      left: Number(rectInfo[0][0]),
-      top: Number(rectInfo[0][1]),
-      right: Number(rectInfo[1][0]),
-      bottom: Number(rectInfo[1][1])
+      "left": Number(rectInfo[0][0] ?? 0),
+      "top": Number(rectInfo[0][1] ?? 0),
+      "right": Number(rectInfo[1][0] ?? 0),
+      "bottom": Number(rectInfo[1][1] ?? 0)
     } as RectValue
   }
 
-  static async sleep(count: int): Promise<int> {
+  static async sleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
@@ -66,41 +53,17 @@ export default class Utils {
     })
   }
 
-  static async msSleep(count: int): Promise<int> {
-    return new Promise<int>((resolve, reject) => {
-      setTimeout(() => {
-        resolve(0)
-      }, count)
-    })
-  }
-
-  static emitEvent(actualValue: RecordData, eventId: int): void {
-    try {
-      let backData: emitter.EventData = {
-        data: { "ACTION": actualValue } as Record<String, RecordData>
-      }
-      let backEvent: emitter.InnerEvent = {
-        eventId: eventId,
-        priority: emitter.EventPriority.LOW
-      }
-      emitter.emit(backEvent, backData);
-    } catch (err) {
-      console.info("emit action state err: " + JSON.stringify(err));
-    }
-  }
-
-  static async swipe(downX: number, downY: number, upX: number, upY: number, steps: number): Promise<void> {
+  static async swipe(downX: number, downY: number, upX: number, upY: number, steps: number) {
     console.info('start to swipe')
     Utils.drags(downX, downY, upX, upY, steps, false)
   }
 
-  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number): Promise<void> {
+  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
     console.info('start to drag')
     Utils.drags(downX, downY, upX, upY, steps, true)
   }
 
-  static async drags(downX: number, downY: number, upX: number,
-    upY: number, steps: number, drag: boolean): Promise<void> {
+  static async drags(downX: number, downY: number, upX: number, upY: number, steps: number, drag:boolean) {
     console.info('start to drag')
     let xStep: number;
     let yStep: number;

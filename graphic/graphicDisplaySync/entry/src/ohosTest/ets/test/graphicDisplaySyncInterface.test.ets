@@ -18,6 +18,17 @@ import buffer from '@ohos.buffer';
 import animator, { AnimatorResult } from '@ohos.animator';
 import { displaySync } from '@kit.ArkGraphics2D';
 
+async function sleep(time: number) {
+  let timeoutId: number = 0;
+  let promise = new Promise<string>(resolve => {
+    timeoutId = setTimeout(() => {
+      resolve('sleep finished');
+    }, time);
+  })
+  await promise;
+  clearTimeout(timeoutId)
+}
+
 export default function graphicDisplaySyncInterfaceTest() {
   describe('graphicDisplaySyncInterfaceTest', ()=> {
     console.log('describe graphicDisplaySyncInterfaceTest start!!!')
@@ -372,6 +383,37 @@ export default function graphicDisplaySyncInterfaceTest() {
         done()        
       } catch (exception) {
         console.error(msg + 'Failed to on. Cause:' + JSON.stringify(exception));
+        expect().assertFail()
+        done()
+      }
+    })
+    /**
+     * @tc.name   testOnOffFrame_0100
+     * @tc.number SUB_GRAPHIC_DISPLAYSYNC_OFF_FRAME_0100
+     * @tc.desc   backDisplaySync off parameters is zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnOffFrame_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msgStr = "==== www data testOnOffFrame_0100 ===="
+      console.log(msgStr + ' begin')
+      try {
+        let backDisplaySync: displaySync.DisplaySync = displaySync.create();
+        let callback = (frameInfo: displaySync.IntervalInfo) => {
+          console.info(msgStr + " DisplaySync", 'TimeStamp:' + frameInfo.timestamp + ' TargetTimeStamp: ' +
+          frameInfo.targetTimestamp);
+          expect(frameInfo.timestamp).assertLarger(0);
+          expect(frameInfo.targetTimestamp).assertLarger(0);
+        }
+        backDisplaySync?.on("frame", callback)
+        backDisplaySync?.start();
+        await sleep(100);
+        backDisplaySync?.off("frame");
+        console.info(msgStr + 'Succeeded in onoff.');
+        done()
+      } catch (exception) {
+        console.error(msgStr + 'Failed to onoff. Cause:' + JSON.stringify(exception));
         expect().assertFail()
         done()
       }

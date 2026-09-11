@@ -38,11 +38,11 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct ShapeNe {
-  aboutToAppear(): void {
+  aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear ShapeNe start`)
   }
 
-  aboutToDisappear(): void {
+  aboutToDisappear() {
     Log.showInfo(TAG, `aboutToDisAppear ShapeNe end`)
   }
 

@@ -22,7 +22,7 @@ let tag: string = 'UtilTestTag';
 
 class UtilsTest{
   
-  static isStartedAbility: boolean = false;
+  static isStartedAbility = false;
 
   
 
