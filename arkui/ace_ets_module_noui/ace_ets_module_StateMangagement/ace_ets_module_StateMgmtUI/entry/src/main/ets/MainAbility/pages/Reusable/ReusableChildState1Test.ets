@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-@ObservedV2
+@Observed
 export class ObservedObject {
   public message: string = 'j';
 }
@@ -42,7 +42,7 @@ struct ReusableChildState1Parent {
   @State propB: string = 'b';
   @State linkC: boolean = true;
   @State provideD: number = 1;
-  @State observedJ: ObservedObject = new ObservedObject('j');
+  @State observedJ: ObservedObject = new ObservedObject();
   build() {
     ReusableChildState1Child({
       stateA: this.stateA,
