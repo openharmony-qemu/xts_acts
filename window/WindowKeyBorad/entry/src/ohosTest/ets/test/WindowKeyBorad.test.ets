@@ -525,7 +525,7 @@ export default function windowKeyBorad() {
     /**
      * @tc.name   testOffKeyboardDidShow_WithCallback
      * @tc.desc   off('keyboardDidShow', callback) 传参，关闭对应的 callback；
-     *            不支持的设备返回 801
+     * @tc.number SUB_BASIC_WMS_OFFKEYBOARDDIDHIDE_0200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -555,7 +555,7 @@ export default function windowKeyBorad() {
     /**
      * @tc.name   testOffKeyboardDidHide_WithCallback
      * @tc.desc   off('keyboardDidHide', callback) 传参，关闭对应的 callback；
-     *            不支持的设备返回 801
+     * @tc.number SUB_BASIC_WMS_OFFKEYBOARDDIDHIDE_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

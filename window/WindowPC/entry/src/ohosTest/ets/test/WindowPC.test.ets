@@ -3148,7 +3148,7 @@ export default function windowPCTest() {
      /**
      * @tc.name   testOffWindowStatusDidChange_NoCallback
      * @tc.desc   off('windowStatusDidChange') 不传参，关闭所有 callback；
-     *            窗口销毁后调用返回 1300002，不支持的设备返回 801
+     * @tc.number SUB_BASIC_WMS_OFFWINDOWSTATUSDIDCHANGE_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
