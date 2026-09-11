@@ -45,7 +45,7 @@
       },
       {
         "name": "MainAbility1",
-        "srcEntry": "./ets/test/MainAbility/MainAbility1.ts",
+        "srcEntry": "./ets/test/MainAbility/MainAbility1.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -73,7 +73,7 @@
       },
       {
         "name": "MainAbility2",
-        "srcEntry": "./ets/test/MainAbility/MainAbility2.ts",
+        "srcEntry": "./ets/test/MainAbility/MainAbility2.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -97,7 +97,7 @@
       },
       {
         "name": "applicationContext01",
-        "srcEntry": "./ets/test/applicationContext/applicationContext01.ts",
+        "srcEntry": "./ets/test/applicationContext/applicationContext01.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -125,7 +125,7 @@
       },
       {
         "name": "applicationContext02",
-        "srcEntry": "./ets/test/applicationContext/applicationContext02.ts",
+        "srcEntry": "./ets/test/applicationContext/applicationContext02.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -153,7 +153,7 @@
       },
       {
         "name": "applicationContext03",
-        "srcEntry": "./ets/test/applicationContext/applicationContext03.ts",
+        "srcEntry": "./ets/test/applicationContext/applicationContext03.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -181,7 +181,7 @@
       },
       {
         "name": "applicationContext04",
-        "srcEntry": "./ets/test/applicationContext/applicationContext04.ts",
+        "srcEntry": "./ets/test/applicationContext/applicationContext04.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -210,7 +210,7 @@
       },
       {
         "name": "applicationContext05",
-        "srcEntry": "./ets/test/applicationContext/applicationContext05.ts",
+        "srcEntry": "./ets/test/applicationContext/applicationContext05.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -240,7 +240,7 @@
     "extensionAbilities": [
       {
         "name": "UIExtensionProvider",
-        "srcEntry": "./ets/test/UIExtensionContentSession/UIExtensionContentSession.ts",
+        "srcEntry": "./ets/test/UIExtensionContentSession/UIExtensionContentSession.ets",
         "description": "UIExtensionAbility",
         "type": "embeddedUI",
         "exported": true

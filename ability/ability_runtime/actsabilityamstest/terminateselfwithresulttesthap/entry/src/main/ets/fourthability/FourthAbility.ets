@@ -16,12 +16,13 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import commonEventManger from '@ohos.commonEventManager';
+import commonEventManager from '@ohos.commonEventManager';
 import { common, StartOptions, Want, wantConstant } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
 export default class FourthAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'FourthAbility onCreate');
   }
 
@@ -34,7 +35,7 @@ export default class FourthAbility extends UIAbility {
   async onDestroy(): Promise<void> {
     let onBackground = AppStorage.get<boolean>('onBackground');
     let onDestroy = true;
-    let commonEventData: commonEventManger.CommonEventPublishData = {
+    let commonEventData: commonEventManager.CommonEventPublishData = {
       parameters: {
         data: {
           onBackground: onBackground,
@@ -42,7 +43,7 @@ export default class FourthAbility extends UIAbility {
         }
       }
     };
-    commonEventManger.publish('onDestroyCallback2', commonEventData, (result) => {
+    commonEventManager.publish('onDestroyCallback2', commonEventData, (result) => {
       hilog.info(0x0000, 'testTag', `onConnect, 50 == ${JSON.stringify(result)}`);
     });
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
@@ -53,7 +54,7 @@ export default class FourthAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('testability/pages/Index', (err, data) => {
+    windowStage.loadContent('testability/pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -77,12 +78,12 @@ export default class FourthAbility extends UIAbility {
       windowMode: 100
     }
     try {
-      let commonEventData: commonEventManger.CommonEventPublishData = {
+      let commonEventData: commonEventManager.CommonEventPublishData = {
         parameters: {
           data: {}
         }
       };
-      commonEventManger.publish('onForegroundCallback', commonEventData, (result) => {
+      commonEventManager.publish('onForegroundCallback', commonEventData, (result) => {
         hilog.info(0x0000, 'testTag', `onConnect, 50 == ${JSON.stringify(result)}`);
         setTimeout(() => {
           this.context.terminateSelf();

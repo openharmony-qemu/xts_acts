@@ -18,14 +18,15 @@ import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { common, Want, wantConstant } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
 export default class SecondAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'SecondAbility onCreate:' + JSON.stringify(want));
     let callerRequestCode: string = want?.parameters?.[wantConstant.Params.CALLER_REQUEST_CODE] as string;
     hilog.info(0x0000, 'testTag', '%{public}s', 'SecondAbility callerRequestCode' + callerRequestCode);
-    AppStorage.setOrCreate<string>("callerRequestCode", callerRequestCode);
-    AppStorage.setOrCreate<Want>("SecondAbilityWant", want);
+    AppStorage.setOrCreate<string>('callerRequestCode', callerRequestCode);
+    AppStorage.setOrCreate<Want>('SecondAbilityWant', want);
     globalThis.secondContext = this.context;
   }
 

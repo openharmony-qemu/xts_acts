@@ -17,43 +17,17 @@ import { UIAbility, Want } from '@kit.AbilityKit';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { commonEventManager } from '@kit.BasicServicesKit';
-import { UIExtensionContentSession, UIExtensionAbility } from '@kit.AbilityKit';
 
-export default class applicationContext04 extends UIExtensionAbility  {
-  public session:UIExtensionContentSession;
+let tag:string = `SUB_ChildProcessManager_sendableContextManager_1000`;
 
-  onSessionCreate(want: Want, session: UIExtensionContentSession): void {
-    this.session = session
-    console.info('applicationContext04 onSessionCreate');
-    globalThis.applicationContext04 = this.context
-    console.info('applicationContext04 JSON.stringify(want) is', JSON.stringify(want));
-    console.info('applicationContext04 JSON.stringify(want) is', JSON.stringify(want.parameters));
-    try {
-      this.session.loadContent(undefined);
-    } catch (error) {
-      console.error(`session.loadContent fail, error: ${JSON.stringify(error)}`);
-      if(error.code==401){
-        globalThis.applicationContext04.terminateSelfWithResult(
-          {
-            resultCode: 100,
-            want: {
-              parameters: {
-                keyString: 'NextCase',
-              }
-            }
-          }, () => {
-          console.log("====>terminateSelfWithResult success====>")
-        });
-        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
-          console.info('====>SUB_ChildProcessManager_sendableContextManager_1100 publish ACTS_TEST_DESTROY');
-        });
-      }
-    }
+export default class applicationContext03 extends UIAbility {
+onCreate(want: Want) {
+    console.info('applicationContext03 onCreate');
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    globalThis.applicationContext03 = this.context
+    console.info('applicationContext03 JSON.stringify(want) is', JSON.stringify(want));
+    console.info('applicationContext03 JSON.stringify(want) is', JSON.stringify(want.parameters));
   };
-
-  onSessionDestroy(session: UIExtensionContentSession) {
-    console.log(`applicationContext04 onSessionDestroy`);
-  }
 
   onDestroy() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
@@ -61,7 +35,7 @@ export default class applicationContext04 extends UIExtensionAbility  {
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
-    console.info('applicationContext04 onWindowStageCreate');
+    console.info('applicationContext03 onWindowStageCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     windowStage.loadContent('testability/pages/UiAbility/UiAbility12', (err, data) => {
       if (err.code) {
@@ -79,12 +53,13 @@ export default class applicationContext04 extends UIExtensionAbility  {
 
   onForeground() {
     // Ability has brought to foreground
-    console.info('applicationContext04 onForeground');
+    console.info('applicationContext03 onForeground');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
+
   }
 
   onBackground() {
-    console.info('applicationContext04 onBackground');
+    console.info('applicationContext03 onBackground');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }

@@ -16,12 +16,13 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import commonEventManger from '@ohos.commonEventManager';
+import commonEventManager from '@ohos.commonEventManager';
 import { common, Want, wantConstant } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
 export default class ThirdAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'ThirdAbility onCreate:' + JSON.stringify(want));
     globalThis.secondContext = this.context;
   }
@@ -35,12 +36,12 @@ export default class ThirdAbility extends UIAbility {
   async onDestroy(): Promise<void> {
     let onBackground = AppStorage.get<boolean>('onBackground');
     let returnDate = onBackground ? true : false;
-    let commonEventData: commonEventManger.CommonEventPublishData = {
+    let commonEventData: commonEventManager.CommonEventPublishData = {
       parameters: {
         data: returnDate
       }
     };
-    commonEventManger.publish('onDestroyCallback', commonEventData, (result) => {
+    commonEventManager.publish('onDestroyCallback', commonEventData, (result) => {
       hilog.info(0x0000, 'testTag', `onConnect, 50 == ${JSON.stringify(result)}`);
     });
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
@@ -51,7 +52,7 @@ export default class ThirdAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('testability/pages/Index', (err, data) => {
+    windowStage.loadContent('testability/pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

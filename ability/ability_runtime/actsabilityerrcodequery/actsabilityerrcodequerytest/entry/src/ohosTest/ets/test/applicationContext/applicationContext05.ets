@@ -16,9 +16,10 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
+import { Want } from '@kit.AbilityKit';
 
 export default class applicationContext05 extends UIAbility {
-  onCreate(want) {
+onCreate(want: Want) {
     console.info('applicationContext05 onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     globalThis.applicationContext05 = this.context
@@ -50,7 +51,7 @@ export default class applicationContext05 extends UIAbility {
           }
         }
       }, () => {
-      console.log("====>terminateSelfWithResult success====>")
+      console.log('====>terminateSelfWithResult success====>')
     });
   }
 

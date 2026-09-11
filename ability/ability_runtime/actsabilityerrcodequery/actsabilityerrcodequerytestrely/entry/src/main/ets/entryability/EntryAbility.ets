@@ -28,10 +28,14 @@ for (let i = 0; i < bufferArr.length; i += 4) {
   bufferArr[i + 2] = 122;
   bufferArr[i + 3] = 255;
 }
-let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+let opts: image.InitializationOptions = {
+  editable: true,
+  pixelFormat: image.PixelMapFormat.RGBA_8888,
+  size: {height: 512, width: 512}
+};
 let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
 
-export default class EntryAbility2 extends UIAbility {
+export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
@@ -67,7 +71,7 @@ export default class EntryAbility2 extends UIAbility {
       this.context.setAbilityInstanceInfo('111111', pixelMap).then(() => {
         commonEventManager.publish('setAbilityInstanceInfo_success', () => {});
       }).catch((err: BusinessError) => {
-        hilog.info(DOMAIN, 'testTag', "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        hilog.info(DOMAIN, 'testTag', 'setAbilityInstanceInfo failed: ' + JSON.stringify(err))
         commonEventManager.publish('setAbilityInstanceInfo_fail', {code: err?.code}, () => {});
       });
       this.context.terminateSelf();

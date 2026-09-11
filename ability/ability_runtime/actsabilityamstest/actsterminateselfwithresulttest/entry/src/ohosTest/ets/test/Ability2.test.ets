@@ -42,7 +42,7 @@ export default function abilityTest2() {
     let cmdBeforeEach = 'aa start -d 0 -a TestAbility' + ' -b ' + 'com.example.actsterminateselfwithresulttest';
     let cmdBeforeEach2 = 'aa force-stop com.example.terminateselfwithresulttesthap';
     let cmdBeforeEach3 = 'aa force-stop com.example.terminateselfwithresulttesthap2';
-    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
     if(user !== undefined){
         cmdBeforeEach += ' -u ' + user;
     }
@@ -195,8 +195,8 @@ export default function abilityTest2() {
                 expect(commonEventData.parameters?.data.onCreate).assertTrue();
                 expect(commonEventData.parameters?.data.onWindowStageCreate).assertTrue();
                 expect(commonEventData.parameters?.data.onForeground).assertTrue();
-                expect(commonEventData.parameters?.data.result.want.bundleName).assertEqual(bundleName);
-                expect(commonEventData.parameters?.data.result.want.abilityName).assertEqual('EntryAbility4');
+                expect(commonEventData.parameters?.data.result.want?.bundleName).assertEqual(bundleName);
+                expect(commonEventData.parameters?.data.result.want?.abilityName).assertEqual('EntryAbility4');
                 expect(commonEventData.parameters?.data.result.resultCode).assertEqual(100);
               }
               if (commonEventData.event == event2) {
@@ -438,19 +438,19 @@ export default function abilityTest2() {
         let event2 = TEST_CASE_NAME + '_2';
         AppStorage.SetOrCreate<boolean>('TestAbilityOnForeground', false);
         let resultDate: common.AbilityResult = {
-          "resultCode": -1,
-          "want": {
-            "deviceId": "",
-            "bundleName": "",
-            "abilityName": "",
-            "moduleName": "",
-            "uri": "",
-            "type": "",
-            "flags": 0,
-            "action": "",
-            "parameters": {},
-            "fds": {},
-            "entities": []
+          'resultCode': -1,
+          'want': {
+            'deviceId': '',
+            'bundleName': '',
+            'abilityName': '',
+            'moduleName': '',
+            'uri': '',
+            'type': '',
+            'flags': 0,
+            'action': '',
+            'parameters': {},
+            'fds': {},
+            'entities': []
           }
         };
 

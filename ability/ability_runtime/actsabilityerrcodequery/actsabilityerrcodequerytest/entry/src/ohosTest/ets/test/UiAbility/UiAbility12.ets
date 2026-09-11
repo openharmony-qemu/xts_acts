@@ -60,8 +60,8 @@ export default class UiAbility12 extends UIAbility {
           }
         }
       }, () => {
-      console.log("====>terminateSelfWithResult success====>")
-      commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+      console.log('====>terminateSelfWithResult success====>')
+      commonEventManager.publish('ACTS_TEST_DESTROY', () => {
         console.info('====>SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1900 publish ACTS_TEST_DESTROY');
       });
     });
