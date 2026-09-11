@@ -102,7 +102,7 @@ export default function fontManagerScopeFontTest() {
      */
     it('test_installScopeFont_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await fontManager.installScopeFont(validFontPath, 2 as fontManager.FontScope);
+        await fontManager.installScopeFont(validFontPath, 2);
         expect(false).assertTrue();
       } catch (error) {
         expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);

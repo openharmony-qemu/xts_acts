@@ -39,6 +39,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
     hilog.info(0x0000, 'testTag', '%{public}s', '*************start SevenPointZeroResMgrStageStaticTest*************');
     let resContext: Context;
     let res: resourceManager.ResourceManager | undefined;
+    let validFontPath: string;
 
     beforeAll(async () => {
       console.info("beforeAll case");
@@ -48,6 +49,8 @@ export default function SevenPointZeroResMgrStageStaticTest() {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       resContext = abilityDelegator.getAppContext()
       res = resContext.resourceManager
+      const cacheDir = resContext.resourceDir;
+      validFontPath = `${cacheDir}/TestFont_Sans.ttf`;
     });
     afterEach(async () => {
       console.info("afterEach case");
@@ -389,7 +392,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
      */
     it("installScopeFont_noPermission_static_test_0100", Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await fontManager.installScopeFont(resContext.resourceDir + '/' + 'TestFont_Sans.ttf', fontManager.FontScope.SESSION);
+        await fontManager.installScopeFont(validFontPath, fontManager.FontScope.SESSION);
       } catch (error) {
         hilog.info(domain, tag, 'installScopeFont_noPermission_static_test_0100 error code: ' + error.code);
         expect((error as BusinessError).code).assertEqual(201);
@@ -407,7 +410,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
      */
     it("uninstallScopeFont_noPermission_static_test_0100", Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await fontManager.uninstallScopeFont(resContext.resourceDir + '/' + 'TestFont_Sans.ttf');
+        await fontManager.uninstallScopeFont(validFontPath);
       } catch (error) {
         hilog.info(domain, tag, 'uninstallScopeFont_noPermission_static_test_0100 error code: ' + error.code);
         expect((error as BusinessError).code).assertEqual(201);
@@ -425,7 +428,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
      */
     it("getFontScope_noPermission_static_test_0100", Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await fontManager.getFontScope(resContext.resourceDir + '/' + 'TestFont_Sans.ttf');
+        await fontManager.getFontScope(validFontPath);
       } catch (error) {
         hilog.info(domain, tag, 'getFontScope_noPermission_static_test_0100 error code: ' + error.code);
         expect((error as BusinessError).code).assertEqual(201);
