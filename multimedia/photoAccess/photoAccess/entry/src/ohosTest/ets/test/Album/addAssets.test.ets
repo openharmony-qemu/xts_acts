@@ -231,14 +231,14 @@ export default function addAssetsTest () {
             console.info(`${testNum} addAssets '' success.`);
             expect(false).assertTrue();
           } else {
-            console.info(`${testNum} failed; error code: ${error.code}`);
-            expect(error.code).assertEqual(String(invalidArgErrorCode));
+            console.info(`${testNum} failed; error code: ${err.code}`);
+            expect(err.code).assertEqual(String(invalidArgErrorCode));
           }
           done();
         })
         done();
       } catch (error) {
-        console.info(`${testNum} failed; error code: ${error.code}`);
+        console.info(`${testNum} failed; catch error code: ${error.code}`);
         expect(error.code).assertEqual(String(invalidArgErrorCode));
         done();
       }
