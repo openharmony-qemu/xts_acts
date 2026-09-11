@@ -663,7 +663,11 @@ static napi_value getWindowAvoidAreaNullParam(napi_env env, napi_callback_info i
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
 
-    auto res = OH_WindowManager_GetWindowAvoidArea(windowId, WindowManager_AvoidAreaType::WINDOW_MANAGER_AVOID_AREA_TYPE_SYSTEM, nullptr);
+    auto res = OH_WindowManager_GetWindowAvoidArea(
+        windowId,
+        WindowManager_AvoidAreaType::WINDOW_MANAGER_AVOID_AREA_TYPE_SYSTEM,
+        nullptr
+        );
     napi_value resultValue;
     napi_create_int32(env, res, &resultValue);
     return resultValue;
