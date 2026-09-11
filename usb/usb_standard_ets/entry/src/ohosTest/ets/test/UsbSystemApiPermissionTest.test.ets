@@ -19,223 +19,210 @@ import { isFilteredDevice } from './FilterUtils';
 import bundleManager from '@ohos.bundle.bundleManager'
 
 
-export default function UsbSystemApiNormalJsTest() {
+export default function UsbSystemApiPermissionTest() {
   
 
-  describe('UsbSystemApiNormalJsTest', () => {
+  describe('UsbSystemApiPermissionTest', () => {
 
-    const TAG: string = "[UsbSystemApiNormalJsTest]";
-    let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
-    let portCurrentMode = 0;
+    const TAG: string = "[UsbSystemApiPermissionTest]";
+    const SKIP_TAG: string = "[SKIP]";
+    let rawDeviceList = usbMgr.getDevices();
+    let deviceList: Array<usbMgr.USBDevice> = rawDeviceList ? rawDeviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId)) : [];
+    let isDeviceConnected: boolean = false;
     
 
     beforeAll(async () => {
-      console.log('*************Usb Unit UsbSystemApiNormalJsTest Begin*************');
+      console.info(`${TAG} beforeAll start`);
       if (deviceList.length > 0) {
-        portCurrentMode = 1;
+        isDeviceConnected = true;
       }
     })
 
     afterAll(() => {
-      console.log('*************Usb Unit UsbSystemApiNormalJsTest End*************');
+      console.info(`${TAG} afterAll`);
     })
   
 
     /**
-     * @tc.name   testUsbAddDeviceAccessRightNormalApp001
+     * @tc.name   testSystemApiAddDeviceAccessRight
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0100
-     * @tc.desc   addDeviceAccessRight Interface testing
+     * @tc.desc   addDeviceAccessRight as normal app should throw 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testUsbAddDeviceAccessRightNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSystemApiAddDeviceAccessRight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-      if (portCurrentMode != 1) {
-        console.info('usb case get_device port is device');
-        done()
-        return
+      if (!isDeviceConnected) {
+        console.info(`${TAG} ${SKIP_TAG} testSystemApiAddDeviceAccessRight, skip`);
+        done();
+        return;
       }
       try {
         let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
-        await bundleManager.getBundleInfoForSelf(bundleFlags).then((bundleInfo) => {
-            console.info(TAG, 'getBundleInfoForSelf success Data: ', JSON.stringify(bundleInfo));
-            let tokenId = bundleInfo.appInfo.accessTokenId;
-            let tokenIdStr = tokenId.toString();
-            console.info(TAG, 'testUsbAddDeviceAccessRightNormalApp001 addDeviceAccessRight begin');
-
-            let rightResult = usbMgr.addDeviceAccessRight(tokenIdStr, deviceList[0].name);
-            console.log(TAG, 'addDeviceAccessRight failed result: ' + rightResult);
-            expect(rightResult === null).assertTrue();
-        })
-      } catch (err) {
-        console.info(TAG, 'usb testUsbAddDeviceAccessRightNormalApp001 catch err code: ',
-          err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(202);
+        let bundleInfo = await bundleManager.getBundleInfoForSelf(bundleFlags);
+        let tokenIdStr = bundleInfo.appInfo.accessTokenId.toString();
+        usbMgr.addDeviceAccessRight(tokenIdStr, deviceList[0].name);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${TAG} testSystemApiAddDeviceAccessRight catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
+        done();
       }
-      done()
     });
 
     /**
-     * @tc.name   testGetFunctionsFromStringNormalApp001
+     * @tc.name   testSystemApiGetFunctionsFromString
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0200
-     * @tc.desc   getFunctionsFromString Interface testing
+     * @tc.desc   getFunctionsFromString as normal app should throw 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetFunctionsFromStringNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSystemApiGetFunctionsFromString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       let strMaskCode = 'hdc';
       try {
-        let nMaskCode = usbMgr.getFunctionsFromString(strMaskCode);
-        console.info(TAG, 'Test USB getFunctionsFromString nMaskCode: ' + nMaskCode);
-        expect(nMaskCode === null).assertTrue();
-      } catch(err) {
-        console.info(TAG, 'usb testGetFunctionsFromStringNormalApp001 catch err code: ',
-          err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(202);
-        done()
+        usbMgr.getFunctionsFromString(strMaskCode);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${TAG} testSystemApiGetFunctionsFromString catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
+        done();
       }
     });
 
     /**
-     * @tc.name   testGetStringFromFunctionsNormalApp001
+     * @tc.name   testSystemApiGetStringFromFunctions
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0300
-     * @tc.desc   getStringFromFunctions Interface testing
+     * @tc.desc   getStringFromFunctions as normal app should throw 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetStringFromFunctionsNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSystemApiGetStringFromFunctions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-      let funcs: number = 4;
+      let maskCode: number = 4; // 4 = USBFunctionType.HDC
       try {
-        let maskCode = usbMgr.getStringFromFunctions(funcs);
-        console.info(TAG, 'Test USB getStringFromFunctions maskCode: ' + maskCode);
-        expect(maskCode === null).assertTrue();
-      } catch(err) {
-        console.info(TAG, 'usb testGetStringFromFunctionsNormalApp001 catch err code: ',
-          err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(202);
-        done()
+        usbMgr.getStringFromFunctions(maskCode);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${TAG} testSystemApiGetStringFromFunctions catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
+        done();
       }
     });
 
     /**
-     * @tc.name   testSetDeviceFunctionsNormalApp001
+     * @tc.name   testSystemApiSetDeviceFunctions
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0400
-     * @tc.desc   setDeviceFunctions Interface testing
+     * @tc.desc   setDeviceFunctions as normal app should throw 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetDeviceFunctionsNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSystemApiSetDeviceFunctions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-      let funcs: number = 4;
+      let maskCode: number = 4; // 4 = USBFunctionType.HDC
       try {
-        await usbMgr.setDeviceFunctions(funcs).then((data) => {
-          console.info(TAG, 'Test USB setDeviceFunctions nMaskCode: ' + data);
-          expect(data === null).assertTrue();
-        })
-      } catch(err) {
-        console.info(TAG, 'usb testSetDeviceFunctionsNormalApp001 catch err code: ',
-          err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(202);
-        done()
+        await usbMgr.setDeviceFunctions(maskCode);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${TAG} testSystemApiSetDeviceFunctions catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
+        done();
       }
     });
 
     /**
-     * @tc.name   testGetDeviceFunctionsNormalApp001
+     * @tc.name   testSystemApiGetDeviceFunctions
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0500
-     * @tc.desc   getDeviceFunctions Interface testing
+     * @tc.desc   getDeviceFunctions as normal app should throw 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetDeviceFunctionsNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSystemApiGetDeviceFunctions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       try {
-        let maskCode = usbMgr.getDeviceFunctions();
-        console.info(TAG, 'Test USB getDeviceFunctions maskCode: ' + maskCode);
-        expect(maskCode === null).assertTrue();
-      } catch(err) {
-        console.info(TAG, 'usb testGetDeviceFunctionsNormalApp001 catch err code: ',
-          err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(202);
-        done()
+        usbMgr.getDeviceFunctions();
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${TAG} testSystemApiGetDeviceFunctions catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
+        done();
       }
     });
 
     /**
-     * @tc.name   testGetPortListNormalApp001
+     * @tc.name   testSystemApiGetPortList
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0600
-     * @tc.desc   getPortList Interface testing
+     * @tc.desc   getPortList as normal app should throw 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetPortListNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSystemApiGetPortList', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       try {
-        let portList = usbMgr.getPortList();
-        console.info(TAG, 'Test USB getPortList maskCode: ' + JSON.stringify(portList));
-        expect(portList === null).assertTrue();
-      } catch(err) {
-        console.info(TAG, 'usb testGetPortListNormalApp001 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(202);
-        done()
+        usbMgr.getPortList();
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${TAG} testSystemApiGetPortList catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
+        done();
       }
     });
 
     /**
-     * @tc.name   testGetPortSupportModesNormalApp001
+     * @tc.name   testSystemApiGetPortSupportModes
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0700
-     * @tc.desc   getPortSupportModes Interface testing
+     * @tc.desc   getPortSupportModes as normal app should throw 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetPortSupportModesNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSystemApiGetPortSupportModes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       let portId: number = 1;
       try {
-        let portMode = usbMgr.getPortSupportModes(portId);
-        console.info(TAG, 'Test USB getPortSupportModes maskCode: ' + JSON.stringify(portMode));
-        expect(portMode === null).assertTrue();
-      } catch(err) {
-        console.info(TAG, 'usb testGetPortSupportModesNormalApp001 catch err code: ',
-          err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(202);
-        done()
+        usbMgr.getPortSupportModes(portId);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${TAG} testSystemApiGetPortSupportModes catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
+        done();
       }
     });
 
     /**
-     * @tc.name   testSetPortRoleTypesNormalApp001
+     * @tc.name   testSystemApiSetPortRoleTypes
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0800
-     * @tc.desc   setPortRoleTypes Interface testing
+     * @tc.desc   setPortRoleTypes as normal app should throw 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetPortRoleTypesNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSystemApiSetPortRoleTypes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       let portId: number = 1;
-      let powerRoleTy: number = 2;
-      let dataRoleTy: number = 2;
+      let powerRole: number = 2; // 2 = PowerRoleType.SINK
+      let dataRole: number = 2; // 2 = DataRoleType.DEVICE
       try {
-        await usbMgr.setPortRoleTypes(portId, powerRoleTy, dataRoleTy)
-          .then((data) => {
-            console.info(TAG, 'Test USB setPortRoleTypes nMaskCode: ' + data);
-            expect(data === null).assertTrue();
-        })
-      } catch(err) {
-        console.info(TAG, 'usb testSetPortRoleTypesNormalApp001 catch err code: ',
-          err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(202);
-        done()
+        await usbMgr.setPortRoleTypes(portId, powerRole, dataRole);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${TAG} testSystemApiSetPortRoleTypes catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
+        done();
       }
     });
 
