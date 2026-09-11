@@ -1194,6 +1194,21 @@ export default function ImagePackerNativeTest() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0300
+     * @tc.desc   OH_PackingOptions_GetQuality return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0300", Level.LEVEL3, async (done: Function) => {
+      let packingOps: image.PackingOption = ndkTest.createPackingOptions();
+      let res: number = ndkTest.jsPackingOptionsSetQuality(packingOps, 30);
+      res = ndkTest.jSPackingOptionsGetQualityBadParameterQuality(packingOps);
+      expect(res).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETNEEDSPACKPROPERTIES_ERROR_0100
