@@ -1289,6 +1289,22 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0300
+     * @tc.desc   OH_PackingOptions_GetDesiredDynamicRange return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0300", Level.LEVEL3, async (done: Function) => {
+      let packingOps: image.PackingOption = ndkTest.createPackingOptions();
+      let res: number = ndkTest.jsPackingOptionsSetDesiredDynamicRange(packingOps, 2);
+      res = ndkTest.jsPackingOptionsGetDesiredDynamicRangeBadParameterRange(packingOps);
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0100
      * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0100
      * @tc.desc   OH_PackingOptions_SetDesiredDynamicRange return IMAGE_SUCCESS
