@@ -1170,9 +1170,10 @@ export default function windowErrCode401_4() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_testConvertOrientationAndRotation_0200  
+     * @tc.name   SUB_BASIC_WMS_testConvertOrientationAndRotation_0200
+     * @tc.number SUB_BASIC_WMS_testConvertOrientationAndRotation_0200  
      * @tc.desc   SUB_BASIC_WMS_testConvertOrientationAndRotation_0200
-     * @tc.type   SUB_BASIC_WMS_testConvertOrientationAndRotation_0200
+     * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
