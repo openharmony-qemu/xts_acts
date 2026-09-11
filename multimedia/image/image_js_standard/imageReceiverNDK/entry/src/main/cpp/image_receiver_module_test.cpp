@@ -231,9 +231,13 @@ Image_ErrorCode ImageReceiverModuleTest::DumpImageInfo(OH_ImageNative *image)
     Image_Size size = { 0 };
     std::vector<uint32_t> types;
 
-    if (GetImageSize(image, &size) != IMAGE_SUCCESS ||
-        GetImageComponentTypes(image, &types) != IMAGE_SUCCESS) {
-        LOG("Get Image property failed");
+    if (GetImageSize(image, &size) != IMAGE_SUCCESS) {
+        LOG("Get Image size failed");
+        return IMAGE_BAD_PARAMETER;
+    }
+
+    if (GetImageComponentTypes(image, &types) != IMAGE_SUCCESS) {
+        LOG("Get Image component types failed");
         return IMAGE_BAD_PARAMETER;
     }
 
