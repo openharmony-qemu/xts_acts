@@ -1023,16 +1023,16 @@ export default function removeAssetsTest () {
       }
     });
 
-        /**
-      * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0700
-      * @tc.name   removeAssets_promise_007
-      * @tc.desc   remove asset from favorite album,error code 13900020
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
-    */
-    it('removeAssets_promise_007', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'removeAssets_promise_007';
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1500
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_007
+     * @tc.desc   removeAssets from favorite album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_007', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_007';
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.FAVORITE);
         let assetNames: Array<string> = [
@@ -1054,15 +1054,15 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0800
-      * @tc.name   removeAssets_promise_008
-      * @tc.desc   remove asset from video album,error code 13900020
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
-    */
-    it('removeAssets_promise_008', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'removeAssets_promise_008';
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0800
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_008
+     * @tc.desc   removeAssets from video album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_008', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_008';
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.VIDEO);
         let assetNames: Array<string> = [
@@ -1083,15 +1083,15 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0900
-      * @tc.name   removeAssets_promise_009
-      * @tc.desc   remove asset from hidden album,error code 13900020
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
-    */
-    it('removeAssets_promise_009', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'removeAssets_promise_009';
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0900
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_009
+     * @tc.desc   removeAssets from hidden album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_009', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_009';
       try {
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper.getHiddenAlbums(photoAccessHelper.HiddenPhotosDisplayMode.ASSETS_MODE);
         console.info(testNum + 'album count is : ' + fetchResult.getCount());
@@ -1115,15 +1115,15 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1000
-      * @tc.name    removeAssets_promise_010
-      * @tc.desc    remove asset from trash album,error code 13900020
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
-    */
-    it('removeAssets_promise_010', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'removeAssets_promise_010';
+     * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1000
+     * @tc.name    SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_010
+     * @tc.desc    removeAssets from trash album,error code 13900020
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_010', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_010';
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.TRASH);
         let assetNames: Array<string> = [
@@ -1145,15 +1145,15 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1100
-      * @tc.name   removeAssets_promise_011
-      * @tc.desc   remove asset from screenshot album,error code 13900020
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
-    */
-    it('removeAssets_promise_011', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'removeAssets_promise_011';
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1100
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_011
+     * @tc.desc   removeAssets from screenshot album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_011', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_011';
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.SCREENSHOT);
         let assetNames: Array<string> = [
@@ -1175,15 +1175,15 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1200
-      * @tc.name   removeAssets_promise_012
-      * @tc.desc   remove asset from camera album,error code 13900020
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
-    */
-    it('removeAssets_promise_012', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'removeAssets_promise_012';
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1200
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_012
+     * @tc.desc   removeAssets from camera album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_012', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_012';
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.CAMERA);
         let assetNames: Array<string> = [
@@ -1204,15 +1204,15 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1300
-      * @tc.name   removeAssets_promise_013
-      * @tc.desc   remove asset from image album,error code 13900020
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
-    */
-    it('removeAssets_promise_013', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'removeAssets_promise_013';
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1300
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_013
+     * @tc.desc   removeAssets from image album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_013', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_013';
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.IMAGE);
         let assetNames: Array<string> = [
@@ -1233,15 +1233,15 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1400
-      * @tc.name   removeAssets_promise_014
-      * @tc.desc   remove asset from cloud enhancement album,error code 13900020
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
-    */
-    it('removeAssets_promise_014', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'removeAssets_promise_014';
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1400
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_014
+     * @tc.desc   removeAssets from cloud enhancement album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_013', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_013';
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.CLOUD_ENHANCEMENT);
         let assetNames: Array<string> = [
@@ -1264,7 +1264,7 @@ export default function removeAssetsTest () {
     /**
       * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1500
       * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_015
-      * @tc.desc   remove asset from source enhancement album,error code 13900020
+      * @tc.desc   removeAssets from source enhancement album,error code 13900020
       * @tc.size   MEDIUM
       * @tc.type   Function
       * @tc.level  Level 2

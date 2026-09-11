@@ -650,7 +650,7 @@ export default function albumCommitModifyTest () {
     /**
      * @tc.name   album_commitModify_promise_005
      * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0500
-     * @tc.desc   album commitModify with system album camera album
+     * @tc.desc   album commitModify with system album camera album,errorCode:13900020
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -677,7 +677,7 @@ export default function albumCommitModifyTest () {
     /**
      * @tc.name   album_commitModify_promise_006
      * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0600
-     * @tc.desc   album commitModify with album albumNmaes to '?'
+     * @tc.desc   album commitModify with album albumNmaes to '?',errorCode:13900020
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -701,7 +701,7 @@ export default function albumCommitModifyTest () {
         /**
      * @tc.name   SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_007
      * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0700
-     * @tc.desc   commitModify with source album source generic album
+     * @tc.desc   commitModify with source album source generic album,errorCode:13900020
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -726,15 +726,15 @@ export default function albumCommitModifyTest () {
     })
 
         /**
-     * @tc.name   album_commitModify_promise_008
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_008
      * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0800
-     * @tc.desc   album commitModify with album albumNmaes to ''
+     * @tc.desc   album commitModify with album albumNmaes to '',errorCode:13900020
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('album_commitModify_promise_008', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'album_commitModify_promise_008';
+    it('SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_008', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_008';
       let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
       try {
         album.albumName = '';
@@ -749,15 +749,15 @@ export default function albumCommitModifyTest () {
     })
 
     /**
-     * @tc.name   album_commitModify_promise_009
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_009
      * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0900
-     * @tc.desc   commitModify with album name lenght is 256;
+     * @tc.desc   commitModify with album name lenght is 256,errorCode:13900020
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('album_commitModify_promise_009', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'album_commitModify_promise_009';
+    it('SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_009', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_009';
       let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
       try {
         album.albumName = 'm'.repeat(256);

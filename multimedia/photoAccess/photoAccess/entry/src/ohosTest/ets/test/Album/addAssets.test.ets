@@ -217,7 +217,7 @@ export default function addAssetsTest () {
     /**
      * @tc.name   addAssets_callback_007
      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ADD_ASSETS_0700
-     * @tc.desc   add '' to user album,error code 13900020
+     * @tc.desc   callback,addAssets '' to user album,error code 13900020
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -228,7 +228,11 @@ export default function addAssetsTest () {
         const album:ESObject = await helper.createAlbum(testNum);
         album.addAssets('', async (err:BusinessError) => {
           if (!err) {
+            console.info(`${testNum} addAssets '' success.`);
             expect(false).assertTrue();
+          } else {
+            console.info(`${testNum} failed; error code: ${error.code}`);
+            expect(error.code).assertEqual(String(invalidArgErrorCode));
           }
           done();
         })
@@ -370,7 +374,7 @@ export default function addAssetsTest () {
     /**
      * @tc.name   addAssets_promise_007
      * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_ADD_ASSETS_0700
-     * @tc.desc   add '' to user album,error code 13900020
+     * @tc.desc   promise,addAssets '' to user album,error code 13900020
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2

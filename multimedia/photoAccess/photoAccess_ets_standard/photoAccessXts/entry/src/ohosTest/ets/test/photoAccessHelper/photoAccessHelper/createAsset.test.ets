@@ -363,7 +363,7 @@ export default function createAssetTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_006
      * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0053
-     * @tc.desc   callback, image, with options, subtype-> null
+     * @tc.desc   callback,createAsset image, with photoType-> null, error code:13900020
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
@@ -375,7 +375,7 @@ export default function createAssetTest() {
       const extension = 'jpg';
       const options: photoAccessHelper.CreateOptions = {
         title: testTitle,
-        subtype: undefined
+        subtype: photoAccessHelper.PhotoSubtype.DEFAULT
       };
       await createAssetCallbackWithOptionsAbnormalTest(done, type, extension, options);
     })
@@ -383,7 +383,7 @@ export default function createAssetTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_007
      * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0054
-     * @tc.desc   callback, image, with options-> null
+     * @tc.desc   callback,createAsset image, with options-> null, error code:13900020
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
@@ -400,7 +400,7 @@ export default function createAssetTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_008
      * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0055
-     * @tc.desc   callback, image, with options,subtype -> null,success return uri
+     * @tc.desc   callback,createAsset image, with subtype -> null, success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
@@ -436,7 +436,7 @@ export default function createAssetTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_009
      * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0056
-     * @tc.desc   callback, image, with options,subtype -> '',success return uri
+     * @tc.desc   callback,createAsset image, with subtype -> '',success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
@@ -472,7 +472,7 @@ export default function createAssetTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_010
      * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0057
-     * @tc.desc   callback, image, with options,subtype -> -1,success return uri
+     * @tc.desc   callback,createAsset image, with subtype -> -1,success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
@@ -980,7 +980,7 @@ export default function createAssetTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_006
      * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0058
-     * @tc.desc   promise, image, with options -> null
+     * @tc.desc   promise,createAsset image, with options -> null,error code:13900020
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -997,7 +997,7 @@ export default function createAssetTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_007
      * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0059
-     * @tc.desc   promise, image, with options -> null
+     * @tc.desc   promise,createAsset image, with subtype -> null, success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1025,7 +1025,7 @@ export default function createAssetTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_008
      * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0060
-     * @tc.desc   promise, image, with options -> '', success return uri
+     * @tc.desc   promise,createAsset image, with subtype -> '', success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1053,7 +1053,7 @@ export default function createAssetTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009
      * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0061
-     * @tc.desc   promise, image, with options -> -1, success return uri
+     * @tc.desc   promise,createAsset image, with subtype -> -1, success return uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
