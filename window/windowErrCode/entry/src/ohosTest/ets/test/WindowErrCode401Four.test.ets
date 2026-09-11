@@ -1170,6 +1170,88 @@ export default function windowErrCode401_4() {
     })
 
     /**
+     * @tc.name   testConvertOrientationAndRotation_0200
+     * @tc.number testConvertOrientationAndRotation_0200
+     * @tc.desc   testConvertOrientationAndRotation_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConvertOrientationAndRotation_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testConvertOrientationAndRotation_0200";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = windowStage.getMainWindowSync()
+      if (!windowClass) {
+        console.error(msgStr + 'Failed to get main window.');
+        expect.assertFail();
+        done();
+      }
+      try {
+        windowClass.convertOrientationAndRotation(null, ohosWindow.RotationInfoType.DISPLAY_ORIENTATION, 0);
+        console.info(msgStr + 'Succeeded1 but unexpected');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        windowClass.convertOrientationAndRotation(undefined, ohosWindow.RotationInfoType.DISPLAY_ORIENTATION, 0);
+        console.info(msgStr + 'Succeeded2 but unexpected.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testConvertOrientationAndRotation_0300
+     * @tc.number testConvertOrientationAndRotation_0300
+     * @tc.desc   testConvertOrientationAndRotation_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConvertOrientationAndRotation_0300', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testConvertOrientationAndRotation_0300";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = windowStage.getMainWindowSync()
+      if (!windowClass) {
+        console.error(msgStr + 'Failed to get main window.');
+        expect.assertFail();
+        done();
+      }
+      try {
+        windowClass.convertOrientationAndRotation(ohosWindow.RotationInfoType.WINDOW_ORIENTATION, null, 0);
+        console.info(msgStr + 'Succeeded1 but unexpected');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        windowClass.convertOrientationAndRotation(ohosWindow.RotationInfoType.WINDOW_ORIENTATION, undefined, 0);
+        console.info(msgStr + 'Succeeded2 but unexpected.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+        done()
+      }
+    })
+
+    /**
      * @tc.name   testCreateSubWindow_0100
      * @tc.number testCreateSubWindow_0100
      * @tc.desc   testCreateSubWindow_0100
