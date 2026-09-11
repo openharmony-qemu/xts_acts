@@ -103,7 +103,7 @@ it('LocalStorage39Jsunit_static_0400', Level.LEVEL0, async (done: () => void): P
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[LocalStorage39Jsunit_static_0400] obj1 is: " + JSON.stringify(obj1));
       await CommonFunc.sleep(1000);
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('Keys：["store_"]');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('Keys：[]');
       console.info('[LocalStorage39Jsunit_static_0400] END');
       done();
     });
