@@ -18,7 +18,7 @@ const TAG = 'ParamManager';
 export default class ParamManager {
   private testName: string = '';
 
-  public setTextNme(name: string) {
+  public setTextNme(name: string): void {
     this.testName = name;
   }
 
