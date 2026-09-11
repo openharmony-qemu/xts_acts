@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it , Level, Size, TestType} from '@ohos/hypium';
+import { describe, it , Level, Size, expect, TestType} from '@ohos/hypium';
 import socket from '@ohos.net.socket';
 import { BusinessError, Callback } from '@ohos.base';
 import {
@@ -1377,13 +1377,13 @@ export default function MulticastSocket() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, '401');
+          expectEqual(err.code, 401);
           console.info(`${caseName} test end`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectEqual(err.code, '401');
+        expectTrue(err.code == 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -1410,13 +1410,13 @@ export default function MulticastSocket() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, '401');
+          expectEqual(err.code, 401);
           console.info(`${caseName} test end`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectEqual(err.code, '401');
+        expectTrue(err.code == 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -1922,13 +1922,13 @@ export default function MulticastSocket() {
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.setLoopbackMode(paramNull, (err: BusinessError) => {
           console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, '401');
+          expectEqual(err.code, 401);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectEqual(err.code, '401');
+        expectTrue(err.code == 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -1951,13 +1951,13 @@ export default function MulticastSocket() {
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.setLoopbackMode(paramUndefined, (err: BusinessError) => {
           console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, '401');
+          expectEqual(err.code, 401);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectEqual(err.code, '401');
+        expectTrue(err.code == 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -1984,13 +1984,13 @@ export default function MulticastSocket() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, '401');
+          expectEqual(err.code, 401);
           console.info(`${caseName} test end`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectEqual(err.code, '401');
+        expectTrue(err.code == 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -2017,13 +2017,13 @@ export default function MulticastSocket() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, '401');
+          expectEqual(err.code, 401);
           console.info(`${caseName} test end`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectEqual(err.code, '401');
+        expectTrue(err.code == 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -2763,13 +2763,13 @@ export default function MulticastSocket() {
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.addMembership(paramNull, (err: BusinessError) => {
           console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, '401');
+          expectEqual(err.code, 401);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectEqual(err.code, '401');
+        expectTrue(err.code == 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -2792,13 +2792,13 @@ export default function MulticastSocket() {
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
         multicast.dropMembership(paramNull, (err: BusinessError) => {
           console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, '401');
+          expect(err.code).assertEqual(401);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectEqual(err.code, '401');
+        expectTrue(err.code == 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -2825,13 +2825,13 @@ export default function MulticastSocket() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, '401');
+          expectEqual(err.code, 401);
           console.info(`${caseName} test end`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
-        expectEqual(err.code, '401');
+        expectTrue(err.code == 401);
         console.info(`${caseName} test end`);
         done();
       }
