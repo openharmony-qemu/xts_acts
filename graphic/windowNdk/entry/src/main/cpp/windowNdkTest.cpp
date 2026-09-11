@@ -655,7 +655,8 @@ static napi_value getKeyEventFilter(napi_env env, napi_callback_info info){
     return retValue;
 }
 
-static napi_value getWindowAvoidAreaNullParam(napi_env env, napi_callback_info info){
+static napi_value getWindowAvoidAreaNullParam(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -2585,7 +2586,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr },
         {"getKeyEventFilter", nullptr, getKeyEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getKeyEventFilterNullParam", nullptr, getKeyEventFilterNullParam, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getWindowAvoidAreaNullParam", nullptr, getWindowAvoidAreaNullParam, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getWindowAvoidAreaNullParam", nullptr, getWindowAvoidAreaNullParam,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getMouseEventFilter", nullptr, getMouseEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getMouseEventFilterNullParam", nullptr, getMouseEventFilterNullParam, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getTouchEventFilter", nullptr, getTouchEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
