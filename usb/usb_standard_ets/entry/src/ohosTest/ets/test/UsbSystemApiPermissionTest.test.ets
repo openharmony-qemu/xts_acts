@@ -70,9 +70,11 @@ export default function UsbSystemApiPermissionTest() {
             console.error(`${TAG} testSystemApiAddDeviceAccessRight catch err: ${JSON.stringify(error)}`);
             expect(error.code).assertEqual(202);
           }
-          done();
         } catch (err) {
-          done(err);
+          console.error(`${TAG} testSystemApiAddDeviceAccessRight setup err: ${JSON.stringify(err)}`);
+          expect().assertFail();
+        } finally {
+          done();
         }
       });
 
@@ -128,16 +130,13 @@ export default function UsbSystemApiPermissionTest() {
       async (done: Function) => {
         let maskCode: number = 4; // 4 = USBFunctionType.HDC
         try {
-          try {
-            await usbMgr.setDeviceFunctions(maskCode);
-            expect().assertFail();
-          } catch (error) {
-            console.error(`${TAG} testSystemApiSetDeviceFunctions catch err: ${JSON.stringify(error)}`);
-            expect(error.code).assertEqual(202);
-          }
+          await usbMgr.setDeviceFunctions(maskCode);
+          expect().assertFail();
+        } catch (error) {
+          console.error(`${TAG} testSystemApiSetDeviceFunctions catch err: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        } finally {
           done();
-        } catch (err) {
-          done(err);
         }
       });
 
@@ -213,16 +212,13 @@ export default function UsbSystemApiPermissionTest() {
         let powerRole: number = 2; // 2 = PowerRoleType.SINK
         let dataRole: number = 2; // 2 = DataRoleType.DEVICE
         try {
-          try {
-            await usbMgr.setPortRoleTypes(portId, powerRole, dataRole);
-            expect().assertFail();
-          } catch (error) {
-            console.error(`${TAG} testSystemApiSetPortRoleTypes catch err: ${JSON.stringify(error)}`);
-            expect(error.code).assertEqual(202);
-          }
+          await usbMgr.setPortRoleTypes(portId, powerRole, dataRole);
+          expect().assertFail();
+        } catch (error) {
+          console.error(`${TAG} testSystemApiSetPortRoleTypes catch err: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        } finally {
           done();
-        } catch (err) {
-          done(err);
         }
       });
   })

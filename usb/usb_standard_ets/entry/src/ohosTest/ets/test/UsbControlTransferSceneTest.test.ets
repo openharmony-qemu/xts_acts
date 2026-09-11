@@ -50,10 +50,6 @@ function deviceConnected(deviceList: Array<Readonly<usbMgr.USBDevice>>) {
   return false;
 }
 
-function sleep(ms: number): Promise<void> {
-  return new Promise<void>(resolve => setTimeout(resolve, ms));
-}
-
 async function clickAllowButton(): Promise<void> {
   console.info(`${TAG} clickAllowButton`);
   try {
@@ -70,18 +66,6 @@ async function clickAllowButton(): Promise<void> {
     }
   } catch (error) {
     console.error(`${TAG} clickAllowButton catch err: ${JSON.stringify(error)}`);
-  }
-}
-
-async function requestUsbRight(deviceName: string): Promise<void> {
-  console.info(`${TAG} requestUsbRight start`);
-  const rightPromise = usbMgr.requestRight(deviceName);
-  await clickAllowButton();
-  try {
-    let hasRight = await rightPromise;
-    console.info(`${TAG} requestRight success, hasRight: ${hasRight}`);
-  } catch (error) {
-    console.error(`${TAG} requestRight fail: ${JSON.stringify(error)}`);
   }
 }
 
@@ -150,7 +134,11 @@ export default function UsbControlTransferSceneTest() {
           console.error(`${TAG} testSceneConnectDeviceNoPermission catch err: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(14400001);
         } finally {
-          await ensurePermission(testDevice!.name);
+          try {
+            await ensurePermission(testDevice!.name);
+          } catch (error) {
+            console.error(`${TAG} testSceneConnectDeviceNoPermission restore permission err: ${JSON.stringify(error)}`);
+          }
           done();
         }
       })

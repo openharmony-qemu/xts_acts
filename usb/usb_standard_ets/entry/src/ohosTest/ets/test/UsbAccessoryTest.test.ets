@@ -31,10 +31,6 @@ let fakeAccessory: usbMgr.USBAccessory = {
   serialNumber: 'serialNumber'
 }
 
-function sleep(ms: number): Promise<void> {
-  return new Promise<void>(resolve => setTimeout(resolve, ms));
-}
-
 function isAccessoryAvailable(): boolean {
   if (accessoryList.length > 0) {
     console.info(`${TAG} USB accessory is available`);

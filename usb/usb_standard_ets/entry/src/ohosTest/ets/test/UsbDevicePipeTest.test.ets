@@ -38,10 +38,6 @@ interface TransferTestParam {
   maxOutSize: number;
 }
 
-function sleep(ms: number): Promise<void> {
-  return new Promise<void>(resolve => setTimeout(resolve, ms));
-}
-
 function ab2str(buf: Uint8Array): string {
   let result: string = '';
   let arr: Uint8Array = new Uint8Array(buf);
@@ -84,18 +80,6 @@ async function clickAllowButton(): Promise<void> {
     }
   } catch (error) {
     console.error(`${TAG} clickAllowButton catch err: ${JSON.stringify(error)}`);
-  }
-}
-
-async function requestUsbRight(deviceName: string): Promise<void> {
-  console.info(`${TAG} requestUsbRight start`);
-  const rightPromise = usbMgr.requestRight(deviceName);
-  await clickAllowButton();
-  try {
-    let hasRight = await rightPromise;
-    console.info(`${TAG} requestRight success, hasRight: ${hasRight}`);
-  } catch (error) {
-    console.error(`${TAG} requestRight fail: ${JSON.stringify(error)}`);
   }
 }
 
@@ -153,18 +137,6 @@ function getTransferTestParam(localPipe: usbMgr.USBDevicePipe): TransferTestPara
   };
   findBulkEndpoints(param);
   return param;
-}
-
-function buildControlTransferParam(bmRequestType: number, bRequest: number, wValue: number, wIndex: number,
-  wLength: number): usbMgr.USBDeviceRequestParams {
-  return {
-    bmRequestType: bmRequestType,
-    bRequest: bRequest,
-    wValue: wValue,
-    wIndex: wIndex,
-    wLength: wLength,
-    data: new Uint8Array(512)
-  };
 }
 
 function buildControlParams(request: number, target: usbMgr.USBRequestTargetType, reqType: usbMgr.USBControlRequestType,
@@ -817,7 +789,6 @@ export default function UsbDevicePipeTest() {
       }
       await ensurePermission(testDevice!.name);
       let localPipe = usbMgr.connectDevice(testDevice!);
-      let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(6, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE,
           (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
@@ -854,7 +825,6 @@ export default function UsbDevicePipeTest() {
       }
       await ensurePermission(testDevice!.name);
       let localPipe = usbMgr.connectDevice(testDevice!);
-      let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(0, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE,
           (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
@@ -891,7 +861,6 @@ export default function UsbDevicePipeTest() {
       }
       await ensurePermission(testDevice!.name);
       let localPipe = usbMgr.connectDevice(testDevice!);
-      let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(0, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE,
           (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
@@ -928,7 +897,6 @@ export default function UsbDevicePipeTest() {
       }
       await ensurePermission(testDevice!.name);
       let localPipe = usbMgr.connectDevice(testDevice!);
-      let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(8, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE,
           (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
@@ -965,7 +933,6 @@ export default function UsbDevicePipeTest() {
       }
       await ensurePermission(testDevice!.name);
       let localPipe = usbMgr.connectDevice(testDevice!);
-      let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(10, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE,
           (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
@@ -1002,7 +969,6 @@ export default function UsbDevicePipeTest() {
       }
       await ensurePermission(testDevice!.name);
       let localPipe = usbMgr.connectDevice(testDevice!);
-      let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(1, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE,
           (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) |
@@ -1039,7 +1005,6 @@ export default function UsbDevicePipeTest() {
       }
       await ensurePermission(testDevice!.name);
       let localPipe = usbMgr.connectDevice(testDevice!);
-      let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(255, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE,
           (usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE) |
@@ -1076,7 +1041,6 @@ export default function UsbDevicePipeTest() {
       }
       await ensurePermission(testDevice!.name);
       let localPipe = usbMgr.connectDevice(testDevice!);
-      let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(255, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT,
           (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) |
@@ -1113,7 +1077,6 @@ export default function UsbDevicePipeTest() {
       }
       await ensurePermission(testDevice!.name);
       let localPipe = usbMgr.connectDevice(testDevice!);
-      let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(255, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER,
           (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) |
@@ -1150,7 +1113,6 @@ export default function UsbDevicePipeTest() {
       }
       await ensurePermission(testDevice!.name);
       let localPipe = usbMgr.connectDevice(testDevice!);
-      let testParam = getTransferTestParam(localPipe);
       try {
         let controlParam = buildControlParams(255, usbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER,
           (usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) |
