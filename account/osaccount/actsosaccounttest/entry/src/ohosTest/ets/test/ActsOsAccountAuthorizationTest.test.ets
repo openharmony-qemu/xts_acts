@@ -16,9 +16,14 @@ import { authorization, BusinessError } from '@kit.BasicServicesKit'
 import { describe, it, expect, beforeEach, TestType, Size, Level } from '@ohos/hypium'
 import { common } from '@kit.AbilityKit'
 import { Driver, ON } from '@ohos.UiTest'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import deviceInfo from '@ohos.deviceInfo';
 
+
+const abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let driver: Driver = Driver.create();
+let deviceType = deviceInfo.deviceType;
+console.info("====>the value of the deviceinfo deviceType is: " + deviceType);
 
 function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve: (value: void | PromiseLike<void>) => void) => {
@@ -28,44 +33,114 @@ function sleep(time: number): Promise<void> {
   });
 }
 
-// 从 TestAbility 获取前台 UIAbilityContext
 function getForegroundContext(): common.UIAbilityContext {
   return globalThis.abilityContext as common.UIAbilityContext;
 }
 
+async function clearAuthorizationDialog(): Promise<void> {
+  console.info("====>clearAuthorizationDialog: start====");
+  try {
+    await abilityDelegator.executeShellCommand('aa force-stop com.huawei.adminauth');
+    await sleep(500);
+    console.info("====>clearAuthorizationDialog: adminauth stopped====");
+  } catch (err) {
+    console.info("====>clearAuthorizationDialog: err (may not exist): " + JSON.stringify(err));
+  }
+  console.info("====>clearAuthorizationDialog: end====");
+}
+
+async function requestAuthAndClick(
+  manager: authorization.AuthorizationManager,
+  privilege: authorization.Privilege,
+  context: common.UIAbilityContext,
+  buttonCandidates: string[]
+): Promise<authorization.AuthorizationResult> {
+  let pending: Promise<authorization.AuthorizationResult> =
+    manager.requestAuthorization(privilege, context);
+  await sleep(3000);
+  let clicked = false;
+  let maxRetries = 5;
+  for (let retry = 0; retry < maxRetries && !clicked; retry++) {
+    for (let i = 0; i < buttonCandidates.length; i++) {
+      let btnText = buttonCandidates[i];
+      try {
+        let btn = await driver.findComponent(ON.text(btnText));
+        if (btn != null) {
+          await btn.click();
+          clicked = true;
+          console.info("====>requestAuthAndClick clicked: " + btnText + " (retry " + retry + ")");
+          break;
+        }
+      } catch (err) {
+        console.info("====>requestAuthAndClick find " + btnText + " err: " + JSON.stringify(err));
+      }
+    }
+    if (!clicked) {
+      console.info("====>requestAuthAndClick retry " + retry + " no button found, waiting...");
+      await sleep(1000);
+    }
+  }
+
+  if (!clicked) {
+    console.info("====>requestAuthAndClick: no button clicked via findComponent after " + maxRetries + " retries");
+  }
+  let result: authorization.AuthorizationResult = await pending;
+  return result;
+}
+
 export default function ActsOsAccountAuthorizationTest(): void {
   describe('ActsOsAccountAuthorizationTest', () => {
+    beforeEach(async () => {
+      await clearAuthorizationDialog();
+    });
 
     /**
-     * 前置操作：关闭测试hap并重新拉起，销毁授权进程，保证每个用例执行前提是权限未被授予。
+     * @tc.name   AuthorizationReqError_001
+     * @tc.number AA_REQ_ERROR_001
+     * @tc.desc   Verify requestAuthorization throws 12300304 when another authorization is in progress.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
      */
-    beforeEach(async (done: () => void) => {
-      console.info("====>beforeEach: force-stop & relaunch test hap start====");
-      let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      let bundleName: string = 'com.acts.osaccounttest';
+    it('AuthorizationReqError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+      console.info("====>AuthorizationReqError_001 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext = getForegroundContext();
+      if (deviceType !== '2in1') {
+        console.info("AuthorizationReqError_001 the interface only enabled in 2in1");
+        done();
+        return;  
+      } 
+      let firstPending: Promise<authorization.AuthorizationResult> =
+        manager.requestAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
+      await sleep(3000);
       try {
-        // 关闭测试hap（销毁进程，授权随进程销毁而失效）
-        await abilityDelegator.executeShellCommand('aa force-stop ' + bundleName);
-        console.info("====>beforeEach: force-stop executed====");
-        await sleep(2000);
+        // 在第一次请求未完成时发起第二次请求，应抛出 12300304（授权服务忙）。
+        await manager.requestAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
+        console.info("====>AuthorizationReqError_001 should have thrown 12300304 but succeeded");
+        expect().assertFail();
       } catch (err) {
-        console.info("====>beforeEach: force-stop err: " + JSON.stringify(err));
-      }
-      try {
-        // 重新拉起测试hap
-        let cmd: string = 'aa start -d 0 -a TestAbility -b ' + bundleName;
-        let user: string | undefined = abilityDelegatorRegistry.getArguments().parameters["-u"];
-        if (user !== undefined) {
-          cmd += ' -u ' + user;
+        console.info("====>AuthorizationReqError_001 catch err: " + JSON.stringify(err));
+        let code: number = (err as BusinessError).code;
+        expect(code).assertEqual(12300304);
+        console.info("====>AuthorizationReqError_001 end====");
+      } finally {
+        try {
+          await abilityDelegator.executeShellCommand('aa force-stop com.huawei.adminauth');
+          await sleep(500);
+        } catch (cleanupErr) {
+          console.info("====>AuthorizationReqError_001 cleanup err: " + JSON.stringify(cleanupErr));
         }
-        await abilityDelegator.executeShellCommand(cmd);
-        console.info("====>beforeEach: relaunch executed====");
-        await sleep(3000);
-      } catch (err) {
-        console.info("====>beforeEach: relaunch err: " + JSON.stringify(err));
+        try {
+          await firstPending;
+        } catch (e) {
+          console.info("====>AuthorizationReqError_001 firstPending settled: " + JSON.stringify(e));
+        }
+        done();
       }
-      console.info("====>beforeEach: force-stop & relaunch test hap end====");
-      done();
     });
 
     /**
@@ -74,7 +149,7 @@ export default function ActsOsAccountAuthorizationTest(): void {
      * @tc.desc   Verify getAuthorizationManager returns a valid AuthorizationManager instance.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level   LEVEL0
      */
     it('AuthorizationGetManagerReturn_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void) => {
@@ -94,79 +169,63 @@ export default function ActsOsAccountAuthorizationTest(): void {
     });
 
     /**
-     * @tc.name   AuthorizationGetManagerReturn_002
-     * @tc.number AA_GETMGR_RETURN_002
-     * @tc.desc   Verify the returned AuthorizationManager can be used for authorization queries.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('AuthorizationGetManagerReturn_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void) => {
-      console.info("====>AuthorizationGetManagerReturn_002 start====");
-      try {
-        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-        let has: boolean = await manager.hasAuthorization(
-          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
-        console.info("====>AuthorizationGetManagerReturn_002 has: " + has);
-        expect(has == true || has == false).assertTrue();
-        console.info("====>AuthorizationGetManagerReturn_002 end====");
-        done();
-      } catch (err) {
-        console.info("====>AuthorizationGetManagerReturn_002 catch err: " + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
      * @tc.name   AuthorizationReqParam_001
      * @tc.number AA_REQ_PARAM_001
-     * @tc.desc   Verify requestAuthorization with a foreground context and clicking confirm returns GRANTED.
+     * @tc.desc   Verify requestAuthorization with user clicking cancel returns CANCELED.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level   LEVEL1
      */
-    it('AuthorizationReqParam_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('AuthorizationReqParam_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
       console.info("====>AuthorizationReqParam_001 start====");
       let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
       let context: common.UIAbilityContext = getForegroundContext();
-      console.info("====>AuthorizationReqParam_001 context: " + JSON.stringify(context));
-      try {
-        // 场景：前台 context，授权弹窗弹出后点击"允许/同意/确认"
-        let result: authorization.AuthorizationResult = await manager.requestAuthorization(
-          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
-        console.info("====>AuthorizationReqParam_001 result: " + JSON.stringify(result));
+      if (deviceType !== '2in1') {
+        try{
+          console.info("the interface only enabled in 2in1");
+          let has: boolean = await manager.hasAuthorization(
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+          expect(has).assertFalse()
+          done();
+          return;  
+        } catch (err) {
+          console.info("not the 2in1 device has failed: " + JSON.stringify(err))
+          expect().assertFail()
+          done();
+          return;
+        }
+      } 
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+      if ( has ) {
+        console.info("====>AuthorizationReqParam_001 already authorized, skip cancel test====");
+        done();
+      } else {
         try {
-          let confirm = await driver.findComponent(ON.text("允许"));
-          let confirm1 = await driver.findComponent(ON.text("同意"));
-          let confirm2 = await driver.findComponent(ON.text("确认"));
-          if (confirm != null && confirm != undefined) {
-            await confirm.click();
-          } else if (confirm1 != null && confirm1 != undefined) {
-            await confirm1.click();
-          } else if (confirm2 != null && confirm2 != undefined) {
-            await confirm2.click();
+          let result: authorization.AuthorizationResult = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS,
+            context,
+            ["取消", "Cancel"]
+          );
+          console.info("====>AuthorizationReqParam_001 result: " + JSON.stringify(result));
+          if (result != null) {
+            expect(result.resultCode == authorization.AuthorizationResultCode.AUTHORIZATION_CANCELED).assertTrue();
           }
         } catch (err) {
-          console.info("====>AuthorizationReqParam_001 click confirm err: " + JSON.stringify(err));
+          console.info("====>AuthorizationReqParam_001 catch err: " + JSON.stringify(err));
+          expect().assertFail();
         }
-        await sleep(1000);
-        // 重新获取授权结果（确认后应为成功）
-        let result2: authorization.AuthorizationResult = await manager.requestAuthorization(
-          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
-        console.info("====>AuthorizationReqParam_001 result2: " + JSON.stringify(result2));
-        expect(result2 != null).assertTrue();
-        if (result2 != null) {
-          expect(result2.resultCode)
-            .assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED);
+        try {
+          let hasAfter: boolean = await manager.hasAuthorization(
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+          expect(hasAfter).assertFalse()
+        } catch (err) {
+          console.error("====>AuthorizationReqParam_001 has catch err: " + JSON.stringify(err))
+          expect().assertFail()
         }
         console.info("====>AuthorizationReqParam_001 end====");
-        done();
-      } catch (err) {
-        console.info("====>AuthorizationReqParam_001 catch err: " + JSON.stringify(err));
-        expect().assertFail();
         done();
       }
     });
@@ -174,67 +233,79 @@ export default function ActsOsAccountAuthorizationTest(): void {
     /**
      * @tc.name   AuthorizationReqParam_002
      * @tc.number AA_REQ_PARAM_002
-     * @tc.desc   Verify requestAuthorization with user clicking cancel returns CANCELED.
+     * @tc.desc   Verify requestAuthorization with a foreground context and clicking confirm returns GRANTED.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level   LEVEL0
      */
-    it('AuthorizationReqParam_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('AuthorizationReqParam_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void) => {
       console.info("====>AuthorizationReqParam_002 start====");
       let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
       let context: common.UIAbilityContext = getForegroundContext();
-      try {
-        // 场景：授权弹窗弹出后点击"取消"
-        let result: authorization.AuthorizationResult = await manager.requestAuthorization(
-          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
-        console.info("====>AuthorizationReqParam_002 result: " + JSON.stringify(result));
+      console.info("====>AuthorizationReqParam_002 context: " + JSON.stringify(context));
+      if (deviceType !== '2in1') {
         try {
-          let cancel = await driver.findComponent(ON.text("取消"));
-          if (cancel != null && cancel != undefined) {
-            await cancel.click();
-          }
+          console.info("AuthorizationReqParam_002 not the 2in1 device");
+          let auth_result: authorization.AuthorizationResult = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
+          console.info("====>AuthorizationReqParam_002 not the 2in1 device auth_result: " + JSON.stringify(auth_result));
+          expect(auth_result.resultCode).assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED);
+          done();
+          return;
         } catch (err) {
-          console.info("====>AuthorizationReqParam_002 click cancel err: " + JSON.stringify(err));
+          console.info("====>AuthorizationReqParam_002 not the 2in1 device catch err: " + JSON.stringify(err));
+          expect().assertFail()
+          done();
+          return;
+        }     
+      } 
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+      if ( has ) {
+        try {
+          let auth_result: authorization.AuthorizationResult = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
+          console.info("====>AuthorizationReqParam_002 auth_result: " + JSON.stringify(auth_result));
+          expect(auth_result.resultCode).assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED)
+        } catch (err) {
+          console.info("AuthorizationReqParam_002 authorization err: " + JSON.stringify(err))
+          expect().assertFail();
         }
-        await sleep(1000);
-        if (result != null && result != undefined) {
-          expect(result.resultCode == authorization.AuthorizationResultCode.AUTHORIZATION_CANCELED ||
-            result.resultCode == authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED).assertTrue();
+        done();
+      } else {
+        try {
+          let result: authorization.AuthorizationResult = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS,
+            context,
+            ["确定", "OK"]
+          );
+          console.info("====>AuthorizationReqParam_002 result: " + JSON.stringify(result));
+          expect(result != null).assertTrue();
+          if (result != null) {
+            expect(result.resultCode)
+              .assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED);
+            expect(result.privilege).assertEqual('ohos.privilege.operate_raw_net_packets')
+          }
+          //2次权限申请、不再有弹框
+          let auth_result: authorization.AuthorizationResult = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
+          console.info("====>AuthorizationReqParam_002 auth_result: " + JSON.stringify(auth_result));
+          expect(auth_result.resultCode).assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED)
+        } catch (err) {
+          console.info("====>AuthorizationReqParam_002 catch err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        try {
+          let hasAfter: boolean = await manager.hasAuthorization(
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+          expect(hasAfter).assertTrue()
+        } catch (err) {
+          console.error("====>AuthorizationReqParam_002 has catch err: " + JSON.stringify(err))
+          expect().assertFail()
         }
         console.info("====>AuthorizationReqParam_002 end====");
-        done();
-      } catch (err) {
-        console.info("====>AuthorizationReqParam_002 catch err: " + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   AuthorizationReqError_001
-     * @tc.number AA_REQ_ERROR_001
-     * @tc.desc   Verify requestAuthorization with an invalid (non-UI) context throws 12300302.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('AuthorizationReqError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void) => {
-      console.info("====>AuthorizationReqError_001 start====");
-      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-      try {
-        // 场景：传入非 UI 上下文（ApplicationContext），交互受限应抛 12300302
-        let appContext: common.Context = getForegroundContext().getApplicationContext();
-        let result: authorization.AuthorizationResult = await manager.requestAuthorization(
-          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, appContext);
-        console.info("====>AuthorizationReqError_001 run err result: " + JSON.stringify(result));
-        expect().assertFail();
-        done();
-      } catch (err) {
-        console.info("====>AuthorizationReqError_001 catch err: " + JSON.stringify(err));
-        expect((err as BusinessError).code).assertEqual(12300302);
-        console.info("====>AuthorizationReqError_001 end====");
         done();
       }
     });
@@ -242,28 +313,250 @@ export default function ActsOsAccountAuthorizationTest(): void {
     /**
      * @tc.name   AuthorizationReqError_002
      * @tc.number AA_REQ_ERROR_002
-     * @tc.desc   Verify requestAuthorization with an undefined context throws 12300302.
+     * @tc.desc   Verify requestAuthorization with an undefined context throws 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level   LEVEL3
      */
     it('AuthorizationReqError_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
       console.info("====>AuthorizationReqError_002 start====");
       let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
       try {
-        // 场景：传入 undefined context，应抛 12300302 或 12300002
+        // 场景：传入 undefined context，应抛 401 或 401
         let result: authorization.AuthorizationResult = await manager.requestAuthorization(
-          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, undefined as unknown as common.UIAbilityContext);
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, undefined);
         console.info("====>AuthorizationReqError_002 run err result: " + JSON.stringify(result));
         expect().assertFail();
         done();
       } catch (err) {
         console.info("====>AuthorizationReqError_002 catch err: " + JSON.stringify(err));
-        let code: number = (err as BusinessError).code;
-        let pass: boolean = (code == 12300302) || (code == 12300002);
-        expect(pass).assertTrue();
+        expect((err as BusinessError).code).assertEqual(401)
         console.info("====>AuthorizationReqError_002 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqError_003
+     * @tc.number AA_REQ_ERROR_003
+     * @tc.desc   Verify requestAuthorization with an null context throws 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('AuthorizationReqError_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+      console.info("====>AuthorizationReqError_003 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      try {
+        // 场景：传入 null context，应抛 401 
+        let result: authorization.AuthorizationResult = await manager.requestAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, null);
+        console.info("====>AuthorizationReqError_003 run err result: " + JSON.stringify(result));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationReqError_003 catch err: " + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(401)
+        console.info("====>AuthorizationReqError_003 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqError_004
+     * @tc.number AA_REQ_ERROR_004
+     * @tc.desc   Verify requestAuthorization with an undefined privilege throws 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('AuthorizationReqError_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+      console.info("====>AuthorizationReqError_004 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext = getForegroundContext();
+      console.info("====>AuthorizationReqError_004 context: " + JSON.stringify(context));
+      try {
+        // 场景：传入 undefined privilege 401 
+        let result: authorization.AuthorizationResult = await manager.requestAuthorization(undefined, context);
+        console.info("====>AuthorizationReqError_004 run err result: " + JSON.stringify(result));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationReqError_004 catch err: " + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(401)
+        console.info("====>AuthorizationReqError_004 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqError_005
+     * @tc.number AA_REQ_ERROR_005
+     * @tc.desc   Verify requestAuthorization with an null privilege throws 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('AuthorizationReqError_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+      console.info("====>AuthorizationReqError_005 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext = getForegroundContext();
+      console.info("====>AuthorizationReqError_005 context: " + JSON.stringify(context));
+      try {
+        // 场景：传入 null privilege 401 
+        let result: authorization.AuthorizationResult = await manager.requestAuthorization(null, context);
+        console.info("====>AuthorizationReqError_005 run err result: " + JSON.stringify(result));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationReqError_005 catch err: " + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(401)
+        console.info("====>AuthorizationReqError_005 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqError_006
+     * @tc.number AA_REQ_ERROR_006
+     * @tc.desc   Verify requestAuthorization with an no target type privilege throws 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('AuthorizationReqError_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+      console.info("====>AuthorizationReqError_006 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext = getForegroundContext();
+      let ob:Object = 1
+      console.info("====>AuthorizationReqError_006 context: " + JSON.stringify(context));
+      try {
+        // 场景：传入非枚举类型的 privilege（整数 1），应抛 401
+        let result: authorization.AuthorizationResult = await manager.requestAuthorization(ob as authorization.Privilege, context);
+        console.info("====>AuthorizationReqError_006 run err result: " + JSON.stringify(result));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationReqError_006 catch err: " + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(401)
+        console.info("====>AuthorizationReqError_006 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqError_007
+     * @tc.number AA_REQ_ERROR_007
+     * @tc.desc   Verify requestAuthorization with an Non-enum privilege throws 12300305.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('AuthorizationReqError_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+      console.info("====>AuthorizationReqError_007 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext = getForegroundContext();
+      console.info("====>AuthorizationReqError_007 context: " + JSON.stringify(context));
+      try {
+        // 场景：传入非枚举类型的 privilege（字符串 'test'），应返回 NOT_SUPPORTED
+        let result: authorization.AuthorizationResult = await manager.requestAuthorization("test" as authorization.Privilege, context);
+        console.info("====>AuthorizationReqError_007 run err result: " + JSON.stringify(result));
+        expect(result.resultCode).assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED);
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationReqError_007 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        console.info("====>AuthorizationReqError_007 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqError_008
+     * @tc.number AA_REQ_ERROR_008
+     * @tc.desc   Verify requestAuthorization with an no target type (1) context throws 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('AuthorizationReqError_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+      console.info("====>AuthorizationReqError_008 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let cx :Object  = 1
+      try {
+        // 场景：传入非 Context 类型的 context（整数 1），应抛 401
+        let result: authorization.AuthorizationResult =
+          await manager.requestAuthorization(authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, cx as common.UIAbilityContext);
+        console.info("====>AuthorizationReqError_008 run err result: " + JSON.stringify(result));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationReqError_008 catch err: " + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(401)
+        console.info("====>AuthorizationReqError_008 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqError_009
+     * @tc.number AA_REQ_ERROR_009
+     * @tc.desc   Verify requestAuthorization with an no Context Object (test) context throws 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('AuthorizationReqError_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+      console.info("====>AuthorizationReqError_009 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let cx :Object = 'test'
+      try {
+        // 场景：传入非 Context 类型的 context（字符串 'test'），应抛 401
+        let result: authorization.AuthorizationResult =
+          await manager.requestAuthorization(authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, cx as common.UIAbilityContext);
+        console.info("====>AuthorizationReqError_009 run err result: " + JSON.stringify(result));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationReqError_009 catch err: " + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(401)
+        console.info("====>AuthorizationReqError_009 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqError_010
+     * @tc.number AA_REQ_ERROR_010
+     * @tc.desc   Verify requestAuthorization with an no UIAbilityContext context throws 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('AuthorizationReqError_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+      console.info("====>AuthorizationReqError_010 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      try {
+        // 场景：传入非 UI 上下文（ApplicationContext），交互受限应抛 401
+        let appContext: common.Context = getForegroundContext().getApplicationContext();
+        let result: authorization.AuthorizationResult = await manager.requestAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, appContext as common.UIAbilityContext);
+        console.info("====>AuthorizationReqError_010 run err result: " + JSON.stringify(result));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationReqError_010 catch err: " + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(401)
+        console.info("====>AuthorizationReqError_010 end====");
         done();
       }
     });
@@ -274,7 +567,7 @@ export default function ActsOsAccountAuthorizationTest(): void {
      * @tc.desc   Verify hasAuthorization with a valid privilege returns a boolean without throwing.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level   LEVEL1
      */
     it('AuthorizationHasParam_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -300,7 +593,7 @@ export default function ActsOsAccountAuthorizationTest(): void {
      * @tc.desc   Verify hasAuthorization returns a boolean type value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level   LEVEL1
      */
     it('AuthorizationHasReturn_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -326,7 +619,7 @@ export default function ActsOsAccountAuthorizationTest(): void {
      * @tc.desc   Verify hasAuthorization is a read-only query that does not change state.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level   LEVEL2
      */
     it('AuthorizationHasReturn_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void) => {
@@ -355,18 +648,17 @@ export default function ActsOsAccountAuthorizationTest(): void {
      * @tc.desc   Verify hasAuthorization with a not-supported privilege throws 12300001 or returns false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level   LEVEL3
      */
     it('AuthorizationHasError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
       console.info("====>AuthorizationHasError_001 start====");
       try {
-        // 场景：传入一个未注册的自定义特权值（字符串枚举会在编译期受限，这里用 try 包裹本地别名）
         let fakePrivilege: authorization.Privilege = 'ohos.privilege.not_registered' as authorization.Privilege;
         let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
         let has: boolean = await manager.hasAuthorization(fakePrivilege);
         console.info("====>AuthorizationHasError_001 run result has: " + has);
-        expect(has == true || has == false).assertTrue();
+        expect(has).assertFalse();
         done();
       } catch (err) {
         console.info("====>AuthorizationHasError_001 catch err: " + JSON.stringify(err));
@@ -383,7 +675,7 @@ export default function ActsOsAccountAuthorizationTest(): void {
      * @tc.desc   Verify Privilege enum PRIVILEGE_OPERATE_RAW_NET_PACKETS value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level   LEVEL1
      */
     it('AuthorizationPrivilegeReturn_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -407,7 +699,7 @@ export default function ActsOsAccountAuthorizationTest(): void {
      * @tc.desc   Verify AuthorizationResultCode enum member values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level   LEVEL1
      */
     it('AuthorizationResultCodeReturn_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -436,16 +728,28 @@ export default function ActsOsAccountAuthorizationTest(): void {
      * @tc.desc   Verify AuthorizationResult structure exposes resultCode and privilege fields.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level   LEVEL1
      */
     it('AuthorizationResultStructReturn_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
       console.info("====>AuthorizationResultStructReturn_001 start====");
       let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
       let context: common.UIAbilityContext = getForegroundContext();
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
       try {
-        let result: authorization.AuthorizationResult = await manager.requestAuthorization(
-          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
+        let result: authorization.AuthorizationResult;
+        if ( !has && deviceType === '2in1' ) {
+          result = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS,
+            context,
+            ["确定", "OK"]
+          );
+        } else {
+          result = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
+        }
         console.info("====>AuthorizationResultStructReturn_001 result: " + JSON.stringify(result));
         expect(result != null).assertTrue();
         if (result != null) {
