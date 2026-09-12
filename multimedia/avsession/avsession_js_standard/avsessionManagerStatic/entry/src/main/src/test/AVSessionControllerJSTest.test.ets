@@ -313,10 +313,9 @@ export default function abilityTest() {
                 let callback2: avSession.KeyRequestCallback = (assetId: string, requestData: Uint8Array) => {
                     console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 callback2");
                 };
-                controller!.getOutputDevice((err: BusinessError | null, deviceInfo: avSession.OutputDeviceInfo | undefined) = > {
-                    if (err) {
-                        console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 fail" + err + err.code);
-                        expect(err).not().assertNull();
+                controller!.getOutputDevice((error: BusinessError | null, deviceInfo: avSession.OutputDeviceInfo | undefined) => {
+                    if (error) {
+                        console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 fail" + error + error.code);
                         expect().assertFalse();
                         done();
                         return;
