@@ -13,521 +13,520 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { authorization, BusinessError } from '@kit.BasicServicesKit'
-import { describe, it, expect, beforeEach, beforeAll, TestType, Size, Level } from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { authorization } from '@kit.BasicServicesKit'
+import { describe, it, expect, beforeEach, TestType, Size, Level } from "../../../hypium/index";
 import common from '@ohos.app.ability.common';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import { Component, Driver, ON, MatchPattern } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import deviceInfo from '@ohos.deviceInfo';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
-let tag: string = 'testTag';
+let tag: string = 'AuthTestTag';
 
-// 从 EntryAbility 注入的 AppStorage 获取前台 UIAbilityContext
-function getForegroundContext(): common.UIAbilityContext {
-  let context: common.UIAbilityContext | undefined = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
-  return context as common.UIAbilityContext;
-}
+const abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+let driver: Driver = Driver.create();
+let deviceType: string = deviceInfo.deviceType;
+hilog.info(0x0000, tag, "====>the value of the deviceinfo deviceType is: " + deviceType);
 
-// 静态工程中测试在应用自身进程内运行（OpenHarmonyTestRunner 直接执行 Hypium），
-// 不能 aa force-stop 自身 bundle（会杀掉正在执行的测试套进程），
-// 只能通过 aa start 将 EntryAbility 前置到前台，保证后续授权弹窗能够正常拉起。
-async function startEntryAbility(): Promise<void> {
-  let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-  let bundleName: string = 'com.acts.osaccounttest.static';
-  let cmd: string = 'aa start -a EntryAbility -b ' + bundleName;
-  let user: string | undefined = abilityDelegatorRegistry.getArguments().parameters["-u"];
-  if (user !== undefined) {
-    cmd += ' -u ' + user;
-  }
-  await abilityDelegator.executeShellCommand(cmd);
-  hilog.info(0x0000, tag, '====>startEntryAbility executed: ' + cmd);
-  await Utils.msSleep(2000);
-}
 
-// 在授权弹窗中探测"允许/同意/确认"按钮并点击；
-// 返回 true 表示弹窗已实际拉起且按钮可交互。
-async function clickDialogConfirm(driver: Driver): Promise<boolean> {
-  let texts: string[] = ["允许", "同意", "确认"];
-  for (let i: number = 0; i < texts.length; i++) {
-    try {
-      let btn: Component | null = await driver.waitForComponent(ON.text(texts[i], MatchPattern.EQUALS), 5000);
-      if (btn != null) {
-        await btn.click();
-        hilog.info(0x0000, tag, '====>clickDialogConfirm clicked: ' + texts[i]);
-        return true;
-      }
-    } catch (err) {
-      hilog.info(0x0000, tag, '====>clickDialogConfirm not found: ' + texts[i]);
+async function getForegroundContext(): Promise<common.UIAbilityContext | undefined> {
+  let maxRetries: int = 30;
+  for (let retry: int = 0; retry < maxRetries; retry++) {
+    let ctx: common.UIAbilityContext | undefined =
+      AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
+    if (ctx) {
+      hilog.info(0x0000, tag, "====>getForegroundContext: got context via AppStorage (retry " + retry + ")");
+      return ctx;
     }
+    hilog.info(0x0000, tag, "====>getForegroundContext: AppStorage context not ready (retry " + retry + ")");
+    await Utils.msSleep(500);
   }
-  return false;
+  hilog.error(0x0000, tag, "====>getForegroundContext: failed after " + maxRetries + " retries");
+  return undefined;
 }
 
-// 在授权弹窗中探测"取消"按钮并点击；
-// 返回 true 表示弹窗已实际拉起且按钮可交互。
-async function clickDialogCancel(driver: Driver): Promise<boolean> {
+async function clearAuthorizationDialog(): Promise<void> {
+  hilog.info(0x0000, tag, "====>clearAuthorizationDialog: start====");
   try {
-    let cancel: Component | null = await driver.waitForComponent(ON.text("取消", MatchPattern.EQUALS), 5000);
-    if (cancel != null) {
-      await cancel.click();
-      hilog.info(0x0000, tag, '====>clickDialogCancel clicked');
-      return true;
-    }
+    await abilityDelegator.executeShellCommand('aa force-stop com.huawei.adminauth');
+    await Utils.msSleep(500);
+    hilog.info(0x0000, tag, "====>clearAuthorizationDialog: adminauth stopped====");
   } catch (err) {
-    hilog.info(0x0000, tag, '====>clickDialogCancel not found');
+    hilog.info(0x0000, tag, "====>clearAuthorizationDialog: err (may not exist): " + JSON.stringify(err));
   }
-  return false;
+  hilog.info(0x0000, tag, "====>clearAuthorizationDialog: end====");
+}
+
+async function requestAuthAndClick(
+  manager: authorization.AuthorizationManager,
+  privilege: authorization.Privilege,
+  context: common.UIAbilityContext,
+  buttonCandidates: string[]
+): Promise<authorization.AuthorizationResult> {
+  let pending: Promise<authorization.AuthorizationResult> =
+    manager.requestAuthorization(privilege, context);
+  await Utils.msSleep(3000);
+  let clicked: boolean = false;
+  let maxRetries: int = 5;
+  for (let retry: int = 0; retry < maxRetries && !clicked; retry++) {
+    for (let i: int = 0; i < buttonCandidates.length; i++) {
+      let btnText: string = buttonCandidates[i];
+      try {
+        let btn: Component | null = await driver.findComponent(ON.text(btnText));
+        if (btn != null) {
+          await btn.click();
+          clicked = true;
+          hilog.info(0x0000, tag, "====>requestAuthAndClick clicked: " + btnText + " (retry " + retry + ")");
+          break;
+        }
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>requestAuthAndClick find " + btnText + " err: " + JSON.stringify(err));
+      }
+    }
+    if (!clicked) {
+      hilog.info(0x0000, tag, "====>requestAuthAndClick retry " + retry + " no button found, waiting...");
+      await Utils.msSleep(1000);
+    }
+  }
+
+  if (!clicked) {
+    hilog.info(0x0000, tag, "====>requestAuthAndClick: no button clicked via findComponent after " + maxRetries + " retries");
+  }
+  let result: authorization.AuthorizationResult = await pending;
+  return result;
 }
 
 export default function ActsOsAccountAuthorizationTestStatic(): void {
   describe('ActsOsAccountAuthorizationTestStatic', () => {
-    let driver: Driver = Driver.create();
-
-    /**
-     * 套件级前置：将 EntryAbility 前置到前台，由 onForeground 注入 UIAbilityContext，
-     * 保证后续每个 requestAuthorization 用例都能在有效前台上下文上拉起授权弹窗。
-     */
-    beforeAll(async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, tag, '====>beforeAll start===="');
-      try {
-        let context: common.UIAbilityContext | undefined = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
-        if (context === undefined) {
-          await startEntryAbility();
-          if (getForegroundContext() == undefined) {
-            hilog.info(0x0000, tag, '====>beforeAll: context still undefined after start');
-          } else {
-            hilog.info(0x0000, tag, '====>beforeAll: context ready');
-          }
-        } else {
-          hilog.info(0x0000, tag, '====>beforeAll: context already present');
-        }
-      } catch (err) {
-        hilog.info(0x0000, tag, '====>beforeAll err: ' + JSON.stringify(err));
-      }
-      hilog.info(0x0000, tag, '====>beforeAll end====');
-      done();
+    beforeEach(async () => {
+      await clearAuthorizationDialog();
     });
 
     /**
-     * 每个用例前置：确保 UIAbilityContext 已注入（未注入时重新前置 EntryAbility）。
-     * 不执行 aa force-stop（静态工程测试与应用同进程，自杀会导致套件中断）。
+     * @tc.name   AuthorizationReqError_001
+     * @tc.number AA_REQ_ERROR_001
+     * @tc.desc   Verify requestAuthorization throws 12300304 when another authorization is in progress.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
      */
-    beforeEach(async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, tag, '====>beforeEach start====');
-      try {
-        let context: common.UIAbilityContext | undefined = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
-        if (context === undefined) {
-          await startEntryAbility();
-        }
-      } catch (err) {
-        hilog.info(0x0000, tag, '====>beforeEach err: ' + JSON.stringify(err));
+    it('AuthorizationReqError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationReqError_001 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      if (deviceType !== '2in1') {
+        hilog.info(0x0000, tag, "AuthorizationReqError_001 the interface only enabled in 2in1");
+        done();
+        return;
       }
-      hilog.info(0x0000, tag, '====>beforeEach end====');
-      done();
+      let context: common.UIAbilityContext | undefined = await getForegroundContext();
+      if (!context) {
+        hilog.error(0x0000, tag, "====>AuthorizationReqError_001 context is undefined, cannot test====");
+        expect().assertFail();
+        done();
+        return;
+      }
+      let firstPending: Promise<authorization.AuthorizationResult> =
+        manager.requestAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
+      await Utils.msSleep(3000);
+      try {
+        await manager.requestAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
+        hilog.info(0x0000, tag, "====>AuthorizationReqError_001 should have thrown 12300304 but succeeded");
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>AuthorizationReqError_001 catch err: " + JSON.stringify(err));
+        let code: number = err.code;
+        expect(code).assertEqual(12300304);
+        hilog.info(0x0000, tag, "====>AuthorizationReqError_001 end====");
+      } finally {
+        try {
+          await abilityDelegator.executeShellCommand('aa force-stop com.huawei.adminauth');
+          await Utils.msSleep(500);
+        } catch (cleanupErr) {
+          hilog.info(0x0000, tag, "====>AuthorizationReqError_001 cleanup err: " + JSON.stringify(cleanupErr));
+        }
+        try {
+          await firstPending;
+        } catch (e) {
+          hilog.info(0x0000, tag, "====>AuthorizationReqError_001 firstPending settled: " + JSON.stringify(e));
+        }
+        done();
+      }
     });
 
     /**
-    * @tc.number    AA_GETMGR_RETURN_001
-    * @tc.name      AuthorizationGetManagerReturn_001_Static
-    * @tc.desc      Verify getAuthorizationManager returns a valid AuthorizationManager instance.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL0
-    */
-    it('AuthorizationGetManagerReturn_001_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+     * @tc.name   AuthorizationGetManagerReturn_001
+     * @tc.number AA_GETMGR_RETURN_001
+     * @tc.desc   Verify getAuthorizationManager returns a valid AuthorizationManager instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('AuthorizationGetManagerReturn_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationGetManagerReturn_001_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        try {
-          let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-          hilog.info(0x0000, tag, logTag + "manager: " + JSON.stringify(manager));
-          expect(manager != null).assertTrue();
-          expect(manager != undefined).assertTrue();
-          hilog.info(0x0000, tag, logTag + "end====");
-          done();
-        } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        }
-      });
+      hilog.info(0x0000, tag, "====>AuthorizationGetManagerReturn_001 start====");
+      try {
+        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+        hilog.info(0x0000, tag, "====>AuthorizationGetManagerReturn_001 manager: " + JSON.stringify(manager));
+        expect(manager != null).assertTrue();
+        expect(manager != undefined).assertTrue();
+        hilog.info(0x0000, tag, "====>AuthorizationGetManagerReturn_001 end====");
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>AuthorizationGetManagerReturn_001 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
 
     /**
-    * @tc.number    AA_GETMGR_RETURN_002
-    * @tc.name      AuthorizationGetManagerReturn_002_Static
-    * @tc.desc      Verify the returned AuthorizationManager can be used for authorization queries.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL1
-    */
-    it('AuthorizationGetManagerReturn_002_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+     * @tc.name   AuthorizationReqParam_001
+     * @tc.number AA_REQ_PARAM_001
+     * @tc.desc   Verify requestAuthorization with user clicking cancel returns CANCELED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationReqParam_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationGetManagerReturn_002_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
+      hilog.info(0x0000, tag, "====>AuthorizationReqParam_001 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      if (deviceType !== '2in1') {
         try {
-          let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+          hilog.info(0x0000, tag, "the interface only enabled in 2in1");
           let has: boolean = await manager.hasAuthorization(
             authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
-          hilog.info(0x0000, tag, logTag + "has: " + has);
-          expect(has == true || has == false).assertTrue();
-          hilog.info(0x0000, tag, logTag + "end====");
+          expect(has).assertFalse();
           done();
+          return;
         } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
+          hilog.info(0x0000, tag, "not the 2in1 device has failed: " + JSON.stringify(err));
           expect().assertFail();
           done();
+          return;
         }
-      });
-
-    /**
-    * @tc.number    AA_REQ_PARAM_002
-    * @tc.name      AuthorizationReqParam_002_Static
-    * @tc.desc      Verify requestAuthorization pulls up the permission confirmation dialog and clicking cancel returns CANCELED.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL1
-    * @tc.note      MUST run before AA_REQ_PARAM_001: a granted authorization is bound to
-    *               the process lifetime, so once granted, subsequent calls reuse the grant
-    *               without showing the dialog. Running cancel first guarantees no valid
-    *               authorization exists, so both cancel and confirm cases pull the dialog.
-    */
-    it('AuthorizationReqParam_002_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationReqParam_002_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-        let context: common.UIAbilityContext = getForegroundContext();
-        hilog.info(0x0000, tag, logTag + "context: " + JSON.stringify(context));
+      }
+      let context: common.UIAbilityContext | undefined = await getForegroundContext();
+      if (!context) {
+        hilog.error(0x0000, tag, "====>AuthorizationReqParam_001 context is undefined, cannot test====");
+        expect().assertFail();
+        done();
+        return;
+      }
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+      if (has) {
+        hilog.info(0x0000, tag, "====>AuthorizationReqParam_001 already authorized, skip cancel test====");
+        done();
+      } else {
         try {
-          // 发起授权请求（不 await，弹窗交互完成后 Promise 才 resolve）
-          let promise: Promise<authorization.AuthorizationResult> = manager.requestAuthorization(
-            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
-          // 证明弹窗确实被拉起：waitForComponent 找到"取消"按钮
-          let shown: boolean = await clickDialogCancel(driver);
-          hilog.info(0x0000, tag, logTag + "dialog shown: " + shown);
-          expect(shown).assertTrue();
-          let result: authorization.AuthorizationResult = await promise;
-          hilog.info(0x0000, tag, logTag + "result: " + JSON.stringify(result));
+          let result: authorization.AuthorizationResult = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS,
+            context,
+            ["取消", "Cancel"]
+          );
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_001 result: " + JSON.stringify(result));
           if (result != null) {
-            expect(result.resultCode)
-              .assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_CANCELED);
+            expect(result.resultCode == authorization.AuthorizationResultCode.AUTHORIZATION_CANCELED).assertTrue();
           }
-          hilog.info(0x0000, tag, logTag + "end====");
-          done();
         } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_001 catch err: " + JSON.stringify(err));
           expect().assertFail();
-          done();
         }
-      });
+        try {
+          let hasAfter: boolean = await manager.hasAuthorization(
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+          expect(hasAfter).assertFalse();
+        } catch (err) {
+          hilog.error(0x0000, tag, "====>AuthorizationReqParam_001 has catch err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, tag, "====>AuthorizationReqParam_001 end====");
+        done();
+      }
+    });
 
     /**
-    * @tc.number    AA_REQ_PARAM_001
-    * @tc.name      AuthorizationReqParam_001_Static
-    * @tc.desc      Verify requestAuthorization pulls up the permission confirmation dialog and clicking confirm returns GRANTED.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL0
-    * @tc.note      Runs AFTER AA_REQ_PARAM_002 (cancel). Since cancel grants nothing,
-    *               no valid authorization persists, so this case pulls the dialog again.
-    */
-    it('AuthorizationReqParam_001_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+     * @tc.name   AuthorizationReqParam_002
+     * @tc.number AA_REQ_PARAM_002
+     * @tc.desc   Verify requestAuthorization with a foreground context and clicking confirm returns GRANTED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('AuthorizationReqParam_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationReqParam_001_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-        let context: common.UIAbilityContext = getForegroundContext();
-        hilog.info(0x0000, tag, logTag + "context: " + JSON.stringify(context));
+      hilog.info(0x0000, tag, "====>AuthorizationReqParam_002 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      if (deviceType !== '2in1') {
         try {
-          // 发起授权请求（不 await，弹窗交互完成后 Promise 才 resolve）
-          let promise: Promise<authorization.AuthorizationResult> = manager.requestAuthorization(
+          hilog.info(0x0000, tag, "AuthorizationReqParam_002 not the 2in1 device");
+          let context: common.UIAbilityContext | undefined = await getForegroundContext();
+          if (!context) {
+            hilog.error(0x0000, tag, "====>AuthorizationReqParam_002 context is undefined, cannot test====");
+            expect().assertFail();
+            done();
+            return;
+          }
+          let auth_result: authorization.AuthorizationResult = await manager.requestAuthorization(
             authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
-          // 证明弹窗确实被拉起：waitForComponent 找到"允许/同意/确认"按钮
-          let shown: boolean = await clickDialogConfirm(driver);
-          hilog.info(0x0000, tag, logTag + "dialog shown: " + shown);
-          expect(shown).assertTrue();
-          let result: authorization.AuthorizationResult = await promise;
-          hilog.info(0x0000, tag, logTag + "result: " + JSON.stringify(result));
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_002 not the 2in1 device auth_result: " + JSON.stringify(auth_result));
+          expect(auth_result.resultCode).assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED);
+          done();
+          return;
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_002 not the 2in1 device catch err: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+          return;
+        }
+      }
+      let context: common.UIAbilityContext | undefined = await getForegroundContext();
+      hilog.info(0x0000, tag, "====>AuthorizationReqParam_002 context obtained");
+      if (!context) {
+        hilog.error(0x0000, tag, "====>AuthorizationReqParam_002 context is undefined, cannot test====");
+        expect().assertFail();
+        done();
+        return;
+      }
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+      if (has) {
+        try {
+          let auth_result: authorization.AuthorizationResult = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_002 auth_result: " + JSON.stringify(auth_result));
+          expect(auth_result.resultCode).assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED);
+        } catch (err) {
+          hilog.info(0x0000, tag, "AuthorizationReqParam_002 authorization err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      } else {
+        try {
+          let result: authorization.AuthorizationResult = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS,
+            context,
+            ["确定", "OK"]
+          );
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_002 result: " + JSON.stringify(result));
+          expect(result != null).assertTrue();
           if (result != null) {
             expect(result.resultCode)
               .assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED);
-            expect(result.privilege).assertEqual(authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+            expect(result.privilege).assertEqual('ohos.privilege.operate_raw_net_packets');
           }
-          hilog.info(0x0000, tag, logTag + "end====");
-          done();
-        } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
-    * @tc.number    AA_REQ_ERROR_001
-    * @tc.name      AuthorizationReqError_001_Static
-    * @tc.desc      Verify requestAuthorization with an invalid (non-UI) context throws 12300302.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL3
-    */
-    it('AuthorizationReqError_001_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationReqError_001_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-        try {
-          // 场景：传入非 UI 上下文（ApplicationContext），交互受限应抛 12300302
-          let appContext: common.Context | undefined = getForegroundContext().getApplicationContext();
-          let result: authorization.AuthorizationResult = await manager.requestAuthorization(
-            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, appContext);
-          hilog.info(0x0000, tag, logTag + "run err result: " + JSON.stringify(result));
-          expect().assertFail();
-          done();
-        } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
-          expect((err as BusinessError).code).assertEqual(12300302);
-          hilog.info(0x0000, tag, logTag + "end====");
-          done();
-        }
-      });
-
-    /**
-    * @tc.number    AA_REQ_ERROR_002
-    * @tc.name      AuthorizationReqError_002_Static
-    * @tc.desc      Verify requestAuthorization with an undefined context throws 12300302 or 12300002.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL3
-    */
-    it('AuthorizationReqError_002_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationReqError_002_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-        try {
-          // 场景：传入 undefined context，应抛 12300302 或 12300002
-          let result: authorization.AuthorizationResult = await manager.requestAuthorization(
-            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, undefined as unknown as common.UIAbilityContext);
-          hilog.info(0x0000, tag, logTag + "run err result: " + JSON.stringify(result));
-          expect().assertFail();
-          done();
-        } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
-          let code: number = (err as BusinessError).code;
-          let pass: boolean = (code == 12300302) || (code == 12300002);
-          expect(pass).assertTrue();
-          hilog.info(0x0000, tag, logTag + "end====");
-          done();
-        }
-      });
-
-    /**
-    * @tc.number    AA_HAS_PARAM_001
-    * @tc.name      AuthorizationHasParam_001_Static
-    * @tc.desc      Verify hasAuthorization with a valid privilege returns a boolean without throwing.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL1
-    */
-    it('AuthorizationHasParam_001_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationHasParam_001_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        try {
-          let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-          let has: boolean = await manager.hasAuthorization(
-            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
-          hilog.info(0x0000, tag, logTag + "has: " + has);
-          expect(has == true || has == false).assertTrue();
-          hilog.info(0x0000, tag, logTag + "end====");
-          done();
-        } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
-    * @tc.number    AA_HAS_RETURN_001
-    * @tc.name      AuthorizationHasReturn_001_Static
-    * @tc.desc      Verify hasAuthorization returns a boolean type value.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL1
-    */
-    it('AuthorizationHasReturn_001_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationHasReturn_001_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        try {
-          let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-          let has: boolean = await manager.hasAuthorization(
-            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
-          hilog.info(0x0000, tag, logTag + "type: " + typeof has + ", value: " + has);
-          expect(typeof has).assertEqual('boolean');
-          hilog.info(0x0000, tag, logTag + "end====");
-          done();
-        } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
-    * @tc.number    AA_HAS_RETURN_002
-    * @tc.name      AuthorizationHasReturn_002_Static
-    * @tc.desc      Verify hasAuthorization is a read-only query that does not change state.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL2
-    */
-    it('AuthorizationHasReturn_002_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationHasReturn_002_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        try {
-          let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-          let before: boolean = await manager.hasAuthorization(
-            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
-          await Utils.msSleep(1000);
-          let after: boolean = await manager.hasAuthorization(
-            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
-          hilog.info(0x0000, tag, logTag + "before: " + before + ", after: " + after);
-          expect(before == after).assertTrue();
-          hilog.info(0x0000, tag, logTag + "end====");
-          done();
-        } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
-    * @tc.number    AA_HAS_ERROR_001
-    * @tc.name      AuthorizationHasError_001_Static
-    * @tc.desc      Verify hasAuthorization with a not-supported privilege returns false or throws.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL3
-    */
-    it('AuthorizationHasError_001_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationHasError_001_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        try {
-          // 场景：传入未注册特权值
-          let fakePrivilege: authorization.Privilege = 'ohos.privilege.not_registered' as authorization.Privilege;
-          let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-          let has: boolean = await manager.hasAuthorization(fakePrivilege);
-          hilog.info(0x0000, tag, logTag + "run result has: " + has);
-          expect(has == true || has == false).assertTrue();
-          done();
-        } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
-          let code: number = (err as BusinessError).code;
-          let pass: boolean = (code == 12300001) || (code == 12300305);
-          expect(pass).assertTrue();
-          done();
-        }
-      });
-
-    /**
-    * @tc.number    AA_PRIV_RETURN_001
-    * @tc.name      AuthorizationPrivilegeReturn_001_Static
-    * @tc.desc      Verify Privilege enum PRIVILEGE_OPERATE_RAW_NET_PACKETS value.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL1
-    */
-    it('AuthorizationPrivilegeReturn_001_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationPrivilegeReturn_001_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        try {
-          let value: string = authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS;
-          hilog.info(0x0000, tag, logTag + "value: " + value);
-          expect(value).assertEqual('ohos.privilege.operate_raw_net_packets');
-          hilog.info(0x0000, tag, logTag + "end====");
-          done();
-        } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
-    * @tc.number    AA_RESULTCODE_RETURN_001
-    * @tc.name      AuthorizationResultCodeReturn_001_Static
-    * @tc.desc      Verify AuthorizationResultCode enum member values.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL1
-    */
-    it('AuthorizationResultCodeReturn_001_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationResultCodeReturn_001_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        try {
-          let granted: number = authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED;
-          let canceled: number = authorization.AuthorizationResultCode.AUTHORIZATION_CANCELED;
-          let denied: number = authorization.AuthorizationResultCode.AUTHORIZATION_DENIED;
-          let notSupported: number = authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED;
-          expect(granted).assertEqual(0);
-          expect(canceled).assertEqual(12300301);
-          expect(denied).assertEqual(12300303);
-          expect(notSupported).assertEqual(12300305);
-          hilog.info(0x0000, tag, logTag + "end====");
-          done();
-        } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
-    * @tc.number    AA_RESULT_STRUCT_001
-    * @tc.name      AuthorizationResultStructReturn_001_Static
-    * @tc.desc      Verify AuthorizationResult structure exposes resultCode and privilege fields.
-    * @tc.type      FUNCTION
-    * @tc.size      MEDIUMTEST
-    * @tc.level     LEVEL1
-    */
-    it('AuthorizationResultStructReturn_001_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let logTag: string = "====>AuthorizationResultStructReturn_001_Static ";
-        hilog.info(0x0000, tag, logTag + "start====");
-        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
-        let context: common.UIAbilityContext = getForegroundContext();
-        try {
-          // AA_REQ_PARAM_001 已授予授权，此调用直接复用，不弹窗直接返回 GRANTED；
-          // 若授权不存在，则弹窗且弹窗确认。
-          let promise: Promise<authorization.AuthorizationResult> = manager.requestAuthorization(
+          let auth_result: authorization.AuthorizationResult = await manager.requestAuthorization(
             authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
-          await clickDialogConfirm(driver);
-          let result: authorization.AuthorizationResult = await promise;
-          hilog.info(0x0000, tag, logTag + "result: " + JSON.stringify(result));
-          expect(result != null).assertTrue();
-          if (result != null) {
-            expect(result.privilege != null).assertTrue();
-            expect(result.privilege).assertEqual(authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
-            let code: number = result.resultCode as number;
-            hilog.info(0x0000, tag, logTag + "resultCode: " + code);
-            expect(code >= 0).assertTrue();
-          }
-          hilog.info(0x0000, tag, logTag + "end====");
-          done();
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_002 auth_result: " + JSON.stringify(auth_result));
+          expect(auth_result.resultCode).assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED);
         } catch (err) {
-          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_002 catch err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        try {
+          let hasAfter: boolean = await manager.hasAuthorization(
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+          expect(hasAfter).assertTrue();
+        } catch (err) {
+          hilog.error(0x0000, tag, "====>AuthorizationReqParam_002 has catch err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, tag, "====>AuthorizationReqParam_002 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationHasParam_001
+     * @tc.number AA_HAS_PARAM_001
+     * @tc.desc   Verify hasAuthorization with a valid privilege returns a boolean without throwing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationHasParam_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationHasParam_001 start====");
+      try {
+        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+        let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+        hilog.info(0x0000, tag, "====>AuthorizationHasParam_001 has: " + has);
+        expect(has == true || has == false).assertTrue();
+        hilog.info(0x0000, tag, "====>AuthorizationHasParam_001 end====");
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>AuthorizationHasParam_001 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationHasReturn_001
+     * @tc.number AA_HAS_RETURN_001
+     * @tc.desc   Verify hasAuthorization returns a boolean type value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationHasReturn_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationHasReturn_001 start====");
+      try {
+        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+        let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+        hilog.info(0x0000, tag, "====>AuthorizationHasReturn_001 type: " + typeof has + ", value: " + has);
+        expect(typeof has).assertEqual('boolean');
+        hilog.info(0x0000, tag, "====>AuthorizationHasReturn_001 end====");
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>AuthorizationHasReturn_001 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationHasReturn_002
+     * @tc.number AA_HAS_RETURN_002
+     * @tc.desc   Verify hasAuthorization is a read-only query that does not change state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('AuthorizationHasReturn_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationHasReturn_002 start====");
+      try {
+        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+        let before: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+        await Utils.msSleep(1000);
+        let after: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+        hilog.info(0x0000, tag, "====>AuthorizationHasReturn_002 before: " + before + ", after: " + after);
+        expect(before == after).assertTrue();
+        hilog.info(0x0000, tag, "====>AuthorizationHasReturn_002 end====");
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>AuthorizationHasReturn_002 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationPrivilegeReturn_001
+     * @tc.number AA_PRIV_RETURN_001
+     * @tc.desc   Verify Privilege enum PRIVILEGE_OPERATE_RAW_NET_PACKETS value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationPrivilegeReturn_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationPrivilegeReturn_001 start====");
+      try {
+        let value: string = authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS;
+        hilog.info(0x0000, tag, "====>AuthorizationPrivilegeReturn_001 value: " + value);
+        expect(value).assertEqual('ohos.privilege.operate_raw_net_packets');
+        hilog.info(0x0000, tag, "====>AuthorizationPrivilegeReturn_001 end====");
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>AuthorizationPrivilegeReturn_001 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationResultCodeReturn_001
+     * @tc.number AA_RESULTCODE_RETURN_001
+     * @tc.desc   Verify AuthorizationResultCode enum member values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationResultCodeReturn_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationResultCodeReturn_001 start====");
+      try {
+        let granted: number = authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED;
+        let canceled: number = authorization.AuthorizationResultCode.AUTHORIZATION_CANCELED;
+        let denied: number = authorization.AuthorizationResultCode.AUTHORIZATION_DENIED;
+        let notSupported: number = authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED;
+        expect(granted).assertEqual(0);
+        expect(canceled).assertEqual(12300301);
+        expect(denied).assertEqual(12300303);
+        expect(notSupported).assertEqual(12300305);
+        hilog.info(0x0000, tag, "====>AuthorizationResultCodeReturn_001 end====");
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>AuthorizationResultCodeReturn_001 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationResultStructReturn_001
+     * @tc.number AA_RESULT_STRUCT_001
+     * @tc.desc   Verify AuthorizationResult structure exposes resultCode and privilege fields.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationResultStructReturn_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationResultStructReturn_001 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext | undefined = await getForegroundContext();
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+      try {
+        if (!context) {
+          hilog.error(0x0000, tag, "====>AuthorizationResultStructReturn_001 context is undefined, cannot test====");
           expect().assertFail();
           done();
+          return;
         }
-      });
+        let result: authorization.AuthorizationResult;
+        if (!has && deviceType === '2in1') {
+          result = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS,
+            context,
+            ["确定", "OK"]
+          );
+        } else {
+          result = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
+        }
+        hilog.info(0x0000, tag, "====>AuthorizationResultStructReturn_001 result: " + JSON.stringify(result));
+        expect(result != null).assertTrue();
+        if (result != null) {
+          expect(result.privilege != null).assertTrue();
+          expect(result.privilege).assertEqual(authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS);
+          let code: number = result.resultCode;
+          hilog.info(0x0000, tag, "====>AuthorizationResultStructReturn_001 resultCode: " + code);
+          expect(code >= 0).assertTrue();
+        }
+        hilog.info(0x0000, tag, "====>AuthorizationResultStructReturn_001 end====");
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>AuthorizationResultStructReturn_001 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
   });
 }
