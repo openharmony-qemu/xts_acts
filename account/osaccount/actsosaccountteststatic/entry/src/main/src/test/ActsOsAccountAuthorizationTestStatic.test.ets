@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { authorization } from '@kit.BasicServicesKit'
-import { describe, it, expect, beforeEach, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, beforeEach, beforeAll, TestType, Size, Level } from "../../../hypium/index";
 import common from '@ohos.app.ability.common';
 import { Driver, ON, Component } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -102,6 +102,24 @@ async function requestAuthAndClick(
 
 export default function ActsOsAccountAuthorizationTestStatic(): void {
   describe('ActsOsAccountAuthorizationTestStatic', () => {
+    beforeAll(async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>ActsOsAccountAuthorizationTestStatic beforeAll start");
+      let cmd: string = "aa start -a EntryAbility -b com.acts.osaccounttest.static";
+      let user: string | undefined = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if (user !== undefined) {
+        cmd += ' -u ' + user;
+      }
+      try {
+        await abilityDelegator.executeShellCommand(cmd);
+        await Utils.msSleep(3000);
+        hilog.info(0x0000, tag, "====>ActsOsAccountAuthorizationTestStatic beforeAll EntryAbility started");
+      } catch (err) {
+        hilog.error(0x0000, tag, "====>ActsOsAccountAuthorizationTestStatic beforeAll start ability err: " + JSON.stringify(err));
+      }
+      hilog.info(0x0000, tag, "====>ActsOsAccountAuthorizationTestStatic beforeAll end");
+      done();
+    });
+
     beforeEach(async () => {
       await clearAuthorizationDialog();
     });
