@@ -20,7 +20,7 @@ struct Index {
     console.info('TestAbility index aboutToAppear')
   }
 
-  @State message: string = 'Run NoPermissionStageTest'
+  @State message: string = 'ActsAccountNoPermissionStageTest'
 
   build() {
     Row() {
