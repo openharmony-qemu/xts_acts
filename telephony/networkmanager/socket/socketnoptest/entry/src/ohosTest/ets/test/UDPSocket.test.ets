@@ -63,5 +63,128 @@ export default function UDPSocketTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testNetworkMgrSocketNopUDPSocketSend0100
+     * @tc.number SUB_NetworkMgr_Socket_Nop_UDPSocket_Send_0100
+     * @tc.desc   Send data without net
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopUDPSocketSend0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopUDPSocketSend0100';
+      console.info(`${caseName} test start`);
+      try {
+        let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+        let sendData: ArrayBuffer = stringToArrayBuffer('Hello UDPSocket');
+        let sendOptions: socket.UDPSendOptions = {
+          data: sendData,
+          address: {
+            address: '127.0.0.1',
+            port: 12345
+          }
+        };
+        udp.send(sendOptions).then(() => {
+          console.info(`${caseName} send success`);
+          udp.close();
+          expectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} send err: ${JSON.stringify(err)}`);
+          expectTrue(err.code === 201);
+          udp.close();
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketNopUDPSocketSetExtraOptions0100
+     * @tc.number SUB_NetworkMgr_Socket_Nop_UDPSocket_SetExtraOptions_0100
+     * @tc.desc   Set extra options (Promise) without net
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopUDPSocketSetExtraOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopUDPSocketSetExtraOptions0100';
+      console.info(`${caseName} test start`);
+      try {
+        let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+        let extraOptions: socket.UDPExtraOptions = {
+          broadcast: true,
+          receiveBufferSize: 1024,
+          sendBufferSize: 1024,
+          reuseAddress: true,
+          socketTimeout: 3000
+        };
+        udp.setExtraOptions(extraOptions).then(() => {
+          console.info(`${caseName} setExtraOptions success`);
+          udp.close();
+          expectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} setExtraOptions err: ${JSON.stringify(err)}`);
+          expectTrue(err.code === 201);
+          udp.close();
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketNopUDPSocketSetExtraOptionsCallback0100
+     * @tc.number SUB_NetworkMgr_Socket_Nop_UDPSocket_SetExtraOptions_Callback_0100
+     * @tc.desc   Set extra options (Callback) without net
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketNopUDPSocketSetExtraOptionsCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketNopUDPSocketSetExtraOptionsCallback0100';
+      console.info(`${caseName} test start`);
+      try {
+        let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+        let extraOptions: socket.UDPExtraOptions = {
+          broadcast: true,
+          receiveBufferSize: 1024,
+          sendBufferSize: 1024,
+          reuseAddress: true,
+          socketTimeout: 3000
+        };
+        udp.setExtraOptions(extraOptions, (err: BusinessError) => {
+          console.info(`${caseName} setExtraOptions callback err: ${JSON.stringify(err)}`);
+          if (err) {
+            expectTrue(err.code === 201);
+          } else {
+            console.info(`${caseName} setExtraOptions callback success`);
+            expectFail();
+          }
+          udp.close();
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
   });
 }
