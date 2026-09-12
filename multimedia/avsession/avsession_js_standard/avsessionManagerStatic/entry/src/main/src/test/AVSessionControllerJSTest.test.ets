@@ -316,6 +316,7 @@ export default function abilityTest() {
                 controller!.getOutputDevice((err: BusinessError | null, deviceInfo: avSession.OutputDeviceInfo | undefined) = > {
                     if (err) {
                         console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 fail" + err + err.code);
+                        expect(err).not().assertNull();
                         expect().assertFalse();
                         done();
                     }

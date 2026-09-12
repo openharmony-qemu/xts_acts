@@ -147,7 +147,8 @@ static void InitPush3(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVSessionRegisterForwardCallbackSuccess", AVSessionRegisterForwardCallbackSuccess));
     desc.push_back(XL("AVSessionRegisterForwardCallbackInvalidParam", AVSessionRegisterForwardCallbackInvalidParam));
     desc.push_back(XL("AVSessionUnregisterForwardCallbackSuccess", AVSessionUnregisterForwardCallbackSuccess));
-    desc.push_back(XL("AVSessionUnregisterForwardCallbackInvalidParam",AVSessionUnregisterForwardCallbackInvalidParam));
+    desc.push_back(
+        XL("AVSessionUnregisterForwardCallbackInvalidParam", AVSessionUnregisterForwardCallbackInvalidParam));
     desc.push_back(XL("AVSessionErrInvalidParam", AVSessionErrInvalidParam));
     desc.push_back(XL("AVSessionErrServiceException", AVSessionErrServiceException));
     desc.push_back(XL("AVSessionErrCodeCommandInvalid", AVSessionErrCodeCommandInvalid));
@@ -157,7 +158,6 @@ static void InitPush3(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVSessionAcquireSessionSuccess", AVSessionAcquireSessionSuccess));
     desc.push_back(XL("AVSessionAcquireSessionInvalidParam", AVSessionAcquireSessionInvalidParam));
     desc.push_back(XL("AVSessionCreateAVCastControllerInvalidParam", AVSessionCreateAVCastControllerInvalidParam));
-    desc.push_back(XL("AVSessionCreateAVCastControllerSuccess", AVSessionCreateAVCastControllerSuccess));
     desc.push_back(XL("AVSessionStopCastingSuccess", AVSessionStopCastingSuccess));
     desc.push_back(XL("AVSessionStopCastingInvalidParam", AVSessionStopCastingInvalidParam));
     desc.push_back(XL("AVSessionAcquireOutputDeviceSuccess", AVSessionAcquireOutputDeviceSuccess));
@@ -460,8 +460,8 @@ static void InitPush9(std::vector<napi_property_descriptor> &desc)
         AVMediaDescriptionBuilderSetMediaTypeNullSuccess));
     desc.push_back(XL("AVMediaDescriptionGetAppNameNullSuccess",
         AVMediaDescriptionGetAppNameNullSuccess));
-    desc.push_back(XL("AVSessionCreateNullInvalidParam",
-        AVSessionCreateNullInvalidParam));
+    desc.push_back(XL("AVSessionCreateNullInvalidParam", AVSessionCreateNullInvalidParam));
+    desc.push_back(XL("AVSessionCreateAVCastControllerSuccess", AVSessionCreateAVCastControllerSuccess));
 }
 static napi_value Init(napi_env env, napi_value exports)
 {
