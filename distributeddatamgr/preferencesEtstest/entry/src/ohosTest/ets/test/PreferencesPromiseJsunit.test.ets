@@ -973,5 +973,47 @@ export default function preferencesPromiseTest(){
               done();
             }
           })
+
+          /**
+         * @tc.name   testPreferencesOffMultiProcessChangeCallBackErr0100
+         * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_4000
+         * @tc.desc   Multiple callback calls
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+          it('testPreferencesOffMultiProcessChangeCallBackErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            let CallBack1 = (key: string) => {
+              console.info(TAG + 'testPreferencesOffMultiProcessChangeCallBackErr0100 keyValue' +
+                mPreferences.getSync(KEY_TEST_STRING_ELEMENT, "aaa"));
+              done();
+              expect('abc').assertEqual(mPreferences.getSync(KEY_TEST_STRING_ELEMENT, "aaa"));
+              mPreferences.off('multiProcessChange',CallBack1);
+            };
+            let CallBack2 = (key: string) => {
+              console.info(TAG + 'testPreferencesOffMultiProcessChangeCallBackErr0100 keyValue' +
+                mPreferences.getSync(KEY_TEST_STRING_ELEMENT, "aaa"));
+              done();
+              expect('abc').assertEqual(mPreferences.getSync(KEY_TEST_STRING_ELEMENT, "aaa"));
+              mPreferences.off('multiProcessChange',CallBack2);
+            };
+            let CallBack3 = (key: string) => {
+              console.info(TAG + 'testPreferencesOffMultiProcessChangeCallBackErr0100 keyValue' +
+                mPreferences.getSync(KEY_TEST_STRING_ELEMENT, "aaa"));
+              done();
+              expect('abc').assertEqual(mPreferences.getSync(KEY_TEST_STRING_ELEMENT, "aaa"));
+              mPreferences.off('multiProcessChange',CallBack3);
+            };
+            try {
+              mPreferences.on('multiProcessChange', CallBack1);
+              mPreferences.on('multiProcessChange', CallBack2);
+              mPreferences.on('multiProcessChange', CallBack3);
+              done();
+            } catch (err) {
+              console.log("clear err =" + err + ", code =" + err.code + ", message =" + err.message);
+              expect().assertFail();
+              done();
+            }
+          })
     })
 }
