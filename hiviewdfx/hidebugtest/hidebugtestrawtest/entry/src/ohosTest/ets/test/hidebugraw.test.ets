@@ -771,7 +771,7 @@ export default function HidebugrawTest() {
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1800 > err code: ${error.code}, err msg: ${error.message}`)
-        expect(error.code == 401).assertTrue();
+        expect(parseInt(error.code)).assertEqual(401);
         done();
       }
     })
@@ -797,7 +797,7 @@ export default function HidebugrawTest() {
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1900 > err code: ${error.code}, err msg: ${error.message}`)
-        expect(error.code == 401).assertTrue();
+        expect(parseInt(error.code)).assertEqual(401);
         done();
       }
     })
@@ -823,7 +823,7 @@ export default function HidebugrawTest() {
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2000 > err code: ${error.code}, err msg: ${error.message}`)
-        expect(error.code == 401).assertTrue();
+        expect(parseInt(error.code)).assertEqual(401);
         done();
       }
     })
@@ -849,7 +849,7 @@ export default function HidebugrawTest() {
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2100 > err code: ${error.code}, err msg: ${error.message}`)
-        expect(error.code == 401).assertTrue();
+        expect(parseInt(error.code)).assertEqual(401);
         done();
       }
     })
@@ -875,7 +875,7 @@ export default function HidebugrawTest() {
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2200 > err code: ${error.code}, err msg: ${error.message}`)
-        expect(error.code == 401).assertTrue();
+        expect(parseInt(error.code)).assertEqual(401);
         done();
       }
     })
@@ -901,7 +901,7 @@ export default function HidebugrawTest() {
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2300 > err code: ${error.code}, err msg: ${error.message}`)
-        expect(error.code == 401).assertTrue();
+        expect(parseInt(error.code)).assertEqual(401);
         done();
       }
     })
@@ -923,7 +923,7 @@ export default function HidebugrawTest() {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2400 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(parseInt(err.code)).assertEqual(401);
         done();
       }
       console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2400 end");
@@ -946,7 +946,7 @@ export default function HidebugrawTest() {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2500 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(parseInt(err.code)).assertEqual(401);
         done();
       }
       console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2500 end");
@@ -969,7 +969,7 @@ export default function HidebugrawTest() {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2600 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(parseInt(err.code)).assertEqual(401);
         done();
       }
       console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2600 end");
@@ -992,7 +992,7 @@ export default function HidebugrawTest() {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2700 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(parseInt(err.code)).assertEqual(401);
         done();
       }
       console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2700 end");
@@ -1019,7 +1019,7 @@ export default function HidebugrawTest() {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2800 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(parseInt(err.code)).assertEqual(401);
         done();
       }
       console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2800 end");
