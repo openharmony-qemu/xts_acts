@@ -1331,7 +1331,7 @@ function testGetAllowedPrinterIPAddressesForDevice() {
   it("test_get_allowed_printer_ip_for_device_0101", Level.LEVEL2, async (done: Function) => {
     try {
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForDevice();
-      expect(false).assertTrue();
+      expect(result.length).assertEqual(0);
     } catch (error) {
       if (error.code === 801) {
         expect(error.code === 801).assertTrue();
@@ -1354,7 +1354,7 @@ function testGetAllowedPrinterIPAddressesForDevice() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForDevice();
-      expect(false).assertTrue();
+      expect(result.length).assertEqual(0);
     } catch (error) {
       if (error.code === 801) {
         expect(error.code === 801).assertTrue();
@@ -1805,7 +1805,7 @@ function testGetAllowedPrinterIPAddressesForAccount() {
   it("test_get_allowed_printer_ip_for_device_for_account_0101", Level.LEVEL2, async (done: Function) => {
     try {
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount();
-      expect(false).assertTrue();
+      expect(result.length).assertEqual(0);
     } catch (error) {
       if (error.code === 801) {
         expect(error.code === 801).assertTrue();
@@ -1828,7 +1828,7 @@ function testGetAllowedPrinterIPAddressesForAccount() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount();
-      expect(false).assertTrue();
+      expect(result.length).assertEqual(0);
     } catch (error) {
       if (error.code === 801) {
         expect(error.code === 801).assertTrue();
