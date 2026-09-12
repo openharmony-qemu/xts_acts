@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,25 +21,25 @@ import { BusinessError, RecordData } from '@ohos.base'
 import { authorization } from '@kit.BasicServicesKit'
 import { common } from '@kit.AbilityKit'
 import { AppStorage } from '@ohos.arkui.stateManagement'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import Utils from './Util.text' 
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import Utils from './Util.test';
 
 let tag: string = 'testTag';
 
 export default function ActsOANoPermissionTestStatic(): void {
   describe('ActsOANoPermissionTestStatic', () => {
-    beforeAll(asnc (): Promise<void> => {
-      hilog.info(0x0000, tag, "====>ActsOANoPermissionTestStatic beforeAll start====");
+    beforeAll(async (): Promise<void> => {
+      hilog.info(0x0000, tag, '====>ActsOANoPermissionTestStatic beforeAll start====');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       let cmd = 'aa start -a EntryAbility -b ohos.acts.account.nopermission.static';
       let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
       if (user !== undefined) {
         cmd += ' -u ' + user;
       }
-      hilog.info(0x0000, tag, "====>beforeAll executeShellCommand: " + cmd);
+      hilog.info(0x0000, tag, '====>beforeAll executeShellCommand: ' + cmd);
       await abilityDelegator.executeShellCommand(cmd);
-      await Utils.mSleep(3000);
-      hilog.info(0x0000, tag, "====>ActsOANoPermissionTestStatic beforeAll end====");
+      await Utils.msSleep(3000);
+      hilog.info(0x0000, tag, '====>ActsOANoPermissionTestStatic beforeAll end====');
     });
 
     /**
@@ -493,8 +493,8 @@ export default function ActsOANoPermissionTestStatic(): void {
         }
         done();
       });
-
-      /**
+      
+    /**
      * @tc.number   SUB_Account_OsAccount_NoPermission_static_4500
      * @tc.name     SUB_Account_OsAccount_NoPermission_static_4500
      * @tc.desc     no ohos.permission.REQUEST_LOCAL_ACCOUNT_AUTHORIZATION.
@@ -510,29 +510,29 @@ export default function ActsOANoPermissionTestStatic(): void {
           hilog.info(0x0000, tag, logTag + "start requestAuthorization");
           let context: common.UIAbilityContext | undefined = undefined;
           let maxRetries: int = 30;
-          for (let retry :int = 0; retry < maxRetries; retry++) {
+          for (let retry: int = 0; retry < maxRetries; retry++) {
             context = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
             if (context) {
-              hilog.info(0x0000, tag, logTag + "get context via AppStorage (retry " + retry + ")");
+              hilog.info(0x0000, tag, logTag + "got context via AppStorage (retry " + retry + ")");
               break;
             }
-            hilog.info(0x0000, tag, logTag + "get context via AppStorage (retry " + retry + ")");
-            await Utils.mSleep(500);
+            hilog.info(0x0000, tag, logTag + "AppStorage context not ready (retry " + retry + ")");
+            await Utils.msSleep(500);
           }
           if (!context) {
             hilog.info(0x0000, tag, logTag + "context is still undefined after retries");
-            except().assertFail();
+            expect().assertFail();
             done();
             return;
           }
-          let authorizationManager: authorization.AuthorizationManager = 
+          let authorizationManager: authorization.AuthorizationManager =
             authorization.getAuthorizationManager();
           let result: authorization.AuthorizationResult = await authorizationManager.requestAuthorization(
             authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
           hilog.info(0x0000, tag, logTag + "result: " + JSON.stringify(result));
-          except().assertFail();
+          expect().assertFail();
         } catch (err) {
-          hilog.info(0x0000, tag, logTag + 'catch err: ' + JSON.stringify(err));
+          hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           expect(err.code).assertEqual(201);
         }
         done();
