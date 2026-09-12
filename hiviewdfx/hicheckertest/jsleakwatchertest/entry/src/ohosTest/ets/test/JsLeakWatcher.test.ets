@@ -299,5 +299,51 @@ export default function JsLeakWatcherTest() {
       }
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_4000 end");
     })
+
+    /**
+     * @tc.name   testJsLeakWatcher41
+     * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_4100
+     * @tc.desc   验证enable接口传入null值返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testJsLeakWatcher41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_4100 start");
+      try {
+        jsLeakWatcher.enable(null);
+        console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_4100 enable null')
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_jsLeakWatcher_Interface_4100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_4100 end");
+    })
+
+    /**
+     * @tc.name   testJsLeakWatcher42
+     * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_4200
+     * @tc.desc   验证enable接口传入undefined值返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testJsLeakWatcher42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_4200 start");
+      try {
+        jsLeakWatcher.enable(undefined);
+        console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_4200 enable undefined')
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_jsLeakWatcher_Interface_4200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(err.code == 401).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_4200 end");
+    })
   })
 }
