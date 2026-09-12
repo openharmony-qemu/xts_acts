@@ -14,8 +14,10 @@
  */
 import ActsOsAccountTest from './ActsOsAccountTest.test.ets'
 import ActsOsAccountErrCodeCheck from './ActsOsAccountErrCodeCheck.test.ets'
+import ActsOsAccountAuthorizationTest from './ActsOsAccountAuthorizationTest.test.ets'
 
 export default function testsuite(): void {
 	ActsOsAccountTest()
 	ActsOsAccountErrCodeCheck()
+	ActsOsAccountAuthorizationTest()
 }

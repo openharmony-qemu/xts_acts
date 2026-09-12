@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
+import ActsOsAccountAuthorizationTestStatic from './ActsOsAccountAuthorizationTestStatic.test'
 import ActsOsAccountErrCodeCheckStatic from './ActsOsAccountErrCodeCheckStatic.test'
 import ActsOsAccountTestStatic from './ActsOsAccountTestStatic.test'
 
 export default function testsuite(): void {
+  ActsOsAccountAuthorizationTestStatic()
   ActsOsAccountErrCodeCheckStatic()
   ActsOsAccountTestStatic()
 }
