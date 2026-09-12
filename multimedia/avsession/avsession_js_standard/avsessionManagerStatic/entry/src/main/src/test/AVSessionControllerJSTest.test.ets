@@ -319,6 +319,7 @@ export default function abilityTest() {
                         expect(err).not().assertNull();
                         expect().assertFalse();
                         done();
+                        return;
                     }
                     console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 success" + JSON.stringify(deviceInfo));
                     expect(deviceInfo).not().assertNull();
