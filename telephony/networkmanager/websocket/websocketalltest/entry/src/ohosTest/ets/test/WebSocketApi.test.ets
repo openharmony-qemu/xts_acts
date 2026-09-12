@@ -242,15 +242,17 @@ export default function WebSocketApiTest() {
         ws.on('error', (err: BusinessError) => {
           console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
         })
-        ws.connect(url, (err: BusinessError, value: boolean) => {
+        ws.connect(url, async (err: BusinessError, value: boolean) => {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} test connect fail`);
+            await ws.close();
             done();
             console.info(`${caseName} test end`);
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
             expectTrue(value == true);
+            await ws.close();
             done();
             console.info(`${caseName} test end`);
           }
@@ -277,16 +279,36 @@ export default function WebSocketApiTest() {
       try {
         let url: string = availableWebSocketAddress;
         ws.on('error', (err: BusinessError) => {
-          console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
-        })
-        ws.connect(url, (error: BusinessError, value: boolean) => { // first
-          console.info(`${caseName} test fisrt result error ${JSON.stringify(error)} and value is ${value}`);
-          expectTrue(error === undefined && value);
-          ws.connect(url, (error: BusinessError, value: boolean) => { // second
-            console.info(`${caseName} test second result error ${JSON.stringify(error)} and value is ${value}`);
-            expectTrue(error !== undefined && error.code === 2302003); // {"code":2302003,"message":"Websocket connection exist"}
+          console.info(`${caseName} findError ${JSON.stringify(err)}`);
+        });
+
+        // 第一次连接
+        ws.connect(url, (error: BusinessError, value: boolean) => {
+          console.info(`${caseName} test first result error ${JSON.stringify(error)} and value is ${value}`);
+
+          // 若第一次连接失败，直接结束测试，避免第二次连接不执行导致 done() 未调用
+          if (error !== undefined || !value) {
+            console.info(`${caseName} first connect failed, skip second connect`);
+            expectTrue(false);
             done();
             console.info(`${caseName} test end`);
+            return;
+          }
+
+          // 第一次连接成功，执行第二次连接（预期失败：连接已存在）
+          ws.connect(url, (error: BusinessError, value: boolean) => {
+            console.info(`${caseName} test second result error ${JSON.stringify(error)} and value is ${value}`);
+            expectTrue(error !== undefined && error.code === 2302003);
+            // {"code":2302003,"message":"Websocket connection exist"}
+
+            // 测试结束后关闭连接，释放资源
+            ws.close((err: BusinessError) => {
+              if (err !== undefined) {
+                console.info(`${caseName} close error ${JSON.stringify(err)}`);
+              }
+              done();
+              console.info(`${caseName} test end`);
+            });
           });
         });
       } catch (err) {
@@ -295,7 +317,7 @@ export default function WebSocketApiTest() {
         done();
         console.info(`${caseName} test end`);
       }
-    })
+    });
 
     /**
      * @tc.name   testNetworkMgrWebSocketConnectCallback0700
@@ -486,8 +508,16 @@ export default function WebSocketApiTest() {
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
             expectTrue(value == true);
-            done();
-            console.info(`${caseName} test end`);
+            // 连接成功后关闭 WebSocket 连接，避免资源泄漏
+            ws.close((closeErr: BusinessError, closeValue: boolean) => {
+              if (closeErr) {
+                console.info(`${caseName} test close fail ${JSON.stringify(closeErr)}`);
+              } else {
+                console.info(`${caseName} test close success and value is ${closeValue}`);
+              }
+              done();
+              console.info(`${caseName} test end`);
+            });
           }
         });
       } catch (err) {
@@ -588,8 +618,16 @@ export default function WebSocketApiTest() {
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
             expectTrue(value == true);
-            done();
-            console.info(`${caseName} test end`);
+            // 连接成功后关闭 WebSocket 连接，避免资源泄漏
+            ws.close((closeErr: BusinessError, closeValue: boolean) => {
+              if (closeErr) {
+                console.info(`${caseName} test close fail ${JSON.stringify(closeErr)}`);
+              } else {
+                console.info(`${caseName} test close success and value is ${closeValue}`);
+              }
+              done();
+              console.info(`${caseName} test end`);
+            });
           }
         });
       } catch (err) {
@@ -782,8 +820,17 @@ export default function WebSocketApiTest() {
         ws.connect(availableWebSocketAddress).then((value: boolean) => {
           console.info(`${caseName} test connect success and value is ${value}`);
           expectTrue(value == true);
-          done();
-          console.info(`${caseName} test end`);
+          // 连接成功后，主动关闭 WebSocket 连接
+          ws.close().then((closeValue: boolean) => {
+            console.info(`${caseName} test close success and value is ${closeValue}`);
+            done();
+            console.info(`${caseName} test end`);
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} test close fail ${JSON.stringify(err)}`);
+            expectFail(`${caseName} test close fail`);
+            done();
+            console.info(`${caseName} test end`);
+          });
         }).catch((err: BusinessError) => {
           console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
           expectFail(`${caseName} test connect fail`);
@@ -810,11 +857,19 @@ export default function WebSocketApiTest() {
       let caseName: string = 'testNetworkMgrWebSocketConnectPromise0600';
       console.info(`${caseName} test start`);
       try {
-        ws.connect(availableWebSocketAddress,{}).then((value: boolean) => {
+        ws.connect(availableWebSocketAddress, {}).then((value: boolean) => {
           console.info(`${caseName} test connect success and value is ${value}`);
           expectTrue(value == true);
-          done();
-          console.info(`${caseName} test end`);
+          // 连接成功后，关闭WebSocket连接，避免资源泄漏
+          ws.close().then(() => {
+            console.info(`${caseName} test close success`);
+            done();
+            console.info(`${caseName} test end`);
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} test close fail ${JSON.stringify(err)}`);
+            done();
+            console.info(`${caseName} test end`);
+          });
         }).catch((err: BusinessError) => {
           console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
           expectFail(`${caseName} test connect fail`);
@@ -903,11 +958,20 @@ export default function WebSocketApiTest() {
       let caseName: string = 'testNetworkMgrWebSocketConnectPromise0900';
       console.info(`${caseName} test start`);
       try {
-        ws.connect(availableWebSocketAddress,options).then((value: boolean) => {
+        ws.connect(availableWebSocketAddress, options).then((value: boolean) => {
           console.info(`${caseName} test connect success and value is ${value}`);
           expectTrue(value == true);
-          done();
-          console.info(`${caseName} test end`);
+          // 连接成功后关闭 WebSocket 连接，避免资源泄漏
+          ws.close().then((closeValue: boolean) => {
+            console.info(`${caseName} test close success and value is ${closeValue}`);
+            done();
+            console.info(`${caseName} test end`);
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} test close fail ${JSON.stringify(err)}`);
+            expectFail(`${caseName} test close fail`);
+            done();
+            console.info(`${caseName} test end`);
+          });
         }).catch((err: BusinessError) => {
           console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
           expectFail(`${caseName} test connect fail`);
@@ -928,27 +992,43 @@ export default function WebSocketApiTest() {
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(Connect twice)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level   LEVEL3
      */
     it('testNetworkMgrWebSocketConnectPromise1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketConnectPromise1000';
       console.info(`${caseName} test start`);
       try {
-        ws.connect(availableWebSocketAddress,options).then((value: boolean) => {
-          console.info(`${caseName} test connect success and value is ${value}`);
-          ws.connect(availableWebSocketAddress,options).then((value: boolean) => {
-            console.info(`${caseName} test connect success and value is ${value}`);
+        ws.connect(availableWebSocketAddress, options).then((value: boolean) => {
+          console.info(`${caseName} test first connect success and value is ${value}`);
+          ws.connect(availableWebSocketAddress, options).then((value: boolean) => {
+            console.info(`${caseName} test second connect success and value is ${value}`);
             expectFail(`${caseName} test connect success`);
-            done();
-            console.info(`${caseName} test end`);
+            // 关闭WebSocket连接，避免资源泄漏
+            ws.close().then(() => {
+              console.info(`${caseName} test close success`);
+              done();
+              console.info(`${caseName} test end`);
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} test close fail ${JSON.stringify(err)}`);
+              done();
+              console.info(`${caseName} test end`);
+            });
           }).catch((err: BusinessError) => {
-            console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
-            expectEqual(err.code,2302003);
-            done();
-            console.info(`${caseName} test end`);
+            console.info(`${caseName} test second connect fail ${JSON.stringify(err)}`);
+            expectEqual(err.code, 2302003);
+            // 关闭WebSocket连接，避免资源泄漏
+            ws.close().then(() => {
+              console.info(`${caseName} test close success`);
+              done();
+              console.info(`${caseName} test end`);
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} test close fail ${JSON.stringify(err)}`);
+              done();
+              console.info(`${caseName} test end`);
+            });
           });
         }).catch((err: BusinessError) => {
-          console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
+          console.info(`${caseName} test first connect fail ${JSON.stringify(err)}`);
           expectFail(`${caseName} test connect fail`);
           done();
           console.info(`${caseName} test end`);
@@ -1092,18 +1172,30 @@ export default function WebSocketApiTest() {
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
           ws.send('Hello', (err: BusinessError, value: boolean) => {
             if (err) {
               console.info(`${caseName} send fail ${JSON.stringify(err)}`);
               expectFail(`${caseName} send fail`);
-              done();
-              console.info(`${caseName} test end`);
+              // 关闭 WebSocket 连接后再结束测试
+              ws.close((closeErr: BusinessError, closeValue: boolean) => {
+                console.info(`${caseName} close result: err=${JSON.stringify(closeErr)}, value=${closeValue}`);
+                ws.off('open');
+                ws.off('error');
+                done();
+                console.info(`${caseName} test end`);
+              });
             } else {
               console.info(`${caseName} send success and value is ${value}`);
               expectTrue(value == true);
-              done();
-              console.info(`${caseName} test end`);
+              // 关闭 WebSocket 连接后再结束测试
+              ws.close((closeErr: BusinessError, closeValue: boolean) => {
+                console.info(`${caseName} close result: err=${JSON.stringify(closeErr)}, value=${closeValue}`);
+                ws.off('open');
+                ws.off('error');
+                done();
+                console.info(`${caseName} test end`);
+              });
             }
           })
         });
@@ -1111,6 +1203,8 @@ export default function WebSocketApiTest() {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} test connect fail`);
+            ws.off('open');
+            ws.off('error');
             done();
             console.info(`${caseName} test end`);
           } else {
@@ -1148,18 +1242,34 @@ export default function WebSocketApiTest() {
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
           ws.send(sendMessage, (err: BusinessError, value: boolean) => {
             if (err) {
               console.info(`${caseName} send fail ${JSON.stringify(err)}`);
               expectFail(`${caseName} send fail`);
-              done();
-              console.info(`${caseName} test end`);
+              // 关闭WebSocket连接
+              ws.close((closeErr: BusinessError, closeValue: boolean) => {
+                if (closeErr) {
+                  console.info(`${caseName} close fail ${JSON.stringify(closeErr)}`);
+                } else {
+                  console.info(`${caseName} close success and value is ${closeValue}`);
+                }
+                done();
+                console.info(`${caseName} test end`);
+              });
             } else {
               console.info(`${caseName} send success and value is ${value}`);
               expectTrue(value == true);
-              done();
-              console.info(`${caseName} test end`);
+              // 关闭WebSocket连接
+              ws.close((closeErr: BusinessError, closeValue: boolean) => {
+                if (closeErr) {
+                  console.info(`${caseName} close fail ${JSON.stringify(closeErr)}`);
+                } else {
+                  console.info(`${caseName} close success and value is ${closeValue}`);
+                }
+                done();
+                console.info(`${caseName} test end`);
+              });
             }
           })
         });
@@ -1286,17 +1396,37 @@ export default function WebSocketApiTest() {
           status: number = 0
           message: string = ""
         }
+
+        // 定义关闭连接和清理监听器的公共函数
+        const closeAndCleanup = (): void => {
+          try {
+            ws.off('open');
+            ws.off('error');
+            ws.close((err: BusinessError, value: boolean) => {
+              if (err) {
+                console.info(`${caseName} close fail ${JSON.stringify(err)}`);
+              } else {
+                console.info(`${caseName} close success and value is ${value}`);
+              }
+            });
+          } catch (closeErr) {
+            console.info(`${caseName} closeAndCleanup catch error ${JSON.stringify(closeErr)}`);
+          }
+        };
+
         ws.on('error', (err: BusinessError) => {
           console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
         });
+
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
           ws.send('Hello', (err: BusinessError, value: boolean) => {
             if (err) {
               console.info(`${caseName} send1 fail ${JSON.stringify(err)}`);
               expectFail(`${caseName} send1 fail`);
+              closeAndCleanup();
               done();
               console.info(`${caseName} test end`);
             } else {
@@ -1305,11 +1435,13 @@ export default function WebSocketApiTest() {
                 if (err) {
                   console.info(`${caseName} send2 fail ${JSON.stringify(err)}`);
                   expectFail(`${caseName} send2 fail`);
+                  closeAndCleanup();
                   done();
                   console.info(`${caseName} test end`);
                 } else {
                   console.info(`${caseName} send2 success and value is ${value}`);
                   expectTrue(value == true);
+                  closeAndCleanup();
                   done();
                   console.info(`${caseName} test end`);
                 }
@@ -1317,10 +1449,12 @@ export default function WebSocketApiTest() {
             }
           })
         });
+
         ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} test connect fail`);
+            closeAndCleanup();
             done();
             console.info(`${caseName} test end`);
           } else {
@@ -1330,6 +1464,13 @@ export default function WebSocketApiTest() {
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        try {
+          ws.off('open');
+          ws.off('error');
+          ws.close();
+        } catch (closeErr) {
+          console.info(`${caseName} catch close error ${JSON.stringify(closeErr)}`);
+        }
         done();
         console.info(`${caseName} test end`);
       }
@@ -1346,47 +1487,102 @@ export default function WebSocketApiTest() {
     it('testNetworkMgrWebSocketSendCallback0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketSendCallback0800';
       console.info(`${caseName} test start`);
+
       try {
         class OutValue {
           status: number = 0
           message: string = ""
         }
+
         ws.on('error', (err: BusinessError) => {
-          console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
+          console.info(`${caseName} findError: ${JSON.stringify(err)}`);
+          expectFail(`${caseName} findError`);
+          // 出错时关闭连接
+          ws.close((err: BusinessError, value: boolean) => {
+            if (err) {
+              console.info(`${caseName} close fail on error: ${JSON.stringify(err)}`);
+            } else {
+              console.info(`${caseName} close success on error`);
+            }
+            done();
+            console.info(`${caseName} test end`);
+          });
         });
+
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
+          // 发送超长消息前记录长度
+          console.info(`${caseName} ready to send long message, length: ${sendLongMessage.length}`);
           ws.send(sendLongMessage, (err: BusinessError, value: boolean) => {
             if (err) {
               console.info(`${caseName} send fail ${JSON.stringify(err)}`);
               expectFail(`${caseName} send fail`);
-              done();
-              console.info(`${caseName} test end`);
+              // 发送失败后关闭连接
+              ws.close((closeErr: BusinessError, closeValue: boolean) => {
+                if (closeErr) {
+                  console.info(`${caseName} close fail after send fail: ${JSON.stringify(closeErr)}`);
+                } else {
+                  console.info(`${caseName} close success after send fail`);
+                }
+                done();
+                console.info(`${caseName} test end`);
+              });
             } else {
-              console.info(`${caseName} send success and value is ${value}`);
+              console.info(`${caseName} send success and value is ${value}, message length: ${sendLongMessage.length}`);
               expectTrue(value == true);
-              done();
-              console.info(`${caseName} test end`);
+              // 发送成功后关闭连接
+              ws.close((closeErr: BusinessError, closeValue: boolean) => {
+                if (closeErr) {
+                  console.info(`${caseName} close fail after send success: ${JSON.stringify(closeErr)}`);
+                } else {
+                  console.info(`${caseName} close success after send success`);
+                }
+                done();
+                console.info(`${caseName} test end`);
+              });
             }
           })
         });
+
         ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} test connect fail`);
-            done();
-            console.info(`${caseName} test end`);
+            // 连接失败时也需要关闭（清理可能存在的资源）
+            ws.close((closeErr: BusinessError, closeValue: boolean) => {
+              if (closeErr) {
+                console.info(`${caseName} close fail after connect fail: ${JSON.stringify(closeErr)}`);
+              } else {
+                console.info(`${caseName} close success after connect fail`);
+              }
+              done();
+              console.info(`${caseName} test end`);
+            });
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
           }
         })
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-        done();
-        console.info(`${caseName} test end`);
+        expectFail(`${caseName} fail, errInfo->${JSON.stringify(err)}`);
+        // 异常情况下尝试关闭连接
+        try {
+          ws.close((closeErr: BusinessError, closeValue: boolean) => {
+            if (closeErr) {
+              console.info(`${caseName} close fail in catch: ${JSON.stringify(closeErr)}`);
+            } else {
+              console.info(`${caseName} close success in catch`);
+            }
+            done();
+            console.info(`${caseName} test end`);
+          });
+        } catch (closeErr) {
+          console.info(`${caseName} close throw error in catch: ${JSON.stringify(closeErr)}`);
+          done();
+          console.info(`${caseName} test end`);
+        }
       }
     })
 
@@ -1407,31 +1603,45 @@ export default function WebSocketApiTest() {
           message: string = ""
         }
         let sendMessage: ArrayBuffer = new ArrayBuffer(0);
+
         ws.on('error', (err: BusinessError) => {
           console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
         });
+
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
           ws.send(sendMessage, (err: BusinessError, value: boolean) => {
             if (err) {
               console.info(`${caseName} send fail ${JSON.stringify(err)}`);
               expectFail(`${caseName} send fail`);
+              // 关闭连接并注销事件监听
+              ws.off('open');
+              ws.off('error');
+              ws.close();
               done();
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} send success and value is ${value}`);
               expectTrue(value == true);
+              // 关闭连接并注销事件监听
+              ws.off('open');
+              ws.off('error');
+              ws.close();
               done();
               console.info(`${caseName} test end`);
             }
           })
         });
+
         ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} test connect fail`);
+            // 连接失败时也需注销事件监听
+            ws.off('open');
+            ws.off('error');
             done();
             console.info(`${caseName} test end`);
           } else {
@@ -1445,6 +1655,7 @@ export default function WebSocketApiTest() {
         console.info(`${caseName} test end`);
       }
     })
+
     /**
      * @tc.name   testNetworkMgrWebSocketSendCallback1000
      * @tc.number SUB_NetworkMgr_WebSocket_SendCallback_1000
@@ -1461,31 +1672,57 @@ export default function WebSocketApiTest() {
           status: number = 0
           message: string = ""
         }
+
         ws.on('error', (err: BusinessError) => {
           console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
         });
+
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
           ws.send('', (err: BusinessError, value: boolean) => {
             if (err) {
               console.info(`${caseName} send fail ${JSON.stringify(err)}`);
               expectTrue(false);
-              done();
-              console.info(`${caseName} test end`);
+              // 关闭连接并清理监听
+              ws.close((closeErr: BusinessError, closeValue: boolean) => {
+                if (closeErr) {
+                  console.info(`${caseName} close fail ${JSON.stringify(closeErr)}`);
+                } else {
+                  console.info(`${caseName} close success and value is ${closeValue}`);
+                }
+                ws.off('error');
+                ws.off('open');
+                done();
+                console.info(`${caseName} test end`);
+              });
             } else {
               console.info(`${caseName} send success and value is ${value}`);
-              expectTrue(value == true)
-              done();
-              console.info(`${caseName} test end`);
+              expectTrue(value == true);
+              // 关闭连接并清理监听
+              ws.close((closeErr: BusinessError, closeValue: boolean) => {
+                if (closeErr) {
+                  console.info(`${caseName} close fail ${JSON.stringify(closeErr)}`);
+                } else {
+                  console.info(`${caseName} close success and value is ${closeValue}`);
+                }
+                ws.off('error');
+                ws.off('open');
+                done();
+                console.info(`${caseName} test end`);
+              });
             }
           })
         });
+
         ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} test connect fail`);
+            // 连接失败时也需清理监听
+            ws.off('error');
+            ws.off('open');
             done();
             console.info(`${caseName} test end`);
           } else {
@@ -1495,10 +1732,19 @@ export default function WebSocketApiTest() {
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        // 异常情况下尝试关闭连接并清理监听
+        try {
+          ws.off('error');
+          ws.off('open');
+          ws.close();
+        } catch (closeErr) {
+          console.info(`${caseName} cleanup error ${JSON.stringify(closeErr)}`);
+        }
         done();
         console.info(`${caseName} test end`);
       }
     })
+
     /**
      * @tc.name   testNetworkMgrWebSocketSendPromise0100
      * @tc.number SUB_NetworkMgr_WebSocket_SendPromise_0100
@@ -1603,6 +1849,7 @@ export default function WebSocketApiTest() {
         console.info(`${caseName} test end`);
       }
     })
+
     /**
      * @tc.name   testNetworkMgrWebSocketSendPromise1000
      * @tc.number SUB_NetworkMgr_WebSocket_SendPromise_1000
@@ -1614,47 +1861,81 @@ export default function WebSocketApiTest() {
     it('testNetworkMgrWebSocketSendPromise1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketSendPromise1000';
       console.info(`${caseName} test start`);
+      let isDone: boolean = false;
+
+      // 统一收尾函数：关闭连接并结束测试
+      const finishTest = (success: boolean, msg?: string) => {
+        if (isDone) {
+          return;
+        }
+        isDone = true;
+        try {
+          ws.off('open');
+          ws.off('error');
+          ws.close((err: BusinessError) => {
+            if (err) {
+              console.info(`${caseName} close fail ${JSON.stringify(err)}`);
+            } else {
+              console.info(`${caseName} close success`);
+            }
+            if (success) {
+              // 正常断言已在调用前完成，此处无需再断言
+            } else {
+              expectFail(msg ? msg : `${caseName} fail`);
+            }
+            done();
+            console.info(`${caseName} test end`);
+          });
+        } catch (err) {
+          console.info(`${caseName} close exception ${JSON.stringify(err)}`);
+          if (!success) {
+            expectFail(msg ? msg : `${caseName} fail`);
+          }
+          done();
+          console.info(`${caseName} test end`);
+        }
+      };
+
       try {
         class OutValue {
           status: number = 0
           message: string = ""
         }
+
         ws.on('error', (err: BusinessError) => {
-          console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
+          console.info(`${caseName} findError ${JSON.stringify(err)}`);
+          finishTest(false, `${caseName} on error`);
         });
+
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
+
           ws.send('').then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
             expectTrue(value == true);
-            done();
-            console.info(`${caseName} test end`);
+            finishTest(true);
           }).catch((err: BusinessError) => {
             console.info(`${caseName} send fail ${JSON.stringify(err)}`);
-            expectFail(`${caseName} send fail`);
-            done();
-            console.info(`${caseName} test end`);
-          })
+            finishTest(false, `${caseName} send fail`);
+          });
         });
+
         ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
-            expectFail(`${caseName} test connect fail`);
-            done();
-            console.info(`${caseName} test end`);
+            finishTest(false, `${caseName} test connect fail`);
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
           }
-        })
+        });
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-        done();
-        console.info(`${caseName} test end`);
+        finishTest(false, `${caseName} fail, errInfo->${JSON.stringify(err)}`);
       }
-    })
+    });
+
     /**
      * @tc.name   testNetworkMgrWebSocketSendPromise0300
      * @tc.number SUB_NetworkMgr_WebSocket_SendPromise_0300
@@ -1671,29 +1952,56 @@ export default function WebSocketApiTest() {
           status: number = 0
           message: string = ""
         }
+
         ws.on('error', (err: BusinessError) => {
           console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
         });
+
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
+
           ws.send('Hello').then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
             expectTrue(value == true);
-            done();
-            console.info(`${caseName} test end`);
+            // 发送成功后关闭连接
+            ws.close((closeErr: BusinessError, closeValue: boolean) => {
+              if (closeErr) {
+                console.info(`${caseName} close fail ${JSON.stringify(closeErr)}`);
+              } else {
+                console.info(`${caseName} close success and value is ${closeValue}`);
+              }
+              ws.off('open');
+              ws.off('error');
+              done();
+              console.info(`${caseName} test end`);
+            });
           }).catch((err: BusinessError) => {
             console.info(`${caseName} send fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} send fail`);
-            done();
-            console.info(`${caseName} test end`);
+            // 发送失败后也需要关闭连接
+            ws.close((closeErr: BusinessError, closeValue: boolean) => {
+              if (closeErr) {
+                console.info(`${caseName} close fail ${JSON.stringify(closeErr)}`);
+              } else {
+                console.info(`${caseName} close success and value is ${closeValue}`);
+              }
+              ws.off('open');
+              ws.off('error');
+              done();
+              console.info(`${caseName} test end`);
+            });
           })
         });
+
         ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} test connect fail`);
+            // 连接失败，无需关闭连接，但需移除事件监听
+            ws.off('open');
+            ws.off('error');
             done();
             console.info(`${caseName} test end`);
           } else {
@@ -1703,8 +2011,20 @@ export default function WebSocketApiTest() {
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-        done();
-        console.info(`${caseName} test end`);
+        // 异常情况下尝试关闭连接并移除监听
+        try {
+          ws.close((closeErr: BusinessError, closeValue: boolean) => {
+            ws.off('open');
+            ws.off('error');
+            done();
+            console.info(`${caseName} test end`);
+          });
+        } catch (closeErr) {
+          ws.off('open');
+          ws.off('error');
+          done();
+          console.info(`${caseName} test end`);
+        }
       }
     })
 
@@ -1719,46 +2039,73 @@ export default function WebSocketApiTest() {
     it('testNetworkMgrWebSocketSendPromise0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketSendPromise0400';
       console.info(`${caseName} test start`);
+
+      // 标记 done 是否已调用，避免重复调用
+      let isDone: boolean = false;
+      const finishTest = (): void => {
+        if (!isDone) {
+          isDone = true;
+          // 移除事件监听器，避免内存泄漏
+          try {
+            ws.off('error');
+            ws.off('open');
+          } catch (e) {
+            console.info(`${caseName} off listener error: ${JSON.stringify(e)}`);
+          }
+          // 关闭 WebSocket 连接
+          try {
+            ws.close();
+          } catch (e) {
+            console.info(`${caseName} close error: ${JSON.stringify(e)}`);
+          }
+          done();
+          console.info(`${caseName} test end`);
+        }
+      };
+
       try {
         let sendMessage: ArrayBuffer = new ArrayBuffer(96);
+
         class OutValue {
           status: number = 0
           message: string = ""
         }
+
         ws.on('error', (err: BusinessError) => {
-          console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
+          console.info(`${caseName} findError: ${JSON.stringify(err)}`);
+          expectFail(`${caseName} findError`);
+          finishTest();
         });
+
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
+
           ws.send(sendMessage).then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
             expectTrue(value == true);
-            done();
-            console.info(`${caseName} test end`);
+            finishTest();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} send fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} send fail`);
-            done();
-            console.info(`${caseName} test end`);
-          })
+            finishTest();
+          });
         });
+
         ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} test connect fail`);
-            done();
-            console.info(`${caseName} test end`);
+            finishTest();
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
           }
-        })
+        });
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-        done();
-        console.info(`${caseName} test end`);
+        expectFail(`${caseName} fail, errInfo->${JSON.stringify(err)}`);
+        finishTest();
       }
     })
 
@@ -1858,42 +2205,61 @@ export default function WebSocketApiTest() {
     it('testNetworkMgrWebSocketSendPromise0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketSendPromise0700';
       console.info(`${caseName} test start`);
+
+      // 封装清理资源的函数：关闭连接 + 移除监听 + 调用 done
+      const cleanup = (isSuccess: boolean) => {
+        ws.off('error');
+        ws.off('open');
+        ws.close((closeErr: BusinessError, closeValue: boolean) => {
+          if (closeErr) {
+            console.info(`${caseName} close fail ${JSON.stringify(closeErr)}`);
+          } else {
+            console.info(`${caseName} close success and value is ${closeValue}`);
+          }
+          done();
+          console.info(`${caseName} test end`);
+        });
+      };
+
       try {
         class OutValue {
           status: number = 0
           message: string = ""
         }
+
         ws.on('error', (err: BusinessError) => {
           console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
         });
+
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
+
           ws.send('Hello').then((value: boolean) => {
             console.info(`${caseName} send1 success and value is ${value}`);
             ws.send('Hello').then((value: boolean) => {
               console.info(`${caseName} send2 success and value is ${value}`);
               expectTrue(value == true);
-              done();
-              console.info(`${caseName} test end`);
+              cleanup(true);
             }).catch((err: BusinessError) => {
               console.info(`${caseName} send2 fail ${JSON.stringify(err)}`);
               expectFail(`${caseName} send2 fail`);
-              done();
-              console.info(`${caseName} test end`);
+              cleanup(false);
             })
           }).catch((err: BusinessError) => {
             console.info(`${caseName} send1 fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} send1 fail`);
-            done();
-            console.info(`${caseName} test end`);
+            cleanup(false);
           })
         });
+
         ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} test connect fail`);
+            ws.off('error');
+            ws.off('open');
             done();
             console.info(`${caseName} test end`);
           } else {
@@ -1903,8 +2269,19 @@ export default function WebSocketApiTest() {
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-        done();
-        console.info(`${caseName} test end`);
+        try {
+          ws.off('error');
+          ws.off('open');
+          ws.close((closeErr: BusinessError, closeValue: boolean) => {
+            console.info(`${caseName} close in catch, err: ${JSON.stringify(closeErr)}`);
+            done();
+            console.info(`${caseName} test end`);
+          });
+        } catch (closeErr) {
+          console.info(`${caseName} close in catch fail ${JSON.stringify(closeErr)}`);
+          done();
+          console.info(`${caseName} test end`);
+        }
       }
     })
 
@@ -1919,47 +2296,91 @@ export default function WebSocketApiTest() {
     it('testNetworkMgrWebSocketSendPromise0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketSendPromise0800';
       console.info(`${caseName} test start`);
+
+      // 标记是否已完成，避免 done 被多次调用
+      let isDone: boolean = false;
+
+      // 统一清理函数：关闭连接并移除监听器
+      const cleanup = (): void => {
+        try {
+          ws.off('open');
+          ws.off('error');
+          ws.off('message');
+          ws.off('close');
+        } catch (err) {
+          console.info(`${caseName} cleanup off listener err: ${JSON.stringify(err)}`);
+        }
+        try {
+          ws.close((err: BusinessError, value: boolean) => {
+            if (err) {
+              console.info(`${caseName} close fail ${JSON.stringify(err)}`);
+            } else {
+              console.info(`${caseName} close success and value is ${value}`);
+            }
+          });
+        } catch (err) {
+          console.info(`${caseName} close exception ${JSON.stringify(err)}`);
+        }
+      };
+
+      // 统一结束函数
+      const finishTest = (): void => {
+        if (isDone) {
+          return;
+        }
+        isDone = true;
+        cleanup();
+        done();
+        console.info(`${caseName} test end`);
+      };
+
       try {
         class OutValue {
           status: number = 0
           message: string = ""
         }
+
         ws.on('error', (err: BusinessError) => {
-          console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
+          console.info(`${caseName} findError ${JSON.stringify(err)}`);
+          expectFail(`${caseName} findError`);
+          finishTest();
         });
+
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
+
           ws.send(sendLongMessage).then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
             expectTrue(value == true);
-            done();
-            console.info(`${caseName} test end`);
+            finishTest();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} send fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} send fail`);
-            done();
-            console.info(`${caseName} test end`);
-          })
+            finishTest();
+          });
         });
+
+        ws.on('close', (err: BusinessError, value: Object) => {
+          console.info(`${caseName} onclose err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
+        });
+
         ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} test connect fail`);
-            done();
-            console.info(`${caseName} test end`);
+            finishTest();
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
           }
-        })
+        });
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-        done();
-        console.info(`${caseName} test end`);
+        expectFail(`${caseName} fail, errInfo->${JSON.stringify(err)}`);
+        finishTest();
       }
-    })
+    });
 
     /**
      * @tc.name   testNetworkMgrWebSocketSendPromise0900
@@ -1972,46 +2393,68 @@ export default function WebSocketApiTest() {
     it('testNetworkMgrWebSocketSendPromise0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketSendPromise0900';
       console.info(`${caseName} test start`);
+
+      // 统一的清理函数：关闭连接并结束测试
+      const cleanupAndDone = () => {
+        try {
+          ws.close();
+        } catch (e) {
+          console.info(`${caseName} close error: ${JSON.stringify(e)}`);
+        }
+        done();
+        console.info(`${caseName} test end`);
+      };
+
       try {
         let sendMessage: ArrayBuffer = new ArrayBuffer(0);
         class OutValue {
           status: number = 0
           message: string = ""
         }
+
         ws.on('error', (err: BusinessError) => {
-          console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
+          console.info(`${caseName} findError: ${JSON.stringify(err)}`);
+          // 发生错误时也需要关闭连接
+          try {
+            ws.close();
+          } catch (e) {
+            console.info(`${caseName} close on error: ${JSON.stringify(e)}`);
+          }
         });
+
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
+          expectEqual(status, 101);
+
           ws.send(sendMessage).then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
             expectTrue(value == true);
-            done();
-            console.info(`${caseName} test end`);
+            // 发送成功后关闭连接
+            cleanupAndDone();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} send fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} send fail`);
-            done();
-            console.info(`${caseName} test end`);
-          })
+            // 发送失败后关闭连接
+            cleanupAndDone();
+          });
         });
+
         ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
           if (err) {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
             expectFail(`${caseName} test connect fail`);
-            done();
-            console.info(`${caseName} test end`);
+            // 连接失败，直接结束（连接未建立，close 仍可安全调用）
+            cleanupAndDone();
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
           }
-        })
+        });
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-        done();
-        console.info(`${caseName} test end`);
+        expectFail(`${caseName} fail, errInfo->${JSON.stringify(err)}`);
+        // 异常情况下也关闭连接
+        cleanupAndDone();
       }
     })
 
@@ -2114,7 +2557,7 @@ export default function WebSocketApiTest() {
                       done();
                       console.info(`${caseName} test end`);
                     }
-                  })              
+                  })
               },2000)
             }
           })
@@ -2950,31 +3393,46 @@ export default function WebSocketApiTest() {
     it('testNetworkMgrWebSocketOnOpenCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketOnOpenCallback0100';
       console.info(`${caseName} test start`);
+
+      // 标志位，确保 done() 只被调用一次
+      let isDone: boolean = false;
+      const safeDone = (): void => {
+        if (!isDone) {
+          isDone = true;
+          done();
+        }
+      };
+
       try {
         class OutValue {
           status: number = 0
           message: string = ""
         }
-        ws.on('error', (err: BusinessError) => {
-          console.info(`${caseName} findError" + ${JSON.stringify(err)}`);
-        });
+
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
-          done();
-        });
-        ws.connect(availableWebSocketAddress, (error: BusinessError, value: boolean) => {
-          console.info(`${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
-          expectTrue(value == true);
-          done();
+          expectEqual(status, 101);
           console.info(`${caseName} test end`);
+          safeDone();
+        });
+
+        ws.connect(availableWebSocketAddress, (error: BusinessError, value: boolean) => {
+          console.info(`${caseName} connect result error ${JSON.stringify(error)} and value is ${value}`);
+          if (error) {
+            // 连接失败，直接结束用例
+            expectFail(`${caseName} connect fail, errInfo->${JSON.stringify(error)}`);
+            safeDone();
+            return;
+          }
+          expectTrue(value == true);
+          // 连接请求成功，等待 open 事件回调中调用 done()
         })
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-        done();
+        expectFail(`${caseName} fail, errInfo->${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
+        safeDone();
       }
     })
 
@@ -3000,8 +3458,8 @@ export default function WebSocketApiTest() {
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen1 err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
-          ws.close((err: BusinessError,value: boolean) => {
+          expectEqual(status, 101);
+          ws.close((err: BusinessError, value: boolean) => {
             if (err) {
               console.info(`${caseName} close fail ${JSON.stringify(err)}`);
               expectFail(`${caseName} close fail`);
@@ -3010,14 +3468,27 @@ export default function WebSocketApiTest() {
             } else {
               console.info(`${caseName} close success and value is ${value}`);
               expectTrue(value == true);
+              // 移除旧的 open 回调，避免回调叠加
+              ws.off('open');
+              // 注册新的 open 回调，在第二次连接成功后调用 done()
               ws.on('open', (err: BusinessError, value: Object) => {
                 console.info(`${caseName} onopen2 err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
                 done();
+                console.info(`${caseName} test end`);
               });
-              done();
-              console.info(`${caseName} test end`);
+              // 重新连接，触发第二次 open 事件
+              ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
+                if (err) {
+                  console.info(`${caseName} reconnect fail ${JSON.stringify(err)}`);
+                  expectFail(`${caseName} reconnect fail`);
+                  done();
+                  console.info(`${caseName} test end`);
+                } else {
+                  console.info(`${caseName} reconnect success and value is ${value}`);
+                }
+              });
             }
-          })
+          });
         });
         ws.connect(availableWebSocketAddress, (err: BusinessError, value: boolean) => {
           if (err) {
@@ -3028,7 +3499,7 @@ export default function WebSocketApiTest() {
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
           }
-        })
+        });
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
@@ -3147,29 +3618,35 @@ export default function WebSocketApiTest() {
     it('testNetworkMgrWebSocketOffOpenCallback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketOffOpenCallback0200';
       console.info(`${caseName} test start`);
+      let isDone: boolean = false;
       try {
-        class OutValue {
-          status: number = 0
-          message: string = ""
-        }
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
-          const status: number = (value as OutValue).status;
-          expectEqual(status,101);
-          done();
+          // off('open')已调用两次，open回调不应触发；若触发则标记测试失败
+          expectFail(`${caseName} fail, open callback should not be triggered after off`);
+          if (!isDone) {
+            isDone = true;
+            done();
+          }
         });
         ws.off('open');
         ws.off('open');
         ws.connect(availableWebSocketAddress, (error: BusinessError, value: boolean) => {
           console.info(`${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
           expectTrue(value);
-          done();
+          if (!isDone) {
+            isDone = true;
+            done();
+          }
           console.info(`${caseName} test end`);
         })
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-        done();
+        if (!isDone) {
+          isDone = true;
+          done();
+        }
         console.info(`${caseName} test end`);
       }
     })
@@ -3190,19 +3667,38 @@ export default function WebSocketApiTest() {
           status: number = 0
           message: string = ""
         }
+
+        // 使用标志位跟踪两个回调的完成状态
+        let connectCompleted = false;
+        let openCompleted = false;
+
+        // 统一的完成处理函数，确保 done() 只调用一次
+        const finishTest = () => {
+          if (connectCompleted && openCompleted) {
+            console.info(`${caseName} test end`);
+            done();
+          }
+        };
+
+        // 1. 先取消订阅 open 事件
         ws.off('open');
+
+        // 2. 重新订阅 open 事件
         ws.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
-          expectEqual(status,101);
-          done();
+          expectEqual(status, 101);
+          openCompleted = true;
+          finishTest();
         });
+
+        // 3. 发起 WebSocket 连接
         ws.connect(availableWebSocketAddress, (error: BusinessError, value: boolean) => {
           console.info(`${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
           expectTrue(value);
-          done();
-          console.info(`${caseName} test end`);
-        })
+          connectCompleted = true;
+          finishTest();
+        });
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
