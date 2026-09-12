@@ -546,12 +546,6 @@ export default function sendablePreferencesPromiseTest() {
       });
     })
 
-
-
-
-
-
-
     /**
      * @tc.name   testSendableFlushSync0100
      * @tc.number testSendableFlushSync0100
@@ -581,8 +575,8 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name   testPreferencesGetUnusualTest0100
-     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_2300
+     * @tc.name   testPreferencesDeleteUnusualTest0100
+     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApi_DeleteUnusualTest_2300
      * @tc.desc   interface delete errCode is 15500000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

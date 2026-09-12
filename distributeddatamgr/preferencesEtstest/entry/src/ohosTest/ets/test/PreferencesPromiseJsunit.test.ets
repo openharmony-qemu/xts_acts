@@ -976,7 +976,7 @@ export default function preferencesPromiseTest(){
 
           /**
          * @tc.name   testPreferencesOffMultiProcessChangeCallBackErr0100
-         * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_4000
+         * @tc.number SUB_DistributedData_Preference_SDK_OffMultiCallBack_ApiPromiseTest_4000
          * @tc.desc   Multiple callback calls
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST

@@ -382,23 +382,23 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @tc.name   OH_RDB_TRANS_BUTT0100
-     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_RDB_TRANS_BUTT0100
-     * @tc.desc   OH_RDB_TRANS_BUTT0100
+     * @tc.name   OH_RDB_TRANS_BUTT_TEST_0100
+     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_RDB_TRANS_BUTT_0100
+     * @tc.desc   OH_RDB_TRANS_BUTT Unusual Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('OH_RDB_TRANS_BUTT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('OH_RDB_TRANS_BUTT_TEST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_RDB_TRANS_BUTT0100();
-      console.info(TAG + "OH_RDB_TRANS_BUTT0100 res=" + res );
+      console.info(TAG + "OH_RDB_TRANS_BUTT_TEST_0100 res=" + res );
       expect(res).assertEqual(0);
       done();
     });
 
     /**
      * @tc.name   OH_RdbTrans_UpdateWithConflictResolution0100
-     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_Rdb_Transaction0200
+     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_RdbTrans_UpdateWithConflictResolution_0200
      * @tc.desc   OH_RdbTrans_UpdateWithConflictResolution0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
