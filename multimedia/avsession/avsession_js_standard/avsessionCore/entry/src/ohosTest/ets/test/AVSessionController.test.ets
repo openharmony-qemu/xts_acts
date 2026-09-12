@@ -2244,14 +2244,14 @@ export default function abilityTest() {
       done();
     })
     /**
-     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_CUSTOMDATACHANGE_0100
-     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_CUSTOMDATACHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_OFF_CUSTOMDATACHANGE_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_OFF_CUSTOMDATACHANGE_0100
      * @tc.desc   customDataChange  on_off
      * @tc.size   MediumTest
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_CUSTOMDATACHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_OFF_CUSTOMDATACHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         let callback1 = () => {
           console.info('on customDataChange callback1');
@@ -2265,7 +2265,7 @@ export default function abilityTest() {
         controller.off('customDataChange', callback1);
         controller.off('customDataChange', callback2);
       } catch (error) {
-        console.info(`SUB_MULTIMEDIA_AVSESSION_ON_OFF_CUSTOMDATACHANGE_0100, error code: ${error.code}, message: ${error.message}`);
+        console.info(`SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_OFF_CUSTOMDATACHANGE_0100, error code: ${error.code}, message: ${error.message}`);
         expect(false).assertTrue();
       }
       await sleep(300);

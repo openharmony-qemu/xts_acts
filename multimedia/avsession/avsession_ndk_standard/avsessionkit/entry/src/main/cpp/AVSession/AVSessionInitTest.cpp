@@ -147,8 +147,7 @@ static void InitPush3(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVSessionRegisterForwardCallbackSuccess", AVSessionRegisterForwardCallbackSuccess));
     desc.push_back(XL("AVSessionRegisterForwardCallbackInvalidParam", AVSessionRegisterForwardCallbackInvalidParam));
     desc.push_back(XL("AVSessionUnregisterForwardCallbackSuccess", AVSessionUnregisterForwardCallbackSuccess));
-    desc.push_back(
-        XL("AVSessionUnregisterForwardCallbackInvalidParam", AVSessionUnregisterForwardCallbackInvalidParam));
+    desc.push_back(XL("AVSessionUnregisterForwardCallbackInvalidParam",AVSessionUnregisterForwardCallbackInvalidParam));
     desc.push_back(XL("AVSessionErrInvalidParam", AVSessionErrInvalidParam));
     desc.push_back(XL("AVSessionErrServiceException", AVSessionErrServiceException));
     desc.push_back(XL("AVSessionErrCodeCommandInvalid", AVSessionErrCodeCommandInvalid));

@@ -481,7 +481,7 @@ export default function audioLoopBack() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_LOOPBACK_STATUS_CHANGE_0100", Level.LEVEL2, async () => {
+    it("SUB_MULTIMEDIA_AUDIO_LOOPBACK_STATUS_CHANGE_0100", Level.LEVEL2, async (done: Function) => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
           let audioLoopback: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
@@ -496,9 +496,11 @@ export default function audioLoopBack() {
           audioLoopback.on('statusChange', callback2);
           audioLoopback.off('statusChange', callback);
           audioLoopback.off('statusChange', callback2);
+          done();
         } catch (err) {
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_LOOPBACK_STATUS_CHANGE_0100 ERROR: ${err}`);
           expect().assertFail();
+          done();
         }
       }
     })

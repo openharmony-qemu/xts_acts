@@ -14860,10 +14860,10 @@ export default function audioRendererTest() {
       let audioRenderer: audio.AudioRenderer;
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-        let callback = (state: audio.AudioState) => {
+        let callback = () => {
           console.info(`${TagFrmwk}: callback called`);
         };
-        let callback2 = (state: audio.AudioState) => {
+        let callback2 = () => {
           console.info(`${TagFrmwk}: callback called`);
         };
         audioRenderer.on('stateChange', callback);
@@ -15964,14 +15964,14 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.name   AUDIORENDERER_ON_MARKREACH_0100
-     * @tc.number AUDIORENDERER_ON_MARKREACH_0100
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIORENDERER_ON_MARKREACH_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIORENDERER_ON_MARKREACH_0100
      * @tc.desc   on_markReach 
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIORENDERER_ON_MARKREACH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIORENDERER_ON_MARKREACH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -16097,14 +16097,14 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.name   AUDIORENDERER_ON_PERIODREACH_0200
-     * @tc.number AUDIORENDERER_ON_PERIODREACH_0200
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIORENDERER_ON_PERIODREACH_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIORENDERER_ON_PERIODREACH_0200
      * @tc.desc   on_periodReach
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIORENDERER_ON_PERIODREACH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIORENDERER_ON_PERIODREACH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
         channels: audio.AudioChannel.CHANNEL_2,

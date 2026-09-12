@@ -317,15 +317,18 @@ export default function abilityTest() {
                     if (err) {
                         console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 fail" + err + err.code);
                         expect().assertFalse();
+                        done();
                     }
-                    console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 success");
+                    console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 success" + JSON.stringify(deviceInfo));
+                    expect(deviceInfo).not().assertNull();
                 });
+                await Utils.msSleep(200);
+                done();
             } catch (error) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 fail" + error + error.code);
                 expect().assertFalse();
+                done();
             }
-            await Utils.msSleep(200);
-            done();
         });
 
         /**

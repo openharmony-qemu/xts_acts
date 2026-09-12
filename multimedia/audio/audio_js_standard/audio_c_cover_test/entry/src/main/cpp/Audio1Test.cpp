@@ -516,7 +516,6 @@ napi_value AudioSessionSetDefaultOutputDeviceSuccess(napi_env env, napi_callback
     napi_value res;
     napi_create_int32(env, result, &res);
     return res;
-    
 }
 
 napi_value AudioSessionGetDefaultOutputDeviceInvalidParam(napi_env env, napi_callback_info info)
