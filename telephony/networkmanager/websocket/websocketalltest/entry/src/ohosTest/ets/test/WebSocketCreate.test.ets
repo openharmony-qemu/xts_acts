@@ -50,7 +50,7 @@ export default function WebSocketCreateTest() {
       try {
         let ws: webSocket.WebSocket = webSocket.createWebSocket();
         console.info(`${caseName} --> ${ws}`);
-        ExpectTrue(ws != null);
+        ExpectTrue(ws !== null);
         done();
         console.info(`${caseName} test end`);
       } catch (err) {
@@ -77,7 +77,7 @@ export default function WebSocketCreateTest() {
         let wsTwo: webSocket.WebSocket = webSocket.createWebSocket();
         console.info(`${caseName} --> ${wsOne}`);
         console.info(`${caseName} --> ${wsTwo}`);
-        ExpectTrue(wsOne != wsTwo);
+        ExpectTrue(wsOne !== wsTwo);
         done();
         console.info(`${caseName} test end`);
       } catch (err) {
