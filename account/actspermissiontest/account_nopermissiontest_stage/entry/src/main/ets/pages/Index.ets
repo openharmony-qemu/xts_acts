@@ -16,7 +16,7 @@
 @Entry
 @Component
 struct Index {
-  @State message: string = 'NoPermissionStageTest';
+  @State message: string = 'ActsAccountNoPermissionStageTest';
 
   aboutToAppear() {
     console.info("start run testcase!!!!");
