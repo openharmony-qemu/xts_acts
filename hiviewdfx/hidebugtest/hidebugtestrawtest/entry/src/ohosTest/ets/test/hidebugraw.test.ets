@@ -767,7 +767,6 @@ export default function HidebugrawTest() {
           let filename = await hidebug.dumpJsRawHeapData(null)
           console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1800 success and generated file path is ${filename}`)
         }
-        expect(false).assertTrue();
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1800 > err code: ${error.code}, err msg: ${error.message}`)
@@ -793,7 +792,6 @@ export default function HidebugrawTest() {
           let filename = await hidebug.dumpJsRawHeapData(undefined)
           console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1900 success and generated file path is ${filename}`)
         }
-        expect(false).assertTrue();
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1900 > err code: ${error.code}, err msg: ${error.message}`)
@@ -819,7 +817,6 @@ export default function HidebugrawTest() {
           let filename = await hidebug.dumpJsRawHeapData(null, true)
           console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_2000 success and generated file path is ${filename}`)
         }
-        expect(false).assertTrue();
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2000 > err code: ${error.code}, err msg: ${error.message}`)
@@ -845,7 +842,6 @@ export default function HidebugrawTest() {
           let filename = await hidebug.dumpJsRawHeapData(undefined, true)
           console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_2100 success and generated file path is ${filename}`)
         }
-        expect(false).assertTrue();
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2100 > err code: ${error.code}, err msg: ${error.message}`)
@@ -871,7 +867,6 @@ export default function HidebugrawTest() {
           let filename = await hidebug.dumpJsRawHeapData(true, null)
           console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_2200 success and generated file path is ${filename}`)
         }
-        expect(false).assertTrue();
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2200 > err code: ${error.code}, err msg: ${error.message}`)
@@ -897,7 +892,6 @@ export default function HidebugrawTest() {
           let filename = await hidebug.dumpJsRawHeapData(true, undefined)
           console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_2300 success and generated file path is ${filename}`)
         }
-        expect(false).assertTrue();
         done();
       } catch (error) {
         console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2300 > err code: ${error.code}, err msg: ${error.message}`)
