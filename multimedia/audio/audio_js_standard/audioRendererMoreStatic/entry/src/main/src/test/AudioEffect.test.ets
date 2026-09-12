@@ -3491,6 +3491,7 @@ export default function AudioEffectTest() {
       await createAudioRenderer(expect().assertFail, done)
       console.info(TAG + 'TestLog: Start Testing start function');
       await start(expect().assertFail, done)
+      await Utils.msSleep(1000);
       console.info(TAG + 'TestLog: Start Testing setAudioEffectMode function');
       await setAudioEffectMode(expect().assertFail, done)
       console.info(TAG + 'TestLog: Start Testing release function');

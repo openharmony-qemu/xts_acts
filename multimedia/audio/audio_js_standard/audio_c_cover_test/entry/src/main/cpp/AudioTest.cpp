@@ -917,12 +917,12 @@ napi_value AudioRendererSetDefaultOutputDeviceSuccess(napi_env env, napi_callbac
 
     OH_AudioRenderer_Start(audioRenderer);
     auto result = OH_AudioRenderer_SetDefaultOutputDevice(audioRenderer, deviceType);
-    if (result == AUDIOSTREAM_SUCCESS || result == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
-        napi_value res;
-        napi_create_int32(env, result, &res);
-        return res;
+    if (result != AUDIOSTREAM_SUCCESS && result != AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        return nullptr;
     }
-    return nullptr;
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
 }
 
 napi_value AudioRendererGetAudioTimestampInfoInvalidParam(napi_env env, napi_callback_info info)

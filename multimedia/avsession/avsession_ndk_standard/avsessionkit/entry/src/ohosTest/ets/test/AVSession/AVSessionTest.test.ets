@@ -1432,7 +1432,7 @@ export default function AVSessionTest() {
     it('testAVSessionDestroy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          let result: number = libavsession.AVSessionDestroySuccess();
+          let result: number = libavsession.AVSessionDestroyInvalidParam();
           expect(result).assertEqual(1);
           done()
         } catch (err) {
@@ -1677,6 +1677,26 @@ export default function AVSessionTest() {
           done()
         } catch (err) {
           console.error("====>testAVSessionSetAVMetadata003 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionSetAVMetadata004
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVMETADATA_0400
+     * @tc.desc   testing SetAVMetadataSuccess interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionSetAVMetadata004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionSetAVMetadataSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionSetAVMetadata004 catch err: " + err);
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
@@ -2061,6 +2081,25 @@ export default function AVSessionTest() {
         }
       });
 
+    /**
+     * @tc.name   testAVSessionCreateAVCastController003
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_CREATE_AV_CAST_CONTROLLER_0300
+     * @tc.desc   testing OH_AVSession_CreateAVCastController interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionCreateAVCastController003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionCreateAVCastControllerSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionCreateAVCastController003 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
     /**
      * @tc.name   testAVSessionStopCasting001
      * @tc.number SUB_AVSession_AVSessionStopCasting_001

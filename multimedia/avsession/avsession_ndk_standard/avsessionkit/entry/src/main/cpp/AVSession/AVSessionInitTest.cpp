@@ -158,6 +158,7 @@ static void InitPush3(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVSessionAcquireSessionSuccess", AVSessionAcquireSessionSuccess));
     desc.push_back(XL("AVSessionAcquireSessionInvalidParam", AVSessionAcquireSessionInvalidParam));
     desc.push_back(XL("AVSessionCreateAVCastControllerInvalidParam", AVSessionCreateAVCastControllerInvalidParam));
+    desc.push_back(XL("AVSessionCreateAVCastControllerSuccess", AVSessionCreateAVCastControllerSuccess));
     desc.push_back(XL("AVSessionStopCastingSuccess", AVSessionStopCastingSuccess));
     desc.push_back(XL("AVSessionStopCastingInvalidParam", AVSessionStopCastingInvalidParam));
     desc.push_back(XL("AVSessionAcquireOutputDeviceSuccess", AVSessionAcquireOutputDeviceSuccess));

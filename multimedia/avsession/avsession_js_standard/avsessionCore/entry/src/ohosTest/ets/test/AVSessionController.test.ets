@@ -1130,7 +1130,7 @@ export default function abilityTest() {
           let callback = (data: boolean) => {
             callbackData = data;
             callbackTriggered = true;
-            console.info(`${TAG}: TestLog: onDesktopLyricEnabled callback data = ${data})`);
+            console.info(`${TAG}: TestLog: onDesktopLyricEnabled callback data = ${data}`);
           }
           controller.onDesktopLyricEnabled(callback);
           await session.enableDesktopLyric(true);
@@ -1167,7 +1167,7 @@ export default function abilityTest() {
           let callback = (data: boolean) => {
             callbackData = data;
             callbackTriggered = true;
-            console.info(`${TAG}: TestLog: onDesktopLyricEnabled callback data = ${data})`);
+            console.info(`${TAG}: TestLog: onDesktopLyricEnabled callback data = ${data}`);
           }
           await session.enableDesktopLyric(true);
           await sleep(200);
@@ -1345,7 +1345,7 @@ export default function abilityTest() {
           let callback = (data: boolean) => {
             callbackData = data;
             callbackTriggered = true;
-            console.info(`${TAG}: onDesktopLyricVisibilityChanged callback triggered, data = ${data})`);
+            console.info(`${TAG}: onDesktopLyricVisibilityChanged callback triggered, data = ${data}`);
           }
           await session.enableDesktopLyric(true);
           controller.onDesktopLyricVisibilityChanged(callback);
@@ -1383,7 +1383,7 @@ export default function abilityTest() {
           let callback = (data: boolean) => {
             callbackData = data;
             callbackTriggered = true;
-            console.info(`${TAG}: onDesktopLyricVisibilityChanged callback triggered, data = ${data})`);
+            console.info(`${TAG}: onDesktopLyricVisibilityChanged callback triggered, data = ${data}`);
           }
           await session.enableDesktopLyric(true);
           await controller.setDesktopLyricVisible(true);
@@ -1682,6 +1682,635 @@ export default function abilityTest() {
         console.info('Succeeded in destroying.');
         done();
       });
+      done();
+    })
+    /**
+     * @tc.number   SUB_MULTIMEDIA_AVSESSION_MANAGER_ON_OFF_SESSIONDESTROY_0100
+     * @tc.name     SUB_MULTIMEDIA_AVSESSION_MANAGER_ON_OFF_SESSIONDESTROY_0100
+     * @tc.desc     Testing session destroy Callback
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_MANAGER_ON_OFF_SESSIONDESTROY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback1: avSession.NoParamCallback = () => {
+        console.info('callback1 call.');
+        }
+        let callback2: avSession.NoParamCallback = () => {
+        console.info('callback2 call.');
+        }
+
+        controller.off('sessionDestroy');
+        controller.on('sessionDestroy', callback1);
+        controller.on('sessionDestroy', callback2);
+        controller.off('sessionDestroy', callback1);
+        controller.off('sessionDestroy', callback2);
+      } catch (error) {
+        console.info('SUB_MULTIMEDIA_AVSESSION_MANAGER_ON_OFF_SESSIONDESTROY_0100 failed: ' + error.message + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+      await sleep(500);
+      done();
+    })
+    /**
+     * @tc.number   SUB_MULTIMEDIA_AVSESSION_MANAGER_ON_OFF_SESSIOEVENT_0100
+     * @tc.name     SUB_MULTIMEDIA_AVSESSION_MANAGER_ON_OFF_SESSIOEVENT_0100
+     * @tc.desc     Testing sessionEvent Callback
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_MANAGER_ON_OFF_SESSIOEVENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback1: avSession.EventProcess = (event, args) => {
+        console.info('callback1 call.');
+        }
+        let callback2: avSession.EventProcess = (event, args) => {
+        console.info('callback2 call.');
+        }
+
+        controller.off('sessionEvent');
+        controller.on('sessionEvent', callback1);
+        controller.on('sessionEvent', callback2);
+        controller.off('sessionEvent', callback1);
+        controller.off('sessionEvent', callback2);
+      } catch (error) {
+        console.info('SUB_MULTIMEDIA_AVSESSION_MANAGER_ON_OFF_SESSIOEVENT_0100 failed: ' + error.message + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+      await sleep(500);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_NULL_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_NULL_0100
+     * @tc.desc   Testing isDesktopLyricEnabled = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_NULL_0100';
+      try {
+        await session.enableDesktopLyric(null);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+        expect(err.message).assertContain('get isEnabled_ failed');
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_UNDERFINED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_UNDERFINED_0100
+     * @tc.desc   Testing isDesktopLyricEnabled = underfined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_UNDERFINED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_UNDERFINED_0100';
+      try {
+        await session.enableDesktopLyric(undefined);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+        expect(err.message).assertContain('get isEnabled_ failed');
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_NULL_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_NULL_0100
+     * @tc.desc   Testing setDesktopLyricVisible null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_NULL_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_NULL_0100';
+        try {
+          await session.setDesktopLyricVisible(null);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.message).assertContain('get isVisible_ failed');
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_UNDERFINED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_UNDERFINED_0100
+     * @tc.desc   Testing setDesktopLyricVisible undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_UNDERFINED_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_UNDERFINED_0100';
+        try {
+          await session.setDesktopLyricVisible(undefined);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.message).assertContain('get isVisible_ failed');
+        }
+        done();
+      });
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_NULL_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_NULL_0100
+     * @tc.desc   test setBackgroundPlayMode null
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_NULL_0100]';
+      session.setBackgroundPlayMode(null).then(()=>{
+        console.info(`${TAG}TestLog: setBackgroundPlayMode success, ENABLE_BACKGROUND_PLAY set successful!`);
+        expect(false).assertTrue();
+      }).catch((err: BusinessError) => {
+        console.info(`${TAG}TestLog: setBackgroundPlayMode error occurred, error: code: ${err.code}, message: ${err.message}`);
+        expect(err.message).assertContain('get playMode_ failed');
+      });
+      await sleep(300);
+      done();
+    })
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_UNDERFINED_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_UNDERFINED_0100
+     * @tc.desc   test setBackgroundPlayMode undefined
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_UNDERFINED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_UNDERFINED_0100]';
+      session.setBackgroundPlayMode(undefined).then(()=>{
+        console.info(`${TAG}TestLog: setBackgroundPlayMode success, ENABLE_BACKGROUND_PLAY set successful!`);
+        expect(false).assertTrue();
+      }).catch((err: BusinessError) => {
+        console.info(`${TAG}TestLog: setBackgroundPlayMode error occurred, error: code: ${err.code}, message: ${err.message}`);
+        expect(err.message).assertContain('get playMode_ failed');
+      });
+      await sleep(300);
+      done();
+    })
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_UNKNOW_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_UNKNOW_0100
+     * @tc.desc   test setBackgroundPlayMode 999
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_UNKNOW_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_UNKNOW_0100]';
+      session.setBackgroundPlayMode(999 as avSession.BackgroundPlayMode).then(()=>{
+        console.info(`${TAG}TestLog: setBackgroundPlayMode success, ENABLE_BACKGROUND_PLAY set successful!`);
+        expect(false).assertTrue();
+      }).catch((err: BusinessError) => {
+        console.info(`${TAG}TestLog: setBackgroundPlayMode error occurred, error: code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600101);
+      });
+      await sleep(300);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYFROMASSETID_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYFROMASSETID_0100
+     * @tc.desc   playFromAssetId  on_off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYFROMASSETID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let callback1 = (assetId: number) => {
+          console.info('on playFromAssetId callback1');
+        }
+        let callback2 = (assetId: number) => {
+          console.info('on playFromAssetId callback2');
+        }
+        session.off('playFromAssetId');
+        session.on('playFromAssetId', callback1);
+        session.on('playFromAssetId', callback2);
+        session.off('playFromAssetId', callback1);
+        session.off('playFromAssetId', callback2);
+      } catch (error) {
+        console.info(`on off playFromAssetId error, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600101);
+      }
+      await sleep(300);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_OUTPUTDEVICECHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_OUTPUTDEVICECHANGE_0100
+     * @tc.desc   outputDeviceChange on_off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_OUTPUTDEVICECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback1 = () => {
+          console.info('on outputdevicechange callback1');
+        }
+        let callback2 = () => {
+          console.info('on outputdevicechange callback2');
+        }
+        session.off('outputdevicechange');
+        session.on('outputdevicechange', callback1);
+        session.on('outputdevicechange', callback2);
+        session.off('outputdevicechange', callback1);
+        session.off('outputdevicechange', callback2);
+      } catch (error) {
+        console.info(`on off outputDeviceChange error, error code: ${error.code}, message: ${error.message}`);
+        expect(error.message).assertContain('invalid');
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_SKIPTOQUEUEITEM_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_SKIPTOQUEUEITEM_0100
+     * @tc.desc   skipToQueueItem on_off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_SKIPTOQUEUEITEM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback1 = (itemId: number) => {
+          console.info('on skipToQueueItem callback1');
+        }
+        let callback2 = (itemId: number) => {
+          console.info('on skipToQueueItem callback2');
+        }
+        session.off('skipToQueueItem');
+        session.on('skipToQueueItem', callback1);
+        session.on('skipToQueueItem', callback2);
+        session.off('skipToQueueItem', callback1);
+        session.off('skipToQueueItem', callback2);
+      } catch (error) {
+        console.info(`on off skipToQueueItem error, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600101);
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_CASTDISPLAYCHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_CASTDISPLAYCHANGE_0100
+     * @tc.desc   castDisplayChange on_off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_CASTDISPLAYCHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback1 = () => {
+          console.info('on castDisplayChange callback1');
+        }
+        let callback2 = () => {
+          console.info('on castDisplayChange callback2');
+        }
+        session.off('castDisplayChange');
+        session.on('castDisplayChange', callback1);
+        session.on('castDisplayChange', callback2);
+        session.off('castDisplayChange', callback1);
+        session.off('castDisplayChange', callback2);
+      } catch (error) {
+        console.info(`on off castDisplayChange error, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600101);
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_CUSTOMDATACHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_CUSTOMDATACHANGE_0100
+     * @tc.desc   customDataChange on_off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_CUSTOMDATACHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback1 = () => {
+          console.info('on customDataChange callback1');
+        }
+        let callback2 = () => {
+          console.info('on customDataChange callback2');
+        }
+        session.off('customDataChange');
+        session.on('customDataChange', callback1);
+        session.on('customDataChange', callback2);
+        session.off('customDataChange', callback1);
+        session.off('customDataChange', callback2);
+      } catch (error) {
+        console.info(`on off customDataChange error, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600101);
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_KEYREQUEST_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_KEYREQUEST_0100
+     * @tc.desc   keyRequest on_off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_KEYREQUEST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback1: avSession.KeyRequestCallback = (assetId, requestData) => {
+          console.info('on keyRequest callback1');
+        }
+        let callback2: avSession.KeyRequestCallback = (assetId, requestData) => {
+          console.info('on keyRequest callback2');
+        }
+        controller.off('keyRequest');
+        controller.on('keyRequest', callback1);
+        controller.on('keyRequest', callback2);
+        controller.off('keyRequest', callback1);
+        controller.off('keyRequest', callback2);
+      } catch (error) {
+        console.info(`on off keyRequest error, error code: ${error.code}, message: ${error.message}`);
+        expect(error.message).assertContain('invalid');
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYINFO_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYINFO_0100
+     * @tc.desc   CastDisplayInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYINFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let castDisplayInfo: avSession.CastDisplayInfo = {
+          id: 1234567890123,
+          name: 'CastDisplay_01',
+          state: avSession.CastDisplayState.STATE_ON,
+          width: 1920,
+          height: 1080,
+        };
+        let aVMediaDescription: avSession.AVMediaDescription = {
+          assetId: '123',
+          drmScheme: 'drmScheme'
+        };
+        expect(castDisplayInfo.id).assertEqual(1234567890123);
+        expect(castDisplayInfo.name).assertEqual('CastDisplay_01');
+        expect(castDisplayInfo.state).assertEqual(avSession.CastDisplayState.STATE_ON);
+        expect(castDisplayInfo.width).assertEqual(1920);
+        expect(castDisplayInfo.height).assertEqual(1080);
+        expect(aVMediaDescription.drmScheme).assertEqual('drmScheme');
+      } catch (error) {
+        console.info(`CastDisplayInfo error, error code: ${error.code}, message: ${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_DEVICEINFO_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_DEVICEINFO_0100
+     * @tc.desc   DeviceInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_DEVICEINFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let deviceInfo: avSession.DeviceInfo = {
+          castCategory: avSession.AVCastCategory.CATEGORY_LOCAL,
+          deviceId: '1234567890ABCDEF',
+          deviceName: 'sound-01',
+          deviceType: avSession.DeviceType.DEVICE_TYPE_LOCAL,
+          manufacturer: 'manufacturer',
+          modelName: 'modelName',
+          supportedProtocols: 0x07,
+          supportedDrmCapabilities: ['edef8ba9-79d6-4ace-a3c8-27dcd51d21ed'],
+          supportedPullClients: [1, 2, 3]
+        };
+        expect(deviceInfo.manufacturer).assertEqual('manufacturer');
+        expect(deviceInfo.modelName).assertEqual('modelName');
+        expect(deviceInfo.supportedProtocols).assertEqual(0x07);
+        expect(deviceInfo.supportedDrmCapabilities).not().assertNull();
+        expect(deviceInfo.supportedPullClients).not().assertNull();
+      } catch (error) {
+        console.info(`DeviceInfo error, error code: ${error.code}, message: ${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVSESSIONDESCRIPTOR_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVSESSIONDESCRIPTOR_0100
+     * @tc.desc   AVSessionDescriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVSESSIONDESCRIPTOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let aVSessionDescriptor: avSession.AVSessionDescriptor = {
+          sessionId: 'session_1234567890',
+          type: 'audio',
+          sessionTag: 'com.example',
+          elementName: {
+            bundleName: 'com.example',
+            abilityName: 'Ability',
+            moduleName: 'entry',
+          },
+          isActive: true,
+          isTopSession: false,
+          outputDevice: {
+            devices: []
+          }
+        };
+        expect(aVSessionDescriptor.sessionId).assertEqual('session_1234567890');
+        expect(aVSessionDescriptor.type).assertEqual('audio');
+        expect(aVSessionDescriptor.sessionTag).assertEqual('com.example');
+        expect(aVSessionDescriptor.elementName).not().assertNull();
+        expect(aVSessionDescriptor.isActive).assertEqual(true);
+        expect(aVSessionDescriptor.isTopSession).assertEqual(false);
+      } catch (error) {
+        console.info(`AVSessionDescriptor error, error code: ${error.code}, message: ${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0100
+     * @tc.desc   getOutputDevice callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        controller.getOutputDevice((err: BusinessError, deviceInfo: avSession.OutputDeviceInfo) => {
+          if (err) {
+            console.error(`Failed to get output device, code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+            done();
+            return;
+          }
+          console.info('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0100 Succeeded in getting output device.');
+        });
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0100, error code: ${error.code}, message: ${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_NULL_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_NULL_0200
+     * @tc.desc   Testing setDesktopLyricVisible null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_NULL_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_NULL_0200';
+        try {
+          await controller.setDesktopLyricVisible(null);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.message).assertContain('get isVisible_ failed');
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_UNDERFINED_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_UNDERFINED_0200
+     * @tc.desc   Testing setDesktopLyricVisible undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_UNDERFINED_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_UNDERFINED_0200';
+        try {
+          await controller.setDesktopLyricVisible(undefined);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.message).assertContain('get isVisible_ failed');
+        }
+        done();
+      });
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_0100
+     * @tc.desc   playbackStateChange  on_off
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback1 = (playbackstate: avSession.AVPlaybackState) => {
+          console.info('on playbackStateChange callback1');
+        }
+        let callback2 = (playbackstate: avSession.AVPlaybackState) => {
+          console.info('on playbackStateChange callback2');
+        }
+        controller.off('playbackStateChange');
+        controller.on('playbackStateChange', 'all', callback1);
+        controller.on('playbackStateChange', 'all', callback2);
+        controller.off('playbackStateChange', callback1);
+        controller.off('playbackStateChange', callback2);
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_0100, error code: ${error.code}, message: ${error.message}`);
+        expect(false).assertTrue();
+      }
+      await sleep(300);
+      done();
+    })
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_CUSTOMDATACHANGE_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_CUSTOMDATACHANGE_0100
+     * @tc.desc   customDataChange  on_off
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_CUSTOMDATACHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let callback1 = () => {
+          console.info('on customDataChange callback1');
+        }
+        let callback2 = () => {
+          console.info('on customDataChange callback2');
+        }
+        controller.off('customDataChange');
+        controller.on('customDataChange', callback1);
+        controller.on('customDataChange', callback2);
+        controller.off('customDataChange', callback1);
+        controller.off('customDataChange', callback2);
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_ON_OFF_CUSTOMDATACHANGE_0100, error code: ${error.code}, message: ${error.message}`);
+        expect(false).assertTrue();
+      }
+      await sleep(300);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_EMPTY_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_EMPTY_0100
+     * @tc.desc   Testing on('callMetadataChange') empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_EMPTY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let metadata = [];
+        controller.on('callMetadataChange', metadata, (callMetadata: ESObject) => {
+          console.info(`on callMetadataChange callMetadata`);
+        });
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_EMPTY_0100 error, error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6600101);
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_EMPTY_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_EMPTY_0100
+     * @tc.desc   Testing on('callStateChange') empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_EMPTY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let state = [];
+        controller.on('callStateChange', state, (avCallState: ESObject) => {
+          console.info(`on callStateChange avCallState`);
+        });
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_EMPTY_0100 error, error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6600101);
+      }
       done();
     })
   })
