@@ -18,6 +18,8 @@
 #include <fstream>
 #include <string>
 #include <cstring>
+#include <filesystem>
+#include <system_error>
 #include <rawfile/raw_file_manager.h>
 #include <AbilityKit/ability_runtime/application_context.h>
 #include <ContentEmbedKit/content_embed/content_embed_common.h>
@@ -25,6 +27,8 @@
 #include <ContentEmbedKit/content_embed/content_embed_proxy.h>
 #include <hilog/log.h>
 #include "ObjectEditor.h"
+
+namespace fs = std::__fs::filesystem;
 
 constexpr int32_t ARGS_COUNT = 4;
 static bool g_IsSupport = false;
@@ -953,6 +957,432 @@ napi_value TestProxyMultiExtension_Normal(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "TestProxyMultiExtension_Normal code: %{public}d", errCode);
     if (errCode == CE_ERR_OK) {
         napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static int32_t ClearDir()
+{
+    char filePath[FILE_PATH_SIZE];
+    int32_t writeLength = 0;
+    AbilityRuntime_ErrorCode abilityCode =
+        OH_AbilityRuntime_ApplicationContextGetTempDir(filePath, FILE_PATH_SIZE, &writeLength);
+    if (abilityCode != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "ClearDir GetTempDir failed: %{public}d", abilityCode);
+        return -1;
+    }
+    std::error_code ec;
+    if (!fs::exists(filePath, ec)) {
+        OH_LOG_ERROR(LOG_APP, "ClearDir temp dir not exists: %{public}s", filePath);
+        return -1;
+    }
+    fs::remove_all(filePath, ec);
+    if (ec) {
+        OH_LOG_ERROR(LOG_APP, "ClearDir remove_all failed: %{public}s", ec.message().c_str());
+        return -1;
+    }
+    abilityCode =
+        OH_AbilityRuntime_ApplicationContextGetFilesDir(filePath, FILE_PATH_SIZE, &writeLength);
+    if (abilityCode != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "ClearDir GetFilesDir failed: %{public}d", abilityCode);
+        return -1;
+    }
+    std::string fullPath = std::string(filePath) + "/ole.bin";
+    fs::remove(fullPath.c_str(), ec);
+    if (ec) {
+        OH_LOG_ERROR(LOG_APP, "ClearDir remove ole.bin failed: %{public}s", ec.message().c_str());
+        return -1;
+    }
+    return 0;
+}
+
+static int32_t PrepareDocAndProxy(ContentEmbed_Document** document,
+    ContentEmbed_ExtensionProxy** proxy)
+{
+    ContentEmbed_ErrorCode errCode = OH_ContentEmbed_CreateDocumentByOEid(
+        normalOEid.c_str(), document);
+    OH_LOG_INFO(LOG_APP, "PrepareDocAndProxy CreateDocumentByOEid ret: %{public}d", errCode);
+    if (errCode != CE_ERR_OK) {
+        return -1;
+    }
+    errCode = CreateProxy(g_contextPtr, *document, proxy);
+    OH_LOG_INFO(LOG_APP, "PrepareDocAndProxy CreateProxy ret: %{public}d", errCode);
+    if (errCode != CE_ERR_OK) {
+        return -1;
+    }
+    int32_t ret = WriteDocumentToSandbox(*document);
+    OH_LOG_INFO(LOG_APP, "PrepareDocAndProxy WriteDocumentToSandbox ret: %{public}d", ret);
+    if (ret != 0) {
+        return -1;
+    }
+    OH_ContentEmbed_Proxy_StopWork(*proxy);
+    OH_ContentEmbed_DestroyExtensionProxy(*proxy);
+    *proxy = nullptr;
+    char filePath[FILE_PATH_SIZE];
+    int32_t writeLength = 0;
+    AbilityRuntime_ErrorCode code =
+        OH_AbilityRuntime_ApplicationContextGetFilesDir(filePath, FILE_PATH_SIZE, &writeLength);
+    if (code != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "PrepareDocAndProxy GetFilesDir failed: %{public}d", code);
+        return -1;
+    }
+    std::string fullPath = std::string(filePath) + "/ole.bin";
+    *document = nullptr;
+    errCode = OH_ContentEmbed_LoadDocumentFromFile(fullPath.c_str(),
+        fullPath.size(), document);
+    OH_LOG_INFO(LOG_APP, "PrepareDocAndProxy LoadDocumentFromFile ret: %{public}d", errCode);
+    if (errCode != CE_ERR_OK) {
+        return -1;
+    }
+    errCode = CreateProxy(g_contextPtr, *document, proxy);
+    OH_LOG_INFO(LOG_APP, "PrepareDocAndProxy CreateProxy reload ret: %{public}d", errCode);
+    if (errCode != CE_ERR_OK) {
+        return -1;
+    }
+    return 0;
+}
+
+static int32_t FlushAndReloadDocument(ContentEmbed_Document** document,
+    ContentEmbed_ExtensionProxy** proxy)
+{
+    ContentEmbed_ErrorCode errCode = OH_ContentEmbed_Document_Flush(*document);
+    OH_LOG_INFO(LOG_APP, "FlushAndReloadDocument Flush ret: %{public}d", errCode);
+    if (errCode != CE_ERR_OK) {
+        return -1;
+    }
+    int32_t ret = WriteDocumentToSandbox(*document);
+    OH_LOG_INFO(LOG_APP, "FlushAndReloadDocument WriteDocumentToSandbox ret: %{public}d", ret);
+    if (ret != 0) {
+        return -1;
+    }
+    OH_ContentEmbed_Proxy_StopWork(*proxy);
+    OH_ContentEmbed_DestroyExtensionProxy(*proxy);
+    *proxy = nullptr;
+    char filePath[FILE_PATH_SIZE];
+    int32_t writeLength = 0;
+    AbilityRuntime_ErrorCode code =
+        OH_AbilityRuntime_ApplicationContextGetFilesDir(filePath, FILE_PATH_SIZE, &writeLength);
+    if (code != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "FlushAndReloadDocument GetFilesDir failed: %{public}d", code);
+        return -1;
+    }
+    std::string fullPath = std::string(filePath) + "/ole.bin";
+    *document = nullptr;
+    errCode = OH_ContentEmbed_LoadDocumentFromFile(fullPath.c_str(),
+        fullPath.size(), document);
+    OH_LOG_INFO(LOG_APP, "FlushAndReloadDocument LoadDocumentFromFile ret: %{public}d", errCode);
+    if (errCode != CE_ERR_OK) {
+        return -1;
+    }
+    errCode = CreateProxy(g_contextPtr, *document, proxy);
+    OH_LOG_INFO(LOG_APP, "FlushAndReloadDocument CreateProxy reload ret: %{public}d", errCode);
+    if (errCode != CE_ERR_OK) {
+        return -1;
+    }
+    return 0;
+}
+
+static ContentEmbed_ErrorCode CreateStreamAndWrite(ContentEmbed_Document* document,
+    const char* name)
+{
+    ContentEmbed_Storage *rootStorage = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Document_GetRootStorage(document, &rootStorage);
+    OH_LOG_INFO(LOG_APP, "CreateStreamAndWrite GetRootStorage ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        return code;
+    }
+    ContentEmbed_Stream *stream = nullptr;
+    code = OH_ContentEmbed_Storage_CreateStream(rootStorage, name, &stream);
+    OH_LOG_INFO(LOG_APP, "CreateStreamAndWrite CreateStream ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        return code;
+    }
+    char writeData[] = "test data for stream read failed";
+    size_t writeNum = 0;
+    code = OH_ContentEmbed_Stream_Write(stream, (unsigned char *)writeData,
+        strlen(writeData), &writeNum);
+    OH_LOG_INFO(LOG_APP, "CreateStreamAndWrite Stream_Write ret: %{public}d", code);
+    return code;
+}
+
+static ContentEmbed_ErrorCode GetStreamAndRead(ContentEmbed_Document* document,
+    const char* name, unsigned char** buffer, size_t* readSize)
+{
+    ContentEmbed_Storage *rootStorage = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Document_GetRootStorage(document, &rootStorage);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndRead GetRootStorage ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        return code;
+    }
+    ContentEmbed_Stream *stream = nullptr;
+    code = OH_ContentEmbed_Storage_GetStream(rootStorage, name, &stream);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndRead GetStream ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        return code;
+    }
+    code = OH_ContentEmbed_Stream_Read(stream, buffer, BUF_SIZE, readSize);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndRead Stream_Read ret: %{public}d", code);
+    return code;
+}
+
+static ContentEmbed_ErrorCode GetStreamAndWrite(ContentEmbed_Document* document,
+    const char* name, uint8_t* buffer, size_t length, size_t* writeSize)
+{
+    ContentEmbed_Storage *rootStorage = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Document_GetRootStorage(document, &rootStorage);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndWrite GetRootStorage ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        return code;
+    }
+    ContentEmbed_Stream *stream = nullptr;
+    code = OH_ContentEmbed_Storage_GetStream(rootStorage, name, &stream);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndWrite GetStream ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        return code;
+    }
+    code = OH_ContentEmbed_Stream_Write(stream, buffer, length, writeSize);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndWrite Stream_Write ret: %{public}d", code);
+    return code;
+}
+
+static ContentEmbed_ErrorCode GetStreamAndGetPosition(ContentEmbed_Document* document,
+    const char* name, size_t* position)
+{
+    ContentEmbed_Storage *rootStorage = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Document_GetRootStorage(document, &rootStorage);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndGetPosition GetRootStorage ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        return code;
+    }
+    ContentEmbed_Stream *stream = nullptr;
+    code = OH_ContentEmbed_Storage_GetStream(rootStorage, name, &stream);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndGetPosition GetStream ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        return code;
+    }
+    code = OH_ContentEmbed_Stream_GetPosition(stream, position);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndGetPosition Stream_GetPosition ret: %{public}d", code);
+    return code;
+}
+
+static ContentEmbed_ErrorCode GetStreamAndGetSize(ContentEmbed_Document* document,
+    const char* name, size_t* size)
+{
+    ContentEmbed_Storage *rootStorage = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Document_GetRootStorage(document, &rootStorage);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndGetSize GetRootStorage ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        return code;
+    }
+    ContentEmbed_Stream *stream = nullptr;
+    code = OH_ContentEmbed_Storage_GetStream(rootStorage, name, &stream);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndGetSize GetStream ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        return code;
+    }
+    code = OH_ContentEmbed_Stream_GetSize(stream, size);
+    OH_LOG_INFO(LOG_APP, "GetStreamAndGetSize Stream_GetSize ret: %{public}d", code);
+    return code;
+}
+
+napi_value TestStreamRead_StreamFailed(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    if (!g_IsSupport) {
+        OH_LOG_ERROR(LOG_APP, "TestStreamRead_StreamFailed not supported");
+        napi_create_int32(env, CE_ERR_STREAM_OPERATION_FAILED, &result);
+        return result;
+    }
+    ContentEmbed_Document *document = nullptr;
+    ContentEmbed_ExtensionProxy *proxy = nullptr;
+    int32_t ret = PrepareDocAndProxy(&document, &proxy);
+    OH_LOG_INFO(LOG_APP, "TestStreamRead_StreamFailed PrepareDocAndProxy ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    char name[] = "testStream";
+    ContentEmbed_ErrorCode code = CreateStreamAndWrite(document, name);
+    OH_LOG_INFO(LOG_APP, "TestStreamRead_StreamFailed CreateStreamAndWrite ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    ret = DocumentDataWriteToServer(document, "testStreamReadFailed");
+    OH_LOG_INFO(LOG_APP, "TestStreamRead_StreamFailed DocumentDataWriteToServer ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    ret = FlushAndReloadDocument(&document, &proxy);
+    OH_LOG_INFO(LOG_APP, "TestStreamRead_StreamFailed FlushAndReloadDocument ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    uint32_t bitmask = 0;
+    code = OH_ContentEmbed_Proxy_GetCapability(proxy, &bitmask);
+    OH_LOG_INFO(LOG_APP, "TestStreamRead_StreamFailed GetCapability ret: %{public}d bitmask: %{public}d",
+        code, bitmask);
+    unsigned char *buffer = nullptr;
+    size_t readSize = 0;
+    code = GetStreamAndRead(document, name, &buffer, &readSize);
+    OH_LOG_INFO(LOG_APP, "TestStreamRead_StreamFailed read code: %{public}d", code);
+    if (code == CE_ERR_STREAM_OPERATION_FAILED) {
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+napi_value TestStreamWrite_StreamFailed(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    if (!g_IsSupport) {
+        OH_LOG_ERROR(LOG_APP, "TestStreamWrite_StreamFailed not supported");
+        napi_create_int32(env, CE_ERR_STREAM_OPERATION_FAILED, &result);
+        return result;
+    }
+    ContentEmbed_Document *document = nullptr;
+    ContentEmbed_ExtensionProxy *proxy = nullptr;
+    int32_t ret = PrepareDocAndProxy(&document, &proxy);
+    OH_LOG_INFO(LOG_APP, "TestStreamWrite_StreamFailed PrepareDocAndProxy ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    char name[] = "testStream";
+    ContentEmbed_ErrorCode code = CreateStreamAndWrite(document, name);
+    OH_LOG_INFO(LOG_APP, "TestStreamWrite_StreamFailed CreateStreamAndWrite ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    ret = DocumentDataWriteToServer(document, "testStreamReadFailed");
+    OH_LOG_INFO(LOG_APP, "TestStreamWrite_StreamFailed DocumentDataWriteToServer ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    ret = FlushAndReloadDocument(&document, &proxy);
+    OH_LOG_INFO(LOG_APP, "TestStreamWrite_StreamFailed FlushAndReloadDocument ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    uint32_t bitmask = 0;
+    code = OH_ContentEmbed_Proxy_GetCapability(proxy, &bitmask);
+    OH_LOG_INFO(LOG_APP, "TestStreamWrite_StreamFailed GetCapability ret: %{public}d bitmask: %{public}d",
+        code, bitmask);
+    uint8_t buffer[BUF_SIZE] = {0};
+    size_t writeSize = 0;
+    code = GetStreamAndWrite(document, name, buffer, BUF_SIZE, &writeSize);
+    OH_LOG_INFO(LOG_APP, "TestStreamWrite_StreamFailed write code: %{public}d", code);
+    if (code == CE_ERR_STREAM_OPERATION_FAILED) {
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+napi_value TestStreamGetPosition_StreamFailed(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    if (!g_IsSupport) {
+        OH_LOG_ERROR(LOG_APP, "TestStreamGetPosition_StreamFailed not supported");
+        napi_create_int32(env, CE_ERR_STREAM_OPERATION_FAILED, &result);
+        return result;
+    }
+    ContentEmbed_Document *document = nullptr;
+    ContentEmbed_ExtensionProxy *proxy = nullptr;
+    int32_t ret = PrepareDocAndProxy(&document, &proxy);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetPosition_StreamFailed PrepareDocAndProxy ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    char name[] = "testStream";
+    ContentEmbed_ErrorCode code = CreateStreamAndWrite(document, name);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetPosition_StreamFailed CreateStreamAndWrite ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    ret = DocumentDataWriteToServer(document, "testStreamReadFailed");
+    OH_LOG_INFO(LOG_APP, "TestStreamGetPosition_StreamFailed DocumentDataWriteToServer ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    ret = FlushAndReloadDocument(&document, &proxy);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetPosition_StreamFailed FlushAndReloadDocument ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    uint32_t bitmask = 0;
+    code = OH_ContentEmbed_Proxy_GetCapability(proxy, &bitmask);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetPosition_StreamFailed GetCapability ret: %{public}d bitmask: %{public}d",
+        code, bitmask);
+    size_t position = 0;
+    code = GetStreamAndGetPosition(document, name, &position);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetPosition_StreamFailed code: %{public}d", code);
+    if (code == CE_ERR_STREAM_OPERATION_FAILED) {
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+napi_value TestStreamGetSize_StreamFailed(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    if (!g_IsSupport) {
+        OH_LOG_ERROR(LOG_APP, "TestStreamGetSize_StreamFailed not supported");
+        napi_create_int32(env, CE_ERR_STREAM_OPERATION_FAILED, &result);
+        return result;
+    }
+    ContentEmbed_Document *document = nullptr;
+    ContentEmbed_ExtensionProxy *proxy = nullptr;
+    int32_t ret = PrepareDocAndProxy(&document, &proxy);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetSize_StreamFailed PrepareDocAndProxy ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    char name[] = "testStream";
+    ContentEmbed_ErrorCode code = CreateStreamAndWrite(document, name);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetSize_StreamFailed CreateStreamAndWrite ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    ret = DocumentDataWriteToServer(document, "testStreamReadFailed");
+    OH_LOG_INFO(LOG_APP, "TestStreamGetSize_StreamFailed DocumentDataWriteToServer ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    ret = FlushAndReloadDocument(&document, &proxy);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetSize_StreamFailed FlushAndReloadDocument ret: %{public}d", ret);
+    if (ret != 0) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    uint32_t bitmask = 0;
+    code = OH_ContentEmbed_Proxy_GetCapability(proxy, &bitmask);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetSize_StreamFailed GetCapability ret: %{public}d bitmask: %{public}d",
+        code, bitmask);
+    size_t size = 0;
+    code = GetStreamAndGetSize(document, name, &size);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetSize_StreamFailed code: %{public}d", code);
+    if (code == CE_ERR_STREAM_OPERATION_FAILED) {
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_create_int32(env, -1, &result);
