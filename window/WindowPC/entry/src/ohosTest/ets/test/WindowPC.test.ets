@@ -3192,6 +3192,7 @@ export default function windowPCTest() {
         await sleep(100)
         let windowStatusTypeAfter = windowClass.getWindowStatus()
         console.log(msgStr +`count1:${count1},count2:${count2},windowStatusTypeBefore:${JSON.stringify(windowStatusTypeBefore)},windowStatusTypeAfter:${JSON.stringify(windowStatusTypeAfter)}`);
+        await windowClass.destroyWindow();
         expect(count1).assertEqual(0);
         expect(count2).assertEqual(0);
         expect(windowStatusTypeBefore === windowStatusTypeAfter).assertFalse()

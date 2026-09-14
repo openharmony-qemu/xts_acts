@@ -580,7 +580,8 @@ export default function windowKeyBorad() {
         console.info(`${caseName} Succeeded off callback2 callback4`);
         await sleep(100)
         console.info(`${caseName} count1:${JSON.stringify(count1)},count2:${JSON.stringify(count2)},count3:${JSON.stringify(count3)},count4:${JSON.stringify(count4)}`);
-        if(deviceType !== 'phone'&&deviceType !== 'tablet'){
+        await windowClass.destroyWindow()
+        if(deviceType !== 'phone'){
           expect(count1).assertEqual(0);
           expect(count2).assertEqual(0);
           expect(count3).assertEqual(0);
