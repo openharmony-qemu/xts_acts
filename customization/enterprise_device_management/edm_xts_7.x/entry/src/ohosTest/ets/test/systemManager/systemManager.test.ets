@@ -1011,7 +1011,7 @@ function testAddAllowedPrinterIPAddressesForDevice() {
   /**
   * @tc.name   test_add_allowed_printer_ip_for_device_0102
   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0102
-  * @tc.desc   test addAllowedPrinterIPAddressesForDevice with normal admin
+  * @tc.desc   test addAllowedPrinterIPAddressesForDevice with byod admin
   * @tc.type   FUNCTION
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL2
@@ -1180,7 +1180,7 @@ function testRemoveAllowedPrinterIPAddressesForDevice() {
   /**
   * @tc.name   test_remove_allowed_printer_ip_for_device_0102
   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0102
-  * @tc.desc   test removeAllowedPrinterIPAddressesForDevice with normal admin
+  * @tc.desc   test removeAllowedPrinterIPAddressesForDevice with byod admin
   * @tc.type   FUNCTION
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL2
@@ -1345,7 +1345,7 @@ function testGetAllowedPrinterIPAddressesForDevice() {
   /**
   * @tc.name   test_get_allowed_printer_ip_for_device_0102
   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0102
-  * @tc.desc   test getAllowedPrinterIPAddressesForDevice with normal admin
+  * @tc.desc   test getAllowedPrinterIPAddressesForDevice with byod admin
   * @tc.type   FUNCTION
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL2
@@ -1485,7 +1485,7 @@ function testAddAllowedPrinterIPAddressesForAccount() {
   /**
   * @tc.name   test_add_allowed_printer_ip_for_device_for_account_0102
   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0102
-  * @tc.desc   test addAllowedPrinterIPAddressesForAccount with normal admin
+  * @tc.desc   test addAllowedPrinterIPAddressesForAccount with byod admin
   * @tc.type   FUNCTION
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL2
@@ -1654,7 +1654,7 @@ function testRemoveAllowedPrinterIPAddressesForAccount() {
   /**
   * @tc.name   test_remove_allowed_printer_ip_for_device_for_account_0102
   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0102
-  * @tc.desc   test removeAllowedPrinterIPAddressesForAccount with normal admin
+  * @tc.desc   test removeAllowedPrinterIPAddressesForAccount with byod admin
   * @tc.type   FUNCTION
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL2
@@ -1819,7 +1819,7 @@ function testGetAllowedPrinterIPAddressesForAccount() {
   /**
   * @tc.name   test_get_allowed_printer_ip_for_device_for_account_0102
   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0102
-  * @tc.desc   test getAllowedPrinterIPAddressesForAccount with normal admin
+  * @tc.desc   test getAllowedPrinterIPAddressesForAccount with byod admin
   * @tc.type   FUNCTION
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL2
