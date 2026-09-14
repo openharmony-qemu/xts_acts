@@ -139,15 +139,16 @@ struct webResourceResponsePage {
               let msg = "testCustomizeSchemes001"
               try {
                 web_webview.WebviewController.customizeSchemes([this.scheme1])
+                Utils.emitEvent(true, 148350);
               } catch (error) {
                 let errMsg = error?.message ?? String(error);
                 if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
                   
                   console.info('No implementation found')
-                  Utils.emitEvent(17100020, 148351);
+                  Utils.emitEvent(17100020, 148350);
                 } else {
                   console.error(`Error: ${errMsg}`);
-                  Utils.emitEvent('error', 2603261011);
+                  Utils.emitEvent('error', 148350);
                 }
               }
               break;
@@ -176,15 +177,16 @@ struct webResourceResponsePage {
               let msg = "emitCustomizeSchemesLazyInitWebEngineTrue"
               try {
                 web_webview.WebviewController.customizeSchemes(this.schemeList,true)
+                Utils.emitEvent(true, 148353);
               } catch (error) {
                 let errMsg = error?.message ?? String(error);
                 if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
                   
                   console.info('No implementation found')
-                  Utils.emitEvent(this.schemeList, 2603261011);
+                  Utils.emitEvent(17100020, 148353);
                 } else {
                   console.error(`Error: ${errMsg}`);
-                  Utils.emitEvent('error', 2603261011);
+                  Utils.emitEvent('error', 148353);
                 }
               }
               break;
@@ -194,6 +196,7 @@ struct webResourceResponsePage {
               let msg = "emitCustomizeSchemesLazyInitWebEngineFalse"
               try {
                 web_webview.WebviewController.customizeSchemes(this.schemeList,false)
+                Utils.emitEvent(true, 148354);
               } catch (error) {
                 let errMsg = error?.message ?? String(error);
                 if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
