@@ -64,11 +64,13 @@ int TestCreateDashPathEffectNull()
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_PathEffect *pathEffect1 = OH_Drawing_CreateDashPathEffect(nullptr, DRAWING_NUMBER_2, 1.0f);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(pathEffect1, nullptr);
     OH_Drawing_ErrorCodeReset();
     // 2. OH_Drawing_CreateDashPathEffect with 0 as the second parameter, check the error code with
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_PathEffect *pathEffect2 = OH_Drawing_CreateDashPathEffect(intervals, 0, 1.0f);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(pathEffect2, nullptr);
     // 3. OH_Drawing_CreateDashPathEffect with 0.0 as the third parameter
     OH_Drawing_PathEffect *pathEffect3 = OH_Drawing_CreateDashPathEffect(intervals, DRAWING_NUMBER_2, 0.0f);
     // add assert
@@ -93,6 +95,7 @@ int TestCreateDashPathEffectAbnormal()
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_PathEffect *pathEffect2 = OH_Drawing_CreateDashPathEffect(intervals, -DRAWING_NUMBER_3, 1.0f);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(pathEffect2, nullptr);
     // 3. OH_Drawing_CreateDashPathEffect with the second parameter being 1
     OH_Drawing_PathEffect *pathEffect3 = OH_Drawing_CreateDashPathEffect(intervals, DRAWING_NUMBER_1, 1.0f);
     // add assert
@@ -101,18 +104,15 @@ int TestCreateDashPathEffectAbnormal()
     OH_Drawing_PathEffect *pathEffect4 = OH_Drawing_CreateDashPathEffect(intervals, DRAWING_NUMBER_3, -1.0f);
     // add assert
     EXPECT_NE(pathEffect4, nullptr);
-    // UINT32_MAX FLT_MAX
-    OH_Drawing_PathEffect *pathEffect5 = OH_Drawing_CreateDashPathEffect(intervals, INT32_MAX, 1.0f);
+    // FLT_MAX
+    OH_Drawing_PathEffect *pathEffect5 = OH_Drawing_CreateDashPathEffect(intervals, DRAWING_NUMBER_3, FLT_MAX);
     EXPECT_NE(pathEffect5, nullptr);
-    OH_Drawing_PathEffect *pathEffect6 = OH_Drawing_CreateDashPathEffect(intervals, DRAWING_NUMBER_3, FLT_MAX);
-    EXPECT_NE(pathEffect6, nullptr);
     // 5. Free memory
     OH_Drawing_PathEffectDestroy(pathEffect1);
     OH_Drawing_PathEffectDestroy(pathEffect2);
     OH_Drawing_PathEffectDestroy(pathEffect3);
     OH_Drawing_PathEffectDestroy(pathEffect4);
     OH_Drawing_PathEffectDestroy(pathEffect5);
-    OH_Drawing_PathEffectDestroy(pathEffect6);
     DrawingNativePathEffectTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
@@ -122,7 +122,7 @@ int TestCreateDashPathEffectMultipleCalls()
     DrawingNativePathEffectTestSetUp();
     float intervals[] = {DRAWING_NUMBER_1, DRAWING_NUMBER_1};
     // 1. Call OH_Drawing_CreateDashPathEffect 10 times
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_PathEffect *pathEffect = OH_Drawing_CreateDashPathEffect(intervals, DRAWING_NUMBER_2, 1.0f);
         // add assert
         EXPECT_NE(pathEffect, nullptr);

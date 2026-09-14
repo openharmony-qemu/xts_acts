@@ -16,6 +16,7 @@
 #include "include/DrawingNativeTextBlobTest.h"
 #include <cstring>
 #include "include/OhosCommonTest.h"
+#include "log_common.h"
 
 #define DRAWING_NUMBER_1 1
 #define DRAWING_NUMBER_2 2
@@ -381,36 +382,58 @@ int TestTextBlobCreateFromPosTextAbnormal()
 int TestTextBlobCreateFromStringNormal()
 {
     DrawingNativeTextBlobTestSetUp();
-    const char *str = "123456";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
     OH_Drawing_Typeface *typeSurface = OH_Drawing_TypefaceCreateDefault();
-    // add assert
     EXPECT_NE(typeSurface, nullptr);
     OH_Drawing_FontSetTypeface(font, typeSurface);
-    OH_Drawing_TextEncoding encodeArray[] = {
-        TEXT_ENCODING_UTF8,
-        TEXT_ENCODING_UTF16,
-        TEXT_ENCODING_UTF32,
-        TEXT_ENCODING_GLYPH_ID,
-    };
-    // 1. Traverse the enumeration values of OH_Drawing_TextEncoding and use OH_Drawing_CanvasDrawTextBlob in
-    // combination
-    for (OH_Drawing_TextEncoding encode : encodeArray) {
-        OH_Drawing_TextBlob *textBlob = OH_Drawing_TextBlobCreateFromString(str, font, encode);
-        // add assert
-        EXPECT_NE(textBlob, nullptr);
-        OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
-        EXPECT_NE(nullptr, canvas);
-        OH_Drawing_ErrorCodeReset();
-        OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, 100.0f, 100.0f);
-        // add assert
-        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-        OH_Drawing_CanvasDestroy(canvas);
-    }
-    // 2. Free memory
+    OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(nullptr, canvas);
+    // 1. UTF-8: use ASCII string "123456"
+    const char *strUtf8 = "123456";
+    OH_Drawing_TextBlob *textBlobUtf8 = OH_Drawing_TextBlobCreateFromString(strUtf8, font, TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlobUtf8, nullptr);
+    OH_Drawing_ErrorCodeReset();
+    OH_Drawing_CanvasDrawTextBlob(canvas, textBlobUtf8, 100.0f, 100.0f);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    OH_Drawing_TextBlobDestroy(textBlobUtf8);
+    // 2. UTF-16: use CJK characters whose UTF-16 LE encoding has no 0x00 bytes,
+    // so strlen (used internally by CreateFromString) returns the correct byte length
+    char16_t strUtf16[] = {u'中', u'文', u'字', u'\0'};
+    OH_Drawing_TextBlob *textBlobUtf16 = OH_Drawing_TextBlobCreateFromString(
+        reinterpret_cast<const char *>(strUtf16), font, TEXT_ENCODING_UTF16);
+    EXPECT_NE(textBlobUtf16, nullptr);
+    OH_Drawing_ErrorCodeReset();
+    OH_Drawing_CanvasDrawTextBlob(canvas, textBlobUtf16, 100.0f, 100.0f);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    OH_Drawing_TextBlobDestroy(textBlobUtf16);
+    // 3. UTF-32: CreateFromString uses strlen, but UTF-32 LE always contains 0x00 bytes
+    // for valid Unicode, so use CreateFromText with explicit byte length
+    char32_t strUtf32[] = {U'中', U'文', U'字', U'\0'};
+    size_t utf32ByteLen = sizeof(strUtf32) - sizeof(char32_t);
+    OH_Drawing_TextBlob *textBlobUtf32 =
+        OH_Drawing_TextBlobCreateFromText(strUtf32, utf32ByteLen, font, TEXT_ENCODING_UTF32);
+    EXPECT_NE(textBlobUtf32, nullptr);
+    OH_Drawing_ErrorCodeReset();
+    OH_Drawing_CanvasDrawTextBlob(canvas, textBlobUtf32, 100.0f, 100.0f);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    OH_Drawing_TextBlobDestroy(textBlobUtf32);
+    // 4. GLYPH_ID: convert UTF-8 text to glyph IDs, then create text blob with explicit byte length
+    int glyphCount = OH_Drawing_FontCountText(font, strUtf8, strlen(strUtf8), TEXT_ENCODING_UTF8);
+    uint16_t glyphs[DRAWING_NUMBER_10] = {0};
+    OH_Drawing_FontTextToGlyphs(font, strUtf8, strlen(strUtf8), TEXT_ENCODING_UTF8, glyphs, glyphCount);
+    size_t glyphByteLen = static_cast<size_t>(glyphCount) * sizeof(uint16_t);
+    OH_Drawing_TextBlob *textBlobGlyph =
+        OH_Drawing_TextBlobCreateFromText(glyphs, glyphByteLen, font, TEXT_ENCODING_GLYPH_ID);
+    EXPECT_NE(textBlobGlyph, nullptr);
+    OH_Drawing_ErrorCodeReset();
+    OH_Drawing_CanvasDrawTextBlob(canvas, textBlobGlyph, 100.0f, 100.0f);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    OH_Drawing_TextBlobDestroy(textBlobGlyph);
+    // 5. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TypefaceDestroy(typeSurface);
+    OH_Drawing_CanvasDestroy(canvas);
     DrawingNativeTextBlobTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
