@@ -38,7 +38,7 @@ export default function netfirewallTest() {
     const orderType_ORDER_ASC :netFirewall.NetFirewallOrderType = netFirewall.NetFirewallOrderType.ORDER_ASC;
     const orderType_ORDER_DESC :netFirewall.NetFirewallOrderType = netFirewall.NetFirewallOrderType.ORDER_DESC;
 
-    let updateCurrentId: (caseName: string) => void = async (caseName: string)=>{
+    let updateCurrentId: (caseName: string) => Promise<void> = async (caseName: string)=>{
       try{
         await netFirewall.getNetFirewallRules(userId, ruleParam).then((result: netFirewall.FirewallRulePage) => {
           if(result.data.length == 0) Current_Ruler_ID = -1
@@ -50,7 +50,7 @@ export default function netfirewallTest() {
         console.error(caseName, "  update CurrentId failed err in : " + JSON.stringify(err));
       }
     }
-    let removedAll:  (deleteNum: number) => void = async (deleteNum: number)=>{
+    let removedAll:  (deleteNum: number) => Promise<void> = async (deleteNum: number)=>{
       try {
         let i = 0
         while (i<deleteNum && Current_Ruler_ID !=-1){
@@ -235,7 +235,7 @@ export default function netfirewallTest() {
           dns: {
             primaryDns: "11.1.11.1",
             standbyDns: "11.0.11.2"
-          } 
+          }
         };
         await netFirewall.addNetFirewallRule(ipRule_01).then(async (result: number) => {
           console.info(`${caseName} rule Id: `, result);
@@ -1052,8 +1052,8 @@ export default function netfirewallTest() {
           appUid: 20001,
           protocol: 6,
           dns: {
-            primaryDns: "8.8.8.8",
-            standbyDns: "8.8.4.4"
+            primaryDns: "172.16.0.1",
+            standbyDns: "172.16.0.2"
           },
           interface: "eth0"
         };
@@ -1632,6 +1632,428 @@ export default function netfirewallTest() {
       }catch (err){
         console.log("test end");
         console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallupdateNetFirewallRule_0400
+     * @tc.number SUB_Network_NetFirewall_updateNetFirewallRule_0400
+     * @tc.desc   Update NetFirewallRule with localIps empty address, empty startIp, empty endIp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallupdateNetFirewallRule_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallupdateNetFirewallRule_0400';
+      console.info(`${caseName}---Start`);
+      try{
+        let ipRuleAdd: netFirewall.NetFirewallRule = {
+          userId: userId,
+          name: "ruleUpdateEmptyLocalIp",
+          description: "rule for testing empty localIp fields",
+          direction: ruleDirection_RULE_IN,
+          action: ruleAction_RULE_ALLOW,
+          type: ruleType_RULE_IP,
+          isEnabled: true,
+          appUid: 20001,
+          protocol: 6,
+          localIps: [
+            {
+              family: 1,
+              type: 1,
+              address: "10.10.1.1",
+              mask: 24
+            }
+          ]
+        };
+        await netFirewall.addNetFirewallRule(ipRuleAdd).then(async (result: number) => {
+          console.info(`${caseName} add rule Id: `, result);
+          let ruleId: number = result;
+          let ipRuleUpd: netFirewall.NetFirewallRule = {
+            userId: userId,
+            id: ruleId,
+            name: "ruleUpdateEmptyLocalIp",
+            description: "updated with empty localIps address, startIp, endIp",
+            direction: ruleDirection_RULE_OUT,
+            action: ruleAction_RULE_ALLOW,
+            type: ruleType_RULE_IP,
+            isEnabled: true,
+            appUid: 20001,
+            protocol: 6,
+            localIps: [
+              {
+                family: 1,
+                type: 1,
+                address: "",
+                mask: 24
+              },
+              {
+                family: 1,
+                type: 2,
+                startIp: "",
+                endIp: ""
+              }
+            ]
+          };
+          await netFirewall.updateNetFirewallRule(ipRuleUpd).then(async () => {
+            console.info(`${caseName} update firewall rule success.`);
+            await netFirewall.getNetFirewallRule(userId, ruleId).then(async (rule: netFirewall.NetFirewallRule) => {
+              console.info(`${caseName} get result:`, JSON.stringify(rule));
+              if (rule.localIps != undefined && rule.localIps[0] != undefined) {
+                ExpectTrue(rule.localIps[0].address === "");
+                console.info(`${caseName} localIps[0].address is empty:`, rule.localIps[0].address);
+              } else {
+                ExpectFail();
+              }
+              if (rule.localIps != undefined && rule.localIps[1] != undefined) {
+                ExpectTrue(rule.localIps[1].startIp === "");
+                console.info(`${caseName} localIps[1].startIp is empty:`, rule.localIps[1].startIp);
+              } else {
+                ExpectFail();
+              }
+              if (rule.localIps != undefined && rule.localIps[1] != undefined) {
+                ExpectTrue(rule.localIps[1].endIp === "");
+                console.info(`${caseName} localIps[1].endIp is empty:`, rule.localIps[1].endIp);
+              } else {
+                ExpectFail();
+              }
+              done();
+            }).catch((error: BusinessError) => {
+              console.error(`${caseName} get firewall rule failed: ` + JSON.stringify(error));
+              ExpectTrue(false);
+              done();
+            });
+          }, (reason: BusinessError) => {
+            console.log(`${caseName} update firewall rule failed: `, JSON.stringify(reason));
+            ExpectTrue(true);
+            done();
+          }).catch((err:BusinessError)=>{
+            console.log(`${caseName} update firewall rule error: `, JSON.stringify(err));
+            ExpectTrue(true);
+            done();
+          });
+        }, (reason: BusinessError) => {
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+          ExpectFail();
+          done();
+        });
+      }catch (err){
+        console.log("test end ");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallupdateNetFirewallRule_0500
+     * @tc.number SUB_Network_NetFirewall_updateNetFirewallRule_0500
+     * @tc.desc   Update NetFirewallRule with domains isWildcard=true, isWildcard=false, empty domain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallupdateNetFirewallRule_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallupdateNetFirewallRule_0500';
+      console.info(`${caseName}---Start`);
+      try{
+        let domainRuleAdd: netFirewall.NetFirewallRule = {
+          userId: userId,
+          name: "ruleUpdateEmptyDomain",
+          description: "rule for testing empty domain fields",
+          direction: ruleDirection_RULE_IN,
+          action: ruleAction_RULE_ALLOW,
+          type: ruleType_RULE_DOMAIN,
+          isEnabled: true,
+          appUid: 20001,
+          protocol: 6,
+          domains: [
+            {
+              isWildcard: true,
+              domain: "*.baidu.com"
+            }
+          ]
+        };
+        await netFirewall.addNetFirewallRule(domainRuleAdd).then(async (result: number) => {
+          console.info(`${caseName} add rule Id: `, result);
+          let ruleId: number = result;
+          let domainRuleUpd: netFirewall.NetFirewallRule = {
+            userId: userId,
+            id: ruleId,
+            name: "ruleUpdateEmptyDomain",
+            description: "updated with domains isWildcard=true, isWildcard=false, empty domain",
+            direction: ruleDirection_RULE_IN,
+            action: ruleAction_RULE_ALLOW,
+            type: ruleType_RULE_DOMAIN,
+            isEnabled: true,
+            appUid: 20001,
+            protocol: 6,
+            domains: [
+              {
+                isWildcard: true,
+                domain: ""
+              },
+              {
+                isWildcard: false,
+                domain: ""
+              }
+            ]
+          };
+          await netFirewall.updateNetFirewallRule(domainRuleUpd).then(async () => {
+            console.info(`${caseName} update firewall rule success.`);
+            await netFirewall.getNetFirewallRule(userId, ruleId).then(async (rule: netFirewall.NetFirewallRule) => {
+              console.info(`${caseName} get result:`, JSON.stringify(rule));
+              if (rule.domains != undefined && rule.domains[0] != undefined) {
+                ExpectTrue(rule.domains[0].isWildcard === true);
+                console.info(`${caseName} domains[0].isWildcard is true:`, rule.domains[0].isWildcard);
+              } else {
+                ExpectFail();
+              }
+              if (rule.domains != undefined && rule.domains[0] != undefined) {
+                ExpectTrue(rule.domains[0].domain === "");
+                console.info(`${caseName} domains[0].domain is empty:`, rule.domains[0].domain);
+              } else {
+                ExpectFail();
+              }
+              if (rule.domains != undefined && rule.domains[1] != undefined) {
+                ExpectTrue(rule.domains[1].isWildcard === false);
+                console.info(`${caseName} domains[1].isWildcard is false:`, rule.domains[1].isWildcard);
+              } else {
+                ExpectFail();
+              }
+              if (rule.domains != undefined && rule.domains[1] != undefined) {
+                ExpectTrue(rule.domains[1].domain === "");
+                console.info(`${caseName} domains[1].domain is empty:`, rule.domains[1].domain);
+              } else {
+                ExpectFail();
+              }
+              done();
+            }).catch((error: BusinessError) => {
+              console.error(`${caseName} get firewall rule failed: ` + JSON.stringify(error));
+              ExpectTrue(false);
+              done();
+            });
+          }, (reason: BusinessError) => {
+            console.log(`${caseName} update firewall rule failed: `, JSON.stringify(reason));
+            ExpectTrue(true);
+            done();
+          }).catch((err:BusinessError)=>{
+            console.log(`${caseName} update firewall rule error: `, JSON.stringify(err));
+            ExpectTrue(true);
+            done();
+          });
+        }, (reason: BusinessError) => {
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+          ExpectFail();
+          done();
+        });
+      }catch (err){
+        console.log("test end ");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallupdateNetFirewallRule_0600
+     * @tc.number SUB_Network_NetFirewall_updateNetFirewallRule_0600
+     * @tc.desc   Update NetFirewallRule with dns empty primaryDns and standbyDns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallupdateNetFirewallRule_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallupdateNetFirewallRule_0600';
+      console.info(`${caseName}---Start`);
+      try{
+        // Clean up one existing rule to ensure capacity for DNS rule creation
+        await updateCurrentId(caseName);
+        await removedAll(1);
+        let dnsRuleAdd: netFirewall.NetFirewallRule = {
+          userId: userId,
+          name: "ruleUpdateEmptyDns",
+          description: "rule for testing empty dns fields",
+          direction: ruleDirection_RULE_OUT,
+          action: ruleAction_RULE_ALLOW,
+          type: ruleType_RULE_DNS,
+          isEnabled: true,
+          appUid: 20001,
+          protocol: 6,
+          dns: {
+            primaryDns: "192.168.100.1",
+            standbyDns: "192.168.100.2"
+          }
+        };
+        await netFirewall.addNetFirewallRule(dnsRuleAdd).then(async (result: number) => {
+          console.info(`${caseName} add rule Id: `, result);
+          let ruleId: number = result;
+          let dnsRuleUpd: netFirewall.NetFirewallRule = {
+            userId: userId,
+            id: ruleId,
+            name: "ruleUpdateEmptyDns",
+            description: "updated with dns empty primaryDns and standbyDns",
+            direction: ruleDirection_RULE_OUT,
+            action: ruleAction_RULE_ALLOW,
+            type: ruleType_RULE_DNS,
+            isEnabled: true,
+            appUid: 20001,
+            protocol: 6,
+            localIps: [],
+            remoteIps: [],
+            remotePorts: [],
+            localPorts: [],
+            domains: [],
+            dns: {
+              primaryDns: "",
+              standbyDns: ""
+            }
+          };
+          await netFirewall.updateNetFirewallRule(dnsRuleUpd).then(async () => {
+            console.info(`${caseName} update firewall rule success.`);
+            await netFirewall.getNetFirewallRule(userId, ruleId).then(async (rule: netFirewall.NetFirewallRule) => {
+              console.info(`${caseName} get result:`, JSON.stringify(rule));
+              if (rule.dns != undefined) {
+                ExpectTrue(rule.dns.primaryDns === "");
+                console.info(`${caseName} dns.primaryDns is empty:`, rule.dns.primaryDns);
+              } else {
+                ExpectFail();
+              }
+              if (rule.dns != undefined) {
+                ExpectTrue(rule.dns.standbyDns === "");
+                console.info(`${caseName} dns.standbyDns is empty:`, rule.dns.standbyDns);
+              } else {
+                ExpectFail();
+              }
+              // Clean up the DNS rule created for this test
+              await netFirewall.removeNetFirewallRule(userId, ruleId).catch((error: BusinessError) => {
+                console.error(`${caseName} cleanup delete failed: ` + JSON.stringify(error));
+              });
+              done();
+            }).catch((error: BusinessError) => {
+              console.error(`${caseName} get firewall rule failed: ` + JSON.stringify(error));
+              ExpectTrue(false);
+              done();
+            });
+          }, (reason: BusinessError) => {
+            console.log(`${caseName} update firewall rule failed: `, JSON.stringify(reason));
+            ExpectTrue(true);
+            done();
+          }).catch((err:BusinessError)=>{
+            console.log(`${caseName} update firewall rule error: `, JSON.stringify(err));
+            ExpectTrue(true);
+            done();
+          });
+        }, (reason: BusinessError) => {
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+          ExpectFail();
+          done();
+        });
+      }catch (err){
+        console.log("test end ");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallNetFirewallOrderFieldORDER_BY_RECORD_TIME_0100
+     * @tc.number SUB_Network_NetFirewall_NetFirewallOrderField_ORDER_BY_RECORD_TIME_0100
+     * @tc.desc   Test NetFirewallOrderField.ORDER_BY_RECORD_TIME = 100 with getNetFirewallRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallNetFirewallOrderFieldORDER_BY_RECORD_TIME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallNetFirewallOrderFieldORDER_BY_RECORD_TIME_0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let ruleParamGetRules: netFirewall.RequestParam = {
+          page: 1,
+          pageSize: 10,
+          orderField: orderField_ORDER_BY_RULE_NAME,
+          orderType: orderType_ORDER_ASC
+        };
+        await netFirewall.getNetFirewallRules(userId, ruleParamGetRules).then((result: netFirewall.FirewallRulePage) => {
+          console.info(`${caseName} getNetFirewallRules success:`, JSON.stringify(result));
+          ExpectTrue(orderField_ORDER_BY_RECORD_TIME === netFirewall.NetFirewallOrderField.ORDER_BY_RECORD_TIME);
+          ExpectTrue(orderField_ORDER_BY_RECORD_TIME === 100);
+          console.info(`${caseName} ORDER_BY_RECORD_TIME value is 100`);
+          ExpectTrue(result.page != undefined);
+          ExpectTrue(result.pageSize != undefined);
+          ExpectTrue(result.totalPage != undefined);
+          ExpectTrue(result.data != undefined);
+          if (result.data != undefined && result.data.length > 0) {
+            ExpectTrue(result.data[0].id != undefined);
+            console.info(`${caseName} data[0].id:`, result.data[0].id);
+          }
+          console.info(`${caseName}---END`);
+          done();
+        }, (reason: BusinessError) => {
+          console.error(`${caseName} getNetFirewallRules failed:`, JSON.stringify(reason));
+          ExpectFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} catch err is`, JSON.stringify(err));
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+        console.log("test end ");
+        console.log(`${caseName} catch err is`, JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallNetFirewallOrderTypeORDER_ASC_0100
+     * @tc.number SUB_Network_NetFirewall_NetFirewallOrderType_ORDER_ASC_0100
+     * @tc.desc   Test NetFirewallOrderType.ORDER_ASC = 1 with getNetFirewallRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallNetFirewallOrderTypeORDER_ASC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallNetFirewallOrderTypeORDER_ASC_0100';
+      console.info(`${caseName}---Start`);
+      try {
+        let ruleParamGetRules: netFirewall.RequestParam = {
+          page: 1,
+          pageSize: 10,
+          orderField: orderField_ORDER_BY_RULE_NAME,
+          orderType: orderType_ORDER_ASC
+        };
+        await netFirewall.getNetFirewallRules(userId, ruleParamGetRules).then((result: netFirewall.FirewallRulePage) => {
+          console.info(`${caseName} getNetFirewallRules success:`, JSON.stringify(result));
+          ExpectTrue(orderType_ORDER_ASC === netFirewall.NetFirewallOrderType.ORDER_ASC);
+          ExpectTrue(orderType_ORDER_ASC === 1);
+          console.info(`${caseName} ORDER_ASC value is 1`);
+          ExpectTrue(result.page != undefined);
+          ExpectTrue(result.pageSize != undefined);
+          ExpectTrue(result.totalPage != undefined);
+          ExpectTrue(result.data != undefined);
+          if (result.data != undefined && result.data.length > 0) {
+            ExpectTrue(result.data[0].id != undefined);
+            console.info(`${caseName} data[0].id:`, result.data[0].id);
+          }
+          console.info(`${caseName}---END`);
+          done();
+        }, (reason: BusinessError) => {
+          console.error(`${caseName} getNetFirewallRules failed:`, JSON.stringify(reason));
+          ExpectFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} catch err is`, JSON.stringify(err));
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+        console.log("test end ");
+        console.log(`${caseName} catch err is`, JSON.stringify(err));
         ExpectFail();
         done();
       }
