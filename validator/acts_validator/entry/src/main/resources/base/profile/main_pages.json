@@ -2,7 +2,6 @@
   "src": [
     "pages/index",
     "pages/ArkUI/ArkUI_index",
-    "pages/ArkUI/ScrollListTest",
     "pages/ArkUI/DraggingSizeChangeEffect",
     "pages/ArkUI/TouchMoveTest",
     "pages/ArkUI/bindSheetTest",
