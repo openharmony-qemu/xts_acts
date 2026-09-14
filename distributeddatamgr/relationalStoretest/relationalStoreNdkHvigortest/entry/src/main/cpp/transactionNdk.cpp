@@ -985,8 +985,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OH_Rdb_SetTokenizer0100", nullptr, OH_Rdb_SetTokenizer0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_IsTokenizerSupported0100", nullptr, OH_Rdb_IsTokenizerSupported0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_RdbTrans_Commit0100", nullptr, OH_RdbTrans_Commit0100, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "OH_RdbTrans_InsertWithConflictResolution0100", nullptr, OH_RdbTrans_InsertWithConflictResolution0100, nullptr, nullptr, nullptr,
-             napi_default, nullptr },
+        { "OH_RdbTrans_InsertWithConflictResolution0100", nullptr, OH_RdbTrans_InsertWithConflictResolution0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_SetCustomDir0100", nullptr, OH_Rdb_SetCustomDir0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_SetReadOnly0100", nullptr, OH_Rdb_SetReadOnly0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_SetPlugins0100", nullptr, OH_Rdb_SetPlugins0100, nullptr, nullptr, nullptr, napi_default, nullptr },
@@ -997,8 +997,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OH_Rdb_SetSemanticIndex_Param_0300", nullptr, OH_Rdb_SetSemanticIndex_Param_0300, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "OH_RDB_TRANS_BUTT0100", nullptr, OH_RDB_TRANS_BUTT0100, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "OH_RdbTrans_UpdateWithConflictResolution0100", nullptr, OH_RdbTrans_UpdateWithConflictResolution0100, nullptr, nullptr, nullptr,
-             napi_default, nullptr },
+        { "OH_RdbTrans_UpdateWithConflictResolution0100", nullptr, OH_RdbTrans_UpdateWithConflictResolution0100,
+            nullptr, nullptr, nullptr,napi_default, nullptr },
     };
     
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
