@@ -523,64 +523,86 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.name   testOffKeyboardDidShow_WithCallback
+     * @tc.name   test_OffKeyboardDidShow_OffKeyboardDidHide_WithCallback
      * @tc.desc   off('keyboardDidShow', callback) 传参，关闭对应的 callback；
      * @tc.number SUB_BASIC_WMS_OFFKEYBOARDDIDHIDE_0200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOffKeyboardDidShow_WithCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testOffKeyboardDidShow_WithCallback ';
+    it('test_OffKeyboardDidShow_OffKeyboardDidHide_WithCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'test_OffKeyboardDidShow_OffKeyboardDidHide_WithCallback ';
       console.log(caseName + 'begin');
-      let mainWindow = windowStage.getMainWindowSync();
+      let count1 = 0;
+      let count2 = 0;
+      let count3 = 0;
+      let count4 = 0;
       try {
-        const callback = (keyboardInfo: window.KeyboardInfo) => {
-          console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+        const callback1 = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo1: ${JSON.stringify(keyboardInfo)}`);
+          count1++;
         };
-        mainWindow.on('keyboardDidShow', callback);
-        mainWindow.off('keyboardDidShow', callback);
+        const callback2 = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo2: ${JSON.stringify(keyboardInfo)}`);
+          count2++;
+        };
+        let windowClass = await windowStage.createSubWindow('test_OffKeyboardDidShow_OffKeyboardDidHide_WithCallback')
+        console.info(`${caseName} Succeeded create subwindow:${JSON.stringify(windowClass)}`);
+        await windowClass.setUIContent('testability/pages/WindowTest/KeyBoradTest')
+        console.info(`${caseName} Succeeded setuicontent`);
+        await windowClass.showWindow()
+        console.info(`${caseName} Succeeded show window`);
+        windowClass.on('keyboardDidShow', callback1);
+        windowClass.on('keyboardDidShow', callback2);
+        windowClass.off('keyboardDidShow', callback1);
+        console.info(`${caseName} Succeeded off callback1`);
+        const callback3 = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo3: ${JSON.stringify(keyboardInfo)}`);
+          count3++;
+        };
+        const callback4 = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo4: ${JSON.stringify(keyboardInfo)}`);
+          count4++;
+        };
+        windowClass.on('keyboardDidHide', callback3);
+        windowClass.on('keyboardDidHide', callback4);
+        windowClass.off('keyboardDidHide', callback3);
+        console.info(`${caseName} Succeeded off callback3`);
         await sleep(500);
-        console.info(`${caseName} off keyboardDidShow with callback success`);
+        focusControl.requestFocus('textInput');
+        console.info(`${caseName} Succeeded requestFocus`);
+        await sleep(500)
+        focusControl.requestFocus('focusTarget');
+        console.info(`${caseName} Succeeded loseFocus`);
+        await sleep(1000)
+        windowClass.off('keyboardDidShow', callback2);
+        windowClass.off('keyboardDidHide', callback4);
+        console.info(`${caseName} Succeeded off callback2 callback4`);
+        await sleep(100)
+        console.info(`${caseName} count1:${JSON.stringify(count1)},count2:${JSON.stringify(count2)},count3:${JSON.stringify(count3)},count4:${JSON.stringify(count4)}`);
+        if(deviceType !== 'phone'&&deviceType !== 'tablet'){
+          expect(count1).assertEqual(0);
+          expect(count2).assertEqual(0);
+          expect(count3).assertEqual(0);
+          expect(count4).assertEqual(0);
+        }else{
+          expect(count1).assertEqual(0);
+          expect(count2).assertEqual(1);
+          expect(count3).assertEqual(0);
+          expect(count4).assertEqual(1);
+        }
         done();
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
         if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801)
+        }else{
+          expect(true).assertFalse()
         }
         done()
       }
     });
 
-    /**
-     * @tc.name   testOffKeyboardDidHide_WithCallback
-     * @tc.desc   off('keyboardDidHide', callback) 传参，关闭对应的 callback；
-     * @tc.number SUB_BASIC_WMS_OFFKEYBOARDDIDHIDE_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testOffKeyboardDidHide_WithCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testOffKeyboardDidHide_WithCallback ';
-      console.log(caseName + 'begin');
-      let mainWindow = windowStage.getMainWindowSync();
-      try {
-        const callback = (keyboardInfo: window.KeyboardInfo) => {
-          console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
-        };
-        mainWindow.on('keyboardDidHide', callback);
-        mainWindow.off('keyboardDidHide', callback);
-        await sleep(500);
-        console.info(`${caseName} off keyboardDidHide with callback success`);
-        done();
-      } catch (err) {
-        console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
-       if (!isSyscapSessionManagerSupported) {
-          expect(err.code).assertEqual(801)
-        }
-        done()
-      }
-    });
 
 
     /**

@@ -3157,19 +3157,51 @@ export default function windowPCTest() {
       let caseName = 'testOffWindowStatusDidChange_NoCallback';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
+      let count1 = 0;
+      let count2 = 0;
+      let options: window.SubWindowOptions = {
+        title: 'testOffWindowStatusDidChange_NoCallback',
+        decorEnabled: true,
+        maximizeSupported: true
+      };
       try {
-        let windowClass = await windowStage.createSubWindow('testOffWindowStatusDidChange_NoCallback');
-        const callback = (data: window.WindowStatusType) => {
-          console.log(`${msgStr} callback data: ${JSON.stringify(data)}`);
+        let windowClass = await windowStage.createSubWindowWithOptions('testOffWindowStatusDidChange_NoCallback',options);
+        await windowClass.setUIContent('testability/pages/Index1')
+
+        const callback1 = (data: window.WindowStatusType) => {
+          console.log(`${msgStr} callback1 data: ${JSON.stringify(data)}`);
+          count1++;
         };
-        windowClass.on('windowStatusDidChange', callback);
+        const callback2 = (data: window.WindowStatusType) => {
+          console.log(`${msgStr} callback2 data: ${JSON.stringify(data)}`);
+          count2++;
+        };
+        windowClass.on('windowStatusDidChange', callback1);
+        windowClass.on('windowStatusDidChange', callback2);
         windowClass.off('windowStatusDidChange');
         console.log(msgStr + 'Succeeded off windowStatusDidChange without callback ');
+        let windowStatusTypeBefore = windowClass.getWindowStatus()
+        await sleep(100)
+        if((windowStatusTypeBefore !== window.WindowStatusType.FULL_SCREEN && windowStatusTypeBefore !== window.WindowStatusType.MAXIMIZE)&&isInFreeWindowMode){
+          await windowClass.maximize()
+          console.log(msgStr + 'Succeeded maximize');
+        }else{
+          await windowClass.minimize()
+          console.log(msgStr + 'Succeeded minimize ');
+        }
+        await sleep(100)
+        let windowStatusTypeAfter = windowClass.getWindowStatus()
+        console.log(msgStr +`count1:${count1},count2:${count2},windowStatusTypeBefore:${JSON.stringify(windowStatusTypeBefore)},windowStatusTypeAfter:${JSON.stringify(windowStatusTypeAfter)}`);
+        expect(count1).assertEqual(0);
+        expect(count2).assertEqual(0);
+        expect(windowStatusTypeBefore === windowStatusTypeAfter).assertFalse()
         done();
       } catch (err) {
         console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
         if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801)
+        }else{
+          expect(true).assertFalse();
         }
         done();
       }
