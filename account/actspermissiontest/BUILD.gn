@@ -18,6 +18,7 @@ group("permissiontest") {
   if (is_standard_system) {
     deps = [
       "account_nopermissiontest:ActsAccountNoPermissionTest",
+      "account_nopermissiontest_stage:ActsAccountNoPermissionStageTest",
       "account_nopermissiontest_static:ActsAccountNoPermissionStaticTest",
       "actspermissiontest:ActsAccountOnlyOnePermissionTest",
       "actspermissionteststatic:ActsAccountOnlyOnePermissionStaticTest",

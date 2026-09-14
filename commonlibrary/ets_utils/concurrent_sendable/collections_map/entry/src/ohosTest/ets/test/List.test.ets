@@ -25,6 +25,7 @@ import CollectionsMapPutTest from "./CollectionsMapPutTest.test";
 import CollectionsMapPutAllSendableTest from "./CollectionsMapPutAllSendableTest.test";
 import CollectionsMapPutAllBuiltinTest from "./CollectionsMapPutAllBuiltinTest.test";
 import CollectionsMapRemoveTest from "./CollectionsMapRemoveTest.test";
+import CollectionsMapNewApiTypeTest from "./CollectionsMapNewApiTypeTest.test";
 import CollectionsMapValuesTest from "./CollectionsMapValuesTest.test";
 import collectionsMapConstructorTest01 from './CollectionsMapConstructorTest01.test';
 import collectionsMapClearSizeTest from './CollectionsMapClearSize.test';
@@ -34,6 +35,7 @@ import collectionsMapNonOrthogonalTest from './CollectionsMapNonOrthogonal.test'
 import collectionsMapForEachEntriesTest from './CollectionsMapForEachEntries.test';
 import collectionsMapSetGet from './CollectionsMapSetGet.test';
 import collectionsMapConcurrentTest from './CollectionsMapConcurrent.test';
+import CollectionsMapExpand1024Test from './CollectionsMapExpand1024Test.test';
 
 
 export default function testsuite() {
@@ -49,6 +51,7 @@ export default function testsuite() {
   CollectionsMapPutAllSendableTest();
   CollectionsMapPutAllBuiltinTest();
   CollectionsMapRemoveTest();
+  CollectionsMapNewApiTypeTest();
   CollectionsMapValuesTest();
   collectionsMapConstructorTest01();
   collectionsMapClearSizeTest();
@@ -58,4 +61,5 @@ export default function testsuite() {
   collectionsMapNonOrthogonalTest();
   collectionsMapSetGet();
   collectionsMapConcurrentTest();
+  CollectionsMapExpand1024Test();
 };

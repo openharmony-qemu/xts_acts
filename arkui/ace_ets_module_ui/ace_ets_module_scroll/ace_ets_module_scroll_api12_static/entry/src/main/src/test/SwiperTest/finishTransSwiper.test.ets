@@ -37,6 +37,7 @@ export default function finishTransSwiper() {
         if (!("finishTransSwiper" == pages.name)) {
           console.info("get finishTransSwiper pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push finishTransSwiper page error:" + err);

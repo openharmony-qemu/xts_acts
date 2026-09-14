@@ -66,25 +66,32 @@ export default function bindGridControllerTest() {
      */
     it('bindGridControllerTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[bindGridControllerTest_static_0100] START');
-      let driver = Driver.create()
-      let bindGridController: Component = await driver.findComponent(ON.id('bindGridController')) as Component;
-      await (bindGridController?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
-      let setOn: Component = await driver.findComponent(ON.id('setOn')) as Component;
-      await (setOn?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
-      let scrollerBy: Component = await driver.findComponent(ON.id('scrollerBy')) as Component;
-      await (scrollerBy?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let bindGridController: Component = await driver.findComponent(ON.id('bindGridController')) as Component;
+        await (bindGridController?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        let setOn: Component = await driver.findComponent(ON.id('setOn')) as Component;
+        await (setOn?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        let scrollerBy: Component = await driver.findComponent(ON.id('scrollerBy')) as Component;
+        await (scrollerBy?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      let strJson = inspector.getInspectorByKey('scrollOffset');
-      await CommonFunc.sleep(1000);
-      console.info('[bindGridControllerTest_static_0100] content: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
-      expect(parseInt(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')) > 0)
-        .assertEqual(true);
-      console.info('[bindGridControllerTest_static_0100] END');
-      done();
+        let strJson = inspector.getInspectorByKey('scrollOffset');
+        await CommonFunc.sleep(1000);
+        console.info('[bindGridControllerTest_static_0100] content: ' +
+          JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
+        expect(parseInt(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')) > 0)
+          .assertEqual(true);
+        console.info('[bindGridControllerTest_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[bindGridControllerTest_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 

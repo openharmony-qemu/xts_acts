@@ -25,7 +25,11 @@ group("concurrent_sendable") {
       "collections_array:ActsCollectionsArrayTest",
       "collections_map:ActsCollectionsMapTest",
       "collections_set:ActsCollectionsSetTest",
-      "collections_bitvector:ActsCollectionsBitVectorTest"
+      "collections_bitvector:ActsCollectionsBitVectorTest",
+      "ArkTSUtils_ASON:ActsArkTSUtilsASONTest",
+      "ArkTSUtils_SendableLruCache:ActsArkTSUtilsSendableLruCacheTest",
+      "ArkTSUtils_ConditionVariable:ActsArkTSUtilsConditionVariableTest",
+      "ArkTSUtils_AsyncLock:ActsArkTSUtilsAsyncLockTest"
     ]
   }
 }

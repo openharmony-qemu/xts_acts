@@ -37,6 +37,7 @@ export default function ScrollToIndexForGridJsunit02() {
           console.info("get ScrollToIndexForGrid02 state pages.name: " + JSON.stringify(pages.name));
           // let result = await router.pushUrl(options);
           routerAlp.pushUrl(options);
+          await CommonFunc.sleep(2000);
           
         }
       } catch (err) {

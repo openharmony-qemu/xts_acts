@@ -35,6 +35,9 @@
       },
       {
         "name": "ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS"
+      },
+      {
+        "name": "ohos.permission.REQUEST_LOCAL_ACCOUNT_AUTHORIZATION"
       }
     ],
     "abilities": [

@@ -18,13 +18,14 @@ import { common, Want } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import commonEventManager from '@ohos.commonEventManager';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 const DOMAIN = 0xFF00;
 
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok")
+      resolve('ok')
     }, time)
   }).then(() => {
     console.info(`sleep ${time} over...`)
@@ -97,7 +98,7 @@ export default function delayedProcessExitTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("SUB_Ability_AbilityRuntime_DelayedProcessExit_0100", Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_DelayedProcessExit_0100', Level.LEVEL0, async (done: Function) => {
       const TAG = 'SUB_Ability_AbilityRuntime_DelayedProcessExit_0100';
       hilog.info(DOMAIN, TAG, 'start');
       if (!appContext || !abilityContext) {
@@ -121,8 +122,8 @@ export default function delayedProcessExitTest() {
       } catch (error) {
         let err: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'startSelfUIAbility failed: code=%{public}d, msg=%{public}s', err?.code, err?.message);
-        if (err?.code === 16000161 || err?.code === 801) {
-          expect(err?.code === 16000161 || err?.code === 801).assertTrue();
+        if (err.code === 16000161 || err.code === 801) {
+          expect(err.code === 16000161 || err.code === 801).assertTrue();
           done();
         } else {
           hilog.error(DOMAIN, TAG, 'Unexpected error code=%{public}d', err?.code);
@@ -140,7 +141,7 @@ export default function delayedProcessExitTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("SUB_Ability_AbilityRuntime_DelayedProcessExit_0300", Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_DelayedProcessExit_0300', Level.LEVEL0, async (done: Function) => {
       const TAG = 'SUB_Ability_AbilityRuntime_DelayedProcessExit_0300';
       let flag = false;
       hilog.info(DOMAIN, TAG, 'start');
@@ -183,7 +184,7 @@ export default function delayedProcessExitTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("SUB_Ability_AbilityRuntime_DelayedProcessExit_0400", Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_DelayedProcessExit_0400', Level.LEVEL0, async (done: Function) => {
       const TAG = 'SUB_Ability_AbilityRuntime_DelayedProcessExit_0400';
       hilog.info(DOMAIN, TAG, 'start');
       if (!appContext) {
@@ -224,7 +225,7 @@ export default function delayedProcessExitTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("SUB_Ability_AbilityRuntime_DelayedProcessExit_0500", Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_DelayedProcessExit_0500', Level.LEVEL0, async (done: Function) => {
       const TAG = 'SUB_Ability_AbilityRuntime_DelayedProcessExit_0500';
       hilog.info(DOMAIN, TAG, 'start');
       if (!appContext) {
@@ -265,7 +266,7 @@ export default function delayedProcessExitTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("SUB_Ability_AbilityRuntime_DelayedProcessExit_0600", Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_DelayedProcessExit_0600', Level.LEVEL0, async (done: Function) => {
       const TAG = 'SUB_Ability_AbilityRuntime_DelayedProcessExit_0600';
       hilog.info(DOMAIN, TAG, 'start');
       if (!appContext || !abilityContext) {
@@ -312,7 +313,7 @@ export default function delayedProcessExitTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("SUB_Ability_AbilityRuntime_DelayedProcessExit_0700", Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_DelayedProcessExit_0700', Level.LEVEL0, async (done: Function) => {
       const TAG = 'SUB_Ability_AbilityRuntime_DelayedProcessExit_0700';
       hilog.info(DOMAIN, TAG, 'start');
       if (!appContext) {
@@ -357,7 +358,7 @@ export default function delayedProcessExitTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("SUB_Ability_AbilityRuntime_DelayedProcessExit_0800", Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_DelayedProcessExit_0800', Level.LEVEL0, async (done: Function) => {
       const TAG = 'SUB_Ability_AbilityRuntime_DelayedProcessExit_0800';
       hilog.info(DOMAIN, TAG, 'start');
       if (!appContext) {
@@ -405,7 +406,7 @@ export default function delayedProcessExitTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("SUB_Ability_AbilityRuntime_DelayedProcessExit_0900", Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_DelayedProcessExit_0900', Level.LEVEL0, async (done: Function) => {
       const TAG = 'SUB_Ability_AbilityRuntime_DelayedProcessExit_0900';
       hilog.info(DOMAIN, TAG, 'start');
       if (!appContext || !abilityContext) {
@@ -452,7 +453,7 @@ export default function delayedProcessExitTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("SUB_Ability_AbilityRuntime_DelayedProcessExit_1000", Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_DelayedProcessExit_1000', Level.LEVEL0, async (done: Function) => {
       const TAG = 'SUB_Ability_AbilityRuntime_DelayedProcessExit_1000';
       hilog.info(DOMAIN, TAG, 'start');
       if (!appContext || !abilityContext) {

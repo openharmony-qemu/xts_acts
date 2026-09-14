@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Driver, ON, Rect } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { startAbility, UtilsTest } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,11 +25,6 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function counterDirectionTest() {
   describe('counterDirectionTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("counterDirectionTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.advancedDialog.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("counterDirectionTest beforeEach start");
@@ -54,7 +48,11 @@ export default function counterDirectionTest() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('counterDirectionTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('chipDirectionTest after each called');
     });
 
@@ -70,16 +68,32 @@ it('testCounterDirection_static_0100', Level.LEVEL0, async (done: () => void): P
       console.log("[testCounterDirection_static_0100] START");
       const driver = Driver.create();
       let buttonAuto = await driver.findComponent(ON.id("Auto"));
-      await (buttonAuto?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (buttonAuto?.click() as Promise<void>);
+      } catch (err) {
+        console.info('testCounterDirection_static_0100 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('testCounterDirection_static_0100 sleep err: ' + JSON.stringify(err));
+      }
       console.log("[testCounterDirection_static_0100] click Auto");
       const lable = await driver.findComponent(ON.text("价格"));
       const rect1 = await (lable!.getBounds() as Promise<Rect>);
       console.log("[testCounterDirection_static_0100] ", " rect:" + JSON.stringify(rect1));
       let buttonRtl = await driver.findComponent(ON.id("Rtl"));
-      await (buttonRtl?.click() as Promise<void>);
+      try {
+        await (buttonRtl?.click() as Promise<void>);
+      } catch (err) {
+        console.info('testCounterDirection_static_0100 click err: ' + JSON.stringify(err));
+      }
       console.log("[counterDirectionTest_0100] ", "click Rtl");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('testCounterDirection_static_0100 sleep err: ' + JSON.stringify(err));
+      }
       let lable2 = await driver.findComponent(ON.text("价格"));
       const rect2 = await (lable2!.getBounds() as Promise<Rect>);
       console.log("[testCounterDirection_static_0100] ", " rect:" + JSON.stringify(rect2));

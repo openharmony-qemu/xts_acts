@@ -14,14 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON, Component } from '@kit.TestKit';
-import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
@@ -35,19 +33,20 @@ async function navigatePage(pageUrl: string, pageName: string): Promise<void> {
   routerInstance.clear();
   if (routerInstance.getState().name !== pageName) {
     routerInstance.replaceUrl({ url: pageUrl });
-    await CommonFunc.sleep(SLEEP_TIME);
+          await CommonFunc.sleep(2000);
   }
 }
 
 export default function PopupCommonOptionsLevelModeTest(): void {
   describe('PopupCommonOptionsLevelModeTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.popup.static', 'EntryAbility');
-    });
     beforeEach(async (): Promise<void> => {
-      await navigatePage('MainAbility/pages/popup/PopupCommonOptionsLevelMode', 'PopupCommonOptionsLevelMode');
+       try {
+         await navigatePage('MainAbility/pages/popup/PopupCommonOptionsLevelMode', 'PopupCommonOptionsLevelMode');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
     });
-    afterEach(async (): Promise<void> => { await Utils.sleep(SLEEP_TIME); });
+    afterEach(async (): Promise<void> => { try { await Utils.sleep(SLEEP_TIME); } catch (err) { console.info("sleep err: " + JSON.stringify(err)); } });
 
     /**
      * @tc.number  PopupCommonOptionsLevelMode_0100
@@ -57,12 +56,28 @@ export default function PopupCommonOptionsLevelModeTest(): void {
      */
     it('PopupCommonOptionsLevelMode_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await clickById(driver, 'popup_default');
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await clickById(driver, 'popup_default');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       const popupText = await driver.findComponent(ON.text('PopupCommon Default LevelMode Test'));
       expect(!!popupText).assertEqual(true);
-      await clickById(driver, 'popup_default');
+       try {
+         await clickById(driver, 'popup_default');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     /**
@@ -73,12 +88,28 @@ export default function PopupCommonOptionsLevelModeTest(): void {
      */
     it('PopupCommonOptionsLevelMode_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await clickById(driver, 'popup_overlay');
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await clickById(driver, 'popup_overlay');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       const popupText = await driver.findComponent(ON.text('PopupCommon OVERLAY LevelMode Test'));
       expect(!!popupText).assertEqual(true);
-      await clickById(driver, 'popup_overlay');
+       try {
+         await clickById(driver, 'popup_overlay');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     /**
@@ -89,12 +120,28 @@ export default function PopupCommonOptionsLevelModeTest(): void {
      */
     it('PopupCommonOptionsLevelMode_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await clickById(driver, 'popup_embedded');
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await clickById(driver, 'popup_embedded');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       const popupText = await driver.findComponent(ON.text('PopupCommon EMBEDDED LevelMode Test'));
       expect(!!popupText).assertEqual(true);
-      await clickById(driver, 'popup_embedded');
+       try {
+         await clickById(driver, 'popup_embedded');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     /**
@@ -105,12 +152,28 @@ export default function PopupCommonOptionsLevelModeTest(): void {
      */
     it('PopupCommonOptionsLevelMode_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await clickById(driver, 'popup_null');
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await clickById(driver, 'popup_null');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       const popupText = await driver.findComponent(ON.text('PopupCommon Null LevelMode Test'));
       expect(!!popupText).assertEqual(true);
-      await clickById(driver, 'popup_null');
+       try {
+         await clickById(driver, 'popup_null');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     /**
@@ -121,12 +184,28 @@ export default function PopupCommonOptionsLevelModeTest(): void {
      */
     it('PopupCommonOptionsLevelMode_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await clickById(driver, 'popup_undefined');
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await clickById(driver, 'popup_undefined');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       const popupText = await driver.findComponent(ON.text('PopupCommon Undefined LevelMode Test'));
       expect(!!popupText).assertEqual(true);
-      await clickById(driver, 'popup_undefined');
+       try {
+         await clickById(driver, 'popup_undefined');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
   });

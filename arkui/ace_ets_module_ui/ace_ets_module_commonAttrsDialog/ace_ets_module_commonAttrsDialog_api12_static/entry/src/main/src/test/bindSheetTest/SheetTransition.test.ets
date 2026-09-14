@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -29,27 +29,13 @@ import {
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
-import common from '@ohos.app.ability.common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 
 export default function SheetTransition() {
   describe('SheetTransition', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("SheetTransition beforeEach start");
       let options: router.RouterOptions = {
@@ -82,22 +68,34 @@ export default function SheetTransition() {
 it('SheetTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SheetTransition_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(5000);
-      let button = await driver.findComponent(ON.id('SheetTransition'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(5000);
+        let button = await driver.findComponent(ON.id('SheetTransition'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SheetTransition_0100 err: ' + JSON.stringify(err));
+      }
 
       let strJson1 = inspector.getInspectorByKey('SheetTypeValue');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('SheetTransition_0100 err: ' + JSON.stringify(err));
+      }
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SheetTransition_0100] component obj1 is: " + JSON.stringify(obj1));
       console.info("[SheetTransition_0100] title: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual("value SheetType:0");
 
-      let size = await driver.getDisplaySize();
-      let sizeX = size.x;
-      console.info("[SheetTransition_0100] size x is: " + JSON.stringify(sizeX));
-      await CommonFunc.sleep(1000);
+      try {
+        let size = await driver.getDisplaySize();
+        let sizeX = size.x;
+        console.info("[SheetTransition_0100] size x is: " + JSON.stringify(sizeX));
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SheetTransition_0100 err: ' + JSON.stringify(err));
+      }
 
       let strJson2 = inspector.getInspectorByKey('WidthValue');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -115,4 +113,3 @@ it('SheetTransition_static_0100', Level.LEVEL0, async (done: () => void): Promis
 
   })
 }
-

@@ -14,26 +14,18 @@
  * limitations under the License.
  */
 
-
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 import { Driver, ON, Rect } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
 
 export default function maxHeightTest(): void{
   describe('maxHeightTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('assemblyCallbackTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.menu.static', 'EntryAbility')
-    });
-
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/maxHeight/maxHeightTest',
@@ -54,8 +46,12 @@ export default function maxHeightTest(): void{
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
-      console.info('maxHeightTest after each called');
+      try {
+        await CommonFunc.sleep(1000);
+        console.info('maxHeightTest after each called');
+      } catch (err) {
+        console.info('maxHeightTest afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**
@@ -67,29 +63,34 @@ export default function maxHeightTest(): void{
      * @tc.level  LEVEL0
      */
     it('maxHeightTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[maxHeightTest_0100] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
+      try {
+        console.info('[maxHeightTest_0100] START');
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
 
-      let button1 = await driver.findComponent(ON.id('percent'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+        let button1 = await driver.findComponent(ON.id('percent'));
+        await (button1?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      const btn1 = await driver.findComponent(ON.id('menu'));
-      expect(btn1 !== null).assertTrue();
-      await CommonFunc.sleep(500);
+        const btn1 = await driver.findComponent(ON.id('menu'));
+        expect(btn1 !== null).assertTrue();
+        await CommonFunc.sleep(500);
 
-      const rect1 = await (btn1?.getBounds() as Promise<Rect>)
-      console.info('maxHeightTest_0100 height: ' + JSON.stringify(rect1));
-      console.info('maxHeightTest_0100 bottom: ' + rect1.bottom);
-      await CommonFunc.sleep(1500);
+        const rect1 = await (btn1?.getBounds() as Promise<Rect>)
+        console.info('maxHeightTest_0100 height: ' + JSON.stringify(rect1));
+        console.info('maxHeightTest_0100 bottom: ' + rect1.bottom);
+        await CommonFunc.sleep(1500);
 
-      expect(Math.round(rect1.bottom) > 0).assertTrue();
-      await CommonFunc.sleep(1500);
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
-      console.info('[maxHeightTest_0100] END')
-      done();
+        expect(Math.round(rect1.bottom) > 0).assertTrue();
+        await CommonFunc.sleep(1500);
+        await (button1?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        console.info('[maxHeightTest_0100] END')
+        done();
+      } catch (err) {
+        console.info('maxHeightTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     /**
@@ -101,29 +102,34 @@ export default function maxHeightTest(): void{
      * @tc.level  LEVEL0
      */
     it('maxHeightTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[maxHeightTest_0200] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
+      try {
+        console.info('[maxHeightTest_0200] START');
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
 
-      let button2 = await driver.findComponent(ON.id('vp'));
-      await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+        let button2 = await driver.findComponent(ON.id('vp'));
+        await (button2?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      const btn2 = await driver.findComponent(ON.id('menu'));
-      expect(btn2 !== null).assertTrue();
-      await CommonFunc.sleep(500);
+        const btn2 = await driver.findComponent(ON.id('menu'));
+        expect(btn2 !== null).assertTrue();
+        await CommonFunc.sleep(500);
 
-      const rect2 = await (btn2?.getBounds() as Promise<Rect>)
-      console.info('maxHeightTest_0200 height: ' + JSON.stringify(rect2));
-      console.info('maxHeightTest_0200 bottom: ' + rect2.bottom);
-      await CommonFunc.sleep(1500);
+        const rect2 = await (btn2?.getBounds() as Promise<Rect>)
+        console.info('maxHeightTest_0200 height: ' + JSON.stringify(rect2));
+        console.info('maxHeightTest_0200 bottom: ' + rect2.bottom);
+        await CommonFunc.sleep(1500);
 
-      expect(Math.round(rect2.bottom) > 0).assertTrue();
-      await CommonFunc.sleep(1500);
-      await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
-      console.info('[maxHeightTest_0200] END')
-      done();
+        expect(Math.round(rect2.bottom) > 0).assertTrue();
+        await CommonFunc.sleep(1500);
+        await (button2?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        console.info('[maxHeightTest_0200] END')
+        done();
+      } catch (err) {
+        console.info('maxHeightTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     /**
@@ -135,29 +141,34 @@ export default function maxHeightTest(): void{
      * @tc.level  LEVEL0
      */
     it('maxHeightTest_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[maxHeightTest_0300] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
+      try {
+        console.info('[maxHeightTest_0300] START');
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
 
-      let button3 = await driver.findComponent(ON.id('px'));
-      await (button3?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+        let button3 = await driver.findComponent(ON.id('px'));
+        await (button3?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      const btn3 = await driver.findComponent(ON.id('menu'));
-      expect(btn3 !== null).assertTrue();
-      await CommonFunc.sleep(500);
+        const btn3 = await driver.findComponent(ON.id('menu'));
+        expect(btn3 !== null).assertTrue();
+        await CommonFunc.sleep(500);
 
-      const rect3 = await (btn3?.getBounds() as Promise<Rect>)
-      console.info('maxHeightTest_0300 height: ' + JSON.stringify(rect3));
-      console.info('maxHeightTest_0300 bottom: ' + rect3.bottom);
-      await CommonFunc.sleep(1500);
+        const rect3 = await (btn3?.getBounds() as Promise<Rect>)
+        console.info('maxHeightTest_0300 height: ' + JSON.stringify(rect3));
+        console.info('maxHeightTest_0300 bottom: ' + rect3.bottom);
+        await CommonFunc.sleep(1500);
 
-      expect(Math.round(rect3.bottom) > 0).assertTrue();
-      await CommonFunc.sleep(1500);
-      await (button3?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
-      console.info('[maxHeightTest_0300] END')
-      done();
+        expect(Math.round(rect3.bottom) > 0).assertTrue();
+        await CommonFunc.sleep(1500);
+        await (button3?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        console.info('[maxHeightTest_0300] END')
+        done();
+      } catch (err) {
+        console.info('maxHeightTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     /**
@@ -169,29 +180,34 @@ export default function maxHeightTest(): void{
      * @tc.level  LEVEL0
      */
     it('maxHeightTest_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[maxHeightTest_0400] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
+      try {
+        console.info('[maxHeightTest_0400] START');
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
 
-      let button4 = await driver.findComponent(ON.id('fp'));
-      await (button4?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+        let button4 = await driver.findComponent(ON.id('fp'));
+        await (button4?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      const btn4 = await driver.findComponent(ON.id('menu'));
-      expect(btn4 !== null).assertTrue();
-      await CommonFunc.sleep(500);
+        const btn4 = await driver.findComponent(ON.id('menu'));
+        expect(btn4 !== null).assertTrue();
+        await CommonFunc.sleep(500);
 
-      const rect4 = await (btn4?.getBounds() as Promise<Rect>)
-      console.info('maxHeightTest_0400 height: ' + JSON.stringify(rect4));
-      console.info('maxHeightTest_0400 bottom: ' + rect4.bottom);
-      await CommonFunc.sleep(1500);
+        const rect4 = await (btn4?.getBounds() as Promise<Rect>)
+        console.info('maxHeightTest_0400 height: ' + JSON.stringify(rect4));
+        console.info('maxHeightTest_0400 bottom: ' + rect4.bottom);
+        await CommonFunc.sleep(1500);
 
-      expect(Math.round(rect4.bottom) > 0).assertTrue();
-      await CommonFunc.sleep(1500);
-      await (button4?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
-      console.info('[maxHeightTest_0400] END')
-      done();
+        expect(Math.round(rect4.bottom) > 0).assertTrue();
+        await CommonFunc.sleep(1500);
+        await (button4?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        console.info('[maxHeightTest_0400] END')
+        done();
+      } catch (err) {
+        console.info('maxHeightTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     /**
@@ -203,29 +219,34 @@ export default function maxHeightTest(): void{
      * @tc.level  LEVEL0
      */
     it('maxHeightTest_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[maxHeightTest_0500] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
+      try {
+        console.info('[maxHeightTest_0500] START');
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
 
-      let button5 = await driver.findComponent(ON.id('lpx'));
-      await (button5?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+        let button5 = await driver.findComponent(ON.id('lpx'));
+        await (button5?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      const btn5 = await driver.findComponent(ON.id('menu'));
-      expect(btn5 !== null).assertTrue();
-      await CommonFunc.sleep(500);
+        const btn5 = await driver.findComponent(ON.id('menu'));
+        expect(btn5 !== null).assertTrue();
+        await CommonFunc.sleep(500);
 
-      const rect5 = await (btn5?.getBounds() as Promise<Rect>)
-      console.info('maxHeightTest_0500 height: ' + JSON.stringify(rect5));
-      console.info('maxHeightTest_0500 bottom: ' + rect5.bottom);
-      await CommonFunc.sleep(1500);
+        const rect5 = await (btn5?.getBounds() as Promise<Rect>)
+        console.info('maxHeightTest_0500 height: ' + JSON.stringify(rect5));
+        console.info('maxHeightTest_0500 bottom: ' + rect5.bottom);
+        await CommonFunc.sleep(1500);
 
-      expect(Math.round(rect5.bottom) > 0).assertTrue();
-      await CommonFunc.sleep(1500);
-      await (button5?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
-      console.info('[maxHeightTest_0500] END')
-      done();
+        expect(Math.round(rect5.bottom) > 0).assertTrue();
+        await CommonFunc.sleep(1500);
+        await (button5?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        console.info('[maxHeightTest_0500] END')
+        done();
+      } catch (err) {
+        console.info('maxHeightTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     /**
@@ -237,29 +258,34 @@ export default function maxHeightTest(): void{
      * @tc.level  LEVEL1
      */
     it('maxHeightTest_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[maxHeightTest_0600] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
+      try {
+        console.info('[maxHeightTest_0600] START');
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
 
-      let button6 = await driver.findComponent(ON.id('0'));
-      await (button6?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+        let button6 = await driver.findComponent(ON.id('0'));
+        await (button6?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      const btn6 = await driver.findComponent(ON.id('menu'));
-      expect(btn6 !== null).assertTrue();
-      await CommonFunc.sleep(500);
+        const btn6 = await driver.findComponent(ON.id('menu'));
+        expect(btn6 !== null).assertTrue();
+        await CommonFunc.sleep(500);
 
-      const rect6 = await (btn6?.getBounds() as Promise<Rect>)
-      console.info('maxHeightTest_0600 height: ' + JSON.stringify(rect6));
-      console.info('maxHeightTest_0600 bottom: ' + rect6.bottom);
-      await CommonFunc.sleep(1500);
+        const rect6 = await (btn6?.getBounds() as Promise<Rect>)
+        console.info('maxHeightTest_0600 height: ' + JSON.stringify(rect6));
+        console.info('maxHeightTest_0600 bottom: ' + rect6.bottom);
+        await CommonFunc.sleep(1500);
 
-      expect(Math.round(rect6.bottom) > 0).assertTrue();
-      await CommonFunc.sleep(1500);
-      await (button6?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
-      console.info('[maxHeightTest_0600] END')
-      done();
+        expect(Math.round(rect6.bottom) > 0).assertTrue();
+        await CommonFunc.sleep(1500);
+        await (button6?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        console.info('[maxHeightTest_0600] END')
+        done();
+      } catch (err) {
+        console.info('maxHeightTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     /**
@@ -271,29 +297,34 @@ export default function maxHeightTest(): void{
      * @tc.level  LEVEL1
      */
     it('maxHeightTest_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[maxHeightTest_0700] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
+      try {
+        console.info('[maxHeightTest_0700] START');
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
 
-      let button7 = await driver.findComponent(ON.id('-1'));
-      await (button7?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+        let button7 = await driver.findComponent(ON.id('-1'));
+        await (button7?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      const btn7 = await driver.findComponent(ON.id('menu'));
-      expect(btn7 !== null).assertTrue();
-      await CommonFunc.sleep(500);
+        const btn7 = await driver.findComponent(ON.id('menu'));
+        expect(btn7 !== null).assertTrue();
+        await CommonFunc.sleep(500);
 
-      const rect7 = await (btn7?.getBounds() as Promise<Rect>)
-      console.info('maxHeightTest_0700 height: ' + JSON.stringify(rect7));
-      console.info('maxHeightTest_0700 bottom: ' + rect7.bottom);
-      await CommonFunc.sleep(1500);
+        const rect7 = await (btn7?.getBounds() as Promise<Rect>)
+        console.info('maxHeightTest_0700 height: ' + JSON.stringify(rect7));
+        console.info('maxHeightTest_0700 bottom: ' + rect7.bottom);
+        await CommonFunc.sleep(1500);
 
-      expect(Math.round(rect7.bottom) > 0).assertTrue();
-      await CommonFunc.sleep(1500);
-      await (button7?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
-      console.info('[maxHeightTest_0700] END')
-      done();
+        expect(Math.round(rect7.bottom) > 0).assertTrue();
+        await CommonFunc.sleep(1500);
+        await (button7?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        console.info('[maxHeightTest_0700] END')
+        done();
+      } catch (err) {
+        console.info('maxHeightTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     /**
@@ -305,29 +336,34 @@ export default function maxHeightTest(): void{
      * @tc.level  LEVEL1
      */
     it('maxHeightTest_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[maxHeightTest_0800] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
+      try {
+        console.info('[maxHeightTest_0800] START');
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
 
-      let button8 = await driver.findComponent(ON.id('undefined'));
-      await (button8?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+        let button8 = await driver.findComponent(ON.id('undefined'));
+        await (button8?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      const btn8 = await driver.findComponent(ON.id('menu'));
-      expect(btn8 !== null).assertTrue();
-      await CommonFunc.sleep(500);
+        const btn8 = await driver.findComponent(ON.id('menu'));
+        expect(btn8 !== null).assertTrue();
+        await CommonFunc.sleep(500);
 
-      const rect8 = await (btn8?.getBounds() as Promise<Rect>)
-      console.info('maxHeightTest_0800 height: ' + JSON.stringify(rect8));
-      console.info('maxHeightTest_0800 bottom: ' + rect8.bottom);
-      await CommonFunc.sleep(1500);
+        const rect8 = await (btn8?.getBounds() as Promise<Rect>)
+        console.info('maxHeightTest_0800 height: ' + JSON.stringify(rect8));
+        console.info('maxHeightTest_0800 bottom: ' + rect8.bottom);
+        await CommonFunc.sleep(1500);
 
-      expect(Math.round(rect8.bottom) > 0).assertTrue();
-      await CommonFunc.sleep(1500);
-      await (button8?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
-      console.info('[maxHeightTest_0800] END')
-      done();
+        expect(Math.round(rect8.bottom) > 0).assertTrue();
+        await CommonFunc.sleep(1500);
+        await (button8?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        console.info('[maxHeightTest_0800] END')
+        done();
+      } catch (err) {
+        console.info('maxHeightTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

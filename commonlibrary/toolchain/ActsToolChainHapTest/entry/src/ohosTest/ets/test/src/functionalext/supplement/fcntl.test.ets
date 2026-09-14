@@ -27,7 +27,7 @@ export default function fcntl_group_test() {
      * @tc.level  LEVEL1
      */
     it("creat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("creat");
+      const result: number = await testNapi.runTest("creat");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function fcntl_group_test() {
      * @tc.level  LEVEL1
      */
     it("openat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("openat");
+      const result: number = await testNapi.runTest("openat");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function fcntl_group_test() {
      * @tc.level  LEVEL1
      */
     it("open", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("open");
+      const result: number = await testNapi.runTest("open");
       expect(result).assertEqual(0);
       done();
     });

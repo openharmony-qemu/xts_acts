@@ -36,6 +36,7 @@ export default function interceptSwiperTest() {
         if (!("interceptSwiper" == pages.name)) {
           console.info("get interceptSwiperTest pages.name:" + JSON.stringify(pages.name));
           interceptSwiperTest.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push interceptSwiperTest page error:" + err);
@@ -67,6 +68,7 @@ it('interceptSwiperTest_static_0100', Level.LEVEL1, async (done: () => void): Pr
         let height = bottom - top;
         console.info("interceptSwiperTest_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
         let driver = Driver.create()
+        await CommonFunc.sleep(1000);
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
         await driver.swipe((Math.round(right - uiContext.vp2px(20))).toInt(), (Math.round(top + height / 2)).toInt(),
           (Math.round(left + uiContext.vp2px(20))).toInt(),
@@ -103,6 +105,7 @@ it('interceptSwiperTest_static_0200', Level.LEVEL1, async (done: () => void): Pr
         let height = bottom - top;
         console.info("interceptSwiperTest_static_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
         let driver = Driver.create()
+        await CommonFunc.sleep(1000);
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
         await driver.swipe((Math.round(left + uiContext.vp2px(20))).toInt(), (Math.round(top + height / 2)).toInt(),
           (Math.round(right - uiContext.vp2px(20))).toInt(),

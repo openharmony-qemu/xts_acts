@@ -20,6 +20,7 @@ import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 function sleep(time: number) {
   return new Promise<string>((resolve, reject) => {
@@ -46,6 +47,7 @@ export default function scrollbarJsunit() {
         console.info("[scrollbarTest] current page is: " + JSON.stringify(pages.name));
         if (!('ScrollBar' == pages.name)) {
           routerAlp.pushUrl(options);
+          await CommonFunc.sleep(2000);
           
         }
       } catch (err) {

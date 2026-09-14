@@ -39,7 +39,7 @@ export default {
         let obj = this;
         storage.clear({ success: function (d) { obj.resultText += 'clear success\n'; obj.statusMsg = obj.hasError ? 'done: fail' : 'done: success'; }, fail: function (d, c) { obj.hasError = true; obj.resultText += 'clear fail\n'; obj.statusMsg = 'done: clear fail'; getApp().data.testItems['api_storage'].errorDetail = 'clear fail: code=' + c; } });
     },
-    onDestroy() { try { this.storageClear(); } catch (e) {} },
+    onDestroy() { if (this.supported) { try { this.storageClear(); } catch (e) {} } },
     passSt() { if (getApp().data.testItems['api_storage'].status === 'pass') { getApp().data.testItems['api_storage'].status = 'null'; this.stPassColor = '#555555'; this.stFailColor = '#555555'; } else { getApp().data.testItems['api_storage'].status = this.hasError ? 'fail' : 'pass'; this.stPassColor = '#4caf50'; this.stFailColor = '#555555'; } },
     failSt() { if (getApp().data.testItems['api_storage'].status === 'fail') { getApp().data.testItems['api_storage'].status = 'null'; this.stFailColor = '#555555'; this.stPassColor = '#555555'; } else { getApp().data.testItems['api_storage'].status = 'fail'; this.stFailColor = '#f44336'; this.stPassColor = '#555555'; } },
     helpClicked() {

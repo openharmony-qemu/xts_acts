@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+import { collections } from '@kit.ArkTS';
+
 export default class Utils{
   static async msSleep(count:number) : Promise<number> {
     return new Promise<number>((resolve, reject) => {
@@ -20,5 +22,16 @@ export default class Utils{
         resolve(0)
       }, count)
     })
+  }
+  
+  static fillNumberMap(map: collections.Map<number, number>, start: number, end: number): boolean {
+    try {
+      for (let index = start; index < end; index++) {
+        map.set(index, index * 2);
+      }
+      return true;
+    } catch (_error) {
+      return false;
+    }
   }
 }

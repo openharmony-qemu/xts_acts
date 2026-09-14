@@ -15,6 +15,8 @@
 #include <iostream>
 #include <cstdio>
 #include <string>
+#include <vector>
+#include <cstdint>
 
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
@@ -36,6 +38,28 @@ constexpr uint32_t DEFAULT_KEY_FRAME_INTERVAL = 2000;
 constexpr uint32_t OHPRINTF_VALUE = 1024;
 const char *INP_DIR_1080 = "/data/storage/el2/base/files/1080_1920_nv12.yuv";
 const char *OUTPUT = "/data/storage/el2/base/files/1080_1920.h265";
+
+constexpr uint32_t PTS_WIDTH = 1080;
+constexpr uint32_t PTS_HEIGHT = 1920;
+constexpr uint32_t PTS_BITRATE = 2200000;
+constexpr uint32_t SQR = 3;
+
+const std::vector<int64_t> PTS_TIMESTAMPS_EQUAL_BUFFER = {
+    100000000, 100040000, 100080000, 100120000, 100160000, 100200000, 100240000,
+    100280000, 100320000, 100360000, 100400000, 100440000, 100480000, 100520000
+};
+const std::vector<int64_t> PTS_TIMESTAMPS_VARIABLE_BUFFER = {
+    100000000, 100080000, 100160000, 100240000, 100260000, 100280000, 100300000,
+    100380000, 100460000, 100540000, 100560000, 100580000, 100600000, 100680000
+};
+const std::vector<int64_t> PTS_TIMESTAMPS_EQUAL_SURFACE = {
+    100000000000, 100040000000, 100080000000, 100120000000, 100160000000, 100200000000, 100240000000,
+    100280000000, 100320000000, 100360000000, 100400000000, 100440000000, 100480000000, 100520000000
+};
+const std::vector<int64_t> PTS_TIMESTAMPS_VARIABLE_SURFACE = {
+    100000000000, 100080000000, 100160000000, 100240000000, 100260000000, 100280000000, 100300000000,
+    100320000000, 100340000000, 100420000000, 100500000000, 100580000000, 100600000000, 100620000000
+};
 } // namespace
 
 namespace OHOS {
@@ -71,9 +95,13 @@ napi_value VIDEO_HW_ENCODE_PTS_FUNC_001(napi_env env, napi_callback_info info)
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    string timeStampFilePath = "/data/storage/el2/base/files/xtscase_01_sqr_buffer.txt";
     VEncAPI11Sample::EncoderConfig config;
-    vEncSample->LoadTimeStampData(timeStampFilePath, config);
+    config.width = PTS_WIDTH;
+    config.height = PTS_HEIGHT;
+    config.bitRate = PTS_BITRATE;
+    config.bitrateMode = SQR;
+    config.surfaceMode = false;
+    vEncSample->timeList = PTS_TIMESTAMPS_EQUAL_BUFFER;
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = INP_DIR_1080;
     vEncSample->outDir = OUTPUT;
@@ -81,6 +109,7 @@ napi_value VIDEO_HW_ENCODE_PTS_FUNC_001(napi_env env, napi_callback_info info)
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
+    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
@@ -98,9 +127,13 @@ napi_value VIDEO_HW_ENCODE_PTS_FUNC_002(napi_env env, napi_callback_info info)
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    string timeStampFilePath = "/data/storage/el2/base/files/xtscase_04_sqr_buffer.txt";
     VEncAPI11Sample::EncoderConfig config;
-    vEncSample->LoadTimeStampData(timeStampFilePath, config);
+    config.width = PTS_WIDTH;
+    config.height = PTS_HEIGHT;
+    config.bitRate = PTS_BITRATE;
+    config.bitrateMode = SQR;
+    config.surfaceMode = false;
+    vEncSample->timeList = PTS_TIMESTAMPS_EQUAL_BUFFER;
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = INP_DIR_1080;
     vEncSample->outDir = OUTPUT;
@@ -126,9 +159,13 @@ napi_value VIDEO_HW_ENCODE_PTS_FUNC_003(napi_env env, napi_callback_info info)
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    string timeStampFilePath = "/data/storage/el2/base/files/xtscase_07_sqr_buffer.txt";
     VEncAPI11Sample::EncoderConfig config;
-    vEncSample->LoadTimeStampData(timeStampFilePath, config);
+    config.width = PTS_WIDTH;
+    config.height = PTS_HEIGHT;
+    config.bitRate = PTS_BITRATE;
+    config.bitrateMode = SQR;
+    config.surfaceMode = false;
+    vEncSample->timeList = PTS_TIMESTAMPS_VARIABLE_BUFFER;
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = INP_DIR_1080;
     vEncSample->outDir = OUTPUT;
@@ -154,9 +191,13 @@ napi_value VIDEO_HW_ENCODE_PTS_FUNC_004(napi_env env, napi_callback_info info)
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    string timeStampFilePath = "/data/storage/el2/base/files/xtscase_01_sqr_surface.txt";
     VEncAPI11Sample::EncoderConfig config;
-    vEncSample->LoadTimeStampData(timeStampFilePath, config);
+    config.width = PTS_WIDTH;
+    config.height = PTS_HEIGHT;
+    config.bitRate = PTS_BITRATE;
+    config.bitrateMode = SQR;
+    config.surfaceMode = true;
+    vEncSample->timeList = PTS_TIMESTAMPS_EQUAL_SURFACE;
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = INP_DIR_1080;
     vEncSample->outDir = OUTPUT;
@@ -182,9 +223,13 @@ napi_value VIDEO_HW_ENCODE_PTS_FUNC_005(napi_env env, napi_callback_info info)
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    string timeStampFilePath = "/data/storage/el2/base/files/xtscase_04_sqr_surface.txt";
     VEncAPI11Sample::EncoderConfig config;
-    vEncSample->LoadTimeStampData(timeStampFilePath, config);
+    config.width = PTS_WIDTH;
+    config.height = PTS_HEIGHT;
+    config.bitRate = PTS_BITRATE;
+    config.bitrateMode = SQR;
+    config.surfaceMode = true;
+    vEncSample->timeList = PTS_TIMESTAMPS_EQUAL_SURFACE;
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = INP_DIR_1080;
     vEncSample->outDir = OUTPUT;
@@ -210,9 +255,13 @@ napi_value VIDEO_HW_ENCODE_PTS_FUNC_006(napi_env env, napi_callback_info info)
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    string timeStampFilePath = "/data/storage/el2/base/files/xtscase_07_sqr_surface.txt";
     VEncAPI11Sample::EncoderConfig config;
-    vEncSample->LoadTimeStampData(timeStampFilePath, config);
+    config.width = PTS_WIDTH;
+    config.height = PTS_HEIGHT;
+    config.bitRate = PTS_BITRATE;
+    config.bitrateMode = SQR;
+    config.surfaceMode = true;
+    vEncSample->timeList = PTS_TIMESTAMPS_VARIABLE_SURFACE;
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = INP_DIR_1080;
     vEncSample->outDir = OUTPUT;

@@ -17,6 +17,11 @@
     "MainAbility/pages/CalendarPicker/CalendarPickerAttributeModifier",
     "MainAbility/pages/DatePicker/DatePickerAttributeModifier",
     "MainAbility/pages/TextPicker/TextPickerAttributeModifier",
-    "MainAbility/pages/TimePicker/TimePickerAttributeModifier"
+    "MainAbility/pages/TimePicker/TimePickerAttributeModifier",
+    "MainAbility/pages/UIPickerComponent/UIPickerCallback",
+    "MainAbility/pages/TextPickerComponent/TextPickerOnChange",
+    "MainAbility/pages/TextPickerComponent/TextPickerOnScrollStop",
+    "MainAbility/pages/TextPickerComponent/TextPickerOnEnterSelectedArea",
+    "MainAbility/pages/TimePickerComponent/TimePickerOnChange"
   ]
 }

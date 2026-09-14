@@ -18,12 +18,13 @@ import CollectionsArrayCombinationSecondTest from './CollectionsArrayCombination
 import CollectionsArrayCombinationThirdTest from './CollectionsArrayCombinationThirdTest.test';
 import CollectionsArrayCombinationFourthTest from './CollectionsArrayCombinationFourthTest.test';
 import CollectionsArraySupplementTest from './CollectionsArraySupplementTest.test';
+import CollectionsArrayExpand1024Test from './CollectionsArrayExpand1024Test.test';
+import TypedArrayExpand1024Test from './TypedArrayExpand1024Test.test';
 import CollectionsArrayContainsAllSendableTest from './CollectionsArrayContainsAllSendableTest.test';
 import CollectionsArrayContainsAllBuiltinTest from './CollectionsArrayContainsAllBuiltinTest.test';
 import CollectionsArrayRetainAllSendableTest from './CollectionsArrayRetainAllSendableTest.test';
 import CollectionsArrayRetainAllBuiltinTest from './CollectionsArrayRetainAllBuiltinTest.test';
 import CollectionsArrayRetainAllPredicateTest from './CollectionsArrayRetainAllPredicateTest.test';
-
 import arrayConstructorSuite from './CollectionsArrayBaseTest/ArrayConstructor.test';
 import arrayTraversalSuite from './CollectionsArrayBaseTest/ArrayTraversal.test';
 import arrayQuerySuite from './CollectionsArrayBaseTest/ArrayQuery.test';
@@ -34,6 +35,7 @@ import arrayModifySuite from './CollectionsArrayBaseTest/ArrayModify.test';
 import arrayInheritanceSuite from './CollectionsArrayBaseTest/ArrayInheritance.test';
 import arrayAnnotationSuite from './CollectionsArrayBaseTest/ArrayAnnotation.test';
 import arrayConcurrentSuite from './CollectionsArrayBaseTest/ArrayConcurrent.test';
+import arrayContainsRetainAllSuite from './CollectionsArrayBaseTest/ArrayContainsRetainAll.test';
 import arrayConcurrentCreateFromTest from './CollectionsArrayConcurrentTest/ArrayConcurrentCreateFromTest.test';
 import arrayConcurrentDataTypeTest from './CollectionsArrayConcurrentTest/ArrayConcurrentDataTypeTest.test';
 import arrayConcurrentFillCopyWithinTest from './CollectionsArrayConcurrentTest/ArrayConcurrentFillCopyWithinTest.test';
@@ -58,12 +60,13 @@ export default function testsuite() {
   CollectionsArrayCombinationThirdTest();
   CollectionsArrayCombinationFourthTest();
   CollectionsArraySupplementTest();
+  CollectionsArrayExpand1024Test();
+  TypedArrayExpand1024Test();
   CollectionsArrayContainsAllSendableTest();
   CollectionsArrayContainsAllBuiltinTest();
   CollectionsArrayRetainAllSendableTest();
   CollectionsArrayRetainAllBuiltinTest();
   CollectionsArrayRetainAllPredicateTest();
-
   arrayConstructorSuite();
   arrayTraversalSuite();
   arrayQuerySuite();
@@ -74,6 +77,7 @@ export default function testsuite() {
   arrayInheritanceSuite();
   arrayAnnotationSuite();
   arrayConcurrentSuite();
+  arrayContainsRetainAllSuite();
   arrayConcurrentCreateFromTest();
   arrayConcurrentDataTypeTest();
   arrayConcurrentFillCopyWithinTest();

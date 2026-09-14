@@ -25,8 +25,8 @@ export const getAllFormsInfoTest = (describeName:string, filterParameter:number)
   const ERR_OK = `success`;
 
   describe(`${describeName}`, () => {
-    const callbackName = `FMS_getFormsInfo_0200 callback`;
-    const promiseName = `FMS_getFormsInfo_0200 promise`;
+    const callbackName = `FMS_getFormsInfo_callback_0200`;
+    const promiseName = `FMS_getFormsInfo_promise_0200`;
 
     /**
      * @tc.name   GetAllFormsInfoTest_001

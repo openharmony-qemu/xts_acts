@@ -5,6 +5,7 @@
         "MainAbility/pages/FolderStack/folder_stack",
         "MainAbility/pages/FolderStack/FolderStackTest1",
         "MainAbility/pages/FolderStack/FolderStackTest2",
-        "MainAbility/pages/FolderStack/FolderStackNullUndefined"
+        "MainAbility/pages/FolderStack/FolderStackNullUndefined",
+        "MainAbility/pages/FoldSplitContainer/FoldSplitContainer1"
     ]
 }

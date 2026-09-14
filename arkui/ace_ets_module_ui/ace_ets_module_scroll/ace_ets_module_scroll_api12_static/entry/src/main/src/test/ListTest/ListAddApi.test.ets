@@ -33,6 +33,7 @@ export default function ListAddApi() {
         if (!("ListAddApi" == pages.name)) {
           console.info("get  Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({ url: "MainAbility/pages/List/ListAddApi" })
+          await CommonFunc.sleep(2000);
           
         }
       } catch (err) {

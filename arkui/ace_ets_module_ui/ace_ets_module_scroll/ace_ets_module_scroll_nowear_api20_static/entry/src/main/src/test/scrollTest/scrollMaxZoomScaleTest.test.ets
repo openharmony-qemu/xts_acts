@@ -40,6 +40,7 @@ export default function ScrollMaxZoomScaleTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/scroll/scrollMaxZoomScale',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ScrollMaxZoomScaleTest page error:' + err);

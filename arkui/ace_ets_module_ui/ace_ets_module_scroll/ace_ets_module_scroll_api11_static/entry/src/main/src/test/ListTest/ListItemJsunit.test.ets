@@ -61,6 +61,7 @@ export default function listItemJsunit() {
         if (!("ListItem" == pages.name)) {
           console.info("get ListItem state success " + JSON.stringify(pages.name));
           router.pushUrl(options)
+          await CommonFunc.sleep(2000);
           // console.info("push ListItem page success " + JSON.stringify(result));
         }
       } catch (err) {

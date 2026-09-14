@@ -53,6 +53,32 @@ export default function ListSwipeActionItemTest() {
     })
 
     /**
+     * @tc.name   testListSwipeAction009
+     * @tc.number SUB_ARKUI_CAPI_LIST_SWIPE_ACTION_0900
+     * @tc.desc   Set action area distance with nullptr item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListSwipeAction009', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testListSwipeActionSetActionAreaDistance002()).assertEqual(0);
+      done()
+    })
+
+    /**
+     * @tc.name   testListSwipeAction010
+     * @tc.number SUB_ARKUI_CAPI_LIST_SWIPE_ACTION_1000
+     * @tc.desc   Set action area distance with a negative value (-10.0f)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListSwipeAction010', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testListSwipeActionSetActionAreaDistance003()).assertEqual(0);
+      done()
+    })
+
+    /**
      * @tc.name   testListSwipeAction003
      * @tc.number SUB_ARKUI_CAPI_LIST_SwipeAction_003
      * @tc.desc   testing swipeAction setEdgeEffect

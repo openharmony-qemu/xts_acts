@@ -41,11 +41,34 @@ import sendableLruCacheErrorTest from './SendableLruCacheBase/SendableLruCacheEr
 import sendableLruCacheSpecialTest from './SendableLruCacheBase/SendableLruCacheSpecial.test';
 import sendableLruCacheNullableTest from './SendableLruCacheBase/SendableLruCacheNullableTest.test';
 import collectionsConcatArrayTest from './CollectionsConcatArrayTest/CollectionsConcatArray.test';
+import sendableLruCacheBigintTest from './SendableLruCacheBase/Typetest/SendableLruCacheBigintTest.test';
+import sendableLruCacheBooleanTest from './SendableLruCacheBase/Typetest/SendableLruCacheBooleanTest.test';
+import sendableLruCacheConcurrencyTest from './SendableLruCacheBase/Typetest/SendableLruCacheConcurrencyTest.test';
+import sendableLruCacheNonSendableTest from './SendableLruCacheBase/Typetest/SendableLruCacheNonSendableTest.test';
+import sendableLruCacheNumberTest from './SendableLruCacheBase/Typetest/SendableLruCacheNumberTest.test';
+import sendableLruCacheSendableTest from './SendableLruCacheBase/Typetest/SendableLruCacheSendableTest.test';
+import sendableLruCacheStringTest from './SendableLruCacheBase/Typetest/SendableLruCacheStringTest.test';
+import sendableLruCacheUnionTest from './SendableLruCacheBase/Typetest/SendableLruCacheUnionTest.test';
+import concatArrayBigintTest from './concatArray/Typetest/ConcatArrayBigintTest.test';
+import concatArrayBooleanTest from './concatArray/Typetest/ConcatArrayBooleanTest.test';
+import concatArrayDateTest from './concatArray/Typetest/ConcatArrayDateTest.test';
+import concatArrayFunctionTest from './concatArray/Typetest/ConcatArrayFunctionTest.test';
+import concatArrayMapTest from './concatArray/Typetest/ConcatArrayMapTest.test';
+import concatArrayNestedTest from './concatArray/Typetest/ConcatArrayNestedTest.test';
+import concatArrayNumberTest from './concatArray/Typetest/ConcatArrayNumberTest.test';
+import concatArrayObjectTest from './concatArray/Typetest/ConcatArrayObjectTest.test';
+import concatArrayRegExpTest from './concatArray/Typetest/ConcatArrayRegExpTest.test';
+import concatArraySetTest from './concatArray/Typetest/ConcatArraySetTest.test';
+import concatArrayStringTest from './concatArray/Typetest/ConcatArrayStringTest.test';
+import concatArrayUnionTest from './concatArray/Typetest/ConcatArrayUnionTest.test';
 import sendableLruCacheBatch1Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch1.test';
 import sendableLruCacheBatch2Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch2.test';
 import sendableLruCacheBatch3Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch3.test';
 import sendableLruCacheBatch4Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch4.test';
 import sendableLruCacheConcurrentTest from './SendableLruCacheConcurrent/SendableLruCacheConcurrent.test';
+import CollectionsConcatArrayExpand1024Test from './concatArray/CollectionsConcatArrayExpand1024Test.test';
+import SendableLruCacheExpand1024Test from './SendableLruCacheConcurrent/SendableLruCacheExpand1024Test.test';
+import SendableExpand1024Test from './SendableLruCacheConcurrent/SendableExpand1024Test.test';
 export default function testsuite(): void {
   StressStabilityComboTest()
 
@@ -81,4 +104,27 @@ export default function testsuite(): void {
   sendableLruCacheBatch4Test();
   sendableLruCacheConcurrentTest();
   collectionsConcatArrayTest();
+  CollectionsConcatArrayExpand1024Test();
+  SendableLruCacheExpand1024Test();
+  SendableExpand1024Test();
+  sendableLruCacheBigintTest();
+  sendableLruCacheBooleanTest();
+  sendableLruCacheConcurrencyTest();
+  sendableLruCacheNonSendableTest();
+  sendableLruCacheNumberTest();
+  sendableLruCacheSendableTest();
+  sendableLruCacheStringTest();
+  sendableLruCacheUnionTest();
+  concatArrayBigintTest();
+  concatArrayBooleanTest();
+  concatArrayDateTest();
+  concatArrayFunctionTest();
+  concatArrayMapTest();
+  concatArrayNestedTest();
+  concatArrayNumberTest();
+  concatArrayObjectTest();
+  concatArrayRegExpTest();
+  concatArraySetTest();
+  concatArrayStringTest();
+  concatArrayUnionTest();
 }

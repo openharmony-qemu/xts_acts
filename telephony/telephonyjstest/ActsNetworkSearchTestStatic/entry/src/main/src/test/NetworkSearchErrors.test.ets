@@ -69,6 +69,142 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
+     * @tc.name   testTelephonyRadioRadioTechnology0100
+     * @tc.number SUB_Telephony_Radio_RadioTechnology_0100
+     * @tc.desc   Subscribe to RadioTechnology events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyRadioRadioTechnology0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyRadioRadioTechnology0100';
+        console.info(`${caseName} test start`);
+        try {
+            console.info(`${caseName}RADIO_TECHNOLOGY_UNKNOWN result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_UNKNOWN);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_UNKNOWN === 0).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_GSM result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_GSM);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_GSM === 1).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_1XRTT result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_1XRTT);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_1XRTT === 2).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_WCDMA result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_WCDMA);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_WCDMA === 3).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_HSPA result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_HSPA);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_HSPA === 4).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_HSPAP result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_HSPAP);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_HSPAP === 5).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_TD_SCDMA result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_TD_SCDMA);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_TD_SCDMA === 6).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_EVDO result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_EVDO);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_EVDO === 7).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_EHRPD result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_EHRPD);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_EHRPD === 8).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_LTE result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_LTE);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_LTE === 9).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_LTE_CA result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_LTE_CA);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_LTE_CA === 10).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_IWLAN result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_IWLAN);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_IWLAN === 11).assertTrue();
+            console.info(`${caseName}RADIO_TECHNOLOGY_NR result:` + radio.RadioTechnology.RADIO_TECHNOLOGY_NR);
+            expect(radio.RadioTechnology.RADIO_TECHNOLOGY_NR === 12).assertTrue();
+            done();
+        } catch (error) {
+            expect().assertFail();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioNetworkType0100
+     * @tc.number SUB_Telephony_Radio_NetworkType_0100
+     * @tc.desc   Subscribe to NetworkType events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyRadioNetworkType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyRadioNetworkType0100';
+        console.info(`${caseName} test start`);
+        try {
+            console.info(`${caseName}NETWORK_TYPE_UNKNOWN result:` + radio.NetworkType.NETWORK_TYPE_UNKNOWN);
+            expect(radio.NetworkType.NETWORK_TYPE_UNKNOWN === 0).assertTrue();
+            console.info(`${caseName}NETWORK_TYPE_GSM result:` + radio.NetworkType.NETWORK_TYPE_GSM);
+            expect(radio.NetworkType.NETWORK_TYPE_GSM === 1).assertTrue();
+            console.info(`${caseName}NETWORK_TYPE_CDMA result:` + radio.NetworkType.NETWORK_TYPE_CDMA);
+            expect(radio.NetworkType.NETWORK_TYPE_CDMA === 2).assertTrue();
+            console.info(`${caseName}NETWORK_TYPE_WCDMA result:` + radio.NetworkType.NETWORK_TYPE_WCDMA);
+            expect(radio.NetworkType.NETWORK_TYPE_WCDMA === 3).assertTrue();
+            console.info(`${caseName}NETWORK_TYPE_TDSCDMA result:` + radio.NetworkType.NETWORK_TYPE_TDSCDMA);
+            expect(radio.NetworkType.NETWORK_TYPE_TDSCDMA === 4).assertTrue();
+            console.info(`${caseName}NETWORK_TYPE_LTE result:` + radio.NetworkType.NETWORK_TYPE_LTE);
+            expect(radio.NetworkType.NETWORK_TYPE_LTE === 5).assertTrue();
+            console.info(`${caseName}NETWORK_TYPE_NR result:` + radio.NetworkType.NETWORK_TYPE_NR);
+            expect(radio.NetworkType.NETWORK_TYPE_NR === 6).assertTrue();
+            done();
+        } catch (error) {
+            expect().assertFail();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioRegState0100
+     * @tc.number SUB_Telephony_Radio_RegState_0100
+     * @tc.desc   Subscribe to RegState events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyRadioRegState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyRadioRegState0100';
+        console.info(`${caseName} test start`);
+        try {
+            console.info(`${caseName}REG_STATE_NO_SERVICE result:` + radio.RegState.REG_STATE_NO_SERVICE);
+            expect(radio.RegState.REG_STATE_NO_SERVICE === 0).assertTrue();
+            console.info(`${caseName}REG_STATE_IN_SERVICE result:` + radio.RegState.REG_STATE_IN_SERVICE);
+            expect(radio.RegState.REG_STATE_IN_SERVICE === 1).assertTrue();
+            console.info(`${caseName}REG_STATE_EMERGENCY_CALL_ONLY result:` + radio.RegState.REG_STATE_EMERGENCY_CALL_ONLY);
+            expect(radio.RegState.REG_STATE_EMERGENCY_CALL_ONLY === 2).assertTrue();
+            console.info(`${caseName}REG_STATE_POWER_OFF result:` + radio.RegState.REG_STATE_POWER_OFF);
+            expect(radio.RegState.REG_STATE_POWER_OFF === 3).assertTrue();
+            done();
+        } catch (error) {
+            expect().assertFail();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioNsaState0100
+     * @tc.number SUB_Telephony_Radio_NsaState_0100
+     * @tc.desc   Subscribe to NsaState events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyRadioNsaState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyRadioNsaState0100';
+        console.info(`${caseName} test start`);
+        try {
+            console.info(`${caseName}NSA_STATE_NOT_SUPPORT result:` + radio.NsaState.NSA_STATE_NOT_SUPPORT);
+            expect(radio.NsaState.NSA_STATE_NOT_SUPPORT === 1).assertTrue();
+            console.info(`${caseName}NSA_STATE_NO_DETECT result:` + radio.NsaState.NSA_STATE_NO_DETECT);
+            expect(radio.NsaState.NSA_STATE_NO_DETECT === 2).assertTrue();
+            console.info(`${caseName}NSA_STATE_CONNECTED_DETECT result:` + radio.NsaState.NSA_STATE_CONNECTED_DETECT);
+            expect(radio.NsaState.NSA_STATE_CONNECTED_DETECT === 3).assertTrue();
+            console.info(`${caseName}NSA_STATE_IDLE_DETECT result:` + radio.NsaState.NSA_STATE_IDLE_DETECT);
+            expect(radio.NsaState.NSA_STATE_IDLE_DETECT === 4).assertTrue();
+            console.info(`${caseName}NSA_STATE_DUAL_CONNECTED result:` + radio.NsaState.NSA_STATE_DUAL_CONNECTED);
+            expect(radio.NsaState.NSA_STATE_DUAL_CONNECTED === 5).assertTrue();
+            console.info(`${caseName}NSA_STATE_SA_ATTACHED result:` + radio.NsaState.NSA_STATE_SA_ATTACHED);
+            expect(radio.NsaState.NSA_STATE_SA_ATTACHED === 6).assertTrue();
+            done();
+        } catch (error) {
+            expect().assertFail();
+            done();
+        }
+    });
+
+    /**
      * @tc.name   Telephony_NetworkSearch_getSignalInformation_Async_0400
      * @tc.number Telephony_NetworkSearch_getSignalInformation_Async_0400
      * @tc.desc   Function test

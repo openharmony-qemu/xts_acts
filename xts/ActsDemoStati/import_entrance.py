@@ -1,1929 +1,1946 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __future__ import annotations
-
-import argparse
-import json
 import os
-import re
 import sys
+import re
+import json
 import time
-from dataclasses import dataclass, field, asdict
-from datetime import datetime, timedelta
-from enum import Enum, auto
-from pathlib import Path
-from typing import (
-    Any, Callable, Dict, Iterable, List, Optional, Sequence, Set, Tuple,
-    Union,
-)
-
-__version__ = "1.0.0"
-__author__ = "opencode"
-
-class ExitCode:
-    SUCCESS = 0
-    GENERIC_ERROR = 1
-    ARGUMENT_ERROR = 2
-    FILE_NOT_FOUND = 3
-    PARSE_ERROR = 4
-    NO_ERRORS_FOUND = 5
-
-RE_TIMESTAMP = re.compile(
-    r"\[(\d{4}/\d{2}/\d{2}\s+\d{2}:\d{2}:\d{2}\.\d+)\s+GMT([+-]\d{2}:\d{2})?\]"
-)
-
-# 时间戳格式：2026/08/24 19:51:56.513
-TS_FORMAT = "%Y/%m/%d %H:%M:%S.%f"
-
-RE_STAGE_START = re.compile(
-    r"\[INFO\]\s*\[([^\]]+)\]\s*:\s*该步骤开始执行"
-)
-RE_STAGE_END = re.compile(
-    r"\[INFO\]\s*\[([^\]]+)\]\s*:\s*该步骤执行完成"
-)
-
-RE_OHOS_ERROR = re.compile(r"\[OHOS ERROR\]")
-
-RE_NINJA_FAILED = re.compile(r"FAILED:\s*(\S+)")
-
-
-RE_NINJA_CMD_FAILED = re.compile(
-    r"command failed:\s*\"([^\"]+)\"\s*,\s*ret_code:\s*(\d+)"
-)
-
-# ninja 进度 [8/12] / [2/2]
-RE_NINJA_PROGRESS = re.compile(r"\[(\d+)/(\d+)\]")
-
-# ninja 编译命令行
-RE_NINJA_CMD = re.compile(
-    r"ninja\s+.*?-C\s+\S+\s+(.*)"
-)
-
-
-
-RE_HVIGOR_BUILD_FAILED = re.compile(
-    r"hvigor\s+ERROR:\s*BUILD FAILED\s+in\s+([\d\s]+m?s[\d\s]*m?s?)"
-)
-RE_HVIGOR_TASK_FAILED = re.compile(
-    r"hvigor\s+ERROR:\s*Failed\s+:(.+)"
-)
-
-RE_HVIGOR_ARKTS_ERROR = re.compile(
-    r"hvigor\s+ERROR:\s*(\d+)\s+ArkTS\s+Compiler\s+Error"
-)
-
-RE_PAGE_NOT_EXIST = re.compile(
-    r"Error Message:\s*Page\s+'([^']+)'\s+does not exist"
-)
-
-RE_HVIGOR_ERROR_CODE = re.compile(r"hvigor\s+ERROR:\s*(\d+)\s*(.*)")
-
-# hvigor Finished :entry:default@XXX... after N ms
-RE_HVIGOR_FINISHED = re.compile(
-    r"hvigor\s+(?:info|warning):\s*>\s*hvigor\s+Finished\s+:(.+?)\s+after\s+(\d+)\s*ms"
-)
-
-# hvigor cmd 行
-RE_HVIGOR_CMD = re.compile(
-    r"hvigor cmd:\s*bash\s+(\S+)\s+(.*)"
-)
-
-# Hvigor clean start / Hvigor build start
-RE_HVIGOR_PHASE = re.compile(r"Hvigor\s+(clean|build)\s+(start)")
-
-
-# ------------------------------------------------------------------
-# Python Traceback 正则
-# ------------------------------------------------------------------
-RE_TRACEBACK_START = re.compile(r"Traceback\s+\(most recent call last\):")
-
-#   File "xxx.py", line 47, in wrapper
-RE_TRACEBACK_FILE = re.compile(
-    r'File\s+"([^"]+)",\s+line\s+(\d+),\s+in\s+(\S+)'
-)
-
-# exceptions.ohos_exception.OHOSException: COMPILE Failed! ...
-RE_OHOS_EXCEPTION = re.compile(
-    r"exceptions\.\w+\.\w+Exception:\s*(.*)"
-)
-
-# raise OHOSException(
-RE_RAISE = re.compile(r"raise\s+(\w+Exception)\(")
-
-RE_CODE = re.compile(r"^Code:\s*(.+)$")
-RE_REASON = re.compile(r"^Reason:\s*(.+)$")
-RE_ERROR_TYPE = re.compile(r"^Error Type:\s*(.+)$")
-RE_DESCRIPTION = re.compile(r"^Description:\s*(.+)$")
-RE_SOLUTION = re.compile(r"^Solution:\s*(.+)$")
-
-RE_BUILD_ERROR_MARKER = re.compile(r"={5}build\s+error={5}")
-
-# build result:failed
-RE_BUILD_RESULT = re.compile(r"build result:\s*(\w+)")
-
-# label_name: 编译失败
-RE_LABEL_NAME = re.compile(r"label_name:\s*(.+)")
-
-# buildFailType: 'E04', buildFailReason: 'compile failed'
-RE_BUILD_FAIL_TYPE = re.compile(r"buildFailType:\s*'([^']+)'")
-RE_BUILD_FAIL_REASON = re.compile(r"buildFailReason:\s*'([^']+)'")
-
-RE_PIPELINE_MSG = re.compile(r"'topic':\s*'pipeline'")
-
-RE_PIPELINE_COMPONENT = re.compile(r"'component':\s*'([^']+)'")
-RE_PIPELINE_RESULT = re.compile(r"'buildResult':\s*'([^']+)'")
-RE_PIPELINE_FAIL_TYPE = re.compile(r"'buildFailType':\s*'([^']+)'")
-RE_PIPELINE_FAIL_REASON = re.compile(r"'buildFailReason':\s*'([^']+)'")
-
-RE_STAGE_STATUS = re.compile(
-    r"'(\w+)':\s*\{'status':\s*'(\w+)'\s*,"
-)
-
-
-RE_PR_URL = re.compile(
-    r"(https?://\S+/merge_requests/\d+)"
-)
-RE_PR_LABEL = re.compile(r"pr:(https?://\S+/pulls/\d+)")
-
-# git fetch / checkout
-RE_GIT_FETCH = re.compile(r"git\s+fetch\s+(?:--\S+\s+)*(\S+)")
-RE_GIT_CHECKOUT = re.compile(r"git\s+checkout\s+(?:-f\s+)?(\S+)")
-
-RE_BUILD_TARGET = re.compile(r"_build_target\s*=\s*\[([^\]]+)\]")
-
-# Compile command: ./build.sh --build-target ...
-RE_COMPILE_CMD = re.compile(r"Compile command:\s*(.+)")
-
-# build-target 参数
-RE_BUILD_TARGET_ARG = re.compile(r"--build-target\s+(\S+)")
-
-
-RE_TOTAL_MEMORY = re.compile(r"Total Memory:\s*([\d.]+)(\w+)")
-RE_FREE_MEMORY = re.compile(r"Free Memory:\s*([\d.]+)(\w+)")
-RE_CPU_USER = re.compile(r"User Cpu%:\s*([\d.]+)%")
-RE_CPU_SYSTEM = re.compile(r"System Cpu%:\s*([\d.]+)%")
-
-RE_ERROR_LOG_PATH = re.compile(r"error\.log")
-RE_BUILD_LOG_PATH = re.compile(r"build\.log")
-RE_LOG_URL = re.compile(r"'buildLog':\s*'([^']+)'")
-RE_ARTIFACTS_URL = re.compile(r"'Artifacts':\s*'([^']+)'")
-
-
-class ErrorType(Enum):
-    """编译错误类型分类。"""
-    NINJA_FAILED = "ninja_failed"
-    NINJA_CMD_FAILED = "ninja_cmd_failed"
-    HVIGOR_BUILD_FAILED = "hvigor_build_failed"
-    HVIGOR_TASK_FAILED = "hvigor_task_failed"
-    HVIGOR_ARKTS_ERROR = "hvigor_arkts_error"
-    PAGE_NOT_EXIST = "page_not_exist"
-    OHOS_EXCEPTION = "ohos_exception"
-    PYTHON_TRACEBACK = "python_traceback"
-    BUILD_ERROR = "build_error"
-    BUILD_RESULT_FAILED = "build_result_failed"
-    PIPELINE_FAILED = "pipeline_failed"
-    GENERIC_ERROR = "generic_error"
-    UNKNOWN = "unknown"
-
-    @property
-    def label(self) -> str:
-        labels = {
-            ErrorType.NINJA_FAILED: "Ninja 目标编译失败",
-            ErrorType.NINJA_CMD_FAILED: "Ninja 命令执行失败",
-            ErrorType.HVIGOR_BUILD_FAILED: "Hvigor 构建失败",
-            ErrorType.HVIGOR_TASK_FAILED: "Hvigor 任务失败",
-            ErrorType.HVIGOR_ARKTS_ERROR: "ArkTS 编译器错误",
-            ErrorType.PAGE_NOT_EXIST: "页面文件不存在",
-            ErrorType.OHOS_EXCEPTION: "OHOS 异常",
-            ErrorType.PYTHON_TRACEBACK: "Python 异常堆栈",
-            ErrorType.BUILD_ERROR: "构建错误标记",
-            ErrorType.BUILD_RESULT_FAILED: "构建结果失败",
-            ErrorType.PIPELINE_FAILED: "流水线失败",
-            ErrorType.GENERIC_ERROR: "通用错误",
-            ErrorType.UNKNOWN: "未知错误",
-        }
-        return labels.get(self, "未知错误")
-
-
-class StageStatus(Enum):
-    """构建阶段状态。"""
-    SUCCESS = "success"
-    FAILED = "failed"
-    SKIPPED = "skipped"
-    RUNNING = "running"
-    UNKNOWN = "unknown"
-
-
-class Severity(Enum):
-    """错误严重级别。"""
-    INFO = auto()
-    WARN = auto()
-    ERROR = auto()
-    FATAL = auto()
-
-    @property
-    def label(self) -> str:
-        return {
-            Severity.INFO: "INFO", Severity.WARN: "WARN",
-            Severity.ERROR: "ERROR", Severity.FATAL: "FATAL",
-        }[self]
-
-
-# ==============================================================================
-# 三、自定义异常
-# ==============================================================================
-
-class LogAnalyzerError(Exception):
-    """分析器基类异常。"""
-
-    def __init__(self, message: str, code: int = ExitCode.GENERIC_ERROR):
-        super().__init__(message)
-        self.code = code
-        self.message = message
-
-    def __str__(self) -> str:
-        return self.message
-
-
-class FileReadError(LogAnalyzerError):
-    """文件读取错误。"""
-
-    def __init__(self, message: str):
-        super().__init__(message, ExitCode.FILE_NOT_FOUND)
-
-
-class ParseError(LogAnalyzerError):
-    """解析错误。"""
-
-    def __init__(self, message: str):
-        super().__init__(message, ExitCode.PARSE_ERROR)
-
-
-class PatternError(LogAnalyzerError):
-    """模式匹配错误。"""
-
-    def __init__(self, message: str):
-        super().__init__(message, ExitCode.GENERIC_ERROR)
-
+import hashlib
+import argparse
+import pickle
+import math
+import statistics
+from collections import defaultdict, Counter, OrderedDict
+from datetime import datetime
+from typing import List, Dict, Set, Tuple, Optional, Any, Iterator
+from dataclasses import dataclass, field
+from functools import lru_cache, wraps
+import threading
+import queue
+import traceback
+
+try:
+    from multiprocessing import Pool, cpu_count
+    HAS_MULTIPROCESSING = True
+except ImportError:
+    HAS_MULTIPROCESSING = False
+
+try:
+    import difflib
+    HAS_DIFFLIB = True
+except ImportError:
+    HAS_DIFFLIB = False
+
+
+# ============================================================
+# Section 1: Constants and Configuration
+# ============================================================
+
+VERSION = "2.0.0"
+APP_NAME = "XTS Case Analyzer"
+DEFAULT_ROOT = r"D:\gdata\xts_acts_7538"
+DEFAULT_OUTPUT = r"D:\gdata\ai\analysis_result.json"
+DEFAULT_REPORT = r"D:\gdata\ai\analysis_report.txt"
+CACHE_FILE = r"D:\gdata\ai\.analyzer_cache.pkl"
+CONFIG_FILE = r"D:\gdata\ai\analyzer_config.json"
+
+SKIP_WORDS = frozenset({
+    'if', 'for', 'while', 'switch', 'catch', 'function', 'return', 'new',
+    'async', 'await', 'let', 'const', 'var', 'of', 'in', 'do', 'try',
+    'throw', 'typeof', 'instanceof', 'void', 'this', 'delete', 'then',
+    'finally', 'toString', 'valueOf', 'setTimeout', 'setInterval',
+    'console', 'require', 'import', 'export', 'from', 'class', 'extends',
+    'super', 'yield', 'continue', 'break', 'case', 'default', 'else',
+    'get', 'set', 'static', 'public', 'private', 'protected', 'readonly',
+    'enum', 'interface', 'type', 'namespace', 'declare', 'as', 'is',
+    'with', 'debugger', 'Number', 'String', 'Boolean', 'Array', 'Object',
+    'Math', 'Date', 'RegExp', 'Error', 'Promise', 'Map', 'Set',
+    'Symbol', 'Proxy', 'Reflect', 'log', 'JSON', 'print', 'resolve',
+    'reject', 'all', 'race', 'apply', 'call', 'bind', 'keys', 'values',
+    'entries', 'assign', 'freeze', 'seal', 'create', 'defineProperty',
+    'getPrototypeOf', 'setPrototypeOf', 'is', 'from', 'isArray', 'of',
+    'push', 'pop', 'shift', 'unshift', 'splice', 'slice', 'concat',
+    'join', 'reverse', 'sort', 'indexOf', 'lastIndexOf', 'includes',
+    'find', 'findIndex', 'filter', 'map', 'reduce', 'forEach', 'some',
+    'every', 'fill', 'copyWithin', 'flat', 'flatMap', 'at', 'entries',
+    'charAt', 'charCodeAt', 'codePointAt', 'startsWith', 'endsWith',
+    'includes', 'repeat', 'padStart', 'padEnd', 'trim', 'trimStart',
+    'trimEnd', 'split', 'substring', 'substr', 'toLowerCase',
+    'toUpperCase', 'localeCompare', 'normalize', 'match', 'matchAll',
+    'search', 'replace', 'replaceAll', 'split', 'raw'
+})
+
+ASSERTION_METHODS = frozenset({
+    'assertEqual', 'assertTrue', 'assertFalse', 'assertNull',
+    'assertNotNull', 'assertUndefined', 'assertNotUndefined',
+    'assertContain', 'assertNotContain', 'assertLarger',
+    'assertLess', 'assertLessOrEqual', 'assertLargerOrEqual',
+    'assertInstanceOf', 'assertDeepEquals', 'assertPromiseIsResolved',
+    'assertThrowError', 'assertNotThrowError', 'expect'
+})
+
+TC_TAGS = ['@tc.name', '@tc.number', '@tc.desc', '@tc.type', '@tc.size', '@tc.level']
+
+TEST_TYPES = {
+    'FUNCTION': '功能测试',
+    'PERFORMANCE': '性能测试',
+    'RELIABILITY': '可靠性测试',
+    'SECURITY': '安全测试',
+    'POWER': '功耗测试',
+    'ROBUSTNESS': '鲁棒性测试',
+    'GLOBAL': '全球化测试',
+    'COMPATIBILITY': '兼容性测试',
+    'USER': '用户体验测试',
+    'STABILITY': '稳定性测试',
+    'STRESS': '压力测试',
+    'FAULT': '故障注入测试',
+    'SECURITY_ICC': '安全IPC测试',
+}
+
+TEST_SIZES = {
+    'SMALLTEST': '小规模测试',
+    'MEDIUMTEST': '中规模测试',
+    'LARGETEST': '大规模测试',
+}
+
+TEST_LEVELS = {
+    'LEVEL0': '级别0',
+    'LEVEL1': '级别1',
+    'LEVEL2': '级别2',
+    'LEVEL3': '级别3',
+    'LEVEL4': '级别4',
+}
+
+DEFAULT_CONFIG = {
+    "root_dir": DEFAULT_ROOT,
+    "output_file": DEFAULT_OUTPUT,
+    "report_file": DEFAULT_REPORT,
+    "cache_enabled": True,
+    "parallel_workers": 4,
+    "min_group_size": 2,
+    "max_sample_cases": 50,
+    "max_interfaces_per_group": 100,
+    "similarity_threshold": 0.7,
+    "enable_similarity": True,
+    "enable_dependency": True,
+    "enable_quality": True,
+    "file_extensions": [".test.ets"],
+    "skip_dirs": [".git", "node_modules", "build", ".idea", ".vscode"],
+}
+
+
+# ============================================================
+# Section 2: Data Classes
+# ============================================================
 
 @dataclass
-class LogLine:
-    """一条日志行（已剥离时间戳前缀）。"""
-    raw: str                 # 原始完整行
-    content: str            # 剥离时间戳后的内容
-    line_no: int = 0         # 行号（1-based）
-    timestamp: str = ""      # 时间戳字符串
-    datetime_obj: Optional[datetime] = None
-
-
-@dataclass
-class ErrorItem:
-    """一个编译错误项。"""
-    error_type: ErrorType = ErrorType.UNKNOWN
-    severity: Severity = Severity.ERROR
-    line_no: int = 0
-    timestamp: str = ""
-    message: str = ""           # 错误主消息
-    detail: str = ""            # 详细信息
-    target: str = ""            # 失败目标（如 obj/.../xxx.json）
-    context: List[str] = field(default_factory=list)  # 上下文行
-    traceback_frames: List[Dict[str, str]] = field(default_factory=list)
-    error_code: str = ""        # 错误码（如 10906403, 4000）
-    solution: str = ""          # 解决建议
-    root_cause: bool = False    # 是否为根本原因
-
-    @property
-    def label(self) -> str:
-        return self.error_type.label
+class TestCase:
+    case_name: str
+    file_path: str
+    methods: List[str]
+    params: str
+    tc_tags: Dict[str, str]
+    line_number: int
+    body_length: int
+    assertion_count: int
+    complexity_score: float
 
     def to_dict(self) -> Dict[str, Any]:
         return {
-            "error_type": self.error_type.value,
-            "error_type_label": self.error_type.label,
-            "severity": self.severity.label,
-            "line_no": self.line_no,
-            "timestamp": self.timestamp,
-            "message": self.message,
-            "detail": self.detail,
-            "target": self.target,
-            "context": self.context,
-            "traceback_frames": self.traceback_frames,
-            "error_code": self.error_code,
-            "solution": self.solution,
-            "root_cause": self.root_cause,
+            "case_name": self.case_name,
+            "file_path": self.file_path,
+            "methods": self.methods,
+            "params": self.params,
+            "tc_tags": self.tc_tags,
+            "line_number": self.line_number,
+            "body_length": self.body_length,
+            "assertion_count": self.assertion_count,
+            "complexity_score": self.complexity_score,
         }
 
 
 @dataclass
-class StageInfo:
-    """一个构建阶段的信息。"""
-    name: str = ""             # 阶段名（如 PRE_ENV:slave_create）
-    status: StageStatus = StageStatus.UNKNOWN
-    start_time: str = ""
-    end_time: str = ""
-    start_dt: Optional[datetime] = None
-    end_dt: Optional[datetime] = None
-    duration_seconds: float = 0.0
-    line_start: int = 0
-    line_end: int = 0
-
-    @property
-    def duration_str(self) -> str:
-        if self.duration_seconds <= 0:
-            return "N/A"
-        mins = int(self.duration_seconds // 60)
-        secs = self.duration_seconds % 60
-        if mins > 0:
-            return f"{mins}m {secs:.1f}s"
-        return f"{secs:.1f}s"
+class InterfaceInfo:
+    name: str
+    call_count: int
+    case_names: List[str]
+    file_paths: Set[str]
 
     def to_dict(self) -> Dict[str, Any]:
         return {
-            "name": self.name, "status": self.status.value,
-            "start_time": self.start_time, "end_time": self.end_time,
-            "duration_seconds": round(self.duration_seconds, 2),
-            "duration_str": self.duration_str,
-            "line_start": self.line_start, "line_end": self.line_end,
+            "name": self.name,
+            "call_count": self.call_count,
+            "case_count": len(self.case_names),
+            "sample_cases": self.case_names[:20],
+            "file_count": len(self.file_paths),
         }
 
 
 @dataclass
-class BuildResult:
-    """构建结果汇总。"""
-    overall_status: str = "unknown"      # success / failed / unknown
-    build_result_str: str = ""           # 原始 build result 字符串
-    fail_type: str = ""                 # 如 E04
-    fail_reason: str = ""               # 如 compile failed
-    component: str = ""                 # 如 dayu200_xts
-    build_duration: int = 0             # 构建时长（秒）
-    build_id: str = ""
-    pipeline_id: str = ""
-    pr_url: str = ""
-    label_name: str = ""
-    build_log_url: str = ""
-    artifacts_url: str = ""
-
-    @property
-    def is_failed(self) -> bool:
-        return self.overall_status == "failed"
-
-    @property
-    def is_success(self) -> bool:
-        return self.overall_status == "success"
+class CaseGroup:
+    group_key: str
+    group_type: str
+    case_count: int
+    cases: List[Dict[str, Any]]
+    common_interfaces: List[str]
+    all_interfaces: Set[str]
 
     def to_dict(self) -> Dict[str, Any]:
         return {
-            "overall_status": self.overall_status,
-            "build_result_str": self.build_result_str,
-            "fail_type": self.fail_type,
-            "fail_reason": self.fail_reason,
-            "component": self.component,
-            "build_duration": self.build_duration,
-            "build_id": self.build_id,
-            "pipeline_id": self.pipeline_id,
-            "pr_url": self.pr_url,
-            "label_name": self.label_name,
-            "build_log_url": self.build_log_url,
-            "artifacts_url": self.artifacts_url,
+            "group_key": self.group_key,
+            "group_type": self.group_type,
+            "case_count": self.case_count,
+            "cases": self.cases,
+            "common_interfaces": self.common_interfaces,
+            "all_interfaces": sorted(self.all_interfaces),
         }
 
 
 @dataclass
-class SystemMetrics:
-    """系统资源指标。"""
-    total_memory: str = ""
-    free_memory: str = ""
-    user_cpu: str = ""
-    system_cpu: str = ""
-    idle_cpu: str = ""
+class AnalysisResult:
+    total_files: int
+    total_cases: int
+    total_interfaces: int
+    cases: List[Dict[str, Any]]
+    interfaces: List[Dict[str, Any]]
+    prefix_groups: List[Dict[str, Any]]
+    token_groups: List[Dict[str, Any]]
+    interface_groups: List[Dict[str, Any]]
+    similarity_clusters: List[Dict[str, Any]]
+    quality_metrics: Dict[str, Any]
+    dependency_graph: Dict[str, Any]
+    statistics: Dict[str, Any]
+    timestamp: str
 
     def to_dict(self) -> Dict[str, Any]:
         return {
-            "total_memory": self.total_memory,
-            "free_memory": self.free_memory,
-            "user_cpu": self.user_cpu,
-            "system_cpu": self.system_cpu,
-        }
-
-
-@dataclass
-class HvigorTaskInfo:
-    """一个 hvigor 任务的信息。"""
-    task_name: str = ""        # 如 :entry:default@CompileArkTS
-    duration_ms: int = 0       # 耗时（毫秒）
-    status: str = "finished"  # finished / failed
-    line_no: int = 0
-    timestamp: str = ""
-
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            "task_name": self.task_name,
-            "duration_ms": self.duration_ms,
-            "status": self.status,
-            "line_no": self.line_no,
+            "total_files": self.total_files,
+            "total_cases": self.total_cases,
+            "total_interfaces": self.total_interfaces,
+            "cases": self.cases,
+            "interfaces": self.interfaces,
+            "prefix_groups": self.prefix_groups,
+            "token_groups": self.token_groups,
+            "interface_groups": self.interface_groups,
+            "similarity_clusters": self.similarity_clusters,
+            "quality_metrics": self.quality_metrics,
+            "dependency_graph": self.dependency_graph,
+            "statistics": self.statistics,
             "timestamp": self.timestamp,
         }
 
 
-@dataclass
-class CompileTarget:
-    """编译目标信息。"""
-    target: str = ""           # 如 test/xts/acts/validator/acts_validator:acts_validator_test
-    compile_cmd: str = ""      # 编译命令
-    line_no: int = 0
+# ============================================================
+# Section 3: Utility Functions
+# ============================================================
 
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            "target": self.target,
-            "compile_cmd": self.compile_cmd,
-            "line_no": self.line_no,
-        }
-
-
-@dataclass
-class AnalysisReport:
-    """完整的日志分析报告。"""
-    source_file: str = ""
-    file_size: int = 0
-    total_lines: int = 0
-    analyzed_at: str = ""
-    build_result: BuildResult = field(default_factory=BuildResult)
-    stages: List[StageInfo] = field(default_factory=list)
-    errors: List[ErrorItem] = field(default_factory=list)
-    root_cause: Optional[ErrorItem] = None
-    hvigor_tasks: List[HvigorTaskInfo] = field(default_factory=list)
-    compile_targets: List[CompileTarget] = field(default_factory=list)
-    system_metrics: SystemMetrics = field(default_factory=SystemMetrics)
-    warnings: List[str] = field(default_factory=list)
-    summary: str = ""
-
-    @property
-    def error_count(self) -> int:
-        return len(self.errors)
-
-    @property
-    def root_cause_error(self) -> Optional[ErrorItem]:
-        for err in self.errors:
-            if err.root_cause:
-                return err
-        return self.errors[0] if self.errors else None
-
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            "source_file": self.source_file,
-            "file_size": self.file_size,
-            "total_lines": self.total_lines,
-            "analyzed_at": self.analyzed_at,
-            "build_result": self.build_result.to_dict(),
-            "stages": [s.to_dict() for s in self.stages],
-            "errors": [e.to_dict() for e in self.errors],
-            "root_cause": self.root_cause.to_dict() if self.root_cause else None,
-            "hvigor_tasks": [t.to_dict() for t in self.hvigor_tasks],
-            "compile_targets": [t.to_dict() for t in self.compile_targets],
-            "system_metrics": self.system_metrics.to_dict(),
-            "warnings": self.warnings,
-            "summary": self.summary,
-            "error_count": self.error_count,
-        }
-class LogLevel(Enum):
-    DEBUG = auto()
-    INFO = auto()
-    WARN = auto()
-    ERROR = auto()
-
-
-class Logger:
-    """轻量日志器。"""
-
-    _COLORS = {
-        LogLevel.DEBUG: "\033[36m",
-        LogLevel.INFO: "\033[32m",
-        LogLevel.WARN: "\033[33m",
-        LogLevel.ERROR: "\033[31m",
-    }
-    _LABELS = {
-        LogLevel.DEBUG: "DEBUG",
-        LogLevel.INFO: "INFO ",
-        LogLevel.WARN: "WARN ",
-        LogLevel.ERROR: "ERROR",
-    }
-    _RESET = "\033[0m"
-
-    def __init__(self, level: LogLevel = LogLevel.INFO,
-                 use_color: bool = True):
-        self.level = level
-        self.use_color = use_color and sys.stdout.isatty()
-
-    def _emit(self, level: LogLevel, msg: str) -> None:
-        if level.value < self.level.value:
-            return
-        ts = time.strftime("%H:%M:%S")
-        label = self._LABELS[level]
-        line = f"[{ts}] [{label}] {msg}"
-        if self.use_color:
-            print(f"{self._COLORS[level]}{line}{self._RESET}")
-        else:
-            print(line)
-
-    def debug(self, msg: str) -> None:
-        self._emit(LogLevel.DEBUG, msg)
-
-    def info(self, msg: str) -> None:
-        self._emit(LogLevel.INFO, msg)
-
-    def warn(self, msg: str) -> None:
-        self._emit(LogLevel.WARN, msg)
-
-    def error(self, msg: str) -> None:
-        self._emit(LogLevel.ERROR, msg)
-
-    def section(self, title: str) -> None:
-        bar = "=" * 60
-        self._emit(LogLevel.INFO, f"\n{bar}\n {title}\n{bar}")
-
-    @staticmethod
-    def from_string(name: str) -> "Logger":
-        mapping = {
-            "debug": LogLevel.DEBUG, "info": LogLevel.INFO,
-            "warn": LogLevel.WARN, "error": LogLevel.ERROR,
-        }
-        return Logger(mapping.get(name.lower(), LogLevel.INFO))
-
-
-class LogLineParser:
-    """解析单行日志，剥离时间戳前缀。"""
-
-    def __init__(self, logger: Optional[Logger] = None):
-        self.logger = logger or Logger()
-
-    def parse_line(self, raw: str, line_no: int) -> LogLine:
-        """解析一行日志，返回 LogLine 对象。"""
-        raw_stripped = raw.rstrip("\n\r")
-        match = RE_TIMESTAMP.search(raw_stripped)
-        if match:
-            ts_str = match.group(1)
-            # 时间戳之后的内容
-            content = raw_stripped[match.end():].lstrip()
-            dt = self._parse_timestamp(ts_str)
-        else:
-            ts_str = ""
-            content = raw_stripped
-            dt = None
-        # 清理 ANSI 颜色码
-        content = self._strip_ansi(content)
-        return LogLine(
-            raw=raw_stripped, content=content,
-            line_no=line_no, timestamp=ts_str, datetime_obj=dt,
-        )
-
-    @staticmethod
-    def _parse_timestamp(ts_str: str) -> Optional[datetime]:
-        """解析时间戳字符串为 datetime 对象。"""
-        try:
-            return datetime.strptime(ts_str, TS_FORMAT)
-        except ValueError:
-            return None
-
-    @staticmethod
-    def _strip_ansi(text: str) -> str:
-        """移除 ANSI 转义序列（颜色码等）。"""
-        ansi_re = re.compile(r"\x1b\[[0-9;]*m")
-        return ansi_re.sub("", text)
-
-    def parse_lines(self, lines: Iterable[str]) -> List[LogLine]:
-        """批量解析日志行。"""
-        result: List[LogLine] = []
-        for idx, line in enumerate(lines, start=1):
-            result.append(self.parse_line(line, idx))
+def timer(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        elapsed = time.time() - start
+        print(f"[TIMER] {func.__name__} took {elapsed:.2f}s")
         return result
+    return wrapper
 
-class LogReader:
-    """读取日志文件，支持流式处理大文件。"""
 
-    def __init__(self, file_path: str, encoding: str = "utf-8",
-                 logger: Optional[Logger] = None):
-        self.file_path = Path(file_path)
-        self.encoding = encoding
-        self.logger = logger or Logger()
+def ensure_dir(path: str) -> None:
+    dir_path = os.path.dirname(path)
+    if dir_path and not os.path.exists(dir_path):
+        os.makedirs(dir_path, exist_ok=True)
 
-    def exists(self) -> bool:
-        return self.file_path.is_file()
 
-    def file_size(self) -> int:
+def file_md5(path: str) -> str:
+    hash_md5 = hashlib.md5()
+    try:
+        with open(path, 'rb') as f:
+            for chunk in iter(lambda: f.read(8192), b''):
+                hash_md5.update(chunk)
+        return hash_md5.hexdigest()
+    except Exception:
+        return ""
+
+
+def safe_read_file(path: str) -> str:
+    for encoding in ('utf-8', 'utf-8-sig', 'gbk', 'latin-1'):
         try:
-            return self.file_path.stat().st_size
-        except OSError:
-            return 0
-
-    def read_all(self) -> List[str]:
-        """读取全部行。"""
-        if not self.exists():
-            raise FileReadError(f"日志文件不存在: {self.file_path}")
-        self.logger.info(f"读取日志文件: {self.file_path} "
-                         f"({self.file_size() / 1024:.0f} KB)")
-        encodings = [self.encoding, "utf-8-sig", "gbk", "latin-1"]
-        for enc in encodings:
-            try:
-                with open(self.file_path, "r", encoding=enc,
-                          errors="replace") as fh:
-                    lines = fh.readlines()
-                self.logger.info(f"读取完成：{len(lines)} 行 (编码: {enc})")
-                return lines
-            except (UnicodeDecodeError, OSError):
-                continue
-        raise FileReadError(f"无法读取文件: {self.file_path}")
-
-    def iter_lines(self) -> Iterable[str]:
-        """逐行迭代读取（流式，适合大文件）。"""
-        if not self.exists():
-            raise FileReadError(f"日志文件不存在: {self.file_path}")
-        encodings = [self.encoding, "utf-8-sig", "gbk", "latin-1"]
-        for enc in encodings:
-            try:
-                with open(self.file_path, "r", encoding=enc,
-                          errors="replace") as fh:
-                    for line in fh:
-                        yield line
-                return
-            except OSError:
-                continue
-        raise FileReadError(f"无法读取文件: {self.file_path}")
-
-    def read_lines_range(self, start: int, end: int) -> List[str]:
-        """读取指定行号范围的行（1-based）。"""
-        lines = self.read_all()
-        start = max(1, start)
-        end = min(len(lines), end)
-        return lines[start - 1: end]
-
-class ErrorMatcher:
-    """单个错误模式的匹配器。"""
-
-    def __init__(self, error_type: ErrorType, pattern: re.Pattern,
-                 severity: Severity = Severity.ERROR,
-                 extractor: Optional[Callable] = None,
-                 description: str = ""):
-        self.error_type = error_type
-        self.pattern = pattern
-        self.severity = severity
-        self.extractor = extractor
-        self.description = description
-
-    def match(self, content: str) -> Optional[re.Match]:
-        """检查内容是否匹配此模式。"""
-        return self.pattern.search(content)
-
-    def extract(self, match: re.Match, log_line: LogLine,
-                context_lines: List[str]) -> ErrorItem:
-        """从匹配结果提取错误信息。"""
-        item = ErrorItem(
-            error_type=self.error_type,
-            severity=self.severity,
-            line_no=log_line.line_no,
-            timestamp=log_line.timestamp,
-            context=context_lines,
-        )
-        if self.extractor:
-            self.extractor(item, match, log_line)
-        else:
-            item.message = match.group(0)
-        return item
+            with open(path, 'r', encoding=encoding) as f:
+                return f.read()
+        except (UnicodeDecodeError, OSError):
+            continue
+    return ""
 
 
-# ------------------------------------------------------------------
-# 各错误类型的提取函数
-# ------------------------------------------------------------------
-
-def _extract_ninja_failed(item: ErrorItem, match: re.Match,
-                          log_line: LogLine) -> None:
-    """提取 ninja FAILED 目标。"""
-    item.target = match.group(1)
-    item.message = f"ninja 编译目标失败: {item.target}"
-    item.detail = log_line.content
+def count_lines(text: str) -> int:
+    return text.count('\n') + 1
 
 
-def _extract_ninja_cmd_failed(item: ErrorItem, match: re.Match,
-                              log_line: LogLine) -> None:
-    """提取 ninja command failed。"""
-    cmd = match.group(1)
-    ret_code = match.group(2)
-    item.message = f"ninja 命令执行失败 (ret_code={ret_code})"
-    item.detail = cmd
-    item.target = "ninja"
-    item.error_code = ret_code
+def normalize_name(name: str) -> str:
+    name = name.strip().strip("'").strip('"')
+    name = re.sub(r'\s+', '_', name)
+    return name
 
 
-def _extract_hvigor_build_failed(item: ErrorItem, match: re.Match,
-                                 log_line: LogLine) -> None:
-    """提取 hvigor BUILD FAILED。"""
-    duration = match.group(1).strip()
-    item.message = f"hvigor 构建失败 (耗时 {duration})"
-    item.detail = log_line.content
+def split_case_name(name: str) -> List[str]:
+    parts = re.split(r'[_\d]+', name)
+    return [p for p in parts if p]
 
 
-def _extract_hvigor_task_failed(item: ErrorItem, match: re.Match,
-                                log_line: LogLine) -> None:
-    """提取 hvigor 任务失败。"""
-    task = match.group(1)
-    item.target = task
-    item.message = f"hvigor 任务失败: {task}"
-    item.detail = log_line.content
+def get_prefix(name: str, depth: int = 4) -> str:
+    parts = name.split('_')
+    if len(parts) >= depth:
+        return '_'.join(parts[:depth])
+    return name
 
 
-def _extract_hvigor_arkts_error(item: ErrorItem, match: re.Match,
-                                log_line: LogLine) -> None:
-    """提取 ArkTS 编译器错误。"""
-    code = match.group(1)
-    item.error_code = code
-    item.message = f"ArkTS 编译器错误 (错误码 {code})"
-    item.detail = log_line.content
+def get_core_token(name: str) -> str:
+    parts = split_case_name(name)
+    if len(parts) >= 5:
+        return '_'.join(parts[:5])
+    return '_'.join(parts) if parts else name
 
 
-def _extract_page_not_exist(item: ErrorItem, match: re.Match,
-                            log_line: LogLine) -> None:
-    """提取页面不存在错误。"""
-    page_path = match.group(1)
-    item.target = page_path
-    page_name = os.path.basename(page_path)
-    item.message = f"页面文件不存在: {page_name}"
-    item.detail = f"路径: {page_path}"
-    item.solution = (
-        "检查 main_pages.json 是否注册了已删除的页面，"
-        "移除对应路由注册项或恢复页面文件"
-    )
+def get_subsystem(filepath: str) -> str:
+    parts = filepath.replace('\\', '/').split('/')
+    for i, p in enumerate(parts):
+        if p == 'xts_acts_7538' and i + 1 < len(parts):
+            return parts[i + 1]
+    return "unknown"
 
 
-def _extract_build_error_marker(item: ErrorItem, match: re.Match,
-                                log_line: LogLine) -> None:
-    """提取 build error 标记。"""
-    item.message = "构建错误标记"
-    item.detail = log_line.content
+def get_suite_name(filepath: str) -> str:
+    parts = filepath.replace('\\', '/').split('/')
+    for p in parts:
+        if p.endswith('Test') or p.endswith('test'):
+            return p
+    return os.path.basename(os.path.dirname(filepath))
 
 
-def _extract_build_result_failed(item: ErrorItem, match: re.Match,
-                                 log_line: LogLine) -> None:
-    """提取 build result:failed。"""
-    result = match.group(1)
-    item.message = f"构建结果: {result}"
-    item.detail = log_line.content
+def levenshtein_distance(s1: str, s2: str) -> int:
+    if len(s1) < len(s2):
+        return levenshtein_distance(s2, s1)
+    if len(s2) == 0:
+        return len(s1)
+    prev_row = range(len(s2) + 1)
+    for i, c1 in enumerate(s1):
+        curr_row = [i + 1]
+        for j, c2 in enumerate(s2):
+            insertions = prev_row[j + 1] + 1
+            deletions = curr_row[j] + 1
+            substitutions = prev_row[j] + (c1 != c2)
+            curr_row.append(min(insertions, deletions, substitutions))
+        prev_row = curr_row
+    return prev_row[-1]
 
 
-def _extract_pipeline_failed(item: ErrorItem, match: re.Match,
-                             log_line: LogLine) -> None:
-    """提取流水线失败消息。"""
-    parts: List[str] = []
-    comp_match = RE_PIPELINE_COMPONENT.search(log_line.content)
-    if comp_match:
-        parts.append(f"组件: {comp_match.group(1)}")
-    result_match = RE_PIPELINE_RESULT.search(log_line.content)
-    if result_match:
-        parts.append(f"结果: {result_match.group(1)}")
-    ft_match = RE_PIPELINE_FAIL_TYPE.search(log_line.content)
-    if ft_match:
-        parts.append(f"失败类型: {ft_match.group(1)}")
-    fr_match = RE_PIPELINE_FAIL_REASON.search(log_line.content)
-    if fr_match:
-        parts.append(f"失败原因: {fr_match.group(1)}")
-    item.message = "流水线失败: " + ", ".join(parts)
-    item.detail = log_line.content[:500]
+def similarity_score(s1: str, s2: str) -> float:
+    max_len = max(len(s1), len(s2))
+    if max_len == 0:
+        return 1.0
+    dist = levenshtein_distance(s1, s2)
+    return 1.0 - (dist / max_len)
 
-class PatternRegistry:
-    """错误模式注册表，管理所有 ErrorMatcher。"""
+
+def jaccard_similarity(set1: Set[str], set2: Set[str]) -> float:
+    if not set1 and not set2:
+        return 1.0
+    union = set1 | set2
+    if not union:
+        return 0.0
+    intersection = set1 & set2
+    return len(intersection) / len(union)
+
+
+def sequence_similarity(s1: str, s2: str) -> float:
+    if HAS_DIFFLIB:
+        return difflib.SequenceMatcher(None, s1, s2).ratio()
+    return similarity_score(s1, s2)
+
+
+def format_size(size_bytes: int) -> str:
+    if size_bytes < 1024:
+        return f"{size_bytes} B"
+    elif size_bytes < 1024 * 1024:
+        return f"{size_bytes / 1024:.2f} KB"
+    elif size_bytes < 1024 * 1024 * 1024:
+        return f"{size_bytes / (1024 * 1024):.2f} MB"
+    else:
+        return f"{size_bytes / (1024 * 1024 * 1024):.2f} GB"
+
+
+def format_time(seconds: float) -> str:
+    if seconds < 60:
+        return f"{seconds:.2f}s"
+    elif seconds < 3600:
+        return f"{int(seconds // 60)}m {seconds % 60:.2f}s"
+    else:
+        return f"{int(seconds // 3600)}h {int((seconds % 3600) // 60)}m"
+
+
+def progress_bar(current: int, total: int, width: int = 40) -> str:
+    if total == 0:
+        return "[" + "=" * width + "] 100%"
+    percent = current / total
+    filled = int(width * percent)
+    bar = "=" * filled + " " * (width - filled)
+    return f"[{bar}] {percent * 100:.1f}% ({current}/{total})"
+
+
+# ============================================================
+# Section 4: Source Code Parser
+# ============================================================
+
+class SourceParser:
+    """Parses .test.ets source files to extract test cases."""
+
+    IT_PATTERN = re.compile(r'\bit\s*\(')
+    DESCRIBE_PATTERN = re.compile(r'\bdescribe\s*\(\s*["\']')
+    COMMENT_TAG_PATTERN = re.compile(r'@tc\.(\w+)\s+(.+)')
+    METHOD_CALL_PATTERN = re.compile(r'(\.?)(\w+)\s*\(')
+    STRING_PATTERN = re.compile(r'["\'`]')
 
     def __init__(self):
-        self._matchers: List[ErrorMatcher] = []
-        self._register_defaults()
+        self.reset()
 
-    def _register_defaults(self) -> None:
-        """注册默认的错误匹配模式。"""
-        self.register(ErrorMatcher(
-            ErrorType.PAGE_NOT_EXIST, RE_PAGE_NOT_EXIST,
-            Severity.FATAL, _extract_page_not_exist,
-            "页面文件不存在（hvigor 10906403 根因）",
-        ))
-        self.register(ErrorMatcher(
-            ErrorType.HVIGOR_ARKTS_ERROR, RE_HVIGOR_ARKTS_ERROR,
-            Severity.FATAL, _extract_hvigor_arkts_error,
-            "ArkTS 编译器错误",
-        ))
-        self.register(ErrorMatcher(
-            ErrorType.HVIGOR_BUILD_FAILED, RE_HVIGOR_BUILD_FAILED,
-            Severity.FATAL, _extract_hvigor_build_failed,
-            "hvigor 构建失败",
-        ))
-        self.register(ErrorMatcher(
-            ErrorType.HVIGOR_TASK_FAILED, RE_HVIGOR_TASK_FAILED,
-            Severity.ERROR, _extract_hvigor_task_failed,
-            "hvigor 任务失败",
-        ))
-        self.register(ErrorMatcher(
-            ErrorType.NINJA_FAILED, RE_NINJA_FAILED,
-            Severity.ERROR, _extract_ninja_failed,
-            "ninja 目标编译失败",
-        ))
-        self.register(ErrorMatcher(
-            ErrorType.NINJA_CMD_FAILED, RE_NINJA_CMD_FAILED,
-            Severity.ERROR, _extract_ninja_cmd_failed,
-            "ninja 命令执行失败",
-        ))
-        self.register(ErrorMatcher(
-            ErrorType.BUILD_ERROR, RE_BUILD_ERROR_MARKER,
-            Severity.FATAL, _extract_build_error_marker,
-            "构建错误标记",
-        ))
-        self.register(ErrorMatcher(
-            ErrorType.BUILD_RESULT_FAILED, RE_BUILD_RESULT,
-            Severity.ERROR, _extract_build_result_failed,
-            "构建结果",
-        ))
-        self.register(ErrorMatcher(
-            ErrorType.PIPELINE_FAILED, RE_PIPELINE_MSG,
-            Severity.ERROR, _extract_pipeline_failed,
-            "流水线消息",
-        ))
+    def reset(self):
+        self.line_offset_cache = {}
 
-    def register(self, matcher: ErrorMatcher) -> None:
-        """注册一个匹配器（后注册的优先级高，插到列表前部）。"""
-        self._matchers.insert(0, matcher)
+    def _build_line_offset(self, text: str):
+        offsets = [0]
+        for i, ch in enumerate(text):
+            if ch == '\n':
+                offsets.append(i + 1)
+        return offsets
 
-    def match_line(self, content: str) -> Optional[ErrorMatcher]:
-        """对一行内容尝试匹配，返回第一个匹配的 matcher。"""
-        for matcher in self._matchers:
-            if matcher.match(content):
-                return matcher
-        return None
+    def _get_line_number(self, text: str, pos: int, offsets: List[int]) -> int:
+        import bisect
+        return bisect.bisect_right(offsets, pos)
 
-    def get_all_matchers(self) -> List[ErrorMatcher]:
-        return list(self._matchers)
-
-    def filter_by_type(self, error_type: ErrorType) -> List[ErrorMatcher]:
-        return [m for m in self._matchers if m.error_type == error_type]
-
-class TracebackAnalyzer:
-    """分析 Python Traceback 堆栈。"""
-
-    def __init__(self, logger: Optional[Logger] = None):
-        self.logger = logger or Logger()
-
-    def find_tracebacks(self, log_lines: List[LogLine]) -> List[ErrorItem]:
-        """查找所有 Python Traceback 并提取堆栈帧。"""
-        results: List[ErrorItem] = []
-        i = 0
-        n = len(log_lines)
-        while i < n:
-            if RE_TRACEBACK_START.search(log_lines[i].content):
-                item = self._extract_traceback(log_lines, i)
-                results.append(item)
-                i = item.line_no + len(item.traceback_frames) + 5
-            else:
+    @staticmethod
+    def find_matching_brace(text: str, start: int) -> int:
+        depth = 0
+        i = start
+        length = len(text)
+        while i < length:
+            ch = text[i]
+            if ch == '{':
+                depth += 1
+            elif ch == '}':
+                depth -= 1
+                if depth == 0:
+                    return i
+            elif ch == "'" or ch == '`':
+                quote = ch
                 i += 1
-        self.logger.debug(f"找到 {len(results)} 个 Python Traceback")
+                while i < length:
+                    if text[i] == '\\':
+                        i += 2
+                        continue
+                    if text[i] == quote:
+                        break
+                    i += 1
+            elif ch == '"':
+                i += 1
+                while i < length:
+                    if text[i] == '\\':
+                        i += 2
+                        continue
+                    if text[i] == '"':
+                        break
+                    i += 1
+            elif ch == '/' and i + 1 < length and text[i + 1] == '/':
+                while i < length and text[i] != '\n':
+                    i += 1
+            elif ch == '/' and i + 1 < length and text[i + 1] == '*':
+                i += 2
+                while i + 1 < length:
+                    if text[i] == '*' and text[i + 1] == '/':
+                        i += 1
+                        break
+                    i += 1
+            i += 1
+        return -1
+
+    @staticmethod
+    def find_first_brace(text: str, start: int, max_scan: int = 300) -> int:
+        i = start
+        length = len(text)
+        count = 0
+        while i < length and count < max_scan:
+            ch = text[i]
+            if ch == '{':
+                return i
+            elif ch == "'" or ch == '`':
+                quote = ch
+                i += 1
+                while i < length:
+                    if text[i] == '\\':
+                        i += 2
+                        continue
+                    if text[i] == quote:
+                        break
+                    i += 1
+            elif ch == '"':
+                i += 1
+                while i < length:
+                    if text[i] == '\\':
+                        i += 2
+                        continue
+                    if text[i] == '"':
+                        break
+                    i += 1
+            elif ch == '/' and i + 1 < length and text[i + 1] == '/':
+                while i < length and text[i] != '\n':
+                    i += 1
+            elif ch == '/' and i + 1 < length and text[i + 1] == '*':
+                i += 2
+                while i + 1 < length:
+                    if text[i] == '*' and text[i + 1] == '/':
+                        i += 1
+                        break
+                    i += 1
+            i += 1
+            count += 1
+        return -1
+
+    @staticmethod
+    def extract_methods(body: str) -> List[str]:
+        methods = set()
+        for m in re.finditer(r'\.(\w+)\s*\(', body):
+            name = m.group(1)
+            if name not in SKIP_WORDS:
+                methods.add(name)
+        for m in re.finditer(r'(?<![\.\w])(\w+)\s*\(', body):
+            name = m.group(1)
+            if name not in SKIP_WORDS:
+                methods.add(name)
+        return sorted(methods)
+
+    @staticmethod
+    def extract_assertions(body: str) -> int:
+        count = 0
+        for method in ASSERTION_METHODS:
+            count += len(re.findall(r'\.' + method + r'\s*\(', body))
+        return count
+
+    @staticmethod
+    def extract_tc_tags(text_before_it: str) -> Dict[str, str]:
+        tags = {}
+        for m in re.finditer(r'@tc\.(\w+)\s+(.+?)(?:\n|\*|$)', text_before_it):
+            tag_name = m.group(1).lower()
+            tag_value = m.group(2).strip().rstrip('*').strip()
+            tags[f"@tc.{tag_name}"] = tag_value
+        return tags
+
+    @staticmethod
+    def extract_case_name(param_str: str) -> str:
+        m = re.match(r"['\"](.+?)['\"]", param_str.strip())
+        if m:
+            return m.group(1)
+        return param_str.strip()
+
+    @staticmethod
+    def compute_complexity(methods: List[str], body_length: int,
+                           assertion_count: int) -> float:
+        method_score = min(len(methods) / 20.0, 1.0) * 30
+        length_score = min(body_length / 2000.0, 1.0) * 30
+        assert_score = min(assertion_count / 10.0, 1.0) * 40
+        return round(method_score + length_score + assert_score, 2)
+
+    def parse_file(self, filepath: str) -> List[TestCase]:
+        content = safe_read_file(filepath)
+        if not content:
+            return []
+
+        offsets = self._build_line_offset(content)
+        results = []
+        search_from = 0
+
+        while True:
+            m = self.IT_PATTERN.search(content, search_from)
+            if not m:
+                break
+
+            it_start = m.start()
+            line_no = self._get_line_number(content, it_start, offsets)
+
+            text_before = content[max(0, it_start - 500):it_start]
+            tc_tags = self.extract_tc_tags(text_before)
+
+            brace_idx = self.find_first_brace(content, m.end())
+            if brace_idx == -1:
+                search_from = m.end()
+                continue
+
+            body_end = self.find_matching_brace(content, brace_idx)
+            if body_end == -1:
+                search_from = brace_idx + 1
+                continue
+
+            param_str = content[m.end():brace_idx].strip()
+            param_str = re.sub(r'=>\s*$', '', param_str).strip()
+
+            body = content[brace_idx + 1:body_end]
+            methods = self.extract_methods(body)
+            assertion_count = self.extract_assertions(body)
+            case_name = self.extract_case_name(param_str)
+            complexity = self.compute_complexity(methods, len(body), assertion_count)
+
+            results.append(TestCase(
+                case_name=case_name,
+                file_path=filepath,
+                methods=methods,
+                params=param_str,
+                tc_tags=tc_tags,
+                line_number=line_no,
+                body_length=len(body),
+                assertion_count=assertion_count,
+                complexity_score=complexity,
+            ))
+
+            search_from = body_end + 1
+
         return results
 
-    def _extract_traceback(self, lines: List[LogLine],
-                           start_idx: int) -> ErrorItem:
-        """从 start_idx 开始提取一个完整的 Traceback。"""
-        start_line = lines[start_idx]
-        frames: List[Dict[str, str]] = []
-        exception_msg = ""
-        context: List[str] = []
-        i = start_idx
-        n = len(lines)
-        max_lines = 50  # 防止无限扫描
-        while i < n and i < start_idx + max_lines:
-            line = lines[i]
-            context.append(line.content)
-            file_match = RE_TRACEBACK_FILE.search(line.content)
-            if file_match:
-                frames.append({
-                    "file": file_match.group(1),
-                    "line": file_match.group(2),
-                    "function": file_match.group(3),
-                })
-            ohos_exc_match = RE_OHOS_EXCEPTION.search(line.content)
-            if ohos_exc_match:
-                exception_msg = ohos_exc_match.group(1)
-                # 继续读 OHOSException 的结构化字段
-                i += 1
-                exc_fields = self._extract_exception_fields(lines, i)
-                break
-            raise_match = RE_RAISE.search(line.content)
-            if raise_match and not exception_msg:
-                exception_msg = f"raised {raise_match.group(1)}"
-            i += 1
-        item = ErrorItem(
-            error_type=ErrorType.PYTHON_TRACEBACK,
-            severity=Severity.FATAL,
-            line_no=start_line.line_no,
-            timestamp=start_line.timestamp,
-            message=exception_msg or "Python 异常",
-            detail="\n".join(context),
-            traceback_frames=frames,
-            context=context,
-        )
-        if not exception_msg and frames:
-            last_frame = frames[-1]
-            item.message = f"异常于 {last_frame['file']}:{last_frame['line']}"
-        return item
 
-    @staticmethod
-    def _extract_exception_fields(lines: List[LogLine],
-                                  start_idx: int) -> Dict[str, str]:
-        """提取 OHOSException 的结构化字段（Code/Reason/...）。"""
-        fields: Dict[str, str] = {}
-        n = len(lines)
-        i = start_idx
-        max_scan = 15
-        while i < n and i < start_idx + max_scan:
-            content = lines[i].content.strip()
-            if not content:
-                i += 1
+# ============================================================
+# Section 5: File Scanner
+# ============================================================
+
+class FileScanner:
+    """Scans directories for test files."""
+
+    def __init__(self, config: Dict[str, Any]):
+        self.root = config.get("root_dir", DEFAULT_ROOT)
+        self.extensions = config.get("file_extensions", [".test.ets"])
+        self.skip_dirs = set(config.get("skip_dirs", []))
+        self.files: List[str] = []
+
+    def scan(self) -> List[str]:
+        self.files = []
+        for dirpath, dirnames, filenames in os.walk(self.root):
+            dirnames[:] = [d for d in dirnames if d not in self.skip_dirs]
+            for fn in filenames:
+                if any(fn.endswith(ext) for ext in self.extensions):
+                    self.files.append(os.path.join(dirpath, fn))
+        return self.files
+
+    def scan_incremental(self, cache: Dict[str, str]) -> Tuple[List[str], List[str]]:
+        all_files = self.scan()
+        new_files = []
+        changed_files = []
+        for f in all_files:
+            md5 = file_md5(f)
+            if f not in cache:
+                new_files.append(f)
+            elif cache[f] != md5:
+                changed_files.append(f)
+            cache[f] = md5
+        return new_files, changed_files
+
+    def get_file_stats(self) -> Dict[str, Any]:
+        total_size = 0
+        by_extension = Counter()
+        for f in self.files:
+            try:
+                total_size += os.path.getsize(f)
+            except OSError:
+                pass
+            ext = os.path.splitext(f)[1]
+            by_extension[ext] += 1
+        return {
+            "total_files": len(self.files),
+            "total_size": total_size,
+            "total_size_formatted": format_size(total_size),
+            "by_extension": dict(by_extension),
+        }
+
+
+# ============================================================
+# Section 6: Case Collector
+# ============================================================
+
+class CaseCollector:
+    """Collects and stores test cases from files."""
+
+    def __init__(self, config: Dict[str, Any]):
+        self.config = config
+        self.parser = SourceParser()
+        self.cases: List[TestCase] = []
+        self.file_case_map: Dict[str, List[TestCase]] = defaultdict(list)
+
+    def collect(self, files: List[str], verbose: bool = True) -> List[TestCase]:
+        self.cases = []
+        total = len(files)
+        for i, filepath in enumerate(files):
+            if verbose and (i + 1) % 2000 == 0:
+                print(f"  进度: {progress_bar(i + 1, total)}")
+            cases = self.parser.parse_file(filepath)
+            for case in cases:
+                self.cases.append(case)
+                self.file_case_map[filepath].append(case)
+        if verbose:
+            print(f"  总用例数: {len(self.cases)}")
+        return self.cases
+
+    def collect_parallel(self, files: List[str], workers: int = 4) -> List[TestCase]:
+        if not HAS_MULTIPROCESSING:
+            return self.collect(files)
+
+        parser = SourceParser()
+        chunks = [files[i::workers] for i in range(workers)]
+
+        def parse_chunk(chunk):
+            results = []
+            for filepath in chunk:
+                results.extend(parser.parse_file(filepath))
+            return results
+
+        with Pool(workers) as pool:
+            all_results = pool.map(parse_chunk, chunks)
+
+        self.cases = []
+        for chunk_results in all_results:
+            for case in chunk_results:
+                self.cases.append(case)
+                self.file_case_map[case.file_path].append(case)
+        return self.cases
+
+    def get_statistics(self) -> Dict[str, Any]:
+        if not self.cases:
+            return {}
+        methods_per_case = [len(c.methods) for c in self.cases]
+        body_lengths = [c.body_length for c in self.cases]
+        assertions = [c.assertion_count for c in self.cases]
+        complexities = [c.complexity_score for c in self.cases]
+        return {
+            "total_cases": len(self.cases),
+            "total_files": len(self.file_case_map),
+            "avg_methods_per_case": round(statistics.mean(methods_per_case), 2) if methods_per_case else 0,
+            "median_methods_per_case": statistics.median(methods_per_case) if methods_per_case else 0,
+            "avg_body_length": round(statistics.mean(body_lengths), 2) if body_lengths else 0,
+            "avg_assertions": round(statistics.mean(assertions), 2) if assertions else 0,
+            "avg_complexity": round(statistics.mean(complexities), 2) if complexities else 0,
+            "max_complexity": max(complexities) if complexities else 0,
+            "min_complexity": min(complexities) if complexities else 0,
+        }
+
+
+# ============================================================
+# Section 7: Interface Analyzer
+# ============================================================
+
+class InterfaceAnalyzer:
+    """Analyzes interfaces (methods) called by test cases."""
+
+    def __init__(self, cases: List[TestCase]):
+        self.cases = cases
+        self.interface_map: Dict[str, InterfaceInfo] = {}
+        self.case_interface_map: Dict[str, Set[str]] = {}
+
+    def analyze(self) -> Dict[str, InterfaceInfo]:
+        self.interface_map = {}
+        self.case_interface_map = {}
+
+        for case in self.cases:
+            iface_set = set()
+            for method in case.methods:
+                if method not in self.interface_map:
+                    self.interface_map[method] = InterfaceInfo(
+                        name=method,
+                        call_count=0,
+                        case_names=[],
+                        file_paths=set()
+                    )
+                info = self.interface_map[method]
+                info.call_count += 1
+                if case.case_name not in info.case_names:
+                    info.case_names.append(case.case_name)
+                info.file_paths.add(case.file_path)
+                iface_set.add(method)
+            self.case_interface_map[case.case_name] = iface_set
+
+        return self.interface_map
+
+    def get_top_interfaces(self, n: int = 50) -> List[InterfaceInfo]:
+        return sorted(self.interface_map.values(),
+                      key=lambda x: x.call_count, reverse=True)[:n]
+
+    def get_interface_groups(self, min_cases: int = 2) -> List[Dict[str, Any]]:
+        groups = []
+        for name, info in sorted(self.interface_map.items(),
+                                  key=lambda x: x[1].call_count, reverse=True):
+            if len(info.case_names) < min_cases:
                 continue
-            for name, regex in [
-                ("code", RE_CODE), ("reason", RE_REASON),
-                ("error_type", RE_ERROR_TYPE),
-                ("description", RE_DESCRIPTION),
-                ("solution", RE_SOLUTION),
-            ]:
-                m = regex.match(content)
-                if m:
-                    fields[name] = m.group(1).strip()
-            # 遇到非字段行且已收集到字段，停止
-            if content and not any(
-                r.match(content) for r in
-                [RE_CODE, RE_REASON, RE_ERROR_TYPE,
-                 RE_DESCRIPTION, RE_SOLUTION]
-            ) and fields:
-                break
-            i += 1
-        return fields
+            groups.append(info.to_dict())
+        return groups
 
-class StageTracker:
-    """追踪构建阶段的开始/结束与耗时。"""
+    def find_related_cases(self, case_name: str, min_shared: int = 2) -> List[str]:
+        target_ifaces = self.case_interface_map.get(case_name, set())
+        if not target_ifaces:
+            return []
+        related = []
+        for other_name, other_ifaces in self.case_interface_map.items():
+            if other_name == case_name:
+                continue
+            shared = target_ifaces & other_ifaces
+            if len(shared) >= min_shared:
+                related.append((other_name, len(shared)))
+        related.sort(key=lambda x: x[1], reverse=True)
+        return [name for name, _ in related]
 
-    def __init__(self, logger: Optional[Logger] = None):
-        self.logger = logger or Logger()
-        self.stages: List[StageInfo] = []
-        self._pending: Dict[str, StageInfo] = {}
-
-    def process_line(self, log_line: LogLine) -> None:
-        """处理一行日志，更新阶段状态。"""
-        content = log_line.content
-        start_match = RE_STAGE_START.search(content)
-        if start_match:
-            stage_name = start_match.group(1)
-            stage = StageInfo(
-                name=stage_name, status=StageStatus.RUNNING,
-                start_time=log_line.timestamp,
-                start_dt=log_line.datetime_obj,
-                line_start=log_line.line_no,
-            )
-            self._pending[stage_name] = stage
-            self.logger.debug(f"阶段开始: {stage_name} (行 {log_line.line_no})")
-            return
-        end_match = RE_STAGE_END.search(content)
-        if end_match:
-            stage_name = end_match.group(1)
-            stage = self._pending.pop(stage_name, None)
-            if stage:
-                stage.status = StageStatus.SUCCESS
-                stage.end_time = log_line.timestamp
-                stage.end_dt = log_line.datetime_obj
-                stage.line_end = log_line.line_no
-                stage.duration_seconds = self._calc_duration(stage)
-                self.stages.append(stage)
-                self.logger.debug(
-                    f"阶段完成: {stage_name} ({stage.duration_str})"
-                )
-            else:
-                # 未找到对应的开始，直接创建
-                stage = StageInfo(
-                    name=stage_name, status=StageStatus.SUCCESS,
-                    end_time=log_line.timestamp,
-                    end_dt=log_line.datetime_obj,
-                    line_end=log_line.line_no,
-                )
-                self.stages.append(stage)
-
-    @staticmethod
-    def _calc_duration(stage: StageInfo) -> float:
-        """计算阶段耗时（秒）。"""
-        if stage.start_dt and stage.end_dt:
-            delta = stage.end_dt - stage.start_dt
-            return delta.total_seconds()
-        return 0.0
-
-    def get_stages(self) -> List[StageInfo]:
-        return list(self.stages)
-
-    def get_failed_stages(self) -> List[StageInfo]:
-        return [s for s in self.stages if s.status == StageStatus.FAILED]
-
-    def get_total_duration(self) -> float:
-        return sum(s.duration_seconds for s in self.stages)
+    def get_coverage_stats(self) -> Dict[str, Any]:
+        if not self.interface_map:
+            return {}
+        call_counts = [info.call_count for info in self.interface_map.values()]
+        case_counts = [len(info.case_names) for info in self.interface_map.values()]
+        return {
+            "total_interfaces": len(self.interface_map),
+            "avg_calls_per_interface": round(statistics.mean(call_counts), 2),
+            "median_calls": statistics.median(call_counts),
+            "max_calls": max(call_counts),
+            "min_calls": min(call_counts),
+            "avg_cases_per_interface": round(statistics.mean(case_counts), 2),
+            "interfaces_used_once": sum(1 for c in call_counts if c == 1),
+            "interfaces_used_many": sum(1 for c in call_counts if c >= 100),
+        }
 
 
-class HvigorTaskTracker:
-    """追踪 hvigor 任务的执行情况。"""
+# ============================================================
+# Section 8: Case Grouper
+# ============================================================
 
-    def __init__(self, logger: Optional[Logger] = None):
-        self.logger = logger or Logger()
-        self.tasks: List[HvigorTaskInfo] = []
+class CaseGrouper:
+    """Groups test cases by various criteria."""
 
-    def process_line(self, log_line: LogLine) -> None:
-        """处理一行日志，提取 hvigor 任务信息。"""
-        finished_match = RE_HVIGOR_FINISHED.search(log_line.content)
-        if finished_match:
-            task_name = finished_match.group(1).strip()
-            duration_ms = int(finished_match.group(2))
-            status = "finished"
-            # 检查是否为失败任务
-            if "Failed" in task_name or "ERROR" in log_line.content:
-                status = "failed"
-            task = HvigorTaskInfo(
-                task_name=task_name, duration_ms=duration_ms,
-                status=status, line_no=log_line.line_no,
-                timestamp=log_line.timestamp,
-            )
-            self.tasks.append(task)
+    def __init__(self, cases: List[TestCase], config: Dict[str, Any]):
+        self.cases = cases
+        self.config = config
+        self.min_group_size = config.get("min_group_size", 2)
+        self.max_sample = config.get("max_sample_cases", 50)
 
-    def get_tasks(self) -> List[HvigorTaskInfo]:
-        return list(self.tasks)
+    def group_by_prefix(self, depth: int = 4) -> List[Dict[str, Any]]:
+        groups = defaultdict(list)
+        for case in self.cases:
+            prefix = get_prefix(case.case_name, depth)
+            groups[prefix].append(case)
 
-    def get_failed_tasks(self) -> List[HvigorTaskInfo]:
-        return [t for t in self.tasks if t.status == "failed"]
-
-    def get_total_duration_ms(self) -> int:
-        return sum(t.duration_ms for t in self.tasks)
-
-class CompileTargetExtractor:
-    """从日志中提取编译目标信息。"""
-
-    def __init__(self, logger: Optional[Logger] = None):
-        self.logger = logger or Logger()
-        self.targets: List[CompileTarget] = []
-
-    def process_line(self, log_line: LogLine) -> None:
-        """处理一行日志，提取编译目标。"""
-        content = log_line.content
-        target_match = RE_BUILD_TARGET.search(content)
-        if target_match:
-            raw = target_match.group(1)
-            for t in raw.split(","):
-                t = t.strip().strip("'\"")
-                if t:
-                    self.targets.append(CompileTarget(
-                        target=t, line_no=log_line.line_no,
-                    ))
-            return
-        cmd_match = RE_COMPILE_CMD.search(content)
-        if cmd_match:
-            cmd = cmd_match.group(1).strip()
-            target_arg_match = RE_BUILD_TARGET_ARG.search(cmd)
-            if target_arg_match:
-                self.targets.append(CompileTarget(
-                    target=target_arg_match.group(1),
-                    compile_cmd=cmd, line_no=log_line.line_no,
-                ))
-
-    def get_targets(self) -> List[CompileTarget]:
-        return list(self.targets)
-
-class MetricsExtractor:
-    """从日志中提取系统资源指标。"""
-
-    def __init__(self, logger: Optional[Logger] = None):
-        self.logger = logger or Logger()
-        self.metrics = SystemMetrics()
-
-    def process_line(self, log_line: LogLine) -> None:
-        """处理一行日志，提取系统指标。"""
-        content = log_line.content
-        m = RE_TOTAL_MEMORY.search(content)
-        if m:
-            self.metrics.total_memory = f"{m.group(1)}{m.group(2)}"
-        m = RE_FREE_MEMORY.search(content)
-        if m:
-            self.metrics.free_memory = f"{m.group(1)}{m.group(2)}"
-        m = RE_CPU_USER.search(content)
-        if m:
-            self.metrics.user_cpu = f"{m.group(1)}%"
-        m = RE_CPU_SYSTEM.search(content)
-        if m:
-            self.metrics.system_cpu = f"{m.group(1)}%"
-
-    def get_metrics(self) -> SystemMetrics:
-        return self.metrics
-
-
-class BuildResultExtractor:
-    """从日志中提取构建结果信息。"""
-
-    def __init__(self, logger: Optional[Logger] = None):
-        self.logger = logger or Logger()
-        self.result = BuildResult()
-
-    def process_line(self, log_line: LogLine) -> None:
-        """处理一行日志，提取构建结果。"""
-        content = log_line.content
-
-        # build result:failed
-        m = RE_BUILD_RESULT.search(content)
-        if m:
-            self.result.build_result_str = m.group(1)
-            if m.group(1) == "failed":
-                self.result.overall_status = "failed"
-            elif m.group(1) == "success":
-                self.result.overall_status = "success"
-
-        # label_name: 编译失败
-        m = RE_LABEL_NAME.search(content)
-        if m:
-            self.result.label_name = m.group(1).strip()
-
-        # buildFailType / buildFailReason
-        m = RE_BUILD_FAIL_TYPE.search(content)
-        if m:
-            self.result.fail_type = m.group(1)
-        m = RE_BUILD_FAIL_REASON.search(content)
-        if m:
-            self.result.fail_reason = m.group(1)
-
-        # 流水线消息中的信息
-        if RE_PIPELINE_MSG.search(content):
-            m = RE_PIPELINE_COMPONENT.search(content)
-            if m:
-                self.result.component = m.group(1)
-            m = RE_PIPELINE_RESULT.search(content)
-            if m:
-                result_val = m.group(1)
-                if result_val == "failed":
-                    self.result.overall_status = "failed"
-                elif result_val == "success":
-                    self.result.overall_status = "success"
-            m = RE_PIPELINE_FAIL_TYPE.search(content)
-            if m:
-                self.result.fail_type = m.group(1)
-            m = RE_PIPELINE_FAIL_REASON.search(content)
-            if m:
-                self.result.fail_reason = m.group(1)
-            m = RE_LOG_URL.search(content)
-            if m:
-                self.result.build_log_url = m.group(1)
-            m = RE_ARTIFACTS_URL.search(content)
-            if m:
-                self.result.artifacts_url = m.group(1)
-
-        # PR URL
-        m = RE_PR_URL.search(content)
-        if m and not self.result.pr_url:
-            self.result.pr_url = m.group(1)
-        m = RE_PR_LABEL.search(content)
-        if m and not self.result.pr_url:
-            self.result.pr_url = m.group(1)
-
-        # build duration
-        m = re.search(r"'buildDuration':\s*(\d+)", content)
-        if m:
-            self.result.build_duration = int(m.group(1))
-
-        # buildId / pipelineId
-        m = re.search(r"'buildId':\s*'([^']+)'", content)
-        if m:
-            self.result.build_id = m.group(1)
-        m = re.search(r"'pipelineId':\s*'([^']+)'", content)
-        if m:
-            self.result.pipeline_id = m.group(1)
-
-    def get_result(self) -> BuildResult:
-        return self.result
-
-
-class ContextExtractor:
-    """提取错误行的上下文（前后若干行）。"""
-
-    def __init__(self, context_before: int = 2,
-                 context_after: int = 5,
-                 logger: Optional[Logger] = None):
-        self.context_before = context_before
-        self.context_after = context_after
-        self.logger = logger or Logger()
-
-    def extract(self, log_lines: List[LogLine],
-                error_line_no: int) -> List[str]:
-        """提取指定行号的上下文。"""
-        start = max(0, error_line_no - 1 - self.context_before)
-        end = min(len(log_lines), error_line_no + self.context_after)
-        result: List[str] = []
-        for i in range(start, end):
-            marker = " >>> " if (i + 1) == error_line_no else "     "
-            result.append(f"{marker}{log_lines[i].content}")
+        result = []
+        for prefix, case_list in sorted(groups.items(),
+                                         key=lambda x: len(x[1]), reverse=True):
+            if len(case_list) < self.min_group_size:
+                continue
+            all_ifaces = set()
+            for c in case_list:
+                all_ifaces.update(c.methods)
+            result.append({
+                "group_key": prefix,
+                "group_type": "name_prefix",
+                "case_count": len(case_list),
+                "cases": [c.to_dict() for c in case_list[:self.max_sample]],
+                "common_interfaces": sorted(all_ifaces)[:self.config.get("max_interfaces_per_group", 100)],
+                "all_interfaces": sorted(all_ifaces),
+            })
         return result
 
-class ErrorExtractor:
-    """从日志中提取所有错误项。"""
+    def group_by_token(self) -> List[Dict[str, Any]]:
+        groups = defaultdict(list)
+        for case in self.cases:
+            token = get_core_token(case.case_name)
+            groups[token].append(case)
 
-    def __init__(self, registry: PatternRegistry,
-                 context_extractor: ContextExtractor,
-                 traceback_analyzer: TracebackAnalyzer,
-                 logger: Optional[Logger] = None):
-        self.registry = registry
-        self.context_extractor = context_extractor
-        self.traceback_analyzer = traceback_analyzer
-        self.logger = logger or Logger()
-        self.errors: List[ErrorItem] = []
-
-    def extract(self, log_lines: List[LogLine]) -> List[ErrorItem]:
-        """从日志行中提取所有错误。"""
-        self.errors = []
-        seen_lines: Set[int] = set()
-
-        # 1. 逐行匹配已知模式
-        for log_line in log_lines:
-            if log_line.line_no in seen_lines:
+        result = []
+        for token, case_list in sorted(groups.items(),
+                                         key=lambda x: len(x[1]), reverse=True):
+            if len(case_list) < self.min_group_size:
                 continue
-            matcher = self.registry.match_line(log_line.content)
-            if matcher:
-                match = matcher.pattern.search(log_line.content)
-                if match:
-                    context = self.context_extractor.extract(
-                        log_lines, log_line.line_no
-                    )
-                    item = matcher.extract(match, log_line, context)
-                    self.errors.append(item)
-                    seen_lines.add(log_line.line_no)
+            all_ifaces = set()
+            for c in case_list:
+                all_ifaces.update(c.methods)
+            result.append({
+                "group_key": token,
+                "group_type": "core_token",
+                "case_count": len(case_list),
+                "sample_cases": [c.case_name for c in case_list[:self.max_sample]],
+                "common_interfaces": sorted(all_ifaces)[:50],
+            })
+        return result
 
-        # 2. 提取 Python Traceback（多行模式）
-        tracebacks = self.traceback_analyzer.find_tracebacks(log_lines)
-        for tb in tracebacks:
-            if tb.line_no not in seen_lines:
-                self.errors.append(tb)
-                seen_lines.add(tb.line_no)
+    def group_by_interface(self, interface_analyzer: InterfaceAnalyzer) -> List[Dict[str, Any]]:
+        groups = []
+        for name, info in sorted(interface_analyzer.interface_map.items(),
+                                  key=lambda x: x[1].call_count, reverse=True):
+            if len(info.case_names) < self.min_group_size:
+                continue
+            groups.append({
+                "group_key": name,
+                "group_type": "interface",
+                "case_count": len(info.case_names),
+                "sample_cases": info.case_names[:self.max_sample],
+                "call_count": info.call_count,
+                "file_count": len(info.file_paths),
+            })
+        return groups
 
-        # 按行号排序
-        self.errors.sort(key=lambda e: e.line_no)
-        self.logger.info(f"共提取 {len(self.errors)} 个错误项")
-        return list(self.errors)
+    def group_by_subsystem(self) -> List[Dict[str, Any]]:
+        groups = defaultdict(list)
+        for case in self.cases:
+            subsystem = get_subsystem(case.file_path)
+            groups[subsystem].append(case)
 
-    def filter_by_type(self, error_type: ErrorType) -> List[ErrorItem]:
-        """按错误类型过滤。"""
-        return [e for e in self.errors if e.error_type == error_type]
+        result = []
+        for subsystem, case_list in sorted(groups.items(),
+                                            key=lambda x: len(x[1]), reverse=True):
+            all_ifaces = set()
+            for c in case_list:
+                all_ifaces.update(c.methods)
+            result.append({
+                "group_key": subsystem,
+                "group_type": "subsystem",
+                "case_count": len(case_list),
+                "file_count": len(set(c.file_path for c in case_list)),
+                "common_interfaces": sorted(all_ifaces)[:50],
+                "sample_cases": [c.case_name for c in case_list[:self.max_sample]],
+            })
+        return result
 
-    def filter_by_severity(self, severity: Severity) -> List[ErrorItem]:
-        """按严重级别过滤。"""
-        return [e for e in self.errors
-                if e.severity.value >= severity.value]
+    def group_by_suite(self) -> List[Dict[str, Any]]:
+        groups = defaultdict(list)
+        for case in self.cases:
+            suite = get_suite_name(case.file_path)
+            groups[suite].append(case)
 
-    def get_fatal_errors(self) -> List[ErrorItem]:
-        """获取致命错误。"""
-        return [e for e in self.errors if e.severity == Severity.FATAL]
+        result = []
+        for suite, case_list in sorted(groups.items(),
+                                         key=lambda x: len(x[1]), reverse=True):
+            if len(case_list) < self.min_group_size:
+                continue
+            all_ifaces = set()
+            for c in case_list:
+                all_ifaces.update(c.methods)
+            result.append({
+                "group_key": suite,
+                "group_type": "test_suite",
+                "case_count": len(case_list),
+                "common_interfaces": sorted(all_ifaces)[:50],
+                "sample_cases": [c.case_name for c in case_list[:self.max_sample]],
+            })
+        return result
 
-class RootCauseAnalyzer:
-    """分析根本错误原因。"""
-
-    def __init__(self, logger: Optional[Logger] = None):
-        self.logger = logger or Logger()
-
-    def analyze(self, errors: List[ErrorItem]) -> Optional[ErrorItem]:
-
-
-        if not errors:
-            return None
-
-        # 按优先级排序的类型列表
-        priority_order = [
-            ErrorType.PAGE_NOT_EXIST,
-            ErrorType.HVIGOR_ARKTS_ERROR,
-            ErrorType.HVIGOR_BUILD_FAILED,
-            ErrorType.HVIGOR_TASK_FAILED,
-            ErrorType.NINJA_FAILED,
-            ErrorType.NINJA_CMD_FAILED,
-            ErrorType.PYTHON_TRACEBACK,
-            ErrorType.OHOS_EXCEPTION,
-            ErrorType.BUILD_ERROR,
-            ErrorType.BUILD_RESULT_FAILED,
-            ErrorType.PIPELINE_FAILED,
+    def group_by_complexity(self) -> List[Dict[str, Any]]:
+        levels = [
+            ("Low (0-30)", 0, 30),
+            ("Medium (30-60)", 30, 60),
+            ("High (60-80)", 60, 80),
+            ("Very High (80-100)", 80, 101),
         ]
-        for error_type in priority_order:
-            for err in errors:
-                if err.error_type == error_type:
-                    err.root_cause = True
-                    self.logger.info(
-                        f"根因: [{err.error_type.label}] 行 {err.line_no}: "
-                        f"{err.message}"
-                    )
-                    return err
-
-        # 取第一个 FATAL
-        for err in errors:
-            if err.severity == Severity.FATAL:
-                err.root_cause = True
-                return err
-
-        # 取第一个
-        errors[0].root_cause = True
-        return errors[0]
-
-    def generate_summary(self, report: AnalysisReport) -> str:
-        """生成分析摘要。"""
-        lines: List[str] = []
-        r = report.build_result
-        lines.append(f"文件: {report.source_file}")
-        lines.append(f"行数: {report.total_lines}")
-        lines.append(f"构建状态: {r.overall_status}")
-        if r.component:
-            lines.append(f"组件: {r.component}")
-        if r.fail_type:
-            lines.append(f"失败类型: {r.fail_type}")
-        if r.fail_reason:
-            lines.append(f"失败原因: {r.fail_reason}")
-        lines.append(f"错误数: {report.error_count}")
-        rc = report.root_cause_error
-        if rc:
-            lines.append(f"根本原因: [{rc.error_type.label}] {rc.message}")
-            if rc.target:
-                lines.append(f"失败目标: {rc.target}")
-            if rc.solution:
-                lines.append(f"建议修复: {rc.solution}")
-        if r.build_log_url:
-            lines.append(f"构建日志: {r.build_log_url}")
-        if r.pr_url:
-            lines.append(f"PR: {r.pr_url}")
-        return "\n".join(lines)
-
-class ReportGenerator:
-    """生成 text / markdown / json 格式的分析报告。"""
-
-    def __init__(self, report: AnalysisReport,
-                 logger: Optional[Logger] = None):
-        self.report = report
-        self.logger = logger or Logger()
-
-    def generate(self, fmt: str = "text") -> str:
-        if fmt == "json":
-            return self._generate_json()
-        if fmt == "markdown":
-            return self._generate_markdown()
-        return self._generate_text()
-
-    # ------------------------------------------------------------------
-    # Text 格式
-    # ------------------------------------------------------------------
-    def _generate_text(self) -> str:
-        r = self.report
-        br = r.build_result
-        lines: List[str] = []
-        lines.append("=" * 70)
-        lines.append(" OHOS 编译日志分析报告")
-        lines.append("=" * 70)
-        lines.append(f"源文件:     {r.source_file}")
-        lines.append(f"文件大小:   {r.file_size / 1024:.1f} KB")
-        lines.append(f"总行数:     {r.total_lines}")
-        lines.append(f"分析时间:   {r.analyzed_at}")
-        lines.append("")
-        lines.append("-" * 70)
-        lines.append(" 构建结果")
-        lines.append("-" * 70)
-        lines.append(f"  整体状态:   {br.overall_status}")
-        if br.component:
-            lines.append(f"  组件:       {br.component}")
-        if br.fail_type:
-            lines.append(f"  失败类型:   {br.fail_type}")
-        if br.fail_reason:
-            lines.append(f"  失败原因:   {br.fail_reason}")
-        if br.build_duration:
-            mins = br.build_duration // 60
-            secs = br.build_duration % 60
-            lines.append(f"  构建时长:   {mins}m {secs}s")
-        if br.pr_url:
-            lines.append(f"  PR:         {br.pr_url}")
-        if br.label_name:
-            lines.append(f"  标签:       {br.label_name}")
-        if br.build_log_url:
-            lines.append(f"  构建日志:   {br.build_log_url}")
-        if br.artifacts_url:
-            lines.append(f"  产物:       {br.artifacts_url}")
-        lines.append("")
-
-        # 根本原因
-        rc = r.root_cause_error
-        if rc:
-            lines.append("-" * 70)
-            lines.append(" 根本原因")
-            lines.append("-" * 70)
-            lines.append(f"  类型:       {rc.error_type.label}")
-            lines.append(f"  行号:       {rc.line_no}")
-            if rc.timestamp:
-                lines.append(f"  时间戳:     {rc.timestamp}")
-            if rc.error_code:
-                lines.append(f"  错误码:     {rc.error_code}")
-            lines.append(f"  消息:       {rc.message}")
-            if rc.target:
-                lines.append(f"  目标:       {rc.target}")
-            if rc.detail:
-                detail_short = rc.detail[:200]
-                if len(rc.detail) > 200:
-                    detail_short += "..."
-                lines.append(f"  详情:       {detail_short}")
-            if rc.solution:
-                lines.append(f"  修复建议:   {rc.solution}")
-            if rc.traceback_frames:
-                lines.append(f"  堆栈帧:")
-                for frame in rc.traceback_frames:
-                    lines.append(f"    {frame['file']}:{frame['line']} "
-                                 f"in {frame['function']}")
-            if rc.context:
-                lines.append(f"  上下文:")
-                for ctx_line in rc.context[:10]:
-                    lines.append(f"    {ctx_line}")
-            lines.append("")
-
-        # 错误列表
-        if r.errors:
-            lines.append("-" * 70)
-            lines.append(f" 全部错误 ({r.error_count})")
-            lines.append("-" * 70)
-            for idx, err in enumerate(r.errors, start=1):
-                tag = " [根因]" if err.root_cause else ""
-                lines.append(f"  {idx}. [{err.severity.label}] "
-                             f"[{err.error_type.label}]{tag}")
-                lines.append(f"     行 {err.line_no}: {err.message}")
-                if err.target:
-                    lines.append(f"     目标: {err.target}")
-            lines.append("")
-
-        # 阶段时间线
-        if r.stages:
-            lines.append("-" * 70)
-            lines.append(f" 构建阶段时间线 ({len(r.stages)})")
-            lines.append("-" * 70)
-            for stage in r.stages:
-                status_tag = stage.status.value.upper()
-                lines.append(f"  [{status_tag:8s}] {stage.name:40s} "
-                             f"{stage.duration_str}")
-            total = sum(s.duration_seconds for s in r.stages)
-            lines.append(f"  {'总计':51s} {total:.1f}s")
-            lines.append("")
-
-        # hvigor 任务
-        if r.hvigor_tasks:
-            lines.append("-" * 70)
-            lines.append(f" Hvigor 任务 ({len(r.hvigor_tasks)})")
-            lines.append("-" * 70)
-            failed_tasks = [t for t in r.hvigor_tasks if t.status == "failed"]
-            if failed_tasks:
-                lines.append(f"  失败任务:")
-                for t in failed_tasks:
-                    lines.append(f"    {t.task_name} (行 {t.line_no})")
-            lines.append(f"  任务总数: {len(r.hvigor_tasks)}")
-            total_ms = sum(t.duration_ms for t in r.hvigor_tasks)
-            lines.append(f"  总耗时:   {total_ms} ms")
-            # 最慢的 5 个任务
-            sorted_tasks = sorted(r.hvigor_tasks,
-                                  key=lambda t: t.duration_ms,
-                                  reverse=True)
-            lines.append(f"  最慢的 5 个任务:")
-            for t in sorted_tasks[:5]:
-                lines.append(f"    {t.duration_ms:6d} ms  {t.task_name}")
-            lines.append("")
-
-        # 编译目标
-        if r.compile_targets:
-            lines.append("-" * 70)
-            lines.append(f" 编译目标 ({len(r.compile_targets)})")
-            lines.append("-" * 70)
-            for t in r.compile_targets:
-                lines.append(f"  {t.target} (行 {t.line_no})")
-            lines.append("")
-
-        # 系统指标
-        m = r.system_metrics
-        if m.total_memory or m.user_cpu:
-            lines.append("-" * 70)
-            lines.append(" 系统资源")
-            lines.append("-" * 70)
-            if m.total_memory:
-                lines.append(f"  总内存:   {m.total_memory}")
-            if m.free_memory:
-                lines.append(f"  空闲内存: {m.free_memory}")
-            if m.user_cpu:
-                lines.append(f"  用户CPU:  {m.user_cpu}")
-            if m.system_cpu:
-                lines.append(f"  系统CPU:  {m.system_cpu}")
-            lines.append("")
-
-        # 警告
-        if r.warnings:
-            lines.append("-" * 70)
-            lines.append(f" 警告 ({len(r.warnings)})")
-            lines.append("-" * 70)
-            for w in r.warnings:
-                lines.append(f"  - {w}")
-            lines.append("")
-
-        # 摘要
-        if r.summary:
-            lines.append("-" * 70)
-            lines.append(" 摘要")
-            lines.append("-" * 70)
-            for sline in r.summary.splitlines():
-                lines.append(f"  {sline}")
-            lines.append("")
-
-        lines.append("=" * 70)
-        return "\n".join(lines)
-
-    def _generate_markdown(self) -> str:
-        r = self.report
-        br = r.build_result
-        lines: List[str] = []
-        return "\n".join(lines)
-
-    def _generate_json(self) -> str:
-        return json.dumps(self.report.to_dict(), indent=2,
-                          ensure_ascii=False)
-
-    def save(self, path: str, fmt: str = "text") -> None:
-        """保存报告到文件。"""
-        content = self.generate(fmt)
-        with open(path, "w", encoding="utf-8") as fh:
-            fh.write(content)
-        self.logger.info(f"报告已保存: {path} ({fmt})")
-
-class LogAnalyzer:
-    """编译日志分析器主类，编排所有组件。"""
-
-    def __init__(self, file_path: str, encoding: str = "utf-8",
-                 context_before: int = 2, context_after: int = 5,
-                 logger: Optional[Logger] = None):
-        self.file_path = file_path
-
-    def analyze(self) -> AnalysisReport:
-        """执行完整分析流程。"""
-        self.logger.section("开始分析编译日志")
-        # 1. 读取文件
-        raw_lines = self.reader.read_all()
-        total_lines = len(raw_lines)
-        file_size = self.reader.file_size()
-        # 2. 解析日志行
-        log_lines = self.line_parser.parse_lines(raw_lines)
-        self.logger.info(f"解析 {total_lines} 行日志")
-        # 3. 逐行处理（阶段/任务/目标/指标/结果）
-        for log_line in log_lines:
-            self.stage_tracker.process_line(log_line)
-            self.hvigor_tracker.process_line(log_line)
-            self.target_extractor.process_line(log_line)
-            self.metrics_extractor.process_line(log_line)
-            self.result_extractor.process_line(log_line)
-        # 4. 提取错误
-        errors = self.error_extractor.extract(log_lines)
-        # 5. 根因分析
-        root_cause = self.root_cause_analyzer.analyze(errors)
-        # 6. 组装报告
-        self.report = AnalysisReport(
-            source_file=self.file_path,
-            file_size=file_size,
-            total_lines=total_lines,
-            analyzed_at=time.strftime("%Y-%m-%d %H:%M:%S"),
-            build_result=self.result_extractor.get_result(),
-            stages=self.stage_tracker.get_stages(),
-            errors=errors,
-            root_cause=root_cause,
-            hvigor_tasks=self.hvigor_tracker.get_tasks(),
-            compile_targets=self.target_extractor.get_targets(),
-            system_metrics=self.metrics_extractor.get_metrics(),
-        )
-        # 7. 生成摘要
-        self.report.summary = self.root_cause_analyzer.generate_summary(
-            self.report
-        )
-        # 8. 额外警告
-        self._collect_warnings()
-        self.logger.section("分析完成")
-        self.logger.info(f"构建状态: {self.report.build_result.overall_status}")
-        self.logger.info(f"错误数: {self.report.error_count}")
-        if root_cause:
-            self.logger.info(f"根因: {root_cause.message}")
-        return self.report
-
-    def _collect_warnings(self) -> None:
-        """收集额外警告。"""
-        warnings: List[str] = []
-        # 检查 hvigor 任务中是否有 Failed
-        failed_tasks = self.hvigor_tracker.get_failed_tasks()
-        for t in failed_tasks:
-            warnings.append(f"hvigor 任务失败: {t.task_name} (行 {t.line_no})")
-        # 检查阶段是否有异常长耗时
-        for stage in self.report.stages:
-            if stage.duration_seconds > 300:
-                warnings.append(
-                    f"阶段耗时较长: {stage.name} ({stage.duration_str})"
-                )
-        # 检查内存不足
-        m = self.report.system_metrics
-        if m.free_memory and "GB" in m.free_memory:
-            try:
-                val = float(re.search(r"[\d.]+", m.free_memory).group())
-                if val < 5:
-                    warnings.append(f"空闲内存较低: {m.free_memory}")
-            except (AttributeError, ValueError):
-                pass
-        self.report.warnings = warnings
-
-class LogRead:
-    """日志文件读取器（别名，兼容 LogReader 命名）。"""
-
-    def __init__(self, file_path: str, encoding: str = "utf-8",
-                 logger: Optional[Logger] = None):
-        self.file_path = Path(file_path)
-        self.encoding = encoding
-        self.logger = logger or Logger()
-
-    def exists(self) -> bool:
-        return self.file_path.is_file()
-
-    def file_size(self) -> int:
-        try:
-            return self.file_path.stat().st_size
-        except OSError:
-            return 0
-
-    def read_all(self) -> List[str]:
-        if not self.exists():
-            raise FileReadError(f"日志文件不存在: {self.file_path}")
-        self.logger.info(f"读取日志文件: {self.file_path} "
-                         f"({self.file_size() / 1024:.0f} KB)")
-        encodings = [self.encoding, "utf-8-sig", "gbk", "latin-1"]
-        for enc in encodings:
-            try:
-                with open(self.file_path, "r", encoding=enc,
-                          errors="replace") as fh:
-                    lines = fh.readlines()
-                self.logger.info(f"读取完成：{len(lines)} 行 (编码: {enc})")
-                return lines
-            except (UnicodeDecodeError, OSError):
+        result = []
+        for label, lo, hi in levels:
+            filtered = [c for c in self.cases if lo <= c.complexity_score < hi]
+            if not filtered:
                 continue
-        raise FileReadError(f"无法读取文件: {self.file_path}")
+            result.append({
+                "group_key": label,
+                "group_type": "complexity",
+                "case_count": len(filtered),
+                "avg_methods": round(statistics.mean([len(c.methods) for c in filtered]), 2),
+                "avg_assertions": round(statistics.mean([c.assertion_count for c in filtered]), 2),
+                "sample_cases": [c.case_name for c in filtered[:self.max_sample]],
+            })
+        return result
 
-    def iter_lines(self) -> Iterable[str]:
-        if not self.exists():
-            raise FileReadError(f"日志文件不存在: {self.file_path}")
-        for enc in [self.encoding, "utf-8-sig", "gbk", "latin-1"]:
-            try:
-                with open(self.file_path, "r", encoding=enc,
-                          errors="replace") as fh:
-                    for line in fh:
-                        yield line
-                return
-            except OSError:
+    def group_by_assertion_count(self) -> List[Dict[str, Any]]:
+        ranges = [
+            ("0 assertions", 0, 1),
+            ("1-3 assertions", 1, 4),
+            ("4-10 assertions", 4, 11),
+            ("11+ assertions", 11, 999999),
+        ]
+        result = []
+        for label, lo, hi in ranges:
+            filtered = [c for c in self.cases if lo <= c.assertion_count < hi]
+            if not filtered:
                 continue
-        raise FileReadError(f"无法读取文件: {self.file_path}")
+            result.append({
+                "group_key": label,
+                "group_type": "assertion_count",
+                "case_count": len(filtered),
+                "sample_cases": [c.case_name for c in filtered[:self.max_sample]],
+            })
+        return result
 
-class MultiFileAnalyzer:
-    """分析多个日志文件并汇总结果。"""
 
-    def __init__(self, file_paths: Sequence[str], encoding: str = "utf-8",
-                 logger: Optional[Logger] = None):
-        self.file_paths = list(file_paths)
-        self.encoding = encoding
-        self.logger = logger or Logger()
-        self.reports: List[AnalysisReport] = []
+# ============================================================
+# Section 9: Similarity Analyzer
+# ============================================================
 
-    def analyze_all(self) -> List[AnalysisReport]:
-        """分析所有日志文件。"""
-        self.reports = []
-        for fpath in self.file_paths:
-            self.logger.info(f"分析文件: {fpath}")
-            analyzer = LogAnalyzer(fpath, self.encoding, logger=self.logger)
-            report = analyzer.analyze()
-            self.reports.append(report)
-        return list(self.reports)
+class SimilarityAnalyzer:
+    """Analyzes similarity between test case names."""
 
-    def get_summary(self) -> Dict[str, Any]:
-        """获取多文件汇总。"""
-        total = len(self.reports)
-        failed = sum(1 for r in self.reports if r.build_result.is_failed)
-        success = sum(1 for r in self.reports if r.build_result.is_success)
-        total_errors = sum(r.error_count for r in self.reports)
+    def __init__(self, cases: List[TestCase], threshold: float = 0.7):
+        self.cases = cases
+        self.threshold = threshold
+        self.clusters: List[List[str]] = []
+
+    def analyze(self, max_cases: int = 5000) -> List[Dict[str, Any]]:
+        case_names = [c.case_name for c in self.cases[:max_cases]]
+        n = len(case_names)
+        if n == 0:
+            return []
+
+        visited = [False] * n
+        clusters = []
+
+        for i in range(n):
+            if visited[i]:
+                continue
+            cluster = [case_names[i]]
+            visited[i] = True
+            for j in range(i + 1, n):
+                if visited[j]:
+                    continue
+                score = sequence_similarity(case_names[i], case_names[j])
+                if score >= self.threshold:
+                    cluster.append(case_names[j])
+                    visited[j] = True
+            if len(cluster) >= 2:
+                clusters.append(cluster)
+
+        clusters.sort(key=len, reverse=True)
+
+        result = []
+        for idx, cluster in enumerate(clusters):
+            result.append({
+                "cluster_id": idx,
+                "case_count": len(cluster),
+                "cases": cluster[:50],
+                "similarity_threshold": self.threshold,
+            })
+        self.clusters = clusters
+        return result
+
+    def find_duplicates(self, threshold: float = 0.95) -> List[Dict[str, Any]]:
+        duplicates = []
+        case_names = [c.case_name for c in self.cases]
+        n = len(case_names)
+        for i in range(n):
+            for j in range(i + 1, min(i + 1000, n)):
+                score = sequence_similarity(case_names[i], case_names[j])
+                if score >= threshold:
+                    duplicates.append({
+                        "case1": case_names[i],
+                        "case2": case_names[j],
+                        "similarity": round(score, 4),
+                    })
+        return duplicates
+
+
+# ============================================================
+# Section 10: Dependency Analyzer
+# ============================================================
+
+class DependencyAnalyzer:
+    """Analyzes dependencies between test cases via shared interfaces."""
+
+    def __init__(self, cases: List[TestCase]):
+        self.cases = cases
+        self.graph: Dict[str, Set[str]] = defaultdict(set)
+        self.reverse_graph: Dict[str, Set[str]] = defaultdict(set)
+
+    def analyze(self, min_shared: int = 3) -> Dict[str, Any]:
+        case_ifaces = {}
+        for case in self.cases:
+            case_ifaces[case.case_name] = set(case.methods)
+
+        case_names = list(case_ifaces.keys())
+        n = len(case_names)
+        edges = 0
+
+        for i in range(n):
+            for j in range(i + 1, n):
+                shared = case_ifaces[case_names[i]] & case_ifaces[case_names[j]]
+                if len(shared) >= min_shared:
+                    self.graph[case_names[i]].add(case_names[j])
+                    self.graph[case_names[j]].add(case_names[i])
+                    edges += 1
+
+        top_connected = sorted(self.graph.items(),
+                                key=lambda x: len(x[1]), reverse=True)[:100]
+
         return {
-            "total_files": total,
-            "failed": failed,
-            "success": success,
-            "unknown": total - failed - success,
-            "total_errors": total_errors,
-            "files": [
-                {
-                    "file": r.source_file,
-                    "status": r.build_result.overall_status,
-                    "component": r.build_result.component,
-                    "errors": r.error_count,
-                    "root_cause": (
-                        r.root_cause_error.message if r.root_cause_error else ""
-                    ),
-                }
-                for r in self.reports
+            "total_nodes": n,
+            "total_edges": edges,
+            "avg_connections": round(edges * 2 / n, 2) if n > 0 else 0,
+            "top_connected": [
+                {"case_name": name, "connection_count": len(conns),
+                 "connected_to": list(conns)[:20]}
+                for name, conns in top_connected
             ],
         }
 
-    def save_summary(self, path: str) -> None:
-        """保存汇总到 JSON 文件。"""
-        with open(path, "w", encoding="utf-8") as fh:
-            json.dump(self.get_summary(), fh, indent=2, ensure_ascii=False)
-        self.logger.info(f"汇总已保存: {path}")
+    def find_clusters(self) -> List[List[str]]:
+        visited = set()
+        clusters = []
 
-class ErrorFilter:
-    """按条件过滤错误列表。"""
+        def dfs(node, cluster):
+            visited.add(node)
+            cluster.append(node)
+            for neighbor in self.graph.get(node, []):
+                if neighbor not in visited:
+                    dfs(neighbor, cluster)
 
-    @staticmethod
-    def by_type(errors: List[ErrorItem],
-                error_type: ErrorType) -> List[ErrorItem]:
-        return [e for e in errors if e.error_type == error_type]
+        for case_name in self.graph:
+            if case_name not in visited:
+                cluster = []
+                dfs(case_name, cluster)
+                if len(cluster) >= 2:
+                    clusters.append(cluster)
 
-    @staticmethod
-    def by_severity(errors: List[ErrorItem],
-                    severity: Severity) -> List[ErrorItem]:
-        return [e for e in errors if e.severity == severity]
-
-    @staticmethod
-    def by_line_range(errors: List[ErrorItem],
-                      start: int, end: int) -> List[ErrorItem]:
-        return [e for e in errors if start <= e.line_no <= end]
-
-    @staticmethod
-    def by_keyword(errors: List[ErrorItem],
-                   keyword: str) -> List[ErrorItem]:
-        kw = keyword.lower()
-        return [e for e in errors
-                if kw in e.message.lower() or kw in e.detail.lower()
-                or kw in e.target.lower()]
-
-    @staticmethod
-    def fatal_only(errors: List[ErrorItem]) -> List[ErrorItem]:
-        return [e for e in errors if e.severity == Severity.FATAL]
-
-    @staticmethod
-    def root_causes_only(errors: List[ErrorItem]) -> List[ErrorItem]:
-        return [e for e in errors if e.root_cause]
-
-class TimelineGenerator:
-    """生成构建时间线。"""
-
-    def __init__(self, report: AnalysisReport,
-                 logger: Optional[Logger] = None):
-        self.report = report
-        self.logger = logger or Logger()
-
-    def generate(self) -> str:
-        """生成文本格式的时间线。"""
-        lines: List[str] = []
-        return "\n".join(lines)
+        clusters.sort(key=len, reverse=True)
+        return clusters
 
 
-class ErrorStatistics:
-    """错误统计信息。"""
+# ============================================================
+# Section 11: Quality Assessor
+# ============================================================
 
-    def __init__(self, errors: List[ErrorItem]):
-        self.errors = errors
+class QualityAssessor:
+    """Assesses test quality metrics."""
 
-    def count_by_type(self) -> Dict[str, int]:
-        """按错误类型统计数量。"""
-        result: Dict[str, int] = {}
-        for err in self.errors:
-            key = err.error_type.label
-            result[key] = result.get(key, 0) + 1
-        return result
+    def __init__(self, cases: List[TestCase]):
+        self.cases = cases
 
-    def count_by_severity(self) -> Dict[str, int]:
-        """按严重级别统计数量。"""
-        result: Dict[str, int] = {}
-        for err in self.errors:
-            key = err.severity.label
-            result[key] = result.get(key, 0) + 1
-        return result
+    def assess(self) -> Dict[str, Any]:
+        total = len(self.cases)
+        if total == 0:
+            return {}
 
-    def get_summary(self) -> Dict[str, Any]:
-        """获取统计摘要。"""
+        no_assertions = sum(1 for c in self.cases if c.assertion_count == 0)
+        no_methods = sum(1 for c in self.cases if len(c.methods) == 0)
+        high_complexity = sum(1 for c in self.cases if c.complexity_score >= 70)
+        low_complexity = sum(1 for c in self.cases if c.complexity_score < 30)
+
+        avg_methods = statistics.mean([len(c.methods) for c in self.cases])
+        avg_assertions = statistics.mean([c.assertion_count for c in self.cases])
+        avg_complexity = statistics.mean([c.complexity_score for c in self.cases])
+
+        tag_coverage = {}
+        for tag in TC_TAGS:
+            count = sum(1 for c in self.cases if tag in c.tc_tags)
+            tag_coverage[tag] = {
+                "count": count,
+                "coverage": f"{count / total * 100:.1f}%"
+            }
+
+        type_dist = Counter()
+        for c in self.cases:
+            tc_type = c.tc_tags.get("@tc.type", "UNKNOWN")
+            type_dist[tc_type] += 1
+
+        level_dist = Counter()
+        for c in self.cases:
+            tc_level = c.tc_tags.get("@tc.level", "UNKNOWN")
+            level_dist[tc_level] += 1
+
+        size_dist = Counter()
+        for c in self.cases:
+            tc_size = c.tc_tags.get("@tc.size", "UNKNOWN")
+            size_dist[tc_size] += 1
+
         return {
-            "total_errors": len(self.errors),
-            "by_type": self.count_by_type(),
-            "by_severity": self.count_by_severity(),
-            "fatal_count": len(
-                [e for e in self.errors if e.severity == Severity.FATAL]
-            ),
-            "root_cause_count": len(
-                [e for e in self.errors if e.root_cause]
-            ),
+            "total_cases": total,
+            "cases_without_assertions": no_assertions,
+            "cases_without_methods": no_methods,
+            "high_complexity_cases": high_complexity,
+            "low_complexity_cases": low_complexity,
+            "avg_methods_per_case": round(avg_methods, 2),
+            "avg_assertions_per_case": round(avg_assertions, 2),
+            "avg_complexity_score": round(avg_complexity, 2),
+            "assertion_coverage": f"{(total - no_assertions) / total * 100:.1f}%",
+            "tag_coverage": tag_coverage,
+            "type_distribution": dict(type_dist.most_common(20)),
+            "level_distribution": dict(level_dist.most_common(10)),
+            "size_distribution": dict(size_dist.most_common(10)),
         }
 
-    def generate_text(self) -> str:
-        """生成统计文本报告。"""
-        lines: List[str] = []
-        return "\n".join(lines)
+
+# ============================================================
+# Section 12: Cache Manager
+# ============================================================
+
+class CacheManager:
+    """Manages cache for incremental analysis."""
+
+    def __init__(self, cache_file: str):
+        self.cache_file = cache_file
+        self.cache: Dict[str, Any] = {}
+
+    def load(self) -> Dict[str, Any]:
+        if os.path.exists(self.cache_file):
+            try:
+                with open(self.cache_file, 'rb') as f:
+                    return pickle.load(f)
+            except Exception:
+                return {}
+        return {}
+
+    def save(self, cache: Dict[str, Any]) -> None:
+        try:
+            ensure_dir(self.cache_file)
+            with open(self.cache_file, 'wb') as f:
+                pickle.dump(cache, f)
+        except Exception as e:
+            print(f"[CACHE] Failed to save: {e}")
+
+    def get_file_hash(self, filepath: str) -> str:
+        return file_md5(filepath)
+
+
+# ============================================================
+# Section 13: Report Generator
+# ============================================================
+
+class ReportGenerator:
+    """Generates text reports from analysis results."""
+
+    def __init__(self, result: AnalysisResult):
+        self.result = result
+
+    def generate(self) -> str:
+        lines = []
+        lines.append("=" * 60)
+        lines.append(f"  {APP_NAME} v{VERSION} - Analysis Report")
+        lines.append(f"  Generated: {self.result.timestamp}")
+        lines.append("=" * 60)
+        lines.append("")
+
+        lines.append("1. OVERVIEW")
+        lines.append("-" * 40)
+        lines.append(f"  Total files scanned:  {self.result.total_files}")
+        lines.append(f"  Total test cases:     {self.result.total_cases}")
+        lines.append(f"  Total interfaces:     {self.result.total_interfaces}")
+        lines.append("")
+
+        stats = self.result.statistics
+        lines.append("2. STATISTICS")
+        lines.append("-" * 40)
+        for key, value in stats.items():
+            if isinstance(value, float):
+                lines.append(f"  {key}: {value:.2f}")
+            else:
+                lines.append(f"  {key}: {value}")
+        lines.append("")
+
+        lines.append("3. TOP INTERFACES (Top 20)")
+        lines.append("-" * 40)
+        for iface in self.result.interfaces[:20]:
+            lines.append(f"  {iface['name']:40s} calls={iface['call_count']:6d}  cases={iface['case_count']:6d}")
+        lines.append("")
+
+        lines.append("4. PREFIX GROUPS (Top 20)")
+        lines.append("-" * 40)
+        for group in self.result.prefix_groups[:20]:
+            lines.append(f"  {group['group_key']:50s} count={group['case_count']:6d}")
+        lines.append("")
+
+        lines.append("5. TOKEN GROUPS (Top 20)")
+        lines.append("-" * 40)
+        for group in self.result.token_groups[:20]:
+            lines.append(f"  {group['group_key']:50s} count={group['case_count']:6d}")
+        lines.append("")
+
+        lines.append("6. INTERFACE CORRELATIONS (Top 20)")
+        lines.append("-" * 40)
+        for group in self.result.interface_groups[:20]:
+            lines.append(f"  {group['group_key']:40s} cases={group['case_count']:6d}  calls={group.get('call_count', 0):6d}")
+        lines.append("")
+
+        if self.result.similarity_clusters:
+            lines.append("7. SIMILARITY CLUSTERS (Top 20)")
+            lines.append("-" * 40)
+            for cluster in self.result.similarity_clusters[:20]:
+                lines.append(f"  Cluster #{cluster['cluster_id']}: {cluster['case_count']} cases")
+                for cn in cluster['cases'][:5]:
+                    lines.append(f"    - {cn}")
+            lines.append("")
+
+        if self.result.quality_metrics:
+            lines.append("8. QUALITY METRICS")
+            lines.append("-" * 40)
+            for key, value in self.result.quality_metrics.items():
+                if isinstance(value, dict):
+                    lines.append(f"  {key}:")
+                    for k2, v2 in value.items():
+                        if isinstance(v2, dict):
+                            lines.append(f"    {k2}: {v2}")
+                        else:
+                            lines.append(f"    {k2}: {v2}")
+                elif isinstance(value, float):
+                    lines.append(f"  {key}: {value:.2f}")
+                else:
+                    lines.append(f"  {key}: {value}")
+            lines.append("")
+
+        if self.result.dependency_graph:
+            lines.append("9. DEPENDENCY GRAPH")
+            lines.append("-" * 40)
+            dg = self.result.dependency_graph
+            lines.append(f"  Total nodes: {dg.get('total_nodes', 0)}")
+            lines.append(f"  Total edges: {dg.get('total_edges', 0)}")
+            lines.append(f"  Avg connections: {dg.get('avg_connections', 0)}")
+            lines.append("")
+
+        lines.append("=" * 60)
+        lines.append("  End of Report")
+        lines.append("=" * 60)
+
+        return '\n'.join(lines)
+
+
+# ============================================================
+# Section 14: Configuration Manager
+# ============================================================
+
+class ConfigManager:
+    """Manages configuration."""
+
+    def __init__(self, config_file: str = CONFIG_FILE):
+        self.config_file = config_file
+        self.config: Dict[str, Any] = dict(DEFAULT_CONFIG)
+
+    def load(self) -> Dict[str, Any]:
+        if os.path.exists(self.config_file):
+            try:
+                with open(self.config_file, 'r', encoding='utf-8') as f:
+                    user_config = json.load(f)
+                self.config.update(user_config)
+            except Exception as e:
+                print(f"[CONFIG] Failed to load: {e}")
+        return self.config
+
+    def save(self) -> None:
+        try:
+            ensure_dir(self.config_file)
+            with open(self.config_file, 'w', encoding='utf-8') as f:
+                json.dump(self.config, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"[CONFIG] Failed to save: {e}")
+
+    def get(self, key: str, default: Any = None) -> Any:
+        return self.config.get(key, default)
+
+    def set(self, key: str, value: Any) -> None:
+        self.config[key] = value
+
+
+# ============================================================
+# Section 15: Main Analyzer
+# ============================================================
+
+class Analyzer:
+    """Main analyzer orchestrating all components."""
+
+    def __init__(self, config: Dict[str, Any]):
+        self.config = config
+        self.scanner = FileScanner(config)
+        self.collector = CaseCollector(config)
+        self.interface_analyzer: Optional[InterfaceAnalyzer] = None
+        self.grouper: Optional[CaseGrouper] = None
+        self.similarity_analyzer: Optional[SimilarityAnalyzer] = None
+        self.dependency_analyzer: Optional[DependencyAnalyzer] = None
+        self.quality_assessor: Optional[QualityAssessor] = None
+        self.result: Optional[AnalysisResult] = None
+
+    @timer
+    def run(self, verbose: bool = True) -> AnalysisResult:
+        if verbose:
+            print(f"\n{'=' * 60}")
+            print(f"  {APP_NAME} v{VERSION}")
+            print(f"  Root: {self.config['root_dir']}")
+            print(f"{'=' * 60}\n")
+
+        if verbose:
+            print("[1/8] Scanning files...")
+        files = self.scanner.scan()
+        if verbose:
+            print(f"  Found {len(files)} test files")
+
+        if verbose:
+            print("[2/8] Parsing test cases...")
+        self.collector.collect(files, verbose=verbose)
+
+        if verbose:
+            print("[3/8] Analyzing interfaces...")
+        self.interface_analyzer = InterfaceAnalyzer(self.collector.cases)
+        self.interface_analyzer.analyze()
+
+        if verbose:
+            print("[4/8] Grouping cases...")
+        self.grouper = CaseGrouper(self.collector.cases, self.config)
+        prefix_groups = self.grouper.group_by_prefix()
+        token_groups = self.grouper.group_by_token()
+        interface_groups = self.grouper.group_by_interface(self.interface_analyzer)
+
+        if verbose:
+            print("[5/8] Analyzing similarity...")
+        threshold = self.config.get("similarity_threshold", 0.7)
+        self.similarity_analyzer = SimilarityAnalyzer(self.collector.cases, threshold)
+        similarity_clusters = self.similarity_analyzer.analyze()
+
+        if verbose:
+            print("[6/8] Analyzing dependencies...")
+        self.dependency_analyzer = DependencyAnalyzer(self.collector.cases)
+        dep_graph = self.dependency_analyzer.analyze()
+
+        if verbose:
+            print("[7/8] Assessing quality...")
+        self.quality_assessor = QualityAssessor(self.collector.cases)
+        quality_metrics = self.quality_assessor.assess()
+
+        if verbose:
+            print("[8/8] Building result...")
+        stats = self.collector.get_statistics()
+        stats.update(self.interface_analyzer.get_coverage_stats())
+
+        top_interfaces = self.interface_analyzer.get_top_interfaces(100)
+
+        self.result = AnalysisResult(
+            total_files=len(files),
+            total_cases=len(self.collector.cases),
+            total_interfaces=len(self.interface_analyzer.interface_map),
+            cases=[c.to_dict() for c in self.collector.cases[:5000]],
+            interfaces=[i.to_dict() for i in top_interfaces],
+            prefix_groups=prefix_groups[:500],
+            token_groups=token_groups[:500],
+            interface_groups=interface_groups[:500],
+            similarity_clusters=similarity_clusters[:200],
+            quality_metrics=quality_metrics,
+            dependency_graph=dep_graph,
+            statistics=stats,
+            timestamp=datetime.now().isoformat()
+        )
+
+        if verbose:
+            print(f"\n  Total cases: {self.result.total_cases}")
+            print(f"  Total interfaces: {self.result.total_interfaces}")
+            print(f"  Prefix groups: {len(prefix_groups)}")
+            print(f"  Token groups: {len(token_groups)}")
+            print(f"  Similarity clusters: {len(similarity_clusters)}")
+
+        return self.result
+
+    def save_json(self, output_file: str) -> None:
+        if not self.result:
+            return
+        ensure_dir(output_file)
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(self.result.to_dict(), f, ensure_ascii=False, indent=2)
+        size = os.path.getsize(output_file)
+        print(f"[OUTPUT] JSON saved: {output_file} ({format_size(size)})")
+
+    def save_report(self, report_file: str) -> None:
+        if not self.result:
+            return
+        ensure_dir(report_file)
+        report_gen = ReportGenerator(self.result)
+        report_text = report_gen.generate()
+        with open(report_file, 'w', encoding='utf-8') as f:
+            f.write(report_text)
+        print(f"[OUTPUT] Report saved: {report_file}")
 
 def build_arg_parser() -> argparse.ArgumentParser:
-    """构建命令行参数解析器。"""
-    # 公共参数：主 parser 与子命令通过 parents 继承，
-    # 使得 --no-color 等既可放在子命令前，也可放在子命令后。
-    common = argparse.ArgumentParser(add_help=False, allow_abbrev=False)
     parser = argparse.ArgumentParser(
-        prog="tt.py",
-        description="OHOS 编译日志分析器：自动定位编译失败原因",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        allow_abbrev=False,
-        parents=[common],
-        epilog="""
-""",
+        description=f"{APP_NAME} v{VERSION} - XTS Test Case Analysis Tool"
     )
+    parser.add_argument('-r', '--root', default=DEFAULT_ROOT,
+                        help='Root directory to scan')
+    parser.add_argument('-o', '--output', default=DEFAULT_OUTPUT,
+                        help='Output JSON file path')
+    parser.add_argument('--report', default=DEFAULT_REPORT,
+                        help='Output report file path')
+    parser.add_argument('-p', '--parallel', type=int, default=4,
+                        help='Number of parallel workers')
+    parser.add_argument('-t', '--threshold', type=float, default=0.7,
+                        help='Similarity threshold (0-1)')
+    parser.add_argument('--no-similarity', action='store_true',
+                        help='Disable similarity analysis')
+    parser.add_argument('--no-dependency', action='store_true',
+                        help='Disable dependency analysis')
+    parser.add_argument('--no-quality', action='store_true',
+                        help='Disable quality assessment')
+    parser.add_argument('--no-cache', action='store_true',
+                        help='Disable cache')
+    parser.add_argument('--verbose', '-v', action='store_true',
+                        help='Verbose output')
+    parser.add_argument('--config', default=CONFIG_FILE,
+                        help='Config file path')
+    parser.add_argument('--version', action='version',
+                        version=f'{APP_NAME} v{VERSION}')
     return parser
 
 
-def create_logger(args: argparse.Namespace) -> Logger:
-    """根据参数创建日志器。"""
-    level_map = {
-        "debug": LogLevel.DEBUG, "info": LogLevel.INFO,
-        "warn": LogLevel.WARN, "error": LogLevel.ERROR,
+def run_from_args(args: argparse.Namespace) -> None:
+    config = dict(DEFAULT_CONFIG)
+    config['root_dir'] = args.root
+    config['output_file'] = args.output
+    config['report_file'] = args.report
+    config['parallel_workers'] = args.parallel
+    config['similarity_threshold'] = args.threshold
+    config['enable_similarity'] = not args.no_similarity
+    config['enable_dependency'] = not args.no_dependency
+    config['enable_quality'] = not args.no_quality
+    config['cache_enabled'] = not args.no_cache
+
+    analyzer = Analyzer(config)
+    result = analyzer.run(verbose=args.verbose)
+
+    analyzer.save_json(config['output_file'])
+    analyzer.save_report(config['report_file'])
+
+    print(f"\nDone! Total cases: {result.total_cases}, "
+          f"Interfaces: {result.total_interfaces}")
+
+def get_subsystem_distribution(cases: List[TestCase]) -> Dict[str, Any]:
+    dist = Counter()
+    for case in cases:
+        subsystem = get_subsystem(case.file_path)
+        dist[subsystem] += 1
+    return {
+        "total_subsystems": len(dist),
+        "distribution": dict(dist.most_common()),
     }
-    level = level_map.get(args.log_level, LogLevel.INFO)
-    use_color = not args.no_color
-    return Logger(level=level, use_color=use_color)
 
 
-def cmd_analyze(args: argparse.Namespace, logger: Logger) -> int:
-    """执行 analyze 子命令。"""
-    files = args.files
-    fmt = args.format
-    output = args.output
-    keyword = args.filter
-
-    if len(files) == 1:
-        # 单文件分析
-        analyzer = LogAnalyzer(
-            files[0], args.encoding,
-            args.context_before, args.context_after, logger,
-        )
-        report = analyzer.analyze()
-        # 过滤
-        if keyword:
-            filtered_errors = ErrorFilter.by_keyword(report.errors, keyword)
-            report.errors = filtered_errors
-            logger.info(f"过滤后错误数: {len(filtered_errors)}")
-        # 输出
-        gen = ReportGenerator(report, logger)
-        content = gen.generate(fmt)
-        if output:
-            gen.save(output, fmt)
-        else:
-            print(content)
-        return (ExitCode.SUCCESS if not report.build_result.is_failed
-                else ExitCode.SUCCESS)
-    else:
-        # 多文件分析
-        multi = MultiFileAnalyzer(files, args.encoding, logger)
-        reports = multi.analyze_all()
-        if fmt == "json":
-            summary = multi.get_summary()
-            content = json.dumps(summary, indent=2, ensure_ascii=False)
-        else:
-            lines: List[str] = []
-            for report in reports:
-                gen = ReportGenerator(report, logger)
-                lines.append(gen.generate(fmt))
-                lines.append("\n")
-            content = "\n".join(lines)
-        if output:
-            with open(output, "w", encoding="utf-8") as fh:
-                fh.write(content)
-            logger.info(f"报告已保存: {output}")
-        else:
-            print(content)
-        return ExitCode.SUCCESS
+def get_suite_distribution(cases: List[TestCase]) -> Dict[str, Any]:
+    dist = Counter()
+    for case in cases:
+        suite = get_suite_name(case.file_path)
+        dist[suite] += 1
+    return {
+        "total_suites": len(dist),
+        "top_suites": dict(dist.most_common(50)),
+    }
 
 
-def cmd_errors(args: argparse.Namespace, logger: Logger) -> int:
-    """执行 errors 子命令。"""
-    analyzer = LogAnalyzer(
-        args.file, args.encoding,
-        args.context_before, args.context_after, logger,
-    )
-    report = analyzer.analyze()
-    errors = report.errors
-    return ExitCode.SUCCESS
+def get_file_distribution(cases: List[TestCase]) -> Dict[str, Any]:
+    file_counts = Counter()
+    for case in cases:
+        file_counts[case.file_path] += 1
+    return {
+        "total_files": len(file_counts),
+        "avg_cases_per_file": round(statistics.mean(file_counts.values()), 2),
+        "max_cases_in_file": max(file_counts.values()),
+        "top_files": dict(file_counts.most_common(20)),
+    }
 
 
-def cmd_timeline(args: argparse.Namespace, logger: Logger) -> int:
-    """执行 timeline 子命令。"""
-    analyzer = LogAnalyzer(args.file, args.encoding, logger=logger)
-    report = analyzer.analyze()
-    gen = TimelineGenerator(report, logger)
-    print(gen.generate())
-    return ExitCode.SUCCESS
+# ============================================================
+# Section 18: Helper - Method Analysis
+# ============================================================
+
+def get_method_frequency(cases: List[TestCase]) -> Dict[str, int]:
+    freq = Counter()
+    for case in cases:
+        for method in case.methods:
+            freq[method] += 1
+    return dict(freq.most_common())
 
 
-def cmd_stats(args: argparse.Namespace, logger: Logger) -> int:
-    """执行 stats 子命令。"""
-    analyzer = LogAnalyzer(args.file, args.encoding, logger=logger)
-    report = analyzer.analyze()
-    stats = ErrorStatistics(report.errors)
-    print(stats.generate_text())
-    return ExitCode.SUCCESS
+def get_assertion_frequency(cases: List[TestCase]) -> Dict[str, int]:
+    freq = Counter()
+    for case in cases:
+        for method in case.methods:
+            if method in ASSERTION_METHODS:
+                freq[method] += 1
+    return dict(freq.most_common())
+
+
+def get_non_assertion_methods(cases: List[TestCase]) -> Dict[str, int]:
+    freq = Counter()
+    for case in cases:
+        for method in case.methods:
+            if method not in ASSERTION_METHODS:
+                freq[method] += 1
+    return dict(freq.most_common())
+
+
+def get_method_co_occurrence(cases: List[TestCase], top_n: int = 50) -> Dict[str, Any]:
+    method_set = set()
+    for case in cases:
+        method_set.update(case.methods)
+    top_methods = sorted(method_set)[:top_n]
+
+    co_occurrence = defaultdict(lambda: defaultdict(int))
+    for case in cases:
+        case_methods = set(case.methods)
+        for m1 in top_methods:
+            if m1 not in case_methods:
+                continue
+            for m2 in top_methods:
+                if m2 not in case_methods:
+                    continue
+                if m1 < m2:
+                    co_occurrence[m1][m2] += 1
+
+    result = {}
+    for m1, partners in co_occurrence.items():
+        top_partners = sorted(partners.items(), key=lambda x: x[1], reverse=True)[:10]
+        result[m1] = [{"method": m, "count": c} for m, c in top_partners]
+    return result
+
+def extract_all_tags(cases: List[TestCase]) -> Dict[str, Any]:
+    tag_values = defaultdict(Counter)
+    for case in cases:
+        for tag, value in case.tc_tags.items():
+            tag_values[tag][value] += 1
+
+    result = {}
+    for tag, counter in tag_values.items():
+        result[tag] = {
+            "unique_values": len(counter),
+            "top_values": dict(counter.most_common(50)),
+        }
+    return result
+
+
+def get_tag_coverage(cases: List[TestCase]) -> Dict[str, float]:
+    total = len(cases)
+    if total == 0:
+        return {}
+    coverage = {}
+    for tag in TC_TAGS:
+        count = sum(1 for c in cases if tag in c.tc_tags)
+        coverage[tag] = round(count / total * 100, 2)
+    return coverage
+
+
+def get_cases_without_tags(cases: List[TestCase]) -> List[str]:
+    return [c.case_name for c in cases if not c.tc_tags]
+
+
+# ============================================================
+# Section 20: Pattern Detection
+# ============================================================
+
+class PatternDetector:
+    """Detects common patterns in test cases."""
+
+    def __init__(self, cases: List[TestCase]):
+        self.cases = cases
+
+    def detect_naming_patterns(self) -> Dict[str, Any]:
+        prefix_counter = Counter()
+        suffix_counter = Counter()
+        number_ranges = defaultdict(int)
+
+        for case in self.cases:
+            name = case.case_name
+            parts = name.split('_')
+            if len(parts) >= 2:
+                prefix_counter['_'.join(parts[:2])] += 1
+            if len(parts) >= 1:
+                suffix_counter[parts[-1]] += 1
+            num_match = re.search(r'(\d{4})$', name)
+            if num_match:
+                num = int(num_match.group(1))
+                bucket = (num // 100) * 100
+                number_ranges[f"{bucket:04d}-{bucket+99:04d}"] += 1
+
+        return {
+            "top_prefixes": dict(prefix_counter.most_common(30)),
+            "top_suffixes": dict(suffix_counter.most_common(20)),
+            "number_distribution": dict(sorted(number_ranges.items())),
+        }
+
+    def detect_common_chains(self) -> Dict[str, Any]:
+        chains = Counter()
+        for case in self.cases:
+            if len(case.methods) >= 2:
+                for i in range(len(case.methods) - 1):
+                    chain = f"{case.methods[i]} -> {case.methods[i+1]}"
+                    chains[chain] += 1
+        return {
+            "total_chains": len(chains),
+            "top_chains": dict(chains.most_common(50)),
+        }
+
+    def detect_outliers(self) -> Dict[str, Any]:
+        if not self.cases:
+            return {}
+        complexities = [c.complexity_score for c in self.cases]
+        avg_c = statistics.mean(complexities)
+        std_c = statistics.stdev(complexities) if len(complexities) > 1 else 0
+        threshold_high = avg_c + 2 * std_c
+        threshold_low = avg_c - 2 * std_c
+
+        outliers_high = [c for c in self.cases if c.complexity_score > threshold_high]
+        outliers_low = [c for c in self.cases if c.complexity_score < threshold_low]
+
+        return {
+            "avg_complexity": round(avg_c, 2),
+            "std_complexity": round(std_c, 2),
+            "high_threshold": round(threshold_high, 2),
+            "low_threshold": round(threshold_low, 2),
+            "high_outlier_count": len(outliers_high),
+            "low_outlier_count": len(outliers_low),
+            "high_outlier_samples": [c.case_name for c in outliers_high[:20]],
+            "low_outlier_samples": [c.case_name for c in outliers_low[:20]],
+        }
+
+    def detect_redundant_cases(self) -> Dict[str, Any]:
+        method_groups = defaultdict(list)
+        for case in self.cases:
+            key = tuple(sorted(case.methods))
+            method_groups[key].append(case.case_name)
+
+        redundant = {}
+        for key, names in method_groups.items():
+            if len(names) >= 3:
+                redundant[f"({len(key)} methods, {len(names)} cases)"] = names[:10]
+
+        return {
+            "total_redundant_groups": len(redundant),
+            "sample_groups": dict(list(redundant.items())[:30]),
+        }
+
+
+# ============================================================
+# Section 21: Trend Analysis
+# ============================================================
+
+class TrendAnalyzer:
+    """Analyzes trends in test case distribution."""
+
+    def __init__(self, cases: List[TestCase]):
+        self.cases = cases
+
+    def analyze_by_subsystem(self) -> List[Dict[str, Any]]:
+        groups = defaultdict(list)
+        for case in self.cases:
+            subsystem = get_subsystem(case.file_path)
+            groups[subsystem].append(case)
+
+        result = []
+        for subsystem, case_list in sorted(groups.items(),
+                                            key=lambda x: len(x[1]), reverse=True):
+            avg_methods = statistics.mean([len(c.methods) for c in case_list])
+            avg_assertions = statistics.mean([c.assertion_count for c in case_list])
+            avg_complexity = statistics.mean([c.complexity_score for c in case_list])
+            result.append({
+                "subsystem": subsystem,
+                "case_count": len(case_list),
+                "file_count": len(set(c.file_path for c in case_list)),
+                "avg_methods": round(avg_methods, 2),
+                "avg_assertions": round(avg_assertions, 2),
+                "avg_complexity": round(avg_complexity, 2),
+            })
+        return result
+
+    def analyze_by_directory_depth(self) -> Dict[str, Any]:
+        depth_counter = Counter()
+        for case in self.cases:
+            rel_path = case.file_path.replace('\\', '/')
+            parts = rel_path.split('/')
+            depth = len(parts)
+            depth_counter[depth] += 1
+
+        return {
+            "depth_distribution": dict(sorted(depth_counter.items())),
+            "avg_depth": round(statistics.mean(depth_counter.elements()), 2) if depth_counter else 0,
+        }
+
+    def analyze_interface_distribution(self) -> Dict[str, Any]:
+        iface_to_subsystem = defaultdict(set)
+        for case in self.cases:
+            subsystem = get_subsystem(case.file_path)
+            for method in case.methods:
+                iface_to_subsystem[method].add(subsystem)
+
+        cross_subsystem = {}
+        single_subsystem = {}
+        for iface, systems in iface_to_subsystem.items():
+            if len(systems) > 1:
+                cross_subsystem[iface] = sorted(systems)
+            else:
+                single_subsystem[iface] = sorted(systems)
+
+        return {
+            "total_interfaces": len(iface_to_subsystem),
+            "cross_subsystem_interfaces": len(cross_subsystem),
+            "single_subsystem_interfaces": len(single_subsystem),
+            "sample_cross_subsystem": dict(list(cross_subsystem.items())[:30]),
+        }
+
+
+# ============================================================
+# Section 22: Export Utilities
+# ============================================================
+
+class ExportUtils:
+    """Utilities for exporting data in various formats."""
+
+    @staticmethod
+    def to_csv(cases: List[TestCase], output_path: str) -> None:
+        ensure_dir(output_path)
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write("case_name,file_path,methods,assertion_count,complexity_score\n")
+            for case in cases:
+                methods_str = ';'.join(case.methods)
+                f.write(f'"{case.case_name}","{case.file_path}",'
+                        f'"{methods_str}",{case.assertion_count},'
+                        f'{case.complexity_score}\n')
+        print(f"[EXPORT] CSV saved: {output_path}")
+
+    @staticmethod
+    def to_markdown(result: AnalysisResult, output_path: str) -> None:
+        ensure_dir(output_path)
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(f"# {APP_NAME} v{VERSION} Report\n\n")
+            f.write(f"Generated: {result.timestamp}\n\n")
+            f.write("## Overview\n\n")
+            f.write(f"| Metric | Value |\n|--------|-------|\n")
+            f.write(f"| Total Files | {result.total_files} |\n")
+            f.write(f"| Total Cases | {result.total_cases} |\n")
+            f.write(f"| Total Interfaces | {result.total_interfaces} |\n\n")
+
+            f.write("## Top 20 Interfaces\n\n")
+            f.write("| Interface | Calls | Cases |\n|-----------|-------|-------|\n")
+            for iface in result.interfaces[:20]:
+                f.write(f"| {iface['name']} | {iface['call_count']} | {iface['case_count']} |\n")
+            f.write("\n")
+
+            f.write("## Top 20 Prefix Groups\n\n")
+            f.write("| Prefix | Count |\n|--------|-------|\n")
+            for group in result.prefix_groups[:20]:
+                f.write(f"| {group['group_key']} | {group['case_count']} |\n")
+            f.write("\n")
+
+            f.write("## Statistics\n\n")
+            for key, value in result.statistics.items():
+                f.write(f"- **{key}**: {value}\n")
+        print(f"[EXPORT] Markdown saved: {output_path}")
+
+    @staticmethod
+    def to_summary_text(result: AnalysisResult) -> str:
+        lines = []
+        lines.append(f"Total cases: {result.total_cases}")
+        lines.append(f"Total interfaces: {result.total_interfaces}")
+        lines.append(f"Total files: {result.total_files}")
+        lines.append(f"Prefix groups: {len(result.prefix_groups)}")
+        lines.append(f"Token groups: {len(result.token_groups)}")
+        lines.append(f"Similarity clusters: {len(result.similarity_clusters)}")
+        return '\n'.join(lines)
+
+class Validator:
+    """Validates test case data."""
+
+    @staticmethod
+    def validate_case_name(name: str) -> bool:
+        if not name or len(name) < 3:
+            return False
+        if not re.match(r'^[A-Za-z0-9_]+$', name):
+            return False
+        if name.startswith('_') or name.endswith('_'):
+            return False
+        return True
+
+    @staticmethod
+    def validate_methods(methods: List[str]) -> bool:
+        if not methods:
+            return False
+        for m in methods:
+            if not re.match(r'^[A-Za-z_]\w*$', m):
+                return False
+        return True
+
+    @staticmethod
+    def validate_file_path(path: str) -> bool:
+        if not path:
+            return False
+        if not os.path.exists(path):
+            return False
+        return True
+
+    @staticmethod
+    def validate_cases(cases: List[TestCase]) -> Dict[str, Any]:
+        invalid_names = []
+        invalid_methods = []
+        invalid_paths = []
+
+        for case in cases:
+            if not Validator.validate_case_name(case.case_name):
+                invalid_names.append(case.case_name)
+            if not Validator.validate_methods(case.methods):
+                invalid_methods.append(case.case_name)
+            if not Validator.validate_file_path(case.file_path):
+                invalid_paths.append(case.case_name)
+
+        return {
+            "total_cases": len(cases),
+            "invalid_name_count": len(invalid_names),
+            "invalid_method_count": len(invalid_methods),
+            "invalid_path_count": len(invalid_paths),
+            "invalid_name_samples": invalid_names[:20],
+            "invalid_method_samples": invalid_methods[:20],
+            "invalid_path_samples": invalid_paths[:20],
+            "is_valid": len(invalid_names) == 0 and len(invalid_methods) == 0,
+        }
+
+class StatsCalculator:
+    """Calculates detailed statistics for test cases."""
+
+    @staticmethod
+    def percentile(data: List[float], p: float) -> float:
+        if not data:
+            return 0.0
+        sorted_data = sorted(data)
+        n = len(sorted_data)
+        k = (n - 1) * p / 100.0
+        f = int(k)
+        c = k - f
+        if f + 1 < n:
+            return sorted_data[f] + c * (sorted_data[f + 1] - sorted_data[f])
+        return float(sorted_data[f])
+
+    @staticmethod
+    def compute_distribution_stats(data: List[float]) -> Dict[str, float]:
+        if not data:
+            return {"count": 0}
+        return {
+            "count": len(data),
+            "mean": round(statistics.mean(data), 2),
+            "median": round(statistics.median(data), 2),
+            "stdev": round(statistics.stdev(data), 2) if len(data) > 1 else 0.0,
+            "min": round(min(data), 2),
+            "max": round(max(data), 2),
+            "p25": round(StatsCalculator.percentile(data, 25), 2),
+            "p50": round(StatsCalculator.percentile(data, 50), 2),
+            "p75": round(StatsCalculator.percentile(data, 75), 2),
+            "p90": round(StatsCalculator.percentile(data, 90), 2),
+            "p95": round(StatsCalculator.percentile(data, 95), 2),
+            "p99": round(StatsCalculator.percentile(data, 99), 2),
+        }
+
+    @staticmethod
+    def compute_all_stats(cases: List[TestCase]) -> Dict[str, Any]:
+        return {
+            "methods_per_case": StatsCalculator.compute_distribution_stats(
+                [len(c.methods) for c in cases]
+            ),
+            "body_length": StatsCalculator.compute_distribution_stats(
+                [c.body_length for c in cases]
+            ),
+            "assertion_count": StatsCalculator.compute_distribution_stats(
+                [c.assertion_count for c in cases]
+            ),
+            "complexity_score": StatsCalculator.compute_distribution_stats(
+                [c.complexity_score for c in cases]
+            ),
+        }
+
+def main():
+    parser = build_arg_parser()
+    args = parser.parse_args()
+    run_from_args(args)

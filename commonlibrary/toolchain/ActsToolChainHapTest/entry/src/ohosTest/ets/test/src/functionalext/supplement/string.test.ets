@@ -27,7 +27,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("bzero", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("bzero");
+      const result: number = await testNapi.runTest("bzero");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("index", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("index");
+      const result: number = await testNapi.runTest("index");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("memccpy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("memccpy");
+      const result: number = await testNapi.runTest("memccpy");
       expect(result).assertEqual(0);
       done();
     });
@@ -66,7 +66,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("memchr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("memchr");
+      const result: number = await testNapi.runTest("memchr");
       expect(result).assertEqual(0);
       done();
     });
@@ -79,7 +79,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("memmove", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("memmove");
+      const result: number = await testNapi.runTest("memmove");
       expect(result).assertEqual(0);
       done();
     });
@@ -92,7 +92,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("mempcpy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mempcpy");
+      const result: number = await testNapi.runTest("mempcpy");
       expect(result).assertEqual(0);
       done();
     });
@@ -105,7 +105,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strcasecmp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strcasecmp");
+      const result: number = await testNapi.runTest("strcasecmp");
       expect(result).assertEqual(0);
       done();
     });
@@ -118,7 +118,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strcasestr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strcasestr");
+      const result: number = await testNapi.runTest("strcasestr");
       expect(result).assertEqual(0);
       done();
     });
@@ -131,7 +131,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strcat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strcat");
+      const result: number = await testNapi.runTest("strcat");
       expect(result).assertEqual(0);
       done();
     });
@@ -144,7 +144,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strchrnul", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strchrnul");
+      const result: number = await testNapi.runTest("strchrnul");
       expect(result).assertEqual(0);
       done();
     });
@@ -157,7 +157,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strcoll", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strcoll");
+      const result: number = await testNapi.runTest("strcoll");
       expect(result).assertEqual(0);
       done();
     });
@@ -170,7 +170,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strdup", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strdup");
+      const result: number = await testNapi.runTest("strdup");
       expect(result).assertEqual(0);
       done();
     });
@@ -183,7 +183,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strerror_r", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strerror_r");
+      const result: number = await testNapi.runTest("strerror_r");
       expect(result).assertEqual(0);
       done();
     });
@@ -196,7 +196,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strndup", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strndup");
+      const result: number = await testNapi.runTest("strndup");
       expect(result).assertEqual(0);
       done();
     });
@@ -209,7 +209,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strnlen", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strnlen");
+      const result: number = await testNapi.runTest("strnlen");
       expect(result).assertEqual(0);
       done();
     });
@@ -222,7 +222,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strsep", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strsep");
+      const result: number = await testNapi.runTest("strsep");
       expect(result).assertEqual(0);
       done();
     });
@@ -235,7 +235,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strsignal", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strsignal");
+      const result: number = await testNapi.runTest("strsignal");
       expect(result).assertEqual(0);
       done();
     });
@@ -248,7 +248,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcpcpy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcpcpy");
+      const result: number = await testNapi.runTest("wcpcpy");
       expect(result).assertEqual(0);
       done();
     });
@@ -261,7 +261,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcscasecmp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcscasecmp");
+      const result: number = await testNapi.runTest("wcscasecmp");
       expect(result).assertEqual(0);
       done();
     });
@@ -274,7 +274,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcscasecmp_l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcscasecmp_l");
+      const result: number = await testNapi.runTest("wcscasecmp_l");
       expect(result).assertEqual(0);
       done();
     });
@@ -287,7 +287,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcschr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcschr");
+      const result: number = await testNapi.runTest("wcschr");
       expect(result).assertEqual(0);
       done();
     });
@@ -300,7 +300,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcscmp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcscmp");
+      const result: number = await testNapi.runTest("wcscmp");
       expect(result).assertEqual(0);
       done();
     });
@@ -313,7 +313,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcscspn", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcscspn");
+      const result: number = await testNapi.runTest("wcscspn");
       expect(result).assertEqual(0);
       done();
     });
@@ -326,7 +326,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcslen", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcslen");
+      const result: number = await testNapi.runTest("wcslen");
       expect(result).assertEqual(0);
       done();
     });
@@ -339,7 +339,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsncasecmp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsncasecmp");
+      const result: number = await testNapi.runTest("wcsncasecmp");
       expect(result).assertEqual(0);
       done();
     });
@@ -352,7 +352,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsncasecmp_l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsncasecmp_l");
+      const result: number = await testNapi.runTest("wcsncasecmp_l");
       expect(result).assertEqual(0);
       done();
     });
@@ -365,7 +365,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsncat", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsncat");
+      const result: number = await testNapi.runTest("wcsncat");
       expect(result).assertEqual(0);
       done();
     });
@@ -378,7 +378,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsncmp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsncmp");
+      const result: number = await testNapi.runTest("wcsncmp");
       expect(result).assertEqual(0);
       done();
     });
@@ -391,7 +391,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsnlen", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsnlen");
+      const result: number = await testNapi.runTest("wcsnlen");
       expect(result).assertEqual(0);
       done();
     });
@@ -404,7 +404,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsrchr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsrchr");
+      const result: number = await testNapi.runTest("wcsrchr");
       expect(result).assertEqual(0);
       done();
     });
@@ -417,7 +417,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsspn", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsspn");
+      const result: number = await testNapi.runTest("wcsspn");
       expect(result).assertEqual(0);
       done();
     });
@@ -430,7 +430,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcstok", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcstok");
+      const result: number = await testNapi.runTest("wcstok");
       expect(result).assertEqual(0);
       done();
     });
@@ -443,7 +443,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcswcs", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcswcs");
+      const result: number = await testNapi.runTest("wcswcs");
       expect(result).assertEqual(0);
       done();
     });
@@ -456,7 +456,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("memmem", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("memmem");
+      const result: number = await testNapi.runTest("memmem");
       expect(result).assertEqual(0);
       done();
     });
@@ -469,7 +469,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("memrchr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("memrchr");
+      const result: number = await testNapi.runTest("memrchr");
       expect(result).assertEqual(0);
       done();
     });
@@ -482,7 +482,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("stpcpy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("stpcpy");
+      const result: number = await testNapi.runTest("stpcpy");
       expect(result).assertEqual(0);
       done();
     });
@@ -495,7 +495,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("stpncpy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("stpncpy");
+      const result: number = await testNapi.runTest("stpncpy");
       expect(result).assertEqual(0);
       done();
     });
@@ -508,7 +508,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("strrchr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strrchr");
+      const result: number = await testNapi.runTest("strrchr");
       expect(result).assertEqual(0);
       done();
     });
@@ -521,7 +521,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcscpy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcscpy");
+      const result: number = await testNapi.runTest("wcscpy");
       expect(result).assertEqual(0);
       done();
     });
@@ -534,7 +534,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsdup", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsdup");
+      const result: number = await testNapi.runTest("wcsdup");
       expect(result).assertEqual(0);
       done();
     });
@@ -547,7 +547,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcsncpy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcsncpy");
+      const result: number = await testNapi.runTest("wcsncpy");
       expect(result).assertEqual(0);
       done();
     });
@@ -560,7 +560,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcspbrk", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcspbrk");
+      const result: number = await testNapi.runTest("wcspbrk");
       expect(result).assertEqual(0);
       done();
     });
@@ -573,7 +573,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wmemchr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wmemchr");
+      const result: number = await testNapi.runTest("wmemchr");
       expect(result).assertEqual(0);
       done();
     });
@@ -586,7 +586,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wmemcmp", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wmemcmp");
+      const result: number = await testNapi.runTest("wmemcmp");
       expect(result).assertEqual(0);
       done();
     });
@@ -599,7 +599,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wmemcpy", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wmemcpy");
+      const result: number = await testNapi.runTest("wmemcpy");
       expect(result).assertEqual(0);
       done();
     });
@@ -612,7 +612,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wmemmove", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wmemmove");
+      const result: number = await testNapi.runTest("wmemmove");
       expect(result).assertEqual(0);
       done();
     });
@@ -625,7 +625,7 @@ export default function string_group_test() {
      * @tc.level  LEVEL1
      */
     it("wmemset", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wmemset");
+      const result: number = await testNapi.runTest("wmemset");
       expect(result).assertEqual(0);
       done();
     });

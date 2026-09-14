@@ -1027,7 +1027,7 @@ export default function cameraSessionTest() {
         }
 
         mCameraSession.on('focusStateChange', focusStateChangeCallback)
-        mCameraSession.off('focusStateChange');
+        mCameraSession.off('focusStateChange', focusStateChangeCallback);
         done();
       } catch (error) {
         let err = error as BusinessError;

@@ -33,6 +33,7 @@ import Want from '@ohos.app.ability.Want';
 import sysDeviceInfo from '@ohos.deviceInfo';
 import common from '@ohos.enterprise.common';
 import { connection, statistics } from '@kit.NetworkKit';
+import formInfo from '@ohos.app.form.formInfo';
 
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
@@ -1152,6 +1153,34 @@ export default function applicationManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         applicationManager.getAllowedDistributeAbilityConnBundles(SELFWANT, applicationManager.ServiceType.COLLABORATION_SERVICE, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 201).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_publishFormToDesktop_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_NO_PERMISSION_JS_0100
+     * @tc.desc   test publishFormToDesktop with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_publishFormToDesktop_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let formInfoParam: applicationManager.FormInfo = {
+          bundleName: 'com.edm.acts.nopermission',
+          moduleName: 'entry',
+          abilityName: 'com.example.myapplication.EnterpriseAdminAbility',
+          name: 'widget',
+          dimension: formInfo.FormDimension.Dimension_1_2
+        };
+        applicationManager.publishFormToDesktop(formInfoParam);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code === 201).assertTrue();

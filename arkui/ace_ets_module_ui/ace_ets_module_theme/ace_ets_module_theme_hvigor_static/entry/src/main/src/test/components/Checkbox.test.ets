@@ -14,16 +14,12 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import { Driver, MouseButton, ON, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import { CheckBoxKeys, checkBoxThemeProperty } from '../../../ets/MainAbility/pages/components/CheckboxPage';
 import { CustomTheme, Theme } from '@ohos.arkui.theme';
 import { MarkStyle } from '@ohos.arkui.component'
@@ -40,10 +36,6 @@ export default function checkboxThemeTest() {
   let colorValues: Map<string, string> | undefined = new Map<string, string>();
 
   describe(SUITE, () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-    });
-
     beforeEach(() => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
@@ -138,7 +130,11 @@ it('ActsCheckBoxThemeColors_static_0200', Level.LEVEL2, async (done: () => void)
 it('ActsCheckBoxThemeColors_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsCheckBoxThemeColors_static_0300`;
       console.info(`${SUITE} ${CASE} START`);
-      await sleep(frameTime);
+      try {
+        await sleep(frameTime);
+      } catch (err) {
+        console.info(`${SUITE} ${CASE} sleep err: ` + JSON.stringify(err));
+      }
       const checkboxJSON = inspector.getInspectorByKey(CheckBoxKeys.checkboxWithTheme);
       const attrsCheckBox = JSON.parseJsonElement(checkboxJSON).getElement('$attrs');
       const selectedColor = attrsCheckBox.getString('selectedColor').toString().toUpperCase();

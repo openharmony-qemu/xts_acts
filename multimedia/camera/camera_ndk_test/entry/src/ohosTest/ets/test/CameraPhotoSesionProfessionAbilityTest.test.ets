@@ -825,6 +825,26 @@ export default function CameraPhotoSesionProfessionAbilityTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500
+     * @tc.desc   Check capture session Get ISO  when the second param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500--------------");
+      createCameraSessionInstance();
+      await startCameraSession();
+      let ret = cameraObj.oHgetIso(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500 ret is "+ret);
+      expect(ret).assertEqual(CAMERA_OK)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500 ends here");
+      await stopCameraSession();
+      await releaseCameraSessionInstance();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0100
      * @tc.desc   Check capture session Set ISO  CAMERA_OK

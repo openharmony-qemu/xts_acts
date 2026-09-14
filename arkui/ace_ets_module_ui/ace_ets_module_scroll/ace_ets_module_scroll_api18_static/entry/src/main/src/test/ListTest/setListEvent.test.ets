@@ -67,64 +67,71 @@ export default function setListEvent() {
      */
 it('setListEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[setListEvent_static_0100] START');
-      let driver = Driver.create()
-      let btnEvent: Component = await driver.findComponent(ON.id('List_addCommonEvent_02')) as Component;
-      await btnEvent.click();
-      await CommonFunc.sleep(1500);
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let btnEvent: Component = await driver.findComponent(ON.id('List_addCommonEvent_02')) as Component;
+        await btnEvent.click();
+        await CommonFunc.sleep(1500);
 
-      let swipeScroll = CommonFunc.getComponentRectOnScreen('key_listItem_set');
-      let top = swipeScroll.top;
-      let right = swipeScroll.right;
-      let left = swipeScroll.left;
-      let bottom = swipeScroll.bottom;
-      console.info("setListEvent_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom - top;
-      let width = right - left;
-      await driver.swipe((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.8)).toInt(),
-        (Math.round(left + width / 2)).toInt(),
-        (Math.round(top + height * 0.2)).toInt());
-      await CommonFunc.sleep(2000);
-      let btn: Component = await driver.findComponent(ON.id('List_setOnReach_02')) as Component;
-      await btn.click();
-      await CommonFunc.sleep(1500);
+        let swipeScroll = CommonFunc.getComponentRectOnScreen('key_listItem_set');
+        let top = swipeScroll.top;
+        let right = swipeScroll.right;
+        let left = swipeScroll.left;
+        let bottom = swipeScroll.bottom;
+        console.info("setListEvent_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
+        let height = bottom - top;
+        let width = right - left;
+        await driver.swipe((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.8)).toInt(),
+          (Math.round(left + width / 2)).toInt(),
+          (Math.round(top + height * 0.2)).toInt());
+        await CommonFunc.sleep(2000);
+        let btn: Component = await driver.findComponent(ON.id('List_setOnReach_02')) as Component;
+        await btn.click();
+        await CommonFunc.sleep(1500);
 
-      let btn1: Component = await driver.findComponent(ON.id('List_setOnWill_02')) as Component;
-      await btn1.click();
-      await CommonFunc.sleep(1500);
-      let strJson1 = inspector.getInspectorByKey('List_setOnWill_02');
-      console.info("[setListEvent_static_0100] content1: " +
-     JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
-        .assertEqual('setOnWillScroll_setOnDidScroll');
+        let btn1: Component = await driver.findComponent(ON.id('List_setOnWill_02')) as Component;
+        await btn1.click();
+        await CommonFunc.sleep(1500);
+        let strJson1 = inspector.getInspectorByKey('List_setOnWill_02');
+        console.info("[setListEvent_static_0100] content1: " +
+          JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'));
+        expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
+          .assertEqual('setOnWillScroll_setOnDidScroll');
 
-      let btn2: Component = await driver.findComponent(ON.id('List_setOnScroll_02')) as Component;
-      await btn2.click();
-      await CommonFunc.sleep(1500);
-      let strJson2 = inspector.getInspectorByKey('List_setOnScroll_02');
-      console.info("[setListEvent_static_0100] content2: " +
-      JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'));
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
-        .assertEqual('setOnScrollStart_setOnScrollStop');
+        let btn2: Component = await driver.findComponent(ON.id('List_setOnScroll_02')) as Component;
+        await btn2.click();
+        await CommonFunc.sleep(1500);
+        let strJson2 = inspector.getInspectorByKey('List_setOnScroll_02');
+        console.info("[setListEvent_static_0100] content2: " +
+          JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'));
+        expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
+          .assertEqual('setOnScrollStart_setOnScrollStop');
 
-      let btn3: Component = await driver.findComponent(ON.id('List_setOnScrollIndex_02')) as Component;
-      await btn3.click();
-      await CommonFunc.sleep(1500);
-      let strJson3 = inspector.getInspectorByKey('List_setOnScrollIndex_02');
-      console.info("[setListEvent_static_0100] content3: " +
-      JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'));
-      expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'))
-        .assertEqual('setOnScrollFrameBegin_setOnScrollIndex');
+        let btn3: Component = await driver.findComponent(ON.id('List_setOnScrollIndex_02')) as Component;
+        await btn3.click();
+        await CommonFunc.sleep(1500);
+        let strJson3 = inspector.getInspectorByKey('List_setOnScrollIndex_02');
+        console.info("[setListEvent_static_0100] content3: " +
+          JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'));
+        expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'))
+          .assertEqual('setOnScrollFrameBegin_setOnScrollIndex');
 
-      let btn4: Component = await driver.findComponent(ON.id('Scroll_VisibleChange_02')) as Component;
-      await btn4.click();
-      await CommonFunc.sleep(1500);
-      let strJson4 = inspector.getInspectorByKey('Scroll_VisibleChange_02');
-      console.info("[setListEvent_static_0100] content4: " +
-      JSON.parseJsonElement(strJson4).getElement('$attrs').getString('content'));
-      expect(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('content'))
-        .assertEqual('setOnScrollVisibleContentChange');
-      console.info('[setListEvent_static_0100] END');
-      done();
+        let btn4: Component = await driver.findComponent(ON.id('Scroll_VisibleChange_02')) as Component;
+        await btn4.click();
+        await CommonFunc.sleep(1500);
+        let strJson4 = inspector.getInspectorByKey('Scroll_VisibleChange_02');
+        console.info("[setListEvent_static_0100] content4: " +
+          JSON.parseJsonElement(strJson4).getElement('$attrs').getString('content'));
+        expect(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('content'))
+          .assertEqual('setOnScrollVisibleContentChange');
+        console.info('[setListEvent_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[setListEvent_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

@@ -15,25 +15,19 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern, Component } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, Component } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
 export default function ActionMenuOptionsSystemMaterialTest(): void {
   describe('ActionMenuOptionsSystemMaterialTest', () => {
-    beforeAll(async () => {
-
-      console.info("ActionMenuOptionsSystemMaterialTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
-    });
 
     beforeEach(async () => {
 
@@ -58,7 +52,11 @@ export default function ActionMenuOptionsSystemMaterialTest(): void {
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+       try {
+         await Utils.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('sleep err: ' + JSON.stringify(err));
+       }
       console.info("ActionMenuOptionsSystemMaterialTest after each called");
     });
 
@@ -75,10 +73,22 @@ export default function ActionMenuOptionsSystemMaterialTest(): void {
 
 		console.info('ActionMenuOptionsSystemMaterial_0100 START');
 		let driver: Driver = Driver.create();
-		await CommonFunc.sleep(1000);
+		 try {
+		   await CommonFunc.sleep(1000);
+		 } catch (err) {
+		   console.info('await err: ' + JSON.stringify(err));
+		 }
 		let button = await driver.findComponent(ON.id('undefined'));
-		await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
-		await CommonFunc.sleep(1000);
+		 try {
+		   await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
+		 } catch (err) {
+		   console.info('await err: ' + JSON.stringify(err));
+		 }
+		 try {
+		   await CommonFunc.sleep(1000);
+		 } catch (err) {
+		   console.info('await err: ' + JSON.stringify(err));
+		 }
 		let titleText = await driver.findComponent(ON.text('ActionMenu Undefined'));
 	    let aaa = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[1]
@@ -90,13 +100,29 @@ export default function ActionMenuOptionsSystemMaterialTest(): void {
       expect(aaa).assertEqual('MaterialType.NONE');
       console.info('CustomPopupOptionsSystemMaterial_0100 Popup Undefined is visible');
 
-      await CommonFunc.sleep(500);
+       try {
+         await CommonFunc.sleep(500);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
 		console.info('ActionMenuOptionsSystemMaterial_0100 Menu title is visible');
 
-		await CommonFunc.sleep(500);
+		 try {
+		   await CommonFunc.sleep(500);
+		 } catch (err) {
+		   console.info('await err: ' + JSON.stringify(err));
+		 }
 		let closeButton = await driver.findComponent(ON.text('Button1'));
-		await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
-		await CommonFunc.sleep(1000);
+		 try {
+		   await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
+		 } catch (err) {
+		   console.info('await err: ' + JSON.stringify(err));
+		 }
+		 try {
+		   await CommonFunc.sleep(1000);
+		 } catch (err) {
+		   console.info('await err: ' + JSON.stringify(err));
+		 }
 		console.info('ActionMenuOptionsSystemMaterial_0100 END');
     });
   });

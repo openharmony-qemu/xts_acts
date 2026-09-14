@@ -29,7 +29,7 @@ export const DEFAULT_TOLERANCE: number = 0.01;
  * 标杆文件名规律：{modelName}{i}.output，i 为输出 tensor 索引。
  *
  * @param syscontext     上下文，用于访问 rawfile
- * @param modelName      模型名（如 "lenet_train_infer"），不传 .output 后缀
+ * @param modelName      模型名（如 'lenet_train_infer'），不传 .output 后缀
  * @param actualOutputs  模型推理输出的 MSTensor 数组
  * @param rTol           相对容差（可选，默认 DEFAULT_TOLERANCE）
  * @param aTol           绝对容差（可选，默认 DEFAULT_TOLERANCE）
@@ -93,9 +93,9 @@ export async function copyRawfileToSandbox(
       let file = fs.openSync(targetPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
       fs.writeSync(file.fd, buffer.buffer);
       fs.closeSync(file);
-      console.log("[rawfile_copy_to_sandbox] " + name + " is copy success");
+      console.log('[rawfile_copy_to_sandbox] ' + name + ' is copy success');
     } catch (e) {
-      console.log("[rawfile_copy_to_sandbox] " + name + " is copy failed: " + JSON.stringify(e));
+      console.log('[rawfile_copy_to_sandbox] ' + name + ' is copy failed: ' + JSON.stringify(e));
     }
   }
 }

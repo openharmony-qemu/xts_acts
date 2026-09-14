@@ -40,6 +40,7 @@ export default function WaterFlowContentEndOffsetModifierTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/waterFlowModifier/waterFlowContentEndOffsetModifier',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push WaterFlowContentEndOffsetModifierTest page error:' + err);

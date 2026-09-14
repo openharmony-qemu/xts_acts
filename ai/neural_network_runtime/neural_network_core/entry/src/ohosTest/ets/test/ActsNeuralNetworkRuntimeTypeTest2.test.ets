@@ -31,13 +31,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeTopK002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeTopK002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_TOP_K", false);
-        console.info("====>NnrtOpTypeTopK002 result: " + result);
+        console.info('====>NnrtOpTypeTopK002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_TOP_K', false);
+        console.info('====>NnrtOpTypeTopK002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeTopK002 catch err: " + err);
+        console.error('====>NnrtOpTypeTopK002 catch err: ' + err);
       }
     })
 
@@ -51,13 +51,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeArgMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeArgMax001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ARG_MAX", true);
-        console.info("====>NnrtOpTypeArgMax001 result: " + result);
+        console.info('====>NnrtOpTypeArgMax001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ARG_MAX', true);
+        console.info('====>NnrtOpTypeArgMax001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeArgMax001 catch err: " + err);
+        console.error('====>NnrtOpTypeArgMax001 catch err: ' + err);
       }
     })
 
@@ -71,13 +71,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeArgMax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeArgMax002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ARG_MAX", false);
-        console.info("====>NnrtOpTypeArgMax002 result: " + result);
+        console.info('====>NnrtOpTypeArgMax002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ARG_MAX', false);
+        console.info('====>NnrtOpTypeArgMax002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeArgMax002 catch err: " + err);
+        console.error('====>NnrtOpTypeArgMax002 catch err: ' + err);
       }
     })
 
@@ -91,13 +91,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeUnsqueeze001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeUnsqueeze001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_UNSQUEEZE", true);
-        console.info("====>NnrtOpTypeUnsqueeze001 result: " + result);
+        console.info('====>NnrtOpTypeUnsqueeze001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_UNSQUEEZE', true);
+        console.info('====>NnrtOpTypeUnsqueeze001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeUnsqueeze001 catch err: " + err);
+        console.error('====>NnrtOpTypeUnsqueeze001 catch err: ' + err);
       }
     })
 
@@ -111,13 +111,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeUnsqueeze002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeUnsqueeze002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_UNSQUEEZE", false);
-        console.info("====>NnrtOpTypeUnsqueeze002 result: " + result);
+        console.info('====>NnrtOpTypeUnsqueeze002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_UNSQUEEZE', false);
+        console.info('====>NnrtOpTypeUnsqueeze002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeUnsqueeze002 catch err: " + err);
+        console.error('====>NnrtOpTypeUnsqueeze002 catch err: ' + err);
       }
     })
 
@@ -131,13 +131,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeGelu001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeGelu001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_GELU", true);
-        console.info("====>NnrtOpTypeGelu001 result: " + result);
+        console.info('====>NnrtOpTypeGelu001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_GELU', true);
+        console.info('====>NnrtOpTypeGelu001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeGelu001 catch err: " + err);
+        console.error('====>NnrtOpTypeGelu001 catch err: ' + err);
       }
     })
 
@@ -151,13 +151,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeGelu002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeGelu002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_GELU", false);
-        console.info("====>NnrtOpTypeGelu002 result: " + result);
+        console.info('====>NnrtOpTypeGelu002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_GELU', false);
+        console.info('====>NnrtOpTypeGelu002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeGelu002 catch err: " + err);
+        console.error('====>NnrtOpTypeGelu002 catch err: ' + err);
       }
     })
 
@@ -171,13 +171,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeUnstack001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeUnstack001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_UNSTACK", true);
-        console.info("====>NnrtOpTypeUnstack001 result: " + result);
+        console.info('====>NnrtOpTypeUnstack001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_UNSTACK', true);
+        console.info('====>NnrtOpTypeUnstack001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeUnstack001 catch err: " + err);
+        console.error('====>NnrtOpTypeUnstack001 catch err: ' + err);
       }
     })
 
@@ -191,13 +191,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeUnstack002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeUnstack002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_UNSTACK", false);
-        console.info("====>NnrtOpTypeUnstack002 result: " + result);
+        console.info('====>NnrtOpTypeUnstack002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_UNSTACK', false);
+        console.info('====>NnrtOpTypeUnstack002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeUnstack002 catch err: " + err);
+        console.error('====>NnrtOpTypeUnstack002 catch err: ' + err);
       }
     })
 
@@ -211,13 +211,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeAbs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeAbs001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ABS", true);
-        console.info("====>NnrtOpTypeAbs001 result: " + result);
+        console.info('====>NnrtOpTypeAbs001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ABS', true);
+        console.info('====>NnrtOpTypeAbs001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeAbs001 catch err: " + err);
+        console.error('====>NnrtOpTypeAbs001 catch err: ' + err);
       }
     })
 
@@ -231,13 +231,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeAbs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeAbs002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ABS", false);
-        console.info("====>NnrtOpTypeAbs002 result: " + result);
+        console.info('====>NnrtOpTypeAbs002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ABS', false);
+        console.info('====>NnrtOpTypeAbs002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeAbs002 catch err: " + err);
+        console.error('====>NnrtOpTypeAbs002 catch err: ' + err);
       }
     })
 
@@ -251,13 +251,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeErf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeErf001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ERF", true);
-        console.info("====>NnrtOpTypeErf001 result: " + result);
+        console.info('====>NnrtOpTypeErf001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ERF', true);
+        console.info('====>NnrtOpTypeErf001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeErf001 catch err: " + err);
+        console.error('====>NnrtOpTypeErf001 catch err: ' + err);
       }
     })
 
@@ -271,13 +271,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeErf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeErf002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ERF", false);
-        console.info("====>NnrtOpTypeErf002 result: " + result);
+        console.info('====>NnrtOpTypeErf002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ERF', false);
+        console.info('====>NnrtOpTypeErf002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeErf002 catch err: " + err);
+        console.error('====>NnrtOpTypeErf002 catch err: ' + err);
       }
     })
 
@@ -291,13 +291,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeExp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeExp001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_EXP", true);
-        console.info("====>NnrtOpTypeExp001 result: " + result);
+        console.info('====>NnrtOpTypeExp001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_EXP', true);
+        console.info('====>NnrtOpTypeExp001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeExp001 catch err: " + err);
+        console.error('====>NnrtOpTypeExp001 catch err: ' + err);
       }
     })
 
@@ -311,13 +311,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeExp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeExp002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_EXP", false);
-        console.info("====>NnrtOpTypeExp002 result: " + result);
+        console.info('====>NnrtOpTypeExp002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_EXP', false);
+        console.info('====>NnrtOpTypeExp002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeExp002 catch err: " + err);
+        console.error('====>NnrtOpTypeExp002 catch err: ' + err);
       }
     })
 
@@ -331,13 +331,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLess001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LESS", true);
-        console.info("====>NnrtOpTypeLess001 result: " + result);
+        console.info('====>NnrtOpTypeLess001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LESS', true);
+        console.info('====>NnrtOpTypeLess001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLess001 catch err: " + err);
+        console.error('====>NnrtOpTypeLess001 catch err: ' + err);
       }
     })
 
@@ -351,13 +351,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLess002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LESS", false);
-        console.info("====>NnrtOpTypeLess002 result: " + result);
+        console.info('====>NnrtOpTypeLess002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LESS', false);
+        console.info('====>NnrtOpTypeLess002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLess002 catch err: " + err);
+        console.error('====>NnrtOpTypeLess002 catch err: ' + err);
       }
     })
 
@@ -371,13 +371,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSelect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSelect001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SELECT", true);
-        console.info("====>NnrtOpTypeSelect001 result: " + result);
+        console.info('====>NnrtOpTypeSelect001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SELECT', true);
+        console.info('====>NnrtOpTypeSelect001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSelect001 catch err: " + err);
+        console.error('====>NnrtOpTypeSelect001 catch err: ' + err);
       }
     })
 
@@ -391,13 +391,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSelect002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSelect002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SELECT", false);
-        console.info("====>NnrtOpTypeSelect002 result: " + result);
+        console.info('====>NnrtOpTypeSelect002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SELECT', false);
+        console.info('====>NnrtOpTypeSelect002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSelect002 catch err: " + err);
+        console.error('====>NnrtOpTypeSelect002 catch err: ' + err);
       }
     })
 
@@ -411,13 +411,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSquare001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSquare001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SQUARE", true);
-        console.info("====>NnrtOpTypeSquare001 result: " + result);
+        console.info('====>NnrtOpTypeSquare001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SQUARE', true);
+        console.info('====>NnrtOpTypeSquare001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSquare001 catch err: " + err);
+        console.error('====>NnrtOpTypeSquare001 catch err: ' + err);
       }
     })
 
@@ -431,13 +431,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSquare002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSquare002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SQUARE", false);
-        console.info("====>NnrtOpTypeSquare002 result: " + result);
+        console.info('====>NnrtOpTypeSquare002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SQUARE', false);
+        console.info('====>NnrtOpTypeSquare002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSquare002 catch err: " + err);
+        console.error('====>NnrtOpTypeSquare002 catch err: ' + err);
       }
     })
 
@@ -451,13 +451,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeFlatten001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeFlatten001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_FLATTEN", true);
-        console.info("====>NnrtOpTypeFlatten001 result: " + result);
+        console.info('====>NnrtOpTypeFlatten001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_FLATTEN', true);
+        console.info('====>NnrtOpTypeFlatten001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeFlatten001 catch err: " + err);
+        console.error('====>NnrtOpTypeFlatten001 catch err: ' + err);
       }
     })
 
@@ -471,13 +471,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeFlatten002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeFlatten002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_FLATTEN", false);
-        console.info("====>NnrtOpTypeFlatten002 result: " + result);
+        console.info('====>NnrtOpTypeFlatten002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_FLATTEN', false);
+        console.info('====>NnrtOpTypeFlatten002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeFlatten002 catch err: " + err);
+        console.error('====>NnrtOpTypeFlatten002 catch err: ' + err);
       }
     })
 
@@ -491,13 +491,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeDepthToSpace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeDepthToSpace001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_DEPTH_TO_SPACE", true);
-        console.info("====>NnrtOpTypeDepthToSpace001 result: " + result);
+        console.info('====>NnrtOpTypeDepthToSpace001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_DEPTH_TO_SPACE', true);
+        console.info('====>NnrtOpTypeDepthToSpace001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeDepthToSpace001 catch err: " + err);
+        console.error('====>NnrtOpTypeDepthToSpace001 catch err: ' + err);
       }
     })
 
@@ -511,13 +511,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeDepthToSpace002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeDepthToSpace002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_DEPTH_TO_SPACE", false);
-        console.info("====>NnrtOpTypeDepthToSpace002 result: " + result);
+        console.info('====>NnrtOpTypeDepthToSpace002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_DEPTH_TO_SPACE', false);
+        console.info('====>NnrtOpTypeDepthToSpace002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeDepthToSpace002 catch err: " + err);
+        console.error('====>NnrtOpTypeDepthToSpace002 catch err: ' + err);
       }
     })
 
@@ -531,13 +531,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeRange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeRange001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_RANGE", true);
-        console.info("====>NnrtOpTypeRange001 result: " + result);
+        console.info('====>NnrtOpTypeRange001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_RANGE', true);
+        console.info('====>NnrtOpTypeRange001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeRange001 catch err: " + err);
+        console.error('====>NnrtOpTypeRange001 catch err: ' + err);
       }
     })
 
@@ -551,13 +551,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeRange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeRange002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_RANGE", false);
-        console.info("====>NnrtOpTypeRange002 result: " + result);
+        console.info('====>NnrtOpTypeRange002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_RANGE', false);
+        console.info('====>NnrtOpTypeRange002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeRange002 catch err: " + err);
+        console.error('====>NnrtOpTypeRange002 catch err: ' + err);
       }
     })
 
@@ -571,13 +571,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeInstanceNorm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeInstanceNorm001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_INSTANCE_NORM", true);
-        console.info("====>NnrtOpTypeInstanceNorm001 result: " + result);
+        console.info('====>NnrtOpTypeInstanceNorm001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_INSTANCE_NORM', true);
+        console.info('====>NnrtOpTypeInstanceNorm001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeInstanceNorm001 catch err: " + err);
+        console.error('====>NnrtOpTypeInstanceNorm001 catch err: ' + err);
       }
     })
 
@@ -591,13 +591,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeInstanceNorm002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeInstanceNorm002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_INSTANCE_NORM", false);
-        console.info("====>NnrtOpTypeInstanceNorm002 result: " + result);
+        console.info('====>NnrtOpTypeInstanceNorm002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_INSTANCE_NORM', false);
+        console.info('====>NnrtOpTypeInstanceNorm002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeInstanceNorm002 catch err: " + err);
+        console.error('====>NnrtOpTypeInstanceNorm002 catch err: ' + err);
       }
     })
 
@@ -611,13 +611,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeConstantOfShape001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeConstantOfShape001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_CONSTANT_OF_SHAPE", true);
-        console.info("====>NnrtOpTypeConstantOfShape001 result: " + result);
+        console.info('====>NnrtOpTypeConstantOfShape001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_CONSTANT_OF_SHAPE', true);
+        console.info('====>NnrtOpTypeConstantOfShape001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeConstantOfShape001 catch err: " + err);
+        console.error('====>NnrtOpTypeConstantOfShape001 catch err: ' + err);
       }
     })
 
@@ -631,13 +631,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeConstantOfShape002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeConstantOfShape002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_CONSTANT_OF_SHAPE", false);
-        console.info("====>NnrtOpTypeConstantOfShape002 result: " + result);
+        console.info('====>NnrtOpTypeConstantOfShape002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_CONSTANT_OF_SHAPE', false);
+        console.info('====>NnrtOpTypeConstantOfShape002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeConstantOfShape002 catch err: " + err);
+        console.error('====>NnrtOpTypeConstantOfShape002 catch err: ' + err);
       }
     })
 
@@ -651,13 +651,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeBroadcastTo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeBroadcastTo001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_BROADCAST_TO", true);
-        console.info("====>NnrtOpTypeBroadcastTo001 result: " + result);
+        console.info('====>NnrtOpTypeBroadcastTo001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_BROADCAST_TO', true);
+        console.info('====>NnrtOpTypeBroadcastTo001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeBroadcastTo001 catch err: " + err);
+        console.error('====>NnrtOpTypeBroadcastTo001 catch err: ' + err);
       }
     })
 
@@ -671,13 +671,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeBroadcastTo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeBroadcastTo002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_BROADCAST_TO", false);
-        console.info("====>NnrtOpTypeBroadcastTo002 result: " + result);
+        console.info('====>NnrtOpTypeBroadcastTo002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_BROADCAST_TO', false);
+        console.info('====>NnrtOpTypeBroadcastTo002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeBroadcastTo002 catch err: " + err);
+        console.error('====>NnrtOpTypeBroadcastTo002 catch err: ' + err);
       }
     })
 
@@ -691,13 +691,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeEqual001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeEqual001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_EQUAL", true);
-        console.info("====>NnrtOpTypeEqual001 result: " + result);
+        console.info('====>NnrtOpTypeEqual001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_EQUAL', true);
+        console.info('====>NnrtOpTypeEqual001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeEqual001 catch err: " + err);
+        console.error('====>NnrtOpTypeEqual001 catch err: ' + err);
       }
     })
 
@@ -711,13 +711,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeEqual002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeEqual002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_EQUAL", false);
-        console.info("====>NnrtOpTypeEqual002 result: " + result);
+        console.info('====>NnrtOpTypeEqual002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_EQUAL', false);
+        console.info('====>NnrtOpTypeEqual002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeEqual002 catch err: " + err);
+        console.error('====>NnrtOpTypeEqual002 catch err: ' + err);
       }
     })
 
@@ -731,13 +731,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeGreater001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeGreater001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_GREATER", true);
-        console.info("====>NnrtOpTypeGreater001 result: " + result);
+        console.info('====>NnrtOpTypeGreater001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_GREATER', true);
+        console.info('====>NnrtOpTypeGreater001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeGreater001 catch err: " + err);
+        console.error('====>NnrtOpTypeGreater001 catch err: ' + err);
       }
     })
 
@@ -751,13 +751,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeGreater002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeGreater002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_GREATER", false);
-        console.info("====>NnrtOpTypeGreater002 result: " + result);
+        console.info('====>NnrtOpTypeGreater002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_GREATER', false);
+        console.info('====>NnrtOpTypeGreater002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeGreater002 catch err: " + err);
+        console.error('====>NnrtOpTypeGreater002 catch err: ' + err);
       }
     })
 
@@ -771,13 +771,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeNotEqual001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeNotEqual001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_NOT_EQUAL", true);
-        console.info("====>NnrtOpTypeNotEqual001 result: " + result);
+        console.info('====>NnrtOpTypeNotEqual001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_NOT_EQUAL', true);
+        console.info('====>NnrtOpTypeNotEqual001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeNotEqual001 catch err: " + err);
+        console.error('====>NnrtOpTypeNotEqual001 catch err: ' + err);
       }
     })
 
@@ -791,13 +791,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeNotEqual002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeNotEqual002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_NOT_EQUAL", false);
-        console.info("====>NnrtOpTypeNotEqual002 result: " + result);
+        console.info('====>NnrtOpTypeNotEqual002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_NOT_EQUAL', false);
+        console.info('====>NnrtOpTypeNotEqual002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeNotEqual002 catch err: " + err);
+        console.error('====>NnrtOpTypeNotEqual002 catch err: ' + err);
       }
     })
 
@@ -811,13 +811,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeGreaterEqual001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeGreaterEqual001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_GREATER_EQUAL", true);
-        console.info("====>NnrtOpTypeGreaterEqual001 result: " + result);
+        console.info('====>NnrtOpTypeGreaterEqual001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_GREATER_EQUAL', true);
+        console.info('====>NnrtOpTypeGreaterEqual001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeGreaterEqual001 catch err: " + err);
+        console.error('====>NnrtOpTypeGreaterEqual001 catch err: ' + err);
       }
     })
 
@@ -831,13 +831,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeGreaterEqual002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeGreaterEqual002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_GREATER_EQUAL", false);
-        console.info("====>NnrtOpTypeGreaterEqual002 result: " + result);
+        console.info('====>NnrtOpTypeGreaterEqual002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_GREATER_EQUAL', false);
+        console.info('====>NnrtOpTypeGreaterEqual002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeGreaterEqual002 catch err: " + err);
+        console.error('====>NnrtOpTypeGreaterEqual002 catch err: ' + err);
       }
     })
 
@@ -851,13 +851,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLeakyRelu001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLeakyRelu001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LEAKY_RELU", true);
-        console.info("====>NnrtOpTypeLeakyRelu001 result: " + result);
+        console.info('====>NnrtOpTypeLeakyRelu001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LEAKY_RELU', true);
+        console.info('====>NnrtOpTypeLeakyRelu001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLeakyRelu001 catch err: " + err);
+        console.error('====>NnrtOpTypeLeakyRelu001 catch err: ' + err);
       }
     })
 
@@ -871,13 +871,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLeakyRelu002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLeakyRelu002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LEAKY_RELU", false);
-        console.info("====>NnrtOpTypeLeakyRelu002 result: " + result);
+        console.info('====>NnrtOpTypeLeakyRelu002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LEAKY_RELU', false);
+        console.info('====>NnrtOpTypeLeakyRelu002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLeakyRelu002 catch err: " + err);
+        console.error('====>NnrtOpTypeLeakyRelu002 catch err: ' + err);
       }
     })
 
@@ -891,13 +891,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLstm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLstm001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LSTM", true);
-        console.info("====>NnrtOpTypeLstm001 result: " + result);
+        console.info('====>NnrtOpTypeLstm001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LSTM', true);
+        console.info('====>NnrtOpTypeLstm001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLstm001 catch err: " + err);
+        console.error('====>NnrtOpTypeLstm001 catch err: ' + err);
       }
     })
 
@@ -911,13 +911,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLstm002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLstm002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LSTM", false);
-        console.info("====>NnrtOpTypeLstm002 result: " + result);
+        console.info('====>NnrtOpTypeLstm002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LSTM', false);
+        console.info('====>NnrtOpTypeLstm002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLstm002 catch err: " + err);
+        console.error('====>NnrtOpTypeLstm002 catch err: ' + err);
       }
     })
 
@@ -931,13 +931,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeClip001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeClip001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_CLIP", true);
-        console.info("====>NnrtOpTypeClip001 result: " + result);
+        console.info('====>NnrtOpTypeClip001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_CLIP', true);
+        console.info('====>NnrtOpTypeClip001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeClip001 catch err: " + err);
+        console.error('====>NnrtOpTypeClip001 catch err: ' + err);
       }
     })
 
@@ -951,13 +951,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeClip002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeClip002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_CLIP", false);
-        console.info("====>NnrtOpTypeClip002 result: " + result);
+        console.info('====>NnrtOpTypeClip002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_CLIP', false);
+        console.info('====>NnrtOpTypeClip002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeClip002 catch err: " + err);
+        console.error('====>NnrtOpTypeClip002 catch err: ' + err);
       }
     })
 
@@ -971,13 +971,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeAll001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ALL", true);
-        console.info("====>NnrtOpTypeAll001 result: " + result);
+        console.info('====>NnrtOpTypeAll001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ALL', true);
+        console.info('====>NnrtOpTypeAll001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeAll001 catch err: " + err);
+        console.error('====>NnrtOpTypeAll001 catch err: ' + err);
       }
     })
 
@@ -991,13 +991,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeAll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeAll002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ALL", false);
-        console.info("====>NnrtOpTypeAll002 result: " + result);
+        console.info('====>NnrtOpTypeAll002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ALL', false);
+        console.info('====>NnrtOpTypeAll002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeAll002 catch err: " + err);
+        console.error('====>NnrtOpTypeAll002 catch err: ' + err);
       }
     })
 
@@ -1011,13 +1011,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeAssert001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeAssert001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ASSERT", true);
-        console.info("====>NnrtOpTypeAssert001 result: " + result);
+        console.info('====>NnrtOpTypeAssert001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ASSERT', true);
+        console.info('====>NnrtOpTypeAssert001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeAssert001 catch err: " + err);
+        console.error('====>NnrtOpTypeAssert001 catch err: ' + err);
       }
     })
 
@@ -1031,13 +1031,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeAssert002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeAssert002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ASSERT", false);
-        console.info("====>NnrtOpTypeAssert002 result: " + result);
+        console.info('====>NnrtOpTypeAssert002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ASSERT', false);
+        console.info('====>NnrtOpTypeAssert002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeAssert002 catch err: " + err);
+        console.error('====>NnrtOpTypeAssert002 catch err: ' + err);
       }
     })
 
@@ -1051,13 +1051,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeCos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeCos001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_COS", true);
-        console.info("====>NnrtOpTypeCos001 result: " + result);
+        console.info('====>NnrtOpTypeCos001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_COS', true);
+        console.info('====>NnrtOpTypeCos001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeCos001 catch err: " + err);
+        console.error('====>NnrtOpTypeCos001 catch err: ' + err);
       }
     })
 
@@ -1071,13 +1071,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeCos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeCos002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_COS", false);
-        console.info("====>NnrtOpTypeCos002 result: " + result);
+        console.info('====>NnrtOpTypeCos002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_COS', false);
+        console.info('====>NnrtOpTypeCos002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeCos002 catch err: " + err);
+        console.error('====>NnrtOpTypeCos002 catch err: ' + err);
       }
     })
 
@@ -1091,13 +1091,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLog001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLog001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LOG", true);
-        console.info("====>NnrtOpTypeLog001 result: " + result);
+        console.info('====>NnrtOpTypeLog001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LOG', true);
+        console.info('====>NnrtOpTypeLog001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLog001 catch err: " + err);
+        console.error('====>NnrtOpTypeLog001 catch err: ' + err);
       }
     })
 
@@ -1111,13 +1111,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLog002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLog002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LOG", false);
-        console.info("====>NnrtOpTypeLog002 result: " + result);
+        console.info('====>NnrtOpTypeLog002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LOG', false);
+        console.info('====>NnrtOpTypeLog002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLog002 catch err: " + err);
+        console.error('====>NnrtOpTypeLog002 catch err: ' + err);
       }
     })
 
@@ -1131,13 +1131,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLogicalAnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLogicalAnd001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LOGICAL_AND", true);
-        console.info("====>NnrtOpTypeLogicalAnd001 result: " + result);
+        console.info('====>NnrtOpTypeLogicalAnd001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LOGICAL_AND', true);
+        console.info('====>NnrtOpTypeLogicalAnd001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLogicalAnd001 catch err: " + err);
+        console.error('====>NnrtOpTypeLogicalAnd001 catch err: ' + err);
       }
     })
 
@@ -1151,13 +1151,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLogicalAnd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLogicalAnd002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LOGICAL_AND", false);
-        console.info("====>NnrtOpTypeLogicalAnd002 result: " + result);
+        console.info('====>NnrtOpTypeLogicalAnd002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LOGICAL_AND', false);
+        console.info('====>NnrtOpTypeLogicalAnd002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLogicalAnd002 catch err: " + err);
+        console.error('====>NnrtOpTypeLogicalAnd002 catch err: ' + err);
       }
     })
 
@@ -1171,13 +1171,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLogicalNot001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLogicalNot001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LOGICAL_NOT", true);
-        console.info("====>NnrtOpTypeLogicalNot001 result: " + result);
+        console.info('====>NnrtOpTypeLogicalNot001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LOGICAL_NOT', true);
+        console.info('====>NnrtOpTypeLogicalNot001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLogicalNot001 catch err: " + err);
+        console.error('====>NnrtOpTypeLogicalNot001 catch err: ' + err);
       }
     })
 
@@ -1191,13 +1191,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLogicalNot002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLogicalNot002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LOGICAL_NOT", false);
-        console.info("====>NnrtOpTypeLogicalNot002 result: " + result);
+        console.info('====>NnrtOpTypeLogicalNot002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LOGICAL_NOT', false);
+        console.info('====>NnrtOpTypeLogicalNot002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLogicalNot002 catch err: " + err);
+        console.error('====>NnrtOpTypeLogicalNot002 catch err: ' + err);
       }
     })
 
@@ -1211,13 +1211,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeMod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeMod001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_MOD", true);
-        console.info("====>NnrtOpTypeMod001 result: " + result);
+        console.info('====>NnrtOpTypeMod001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_MOD', true);
+        console.info('====>NnrtOpTypeMod001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeMod001 catch err: " + err);
+        console.error('====>NnrtOpTypeMod001 catch err: ' + err);
       }
     })
 
@@ -1231,13 +1231,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeMod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeMod002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_MOD", false);
-        console.info("====>NnrtOpTypeMod002 result: " + result);
+        console.info('====>NnrtOpTypeMod002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_MOD', false);
+        console.info('====>NnrtOpTypeMod002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeMod002 catch err: " + err);
+        console.error('====>NnrtOpTypeMod002 catch err: ' + err);
       }
     })
 
@@ -1251,13 +1251,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeNeg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeNeg001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_NEG", true);
-        console.info("====>NnrtOpTypeNeg001 result: " + result);
+        console.info('====>NnrtOpTypeNeg001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_NEG', true);
+        console.info('====>NnrtOpTypeNeg001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeNeg001 catch err: " + err);
+        console.error('====>NnrtOpTypeNeg001 catch err: ' + err);
       }
     })
 
@@ -1271,13 +1271,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeNeg002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeNeg002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_NEG", false);
-        console.info("====>NnrtOpTypeNeg002 result: " + result);
+        console.info('====>NnrtOpTypeNeg002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_NEG', false);
+        console.info('====>NnrtOpTypeNeg002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeNeg002 catch err: " + err);
+        console.error('====>NnrtOpTypeNeg002 catch err: ' + err);
       }
     })
 
@@ -1291,13 +1291,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeReciprocal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeReciprocal001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_RECIPROCAL", true);
-        console.info("====>NnrtOpTypeReciprocal001 result: " + result);
+        console.info('====>NnrtOpTypeReciprocal001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_RECIPROCAL', true);
+        console.info('====>NnrtOpTypeReciprocal001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeReciprocal001 catch err: " + err);
+        console.error('====>NnrtOpTypeReciprocal001 catch err: ' + err);
       }
     })
 
@@ -1311,13 +1311,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeReciprocal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeReciprocal002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_RECIPROCAL", false);
-        console.info("====>NnrtOpTypeReciprocal002 result: " + result);
+        console.info('====>NnrtOpTypeReciprocal002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_RECIPROCAL', false);
+        console.info('====>NnrtOpTypeReciprocal002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeReciprocal002 catch err: " + err);
+        console.error('====>NnrtOpTypeReciprocal002 catch err: ' + err);
       }
     })
 
@@ -1331,13 +1331,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSin001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SIN", true);
-        console.info("====>NnrtOpTypeSin001 result: " + result);
+        console.info('====>NnrtOpTypeSin001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SIN', true);
+        console.info('====>NnrtOpTypeSin001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSin001 catch err: " + err);
+        console.error('====>NnrtOpTypeSin001 catch err: ' + err);
       }
     })
 
@@ -1351,13 +1351,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSin002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SIN", false);
-        console.info("====>NnrtOpTypeSin002 result: " + result);
+        console.info('====>NnrtOpTypeSin002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SIN', false);
+        console.info('====>NnrtOpTypeSin002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSin002 catch err: " + err);
+        console.error('====>NnrtOpTypeSin002 catch err: ' + err);
       }
     })
 
@@ -1371,13 +1371,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeWhere001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeWhere001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_WHERE", true);
-        console.info("====>NnrtOpTypeWhere001 result: " + result);
+        console.info('====>NnrtOpTypeWhere001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_WHERE', true);
+        console.info('====>NnrtOpTypeWhere001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeWhere001 catch err: " + err);
+        console.error('====>NnrtOpTypeWhere001 catch err: ' + err);
       }
     })
 
@@ -1391,13 +1391,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeWhere002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeWhere002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_WHERE", false);
-        console.info("====>NnrtOpTypeWhere002 result: " + result);
+        console.info('====>NnrtOpTypeWhere002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_WHERE', false);
+        console.info('====>NnrtOpTypeWhere002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeWhere002 catch err: " + err);
+        console.error('====>NnrtOpTypeWhere002 catch err: ' + err);
       }
     })
 
@@ -1411,13 +1411,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSparseToDense001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSparseToDense001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SPARSE_TO_DENSE", true);
-        console.info("====>NnrtOpTypeSparseToDense001 result: " + result);
+        console.info('====>NnrtOpTypeSparseToDense001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SPARSE_TO_DENSE', true);
+        console.info('====>NnrtOpTypeSparseToDense001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSparseToDense001 catch err: " + err);
+        console.error('====>NnrtOpTypeSparseToDense001 catch err: ' + err);
       }
     })
 
@@ -1431,13 +1431,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSparseToDense002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSparseToDense002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SPARSE_TO_DENSE", false);
-        console.info("====>NnrtOpTypeSparseToDense002 result: " + result);
+        console.info('====>NnrtOpTypeSparseToDense002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SPARSE_TO_DENSE', false);
+        console.info('====>NnrtOpTypeSparseToDense002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSparseToDense002 catch err: " + err);
+        console.error('====>NnrtOpTypeSparseToDense002 catch err: ' + err);
       }
     })
 
@@ -1451,13 +1451,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLogicalOr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLogicalOr001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LOGICAL_OR", true);
-        console.info("====>NnrtOpTypeLogicalOr001 result: " + result);
+        console.info('====>NnrtOpTypeLogicalOr001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LOGICAL_OR', true);
+        console.info('====>NnrtOpTypeLogicalOr001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLogicalOr001 catch err: " + err);
+        console.error('====>NnrtOpTypeLogicalOr001 catch err: ' + err);
       }
     })
 
@@ -1471,13 +1471,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLogicalOr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLogicalOr002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LOGICAL_OR", false);
-        console.info("====>NnrtOpTypeLogicalOr002 result: " + result);
+        console.info('====>NnrtOpTypeLogicalOr002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LOGICAL_OR', false);
+        console.info('====>NnrtOpTypeLogicalOr002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLogicalOr002 catch err: " + err);
+        console.error('====>NnrtOpTypeLogicalOr002 catch err: ' + err);
       }
     })
 
@@ -1491,13 +1491,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeCeil001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeCeil001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_CEIL", true);
-        console.info("====>NnrtOpTypeCeil001 result: " + result);
+        console.info('====>NnrtOpTypeCeil001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_CEIL', true);
+        console.info('====>NnrtOpTypeCeil001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeCeil001 catch err: " + err);
+        console.error('====>NnrtOpTypeCeil001 catch err: ' + err);
       }
     })
 
@@ -1511,13 +1511,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeCeil002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeCeil002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_CEIL", false);
-        console.info("====>NnrtOpTypeCeil002 result: " + result);
+        console.info('====>NnrtOpTypeCeil002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_CEIL', false);
+        console.info('====>NnrtOpTypeCeil002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeCeil002 catch err: " + err);
+        console.error('====>NnrtOpTypeCeil002 catch err: ' + err);
       }
     })
 
@@ -1531,13 +1531,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeCrop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeCrop001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_CROP", true);
-        console.info("====>NnrtOpTypeCrop001 result: " + result);
+        console.info('====>NnrtOpTypeCrop001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_CROP', true);
+        console.info('====>NnrtOpTypeCrop001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeCrop001 catch err: " + err);
+        console.error('====>NnrtOpTypeCrop001 catch err: ' + err);
       }
     })
 
@@ -1551,13 +1551,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeCrop002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeCrop002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_CROP", false);
-        console.info("====>NnrtOpTypeCrop002 result: " + result);
+        console.info('====>NnrtOpTypeCrop002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_CROP', false);
+        console.info('====>NnrtOpTypeCrop002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeCrop002 catch err: " + err);
+        console.error('====>NnrtOpTypeCrop002 catch err: ' + err);
       }
     })
 
@@ -1572,13 +1572,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
     it('NnrtOpTypeDetectionPostProcess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeDetectionPostProcess001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_DETECTION_POST_PROCESS", true);
-        console.info("====>NnrtOpTypeDetectionPostProcess001 result: " + result);
+        console.info('====>NnrtOpTypeDetectionPostProcess001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_DETECTION_POST_PROCESS', true);
+        console.info('====>NnrtOpTypeDetectionPostProcess001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeDetectionPostProcess001 catch err: " + err);
+        console.error('====>NnrtOpTypeDetectionPostProcess001 catch err: ' + err);
       }
     })
 
@@ -1593,14 +1593,14 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
     it('NnrtOpTypeDetectionPostProcess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeDetectionPostProcess002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_DETECTION_POST_PROCESS",
+        console.info('====>NnrtOpTypeDetectionPostProcess002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_DETECTION_POST_PROCESS',
           false);
-        console.info("====>NnrtOpTypeDetectionPostProcess002 result: " + result);
+        console.info('====>NnrtOpTypeDetectionPostProcess002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeDetectionPostProcess002 catch err: " + err);
+        console.error('====>NnrtOpTypeDetectionPostProcess002 catch err: ' + err);
       }
     })
 
@@ -1614,13 +1614,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeFloor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeFloor001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_FLOOR", true);
-        console.info("====>NnrtOpTypeFloor001 result: " + result);
+        console.info('====>NnrtOpTypeFloor001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_FLOOR', true);
+        console.info('====>NnrtOpTypeFloor001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeFloor001 catch err: " + err);
+        console.error('====>NnrtOpTypeFloor001 catch err: ' + err);
       }
     })
 
@@ -1634,13 +1634,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeFloor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeFloor002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_FLOOR", false);
-        console.info("====>NnrtOpTypeFloor002 result: " + result);
+        console.info('====>NnrtOpTypeFloor002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_FLOOR', false);
+        console.info('====>NnrtOpTypeFloor002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeFloor002 catch err: " + err);
+        console.error('====>NnrtOpTypeFloor002 catch err: ' + err);
       }
     })
 
@@ -1654,13 +1654,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeL2Normalize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeL2Normalize001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_L2_NORMALIZE", true);
-        console.info("====>NnrtOpTypeL2Normalize001 result: " + result);
+        console.info('====>NnrtOpTypeL2Normalize001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_L2_NORMALIZE', true);
+        console.info('====>NnrtOpTypeL2Normalize001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeL2Normalize001 catch err: " + err);
+        console.error('====>NnrtOpTypeL2Normalize001 catch err: ' + err);
       }
     })
 
@@ -1674,13 +1674,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeL2Normalize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeL2Normalize002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_L2_NORMALIZE", false);
-        console.info("====>NnrtOpTypeL2Normalize002 result: " + result);
+        console.info('====>NnrtOpTypeL2Normalize002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_L2_NORMALIZE', false);
+        console.info('====>NnrtOpTypeL2Normalize002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeL2Normalize002 catch err: " + err);
+        console.error('====>NnrtOpTypeL2Normalize002 catch err: ' + err);
       }
     })
 
@@ -1694,13 +1694,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLogSoftmax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLogSoftmax001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LOG_SOFTMAX", true);
-        console.info("====>NnrtOpTypeLogSoftmax001 result: " + result);
+        console.info('====>NnrtOpTypeLogSoftmax001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LOG_SOFTMAX', true);
+        console.info('====>NnrtOpTypeLogSoftmax001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLogSoftmax001 catch err: " + err);
+        console.error('====>NnrtOpTypeLogSoftmax001 catch err: ' + err);
       }
     })
 
@@ -1714,13 +1714,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLogSoftmax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLogSoftmax002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LOG_SOFTMAX", false);
-        console.info("====>NnrtOpTypeLogSoftmax002 result: " + result);
+        console.info('====>NnrtOpTypeLogSoftmax002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LOG_SOFTMAX', false);
+        console.info('====>NnrtOpTypeLogSoftmax002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLogSoftmax002 catch err: " + err);
+        console.error('====>NnrtOpTypeLogSoftmax002 catch err: ' + err);
       }
     })
 
@@ -1734,13 +1734,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLrn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLrn001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LRN", true);
-        console.info("====>NnrtOpTypeLrn001 result: " + result);
+        console.info('====>NnrtOpTypeLrn001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LRN', true);
+        console.info('====>NnrtOpTypeLrn001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLrn001 catch err: " + err);
+        console.error('====>NnrtOpTypeLrn001 catch err: ' + err);
       }
     })
 
@@ -1754,13 +1754,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeLrn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeLrn002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_LRN", false);
-        console.info("====>NnrtOpTypeLrn002 result: " + result);
+        console.info('====>NnrtOpTypeLrn002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_LRN', false);
+        console.info('====>NnrtOpTypeLrn002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeLrn002 catch err: " + err);
+        console.error('====>NnrtOpTypeLrn002 catch err: ' + err);
       }
     })
 
@@ -1774,13 +1774,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeMinimum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeMinimum001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_MINIMUM", true);
-        console.info("====>NnrtOpTypeMinimum001 result: " + result);
+        console.info('====>NnrtOpTypeMinimum001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_MINIMUM', true);
+        console.info('====>NnrtOpTypeMinimum001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeMinimum001 catch err: " + err);
+        console.error('====>NnrtOpTypeMinimum001 catch err: ' + err);
       }
     })
 
@@ -1794,13 +1794,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeMinimum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeMinimum002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_MINIMUM", false);
-        console.info("====>NnrtOpTypeMinimum002 result: " + result);
+        console.info('====>NnrtOpTypeMinimum002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_MINIMUM', false);
+        console.info('====>NnrtOpTypeMinimum002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeMinimum002 catch err: " + err);
+        console.error('====>NnrtOpTypeMinimum002 catch err: ' + err);
       }
     })
 
@@ -1814,13 +1814,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeRank001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeRank001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_RANK", true);
-        console.info("====>NnrtOpTypeRank001 result: " + result);
+        console.info('====>NnrtOpTypeRank001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_RANK', true);
+        console.info('====>NnrtOpTypeRank001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeRank001 catch err: " + err);
+        console.error('====>NnrtOpTypeRank001 catch err: ' + err);
       }
     })
 
@@ -1834,13 +1834,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeRank002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeRank002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_RANK", false);
-        console.info("====>NnrtOpTypeRank002 result: " + result);
+        console.info('====>NnrtOpTypeRank002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_RANK', false);
+        console.info('====>NnrtOpTypeRank002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeRank002 catch err: " + err);
+        console.error('====>NnrtOpTypeRank002 catch err: ' + err);
       }
     })
 
@@ -1854,13 +1854,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeReduceMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeReduceMax001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_REDUCE_MAX", true);
-        console.info("====>NnrtOpTypeReduceMax001 result: " + result);
+        console.info('====>NnrtOpTypeReduceMax001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_REDUCE_MAX', true);
+        console.info('====>NnrtOpTypeReduceMax001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeReduceMax001 catch err: " + err);
+        console.error('====>NnrtOpTypeReduceMax001 catch err: ' + err);
       }
     })
 
@@ -1874,13 +1874,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeReduceMax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeReduceMax002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_REDUCE_MAX", false);
-        console.info("====>NnrtOpTypeReduceMax002 result: " + result);
+        console.info('====>NnrtOpTypeReduceMax002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_REDUCE_MAX', false);
+        console.info('====>NnrtOpTypeReduceMax002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeReduceMax002 catch err: " + err);
+        console.error('====>NnrtOpTypeReduceMax002 catch err: ' + err);
       }
     })
 
@@ -1894,13 +1894,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeReduceMin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeReduceMin001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_REDUCE_MIN", true);
-        console.info("====>NnrtOpTypeReduceMin001 result: " + result);
+        console.info('====>NnrtOpTypeReduceMin001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_REDUCE_MIN', true);
+        console.info('====>NnrtOpTypeReduceMin001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeReduceMin001 catch err: " + err);
+        console.error('====>NnrtOpTypeReduceMin001 catch err: ' + err);
       }
     })
 
@@ -1914,13 +1914,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeReduceMin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeReduceMin002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_REDUCE_MIN", false);
-        console.info("====>NnrtOpTypeReduceMin002 result: " + result);
+        console.info('====>NnrtOpTypeReduceMin002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_REDUCE_MIN', false);
+        console.info('====>NnrtOpTypeReduceMin002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeReduceMin002 catch err: " + err);
+        console.error('====>NnrtOpTypeReduceMin002 catch err: ' + err);
       }
     })
 
@@ -1934,13 +1934,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeReduceSum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeReduceSum001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_REDUCE_SUM", true);
-        console.info("====>NnrtOpTypeReduceSum001 result: " + result);
+        console.info('====>NnrtOpTypeReduceSum001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_REDUCE_SUM', true);
+        console.info('====>NnrtOpTypeReduceSum001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeReduceSum001 catch err: " + err);
+        console.error('====>NnrtOpTypeReduceSum001 catch err: ' + err);
       }
     })
 
@@ -1954,13 +1954,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeReduceSum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeReduceSum002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_REDUCE_SUM", false);
-        console.info("====>NnrtOpTypeReduceSum002 result: " + result);
+        console.info('====>NnrtOpTypeReduceSum002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_REDUCE_SUM', false);
+        console.info('====>NnrtOpTypeReduceSum002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeReduceSum002 catch err: " + err);
+        console.error('====>NnrtOpTypeReduceSum002 catch err: ' + err);
       }
     })
 
@@ -1974,13 +1974,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeRound001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeRound001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ROUND", true);
-        console.info("====>NnrtOpTypeRound001 result: " + result);
+        console.info('====>NnrtOpTypeRound001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ROUND', true);
+        console.info('====>NnrtOpTypeRound001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeRound001 catch err: " + err);
+        console.error('====>NnrtOpTypeRound001 catch err: ' + err);
       }
     })
 
@@ -1994,13 +1994,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeRound002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeRound002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_ROUND", false);
-        console.info("====>NnrtOpTypeRound002 result: " + result);
+        console.info('====>NnrtOpTypeRound002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_ROUND', false);
+        console.info('====>NnrtOpTypeRound002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeRound002 catch err: " + err);
+        console.error('====>NnrtOpTypeRound002 catch err: ' + err);
       }
     })
 
@@ -2014,13 +2014,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeScatterNd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeScatterNd001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SCATTER_ND", true);
-        console.info("====>NnrtOpTypeScatterNd001 result: " + result);
+        console.info('====>NnrtOpTypeScatterNd001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SCATTER_ND', true);
+        console.info('====>NnrtOpTypeScatterNd001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeScatterNd001 catch err: " + err);
+        console.error('====>NnrtOpTypeScatterNd001 catch err: ' + err);
       }
     })
 
@@ -2034,13 +2034,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeScatterNd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeScatterNd002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SCATTER_ND", false);
-        console.info("====>NnrtOpTypeScatterNd002 result: " + result);
+        console.info('====>NnrtOpTypeScatterNd002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SCATTER_ND', false);
+        console.info('====>NnrtOpTypeScatterNd002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeScatterNd002 catch err: " + err);
+        console.error('====>NnrtOpTypeScatterNd002 catch err: ' + err);
       }
     })
 
@@ -2054,13 +2054,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSpaceToDepth001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSpaceToDepth001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SPACE_TO_DEPTH", true);
-        console.info("====>NnrtOpTypeSpaceToDepth001 result: " + result);
+        console.info('====>NnrtOpTypeSpaceToDepth001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SPACE_TO_DEPTH', true);
+        console.info('====>NnrtOpTypeSpaceToDepth001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSpaceToDepth001 catch err: " + err);
+        console.error('====>NnrtOpTypeSpaceToDepth001 catch err: ' + err);
       }
     })
 
@@ -2074,13 +2074,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSpaceToDepth002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSpaceToDepth002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SPACE_TO_DEPTH", false);
-        console.info("====>NnrtOpTypeSpaceToDepth002 result: " + result);
+        console.info('====>NnrtOpTypeSpaceToDepth002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SPACE_TO_DEPTH', false);
+        console.info('====>NnrtOpTypeSpaceToDepth002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSpaceToDepth002 catch err: " + err);
+        console.error('====>NnrtOpTypeSpaceToDepth002 catch err: ' + err);
       }
     })
 
@@ -2094,13 +2094,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSwish001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSwish001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SWISH", true);
-        console.info("====>NnrtOpTypeSwish001 result: " + result);
+        console.info('====>NnrtOpTypeSwish001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SWISH', true);
+        console.info('====>NnrtOpTypeSwish001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSwish001 catch err: " + err);
+        console.error('====>NnrtOpTypeSwish001 catch err: ' + err);
       }
     })
 
@@ -2114,13 +2114,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeSwish002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeSwish002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_SWISH", false);
-        console.info("====>NnrtOpTypeSwish002 result: " + result);
+        console.info('====>NnrtOpTypeSwish002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_SWISH', false);
+        console.info('====>NnrtOpTypeSwish002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeSwish002 catch err: " + err);
+        console.error('====>NnrtOpTypeSwish002 catch err: ' + err);
       }
     })
 
@@ -2134,13 +2134,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeReduceL2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeReduceL2001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_REDUCE_L2", true);
-        console.info("====>NnrtOpTypeReduceL2001 result: " + result);
+        console.info('====>NnrtOpTypeReduceL2001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_REDUCE_L2', true);
+        console.info('====>NnrtOpTypeReduceL2001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeReduceL2001 catch err: " + err);
+        console.error('====>NnrtOpTypeReduceL2001 catch err: ' + err);
       }
     })
 
@@ -2154,13 +2154,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeReduceL2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeReduceL2002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_REDUCE_L2", false);
-        console.info("====>NnrtOpTypeReduceL2002 result: " + result);
+        console.info('====>NnrtOpTypeReduceL2002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_REDUCE_L2', false);
+        console.info('====>NnrtOpTypeReduceL2002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeReduceL2002 catch err: " + err);
+        console.error('====>NnrtOpTypeReduceL2002 catch err: ' + err);
       }
     })
 
@@ -2174,13 +2174,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeHardSigmoid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeHardSigmoid001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_HARD_SIGMOID", true);
-        console.info("====>NnrtOpTypeHardSigmoid001 result: " + result);
+        console.info('====>NnrtOpTypeHardSigmoid001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_HARD_SIGMOID', true);
+        console.info('====>NnrtOpTypeHardSigmoid001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeHardSigmoid001 catch err: " + err);
+        console.error('====>NnrtOpTypeHardSigmoid001 catch err: ' + err);
       }
     })
 
@@ -2194,13 +2194,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeHardSigmoid002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeHardSigmoid002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_HARD_SIGMOID", false);
-        console.info("====>NnrtOpTypeHardSigmoid002 result: " + result);
+        console.info('====>NnrtOpTypeHardSigmoid002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_HARD_SIGMOID', false);
+        console.info('====>NnrtOpTypeHardSigmoid002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeHardSigmoid002 catch err: " + err);
+        console.error('====>NnrtOpTypeHardSigmoid002 catch err: ' + err);
       }
     })
 
@@ -2214,13 +2214,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeGatherNd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeGatherNd001 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_GATHER_ND", true);
-        console.info("====>NnrtOpTypeGatherNd001 result: " + result);
+        console.info('====>NnrtOpTypeGatherNd001 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_GATHER_ND', true);
+        console.info('====>NnrtOpTypeGatherNd001 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeGatherNd001 catch err: " + err);
+        console.error('====>NnrtOpTypeGatherNd001 catch err: ' + err);
       }
     })
 
@@ -2234,13 +2234,13 @@ export default function ActsNeuralNetworkRuntimeTypeTest2() {
      */
     it('NnrtOpTypeGatherNd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtOpTypeGatherNd002 start====");
-        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest("OH_NN_OPS_GATHER_ND", false);
-        console.info("====>NnrtOpTypeGatherNd002 result: " + result);
+        console.info('====>NnrtOpTypeGatherNd002 start====');
+        let result : number = neuralnetworkcoretest.NNOperationTypeCommonTest('OH_NN_OPS_GATHER_ND', false);
+        console.info('====>NnrtOpTypeGatherNd002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtOpTypeGatherNd002 catch err: " + err);
+        console.error('====>NnrtOpTypeGatherNd002 catch err: ' + err);
       }
     })
   })

@@ -50,6 +50,7 @@
         "MainAbility/pages/Circle/CircleNullUndefined3",
         "MainAbility/pages/Rect/RectRadiusWidthHeightNullUndefined",
         "MainAbility/pages/Rect/RectNullUndefined",
-        "MainAbility/pages/Circle/CircleStrokeColorMetrics"
+        "MainAbility/pages/Circle/CircleStrokeColorMetrics",
+        "MainAbility/pages/Rect/RectRadiusNullArray"
     ]
 }

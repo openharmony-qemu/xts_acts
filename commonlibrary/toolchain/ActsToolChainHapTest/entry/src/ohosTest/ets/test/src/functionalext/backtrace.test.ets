@@ -27,7 +27,7 @@ export default function FunctionalextBacktraceTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("unittest_backtrace", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("unittest_backtrace");
+      const result: number = await testNapi.runTest("unittest_backtrace");
       expect(result).assertEqual(0);
       done();
     });

@@ -22,7 +22,7 @@ export default class Utils {
   static sleep(time: number) {
     return new Promise<string>((resolve, reject) => {
       setTimeout(() => {
-        resolve("ok")
+        resolve('ok')
       }, time)
     }).then(() => {
       console.info(`sleep ${time} over...`)
@@ -31,7 +31,7 @@ export default class Utils {
 
 
   static copyRawfileToFilesDirSync(rawfileName: string, context: Context) {
-    let dir = context.filesDir + "/";
+    let dir = context.filesDir + '/';
     try {
       let targetFilePath = dir + rawfileName;
       context.resourceManager.getRawFileContent(rawfileName, (error, model_buffer) => {
@@ -43,16 +43,16 @@ export default class Utils {
           let file = fs.openSync(targetFilePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
           fs.writeSync(file.fd, model_buffer.buffer);
           fs.closeSync(file);
-          console.log("[rawfile_copy_to_sandbox] $\{rawfileName} is copy success");
+          console.log('[rawfile_copy_to_sandbox] $\{rawfileName} is copy success');
         }
       });
     } catch (error) {
-      console.info("[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed" + error);
+      console.info('[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed' + error);
     }
   }
 
   static fileCheckSync(fileName: string, context: Context): boolean {
-    let targetFilePath = context.filesDir + "/" + fileName;
+    let targetFilePath = context.filesDir + '/' + fileName;
     try {
       return fs.accessSync(targetFilePath);
     } catch (err) {

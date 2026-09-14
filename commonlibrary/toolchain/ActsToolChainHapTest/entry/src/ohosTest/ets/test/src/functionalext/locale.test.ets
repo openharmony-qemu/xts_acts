@@ -27,7 +27,7 @@ export default function locale_group_test() {
      * @tc.level  LEVEL1
      */
     it("localeconv", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("localeconv");
+      const result: number = await testNapi.runTest("localeconv");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function locale_group_test() {
      * @tc.level  LEVEL1
      */
     it("localeconv_multithread", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("localeconv_multithread");
+      const result: number = await testNapi.runTest("localeconv_multithread");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function locale_group_test() {
      * @tc.level  LEVEL1
      */
     it("newlocale", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("newlocale");
+      const result: number = await testNapi.runTest("newlocale");
       expect(result).assertEqual(0);
       done();
     });
@@ -66,7 +66,7 @@ export default function locale_group_test() {
      * @tc.level  LEVEL1
      */
     it("setlocale", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("setlocale");
+      const result: number = await testNapi.runTest("setlocale");
       expect(result).assertEqual(0);
       done();
     });
@@ -79,7 +79,7 @@ export default function locale_group_test() {
      * @tc.level  LEVEL1
      */
     it("strtod_l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strtod_l");
+      const result: number = await testNapi.runTest("strtod_l");
       expect(result).assertEqual(0);
       done();
     });
@@ -92,7 +92,7 @@ export default function locale_group_test() {
      * @tc.level  LEVEL1
      */
     it("uselocale", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("uselocale");
+      const result: number = await testNapi.runTest("uselocale");
       expect(result).assertEqual(0);
       done();
     });
@@ -105,7 +105,7 @@ export default function locale_group_test() {
      * @tc.level  LEVEL1
      */
     it("wcstod_l", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("wcstod_l");
+      const result: number = await testNapi.runTest("wcstod_l");
       expect(result).assertEqual(0);
       done();
     });
@@ -119,7 +119,7 @@ export default function locale_group_test() {
      * @tc.level  LEVEL1
      */
     it("duplocale", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("duplocale");
+      const result: number = await testNapi.runTest("duplocale");
       expect(result).assertEqual(0);
       done();
     });

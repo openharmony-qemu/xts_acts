@@ -15,7 +15,7 @@ function sleep(time: number) {
 export default function actsNotificationPriorityTest() {
   describe('actsNotificationPriorityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(async () => {
+    beforeAll(async (done: Function) => {
       context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       notificationManager.requestEnableNotification(context).then(() => {
         console.info(`requestEnableNotification succeeded`);
@@ -27,14 +27,15 @@ export default function actsNotificationPriorityTest() {
           expect().assertFail();
         }
       });
-      await sleep(1000)
+      await sleep(1500)
       let driver = Driver.create();
       let button = await driver.findComponent(ON.text('允许'));
       console.info(`button is ${JSON.stringify(button)}`);
       if (button !== null) {
-        await sleep(1000);
+        await sleep(1500);
         await button.click();
-        await sleep(1000);
+        await sleep(1500);
+        done()
       } else {
         console.info(`null button`);
         expect(button).assertContain('允许')
@@ -838,6 +839,68 @@ export default function actsNotificationPriorityTest() {
         expect(err.code).assertEqual(401)
         done()
       }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_7500
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_7500
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_7500', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_7500"
+      let count = 0
+      try {
+        let removeSlotCallback = (err: BusinessError): void => {
+          if (err) {
+            console.error(TAG + `Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info(TAG + `Succeeded in removing slot.`);
+            count++
+            expect(count).assertEqual(1)
+            done()
+          }
+        }
+        notificationManager.removeSlot(undefined, removeSlotCallback);
+      }catch (err) {
+        console.info(`${TAG} removeSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_7600
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_7600
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_7600', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_7600"
+      let count = 0
+      try {
+        notificationManager.addSlot(15, (err) => {
+          if (err) {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        done()
+      }
+
     })
   })
 }

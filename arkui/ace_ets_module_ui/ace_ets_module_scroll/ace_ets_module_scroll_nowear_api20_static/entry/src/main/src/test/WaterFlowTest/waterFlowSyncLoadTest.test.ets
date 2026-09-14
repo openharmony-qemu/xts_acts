@@ -40,6 +40,7 @@ export default function WaterFlowSyncLoadTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/WaterFlow/waterFlowSyncLoad',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push WaterFlowSyncLoadTest page error:' + err);

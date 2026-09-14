@@ -27,7 +27,7 @@ export default function FunctionalextOhosDfxLogTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("ohos_dfx_log", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ohos_dfx_log");
+      const result: number = await testNapi.runTest("ohos_dfx_log");
       expect(result).assertEqual(0);
       done();
     });

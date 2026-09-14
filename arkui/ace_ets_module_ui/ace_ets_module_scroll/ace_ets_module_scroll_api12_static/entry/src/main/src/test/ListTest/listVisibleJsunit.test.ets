@@ -36,6 +36,7 @@ export default function listVisibleJsunit() {
         if (!("listVisible" == pages.name)) {
           console.info("get listVisibleJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push listVisibleJsunit page error: " + err);

@@ -9,6 +9,8 @@ import test_0008 from './xml/XmlTest05.test';
 import test_0009 from './xml/XmlTest06.test';
 import test_0010 from './xml/XmlTest07.test';
 import test_0011 from './xml/XmlTest08.test';
+import xmlDynamicFPTest from './xmlfp/XmlDynamicFP.test';
+import xmlFPTest from './xmlfp/XmlFP.test';
 
 export default function testsuite() {
   test_0001();
@@ -22,4 +24,6 @@ export default function testsuite() {
   test_0009();
   test_0010();
   test_0011();
+  xmlDynamicFPTest();
+  xmlFPTest();
 }

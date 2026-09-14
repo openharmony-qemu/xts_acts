@@ -18,3 +18,4 @@ export const GetRemainingDelayTime: () => number;
 export const CancelSuspendDelay: () => number;
 export const GetTransientTaskInfo: () => backgroundTaskManager.TransientTaskInfo;
 export const RequestSuspendDelayWithReasonIsNull: () => number;
+export const GetRemainingDelayTimeWithNull: () => number;

@@ -31,6 +31,7 @@ export default function syncLoadModifierTest() {
         if (!('TextLineSpacing' == pages.name)) {
           console.info('get TextLineSpacingTest state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push TextLineSpacingTest page error: ' + err);

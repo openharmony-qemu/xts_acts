@@ -27,7 +27,7 @@ export default function fenv_group_test() {
      * @tc.level  LEVEL1
      */
     it("flt_rounds", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__flt_rounds");
+      const result: number = await testNapi.runTest("__flt_rounds");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function fenv_group_test() {
      * @tc.level  LEVEL1
      */
     it("feholdexcept", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("feholdexcept");
+      const result: number = await testNapi.runTest("feholdexcept");
       expect(result).assertEqual(0);
       done();
     });
@@ -53,7 +53,7 @@ export default function fenv_group_test() {
      * @tc.desc   libc-test feupdateenv
      */
     it("feupdateenv", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("feupdateenv");
+      const result: number = await testNapi.runTest("feupdateenv");
       expect(result).assertEqual(0);
       done();
     });

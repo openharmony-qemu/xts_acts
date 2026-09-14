@@ -9,7 +9,8 @@
     "testability/pages/WebForceEnableZoom",
     "testability/pages/WebSetSoftKeyboardBehaviorMode",
     "testability/pages/WebKeyBoardAvoidMode",
-    "testability/pages/WebOnInputMethodAttached"
+    "testability/pages/WebOnInputMethodAttached",
+    "testability/pages/WebAttrOutOfRangeEnum"
   ]
 }
 

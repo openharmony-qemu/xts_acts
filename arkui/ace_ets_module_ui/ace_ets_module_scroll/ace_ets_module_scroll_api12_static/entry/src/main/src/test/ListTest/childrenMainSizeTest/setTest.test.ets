@@ -46,6 +46,7 @@ export default function setTest() {
         if (!("set" == pages.name)) {
           console.info("get setTest state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push setTest page error: " + err);

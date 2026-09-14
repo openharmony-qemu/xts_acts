@@ -33,6 +33,7 @@ export default function SwiperMargin_4() {
           router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperMargin_4"
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push SwiperMargin_4 page error:" + err);

@@ -57,6 +57,7 @@ it('showDotIndicator_static_0100', Level.LEVEL0, async (done: () => void): Promi
       try {
         await CommonFunc.sleep(1000);
         let driver = Driver.create()
+        await CommonFunc.sleep(1000);
         await driver.assertComponentExist(ON.text('2'));
         let btn1: Component = await driver.findComponent(ON.id('indicator_showNext')) as Component;
         await btn1.click();

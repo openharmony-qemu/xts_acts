@@ -59,24 +59,31 @@ export default function getListVisible() {
      * @tc.level    Level.LEVEL1
      */
 it('getListVisible_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[getListVisible_static_0100] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let btn: Component = await driver.findComponent(ON.text('数学')) as Component;
-      console.info('test: 11[getListVisible_static_0100] START');
-      await btn.click();
-      console.info('test: 22[getListVisible_static_0100] START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('list_getMess');
-      console.info("[getListVisible_static_0100] component obj is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      console.info("[getListVisible_static_0100] content: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
-      await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('Item: index:0 itemIndex:1');
-      console.info('[getListVisible_static_0100] END');
-      done();
+      try {
+        console.info('[getListVisible_static_0100] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let btn: Component = await driver.findComponent(ON.text('数学')) as Component;
+        console.info('test: 11[getListVisible_static_0100] START');
+        await btn.click();
+        console.info('test: 22[getListVisible_static_0100] START');
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('list_getMess');
+        console.info("[getListVisible_static_0100] component obj is: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+        console.info("[getListVisible_static_0100] content: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
+        await CommonFunc.sleep(1000);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+          .assertEqual('Item: index:0 itemIndex:1');
+        console.info('[getListVisible_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[getListVisible_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

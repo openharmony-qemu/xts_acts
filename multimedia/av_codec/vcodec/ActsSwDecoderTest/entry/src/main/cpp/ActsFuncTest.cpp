@@ -160,6 +160,7 @@ int VideoSwdecFunction0800()
     vDecSample->defaultHeight = K_HEIGHT_1080;
     vDecSample->defaultFrameRate = 30U;
     vDecSample->beforeEosInput = true;
+    vDecSample->noCaleHash = true;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK) {
         return -1;
     }
@@ -305,6 +306,7 @@ int VideoSwdecFunction1200()
     vDecSample->defaultHeight = K_HEIGHT_1080;
     vDecSample->defaultFrameRate = 30U;
     vDecSample->surfaceOutput = false;
+    vDecSample->noCaleHash = true;
     vDecSample->repeatStartStopBeforeEos = K_REPEAT_START_STOP_OR_FLUSH_BEFORE_EOS_COUNT;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK) { return -1; }
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return -1; }
@@ -332,6 +334,7 @@ int VideoSwdecFunction1300()
     vDecSample->defaultHeight = K_HEIGHT_1080;
     vDecSample->defaultFrameRate = 30U;
     vDecSample->surfaceOutput = false;
+    vDecSample->noCaleHash = true;
     vDecSample->repeatStartFlushBeforeEos = K_REPEAT_START_STOP_OR_FLUSH_BEFORE_EOS_COUNT;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK) { return -1; }
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return -1; }
@@ -497,6 +500,7 @@ int VideoDecodeSyncSw264Func0040()
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_RGBA;
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->sleepOnFPS = true;
+    vDecSample->noCaleHash = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameAvc) != AV_ERR_OK) { return -1; }
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return -1; }
     int ret = vDecSample->StartSyncVideoDecoder();

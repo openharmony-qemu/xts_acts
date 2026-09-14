@@ -121,9 +121,9 @@ export class MyDataSource <T> extends BasicDataSource<T> {
     this.notifyDataAdd(this.dataArray.length - 1);
   }
 
-  public deleteData(index: number): void {
+  public deleteData(index: int): void {
     this.dataArray.splice(index.toInt(), 1);
-    this.notifyDataAdd(this.totalCount())
+    this.notifyDataDelete(index)
   }
 }
 
@@ -132,9 +132,9 @@ export class MyDataSource <T> extends BasicDataSource<T> {
 struct listVisibleContent {
   private dataBean: MyDataSource<string> = new MyDataSource<string>();
   scroller: Scroller = new Scroller()
-  private firstViewIndex: number = 0
-  private lastViewIndex: number = 0
-  @State leg: number = 0
+  private firstViewIndex: int = 0
+  private lastViewIndex: int = 0
+  @State leg: int = 0
 
   aboutToAppear() {
     for (let i = 1; i <= 50; i++) {

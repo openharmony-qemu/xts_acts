@@ -13,33 +13,24 @@
  * limitations under the License.
  */
 
-import AsyncLockTest from './AsyncLockTest.test.ets'
 import ConcurrencyBaseTest from './ConcurrencyBase.test.ets'
 import SendableChainTest from './SendablesChain.test.ets'
 import SendableGroupTest from './SendablesGroup.test.ets'
 import SendableGroupWithAllocTest from './SendablesGroupWithAlloc.test.ets'
-import LockTest from './LockTest.test.ets'
 import TaskPoolTest from './TaskPoolTest.test.ets'
 import TaskGroupTest from './TaskGroupTest.test.ets'
 import SendablesTest from './SendablesTest.test.ets'
 import SendablesTestWithAlloc from './SendablesTestWithAlloc.test.ets'
 import PixMapTest from './PixMapTest.test.ets'
-import SendableLruCache from './SendableLruCache.test.ets'
-import SendableLruCacheSupplement from './SendableLruCacheSupplement.test.ets'
 
 export default function testsuite() {
-    // test case in AsyncLockTest can only be reproduced in the first and standalone testsuite
-    AsyncLockTest();
     ConcurrencyBaseTest();
     SendableChainTest();
     SendableGroupTest();
     SendableGroupWithAllocTest();
-    LockTest();
     TaskPoolTest();
     TaskGroupTest();
     SendablesTest();
     SendablesTestWithAlloc();
     PixMapTest();
-    SendableLruCache();
-    SendableLruCacheSupplement();
 }

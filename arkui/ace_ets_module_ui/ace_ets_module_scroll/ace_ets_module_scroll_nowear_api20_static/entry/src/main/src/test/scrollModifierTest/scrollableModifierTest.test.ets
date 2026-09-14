@@ -40,6 +40,7 @@ export default function ScrollableModifierTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/scrollModifier/scrollableModifier',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ScrollableModifierTest page error:' + err);

@@ -40,6 +40,7 @@ export default function ScrollableTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/scroll/scrollable',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ScrollableTest page error:' + err);

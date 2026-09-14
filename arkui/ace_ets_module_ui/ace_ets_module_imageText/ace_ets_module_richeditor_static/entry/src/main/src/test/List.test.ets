@@ -20,6 +20,7 @@ import RichEditorShaderStyleTest from './RichEditor26Test/RichEditorShaderStyle.
 import RichEditorStrokeJoinStyleTest from './RichEditor26Test/RichEditorStrokeJoinStyle.test';
 import RichEditorPunctuationOverflowTest from './RichEditor26Test/RichEditorPunctuationOverflow.test';
 import RichEditorScrollToVisibleTest from './RichEditor26Test/RichEditorScrollToVisible.test';
+import RichEditorEnableSelectedDataDetectorTest from './RichEditor26Test/RichEditorEnableSelectedDataDetector.test';
 
 export default function testsuite() {
   RichEditorTest();
@@ -27,4 +28,5 @@ export default function testsuite() {
   RichEditorStrokeJoinStyleTest();
   RichEditorPunctuationOverflowTest();
   RichEditorScrollToVisibleTest();
+  RichEditorEnableSelectedDataDetectorTest();
 }

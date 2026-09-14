@@ -27,7 +27,7 @@ export default function FunctionalextSupplementSelectTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("pselect", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pselect");
+      const result: number = await testNapi.runTest("pselect");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function FunctionalextSupplementSelectTestGroupTest() {
      * @tc.desc   libc-test select
      */
     it("select", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("select");
+      const result: number = await testNapi.runTest("select");
       expect(result).assertEqual(0);
       done();
     });

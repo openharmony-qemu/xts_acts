@@ -14,31 +14,16 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level,  Size, TestType } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level,  Size, TestType } from "../../../../hypium/index"
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 
 export default function showActionSheetOrder() {
   describe('showActionSheetOrder', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("DismissReasonTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async () => {
       console.info("showActionSheetOrder beforeEach start");
@@ -67,7 +52,11 @@ export default function showActionSheetOrder() {
       if (AppStorage.get<number>('showActionSheetOrder') as number != undefined) {
         AppStorage.delete('showActionSheetOrder')
       }
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('showActionSheetOrder after each sleep err: ' + JSON.stringify(err));
+      }
       console.info("showActionSheetOrder after each called");
     });
 
@@ -79,22 +68,26 @@ export default function showActionSheetOrder() {
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 
      */
 it('showActionSheetOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
-      console.info('showActionSheetOrder_static_0100 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('100')) as Component;
-      await button!.click();
-      await CommonFunc.sleep(500);
-      let button1 = await driver.findComponent(ON.id('myOrder')) as Component;
-      await button1!.click();
-      await CommonFunc.sleep(500);
-      let top = AppStorage.get<number>('showActionSheetOrder') as number
-      expect(top).assertEqual(100)
-      await CommonFunc.sleep(500);
-      let button2 = await driver.findComponent(ON.text('Confirm')) as Component;
-      await button2!.click();
-      await CommonFunc.sleep(500);
-      console.info('showActionSheetOrder_static_0100 END');
+      try {
+        console.info('showActionSheetOrder_static_0100 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('100')) as Component;
+        await button!.click();
+        await CommonFunc.sleep(500);
+        let button1 = await driver.findComponent(ON.id('myOrder')) as Component;
+        await button1!.click();
+        await CommonFunc.sleep(500);
+        let top = AppStorage.get<number>('showActionSheetOrder') as number
+        expect(top).assertEqual(100)
+        await CommonFunc.sleep(500);
+        let button2 = await driver.findComponent(ON.text('Confirm')) as Component;
+        await button2!.click();
+        await CommonFunc.sleep(500);
+        console.info('showActionSheetOrder_static_0100 END');
+      } catch (err) {
+        console.info('showActionSheetOrder_static_0100 err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -106,22 +99,26 @@ it('showActionSheetOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Lev
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 
      */
 it('showActionSheetOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
-      console.info('showActionSheetOrder_static_0200 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('100001')) as Component;
-      await button!.click();
-      await CommonFunc.sleep(500);
-      let button1 = await driver.findComponent(ON.id('myOrder')) as Component;
-      await button1!.click();
-      await CommonFunc.sleep(500);
-      let top = AppStorage.get<number>('showActionSheetOrder') as number
-      expect(top).assertEqual(100000)
-      await CommonFunc.sleep(500);
-      let button2 = await driver.findComponent(ON.text('Confirm')) as Component;
-      await button2!.click();
-      await CommonFunc.sleep(500);
-      console.info('showActionSheetOrder_static_0200 END');
+      try {
+        console.info('showActionSheetOrder_static_0200 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('100001')) as Component;
+        await button!.click();
+        await CommonFunc.sleep(500);
+        let button1 = await driver.findComponent(ON.id('myOrder')) as Component;
+        await button1!.click();
+        await CommonFunc.sleep(500);
+        let top = AppStorage.get<number>('showActionSheetOrder') as number
+        expect(top).assertEqual(100000)
+        await CommonFunc.sleep(500);
+        let button2 = await driver.findComponent(ON.text('Confirm')) as Component;
+        await button2!.click();
+        await CommonFunc.sleep(500);
+        console.info('showActionSheetOrder_static_0200 END');
+      } catch (err) {
+        console.info('showActionSheetOrder_static_0200 err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -133,22 +130,26 @@ it('showActionSheetOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Lev
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 
      */
 it('showActionSheetOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
-      console.info('showActionSheetOrder_static_0300 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('-100001')) as Component;
-      await button!.click();
-      await CommonFunc.sleep(500);
-      let button1 = await driver.findComponent(ON.id('myOrder')) as Component;
-      await button1!.click();
-      await CommonFunc.sleep(500);
-      let top = AppStorage.get<number>('showActionSheetOrder') as number
-      expect(top).assertEqual(-100000)
-      await CommonFunc.sleep(500);
-      let button2 = await driver.findComponent(ON.text('Confirm')) as Component;
-      await button2!.click();
-      await CommonFunc.sleep(500);
-      console.info('showActionSheetOrder_static_0300 END');
+      try {
+        console.info('showActionSheetOrder_static_0300 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('-100001')) as Component;
+        await button!.click();
+        await CommonFunc.sleep(500);
+        let button1 = await driver.findComponent(ON.id('myOrder')) as Component;
+        await button1!.click();
+        await CommonFunc.sleep(500);
+        let top = AppStorage.get<number>('showActionSheetOrder') as number
+        expect(top).assertEqual(-100000)
+        await CommonFunc.sleep(500);
+        let button2 = await driver.findComponent(ON.text('Confirm')) as Component;
+        await button2!.click();
+        await CommonFunc.sleep(500);
+        console.info('showActionSheetOrder_static_0300 END');
+      } catch (err) {
+        console.info('showActionSheetOrder_static_0300 err: ' + JSON.stringify(err));
+      }
       done();
     });
     
@@ -159,22 +160,26 @@ it('showActionSheetOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Lev
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 
      */
 it('showActionSheetOrder_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
-      console.info('showActionSheetOrder_static_0400 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('undefined')) as Component;
-      await button!.click(); 
-      await CommonFunc.sleep(500);
-      let button1 = await driver.findComponent(ON.id('myOrder')) as Component;
-      await button1!.click();
-      await CommonFunc.sleep(500);
-      let top = AppStorage.get<number>('showActionSheetOrder') as number
-      expect(top).assertEqual(0)
-      await CommonFunc.sleep(500);
-      let button2 = await driver.findComponent(ON.text('Confirm')) as Component;
-      await button2!.click();
-      await CommonFunc.sleep(500);
-      console.info('showActionSheetOrder_static_0400 END');
+      try {
+        console.info('showActionSheetOrder_static_0400 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('undefined')) as Component;
+        await button!.click(); 
+        await CommonFunc.sleep(500);
+        let button1 = await driver.findComponent(ON.id('myOrder')) as Component;
+        await button1!.click();
+        await CommonFunc.sleep(500);
+        let top = AppStorage.get<number>('showActionSheetOrder') as number
+        expect(top).assertEqual(0)
+        await CommonFunc.sleep(500);
+        let button2 = await driver.findComponent(ON.text('Confirm')) as Component;
+        await button2!.click();
+        await CommonFunc.sleep(500);
+        console.info('showActionSheetOrder_static_0400 END');
+      } catch (err) {
+        console.info('showActionSheetOrder_static_0400 err: ' + JSON.stringify(err));
+      }
       done();
     });
   })

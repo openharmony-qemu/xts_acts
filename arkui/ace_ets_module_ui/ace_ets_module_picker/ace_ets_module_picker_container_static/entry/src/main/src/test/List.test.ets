@@ -29,6 +29,11 @@ import CalendarPickerAttributeModifierTest from './CalendarPicker/CalendarPicker
 import DatePickerAttributeModifierTest from './DatePicker/DatePickerAttributeModifier.test';
 import TextPickerAttributeModifierTest from './TextPicker/TextPickerAttributeModifier.test';
 import TimePickerAttributeModifierTest from './TimePicker/TimePickerAttributeModifier.test';
+import UIPickerCallbackTest from './UIPickerComponent/UIPickerCallback.test';
+import TextPickerOnChangeTest from './TextPickerComponent/TextPickerOnChange.test';
+import TextPickerOnScrollStopTest from './TextPickerComponent/TextPickerOnScrollStop.test';
+import TextPickerOnEnterSelectedAreaTest from './TextPickerComponent/TextPickerOnEnterSelectedArea.test';
+import TimePickerOnChangeTest from './TimePickerComponent/TimePickerOnChange.test';
 
 export default function testsuite() {
     UIPickerCanLoopTest();
@@ -47,4 +52,8 @@ export default function testsuite() {
     DatePickerAttributeModifierTest();
     TextPickerAttributeModifierTest();
     TimePickerAttributeModifierTest();
+    UIPickerCallbackTest();
+    TextPickerOnChangeTest();
+    TextPickerOnEnterSelectedAreaTest();
+    TimePickerOnChangeTest();
 }

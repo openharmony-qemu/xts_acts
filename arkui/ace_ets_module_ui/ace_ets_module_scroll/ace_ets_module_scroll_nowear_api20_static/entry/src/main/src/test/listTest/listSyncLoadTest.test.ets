@@ -40,6 +40,7 @@ export default function ListSyncLoadTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/list/listSyncLoad',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ListSyncLoadTest page error:' + err);

@@ -50,6 +50,7 @@ export default function List07Test() {
         if (!("List07" == pages.name)) {
           console.info("get list state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
           
           // console.info("push list page success " + JSON.stringify(result));
         }

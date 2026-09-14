@@ -45,6 +45,7 @@
 #define PARAM_1300011 1300011
 #define PARAM_1300012 1300012
 #define PARAM_1300015 1300015
+#define PARAM_1300014 1300014
 #define NAPI_ERR_INVALID_PARAM 1300016
 
 #define MAX_DENSITY_CALLBACKS 10
@@ -1878,6 +1879,7 @@ napi_value TestWindowManager_ErrorCode_enum(napi_env env, napi_callback_info inf
     napi_value retValue;
     if (WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_DESTROY_FAILED == PARAM_1300011 &&
         WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_STATE_ABNORMAL == PARAM_1300012 &&
+        WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR == PARAM_1300014 &&
         WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_REPEATED_OPERATION == PARAM_1300015) {
         napi_create_int32(env, 0, &retValue);
     } else {

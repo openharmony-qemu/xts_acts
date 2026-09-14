@@ -32,6 +32,7 @@ export default function contentStartOffsetTest() {
         if (!('Grid_contentStartOffset' == pages.name)) {
           console.info('get ContentStartOffsetTest state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ContentStartOffsetTest page error: ' + err);

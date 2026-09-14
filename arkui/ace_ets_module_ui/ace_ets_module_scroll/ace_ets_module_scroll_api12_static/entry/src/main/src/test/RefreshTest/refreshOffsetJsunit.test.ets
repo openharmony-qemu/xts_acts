@@ -35,6 +35,7 @@ export default function refreshOffsetJsunit() {
         if (!("refreshOffset" == pages.name)) {
           console.info("get refreshOffsetJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push refreshOffsetJsunit page error: " + err);

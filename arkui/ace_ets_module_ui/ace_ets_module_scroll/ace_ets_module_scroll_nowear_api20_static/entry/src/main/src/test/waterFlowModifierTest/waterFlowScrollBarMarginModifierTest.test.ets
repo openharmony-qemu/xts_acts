@@ -40,6 +40,7 @@ export default function WaterFlowScrollBarMarginModifierTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/waterFlowModifier/waterFlowScrollBarMarginModifier',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push WaterFlowScrollBarMarginModifierTest page error:' + err);

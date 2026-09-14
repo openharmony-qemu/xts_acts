@@ -16,6 +16,18 @@ import lruCacheTest02 from './LRUCache/LRUCacheTest02.test';
 import lruCacheTest03 from './LRUCache/LRUCacheTest03.test';
 import lruCacheTest04 from './LRUCache/LRUCacheTest04.test';
 import lruCacheTest05 from './LRUCache/LRUCacheTest05.test';
+import lruCacheBigintTest from './LRUCache/Typetest/LruCacheBigintTest.test';
+import lruCacheBooleanTest from './LRUCache/Typetest/LruCacheBooleanTest.test';
+import lruCacheDateTest from './LRUCache/Typetest/LruCacheDateTest.test';
+import lruCacheFunctionTest from './LRUCache/Typetest/LruCacheFunctionTest.test';
+import lruCacheMapTest from './LRUCache/Typetest/LruCacheMapTest.test';
+import lruCacheNestedTest from './LRUCache/Typetest/LruCacheNestedTest.test';
+import lruCacheNumberTest from './LRUCache/Typetest/LruCacheNumberTest.test';
+import lruCacheObjectTest from './LRUCache/Typetest/LruCacheObjectTest.test';
+import lruCacheRegExpTest from './LRUCache/Typetest/LruCacheRegExpTest.test';
+import lruCacheSetTest from './LRUCache/Typetest/LruCacheSetTest.test';
+import lruCacheStringTest from './LRUCache/Typetest/LruCacheStringTest.test';
+import lruCacheUnionTest from './LRUCache/Typetest/LruCacheUnionTest.test';
 
 import rationalNumberTest from './RationalNumber/RationalNumberTest.test';
 import rationalNumberTest02 from './RationalNumber/RationalNumberTest02.test';
@@ -38,6 +50,10 @@ import util3Test from './util/Util3.test';
 import utilTypeTest from './util/UtilType.test';
 import vmHeapMemoryPressureTest from './util/VMHeapMemoryPressureTest.test';
 
+import util1FPTest from './utilfp/Util1FP.test';
+import util2FPTest from './utilfp/Util2FP.test';
+import util3FPTest from './utilfp/Util3FP.test';
+
 export default function testsuite() {
   base64HelperTest();
   base64HelperTest02();
@@ -55,6 +71,18 @@ export default function testsuite() {
   lruCacheTest03();
   lruCacheTest04();
   lruCacheTest05();
+  lruCacheBigintTest();
+  lruCacheBooleanTest();
+  lruCacheDateTest();
+  lruCacheFunctionTest();
+  lruCacheMapTest();
+  lruCacheNestedTest();
+  lruCacheNumberTest();
+  lruCacheObjectTest();
+  lruCacheRegExpTest();
+  lruCacheSetTest();
+  lruCacheStringTest();
+  lruCacheUnionTest();
   rationalNumberTest();
   rationalNumberTest02();
   rationalNumberTest03();
@@ -71,4 +99,7 @@ export default function testsuite() {
   util3Test();
   utilTypeTest();
   vmHeapMemoryPressureTest();
+  util1FPTest();
+  util2FPTest();
+  util3FPTest();
 }

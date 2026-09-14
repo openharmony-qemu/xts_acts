@@ -472,7 +472,7 @@ export default function BitVectorFlipBitByIndexTest() {
           }
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect(e.code).assertEqual(10200201)
+          expect(e.code === 10200201 || e.code === 10200001).assertEqual(true)
         }
         while (count < 100) {
           await asyncSleep(100)

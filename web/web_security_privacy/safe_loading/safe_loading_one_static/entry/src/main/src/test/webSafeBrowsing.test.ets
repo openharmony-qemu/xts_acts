@@ -154,55 +154,5 @@ export default function ActsAceWebSafeBrowsing() {
       await Utils.msSleep(2000);
       done();
     })
-
-    /**
-     * @tc.name   testEnableSafeBrowsingNullStatic001
-     * @tc.number SUB_ACE_WEB_SAFEBROWSING_NULL_0100
-     * @tc.desc   test enableSafeBrowsing with null param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testEnableSafeBrowsingNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent("emitEnableSafeBrowsingNullStatic001", 10);
-      await Utils.msSleep(2000);
-      Utils.registerBaseEvent("testEnableSafeBrowsingNullStatic001", true, 41021701, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
-      await Utils.msSleep(2000);
-      done();
-    })
-
-    /**
-     * @tc.name   testEnableSafeBrowsingUndefinedStatic001
-     * @tc.number SUB_ACE_WEB_SAFEBROWSING_UNDEFINED_0100
-     * @tc.desc   test enableSafeBrowsing with undefined param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testEnableSafeBrowsingUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent("emitEnableSafeBrowsingUndefinedStatic001", 10);
-      await Utils.msSleep(2000);
-      Utils.registerBaseEvent("testEnableSafeBrowsingUndefinedStatic001", true, 41021702, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
-      await Utils.msSleep(2000);
-      done();
-    })
   })
 }

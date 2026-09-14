@@ -16,49 +16,70 @@
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach } from '@ohos/hypium';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/utils/Common';
-import { UiDriver, BY, UiComponent } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 
 const BUNDLE_NAME = 'com.arkui.ace.navigation1';
 const RECYCLE_PAGE_URL = 'MainAbility/pages/Navigation/NavigationRecyclePage';
 const MODIFIER_PAGE_URL = 'MainAbility/pages/Navigation/ModifierRecyclePage';
 
-async function findComponentWithScroll(driver: UiDriver, key: string, maxRetries: number = 8): Promise<UiComponent> {
+
+async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetries: number = 10): Promise<Component | null> {
   // Try direct find first
+  for (let i = 0; i < 3; i++) {
+    let comp = await driver.findComponent(ON.id(id));
+    if (comp !== null) {
+      return comp;
+    }
+    await CommonFunc.sleep(500);
+  }
+ 
   try {
-    let btn = await driver.findComponent(BY.key(key));
-    if (btn != null) {
-      return btn;
+    let scrollComp = await driver.findComponent(ON.type('Scroll'));
+    let result = await scrollComp.scrollSearch(ON.id(id));
+    if (result !== null && result !== undefined) {
+      return result;
     }
   } catch (e) {
-    // not found, proceed to scroll
+    // scrollSearch failed
   }
-  // Use driver.swipe to physically scroll down and find the component
-  for (let i = 0; i < maxRetries; i++) {
-    await driver.swipe(500, 1500, 500, 500);
+  
+  try {
+    let scrollComp = await driver.findComponent(ON.type('Scroll'));
+    let bounds = await scrollComp.getBounds();
+    let centerX: number = Math.round((bounds.left + bounds.right) / 2);
+    let centerY: number = Math.round((bounds.top + bounds.bottom) / 2);
+    await scrollComp.scrollToTop();
     await CommonFunc.sleep(800);
-    try {
-      let btn = await driver.findComponent(BY.key(key));
-      if (btn != null) {
-        return btn;
+    for (let i = 0; i < maxScrollRetries; i++) {
+      let comp = await driver.findComponent(ON.id(id));
+      if (comp !== null) {
+        return comp;
       }
-    } catch (e) {
-      // still not found, retry
+      // Scroll down via mouse wheel (PC-compatible)
+      await driver.mouseScroll({ x: centerX, y: centerY }, true, 3);
+      await CommonFunc.sleep(500);
     }
+    // Final check after scrolling
+    let comp = await driver.findComponent(ON.id(id));
+    if (comp !== null) {
+      return comp;
+    }
+  } catch (e) {
+    // mouseScroll fallback failed
   }
-  // If still not found after scrolling down, scroll back up and retry
-  for (let i = 0; i < maxRetries; i++) {
-    await driver.swipe(500, 500, 500, 1500);
+ 
+  try {
+    let scrollComp = await driver.findComponent(ON.type('Scroll'));
+    await scrollComp.scrollToBottom();
     await CommonFunc.sleep(800);
-    try {
-      let btn = await driver.findComponent(BY.key(key));
-      if (btn != null) {
-        return btn;
-      }
-    } catch (e) {
-      // still not found, retry
+    let comp = await driver.findComponent(ON.id(id));
+    if (comp !== null) {
+      return comp;
     }
+  } catch (e) {
+    // scrollToBottom fallback failed
   }
-  throw new Error('Component not found: ' + key);
+  return null;
 }
 
 function getTextContentById(id: string): string {
@@ -114,10 +135,7 @@ export default function NavigationRecycleTest() {
       done();
     });
 
-    // ========================================================================
-    // 函数调用覆盖 (Function Call Coverage)
-    // ========================================================================
-
+   
     /**
      * @tc.number SUB_ARKUI_NAVIGATION_NavigationRecycle_0100
      * @tc.name   SUB_ARKUI_NAVIGATION_NavigationRecycle_0100
@@ -129,10 +147,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_0100', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_0100 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'nav_recoverable_true');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack != null).assertTrue();
@@ -154,10 +172,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_0200', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_0200 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'nav_recoverable_false');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack != null).assertTrue();
@@ -179,10 +197,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_0300', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_0300 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'recycle_memory_true');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack != null).assertTrue();
@@ -204,10 +222,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_0400', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_0400 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'recycle_memory_false');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack != null).assertTrue();
@@ -229,14 +247,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_0500', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_0500 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'dest_recoverable_true');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'push_standard');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -258,14 +276,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_0600', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_0600 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'dest_recoverable_false');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_0600');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -287,10 +305,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_0700', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_0700 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_saveRestore');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -316,14 +334,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_0800', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_0800 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'nav_recoverable_true_0800');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_0800');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -349,14 +367,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_0900', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_0900 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'nav_recoverable_false_0900');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_0900');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -378,14 +396,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_1000', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_1000 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'recycle_memory_true_1000');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_1000');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -407,14 +425,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_1100', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_1100 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'recycle_memory_false_1100');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_1100');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -436,10 +454,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_1200', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_1200 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_1200');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -461,10 +479,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_1300', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_1300 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_dialog');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -486,10 +504,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_1400', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_1400 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_saveRestore_1400');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -511,10 +529,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_1500', Level.LEVEL2, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_1500 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_saveEmpty');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -536,10 +554,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_1600', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_1600 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_with_param');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -561,10 +579,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_1700', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_1700 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_dialog_with_param');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -590,14 +608,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_1800', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_1800 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'stack_limit_0');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'push_3_standard');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(2000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(3);
@@ -619,14 +637,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_1900', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_1900 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'stack_limit_minus1');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'push_3_standard_1900');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(2000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(3);
@@ -648,14 +666,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_2000', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_2000 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'stack_limit_1');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'push_3_standard_2000');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(2000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertLarger(0);
@@ -677,14 +695,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_2100', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_2100 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'stack_limit_3');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'push_5_standard');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(3000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertLarger(0);
@@ -706,10 +724,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_2200', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_2200 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_saveRestore_2200');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -735,10 +753,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_2300', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_2300 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_saveRestore_2300');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -760,10 +778,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_2400', Level.LEVEL2, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_2400 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_saveRestoreB');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -789,10 +807,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_2500', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_2500 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_2500');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Query stack size via NavPathStack API (NavDestination covers the main page, UI button not clickable)
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
@@ -815,10 +833,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_2600', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_2600 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_2600');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Query path names via NavPathStack API (NavDestination covers the main page, UI button not clickable)
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
@@ -842,10 +860,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_2700', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_2700 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_2700');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Query index by name via NavPathStack API (NavDestination covers the main page, UI button not clickable)
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
@@ -869,10 +887,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_2800', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_2800 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_with_param_2800');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Query param by index via NavPathStack API (NavDestination covers the main page, UI button not clickable)
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
@@ -896,10 +914,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_2900', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_2900 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_with_param_2900');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Query params by name via NavPathStack API (NavDestination covers the main page, UI button not clickable)
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
@@ -923,10 +941,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_3000', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_3000 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_standard_3000');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -952,10 +970,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_3100', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_3100 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'push_3_standard_3100');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(2000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(3);
@@ -985,16 +1003,16 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_3200', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_3200 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         // Set recyclePagesOnLowMemory to true
         let memBtn = await findComponentWithScroll(driver, 'recycle_memory_true');
         expect(memBtn != null).assertTrue();
-        await memBtn.click();
+        await memBtn!.click();
         await CommonFunc.sleep(500);
         // Push a page with onSaveState/onRestoreState callbacks
         let pushBtn = await findComponentWithScroll(driver, 'push_saveRestore');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Verify the page is in the stack
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
@@ -1024,16 +1042,16 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_3300', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_3300 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         // Set recyclePagesOnLowMemory to false
         let memBtn = await findComponentWithScroll(driver, 'recycle_memory_false');
         expect(memBtn != null).assertTrue();
-        await memBtn.click();
+        await memBtn!.click();
         await CommonFunc.sleep(500);
         // Push a page with onSaveState/onRestoreState callbacks
         let pushBtn = await findComponentWithScroll(driver, 'push_saveRestore');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Verify the page is in the stack
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
@@ -1060,16 +1078,16 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_3400', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_3400 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         // Set recyclePagesOnLowMemory to true
         let memBtn = await findComponentWithScroll(driver, 'recycle_memory_true');
         expect(memBtn != null).assertTrue();
-        await memBtn.click();
+        await memBtn!.click();
         await CommonFunc.sleep(500);
         // Push saveRestore page first
         let pushSaveBtn = await findComponentWithScroll(driver, 'push_saveRestore');
         expect(pushSaveBtn != null).assertTrue();
-        await pushSaveBtn.click();
+        await pushSaveBtn!.click();
         await CommonFunc.sleep(1000);
         // Push standard page on top via NavPathStack API (NavDestination covers the main page after first push)
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
@@ -1106,18 +1124,18 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_3500', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_3500 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         // Clear previous state
         AppStorage.delete('saveStateResult');
         // Set recyclePagesOnLowMemory to true
         let memBtn = await findComponentWithScroll(driver, 'recycle_memory_true');
         expect(memBtn != null).assertTrue();
-        await memBtn.click();
+        await memBtn!.click();
         await CommonFunc.sleep(500);
         // Push saveRestore page which has onSaveState callback
         let pushBtn = await findComponentWithScroll(driver, 'push_saveRestore');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Pop the page - this triggers onSaveState when page is removed from stack
         // Pop via NavPathStack API (NavDestination covers the main page, UI button not clickable)
@@ -1145,19 +1163,19 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_3600', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_3600 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         // Clear previous state
         AppStorage.delete('saveStateResult');
         AppStorage.delete('restoreStateResult');
         // Set recyclePagesOnLowMemory to true
         let memBtn = await findComponentWithScroll(driver, 'recycle_memory_true');
         expect(memBtn != null).assertTrue();
-        await memBtn.click();
+        await memBtn!.click();
         await CommonFunc.sleep(500);
         // Push saveRestore page
         let pushSaveBtn = await findComponentWithScroll(driver, 'push_saveRestore');
         expect(pushSaveBtn != null).assertTrue();
-        await pushSaveBtn.click();
+        await pushSaveBtn!.click();
         await CommonFunc.sleep(1000);
         // Push standard page on top via NavPathStack API (NavDestination covers the main page after first push)
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
@@ -1193,18 +1211,18 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_3700', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_3700 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         // Clear previous state
         AppStorage.delete('saveStateResult');
         // Set recyclePagesOnLowMemory to false
         let memBtn = await findComponentWithScroll(driver, 'recycle_memory_false');
         expect(memBtn != null).assertTrue();
-        await memBtn.click();
+        await memBtn!.click();
         await CommonFunc.sleep(500);
         // Push saveRestore page
         let pushBtn = await findComponentWithScroll(driver, 'push_saveRestore');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Pop the page
         // Pop via NavPathStack API (NavDestination covers the main page, UI button not clickable)
@@ -1233,17 +1251,17 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_3800', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_3800 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         // First set to true
         let memTrueBtn = await findComponentWithScroll(driver, 'recycle_memory_true');
         expect(memTrueBtn != null).assertTrue();
-        await memTrueBtn.click();
+        await memTrueBtn!.click();
         await CommonFunc.sleep(500);
         // Push a standard page
         let pushBtn = await findComponentWithScroll(driver, 'push_standard');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         expect(navPathStack.size()).assertEqual(1);
         // Pop back via API, then switch to false
@@ -1251,14 +1269,14 @@ export default function NavigationRecycleTest() {
         await CommonFunc.sleep(500);
         let memFalseBtn = await findComponentWithScroll(driver, 'recycle_memory_false');
         expect(memFalseBtn != null).assertTrue();
-        await memFalseBtn.click();
+        await memFalseBtn!.click();
         await CommonFunc.sleep(500);
         // Verify stack is empty after pop
         expect(navPathStack.size()).assertEqual(0);
         // Push again with false setting
         pushBtn = await findComponentWithScroll(driver, 'push_standard');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         expect(navPathStack.size()).assertEqual(1);
         // Clean up via API
@@ -1282,7 +1300,7 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_NavigationRecycle_3900', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_3900 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
         // Ensure clean state
         navPathStack.clear();
@@ -1291,16 +1309,16 @@ export default function NavigationRecycleTest() {
         // Set both recyclePagesOnLowMemory=true and recoverable=true
         let memBtn = await findComponentWithScroll(driver, 'recycle_memory_true_3900');
         expect(memBtn != null).assertTrue();
-        await memBtn.click();
+        await memBtn!.click();
         await CommonFunc.sleep(500);
         let recBtn = await findComponentWithScroll(driver, 'nav_recoverable_true_3900');
         expect(recBtn != null).assertTrue();
-        await recBtn.click();
+        await recBtn!.click();
         await CommonFunc.sleep(500);
         // Push saveRestore page
         let pushBtn = await findComponentWithScroll(driver, 'push_saveRestore_3900');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         expect(navPathStack.size()).assertEqual(1);
         // Pop the page via NavPathStack API (NavDestination covers the main page, UI button not clickable)
@@ -1313,7 +1331,7 @@ export default function NavigationRecycleTest() {
         // Re-push the same page - verify it can be re-created
         let rePushBtn = await findComponentWithScroll(driver, 'push_saveRestore_3900');
         expect(rePushBtn != null).assertTrue();
-        await rePushBtn.click();
+        await rePushBtn!.click();
         await CommonFunc.sleep(1500);
         expect(navPathStack.size()).assertEqual(1);
         // Clean up via NavPathStack API
@@ -1372,10 +1390,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_0100', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_0100 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'use_recycle_modifier');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('modNavPathStack') as NavPathStack;
         expect(navPathStack != null).assertTrue();
@@ -1397,10 +1415,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_0200', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_0200 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'use_no_recycle_modifier');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('modNavPathStack') as NavPathStack;
         expect(navPathStack != null).assertTrue();
@@ -1422,10 +1440,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_0300', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_0300 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let btn = await findComponentWithScroll(driver, 'use_stack_limit_modifier_0600');
         expect(btn != null).assertTrue();
-        await btn.click();
+        await btn!.click();
         await CommonFunc.sleep(1500);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('modNavPathStack') as NavPathStack;
         expect(navPathStack != null).assertTrue();
@@ -1451,14 +1469,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_0400', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_0400 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let modBtn = await findComponentWithScroll(driver, 'use_recycle_modifier_0400');
         expect(modBtn != null).assertTrue();
-        await modBtn.click();
+        await modBtn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'mod_push_standard');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('modNavPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -1480,14 +1498,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_0500', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_0500 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let modBtn = await findComponentWithScroll(driver, 'use_no_recycle_modifier_0500');
         expect(modBtn != null).assertTrue();
-        await modBtn.click();
+        await modBtn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'mod_push_standard_0500');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('modNavPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -1513,15 +1531,15 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_0600', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_0600 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let modBtn = await findComponentWithScroll(driver, 'use_stack_limit_modifier_0600');
         expect(modBtn != null).assertTrue();
-        await modBtn.click();
+        await modBtn!.click();
         await CommonFunc.sleep(1500);
         // Push first page via UI button
         let pushBtn = await findComponentWithScroll(driver, 'mod_push_standard_0600');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Push remaining pages via NavPathStack API (NavDestination covers the main page after first push)
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('modNavPathStack') as NavPathStack;
@@ -1548,14 +1566,14 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_0700', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_0700 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let modBtn = await findComponentWithScroll(driver, 'use_recycle_modifier_0700');
         expect(modBtn != null).assertTrue();
-        await modBtn.click();
+        await modBtn!.click();
         await CommonFunc.sleep(500);
         let pushBtn = await findComponentWithScroll(driver, 'mod_push_saveRestore');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('modNavPathStack') as NavPathStack;
         expect(navPathStack.size()).assertEqual(1);
@@ -1581,10 +1599,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_0800', Level.LEVEL0, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_0800 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'mod_push_standard_0800');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Query stack size via NavPathStack API (NavDestination covers the main page, UI button not clickable)
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('modNavPathStack') as NavPathStack;
@@ -1607,10 +1625,10 @@ export default function NavigationRecycleTest() {
     it('SUB_ARKUI_NAVIGATION_ModifierRecycle_0900', Level.LEVEL1, async (done: Function): Promise<void> => {
       console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_0900 START');
       try {
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         let pushBtn = await findComponentWithScroll(driver, 'mod_push_standard_0900');
         expect(pushBtn != null).assertTrue();
-        await pushBtn.click();
+        await pushBtn!.click();
         await CommonFunc.sleep(1000);
         // Query path names via NavPathStack API (NavDestination covers the main page, UI button not clickable)
         let navPathStack: NavPathStack | undefined = AppStorage.get<NavPathStack>('modNavPathStack') as NavPathStack;

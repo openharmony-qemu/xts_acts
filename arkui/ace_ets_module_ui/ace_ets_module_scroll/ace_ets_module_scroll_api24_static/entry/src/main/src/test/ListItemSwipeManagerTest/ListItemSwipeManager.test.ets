@@ -101,6 +101,7 @@ export default function ListItemSwipeManagerTest() {
       async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
+        await Utils.sleep(1000);
         const btn = await driver.findComponent(ON.id('listSwipe_btn'));
         expect(!!btn).assertTrue();
         await (btn?.click() as Promise<void>);

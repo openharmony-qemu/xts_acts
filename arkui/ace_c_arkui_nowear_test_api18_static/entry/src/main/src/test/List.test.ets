@@ -28,6 +28,7 @@ import swiperDigitIndicatorTest from "./swiperDigitIndicator/swiperDigitIndicato
 import SwiperIndicatorTest from "./swiperIndicator/swiperIndicator.test"
 import TextPickerCascadeTest from "./textPickerCascade/textPickerCascade.test"
 import PointerEventTest from "./pointerEvent/pointerEvent.test"
+import ToolBarV2Test from "./toolBarV2/ToolBarV2.test";
 
 
 export default function testsuite() {
@@ -45,4 +46,5 @@ export default function testsuite() {
   SwiperIndicatorTest()
   TextPickerCascadeTest()
   PointerEventTest();
+  ToolBarV2Test();
 }

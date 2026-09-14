@@ -48,96 +48,105 @@ export default function GridBackToTopTest() {
     
     
 /**
-     * @tc.number   GridScrollTest1_static_0100
+     * @tc.number   SUB_ARKUI_GRID_BACKTOTOP_STATIC_0100
      * @tc.name     GridScrollTest1_static_0100
      * @tc.desc     GridScrollTest1_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('GridScrollTest1_static_0100', Level.LEVEL1, async () => {
-      console.info('GridScrollTest_0100 START');
-      await sleep(1500)
-      let driverGrid: Driver = Driver.create();
-      let grid: Component = await driverGrid.findComponent(ON.id('gridScroll_4')) as Component;
-      let rect = await  (grid.getBounds() as Promise<Rect>)
-      let top = rect.top;
-      let left = rect.left;
-      let right = rect.right;
-      let bottom = rect.bottom;
-      console.info("GridScrollTest_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom - top;
-      let width = right - left;
-      let driverTop = Driver.create();
-      let topButton: Component = await driverTop.findComponent(ON.id('Top')) as Component;
-      let driverSwitch = Driver.create();
-      let switchButton: Component = await driverSwitch.findComponent(ON.id('Switch')) as Component;
-      await sleep(1500);
+it('GridScrollTest1_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('GridScrollTest_0100 START');
+        await sleep(1500)
+        let driverGrid: Driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let grid: Component = await driverGrid.findComponent(ON.id('gridScroll_4')) as Component;
+        let rect = await  (grid.getBounds() as Promise<Rect>)
+        let top = rect.top;
+        let left = rect.left;
+        let right = rect.right;
+        let bottom = rect.bottom;
+        console.info("GridScrollTest_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
+        let height = bottom - top;
+        let width = right - left;
+        let driverTop = Driver.create();
+        await CommonFunc.sleep(1000);
+        let topButton: Component = await driverTop.findComponent(ON.id('Top')) as Component;
+        let driverSwitch = Driver.create();
+        let switchButton: Component = await driverSwitch.findComponent(ON.id('Switch')) as Component;
+        await sleep(1500);
 
-      await driverGrid.swipe(
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 4).toInt(),
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 2).toInt()
-      );
-      await sleep(2000);
-      await topButton.click();
-      await sleep(1500)
-      let stopJson = inspector.getInspectorByKey('gridBackToTop');
-      console.info("getInspectorByKey result for stopJson: " + stopJson);
-      console.info("getInspectorByKey result for $attrs: " + JSON.parseJsonElement(stopJson).getElement("$attrs"));
-      console.info("getInspectorByKey result for content: " + JSON.parseJsonElement(stopJson).getElement("$attrs").getString("content"));
-      expect(JSON.parseJsonElement(stopJson).getElement("$attrs").getString("content") !== 'onDidGridBackToTop').assertTrue();
+        await driverGrid.swipe(
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 4).toInt(),
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 2).toInt()
+        );
+        await sleep(2000);
+        await topButton.click();
+        await sleep(1500)
+        let stopJson = inspector.getInspectorByKey('gridBackToTop');
+        console.info("getInspectorByKey result for stopJson: " + stopJson);
+        console.info("getInspectorByKey result for $attrs: " + JSON.parseJsonElement(stopJson).getElement("$attrs"));
+        console.info("getInspectorByKey result for content: " + JSON.parseJsonElement(stopJson).getElement("$attrs").getString("content"));
+        expect(JSON.parseJsonElement(stopJson).getElement("$attrs").getString("content") !== 'onDidGridBackToTop').assertTrue();
 
-      await switchButton.click();
-      await sleep(500)
-      await topButton.click();
-      await sleep(1500)
+        await switchButton.click();
+        await sleep(500)
+        await topButton.click();
+        await sleep(1500)
 
-      await driverGrid.swipe(
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 4).toInt(),
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 2).toInt()
-      );
-      await sleep(2000);
-      await switchButton.click();
-      await sleep(500)
-      await topButton.click();
-      await sleep(1500)
+        await driverGrid.swipe(
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 4).toInt(),
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 2).toInt()
+        );
+        await sleep(2000);
+        await switchButton.click();
+        await sleep(500)
+        await topButton.click();
+        await sleep(1500)
 
-      await driverGrid.swipe(
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 4).toInt(),
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 2).toInt()
-      );
-      await sleep(2000);
-      await switchButton.click();
-      await sleep(500)
-      await topButton.click();
-      await sleep(1000); //waiting for scroll to top
+        await driverGrid.swipe(
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 4).toInt(),
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 2).toInt()
+        );
+        await sleep(2000);
+        await switchButton.click();
+        await sleep(500)
+        await topButton.click();
+        await sleep(1000); //waiting for scroll to top
 
-      // Retrieve the text content of scrolling related events
-      let strJson = inspector.getInspectorByKey('gridScroll_1');
-      let strJson1 = inspector.getInspectorByKey('gridScroll_2');
-      let strJson3 = inspector.getInspectorByKey('gridBackToTop');
-      let strJson4 = inspector.getInspectorByKey('gridAbnormal');
-      console.info("getInspectorByKey result for gridScroll_1: " + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("getInspectorByKey result for gridScroll_2: " + strJson1);
-      let obj1 = JSON.parseJsonElement(strJson1);
-      console.info("getInspectorByKey result for gridBackToTop: " + strJson3);
-      let obj3 = JSON.parseJsonElement(strJson3);
-      let obj4 = JSON.parseJsonElement(strJson4);
-      // output the event information
-      console.info("[GridScrollTest_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[GridScrollTest_0100] component obj1 is: " + JSON.stringify(obj1));
-      console.info("[GridScrollTest_0100] component obj3 is: " + JSON.stringify(obj3));
-      console.info("[GridScrollTest_0100] component obj4 is: " + JSON.stringify(obj4));
-      // verify the event information
-      expect(obj.getElement("$attrs").getString("content")).assertEqual('onWillScroll');
-      expect(obj3.getElement("$attrs").getString("content")).assertEqual('onDidGridBackToTop');
-      expect(obj4.getElement("$attrs").getString("content")).assertEqual('DidAbnormal');
-      console.info('[GridScrollTest_0100] END');
+        // Retrieve the text content of scrolling related events
+        let strJson = inspector.getInspectorByKey('gridScroll_1');
+        let strJson1 = inspector.getInspectorByKey('gridScroll_2');
+        let strJson3 = inspector.getInspectorByKey('gridBackToTop');
+        let strJson4 = inspector.getInspectorByKey('gridAbnormal');
+        console.info("getInspectorByKey result for gridScroll_1: " + strJson);
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("getInspectorByKey result for gridScroll_2: " + strJson1);
+        let obj1 = JSON.parseJsonElement(strJson1);
+        console.info("getInspectorByKey result for gridBackToTop: " + strJson3);
+        let obj3 = JSON.parseJsonElement(strJson3);
+        let obj4 = JSON.parseJsonElement(strJson4);
+        // output the event information
+        console.info("[GridScrollTest_0100] component obj is: " + JSON.stringify(obj));
+        console.info("[GridScrollTest_0100] component obj1 is: " + JSON.stringify(obj1));
+        console.info("[GridScrollTest_0100] component obj3 is: " + JSON.stringify(obj3));
+        console.info("[GridScrollTest_0100] component obj4 is: " + JSON.stringify(obj4));
+        // verify the event information
+        expect(obj.getElement("$attrs").getString("content")).assertEqual('onWillScroll');
+        expect(obj3.getElement("$attrs").getString("content")).assertEqual('onDidGridBackToTop');
+        expect(obj4.getElement("$attrs").getString("content")).assertEqual('DidAbnormal');
+        console.info('[GridScrollTest_0100] END');
+        done();
+      } catch (error) {
+        console.error('[GridScrollTest1_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }

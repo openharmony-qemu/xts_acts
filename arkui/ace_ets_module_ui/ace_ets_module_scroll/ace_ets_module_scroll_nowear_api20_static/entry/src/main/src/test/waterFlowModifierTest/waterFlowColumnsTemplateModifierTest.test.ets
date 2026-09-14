@@ -40,6 +40,7 @@ export default function WaterFlowColumnsTemplateModifierTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/waterFlowModifier/waterFlowColumnsTemplateModifier',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ScrollColumnsTemplateModifierTest page error:' + err);

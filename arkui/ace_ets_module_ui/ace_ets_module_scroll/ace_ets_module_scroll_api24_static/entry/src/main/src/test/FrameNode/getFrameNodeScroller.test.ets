@@ -49,6 +49,7 @@ export default function getFrameNodeScroller() {
         if (!("getFrameNodeScroller" == pages.name)) {
           console.info("get getFrameNodeScroller pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push getFrameNodeScroller page error:" + err);
@@ -69,6 +70,7 @@ export default function getFrameNodeScroller() {
       try {
         await CommonFunc.sleep(1000);
         let driver = Driver.create();
+        await CommonFunc.sleep(1000);
         let btn = await driver.findComponent(ON.id('bind_grid_getFrameNode'));
         await (btn?.click() as Promise<void>);
         console.info("[getFrameNodeScroller_static_0100] Click getFrameNode.");
@@ -101,6 +103,7 @@ export default function getFrameNodeScroller() {
       try {
         await CommonFunc.sleep(1000);
         let driver = Driver.create();
+        await CommonFunc.sleep(1000);
         let btn = await driver.findComponent(ON.id('bind_grid_offy'));
         await (btn?.click() as Promise<void>);
         console.info("[getFrameNodeScroller_static_0200] Click 120 offset.");

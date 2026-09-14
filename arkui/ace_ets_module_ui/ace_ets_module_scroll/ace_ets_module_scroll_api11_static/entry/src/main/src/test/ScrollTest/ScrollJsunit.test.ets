@@ -48,6 +48,7 @@ export default function ScrollJsunit() {
           console.info("get Scroll state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
+          await CommonFunc.sleep(2000);
           // console.info("push Scroll page success " + JSON.stringify(result));
         }
       } catch (err) {

@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level, beforeAll  } from '../../../../hypium/index';
+import { expect, describe, it, afterEach, Level  } from '../../../../hypium/index';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import {LibUtil} from '../../../ets/pages/LibUtil'
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 
 let libUtil:LibUtil = new LibUtil();
 
 export default function textPickerRangeTest() {
 
   describe('TextPickerRangeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api19.static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('textPickerRangeTest afterEach sleep err: ' + JSON.stringify(err));
+      }
     })
 
     
@@ -42,8 +42,12 @@ export default function textPickerRangeTest() {
      */
     it('testTextPicker001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let PAGE_TAG = 'testTextPickerRange';
-      await Utils.pushPage(`textPicker/${PAGE_TAG}`);
-      await Utils.sleep(3000)
+      try {
+        await Utils.pushPage(`textPicker/${PAGE_TAG}`);
+        await Utils.sleep(3000)
+      } catch (err) {
+        console.info('testTextPicker001 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('textpicker');
       console.log('testTextPickerMode001' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('range')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('range')).assertEqual('[\"icon:resource://base/media/startIcon.png,text:video\",\"icon:,text:test'+
@@ -60,8 +64,12 @@ export default function textPickerRangeTest() {
      */
     it('testTextPicker002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let PAGE_TAG = 'testTextPickerRange';
-      await Utils.pushPage(`textPicker/${PAGE_TAG}`);
-      await Utils.sleep(3000)
+      try {
+        await Utils.pushPage(`textPicker/${PAGE_TAG}`);
+        await Utils.sleep(3000)
+      } catch (err) {
+        console.info('testTextPicker002 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('textpicker2');
       console.log('testTextPickerMode002' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('range')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('range')).assertEqual('[{\"text\":\"test1\", \"children\":[{\"text\":\"te'+

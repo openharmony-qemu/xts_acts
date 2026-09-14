@@ -113,7 +113,7 @@ struct GridEventPage {
   }
 
   build() {
-    Column({ space: 5 }) {
+    Column() {
       Row(){
         Text(this.onItemDragStart).fontSize(10).margin({right:10}).key('GridPage_onItemDragStart')
         Text(this.onItemDragEnter).fontSize(10).key('GridPage_onItemDragEnter')
@@ -276,6 +276,6 @@ struct GridEventPage {
         console.info('onScrollFrameBegin offset:' + offset +' state:' + state)
         return { offsetRemain: offset }
       })
-    }.width('100%').margin({ top: 5 })
+    }.width('100%')
   }
 }

@@ -61,34 +61,41 @@ export default function arcSwiperContent() {
      * @tc.level  Level.LEVEL0
      */
     it('SUB_ARKUI_ARCSWIPER_ANIMATION_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[arcSwiperContent_0100] START');
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create();
-      let arc1 = await driver.findComponent(ON.id('arcs_customContent'));
-      let swipeTabs = await (arc1?.getBounds() as Promise<Rect>);
-      let top = swipeTabs.top;
-      let right = swipeTabs.right;
-      let left = swipeTabs.left;
-      let bottom = swipeTabs.bottom;
-      let height = bottom - top;
-      let width = right - left;
-      await driver.drag(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
-        Math.round(left + width * 0.2).toInt(), Math.round(top + height / 2).toInt());
-      await CommonFunc.sleep(2000);
-      await driver.assertComponentExist(ON.text('1'));
-      let strJson = inspector.getInspectorByKey('onAnimationStart_arcs_content');
-      console.info('[arcSwiperContent_0100] component obj1 is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info('[arcSwiperContent_0100] content: ' +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('onAnimationStartIndex: 0');
-      let strJson1 = inspector.getInspectorByKey('index1_arcs_content');
-      console.info('[arcSwiperContent_0100] component obj1 is: ' + JSON.stringify(JSON.parseJsonElement(strJson1)));
-      console.info('[arcSwiperContent_0100] content1: ' +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('index: 1');
-      console.info('[arcSwiperContent_0100] END');
-      done();
+      try {
+        console.info('[arcSwiperContent_0100] START');
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let arc1 = await driver.findComponent(ON.id('arcs_customContent'));
+        let swipeTabs = await (arc1?.getBounds() as Promise<Rect>);
+        let top = swipeTabs.top;
+        let right = swipeTabs.right;
+        let left = swipeTabs.left;
+        let bottom = swipeTabs.bottom;
+        let height = bottom - top;
+        let width = right - left;
+        await driver.drag(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
+          Math.round(left + width * 0.2).toInt(), Math.round(top + height / 2).toInt());
+        await CommonFunc.sleep(2000);
+        await driver.assertComponentExist(ON.text('1'));
+        let strJson = inspector.getInspectorByKey('onAnimationStart_arcs_content');
+        console.info('[arcSwiperContent_0100] component obj1 is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
+        console.info('[arcSwiperContent_0100] content: ' +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+          .assertEqual('onAnimationStartIndex: 0');
+        let strJson1 = inspector.getInspectorByKey('index1_arcs_content');
+        console.info('[arcSwiperContent_0100] component obj1 is: ' + JSON.stringify(JSON.parseJsonElement(strJson1)));
+        console.info('[arcSwiperContent_0100] content1: ' +
+        JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')));
+        expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('index: 1');
+        console.info('[arcSwiperContent_0100] END');
+        done();
+      } catch (error) {
+        console.error('[SUB_ARKUI_ARCSWIPER_ANIMATION_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

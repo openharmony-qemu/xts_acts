@@ -40,7 +40,6 @@ struct DatePickerComponentOnChange {
       })
         .id('datePickerComponent_onChange')
         .width('100%')
-        .height('30%')
 
       Text(`onChangeTriggered: ${this.onChangeTriggered}`)
         .id('text_onChange_triggered')

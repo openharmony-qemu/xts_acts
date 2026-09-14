@@ -650,7 +650,74 @@ export default function ConnectedTagTest() {
             }
             done();
         })
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_2100
+         * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_2100
+         * @tc.desc   Registers and cancels the NFC field strength status event.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfcConnectedTag_js_2100', Level.LEVEL0, function (done) {
+            var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
+            console.info("testSysCaps06 test.syscap.param.001 : " + isAccessToken);
+            if (!isAccessToken) {
+                console.info("The device does not support active label chips.")
+                expect(isAccessToken).assertFalse()
+            } else {
+                let recvNfcRfNotifyFunc = result => {
+                    console.info("[NFC_test] ConnectedTag6 nfc state receive state ->" + result);
+                    expect(result != null).assertTrue();
+                }
+                try {
+                    connectedTag.on('notify', recvNfcRfNotifyFunc)
+                    connectedTag.off('notify')
+                } catch (error) {
+                    console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_2100 notify failed,code is ${error.code}, message is ${error.message}");
 
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_2200
+         * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_2200
+         * @tc.desc   Registers and cancels the NFC field strength status event.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfcConnectedTag_js_2200', Level.LEVEL0, function (done) {
+            var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
+            console.info("testSysCaps06 test.syscap.param.001 : " + isAccessToken);
+            if (!isAccessToken) {
+                console.info("The device does not support active label chips.")
+                expect(isAccessToken).assertFalse()
+            } else {
+                let recvNfcRfNotifyFunc = result => {
+                    console.info("[NFC_test] ConnectedTag6 nfc state receive state ->" + result);
+                    expect(result != null).assertTrue();
+                }
+                let recvNfcRfNotifyFunc2 = result => {
+                    console.info("[NFC_test] ConnectedTag6 nfc state receive state ->" + result);
+                    expect(result != null).assertTrue();
+                }
+                let recvNfcRfNotifyFunc3 = result => {
+                    console.info("[NFC_test] ConnectedTag6 nfc state receive state ->" + result);
+                    expect(result != null).assertTrue();
+                }
+                try {
+                    connectedTag.on('notify', recvNfcRfNotifyFunc)
+                    connectedTag.on('notify', recvNfcRfNotifyFunc2)
+                    connectedTag.on('notify', recvNfcRfNotifyFunc3)
+                    connectedTag.off('notify')
+                } catch (error) {
+                    console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_2200 notify failed,code is ${error.code}, message is ${error.message}");
+
+                }
+            }
+            done();
+        })
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }
