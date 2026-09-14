@@ -164,6 +164,31 @@ export default function ConnectionPublicNopTest() {
     })
 
     /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetSyncNop0100
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNetSyncNop_0100
+     * @tc.desc   Calling getDefaultNetSync without permission returns error code 201.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionGetDefaultNetSyncNop0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionGetDefaultNetSyncNop0100";
+      console.info(`${caseName}---Start`);
+      try {
+        let netHandle: connection.NetHandle = connection.getDefaultNetSync();
+        console.info(`${caseName} getDefaultNetSync success netHandle: ${JSON.stringify(netHandle)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
+        ExpectTrue(err.code == PERMISSION_DENIED_CODE);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    
+    /**
      * @tc.name   testNetworkMgrConnectionReportNetConnectedNop0300
      * @tc.number SUB_testNetworkMgrConnectionReportNetConnectedNop0300
      * @tc.desc   Using the addCustomDnsRule (callback) method without permission
