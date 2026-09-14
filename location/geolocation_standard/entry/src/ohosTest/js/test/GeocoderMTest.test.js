@@ -1607,5 +1607,66 @@ export default function geolocationTest_geo5() {
         }
     });
 
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_GeoAddress_0100
+     * @tc.number SUB_HSS_LocationSystem_GeoAddress_0100
+     * @tc.desc   Check GeoAddress properties in getAddressesFromLocation result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_GeoAddress_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let isAvailable = geolocationm.isGeocoderAvailable();
+        if (isAvailable) {
+            let reverseGeocodeRequest = { "latitude": 31.265496, "longitude": 121.62771, "maxItems": 1, "locale": "zh" };
+            try {
+                await geolocationm.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+                    console.info('[lbs_js] GeoAddress_0100 getAddressesFromLocation data: ' + JSON.stringify(data));
+                    if (data && data.length > 0) {
+                        let address = data[0];
+                        expect(typeof address.latitude).assertEqual('number');
+                        expect(typeof address.longitude).assertEqual('number');
+                        expect(typeof address.locale).assertEqual('string');
+                        expect(typeof address.placeName).assertEqual('string');
+                        expect(typeof address.countryCode).assertEqual('string');
+                        expect(typeof address.countryName).assertEqual('string');
+                        expect(typeof address.administrativeArea).assertEqual('string');
+                        expect(typeof address.subAdministrativeArea).assertEqual('string');
+                        expect(typeof address.locality).assertEqual('string');
+                        expect(typeof address.subLocality).assertEqual('string');
+                        expect(typeof address.roadName).assertEqual('string');
+                        expect(typeof address.subRoadName).assertEqual('string');
+                        expect(typeof address.premises).assertEqual('string');
+                        expect(typeof address.postalCode).assertEqual('string');
+                        expect(typeof address.phoneNumber).assertEqual('string');
+                        expect(typeof address.addressUrl).assertEqual('string');
+                        expect(Array.isArray(address.descriptions)).assertTrue();
+                        expect(typeof address.descriptionsSize).assertEqual('number');
+                    } else {
+                        expect().assertFail();
+                    }
+                }).catch((error) => {
+                    console.info('[lbs_js] GeoAddress_0100 getAddressesFromLocation err: ' + JSON.stringify(error));
+                    if (error.code === 801) {
+                        expect(error.code).assertEqual(801);
+                    } else {
+                        expect().assertFail();
+                    }
+                });
+            } catch (error) {
+                console.info('[lbs_js] GeoAddress_0100 getAddressesFromLocation try err: ' + JSON.stringify(error));
+                if (error.code === 801) {
+                    expect(error.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await sleep(1000);
+        } else {
+            console.info("[lbs_js] The geocoding service is unavailable.");
+        }
+        done();
+    })
+
     })
 }

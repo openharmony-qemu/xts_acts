@@ -3729,6 +3729,62 @@ export default function geolocationTest_geo7() {
         done();
     })
 
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_offLocationChange_0100
+     * @tc.number SUB_HSS_LocationSystem_offLocationChange_0100
+     * @tc.desc   When the location switch is disabled, off('locationChange') will return 3301100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_HSS_LocationSystem_offLocationChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_HSS_LocationSystem_offLocationChange_0100: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support location');
+            done();
+            return;
+        }
+        try {
+            await geolocationm.disableLocation();
+        } catch (error) {
+            console.info('[lbs_js] offLocationChange0100 disableLocation error.' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
+        }
+        await sleep(1000);
+        var locationChange = (location) => {
+            console.info('[lbs_js] offLocationChange0100 locationChanger data:' + JSON.stringify(location));
+        };
+        var requestInfo = {
+            'priority': request_priority_FIRST_FIX,
+            'scenario': request_scenario_NAVIGATION,
+            'timeInterval': 1,
+            'maxAccuracy': 0
+        };
+        try {
+            geolocationm.on('locationChange', requestInfo, locationChange);
+            geolocationm.off('locationChange', locationChange);
+            console.info('[lbs_js] offLocationChange0100 off without err thrown');
+            expect().assertFail();
+        } catch (error) {
+            console.info('[lbs_js] offLocationChange0100 try err.' + JSON.stringify(error));
+            if (error.code === '801') {
+                expect(error.code).assertEqual('801');
+            } else {
+                expect(error.code).assertEqual('3301100');
+                console.info('[lbs_js] offLocationChange0100 return 3301100 success');
+            }
+        }
+        try {
+            geolocationm.enableLocation();
+        } catch (error) {
+            console.info('[lbs_js] offLocationChange0100 enableLocation error.' + JSON.stringify(error));
+        }
+        done();
+    })
+
 
 
     })
