@@ -34,7 +34,7 @@ def heif_to_jpg_pillow(heif_path, jpg_path):
         im.convert("RGB").save(jpg_path, "JPEG")
 
  # === 配置 ===
-API_KEY = ""  # 替换为你自己的 DashScope API Key
+API_KEY = ""  # 替换为自己的 DashScope API Key
 BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 MODEL_NAME = "qwen-vl-max"  # 或 qwen-vl-max，根据你使用的模型调整
 
