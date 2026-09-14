@@ -182,7 +182,8 @@ export default function ConnectionPublicNopTest() {
         done();
       } catch (err) {
         console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(201);
+        let err_code = Number(err.code);
+        expect(err_code).assertEqual(201);
         console.info(`${caseName}---End`);
         done();
       }
