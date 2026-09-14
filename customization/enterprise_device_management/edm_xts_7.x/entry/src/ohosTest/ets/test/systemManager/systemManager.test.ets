@@ -15,7 +15,8 @@
 
 import { describe, expect, it, Level } from '@ohos/hypium';
 import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID, INVALID_USER_ID,
-  IP_LIST_1, IP_LIST_2, IP_LIST_SINGLE, IP_LIST_OVER_MAX, ipListOverMaxInit } from '../commom.test.ets';
+  IP_LIST_1, IP_LIST_2, IP_LIST_SINGLE, IP_LIST_OVER_MAX, ipListOverMaxInit, INVALID_IP_LIST,
+  IPV6_LIST_1, IPV6_LIST_SINGLE, INVALID_IPV6_LIST, IP_LIST_MAX_100, IP_LIST_ONE_EXTRA } from '../commom.test.ets';
 import { BusinessError } from '@ohos.base';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -1059,6 +1060,35 @@ function testAddAllowedPrinterIPAddressesForDevice() {
   });
 
   /**
+  * @tc.name   test_add_allowed_printer_ip_for_device_0104
+  * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0104
+  * @tc.desc   test addAllowedPrinterIPAddressesForDevice with various invalid IP formats
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_add_allowed_printer_ip_for_device_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      for (const invalidIp of INVALID_IP_LIST) {
+        try {
+          systemManager.addAllowedPrinterIPAddressesForDevice([invalidIp]);
+          expect(false).assertTrue();
+        } catch (error) {
+          if (error.code === 801) {
+            expect(error.code === 801).assertTrue();
+          } else {
+            expect(error.code === 9200012).assertTrue();
+          }
+        }
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
   * @tc.name   test_add_allowed_printer_ip_for_device_0200
   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0200
   * @tc.desc   test addAllowedPrinterIPAddressesForDevice success
@@ -1127,6 +1157,92 @@ function testAddAllowedPrinterIPAddressesForDevice() {
     }
     done();
   });
+
+  /**
+  * @tc.name   test_add_allowed_printer_ip_for_device_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0500
+  * @tc.desc   test addAllowedPrinterIPAddressesForDevice with valid full IPv6 addresses
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_add_allowed_printer_ip_for_device_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.addAllowedPrinterIPAddressesForDevice(IPV6_LIST_1);
+      let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForDevice();
+      expect(result.length).assertEqual(2);
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_add_allowed_printer_ip_for_device_0501
+  * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0501
+  * @tc.desc   test addAllowedPrinterIPAddressesForDevice with abbreviated IPv6 addresses (should fail)
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_add_allowed_printer_ip_for_device_0501", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      for (const invalidIpv6 of INVALID_IPV6_LIST) {
+        try {
+          systemManager.addAllowedPrinterIPAddressesForDevice([invalidIpv6]);
+          expect(false).assertTrue();
+        } catch (error) {
+          if (error.code === 801) {
+            expect(error.code === 801).assertTrue();
+          } else {
+            expect(error.code === 9200012).assertTrue();
+          }
+        }
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**                                                                                                                                                                                                                              
+  * @tc.name   test_add_allowed_printer_ip_for_device_0502                                                                                                                                                                         
+  * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0502                                                                                                                                           
+  * @tc.desc   test add 100 valid IPs then add one more should fail with 9200019                                                                                                                                                   
+  * @tc.type   FUNCTION                                                                                                                                                                                                            
+  * @tc.size   MEDIUMTEST                                                                                                                                                                                                          
+  * @tc.level  LEVEL2                                                                                                                                                                                                              
+  */                                                                                                                                                                                                                               
+  it("test_add_allowed_printer_ip_for_device_0502", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.addAllowedPrinterIPAddressesForDevice(IP_LIST_MAX_100);
+      let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForDevice();
+      console.info('test_add_for_account_0502: after add 100, result.length=' + result.length); 
+      expect(result.length).assertEqual(100);
+      try {
+        systemManager.addAllowedPrinterIPAddressesForDevice(IP_LIST_ONE_EXTRA);
+        console.info('test_add_for_account_0502: second add did not throw, unexpected'); 
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 9200019).assertTrue();
+        }
+      }
+    } catch (error) {
+    console.info('test_add_for_account_0502: outer catch error code=' + error.code);  
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  }); 
 }
 
 function testRemoveAllowedPrinterIPAddressesForDevice() {
@@ -1228,6 +1344,35 @@ function testRemoveAllowedPrinterIPAddressesForDevice() {
   });
 
   /**
+  * @tc.name   test_remove_allowed_printer_ip_for_device_0104
+  * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0104
+  * @tc.desc   test removeAllowedPrinterIPAddressesForDevice with various invalid IP formats
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_remove_allowed_printer_ip_for_device_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      for (const invalidIp of INVALID_IP_LIST) {
+        try {
+          systemManager.removeAllowedPrinterIPAddressesForDevice([invalidIp]);
+          expect(false).assertTrue();
+        } catch (error) {
+          if (error.code === 801) {
+            expect(error.code === 801).assertTrue();
+          } else {
+            expect(error.code === 9200012).assertTrue();
+          }
+        }
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
   * @tc.name   test_remove_allowed_printer_ip_for_device_0200
   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0200
   * @tc.desc   test removeAllowedPrinterIPAddressesForDevice success
@@ -1296,6 +1441,29 @@ function testRemoveAllowedPrinterIPAddressesForDevice() {
     }
     done();
   });
+
+  /**
+  * @tc.name   test_remove_allowed_printer_ip_for_device_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0500
+  * @tc.desc   test removeAllowedPrinterIPAddressesForDevice with valid full IPv6 addresses
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_remove_allowed_printer_ip_for_device_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.addAllowedPrinterIPAddressesForDevice(IPV6_LIST_1);
+      systemManager.removeAllowedPrinterIPAddressesForDevice(IPV6_LIST_SINGLE);
+      let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForDevice();
+      expect(result.length).assertEqual(1);
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testGetAllowedPrinterIPAddressesForDevice() {
@@ -1313,7 +1481,7 @@ function testGetAllowedPrinterIPAddressesForDevice() {
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForDevice();
       expect(result.length).assertEqual(0);
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1333,11 +1501,7 @@ function testGetAllowedPrinterIPAddressesForDevice() {
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForDevice();
       expect(result.length).assertEqual(0);
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
-      } else {
-        expect(error.code === 9200001).assertTrue();
-      }
+      expect(error.code === 9200001).assertTrue();
     }
     done();
   });
@@ -1356,11 +1520,7 @@ function testGetAllowedPrinterIPAddressesForDevice() {
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForDevice();
       expect(result.length).assertEqual(0);
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
-      } else {
-        expect(error.code === 9200002).assertTrue();
-      }
+      expect(error.code === 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1425,6 +1585,30 @@ function testGetAllowedPrinterIPAddressesForDevice() {
       systemManager.addAllowedPrinterIPAddressesForDevice(IP_LIST_1);
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForDevice(1); // QueryPolicy.ALL
       expect(result.length).assertEqual(2);
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_allowed_printer_ip_for_device_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0500
+  * @tc.desc   test getAllowedPrinterIPAddressesForDevice returns IPv6 addresses
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_allowed_printer_ip_for_device_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.addAllowedPrinterIPAddressesForDevice(IPV6_LIST_1);
+      let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForDevice();
+      expect(result.length).assertEqual(2);
+      expect(result.indexOf(IPV6_LIST_1[0]) !== -1).assertTrue();
+      expect(result.indexOf(IPV6_LIST_1[1]) !== -1).assertTrue();
     } catch (error) {
       expect(error.code === 801).assertTrue();
     } finally {
@@ -1533,6 +1717,35 @@ function testAddAllowedPrinterIPAddressesForAccount() {
   });
 
   /**
+  * @tc.name   test_add_allowed_printer_ip_for_device_for_account_0104
+  * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0104
+  * @tc.desc   test addAllowedPrinterIPAddressesForAccount with various invalid IP formats
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_add_allowed_printer_ip_for_device_for_account_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      for (const invalidIp of INVALID_IP_LIST) {
+        try {
+          systemManager.addAllowedPrinterIPAddressesForAccount([invalidIp]);
+          expect(false).assertTrue();
+        } catch (error) {
+          if (error.code === 801) {
+            expect(error.code === 801).assertTrue();
+          } else {
+            expect(error.code === 9200012).assertTrue();
+          }
+        }
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
   * @tc.name   test_add_allowed_printer_ip_for_device_for_account_0200
   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0200
   * @tc.desc   test addAllowedPrinterIPAddressesForAccount success
@@ -1601,6 +1814,89 @@ function testAddAllowedPrinterIPAddressesForAccount() {
     }
     done();
   });
+
+  /**
+  * @tc.name   test_add_allowed_printer_ip_for_device_for_account_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0500
+  * @tc.desc   test addAllowedPrinterIPAddressesForAccount with valid full IPv6 addresses
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_add_allowed_printer_ip_for_device_for_account_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.addAllowedPrinterIPAddressesForAccount(IPV6_LIST_1);
+      let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount();
+      expect(result.length).assertEqual(2);
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_add_allowed_printer_ip_for_device_for_account_0501
+  * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0501
+  * @tc.desc   test addAllowedPrinterIPAddressesForAccount with abbreviated IPv6 addresses (should fail)
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_add_allowed_printer_ip_for_device_for_account_0501", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      for (const invalidIpv6 of INVALID_IPV6_LIST) {
+        try {
+          systemManager.addAllowedPrinterIPAddressesForAccount([invalidIpv6]);
+          expect(false).assertTrue();
+        } catch (error) {
+          if (error.code === 801) {
+            expect(error.code === 801).assertTrue();
+          } else {
+            expect(error.code === 9200012).assertTrue();
+          }
+        }
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+/**                                                                                                                                                                                                                              
+  * @tc.name   test_add_allowed_printer_ip_for_account_0502                                                                                                                                                                         
+  * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0502                                                                                                                                           
+  * @tc.desc   test add 100 valid IPs then add one more should fail with 9200019                                                                                                                                                   
+  * @tc.type   FUNCTION                                                                                                                                                                                                            
+  * @tc.size   MEDIUMTEST                                                                                                                                                                                                          
+  * @tc.level  LEVEL2                                                                                                                                                                                                              
+  */                                                                                                                                                                                                                               
+  it("test_add_allowed_printer_ip_for_account_0502", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.addAllowedPrinterIPAddressesForAccount(IP_LIST_MAX_100);
+      let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount();
+      expect(result.length).assertEqual(100);
+      try {
+        systemManager.addAllowedPrinterIPAddressesForAccount(IP_LIST_ONE_EXTRA);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 9200019).assertTrue();
+        }
+      }
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  }); 
 }
 
 function testRemoveAllowedPrinterIPAddressesForAccount() {
@@ -1702,6 +1998,35 @@ function testRemoveAllowedPrinterIPAddressesForAccount() {
   });
 
   /**
+  * @tc.name   test_remove_allowed_printer_ip_for_device_for_account_0104
+  * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0104
+  * @tc.desc   test removeAllowedPrinterIPAddressesForAccount with various invalid IP formats
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_remove_allowed_printer_ip_for_device_for_account_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      for (const invalidIp of INVALID_IP_LIST) {
+        try {
+          systemManager.removeAllowedPrinterIPAddressesForAccount([invalidIp]);
+          expect(false).assertTrue();
+        } catch (error) {
+          if (error.code === 801) {
+            expect(error.code === 801).assertTrue();
+          } else {
+            expect(error.code === 9200012).assertTrue();
+          }
+        }
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
   * @tc.name   test_remove_allowed_printer_ip_for_device_for_account_0200
   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0200
   * @tc.desc   test removeAllowedPrinterIPAddressesForAccount success
@@ -1770,6 +2095,29 @@ function testRemoveAllowedPrinterIPAddressesForAccount() {
     }
     done();
   });
+
+  /**
+  * @tc.name   test_remove_allowed_printer_ip_for_device_for_account_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0500
+  * @tc.desc   test removeAllowedPrinterIPAddressesForAccount with valid full IPv6 addresses
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_remove_allowed_printer_ip_for_device_for_account_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.addAllowedPrinterIPAddressesForAccount(IPV6_LIST_1);
+      systemManager.removeAllowedPrinterIPAddressesForAccount(IPV6_LIST_SINGLE);
+      let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount();
+      expect(result.length).assertEqual(1);
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testGetAllowedPrinterIPAddressesForAccount() {
@@ -1787,7 +2135,7 @@ function testGetAllowedPrinterIPAddressesForAccount() {
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount();
       expect(result.length).assertEqual(0);
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1807,11 +2155,7 @@ function testGetAllowedPrinterIPAddressesForAccount() {
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount();
       expect(result.length).assertEqual(0);
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
-      } else {
-        expect(error.code === 9200001).assertTrue();
-      }
+      expect(error.code === 9200001).assertTrue();
     }
     done();
   });
@@ -1830,11 +2174,7 @@ function testGetAllowedPrinterIPAddressesForAccount() {
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount();
       expect(result.length).assertEqual(0);
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
-      } else {
-        expect(error.code === 9200002).assertTrue();
-      }
+      expect(error.code === 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1899,6 +2239,30 @@ function testGetAllowedPrinterIPAddressesForAccount() {
       systemManager.addAllowedPrinterIPAddressesForAccount(IP_LIST_1);
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount(1); // QueryPolicy.ALL
       expect(result.length).assertEqual(2);
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_allowed_printer_ip_for_device_for_account_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0500
+  * @tc.desc   test getAllowedPrinterIPAddressesForAccount returns IPv6 addresses
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_allowed_printer_ip_for_device_for_account_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.addAllowedPrinterIPAddressesForAccount(IPV6_LIST_1);
+      let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount();
+      expect(result.length).assertEqual(2);
+      expect(result.indexOf(IPV6_LIST_1[0]) !== -1).assertTrue();
+      expect(result.indexOf(IPV6_LIST_1[1]) !== -1).assertTrue();
     } catch (error) {
       expect(error.code === 801).assertTrue();
     } finally {
