@@ -335,7 +335,7 @@ int TestColorFilterCreateMatrixBoundaryValues()
     float matrix[20];
     
     // 所有元素为0
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_20; i++) {
         matrix[i] = 0.0f;
     }
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
