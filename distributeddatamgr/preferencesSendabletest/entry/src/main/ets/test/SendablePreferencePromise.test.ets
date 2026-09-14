@@ -546,12 +546,6 @@ export default function sendablePreferencesPromiseTest() {
       });
     })
 
-
-
-
-
-
-
     /**
      * @tc.name   testSendableFlushSync0100
      * @tc.number testSendableFlushSync0100
@@ -579,5 +573,95 @@ export default function sendablePreferencesPromiseTest() {
       }
       
     })
+
+    /**
+     * @tc.name   testPreferencesDeleteUnusualTest0100
+     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApi_DeleteUnusualTest_2300
+     * @tc.desc   interface delete errCode is 15500000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesDeleteUnusualTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await mPreferences.delete('');
+        console.info("====>testPreferencesDeleteUnusualTest0100 delete success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>testPreferencesGetErr0100 catch: " + JSON.stringify(err));
+        expect(err.code).assertEqual(15500000);
+        done();
+      }
     })
+
+    /**
+     * @tc.name   testSendablePreferencesOnMultiCallBack0100
+     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_2400
+     * @tc.desc   interface on_change MultiCallBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSendablePreferencesOnMultiCallBack0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      await mPreferences.clear();
+      let observer = (KEY_STRING: string) => {
+        console.info(TAG + 'testPreferencesRegisterObserver001 keyValue' + mPreferences.getSync(KEY_STRING,"aaa"));
+        done();
+        expect('abcd').assertEqual(mPreferences.getSync(KEY_STRING,"aaa"));
+        mPreferences.off('change')
+      };
+      let observer1 = (KEY_STRING: string) => {
+        console.info(TAG + 'testPreferencesRegisterObserver001 keyValue' + mPreferences.getSync(KEY_STRING,"aaa"));
+        done();
+        expect('abcd').assertEqual(mPreferences.getSync(KEY_STRING,"aaa"));
+        mPreferences.off('change')
+      };
+      let observer2 = (KEY_STRING: string) => {
+        console.info(TAG + 'testPreferencesRegisterObserver001 keyValue' + mPreferences.getSync(KEY_STRING,"aaa"));
+        done();
+        expect('abcd').assertEqual(mPreferences.getSync(KEY_STRING,"aaa"));
+        mPreferences.off('change')
+      };
+      mPreferences.on('change', observer);
+      mPreferences.on('change', observer1);
+      mPreferences.on('change', observer2);
+      mPreferences.putSync(KEY_STRING, 'abcd');
+      await mPreferences.flush();
+    })
+
+    /**
+     * @tc.name   testSendablePreferencesOnMultiCallBack0200
+     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_2500
+     * @tc.desc   interface on_multiProcessChange MultiCallBack.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSendablePreferencesOnMultiCallBack0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let observer = (key: string) => {
+        console.info(TAG + 'testSendablePreferencesOnMultiCallBack0200 keyValue' + mPreferences.getSync(KEY_STRING,"aaa"));
+        expect('abc').assertEqual(mPreferences.getSync(KEY_STRING,"aaa"));
+        mPreferences.off('multiProcessChange');
+        done();
+      }
+      let observer1 = (key: string) => {
+        console.info(TAG + 'testSendablePreferencesOnMultiCallBack0200 keyValue' + mPreferences.getSync(KEY_STRING,"aaa"));
+        expect('abc').assertEqual(mPreferences.getSync(KEY_STRING,"aaa"));
+        mPreferences.off('multiProcessChange');
+        done();
+      }
+      let observer2 = (key: string) => {
+        console.info(TAG + 'testSendablePreferencesOnMultiCallBack0200 keyValue' + mPreferences.getSync(KEY_STRING,"aaa"));
+        expect('abc').assertEqual(mPreferences.getSync(KEY_STRING,"aaa"));
+        mPreferences.off('multiProcessChange');
+        done();
+      }
+      mPreferences.on('multiProcessChange', observer);
+      mPreferences.on('multiProcessChange', observer1);
+      mPreferences.on('multiProcessChange', observer2);
+      mPreferences.putSync(KEY_STRING, 'abc');
+      await mPreferences.flush();
+    })
+  })
 }

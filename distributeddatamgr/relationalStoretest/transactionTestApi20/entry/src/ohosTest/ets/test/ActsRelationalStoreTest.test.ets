@@ -1099,7 +1099,7 @@ export default function ActsRelationalStoreTest() {
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600 start====");
           let result: number = testNapi.testSetTokenizerNotSupported();
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600 result====", result);
-          expect([0, 801]).assertContain(result);
+          expect(result).assertEqual(RDB_ERR);
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600 catch err: " + err);
@@ -1122,7 +1122,7 @@ export default function ActsRelationalStoreTest() {
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBackByTrxId_4700 start====");
           let result: number = testNapi.testRollBackByTrxIdSuccess();
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBackByTrxId_4700 result====", result);
-          expect([0, 801]).assertContain(result);
+          expect(result).assertEqual(RDB_ERR);
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBackByTrxId_4700 catch err: " + err);
@@ -1145,7 +1145,7 @@ export default function ActsRelationalStoreTest() {
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CommitByTrxId_4800 start====");
           let result: number = testNapi.testCommitByTrxIdSuccess();
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CommitByTrxId_4800 result====", result);
-          expect([0, 801]).assertContain(result);
+          expect(result).assertEqual(RDB_ERR);
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CommitByTrxId_4800 catch err: " + err);

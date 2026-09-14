@@ -269,7 +269,7 @@ export default function preferencesPromiseErrTest() {
       try {
         let isXmlSupported = dataPreferences.isStorageTypeSupported(null);
         console.info(TAG + "isXmlSupported: ${isXmlSupported}");
-        expect(isXmlSupported).assertEqual(null);
+        expect().assertFail();
         done();
       } catch (err) {
         console.info("testPreferencesGetPreferencesPromiseErr1000 fail: " + err.message + "code: " + err.code);
