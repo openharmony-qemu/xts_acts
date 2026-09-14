@@ -1777,14 +1777,14 @@ describe('ActsBundleManagerTest', function () {
     })
 
      /**
-     * @tc.name   Sub_Bms_Framework_Query_AppInfo_3000
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_3000
+     * @tc.name   SUB_BMS_FRAMEWORK_Query_AppInfo_3000
+     * @tc.number SUB_BMS_FRAMEWORK_Query_AppInfo_3000
      * @tc.desc   getAllBundleInfo with invalid bundleFlag (negative value) and userId callback test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it('Sub_Bms_Framework_Query_AppInfo_3000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+     it('SUB_BMS_FRAMEWORK_Query_AppInfo_3000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         console.info('testGetAllBundleInfoInvalidFlagCallbackWithUserId start, bundleFlag=-1, userId=' + userId);
         demo.getAllBundleInfo(-1, userId, (error, data) => {
             if (error) {
@@ -1833,14 +1833,14 @@ describe('ActsBundleManagerTest', function () {
     })
 
      /**
-     * @tc.name   Sub_Bms_Framework_Query_AppInfo_3010
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_3010
+     * @tc.name   SUB_BMS_FRAMEWORK_Query_AppInfo_3010
+     * @tc.number SUB_BMS_FRAMEWORK_Query_AppInfo_3010
      * @tc.desc   getAllBundleInfo with invalid bundleFlag (large out-of-range value) two param callback test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it('Sub_Bms_Framework_Query_AppInfo_3010', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+     it('SUB_BMS_FRAMEWORK_Query_AppInfo_3100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         console.info('testGetAllBundleInfoInvalidFlagLargeCallback start, bundleFlag=999999');
         demo.getAllBundleInfo(999999, (error, data) => {
             if (error) {
@@ -1890,14 +1890,14 @@ describe('ActsBundleManagerTest', function () {
     })
 
      /**
-     * @tc.name   Sub_Bms_Framework_Query_AppInfo_3020
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_3020
+     * @tc.name   SUB_BMS_FRAMEWORK_Query_AppInfo_3020
+     * @tc.number SUB_BMS_FRAMEWORK_Query_AppInfo_3020
      * @tc.desc   getAllBundleInfo with invalid bundleFlag (undefined gap value) promise test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it('Sub_Bms_Framework_Query_AppInfo_3020', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+     it('SUB_BMS_FRAMEWORK_Query_AppInfo_3020', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         console.info('testGetAllBundleInfoInvalidFlagPromise start, bundleFlag=0x00000400, userId=' + userId);
         await demo.getAllBundleInfo(0x00000400, userId).then(data => {
             console.info('testGetAllBundleInfoInvalidFlagPromise data.length=' + data.length);
