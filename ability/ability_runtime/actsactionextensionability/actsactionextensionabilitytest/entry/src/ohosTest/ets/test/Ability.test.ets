@@ -44,7 +44,7 @@ export default function abilityTest() {
   describe('ActsAbilityTest', () => {
    
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>("testAbilityContext") as common.UIAbilityContext;
+      context = AppStorage.get<common.UIAbilityContext>('testAbilityContext') as common.UIAbilityContext;
       console.info(`====>beforeAll getcontext result: ` + JSON.stringify(context));
     })
     /**
@@ -72,17 +72,17 @@ export default function abilityTest() {
           expect(data.parameters?.count).assertEqual(3);
           await abilityDelegator.executeShellCommand('aa dump -a').then((data) => {
             console.info('====>Acts_ActionExtensionAbility_0100 : data : ' + JSON.stringify(data.stdResult));
-            let firstString = data.stdResult.split("entry/ActsActionExtensionAbility");
-            let result = firstString[1].split("uri");
+            let firstString = data.stdResult.split('entry/ActsActionExtensionAbility');
+            let result = firstString[1].split('uri');
             console.info('====>Acts_ActionExtensionAbility_0100 result aa string: ' + JSON.stringify(result[0]));
             try {
-              expect(result[0]).assertContain("main name [ActsActionExtensionAbility]");
-              expect(result[0]).assertContain("bundle name [com.example.actsactionextensionabilitytest]");
-              expect(result[0]).assertContain("ability type [UIEXTENSION]");
-              expect(result[0]).assertContain("app state #FOREGROUND");
-              expect(result[0]).assertContain("root host bundle name [com.example.actsactionextensionabilitytest]");
-              expect(result[0]).assertContain("root host module name [entry]");
-              expect(result[0]).assertContain("root host ability name [EntryAbility]");
+              expect(result[0]).assertContain('main name [ActsActionExtensionAbility]');
+              expect(result[0]).assertContain('bundle name [com.example.actsactionextensionabilitytest]');
+              expect(result[0]).assertContain('ability type [UIEXTENSION]');
+              expect(result[0]).assertContain('app state #FOREGROUND');
+              expect(result[0]).assertContain('root host bundle name [com.example.actsactionextensionabilitytest]');
+              expect(result[0]).assertContain('root host module name [entry]');
+              expect(result[0]).assertContain('root host ability name [EntryAbility]');
             } catch {
               expect().assertFail();
             }
@@ -136,17 +136,17 @@ export default function abilityTest() {
           expect(data.parameters?.count).assertEqual(3);
           await abilityDelegator.executeShellCommand('aa dump -a').then((data) => {
             console.info('====>Acts_ActionExtensionAbility_0200 : data : ' + JSON.stringify(data.stdResult));
-            let firstString = data.stdResult.split("entry/ActsActionExtensionAbility");
-            let result = firstString[1].split("uri");
+            let firstString = data.stdResult.split('entry/ActsActionExtensionAbility');
+            let result = firstString[1].split('uri');
             console.info('====>Acts_ActionExtensionAbility_0200 result aa string: ' + JSON.stringify(result[0]));
             try {
-              expect(result[0]).assertContain("main name [ActsActionExtensionAbility]");
-              expect(result[0]).assertContain("bundle name [com.example.actsactionextensionabilitytest]");
-              expect(result[0]).assertContain("ability type [UIEXTENSION]");
-              expect(result[0]).assertContain("app state #FOREGROUND");
-              expect(result[0]).assertContain("root host bundle name [com.example.actsactionextensionabilitytest]");
-              expect(result[0]).assertContain("root host module name [feature]");
-              expect(result[0]).assertContain("root host ability name [FeatureAbility]");
+              expect(result[0]).assertContain('main name [ActsActionExtensionAbility]');
+              expect(result[0]).assertContain('bundle name [com.example.actsactionextensionabilitytest]');
+              expect(result[0]).assertContain('ability type [UIEXTENSION]');
+              expect(result[0]).assertContain('app state #FOREGROUND');
+              expect(result[0]).assertContain('root host bundle name [com.example.actsactionextensionabilitytest]');
+              expect(result[0]).assertContain('root host module name [feature]');
+              expect(result[0]).assertContain('root host ability name [FeatureAbility]');
             } catch {
               expect().assertFail();
             };
@@ -207,17 +207,17 @@ export default function abilityTest() {
           expect(data.parameters?.count).assertEqual(3);
           await abilityDelegator.executeShellCommand('aa dump -a').then((data) => {
             console.info('====>Acts_ActionExtensionAbility_0300 : data : ' + JSON.stringify(data.stdResult));
-            let firstString = data.stdResult.split("entry_assist/ActsActionExtensionAbility");
-            let result = firstString[1].split("uri");
+            let firstString = data.stdResult.split('entry_assist/ActsActionExtensionAbility');
+            let result = firstString[1].split('uri');
             console.info('====>Acts_ActionExtensionAbility_0300 result aa string: ' + JSON.stringify(result[0]));
             try {
-              expect(result[0]).assertContain("main name [ActsActionExtensionAbility]");
-              expect(result[0]).assertContain("bundle name [com.example.actsactionextensionabilityrely]");
-              expect(result[0]).assertContain("ability type [UIEXTENSION]");
-              expect(result[0]).assertContain("app state #FOREGROUND");
-              expect(result[0]).assertContain("root host bundle name [com.example.actsactionextensionabilitytest]");
-              expect(result[0]).assertContain("root host module name [entry]");
-              expect(result[0]).assertContain("root host ability name [EntryAbility]");
+              expect(result[0]).assertContain('main name [ActsActionExtensionAbility]');
+              expect(result[0]).assertContain('bundle name [com.example.actsactionextensionabilityrely]');
+              expect(result[0]).assertContain('ability type [UIEXTENSION]');
+              expect(result[0]).assertContain('app state #FOREGROUND');
+              expect(result[0]).assertContain('root host bundle name [com.example.actsactionextensionabilitytest]');
+              expect(result[0]).assertContain('root host module name [entry]');
+              expect(result[0]).assertContain('root host ability name [EntryAbility]');
             } catch {
               expect().assertFail();
             }
@@ -246,7 +246,7 @@ export default function abilityTest() {
           await globalThis.terminate('Acts_ActionExtensionAbility_0300');
           let cmd = 'aa force-stop com.example.actsactionextensionabilityrely';
           await abilityDelegator.executeShellCommand(cmd).catch((error: BusinessError) => {
-            console.log("====>Acts_ActionExtensionAbility_0300 executeShellCommand error : " + JSON.stringify(error));
+            console.log('====>Acts_ActionExtensionAbility_0300 executeShellCommand error : ' + JSON.stringify(error));
           });
           await sleep(1000);
           done();
@@ -453,7 +453,7 @@ export default function abilityTest() {
         events: [appearEvent, onResultEvent]
       }
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -464,7 +464,7 @@ export default function abilityTest() {
         });
 
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
 
           if (data.event == appearEvent) {
             commonEvent.publish(terminateSelfWithResultEvent, ()=>{});
@@ -472,7 +472,7 @@ export default function abilityTest() {
             let result:ESObject = data.parameters?.result as ESObject;
             setTimeout(async () => {
               commonEvent.unsubscribe(subscriber, async (err, data) => {
-                expect(result.want.action).assertEqual('ACTION');
+                expect(result.want?.action).assertEqual('ACTION');
                 globalThis.terminate('Acts_ActionExtensionAbility_0800');
                 setTimeout(() => {
                   console.info(`====>Acts_ActionExtensionAbility_0800 unSubscribeCallback`);
@@ -485,7 +485,7 @@ export default function abilityTest() {
       }).catch((error: BusinessError) => {
         globalThis.terminate('Acts_ActionExtensionAbility_0800');
         setTimeout(() => {
-          console.log("createSubscriber err : " + JSON.stringify(error));
+          console.log('createSubscriber err : ' + JSON.stringify(error));
           expect().assertFail();
         }, 1000);
       });
@@ -509,7 +509,7 @@ export default function abilityTest() {
         events: [appearEvent, onReceiveEvent]
       }
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -520,7 +520,7 @@ export default function abilityTest() {
         });
 
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
 
           if (data.event == appearEvent) {
             commonEvent.publish(sendDataEvent, (err) => {
@@ -552,7 +552,7 @@ export default function abilityTest() {
       }).catch((error: BusinessError) => {
         globalThis.terminate('Acts_ActionExtensionAbility_0900');
         setTimeout(() => {
-          console.log("createSubscriber err : " + JSON.stringify(error));
+          console.log('createSubscriber err : ' + JSON.stringify(error));
           expect().assertFail();
         }, 1000);
       });
@@ -818,7 +818,7 @@ export default function abilityTest() {
         events: ['setReceiveDataCallback']
       };
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -828,7 +828,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'setReceiveDataCallback') {
             let resultCheck:ESObject = {
               name: {
@@ -869,8 +869,8 @@ export default function abilityTest() {
       await abilityDelegator.executeShellCommand('aa dump -a').then((data) => {
         console.info('====>Acts_ActionExtensionAbility_1700 : data : ' + JSON.stringify(data.stdResult));
         try {
-          expect(JSON.stringify(data)).assertContain("main name [ActsActionExtensionAbility]");
-          expect(JSON.stringify(data)).assertContain("main name [UIExtAbility]");
+          expect(JSON.stringify(data)).assertContain('main name [ActsActionExtensionAbility]');
+          expect(JSON.stringify(data)).assertContain('main name [UIExtAbility]');
         } catch {
           expect().assertFail();
         }
@@ -897,7 +897,7 @@ export default function abilityTest() {
         events: ['ACTS_CALL_EVENT']
       };
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -907,13 +907,13 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_CALL_EVENT') {
             await abilityDelegator.executeShellCommand('aa dump -a').then((data) => {
               console.info('====>Acts_ActionExtensionAbility_1800 : data : ' + JSON.stringify(data.stdResult));
               try {
-                expect(JSON.stringify(data)).assertContain("main name [ActsActionExtensionAbility]");
-                expect(JSON.stringify(data)).assertContain("main name [UIExtAbility]");
+                expect(JSON.stringify(data)).assertContain('main name [ActsActionExtensionAbility]');
+                expect(JSON.stringify(data)).assertContain('main name [UIExtAbility]');
               } catch {
                 expect().assertFail();
               }
@@ -945,35 +945,35 @@ export default function abilityTest() {
         events: ['ACTS_TEST_CONTEXT']
       };
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility(CONTEXT_WANT, (err:ESObject) => {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_TEST_CONTEXT') {
             try {
               expect(data.parameters?.context != null).assertTrue();
               let hapModuleInfo:ESObject = data.parameters?.context.currentHapModuleInfo as ESObject;
               expect(hapModuleInfo != null).assertTrue();
-              console.log("====>Acts_ActionExtensionAbility_1900 hapModuleInfo : " + JSON.stringify(hapModuleInfo));
+              console.log('====>Acts_ActionExtensionAbility_1900 hapModuleInfo : ' + JSON.stringify(hapModuleInfo));
               console.log(`Acts_ActionExtensionAbility_1900 hapModuleInfo.name: ` + hapModuleInfo.name);
-              expect(hapModuleInfo.name == "entry").assertTrue();
+              expect(hapModuleInfo.name == 'entry').assertTrue();
               console.log(`Acts_ActionExtensionAbility_1900 hapModuleInfo.icon: ` + hapModuleInfo.icon);
-              expect(hapModuleInfo.icon == "$media:icon").assertTrue();
+              expect(hapModuleInfo.icon == '$media:icon').assertTrue();
               console.log(`Acts_ActionExtensionAbility_1900 hapModuleInfo.iconId: ` + hapModuleInfo.iconId);
               expect(typeof (hapModuleInfo.iconId) == 'number').assertTrue();
               console.log(`Acts_ActionExtensionAbility_1900 hapModuleInfo.label: ` + hapModuleInfo.label);
-              expect(hapModuleInfo.label == "$string:EntryAbility_label").assertTrue();
+              expect(hapModuleInfo.label == '$string:EntryAbility_label').assertTrue();
               console.log(`Acts_ActionExtensionAbility_1900 hapModuleInfo.labelId: ` + hapModuleInfo.labelId);
               expect(typeof (hapModuleInfo.labelId) == 'number').assertTrue();
               console.log(`Acts_ActionExtensionAbility_1900 hapModuleInfo.description: ` + hapModuleInfo.description);
-              expect(hapModuleInfo.description == "$string:module_desc").assertTrue();
+              expect(hapModuleInfo.description == '$string:module_desc').assertTrue();
               console.log(`Acts_ActionExtensionAbility_1900 hapModuleInfo.descriptionId: ` + hapModuleInfo.descriptionId);
               expect(typeof (hapModuleInfo.descriptionId) == 'number').assertTrue();
               console.log(`Acts_ActionExtensionAbility_1900 hapModuleInfo.mainElementName: ` + hapModuleInfo.mainElementName);
-              expect(hapModuleInfo.mainElementName == "EntryAbility").assertTrue();
+              expect(hapModuleInfo.mainElementName == 'EntryAbility').assertTrue();
               console.log(`Acts_ActionExtensionAbility_1900 hapModuleInfo.metadata: ` + hapModuleInfo.metadata.length);
               expect(hapModuleInfo.metadata.length >= 0).assertTrue();
 
@@ -1014,13 +1014,13 @@ export default function abilityTest() {
         events: ['ACTS_TEST_CONTEXT']
       };
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility(CONTEXT_WANT, (err) => {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_TEST_CONTEXT') {
             try {
               expect(data.parameters?.context != null).assertTrue();
@@ -1068,13 +1068,13 @@ export default function abilityTest() {
         events: ['ACTS_TEST_CONTEXT']
       };
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility(CONTEXT_WANT, (err) => {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_TEST_CONTEXT') {
             try {
               expect(data.parameters?.context != null).assertTrue();
@@ -1137,7 +1137,7 @@ export default function abilityTest() {
       };
 
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1147,7 +1147,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_CALL_EVENT') {
             expect(data.parameters?.resourceManager != null).assertTrue();
             console.log('Acts_ActionExtensionAbility_2200 success');
@@ -1179,7 +1179,7 @@ export default function abilityTest() {
       };
 
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1189,7 +1189,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_CALL_EVENT') {
             console.log(`Acts_ActionExtensionAbility_2300 applicationInfo.name: ` + data.parameters?.name);
             expect(data.parameters?.name == 'com.example.actsactionextensionabilitytest').assertTrue();
@@ -1237,7 +1237,7 @@ export default function abilityTest() {
       };
 
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1247,7 +1247,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_CALL_EVENT') {
             let cacheDir:ESObject = data.parameters?.cacheDir as ESObject;
             console.log(`Acts_ActionExtensionAbility_2400 cacheDir:` + cacheDir);
@@ -1282,7 +1282,7 @@ export default function abilityTest() {
       };
 
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1292,7 +1292,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_CALL_EVENT') {
             let tempDir:string = data.parameters?.tempDir as string;
             console.log(`Acts_ActionExtensionAbility_2500 tempDir:` + tempDir);
@@ -1327,7 +1327,7 @@ export default function abilityTest() {
       };
 
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1337,7 +1337,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_CALL_EVENT') {
             let filesDir: string = data.parameters?.filesDir as string;
             console.log(`Acts_ActionExtensionAbility_2600 filesDir:` + filesDir);
@@ -1371,7 +1371,7 @@ export default function abilityTest() {
       };
 
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1381,7 +1381,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_CALL_EVENT') {
             let databaseDir: string = data.parameters?.databaseDir as string;
             console.log(`Acts_ActionExtensionAbility_2700 databaseDir:` + databaseDir);
@@ -1415,7 +1415,7 @@ export default function abilityTest() {
       };
 
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1425,7 +1425,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_CALL_EVENT') {
             let preferencesDir: string = data.parameters?.preferencesDir as string;
             console.log(`Acts_ActionExtensionAbility_2800 preferencesDir:` + preferencesDir);
@@ -1460,7 +1460,7 @@ export default function abilityTest() {
       };
 
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1470,7 +1470,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_CALL_EVENT') {
             let bundleCodeDir: string = data.parameters?.bundleCodeDir as string;
             console.log(`Acts_ActionExtensionAbility_2900 bundleCodeDir:` + bundleCodeDir);
@@ -1504,7 +1504,7 @@ export default function abilityTest() {
         events: ['ACTS_TEST_CONTEXT']
       };
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1514,11 +1514,11 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_TEST_CONTEXT') {
             try {
               expect(data.parameters?.bundleName != null).assertTrue();
-              expect(data.parameters?.bundleName).assertEqual("com.example.actsactionextensionabilitytest");
+              expect(data.parameters?.bundleName).assertEqual('com.example.actsactionextensionabilitytest');
               setTimeout(async () => {
                 commonEvent.unsubscribe(subscriber, async (err, data) => {
                   globalThis.terminate('Acts_ActionExtensionAbility_3000');
@@ -1555,7 +1555,7 @@ export default function abilityTest() {
         events: ['ACTS_TEST_CONTEXT']
       };
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1565,11 +1565,11 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_TEST_CONTEXT') {
             try {
               expect(data.parameters?.bundleName != null).assertTrue();
-              expect(data.parameters?.bundleName).assertEqual("com.example.actsactionextensionabilitytest");
+              expect(data.parameters?.bundleName).assertEqual('com.example.actsactionextensionabilitytest');
               setTimeout(async () => {
                 commonEvent.unsubscribe(subscriber, async (err, data) => {
                   globalThis.terminate('Acts_ActionExtensionAbility_3000');
@@ -1606,7 +1606,7 @@ export default function abilityTest() {
         events: ['ACTS_TEST_CONTEXT']
       };
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1616,7 +1616,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_TEST_CONTEXT') {
             try {
               expect(!data.parameters?.moduleContext).assertTrue();
@@ -1656,7 +1656,7 @@ export default function abilityTest() {
         events: ['ACTS_TEST_CONTEXT']
       };
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1666,7 +1666,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_TEST_CONTEXT') {
             try {
               expect(!data.parameters?.moduleContext).assertTrue();
@@ -1706,7 +1706,7 @@ export default function abilityTest() {
         events: ['ACTS_TEST_CONTEXT']
       };
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1716,7 +1716,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_TEST_CONTEXT') {
             try {
               expect(!data.parameters?.moduleContext).assertTrue();
@@ -1756,7 +1756,7 @@ export default function abilityTest() {
         events: ['ACTS_TEST_CONTEXT']
       };
       await commonEvent.createSubscriber(subscribeInfo).then(async (data) => {
-        console.log("createSubscriber data : " + JSON.stringify(data));
+        console.log('createSubscriber data : ' + JSON.stringify(data));
         subscriber = data;
         context.startAbility({
           bundleName: 'com.example.actsactionextensionabilitytest',
@@ -1766,7 +1766,7 @@ export default function abilityTest() {
           expect(err.code).assertEqual(0);
         });
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.log("SubscribeInfoCallback : " + JSON.stringify(data));
+          console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_TEST_CONTEXT') {
             try {
               expect(data.parameters?.applicationContext != null).assertTrue();
@@ -1874,7 +1874,7 @@ export default function abilityTest() {
           flag = true;
         }
       }
-      context.startAbilityByType("share", wantParam, abilityStartCallback, (err) => {
+      context.startAbilityByType('share', wantParam, abilityStartCallback, (err) => {
         if (err) {
           console.log('====>SUB_Ability_AbilityRuntime_AMS_WantShowMode_0300 :' + JSON.stringify(err));
         }
@@ -1901,7 +1901,7 @@ export default function abilityTest() {
           flag = true;
         }
       }
-      context.startAbilityByType("share", wantParam, abilityStartCallback, (err) => {
+      context.startAbilityByType('share', wantParam, abilityStartCallback, (err) => {
         if (err) {
           console.log('====>SUB_Ability_AbilityRuntime_AMS_WantShowMode_0400 :' + JSON.stringify(err));
         }

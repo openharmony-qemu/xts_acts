@@ -15,16 +15,20 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import type window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@ohos.base';
 
 export default class FeatureAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     const TIMEOUT = 50;
-    globalThis.featureTerminate = (str) => {
+    globalThis.featureTerminate = (str: string) => {
       setTimeout(() => {
         this.context.terminateSelf().then(() => {
           console.info('====>terminateSelf' + JSON.stringify(str) + ' end');
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.info('====>terminateSelf ' + JSON.stringify(str) + ' err:' + JSON.stringify(err));
         });
       }, TIMEOUT);
@@ -62,7 +66,7 @@ export default class FeatureAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err, data) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

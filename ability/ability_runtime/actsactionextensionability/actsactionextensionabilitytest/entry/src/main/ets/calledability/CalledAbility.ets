@@ -15,17 +15,20 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import type window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+
+import { Want } from '@kit.AbilityKit';
 
 export default class CalledAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'CalledAbility onCreate');
     console.log('=====> first app CalledAbility =====>');
     const TIMEOUT = 50;
-    globalThis.terminateCalledAbility = (str) => {
+    globalThis.terminateCalledAbility = (str: string) => {
       setTimeout(() => {
         this.context.terminateSelf().then(() => {
           console.info('====>terminateSelf' + JSON.stringify(str) + ' end');
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.info('====>terminateSelf ' + JSON.stringify(str) + ' err:' + JSON.stringify(err));
         });
       }, TIMEOUT);
