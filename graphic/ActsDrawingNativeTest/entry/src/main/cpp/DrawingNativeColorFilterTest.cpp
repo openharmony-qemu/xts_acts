@@ -344,7 +344,7 @@ int TestColorFilterCreateMatrixBoundaryValues()
     OH_Drawing_ColorFilterDestroy(colorFilter);
     
     // 所有元素为极大值
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_20; i++) {
         matrix[i] = FLT_MAX;
     }
     colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);

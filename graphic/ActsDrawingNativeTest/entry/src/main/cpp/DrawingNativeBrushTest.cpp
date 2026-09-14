@@ -518,7 +518,7 @@ int TestBrushSetGetAlphaMultipleTimes()
     
     // 连续设置和获取alpha验证准确性
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        uint8_t setAlpha = (uint8_t)(i * 25);
+        uint8_t setAlpha = static_cast<uint8_t>(i * 25);
         OH_Drawing_BrushSetAlpha(brush, setAlpha);
         
         uint8_t getAlpha = OH_Drawing_BrushGetAlpha(brush);
@@ -868,7 +868,7 @@ int TestBrushGetAlphaFloatBoundary()
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(a, 0.0f);
     
-    OH_Drawing_BrushSetAlpha(brush, 255);
+    OH_Drawing_BrushSetAlpha(brush, DRAWING_NUMBER_255);
     errorCode = OH_Drawing_BrushGetAlphaFloat(brush, &a);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(a, 1.0f);
