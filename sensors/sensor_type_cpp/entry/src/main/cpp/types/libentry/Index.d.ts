@@ -113,4 +113,4 @@ export const vibrator_PlayVibrationCustomTest2: () => number;
 
 export const permission_deniedTest: () => number;
 
-export const Sensor_Result_0100: () => number;
+export const sensor_Result_0100: () => number;

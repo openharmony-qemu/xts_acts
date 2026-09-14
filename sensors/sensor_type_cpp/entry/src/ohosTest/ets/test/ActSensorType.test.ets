@@ -368,7 +368,7 @@ export default function sensorTypeNdkTest() {
       TAG = "testSensor_typeNdkTest140"
       try {
         console.info(TAG + "===> START");
-        let ret : number = sensor.sensorInfo_GetNameTest1();
+        let ret : number = sensor.sensorInfo_GetNameTest();
         console.info(TAG + "Test ret Result ===> " + ret);
         expect(ret).assertEqual(SENSOR_PARAMETER_ERROR);
         done()
@@ -390,7 +390,7 @@ export default function sensorTypeNdkTest() {
       TAG = "testSensor_typeNdkTest150"
       try {
         console.info(TAG + "===> START");
-        let ret : number = sensor.sensorInfo_GetVendorNameTest1();
+        let ret : number = sensor.sensorInfo_GetVendorNameTest();
         console.info(TAG + "Test ret Result ===> " + ret);
         expect(ret).assertEqual(SENSOR_PARAMETER_ERROR);
         done()
