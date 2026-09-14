@@ -1840,7 +1840,7 @@ describe('ActsBundleManagerTest', function () {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it('SUB_BMS_FRAMEWORK_Query_AppInfo_3100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+     it('SUB_BMS_FRAMEWORK_Query_AppInfo_3010', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         console.info('testGetAllBundleInfoInvalidFlagLargeCallback start, bundleFlag=999999');
         demo.getAllBundleInfo(999999, (error, data) => {
             if (error) {
