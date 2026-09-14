@@ -1642,7 +1642,7 @@ napi_value TestRollBackByTrxIdSuccess(napi_env env, napi_callback_info info)
     int64_t trxId = 0;
     OH_Rdb_BeginTransWithTrxId(testStore, &trxId);
     int ret = OH_Rdb_RollBackByTrxId(testStore, trxId);
-    if (ret == RDB_OK == OH_Rdb_ErrCode::RDB_OK) {
+    if (ret == OH_Rdb_ErrCode::RDB_OK) {
         napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_OK, &result);
     } else if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED) {
         napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED, &result);
@@ -1687,7 +1687,8 @@ napi_value TestCommitByTrxIdSuccess(napi_env env, napi_callback_info info)
     OH_Rdb_Insert(testStore, "test", insertBucket);
     int64_t trxId = 0;
     OH_Rdb_BeginTransWithTrxId(testStore, &trxId);
-    if (ret == RDB_OK == OH_Rdb_ErrCode::RDB_OK) {
+    int ret = OH_Rdb_CommitByTrxId(testStore, trxId);
+    if (ret == OH_Rdb_ErrCode::RDB_OK) {
         napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_OK, &result);
     } else if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED) {
         napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED, &result);
