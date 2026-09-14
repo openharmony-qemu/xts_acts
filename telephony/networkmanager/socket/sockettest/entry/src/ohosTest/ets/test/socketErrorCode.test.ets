@@ -642,22 +642,44 @@ export default function SocketErrorCodeTest01() {
     it('testNetworkMgrSocketTLSSocketGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketGetSocketFd0100';
       console.info(`${caseName} test start`);
+      let tls: socket.TLSSocket | undefined = undefined;
       try {
-        let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-        tls.getSocketFd().then(() => {
-          console.info(`${caseName} get success`);
-          expect(true).assertTrue();
-          done();
+        tls = socket.constructTLSSocketInstance();
+        tls!.getSocketFd().then((fd: number) => {
+          console.info(`${caseName} get success, fd=` + fd);
+          if (fd !== undefined) {
+            expect(fd >= 0).assertTrue();
+          }
+          tls!.close().then(() => {
+            done();
+          }).catch((closeErr: Object) => {
+            console.info(`${caseName} close err: ${JSON.stringify(closeErr)}`);
+            done();
+          });
         }).catch((err: BusinessError) => {
           console.info(`${caseName} get err: ${JSON.stringify(err)}`);
           ExpectFail();
-          done();
+          tls!.close().then(() => {
+            done();
+          }).catch((closeErr: Object) => {
+            console.info(`${caseName} close err: ${JSON.stringify(closeErr)}`);
+            done();
+          });
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
         ExpectFail();
-        done();
+        if (tls !== undefined) {
+          tls!.close().then(() => {
+            done();
+          }).catch((closeErr: Object) => {
+            console.info(`${caseName} close err: ${JSON.stringify(closeErr)}`);
+            done();
+          });
+        } else {
+          done();
+        }
       }
     });
 
