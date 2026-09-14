@@ -64,14 +64,11 @@ export default function sSapTest() {
     });
     beforeEach(async (done:Function) => {
       console.info('beforeEach start');
-      
       console.info('beforeEach end');
       done();
     })
     afterEach(async(done: Function) => {
       console.info('afterEach start');
-      console.info('sleep 500ms');
-      // await sleep(TIME_SLEEP_AFTER);
       console.info('afterEach end');
       done();
     })
