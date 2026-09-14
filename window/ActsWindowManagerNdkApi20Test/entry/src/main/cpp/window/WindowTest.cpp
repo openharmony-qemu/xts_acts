@@ -565,6 +565,18 @@ bool MouseEventFilter(Input_MouseEvent* mouseEvent)
     return flag;
 }
 
+napi_value RegisterMouseEventFilterInvalidParam(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    int32_t result = OH_NativeWindowManager_RegisterMouseEventFilter(g_mainWindowId, nullptr) ==
+            WINDOW_MANAGER_ERRORCODE_INVALID_PARAM ? WINDOW_MANAGER_ERRORCODE_INVALID_PARAM :
+            OK;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "RegisterMouseEventFilterInvalidParam: %{public}d", result);
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
 napi_value UnregisterMouseEventFilterOkOrServiceError(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
@@ -632,6 +644,18 @@ bool TouchEventFilter(Input_TouchEvent* touchEvent)
     std::mt19937 mt(randomNumber()); // 随机数生成器
     bool flag = mt() % 2;
     return flag;
+}
+
+napi_value RegisterTouchEventFilterInvalidParam(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    int32_t result = OH_NativeWindowManager_RegisterTouchEventFilter(g_mainWindowId, nullptr) ==
+            WINDOW_MANAGER_ERRORCODE_INVALID_PARAM ? WINDOW_MANAGER_ERRORCODE_INVALID_PARAM :
+            OK;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "RegisterTouchEventFilterInvalidParam: %{public}d", result);
+    napi_create_int32(env, result, &retValue);
+    return retValue;
 }
 
 napi_value UnregisterTouchEventFilterOkOrServiceError(napi_env env, napi_callback_info info)
