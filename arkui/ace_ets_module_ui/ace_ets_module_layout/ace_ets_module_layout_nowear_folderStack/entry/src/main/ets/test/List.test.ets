@@ -18,6 +18,7 @@ import enumFolderTest from "./FolderStack/enumflodstack.test"
 import FolderStackTest1 from './FolderStack/FolderStackTest1.test.ets';
 import FolderStackTest2 from './FolderStack/FolderStackTest2.test.ets';
 import folderStackNullUndefinedTest from './FolderStack/FolderStackNullUndefined.test';
+import FoldSplitContainer1Test from './FoldSplitContainer/FoldSplitContainer1Test.test';
 
 export default function testsuite() {
   FolderStack3ApiJsunit()
@@ -25,4 +26,5 @@ export default function testsuite() {
   FolderStackTest1();
   FolderStackTest2();
   folderStackNullUndefinedTest();
+  FoldSplitContainer1Test();
 }

@@ -18,7 +18,6 @@ import window from '@ohos.window';
 import events_emitter from '@ohos.events.emitter';
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -40,23 +39,14 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { RecordData } from '@ohos.base';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 const SUITE = 'keyboardShortcut'
 const baseEvent1 = 35872
 const baseEvent2 = 35873
@@ -65,9 +55,6 @@ export default function KeyboardShortcutJsunit() {
 
 
   describe('KeyboardShortcutJsunit', () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/KeyboardShortcut",

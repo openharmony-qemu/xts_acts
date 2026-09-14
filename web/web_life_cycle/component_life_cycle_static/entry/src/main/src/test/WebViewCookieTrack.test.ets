@@ -26,7 +26,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 let testAbilityContext:common.UIAbilityContext;
 let emitKey = "emitWebViewCookieTrack"
 
-export default function ActsAcewebViewCookieTrack() {
+export default function ActsAcewebViewCookieTrack(): void {
   describe('ActsAcewebViewCookieTrack', () :void=> {
 
     beforeAll(async (): Promise<void> => {

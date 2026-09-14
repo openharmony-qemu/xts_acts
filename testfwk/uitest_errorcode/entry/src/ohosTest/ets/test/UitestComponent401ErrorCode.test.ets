@@ -340,10 +340,26 @@ export default function uitestEnumTest() {
       await driver.delayMs(1000)
       try {
         let input1 = await driver.findComponent(ON.text('MainPage'))
-        await input1.scrollSearch(null, false, 100);
+        await input1.scrollSearch(null);
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Component_scrollSearch_401 on = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let input1 = await driver.findComponent(ON.text('MainPage'))
+        await input1.scrollSearch(undefined);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Component_scrollSearch_401 on = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let input1 = await driver.findComponent(ON.text('MainPage'))
+        await input1.scrollSearch(null, false, 100);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Component_scrollSearch_401 on = null 1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {

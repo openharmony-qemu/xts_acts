@@ -50,6 +50,7 @@ import TextAreaTypeApi12Test from "./TextAreaApi12Test/TextAreaTypeApi12.test";
 import textAreaNode from "./TextAreaApi14Test/textAreaNode.test";
 import onSubmitTest from './TextAreaApi14Test/onSubmitTest.test';
 import TextAreaKeyboardAppearanceTest from './TextAreaApi15Test/TextAreaKeyboardAppearance.test';
+import TextAreaCalcWidthTest from './TextAreaApi15Test/TextAreaCalcWidth.test';
 import TextAreaStopBackPressTest from './TextAreaApi16Test/TextAreaStopBackPress.test';
 import textAreaEllipsisModeTest from './TextAreaApi16Test/textAreaEllipsisModeTest.test';
 import textAreaFontScaleTest from './TextAreaApi16Test/textAreaFontScaleTest.test';
@@ -111,6 +112,7 @@ import ContentTypeTest from './TextInputApi12Test/ContentType.test';
 import fontFeatureTest from './TextInputApi12Test/fontFeature.test';
 import TextInputModifierTest from "./TextInputApi12Test/TextInputModifier.test";
 import TextInputKeyboardAppearanceTest from './TextInputApi15Test/TextInputKeyboardAppearance.test';
+import TextInputCalcWidthTest from './TextInputApi15Test/TextInputCalcWidth.test';
 import TextInputStopBackPressTest from './TextInputApi16Test/TextInputStopBackPress.test';
 import textInputEllipsisModeTest from './TextInputApi16Test/textInputEllipsisModeTest.test';
 import textInputFontScaleTest from './TextInputApi16Test/textInputFontScaleTest.test';
@@ -202,6 +204,7 @@ export default function testsuite() {
   textAreaNode()                   // Api14
   // onSubmitTest()
   TextAreaKeyboardAppearanceTest() // Api15
+  TextAreaCalcWidthTest()
   TextAreaStopBackPressTest()      // Api16
   textAreaEllipsisModeTest()
   textAreaFontScaleTest()
@@ -261,6 +264,7 @@ export default function testsuite() {
   fontFeatureTest()
   TextInputModifierTest()
   TextInputKeyboardAppearanceTest()  // Api15
+  TextInputCalcWidthTest()
   TextInputStopBackPressTest()       // Api16
   textInputEllipsisModeTest()
   textInputFontScaleTest()

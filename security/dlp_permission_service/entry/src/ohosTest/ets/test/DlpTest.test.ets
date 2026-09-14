@@ -21,6 +21,12 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { deviceInfo } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
+import window from '@ohos.window';
+
+let checkDlpNotSupported = () => {
+  return !canIUse("SystemCapability.Security.DataLossPrevention");
+}
 
 interface ERRCODE {
   DLP_OK: number,
@@ -335,13 +341,17 @@ export default function dlpTest() {
     it('testGetDLPSupportedFileTypes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let curTag = TAG + "Test_generateDLPFile_002";
       console.info(curTag, "start");
-
-      dlpPermission.getDLPSupportedFileTypes(async (err, fileTypes) => {
-        expect(err).assertEqual(null);
-        expect(typeof (fileTypes)).assertEqual("object");
-
-        console.info(curTag, "end");
-      });
+      if (canIUse("SystemCapability.Security.DataLossPrevention")) {
+        dlpPermission.getDLPSupportedFileTypes(async (err, fileTypes) => {
+          expect(err).assertEqual(null);
+          expect(typeof (fileTypes)).assertEqual("object");
+        });
+      } else {
+        dlpPermission.getDLPSupportedFileTypes(async (err, fileTypes) => {
+          expect(err.code).assertEqual(801);
+        });
+      }
+      console.info(curTag, "end");
     })
 
     /**
@@ -2231,11 +2241,15 @@ export default function dlpTest() {
     it('testGetDLPPermissionInfo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let curTag = TAG + "Test_getDLPPermissionInfo_004";
       console.info(curTag, "start");
-
-      dlpPermission.getDLPPermissionInfo(async (err, dlpPermInfo) => {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_API_FOR_SANDBOX_ERROR);
-      });
-
+      if (canIUse("SystemCapability.Security.DataLossPrevention")) {
+        dlpPermission.getDLPPermissionInfo(async (err, dlpPermInfo) => {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_API_FOR_SANDBOX_ERROR);
+        });
+      } else {
+        dlpPermission.getDLPPermissionInfo(async (err, dlpPermInfo) => {
+          expect(err.code).assertEqual(801);
+        });
+      }
       console.info(curTag, "end");
     })
 
@@ -4276,6 +4290,269 @@ export default function dlpTest() {
     })
 
     /**
+     * @tc.name   SUB_SECURITY_DLP_startDLPManagerForResult_0200
+     * @tc.number SUB_SECURITY_DLP_startDLPManagerForResult_0200
+     * @tc.desc   test startDLPManagerForResult with windowClass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_SECURITY_DLP_startDLPManagerForResult_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      let curTag = TAG + "SUB_SECURITY_DLP_startDLPManagerForResult_0200";
+      console.info(curTag, "start");
+      let context: common.UIAbilityContext = globalThis.context;
+      let want: Want = {
+        "uri": "file://docs/storage/Users/currentUser/Desktop/1.txt",
+        "parameters": {
+          "displayName": ""
+        }
+      }
+      let config: window.Configuration = {
+        name: "dlp_test_window",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: globalThis.context
+      };
+      let windowClass = await window.createWindow(config);
+      if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
+        try {
+          let result: common.AbilityResult = await dlpPermission.startDLPManagerForResult(context, want, windowClass);
+          expect(false).assertTrue();
+        } catch (err) {
+          expect(err.code).assertEqual(801);
+        }
+      } else {
+        try {
+          let result: common.AbilityResult = await dlpPermission.startDLPManagerForResult(context, want, windowClass);
+          expect(false).assertTrue();
+        } catch (err) {
+          expect(err.code).assertEqual(19100017)
+        }
+      }
+      console.info(curTag, "end");
+      await windowClass.destroyWindow();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_contextNull_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_contextNull_0100
+     * @tc.desc   test startDLPManagerForResult with null context, return error code 19100001 or 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_contextNull_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let curTag = TAG + "SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_contextNull_0100";
+        console.info(curTag, "start");
+        let want: Want = {
+          "uri": "file://docs/storage/Users/currentUser/Desktop/1.txt",
+          "parameters": {
+            "displayName": ""
+          }
+        };
+        let config: window.Configuration = {
+          name: "dlp_test_window_context_null",
+          windowType: window.WindowType.TYPE_FLOAT,
+          ctx: globalThis.context
+        };
+        let windowClass = await window.createWindow(config);
+        if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
+          try {
+            await dlpPermission.startDLPManagerForResult(null!, want, windowClass);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.startDLPManagerForResult(null!, want, windowClass);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
+            expect(err.code).assertEqual(19100001);
+          }
+        }
+        console.info(curTag, "end");
+        await windowClass.destroyWindow();
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_contextUndefined_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_contextUndefined_0100
+     * @tc.desc   test startDLPManagerForResult with undefined context, return error code 19100001 or 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_contextUndefined_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let curTag = TAG + "SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_contextUndefined_0100";
+        console.info(curTag, "start");
+        let want: Want = {
+          "uri": "file://docs/storage/Users/currentUser/Desktop/1.txt",
+          "parameters": {
+            "displayName": ""
+          }
+        };
+        let config: window.Configuration = {
+          name: "dlp_test_window_context_undefined",
+          windowType: window.WindowType.TYPE_FLOAT,
+          ctx: globalThis.context
+        };
+        let windowClass = await window.createWindow(config);
+        if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
+          try {
+            await dlpPermission.startDLPManagerForResult(undefined!, want, windowClass);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.startDLPManagerForResult(undefined!, want, windowClass);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
+            expect(err.code).assertEqual(19100001);
+          }
+        }
+        console.info(curTag, "end");
+        await windowClass.destroyWindow();
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_windowClassNull_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_windowClassNull_0100
+     * @tc.desc   test startDLPManagerForResult with null windowClass, return error code 19100001 or 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_windowClassNull_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let curTag = TAG + "SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_windowClassNull_0100";
+        console.info(curTag, "start");
+        let context: common.UIAbilityContext = globalThis.context;
+        let want: Want = {
+          "uri": "file://docs/storage/Users/currentUser/Desktop/1.txt",
+          "parameters": {
+            "displayName": ""
+          }
+        };
+        if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
+          try {
+            await dlpPermission.startDLPManagerForResult(context, want, null!);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.startDLPManagerForResult(context, want, null!);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
+            expect(err.code).assertEqual(19100017);
+          }
+        }
+        console.info(curTag, "end");
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_windowClassUndefined_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_windowClassUndefined_0100
+     * @tc.desc   test startDLPManagerForResult with undefined windowClass, return error code 19100001 or 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_windowClassUndefined_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let curTag = TAG + "SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_windowClassUndefined_0100";
+        console.info(curTag, "start");
+        let context: common.UIAbilityContext = globalThis.context;
+        let want: Want = {
+          "uri": "file://docs/storage/Users/currentUser/Desktop/1.txt",
+          "parameters": {
+            "displayName": ""
+          }
+        };
+        if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
+          try {
+            await dlpPermission.startDLPManagerForResult(context, want, undefined!);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.startDLPManagerForResult(context, want, undefined!);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
+            expect(err.code).assertEqual(19100017);
+          }
+        }
+        console.info(curTag, "end");
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_uriEmpty_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_uriEmpty_0100
+     * @tc.desc   test 调用startDLPManagerForResult接口，uri传空字符串，返回19100016错误码或801错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_uriEmpty_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let curTag = TAG + "SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_uriEmpty_0100";
+        console.info(curTag, "start");
+        let context: common.UIAbilityContext = globalThis.context;
+        let want: Want = {
+          "uri": "",
+          "parameters": {
+            "displayName": ""
+          }
+        };
+        let config: window.Configuration = {
+          name: "dlp_test_window_uri_empty",
+          windowType: window.WindowType.TYPE_FLOAT,
+          ctx: globalThis.context
+        };
+        let windowClass = await window.createWindow(config);
+        if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
+          try {
+            await dlpPermission.startDLPManagerForResult(context, want, windowClass);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.startDLPManagerForResult(context, want, windowClass);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info(curTag, "startDLPManagerForResult failed", err.code, err.message);
+            expect(err.code).assertEqual(19100016);
+          }
+        }
+        console.info(curTag, "end");
+        await windowClass.destroyWindow();
+        done();
+      })
+
+    /**
      * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_16_0100
      * @tc.number SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_16_0100
      * @tc.desc   test 调用startDLPManagerForResult接口，不传入uri参数，返回19100016错误码
@@ -4385,5 +4662,162 @@ export default function dlpTest() {
       }
     }
 
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_getDLPPermissionInfo_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_getDLPPermissionInfo_0100
+     * @tc.desc   test getDLPPermissionInfo in car return 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_getDLPPermissionInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
+          try {
+            await dlpPermission.getDLPPermissionInfo();
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.getDLPPermissionInfo();
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(19100006);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_queryDlpPolicy_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_queryDlpPolicy_0100
+     * @tc.desc   test queryDlpPolicy in car return 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_queryDlpPolicy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
+          try { 
+            await dlpPermission.queryDlpPolicy(null);
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.queryDlpPolicy(null);
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(401);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_decryptDlpFile_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_decryptDlpFile_0100
+     * @tc.desc   test decryptDlpFile in car return 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_decryptDlpFile_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
+          try {
+            await dlpPermission.decryptDlpFile(null, null);
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.decryptDlpFile(null, null);
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(401);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_unregisterPlugin_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_unregisterPlugin_0100
+     * @tc.desc   test unregisterPlugin in car return 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_unregisterPlugin_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
+          try {
+            await dlpPermission.DlpConnManager.unregisterPlugin();
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.DlpConnManager.unregisterPlugin();
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(19100011);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_connectServer_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_connectServer_0100
+     * @tc.desc   test connectServer in car return 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_connectServer_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let plugin: dlpPermission.DlpConnPlugin = new DataCapsulePlugin();
+        let isDevBoard: boolean = checkDeviceIsDevBoard();
+        if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
+          try {
+            await dlpPermission.DlpConnManager.registerPlugin(plugin);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 registerPlugin failed, err.code " + err.code);
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          if (isDevBoard) {
+            try {
+              let result = await dlpPermission.DlpConnManager.registerPlugin(plugin);
+              expect(result != undefined).assertTrue();
+            } catch (err) {
+              console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 registerPlugin failed, err.code " + err.code);
+              expect(false).assertTrue();
+            }
+          } else {
+            try {
+              await dlpPermission.DlpConnManager.registerPlugin(plugin);
+              expect(false).assertTrue();
+            } catch (err) {
+              console.info("SUB_Security_DataSecurity_DLP_connectServer_0100 registerPlugin failed, err.code " + err.code);
+              expect(err.code).assertEqual(19100011);
+            }
+          }
+        }
+        done();
+      })
   })
 }

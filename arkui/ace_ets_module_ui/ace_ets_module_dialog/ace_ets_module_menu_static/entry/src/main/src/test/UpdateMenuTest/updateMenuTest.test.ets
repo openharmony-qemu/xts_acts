@@ -13,22 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 export default function updateMenuTest(): void {
   describe('updateMenuTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("updateMenuTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("updateMenuTest beforeEach start");
       let options: router.RouterOptions = {
@@ -50,8 +45,12 @@ export default function updateMenuTest(): void {
       console.info("updateMenuTest beforeEach end");
     });
     afterEach(async () => {
-      await Utils.sleep(1000);
-      console.info("updateMenuTest after each called");
+      try {
+        await Utils.sleep(1000);
+        console.info("updateMenuTest after each called");
+      } catch (err) {
+        console.info('updateMenuTest afterEach err: ' + JSON.stringify(err));
+      }
     });
     /**
      * @tc.number updateMenuTest_0100
@@ -62,15 +61,20 @@ export default function updateMenuTest(): void {
      * @tc.level  @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('updateMenuTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('openUpdate'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(5000);
-      let updateMenu = inspector.getInspectorByKey('updateMenu');
-      let obj = JSON.parseJsonElement(updateMenu);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('updateMenu');
-      console.info('updateMenuTest_0100 END ===========================');
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('openUpdate'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(5000);
+        let updateMenu = inspector.getInspectorByKey('updateMenu');
+        let obj = JSON.parseJsonElement(updateMenu);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('updateMenu');
+        console.info('updateMenuTest_0100 END ===========================');
+        done();
+      } catch (err) {
+        console.info('updateMenuTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

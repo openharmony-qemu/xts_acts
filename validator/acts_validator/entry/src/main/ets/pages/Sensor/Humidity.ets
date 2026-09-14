@@ -60,7 +60,7 @@ struct Humidity {
             })
             router.back({
               url: 'pages/Sensor/Sensor_index',
-              params: { result: 'false', title: this.name }
+              params: { result: 'true ', title: this.name }
             })
           }
         }
@@ -88,7 +88,7 @@ struct Humidity {
           })
           router.back({
             url: 'pages/Sensor/Sensor_index',
-            params: { result: 'false', title: this.name }
+            params: { result: 'true ', title: this.name }
           })
         }
         console.error(TAG, `Failed to invoke on. Code: ${e.code}, message: ${e.message}`);

@@ -697,7 +697,12 @@ napi_property_descriptor desc[] = {
     {"ohDrawingSetTypographyStyleAttributeDoubleFirstLineHeadIndent0100", nullptr,
         OHDrawingSetTypographyStyleAttributeDoubleFirstLineHeadIndent0100, nullptr, nullptr, nullptr,
         napi_default, nullptr},
-    
+    {"testSetTextHighContrast001", nullptr, TestSetTextHighContrast001, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"testSetTextHighContrast002", nullptr, TestSetTextHighContrast002, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"testTypographyUpdateDecorationColor001", nullptr, TestTypographyUpdateDecorationColor001,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

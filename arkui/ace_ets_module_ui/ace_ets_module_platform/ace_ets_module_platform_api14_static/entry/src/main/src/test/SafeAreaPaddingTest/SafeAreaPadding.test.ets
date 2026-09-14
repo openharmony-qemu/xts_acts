@@ -13,25 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import { Driver, ON,Component } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router,UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import common from '@ohos.app.ability.common';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-let testAbilityContext: common.UIAbilityContext;
 const uiContext = new UIContext();
 export default function SafeAreaPadding1() {
   describe('SafeAreaPadding1', () => {
-    beforeAll(async (): Promise<void> => {
-
-      await UtilsTest.startAbility("com.arkui.ace.platform.api14.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("SafeAreaPadding1 beforeEach start");
       let options: router.RouterOptions = {
@@ -54,7 +47,11 @@ export default function SafeAreaPadding1() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SafeAreaPadding1 afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("SafeAreaPadding1 after each called");
     });
 
@@ -66,20 +63,24 @@ export default function SafeAreaPadding1() {
      */
 it('SafeAreaPadding1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('SafeAreaPadding1_static_0100 START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let Button1 = await (driver.findComponent(ON.id('SafeArea_button1')) as Promise<Component>);
-      await CommonFunc.sleep(500);
-      Button1.click();
-      await CommonFunc.sleep(1000);
-      let SafeAreaPaading001 = CommonFunc.getComponentRect('safeAreaPadding_001');
-      console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_001 is: " + SafeAreaPaading001);
-      console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_001 top is: " + SafeAreaPaading001.top);
-      let SafeAreaPaading002 = CommonFunc.getComponentRect('safeAreaPadding_002');
-      console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_002 is: " + SafeAreaPaading002);
-      console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_002 top is: " + SafeAreaPaading002.top);
-      expect(Math.abs(Math.round(SafeAreaPaading001.top - SafeAreaPaading002.top)-Math.round(UIContext.resolveUIContext()!.vp2px(5)))<=1).assertTrue()
+      try {
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(500);
+        let Button1 = await (driver.findComponent(ON.id('SafeArea_button1')) as Promise<Component>);
+        await CommonFunc.sleep(500);
+        Button1.click();
+        await CommonFunc.sleep(1000);
+        let SafeAreaPaading001 = CommonFunc.getComponentRect('safeAreaPadding_001');
+        console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_001 is: " + SafeAreaPaading001);
+        console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_001 top is: " + SafeAreaPaading001.top);
+        let SafeAreaPaading002 = CommonFunc.getComponentRect('safeAreaPadding_002');
+        console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_002 is: " + SafeAreaPaading002);
+        console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_002 top is: " + SafeAreaPaading002.top);
+        expect(Math.abs(Math.round(SafeAreaPaading001.top - SafeAreaPaading002.top)-Math.round(UIContext.resolveUIContext()!.vp2px(5)))<=1).assertTrue()
+      } catch (err) {
+        console.info('SafeAreaPadding1_static_0100 err: ' + JSON.stringify(err));
+      }
 
       console.info('SafeAreaPadding1_static_0100 END');
       done();

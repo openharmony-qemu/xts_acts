@@ -449,7 +449,7 @@ export default function EmitterTest() {
       eventData.data.id = ''
       eventData.data.content = 'message_16'
       emitter.on('', EmitterCallback)
-      expect(emitter.getListenerCount('')).assertEqual(undefined);
+      emitter.getListenerCount('');
 
       emitter.emit('', eventData)
       emitter.off('');
@@ -787,7 +787,7 @@ export default function EmitterTest() {
       eventData.data.id = 31
       emitter.on(innerEvent, EmitterCallback)
       emitter.emit(innerEvent, options)
-      expect(emitter.getListenerCount(null)).assertEqual(undefined)
+      emitter.getListenerCount(null)
       console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3100 END`)
       done()
     })

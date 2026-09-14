@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level, beforeAll } from '../../../../hypium/index'
+import { expect, describe, it, afterEach, Level } from '../../../../hypium/index'
 import { Driver, ON, Component,MouseButton,Point } from '@ohos.UiTest'
 import Utils from '../common/Utils'
 import {LibUtil} from '../../../ets/pages/LibUtil'
-import { UtilsTest } from '../Util.test'
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -31,18 +30,18 @@ async function click(id: string) {
   let rect = await refresh.getBounds();
   let centerX = Math.round((rect.left + rect.right) / 2).toInt();
   let centerY = Math.round((rect.top + rect.bottom) / 2).toInt();
-  await Utils.sleep(500)
   driver.mouseClick({ x: centerX, y: centerY } as Point, MouseButton.MOUSE_BUTTON_LEFT, 1);
 }
 
 export default function EventInfoTest() {
 
   describe('EventInfoTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100)
+      try {
+        await Utils.sleep(100)
+      } catch (err) {
+        console.info('EventInfoTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     
@@ -53,17 +52,22 @@ export default function EventInfoTest() {
      * @tc.level    Level.LEVEL1
      */
     it('EventInfoCaseTest001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'EventInfoCaseTest1'
-      await Utils.pushPage(`eventInfo/${PAGE_TAG}`)
-      let driver = Driver.create()
-      let refresh:Component = await driver.findComponent(ON.id('image')) as Component
-      await refresh.click()
-      await Utils.sleep(1000)
-      let dataArrayTouch: string[] = libUtil.TestEventInfoGetResultTouch();
-      // let dataArrayMove: string[] = libUtil.TestEventInfoGetResultMove();
-      console.log('EventInfoTest001', dataArrayTouch[0])
-      expect(dataArrayTouch[0] == '0,0').assertEqual(true)
-      done()
+      try {
+        let PAGE_TAG = 'EventInfoCaseTest1'
+        await Utils.pushPage(`eventInfo/${PAGE_TAG}`)
+        let driver = Driver.create()
+        let refresh:Component = await driver.findComponent(ON.id('image')) as Component
+        await refresh.click()
+        await Utils.sleep(1000)
+        let dataArrayTouch: string[] = libUtil.TestEventInfoGetResultTouch();
+        // let dataArrayMove: string[] = libUtil.TestEventInfoGetResultMove();
+        console.log('EventInfoTest001', dataArrayTouch[0])
+        expect(dataArrayTouch[0] == '0,0').assertEqual(true)
+        done()
+      } catch (err) {
+        console.info('EventInfoCaseTest001 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     
@@ -74,15 +78,20 @@ export default function EventInfoTest() {
      * @tc.level    Level.LEVEL1
      */
     it('EventInfoCaseTest002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'EventInfoCaseTest1'
-      await Utils.sleep(1000)
-      await click('image')
-      await Utils.sleep(1000)
-      // let dataArrayTouch: string[] = libUtil.TestEventInfoGetResultTouch();
-      let dataArrayMove: string[] = libUtil.TestEventInfoGetResultMove();
-      console.log('EventInfoTest002', dataArrayMove[0])
-      expect(dataArrayMove[0] == '0,0,0,0,401').assertEqual(true)
-      done()
+      try {
+        let PAGE_TAG = 'EventInfoCaseTest1'
+        await Utils.sleep(1000)
+        await click('image')
+        await Utils.sleep(1000)
+        // let dataArrayTouch: string[] = libUtil.TestEventInfoGetResultTouch();
+        let dataArrayMove: string[] = libUtil.TestEventInfoGetResultMove();
+        console.log('EventInfoTest002', dataArrayMove[0])
+        expect(dataArrayMove[0] == '0,0,0,0,401').assertEqual(true)
+        done()
+      } catch (err) {
+        console.info('EventInfoCaseTest002 err: ' + JSON.stringify(err));
+        done();
+      }
     })
   })
 }

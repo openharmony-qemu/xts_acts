@@ -1137,7 +1137,7 @@ export default function Uint8ArraySet02Test(): void {
      */
     it('testUint8ArraySet02_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array(200)
-      const src: FixedArray<int> = new FixedArray<int>(200)
+      const src: FixedArray<int> = new FixedArray<int>(200, 0)
       for (let i: int = 0; i < 200; i++) {
         src[i] = i + 256
       }

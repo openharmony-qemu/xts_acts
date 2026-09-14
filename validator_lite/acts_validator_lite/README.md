@@ -14,7 +14,27 @@
 
 产物在 `out/.../suites/acts_validator_lite/`，独立于 `suites/acts/`，`run acts` 不会扫到。
 
+> ⚠️ **LiteOS 执行前必做（否则挂载失败）**
+>
+> 编译生成的 `ActsValidatorLite.json` 第 17 行 `"type_kernel"` 字段固定为 `"linux"`（源自本目录 `Test.json`）。执行 **LiteOS 内核** 前，必须手动将其改为 `"lite"`，否则 MountKit 会按 Linux 方式挂载（`toybox mount -t nfs`）导致 NFS 挂载失败。
+>
+> 文件路径（LiteOS 产物）：
+> `out/hispark_taurus/ipcamera_hispark_taurus/suites/acts_validator_lite/testcases/acts_validator_lite/ActsValidatorLite.json`
+>
+> ```diff
+>  "kits": [
+>      {
+>          "type": "MountKit",
+>          "server": "NfsServer",
+> -        "type_kernel": "linux",
+> +        "type_kernel": "lite",
+> ```
+>
+> Linux 内核产物（`..._linux/...`）保持 `"linux"` 不变。
+
 ## 执行
+
+> LiteOS 用户：执行前先按[编译章节](#编译)的说明，把产物 `ActsValidatorLite.json` 的 `type_kernel` 由 `linux` 改为 `lite`，否则 NFS 挂载失败、用例无法下发。
 
 ### 1. 配置 `config/user_config.xml`
 
@@ -95,6 +115,7 @@ xdevice 自动:
 | 路径前缀 | `/storage` | `/storage` | 统一 |
 | aa 拉起 | 有 | 有（`tools_lite` 编译） | 自动重试 3 次 |
 | chmod +x | 需要 | 不需要 | 仅 Linux |
+| `type_kernel` | `linux` | `lite` | 产物 `ActsValidatorLite.json` 默认 `linux`；跑 LiteOS 前手改第 17 行为 `lite` |
 
 ## Test.json 配置
 

@@ -14,32 +14,17 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function defaultFocus() {
 
   describe('getWithUniqueId', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/ComponentSnapshotByUniqueId/getWithUniqueId',
@@ -62,7 +47,11 @@ export default function defaultFocus() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("defaultFocus after each error: " + err);
+      }
       console.info("defaultFocus after each called");
     });
 
@@ -87,9 +76,9 @@ it('getWithUniqueId_static_0001', Level.LEVEL0, async (done: () => void): Promis
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
 
       let snapshotScaleButton = await driver.findComponent(ON.id('snapshotScale'));
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       await (snapshotScaleButton?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
 
       let snapshotButton = await driver.findComponent(ON.id('UniqueId_getSnapshot'));
       await CommonFunc.sleep(1000);
@@ -97,7 +86,7 @@ it('getWithUniqueId_static_0001', Level.LEVEL0, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
 
       strJson = inspector.getInspectorByKey('resultText');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
         .assertEqual('UniqueId_getSnapshot_success');
       await CommonFunc.sleep(1000);
@@ -117,9 +106,9 @@ it('getWithUniqueId_static_0002', Level.LEVEL0, async (done: () => void): Promis
 
       console.info('getWithUniqueId_static_0002 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('resultText');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       console.info("[getWithUniqueId_static_0002] attrs is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       console.info("[getWithUniqueId_static_0002] content is: " +
@@ -130,14 +119,13 @@ it('getWithUniqueId_static_0002', Level.LEVEL0, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
 
       strJson = inspector.getInspectorByKey('resultText');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
         .assertEqual('UniqueId_getSyncSnapshot_success');
       await CommonFunc.sleep(1000);
       console.info('[getWithUniqueId_static_0002] END');
       done();
     });
-
 
     
     
@@ -177,7 +165,6 @@ it('getWithUniqueId_static_0003', Level.LEVEL0, async (done: () => void): Promis
       console.info('[getWithUniqueId_static_0003] END');
       done();
     });
-
 
     
     

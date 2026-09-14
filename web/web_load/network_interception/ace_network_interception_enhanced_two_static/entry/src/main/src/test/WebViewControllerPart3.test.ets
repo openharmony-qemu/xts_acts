@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach } from '../../../hypium/index';
+import {Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach, expect } from '../../../hypium/index';
 import Utils from './Utils.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 
 let testAbilityContext: common.UIAbilityContext;
 
@@ -54,6 +55,7 @@ export default function webViewControllerPart3Test() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
+
     /**
      * @tc.name   testSetNetworkAvailableStatic001
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0100
@@ -67,7 +69,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testSetNetworkAvailable001", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testSetNetworkAvailable001", 'false', 100055, done);
+        Utils.registerBaseEvent("testSetNetworkAvailable001", 'false', 100055, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -87,7 +94,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testSetNetworkAvailable002", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testSetNetworkAvailable002", 'true', 100056, done);
+        Utils.registerBaseEvent("testSetNetworkAvailable002", 'true', 100056, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -107,7 +119,12 @@ export default function webViewControllerPart3Test() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testSetNetworkAvailable003", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testSetNetworkAvailable003", 17100001, 100057, done);
+        Utils.registerBaseEvent("testSetNetworkAvailable003", 17100001, 100057, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
         await Utils.msSleep(2000);

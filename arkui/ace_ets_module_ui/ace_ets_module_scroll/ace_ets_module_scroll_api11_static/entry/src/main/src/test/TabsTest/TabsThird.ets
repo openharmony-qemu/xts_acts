@@ -14,23 +14,16 @@
  * limitations under the License.
  */
 import { Resource, BarMode, LayoutStyle, VerticalAlign, LayoutMode, TextOverflow, TextHeightAdaptivePolicy, FontWeight, FontStyle, Color, $r } from '@ohos.arkui.component';
-import { describe, beforeEach, afterEach, it, expect, beforeAll, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 function tabsDefaultFontSize(sysWidth: Resource) {
   const context = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
@@ -43,9 +36,6 @@ function tabsDefaultFontSize(sysWidth: Resource) {
 export default function tabsThird() {
   describe('ActsAceTabsTestThird', () => {
     let count: int = 0
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Tabs/IndexThird",

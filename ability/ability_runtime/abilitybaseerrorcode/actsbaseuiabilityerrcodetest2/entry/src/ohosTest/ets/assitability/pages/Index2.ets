@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
+import { Want } from '@kit.AbilityKit';
 let testAbilityWant:Want;
 @Entry
 @Component

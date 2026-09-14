@@ -163,7 +163,7 @@ class MyHandler implements reflect.InvocationHandler {
     public invoke(proxy: reflect.Proxy, method: reflect.InstanceMethod, args: FixedArray<Any>): Any {
         if ((proxy instanceof ProxyInterface) && method.getName() === 'test'
             && method.getParametersNum() == 1) {
-            let newArgs = new FixedArray<Any>(1);
+            let newArgs = new FixedArray<Any>(1, undefined);
             newArgs[0] = 'hellow: ' + (args[0] as string);
             return method.invoke(this.target, newArgs)
         }

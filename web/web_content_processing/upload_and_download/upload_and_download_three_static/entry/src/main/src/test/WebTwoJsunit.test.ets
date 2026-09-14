@@ -17,8 +17,9 @@
 import { beforeAll, beforeEach, afterEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
 import Utils from './Utils.test';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import emitter from '@ohos.events.emitter';
@@ -60,6 +61,54 @@ export default function webTwoJsunit() {
     })
 
     /**
+     * @tc.name   emitRefreshNullStatic001
+     * @tc.number SUB_ACE_WEB_REFRESH_NULL_0100
+     * @tc.desc   test refresh with null ignoreCache param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitRefreshNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitRefreshNullStatic001', 10)
+        await Utils.msSleep(2000);
+        Utils.registerBaseEvent('emitRefreshNullStatic001', true, 41021801, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponenttwo', 10, '');
+        await Utils.msSleep(2000);
+        done()
+      })
+
+    /**
+     * @tc.name   emitRefreshUndefinedStatic001
+     * @tc.number SUB_ACE_WEB_REFRESH_UNDEFINED_0100
+     * @tc.desc   test refresh with undefined ignoreCache param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitRefreshUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitRefreshUndefinedStatic001', 10)
+        await Utils.msSleep(2000);
+        Utils.registerBaseEvent('emitRefreshUndefinedStatic001', true, 41021802, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponenttwo', 10, '');
+        await Utils.msSleep(2000);
+        done()
+      })
+
+    /**
      * @tc.name   onDownloadFailed
      * @tc.number SUB_ACE_WEB_API_0100
      * @tc.desc   ets allow the Web access overview mode
@@ -71,7 +120,12 @@ export default function webTwoJsunit() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonDownloadFailed', 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent('onDownloadFailed', true, 6, done);
+        Utils.registerBaseEvent('onDownloadFailed', true, 6, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webcomponenttwo', 10, '');
         await Utils.msSleep(2000);
@@ -88,9 +142,14 @@ export default function webTwoJsunit() {
      */
     it('emitRefreshTrueStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        Utils.emitEvent('emitRefreshTrueStatic', 10)
+        Utils.emitEvent('emitRefreshTrue', 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent('emitRefreshTrueStatic', true, 7, done);
+        Utils.registerBaseEvent('emitRefreshTrue', true, 7, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webcomponenttwo', 10, '');
         await Utils.msSleep(2000);
@@ -107,9 +166,14 @@ export default function webTwoJsunit() {
      */
     it('emitRefreshFalseStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        Utils.emitEvent('emitRefreshFalseStatic', 10)
+        Utils.emitEvent('emitRefreshFalse', 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent('emitRefreshFalseStatic', true, 8, done);
+        Utils.registerBaseEvent('emitRefreshFalse', true, 8, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webcomponenttwo', 10, '');
         await Utils.msSleep(2000);

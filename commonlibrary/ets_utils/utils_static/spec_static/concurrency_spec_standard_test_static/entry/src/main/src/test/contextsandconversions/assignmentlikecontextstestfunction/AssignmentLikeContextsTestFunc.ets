@@ -2323,8 +2323,8 @@ export function testAssignmentLikeContexts0057(){
 
 export function testAssignmentLikeContexts0059(){
   const TAG = 'testAssignmentLikeContexts0059';
-  let src_1: FixedArray<Boolean> = new FixedArray<Boolean>(1);
-        let dst_1: FixedArray<boolean> = new FixedArray<boolean>(1);
+  let src_1: FixedArray<Boolean> = new FixedArray<Boolean>(1, false);
+        let dst_1: FixedArray<boolean> = new FixedArray<boolean>(1, false);
         // 预期编译阶段校验类型兼容性
         dst_1 = src_1 as FixedArray<boolean>;
   if(dst_1.length !== src_1.length){
@@ -2335,8 +2335,8 @@ export function testAssignmentLikeContexts0059(){
 
 export function testAssignmentLikeContexts0060(){
   const TAG = 'testAssignmentLikeContexts0060';
-  let src_2: FixedArray<Byte> = new FixedArray<Byte>(1);
-        let dst_2: FixedArray<byte> = new FixedArray<byte>(1);
+  let src_2: FixedArray<Byte> = new FixedArray<Byte>(1, 0);
+        let dst_2: FixedArray<byte> = new FixedArray<byte>(1, 0);
         dst_2 = src_2 as FixedArray<byte>;
   if(dst_2.length !== src_2.length){
         console.info(`${TAG} Task execution failed: dst_2.length: ${dst_2.length}`);
@@ -2346,8 +2346,8 @@ export function testAssignmentLikeContexts0060(){
 
 export function testAssignmentLikeContexts0061(){
   const TAG = 'testAssignmentLikeContexts0061';
-  let src_11: FixedArray<char> = new FixedArray<char>(1);
-        let dst_11: FixedArray<Char> = new FixedArray<Char>(1);
+  let src_11: FixedArray<char> = new FixedArray<char>(1, c'\u0000');
+        let dst_11: FixedArray<Char> = new FixedArray<Char>(1, c'\u0000');
         dst_11 = src_11 as FixedArray<Char>;
   if(dst_11.length !== src_11.length){
         console.info(`${TAG} Task execution failed: dst_11.length: ${dst_11.length}`);
@@ -2357,8 +2357,8 @@ export function testAssignmentLikeContexts0061(){
 
 export function testAssignmentLikeContexts0062(){
   const TAG = 'testAssignmentLikeContexts0062';
-  let src_12: FixedArray<short> = new FixedArray<short>(1);
-        let dst_12: FixedArray<Short> = new FixedArray<Short>(1);
+  let src_12: FixedArray<short> = new FixedArray<short>(1, 0);
+        let dst_12: FixedArray<Short> = new FixedArray<Short>(1, 0);
         dst_12 = src_12 as FixedArray<Short>;
   if(dst_12.length !== src_12.length){
         console.info(`${TAG} Task execution failed: dst_12.length: ${dst_12.length}`);
@@ -2368,8 +2368,8 @@ export function testAssignmentLikeContexts0062(){
 
 export function testAssignmentLikeContexts0063(){
   const TAG = 'testAssignmentLikeContexts0063';
-  let src_13: FixedArray<int> = new FixedArray<int>(1);
-        let dst_13: FixedArray<Int> = new FixedArray<Int>(1);
+  let src_13: FixedArray<int> = new FixedArray<int>(1, 0);
+        let dst_13: FixedArray<Int> = new FixedArray<Int>(1, 0);
         dst_13 = src_13 as FixedArray<Int>;
   if(dst_13.length !== src_13.length){
         console.info(`${TAG} Task execution failed: dst_13.length: ${dst_13.length}`);
@@ -2379,8 +2379,8 @@ export function testAssignmentLikeContexts0063(){
 
 export function testAssignmentLikeContexts0064(){
   const TAG = 'testAssignmentLikeContexts0064';
-  let src_14: FixedArray<long> = new FixedArray<long>(1);
-        let dst_14: FixedArray<Long> = new FixedArray<Long>(1);
+  let src_14: FixedArray<long> = new FixedArray<long>(1, 0);
+        let dst_14: FixedArray<Long> = new FixedArray<Long>(1, 0);
         dst_14 = src_14 as FixedArray<Long>;
   if(dst_14.length !== src_14.length){
         console.info(`${TAG} Task execution failed: dst_14.length: ${dst_14.length}`);
@@ -2390,8 +2390,8 @@ export function testAssignmentLikeContexts0064(){
 
 export function testAssignmentLikeContexts0065(){
   const TAG = 'testAssignmentLikeContexts0065';
-  let src_15: FixedArray<float> = new FixedArray<float>(1);
-        let dst_15: FixedArray<Float> = new FixedArray<Float>(1);
+  let src_15: FixedArray<float> = new FixedArray<float>(1, 0);
+        let dst_15: FixedArray<Float> = new FixedArray<Float>(1, 0);
         dst_15 = src_15 as FixedArray<Float>;
   if(dst_15.length !== src_15.length){
         console.info(`${TAG} Task execution failed: dst_15.length: ${dst_15.length}`);
@@ -2401,8 +2401,8 @@ export function testAssignmentLikeContexts0065(){
 
 export function testAssignmentLikeContexts0066(){
   const TAG = 'testAssignmentLikeContexts0066';
-  let src_16: FixedArray<double> = new FixedArray<double>(1);
-        let dst_16: FixedArray<Double> = new FixedArray<Double>(1);
+  let src_16: FixedArray<double> = new FixedArray<double>(1, 0);
+        let dst_16: FixedArray<Double> = new FixedArray<Double>(1, 0);
         dst_16 = src_16 as FixedArray<Double>;
   if(dst_16.length !== src_16.length){
         console.info(`${TAG} Task execution failed: dst_16.length: ${dst_16.length}`);
@@ -2412,8 +2412,8 @@ export function testAssignmentLikeContexts0066(){
 
 export function testAssignmentLikeContexts0067(){
   const TAG = 'testAssignmentLikeContexts0067';
-  let src_3: FixedArray<Char> = new FixedArray<Char>(1);
-        let dst_3: FixedArray<char> = new FixedArray<char>(1);
+  let src_3: FixedArray<Char> = new FixedArray<Char>(1, c'\u0000');
+        let dst_3: FixedArray<char> = new FixedArray<char>(1, c'\u0000');
         dst_3 = src_3 as FixedArray<char>;
   if(dst_3.length !== src_3.length){
         console.info(`${TAG} Task execution failed: dst_3.length: ${dst_3.length}`);
@@ -2423,8 +2423,8 @@ export function testAssignmentLikeContexts0067(){
 
 export function testAssignmentLikeContexts0068(){
   const TAG = 'testAssignmentLikeContexts0068';
-  let src_4: FixedArray<Short> = new FixedArray<Short>(1);
-        let dst_4: FixedArray<short> = new FixedArray<short>(1);
+  let src_4: FixedArray<Short> = new FixedArray<Short>(1, 0);
+        let dst_4: FixedArray<short> = new FixedArray<short>(1, 0);
         dst_4 = src_4 as FixedArray<short>;
   if(dst_4.length !== src_4.length){
         console.info(`${TAG} Task execution failed: dst_4.length: ${dst_4.length}`);
@@ -2434,8 +2434,8 @@ export function testAssignmentLikeContexts0068(){
 
 export function testAssignmentLikeContexts0069(){
   const TAG = 'testAssignmentLikeContexts0069';
-  let src_5: FixedArray<Int> = new FixedArray<Int>(1);
-        let dst_5: FixedArray<int> = new FixedArray<int>(1);
+  let src_5: FixedArray<Int> = new FixedArray<Int>(1, 0);
+        let dst_5: FixedArray<int> = new FixedArray<int>(1, 0);
         dst_5 = src_5 as FixedArray<int>;
   if(dst_5.length !== src_5.length){
         console.info(`${TAG} Task execution failed: dst_5.length: ${dst_5.length}`);
@@ -2445,8 +2445,8 @@ export function testAssignmentLikeContexts0069(){
 
 export function testAssignmentLikeContexts0070(){
   const TAG = 'testAssignmentLikeContexts0070';
-  let src_6: FixedArray<Long> = new FixedArray<Long>(1);
-        let dst_6: FixedArray<long> = new FixedArray<long>(1);
+  let src_6: FixedArray<Long> = new FixedArray<Long>(1, 0);
+        let dst_6: FixedArray<long> = new FixedArray<long>(1, 0);
         dst_6 = src_6 as FixedArray<long>;
   if(dst_6.length !== src_6.length){
         console.info(`${TAG} Task execution failed: dst_6.length: ${dst_6.length}`);
@@ -2456,8 +2456,8 @@ export function testAssignmentLikeContexts0070(){
 
 export function testAssignmentLikeContexts0071(){
   const TAG = 'testAssignmentLikeContexts0071';
-  let src_7: FixedArray<Float> = new FixedArray<Float>(1);
-        let dst_7: FixedArray<float> = new FixedArray<float>(1);
+  let src_7: FixedArray<Float> = new FixedArray<Float>(1, 0);
+        let dst_7: FixedArray<float> = new FixedArray<float>(1, 0);
         dst_7 = src_7 as FixedArray<float>;
   if(dst_7.length !== src_7.length){
         console.info(`${TAG} Task execution failed: dst_7.length: ${dst_7.length}`);
@@ -2467,8 +2467,8 @@ export function testAssignmentLikeContexts0071(){
 
 export function testAssignmentLikeContexts0072(){
   const TAG = 'testAssignmentLikeContexts0072';
-  let src_8: FixedArray<Double> = new FixedArray<Double>(1);
-        let dst_8: FixedArray<double> = new FixedArray<double>(1);
+  let src_8: FixedArray<Double> = new FixedArray<Double>(1, 0);
+        let dst_8: FixedArray<double> = new FixedArray<double>(1, 0);
         dst_8 = src_8 as FixedArray<double>;
   if(dst_8.length !== src_8.length){
         console.info(`${TAG} Task execution failed: dst_8.length: ${dst_8.length}`);
@@ -2478,8 +2478,8 @@ export function testAssignmentLikeContexts0072(){
 
 export function testAssignmentLikeContexts0073(){
   const TAG = 'testAssignmentLikeContexts0073';
-  let src_9: FixedArray<boolean> = new FixedArray<boolean>(1);
-        let dst_9: FixedArray<Boolean> = new FixedArray<Boolean>(1);
+  let src_9: FixedArray<boolean> = new FixedArray<boolean>(1, false);
+        let dst_9: FixedArray<Boolean> = new FixedArray<Boolean>(1, false);
         dst_9 = src_9 as FixedArray<Boolean>;
   if(dst_9.length !== src_9.length){
         console.info(`${TAG} Task execution failed: dst_9.length: ${dst_9.length}`);
@@ -2489,8 +2489,8 @@ export function testAssignmentLikeContexts0073(){
 
 export function testAssignmentLikeContexts0074(){
   const TAG = 'testAssignmentLikeContexts0074';
-  let src_10: FixedArray<byte> = new FixedArray<byte>(1);
-        let dst_10: FixedArray<Byte> = new FixedArray<Byte>(1);
+  let src_10: FixedArray<byte> = new FixedArray<byte>(1, 0);
+        let dst_10: FixedArray<Byte> = new FixedArray<Byte>(1, 0);
         dst_10 = src_10 as FixedArray<Byte>;
   if(dst_10.length !== src_10.length){
         console.info(`${TAG} Task execution failed: dst_10.length: ${dst_10.length}`);

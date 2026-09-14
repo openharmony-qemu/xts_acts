@@ -117,7 +117,7 @@ export default function abilityTest() {
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0400] start');
       let pid = 0;
       let applicationStateObserver: appManager.ApplicationStateObserver = {
-        onForegroundApplicationChanged(appStateData) {
+        onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
           console.log(tag + `onForegroundApplicationChanged appStateData: ${JSON.stringify(appStateData)}`);
           if(appStateData?.bundleName == "com.acts.startuiserviceextensionrely"){
             try{
@@ -129,7 +129,7 @@ export default function abilityTest() {
             }catch(e){}
           }
         },
-        onAbilityStateChanged(abilityStateData) {
+        onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
           console.log(tag + `onAbilityStateChanged onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
           if(abilityStateData?.bundleName == "com.acts.startuiserviceextensionrely"){
             try{
@@ -146,7 +146,7 @@ export default function abilityTest() {
             }catch(e){}
           }
         },
-        onProcessCreated(processData) {
+        onProcessCreated(processData: appManager.ProcessData) {
           console.log(`onProcessCreated onProcessCreated: ${JSON.stringify(processData)}`);
           if(processData?.bundleName == "com.acts.startuiserviceextensionrely"){
             pid = processData.pid
@@ -156,7 +156,7 @@ export default function abilityTest() {
             expect(processData?.uid).assertLarger(0);
             expect(processData?.isContinuousTask).assertFalse();
             expect(processData?.isKeepAlive).assertFalse();
-			expect(typeof(processData?.state)).assertEqual("number");
+			      expect(typeof(processData?.state)).assertEqual("number");
           }catch(e){}
           }
         },

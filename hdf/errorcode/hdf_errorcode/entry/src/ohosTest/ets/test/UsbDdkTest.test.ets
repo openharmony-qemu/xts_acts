@@ -648,6 +648,27 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
+     * @tc.name   SUB_Driver_Ext_UsbSerialRelease_4900
+     * @tc.number SUB_Driver_Ext_UsbSerialRelease_4900
+     * @tc.desc   Test UsbSerialRelease.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Driver_Ext_UsbSerialRelease_4900', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_UsbSerialRelease_4900 start====");
+        let result:number = baskddkerror.UsbSerialRelease();
+        expect(result).assertEqual(Success);
+        console.info("====>SUB_Driver_Ext_UsbSerialRelease_4900 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_UsbSerialRelease_4900 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
      * @tc.name   SUB_Driver_Ext_UsbSerialReleaseInitError_3200
      * @tc.number SUB_Driver_Ext_UsbSerialReleaseInitError_3200
      * @tc.desc   Test UsbSerialReleaseInitError.

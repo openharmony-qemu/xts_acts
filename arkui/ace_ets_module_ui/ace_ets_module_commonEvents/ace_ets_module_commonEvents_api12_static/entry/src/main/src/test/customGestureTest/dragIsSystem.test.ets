@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,34 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 const uiContext = new UIContext();
 
 
 export default function dragIsSystem() {
   describe('dragIsSystem', () => {
 
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
     
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
-    beforeAll(() => {
-    });
     beforeEach(async ():Promise<void> => {
       console.info("dragIsSystem beforeEach start");
       try {
@@ -62,8 +50,12 @@ export default function dragIsSystem() {
       //done();
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      console.info("dragIsSystem after each called");
+      try {
+            await CommonFunc.sleep(1000);
+            console.info("dragIsSystem after each called");
+      } catch (err) {
+        console.error("afterEach error: " + err);
+      }
     });
 
     

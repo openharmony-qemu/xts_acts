@@ -65,6 +65,12 @@ struct WebIndex {
               }
               break;
             }
+            case 'emitSwitchNextPageStatic06' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/ScreenCaptureHandlerConstructor' })
+              console.log('push URL success')
+            }
           }
         })
       }

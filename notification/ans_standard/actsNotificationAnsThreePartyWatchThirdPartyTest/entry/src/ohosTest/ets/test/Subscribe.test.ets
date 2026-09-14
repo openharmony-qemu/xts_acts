@@ -4,8 +4,8 @@ import { notificationExtensionSubscription, notificationManager } from '@kit.Not
 import { BusinessError } from '@kit.BasicServicesKit'
 import { abilityAccessCtrl } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';
-let commonTag: string = "Subscribe"
-let bundleName:string = "com.example.actsNotificationAnsThreePartyWatchThirdParty"
+let commonTag: string = 'Subscribe'
+let bundleName:string = 'com.example.actsNotificationAnsThreePartyWatchThirdParty'
 export default function actsNotificationAnsThreePartySubscribeTest() {
   let uiAbilityContext: common.UIAbilityContext | undefined =
     AppStorage.get<common.UIAbilityContext>('uiAbilityContext');
@@ -19,7 +19,7 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
       } catch (err) {
       }
     })
-    
+
     /**
       * @tc.number    Sub_Notification_Ans_ThreePartyWatch_1011
       * @tc.name      Sub_Notification_Ans_ThreePartyWatch_1011
@@ -29,7 +29,7 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
       * @tc.level     Level 0
     */
     it('Sub_Notification_Ans_ThreePartyWatch_1011', Level.LEVEL0, async (done: Function) => {
-      let TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1011 ";
+      let TAG = commonTag + 'Sub_Notification_Ans_ThreePartyWatch_1011 ';
       let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [
         {
           addr: '01:23:45:67:89:AB', // 使用动态获取的蓝牙地址
@@ -38,7 +38,7 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
       ];
       // 1、调用subscribe(info: NotificationExtensionSubscriptionInfo[]): Promise<void>接口订阅成功，其中addr按照备注方法获取，type填写BLUETOOTH
       await notificationExtensionSubscription.subscribe(infos).then(() => {
-        console.info(TAG+"subscribe success1111");
+        console.info(TAG+'subscribe success1111');
       }).catch((err: BusinessError) => {
         console.error(`subscribe fail: ${JSON.stringify(err)}`);
          if(err.code == 201){
@@ -53,7 +53,7 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
       await notificationExtensionSubscription.getSubscribeInfo().then((data) => {
         console.info(TAG +`getSubscribeInfo successfully. Data: ${JSON.stringify(data)}`);
         expect(data.length).assertEqual(1);  // 先确认数组长度正确
-        expect(data[0].addr).assertEqual("01:23:45:67:89:AB");  // 校验addr
+        expect(data[0].addr).assertEqual('01:23:45:67:89:AB');  // 校验addr
         expect(data[0].type).assertEqual(0);  // 校验type
         done();
       }).catch((err: BusinessError) => {

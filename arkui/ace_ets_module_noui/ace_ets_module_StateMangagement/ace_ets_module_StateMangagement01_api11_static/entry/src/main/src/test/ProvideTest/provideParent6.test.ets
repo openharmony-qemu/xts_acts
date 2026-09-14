@@ -66,12 +66,12 @@ export default function provideParent6() {
     
     
 /**
-     * @tc.number   provideParentSixTest_static_0100
-     * @tc.name     provideParentSixTest_static_0100
-     * @tc.desc     provideParentSixTest_static_0100
+     * @tc.number   SUB_ARKUI_API_provideParentSixTest_static_0100
+     * @tc.name     SUB_ARKUI_API_provideParentSixTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_provideParentSixTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('provideParentSixTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_provideParentSixTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('provideParentSixTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('provideParent6');

@@ -19,6 +19,21 @@ import keyedCollections09Test from './map2/KeyedCollections_09.test';
 import keyedCollections11Test from './map2/KeyedCollections_11.test';
 import keyedCollections17Test from './map2/KeyedCollections_17.test';
 
+import mapBigIntTest from "./map3/MapBigIntTest.test";
+import mapBooleanTest from "./map3/MapBooleanTest.test";
+import mapClassTest from "./map3/MapClassTest.test";
+import mapDateTest from "./map3/MapDateTest.test";
+import mapFunctionTest from "./map3/MapFunctionTest.test";
+import mapMapTest from "./map3/MapMapTest.test";
+import mapNestedTest from "./map3/MapNestedTest.test";
+import mapNumberTest from "./map3/MapNumberTest.test";
+import mapObjectTest from "./map3/MapObjectTest.test";
+import mapRegExpTest from "./map3/MapRegExpTest.test";
+import mapSetTest from "./map3/MapSetTest.test";
+import mapStringTest from "./map3/MapStringTest.test";
+import mapSymbolTest from "./map3/MapSymbolTest.test";
+import mapUnionTest from "./map3/MapUnionTest.test";
+
 export default function testsuite() {
   MapClearTest();
   MapConstructorTest();
@@ -40,4 +55,19 @@ export default function testsuite() {
   keyedCollections09Test();
   keyedCollections11Test();
   keyedCollections17Test();
+
+  mapBigIntTest();
+  mapBooleanTest();
+  mapClassTest();
+  mapDateTest();
+  mapFunctionTest();
+  mapMapTest();
+  mapNestedTest();
+  mapNumberTest();
+  mapObjectTest();
+  mapRegExpTest();
+  mapSetTest();
+  mapStringTest();
+  mapSymbolTest();
+  mapUnionTest();
 }

@@ -240,7 +240,7 @@ export default function builtinsArrayEntriesPrototypebTest(): void {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest0700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<byte> = new FixedArray<byte>(50);
+        const arr: FixedArray<byte> = new FixedArray<byte>(50, 0);
         for (let i = 0; i < 50; i++) {
           arr[i] = (i * 2).toByte();
         }
@@ -495,7 +495,7 @@ export default function builtinsArrayEntriesPrototypebTest(): void {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest1500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = new FixedArray<char>(50);
+        const arr: FixedArray<char> = new FixedArray<char>(50, c'\u0000');
         const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         for (let i = 0; i < 50; i++) {
           arr[i] = chars.charAt(i);
@@ -751,7 +751,7 @@ export default function builtinsArrayEntriesPrototypebTest(): void {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest2300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<double> = new FixedArray<double>(50);
+        const arr: FixedArray<double> = new FixedArray<double>(50, 0);
         for (let i = 0; i < 50; i++) {
           arr[i] = i * 1.5;
         }
@@ -1006,7 +1006,7 @@ export default function builtinsArrayEntriesPrototypebTest(): void {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest3100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = new FixedArray<float>(50);
+        const arr: FixedArray<float> = new FixedArray<float>(50, 0);
         for (let i = 0; i < 50; i++) {
           arr[i] = (i * 1.5).toFloat();
         }
@@ -1261,7 +1261,7 @@ export default function builtinsArrayEntriesPrototypebTest(): void {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest3900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<int> = new FixedArray<int>(50);
+        const arr: FixedArray<int> = new FixedArray<int>(50, 0);
         for (let i = 0; i < 50; i++) {
           arr[i] = i * 2;
         }
@@ -1516,7 +1516,7 @@ export default function builtinsArrayEntriesPrototypebTest(): void {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest4700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<long> = new FixedArray<long>(50);
+        const arr: FixedArray<long> = new FixedArray<long>(50, 0);
         for (let i = 0; i < 50; i++) {
           arr[i] = i * 2;
         }
@@ -1771,7 +1771,7 @@ export default function builtinsArrayEntriesPrototypebTest(): void {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest5500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<short> = new FixedArray<short>(50);
+        const arr: FixedArray<short> = new FixedArray<short>(50, 0);
         for (let i = 0; i < 50; i++) {
           arr[i] = (i * 2).toShort();
         }

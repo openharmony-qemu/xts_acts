@@ -153,12 +153,12 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixed: FixedArray<int> = new FixedArray<int>(3);
+      let fixed: FixedArray<int> = new FixedArray<int>(3, 0);
       fixed[0] = 10;
       fixed[1] = 20;
       fixed[2] = 30;
       let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(fixed);
-      let newFixed: FixedArray<int> = new FixedArray<int>(3);
+      let newFixed: FixedArray<int> = new FixedArray<int>(3, 0);
       newFixed[0] = 40;
       newFixed[1] = 50;
       newFixed[2] = 60;
@@ -763,8 +763,8 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(3));
-      let fa: FixedArray<int> = new FixedArray<int>(3);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(3, 0));
+      let fa: FixedArray<int> = new FixedArray<int>(3, 0);
       fa[0] = 7;
       fa[1] = 8;
       fa[2] = 9;
@@ -782,8 +782,8 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2));
-      let fa: FixedArray<int> = new FixedArray<int>(2);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2, 0));
+      let fa: FixedArray<int> = new FixedArray<int>(2, 0);
       fa[0] = 111;
       fa[1] = 222;
       box.set(fa);
@@ -799,12 +799,12 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let boxA: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2));
-      let boxB: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2));
-      let fA: FixedArray<int> = new FixedArray<int>(2);
+      let boxA: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2, 0));
+      let boxB: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2, 0));
+      let fA: FixedArray<int> = new FixedArray<int>(2, 0);
       fA[0] = 1;
       fA[1] = 2;
-      let fB: FixedArray<int> = new FixedArray<int>(2);
+      let fB: FixedArray<int> = new FixedArray<int>(2, 0);
       fB[0] = 3;
       fB[1] = 4;
       boxA.set(fA);
@@ -822,8 +822,8 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2));
-      let fa: FixedArray<int> = new FixedArray<int>(2);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2, 0));
+      let fa: FixedArray<int> = new FixedArray<int>(2, 0);
       fa[0] = 99;
       fa[1] = 88;
       let ret: FixedArray<int> = box.set(fa);
@@ -840,12 +840,12 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2));
-      let a: FixedArray<int> = new FixedArray<int>(2);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2, 0));
+      let a: FixedArray<int> = new FixedArray<int>(2, 0);
       a[0] = 1;
-      let b: FixedArray<int> = new FixedArray<int>(2);
+      let b: FixedArray<int> = new FixedArray<int>(2, 0);
       b[0] = 2;
-      let c: FixedArray<int> = new FixedArray<int>(2);
+      let c: FixedArray<int> = new FixedArray<int>(2, 0);
       c[0] = 3;
       box.set(a);
       box.set(b);
@@ -862,8 +862,8 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2));
-      let fa: FixedArray<int> = new FixedArray<int>(5);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2, 0));
+      let fa: FixedArray<int> = new FixedArray<int>(5, 0);
       fa[0] = 10;
       fa[1] = 20;
       fa[2] = 30;
@@ -882,8 +882,8 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2));
-      let fa: FixedArray<int> = new FixedArray<int>(2);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2, 0));
+      let fa: FixedArray<int> = new FixedArray<int>(2, 0);
       fa[0] = -100;
       fa[1] = -200;
       box.set(fa);
@@ -899,8 +899,8 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(3));
-      let fa: FixedArray<int> = new FixedArray<int>(3);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(3, 0));
+      let fa: FixedArray<int> = new FixedArray<int>(3, 0);
       box.set(fa);
       expect(box.get()[0]).assertEqual(0);
       expect(box.get()[1]).assertEqual(0);
@@ -1054,8 +1054,8 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2));
-      let fa: FixedArray<int> = new FixedArray<int>(2);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2, 0));
+      let fa: FixedArray<int> = new FixedArray<int>(2, 0);
       fa[0] = Int.MAX_VALUE;
       fa[1] = Int.MIN_VALUE;
       box.set(fa);
@@ -1072,8 +1072,8 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(3));
-      let fa: FixedArray<int> = new FixedArray<int>(3);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(3, 0));
+      let fa: FixedArray<int> = new FixedArray<int>(3, 0);
       fa[0] = 5;
       fa[1] = 5;
       fa[2] = 5;
@@ -1313,8 +1313,8 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(3));
-      let fa: FixedArray<int> = new FixedArray<int>(3);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(3, 0));
+      let fa: FixedArray<int> = new FixedArray<int>(3, 0);
       fa[0] = 100;
       fa[1] = 200;
       fa[2] = 300;
@@ -1333,8 +1333,8 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2));
-      let fa: FixedArray<int> = new FixedArray<int>(2);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2, 0));
+      let fa: FixedArray<int> = new FixedArray<int>(2, 0);
       fa[0] = 0;
       fa[1] = 0;
       box.set(fa);
@@ -1452,12 +1452,12 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(1));
-      let a: FixedArray<int> = new FixedArray<int>(1);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(1, 0));
+      let a: FixedArray<int> = new FixedArray<int>(1, 0);
       a[0] = 1;
-      let b: FixedArray<int> = new FixedArray<int>(1);
+      let b: FixedArray<int> = new FixedArray<int>(1, 0);
       b[0] = 2;
-      let c: FixedArray<int> = new FixedArray<int>(1);
+      let c: FixedArray<int> = new FixedArray<int>(1, 0);
       c[0] = 3;
       box.set(a);
       box.set(b);
@@ -1514,8 +1514,8 @@ export default function BoxGenericGetSetTest4(): void {
      */
     it('testBoxGenericGetSetD090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let roBox: Box<ReadonlyIntArray040> = new Box<ReadonlyIntArray040>([1, 2]);
-      let faBox: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2));
-      let fa: FixedArray<int> = new FixedArray<int>(2);
+      let faBox: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2, 0));
+      let fa: FixedArray<int> = new FixedArray<int>(2, 0);
       fa[0] = 10;
       fa[1] = 20;
       roBox.set([3, 4, 5]);
@@ -1587,8 +1587,8 @@ export default function BoxGenericGetSetTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericGetSetD094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2));
-      let empty: FixedArray<int> = new FixedArray<int>(0);
+      let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(new FixedArray<int>(2, 0));
+      let empty: FixedArray<int> = new FixedArray<int>(0, 0);
       box.set(empty);
       expect(box.get().length).assertEqual(0);
     });

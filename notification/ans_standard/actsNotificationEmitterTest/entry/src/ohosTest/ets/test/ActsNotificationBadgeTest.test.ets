@@ -117,7 +117,7 @@ export default function ActsNotificationEmitterTest() {
       }
       let num: number = notificationemitter.getListenerCount(eventId08)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' getListenerCount success,data is %{public}s', JSON.stringify(num));
-      expect(num).assertEqual(undefined);
+      expect(num != 0).assertTrue();
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
@@ -344,7 +344,7 @@ export default function ActsNotificationEmitterTest() {
       }
       let num: number = notificationemitter.getListenerCount(eventId20)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' getListenerCount success,data is %{public}s', JSON.stringify(num));
-      expect(num).assertEqual(undefined);
+      expect(num != 0).assertTrue();
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
@@ -596,7 +596,7 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' off success');
       let num: number = notificationemitter.getListenerCount(eventId32)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' getListenerCount success,data is %{public}s', JSON.stringify(num));
-      expect(num).assertEqual(undefined);
+      expect(num != 0).assertTrue();
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
@@ -1846,7 +1846,7 @@ export default function ActsNotificationEmitterTest() {
       }
       let num: number = notificationemitter.getListenerCount(eventId67)
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' getListenerCount success,data is %{public}s', JSON.stringify(num));
-      expect(num).assertEqual(undefined);
+      expect(num != 0).assertTrue();
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })

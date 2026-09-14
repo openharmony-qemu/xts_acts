@@ -721,7 +721,7 @@ export default function wifiSta() {
             console.info(`${caseName} api is not support`);
             expect(err.code).assertEqual(801);
           } else {
-            expect(err.code).assertEqual(2501000);
+            expect().assertFail();
           }
           done();
         });
@@ -734,7 +734,7 @@ export default function wifiSta() {
           console.info(`${caseName} api is not support`);
           expect(err.code).assertEqual(801);
         } else {
-          expect(err.code).assertEqual(2501000);
+          expect().assertFail();
         }
         done();
       }
@@ -794,7 +794,7 @@ export default function wifiSta() {
       console.info(`${caseName} test start`);
       networkId = -1;
       try {
-        await sleep(10000);//用例弹框影响--消除影响
+        await sleep(3000);//用例弹框影响--消除影响
         let config:wifiMg.WifiDeviceConfig = {
           ssid: 'test_ssid_with_action',
           preSharedKey: 'test_password',
@@ -946,6 +946,8 @@ export default function wifiSta() {
         console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
         await wifiMg.connectToCandidateConfig(networkId);
         console.info(`${caseName} connectToCandidateConfig promise success`);
+        await clickText('连接');
+        console.info(`${caseName} 点击连接 弹框出现10s后消失，对弹框动作无论是点击连接还是取消均不影响`);
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === '801') {
@@ -985,6 +987,8 @@ export default function wifiSta() {
         console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
         await wifiMg.connectToCandidateConfig(networkId);
         console.info(`${caseName} connectToCandidateConfig promise success`);
+        await clickText('连接');
+        console.info(`${caseName} 点击连接 弹框出现10s后消失，对弹框动作无论是点击连接还是取消均不影响`);
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === '801') {

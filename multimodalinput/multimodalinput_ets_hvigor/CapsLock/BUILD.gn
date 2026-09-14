@@ -20,5 +20,5 @@ ohos_js_app_suite("ActsMultimodalInputCapsLockTest") {
   subsystem_name = "multimodalinput"
   part_name = "input"
   hap_name = "ActsMultimodalInputCapsLockTest"
-  certificate_profile = "signature/openharmony_sx.p7b"
+  certificate_profile = "./signature/openharmony_sx.p7b"
 }

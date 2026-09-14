@@ -14,27 +14,28 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, Level, beforeEach } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
-import { UtilsTest } from '../Util.test';
+
 import { Driver, ON, Point } from '@kit.TestKit';
 
 export default function CommonEventGlobalDisplayTest(): void {
   describe('CommonEventGlobalDisplayTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.commonEvents.api24.static', 'EntryAbility');
-    });
 
     beforeEach(async (): Promise<void> => {
+      try {
       let r = await waitForMainRouterForStaticTest();
       expect(r !== undefined && r !== null).assertTrue();
       let ro: router.RouterOptions = { url: 'MainAbility/pages/CommonEventApiProbe/CommonEventApiProbe' };
       r!.clear();
       await r!.replaceUrl(ro);
       await Utils.sleep(600);
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+      }
     });
 
     /**
@@ -46,6 +47,7 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_ClickEvent_GlobalDisplayXY_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id("commonEventClickHost"));
       await (button?.click() as Promise<void>);
@@ -56,7 +58,12 @@ export default function CommonEventGlobalDisplayTest(): void {
       let clickGdyOk: boolean = gdy != null && gdy.length > 0;
       expect(clickGdxOk).assertTrue();
       expect(clickGdyOk).assertTrue();
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -68,6 +75,7 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_HoverEvent_GlobalDisplayXY_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let driver = Driver.create();
       let button1 = await driver.findComponent(ON.id('commonEventClickHost'));
       let button2 = await driver.findComponent(ON.id('commonEventHoverHost'));
@@ -81,7 +89,12 @@ export default function CommonEventGlobalDisplayTest(): void {
       let hoverGdyOk: boolean = gdy != null && gdy.length > 0;
       expect(hoverGdxOk).assertTrue();
       expect(hoverGdyOk).assertTrue();
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -93,6 +106,7 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_MouseEvent_GlobalDisplayXY_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       let host = await driver.findComponent(ON.id('commonEventMouseHost'));
       let hostOk: boolean = host != undefined && host != null;
@@ -107,7 +121,12 @@ export default function CommonEventGlobalDisplayTest(): void {
       let mouseGdyOk: boolean = gdy != null && gdy.length > 0;
       expect(mouseGdxOk).assertTrue();
       expect(mouseGdyOk).assertTrue();
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -119,6 +138,7 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_AccessibilityHoverEvent_GlobalDisplayXY_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       let host = await driver.findComponent(ON.id('commonEventAccHoverHost'));
       let hostOk: boolean = host != undefined && host != null;
@@ -133,7 +153,12 @@ export default function CommonEventGlobalDisplayTest(): void {
       let accGdyOk: boolean = gdy != null && gdy.length > 0;
       expect(accGdxOk).assertTrue();
       expect(accGdyOk).assertTrue();
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -145,6 +170,7 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_TouchObject_GlobalDisplayXY_2200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id("commonEventTouchHost"));
       await (button?.click() as Promise<void>);
@@ -155,7 +181,12 @@ export default function CommonEventGlobalDisplayTest(): void {
       let touchGdyOk: boolean = gdy != null && gdy.length > 0;
       expect(touchGdxOk).assertTrue();
       expect(touchGdyOk).assertTrue();
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
   });
 }

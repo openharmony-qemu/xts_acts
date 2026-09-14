@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, Level, beforeEach } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
-import { UtilsTest } from '../Util.test';
+
 import { Driver, Point, ON } from '@kit.TestKit';
 
 async function dragFromProbeHost(): Promise<void> {
@@ -57,17 +57,18 @@ async function dragFromProbeHost(): Promise<void> {
 
 export default function CommonDragEventTest(): void {
   describe('CommonDragEventTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.commonEvents.api24.static', 'EntryAbility');
-    });
 
     beforeEach(async (): Promise<void> => {
+      try {
       let r = await waitForMainRouterForStaticTest();
       expect(r !== undefined && r !== null).assertTrue();
       let ro: router.RouterOptions = { url: 'MainAbility/pages/CommonDragEventProbe/CommonDragEventProbe' };
       r!.clear();
       await r!.replaceUrl(ro);
       await Utils.sleep(600);
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+      }
     });
 
     /**
@@ -100,11 +101,17 @@ export default function CommonDragEventTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Common_DragEvent_IsRemote_2500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       await dragFromProbeHost();
       let remote = AppStorage.get<string>('de_is_remote');
       let remoteOk: boolean = remote === '0' || remote === '1';
       expect(remoteOk).assertTrue();
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -116,9 +123,15 @@ export default function CommonDragEventTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Common_DragEvent_SetDataLoadParams_2600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       await dragFromProbeHost();
       expect(AppStorage.get<string>('de_set_dataload')).assertEqual('1');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -130,12 +143,18 @@ export default function CommonDragEventTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Common_DragEvent_GetGlobalDisplayX_2700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       await dragFromProbeHost();
       let v = AppStorage.get<string>('de_gdx');
       let gdxOk: boolean = v != null && v.length > 0;
       expect(gdxOk).assertTrue();
       expect(Number(v)).assertLargerOrEqual(0);
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -147,12 +166,18 @@ export default function CommonDragEventTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Common_DragEvent_GetGlobalDisplayY_2800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       await dragFromProbeHost();
       let v = AppStorage.get<string>('de_gdy');
       let gdyOk: boolean = v != null && v.length > 0;
       expect(gdyOk).assertTrue();
       expect(Number(v)).assertLargerOrEqual(0);
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
   });
 }

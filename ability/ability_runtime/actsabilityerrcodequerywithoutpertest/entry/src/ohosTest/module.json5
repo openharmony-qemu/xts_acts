@@ -47,7 +47,7 @@
     "extensionAbilities": [
       {
         "name": "UIExtensionProvider",
-        "srcEntry": "./ets/test/UIExtensionContentSession/UIExtensionContentSession.ts",
+        "srcEntry": "./ets/test/UIExtensionContentSession/UIExtensionContentSession.ets",
         "description": "UIExtensionAbility",
         "type": "sys/commonUI",
         "exported": true,

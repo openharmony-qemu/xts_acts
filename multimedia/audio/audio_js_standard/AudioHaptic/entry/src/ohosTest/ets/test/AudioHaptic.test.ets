@@ -1905,12 +1905,14 @@ export default function AudioHapticTest() {
           AudioHapticPlayer = data;
           console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
           try {
-            AudioHapticPlayer.on('endOfStream', () => {
+            AudioHapticPlayer.off('endOfStream');
+            let endOfStreamCallback = () => {
               console.info(`${tag} on endOfStream called `);
               console.log(`${tag} AudioHapticPlayer release success`);
+            };
 
-            });
-            AudioHapticPlayer.off('endOfStream');
+            AudioHapticPlayer.on('endOfStream', endOfStreamCallback);
+            AudioHapticPlayer.off('endOfStream', endOfStreamCallback);
             await AudioHapticPlayer.start();
             console.log(`${tag} AudioHapticPlayer start success`);
             await sleep(1000);
@@ -1958,10 +1960,13 @@ export default function AudioHapticTest() {
           console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
           await sleep(100);
           try {
+            AudioHapticPlayer.off('audioInterrupt');
             AudioHapticPlayer.on('audioInterrupt', (InterruptEvent) => {
               console.info(`${tag} on audioInterrupt called `);
             });
-            AudioHapticPlayer.off('audioInterrupt');
+            AudioHapticPlayer.off('audioInterrupt', (InterruptEvent) => {
+              console.info(`${tag} off audioInterrupt called `);
+            });
             await AudioHapticPlayer.start();
             console.log(`${tag} AudioHapticPlayer start success`);
 

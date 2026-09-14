@@ -52,7 +52,6 @@ export default function nfcControllerTest() {
          */
         it('SUB_COMMUNICATION_NFC_Cont_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             let nfcswitchis:boolean = controller.isNfcOpen();
-            await Utils.msSleep(2000)
             if (nfcswitchis == true) {
                 hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0100 Nfc isopenstate is ->' + nfcswitchis);
                 expect(nfcswitchis).assertTrue();
@@ -60,7 +59,6 @@ export default function nfcControllerTest() {
                 hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0100 Nfc isopenstate is ->' + nfcswitchis);
                 expect(nfcswitchis).assertFalse();
             }
-            await Utils.msSleep(2000)
             done();
         })
 
@@ -74,10 +72,8 @@ export default function nfcControllerTest() {
          */
         it('SUB_COMMUNICATION_NFC_Cont_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             let checkopennfc:controller.NfcState =  controller.getNfcState();
-            await Utils.msSleep(2000)
             hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0200 checkopen the state of nfc ->' + checkopennfc);
             expect(checkopennfc).assertEqual(3);
-            await Utils.msSleep(2000)
             done();
         })
 

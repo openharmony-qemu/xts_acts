@@ -56,6 +56,37 @@ import longToString3Test from "./long/LongToString3Test.test";
 import longToStringRadixTest from "./long/LongToStringRadixTest.test";
 import longMinValuePlusCaseTest from './long/LongMinValuePlusCaseTest.test';
 
+import longAdd1Test from "./long1/LongAdd1Test.test";
+import longCompareTo1Test from "./long1/LongCompareTo1Test.test";
+import longConstructor3Test from "./long1/LongConstructor3Test.test";
+import longDiv1Test from "./long1/LongDiv1Test.test";
+import longEquals1Test from "./long1/LongEquals1Test.test";
+import longIsGreaterEqualThan1Test from "./long1/LongIsGreaterEqualThan1Test.test";
+import longIsGreaterThan1Test from "./long1/LongIsGreaterThan1Test.test";
+import longIsLessEqualThan1Test from "./long1/LongIsLessEqualThan1Test.test";
+import longIsLessThan1Test from "./long1/LongIsLessThan1Test.test";
+import longMul1Test from "./long1/LongMul1Test.test";
+import longOverall1Part1Test from "./long1/LongOverall1Part1Test.test";
+import longOverall1Part2Test from "./long1/LongOverall1Part2Test.test";
+import longOverall1Part3Test from "./long1/LongOverall1Part3Test.test";
+import longOverall1Part4Test from "./long1/LongOverall1Part4Test.test";
+import longOverall1Part5Test from "./long1/LongOverall1Part5Test.test";
+import longParseInt1Test from "./long1/LongParseInt1Test.test";
+import longProperty1Part1Test from "./long1/LongProperty1Part1Test.test";
+import longProperty1Part2Test from "./long1/LongProperty1Part2Test.test";
+import longProperty1Part3Test from "./long1/LongProperty1Part3Test.test";
+import longSub1Test from "./long1/LongSub1Test.test";
+import longToByte3Part1Test from "./long1/LongToByte3Part1Test.test";
+import longToChar3Part1Test from "./long1/LongToChar3Part1Test.test";
+import longToChar3Part2Test from "./long1/LongToChar3Part2Test.test";
+import longToDouble3Test from "./long1/LongToDouble3Test.test";
+import longToFloat3Test from "./long1/LongToFloat3Test.test";
+import longToInt3Test from "./long1/LongToInt3Test.test";
+import longToLocaleString3Test from "./long1/LongToLocaleString3Test.test";
+import longToLong3Test from "./long1/LongToLong3Test.test";
+import longToShort3Test from "./long1/LongToShort3Test.test";
+import longToString4Test from "./long1/LongToString4Test.test";
+
 export default function testSuite(): void {
 
   longAddTest();
@@ -99,5 +130,36 @@ export default function testSuite(): void {
   longToString3Test();
   longToStringRadixTest();
   longMinValuePlusCaseTest();
+
+  longAdd1Test();
+  longCompareTo1Test();
+  longConstructor3Test();
+  longDiv1Test();
+  longEquals1Test();
+  longIsGreaterEqualThan1Test();
+  longIsGreaterThan1Test();
+  longIsLessEqualThan1Test();
+  longIsLessThan1Test();
+  longMul1Test();
+  longOverall1Part1Test();
+  longOverall1Part2Test();
+  longOverall1Part3Test();
+  longOverall1Part4Test();
+  longOverall1Part5Test();
+  longParseInt1Test();
+  longProperty1Part1Test();
+  longProperty1Part2Test();
+  longProperty1Part3Test();
+  longSub1Test();
+  longToByte3Part1Test();
+  longToChar3Part1Test();
+  longToChar3Part2Test();
+  longToDouble3Test();
+  longToFloat3Test();
+  longToInt3Test();
+  longToLocaleString3Test();
+  longToLong3Test();
+  longToShort3Test();
+  longToString4Test();
 
 }

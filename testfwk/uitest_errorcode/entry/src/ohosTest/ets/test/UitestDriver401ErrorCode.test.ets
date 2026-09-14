@@ -348,6 +348,20 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
+        observer.once('windowChange', null, {timeout: 2000}, (elementInfo) => {})
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_once_401 windowChange windowChangeType = null, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        observer.once('windowChange', undefined, {timeout: 2000}, (elementInfo) => {})
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_once_401 windowChange windowChangeType = undefined, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
         observer.once('windowChange', WindowChangeType.WINDOW_ADDED, null, (elementInfo) => {})
         expect().assertFail();
       } catch (error) {
@@ -388,6 +402,20 @@ export default function uitestEnumTest() {
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_once_401 ComponentEventType type = undefined, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        observer.once('componentEventOccur', null, {timeout: 2000}, (elementInfo) => {})
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_once_401 ComponentEventType = null, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        observer.once('componentEventOccur', undefined, {timeout: 2000}, (elementInfo) => {})
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_once_401 ComponentEventType = undefined, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
       }
       try {
         observer.once('componentEventOccur', ComponentEventType.COMPONENT_CLICKED, null, (elementInfo) => {})
@@ -1766,36 +1794,50 @@ export default function uitestEnumTest() {
     it('testApi9_Driver_flingDir_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, testApi9_Driver_flingDir_401 start`);
       try {
-        await driver.fling(UiDirection.DOWN, null)
+        await driver.fling(null, 600)
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_flingDir_401 dir = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        await driver.fling(UiDirection.DOWN, undefined)
+        await driver.fling(undefined, 600)
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_flingDir_401 dir = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
+        await driver.fling(UiDirection.DOWN, null)
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_flingDir_401 speed = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.fling(UiDirection.DOWN, undefined)
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_Driver_flingDir_401 speed = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
         await driver.fling(UiDirection.DOWN, 199)
       } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_flingDir_401 dir = 199 error, ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testApi9_Driver_flingDir_401 speed = 199 error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
         await driver.fling(UiDirection.DOWN, 41000)
       } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_flingDir_401 dir = 41000 error, ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testApi9_Driver_flingDir_401 speed = 41000 error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
         await driver.fling(UiDirection.DOWN, -1)
         expect().assertFail();
       } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_flingDir_401 dir = -1 error, ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testApi9_Driver_flingDir_401 speed = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_flingDir_401 END`);
@@ -2812,7 +2854,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        await driver.touchPadMultiFingerSwipe(-1, UiDirection.LEFT, {stay: false});
+        await driver.touchPadMultiFingerSwipe(-1, UiDirection.DOWN, {stay: false});
         console.log(TestTag, `testApi18_Driver_touchPadMultiFingerSwipe_401`);
         expect().assertFail();
       } catch (error) {
@@ -2820,7 +2862,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        await driver.touchPadMultiFingerSwipe(5, UiDirection.LEFT, {stay: false});
+        await driver.touchPadMultiFingerSwipe(5, UiDirection.UP, {stay: false});
         console.log(TestTag, `testApi18_Driver_touchPadMultiFingerSwipe_401`);
         expect().assertFail();
       } catch (error) {
@@ -2841,6 +2883,22 @@ export default function uitestEnumTest() {
         expect().assertFail();
       } catch (error) {
         console.log(TestTag, `testApi18_Driver_touchPadMultiFingerSwipe_401, speed = 2 error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.touchPadMultiFingerSwipe(1, null, {stay: true});
+        console.log(TestTag, `testApi18_Driver_touchPadMultiFingerSwipe_401`);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_touchPadMultiFingerSwipe_401, direction = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.touchPadMultiFingerSwipe(1, undefined, {stay: true});
+        console.log(TestTag, `testApi18_Driver_touchPadMultiFingerSwipe_401`);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_touchPadMultiFingerSwipe_401, direction = undefined error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi18_Driver_touchPadMultiFingerSwipe_401 END`);
@@ -3339,6 +3397,20 @@ export default function uitestEnumTest() {
         expect().assertFail();
       } catch (error) {
         console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, point = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.touchPadTwoFingersScroll(btnCenter, null, 30, 600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, direction = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.touchPadTwoFingersScroll(btnCenter, undefined, 30, 600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, direction = undefined error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {

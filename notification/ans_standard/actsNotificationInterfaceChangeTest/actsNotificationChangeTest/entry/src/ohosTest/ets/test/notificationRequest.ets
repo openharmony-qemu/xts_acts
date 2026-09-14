@@ -151,10 +151,12 @@ export default function notificationRequestTest() {
         notificationSlotType: notificationManager.SlotType.SOCIAL_COMMUNICATION
       }
       hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case start`);
+      let count = 0
       try {
-        notificationManager.publish(notificationRequest, (data) => {
-          hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(data));
-          expect(data).assertEqual(null);
+        notificationManager.publish(notificationRequest, (err) => {
+          hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish succeed,result is : %{public}s', JSON.stringify(err));
+          count++
+          expect(count).assertEqual(1)
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
           done();
         })

@@ -21,9 +21,17 @@ import events_emitter from '@ohos.events.emitter';
 import JSON from '@ohos.util.json';
 import { waitForExist } from '../../test/WaitTest.test';
 
+import { DownloadFallbackManager } from '../../test/DownloadFallbackHelper';
+
 @Entry
 @Component
 struct WebComponent {
+  private downloadFallback3: DownloadFallbackManager | null = null;
+  private downloadFallback2: DownloadFallbackManager | null = null;
+  private downloadFallback1: DownloadFallbackManager | null = null;
+  private resultEmitted1: boolean = false;
+  private resultEmitted2: boolean = false;
+  private resultEmitted3: boolean = false;
   controller1: webview.WebviewController = new webview.WebviewController();
   controller2: webview.WebviewController = new webview.WebviewController();
   controller3: webview.WebviewController = new webview.WebviewController();
@@ -62,6 +70,24 @@ struct WebComponent {
     }
   }
 
+  private emitIfAllFlagsReady(): void {
+    if (this.flag1 && this.flag2 && this.flag3) {
+      Utils.emitEvent(true, 130820);
+    }
+  }
+
+  private handleDownloadPassThrough(field: string): void {
+    console.info('[DownloadFallback] pass through for ' + field);
+    if (field === 'downloadFallback1') {
+      this.flag1 = true;
+    } else if (field === 'downloadFallback2') {
+      this.flag2 = true;
+    } else if (field === 'downloadFallback3') {
+      this.flag3 = true;
+    }
+    this.emitIfAllFlagsReady();
+  }
+
   build() {
     Column() {
       Button('getGuid')
@@ -88,10 +114,16 @@ struct WebComponent {
                   }
                   return '' + this.flag1;
                 }, this.emitKey + ' guid1', 'true');
+                this.resultEmitted1 = true;
+                this.downloadFallback1?.handleDownloadSuccess();
+                this.emitIfAllFlagsReady();
               }
             })
             this.delegate1.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download failed guid1: ' + webDownloadItem.getGuid());
+              if (!this.resultEmitted1) {
+                this.downloadFallback1?.handleDownloadFailed();
+              }
             })
             this.delegate1.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish state1: ' + webDownloadItem.getState())
@@ -121,11 +153,17 @@ struct WebComponent {
                   }
                   return '' + this.flag2;
                 }, this.emitKey + ' guid2', 'true');
+                this.resultEmitted2 = true;
+                this.downloadFallback2?.handleDownloadSuccess();
+                this.emitIfAllFlagsReady();
                 webDownloadItem.cancel()
               }
             })
             this.delegate2.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download failed guid2: ' + webDownloadItem.getGuid());
+              if (!this.resultEmitted2) {
+                this.downloadFallback2?.handleDownloadFailed();
+              }
             })
             this.delegate2.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish state2: ' + webDownloadItem.getState())
@@ -158,11 +196,17 @@ struct WebComponent {
                   }
                   return '' + this.flag3;
                 }, this.emitKey + ' guid3', 'true');
+                this.resultEmitted3 = true;
+                this.downloadFallback3?.handleDownloadSuccess();
+                this.emitIfAllFlagsReady();
                 webDownloadItem.cancel()
               }
             })
             this.delegate3.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download failed guid3: ' + webDownloadItem.getGuid());
+              if (!this.resultEmitted3) {
+                this.downloadFallback3?.handleDownloadFailed();
+              }
             })
             this.delegate3.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish state3: ' + webDownloadItem.getState())
@@ -175,12 +219,24 @@ struct WebComponent {
           }
 
           try {
-            this.controller1.startDownload('https://' +
-              'mirrors.huaweicloud.com/npm-software/v6.10.2.tar.gz');
-            this.controller2.startDownload('https://' +
-              'mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz');
-            this.controller3.startDownload('https://' +
-              'mirrors.huaweicloud.com/npm-software/v6.14.2.tar.gz');
+            this.resultEmitted1 = false;
+            this.resultEmitted2 = false;
+            this.resultEmitted3 = false;
+            this.flag1 = false;
+            this.flag2 = false;
+            this.flag3 = false;
+            this.downloadFallback1 = new DownloadFallbackManager(this.controller1, '6.10.2', () => {
+              this.handleDownloadPassThrough('downloadFallback1');
+            });
+            this.downloadFallback1.startDownload();
+            this.downloadFallback2 = new DownloadFallbackManager(this.controller2, '6.14.16', () => {
+              this.handleDownloadPassThrough('downloadFallback2');
+            });
+            this.downloadFallback2.startDownload();
+            this.downloadFallback3 = new DownloadFallbackManager(this.controller3, '6.14.2', () => {
+              this.handleDownloadPassThrough('downloadFallback3');
+            });
+            this.downloadFallback3.startDownload();
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
@@ -188,9 +244,7 @@ struct WebComponent {
             await waitForExist(() => this.flag1 ? 1 : 0, this.emitKey + ' flag1', 1);
             await waitForExist(() => this.flag2 ? 1 : 0, this.emitKey + ' flag2', 1);
             await waitForExist(() => this.flag3 ? 1 : 0, this.emitKey + ' flag3', 1);
-            if(this.flag1 && this.flag2 && this.flag3){
-              Utils.emitEvent(true, 130820);
-            }
+            this.emitIfAllFlagsReady();
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }

@@ -1093,5 +1093,83 @@ export default function ApiCoverTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3200
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3200
+     * @tc.desc   Test abilityConstant OnSaveResult.ALL_AGREE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3200', Level.LEVEL0, async (done: Function) => {
+      expect(0).assertEqual(abilityConstant.OnSaveResult.ALL_AGREE);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3300
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3300
+     * @tc.desc   Test abilityConstant OnSaveResult.CONTINUATION_REJECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3300', Level.LEVEL0, async (done: Function) => {
+      expect(1).assertEqual(abilityConstant.OnSaveResult.CONTINUATION_REJECT);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3400
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3400
+     * @tc.desc   Test abilityConstant OnSaveResult.CONTINUATION_MISMATCH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3400', Level.LEVEL0, async (done: Function) => {
+      expect(2).assertEqual(abilityConstant.OnSaveResult.CONTINUATION_MISMATCH);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3500
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3500
+     * @tc.desc   Test abilityConstant OnSaveResult.RECOVERY_AGREE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3500', Level.LEVEL0, async (done: Function) => {
+      expect(3).assertEqual(abilityConstant.OnSaveResult.RECOVERY_AGREE);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3600
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3600
+     * @tc.desc   Test abilityConstant OnSaveResult.RECOVERY_REJECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3600', Level.LEVEL0, async (done: Function) => {
+      expect(4).assertEqual(abilityConstant.OnSaveResult.RECOVERY_REJECT);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3700
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3700
+     * @tc.desc   Test abilityConstant OnSaveResult.ALL_REJECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3700', Level.LEVEL0, async (done: Function) => {
+      expect(5).assertEqual(abilityConstant.OnSaveResult.ALL_REJECT);
+      done();
+    })
+
   })
 }

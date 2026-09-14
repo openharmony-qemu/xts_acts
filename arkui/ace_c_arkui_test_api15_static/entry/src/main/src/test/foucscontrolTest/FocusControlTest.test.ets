@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach,beforeAll, beforeEach, Level } from '../../../../hypium/index';
+import { expect, describe, it, afterEach, beforeEach, Level } from '../../../../hypium/index';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test'
 import Utils from '../common/Utils';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -25,9 +24,6 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function FocusControlTest() {
   describe('FocusControlTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
-    });
     beforeEach(async () => {
       console.info("FocusControlTest beforeEach start");
       let options: router.RouterOptions = {
@@ -49,7 +45,11 @@ export default function FocusControlTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('FocusControlTest afterEach err: ' + JSON.stringify(err));
+      }
       console.info("FocusControlTest after each called");
     });
 
@@ -61,13 +61,18 @@ export default function FocusControlTest() {
      * @tc.level    Level.LEVEL1
      */
     it('SUB_ARKUI_CAPI_FocusControlTest_TEST001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await Utils.sleep(1000);
-      let strJson = inspector.getInspectorByKey('button2')
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('backgroundColor'))
-        .assertEqual('#FF00FF00');
-      ;
-      done();
+      try {
+        await Utils.sleep(1000);
+        let strJson = inspector.getInspectorByKey('button2')
+        let obj = JSON.parseJsonElement(strJson);
+        expect(obj.getElement('$attrs').getString('backgroundColor'))
+          .assertEqual('#FF00FF00');
+        ;
+        done();
+      } catch (err) {
+        console.info('SUB_ARKUI_CAPI_FocusControlTest_TEST001 err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
 

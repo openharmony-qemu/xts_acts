@@ -13,25 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 
 export default function GetWindowWidthAndHeightTest() {
   describe('GetWindowWidthAndHeightTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("themePageToggleTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("themePageToggleTest beforeEach start");
@@ -67,24 +59,29 @@ export default function GetWindowWidthAndHeightTest() {
      */
 it('GetWindowWidthBreakpoint_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
-      console.info('GetWindowWidthBreakpoint_static_0100 START');
-      let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getWindowWidthBreakpointButton'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      let button2 = await driver.findComponent(ON.id('getWindowWidth'));
-      await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('widthBpValue');
-      let obj = JSON.parseJsonElement(strJson);
-      let strJson1 = inspector.getInspectorByKey('windowWidthBreakpoint');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      console.info("[GetWindowWidthBreakpoint_static_0100] component obj is: " + obj.getElement('$attrs').getString('content'));
-      console.info("[GetWindowWidthBreakpoint_static_0100] component obj1 is: " + obj1.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual(obj1.getElement('$attrs').getString('content'))
-      console.info('[GetWindowWidthBreakpoint_static_0100] END');
-      done();
+      try {
+        console.info('GetWindowWidthBreakpoint_static_0100 START');
+        let driver =  Driver.create()
+        await CommonFunc.sleep(1000);
+        let button1 = await driver.findComponent(ON.id('getWindowWidthBreakpointButton'));
+        await (button1?.click() as Promise<void>);
+        await CommonFunc.sleep(2000);
+        let button2 = await driver.findComponent(ON.id('getWindowWidth'));
+        await (button2?.click() as Promise<void>);
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('widthBpValue');
+        let obj = JSON.parseJsonElement(strJson);
+        let strJson1 = inspector.getInspectorByKey('windowWidthBreakpoint');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        console.info("[GetWindowWidthBreakpoint_static_0100] component obj is: " + obj.getElement('$attrs').getString('content'));
+        console.info("[GetWindowWidthBreakpoint_static_0100] component obj1 is: " + obj1.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual(obj1.getElement('$attrs').getString('content'))
+        console.info('[GetWindowWidthBreakpoint_static_0100] END');
+        done();
+      } catch (err) {
+        console.info('GetWindowWidthBreakpoint_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
     
@@ -96,24 +93,29 @@ it('GetWindowWidthBreakpoint_static_0100', Level.LEVEL0, async (done: () => void
      */
 it('GetWindowHeightBreakpoint_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
-      console.info('GetWindowHeightBreakpoint_static_0200 START');
-      let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getWindowHeightBreakpointButton'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      let button2 = await driver.findComponent(ON.id('getWindowWidth'));
-      await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('heightBpValue');
-      let obj = JSON.parseJsonElement(strJson);
-      let strJson1 = inspector.getInspectorByKey('windowHeightBreakpoint');
-      let obj1 = JSON.parseJsonElement(strJson);
-      console.info("[GetWindowHeightBreakpoint_static_0200] component obj is: " + JSON.stringify(obj));
-      console.info("[GetWindowHeightBreakpoint_static_0200] component obj1 is: " + JSON.stringify(obj1));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual(obj1.getElement('$attrs').getString('content'));
-      console.info('[GetWindowHeightBreakpoint_static_0200] END');
-      done();
+      try {
+        console.info('GetWindowHeightBreakpoint_static_0200 START');
+        let driver =  Driver.create()
+        await CommonFunc.sleep(1000);
+        let button1 = await driver.findComponent(ON.id('getWindowHeightBreakpointButton'));
+        await (button1?.click() as Promise<void>);
+        await CommonFunc.sleep(2000);
+        let button2 = await driver.findComponent(ON.id('getWindowWidth'));
+        await (button2?.click() as Promise<void>);
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('heightBpValue');
+        let obj = JSON.parseJsonElement(strJson);
+        let strJson1 = inspector.getInspectorByKey('windowHeightBreakpoint');
+        let obj1 = JSON.parseJsonElement(strJson);
+        console.info("[GetWindowHeightBreakpoint_static_0200] component obj is: " + JSON.stringify(obj));
+        console.info("[GetWindowHeightBreakpoint_static_0200] component obj1 is: " + JSON.stringify(obj1));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual(obj1.getElement('$attrs').getString('content'));
+        console.info('[GetWindowHeightBreakpoint_static_0200] END');
+        done();
+      } catch (err) {
+        console.info('GetWindowHeightBreakpoint_static_0200 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

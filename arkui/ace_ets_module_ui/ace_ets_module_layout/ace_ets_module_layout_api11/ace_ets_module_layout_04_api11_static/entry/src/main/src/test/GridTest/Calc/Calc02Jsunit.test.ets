@@ -14,30 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function CalcJsunit02() {
   describe('CalcJsunit02', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CalcJsunit02 beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("CalcJsunit02 beforeEach start");
       let options: router.RouterOptions = {
@@ -59,7 +45,11 @@ export default function CalcJsunit02() {
       console.info("CalcJsunit02 beforeEach end");
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('CalcJsunit02Test await err: ' + JSON.stringify(err));
+      }
       const router = AppStorage.get<Router>("router") as Router
       router.back()
       console.info("CalcJsunit02 after each called");
@@ -73,7 +63,11 @@ export default function CalcJsunit02() {
      */
 it('CalcJsunit02_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[CalcJsunit02_static_0100] START');
+      try {
       await CommonFunc.sleep(4000);
+      } catch (err) {
+      console.info('CalcJsunit02Test await err: ' + JSON.stringify(err));
+      }
       let calc0201: RectValue = CommonFunc.getComponentRect('calc02key01');
       let calc0202: RectValue = CommonFunc.getComponentRect('calc02key02');
       let calc0203: RectValue = CommonFunc.getComponentRect('calc02key03');
@@ -83,7 +77,11 @@ it('CalcJsunit02_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       let calc0207: RectValue = CommonFunc.getComponentRect('calc02key07');
       let calc0208: RectValue = CommonFunc.getComponentRect('calc02key08');
       let calc0209: RectValue = CommonFunc.getComponentRect('calc02key09');
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('CalcJsunit02Test await err: ' + JSON.stringify(err));
+      }
       console.log('1111', calc0201.top, calc0201.bottom, calc0201.bottom - calc0201.top)
       console.log('2222', calc0202.right, calc0202.left, calc0201.right - calc0201.left)
       console.log('3333', calc0203.right, calc0203.left, calc0203.right - calc0203.left)

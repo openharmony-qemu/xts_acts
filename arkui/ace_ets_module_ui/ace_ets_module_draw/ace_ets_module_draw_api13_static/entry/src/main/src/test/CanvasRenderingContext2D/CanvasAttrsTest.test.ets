@@ -13,23 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage, LocalStorage } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 export default function CanvasAttrsTest() {
   describe('CanvasAttrsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CanvasAttrsTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("CanvasAttrsTest beforeEach start");
       let options: router.RouterOptions = {
@@ -54,8 +46,9 @@ export default function CanvasAttrsTest() {
       console.info("CanvasAttrsTest beforeEach end");
     }); 
 
-    
-    
+
+
+
 
 
 
@@ -69,31 +62,59 @@ it('CanvasAttrsTest_static_0100', Level.LEVEL2, async (done: () => void): Promis
 
       console.info('CanvasAttrsTest_0100 START');
       let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasAttrsTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       let strJson = inspector.getInspectorByKey('show_content');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[CanvasAttrsTest_0100] content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Canvas is fully visible.');
 
-      // 
+      //
       let button = await driver.findComponent(ON.id('swipe_bottom'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CanvasAttrsTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('CanvasAttrsTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       strJson = inspector.getInspectorByKey('show_content');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasAttrsTestTest sleep err: ' + JSON.stringify(err));
+      }
       obj = JSON.parseJsonElement(strJson);
       console.info("[CanvasAttrsTest_0100] content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Canvas is completely invisible.');
 
-      // 
+      //
       button = await driver.findComponent(ON.id('swipe_top'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CanvasAttrsTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('CanvasAttrsTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       strJson = inspector.getInspectorByKey('show_content');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasAttrsTestTest sleep err: ' + JSON.stringify(err));
+      }
       obj = JSON.parseJsonElement(strJson);
       console.info("[CanvasAttrsTest_0100] content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Canvas is fully visible.');   // 断言失败
@@ -103,4 +124,3 @@ it('CanvasAttrsTest_static_0100', Level.LEVEL2, async (done: () => void): Promis
     });
   })
 }
-

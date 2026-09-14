@@ -18,8 +18,6 @@ import pcsNetworkTest from 'libpcsNetworkTest.so'
 import pcsAudioTest from 'libpcsAudioTest.so'
 import softwareNdk from 'libsoftwareNdk.so'
 import openglNdk from 'libopenglNdk.so'
-import { BusinessError } from '@ohos.base';
-
 export default function pcsNdkTest() {
   describe('PCSNdkTest', () => {
     let SuccessResult1 = 0
@@ -162,8 +160,7 @@ export default function pcsNdkTest() {
           expect(openglNdk.OpenglEnabled()).assertEqual(SuccessResult1)
         }
       } catch (error) {
-        let err: BusinessError = error as BusinessError
-        console.log(`the device not support opengl code: ${err.code}, msg: ${err.message}`)
+        console.log(`the device not support opengl ${JSON.stringify(error)}`)
       }
       done()
     })

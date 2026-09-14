@@ -25,7 +25,6 @@ import {
   Level
 } from '../../../../hypium/index'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
@@ -36,8 +35,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function AttributeUpdaterUpdateConstructorParams() {
   describe('AttributeUpdaterUpdateConstructorParams', () => {
     beforeAll(async () => {
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(1000)
       console.info('frameNodeApi beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/AttributeUpdaterUpdateConstructorParams/AttributeUpdaterUpdateConstructorParams',
@@ -53,7 +50,6 @@ export default function AttributeUpdaterUpdateConstructorParams() {
       }
       console.info('frameNodeApi beforeEach end');
     });
-
     beforeEach(async () => {
       console.info('beforeAll case');
     });
@@ -77,31 +73,51 @@ export default function AttributeUpdaterUpdateConstructorParams() {
     it('AttributeUpdater_updateConstructorParams_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[AttributeUpdater_updateConstructorParams_0100] START');
       let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttributeUpdaterUpdateConstructorParamsTest await err: ' + JSON.stringify(err));
+      }
 
-      // 获取Text组件初始内容
+      // 閼惧嘲褰嘥ext缂佸嫪娆㈤崚婵嗩潗閸愬懎顔?
       let strJson = inspector.getInspectorByKey('text_update_constructor_params');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttributeUpdaterUpdateConstructorParamsTest await err: ' + JSON.stringify(err));
+      }
       console.info('[AttributeUpdater_updateConstructorParams_0100] initial $attrs: ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
 
-      // 断言初始文本内容
+      // 閺傤叀鈻堥崚婵嗩潗閺傚洦婀伴崘鍛啇
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
         .getElement('$attrs').getElement('content')))
         .assertEqual('"Initialize"');
 
-      // 点击Text组件触发updateConstructorParams
+      // 閻愮懓鍤甌ext缂佸嫪娆㈢憴锕€褰倁pdateConstructorParams
       let text = await driver.findComponent(ON.id('text_update_constructor_params'));
-      await (text?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (text?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttributeUpdaterUpdateConstructorParamsTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttributeUpdaterUpdateConstructorParamsTest await err: ' + JSON.stringify(err));
+      }
 
-      // 获取更新后的Text组件内容
+      // 閼惧嘲褰囬弴瀛樻煀閸氬海娈慣ext缂佸嫪娆㈤崘鍛啇
       let strJson2 = inspector.getInspectorByKey('text_update_constructor_params');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttributeUpdaterUpdateConstructorParamsTest await err: ' + JSON.stringify(err));
+      }
       console.info('[AttributeUpdater_updateConstructorParams_0100] updated $attrs: ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs')));
 
-      // 断言文本内容已更新
+      // 閺傤叀鈻堥弬鍥ㄦ拱閸愬懎顔愬鍙夋纯閺?
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)
         .getElement('$attrs').getElement('content')))
         .assertEqual('"Updated"');

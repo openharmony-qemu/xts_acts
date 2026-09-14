@@ -14,32 +14,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import {UtilsTest} from '../Util.test'
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function onVisibleAreaApproximateChangeTest() {
 
   describe('onVisibleAreaApproximateChangeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi18.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/onVisiable/onVisiable',
@@ -62,7 +47,11 @@ export default function onVisibleAreaApproximateChangeTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("onVisibleAreaApproximateChange after each error: " + err);
+      }
       console.info("onVisibleAreaApproximateChange after each called");
     });
 
@@ -76,6 +65,7 @@ export default function onVisibleAreaApproximateChangeTest() {
      * @tc.level    Level.LEVEL0
      */
 it('onVisibleAreaApproximateChange_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('onVisibleAreaApproximateChange_static_0010 START');
       let driver  = Driver.create()
       await CommonFunc.sleep(1000);
@@ -103,7 +93,7 @@ it('onVisibleAreaApproximateChange_static_0010', Level.LEVEL0, async (done: () =
 
       // 从完全可见滑动到完全不可见
       await driver.swipe(Math.round(left + width*0.5).toInt(),Math.round(top + height*0.08).toInt(),Math.round(left + width*0.5).toInt(),Math.round(bottom - height*0.08).toInt());
-      await CommonFunc.sleep(4000);
+      await CommonFunc.sleep(3000);
       strJson = inspector.getInspectorByKey('onVisibleAreaApproximateChange_column_id');
       await CommonFunc.sleep(1000);
       obj = JSON.parseJsonElement(strJson);
@@ -111,6 +101,10 @@ it('onVisibleAreaApproximateChange_static_0010', Level.LEVEL0, async (done: () =
       console.info('onVisibleAreaApproximateChange_column_id content is :' + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Test Text is fully visible');
       console.info('[onVisibleAreaApproximateChange_static_0010] END');
+      } catch (err) {
+        console.error('[onVisibleAreaApproximateChange_static_0010] error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
   })

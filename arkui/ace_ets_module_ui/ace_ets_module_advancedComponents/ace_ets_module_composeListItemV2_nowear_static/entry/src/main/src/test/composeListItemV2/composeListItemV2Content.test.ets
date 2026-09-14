@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility } from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function composeListItemV2ContentTest() {
   describe('composeListItemV2ContentTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("composeListItemV2ContentTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.composeListItemV2.nowear.test.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("composeListItemV2ContentTest beforeEach start");
       let options: router.RouterOptions = {
@@ -52,7 +46,11 @@ export default function composeListItemV2ContentTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('composeListItemV2ContentTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('composeListItemV2ContentTest after each called');
     })
 
@@ -68,13 +66,19 @@ export default function composeListItemV2ContentTest() {
      */
     it('composeListItemV2Content_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2Content_static_0100] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let primaryText = await driver.findComponent(ON.text('Primary Text'));
-      expect(primaryText !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2Content_static_0100] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let primaryText = await driver.findComponent(ON.text('Primary Text'));
+        expect(primaryText !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2Content_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2Content_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -85,15 +89,21 @@ export default function composeListItemV2ContentTest() {
      */
     it('composeListItemV2Content_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2Content_static_0200] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let primaryText = await driver.findComponent(ON.text('Primary Text'));
-      let secondaryText = await driver.findComponent(ON.text('Secondary Text'));
-      expect(primaryText !== null).assertTrue();
-      expect(secondaryText !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2Content_static_0200] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let primaryText = await driver.findComponent(ON.text('Primary Text'));
+        let secondaryText = await driver.findComponent(ON.text('Secondary Text'));
+        expect(primaryText !== null).assertTrue();
+        expect(secondaryText !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2Content_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2Content_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -104,13 +114,19 @@ export default function composeListItemV2ContentTest() {
      */
     it('composeListItemV2Content_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2Content_static_0300] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let primaryText = await driver.findComponent(ON.text('Primary Text with Icon'));
-      expect(primaryText !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2Content_static_0300] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let primaryText = await driver.findComponent(ON.text('Primary Text with Icon'));
+        expect(primaryText !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2Content_static_0300] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2Content_static_0300] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -121,13 +137,19 @@ export default function composeListItemV2ContentTest() {
      */
     it('composeListItemV2Content_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2Content_static_0400] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let description = await driver.findComponent(ON.text('Description Text'));
-      expect(description !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2Content_static_0400] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let description = await driver.findComponent(ON.text('Description Text'));
+        expect(description !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2Content_static_0400] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2Content_static_0400] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -138,17 +160,23 @@ export default function composeListItemV2ContentTest() {
      */
     it('composeListItemV2Content_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2Content_static_0500] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let primaryText = await driver.findComponent(ON.text('Full Content'));
-      let secondaryText = await driver.findComponent(ON.text('Secondary'));
-      let description = await driver.findComponent(ON.text('Description'));
-      expect(primaryText !== null).assertTrue();
-      expect(secondaryText !== null).assertTrue();
-      expect(description !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2Content_static_0500] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let primaryText = await driver.findComponent(ON.text('Full Content'));
+        let secondaryText = await driver.findComponent(ON.text('Secondary'));
+        let description = await driver.findComponent(ON.text('Description'));
+        expect(primaryText !== null).assertTrue();
+        expect(secondaryText !== null).assertTrue();
+        expect(description !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2Content_static_0500] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2Content_static_0500] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

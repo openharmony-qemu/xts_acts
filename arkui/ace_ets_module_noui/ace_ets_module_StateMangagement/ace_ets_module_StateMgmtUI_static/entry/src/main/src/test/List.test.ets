@@ -38,6 +38,21 @@ import ExtendableStackBuiltInTest from './ExtendBuiltIn/ExtendableStackBuiltInTe
 import ExtendableStackBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableStackBuiltInUndefinedTest.test';
 import ExtendableTextBuiltInTest from './ExtendBuiltIn/ExtendableTextBuiltInTest.test';
 import ExtendableToggleBuiltInTest from './ExtendBuiltIn/ExtendableToggleBuiltInTest.test';
+import RepeatReusableFalse1 from './ReusableTest/RepeatReusableFalse1.test';
+import RepeatReusableTrue1 from './ReusableTest/RepeatReusableTrue1.test';
+import SVDeepListenMakeObservedTest from './stateVariableDeepListen/SVDeepListenMakeObservedTest.test';
+import SVDeepListenMakeObservedFalseTest from './stateVariableDeepListen/SVDeepListenMakeObservedFalseTest.test';
+import SVDeepListenObservedAndObjectlinkTest
+  from './stateVariableDeepListen/SVDeepListenObservedAndObjectlinkTest.test';
+import SVDeepListenObservedBuiltInTest from './stateVariableDeepListen/SVDeepListenObservedBuiltInTest.test';
+import GlobalReusePoolTest from './uiutilsTest/GlobalReusePool.test';
+import GlobalReusePool002Test from './uiutilsTest/GlobalReusePool002.test';
+import GlobalReusePool003Test from './uiutilsTest/GlobalReusePool003.test';
+import GlobalReusePool004Test from './uiutilsTest/GlobalReusePool004.test';
+import StaticCoverageComponentTest from './staticCoverage/StaticCoverageComponent.test';
+import StaticCoverageDecoratorTest from './staticCoverage/StaticCoverageDecorator.test';
+import StaticCoverageStorageTest from './staticCoverage/StaticCoverageStorage.test';
+import StaticCoverageUtilsTest from './staticCoverage/StaticCoverageUtils.test';
  
  
 export default function testsuite() {
@@ -65,4 +80,18 @@ export default function testsuite() {
   componentLifecycleDecoratorsTest();
   reuseComponentLifecycleTest();
   reuseV2ComponentLifecycleTest();
+  StaticCoverageComponentTest();
+  StaticCoverageDecoratorTest();
+  StaticCoverageStorageTest();
+  StaticCoverageUtilsTest();
+  //RepeatReusableFalse1(); 
+  //RepeatReusableTrue1(); 
+  GlobalReusePool004Test();
+  SVDeepListenMakeObservedTest();
+  SVDeepListenMakeObservedFalseTest();
+  SVDeepListenObservedAndObjectlinkTest();
+  SVDeepListenObservedBuiltInTest();
+  GlobalReusePool002Test();
+  GlobalReusePool003Test();
+  GlobalReusePoolTest();
 }

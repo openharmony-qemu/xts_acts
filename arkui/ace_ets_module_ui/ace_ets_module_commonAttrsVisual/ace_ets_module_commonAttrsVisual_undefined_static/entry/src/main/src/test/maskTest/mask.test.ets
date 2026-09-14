@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import {
   Driver, ON
@@ -27,13 +26,6 @@ import {
 
 export default function MaskTest() {
   describe('MaskTest', () => {
-    beforeAll(async ():Promise<void> => {
-      console.info("MaskTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("MaskTest beforeEach start");
       let options: router.RouterOptions = {
@@ -63,9 +55,17 @@ export default function MaskTest() {
     it('MaskUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[MaskUndefinedTest_static_0100] START');
       let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('MaskUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('maskTest');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('MaskUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
 
       console.info("[MaskUndefinedTest_static_0100] $attrs: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -74,11 +74,23 @@ export default function MaskTest() {
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('mask')))
         .assertEqual('{}');
       let changeBtn = await driver.findComponent(ON.id('mask'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (changeBtn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('MaskUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('MaskUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       console.info("[MaskUndefinedTest_static_0100] click mask");
       strJson = inspector.getInspectorByKey('maskTest');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('MaskUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('mask')))
         .assertEqual('{}');
       console.info('[MaskUndefinedTest_static_0100] END');

@@ -140,7 +140,7 @@ export default function quickRequestImageTest() {
         done();
       } catch (error) {
         hilog.info(domain, tag, `${testNum} error: ${error}, ${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(401);
         done();
       }
     })
@@ -174,7 +174,7 @@ export default function quickRequestImageTest() {
         done();
       } catch (error) {
         hilog.info(domain, tag, `${testNum} error: ${error}, ${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(401);
         done();
       }
     })
@@ -205,7 +205,7 @@ export default function quickRequestImageTest() {
         done();
       } catch (error) {
         hilog.info(domain, tag, `${testNum} error: ${error}, ${error.code}`);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect(error.code).assertEqual(14000011);
         done();
       }
     })

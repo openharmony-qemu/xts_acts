@@ -529,7 +529,7 @@ export default function ManagerCreatePhotoOutputSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error, error.code)
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(401);
         done();
       }
     })
@@ -550,7 +550,7 @@ export default function ManagerCreatePhotoOutputSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error, error.code)
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(401);
         done();
       }
     })

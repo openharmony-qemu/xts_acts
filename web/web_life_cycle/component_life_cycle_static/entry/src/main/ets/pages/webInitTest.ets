@@ -26,7 +26,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import webView from '@ohos.web.webview'
-import { BusinessError, RecordData } from '@ohos.base';
+import { RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
@@ -121,9 +121,37 @@ struct WebInitTest {
                   })
                   Utils.emitEvent(this.webInit, 202603182);
                 } catch (error) {
-                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                   Utils.emitEvent(`${error.code}`, 202603182);
+                }
+                break;
+              }
+
+              case 'emitOnce004': {
+                try {
+                  webView.once(null as string, () => {
+                    console.error('webInited =====>')
+                    this.webInit = true
+                    Utils.emitEvent(this.webInit, 202603183);
+                  })
+
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(`401`, 202603183);
+                }
+                break;
+              }
+
+              case 'emitOnce005': {
+                try {
+                  webView.once(undefined as string, () => {
+                    console.error('webInited =====>')
+                    this.webInit = true
+                    Utils.emitEvent(this.webInit, 202603184);
+                  })
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(`401`, 202603184);
                 }
                 break;
               }

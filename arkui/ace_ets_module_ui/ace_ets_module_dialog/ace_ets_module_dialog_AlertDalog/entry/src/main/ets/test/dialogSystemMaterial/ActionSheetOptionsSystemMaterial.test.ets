@@ -65,17 +65,23 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       let dialog: ESObject = obj.$children[1]
 
       expect(dialog).not().assertUndefined();
-		  expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-		  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-		  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-		  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-		  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
 
       console.info('ActionSheetOptionsSystemMaterial_0100 Sheet title is visible');
 
       await CommonFunc.sleep(500);
-      let closeButton = await driver.findComponent(ON.text('Confirm'));
-      await closeButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+        let closeButton = await driver.findComponent(ON.text('Confirm'));
+        await closeButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0100 END');
       done();
@@ -107,8 +113,14 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       console.info('ActionSheetOptionsSystemMaterial_0200 Sheet title is visible');
 
       await CommonFunc.sleep(500);
-      let closeButton = await driver.findComponent(ON.text('Confirm'));
-      await closeButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+        let closeButton = await driver.findComponent(ON.text('Confirm'));
+        await closeButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0200 END');
       done();
@@ -141,8 +153,14 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       console.info('ActionSheetOptionsSystemMaterial_0300 Sheet title is visible');
 
       await CommonFunc.sleep(500);
-      let closeButton = await driver.findComponent(ON.text('Confirm'));
-      await closeButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+        let closeButton = await driver.findComponent(ON.text('Confirm'));
+        await closeButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0300 END');
       done();
@@ -170,12 +188,17 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       let dialog: ESObject = obj.$children[1]
 
       expect(dialog).not().assertUndefined();
-
       console.info('ActionSheetOptionsSystemMaterial_0400 Sheet title is visible');
 
       await CommonFunc.sleep(500);
-      let closeButton = await driver.findComponent(ON.text('Confirm'));
-      await closeButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+        let closeButton = await driver.findComponent(ON.text('Confirm'));
+        await closeButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0400 END');
       done();
@@ -207,8 +230,16 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       console.info('ActionSheetOptionsSystemMaterial_0500 Sheet title is visible');
 
       await CommonFunc.sleep(500);
-      let closeButton = await driver.findComponent(ON.text('Confirm'));
-      await closeButton.click();
+      
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+        let closeButton = await driver.findComponent(ON.text('Confirm'));
+        await closeButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
+      
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0500 END');
       done();
@@ -234,14 +265,19 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       let titleText = await driver.findComponent(ON.text('ActionSheet NONE'));
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let dialog: ESObject = obj.$children[1]
-
       expect(dialog).not().assertUndefined();
 
       console.info('ActionSheetOptionsSystemMaterial_0600 Sheet title is visible');
 
       await CommonFunc.sleep(500);
-      let closeButton = await driver.findComponent(ON.text('Confirm'));
-      await closeButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+        let closeButton = await driver.findComponent(ON.text('Confirm'));
+        await closeButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0600 END');
       done();

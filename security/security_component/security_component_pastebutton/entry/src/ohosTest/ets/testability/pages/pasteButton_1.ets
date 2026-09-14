@@ -214,7 +214,7 @@ struct pasteButton_1 {
             .borderRadius(this.borderRad)
             .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
             .textIconSpace(this.middle)
-            .key("keyPaste2")
+            .id("keyPaste2")
             .width(this.widthT)
             .height(this.heightT)
             .size({ width: this.widthT, height: this.heightT })

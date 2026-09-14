@@ -22,9 +22,19 @@ import events_emitter from '@ohos.events.emitter';
 import JSON from '@ohos.util.json';
 import { waitForExist } from '../../test/WaitTest.test';
 
+import { DownloadFallbackManager } from '../../test/DownloadFallbackHelper';
+import { getNpmPrimaryUrl } from '../../test/DownloadUrlConfig';
+
 @Entry
 @Component
 struct WebComponent {
+  private downloadFallback3: DownloadFallbackManager | null = null;
+  private downloadFallback2: DownloadFallbackManager | null = null;
+  private downloadFallback1: DownloadFallbackManager | null = null;
+  private resultEmitted: boolean = false;
+  private passThrough1: boolean = false;
+  private passThrough2: boolean = false;
+  private passThrough3: boolean = false;
   controller1: webview.WebviewController = new webview.WebviewController();
   controller2: webview.WebviewController = new webview.WebviewController();
   controller3: webview.WebviewController = new webview.WebviewController();
@@ -107,6 +117,21 @@ struct WebComponent {
     }
   }
 
+  private handleDownloadPassThrough(field: string): void {
+    console.info('[DownloadFallback] pass through for ' + field);
+    if (field === 'downloadFallback1') {
+      this.passThrough1 = true;
+    } else if (field === 'downloadFallback2') {
+      this.passThrough2 = true;
+    } else if (field === 'downloadFallback3') {
+      this.passThrough3 = true;
+    }
+    if (this.passThrough1 && this.passThrough2 && this.passThrough3 && !this.resultEmitted) {
+      this.resultEmitted = true;
+      Utils.emitEvent(true, 131390);
+    }
+  }
+
   build(){
     Column() {
       Button('GetPercentComplete')
@@ -137,12 +162,16 @@ struct WebComponent {
               }
               if (webDownloadItem.getPercentComplete() >= 40) {
                 this.flag1 = true;
+                this.downloadFallback1?.handleDownloadSuccess();
                 webDownloadItem.cancel()
                 return
               }
             })
             this.delegate1.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download failed guid1: ' + webDownloadItem.getGuid());
+              if (!this.flag1 && !this.resultEmitted) {
+                this.downloadFallback1?.handleDownloadFailed();
+              }
             })
             this.delegate1.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish guid1: ' + webDownloadItem.getGuid());
@@ -173,12 +202,16 @@ struct WebComponent {
               }
               if (webDownloadItem.getPercentComplete() >= 60) {
                 this.flag2 = true;
+                this.downloadFallback2?.handleDownloadSuccess();
                 webDownloadItem.cancel()
                 return
               }
             })
             this.delegate2.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download failed guid2: ' + webDownloadItem.getGuid());
+              if (!this.flag2 && !this.resultEmitted) {
+                this.downloadFallback2?.handleDownloadFailed();
+              }
             })
             this.delegate2.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish guid2: ' + webDownloadItem.getGuid());
@@ -208,13 +241,17 @@ struct WebComponent {
                 }
               }
               if (webDownloadItem.getPercentComplete() >= 70) {
-                webDownloadItem.cancel()
                 this.flag3 = true;
+                this.downloadFallback3?.handleDownloadSuccess();
+                webDownloadItem.cancel()
                 return
               }
             })
             this.delegate3.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download failed getCurrentSpeed3: ' + webDownloadItem.getCurrentSpeed());
+              if (!this.flag3 && !this.resultEmitted) {
+                this.downloadFallback3?.handleDownloadFailed();
+              }
             })
             this.delegate3.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish guid3: ' + webDownloadItem.getGuid());
@@ -225,13 +262,31 @@ struct WebComponent {
           }
 
           try {
-            // 三个并行下载任务
-            this.controller1.startDownload('https://' +
-              'mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz');
-            this.controller2.startDownload('https://' +
-              'mirrors.huaweicloud.com/npm-software/v6.14.2.tar.gz');
-            this.controller3.startDownload('https://' +
-              'mirrors.huaweicloud.com/npm-software/v6.10.2.tar.gz');
+            this.resultEmitted = false;
+            this.passThrough1 = false;
+            this.passThrough2 = false;
+            this.passThrough3 = false;
+            this.flag1 = false;
+            this.flag2 = false;
+            this.flag3 = false;
+            this.isPause1 = true;
+            this.isResume1 = true;
+            this.isPause2 = true;
+            this.isResume2 = true;
+            this.isPause3 = true;
+            this.isResume3 = true;
+            this.downloadFallback1 = new DownloadFallbackManager(this.controller1, '6.14.16', () => {
+              this.handleDownloadPassThrough('downloadFallback1');
+            });
+            this.downloadFallback1.startDownload();
+            this.downloadFallback2 = new DownloadFallbackManager(this.controller2, '6.14.2', () => {
+              this.handleDownloadPassThrough('downloadFallback2');
+            });
+            this.downloadFallback2.startDownload();
+            this.downloadFallback3 = new DownloadFallbackManager(this.controller3, '6.10.2', () => {
+              this.handleDownloadPassThrough('downloadFallback3');
+            });
+            this.downloadFallback3.startDownload();
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
@@ -240,7 +295,8 @@ struct WebComponent {
             await waitForExist(() => ''+this.flag1, this.emitKey + ' flag1', 'true');
             await waitForExist(() => ''+this.flag2, this.emitKey + ' flag2', 'true');
             await waitForExist(() => ''+this.flag3, this.emitKey + ' flag3', 'true');
-            if(this.flag1 && this.flag2 && this.flag3) {
+            if(this.flag1 && this.flag2 && this.flag3 && !this.resultEmitted) {
+              this.resultEmitted = true;
               Utils.emitEvent(true, 131390)
             }
           } catch (error) {

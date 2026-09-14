@@ -1944,5 +1944,56 @@ export default function LowPowerSinkNdkTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+        console.info("====>SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0100 start====");
+        let result: number = lowpoweraudiosinkndk.OH_LowPowerVideoSink_GetParameter0100();
+        expect(0).assertEqual(result);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0200
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0200
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+        console.info("====>SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0200 start====");
+        let result: number = lowpoweraudiosinkndk.OH_LowPowerVideoSink_GetParameter0200();
+        expect(0).assertEqual(result);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0300
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0300
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+        console.info("====>SUB_MULTIMEIDA_OH_LowPowerVideoSink_GetParameter_0300 start====");
+        let result: number = lowpoweraudiosinkndk.OH_LowPowerVideoSink_GetParameter0300();
+        expect(0).assertEqual(result);
+        done()
+      }
+    })
+
   })
 }

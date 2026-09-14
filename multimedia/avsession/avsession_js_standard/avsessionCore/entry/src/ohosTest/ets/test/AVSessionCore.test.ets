@@ -400,7 +400,7 @@ export default function abilityTest() {
               expect(false).assertTrue();
           }
         });
-          await sleep(1000);
+          await sleep(2000);
           done();
       } catch(err) {
           console.info(`Get device BusinessError: ${err.code}, message: ${err.message}`);

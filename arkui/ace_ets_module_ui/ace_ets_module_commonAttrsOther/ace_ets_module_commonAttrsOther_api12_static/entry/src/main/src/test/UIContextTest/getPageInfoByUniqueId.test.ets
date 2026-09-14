@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -32,30 +32,15 @@ import {
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import display from '@ohos.display'
 import { $r } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import common from '@ohos.app.ability.common';
-import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function getPageInfoByUniqueIdTest() {
   describe('getPageInfoByUniqueIdTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api12.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("getPageInfoByUniqueIdTest beforeEach start");
       let options: router.RouterOptions = {

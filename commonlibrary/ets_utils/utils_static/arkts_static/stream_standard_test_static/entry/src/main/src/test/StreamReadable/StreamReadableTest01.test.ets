@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
-import { stream, util } from '@kit.ArkTS';
+import { stream, util, buffer } from '@kit.ArkTS';
 import Utils from '../Util.test';
 
 function createReadable(): stream.Readable {
@@ -24,7 +24,7 @@ function createReadable(): stream.Readable {
 class TestReadable0023 extends stream.Readable {
   readCalled: boolean = false;
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (!this.readCalled) {
       this.push('test data');
       this.readCalled = true;
@@ -35,7 +35,7 @@ class TestReadable0023 extends stream.Readable {
 class TestReadable0024 extends stream.Readable {
   readCalled: boolean = false;
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (!this.readCalled) {
       this.push('test data');
       this.readCalled = true;
@@ -46,7 +46,7 @@ class TestReadable0024 extends stream.Readable {
 class TestReadable0025 extends stream.Readable {
   readCalled: boolean = false;
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (!this.readCalled) {
       this.push('test data');
       this.readCalled = true;
@@ -57,7 +57,7 @@ class TestReadable0025 extends stream.Readable {
 class TestReadable0026 extends stream.Readable {
   readCalled: boolean = false;
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (!this.readCalled) {
       this.push('test data');
       this.readCalled = true;
@@ -68,7 +68,7 @@ class TestReadable0026 extends stream.Readable {
 class TestReadable0027 extends stream.Readable {
   readCalled: boolean = false;
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (!this.readCalled) {
       this.push('test data');
       this.readCalled = true;
@@ -82,7 +82,7 @@ class TestReadable0028 extends stream.Readable {
     this.push('test data');
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
   }
 }
 
@@ -92,7 +92,7 @@ class TestReadable0029 extends stream.Readable {
     this.push('test data');
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
   }
 }
 
@@ -102,7 +102,7 @@ class TestReadable0030 extends stream.Readable {
     this.push('test data');
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
   }
 }
 
@@ -112,7 +112,7 @@ class TestReadable0031 extends stream.Readable {
     this.push('test data');
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
   }
 }
 
@@ -122,14 +122,14 @@ class TestReadable0032 extends stream.Readable {
     this.push('test data');
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
   }
 }
 
 class TestReadable0033 extends stream.Readable {
   readCalled: boolean = false;
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (!this.readCalled) {
       this.push('test data');
       this.readCalled = true;
@@ -140,7 +140,7 @@ class TestReadable0033 extends stream.Readable {
 class TestReadable0034 extends stream.Readable {
   readCalled: boolean = false;
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (!this.readCalled) {
       this.push('test data');
       this.readCalled = true;
@@ -154,18 +154,18 @@ class TestReadable0035 extends stream.Readable {
     this.push('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
   }
 }
 
 class TestReadable0036 extends stream.Readable {
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push(undefined);
   }
 }
 
 class TestReadable0037 extends stream.Readable {
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push(null);
   }
 }
@@ -176,14 +176,14 @@ class TestReadable0038 extends stream.Readable {
     this.push('👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴');
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
   }
 }
 
 class TestReadable0039 extends stream.Readable {
   pushCount: number = 0;
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (this.pushCount === 0) {
       this.push('\n\t\r\b\f\\\'\"\\0');
       this.pushCount++;
@@ -194,7 +194,7 @@ class TestReadable0039 extends stream.Readable {
 class TestReadable0040 extends stream.Readable {
   pushCount: number = 0;
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (this.pushCount === 0) {
       this.push('test data');
       this.pushCount++;
@@ -205,7 +205,7 @@ class TestReadable0040 extends stream.Readable {
 class TestReadable0041 extends stream.Readable {
   pushCount: number = 0;
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (this.pushCount === 0) {
       let uint8Array = new Uint8Array([72, 101, 108, 108, 111]);
       this.push(uint8Array);
@@ -217,7 +217,7 @@ class TestReadable0041 extends stream.Readable {
 class TestReadable0042 extends stream.Readable {
   pushCount: number = 0;
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (this.pushCount === 0) {
       let largeString = 'a'.repeat(100);
       this.push(largeString);
@@ -231,7 +231,7 @@ class TestReadable0043 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (!this.readCalled) {
       this.push('test data');
       this.readCalled = true;
@@ -240,7 +240,7 @@ class TestReadable0043 extends stream.Readable {
 }
 
 class TestReadable0044 extends stream.Readable {
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('test data');
   }
 }
@@ -249,7 +249,7 @@ class TestReadable0045 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('test data');
     this.push(null);
   }
@@ -260,7 +260,7 @@ class TestReadable0046 extends stream.Readable {
     super();
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('flowing data');
     this.push(null);
   }
@@ -271,7 +271,7 @@ class TestReadable0047 extends stream.Readable {
     super();
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('test');
     this.push(null);
   }
@@ -282,7 +282,7 @@ class TestReadable0048 extends stream.Readable {
     super();
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('test');
     this.push(null);
   }
@@ -293,7 +293,7 @@ class TestReadable0049 extends stream.Readable {
     super();
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push(null);
   }
 }
@@ -303,7 +303,7 @@ class TestReadable0050 extends stream.Readable {
     super();
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('test');
     this.push(null);
   }
@@ -314,7 +314,7 @@ class TestReadable0051 extends stream.Readable {
     super();
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
 
   }
 }
@@ -327,7 +327,7 @@ class TestReadable0052 extends stream.Readable {
     super();
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     if (this.index < this.data.length) {
       let chunk = new Uint8Array([this.data[this.index++]]);
       this.push(chunk);
@@ -729,8 +729,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let readableStream = new TestReadable0023();
       let dataChunk = readableStream.read();
-      expect(dataChunk == null).assertTrue();
-      expect(typeof dataChunk).assertEqual('object');
+      expect(dataChunk instanceof buffer.Buffer).assertTrue();
     });
 
     /**
@@ -758,7 +757,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let readableStream = new TestReadable0025();
       let dataChunk = readableStream.read(4);
-      expect(dataChunk == null).assertTrue();
+      expect(dataChunk instanceof buffer.Buffer).assertTrue();
     });
 
     /**
@@ -791,7 +790,7 @@ export default function StreamReadable01Test(): void {
       try {
         let readableStream = new TestReadable0027();
         let dataChunk = readableStream.read();
-        expect(dataChunk === null || dataChunk === undefined).assertEqual(true);
+        expect(dataChunk === null || dataChunk === undefined).assertEqual(false);
       } catch (error) {
         expect(error.code).assertEqual(undefined);
       }
@@ -980,7 +979,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let readableStream = new TestReadable0039();
       let dataChunk = readableStream.read();
-      expect(dataChunk).assertNull();
+      expect(dataChunk instanceof buffer.Buffer).assertTrue();
     });
 
     /**

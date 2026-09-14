@@ -126,6 +126,20 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
+     * @tc.name   testOhAvPlayerSetURLSource002
+     * @tc.number SUB_MULTIMEIDA_AVPlayer_SetURLSource_0200
+     * @tc.desc   test OH_AVPlayer_SetURLSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerSetURLSource002', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.AvPlayerSetURLSourceAbnormal();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   testOhAvPlayerSetURLSource003
      * @tc.number SUB_MULTIMEIDA_AVPLAYER_NDK_SETURLSOURCE_0300
      * @tc.desc   test OH_AVPlayer_SetURLSource

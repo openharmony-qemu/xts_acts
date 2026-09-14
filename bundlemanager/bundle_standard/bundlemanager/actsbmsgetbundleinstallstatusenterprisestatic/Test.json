@@ -1,0 +1,27 @@
+{
+    "description": "Configuration for getBundleInstallStatus static enterprise tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "600000",
+        "shell-timeout": "600000",
+        "bundle-name": "ohos.acts.getbundleinstallstatus.static.enterprise",
+        "module-name": "entry",
+        "testcase-timeout": 240000,
+        "compile-mode":"esmodule"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ActsBmsGetBundleInstallStatusStaticEnterpriseTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        },{
+            "type": "ShellKit",
+            "run-command": [
+                "power-shell wakeup",
+                "power-shell setmode 602"
+            ]
+        }
+    ]
+}

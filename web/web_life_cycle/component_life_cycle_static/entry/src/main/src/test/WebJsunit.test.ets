@@ -24,7 +24,7 @@ import inspector from '@ohos.arkui.inspector';
 
 let testAbilityContext: common.UIAbilityContext;
 
-export default function webJsunit() {
+export default function webJsunit(): void {
 
   describe('ActsAceWebDevTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -64,7 +64,7 @@ export default function webJsunit() {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitStoreWebArchive02", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("StoreWebArchive02", false, 202603183, done);
+        Utils.registerEvent("StoreWebArchiveStatic02", false, 202603185, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webcomponent', 10, '');
         await Utils.msSleep(2000);
@@ -84,7 +84,7 @@ export default function webJsunit() {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitStoreWebArchive03", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("StoreWebArchive03", false, 202603184, done);
+        Utils.registerEvent("StoreWebArchiveStatic03", false, 202603186, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webcomponent', 10, '');
         await Utils.msSleep(2000);

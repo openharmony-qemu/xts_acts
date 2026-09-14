@@ -13,18 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
 import { Color, Resource, $r } from '@ohos.arkui.component';
 import router from '@ohos.router';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -46,12 +40,6 @@ function spliceColor(sysColor: Resource) {
 
 export default function UIPickerIndicatorModifierTest() {
   describe('UIPickerIndicatorModifierTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("UIPickerIndicatorModifierTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.container.static", "EntryAbility")
-      await UtilsTest.msSleep(SLEEP_TIME_L)
-    });
 
     beforeEach(async () => {
       console.info('UIPickerIndicatorModifierTest beforeEach start');

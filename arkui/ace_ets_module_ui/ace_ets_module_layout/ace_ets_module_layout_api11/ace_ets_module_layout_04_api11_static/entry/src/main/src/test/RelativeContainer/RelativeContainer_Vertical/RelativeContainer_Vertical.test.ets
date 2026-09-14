@@ -14,32 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { VerticalAlign } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function RelativeContainer_Vertical() {
   describe('RelativeContainer_Vertical', () => {
-    beforeAll(async() => {
-      console.info("RelativeContainer_Vertical beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("RelativeContainer_Vertical beforeEach start");
       let options: router.RouterOptions = {
@@ -63,7 +49,11 @@ export default function RelativeContainer_Vertical() {
       }
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('RelativeContainer_VeTest await err: ' + JSON.stringify(err));
+      }
       console.info("RelativeContainer_Vertical after each called")
     });
     
@@ -82,7 +72,11 @@ it('SUB_ACE_RelativeContainer_Vertical_TEST_static_0100', Level.LEVEL0, async (d
         name: 'addalign', value: VerticalAlign.Top
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('RelativeContainer_VeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let RelativeContainer_Vertical_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_Vertical_bt1');
       let RelativeContainer_Vertical_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_Vertical_tx2');
@@ -112,7 +106,11 @@ it('SUB_ACE_RelativeContainer_Vertical_TEST_static_0200', Level.LEVEL0, async (d
         name: 'addalign', value: VerticalAlign.Center
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('RelativeContainer_VeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let RelativeContainer_Vertical_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_Vertical_bt1');
       let RelativeContainer_Vertical_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_Vertical_tx2');
@@ -145,7 +143,11 @@ it('SUB_ACE_RelativeContainer_Vertical_TEST_static_0300', Level.LEVEL0, async (d
         name: 'addalign', value: VerticalAlign.Bottom
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('RelativeContainer_VeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let RelativeContainer_Vertical_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_Vertical_bt1');
       let RelativeContainer_Vertical_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_Vertical_tx2');

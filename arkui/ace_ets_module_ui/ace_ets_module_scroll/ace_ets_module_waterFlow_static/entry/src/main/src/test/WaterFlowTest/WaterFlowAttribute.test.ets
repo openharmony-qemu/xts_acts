@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { ItemFillPolicy } from '@ohos.arkui.component';
 
@@ -29,12 +28,6 @@ const SLEEP_TIME = 1000;
 
 export default function WaterFlowAttributeTest() {
   describe('WaterFlowAttributeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('WaterFlowAttributeTest beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility('com.arkui.ace.waterFlow.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('WaterFlowAttributeTest beforeEach start');
       let options: router.RouterOptions = {

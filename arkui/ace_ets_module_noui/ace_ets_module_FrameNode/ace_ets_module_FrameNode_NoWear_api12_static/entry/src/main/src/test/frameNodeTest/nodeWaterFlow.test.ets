@@ -13,22 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach, afterAll } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 export default function nodeWaterFlow() {
   describe('nodeWaterFlow', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("nodeWaterFlow beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.FrameNodeNoWear.api12.static", "EntryAbility")
-    });
 
     beforeEach(async () => {
       console.info("nodeWaterFlow beforeEach start");
@@ -42,7 +36,7 @@ export default function nodeWaterFlow() {
         console.info("get nodeWaterFlow state pages: " + JSON.stringify(pages));
         if (!("nodeWaterFlow" == pages.name)) {
           console.info("get nodeWaterFlow state pages.name: " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -52,14 +46,13 @@ export default function nodeWaterFlow() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('nodeWaterFlow afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info(" nodeWaterFlow after each called");
     });
-
-    
-
-
-    
 
     /**
      * @tc.number   nodeWaterFlow_static_0100
@@ -67,29 +60,29 @@ export default function nodeWaterFlow() {
      * @tc.desc     nodeWaterFlow_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('nodeWaterFlow_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('nodeWaterFlow_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeWaterFlow_0100 START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      let size = await driver.getDisplaySize();
-      if (size.x != 466 && size.y != 466) {
-        let button = await driver.findComponent(ON.type('WaterFlow'));
+      try {
         await CommonFunc.sleep(1000);
-        let type1 = await button!.getType();
-        await CommonFunc.sleep(1000);
-        let strJson = inspector.getInspectorByKey('waterFlow_node');
-        let obj = JSON.parseJsonElement(strJson);
-        console.info("[nodeWaterFlow_0100] component obj is: " + JSON.stringify(obj));
-        expect(obj.getString('$type')).assertEqual(type1);
-        console.info('[nodeWaterFlow_0100] END');
+        let driver: Driver = Driver.create();
+        let size = await driver.getDisplaySize();
+        if (size.x != 466 && size.y != 466) {
+          let button = await driver.findComponent(ON.type('WaterFlow'));
+          await CommonFunc.sleep(1000);
+          let type1 = await button!.getType();
+          await CommonFunc.sleep(1000);
+          let strJson = inspector.getInspectorByKey('waterFlow_node');
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("[nodeWaterFlow_0100] component obj is: " + JSON.stringify(obj));
+          expect(obj.getString('$type')).assertEqual(type1);
+          console.info('[nodeWaterFlow_0100] END');
+        }
+      } catch (error) {
+        console.error('[nodeWaterFlow_static_0100] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
       done();
     });
-
-    
-
-
-    
 
     /**
      * @tc.number   nodeWaterFlow_static_0200
@@ -97,20 +90,25 @@ it('nodeWaterFlow_static_0100', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.desc     nodeWaterFlow_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('nodeWaterFlow_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('nodeWaterFlow_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeWaterFlow_0200 START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      let size = await driver.getDisplaySize();
-      if (size.x != 466 && size.y != 466) {
-        let button = await driver.findComponent(ON.type('FlowItem'));
-        let type2 = await button!.getType();
+      try {
         await CommonFunc.sleep(1000);
-        let strJson = inspector.getInspectorByKey('flowItem_node');
-        let obj = JSON.parseJsonElement(strJson);
-        console.info("[nodeWaterFlow_0200] component obj is: " + JSON.stringify(obj));
-        expect(obj.getString('$type')).assertEqual(type2);
-        console.info('[nodeWaterFlow_0200] END');
+        let driver: Driver = Driver.create();
+        let size = await driver.getDisplaySize();
+        if (size.x != 466 && size.y != 466) {
+          let button = await driver.findComponent(ON.type('FlowItem'));
+          let type2 = await button!.getType();
+          await CommonFunc.sleep(1000);
+          let strJson = inspector.getInspectorByKey('flowItem_node');
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("[nodeWaterFlow_0200] component obj is: " + JSON.stringify(obj));
+          expect(obj.getString('$type')).assertEqual(type2);
+          console.info('[nodeWaterFlow_0200] END');
+        }
+      } catch (error) {
+        console.error('[nodeWaterFlow_static_0200] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
       done();
     });

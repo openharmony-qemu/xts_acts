@@ -22,7 +22,7 @@ import { common } from '@kit.AbilityKit';
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }
@@ -34,7 +34,7 @@ let tag = 'ActsNotificationAnsThreePartyWatchWithinAbilityTest'
 export default function ActsNotificationAnsThreePartyWatchWithinAbilityTest() {
   describe('ActsNotificationAnsThreePartyWatchWithinAbilityTest', () => {
     beforeAll(async () => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       await notificationManager.setNotificationEnable({ bundle: bundleName }, true)
     })
     beforeEach(() => {

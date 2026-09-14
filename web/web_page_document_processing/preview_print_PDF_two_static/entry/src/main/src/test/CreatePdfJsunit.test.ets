@@ -25,7 +25,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let testAbilityContext: common.UIAbilityContext;
 
-export default function webJsunit() {
+export default function webJsunit(): void {
   describe('createPdfTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')

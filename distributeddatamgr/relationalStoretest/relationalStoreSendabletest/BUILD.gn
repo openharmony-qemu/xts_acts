@@ -18,5 +18,5 @@ ohos_js_app_suite("relationalstoreSendable_ets_test") {
   testonly = true
   part_name = "relational_store"
   subsystem_name = "distributeddatamgr"
-  certificate_profile = "signature/openharmony_sx.p7b"
+  certificate_profile = "./signature/openharmony_sx.p7b"
 }

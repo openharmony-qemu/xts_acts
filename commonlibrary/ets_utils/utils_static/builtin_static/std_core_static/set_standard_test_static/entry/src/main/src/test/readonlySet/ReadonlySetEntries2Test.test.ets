@@ -675,10 +675,10 @@ export default function ReadonlySetEntries2Test(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetEntries031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa1: FixedArray<int> = new FixedArray<int>(2);
+      let fa1: FixedArray<int> = new FixedArray<int>(2, 0);
       fa1[0] = 1;
       fa1[1] = 2;
-      let fa2: FixedArray<int> = new FixedArray<int>(2);
+      let fa2: FixedArray<int> = new FixedArray<int>(2, 0);
       fa2[0] = 3;
       fa2[1] = 4;
       const set: ReadonlySet<FixedArray<int>> = new Set<FixedArray<int>>([fa1, fa2]);
@@ -815,10 +815,10 @@ export default function ReadonlySetEntries2Test(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetEntries037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let va1: ValueArray<int> = new ValueArray<int>(2);
+      let va1: ValueArray<int> = new ValueArray<int>(2, 0);
       va1[0] = 1;
       va1[1] = 2;
-      let va2: ValueArray<int> = new ValueArray<int>(2);
+      let va2: ValueArray<int> = new ValueArray<int>(2, 0);
       va2[0] = 3;
       va2[1] = 4;
       const set: ReadonlySet<ValueArray<int>> = new Set<ValueArray<int>>([va1, va2]);

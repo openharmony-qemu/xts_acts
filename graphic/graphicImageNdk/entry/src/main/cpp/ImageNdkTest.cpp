@@ -2319,6 +2319,45 @@ static void setInt32NamedProperty(napi_env env, napi_value object, const char *u
     napi_set_named_property(env, object, utf8name, tmp);
 }
 
+static napi_value TestGetAlphaTypeNullPtr(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *ops = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&ops);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    errCode = OH_PixelmapInitializationOptions_GetAlphaType(ops, nullptr);
+    int32_t ret = (errCode == IMAGE_BAD_PARAMETER) ? IMAGE_SUCCESS : IMAGE_UNKNOWN_ERROR;
+    OH_PixelmapInitializationOptions_Release(ops);
+    return getJsResult(env, ret);
+}
+
+static napi_value TestImageInfoGetWidthNullPtr(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_ImageInfo *imageInfo = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapImageInfo_Create(&imageInfo);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    errCode = OH_PixelmapImageInfo_GetWidth(imageInfo, nullptr);
+    int32_t ret = (errCode == IMAGE_BAD_PARAMETER) ? IMAGE_SUCCESS : IMAGE_UNKNOWN_ERROR;
+    OH_PixelmapImageInfo_Release(imageInfo);
+    return getJsResult(env, ret);
+}
+
+static napi_value TestImageInfoGetHeightNullPtr(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_ImageInfo *imageInfo = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapImageInfo_Create(&imageInfo);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    errCode = OH_PixelmapImageInfo_GetHeight(imageInfo, nullptr);
+    int32_t ret = (errCode == IMAGE_BAD_PARAMETER) ? IMAGE_SUCCESS : IMAGE_UNKNOWN_ERROR;
+    OH_PixelmapImageInfo_Release(imageInfo);
+    return getJsResult(env, ret);
+}
+
 napi_property_descriptor desc[] = {
     {"testCreatePixelMapWithStrideAbnormal", nullptr, TestCreatePixelMapWithStrideAbnormal, nullptr, nullptr,
      nullptr, napi_default, nullptr},
@@ -2476,6 +2515,11 @@ napi_property_descriptor desc[] = {
      TestNativeConvertAlphaTypeUnsupportedDataFormat, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"testNativeImageDataConversionFailedErrorCode", nullptr,
      TestNativeImageDataConversionFailedErrorCode, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testGetAlphaTypeNullPtr", nullptr, TestGetAlphaTypeNullPtr, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testImageInfoGetWidthNullPtr", nullptr, TestImageInfoGetWidthNullPtr, nullptr, nullptr, nullptr, napi_default,
+     nullptr},
+    {"testImageInfoGetHeightNullPtr", nullptr, TestImageInfoGetHeightNullPtr, nullptr, nullptr, nullptr, napi_default,
+     nullptr},
 };
 
 EXTERN_C_START

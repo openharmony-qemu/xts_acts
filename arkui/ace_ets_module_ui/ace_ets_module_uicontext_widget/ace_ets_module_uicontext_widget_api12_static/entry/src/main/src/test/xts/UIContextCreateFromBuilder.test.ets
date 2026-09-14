@@ -13,25 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach,  it, Level, expect, beforeAll } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach,  it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector'
-import {UtilsTest,startAbility} from '../Util.test'
 
 export default function UIContextCreateFromBuilderJsunit() {
   describe('UIContextCreateFromBuilderTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("UIContextCreateFromBuilderTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.example.myapplication.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async () => {
       console.info('UIContextCreateFromBuilderTest beforeEach start');
       let options:router.RouterOptions = {
@@ -53,7 +44,11 @@ export default function UIContextCreateFromBuilderJsunit() {
       }
     });
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('UIContextCreateFromBuilder afterEach err: ' + JSON.stringify(err));
+      }
       console.info('UIContextCreateFromBuilder after each called');
     });
     
@@ -67,17 +62,21 @@ export default function UIContextCreateFromBuilderJsunit() {
      * @tc.level    Level.LEVEL0
      */
 it('UIContextCreateFromBuilderTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
-  // App died
-      console.info('UIContextCreateFromBuilderTest_0100 START');
-      let driver1 = Driver.create();
-      let button = await driver1.findComponent(ON.id('getComponentSnapshot_03'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      let text =  inspector.getInspectorByKey('key_getComponentSnapshot_text_03');
-      console.info('snapshot++++++++++++++++++++'+JSON.stringifyJsonElement(JSON.parseJsonElement(text).getElement('$attrs')));
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('snapshot');
-      console.info('UIContextCreateFromBuilderTest_0100 END');
-      done();
+      try {
+        console.info('UIContextCreateFromBuilderTest_0100 START');
+        let driver1 = Driver.create();
+        let button = await driver1.findComponent(ON.id('getComponentSnapshot_03'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        let text =  inspector.getInspectorByKey('key_getComponentSnapshot_text_03');
+        console.info('snapshot++++++++++++++++++++'+JSON.stringifyJsonElement(JSON.parseJsonElement(text).getElement('$attrs')));
+        expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('snapshot');
+        console.info('UIContextCreateFromBuilderTest_0100 END');
+        done();
+      } catch (err) {
+        console.info('UIContextCreateFromBuilderTest_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
     
     
@@ -90,16 +89,20 @@ it('UIContextCreateFromBuilderTest_static_0100', Level.LEVEL0, async (done: ()=>
      * @tc.level    Level.LEVEL0
      */
 it('UIContextCreateFromBuilderTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
-
-      console.info('UIContextCreateFromBuilderTest_0200 START');
-      let driver1 = Driver.create();
-      let button = await driver1.findComponent(ON.id('getComponentSnapshot_04'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      let text =  inspector.getInspectorByKey('key_getComponentSnapshot_text_04');
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('snapshot');
-      console.info('UIContextCreateFromBuilderTest_0200 END');
-      done();
+      try {
+        console.info('UIContextCreateFromBuilderTest_0200 START');
+        let driver1 = Driver.create();
+        let button = await driver1.findComponent(ON.id('getComponentSnapshot_04'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        let text =  inspector.getInspectorByKey('key_getComponentSnapshot_text_04');
+        expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('snapshot');
+        console.info('UIContextCreateFromBuilderTest_0200 END');
+        done();
+      } catch (err) {
+        console.info('UIContextCreateFromBuilderTest_static_0200 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

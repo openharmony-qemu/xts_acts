@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,30 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function FocusScopePriority8() {
   describe('FocusScopePriority8', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("FocusScopePriority8 beforeEach start");
       let options: router.RouterOptions = {
@@ -58,7 +44,11 @@ export default function FocusScopePriority8() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("FocusScopePriority8 after each called");
     });
 
@@ -70,40 +60,88 @@ export default function FocusScopePriority8() {
      */
     it('FocusScopePriority8_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[FocusScopePriority8_static_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btn2_8 = await (driver.findComponent(ON.id('FocusScopePriority8_btn2_8')) as Promise<Component>);
       let btn2_8_isFocusedValue = await btn2_8.isFocused()
@@ -111,7 +149,11 @@ export default function FocusScopePriority8() {
       console.info('[FocusScopePriority8_static_0100] btn2_8 isFocused');
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btn3_8 = await (driver.findComponent(ON.id('FocusScopePriority8_btn3_8')) as Promise<Component>);
       let btn3_8_isFocusedValue = await btn3_8.isFocused()
@@ -119,49 +161,109 @@ export default function FocusScopePriority8() {
       console.info('[FocusScopePriority8_static_0100] btn3_8 isFocused');
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btn1_8 = await (driver.findComponent(ON.id('FocusScopePriority8_btn1_8')) as Promise<Component>);
       let btn1_8_isFocusedValue = await btn1_8.isFocused()
@@ -169,14 +271,22 @@ export default function FocusScopePriority8() {
       console.info('[FocusScopePriority8_static_0100] btn1_8 isFocused');
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btn2_8_isFocusedValue2 = await btn2_8.isFocused()
       expect(btn2_8_isFocusedValue2).assertEqual(true);
       console.info('[FocusScopePriority8_static_0100] btn2_8 isFocused 2');
 
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btn3_8_isFocusedValue2 = await btn3_8.isFocused()
       expect(btn3_8_isFocusedValue2).assertEqual(true);
@@ -185,7 +295,11 @@ export default function FocusScopePriority8() {
       let scrollBar = await (driver.findComponent(ON.id('FocusScopePriority8_scroll')) as Promise<Component>);
       let clearFocus = await (scrollBar.scrollSearch(ON.id('FocusScopePriority8_clearFocus')) as Promise<Component>);
       await clearFocus.click()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[FocusScopePriority8_static_0100] clearFocus click');
 
       console.info('[FocusScopePriority8_static_0100] END');
@@ -193,4 +307,3 @@ export default function FocusScopePriority8() {
     });
   })
 }
-

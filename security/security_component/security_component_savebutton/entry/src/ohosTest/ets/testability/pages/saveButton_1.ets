@@ -88,7 +88,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave2")
+              .id("keySave2")
           }
           .visibility(this.isShow === 0 ? Visibility.Visible : Visibility.None)
 
@@ -128,7 +128,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave3")
+              .id("keySave3")
           }
           .visibility(this.isShow === 1 ? Visibility.Visible : Visibility.None)
 
@@ -168,7 +168,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave4")
+              .id("keySave4")
           }
           .visibility(this.isShow === 2 ? Visibility.Visible : Visibility.None)
 
@@ -208,7 +208,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave5")
+              .id("keySave5")
           }
           .visibility(this.isShow === 3 ? Visibility.Visible : Visibility.None)
 
@@ -248,7 +248,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave6")
+              .id("keySave6")
           }
           .visibility(this.isShow === 4 ? Visibility.Visible : Visibility.None)
 
@@ -288,7 +288,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave7")
+              .id("keySave7")
           }
           .visibility(this.isShow === 5 ? Visibility.Visible : Visibility.None)
 
@@ -328,7 +328,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave8")
+              .id("keySave8")
           }
           .visibility(this.isShow === 6 ? Visibility.Visible : Visibility.None)
 
@@ -368,7 +368,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave9")
+              .id("keySave9")
           }
           .visibility(this.isShow === 7 ? Visibility.Visible : Visibility.None)
 
@@ -408,7 +408,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave15")
+              .id("keySave15")
           }
           .visibility(this.isShow === 8 ? Visibility.Visible : Visibility.None)
 
@@ -448,7 +448,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave16")
+              .id("keySave16")
           }
           .visibility(this.isShow === 9 ? Visibility.Visible : Visibility.None)
 
@@ -488,7 +488,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave17")
+              .id("keySave17")
           }
           .visibility(this.isShow === 10 ? Visibility.Visible : Visibility.None)
 
@@ -528,7 +528,7 @@ struct saveButton_1 {
               .borderRadius(this.borderRad)
               .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
               .textIconSpace(this.middle)
-              .key("keySave18")
+              .id("keySave18")
           }
           .visibility(this.isShow === 11 ? Visibility.Visible : Visibility.None)
 

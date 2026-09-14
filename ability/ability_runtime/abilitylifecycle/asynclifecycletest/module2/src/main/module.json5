@@ -16,7 +16,7 @@
   "module": {
     "name": "module2",
     "type": "feature",
-    "srcEntry": "./ets/Application/MyAbilityStage.ts",
+    "srcEntry": "./ets/Application/MyAbilityStage.ets",
     "description": "$string:module2_desc",
     "mainElement": "MainAbility",
     "deviceTypes": [],
@@ -26,7 +26,7 @@
     "abilities": [
       {
         "name": "MainAbility",
-        "srcEntry": "./ets/MainAbility/MainAbility.ts",
+        "srcEntry": "./ets/MainAbility/MainAbility.ets",
         "description": "$string:MainAbility_desc",
         "icon": "$media:icon",
         "label": "$string:MainAbility_label",

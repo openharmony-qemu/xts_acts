@@ -36,6 +36,7 @@
         "MainAbility/pages/AllowDrop/AllowDropNullAndUndefined",
         "MainAbility/pages/DragEvent/setDataNullAndUndefined",
         "MainAbility/pages/DragEvent/startDataLoadingNullAndUndefined",
-        "MainAbility/pages/DragEvent/setDataLoadParamsNullAndUndefined"
+        "MainAbility/pages/DragEvent/setDataLoadParamsNullAndUndefined",
+        "MainAbility/pages/DragController/DragControllerNullAndUndefined"
     ]
 }

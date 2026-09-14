@@ -1095,5 +1095,109 @@ export default function DeviceInfoTest() {
       done();
       console.info('deviceinfo_test_static_4500 : end');
     })
+
+    /**
+     * @tc.name   deviceinfo_test_static_4600
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4600
+     * @tc.desc   Get the sdkMinorApiVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_4600 start');
+      let sdkMinorApiVersionInfo = deviceinfo.sdkMinorApiVersion;
+      console.info('the value of the sdkMinorApiVersion is :' + sdkMinorApiVersionInfo);
+
+      expect(sdkMinorApiVersionInfo).assertInstanceOf('int');
+      expect(sdkMinorApiVersionInfo >= 0).assertTrue();
+      done();
+
+      console.info('deviceinfo_test_static_4600 : end');
+    })
+
+    /**
+     * @tc.name   deviceinfo_test_static_4700
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4700
+     * @tc.desc   Get the sdkPatchApiVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_4700 start');
+      let sdkPatchApiVersionInfo = deviceinfo.sdkPatchApiVersion;
+      console.info('the value of the sdkPatchApiVersion is :' + sdkPatchApiVersionInfo);
+
+      expect(sdkPatchApiVersionInfo).assertInstanceOf('int');
+      expect(sdkPatchApiVersionInfo >= 0).assertTrue();
+      done();
+
+      console.info('deviceinfo_test_static_4700 : end');
+    })
+
+
+    /**
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4800
+     * @tc.name deviceApiAvailable_test_static_4800
+     * @tc.desc Test apiAvailable
+     */
+    it('deviceApiAvailable_test_static_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "deviceApiAvailable_test_static_4800"
+      console.info(`${caseName} START`);
+
+      const originMajor = deviceinfo.sdkApiVersion;
+
+      console.info('apiAvailable, origin major:' + originMajor);
+
+      console.info('--- 校验：传入数字类型的非法数值 ---');
+      let negtiveValue = -1;
+      let result = deviceinfo.apiAvailable(negtiveValue); // major负数
+      expect(result).assertEqual(false);
+
+      let zeroValue = 0;
+      result = deviceinfo.apiAvailable(zeroValue); // major传0
+      expect(result).assertEqual(false);
+
+      let oneHundred = 100;
+      result = deviceinfo.apiAvailable(oneHundred); // major超大数
+      expect(result).assertEqual(false);
+
+      /************************ 第二部分：合法传参-版本相等 ************************/
+      // 大于26的版本号，转换为字符串类型，传入apiAvailable中
+
+      if (originMajor >= 26) {
+        console.info('apiAvailable, originMajor :' + originMajor);
+        // 验证传参等于系统版本时（且版本号为合法版本）返回1
+        result = deviceinfo.apiAvailable(originMajor + ".0.0");
+        expect(result).assertEqual(true);
+
+        // 验证传参小于系统版本时（且版本号为合法版本）返回1
+        if ((originMajor - 1) >= 26) {
+          result = deviceinfo.apiAvailable((originMajor - 1) + ".0.0");
+          expect(result).assertEqual(true);
+        }
+
+        // 验证传参大于系统版本时（且版本号为合法版本）返回0
+        result = deviceinfo.apiAvailable((originMajor + 1) + ".0.0");
+        expect(result).assertEqual(false);
+      } else {
+        console.info('--- 校验：合法传参，版本号等于系统版本 ---');
+        result = deviceinfo.apiAvailable(originMajor);
+        expect(result).assertEqual(true);
+        // 验证传参小于系统版本时（且版本号为合法版本）返回1
+        if(originMajor - 1 > 0) {
+          result = deviceinfo.apiAvailable(originMajor - 1);
+          expect(result).assertEqual(true);
+        }
+        // 验证传参大于系统版本时（且版本号为合法版本）返回0
+        if(originMajor + 1 < 26) {
+          result = deviceinfo.apiAvailable(originMajor + 1);
+          expect(result).assertEqual(false);
+        }
+      }
+      console.info(`${caseName} END`);
+      done();
+    });
   })
 }

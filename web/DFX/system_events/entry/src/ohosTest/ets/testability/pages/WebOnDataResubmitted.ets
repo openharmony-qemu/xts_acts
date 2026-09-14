@@ -15,6 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
+import { XtsTestServer } from 'library';
 import Utils from '../../test/Utils.test';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
@@ -28,6 +29,7 @@ const driver = Driver.create();
 @Component
 struct WebOnDataResubmitted {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = '';
   @State onDataResubmittedCalled: boolean = false;
   @State resend: boolean = true;
@@ -48,6 +50,14 @@ struct WebOnDataResubmitted {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    try {
+      this.controller.loadUrl(this.mServer.getShutdownUrl());
+    } catch (_e) {
+      // page teardown: controller may already be unbound (17100001)
+    }
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -76,7 +86,7 @@ struct WebOnDataResubmitted {
         });
 
         Button('web click').key('WebOnDataResubmittedTestButton').onClick(async () => {
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
           console.info('key==>' + this.str)
           this.isReceive = -1;
@@ -87,7 +97,7 @@ struct WebOnDataResubmitted {
                 this.isPageEnd =-1;
                 this.isOnDataResubmittedEnd =-1;
                 Utils.waitAndClickComponent(driver, 'WebOnDataResubmittedTestWebView', 'this.str');
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.isOnDataResubmittedEnd =-1;
                 this.controller.refresh();
                 await Utils.waitForExist(()=>this.isOnDataResubmittedEnd, this.str+' isOnDataResubmittedEnd', 1, 500);
@@ -100,12 +110,12 @@ struct WebOnDataResubmitted {
             case 'emitDataResubmissionHandlerResend': {
               try {
                 this.isPageEnd =-1;
-                this.controller.loadUrl('resource://rawfile/dataSubmit.html');
+                this.controller.loadUrl(this.mServer.getAssetUrl('dataSubmit.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 500);
                 this.title = ''
                 this.isPageEnd =-1;
                 this.controller.runJavaScript('testClick()');
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.isPageEnd = -1;
                 this.controller.refresh();
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 500);
@@ -118,8 +128,8 @@ struct WebOnDataResubmitted {
             case 'emitDataResubmissionHandlerCancel': {
               try {
                 this.isPageEnd =-1;
-                this.controller.loadUrl('resource://rawfile/dataSubmit.html');
-                await Utils.waitForExist(()=>this.isPageEnd, 'isPageEnd', 1, 1000);
+                this.controller.loadUrl(this.mServer.getAssetUrl('dataSubmit.html'));
+                await Utils.waitForExist(()=>this.isPageEnd, 'isPageEnd', 1, 1000, 5);
                 this.title = ''
                 this.resend = false
                 this.isPageEnd =-1;
@@ -138,7 +148,7 @@ struct WebOnDataResubmitted {
         })
       }
 
-      Web({ src: $rawfile('dataSubmit.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('dataSubmit.html'), controller: this.controller })
         .key('WebOnDataResubmittedTestWebView')
         .javaScriptAccess(true)
         .onDataResubmitted((event) => {

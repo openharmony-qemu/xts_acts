@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/Grid/GridIndex"
+    "MainAbility/pages/Grid/GridIndex",
+    "MainAbility/pages/Grid/GridLayoutOptionsUn"
   ]
 }

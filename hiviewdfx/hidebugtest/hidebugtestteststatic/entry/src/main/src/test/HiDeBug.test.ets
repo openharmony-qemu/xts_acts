@@ -313,7 +313,9 @@ export default function HidebugJsTest() {
                 for (let ii = 0; ii < appThreadCpuUsage.length; ii++) {
                     hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_HiDebug_CPU_Js_0200 > threadId =: ${appThreadCpuUsage[ii].threadId}`)
                     hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_HiDebug_CPU_Js_0200 > cpuUsage =: ${appThreadCpuUsage[ii].cpuUsage}`)
+                    hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_HiDebug_CPU_Js_0200 > threadName =: ${appThreadCpuUsage[ii].threadName}`)
                     expect(appThreadCpuUsage[ii].cpuUsage >= 0 && appThreadCpuUsage[ii].cpuUsage <= 100).assertTrue();
+                    expect(typeof appThreadCpuUsage[ii].threadName === 'string').assertTrue();
                 }
                 done()
             } catch (err) {
@@ -759,7 +761,9 @@ export default function HidebugJsTest() {
                 for (let ii = 0; ii < appThreadCpuUsage.length; ii++) {
                     console.info(`DFX_DFR_Hiprofiler_Interface_Static1_2100 > threadId =: ${appThreadCpuUsage[ii].threadId}`)
                     console.info(`DFX_DFR_Hiprofiler_Interface_Static1_2100 > cpuUsage =: ${appThreadCpuUsage[ii].cpuUsage}`)
+                    console.info(`DFX_DFR_Hiprofiler_Interface_Static1_2100 > threadName =: ${appThreadCpuUsage[ii].threadName}`)
                     expect(appThreadCpuUsage[ii].cpuUsage >= 0 && appThreadCpuUsage[ii].cpuUsage <= 100).assertTrue();
+                    expect(typeof appThreadCpuUsage[ii].threadName === 'string').assertTrue();
                 }
                 done();
             } catch (err) {

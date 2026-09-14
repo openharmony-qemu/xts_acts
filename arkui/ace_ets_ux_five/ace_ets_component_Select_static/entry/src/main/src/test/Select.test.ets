@@ -13,35 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  DisplayRotation,
-  Driver,
-  MatchPattern,
-  ON,
-  PointerMatrix,
-  ResizeDirection,
-  UiWindow,
-  WindowMode
-} from '@ohos.UiTest';
-import CommonFunc from '../../ets/MainAbility/common/Common';
-import { Callback, MessageManager } from '../../ets/MainAbility/common/MessageManager';
-import { BusinessError } from '@ohos.base';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { startAbility, stopApplication, UtilsTest } from './Util.test'
 
 export default function SelectTest() {
   describe('SelectTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("SelectTest beforeEach start");
-      await UtilsTest.startAbility("com.example.Select.static", "EntryAbility");
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {

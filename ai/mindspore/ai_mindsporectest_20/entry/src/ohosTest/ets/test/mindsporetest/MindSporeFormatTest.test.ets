@@ -35,13 +35,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_001 start====");
+          console.info('====>testformattest_001 start====');
           let result: number = mindsporendk.FormatTest_001();
           console.info(`====>testformattest_001 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_001 err: " + err);
+          console.error('====>testformattest_001 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -58,13 +58,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_002 start====");
+          console.info('====>testformattest_002 start====');
           let result: number = mindsporendk.FormatTest_002();
           console.info(`====>testformattest_002 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_002 err: " + err);
+          console.error('====>testformattest_002 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -81,13 +81,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_003 start====");
+          console.info('====>testformattest_003 start====');
           let result: number = mindsporendk.FormatTest_003();
           console.info(`====>testformattest_003 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_003 err: " + err);
+          console.error('====>testformattest_003 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -104,13 +104,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_004 start====");
+          console.info('====>testformattest_004 start====');
           let result: number = mindsporendk.FormatTest_004();
           console.info(`====>testformattest_004 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_004 err: " + err);
+          console.error('====>testformattest_004 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -127,13 +127,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_005 start====");
+          console.info('====>testformattest_005 start====');
           let result: number = mindsporendk.FormatTest_005();
           console.info(`====>testformattest_005 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_005 err: " + err);
+          console.error('====>testformattest_005 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -150,13 +150,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_006 start====");
+          console.info('====>testformattest_006 start====');
           let result: number = mindsporendk.FormatTest_006();
           console.info(`====>testformattest_006 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_006 err: " + err);
+          console.error('====>testformattest_006 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -173,13 +173,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_007 start====");
+          console.info('====>testformattest_007 start====');
           let result: number = mindsporendk.FormatTest_007();
           console.info(`====>testformattest_007 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_007 err: " + err);
+          console.error('====>testformattest_007 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -196,13 +196,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_008 start====");
+          console.info('====>testformattest_008 start====');
           let result: number = mindsporendk.FormatTest_008();
           console.info(`====>testformattest_008 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_008 err: " + err);
+          console.error('====>testformattest_008 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -219,13 +219,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_009 start====");
+          console.info('====>testformattest_009 start====');
           let result: number = mindsporendk.FormatTest_009();
           console.info(`====>testformattest_009 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_009 err: " + err);
+          console.error('====>testformattest_009 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -242,13 +242,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_010 start====");
+          console.info('====>testformattest_010 start====');
           let result: number = mindsporendk.FormatTest_010();
           console.info(`====>testformattest_010 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_010 err: " + err);
+          console.error('====>testformattest_010 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -265,13 +265,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_011 start====");
+          console.info('====>testformattest_011 start====');
           let result: number = mindsporendk.FormatTest_011();
           console.info(`====>testformattest_011 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_011 err: " + err);
+          console.error('====>testformattest_011 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -288,13 +288,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_012 start====");
+          console.info('====>testformattest_012 start====');
           let result: number = mindsporendk.FormatTest_012();
           console.info(`====>testformattest_012 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_012 err: " + err);
+          console.error('====>testformattest_012 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -311,13 +311,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_013 start====");
+          console.info('====>testformattest_013 start====');
           let result: number = mindsporendk.FormatTest_013();
           console.info(`====>testformattest_013 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_013 err: " + err);
+          console.error('====>testformattest_013 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -334,13 +334,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_014 start====");
+          console.info('====>testformattest_014 start====');
           let result: number = mindsporendk.FormatTest_014();
           console.info(`====>testformattest_014 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_014 err: " + err);
+          console.error('====>testformattest_014 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -357,13 +357,13 @@ export default function MindSporeFormatTest() {
     it('testformattest_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testformattest_015 start====");
+          console.info('====>testformattest_015 start====');
           let result: number = mindsporendk.FormatTest_015();
           console.info(`====>testformattest_015 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testformattest_015 err: " + err);
+          console.error('====>testformattest_015 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }

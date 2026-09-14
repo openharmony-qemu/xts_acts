@@ -39,7 +39,7 @@ export default function demoEscapeUtilJsonTest() {
     })
     /**
      * @tc.name   testParseEscape0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_ESCAPE_0100
      * @tc.desc   Test the Utils interface parse with input escape \b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -61,7 +61,7 @@ export default function demoEscapeUtilJsonTest() {
     });
     /**
      * @tc.name   testParseEscape0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_ESCAPE_0200
      * @tc.desc   Test the Utils interface parse with input escape \f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -83,7 +83,7 @@ export default function demoEscapeUtilJsonTest() {
     });
     /**
      * @tc.name   testParseEscape0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_ESCAPE_0300
      * @tc.desc   Test the Utils interface parse with input escape \n.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function demoEscapeUtilJsonTest() {
     });
     /**
      * @tc.name   testParseEscape0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_ESCAPE_0400
      * @tc.desc   Test the Utils interface parse with input escape \r.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function demoEscapeUtilJsonTest() {
     });
     /**
      * @tc.name   testParseEscape0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_ESCAPE_0500
      * @tc.desc   Test the Utils interface parse with input escape \t.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -149,7 +149,7 @@ export default function demoEscapeUtilJsonTest() {
     });
     /**
      * @tc.name   testParseEscape0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_ESCAPE_0600
      * @tc.desc   Test the Utils interface parse with input escape \v.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -171,7 +171,7 @@ export default function demoEscapeUtilJsonTest() {
     });
     /**
      * @tc.name   testParseEscape0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_ESCAPE_0700
      * @tc.desc   Test the Utils interface parse with input escape \x24.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -194,7 +194,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testParseEscape0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_ESCAPE_0800
      * @tc.desc   Test the Utils interface parse with input escape \开.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -216,7 +216,7 @@ export default function demoEscapeUtilJsonTest() {
     });
     /**
      * @tc.name   testParseEscape0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_ESCAPE_0900
      * @tc.desc   Test the Utils interface parse with input escape \开.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -238,7 +238,7 @@ export default function demoEscapeUtilJsonTest() {
     });
     /**
      * @tc.name   testParseEscape0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_ESCAPE_1000
      * @tc.desc   Test the Utils interface parse with input escape \0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -260,7 +260,7 @@ export default function demoEscapeUtilJsonTest() {
     });
     /**
      * @tc.name   testParseEscape0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_ESCAPE_1100
      * @tc.desc   Test the Utils interface parse with input escape \b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -282,7 +282,7 @@ export default function demoEscapeUtilJsonTest() {
     });
     /**
      * @tc.name   testUtilJsonHasEscape0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_ESCAPE_1200
      * @tc.desc   Test the function of the Interface escape  \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -303,7 +303,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEscape0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_EMOJI_1300
      * @tc.desc   Test the function of the Interface escape  \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -324,7 +324,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_ESCAPE_1400
      * @tc.desc   Test the function of the Interface escape  \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -345,7 +345,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEscape0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_ESCAPE_1500
      * @tc.desc   Test the function of the Interface escape  \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -366,7 +366,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEscape0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_ESCAPE_1600
      * @tc.desc   Test the function of the Interface escape  \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -387,7 +387,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEscape0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_ESCAPE_1700
      * @tc.desc   Test the function of the Interface escape  \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -408,7 +408,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEscape0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_ESCAPE_1800
      * @tc.desc   Test the function of the Interface escape  \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -429,7 +429,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEscape0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_ESCAPE_1900
      * @tc.desc   Test the function of the Interface escape  \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -450,7 +450,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEscape0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_ESCAPE_2000
      * @tc.desc   Test the function of the Interface escape  \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -471,7 +471,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEscape0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_ESCAPE_2100
      * @tc.desc   Test the function of the Interface escape  \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -492,7 +492,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonHasEscape0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONHAS_ESCAPE_2200
      * @tc.desc   Test the function of the Interface escape  \\b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -512,7 +512,7 @@ export default function demoEscapeUtilJsonTest() {
     });
     /**
      * @tc.name   testUtilJsonRemoveEscape0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_ESCAPE_2300
      * @tc.desc   Test the function of the Interface escape  \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -556,7 +556,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_ESCAPE_2500
      * @tc.desc   Test the function of the Interface escape  \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -578,7 +578,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEscape0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_ESCAPE_2600
      * @tc.desc   Test the function of the Interface escape  \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -600,7 +600,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEscape0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_ESCAPE_2700
      * @tc.desc   Test the function of the Interface escape  \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -622,7 +622,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEscape0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_ESCAPE_2800
      * @tc.desc   Test the function of the Interface escape  \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -644,7 +644,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEscape0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_ESCAPE_2900
      * @tc.desc   Test the function of the Interface escape  \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -666,7 +666,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEscape0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_ESCAPE_3000
      * @tc.desc   Test the function of the Interface escape  \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -688,7 +688,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEscape0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_ESCAPE_3100
      * @tc.desc   Test the function of the Interface escape  \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -710,7 +710,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEscape0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_ESCAPE_3200
      * @tc.desc   Test the function of the Interface escape  \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -732,7 +732,7 @@ export default function demoEscapeUtilJsonTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveEscape0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSONREMOVE_ESCAPE_3300
      * @tc.desc   Test the function of the Interface escape  \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

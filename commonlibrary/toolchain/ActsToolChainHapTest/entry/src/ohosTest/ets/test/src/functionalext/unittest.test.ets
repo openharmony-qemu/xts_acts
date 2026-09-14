@@ -30,7 +30,7 @@ export default function FunctionalextUnittestTestGroupTest() {
       "unittest_fatal_message_assert_fail",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest(
+        const result: number = await testNapi.runTest(
           "unittest_fatal_message_assert_fail",
         );
         expect(result).assertEqual(0);
@@ -50,7 +50,7 @@ export default function FunctionalextUnittestTestGroupTest() {
       "unittest_fatal_message",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest(
+        const result: number = await testNapi.runTest(
           "unittest_fatal_message",
         );
         expect(result).assertEqual(0);
@@ -70,7 +70,7 @@ export default function FunctionalextUnittestTestGroupTest() {
       "unittest_fatal_message_assert_fail_dialog",
       Level.LEVEL1,
       async (done: Function) => {
-        const result = await testNapi.runTest(
+        const result: number = await testNapi.runTest(
           "unittest_fatal_message_assert_fail_dialog",
         );
         expect(result).assertEqual(0);

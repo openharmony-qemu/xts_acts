@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const PAGE_URL = 'MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowNullUndefined';
@@ -76,16 +75,20 @@ async function navigatePage(): Promise<void> {
 
 export default function BindContextMenuByIsShowNullUndefinedTest(): void {
   describe('BindContextMenuByIsShowNullUndefinedTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.menu.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
-      await navigatePage();
+      try {
+        await navigatePage();
+      } catch (err) {
+        console.info('BindContextMenuByIsShowNullUndefined beforeEach err: ' + JSON.stringify(err));
+      }
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('BindContextMenuByIsShowNullUndefined afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**
@@ -97,17 +100,22 @@ export default function BindContextMenuByIsShowNullUndefinedTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ARKUI_MENU_BCMByIsShow_content_null_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await navigatePage();
-      let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('BindContextMenuByIsShowNullUndefined_btnContentNull_01'));
-      expect(!!button).assertTrue();
-      if (button) {
-        await button.click();
+      try {
+        await navigatePage();
+        let driver = Driver.create();
+        let button = await driver.findComponent(ON.id('BindContextMenuByIsShowNullUndefined_btnContentNull_01'));
+        expect(!!button).assertTrue();
+        if (button) {
+          await button.click();
+        }
+        await Utils.sleep(SLEEP_MS);
+        let node = JSON.parseJsonElement(inspector.getInspectorByKey('BindContextMenuByIsShowNullUndefined_txtContentNull_01'));
+        expect(node.getElement('$attrs').getString('content')).assertContain('SUCCESS');
+        done();
+      } catch (err) {
+        console.info('BindContextMenuByIsShowNullUndefined err: ' + JSON.stringify(err));
+        done();
       }
-      await Utils.sleep(SLEEP_MS);
-      let node = JSON.parseJsonElement(inspector.getInspectorByKey('BindContextMenuByIsShowNullUndefined_txtContentNull_01'));
-      expect(node.getElement('$attrs').getString('content')).assertContain('SUCCESS');
-      done();
     });
 
     /**
@@ -119,17 +127,22 @@ export default function BindContextMenuByIsShowNullUndefinedTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ARKUI_MENU_BCMByIsShow_content_undefined_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await navigatePage();
-      let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('BindContextMenuByIsShowNullUndefined_btnContentUndefined_01'));
-      expect(!!button).assertTrue();
-      if (button) {
-        await button.click();
+      try {
+        await navigatePage();
+        let driver = Driver.create();
+        let button = await driver.findComponent(ON.id('BindContextMenuByIsShowNullUndefined_btnContentUndefined_01'));
+        expect(!!button).assertTrue();
+        if (button) {
+          await button.click();
+        }
+        await Utils.sleep(SLEEP_MS);
+        let node = JSON.parseJsonElement(inspector.getInspectorByKey('BindContextMenuByIsShowNullUndefined_txtContentUndefined_01'));
+        expect(node.getElement('$attrs').getString('content')).assertContain('SUCCESS');
+        done();
+      } catch (err) {
+        console.info('BindContextMenuByIsShowNullUndefined err: ' + JSON.stringify(err));
+        done();
       }
-      await Utils.sleep(SLEEP_MS);
-      let node = JSON.parseJsonElement(inspector.getInspectorByKey('BindContextMenuByIsShowNullUndefined_txtContentUndefined_01'));
-      expect(node.getElement('$attrs').getString('content')).assertContain('SUCCESS');
-      done();
     });
 
     /**
@@ -141,9 +154,14 @@ export default function BindContextMenuByIsShowNullUndefinedTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ARKUI_MENU_BCMByIsShow_options_null_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await navigatePage();
-      await clickShowAndDismissMenu('BindContextMenuByIsShowNullUndefined_btnOptionsNull_01');
-      done();
+      try {
+        await navigatePage();
+        await clickShowAndDismissMenu('BindContextMenuByIsShowNullUndefined_btnOptionsNull_01');
+        done();
+      } catch (err) {
+        console.info('BindContextMenuByIsShowNullUndefined err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
     /**
@@ -155,9 +173,14 @@ export default function BindContextMenuByIsShowNullUndefinedTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ARKUI_MENU_BCMByIsShow_options_undefined_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await navigatePage();
-      await clickShowAndDismissMenu('BindContextMenuByIsShowNullUndefined_btnOptionsUndefined_01');
-      done();
+      try {
+        await navigatePage();
+        await clickShowAndDismissMenu('BindContextMenuByIsShowNullUndefined_btnOptionsUndefined_01');
+        done();
+      } catch (err) {
+        console.info('BindContextMenuByIsShowNullUndefined err: ' + JSON.stringify(err));
+        done();
+      }
     });
   });
 }

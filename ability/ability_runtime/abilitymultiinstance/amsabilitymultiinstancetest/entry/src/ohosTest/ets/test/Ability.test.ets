@@ -16,7 +16,7 @@
 import commonEventManager from '@ohos.commonEventManager';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
-import commonEvent from '@ohos.commonEvent';
+import commonEvent from '@ohos.commonEventManager';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import { BusinessError } from '@ohos.base';
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'

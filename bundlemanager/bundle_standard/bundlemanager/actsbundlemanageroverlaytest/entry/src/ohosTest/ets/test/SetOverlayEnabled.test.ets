@@ -389,6 +389,5 @@ export default function setOverlayEnabled() {
       done();
     })
 
-
   })
 }

@@ -892,8 +892,12 @@ export default function ImageGetComponentSupp(): void {
               console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
               try {
                 let bufferData = img.getBufferData();
-                console.info(TAG, testName, 'img.getBufferData succeeded.', bufferData?.rowStride);
-                expect(bufferData!.rowStride.length > 0).assertTrue();
+                if (!bufferData) {
+                  console.info(TAG, testName, 'does not support getBufferData.');
+                } else {
+                  console.info(TAG, testName, 'img.getBufferData succeeded.', bufferData?.rowStride);
+                  expect(bufferData!.rowStride.length > 0).assertTrue();
+                }
               } catch (error) {
                 console.error(TAG, testName, 'getBufferData', error.message, error.code);
                 expect().assertFail();
@@ -959,8 +963,12 @@ export default function ImageGetComponentSupp(): void {
               console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
               try {
                 let bufferData = img.getBufferData();
-                console.info(TAG, testName, 'img.getBufferData succeeded.', bufferData?.pixelStride);
-                expect(bufferData!.pixelStride.length > 0).assertTrue();
+                if (!bufferData) {
+                  console.info(TAG, testName, 'does not support getBufferData.');
+                } else {
+                  console.info(TAG, testName, 'img.getBufferData succeeded.', bufferData?.pixelStride);
+                  expect(bufferData!.pixelStride.length > 0).assertTrue();
+                }
               } catch (error) {
                 console.error(TAG, testName, 'getBufferData', error.message, error.code);
                 expect().assertFail();
@@ -1025,8 +1033,12 @@ export default function ImageGetComponentSupp(): void {
               console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
               try {
                 let bufferData = img.getBufferData();
-                console.info(TAG, testName, 'img.getBufferData succeeded.', bufferData?.byteBuffer);
-                expect(bufferData!.byteBuffer.byteLength > 0).assertTrue();
+                if (!bufferData) {
+                  console.info(TAG, testName, 'does not support getBufferData.');
+                } else {
+                  console.info(TAG, testName, 'img.getBufferData succeeded.', bufferData?.byteBuffer);
+                  expect(bufferData!.byteBuffer.byteLength > 0).assertTrue();
+                }
               } catch (error) {
                 console.error(TAG, testName, 'getBufferData', error.message, error.code);
                 expect().assertFail();

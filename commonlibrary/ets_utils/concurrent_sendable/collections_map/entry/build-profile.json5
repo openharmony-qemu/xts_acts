@@ -16,7 +16,15 @@
   "apiType": 'stageMode',
   "buildOption": {
     "sourceOption": {
-      "workers": []
+      "workers": [
+        "./src/ohosTest/ets/test/CollectionsMapWorker.ets",
+        "./src/ohosTest/ets/test/workers/MapContainsValueWorker.ets",
+        "./src/ohosTest/ets/test/workers/MapPutAllBuiltinWorker.ets",
+        "./src/ohosTest/ets/test/workers/MapPutAllWorker.ets",
+        "./src/ohosTest/ets/test/workers/MapPutWorker.ets",
+        "./src/ohosTest/ets/test/workers/MapRemoveWorker.ets"
+
+      ]
     }
   },
   "targets": [

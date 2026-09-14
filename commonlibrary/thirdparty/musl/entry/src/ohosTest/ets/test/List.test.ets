@@ -39,6 +39,7 @@ import muslFtwTest from './FtwNdk.test';
 import muslGetoptNdkTest from './GetoptNdk.test';
 import muslGlobdNdkTest from './GlobNdk.test';
 import muslIconvNdkTest from './IconvNdk.test';
+import big5LocaleTest from './Big5LocaleNdk.test';
 import muslIfAddSNdkTest from './IfaddrsNdk.test';
 import muslIfNdkTest from './IfNdk.test';
 import muslInetNdkTest from './InetNdk.test';
@@ -181,6 +182,7 @@ export default function testsuite() {
   muslGetoptNdkTest();
   muslGlobdNdkTest();
   muslIconvNdkTest();
+  big5LocaleTest();
   muslIfAddSNdkTest();
   muslIfNdkTest();
   muslIpcTest();

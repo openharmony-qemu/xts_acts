@@ -13,31 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function AddMonitorObservedV2Int(): void {
   describe('AddMonitorObservedV2Int', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("AddMonitorObservedV2Int beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.StateMgmtV2.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("AddMonitorObservedV2Int beforeEach start");
@@ -74,26 +59,30 @@ export default function AddMonitorObservedV2Int(): void {
     it('AddMonitorObservedV2Int_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorObservedV2Int_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('ObservedButton')) as Component;
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew = inspector.getInspectorByKey('ObservedText');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] age has changed from 10 to 11');
-      let btn_true1 = await driver.findComponent(ON.id('ObservedClear')) as Component;
-      await btn_true1.click();
-      await CommonFunc.sleep(1000);
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew1 = inspector.getInspectorByKey('ObservedText');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] age has changed from 10 to 11');
-
+      try{
+        let driver = await Driver.create();
+        let btn_true = await driver.findComponent(ON.id('ObservedButton'));
+        await (btn_true?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJsonNew = inspector.getInspectorByKey('ObservedText');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] age has changed from 10 to 11');
+        let btn_true1 = await driver.findComponent(ON.id('ObservedClear'));
+        await (btn_true1?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        await (btn_true?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJsonNew1 = inspector.getInspectorByKey('ObservedText');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] age has changed from 10 to 11');
+      } catch (err) {
+        console.error('AddMonitorObservedV2Int_static_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });

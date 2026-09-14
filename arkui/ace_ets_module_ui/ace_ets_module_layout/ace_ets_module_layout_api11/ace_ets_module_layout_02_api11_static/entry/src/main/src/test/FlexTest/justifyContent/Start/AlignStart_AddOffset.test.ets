@@ -14,33 +14,19 @@
  * limitations under the License.
  */
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '../../../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, afterEach } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
 import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
 import { Position } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function AlignStart_AddOffset() {
   describe('AlignStart_AddOffset', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("AlignStart_AddOffset beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("AlignStart_AddOffset beforeEach start");
@@ -65,7 +51,11 @@ export default function AlignStart_AddOffset() {
 
 
     afterEach(async () : Promise<void> => {
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('AlignStart_AddOffset sleep err: ' + JSON.stringify(err));
+      }
       console.info("AlignStart_AddOffset after each called");
     });
 
@@ -87,7 +77,11 @@ it('testFlexAlignStartTextOffset_static', Level.LEVEL0, async () : Promise<void>
           }
         });
       }
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('AlignStart_AddOffset sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Start_AddOffset_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Flex');

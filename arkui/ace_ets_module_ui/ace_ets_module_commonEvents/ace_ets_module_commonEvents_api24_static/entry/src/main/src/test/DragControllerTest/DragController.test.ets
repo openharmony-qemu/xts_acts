@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, Level, beforeEach } from '../../../../hypium/index';
 import dragController from '@ohos.arkui.dragController';
 import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 import router from '@ohos.router';
@@ -24,7 +24,6 @@ import {
   DragSpringLoadingTestBridge,
   SpringLoadingContextForBridge,
 } from '../../../ets/MainAbility/common/DragSpringLoadingTestBridge';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
@@ -59,10 +58,6 @@ function springLoadingBeginContextForContractTest(): SpringLoadingContextForBrid
 
 export default function DragControllerTest(): void {
   describe('DragControllerTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('DragControllerTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.commonEvents.api24.static', 'EntryAbility');
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info('DragControllerTest beforeEach start');

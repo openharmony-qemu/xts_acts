@@ -14988,6 +14988,7 @@ export default function audioRendererTest() {
                 console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
                 console.info(`Volume level: ${volumeEvent.volume} `);
                 console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
+                audioVolumeManager.off('appVolumeChange');
               };
               audioVolumeManager.on('appVolumeChange', appVolumeChangeCallback);
               audioVolumeManager.setAppVolumePercentage(20).then(() => {

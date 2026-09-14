@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON, Component } from '@kit.TestKit';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { DialogDisplayMode } from '@ohos.arkui.component';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 const PAGE_URL = 'MainAbility/pages/dialogSystemMaterial/BaseDialogOptionsDisplayModeInSubWindow';
@@ -48,16 +47,21 @@ async function navigatePage(): Promise<void> {
 
 export default function BaseDialogOptionsDisplayModeInSubWindowTest(): void {
   describe('BaseDialogOptionsDisplayModeInSubWindowTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.popup.static', 'EntryAbility');
-    });
 
     beforeEach(async (): Promise<void> => {
-      await navigatePage();
+       try {
+         await navigatePage();
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(SLEEP_TIME);
+       try {
+         await Utils.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('sleep err: ' + JSON.stringify(err));
+       }
     });
 
     /**
@@ -102,20 +106,60 @@ export default function BaseDialogOptionsDisplayModeInSubWindowTest(): void {
       async (done: () => void): Promise<void> => {
         console.info('BaseDialogOptionsDisplayModeInSubWindow_Menu_0300 START');
         const driver = Driver.create();
-        await CommonFunc.sleep(SLEEP_TIME);
-        await clickById(driver, 'trueBtn');
-        await CommonFunc.sleep(SLEEP_TIME);
-        await clickByText(driver, '弹窗SCREEN_BASED');
-        await CommonFunc.sleep(SLEEP_TIME);
+         try {
+           await CommonFunc.sleep(SLEEP_TIME);
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await clickById(driver, 'trueBtn');
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await CommonFunc.sleep(SLEEP_TIME);
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await clickByText(driver, '弹窗SCREEN_BASED');
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await CommonFunc.sleep(SLEEP_TIME);
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
         let confirmBtn = await driver.findComponent(ON.text('确认'));
         expect(!!confirmBtn).assertEqual(true);
-        await clickByText(driver, '确认');
-        await CommonFunc.sleep(SLEEP_TIME);
-        await clickByText(driver, '弹窗WINDOW_BASED');
-        await CommonFunc.sleep(SLEEP_TIME);
+         try {
+           await clickByText(driver, '确认');
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await CommonFunc.sleep(SLEEP_TIME);
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await clickByText(driver, '弹窗WINDOW_BASED');
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await CommonFunc.sleep(SLEEP_TIME);
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
         confirmBtn = await driver.findComponent(ON.text('确认'));
         expect(!!confirmBtn).assertEqual(true);
-        await clickByText(driver, '确认');
+         try {
+           await clickByText(driver, '确认');
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
         done();
       });
 
@@ -131,20 +175,60 @@ export default function BaseDialogOptionsDisplayModeInSubWindowTest(): void {
       async (done: () => void): Promise<void> => {
         console.info('BaseDialogOptionsDisplayModeInSubWindow_Menu_0400 START');
         const driver = Driver.create();
-        await CommonFunc.sleep(SLEEP_TIME);
-        await clickById(driver, 'falseBtn');
-        await CommonFunc.sleep(SLEEP_TIME);
-        await clickByText(driver, '弹窗SCREEN_BASED');
-        await CommonFunc.sleep(SLEEP_TIME);
+         try {
+           await CommonFunc.sleep(SLEEP_TIME);
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await clickById(driver, 'falseBtn');
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await CommonFunc.sleep(SLEEP_TIME);
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await clickByText(driver, '弹窗SCREEN_BASED');
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await CommonFunc.sleep(SLEEP_TIME);
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
         let confirmBtn = await driver.findComponent(ON.text('确认'));
         expect(!!confirmBtn).assertEqual(true);
-        await clickByText(driver, '确认');
-        await CommonFunc.sleep(SLEEP_TIME);
-        await clickByText(driver, '弹窗WINDOW_BASED');
-        await CommonFunc.sleep(SLEEP_TIME);
+         try {
+           await clickByText(driver, '确认');
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await CommonFunc.sleep(SLEEP_TIME);
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await clickByText(driver, '弹窗WINDOW_BASED');
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
+         try {
+           await CommonFunc.sleep(SLEEP_TIME);
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
         confirmBtn = await driver.findComponent(ON.text('确认'));
         expect(!!confirmBtn).assertEqual(true);
-        await clickByText(driver, '确认');
+         try {
+           await clickByText(driver, '确认');
+         } catch (err) {
+           console.info('await err: ' + JSON.stringify(err));
+         }
         done();
       });
   });

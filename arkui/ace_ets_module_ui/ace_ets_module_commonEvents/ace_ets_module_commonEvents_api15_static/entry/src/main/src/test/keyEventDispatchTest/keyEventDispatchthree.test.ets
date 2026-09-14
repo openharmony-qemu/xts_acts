@@ -15,7 +15,7 @@
  */
 
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, Component, PointerMatrix, MouseButton } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -23,23 +23,9 @@ import RectValue from '../../../ets/MainAbility/common/Rect';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function keyEventDispatchTest3() {
   describe('keyEventDispatchTest3', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("keyEventDispatchTest3 beforeEach start");
       let options: router.RouterOptions = {

@@ -18,6 +18,14 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 import webview from '@ohos.web.webview';
 import { BusinessError } from '@ohos.base';
 
+/**
+ * Compare whether two values are equal. Convert both sides to number first
+ * and then compare strictly, to tolerate inconsistent types of error.code.
+ */
+function isEqual(a: number, b: number): boolean {
+  return Number(a) === Number(b);
+}
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 const URL = "https://" + "www.example.com"
@@ -499,7 +507,7 @@ export default function WebHttpCookies() {
         webview.WebCookieManager.fetchAllCookies(null)
       } catch (error) {
         console.error(`ErrorCode:${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
-        if (error.code == 401) {
+        if (isEqual(error.code, 401)) {
           result = true
         }
       }
@@ -521,7 +529,7 @@ export default function WebHttpCookies() {
         webview.WebCookieManager.fetchAllCookies(undefined)
       } catch (error) {
         console.error(`ErrorCode:${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
-        if (error.code == 401) {
+        if (isEqual(error.code, 401)) {
           result = true
         }
       }

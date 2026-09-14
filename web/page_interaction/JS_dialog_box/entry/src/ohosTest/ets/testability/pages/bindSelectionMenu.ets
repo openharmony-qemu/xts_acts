@@ -16,7 +16,6 @@ import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { BusinessError } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
 interface PreviewBuilderParam {
@@ -35,7 +34,6 @@ interface PreviewBuilderParam {
 
 const EVENT_ID_SET_SUITE_KEY = 177001;
 const DOMAIN = 0x0000;
-let driver: Driver = Driver.create();
 
 @Entry
 @Component
@@ -125,17 +123,8 @@ struct WebComponent {
                   Utils.emitEvent(true, 177010)
                   break;
                 }
-                await Utils.waitForReleaseDriver(this.str, driver)
-                this.isOnContextMenuShow = -1;
-                let button = await driver.findComponent(ON.id('bindSelectionMenuType'));
-                await button.longClick();
-                await Utils.waitForExist(()=>this.isOnContextMenuShow, this.str+' isOnContextMenuShow', 1, 1000);
-                try{
-                  let buttonOne = await driver.findComponent(ON.text('复制'));
-                  await buttonOne.click()
-                }catch (err){
-                  this.result?.closeContextMenu();
-                }
+                // 长按选中与菜单点击由测试侧串行执行（避免页面内使用 UiTest 与测试并发 17000002）
+                Utils.emitEvent(true, 177011);
                 break;
             }
             case "bindSelectionMenuType02": {
@@ -147,13 +136,9 @@ struct WebComponent {
             }
           case "bindSelectionMenuType03": {
             this.isPageEnd = -1;
-            await Utils.waitForExist(()=>this.isPageEnd, this.str+'TextMenuBuilder', 1, 1000);
-            let buttonOne = await driver.findComponent(ON.text('这是一段文字'));
-            let point = await buttonOne.getBoundsCenter();
-            await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
-            await Utils.sleep(2000);
-            let buttonTwo = await driver.findComponent(ON.text('复制'));
-            await buttonTwo.click()
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+'TextMenuBuilder', 1, 1000, 5);
+            // 右键与菜单点击由测试侧串行执行（避免页面内使用 UiTest 与测试并发 17000002）
+            Utils.emitEvent(true, 177031);
             break;
           }
 

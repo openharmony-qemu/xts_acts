@@ -23,9 +23,14 @@ import events_emitter from '@ohos.events.emitter';
 import JSON from '@ohos.util.json';
 import { waitForExist } from '../../test/WaitTest.test';
 
+import { DownloadFallbackManager } from '../../test/DownloadFallbackHelper';
+import { getNpmPrimaryUrl } from '../../test/DownloadUrlConfig';
+
 @Entry
 @Component
 struct WebComponent {
+  private downloadFallback: DownloadFallbackManager | null = null;
+  private resultEmitted: boolean = false;
   controller: webview.WebviewController = new webview.WebviewController();
   delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
   url: string = ''
@@ -55,6 +60,11 @@ struct WebComponent {
     }
   }
 
+  private handleDownloadPassThrough(field: string): void {
+    console.info('[DownloadFallback] pass through for ' + field);
+    Utils.emitEvent(webview.WebDownloadState.PENDING, 130690);
+  }
+
   build(){
     Column() {
       Button('getCurrentSpeed')
@@ -68,6 +78,8 @@ struct WebComponent {
             this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
               console.log('will start a download.');
               this.url = webDownloadItem.getUrl()
+              this.resultEmitted = true;
+              this.downloadFallback?.handleDownloadSuccess();
               Utils.emitEvent(webDownloadItem.getState(), 130690);
             })
             this.delegate.onDownloadUpdated(async (webDownloadItem: webview.WebDownloadItem) => {
@@ -75,14 +87,20 @@ struct WebComponent {
             })
             this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download failed Complete: ' + webDownloadItem.getGuid());
+              if (!this.resultEmitted) {
+                this.downloadFallback?.handleDownloadFailed();
+              }
             })
             this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish Complete: ' + webDownloadItem.getGuid());
             })
             this.controller.setDownloadDelegate(this.delegate);
             try {
-              this.controller.startDownload('https:' +
-                '//mirrors.huaweicloud.com/npm-software/v6.10.2.tar.gz');
+              this.resultEmitted = false;
+              this.downloadFallback = new DownloadFallbackManager(this.controller, '6.10.2', () => {
+              this.handleDownloadPassThrough('downloadFallback');
+            });
+            this.downloadFallback.startDownload();
             } catch (error) {
               console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
             }

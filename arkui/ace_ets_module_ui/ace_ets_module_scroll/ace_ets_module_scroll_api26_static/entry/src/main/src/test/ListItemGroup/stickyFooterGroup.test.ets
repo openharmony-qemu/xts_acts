@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { List, ListItemGroup, ListItem, StickyStyle } from '@ohos.arkui.component'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,16 +21,9 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 export default function stickyFooterGroup() {
   describe('stickyFooterGroup', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("stickyFooterGroup beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.scroll.api26.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info('stickyFooterGroup beforeEach start');

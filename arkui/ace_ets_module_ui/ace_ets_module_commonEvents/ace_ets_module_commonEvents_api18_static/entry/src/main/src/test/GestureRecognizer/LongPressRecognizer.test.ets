@@ -16,7 +16,6 @@
 import {
   afterAll,
   afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
@@ -31,25 +30,9 @@ import { Driver, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function LongPressRecognizerTest() {
   describe('LongPressRecognizerTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi18.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/GestureRecognizer/LongPressRecognizer',
@@ -72,7 +55,11 @@ export default function LongPressRecognizerTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error('LongPressRecognizer after each error: ' + err);
+      }
       console.info('LongPressRecognizer after each called');
     });
 
@@ -86,6 +73,7 @@ export default function LongPressRecognizerTest() {
      * @tc.level    Level.LEVEL0
      */
 it('LongPressRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
       console.info('LongPressRecognizer_static_0100 START');
       let driver = Driver.create()
@@ -101,6 +89,10 @@ it('LongPressRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Pr
       expect(obj.getElement('$attrs').getString('content'))
         .assertEqual('LongPressGesture\nfingers:1\nisFingerCountLimited:false\nrepeat:false\nduration:500');
       console.info('[LongPressRecognizer_static_0100] END');
+      } catch (err) {
+        console.error('[LongPressRecognizer_static_0100] error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
   })

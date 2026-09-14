@@ -64,7 +64,7 @@ struct webCookieManager {
                 webView.WebCookieManager.saveCookieSync();
                 Utils.emitEvent('success', 202502180);
               } catch (error) {
-                error = error as BusinessError;
+               
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent('fail', 202502180);
               }
@@ -75,7 +75,7 @@ struct webCookieManager {
                 webView.WebviewController.removeAllCache(true);
                 Utils.emitEvent('success', 202502211);
               } catch (error) {
-                error = error as BusinessError;
+               
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent('fail', 202502211);
               }
@@ -86,9 +86,32 @@ struct webCookieManager {
                 webView.WebviewController.removeAllCache(false);
                 Utils.emitEvent('success', 202502212);
               } catch (error) {
-                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent('fail', 202502212);
+              }
+              break;
+            }
+
+            case 'testRemoveAllCacheNullStatic001': {
+              try {
+                let param: boolean | null = null;
+                webView.WebviewController.removeAllCache(param as boolean);
+                Utils.emitEvent('fail', 41022601);
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent('success', 41022601);
+              }
+              break;
+            }
+
+            case 'testRemoveAllCacheUndefinedStatic001': {
+              try {
+                let param: boolean | undefined = undefined;
+                webView.WebviewController.removeAllCache(param as boolean);
+                Utils.emitEvent('fail', 41022602);
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent('success', 41022602);
               }
               break;
             }

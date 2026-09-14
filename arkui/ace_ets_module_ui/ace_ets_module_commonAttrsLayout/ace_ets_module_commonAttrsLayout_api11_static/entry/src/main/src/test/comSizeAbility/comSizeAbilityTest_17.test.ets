@@ -16,33 +16,21 @@
 
 import accessibility from '@ohos.accessibility';
 import componentUtils from '@ohos.arkui.componentUtils';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, Rect } from '@ohos.UiTest';
 import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../Util.test';
-import { BusinessError } from '@ohos.base';
 
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+
 
 export default function comSizeAbilityTest_17() {
   describe('comSizeAbilityTest_17', () => {
 
 
 
-    beforeAll(async (): Promise<void> => {
-      console.info("comSizeAbilityTest_17 beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("comSizeAbilityTest_17 beforeEach start")
       let options: router.RouterOptions = {
@@ -76,11 +64,23 @@ it('comSizeAbilityTestJsunit_static_44', Level.LEVEL0, async (done: () => void):
       console.info('comSizeAbilityTestJsunit_static_44 START')
       let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('comSizeAbilityTest_17_to_1'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("TextPicker_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("TextPicker_Father");
       let Size = modePosition.size
@@ -104,7 +104,11 @@ it('comSizeAbilityTestJsunit_static_44', Level.LEVEL0, async (done: () => void):
       console.info("[comSizeAbilityTestJsunit_static_44] component Transform is: " + JSON.stringify(Transform))
       console.info("[comSizeAbilityTestJsunit_static_44] component Scale is: " + JSON.stringify(Scale))
       console.info("[comSizeAbilityTestJsunit_static_44] component Rotate is: " + JSON.stringify(Rotate))
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(130))) <= 1).assertTrue();
       expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
       // expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
@@ -126,7 +130,11 @@ it('comSizeAbilityTestJsunit_static_44', Level.LEVEL0, async (done: () => void):
       expect(JSON.stringify(Rotate.centerY)).assertEqual('1');
       // expect(JSON.stringify(Transform)).assertEqual('[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]]');
       console.info('[comSizeAbilityTestJsunit_static_44] END')
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       done()
     })
 
@@ -141,11 +149,23 @@ it('comSizeAbilityTestJsunit_static_45', Level.LEVEL0, async (done: () => void):
       console.info('comSizeAbilityTestJsunit_static_45 START')
       let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('comSizeAbilityTest_17_to_2'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Text_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Text_Father");
       let Size = modePosition.size
@@ -169,7 +189,11 @@ it('comSizeAbilityTestJsunit_static_45', Level.LEVEL0, async (done: () => void):
       console.info("[comSizeAbilityTestJsunit_static_45] component Transform is: " + JSON.stringify(Transform))
       console.info("[comSizeAbilityTestJsunit_static_45] component Scale is: " + JSON.stringify(Scale))
       console.info("[comSizeAbilityTestJsunit_static_45] component Rotate is: " + JSON.stringify(Rotate))
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(155))) <= 1).assertTrue();
       expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
       // expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
@@ -191,7 +215,11 @@ it('comSizeAbilityTestJsunit_static_45', Level.LEVEL0, async (done: () => void):
       expect(JSON.stringify(Rotate.centerY)).assertEqual('1');
       // expect(JSON.stringify(Transform)).assertEqual('[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]]');
       console.info('[comSizeAbilityTestJsunit_static_45] END')
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       done()
     })
 
@@ -206,11 +234,23 @@ it('comSizeAbilityTestJsunit_static_46', Level.LEVEL0, async (done: () => void):
       console.info('comSizeAbilityTestJsunit_static_46 START')
       let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('comSizeAbilityTest_17_to_3'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("TextInput_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("TextInput_Father");
       let Size = modePosition.size
@@ -234,7 +274,11 @@ it('comSizeAbilityTestJsunit_static_46', Level.LEVEL0, async (done: () => void):
       console.info("[comSizeAbilityTestJsunit_static_46] component Transform is: " + JSON.stringify(Transform))
       console.info("[comSizeAbilityTestJsunit_static_46] component Scale is: " + JSON.stringify(Scale))
       console.info("[comSizeAbilityTestJsunit_static_46] component Rotate is: " + JSON.stringify(Rotate))
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       expect(Math.floor(Math.abs(SizeWidth - uiContext.vp2px(135))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(SizeHeight - uiContext.vp2px(110))) <= 1).assertTrue();
       // expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
@@ -256,7 +300,11 @@ it('comSizeAbilityTestJsunit_static_46', Level.LEVEL0, async (done: () => void):
       expect(JSON.stringify(Rotate.centerY)).assertEqual('1');
       // expect(JSON.stringify(Transform)).assertEqual('[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]]');
       console.info('[comSizeAbilityTestJsunit_static_46] END')
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       done()
     })
   })

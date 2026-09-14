@@ -20,6 +20,8 @@ import fs from '@ohos.file.fs';
 
 const OH_HTTP_OK = 0;
 const WEBSOCKET_OK = 0;
+const NETCONN_SUCCESS = 0;
+const ENUM_CASE_INDEX_5 = 5;
 const NETCONN_PERMISSION_DENIED = 201;
 const OH_HTTP_PARAMETER_ERROR = 401;
 const NETCONN_PARAMETER_ERROR = 401;
@@ -1976,6 +1978,38 @@ export default function ActsNetConnectionTest() {
         let result : number = NetConnectionTest.GetCertificatesHost('www.baidu.com');
         console.info(`${caseName} result is: ` + JSON.stringify(result));
         expect(result).assertEqual(OH_HTTP_OK);
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerNETCONNEnumByCaseIndex0100
+     * @tc.number SUB_NetworkManager_NETCONN_Enum_By_Case_Index_0100
+     * @tc.desc   test NetConn_ErrorCode enum values by different case index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerNETCONNEnumByCaseIndex0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerNETCONNEnumByCaseIndex0100';
+      try {
+        console.info(`${caseName} ---start`);
+        let resultSuccess : number = NetConnectionTest.Netconn_GetEnumByCaseIndex(CASE_INDEX_1);
+        let resultPermissionDenied : number = NetConnectionTest.Netconn_GetEnumByCaseIndex(CASE_INDEX_2);
+        let resultParameterError : number = NetConnectionTest.Netconn_GetEnumByCaseIndex(CASE_INDEX_3);
+        let resultOperationFailed : number = NetConnectionTest.Netconn_GetEnumByCaseIndex(CASE_INDEX_4);
+        let resultInternalError : number = NetConnectionTest.Netconn_GetEnumByCaseIndex(ENUM_CASE_INDEX_5);
+        console.info(`${caseName} results are: ` + JSON.stringify(resultSuccess) + ', ' +
+          JSON.stringify(resultPermissionDenied) + ', ' + JSON.stringify(resultParameterError) + ', ' +
+          JSON.stringify(resultOperationFailed) + ', ' + JSON.stringify(resultInternalError));
+        expect(resultSuccess).assertEqual(NETCONN_SUCCESS);
+        expect(resultPermissionDenied).assertEqual(NETCONN_PERMISSION_DENIED);
+        expect(resultParameterError).assertEqual(NETCONN_PARAMETER_ERROR);
+        expect(resultOperationFailed).assertEqual(NETCONN_OPERATTION_FAILED);
+        expect(resultInternalError).assertEqual(NETCONN_INTERNAL_ERROR);
         done();
       } catch (err) {
         console.error(`${caseName} catch err: ` + JSON.stringify(err));

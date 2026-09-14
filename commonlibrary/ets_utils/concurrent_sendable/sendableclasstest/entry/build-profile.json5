@@ -17,7 +17,9 @@
   "buildOption": {
     "sourceOption": {
       "workers": [
-        "./src/ohosTest/ets/workers/Worker.ets"
+        "./src/ohosTest/ets/workers/Worker.ets",
+        "./src/ohosTest/ets/workers/SendablePassWorker.ets",
+        "./src/ohosTest/ets/workers/SendableTsFuncWorker.ets"
       ]
     }
   },

@@ -13,31 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import {UtilsTest,startAbility} from '../Util.test'
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function lazyForEachTest() {
   describe('lazyForEachTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("lazyForEachTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async () => {
       console.info("lazyForEachTest beforeEach start");
       let options: router.RouterOptions = {
@@ -60,11 +45,14 @@ export default function lazyForEachTest() {
       console.info("lazyForEachTest beforeEach end");
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("lazyForEachTest after each called");
     });
-    
-    
+
 
 
 
@@ -78,13 +66,25 @@ it('lazyForEachTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
 
       console.info('lazyForEachTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('+++++++++++++++++++++1');
       let button = await driver.findComponent(ON.id('button_expand'));
   console.info('+++++++++++++++++++++2');
-      await (button?.click() as Promise<void>);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('lazyForEachTest click err: ' + JSON.stringify(err));
+      }
   console.info('+++++++++++++++++++++3');
-      await CommonFunc.sleep(1500);
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1: string = inspector.getInspectorByKey('getChildValue');
   console.info('+++++++++++++++++++++4');
       let strJson2: string = inspector.getInspectorByKey('getFirstChildIndexWithoutExpandValue');
@@ -103,8 +103,7 @@ it('lazyForEachTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[lazyForEachTest_0100] END');
       done();
     });
-    
-    
+
 
 
 
@@ -118,10 +117,22 @@ it('lazyForEachTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
 
       console.info('lazyForEachTest_0200 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('button_not_expand'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('lazyForEachTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1: string = inspector.getInspectorByKey('getChildValue');
       let strJson2: string = inspector.getInspectorByKey('getFirstChildIndexWithoutExpandValue');
       let strJson3: string = inspector.getInspectorByKey('getLastChildIndexWithoutExpandValue');
@@ -137,8 +148,7 @@ it('lazyForEachTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[lazyForEachTest_0200] END');
       done();
     });
-    
-    
+
 
 
 
@@ -152,10 +162,22 @@ it('lazyForEachTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
 
       console.info('lazyForEachTest_0300 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('button_lazy_expand'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('lazyForEachTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1: string = inspector.getInspectorByKey('getChildValue');
       let strJson2: string = inspector.getInspectorByKey('getFirstChildIndexWithoutExpandValue');
       let strJson3: string = inspector.getInspectorByKey('getLastChildIndexWithoutExpandValue');
@@ -171,8 +193,7 @@ it('lazyForEachTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[lazyForEachTest_0300] END');
       done();
     });
-    
-    
+
 
 
 
@@ -186,10 +207,22 @@ it('lazyForEachTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
 
       console.info('lazyForEachTest_0400 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('button_expand_null'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('lazyForEachTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1: string = inspector.getInspectorByKey('getChildValue');
       let strJson2: string = inspector.getInspectorByKey('getFirstChildIndexWithoutExpandValue');
       let strJson3: string = inspector.getInspectorByKey('getLastChildIndexWithoutExpandValue');
@@ -205,8 +238,7 @@ it('lazyForEachTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[lazyForEachTest_0400] END');
       done();
     });
-    
-    
+
 
 
 
@@ -220,10 +252,22 @@ it('lazyForEachTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
 
       console.info('lazyForEachTest_0500 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('button_expand_undefined'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('lazyForEachTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1: string = inspector.getInspectorByKey('getChildValue');
       let strJson2: string = inspector.getInspectorByKey('getFirstChildIndexWithoutExpandValue');
       let strJson3: string = inspector.getInspectorByKey('getLastChildIndexWithoutExpandValue');
@@ -239,8 +283,7 @@ it('lazyForEachTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[lazyForEachTest_0500] END');
       done();
     });
-    
-    
+
 
 
 
@@ -254,10 +297,22 @@ it('lazyForEachTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
 
       console.info('lazyForEachTest_0600 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('button_expand_out'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('lazyForEachTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1: string = inspector.getInspectorByKey('getChildValue');
       let strJson2: string = inspector.getInspectorByKey('getFirstChildIndexWithoutExpandValue');
       let strJson3: string = inspector.getInspectorByKey('getLastChildIndexWithoutExpandValue');
@@ -273,8 +328,7 @@ it('lazyForEachTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[lazyForEachTest_0600] END');
       done();
     });
-    
-    
+
 
 
 
@@ -288,10 +342,22 @@ it('lazyForEachTest_static_0700', Level.LEVEL0, async (done: ()=>void) => {
 
       console.info('lazyForEachTest_0700 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('button_lazy_expand_out'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('lazyForEachTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1: string = inspector.getInspectorByKey('getChildValue');
       let strJson2: string = inspector.getInspectorByKey('getFirstChildIndexWithoutExpandValue');
       let strJson3: string = inspector.getInspectorByKey('getLastChildIndexWithoutExpandValue');
@@ -307,8 +373,7 @@ it('lazyForEachTest_static_0700', Level.LEVEL0, async (done: ()=>void) => {
       console.info('[lazyForEachTest_0700] END');
       done();
     });
-    
-    
+
 
 
 
@@ -322,10 +387,22 @@ it('lazyForEachTest_static_0800', Level.LEVEL0, async (done: ()=>void) => {
 
       console.info('lazyForEachTest_0800 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('button_not_expand_out'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('lazyForEachTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('lazyForEachTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1: string = inspector.getInspectorByKey('getChildValue');
       let strJson2: string = inspector.getInspectorByKey('getFirstChildIndexWithoutExpandValue');
       let strJson3: string = inspector.getInspectorByKey('getLastChildIndexWithoutExpandValue');

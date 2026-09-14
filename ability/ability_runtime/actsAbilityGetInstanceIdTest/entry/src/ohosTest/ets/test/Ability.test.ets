@@ -67,7 +67,7 @@ async function subscribeEvent(eventName: string, callback: (data: CommonEventMan
         return;
       }
       hilog.info(DOMAIN, 'testTag', 'subscribeEvent received event: ' + JSON.stringify(commonEventData));
-      if (commonEventData?.event == eventName) {
+      if (commonEventData && commonEventData.event == eventName) {
         hilog.info(DOMAIN, 'testTag', 'subscribeEvent matched eventName: ' + eventName);
         callback(commonEventData);
       }
@@ -125,7 +125,7 @@ export default function ActsGetInstanceIdTest() {
         hilog.error(DOMAIN, 'testTag', 'Get system parameter error: %{public}s', JSON.stringify(err));
         mpEnable = PARAM_FAIL;
       }
-      abilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      abilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
     })
 
     /**
@@ -437,7 +437,7 @@ export default function ActsGetInstanceIdTest() {
             }
             done();
           });
-          
+
           await startEntryAbility('case08');
         } catch (err) {
           hilog.error(DOMAIN, 'testTag', '%{public}s error: %{public}s', caseName, JSON.stringify(err));

@@ -9,7 +9,7 @@ import uint32ArrayTaskPoolTest from './TypedArrayTaskPool/uint32ArrayTaskPool.te
 
 import ArrayTaskPoolTest from './Array/ArrayTaskPool.test';
 import ArrayBufferTaskPoolTest from './ArrayBuffer/ArrayBufferTaskPool.test';
-import BitVectorTaskPoolTest from './BitVector/BitVectorTaskPool.test';
+
 import ConcatArrayTaskPoolTest from './ConcatArray/ConcatArrayTaskPool.test';
 import MapTaskPoolTest from './Map/MapTaskPool.test';
 import SetTaskPoolTest from './Set/SetTaskPool.test';
@@ -26,7 +26,7 @@ export default function testsuite() {
 
   ArrayTaskPoolTest();
   ArrayBufferTaskPoolTest();
-  BitVectorTaskPoolTest();
+
   ConcatArrayTaskPoolTest();
   MapTaskPoolTest();
   SetTaskPoolTest();

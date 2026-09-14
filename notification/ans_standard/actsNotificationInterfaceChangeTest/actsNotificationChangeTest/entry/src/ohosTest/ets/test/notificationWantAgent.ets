@@ -38,13 +38,13 @@ export default function wantAgentInfoTest() {
       let WantAgentInfo: wantAgent.WantAgentInfo = {
         wants: [
           {
-            deviceId: "deviceId",
-            bundleName: "com.example.notificationchangetest",
-            abilityName: "EntryAbility",
-            action: "action1",
-            entities: ["entity1"],
-            type: "MIMETYPE",
-            uri: "key={true.true,false}",
+            deviceId: 'deviceId',
+            bundleName: 'com.example.notificationchangetest',
+            abilityName: 'EntryAbility',
+            action: 'action1',
+            entities: ['entity1'],
+            type: 'MIMETYPE',
+            uri: 'key={true.true,false}',
             parameters: {
               myKey0: 2222
             }
@@ -95,13 +95,13 @@ export default function wantAgentInfoTest() {
       let WantAgentInfo: wantAgent.WantAgentInfo = {
         wants: [
           {
-            deviceId: "deviceId",
-            bundleName: "com.example.notificationchangetest",
-            abilityName: "EntryAbility",
-            action: "action1",
-            entities: ["entity1"],
-            type: "MIMETYPE",
-            uri: "key={true.true,false}",
+            deviceId: 'deviceId',
+            bundleName: 'com.example.notificationchangetest',
+            abilityName: 'EntryAbility',
+            action: 'action1',
+            entities: ['entity1'],
+            type: 'MIMETYPE',
+            uri: 'key={true.true,false}',
             parameters: {
               myKey0: 2222
             }
@@ -152,13 +152,13 @@ export default function wantAgentInfoTest() {
       let WantAgentInfo: wantAgent.WantAgentInfo = {
         wants: [
           {
-            deviceId: "deviceId",
-            bundleName: "com.example.notificationchangetest",
-            abilityName: "EntryAbility",
-            action: "action1",
-            entities: ["entity1"],
-            type: "MIMETYPE",
-            uri: "key={true.true,false}",
+            deviceId: 'deviceId',
+            bundleName: 'com.example.notificationchangetest',
+            abilityName: 'EntryAbility',
+            action: 'action1',
+            entities: ['entity1'],
+            type: 'MIMETYPE',
+            uri: 'key={true.true,false}',
             parameters: {
               myKey0: 2222
             }
@@ -209,13 +209,13 @@ export default function wantAgentInfoTest() {
       let WantAgentInfo: wantAgent.WantAgentInfo = {
         wants: [
           {
-            deviceId: "deviceId",
-            bundleName: "com.example.notificationchangetest",
-            abilityName: "EntryAbility",
-            action: "action1",
-            entities: ["entity1"],
-            type: "MIMETYPE",
-            uri: "key={true.true,false}",
+            deviceId: 'deviceId',
+            bundleName: 'com.example.notificationchangetest',
+            abilityName: 'EntryAbility',
+            action: 'action1',
+            entities: ['entity1'],
+            type: 'MIMETYPE',
+            uri: 'key={true.true,false}',
             parameters: {
               myKey0: 2222
             }
@@ -266,13 +266,13 @@ export default function wantAgentInfoTest() {
       let WantAgentInfo: wantAgent.WantAgentInfo = {
         wants: [
           {
-            deviceId: "deviceId",
-            bundleName: "com.example.notificationchangetest",
-            abilityName: "EntryAbility",
-            action: "action1",
-            entities: ["entity1"],
-            type: "MIMETYPE",
-            uri: "key={true.true,false}",
+            deviceId: 'deviceId',
+            bundleName: 'com.example.notificationchangetest',
+            abilityName: 'EntryAbility',
+            action: 'action1',
+            entities: ['entity1'],
+            type: 'MIMETYPE',
+            uri: 'key={true.true,false}',
             parameters: {
               myKey0: 2222
             }

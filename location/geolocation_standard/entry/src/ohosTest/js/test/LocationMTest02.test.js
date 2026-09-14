@@ -745,14 +745,14 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_onLocationChange_perm_test_001
-     * @tc.number SUB_Location_onLocationChange_perm_test_001
+     * @tc.name   SUB_Location_Location_onLocationChange_perm_test_0100
+     * @tc.number SUB_Location_Location_onLocationChange_perm_test_0100
      * @tc.desc   Subscribe location change with valid params and permission.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Location_onLocationChange_perm_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_Location_Location_onLocationChange_perm_test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         let requestInfo = {
             'priority': geolocationm.LocationRequestPriority.FIRST_FIX,
             'scenario': geolocationm.LocationRequestScenario.UNSET,
@@ -768,7 +768,7 @@ export default function geolocationTest_geo8() {
             try {
                 geolocationm.offLocationChange(locationChange);
             } catch (e) {
-                console.info('[lbs_js] onLocationChange_perm_test_001 off err: ' + JSON.stringify(e));
+                console.info('[lbs_js] onLocationChange_perm_test_0100 off err: ' + JSON.stringify(e));
                 expect().assertFail();
             }
             done();
@@ -784,20 +784,20 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_onLocationChange_perm_test_002
-     * @tc.number SUB_Location_onLocationChange_perm_test_002
+     * @tc.name   SUB_Location_Location_onLocationChange_perm_test_0200
+     * @tc.number SUB_Location_Location_onLocationChange_perm_test_0200
      * @tc.desc   Subscribe location change with all-null args (401).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_onLocationChange_perm_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_onLocationChange_perm_test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.onLocationChange(null, null);
             expect().assertFail();
             done();
         } catch (err) {
-            console.info('[lbs_js] onLocationChange_perm_test_002 catch err: ' + JSON.stringify(err));
+            console.info('[lbs_js] onLocationChange_perm_test_0200 catch err: ' + JSON.stringify(err));
             if (err.code === 401) {
                 expect(err.code === 401).assertTrue();
             } else {
@@ -808,14 +808,14 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_onLocationChange_perm_test_003
-     * @tc.number SUB_Location_onLocationChange_perm_test_003
+     * @tc.name   SUB_Location_Location_onLocationChange_perm_test_0300
+     * @tc.number SUB_Location_Location_onLocationChange_perm_test_0300
      * @tc.desc   Subscribe location change with ContinuousLocationRequest and permission.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Location_onLocationChange_perm_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_Location_Location_onLocationChange_perm_test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         let request = {
             'interval': 1,
             'locationScenario': geolocationm.UserActivityScenario.NAVIGATION
@@ -828,7 +828,7 @@ export default function geolocationTest_geo8() {
             try {
                 geolocationm.offLocationChange(locationCallback);
             } catch (e) {
-                console.info('[lbs_js] onLocationChange_perm_test_003 off err: ' + JSON.stringify(e));
+                console.info('[lbs_js] onLocationChange_perm_test_0300 off err: ' + JSON.stringify(e));
                 expect().assertFail();
             }
             done();
@@ -844,20 +844,20 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_onLocationChange_perm_test_004
-     * @tc.number SUB_Location_onLocationChange_perm_test_004
+     * @tc.name   SUB_Location_Location_onLocationChange_perm_test_0400
+     * @tc.number SUB_Location_Location_onLocationChange_perm_test_0400
      * @tc.desc   Subscribe location change with all-undefined args (401).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_onLocationChange_perm_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_onLocationChange_perm_test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.onLocationChange(undefined, undefined);
             expect().assertFail();
             done();
         } catch (err) {
-            console.info('[lbs_js] onLocationChange_perm_test_004 catch err: ' + JSON.stringify(err));
+            console.info('[lbs_js] onLocationChange_perm_test_0400 catch err: ' + JSON.stringify(err));
             if (err.code === 401) {
                 expect(err.code === 401).assertTrue();
             } else {
@@ -868,20 +868,20 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_offLocationChange_perm_test_001
-     * @tc.number SUB_Location_offLocationChange_perm_test_001
+     * @tc.name   SUB_Location_Location_offLocationChange_perm_test_0100
+     * @tc.number SUB_Location_Location_offLocationChange_perm_test_0100
      * @tc.desc   Unsubscribe location change without args (valid).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Location_offLocationChange_perm_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_Location_Location_offLocationChange_perm_test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
             geolocationm.offLocationChange();
-            console.info('[lbs_js] offLocationChange_perm_test_001 done');
+            console.info('[lbs_js] offLocationChange_perm_test_0100 done');
             done();
         } catch (err) {
-            console.info('[lbs_js] offLocationChange_perm_test_001 catch err: ' + JSON.stringify(err));
+            console.info('[lbs_js] offLocationChange_perm_test_0100 catch err: ' + JSON.stringify(err));
             if (err.code === 801) {
                 expect(err.code === 801).assertTrue();
             } else {
@@ -892,20 +892,20 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_offLocationChange_perm_test_002
-     * @tc.number SUB_Location_offLocationChange_perm_test_002
+     * @tc.name   SUB_Location_Location_offLocationChange_perm_test_0200
+     * @tc.number SUB_Location_Location_offLocationChange_perm_test_0200
      * @tc.desc   Unsubscribe location change with invalid callback type (401).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_offLocationChange_perm_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_offLocationChange_perm_test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.offLocationChange('invalid callback');
             expect().assertFail();
             done();
         } catch (err) {
-            console.info('[lbs_js] offLocationChange_perm_test_002 catch err: ' + JSON.stringify(err));
+            console.info('[lbs_js] offLocationChange_perm_test_0200 catch err: ' + JSON.stringify(err));
             if (err.code === 401) {
                 expect(err.code === 401).assertTrue();
             } else {
@@ -916,28 +916,29 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_getCurrentDistrict_perm_test_001
-     * @tc.number SUB_Location_getCurrentDistrict_perm_test_001
+     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_0100
+     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_0100
      * @tc.desc   Obtain current district with valid params and permission.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Location_getCurrentDistrict_perm_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_Location_Location_getCurrentDistrict_perm_test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
             let params = { 'locale': 'zh', 'timeoutMs': 5000 };
             geolocationm.getCurrentDistrict(params).then((res) => {
-                console.info('[lbs_js] getCurrentDistrict_perm_test_001 result: ' + JSON.stringify(res));
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0100 result: ' + JSON.stringify(res));
                 expect(typeof res === 'object').assertTrue();
                 expect(typeof res.locale === 'string').assertTrue();
                 expect(typeof res.countryCode === 'string').assertTrue();
                 expect(typeof res.countryName === 'string').assertTrue();
                 expect(typeof res.administrativeArea === 'string').assertTrue();
+                expect(typeof res.subAdministrativeArea === 'string').assertTrue();
                 expect(typeof res.locality === 'string').assertTrue();
                 expect(typeof res.subLocality === 'string').assertTrue();
                 done();
             }).catch((error) => {
-                console.info('[lbs_js] getCurrentDistrict_perm_test_001 promise catch err: ' + JSON.stringify(error));
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0100 promise catch err: ' + JSON.stringify(error));
                 if (error.code === 801) {
                     expect(error.code === 801).assertTrue();
                 } else {
@@ -946,7 +947,7 @@ export default function geolocationTest_geo8() {
                 done();
             });
         } catch (error) {
-            console.info('[lbs_js] getCurrentDistrict_perm_test_001 sync catch err: ' + JSON.stringify(error));
+            console.info('[lbs_js] getCurrentDistrict_perm_test_0100 sync catch err: ' + JSON.stringify(error));
             if (error.code === 801) {
                 expect(error.code === 801).assertTrue();
             } else {
@@ -957,21 +958,21 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_getCurrentDistrict_perm_test_002
-     * @tc.number SUB_Location_getCurrentDistrict_perm_test_002
+     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_0200
+     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_0200
      * @tc.desc   Obtain current district with locale of wrong type (401).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_getCurrentDistrict_perm_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_getCurrentDistrict_perm_test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.getCurrentDistrict({ 'locale': 123 }).then((res) => {
-                console.info('[lbs_js] getCurrentDistrict_perm_test_002 unexpectedly succeeded: ' + JSON.stringify(res));
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0200 unexpectedly succeeded: ' + JSON.stringify(res));
                 expect().assertFail();
                 done();
             }).catch((error) => {
-                console.info('[lbs_js] getCurrentDistrict_perm_test_002 promise catch err: ' + JSON.stringify(error));
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0200 promise catch err: ' + JSON.stringify(error));
                 if (error.code === 401) {
                     expect(error.code === 401).assertTrue();
                 } else {
@@ -980,7 +981,7 @@ export default function geolocationTest_geo8() {
                 done();
             });
         } catch (error) {
-            console.info('[lbs_js] getCurrentDistrict_perm_test_002 sync catch err: ' + JSON.stringify(error));
+            console.info('[lbs_js] getCurrentDistrict_perm_test_0200 sync catch err: ' + JSON.stringify(error));
             if (error.code === 401) {
                 expect(error.code === 401).assertTrue();
             } else {
@@ -991,17 +992,17 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_startBluetoothSearch_perm_test_001
-     * @tc.number SUB_Location_startBluetoothSearch_perm_test_001
+     * @tc.name   SUB_Location_Location_startBluetoothSearch_perm_test_0100
+     * @tc.number SUB_Location_Location_startBluetoothSearch_perm_test_0100
      * @tc.desc   Start bluetooth search with valid params and permission.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Location_startBluetoothSearch_perm_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_Location_Location_startBluetoothSearch_perm_test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         let requestInfo = {"deviceIdArray":['00:11:22:33:44:55'], "rssiThreshold":-80};
         let callback = (result) => {
-            console.info('[lbs_js] startBluetoothSearch_perm_test_001 callback: ' + JSON.stringify(result));
+            console.info('[lbs_js] startBluetoothSearch_perm_test_0100 callback: ' + JSON.stringify(result));
             expect(typeof result.deviceId === 'string').assertTrue();
             expect(typeof result.rssi === 'number').assertTrue();
             expect(typeof result.deviceName === 'string').assertTrue();
@@ -1009,17 +1010,17 @@ export default function geolocationTest_geo8() {
         };
         try {
             geolocationm.startBluetoothSearch(requestInfo, callback);
-            console.info('[lbs_js] startBluetoothSearch_perm_test_001 subscribe done');
+            console.info('[lbs_js] startBluetoothSearch_perm_test_0100 subscribe done');
             try {
                 geolocationm.stopBluetoothSearch(callback);
-                console.info('[lbs_js] startBluetoothSearch_perm_test_001 cleanup stop done');
+                console.info('[lbs_js] startBluetoothSearch_perm_test_0100 cleanup stop done');
             } catch (e) {
-                console.info('[lbs_js] startBluetoothSearch_perm_test_001 cleanup stop err: ' + JSON.stringify(e));
+                console.info('[lbs_js] startBluetoothSearch_perm_test_0100 cleanup stop err: ' + JSON.stringify(e));
                 expect().assertFail();
             }
             done();
         } catch (err) {
-            console.info('[lbs_js] startBluetoothSearch_perm_test_001 catch err: ' + JSON.stringify(err));
+            console.info('[lbs_js] startBluetoothSearch_perm_test_0100 catch err: ' + JSON.stringify(err));
             if (err.code === 801) {
                 expect(err.code === 801).assertTrue();
             } else {
@@ -1030,20 +1031,20 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_startBluetoothSearch_perm_test_002
-     * @tc.number SUB_Location_startBluetoothSearch_perm_test_002
+     * @tc.name   SUB_Location_Location_startBluetoothSearch_perm_test_0200
+     * @tc.number SUB_Location_Location_startBluetoothSearch_perm_test_0200
      * @tc.desc   Start bluetooth search with all-null args (401).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_startBluetoothSearch_perm_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_startBluetoothSearch_perm_test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.startBluetoothSearch(null, null);
             expect().assertFail();
             done();
         } catch (err) {
-            console.info('[lbs_js] startBluetoothSearch_perm_test_002 catch err: ' + JSON.stringify(err));
+            console.info('[lbs_js] startBluetoothSearch_perm_test_0200 catch err: ' + JSON.stringify(err));
             if (err.code === 401) {
                 expect(err.code === 401).assertTrue();
             } else {
@@ -1054,24 +1055,24 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_startBluetoothSearch_perm_test_003
-     * @tc.number SUB_Location_startBluetoothSearch_perm_test_003
+     * @tc.name   SUB_Location_Location_startBluetoothSearch_perm_test_0300
+     * @tc.number SUB_Location_Location_startBluetoothSearch_perm_test_0300
      * @tc.desc   Start bluetooth search with deviceIdArray of wrong type (401).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_startBluetoothSearch_perm_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_startBluetoothSearch_perm_test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         let requestInfo = {'deviceIdArray':'not_an_array', 'rssiThreshold':-70};
         let callback = (result) => {
-            console.info('[lbs_js] startBluetoothSearch_perm_test_003 callback: ' + JSON.stringify(result));
+            console.info('[lbs_js] startBluetoothSearch_perm_test_0300 callback: ' + JSON.stringify(result));
         };
         try {
             geolocationm.startBluetoothSearch(requestInfo, callback);
             expect().assertFail();
             done();
         } catch (err) {
-            console.info('[lbs_js] startBluetoothSearch_perm_test_003 catch err: ' + JSON.stringify(err));
+            console.info('[lbs_js] startBluetoothSearch_perm_test_0300 catch err: ' + JSON.stringify(err));
             if (err.code === 401) {
                 expect(err.code === 401).assertTrue();
             } else {
@@ -1082,20 +1083,20 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_startBluetoothSearch_perm_test_004
-     * @tc.number SUB_Location_startBluetoothSearch_perm_test_004
+     * @tc.name   SUB_Location_Location_startBluetoothSearch_perm_test_0400
+     * @tc.number SUB_Location_Location_startBluetoothSearch_perm_test_0400
      * @tc.desc   Start bluetooth search with all-undefined args (401).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_startBluetoothSearch_perm_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_startBluetoothSearch_perm_test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.startBluetoothSearch(undefined, undefined);
             expect().assertFail();
             done();
         } catch (err) {
-            console.info('[lbs_js] startBluetoothSearch_perm_test_004 catch err: ' + JSON.stringify(err));
+            console.info('[lbs_js] startBluetoothSearch_perm_test_0400 catch err: ' + JSON.stringify(err));
             if (err.code === 401) {
                 expect(err.code === 401).assertTrue();
             } else {
@@ -1106,20 +1107,20 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_stopBluetoothSearch_perm_test_001
-     * @tc.number SUB_Location_stopBluetoothSearch_perm_test_001
+     * @tc.name   SUB_Location_Location_stopBluetoothSearch_perm_test_0100
+     * @tc.number SUB_Location_Location_stopBluetoothSearch_perm_test_0100
      * @tc.desc   Stop bluetooth search without args (valid, no permission required).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Location_stopBluetoothSearch_perm_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_Location_Location_stopBluetoothSearch_perm_test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
             geolocationm.stopBluetoothSearch();
-            console.info('[lbs_js] stopBluetoothSearch_perm_test_001 done');
+            console.info('[lbs_js] stopBluetoothSearch_perm_test_0100 done');
             done();
         } catch (err) {
-            console.info('[lbs_js] stopBluetoothSearch_perm_test_001 catch err: ' + JSON.stringify(err));
+            console.info('[lbs_js] stopBluetoothSearch_perm_test_0100 catch err: ' + JSON.stringify(err));
             if (err.code === 801) {
                 expect(err.code === 801).assertTrue();
             } else {
@@ -1130,20 +1131,20 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_stopBluetoothSearch_perm_test_002
-     * @tc.number SUB_Location_stopBluetoothSearch_perm_test_002
+     * @tc.name   SUB_Location_Location_stopBluetoothSearch_perm_test_0200
+     * @tc.number SUB_Location_Location_stopBluetoothSearch_perm_test_0200
      * @tc.desc   Stop bluetooth search with invalid callback type (401).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_stopBluetoothSearch_perm_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_stopBluetoothSearch_perm_test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.stopBluetoothSearch(123);
             expect().assertFail();
             done();
         } catch (err) {
-            console.info('[lbs_js] stopBluetoothSearch_perm_test_002 catch err: ' + JSON.stringify(err));
+            console.info('[lbs_js] stopBluetoothSearch_perm_test_0200 catch err: ' + JSON.stringify(err));
             if (err.code === 401) {
                 expect(err.code === 401).assertTrue();
             } else {
@@ -1154,94 +1155,21 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_getPostProcessingTrack_perm_test_001
-     * @tc.number SUB_Location_getPostProcessingTrack_perm_test_001
-     * @tc.desc   Obtain post-processing track after subscribing skiing continuous location.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_Location_getPostProcessingTrack_perm_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
-        let request = {
-            'interval': 1,
-            'locationScenario': geolocationm.UserActivityScenario.SPORT,
-            'sportsType': geolocationm.SportsType.SKIING
-        };
-        let locationCallback = (location) => {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 locationCallback: ' + JSON.stringify(location));
-        };
-        try {
-            geolocationm.onLocationChange(request, locationCallback);
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 onLocationChange subscribe success');
-        } catch (err) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 onLocationChange err: ' + JSON.stringify(err));
-            if (err.code === 801) {
-                expect(err.code === 801).assertTrue();
-            } else {
-                expect().assertFail();
-            }
-            done();
-            return;
-        }
-        await sleep(3000);
-        try {
-            geolocationm.offLocationChange(locationCallback);
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 offLocationChange success');
-        } catch (err) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 offLocationChange err: ' + JSON.stringify(err));
-        }
-        try {
-            geolocationm.getPostProcessingTrack(geolocationm.SportsType.SKIING).then((res) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_001 result length: ' + res.length);
-                expect(res instanceof Array).assertTrue();
-                if (res.length > 0) {
-                    let loc = res[0];
-                    expect(typeof loc.latitude === 'number').assertTrue();
-                    expect(typeof loc.longitude === 'number').assertTrue();
-                    expect(typeof loc.altitude === 'number').assertTrue();
-                    expect(typeof loc.accuracy === 'number').assertTrue();
-                    expect(typeof loc.speed === 'number').assertTrue();
-                    expect(typeof loc.timeStamp === 'number').assertTrue();
-                    expect(typeof loc.direction === 'number').assertTrue();
-                    expect(typeof loc.timeSinceBoot === 'number').assertTrue();
-                }
-                done();
-            }).catch((error) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_001 promise catch err: ' + JSON.stringify(error));
-                if (error.code === 801) {
-                    expect(error.code === 801).assertTrue();
-                } else {
-                    expect().assertFail();
-                }
-                done();
-            });
-        } catch (error) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 sync catch err: ' + JSON.stringify(error));
-            if (error.code === 801) {
-                expect(error.code === 801).assertTrue();
-            } else {
-                expect().assertFail();
-            }
-            done();
-        }
-    });
-
-    /**
-     * @tc.name   SUB_Location_getPostProcessingTrack_perm_test_004
-     * @tc.number SUB_Location_getPostProcessingTrack_perm_test_004
+     * @tc.name   SUB_Location_Location_getPostProcessingTrack_perm_test_0100
+     * @tc.number SUB_Location_Location_getPostProcessingTrack_perm_test_0100
      * @tc.desc   getPostProcessingTrack returns 3301200 when no skiing track recorded.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Location_getPostProcessingTrack_perm_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_Location_getPostProcessingTrack_perm_test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
             geolocationm.getPostProcessingTrack(geolocationm.SportsType.SKIING).then((res) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_004 unexpectedly succeeded, len: ' + res.length);
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0100 unexpectedly succeeded, len: ' + res.length);
                 expect().assertFail();
                 done();
             }).catch((error) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_004 promise catch err: ' + JSON.stringify(error));
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0100 promise catch err: ' + JSON.stringify(error));
                 if (error.code === 801) {
                     expect(error.code === 801).assertTrue();
                 } else {
@@ -1250,7 +1178,7 @@ export default function geolocationTest_geo8() {
                 done();
             });
         } catch (error) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_004 sync catch err: ' + JSON.stringify(error));
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_0100 sync catch err: ' + JSON.stringify(error));
             if (error.code === 801) {
                 expect(error.code === 801).assertTrue();
             } else {
@@ -1261,21 +1189,21 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_getPostProcessingTrack_perm_test_002
-     * @tc.number SUB_Location_getPostProcessingTrack_perm_test_002
+     * @tc.name   SUB_Location_Location_getPostProcessingTrack_perm_test_0200
+     * @tc.number SUB_Location_Location_getPostProcessingTrack_perm_test_0200
      * @tc.desc   Obtain post-processing track with sportsType of wrong type (401).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_getPostProcessingTrack_perm_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_getPostProcessingTrack_perm_test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.getPostProcessingTrack('abc').then((res) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_002 unexpectedly succeeded: ' + JSON.stringify(res));
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0200 unexpectedly succeeded: ' + JSON.stringify(res));
                 expect().assertFail();
                 done();
             }).catch((error) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_002 promise catch err: ' + JSON.stringify(error));
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0200 promise catch err: ' + JSON.stringify(error));
                 if (error.code === 401) {
                     expect(error.code === 401).assertTrue();
                 } else {
@@ -1284,7 +1212,7 @@ export default function geolocationTest_geo8() {
                 done();
             });
         } catch (error) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_002 sync catch err: ' + JSON.stringify(error));
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_0200 sync catch err: ' + JSON.stringify(error));
             if (error.code === 401) {
                 expect(error.code === 401).assertTrue();
             } else {
@@ -1295,19 +1223,19 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_onLocationChange_perm_test_005
-     * @tc.number SUB_Location_onLocationChange_perm_test_005
+     * @tc.name   SUB_Location_Location_onLocationChange_perm_test_0500
+     * @tc.number SUB_Location_Location_onLocationChange_perm_test_0500
      * @tc.desc   Subscribe location change returns 3301100 when location switch off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Location_onLocationChange_perm_test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_Location_onLocationChange_perm_test_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
             geolocationm.disableLocation();
             await sleep(1000);
         } catch (error) {
-            console.info('[lbs_js] onLocationChange_perm_test_005 disableLocation err: ' + JSON.stringify(error));
+            console.info('[lbs_js] onLocationChange_perm_test_0500 disableLocation err: ' + JSON.stringify(error));
         }
         let requestInfo = {
             'priority': geolocationm.LocationRequestPriority.FIRST_FIX,
@@ -1324,13 +1252,13 @@ export default function geolocationTest_geo8() {
             try {
                 geolocationm.offLocationChange(locationChange);
             } catch (e) {
-                console.info('[lbs_js] onLocationChange_perm_test_005 off err: ' + JSON.stringify(e));
+                console.info('[lbs_js] onLocationChange_perm_test_0500 off err: ' + JSON.stringify(e));
             }
             expect().assertFail();
             try {
                 geolocationm.enableLocation();
             } catch (e) {
-                console.info('[lbs_js] onLocationChange_perm_test_005 enableLocation err: ' + JSON.stringify(e));
+                console.info('[lbs_js] onLocationChange_perm_test_0500 enableLocation err: ' + JSON.stringify(e));
             }
             done();
         } catch (err) {
@@ -1343,40 +1271,40 @@ export default function geolocationTest_geo8() {
             try {
                 geolocationm.enableLocation();
             } catch (e) {
-                console.info('[lbs_js] onLocationChange_perm_test_005 enableLocation err: ' + JSON.stringify(e));
+                console.info('[lbs_js] onLocationChange_perm_test_0500 enableLocation err: ' + JSON.stringify(e));
             }
             done();
         }
     });
 
     /**
-     * @tc.name   SUB_Location_getCurrentDistrict_perm_test_003
-     * @tc.number SUB_Location_getCurrentDistrict_perm_test_003
+     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_0300
+     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_0300
      * @tc.desc   getCurrentDistrict returns 3301100 when location switch off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Location_getCurrentDistrict_perm_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_Location_getCurrentDistrict_perm_test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
             geolocationm.disableLocation();
             await sleep(1000);
         } catch (error) {
-            console.info('[lbs_js] getCurrentDistrict_perm_test_003 disableLocation err: ' + JSON.stringify(error));
+            console.info('[lbs_js] getCurrentDistrict_perm_test_0300 disableLocation err: ' + JSON.stringify(error));
         }
         try {
             let params = { 'locale': 'zh', 'timeoutMs': 5000 };
             geolocationm.getCurrentDistrict(params).then((res) => {
-                console.info('[lbs_js] getCurrentDistrict_perm_test_003 unexpectedly succeeded: ' + JSON.stringify(res));
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0300 unexpectedly succeeded: ' + JSON.stringify(res));
                 expect().assertFail();
                 try {
                     geolocationm.enableLocation();
                 } catch (e) {
-                    console.info('[lbs_js] getCurrentDistrict_perm_test_003 enableLocation err: ' + JSON.stringify(e));
+                    console.info('[lbs_js] getCurrentDistrict_perm_test_0300 enableLocation err: ' + JSON.stringify(e));
                 }
                 done();
             }).catch((error) => {
-                console.info('[lbs_js] getCurrentDistrict_perm_test_003 promise catch err: ' + JSON.stringify(error));
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0300 promise catch err: ' + JSON.stringify(error));
                 if (error.code === 801) {
                     expect(error.code === 801).assertTrue();
                 } else {
@@ -1385,12 +1313,12 @@ export default function geolocationTest_geo8() {
                 try {
                     geolocationm.enableLocation();
                 } catch (e) {
-                    console.info('[lbs_js] getCurrentDistrict_perm_test_003 enableLocation err: ' + JSON.stringify(e));
+                    console.info('[lbs_js] getCurrentDistrict_perm_test_0300 enableLocation err: ' + JSON.stringify(e));
                 }
                 done();
             });
         } catch (error) {
-            console.info('[lbs_js] getCurrentDistrict_perm_test_003 sync catch err: ' + JSON.stringify(error));
+            console.info('[lbs_js] getCurrentDistrict_perm_test_0300 sync catch err: ' + JSON.stringify(error));
             if (error.code === 801) {
                 expect(error.code === 801).assertTrue();
             } else {
@@ -1399,34 +1327,34 @@ export default function geolocationTest_geo8() {
             try {
                 geolocationm.enableLocation();
             } catch (e) {
-                console.info('[lbs_js] getCurrentDistrict_perm_test_003 enableLocation err: ' + JSON.stringify(e));
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0300 enableLocation err: ' + JSON.stringify(e));
             }
             done();
         }
     });
 
     /**
-     * @tc.name   SUB_Location_getPostProcessingTrack_perm_test_003
-     * @tc.number SUB_Location_getPostProcessingTrack_perm_test_003
+     * @tc.name   SUB_Location_Location_getPostProcessingTrack_perm_test_0300
+     * @tc.number SUB_Location_Location_getPostProcessingTrack_perm_test_0300
      * @tc.desc   getPostProcessingTrack returns 3301100 when location switch off after skiing subscription.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Location_getPostProcessingTrack_perm_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_Location_getPostProcessingTrack_perm_test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let request = {
             'interval': 1,
             'locationScenario': geolocationm.UserActivityScenario.SPORT,
             'sportsType': geolocationm.SportsType.SKIING
         };
         let locationCallback = (location) => {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_003 locationCallback: ' + JSON.stringify(location));
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 locationCallback: ' + JSON.stringify(location));
         };
         try {
             geolocationm.onLocationChange(request, locationCallback);
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_003 onLocationChange subscribe success');
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 onLocationChange subscribe success');
         } catch (err) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_003 onLocationChange err: ' + JSON.stringify(err));
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 onLocationChange err: ' + JSON.stringify(err));
             if (err.code === 801) {
                 expect(err.code === 801).assertTrue();
             } else {
@@ -1440,25 +1368,25 @@ export default function geolocationTest_geo8() {
             geolocationm.disableLocation();
             await sleep(1000);
         } catch (error) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_003 disableLocation err: ' + JSON.stringify(error));
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 disableLocation err: ' + JSON.stringify(error));
         }
         try {
             geolocationm.getPostProcessingTrack(geolocationm.SportsType.SKIING).then((res) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_003 unexpectedly succeeded, len: ' + res.length);
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 unexpectedly succeeded, len: ' + res.length);
                 expect().assertFail();
                 try {
                     geolocationm.enableLocation();
                 } catch (e) {
-                    console.info('[lbs_js] getPostProcessingTrack_perm_test_003 enableLocation err: ' + JSON.stringify(e));
+                    console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 enableLocation err: ' + JSON.stringify(e));
                 }
                 try {
                     geolocationm.offLocationChange(locationCallback);
                 } catch (e) {
-                    console.info('[lbs_js] getPostProcessingTrack_perm_test_003 offLocationChange err: ' + JSON.stringify(e));
+                    console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 offLocationChange err: ' + JSON.stringify(e));
                 }
                 done();
             }).catch((error) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_003 promise catch err: ' + JSON.stringify(error));
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 promise catch err: ' + JSON.stringify(error));
                 if (error.code === 801) {
                     expect(error.code === 801).assertTrue();
                 } else {
@@ -1467,17 +1395,17 @@ export default function geolocationTest_geo8() {
                 try {
                     geolocationm.enableLocation();
                 } catch (e) {
-                    console.info('[lbs_js] getPostProcessingTrack_perm_test_003 enableLocation err: ' + JSON.stringify(e));
+                    console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 enableLocation err: ' + JSON.stringify(e));
                 }
                 try {
                     geolocationm.offLocationChange(locationCallback);
                 } catch (e) {
-                    console.info('[lbs_js] getPostProcessingTrack_perm_test_003 offLocationChange err: ' + JSON.stringify(e));
+                    console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 offLocationChange err: ' + JSON.stringify(e));
                 }
                 done();
             });
         } catch (error) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_003 sync catch err: ' + JSON.stringify(error));
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 sync catch err: ' + JSON.stringify(error));
             if (error.code === 801) {
                 expect(error.code === 801).assertTrue();
             } else {
@@ -1486,29 +1414,29 @@ export default function geolocationTest_geo8() {
             try {
                 geolocationm.enableLocation();
             } catch (e) {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_003 enableLocation err: ' + JSON.stringify(e));
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 enableLocation err: ' + JSON.stringify(e));
             }
             try {
                 geolocationm.offLocationChange(locationCallback);
             } catch (e) {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_003 offLocationChange err: ' + JSON.stringify(e));
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0300 offLocationChange err: ' + JSON.stringify(e));
             }
             done();
         }
     });
 
     /**
-     * @tc.name   SUB_Location_findMatchingWlan_promiss_0600
-     * @tc.number SUB_Location_findMatchingWlan_promiss_0600
+     * @tc.name   SUB_Location_Location_findMatchingWlan_promiss_0600
+     * @tc.number SUB_Location_Location_findMatchingWlan_promiss_0600
      * @tc.desc   Test findMatchingWlan return value MatchingWlanInfo structure coverage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Location_findMatchingWlan_promiss_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_Location_Location_findMatchingWlan_promiss_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
             let bssid = geolocationm.getCurrentWifiBssidForLocating();
-            console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0600: ' + bssid);
+            console.info('[lbs_js] SUB_Location_Location_findMatchingWlan_promiss_0600: ' + bssid);
             
             if (!bssid) {
                 console.info('[lbs_js] No BSSID available, skip test');
@@ -1521,7 +1449,7 @@ export default function geolocationTest_geo8() {
             let needStartScan = true;
             
             geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
-                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0600 result: ' + JSON.stringify(result));
+                console.info('[lbs_js] SUB_Location_Location_findMatchingWlan_promiss_0600 result: ' + JSON.stringify(result));
                 expect(result instanceof Array).assertTrue();
                 if (result.length > 0) {
                     console.info('[lbs_js] result[0].index: ' + result[0].index);
@@ -1535,13 +1463,188 @@ export default function geolocationTest_geo8() {
                 }
                 done();
             }).catch((err) => {
-                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0600 err: ' + JSON.stringify(err));
+                console.info('[lbs_js] SUB_Location_Location_findMatchingWlan_promiss_0600 err: ' + JSON.stringify(err));
                 expect(err.code === 801).assertTrue();
                 done();
             });
         } catch (error) {
-            console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0600 try error: ' + JSON.stringify(error));
+            console.info('[lbs_js] SUB_Location_Location_findMatchingWlan_promiss_0600 try error: ' + JSON.stringify(error));
             expect(error.code === 801).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_0400
+     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_0400
+     * @tc.desc   Obtain current district with params of null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Location_Location_getCurrentDistrict_perm_test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        try {
+            geolocationm.getCurrentDistrict(null).then((res) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0400 result: ' + JSON.stringify(res));
+                expect(typeof res === 'object').assertTrue();
+                expect(typeof res.locale === 'string').assertTrue();
+                expect(typeof res.countryCode === 'string').assertTrue();
+                done();
+            }).catch((error) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0400 promise catch err: ' + JSON.stringify(error));
+                if (error.code === 401) {
+                    expect(error.code === 401).assertTrue();
+                } else {
+                    expect(error.code === 801).assertTrue();
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] getCurrentDistrict_perm_test_0400 sync catch err: ' + JSON.stringify(error));
+            if (error.code === 401) {
+                expect(error.code === 401).assertTrue();
+            } else {
+                expect(error.code === 801).assertTrue();
+            }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_0500
+     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_0500
+     * @tc.desc   Obtain current district with params of undefined, expect the same as no params.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_Location_getCurrentDistrict_perm_test_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+            geolocationm.getCurrentDistrict(undefined).then((res) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0500 result: ' + JSON.stringify(res));
+                expect(typeof res === 'object').assertTrue();
+                expect(typeof res.locale === 'string').assertTrue();
+                expect(typeof res.countryCode === 'string').assertTrue();
+                done();
+            }).catch((error) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0500 promise catch err: ' + JSON.stringify(error));
+                if (error.code === 801) {
+                    expect(error.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] getCurrentDistrict_perm_test_0500 sync catch err: ' + JSON.stringify(error));
+            if (error.code === 801) {
+                expect(error.code === 801).assertTrue();
+            } else {
+                expect().assertFail();
+            }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_0600
+     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_0600
+     * @tc.desc   getCurrentDistrict returns 3301500 when reverse geocoding server returns an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_Location_getCurrentDistrict_perm_test_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+            let params = { 'locale': 'zh', 'timeoutMs': 1 };
+            geolocationm.getCurrentDistrict(params).then((res) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0600 unexpectedly succeeded: ' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch((error) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_0600 promise catch err: ' + JSON.stringify(error));
+                if (error.code === 801) {
+                    expect(error.code === 801).assertTrue();
+                } else {
+                    expect(error.code === 3301500).assertTrue();
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] getCurrentDistrict_perm_test_0600 sync catch err: ' + JSON.stringify(error));
+            if (error.code === 801) {
+                expect(error.code === 801).assertTrue();
+            } else {
+                expect(error.code === 3301500).assertTrue();
+            }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_Location_getPostProcessingTrack_perm_test_0400
+     * @tc.number SUB_Location_Location_getPostProcessingTrack_perm_test_0400
+     * @tc.desc   Obtain post-processing track with sportsType of null (401).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Location_Location_getPostProcessingTrack_perm_test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        try {
+            geolocationm.getPostProcessingTrack(null).then((res) => {
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0400 unexpectedly succeeded: ' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch((error) => {
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0400 promise catch err: ' + JSON.stringify(error));
+                if (error.code === 401) {
+                    expect(error.code === 401).assertTrue();
+                } else {
+                    expect(error.code === 801).assertTrue();
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_0400 sync catch err: ' + JSON.stringify(error));
+            if (error.code === 401) {
+                expect(error.code === 401).assertTrue();
+            } else {
+                expect(error.code === 801).assertTrue();
+            }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_Location_getPostProcessingTrack_perm_test_0500
+     * @tc.number SUB_Location_Location_getPostProcessingTrack_perm_test_0500
+     * @tc.desc   Obtain post-processing track with sportsType of undefined (401).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Location_Location_getPostProcessingTrack_perm_test_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        try {
+            geolocationm.getPostProcessingTrack(undefined).then((res) => {
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0500 unexpectedly succeeded: ' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch((error) => {
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_0500 promise catch err: ' + JSON.stringify(error));
+                if (error.code === 401) {
+                    expect(error.code === 401).assertTrue();
+                } else {
+                    expect(error.code === 801).assertTrue();
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_0500 sync catch err: ' + JSON.stringify(error));
+            if (error.code === 401) {
+                expect(error.code === 401).assertTrue();
+            } else {
+                expect(error.code === 801).assertTrue();
+            }
             done();
         }
     });

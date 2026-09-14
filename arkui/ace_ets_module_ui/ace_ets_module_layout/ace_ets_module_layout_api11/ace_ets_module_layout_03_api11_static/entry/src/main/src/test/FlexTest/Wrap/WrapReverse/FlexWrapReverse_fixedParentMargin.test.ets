@@ -14,31 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext';
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function flexWrapReverse_fixedParentMargin() {
   describe('FlexWrapReverse_fixedParentMargin', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("FlexWrapReverse_fixedParentMargin beforeEach start");
-     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("FlexWrapReverse_fixedParentMargin beforeEach start");
       let options: router.RouterOptions = {
@@ -52,7 +39,7 @@ export default function flexWrapReverse_fixedParentMargin() {
         if (!("FlexWrapReverse_fixedParentMargin" == pages.name)) {
           console.info("get FlexWrapReverse_fixedParentMargin pages.name:" + '');
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push FlexWrapReverse_fixedParentMargin page error:" + err);
@@ -62,7 +49,11 @@ export default function flexWrapReverse_fixedParentMargin() {
 
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+      await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       console.info("FlexWrapReverse_fixedParentMargin afterEach called");
     });
 
@@ -82,7 +73,11 @@ it('testWrapReverseParentfixedMarginChildPadding_static', Level.LEVEL0, async ()
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'margin', value: 0
       })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('FlexWrapReverseTest13');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Flex');
@@ -128,7 +123,11 @@ it('testWrapReverseParentfixedMarginChildMargin_static', Level.LEVEL0, async () 
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'margin', value: 50
       })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('FlexWrapReverseTest13');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Flex');
@@ -175,7 +174,11 @@ it('testWrapReverseParentfixedMarginChildMarginAndPadding_static', Level.LEVEL0,
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'margin', value: 30
       })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('FlexWrapReverseTest13');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Flex');

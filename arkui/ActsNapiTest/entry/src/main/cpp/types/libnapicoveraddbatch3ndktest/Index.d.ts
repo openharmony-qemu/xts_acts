@@ -1,0 +1,32 @@
+declare namespace napicoveraddbatch3ndktest {
+  export const createThreadsafeFunctionInitialCountLimit: () => number;
+  export const queueAsyncWorkWithQosReturnsOk: () => number;
+  export const threadsafeFunctionLooseResourceAndNameTypes: () => number;
+  export const releaseThreadsafeFunctionAfterCountZero: () => number;
+  export const setupThreadsafeFunctionCrossThreadProbe: () => number;
+  export const refThreadsafeFunctionWithCurrentEnv: () => number;
+  export const unrefThreadsafeFunctionWithCurrentEnv: () => number;
+  export const cleanupThreadsafeFunctionCrossThreadProbe: () => number;
+  export const createArkRuntimeOnNativeThread: () => number;
+  export const isSendableDistinguishesValues: () => number;
+  export const createSendableObjectArrayAndBuffer: () => number;
+  export const createSendableArrayWithLengthAndTypedArray: () => number;
+  export const sendableTypedArrayInfoAndTypeCheck: () => number;
+  export const createObjectWithPropertiesHelpers: () => number;
+  export const throwBusinessErrorStatus: () => number;
+  export const callsiteInfoGetAndSetProperty: () => number;
+  export const callsiteInfoNullParametersAreAccepted: () => number;
+  export const criticalScopeUtf16BufferBehavior: () => number;
+  export const createThreadsafeFunctionNullFunc: () => number;
+  export const refThreadsafeFunctionNull: () => number;
+  export const isSendableNullParam: () => number;
+  export const createSendableArrayNullResult: () => number;
+  export const createSendableArraybufferNullData: () => number;
+  export const releaseThreadsafeFunctionNull: () => number;
+  export const createArkRuntimeNullReturnsInvalidArg: () => number;
+  export const destroyArkRuntimeTwiceReturnsError: () => number;
+  export const createSendableArraybufferHugeLengthReturnsError: () => number;
+  export const criticalScopeUtf16BufferEfficientAccess: () => number;
+  export const criticalScopeUtf16BufferOutsideScopeReturnsError: () => number;
+  export const criticalScopeUtf16BufferComboWithGetValue: () => number;
+}

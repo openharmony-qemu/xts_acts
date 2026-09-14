@@ -26,7 +26,7 @@ import events_emitter from '@ohos.events.emitter';
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function componentLifeCycleTestOne() {
+export default function componentLifeCycleTestOne(): void {
 
   describe('componentLifeCycleTestOne', (): void => {
     beforeAll(async (): Promise<void> => {
@@ -51,7 +51,12 @@ export default function componentLifeCycleTestOne() {
     it('onInactiveStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitonInactive", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("onInactive", "baidu", 7, done);
+      Utils.registerBaseEvent("onInactive", "baidu", 7, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
       await Utils.msSleep(5000);
       done();
@@ -68,7 +73,12 @@ export default function componentLifeCycleTestOne() {
     it('onActiveStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitonActive", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("onActive", "index", 8, done); //Depend on execution order, executed after onInactive, result is "index"
+      Utils.registerBaseEvent("onActive", "index", 8, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        }); //Depend on execution order, executed after onInactive, result is "index"
       inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
       await Utils.msSleep(5000);
       done();
@@ -174,11 +184,18 @@ export default function componentLifeCycleTestOne() {
      */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        Utils.emitEvent('emitonSwitchNextPage', 10)
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
-        await Utils.msSleep(5000)
-        done();
+        try {
+          Utils.emitEvent('emitonSwitchNextPage', 10)
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+          await Utils.msSleep(5000)
+          done();
+      
+        } catch (err) {
+          console.info('[emitonSwitchNextPage] err:' + JSON.stringify(err));
+          done();
+
+          }
       })
   })
 }

@@ -27,6 +27,7 @@ import UitestDriver401ErrorCode from './UitestDriver401ErrorCode.test'
 import UitestUWindow401ErrorCode from './UitestUWindow401ErrorCode.test'
 import uitestApi26ErrorTest from './UitestApi26ErrorCode.test'
 import uitestOnApi26ErrorCodeTest from './UiTestOnApi26ErrorCode.test'
+import uitestEnumBoundaryErrorCode from './UitestEnumBoundaryErrorCode.test'
 export default function testsuite() {
   uitestComponentErrorTest();
   uitestDriverErrorTest();
@@ -42,4 +43,5 @@ export default function testsuite() {
   UitestUWindow401ErrorCode();
   uitestApi26ErrorTest();
   uitestOnApi26ErrorCodeTest();
+  uitestEnumBoundaryErrorCode();
 }

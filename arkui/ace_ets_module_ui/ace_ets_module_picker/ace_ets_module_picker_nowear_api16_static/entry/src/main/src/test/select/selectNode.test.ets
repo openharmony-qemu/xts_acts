@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -22,15 +22,9 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 export default function selectNodeTest() {
   describe('selectNodeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("selectNodeTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info('selectNodeTest beforeEach start');
       let options: router.RouterOptions = {

@@ -96,8 +96,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
 
-          done();
         }
+        done();
       });
 
     /**
@@ -163,8 +163,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -230,8 +230,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -273,8 +273,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -316,8 +316,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -359,8 +359,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -405,8 +405,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
 
@@ -449,8 +449,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -492,8 +492,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -535,8 +535,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -579,8 +579,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -594,59 +594,67 @@ export default function MessageTest2(): void {
     it('MessageScenarioTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest001';
-        let flag: boolean = false;
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
         try {
           eaw.start();
-          let result: concurrency.Message[] = [];
+          let plainCount = new AtomicInt(0);
+          let whatOneCount = new AtomicInt(0);
+          let whatTenCount = new AtomicInt(0);
+          let negativeCount = new AtomicInt(0);
+          let objectCount = new AtomicInt(0);
+          let callbackCount = new AtomicInt(0);
+          let completedCount = new AtomicInt(0);
+          let mismatchCount = new AtomicInt(0);
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
-              await Sleep(1000);
-              flag = true;
-              result.push(msg);
-            })
+            let what = msg.getWhat();
+            let obj = msg.getObject();
+            let hasCallback = msg.getCallback() !== undefined;
+            if (what === -1000000 && obj === undefined && !hasCallback) {
+              plainCount.fetchAdd(1);
+            } else if (what === 1 && obj === undefined && !hasCallback) {
+              whatOneCount.fetchAdd(1);
+            } else if (what === 10 && obj === undefined && !hasCallback) {
+              whatTenCount.fetchAdd(1);
+            } else if (what === -1 && obj === undefined && !hasCallback) {
+              negativeCount.fetchAdd(1);
+            } else if (what === 1 && obj === "msg4" && !hasCallback) {
+              objectCount.fetchAdd(1);
+            } else if (what === -1000000 && obj === undefined && hasCallback) {
+              callbackCount.fetchAdd(1);
+            } else {
+              mismatchCount.fetchAdd(1);
+            }
+            completedCount.fetchAdd(1);
           }, eaw);
-          let messages: concurrency.Message[] = [];
           let message0 = new concurrency.Message(handler);
           handler.sendMessage(message0);
-          messages.push(message0);
           let message1: concurrency.Message = new concurrency.Message(1, handler);
           handler.sendMessage(message1);
-          messages.push(message1);
           let message2: concurrency.Message = new concurrency.Message(10, handler);
           handler.sendMessage(message2);
-          messages.push(message2);
           let message3: concurrency.Message = new concurrency.Message(-1, handler);
           handler.sendMessage(message3);
-          messages.push(message3);
           let message4: concurrency.Message = new concurrency.Message(1, "msg4", handler);
           handler.sendMessage(message4);
-          messages.push(message4);
           let callback: CB = () => {
             console.log(`concurrency.Message callback！`);
           };
           let message5 = new concurrency.Message(callback, handler);
           handler.sendMessage(message5);
-          messages.push(message5);
-          while (true) {
-            await Sleep(10);
-            if (result.length == 6) {
-              break;
-            }
+          let waitCount: number = 0;
+          while (completedCount.load() < 6 && waitCount < 50) {
+            waitCount++;
+            await Sleep(100);
           }
-          console.info(`resulr length: ${result.length}  ${messages.length}`);
-          if (result.length == messages.length) {
-            result.forEach((msg, index) => {
-              console.error(`equals`);
-              expect(msg.equals(messages[index.toInt()])).assertTrue();
-            });
-          } else {
-            expect().assertFail();
-          }
-          while (!flag) {
-            await Utils.msSleep(100);
-          }
+          expect(completedCount.load()).assertEqual(6);
+          expect(plainCount.load()).assertEqual(1);
+          expect(whatOneCount.load()).assertEqual(1);
+          expect(whatTenCount.load()).assertEqual(1);
+          expect(negativeCount.load()).assertEqual(1);
+          expect(objectCount.load()).assertEqual(1);
+          expect(callbackCount.load()).assertEqual(1);
+          expect(mismatchCount.load()).assertEqual(0);
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -657,8 +665,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -719,8 +727,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -791,8 +799,8 @@ export default function MessageTest2(): void {
             }
           }
           console.info(`${TAG} test end`)
-          done();
         }
+        done();
       });
 
     /**
@@ -847,8 +855,8 @@ export default function MessageTest2(): void {
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
-          done();
         }
+        done();
       });
 
     /**
@@ -903,8 +911,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -916,7 +924,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 0
      */
     it('GetWorkerTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (): void => {
         const TAG: string = 'GetWorkerTest001';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -926,7 +934,7 @@ export default function MessageTest2(): void {
           }, eaw);
           expect(handler.getWorker()).assertEqual(eaw);
         } catch (error) {
-          console.error(`error.message => ${error.message}`);
+          console.info(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -935,7 +943,6 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
       });
 
@@ -948,7 +955,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 1
      */
     it('GetWorkerTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (): void => {
         const TAG: string = 'GetWorkerTest002';
         console.info(`${TAG} test start`);
         let eaw1 = new EAWorker();
@@ -960,7 +967,7 @@ export default function MessageTest2(): void {
           }, eaw1);
           expect(handler.getWorker() != eaw2).assertTrue();
         } catch (error) {
-          console.error(`error.message => ${error.message}`);
+          console.info(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -970,7 +977,6 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
       });
 
@@ -1017,8 +1023,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1066,8 +1072,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1079,7 +1085,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 1
      */
     it('SendMessageTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void) => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'SendMessageTest001';
         console.info(`${TAG} test start`);
         let h1Received = false;
@@ -1112,8 +1118,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1125,7 +1131,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 0
      */
     it('SendMessageTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void) => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'SendMessageTest002';
         console.info(`${TAG} test start`);
         let received = false;
@@ -1152,8 +1158,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1165,7 +1171,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 0
      */
     it('SendMessageTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void) => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'SendMessageTest003';
         console.info(`${TAG} test start`);
         const worker1 = new EAWorker();
@@ -1200,8 +1206,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1213,7 +1219,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 0
      */
     it('SendMessageTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void) => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'SendMessageTest004';
         console.info(`${TAG} test start`);
         let received = false;
@@ -1246,8 +1252,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1259,7 +1265,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 0
      */
     it('SendMessageTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void) => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'SendMessageTest005';
         console.info(`${TAG} test start`);
         let executed = false;
@@ -1293,8 +1299,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1306,7 +1312,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 0
      */
     it('SendMessageTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void) => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'SendMessageTest006';
         console.info(`${TAG} test start`);
         let h1Received = false;
@@ -1339,8 +1345,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1352,7 +1358,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 0
      */
     it('SendMessageTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void) => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'SendMessageTest007';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1381,8 +1387,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1394,7 +1400,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 0
      */
     it('SendMessageTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void) => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'SendMessageTest008';
         console.info(`${TAG} test start`);
         let h1Received = false;
@@ -1429,8 +1435,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1473,8 +1479,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1486,7 +1492,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 0
      */
     it('SendMessageTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void) => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'SendMessageTest010';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1524,8 +1530,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -1538,7 +1544,7 @@ export default function MessageTest2(): void {
      * @tc.level Level 1
      */
     it('SendMessageTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void) => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'SendMessageTest011';
         console.info(`${TAG} test start`);
         let h1Received = false;
@@ -1571,8 +1577,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
+        done();
       });
 
 
@@ -1614,8 +1620,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       })
 
     /**
@@ -1666,8 +1672,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -1708,8 +1714,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -1750,8 +1756,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -1777,7 +1783,7 @@ export default function MessageTest2(): void {
               flag = true;
             })
           }, worker)
-          let msg = new concurrency.Message(1, 1 as short, handler);
+          let msg = new concurrency.Message(1, 1, handler);
           handler.sendMessage(msg);
           expect(msg.getObject() as int).assertEqual(1);
           while (!flag) {
@@ -1792,8 +1798,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -1834,8 +1840,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -1876,8 +1882,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -1919,8 +1925,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -1961,8 +1967,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -2002,8 +2008,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -2049,8 +2055,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       })
 
     /**
@@ -2097,8 +2103,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       })
 
     /**
@@ -2147,8 +2153,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       })
 
     /**
@@ -2204,8 +2210,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       })
 
     /**
@@ -2261,8 +2267,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       })
 
     /**
@@ -2318,8 +2324,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       })
 
     /**
@@ -2379,8 +2385,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       })
 
     /**
@@ -2440,8 +2446,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       })
 
     /**
@@ -2491,8 +2497,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       })
 
     /**
@@ -2534,8 +2540,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -2576,8 +2582,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -2613,8 +2619,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -2656,8 +2662,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -2700,8 +2706,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
 
     /**
@@ -2719,7 +2725,10 @@ export default function MessageTest2(): void {
         let flag: boolean = false;
         let handlerValue: boolean = false;
         let removeFlag: boolean = false;
+        let doneFlag = new AtomicInt(0);
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
           waitForCompletion(async () => {
             await Sleep(1000);
             flag = true;
@@ -2729,22 +2738,32 @@ export default function MessageTest2(): void {
         }
         worker.start();
         try {
-          let headMsg = new concurrency.Message(p, handler)
-          handler.sendMessage(headMsg);
-          removeFlag = handler.removeCallbacks(p)
+          let postedCallback = (): void => {
+            let headMsg = new concurrency.Message(p, handler)
+            handler.sendMessage(headMsg);
+            removeFlag = handler.removeCallbacks(p)
+            doneFlag.fetchAdd(1);
+          };
+          handler.post(postedCallback);
+          let waitCount: int = 0;
+          while (doneFlag.load() < 1 && waitCount < 50) {
+            waitCount++;
+            await Sleep(10);
+          }
+          expect(doneFlag.load()).assertEqual(1);
           expect(removeFlag).assertEqual(true);
         } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
+          console.info(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0214
      * @tc.name RemoveCallbacksTest008
@@ -2777,8 +2796,8 @@ export default function MessageTest2(): void {
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
-          done();
         }
+        done();
       });
   });
 }

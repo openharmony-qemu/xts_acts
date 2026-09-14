@@ -1,0 +1,25 @@
+{
+  "module": {
+    "name": "entry_test",
+    "type": "feature",
+    "description": "Test module",
+    "deviceTypes": [],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "mainElement": "TestAbility",
+    "abilities": [
+      {
+        "name": "TestAbility",
+        "srcEntry": "./ets/testability/TestAbility.ets",
+        "exported": true,
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background"
+      }
+    ],
+    "testRunner": {
+      "name": "OpenHarmonyTestRunner",
+      "srcPath": "testrunner"
+    }
+  }
+}

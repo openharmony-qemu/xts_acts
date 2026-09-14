@@ -53,6 +53,13 @@ import CustomPropertyTest from './customProperty/CustomProperty.test';
 import componentLifecycleDecoratorsTest from './lifecycle/ComponentLifecycleDecorators.test';
 import reuseComponentLifecycleTest from './lifecycle/ReuseComponentLifecycle.test';
 import reuseV2ComponentLifecycleTest from './lifecycle/ReuseV2ComponentLifecycle.test';
+import GlobalReusePoolTest from './uiutilsTest/GlobalReusePool.test';
+import GlobalReusePool002Test from './uiutilsTest/GlobalReusePool002.test';
+import ReusableChildState1Test from './Reusable/ReusableChildState1Test.test';
+import ReusableChildState2Test from './Reusable/ReusableChildState2Test.test';
+import ReusableChildState3Test from './Reusable/ReusableChildState3Test.test';
+import ReusableChildState4Test from './Reusable/ReusableChildState4Test.test';
+
 export default function testsuite() {
     MutableBuilder001();
     BuilderParam001();
@@ -94,4 +101,10 @@ export default function testsuite() {
     componentLifecycleDecoratorsTest();
     reuseComponentLifecycleTest();
     reuseV2ComponentLifecycleTest();
+    GlobalReusePoolTest();
+    GlobalReusePool002Test();
+    ReusableChildState1Test();
+    ReusableChildState2Test();
+    ReusableChildState3Test();
+    ReusableChildState4Test();
 }

@@ -20,8 +20,6 @@ import webview from '@ohos.web.webview'
 import emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement'
-import { BusinessError } from '@ohos.base'
-import { Driver } from '@ohos.UiTest';
 import hilog from '@ohos.hilog';
 
 export class StringFields {
@@ -177,7 +175,7 @@ struct webViewIncognitoMode {
                 this.controller.loadUrl('https://m.weibo.cn');
                 webview.GeolocationPermissions.deleteGeolocation('https://m.weibo.cn', true);
                 webview.GeolocationPermissions.getAccessibleGeolocation('https://m.weibo.cn', (error, result) => {
-                  if (error) {
+                  if (error && error.code) {
                     Utils.emitEvent('success', 8035);
                     return;
                   }
@@ -199,7 +197,7 @@ struct webViewIncognitoMode {
                 this.controller.loadUrl('https://m.weibo.cn');
                 webview.GeolocationPermissions.deleteGeolocation('https://m.weibo.cn', true);
                 webview.GeolocationPermissions.getAccessibleGeolocation('https://m.weibo.cn', (error, result) => {
-                  if (error) {
+                  if (error && error.code) {
                     Utils.emitEvent('success', 8036);
                     return;
                   }
@@ -292,6 +290,188 @@ struct webViewIncognitoMode {
               break;
             }
 
+            case 'emitWebViewIncognitoMode24': {
+              try {
+                this.isPrivacy = false;
+                webview.GeolocationPermissions.getStoredGeolocation(null as boolean)
+                  .then((origins: Array<string>) => {
+                    let originsStr: string = origins.join();
+                    console.log('getStoredGeolocationPromise null origins: ' + originsStr);
+                    Utils.emitEvent(0, 8039);
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocationPromise null error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 8039);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocationPromise null catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(401, 8039);
+              }
+              break;
+            }
+
+            case 'emitWebViewIncognitoMode25': {
+              try {
+                this.isPrivacy = false;
+                webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com');
+                webview.GeolocationPermissions.getStoredGeolocation(undefined)
+                  .then((origins: Array<string>) => {
+                    let originsStr: string = origins.join();
+                    console.log('getStoredGeolocationPromise undefined origins: ' + originsStr);
+                    if (originsStr == 'https://m.baidu.com') {
+                      Utils.emitEvent('success', 8040);
+                    } else {
+                      Utils.emitEvent('fail', 8040);
+                    }
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocationPromise undefined error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent('fail', 8040);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocationPromise undefined catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent('fail', 8040);
+              }
+              break;
+            }
+
+            case 'emitWebViewIncognitoMode26': {
+              try {
+                this.isPrivacy = false;
+                webview.GeolocationPermissions.deleteAllGeolocation(false);
+                webview.GeolocationPermissions.getStoredGeolocation(false)
+                  .then((origins: Array<string>) => {
+                    let originsStr: string = origins.join();
+                    console.log('getStoredGeolocationPromise empty origins: ' + originsStr);
+                    if (!originsStr) {
+                      Utils.emitEvent('success', 8041);
+                    } else {
+                      Utils.emitEvent('fail', 8041);
+                    }
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocationPromise empty error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent('fail', 8041);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocationPromise empty catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent('fail', 8041);
+              }
+              break;
+            }
+
+            case 'emitWebViewIncognitoMode27': {
+              try {
+                this.isPrivacy = false;
+                webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com');
+                webview.GeolocationPermissions.getStoredGeolocation(false)
+                  .then((origins: Array<string>) => {
+                    let originsStr: string = origins.join();
+                    console.log('getStoredGeolocationPromise non-empty origins: ' + originsStr);
+                    if (originsStr == 'https://m.baidu.com') {
+                      Utils.emitEvent('success', 8042);
+                    } else {
+                      Utils.emitEvent('fail', 8042);
+                    }
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocationPromise non-empty error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent('fail', 8042);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocationPromise non-empty catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent('fail', 8042);
+              }
+              break;
+            }
+
+            case 'emitWebViewIncognitoMode28': {
+              try {
+                this.isPrivacy = false;
+                webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCb null error: ' + JSON.stringify(error));
+                    Utils.emitEvent(error.code, 8043);
+                  } else {
+                    let originsStr = origins?.join();
+                    console.log('getStoredGeolocationCb null origins: ' + originsStr);
+                    Utils.emitEvent(0, 8043);
+                  }
+                }, null as boolean);
+              } catch (error) {
+                Utils.emitEvent(401, 8043);
+              }
+              break;
+            }
+
+            case 'emitWebViewIncognitoMode29': {
+              try {
+                this.isPrivacy = false;
+                webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com');
+                webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCb undefined error: ' + JSON.stringify(error));
+                    Utils.emitEvent('fail', 8044);
+                  } else {
+                    let originsStr = origins?.join();
+                    console.log('getStoredGeolocationCb undefined origins: ' + originsStr);
+                    if (originsStr == 'https://m.baidu.com') {
+                      Utils.emitEvent('success', 8044);
+                    } else {
+                      Utils.emitEvent('fail', 8044);
+                    }
+                  }
+                }, undefined);
+              } catch (error) {
+                Utils.emitEvent('fail', 8044);
+              }
+              break;
+            }
+
+            case 'emitWebViewIncognitoMode30': {
+              try {
+                this.isPrivacy = false;
+                webview.GeolocationPermissions.deleteAllGeolocation(false);
+                webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCb empty error: ' + JSON.stringify(error));
+                    Utils.emitEvent('fail', 8045);
+                  } else {
+                    let originsStr = origins?.join();
+                    console.log('getStoredGeolocationCb empty origins: ' + originsStr);
+                    if (!originsStr) {
+                      Utils.emitEvent('success', 8045);
+                    } else {
+                      Utils.emitEvent('fail', 8045);
+                    }
+                  }
+                }, false);
+              } catch (error) {
+                Utils.emitEvent('fail', 8045);
+              }
+              break;
+            }
+
+            case 'emitWebViewIncognitoMode31': {
+              try {
+                this.isPrivacy = false;
+                webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com');
+                webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCb non-empty error: ' + JSON.stringify(error));
+                    Utils.emitEvent('fail', 8046);
+                  } else {
+                    let originsStr = origins?.join();
+                    console.log('getStoredGeolocationCb non-empty origins: ' + originsStr);
+                    if (originsStr == 'https://m.baidu.com') {
+                      Utils.emitEvent('success', 8046);
+                    } else {
+                      Utils.emitEvent('fail', 8046);
+                    }
+                  }
+                }, false);
+              } catch (error) {
+                Utils.emitEvent('fail', 8046);
+              }
+              break;
+            }
+
             case 'emitWebViewIncognitoMode01': {
               try {
                 this.controller.loadUrl('https://m.weibo.cn');
@@ -306,6 +486,24 @@ struct webViewIncognitoMode {
 
               } catch (error) {
                 hilog.info(0X0000,"testTag",`ErrorCode: ` + error );
+              }
+              break;
+            }
+            case 'testDeleteAllGeolocationNull': {
+              try {
+                webview.GeolocationPermissions.deleteAllGeolocation(null as boolean);
+                Utils.emitEvent('success', 8047);
+              } catch (error) {
+                Utils.emitEvent('fail', 8047);
+              }
+              break;
+            }
+            case 'testDeleteAllGeolocationUndefined': {
+              try {
+                webview.GeolocationPermissions.deleteAllGeolocation(undefined);
+                Utils.emitEvent('success', 8048);
+              } catch (error) {
+                Utils.emitEvent('fail', 8048);
               }
               break;
             }

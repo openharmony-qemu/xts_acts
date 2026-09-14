@@ -22,6 +22,7 @@ import events_emitter from '@ohos.events.emitter';
 import fs from '@ohos.file.fs';
 import business_error from '@ohos.base';
 import {waitForAssert, waitForExist} from '../../test/WaitTest';
+import { XtsTestServer } from 'library';
 
 class testObj {
   constructor() {
@@ -46,6 +47,7 @@ const EVENT_ID_SET_SUITE_KEY = 123101;
 struct Index {
   controller: webView.WebviewController = new webView.WebviewController();
   controllerNull: webView.WebviewController = new webView.WebviewController();
+  mSslServer: XtsTestServer = new XtsTestServer(getContext(this), true);
   responseWeb: WebResourceResponse = new WebResourceResponse()
   @State webResult: string = ' ';
   @State str: string = '';
@@ -70,6 +72,10 @@ struct Index {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+    try {
+      this.controller.loadUrl(this.mSslServer.getShutdownUrl());
+    } catch (_e) {
+    }
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -202,7 +208,8 @@ struct Index {
         .javaScriptAccess(this.javaScriptAccess)
         .zoomAccess(false)
         .onSslErrorEventReceive((e) => {
-          // 忽略ssl证书错误，便于测试一些证书过期的网站，如：https://expired.badssl.com
+          // 忽略 ssl 证书错误，触发证书异常路径验证。
+          this.isSslErrorHandlerComplete = 1;
           e.handler.handleConfirm();
         })
         .onSslErrorEvent((event: SslErrorEvent) => {

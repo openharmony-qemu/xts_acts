@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -23,6 +23,7 @@ import Utils from './Util.test';
 import request from "@ohos.request";
 import common from "@ohos.app.ability.common";
 import fs from "@ohos.file.fs";
+import {WifiConnectStatus} from '../common/WifiConnectStatus';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let baseContext: common.UIAbilityContext | undefined;
@@ -65,6 +66,15 @@ export default function RequestDownloadStaticTest() {
       await Utils.msSleep(2000)
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
+
+    /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (): Promise<void> => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+    });
 
     /**
      * @tc.name   SUB_MISC_REQUEST_DOWNLOAD_state_Static_0010

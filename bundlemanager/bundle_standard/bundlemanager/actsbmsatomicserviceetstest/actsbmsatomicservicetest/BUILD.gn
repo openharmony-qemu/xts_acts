@@ -20,7 +20,7 @@ ohos_js_hap_suite("ActsBmsAtomicServiceTest") {
     ":actsbmsatomicservicetest_resources",
   ]
   ets2abc = true
-  certificate_profile = "signature/openharmony_sx.p7b"
+  certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsBmsAtomicServiceTest"
   subsystem_name = "bundlemanager"
   part_name = "bundle_framework"

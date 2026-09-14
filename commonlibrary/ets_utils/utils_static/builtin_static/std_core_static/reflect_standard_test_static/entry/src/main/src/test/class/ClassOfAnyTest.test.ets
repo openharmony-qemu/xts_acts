@@ -1352,7 +1352,7 @@ export default function ClassOfAnyTest(): void {
      * @tc.level Level 2
     */
     it('testClassOfAny014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj: Any = new FixedArray<int>(3)
+      let obj: Any = new FixedArray<int>(3, 0)
       let cls = Class.ofAny(obj)
       expect(cls !== undefined && cls !== null).assertTrue()
       expect(cls!.isFixedArray()).assertTrue()

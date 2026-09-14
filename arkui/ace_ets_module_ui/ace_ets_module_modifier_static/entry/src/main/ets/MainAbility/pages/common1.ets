@@ -117,7 +117,7 @@ struct Common1Example {
 
   @State customModifier5: CustomModifier = new CustomModifier()
     .clickEffect({ level: ClickEffectLevel.HEAVY, scale: 1 })
-    .allowDrop([UTD.UniformDataType.PLAIN_TEXT])
+    .allowDrop([UTD.UniformDataType.PLAIN_TEXT] as Array<UTD.UniformDataType>)
     .backgroundBrightness({ rate: 10, lightUpDegree: 10 })
     .dragPreviewOptions({ mode: DragPreviewMode.AUTO })
     .alignRules({
@@ -128,7 +128,7 @@ struct Common1Example {
       right: {anchor: "__container__", align: HorizontalAlign.End}
     } as AlignRuleOption)
     // 导致 白屏，适配暂注
-    .allowDrop([UTD.UniformDataType.PLAIN_TEXT])
+    .allowDrop([UTD.UniformDataType.PLAIN_TEXT] as Array<UTD.UniformDataType>)
     .hoverEffect(HoverEffect.Auto)
     .foregroundBlurStyle(BlurStyle.Thin,{ colorMode: ThemeColorMode.DARK, adaptiveColor: AdaptiveColor.DEFAULT, scale: 1.0 })
     .expandSafeArea([SafeAreaType.SYSTEM],[ SafeAreaEdge.BOTTOM])

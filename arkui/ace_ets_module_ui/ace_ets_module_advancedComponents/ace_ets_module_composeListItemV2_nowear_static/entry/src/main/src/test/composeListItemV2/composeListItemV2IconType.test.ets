@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility } from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function composeListItemV2IconTypeTest() {
   describe('composeListItemV2IconTypeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("composeListItemV2IconTypeTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.composeListItemV2.nowear.test.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("composeListItemV2IconTypeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -52,7 +46,11 @@ export default function composeListItemV2IconTypeTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('composeListItemV2IconTypeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('composeListItemV2IconTypeTest after each called');
     })
 
@@ -68,13 +66,19 @@ export default function composeListItemV2IconTypeTest() {
      */
     it('composeListItemV2IconType_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2IconType_static_0100] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let badgeText = await driver.findComponent(ON.text('Badge Icon'));
-      expect(badgeText !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2IconType_static_0100] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let badgeText = await driver.findComponent(ON.text('Badge Icon'));
+        expect(badgeText !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2IconType_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2IconType_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -85,13 +89,19 @@ export default function composeListItemV2IconTypeTest() {
      */
     it('composeListItemV2IconType_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2IconType_static_0200] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let normalText = await driver.findComponent(ON.text('Normal Icon'));
-      expect(normalText !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2IconType_static_0200] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let normalText = await driver.findComponent(ON.text('Normal Icon'));
+        expect(normalText !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2IconType_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2IconType_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -102,13 +112,19 @@ export default function composeListItemV2IconTypeTest() {
      */
     it('composeListItemV2IconType_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2IconType_static_0300] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let systemText = await driver.findComponent(ON.text('System Icon'));
-      expect(systemText !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2IconType_static_0300] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let systemText = await driver.findComponent(ON.text('System Icon'));
+        expect(systemText !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2IconType_static_0300] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2IconType_static_0300] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -119,13 +135,19 @@ export default function composeListItemV2IconTypeTest() {
      */
     it('composeListItemV2IconType_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2IconType_static_0400] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let headText = await driver.findComponent(ON.text('Head Sculpture'));
-      expect(headText !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2IconType_static_0400] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let headText = await driver.findComponent(ON.text('Head Sculpture'));
+        expect(headText !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2IconType_static_0400] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2IconType_static_0400] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -136,13 +158,19 @@ export default function composeListItemV2IconTypeTest() {
      */
     it('composeListItemV2IconType_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2IconType_static_0500] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let appText = await driver.findComponent(ON.text('App Icon'));
-      expect(appText !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2IconType_static_0500] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let appText = await driver.findComponent(ON.text('App Icon'));
+        expect(appText !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2IconType_static_0500] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2IconType_static_0500] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -153,13 +181,19 @@ export default function composeListItemV2IconTypeTest() {
      */
     it('composeListItemV2IconType_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2IconType_static_0600] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let previewText = await driver.findComponent(ON.text('Preview Icon'));
-      expect(previewText !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2IconType_static_0600] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let previewText = await driver.findComponent(ON.text('Preview Icon'));
+        expect(previewText !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2IconType_static_0600] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2IconType_static_0600] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -170,13 +204,19 @@ export default function composeListItemV2IconTypeTest() {
      */
     it('composeListItemV2IconType_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2IconType_static_0700] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let longitudinalText = await driver.findComponent(ON.text('Longitudinal Icon'));
-      expect(longitudinalText !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2IconType_static_0700] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let longitudinalText = await driver.findComponent(ON.text('Longitudinal Icon'));
+        expect(longitudinalText !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2IconType_static_0700] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2IconType_static_0700] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -187,13 +227,19 @@ export default function composeListItemV2IconTypeTest() {
      */
     it('composeListItemV2IconType_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2IconType_static_0800] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      let verticalText = await driver.findComponent(ON.text('Vertical Icon'));
-      expect(verticalText !== null).assertTrue();
-      await driver.delayMs(1000);
-      console.info('[composeListItemV2IconType_static_0800] END');
-      done();
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        let verticalText = await driver.findComponent(ON.text('Vertical Icon'));
+        expect(verticalText !== null).assertTrue();
+        await driver.delayMs(1000);
+        console.info('[composeListItemV2IconType_static_0800] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2IconType_static_0800] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

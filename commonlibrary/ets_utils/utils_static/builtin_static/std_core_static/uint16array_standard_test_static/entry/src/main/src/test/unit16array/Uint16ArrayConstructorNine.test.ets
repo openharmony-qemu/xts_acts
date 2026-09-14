@@ -235,7 +235,7 @@ export default function uint16ArrayConstructor09Test(): void {
      */
     it('testUint16ArrayConstructorNine012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
-        let fa: FixedArray<number> = new FixedArray<number>(3);
+        let fa: FixedArray<number> = new FixedArray<number>(3, 0);
         fa[0] = 100;
         fa[1] = 200;
         fa[2] = 300;
@@ -275,7 +275,7 @@ export default function uint16ArrayConstructor09Test(): void {
     it('testUint16ArrayConstructorNine014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let a: Uint16Array = new Uint16Array(3);
-        let fa: FixedArray<int> = new FixedArray<int>(3);
+        let fa: FixedArray<int> = new FixedArray<int>(3, 0);
         fa[0] = 0;
         fa[1] = 0;
         fa[2] = 0;
@@ -475,7 +475,7 @@ export default function uint16ArrayConstructor09Test(): void {
      */
     it('testUint16ArrayConstructorNine025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
-        let fa: FixedArray<int> = new FixedArray<int>(2);
+        let fa: FixedArray<int> = new FixedArray<int>(2, 0);
         fa[0] = 42;
         fa[1] = 84;
         let a: Uint16Array = new Uint16Array(fa);
@@ -566,7 +566,7 @@ export default function uint16ArrayConstructor09Test(): void {
      */
     it('testUint16ArrayConstructorNine030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
-        let fa: FixedArray<number> = new FixedArray<number>(0);
+        let fa: FixedArray<number> = new FixedArray<number>(0, 0);
         let a: Uint16Array = new Uint16Array(fa);
         let b: Uint16Array = new Uint16Array([]);
         expect(a.length).assertEqual(0);
@@ -753,7 +753,7 @@ export default function uint16ArrayConstructor09Test(): void {
      */
     it('testUint16ArrayConstructorNine041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
-        let fa: FixedArray<number> = new FixedArray<number>(1);
+        let fa: FixedArray<number> = new FixedArray<number>(1, 0);
         fa[0] = 42;
         let a: Uint16Array = new Uint16Array(fa);
         expect(a.byteLength).assertEqual(2);
@@ -1070,7 +1070,7 @@ export default function uint16ArrayConstructor09Test(): void {
     it('testUint16ArrayConstructorNine057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let buf: ArrayBuffer = new ArrayBuffer(0);
-        let fa: FixedArray<number> = new FixedArray<number>(2);
+        let fa: FixedArray<number> = new FixedArray<number>(2, 0);
         fa[0] = 11;
         fa[1] = 22;
         try {
@@ -1367,7 +1367,7 @@ export default function uint16ArrayConstructor09Test(): void {
      */
     it('testUint16ArrayConstructorNine074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
-        let fa: FixedArray<number> = new FixedArray<number>(3);
+        let fa: FixedArray<number> = new FixedArray<number>(3, 0);
         fa[0] = 1000;
         fa[1] = 2000;
         fa[2] = 3000;

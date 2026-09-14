@@ -36,7 +36,7 @@ export default function SetConnectionTimeOut() {
       webview.WebviewController.setConnectionTimeout(60)
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
-      await waitForComponents('001');
+      await waitForComponents('SetConnectionTimeOut1_setConnectionTimeOut');
       done();
     })
     beforeEach(async (done: Function) => {
@@ -102,7 +102,13 @@ export default function SetConnectionTimeOut() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, "001");
+      try {
+        await Utils.waitAndClickComponent(driver, "SetConnectionTimeOut1_setConnectionTimeOut");
+      } catch (error) {
+        console.error('SetConnectionTimeOut1 waitAndClickComponent failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
       router.clear()
     })
 
@@ -123,7 +129,13 @@ export default function SetConnectionTimeOut() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, "001");
+      try {
+        await Utils.waitAndClickComponent(driver, "SetConnectionTimeOut2_setConnectionTimeOut");
+      } catch (error) {
+        console.error('SetConnectionTimeOut2 waitAndClickComponent failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
       router.clear()
     })
 
@@ -144,7 +156,13 @@ export default function SetConnectionTimeOut() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, "001");
+      try {
+        await Utils.waitAndClickComponent(driver, "SetConnectionTimeOut3_setConnectionTimeOut");
+      } catch (error) {
+        console.error('SetConnectionTimeOut3 waitAndClickComponent failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
       router.clear()
     })
 
@@ -165,7 +183,13 @@ export default function SetConnectionTimeOut() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, "001");
+      try {
+        await Utils.waitAndClickComponent(driver, "SetConnectionTimeOut4_setConnectionTimeOut");
+      } catch (error) {
+        console.error('SetConnectionTimeOut4 waitAndClickComponent failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
       router.clear()
     })
 

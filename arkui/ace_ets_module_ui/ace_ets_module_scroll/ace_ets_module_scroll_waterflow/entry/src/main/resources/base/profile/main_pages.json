@@ -22,6 +22,7 @@
         "MainAbility/pages/WaterFlowScrollBarWidth",
         "MainAbility/pages/waterFlowDefault/sectionsNullUndefined",
         "MainAbility/pages/WaterFlow/waterFlowEmptyLazy",
+        "MainAbility/pages/WaterFlow/WaterFlowLayoutModeUn",
         "MainAbility/pages/LazyVWaterFlowLayout/LazyVWaterFlowLayoutProperties",
         "MainAbility/pages/LazyColumnLayout/LazyColumnLayoutProperties",
         "MainAbility/pages/LazyVWaterFlowLayout/headerFooterStickyFlow",

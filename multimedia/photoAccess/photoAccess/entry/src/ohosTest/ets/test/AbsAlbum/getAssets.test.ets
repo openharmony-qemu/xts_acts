@@ -540,6 +540,74 @@ export default function albumGetAssetsTest () {
       }
     });
 
+    /**
+      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_1100
+      * @tc.name    album_getAssets_callback_011
+      * @tc.desc    album getAssets File that fetchOption error, error code is 13900020
+      * @tc.size    MEDIUM
+      * @tc.type    Function
+      * @tc.level   Level 0
+    */
+    it('album_getAssets_callback_011', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'album_getAssets_callback_011';
+      const errorCode = 13900020;
+      try {
+        const fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper.getAlbums(albumType.SYSTEM, albumSubtype.VIDEO);
+        const album: photoAccessHelper.Album = await fetchResult.getFirstObject();
+        fetchResult.close();
+        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+        let fetchOption: photoAccessHelper.FetchOptions = {
+          fetchColumns: ['noexist'],
+          predicates: predicates
+        }
+        album.getAssets(fetchOption, async (err, FetchResult) => {
+          if(err){
+            expect(false).assertTrue();
+            done();
+          }
+          else{
+            FetchResult.close();
+            expect(false).assertTrue();
+            done();
+          }
+        })
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error}`);
+        expect(error.code).assertEqual(String(errorCode));
+        done();
+      }
+    });
+
+    /**
+      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_1200
+      * @tc.name    album_getAssets_callback_012
+      * @tc.desc    album getAssets File that check lpath
+      * @tc.size    MEDIUM
+      * @tc.type    Function
+      * @tc.level   Level 0
+    */
+    it('album_getAssets_callback_012', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'album_getAssets_callback_012';
+      try {
+        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+        let albumFetchOptions: photoAccessHelper.FetchOptions = {
+          fetchColumns: [],
+          predicates: predicates
+        }
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper.getAlbums(photoAccessHelper.AlbumType.SOURCE,
+          photoAccessHelper.AlbumSubtype.SOURCE_GENERIC, albumFetchOptions);
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        const albumlpath: string = '/Pictures/' + album.albumName;
+        expect(album.lpath === albumlpath).assertTrue();
+        albumList.close();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
     //promise
     /**
      * @tc.name   album_getAssets_promise_000
@@ -613,6 +681,36 @@ export default function albumGetAssetsTest () {
       } catch (error) {
         console.info(`${testNum} failed; error: ${error.code}`);
         expect(error.code === '14000011').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   album_getAssets_promise_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_0300
+     * @tc.desc   album getAssets fetchColumns Invalid argument,error code is 13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('album_getAssets_promise_003', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'album_getAssets_promise_003';
+      const errorCode = 13900020
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOps: photoAccessHelper.FetchOptions = {
+        fetchColumns: ['Invalid argument'],
+        predicates: predicates
+      }
+      const fetchResult = await helper.getAlbums(albumType.SYSTEM, albumSubtype.IMAGE);
+      const album = await fetchResult.getFirstObject();
+      fetchResult.close();
+      try {
+        album.getAssets(fetchOps);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual(String(errorCode));
         done();
       }
     });

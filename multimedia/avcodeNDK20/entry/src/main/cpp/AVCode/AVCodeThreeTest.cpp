@@ -1753,3 +1753,62 @@ napi_value EnumOHEnableSkipSamples2(napi_env env, napi_callback_info info)
     OH_AVFormat_Destroy(format);
     return retValue;
 }
+
+napi_value EnumOHAudioChannelLayout(napi_env env, napi_callback_info info)
+{
+    OH_AVFormat *format = OH_AVFormat_Create();
+    int32_t errNum = 0;
+    bool setResult = OH_AVFormat_SetLongValue(format, OH_MD_KEY_CHANNEL_LAYOUT, UNKNOWN_CHANNEL_LAYOUT);
+    napi_value retValue;
+    if (setResult != true) {
+        errNum++;
+    }
+
+    setResult = OH_AVFormat_SetLongValue(format, OH_MD_KEY_CHANNEL_LAYOUT, MONO);
+    if (setResult != true) {
+        errNum++;
+    }
+
+    setResult = OH_AVFormat_SetLongValue(format, OH_MD_KEY_CHANNEL_LAYOUT, STEREO);
+    if (setResult != true) {
+        errNum++;
+    }
+
+    setResult = OH_AVFormat_SetLongValue(format, OH_MD_KEY_CHANNEL_LAYOUT, CH_2POINT1);
+    if (setResult != true) {
+        errNum++;
+    }
+
+    setResult = OH_AVFormat_SetLongValue(format, OH_MD_KEY_CHANNEL_LAYOUT, CH_3POINT1);
+    if (setResult != true) {
+        errNum++;
+    }
+
+    setResult = OH_AVFormat_SetLongValue(format, OH_MD_KEY_CHANNEL_LAYOUT, CH_4POINT1);
+    if (setResult != true) {
+        errNum++;
+    }
+
+    setResult = OH_AVFormat_SetLongValue(format, OH_MD_KEY_CHANNEL_LAYOUT, CH_5POINT1);
+    if (setResult != true) {
+        errNum++;
+    }
+
+    setResult = OH_AVFormat_SetLongValue(format, OH_MD_KEY_CHANNEL_LAYOUT, CH_6POINT1);
+    if (setResult != true) {
+        errNum++;
+    }
+
+    setResult = OH_AVFormat_SetLongValue(format, OH_MD_KEY_CHANNEL_LAYOUT, CH_7POINT1);
+    if (setResult != true) {
+        errNum++;
+    }
+
+    if (errNum == 0) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    OH_AVFormat_Destroy(format);
+    return retValue;
+}

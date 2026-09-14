@@ -13,30 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function refreshOffsetChangeJsunit() {
   describe('refreshOffsetChangeJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("refreshOffsetChangeJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -49,6 +35,7 @@ export default function refreshOffsetChangeJsunit() {
         if (!("refreshOffsetChange" == pages.name)) {
           console.info("get refreshOffsetChangeJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push refreshOffsetChangeJsunit page error: " + err);
@@ -268,33 +255,39 @@ it('refreshOffsetChangeJsunit_static_0600', Level.LEVEL0, async (done: () => voi
      */
 it('refreshOffsetChangeJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0700 START');
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
-      let top = swiperOffset.top;
-      let right = swiperOffset.right;
-      let left = swiperOffset.left;
-      let bottom = swiperOffset.bottom;
-      console.info("refreshOffsetChangeJsunit_static_0700 value is" + left + " --" + right + "--" + top + "--" +
-        bottom);
-      let height = bottom - top;
-      let width = right - left;
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      await driver.swipe((Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.1)).toInt(),
-        (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.7)).toInt());
-      await CommonFunc.sleep(1000);
-      let strJson1 = inspector.getInspectorByKey('refresh_mess1_1');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      console.info("[refreshOffsetChangeJsunit_static_0700] component obj1 is: " + JSON.stringify(obj1));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('onStateChange:3');
+      try {
+        let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
+        let top = swiperOffset.top;
+        let right = swiperOffset.right;
+        let left = swiperOffset.left;
+        let bottom = swiperOffset.bottom;
+        console.info("refreshOffsetChangeJsunit_static_0700 value is" + left + " --" + right + "--" + top + "--" +
+          bottom);
+        let height = bottom - top;
+        let width = right - left;
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.1)).toInt(),
+          (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.9)).toInt());
+        await CommonFunc.sleep(1000);
+        let strJson1 = inspector.getInspectorByKey('refresh_mess1_1');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        console.info("[refreshOffsetChangeJsunit_static_0700] component obj1 is: " + JSON.stringify(obj1));
+        expect(obj1.getElement('$attrs').getString('content')).assertEqual('onStateChange:3');
 
-      await driver.swipe((Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.5)).toInt(),
-        (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.4)).toInt());
-      let strJson = inspector.getInspectorByKey('refresh_mess1_2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[refreshOffsetChangeJsunit_static_0700] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('onOffsetChange-');
-      console.info('[refreshOffsetChangeJsunit_static_0700] END');
-      done();
+        await driver.swipe((Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.5)).toInt(),
+          (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.4)).toInt());
+        let strJson = inspector.getInspectorByKey('refresh_mess1_2');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[refreshOffsetChangeJsunit_static_0700] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('onOffsetChange-');
+        console.info('[refreshOffsetChangeJsunit_static_0700] END');
+        done();
+      } catch (error) {
+        console.error('[refreshOffsetChangeJsunit_static_0700] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     
@@ -308,33 +301,40 @@ it('refreshOffsetChangeJsunit_static_0700', Level.LEVEL0, async (done: () => voi
      */
 it('refreshOffsetChangeJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetChangeJsunit_static_0800 START');
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
-      let top = swiperOffset.top;
-      let right = swiperOffset.right;
-      let left = swiperOffset.left;
-      let bottom = swiperOffset.bottom;
-      console.info("refreshOffsetChangeJsunit_static_0800 value is" + left + " --" + right + "--" + top + "--" +
-        bottom);
-      let height = bottom - top;
-      let width = right - left;
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      await driver.swipe((Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.1)).toInt(),
-        (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.5)).toInt());
-      await CommonFunc.sleep(1000);
-      let strJson1 = inspector.getInspectorByKey('refresh_mess1_1');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      console.info("[refreshOffsetChangeJsunit_static_0800] component obj1 is: " + JSON.stringify(obj1));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('onStateChange:3');
+      try {
 
-      await driver.swipe((Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.5)).toInt(),
-        (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.6)).toInt());
-      let strJson = inspector.getInspectorByKey('refresh_mess1_2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[refreshOffsetChangeJsunit_static_0800] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('onOffsetChange+');
-      console.info('[refreshOffsetChangeJsunit_static_0800] END');
-      done();
+        let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
+        let top = swiperOffset.top;
+        let right = swiperOffset.right;
+        let left = swiperOffset.left;
+        let bottom = swiperOffset.bottom;
+        console.info("refreshOffsetChangeJsunit_static_0800 value is" + left + " --" + right + "--" + top + "--" +
+          bottom);
+        let height = bottom - top;
+        let width = right - left;
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.1)).toInt(),
+          (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.8)).toInt());
+        await CommonFunc.sleep(1000);
+        let strJson1 = inspector.getInspectorByKey('refresh_mess1_1');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        console.info("[refreshOffsetChangeJsunit_static_0800] component obj1 is: " + JSON.stringify(obj1));
+        expect(obj1.getElement('$attrs').getString('content')).assertEqual('onStateChange:3');
+
+        await driver.swipe((Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.5)).toInt(),
+          (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height * 0.8)).toInt());
+        let strJson = inspector.getInspectorByKey('refresh_mess1_2');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[refreshOffsetChangeJsunit_static_0800] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('onOffsetChange+');
+        console.info('[refreshOffsetChangeJsunit_static_0800] END');
+        done();
+      } catch (error) {
+        console.error('[refreshOffsetChangeJsunit_static_0800] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     

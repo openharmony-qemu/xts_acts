@@ -149,6 +149,47 @@ export default function nfcTagTest() {
       done();
     })
 
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let elementName: ElementName = {
+        "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+        "abilityName": "MainAbility",
+        "moduleName": "entry"
+      };
+      let discTech: Array<int> = [1, 2, 4];
+      let AsyncCallback:(err: BusinessError<void> | null, data: tag.TagInfo | undefined) => void = (
+        err: BusinessError<void> | null, data: tag.TagInfo | undefined) => {
+        if (data !== undefined && data !== null) {
+          let uid: Array<int> = data.uid;
+          let technology: Array<int> = data.technology;
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400 uid readable unexpectedly -> ' + uid);
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400 technology readable unexpectedly -> ' + technology);
+          expect().assertFail();
+        }
+        hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400 registerForegroundDispatch finish ');
+      }
+      try {
+        tag.registerForegroundDispatch(elementName, discTech, AsyncCallback);
+      } catch(error) {
+        error = error as BusinessError;
+        if (error.code === 201) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400 registerForegroundDispatch error:  ' + error + error.code);
+          expect(error.code).assertEqual(201);
+        } else {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_Permissions_static_0400 registerForegroundDispatch fail:  ' + error + error.code);
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
     console.info("*************[nfc_test] start nfc js unit test end*************");
   })
 }

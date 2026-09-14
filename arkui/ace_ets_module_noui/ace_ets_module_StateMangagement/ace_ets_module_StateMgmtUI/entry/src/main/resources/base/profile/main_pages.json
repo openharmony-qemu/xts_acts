@@ -44,6 +44,12 @@
     "MainAbility/pages/circularReference/CircularReference",
     "MainAbility/pages/lifecycle/ComponentLifecycleDecorators",
     "MainAbility/pages/lifecycle/ReuseComponentLifecycle",
-    "MainAbility/pages/lifecycle/ReuseV2ComponentLifecycle"
+    "MainAbility/pages/lifecycle/ReuseV2ComponentLifecycle",
+    "MainAbility/pages/uiutils/GlobalReusePool",
+    "MainAbility/pages/uiutils/GlobalReusePool002",
+    "MainAbility/pages/Reusable/ReusableChildState1Test",
+    "MainAbility/pages/Reusable/ReusableChildState2Test",
+    "MainAbility/pages/Reusable/ReusableChildState3Test",
+    "MainAbility/pages/Reusable/ReusableChildState4Test"
   ]
 }

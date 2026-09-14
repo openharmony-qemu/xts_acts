@@ -27,7 +27,7 @@ export default function FunctionalextSupplementManualEnvTestGroupTest() {
      * @tc.desc   libc-test a_stack_chk_fail
      */
     it("a_stack_chk_fail", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("a_stack_chk_fail");
+      const result: number = await testNapi.runTest("a_stack_chk_fail");
       expect(result).assertEqual(0);
       done();
     });

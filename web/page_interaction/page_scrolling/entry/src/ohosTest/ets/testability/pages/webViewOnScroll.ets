@@ -116,7 +116,7 @@ struct webViewOnScroll {
         Button("web click").key('webViewOnScroll').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "emitOnscroll": {
               try {
@@ -158,12 +158,12 @@ struct webViewOnScroll {
               try {
                 this.isPageEnd = -1
                 this.controller.loadUrl($rawfile('indexCopyTwo.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("Tablet")) {
                   this.isPageEnd = -1
                   this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 }
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
                   this.checkEleResult = JSON.parse(result)
@@ -196,12 +196,12 @@ struct webViewOnScroll {
               try {
                 this.isPageEnd = -1
                 this.controller.loadUrl($rawfile('indexCopyTwo.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("Tablet")) {
                   this.isPageEnd = -1
                   this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 }
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
                   this.checkEleResult = JSON.parse(result)
@@ -237,7 +237,7 @@ struct webViewOnScroll {
               try {
                 this.isPageEnd = -1
                 this.controller.loadUrl($rawfile('indexFive.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.pageDown(true);
                 setTimeout(() => {
                   if (this.isWebBottom) {
@@ -256,12 +256,12 @@ struct webViewOnScroll {
               try {
                 this.isPageEnd = -1
                 this.controller.loadUrl($rawfile('indexCopyTwo.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("Tablet")) {
                   this.isPageEnd = -1
                   this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 }
                 this.controller.pageUp(true);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');

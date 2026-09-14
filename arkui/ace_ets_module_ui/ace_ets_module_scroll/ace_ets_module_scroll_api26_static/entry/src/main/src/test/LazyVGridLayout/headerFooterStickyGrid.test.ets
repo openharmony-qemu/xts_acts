@@ -13,28 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Color } from '@ohos.arkui.component'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 export default function headerFooterStickyGrid() {
   describe('headerFooterStickyGrid', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("headerFooterStickyGrid beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.scroll.api26.static", "EntryAbility")
-    });
 
     beforeEach(async () => {
       console.info('headerFooterStickyGrid beforeEach start');
@@ -49,7 +38,7 @@ export default function headerFooterStickyGrid() {
         if (!('headerFooterStickyGrid' == pages.name)) {
           console.info('get headerFooterStickyGrid pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2500);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push headerFooterStickyGrid page error:' + err);
@@ -66,16 +55,23 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridHeader_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridHeader_static_0100] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('lazyVGrid_header_default');
-      let obj = JSON.parseJsonElement(strJson);
-      let header = obj.getElement('$attrs').tryGetElement('header');
-      console.log('[lazyVGridHeader_static_0100] header: ' + header);
-      expect(obj.getElement('$attrs').tryGetElement('header')).assertUndefined();
-      console.info('[lazyVGridHeader_static_0100] END');
-      done();
+      try {
+        console.info('[lazyVGridHeader_static_0100] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_header_default');
+        let obj = JSON.parseJsonElement(strJson);
+        let header = obj.getElement('$attrs').tryGetElement('header');
+        console.log('[lazyVGridHeader_static_0100] header: ' + header);
+        expect(obj.getElement('$attrs').tryGetElement('header')).assertUndefined();
+        console.info('[lazyVGridHeader_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridHeader_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -87,21 +83,28 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridHeader_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridHeader_static_0200] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('lazyVGrid_header_builder');
-      let obj = JSON.parseJsonElement(strJson);
-      let header = obj.getElement('$attrs').tryGetElement('header');
-      console.log('[lazyVGridHeader_static_0200] header: ' + header);
+      try {
+        console.info('[lazyVGridHeader_static_0200] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_header_builder');
+        let obj = JSON.parseJsonElement(strJson);
+        let header = obj.getElement('$attrs').tryGetElement('header');
+        console.log('[lazyVGridHeader_static_0200] header: ' + header);
 
-      let strJson2 = inspector.getInspectorByKey('lazy_grid_header');
-      let obj2 = JSON.parseJsonElement(strJson2);
-      console.info('[lazyVGridHeader_static_0200] content: ' +
-        JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual('Header');
-      console.info('[lazyVGridHeader_static_0200] END');
-      done();
+        let strJson2 = inspector.getInspectorByKey('lazy_grid_header');
+        let obj2 = JSON.parseJsonElement(strJson2);
+        console.info('[lazyVGridHeader_static_0200] content: ' +
+          JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
+        expect(obj2.getElement('$attrs').getString('content')).assertEqual('Header');
+        console.info('[lazyVGridHeader_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridHeader_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -113,16 +116,23 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridHeader_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridHeader_static_0300] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('lazyVGrid_header_undefined');
-      let obj = JSON.parseJsonElement(strJson);
-      let header = obj.getElement('$attrs').tryGetElement('header');
-      console.log('[lazyVGridHeader_static_0300] header: ' + header);
-      expect(obj.getElement('$attrs').tryGetElement('header')).assertUndefined();
-      console.info('[lazyVGridHeader_static_0300] END');
-      done();
+      try {
+        console.info('[lazyVGridHeader_static_0300] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_header_undefined');
+        let obj = JSON.parseJsonElement(strJson);
+        let header = obj.getElement('$attrs').tryGetElement('header');
+        console.log('[lazyVGridHeader_static_0300] header: ' + header);
+        expect(obj.getElement('$attrs').tryGetElement('header')).assertUndefined();
+        console.info('[lazyVGridHeader_static_0300] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridHeader_static_0300] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -134,16 +144,23 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridFooter_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridFooter_static_0100] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('lazyVGrid_footer_default');
-      let obj = JSON.parseJsonElement(strJson);
-      let footer = obj.getElement('$attrs').tryGetElement('footer');
-      console.log('[lazyVGridFooter_static_0100] footer: ' + footer);
-      expect(obj.getElement('$attrs').tryGetElement('footer')).assertUndefined();
-      console.info('[lazyVGridFooter_static_0100] END');
-      done();
+      try {
+        console.info('[lazyVGridFooter_static_0100] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_footer_default');
+        let obj = JSON.parseJsonElement(strJson);
+        let footer = obj.getElement('$attrs').tryGetElement('footer');
+        console.log('[lazyVGridFooter_static_0100] footer: ' + footer);
+        expect(obj.getElement('$attrs').tryGetElement('footer')).assertUndefined();
+        console.info('[lazyVGridFooter_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridFooter_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -155,21 +172,28 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridFooter_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridFooter_static_0200] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('lazyVGrid_footer_builder');
-      let obj = JSON.parseJsonElement(strJson);
-      let footer = obj.getElement('$attrs').tryGetElement('footer');
-      console.log('[lazyVGridFooter_static_0200] footer: ' + footer);
+      try {
+        console.info('[lazyVGridFooter_static_0200] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_footer_builder');
+        let obj = JSON.parseJsonElement(strJson);
+        let footer = obj.getElement('$attrs').tryGetElement('footer');
+        console.log('[lazyVGridFooter_static_0200] footer: ' + footer);
 
-      let strJson2 = inspector.getInspectorByKey('lazy_grid_footer');
-      let obj2 = JSON.parseJsonElement(strJson2);
-      console.info('[lazyVGridFooter_static_0200] content: ' +
-        JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual('Footer');
-      console.info('[lazyVGridFooter_static_0200] END');
-      done();
+        let strJson2 = inspector.getInspectorByKey('lazy_grid_footer');
+        let obj2 = JSON.parseJsonElement(strJson2);
+        console.info('[lazyVGridFooter_static_0200] content: ' +
+          JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
+        expect(obj2.getElement('$attrs').getString('content')).assertEqual('Footer');
+        console.info('[lazyVGridFooter_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridFooter_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -181,16 +205,23 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridFooter_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridFooter_static_0300] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('lazyVGrid_footer_undefined');
-      let obj = JSON.parseJsonElement(strJson);
-      let footer = obj.getElement('$attrs').tryGetElement('footer');
-      console.log('[lazyVGridFooter_static_0300] footer: ' + footer);
-      expect(obj.getElement('$attrs').tryGetElement('footer')).assertUndefined();
-      console.info('[lazyVGridFooter_static_0300] END');
-      done();
+      try {
+        console.info('[lazyVGridFooter_static_0300] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_footer_undefined');
+        let obj = JSON.parseJsonElement(strJson);
+        let footer = obj.getElement('$attrs').tryGetElement('footer');
+        console.log('[lazyVGridFooter_static_0300] footer: ' + footer);
+        expect(obj.getElement('$attrs').tryGetElement('footer')).assertUndefined();
+        console.info('[lazyVGridFooter_static_0300] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridFooter_static_0300] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -202,16 +233,23 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridSticky_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridSticky_static_0100] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_default');
-      let obj = JSON.parseJsonElement(strJson);
-      let sticky = obj.getElement('$attrs').tryGetElement('sticky');
-      console.log('[lazyVGridSticky_static_0100] sticky: ' + sticky);
-      expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.None');
-      console.info('[lazyVGridSticky_static_0100] END');
-      done();
+      try {
+        console.info('[lazyVGridSticky_static_0100] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_default');
+        let obj = JSON.parseJsonElement(strJson);
+        let sticky = obj.getElement('$attrs').tryGetElement('sticky');
+        console.log('[lazyVGridSticky_static_0100] sticky: ' + sticky);
+        expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.None');
+        console.info('[lazyVGridSticky_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridSticky_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -223,16 +261,23 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridSticky_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridSticky_static_0200] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_none');
-      let obj = JSON.parseJsonElement(strJson);
-      let sticky = obj.getElement('$attrs').tryGetElement('sticky');
-      console.log('[lazyVGridSticky_static_0200] sticky: ' + sticky);
-      expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.None');
-      console.info('[lazyVGridSticky_static_0200] END');
-      done();
+      try {
+        console.info('[lazyVGridSticky_static_0200] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_none');
+        let obj = JSON.parseJsonElement(strJson);
+        let sticky = obj.getElement('$attrs').tryGetElement('sticky');
+        console.log('[lazyVGridSticky_static_0200] sticky: ' + sticky);
+        expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.None');
+        console.info('[lazyVGridSticky_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridSticky_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -244,16 +289,23 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridSticky_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridSticky_static_0300] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_header');
-      let obj = JSON.parseJsonElement(strJson);
-      let sticky = obj.getElement('$attrs').tryGetElement('sticky');
-      console.log('[lazyVGridSticky_static_0300] sticky: ' + sticky);
-      expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.Header');
-      console.info('[lazyVGridSticky_static_0300] END');
-      done();
+      try {
+        console.info('[lazyVGridSticky_static_0300] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_header');
+        let obj = JSON.parseJsonElement(strJson);
+        let sticky = obj.getElement('$attrs').tryGetElement('sticky');
+        console.log('[lazyVGridSticky_static_0300] sticky: ' + sticky);
+        expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.Header');
+        console.info('[lazyVGridSticky_static_0300] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridSticky_static_0300] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -265,16 +317,23 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridSticky_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridSticky_static_0400] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_footer');
-      let obj = JSON.parseJsonElement(strJson);
-      let sticky = obj.getElement('$attrs').tryGetElement('sticky');
-      console.log('[lazyVGridSticky_static_0400] sticky: ' + sticky);
-      expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.Footer');
-      console.info('[lazyVGridSticky_static_0400] END');
-      done();
+      try {
+        console.info('[lazyVGridSticky_static_0400] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_footer');
+        let obj = JSON.parseJsonElement(strJson);
+        let sticky = obj.getElement('$attrs').tryGetElement('sticky');
+        console.log('[lazyVGridSticky_static_0400] sticky: ' + sticky);
+        expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.Footer');
+        console.info('[lazyVGridSticky_static_0400] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridSticky_static_0400] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -286,16 +345,23 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridSticky_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridSticky_static_0500] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_both');
-      let obj = JSON.parseJsonElement(strJson);
-      let sticky = obj.getElement('$attrs').tryGetElement('sticky');
-      console.log('[lazyVGridSticky_static_0500] sticky: ' + sticky);
-      expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.Header | StickyStyle.Footer');
-      console.info('[lazyVGridSticky_static_0500] END');
-      done();
+      try {
+        console.info('[lazyVGridSticky_static_0500] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_both');
+        let obj = JSON.parseJsonElement(strJson);
+        let sticky = obj.getElement('$attrs').tryGetElement('sticky');
+        console.log('[lazyVGridSticky_static_0500] sticky: ' + sticky);
+        expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.Header | StickyStyle.Footer');
+        console.info('[lazyVGridSticky_static_0500] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridSticky_static_0500] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -307,19 +373,26 @@ export default function headerFooterStickyGrid() {
      * @tc.level  LEVEL0
      */
     it('lazyVGridSticky_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lazyVGridSticky_static_0600] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let strJsonCompare = inspector.getInspectorByKey('lazyVGrid_sticky_default');
-      let objCompare = JSON.parseJsonElement(strJsonCompare);
-      let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_undefined');
-      let obj = JSON.parseJsonElement(strJson);
-      let sticky = obj.getElement('$attrs').tryGetElement('sticky');
-      console.log('[lazyVGridSticky_static_0600] sticky: ' + sticky);
-      expect(obj.getElement('$attrs').getString('sticky'))
-        .assertEqual(objCompare.getElement('$attrs').getString('sticky'));
-      console.info('[lazyVGridSticky_static_0600] END');
-      done();
+      try {
+        console.info('[lazyVGridSticky_static_0600] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let strJsonCompare = inspector.getInspectorByKey('lazyVGrid_sticky_default');
+        let objCompare = JSON.parseJsonElement(strJsonCompare);
+        let strJson = inspector.getInspectorByKey('lazyVGrid_sticky_undefined');
+        let obj = JSON.parseJsonElement(strJson);
+        let sticky = obj.getElement('$attrs').tryGetElement('sticky');
+        console.log('[lazyVGridSticky_static_0600] sticky: ' + sticky);
+        expect(obj.getElement('$attrs').getString('sticky'))
+          .assertEqual(objCompare.getElement('$attrs').getString('sticky'));
+        console.info('[lazyVGridSticky_static_0600] END');
+        done();
+      } catch (error) {
+        console.error('[lazyVGridSticky_static_0600] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   });
 }

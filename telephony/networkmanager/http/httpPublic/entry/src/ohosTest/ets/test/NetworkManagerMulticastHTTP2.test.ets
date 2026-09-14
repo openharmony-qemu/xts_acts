@@ -69,7 +69,7 @@ function expectTrue(data : boolean){
 export default function NetworkManagerMulticast2HTTP2Test() {
     afterAll(async ()=> {
         console.log('NetworkManagerMulticastHTTPTest afterAll start');
-        console.log('NetworkManagerMulticastHTTPTest afterAll end');
+        console.log('NetworkManagerMulticastHTTPTest NetworkManagerMulticast2HTTP2TestafterAll end');
     });
     describe("NetworkManagerMulticast2HTTP2Test", ()=> {
         /**

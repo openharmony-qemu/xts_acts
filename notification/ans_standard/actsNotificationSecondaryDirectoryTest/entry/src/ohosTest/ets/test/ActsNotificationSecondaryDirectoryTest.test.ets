@@ -84,9 +84,9 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         let ctx: common.UIAbilityContext | undefined = AppStorage.get('ctx');
         notificationManager.requestEnableNotification(ctx).then(() => {
          let basicContent: notificationManager.NotificationBasicContent = {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_Publish"
+            title: 'test_title',
+            text: 'test_text',
+            additionalText: 'test_Publish'
         }
         let notifyContent: notificationManager.NotificationContent = {
             contentType: notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
@@ -147,12 +147,12 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3950 START`);
         let count :number = 0
         let longContentText: notificationManager.NotificationLongTextContent = {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_Publish",
-            longText: "longText123456",
-            briefText: "briefText123456",
-            expandedTitle: "expandedTitle123456"
+            title: 'test_title',
+            text: 'test_text',
+            additionalText: 'test_Publish',
+            longText: 'longText123456',
+            briefText: 'briefText123456',
+            expandedTitle: 'expandedTitle123456'
         }
 
         let notifyContent: notificationManager.NotificationContent = {
@@ -199,9 +199,9 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4050 START`);
         let count :number = 0
         let basicContent: notificationManager.NotificationBasicContent = {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_Publish"
+            title: 'test_title',
+            text: 'test_text',
+            additionalText: 'test_Publish'
         }
 
         let notifyContent: notificationManager.NotificationContent = {
@@ -248,11 +248,11 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4150 START`);
         let count :number = 0
         let multiLineContent: notificationManager.NotificationMultiLineContent = {
-            title: "test_title",
-            text: "test_text",
-            briefText: "notificationMultiLineContent_title",
-            longTitle: "notificationMultiLineContent_title_12345678999999999",
-            lines: ["thrive", "democracy", "civilization", "harmonious"]
+            title: 'test_title',
+            text: 'test_text',
+            briefText: 'notificationMultiLineContent_title',
+            longTitle: 'notificationMultiLineContent_title_12345678999999999',
+            lines: ['thrive', 'democracy', 'civilization', 'harmonious']
         }
 
         let notifyContent: notificationManager.NotificationContent = {
@@ -303,7 +303,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
                 {
                     bundleName: 'com.example.secondaryDirectory',
                     abilityName: 'com.example.secondaryDirectory.MainAbility',
-                    action: "usual.event.REMOVAL_WANTAGENT"
+                    action: 'usual.event.REMOVAL_WANTAGENT'
                 }
               ],
             operationType: WantAgent.OperationType.SEND_COMMON_EVENT,
@@ -314,9 +314,9 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         let wantAgentData = await WantAgent.getWantAgent(agentInfo);
 
         let basicContent: notificationManager.NotificationBasicContent = {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_Publish"
+            title: 'test_title',
+            text: 'test_text',
+            additionalText: 'test_Publish'
         }
         let notifyContent: notificationManager.NotificationContent = {
             contentType: notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
@@ -328,7 +328,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         }
 
         let actionButton: notificationManager.NotificationActionButton = {
-            title:"buttonA",
+            title:'buttonA',
             wantAgent: wantAgentData,
             userInput: userInputContent
         }
@@ -375,9 +375,9 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 START`);
         let count :number = 0
         let basicContent: notificationManager.NotificationBasicContent = {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_Publish"
+            title: 'test_title',
+            text: 'test_text',
+            additionalText: 'test_Publish'
         }
         let notifyContent: notificationManager.NotificationContent = {
             contentType: notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
@@ -434,14 +434,14 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         let count :number = 0
         let options: notificationManager.DistributedOptions = {
             isDistributed: false,
-            supportDisplayDevices: ["0"],
-            supportOperateDevices: ["0"]
+            supportDisplayDevices: ['0'],
+            supportOperateDevices: ['0']
         }
 
         let basicContent: notificationManager.NotificationBasicContent = {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_Publish"
+            title: 'test_title',
+            text: 'test_text',
+            additionalText: 'test_Publish'
         }
         let notifyContent: notificationManager.NotificationContent = {
             contentType: notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
@@ -503,11 +503,11 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
             console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 pixelMap: ${pixelMap}`);
 
             let longContentPicture: notificationManager.NotificationPictureContent = {
-                title: "test_title",
-                text: "test_text",
-                additionalText: "test_Publish",
-                briefText: "briefText123456",
-                expandedTitle: "expandedTitle123456",
+                title: 'test_title',
+                text: 'test_text',
+                additionalText: 'test_Publish',
+                briefText: 'briefText123456',
+                expandedTitle: 'expandedTitle123456',
                 picture: pixelMap
             }
 
@@ -600,13 +600,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4750 START`);
 
         let bundleOpt: notificationManager.BundleOption = {
-            bundle: "com.example.secondaryDirectory",
+            bundle: 'com.example.secondaryDirectory',
             uid: 101001
         }
         console.info(`${TAG} BundleOption bundle:uid = ${bundleOpt.bundle}${bundleOpt.uid}`);
         expect(typeof bundleOpt.bundle == 'string').assertTrue()
         expect(typeof bundleOpt.uid == 'number').assertTrue()
-        expect(bundleOpt.bundle).assertEqual("com.example.secondaryDirectory")
+        expect(bundleOpt.bundle).assertEqual('com.example.secondaryDirectory')
         expect(bundleOpt.uid).assertEqual(101001)
         done()
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4750 END`);

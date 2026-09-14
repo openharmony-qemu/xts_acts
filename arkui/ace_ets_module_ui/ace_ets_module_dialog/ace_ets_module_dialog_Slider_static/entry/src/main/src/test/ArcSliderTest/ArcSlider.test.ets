@@ -15,20 +15,13 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
-import { Want } from '@kit.AbilityKit';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
-
-let want: Want;
-const bundleName = abilityDelegatorRegistry.getArguments().bundleName;
-const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 /** ArcSliderPosition.LEFT enum value */
 const ARC_SLIDER_POSITION_LEFT = 0;
@@ -41,12 +34,6 @@ function getArcSliderAllOptionsNodeStr(): string {
 
 export default function ArcSliderTest() {
   describe('ArcSliderTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info(`${LOG_TAG} beforeAll start`);
-      await UtilsTest.startAbility('com.arkui.ace.slider_static', 'EntryAbility');
-      console.info(`${LOG_TAG} beforeAll end`);
-    });
-
     beforeEach(() => {
       console.info(`${LOG_TAG} beforeEach start`);
       let options: router.RouterOptions = {
@@ -72,7 +59,11 @@ export default function ArcSliderTest() {
       AppStorage.delete('arcSliderOnTouchCalled');
       AppStorage.delete('arcSliderOnChangeProgress');
       AppStorage.delete('arcSliderOnEnlargeValue');
-      await Utils.sleep(300);
+      try {
+        await Utils.sleep(300);
+      } catch (err) {
+        console.info(`${LOG_TAG} afterEach sleep err: ` + JSON.stringify(err));
+      }
       console.info(`${LOG_TAG} afterEach end`);
     });
 
@@ -356,14 +347,19 @@ export default function ArcSliderTest() {
       const caseName = 'arcSliderOptionsOnTouch';
       console.info(`${LOG_TAG} case_start ${caseName}`);
       let driver = Driver.create();
-      await driver.delayMs(300);
-      const comp = await driver.findComponent(ON.id('arcSliderAllOptions'));
-      console.info(`${LOG_TAG} ${caseName} findComponent result=${comp ? 'found' : 'null'}`);
-      await (comp?.click() as Promise<void>);
-      await Utils.sleep(600);
-      const called = AppStorage.get<boolean>('arcSliderOnTouchCalled');
-      console.info(`${LOG_TAG} ${caseName} arcSliderOnTouchCalled=${called} expected=true_or_component_found`);
-      expect(comp !== null && comp !== undefined || called === true).assertTrue();
+      try {
+        await driver.delayMs(300);
+        const comp = await driver.findComponent(ON.id('arcSliderAllOptions'));
+        console.info(`${LOG_TAG} ${caseName} findComponent result=${comp ? 'found' : 'null'}`);
+        await (comp?.click() as Promise<void>);
+        await Utils.sleep(600);
+        const called = AppStorage.get<boolean>('arcSliderOnTouchCalled');
+        console.info(`${LOG_TAG} ${caseName} arcSliderOnTouchCalled=${called} expected=true_or_component_found`);
+        expect(comp !== null && comp !== undefined || called === true).assertTrue();
+      } catch (err) {
+        console.info(`${LOG_TAG} ${caseName} err: ` + JSON.stringify(err));
+        expect().assertFail();
+      }
       console.info(`${LOG_TAG} case_end ${caseName} pass`);
       done();
     });

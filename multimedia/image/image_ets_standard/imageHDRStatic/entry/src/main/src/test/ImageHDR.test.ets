@@ -24,7 +24,7 @@ export default function imageHDR() {
   describe('imageHDR', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     let filesDir: string | undefined | null;
-    let isSupportHdr: Boolean;
+    let isSupportHdr: Boolean = false;
 
     let filePath: string;
     let globalpixelmap: image.PixelMap | undefined = undefined;
@@ -36,10 +36,10 @@ export default function imageHDR() {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       try {
-        isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
+        isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
+        console.info('isSupportHdr is ' + isSupportHdr);
       } catch (err) {
-        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-        isSupportHdr = false;
+        console.error('The file path does not exist');
       }
     })
     beforeEach(() => {

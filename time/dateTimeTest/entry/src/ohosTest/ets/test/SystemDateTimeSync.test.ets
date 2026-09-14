@@ -193,7 +193,7 @@ export default function systemDateTimeSyncJsunit() {
     /**
      * @tc.name   SUB_systemDateTime_getUptime_sync_0150
      * @tc.number SUB_systemDateTime_getUptime_sync_0150
-     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.desc   Test getUptime with timeType undefined, expect error 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -201,7 +201,7 @@ export default function systemDateTimeSyncJsunit() {
     it("SUB_systemDateTime_getUptime_sync_0150", Level.LEVEL2, async (done: Function) => {
       console.info("====>----------SUB_systemDateTime_getUptime_sync_0150 start----------------");
       try{
-        let errTimeType: systemDateTime.TimeType | undefined;
+        let errTimeType: systemDateTime.TimeType | undefined = undefined;
         let realTime = systemDateTime.getUptime(errTimeType);
         console.info("====>SUB_systemDateTime_getUptime_sync_0150 currentTime: " + JSON.stringify(realTime));
         expect().assertFail();

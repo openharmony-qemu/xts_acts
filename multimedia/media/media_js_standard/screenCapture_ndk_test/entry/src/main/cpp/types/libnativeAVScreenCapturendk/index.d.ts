@@ -94,3 +94,5 @@ export const normalAVScreenCapturePauseScreenCaptureErr: () => number;
 export const normalAVScreenCapturePauseScreenCaptureError: () => number;
 export const normalAVScreenCaptureResumeScreenCaptureErr: () => number;
 export const normalAVScreenCaptureResumeScreenCaptureError: () => number;
+export const virtualExtendedScreenRecordTest: () => number;
+export const virtualExtendedScreenRecordTestStop: () => number;

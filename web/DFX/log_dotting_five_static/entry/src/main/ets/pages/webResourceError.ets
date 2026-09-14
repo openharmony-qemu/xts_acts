@@ -87,6 +87,14 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               }
               break;
             }
+
+            case 'emitOnSwitchNextPageResourceError': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebResourceErrorConstructor' })
+              console.log('push URL success')
+            }
+
           }
         })
       }

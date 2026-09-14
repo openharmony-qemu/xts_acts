@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 
 import events_emitter from '@ohos.events.emitter';
@@ -21,25 +21,10 @@ import Utils from '../Utils.test';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
 import { GradientDirection } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function gradientDirectionJsunit() {
   describe('gradientDirectionJsunit', () => {
-    beforeAll(async() => {
-      console.info("gradientDirectionJsunit beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info('beforeEach ===================GradientDirection test beforeEach called===================');
       let options: router.RouterOptions = {
@@ -63,7 +48,11 @@ export default function gradientDirectionJsunit() {
     });
 
     afterEach(async () => {
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('gradientDirectionJsuTest await err: ' + JSON.stringify(err));
+      }
       console.info('[ afterEach ] ===================GradientDirection test after each called===================');
     });
 
@@ -103,7 +92,11 @@ it('GradientDirectionTest_static_0200', Level.LEVEL0, async (done: () => void): 
       } catch (err) {
         console.log("GradientDirectionTest_static_0200 change component data error: " + (err as Error)?.message);
       }
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('gradientDirectionJsuTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('GradientDirection');
       console.info("GradientDirectionTest_static_0200 component strJson:" + strJson);
      let obj = JSON.parseJsonElement(strJson);
@@ -129,7 +122,11 @@ it('GradientDirectionTest_static_0300', Level.LEVEL0, async (done: () => void): 
       } catch (err) {
         console.log("GradientDirectionTest_static_0300 change component data error: " + (err as Error)?.message);
       }
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('gradientDirectionJsuTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('GradientDirection');
       console.info("GradientDirectionTest_static_0300 component strJson:" + strJson);
      let obj = JSON.parseJsonElement(strJson);
@@ -153,7 +150,11 @@ it('GradientDirectionTest_static_0400', Level.LEVEL0, async (done: () => void): 
       } catch (err) {
         console.log("GradientDirectionTest_static_0400 change component data error: " + (err as Error)?.message);
       }
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('gradientDirectionJsuTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('GradientDirection');
       console.info("GradientDirectionTest_static_0400 component strJson:" + strJson);
      let obj = JSON.parseJsonElement(strJson);

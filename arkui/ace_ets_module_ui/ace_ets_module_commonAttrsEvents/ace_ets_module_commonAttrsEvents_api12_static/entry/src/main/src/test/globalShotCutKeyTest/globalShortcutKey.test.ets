@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,9 @@
  */
 
 import type { KeyCode } from '@ohos.multimodalInput.keyCode';
-import { BusinessError } from '@ohos.base';
+
 import { Callback, Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -25,14 +25,6 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { FunctionKey, ModifierKey } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 // to test Ctrl + A ,Ctrl + C ..
 const keycodeMap = new Map<string | FunctionKey, int>();
@@ -63,10 +55,6 @@ keycodeMap.set(FunctionKey.DPAD_RIGHT, KeyCode.KEYCODE_DPAD_RIGHT);
 
 export default function globalShortcutKeyTest() {
   describe('globalShortcutKeyTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/shotCutKeyTest/globalShortcutKeyTest",
@@ -89,7 +77,11 @@ export default function globalShortcutKeyTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
     });
 
     /**
@@ -121,7 +113,7 @@ export default function globalShortcutKeyTest() {
     /**
      * @tc.number    SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0280
      * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0280
-     * @tc.desc      simulate the keyboard operate “CTRL + SHIFT + Z”
+     * @tc.desc      simulate the keyboard operate 鈥淐TRL + SHIFT + Z鈥?
      * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
@@ -149,7 +141,11 @@ export default function globalShortcutKeyTest() {
         let driver = Driver.create();
         // keyboard to sumilate 'CTRL + M'
         await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_M);
-        await CommonFunc.sleep(1500);
+        try {
+          await CommonFunc.sleep(500);
+        } catch (err) {
+          console.info('xxxTest sleep err: ' + JSON.stringify(err));
+        }
         // to get the data to check
         let tt2 = inspector.getInspectorByKey('keyTest5');
         let obj2 = JSON.parseJsonElement(tt2);
@@ -162,7 +158,7 @@ export default function globalShortcutKeyTest() {
     /**
      * @tc.number    SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0380
      * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0380
-     * @tc.desc      'CTRAL + SHIFT + ←' is unenable
+     * @tc.desc      'CTRAL + SHIFT + 鈫? is unenable
      * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
@@ -170,10 +166,14 @@ export default function globalShortcutKeyTest() {
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0380', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let driver = Driver.create();
-        // keyboard to sumilate 'CTRAL + ←'
+        // keyboard to sumilate 'CTRAL + 鈫?
         await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_CTRL_LEFT,
           KeyCode.KEYCODE_DPAD_LEFT);
-        await CommonFunc.sleep(1500);
+        try {
+          await CommonFunc.sleep(500);
+        } catch (err) {
+          console.info('xxxTest sleep err: ' + JSON.stringify(err));
+        }
         // to get the data to check
         let tt2 = inspector.getInspectorByKey('keyTest6');
         let obj2 = JSON.parseJsonElement(tt2);
@@ -196,7 +196,11 @@ export default function globalShortcutKeyTest() {
         let driver = Driver.create();
         // keyboard to sumilate 'CTRAL + I'
         await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_I);
-        await CommonFunc.sleep(1500);
+        try {
+          await CommonFunc.sleep(2000);
+        } catch (err) {
+          console.info('xxxTest sleep err: ' + JSON.stringify(err));
+        }
         // to get the data to check
         let tt2 = inspector.getInspectorByKey('keyTest7');
         let obj2 = JSON.parseJsonElement(tt2);
@@ -205,7 +209,6 @@ export default function globalShortcutKeyTest() {
         expect(obj2.getElement('$attrs').getString('content')).assertEqual('I clicked Button 7');
         done();
       });
-
 
     /**
      * @tc.number    SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0330
@@ -220,7 +223,11 @@ export default function globalShortcutKeyTest() {
         let driver = Driver.create();
         // keyboard to sumilate 'SHIFT + ->'
         await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT);
-        await CommonFunc.sleep(1500);
+        try {
+          await CommonFunc.sleep(500);
+        } catch (err) {
+          console.info('xxxTest sleep err: ' + JSON.stringify(err));
+        }
         // to get the data to check
         let tt2 = inspector.getInspectorByKey('keyTest8');
         let obj2 = JSON.parseJsonElement(tt2);
@@ -238,11 +245,19 @@ async function testAsyncFunctionSingle2(keyChar: string | FunctionKey): Promise<
     name: 'changeChar2', value: keyChar
   });
 
-  await CommonFunc.sleep(500);
+  try {
+    await CommonFunc.sleep(500);
+  } catch (err) {
+    console.info('xxxTest sleep err: ' + JSON.stringify(err));
+  }
   let driver = Driver.create();
   // keyboard to sumilate single press key
   driver.triggerKey(keycodeMap.get(keyChar) as int);
-  await CommonFunc.sleep(2000);
+  try {
+    await CommonFunc.sleep(2500);
+  } catch (err) {
+    console.info('xxxTest sleep err: ' + JSON.stringify(err));
+  }
   // to get the data to check
   let tt2 = inspector.getInspectorByKey('keyTest2');
   let obj2 = JSON.parseJsonElement(tt2);
@@ -261,16 +276,28 @@ async function testAsyncFunction3(keyChar: string | FunctionKey): Promise<void> 
   AppStorage.get<MessageManager<string | FunctionKey>>("messageManager")!.notify({
     name: 'changeChar3', value: keyChar
   });
-  await CommonFunc.sleep(500);
+  try {
+    await CommonFunc.sleep(500);
+  } catch (err) {
+    console.info('xxxTest sleep err: ' + JSON.stringify(err));
+  }
   let driver = Driver.create();
   // keyboard to sumilate
   if (keyChar === FunctionKey.ESC) {
     AppStorage.get<MessageManager<ModifierKey[]>>("messageManager")!.notify({
       name: 'keys', value: new Array<ModifierKey>(ModifierKey.SHIFT, ModifierKey.CTRL)
     });
-    await CommonFunc.sleep(500);
+    try {
+      await CommonFunc.sleep(1500);
+    } catch (err) {
+      console.info('xxxTest sleep err: ' + JSON.stringify(err));
+    }
     driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar));
-    await CommonFunc.sleep(2000);
+    try {
+      await CommonFunc.sleep(1500);
+    } catch (err) {
+      console.info('xxxTest sleep err: ' + JSON.stringify(err));
+    }
     // to get the data to check
     let tt2 = inspector.getInspectorByKey('keyTest3');
     let obj2 = JSON.parseJsonElement(tt2);
@@ -284,9 +311,17 @@ async function testAsyncFunction3(keyChar: string | FunctionKey): Promise<void> 
     AppStorage.get<MessageManager<ModifierKey[]>>("messageManager")!.notify({
       name: 'keys', value: new Array<ModifierKey>(ModifierKey.SHIFT, ModifierKey.CTRL)
     });
-    await CommonFunc.sleep(500);
+    try {
+      await CommonFunc.sleep(1500);
+    } catch (err) {
+      console.info('xxxTest sleep err: ' + JSON.stringify(err));
+    }
     driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar));
-    await CommonFunc.sleep(2000);
+    try {
+      await CommonFunc.sleep(1500);
+    } catch (err) {
+      console.info('xxxTest sleep err: ' + JSON.stringify(err));
+    }
     // to get the data to check
     let tt2 = inspector.getInspectorByKey('keyTest3');
     let obj2 = JSON.parseJsonElement(tt2);
@@ -300,9 +335,17 @@ async function testAsyncFunction3(keyChar: string | FunctionKey): Promise<void> 
     AppStorage.get<MessageManager<ModifierKey[]>>("messageManager")!.notify({
       name: 'keys', value: new Array<ModifierKey>(ModifierKey.SHIFT, ModifierKey.ALT)
     });
-    await CommonFunc.sleep(500);
+    try {
+      await CommonFunc.sleep(500);
+    } catch (err) {
+      console.info('xxxTest sleep err: ' + JSON.stringify(err));
+    }
     driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar));
-    await CommonFunc.sleep(2000);
+    try {
+      await CommonFunc.sleep(2000);
+    } catch (err) {
+      console.info('xxxTest sleep err: ' + JSON.stringify(err));
+    }
     // to get the data to check
     let tt2 = inspector.getInspectorByKey('keyTest3');
     let obj2 = JSON.parseJsonElement(tt2);
@@ -316,9 +359,17 @@ async function testAsyncFunction3(keyChar: string | FunctionKey): Promise<void> 
     AppStorage.get<MessageManager<ModifierKey[]>>("messageManager")!.notify({
       name: 'keys', value: new Array<ModifierKey>(ModifierKey.SHIFT, ModifierKey.ALT)
     });
-    await CommonFunc.sleep(500);
+    try {
+      await CommonFunc.sleep(500);
+    } catch (err) {
+      console.info('xxxTest sleep err: ' + JSON.stringify(err));
+    }
     driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar));
-    await CommonFunc.sleep(2000);
+    try {
+      await CommonFunc.sleep(2000);
+    } catch (err) {
+      console.info('xxxTest sleep err: ' + JSON.stringify(err));
+    }
     // to get the data to check
     let tt2 = inspector.getInspectorByKey('keyTest3');
     let obj2 = JSON.parseJsonElement(tt2);

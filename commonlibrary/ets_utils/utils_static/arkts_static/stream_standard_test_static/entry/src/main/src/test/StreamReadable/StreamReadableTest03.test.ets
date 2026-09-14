@@ -37,7 +37,7 @@ class IncompleteWritable extends stream.Writable {
     super();
   }
 
-  doWrite(_chunk: string | Uint8Array, _encoding: string, _callback: () => void): void {
+  doWrite(_chunk: string | Uint8Array, _encoding: string, _callback: Function): void {
   }
 }
 
@@ -46,7 +46,7 @@ class BadWritable extends stream.Writable {
     super();
   }
 
-  doWrite(_chunk: string | Uint8Array, _encoding: string, _callback: () => void): void {
+  doWrite(_chunk: string | Uint8Array, _encoding: string, _callback: Function): void {
     throw new Error('BadWritable error');
   }
 }
@@ -56,7 +56,7 @@ class WrongSignatureWritable extends stream.Writable {
     super();
   }
 
-  doWrite(_chunk: string | Uint8Array, _encoding: string, _callback: () => void): void {
+  doWrite(_chunk: string | Uint8Array, _encoding: string, _callback: Function): void {
     throw new Error('WrongSignatureWritable error');
   }
 }
@@ -70,7 +70,7 @@ class TestReadable0301 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -79,7 +79,7 @@ class TestReadable0302 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -88,7 +88,7 @@ class TestReadable0303 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -97,7 +97,7 @@ class TestReadable0304 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -106,7 +106,7 @@ class TestReadable0305 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -115,7 +115,7 @@ class TestReadable0306 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -124,7 +124,7 @@ class TestReadable0307 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -133,7 +133,7 @@ class TestReadable0308 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -142,7 +142,7 @@ class TestReadable0309 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -151,7 +151,7 @@ class TestReadable0310 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -160,7 +160,7 @@ class TestReadable0311 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -169,7 +169,7 @@ class TestReadable0312 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -178,7 +178,7 @@ class TestReadable0313 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -187,7 +187,7 @@ class TestReadable0314 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -196,7 +196,7 @@ class TestReadable0315 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -205,7 +205,7 @@ class TestReadable0316 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -214,7 +214,7 @@ class TestReadable0317 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -223,7 +223,7 @@ class TestReadable0318 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -232,7 +232,7 @@ class TestReadable0319 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -241,7 +241,7 @@ class TestReadable0320 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -250,7 +250,7 @@ class TestReadable0321 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -259,39 +259,39 @@ class TestReadable0322 extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
 class TestReadable0323 extends stream.Readable {
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
 class TestReadable0324 extends stream.Readable {
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
 class TestReadable0325 extends stream.Readable {
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
 class TestReadable0326 extends stream.Readable {
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
 class TestReadable0327 extends stream.Readable {
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
 class CustomReadable0328 extends stream.Readable {
   data: number[] = [1, 2, 3];
 
-  doRead(size: number) {
+  doRead(size: int) {
     if (this.data.length > 0) {
       this.push(this.data.shift()?.toString());
     } else {
@@ -303,7 +303,7 @@ class CustomReadable0328 extends stream.Readable {
 class CustomReadable0329 extends stream.Readable {
   data: number[] = [1, 2, 3];
 
-  doRead(size: number) {
+  doRead(size: int) {
     if (this.data.length > 0) {
       this.push(this.data.shift()?.toString());
     } else {
@@ -315,7 +315,7 @@ class CustomReadable0329 extends stream.Readable {
 class CustomReadable0330 extends stream.Readable {
   data: number[] = [1, 2, 3];
 
-  doRead(size: number) {
+  doRead(size: int) {
     if (this.data.length > 0) {
       this.push(this.data.shift()?.toString());
     } else {
@@ -329,7 +329,7 @@ class TestReadable0331 extends stream.Readable {
     super();
   }
 
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     this.push('test data');
     this.push(null);
   }
@@ -342,11 +342,14 @@ class TestWritable0331 extends stream.Writable {
     super();
   }
 
-  doWrite(chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
+  doWrite(chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     if (typeof chunk === 'string') {
       this.receivedData += chunk;
+    } else if (chunk instanceof Uint8Array) {
+      const decoder = new util.TextDecoder();
+      this.receivedData += decoder.decodeToString(chunk);
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -355,7 +358,7 @@ class TestReadable0332 extends stream.Readable {
     super();
   }
 
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     this.push('test');
     this.push(null);
   }
@@ -366,8 +369,8 @@ class TestWritable0332 extends stream.Writable {
     super();
   }
 
-  doWrite(_chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
-    callback();
+  doWrite(_chunk: string | Uint8Array, _encoding: string, callback: Function): void {
+    callback.unsafeCall();
   }
 }
 
@@ -376,7 +379,7 @@ class TestReadable0333 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     if (this.chunkCount < 5) {
       this.push(`chunk${this.chunkCount}`);
       this.chunkCount++;
@@ -391,17 +394,14 @@ class TestWritable0333 extends stream.Writable {
   constructor() {
     super();
   }
-  _write(chunk: string | Uint8Array, encoding: string, callback: Function): void {
+  doWrite(chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     if (typeof chunk === 'string') {
       this.receivedChunks.push(chunk as string);
+    } else if (chunk instanceof Uint8Array) {
+      const decoder = new util.TextDecoder();
+      this.receivedChunks.push(decoder.decodeToString(chunk));
     }
-    invokeCb(callback);
-  }
-  doWrite(chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
-    if (typeof chunk === 'string') {
-      this.receivedChunks.push(chunk as string);
-    }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -410,7 +410,7 @@ class TestReadable0334 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     if (!this.pushed) {
       this.pushed = true;
       const data: Uint8Array = new Uint8Array([72, 101, 108, 108, 111]);
@@ -425,21 +425,13 @@ class TestWritable0334 extends stream.Writable {
   constructor() {
     super();
   }
-  _write(chunk: string | Uint8Array, encoding: string, callback: Function): void {
+  doWrite(chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     if (chunk instanceof Uint8Array) {
       for (const b of chunk) {
         this.receivedBytes.push(b);
       }
     }
-    invokeCb(callback);
-  }
-  doWrite(chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
-    if (chunk instanceof Uint8Array) {
-      for (const b of chunk) {
-        this.receivedBytes.push(b);
-      }
-    }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -448,7 +440,7 @@ class TestReadable0335 extends stream.Readable {
     super();
   }
 
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     this.push('test');
     this.push(null);
   }
@@ -459,8 +451,8 @@ class TestWritable0335 extends stream.Writable {
     super();
   }
 
-  doWrite(_chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
-    callback();
+  doWrite(_chunk: string | Uint8Array, _encoding: string, callback: Function): void {
+    callback.unsafeCall();
   }
 }
 
@@ -469,7 +461,7 @@ class TestReadable0336 extends stream.Readable {
     super();
   }
 
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     this.push('test');
     this.push(null);
   }
@@ -480,8 +472,8 @@ class TestWritable0336 extends stream.Writable {
     super();
   }
 
-  doWrite(_chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
-    callback();
+  doWrite(_chunk: string | Uint8Array, _encoding: string, callback: Function): void {
+    callback.unsafeCall();
   }
 }
 
@@ -490,7 +482,7 @@ class TestReadable0337 extends stream.Readable {
     super();
   }
 
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     this.push('test');
     this.push(null);
   }
@@ -503,7 +495,7 @@ class TestReadable0338 extends stream.Readable {
     super();
   }
 
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     if (!this.dataSent) {
       this.push('test data');
       this.dataSent = true;
@@ -520,9 +512,9 @@ class TestWritable0338 extends stream.Writable {
     super();
   }
 
-  doWrite(_chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
+  doWrite(_chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     this.received = true;
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -531,7 +523,7 @@ class TestReadable0339 extends stream.Readable {
     super();
   }
 
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     this.push('data');
     this.push(null);
   }
@@ -544,11 +536,14 @@ class TestWritable0339a extends stream.Writable {
     super();
   }
 
-  doWrite(chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
+  doWrite(chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     if (typeof chunk === 'string') {
       this.received1 += chunk;
+    } else if (chunk instanceof Uint8Array) {
+      const decoder = new util.TextDecoder();
+      this.received1 += decoder.decodeToString(chunk);
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -559,11 +554,14 @@ class TestWritable0339b extends stream.Writable {
     super();
   }
 
-  doWrite(chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
+  doWrite(chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     if (typeof chunk === 'string') {
       this.received2 += chunk;
+    } else if (chunk instanceof Uint8Array) {
+      const decoder = new util.TextDecoder();
+      this.received2 += decoder.decodeToString(chunk);
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -572,7 +570,7 @@ class TestReadable0340 extends stream.Readable {
     super();
   }
 
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     const testString: string = "Hello World";
     this.push(testString);
     this.push(null);
@@ -586,11 +584,14 @@ class TestWritable0340 extends stream.Writable {
     super();
   }
 
-  doWrite(chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
+  doWrite(chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     if (typeof chunk === 'string') {
       this.receivedData += chunk;
+    } else if (chunk instanceof Uint8Array) {
+      const decoder = new util.TextDecoder();
+      this.receivedData += decoder.decodeToString(chunk);
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -598,7 +599,7 @@ class TestReadable0341 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     this.push("true");
     this.push("false");
     this.push(null);
@@ -610,11 +611,14 @@ class TestWritable0341 extends stream.Writable {
   constructor() {
     super();
   }
-  doWrite(chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
+  doWrite(chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     if (typeof chunk === 'string') {
       this.receivedData.push(chunk as string);
+    } else if (chunk instanceof Uint8Array) {
+      const decoder = new util.TextDecoder();
+      this.receivedData.push(decoder.decodeToString(chunk));
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -623,7 +627,7 @@ class TestReadable0342 extends stream.Readable {
     super();
   }
 
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     const arrayData: number[] = [1, 2, 3];
     this.push(JSON.stringify(arrayData));
     this.push(null);
@@ -637,11 +641,14 @@ class TestWritable0342 extends stream.Writable {
     super();
   }
 
-  doWrite(chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
+  doWrite(chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     if (typeof chunk === 'string') {
       this.receivedData += chunk;
+    } else if (chunk instanceof Uint8Array) {
+      const decoder = new util.TextDecoder();
+      this.receivedData += decoder.decodeToString(chunk);
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -650,7 +657,7 @@ class TestReadable0343 extends stream.Readable {
     super();
   }
 
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     const int8Data: Int8Array = new Int8Array([-128, 0, 127]);
     const uint8Data: Uint8Array = new Uint8Array(int8Data.buffer, int8Data.byteOffset, int8Data.length);
     this.push(uint8Data);
@@ -665,13 +672,13 @@ class TestWritable0343 extends stream.Writable {
     super();
   }
 
-  doWrite(chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
+  doWrite(chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     if (chunk instanceof Uint8Array) {
       for (const b of chunk) {
         this.receivedData.push(b);
       }
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -680,7 +687,7 @@ class TestReadable0344 extends stream.Readable {
     super();
   }
 
-  doRead(_size: number): void {
+  doRead(_size: int): void {
     this.push('test data');
     this.push(null);
   }
@@ -693,11 +700,14 @@ class TestWritable0344 extends stream.Writable {
     super();
   }
 
-  doWrite(chunk: string | Uint8Array, _encoding: string, callback: () => void): void {
+  doWrite(chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     if (typeof chunk === 'string') {
       this.dataReceived += chunk;
+    } else if (chunk instanceof Uint8Array) {
+      const decoder = new util.TextDecoder();
+      this.dataReceived += decoder.decodeToString(chunk);
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -1249,7 +1259,7 @@ export default function StreamReadable03Test(): void {
       const readable: TestReadable0333 = new TestReadable0333();
       const writable: TestWritable0333 = new TestWritable0333();
       writable.on('finish', () => {
-        expect(writable.receivedChunks.length).assertEqual(3);
+        expect(writable.receivedChunks.length).assertEqual(5);
       });
       readable.pipe(writable);
       readable.read();
@@ -1267,7 +1277,7 @@ export default function StreamReadable03Test(): void {
       const readable: TestReadable0334 = new TestReadable0334();
       const writable: TestWritable0334 = new TestWritable0334();
       writable.on('finish', () => {
-        expect(writable.receivedBytes.length).assertEqual(0);
+        expect(writable.receivedBytes.length).assertEqual(5);
       });
       readable.pipe(writable);
       readable.read();
@@ -1342,15 +1352,15 @@ export default function StreamReadable03Test(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStreamReadable03Chapter0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStreamReadable03Chapter0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const readable: TestReadable0338 = new TestReadable0338();
       const writable: TestWritable0338 = new TestWritable0338();
 
       readable.pipe(writable);
 
-      setTimeout(() => {
-        expect(writable.received).assertTrue();
-      }, 100);
+      await Utils.msSleep(50);
+      expect(writable.received).assertTrue();
+      done();
     });
 
     /**
@@ -1380,15 +1390,15 @@ export default function StreamReadable03Test(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStreamReadable03Chapter0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStreamReadable03Chapter0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const readable: TestReadable0340 = new TestReadable0340();
       const writable: TestWritable0340 = new TestWritable0340();
 
       readable.pipe(writable);
 
-      setTimeout(() => {
-        expect(writable.receivedData).assertEqual("Hello World");
-      }, 100);
+      await Utils.msSleep(50);
+      expect(writable.receivedData).assertEqual('Hello World');
+      done();
     });
 
     /**
@@ -1399,15 +1409,15 @@ export default function StreamReadable03Test(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStreamReadable03Chapter0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStreamReadable03Chapter0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const readable: TestReadable0342 = new TestReadable0342();
       const writable: TestWritable0342 = new TestWritable0342();
 
       readable.pipe(writable);
 
-      setTimeout(() => {
-        expect(writable.receivedData).assertEqual("[1,2,3]");
-      }, 100);
+      await Utils.msSleep(50);
+      expect(writable.receivedData).assertEqual('[1,2,3]');
+      done();
     });
 
     /**
@@ -1423,7 +1433,7 @@ export default function StreamReadable03Test(): void {
       const writable: TestWritable0343 = new TestWritable0343();
 
       writable.on('finish', () => {
-        expect(writable.receivedData.length).assertEqual(0);
+        expect(writable.receivedData.length).assertEqual(3);
       });
 
       readable.pipe(writable);

@@ -13,35 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, afterAll, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, afterAll, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import hilog from '@ohos.hilog';
-import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest, startAbility } from '../Util.test';
-let testAbilityContext: common.UIAbilityContext;
-let domain: int = 0x0000;
-let tag: string = 'testTag';
 
 export default function ScrollEffectEdge() {
   const SUITE: string = 'ScrollEffectEdge'
   const waitUiReadyMs: number = 1500
 
   describe('ScrollEffectEdge', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("ScrollEffectEdge beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.scroll16.static", "EntryAbility");
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ScrollEffectEdge beforeEach start");
@@ -68,87 +53,107 @@ export default function ScrollEffectEdge() {
     });
 
 
-    
     /**
      * @tc.number   ArkUI_Scroll_EffectEdge_static_0100
      * @tc.name     ArkUI_Scroll_EffectEdge_static_0100
      * @tc.desc     ArkUI_Scroll_EffectEdge_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Scroll_EffectEdge_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let json1 = inspector.getInspectorByKey('scroll1')
-      await sleep(1000)
-      let obj = JSON.parseJsonElement(json1);
-      let value: string = obj.getElement('$attrs').getElement('edgeEffectOptions').getString('effectEdge');
-      console.log('ArkUI_Scroll_EffectEdge_static_0100 json1 ' + json1)
-      console.log('ArkUI_Scroll_EffectEdge_static_0100 value ' + value)
+    it('ArkUI_Scroll_EffectEdge_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let json1 = inspector.getInspectorByKey('scroll1')
+        await sleep(1000)
+        let obj = JSON.parseJsonElement(json1);
+        let value: string = obj.getElement('$attrs').getElement('edgeEffectOptions').getString('effectEdge');
+        console.log('ArkUI_Scroll_EffectEdge_static_0100 json1 ' + json1)
+        console.log('ArkUI_Scroll_EffectEdge_static_0100 value ' + value)
 
-      await sleep(1000)
-      expect(value).assertEqual('EffectEdge.Start')
-      done()
+        await sleep(1000)
+        expect(value).assertEqual('EffectEdge.Start')
+        done()
+      } catch (error) {
+        console.error('[ArkUI_Scroll_EffectEdge_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
-    
     /**
      * @tc.number   ArkUI_Scroll_EffectEdge_static_0200
      * @tc.name     ArkUI_Scroll_EffectEdge_static_0200
      * @tc.desc     ArkUI_Scroll_EffectEdge_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Scroll_EffectEdge_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let json1 = inspector.getInspectorByKey('scroll2')
-      await sleep(1000)
-      let obj = JSON.parseJsonElement(json1);
-      let value: string = obj.getElement('$attrs').getElement('edgeEffectOptions').getString('effectEdge');
-      console.log('ArkUI_Scroll_EffectEdge_static_0200 json1 ' + json1)
-      console.log('ArkUI_Scroll_EffectEdge_static_0200 value ' + value)
+    it('ArkUI_Scroll_EffectEdge_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let json1 = inspector.getInspectorByKey('scroll2')
+        await sleep(1000)
+        let obj = JSON.parseJsonElement(json1);
+        let value: string = obj.getElement('$attrs').getElement('edgeEffectOptions').getString('effectEdge');
+        console.log('ArkUI_Scroll_EffectEdge_static_0200 json1 ' + json1)
+        console.log('ArkUI_Scroll_EffectEdge_static_0200 value ' + value)
 
-      await sleep(1000)
-      expect(value).assertEqual('EffectEdge.All')
-      done()
+        await sleep(1000)
+        expect(value).assertEqual('EffectEdge.All')
+        done()
+      } catch (error) {
+        console.error('[ArkUI_Scroll_EffectEdge_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
-    
     /**
      * @tc.number   ArkUI_Scroll_EffectEdge_static_0300
      * @tc.name     ArkUI_Scroll_EffectEdge_static_0300
      * @tc.desc     ArkUI_Scroll_EffectEdge_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Scroll_EffectEdge_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let json1 = inspector.getInspectorByKey('list2')
-      await sleep(1000)
-      let obj = JSON.parseJsonElement(json1);
-      let value: string = obj.getElement('$attrs').getElement('edgeEffectOptions').getString('effectEdge');
-      console.log('ArkUI_Scroll_EffectEdge_static_0300 json1 ' + json1)
-      console.log('ArkUI_Scroll_EffectEdge_static_0300 value ' + value)
+    it('ArkUI_Scroll_EffectEdge_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let json1 = inspector.getInspectorByKey('list2')
+        await sleep(1000)
+        let obj = JSON.parseJsonElement(json1);
+        let value: string = obj.getElement('$attrs').getElement('edgeEffectOptions').getString('effectEdge');
+        console.log('ArkUI_Scroll_EffectEdge_static_0300 json1 ' + json1)
+        console.log('ArkUI_Scroll_EffectEdge_static_0300 value ' + value)
 
-      await sleep(1000)
-      expect(value).assertEqual('EffectEdge.End')
-      done()
+        await sleep(1000)
+        expect(value).assertEqual('EffectEdge.End')
+        done()
+      } catch (error) {
+        console.error('[ArkUI_Scroll_EffectEdge_static_0300] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
-    
     /**
      * @tc.number   ArkUI_Scroll_EffectEdge_static_0400
      * @tc.name     ArkUI_Scroll_EffectEdge_static_0400
      * @tc.desc     ArkUI_Scroll_EffectEdge_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Scroll_EffectEdge_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let json1 = inspector.getInspectorByKey('grid3')
-      await sleep(1000)
-      let obj = JSON.parseJsonElement(json1);
-      let value = obj.getElement('$attrs').getElement('edgeEffectOptions').getString('effectEdge');
-      console.log('ArkUI_Scroll_EffectEdge_static_0400 json1 ' + json1)
-      console.log('ArkUI_Scroll_EffectEdge_static_0400 value ' + value)
+    it('ArkUI_Scroll_EffectEdge_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let json1 = inspector.getInspectorByKey('grid3')
+        await sleep(1000)
+        let obj = JSON.parseJsonElement(json1);
+        let value = obj.getElement('$attrs').getElement('edgeEffectOptions').getString('effectEdge');
+        console.log('ArkUI_Scroll_EffectEdge_static_0400 json1 ' + json1)
+        console.log('ArkUI_Scroll_EffectEdge_static_0400 value ' + value)
 
-      await sleep(1000)
-      expect(value).assertEqual('EffectEdge.All')
-      done()
+        await sleep(1000)
+        expect(value).assertEqual('EffectEdge.All')
+        done()
+      } catch (error) {
+        console.error('[ArkUI_Scroll_EffectEdge_static_0400] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

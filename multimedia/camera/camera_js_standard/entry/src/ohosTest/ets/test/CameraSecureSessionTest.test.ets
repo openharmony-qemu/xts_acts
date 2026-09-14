@@ -30,7 +30,6 @@ let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
 let mCameraSession: cameraObj.SecureSession;
 let mPhotoSurface: string;
 
-
 // CAMERA-0 letiables
 let mCameraNum: number;
 
@@ -458,7 +457,6 @@ export default function cameraSecureSessionTest() {
       done();
     })
 
-
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_ERROR_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_ERROR_0100
@@ -478,7 +476,6 @@ export default function cameraSecureSessionTest() {
             console.info(`Secure session success to listen on error`)
           }
         })
-        expect(true).assertTrue()
       } catch (err) {
         console.error(`Secure session failed to listen on error: ${err.code}`)
         expect().assertFail()
@@ -515,7 +512,6 @@ export default function cameraSecureSessionTest() {
             console.info(`Secure session success to turn off listen on error`)
           }
         })
-        expect(true).assertTrue()
       } catch (err) {
         console.error(`Secure session failed to turn off listen on error: ${err.code}`)
         expect().assertFail()
@@ -525,7 +521,33 @@ export default function cameraSecureSessionTest() {
       done()
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_ERROR_0200
+     * @tc.desc   Test secure session off callback error when no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_ERROR_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_ERROR_0200--------------");
+      createSecureSessionInstance();
 
+      mCameraSession.on('error', (err) => {
+          console.error(`Secure session error code: ${err.code}`)
+      })
+
+      try {
+        mCameraSession.off('error')
+      } catch (err) {
+        console.error(`Secure session failed to turn off listen on error: ${err.code}`)
+        await releaseCameraSessionInstance()
+        expect().assertFail()
+      }
+      console.info("--------------Exit SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_ERROR_0100--------------");
+      await releaseCameraSessionInstance()
+      done()
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_FOCUS_STATE_CHANGE_0100
@@ -547,12 +569,39 @@ export default function cameraSecureSessionTest() {
             console.info(`Secure session success to listen on error`)
           }
         })
-        expect(true).assertTrue()
       } catch (err) {
         console.error(`Secure session failed to listen on error: ${err.code}`)
         expect().assertFail()
       }
       console.info("--------------Exit SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_FOCUS_STATE_CHANGE_0100--------------");
+      await releaseCameraSessionInstance()
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_FOCUS_STATE_CHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_FOCUS_STATE_CHANGE_0200
+     * @tc.desc   Test secure session off callback focusStateChange when no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_FOCUS_STATE_CHANGE_0200', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_FOCUS_STATE_CHANGE_0200--------------");
+      createSecureSessionInstance();
+
+      mCameraSession.on('focusStateChange', (err) => {
+          console.error(`Secure session error code: ${err.code}`)
+      })
+
+      try {
+        mCameraSession.off('focusStateChange')
+      } catch (err) {
+        console.error(`Secure session failed to turn off listen on error: ${err.code}`)
+        await releaseCameraSessionInstance()
+        expect().assertFail()
+      }
+      console.info("--------------Exit SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_FOCUS_STATE_CHANGE_0200--------------");
       await releaseCameraSessionInstance()
       done()
     })
@@ -583,7 +632,6 @@ export default function cameraSecureSessionTest() {
             console.info(`Secure session success to turn off listen on error`)
           }
         })
-        expect(true).assertTrue()
       } catch (err) {
         console.error(`Secure session failed to turn off listen on error: ${err.code}`)
         expect().assertFail()
@@ -628,7 +676,6 @@ export default function cameraSecureSessionTest() {
         try {
           mCameraSession.addSecureOutput(mPreviewOutput);
           console.info(TAG + "Success to addSecureOutput mPreviewOutput");
-          expect(true).assertTrue()
         } catch (err) {
           console.info(TAG + "Failed to addSecureOutput mPreviewOutput, error code: " + err.code);
           expect().assertFail()
@@ -689,7 +736,6 @@ export default function cameraSecureSessionTest() {
       }
       done()
     })
-
 
   })
 }

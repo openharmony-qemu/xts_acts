@@ -30,7 +30,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
     };
     let tag = want?.parameters?.caseName as string;
     let storage: LocalStorage = new LocalStorage(param);
-    if(want?.parameters?.case == 'startErrorCodeCallBack1600001'){
+    if(want?.parameters!.case == 'startErrorCodeCallBack1600001'){
       try{
         let want: Want = {
           bundleName: 'com.acts.ability.errcode',
@@ -70,7 +70,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
       }
     } else
 
-      if(want?.parameters?.case == 'startErrorCodeCallBack16000050') {
+      if(want?.parameters!.case == 'startErrorCodeCallBack16000050') {
         try{
 
           let want: Want = {
@@ -113,7 +113,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
 
       } else
 
-      if (want?.parameters?.case == "startErrorCodeCallBack16000004") {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000004") {
         try{
 
           let want: Want = {
@@ -155,7 +155,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
 
       } else
 
-      if (want?.parameters?.case == "startErrorCodeCallBack16000019") {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000019") {
         try{
 
           let want: Want = {
@@ -194,7 +194,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
         }
 
       } else
-      if (want?.parameters?.case == "startErrorCodeCallBack16000072")  {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000072")  {
         try{
 
           let want: Want = {
@@ -238,7 +238,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
 
       } else
 
-      // if (want?.parameters?.case == "startErrorCodeCallBack16000076")  {
+      // if (want?.parameters!.case == "startErrorCodeCallBack16000076")  {
       //   try{
       //
       //     let want: Want = {
@@ -282,7 +282,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
       //
       // } else
       //
-      // if (want?.parameters?.case == "startErrorCodeCallBack16000077") {
+      // if (want?.parameters!.case == "startErrorCodeCallBack16000077") {
       //   try{
       //     let want: Want = {
       //       bundleName: 'com.acts.ability.errcode',
@@ -345,7 +345,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
       //   }
       //
       // } else
-      // if (want?.parameters?.case == "startErrorCodeCallBack16000079") {
+      // if (want?.parameters!.case == "startErrorCodeCallBack16000079") {
       //   try{
       //     let want: Want = {
       //       bundleName: 'com.ability.errcode.assist',
@@ -390,7 +390,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
       //   }
       //
       // } else
-      if (want?.parameters?.case == "startErrorCodeCallBack16000080") {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000080") {
         try{
           let want: Want = {
             bundleName: 'com.ability.errcode.assist',
@@ -433,7 +433,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
 
       } else
 
-      if (want?.parameters?.case == "startErrorCodeCallBack16000073") {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000073") {
         try{
           let want: Want = {
             bundleName: 'com.ability.errcode.assist',
@@ -476,7 +476,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
         }
 
       } else
-      if (want?.parameters?.case == "startErrorCodeCallBack16000078") {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000078") {
         try {
           let want: Want = {
             bundleName: 'com.ability.errcode.assist3',
@@ -519,7 +519,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
 
       } else
 
-      if(want?.parameters?.case == 'startErrorCodeCallBackOptions16000050') {
+      if(want?.parameters!.case == 'startErrorCodeCallBackOptions16000050') {
         try{
 
           let want: Want = {
@@ -564,7 +564,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
 
       } else
 
-      if (want?.parameters?.case == "startErrorCodeCallBackOptions16000004") {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000004") {
         try{
 
           let want: Want = {
@@ -608,7 +608,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
 
       } else
 
-      if (want?.parameters?.case == "startErrorCodeCallBackOptions16000019") {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000019") {
         try{
 
           let want: Want = {
@@ -653,7 +653,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
 
       } else
 
-      if (want?.parameters?.case == "startErrorCodeCallBackOptions16000072")  {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000072")  {
         try{
 
           let want: Want = {
@@ -701,7 +701,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
 
       } else
 
-      // if (want?.parameters?.case == "startErrorCodeCallBackOptions16000076")  {
+      // if (want?.parameters!.case == "startErrorCodeCallBackOptions16000076")  {
       //   try{
       //
       //     let want: Want = {
@@ -748,7 +748,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
       //
       // } else
       //
-      // if (want?.parameters?.case == "startErrorCodeCallBackOptions16000077") {
+      // if (want?.parameters!.case == "startErrorCodeCallBackOptions16000077") {
       //   try{
       //     let want: Want = {
       //       bundleName: 'com.acts.ability.errcode',
@@ -811,7 +811,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
       //   }
       //
       // } else
-      // if (want?.parameters?.case == "startErrorCodeCallBackOptions16000079") {
+      // if (want?.parameters!.case == "startErrorCodeCallBackOptions16000079") {
       //   try{
       //     let want: Want = {
       //       bundleName: 'com.ability.errcode.assist',
@@ -857,7 +857,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
       //   }
       //
       // } else
-      if (want?.parameters?.case == "startErrorCodeCallBackOptions16000080") {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000080") {
         try{
           let want: Want = {
             bundleName: 'com.ability.errcode.assist',
@@ -902,7 +902,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
 
       } else
 
-      if (want?.parameters?.case == "startErrorCodeCallBackOptions16000073") {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000073") {
         try{
           let want: Want = {
             bundleName: 'com.ability.errcode.assist',
@@ -948,7 +948,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
         }
 
       } else
-      if (want?.parameters?.case == "startErrorCodeCallBackOptions16000078") {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000078") {
         try {
           let want: Want = {
             bundleName: 'com.ability.errcode.assist3',

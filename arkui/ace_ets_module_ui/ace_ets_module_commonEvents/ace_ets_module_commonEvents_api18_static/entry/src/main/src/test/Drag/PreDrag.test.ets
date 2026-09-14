@@ -14,32 +14,16 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function PreDrag() {
   describe('PreDragTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi18.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Drag/PreDrag',
@@ -62,7 +46,11 @@ export default function PreDrag() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error('PreDragTest after each error: ' + err);
+      }
       console.info('PreDragTest after each called');
     });
 
@@ -76,6 +64,7 @@ export default function PreDrag() {
      * @tc.level    Level.LEVEL0
      */
 it('PreDragTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('PreDragTest_static_0010 START');
       let driver = Driver.create();
       let grid = await driver.findComponent(ON.id('drag'));
@@ -90,6 +79,10 @@ it('PreDragTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info('[PreDragTest_static_0010] PreDrag: ' + JSON.stringify(obj.getElement('$attrs')));
       expect(obj1.getElement('$attrs').getString('label')).assertEqual('350s');
       console.info('[PreDragTest_static_0010] END');
+      } catch (err) {
+        console.error('[PreDragTest_static_0010] error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
   })

@@ -77,7 +77,7 @@ struct WebViewMenuInputFieldType {
         Button('WebViewMenuInputFieldTypeTestButton').key('WebViewMenuInputFieldTypeTestButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "emitInputFieldTypeNumber001": {
               this.isPageEnd = -1;
@@ -87,7 +87,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.controller.loadUrl("resource://rawfile/InputFieldTypeTestNumber.html")
               }
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
@@ -102,7 +102,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.controller.loadUrl("resource://rawfile/InputFieldTypeTestText.html")
               }
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
@@ -117,7 +117,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.controller.loadUrl("resource://rawfile/InputFieldTypeTestPassWord.html")
               }
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
@@ -132,7 +132,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.controller.loadUrl("resource://rawfile/InputFieldTypeTestTel.html")
               }
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
@@ -147,7 +147,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.controller.loadUrl("resource://rawfile/InputFieldTypeTestOther.html")
               }
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)

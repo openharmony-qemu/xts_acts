@@ -188,6 +188,63 @@ export default function SetBlanklessLoadingWithKey() : void{
       await Utils.msSleep(6000);
       done()
     })
+
+    /**
+     * @tc.name   testGetBlanklessInfoWithKey801Static
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETBLANKLESSINFOWITHKEY_801_STATIC_0100
+     * @tc.desc   test getBlanklessInfoWithKey 801 capability not supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetBlanklessInfoWithKey801Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testGetBlanklessInfoWithKey801Static', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testGetBlanklessInfoWithKey801Static', 801, 148590, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+     * @tc.name   testSetBlanklessLoadingWithKey801Static
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHKEY_801_STATIC_0100
+     * @tc.desc   test setBlanklessLoadingWithKey 801 capability not supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetBlanklessLoadingWithKey801Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testSetBlanklessLoadingWithKey801Static', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey801Static', 801, 148594, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+     * @tc.name   testClearBlanklessLoadingCache801Static
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARBLANKLESSLOADINGCACHE_801_STATIC_0100
+     * @tc.desc   test clearBlanklessLoadingCache 801 capability not supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClearBlanklessLoadingCache801Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testClearBlanklessLoadingCache801Static', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testClearBlanklessLoadingCache801Static', 801, 148598, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
     
   })
 }

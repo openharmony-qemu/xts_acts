@@ -762,7 +762,7 @@ export default function SetConstructor1_2Test(): void {
      * @tc.level LEVEL2
      */
     it('testConstructor1_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fa: FixedArray<int> = new FixedArray<int>(3);
+      const fa: FixedArray<int> = new FixedArray<int>(3, 0);
       fa[0] = 10;
       fa[1] = 20;
       fa[2] = 30;

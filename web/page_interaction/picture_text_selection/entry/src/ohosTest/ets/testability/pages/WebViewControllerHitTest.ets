@@ -18,6 +18,7 @@ import business_error from '@ohos.base';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import { Driver } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 176301;
 
@@ -25,6 +26,7 @@ const EVENT_ID_SET_SUITE_KEY = 176301;
 @Component
 struct WebViewControllerHitTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ""
   @State hitType: number = -1
   hitTestValue?: webView.HitTestValue
@@ -67,6 +69,14 @@ struct WebViewControllerHitTest {
     console.log("webView.WebHitTestType Unknown: " + webView.WebHitTestType.Unknown)
   }
 
+  aboutToDisappear() {
+    try {
+      this.controller.loadUrl(this.mServer.getShutdownUrl());
+    } catch (_e) {
+      // page teardown: controller may already be unbound (17100001)
+    }
+  }
+
   build() {
     Row() {
       Column() {
@@ -74,13 +84,13 @@ struct WebViewControllerHitTest {
           .onClick(async () => {
             console.info("key==>" + this.str)
             await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
             switch (this.str) {
               case "emitGetHitTestValue001": {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeEditText.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -96,7 +106,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeEmail.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -112,7 +122,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeHttpAnchor.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -128,7 +138,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeHttpAnchorImg.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -144,7 +154,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeImg.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -160,7 +170,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeMap.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -176,7 +186,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypePhone.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -192,7 +202,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeUnknown.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -208,7 +218,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeEmail.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -224,7 +234,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeHttpAnchor.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -240,7 +250,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeHttpAnchorImg.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -256,7 +266,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeImg.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -272,7 +282,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypePhone.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -288,7 +298,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeEditText.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -302,7 +312,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeEmail.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -316,7 +326,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeHttpAnchor.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -330,7 +340,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeHttpAnchorImg.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -344,7 +354,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeImg.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -358,7 +368,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeMap.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -372,7 +382,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypePhone.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);
@@ -386,7 +396,7 @@ struct WebViewControllerHitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/hitTypeUnknown.html')
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isGetHitType = -1;
                   await Utils.clickComponent('WebViewControllerHitTestWebView')
                   await Utils.waitForExist(()=>this.isGetHitType, this.str+' isGetHitType', 1, 1000);

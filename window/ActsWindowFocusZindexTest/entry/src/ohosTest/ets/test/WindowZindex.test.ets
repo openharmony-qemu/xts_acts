@@ -2570,5 +2570,171 @@ export default function windowZindexTest() {
         }
       })
 
+          /**
+     * @tc.name   test_setRaiseByClickEnabled_subWindow_notShow
+     * @tc.number SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0700
+     * @tc.desc   test_setRaiseByClickEnabled_subWindow_notShow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setRaiseByClickEnabled_subWindow_notShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'test_setRaiseByClickEnabled_subWindow_notShow';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          let subWindow = await windowStage.createSubWindow("test_setRaiseByClickEnabled_subWindow_notShow");
+          let promise = subWindow.setRaiseByClickEnabled(false);
+          promise.then(async () => {
+            console.info(msgStr + 'Succeeded in setRaiseByClickEnabled the window to app top.');
+            await subWindow.destroyWindow();
+            expect(false).assertTrue();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(msgStr +
+              `Failed to setRaiseByClickEnabled the window to app top. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow.destroyWindow()
+            if (!canIUseRes) {
+              expect(err.code).assertEqual(801);
+            } else {
+              expect(err.code).assertEqual(1300002);
+            }
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (exception) {
+          console.error(msgStr + 'Failed . Cause: ' + JSON.stringify(exception));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   test_setRaiseByClickEnabled_subWindow_Show_Minimize
+     * @tc.number SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0800
+     * @tc.desc   test_setRaiseByClickEnabled_subWindow_Show_Minimize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setRaiseByClickEnabled_subWindow_Show_Minimize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'test_setRaiseByClickEnabled_subWindow_Show_Minimize';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          let subWindow = await windowStage.createSubWindow("test_setRaiseByClickEnabled_subWindow_Show_Minimize");
+          await subWindow.setUIContent('testability/pages/Index2');
+          await subWindow.showWindow();
+          await sleep(500)
+          await subWindow.minimize();
+          await sleep(500)
+          let promise = subWindow.setRaiseByClickEnabled(false);
+          promise.then(async () => {
+            console.info(msgStr + 'Succeeded in setRaiseByClickEnabled the window to app top.');
+            await subWindow.destroyWindow();
+            expect(false).assertTrue();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(msgStr +
+              `Failed to setRaiseByClickEnabled the window to app top. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow.destroyWindow()
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (exception) {
+          console.error(msgStr + 'Failed . Cause: ' + JSON.stringify(exception));
+          if (!canIUseRes) {
+            expect(exception.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   test_raiseToAppTop_subWindow_notShow
+     * @tc.number SUB_BASIC_WMS_RAISE_TO_APP_TOP_0100
+     * @tc.desc   test_raiseToAppTop_subWindow_notShow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_raiseToAppTop_subWindow_notShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName: string = 'test_raiseToAppTop_subWindow_notShow';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          let subWindow = await windowStage.createSubWindow("test_raiseToAppTop_subWindow_notShow");
+          let promise = subWindow.raiseToAppTop();
+          promise.then(async () => {
+            console.info(msgStr + 'Succeeded in raising the window to app top.');
+            await subWindow.destroyWindow();
+            expect(false).assertTrue();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(msgStr +
+              `Failed to raise the window to app top. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow.destroyWindow()
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (exception) {
+          console.error(msgStr + ' Failed   Cause: ' + JSON.stringify(exception));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   test_raiseToAppTop_subWindow_Show_Minimize
+     * @tc.number SUB_BASIC_WMS_RAISE_TO_APP_TOP_0200
+     * @tc.desc   test_raiseToAppTop_subWindow_Show_Minimize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_raiseToAppTop_subWindow_Show_Minimize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName: string = 'test_raiseToAppTop_subWindow_Show_Minimize';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          let subWindow = await windowStage.createSubWindow("test_raiseToAppTop_subWindow_Show_Minimize");
+          await subWindow.setUIContent('testability/pages/Index2');
+          await subWindow.showWindow();
+          await sleep(500)
+          await subWindow.minimize();
+          await sleep(500)
+          let promise = subWindow.raiseToAppTop();
+          promise.then(async () => {
+            console.info(msgStr + 'Succeeded in raising the window to app top.');
+            await subWindow.destroyWindow();
+            expect(false).assertTrue();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(msgStr +
+              `Failed to raise the window to app top. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow.destroyWindow()
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (exception) {
+          console.error(msgStr + ' Failed   Cause: ' + JSON.stringify(exception));
+          if (!canIUseRes) {
+            expect(exception.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+          done();
+        }
+      });
+
   })
 }

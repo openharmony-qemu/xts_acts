@@ -22,15 +22,17 @@
         "deviceTypes": [],
         "deliveryWithInstall": true,
         "installationFree": false,
-        "uiSyntax": "ets",
         "pages": "$profile:main_pages",
         "abilities": [
             {
                 "name": "EntryAbility",
-                "srcEntry": "./ets/entryability/EntryAbility.ts",
+                "srcEntry": "./ets/entryability/EntryAbility.ets",
                 "description": "$string:phone_entry_main",
                 "icon": "$media:icon",
                 "label": "$string:entry_label",
+                "startWindowIcon": "$media:icon",
+                "startWindowBackground": "$color:start_window_background",
+                "exported": true,
                 "visible": true,
                 "orientation": "portrait",
                 "skills": [

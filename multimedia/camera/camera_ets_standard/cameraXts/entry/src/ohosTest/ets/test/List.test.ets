@@ -41,6 +41,7 @@ import CameraPhotoSessionBackTest from './Session/CameraPhotoSessionBack.test';
 import MiniCapabilityTest from './MiniCapability.test';
 import VideoSessionManualControlTest from './VideoSession/VideoSessionManualControl.test'
 import MetadataOutputTest from './CameraOutput/MetadataOutput.test'
+import CameraLockFocusTest from './Focus/CameraLockFocus.test';
 
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
 const cameraManager = camera.getCameraManager(testContext);
@@ -103,5 +104,6 @@ export default function testsuite() {
     MiniCapabilityTest();
     VideoSessionManualControlTest();
     MetadataOutputTest();
+    CameraLockFocusTest();
   }
 }

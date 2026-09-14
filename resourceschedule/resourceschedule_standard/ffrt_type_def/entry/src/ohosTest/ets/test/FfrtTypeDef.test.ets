@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect, Level, TestType, Size} from '@ohos/hypium';
-import ffrt from 'libentry.so';
+import * as ffrt from 'libentry.so';
 export default function ffrtTypeDefTest() {
   const EINVAL = 22;
   describe('ActsFfrtTypeDefTest', () => {

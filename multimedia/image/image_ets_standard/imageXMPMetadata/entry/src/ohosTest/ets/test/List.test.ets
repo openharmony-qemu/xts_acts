@@ -14,6 +14,52 @@
  */
 import imageXMPMetadata from './ImageXMPMetadata.test';
 
+import ExifCloneTest from './Metadata/ExifMetadata/Clone.test';
+import ExifCreateInstanceTest from './Metadata/ExifMetadata/CreateInstance.test';
+import ExifGetAllPropertiesTest from './Metadata/ExifMetadata/GetAllProperties.test';
+import ExifGetBlobTest from './Metadata/ExifMetadata/GetBlob.test';
+import ExifGetPropertiesTest from './Metadata/ExifMetadata/GetProperties.test';
+import ExifSetBlobTest from './Metadata/ExifMetadata/SetBlob.test';
+import ExifSetPropertiesTest from './Metadata/ExifMetadata/SetProperties.test';
+
+import MakerNoteCloneTest from './Metadata/MakerNoteHuaweiMetadata/Clone.test';
+import MakerNoteCreateInstanceTest from './Metadata/MakerNoteHuaweiMetadata/CreateInstance.test';
+import MakerNoteGetAllPropertiesTest from './Metadata/MakerNoteHuaweiMetadata/GetAllProperties.test';
+import MakerNoteGetBlobTest from './Metadata/MakerNoteHuaweiMetadata/GetBlob.test';
+import MakerNoteGetPropertiesTest from './Metadata/MakerNoteHuaweiMetadata/GetProperties.test';
+import MakerNoteSetBlobTest from './Metadata/MakerNoteHuaweiMetadata/SetBlob.test';
+import MakerNoteSetPropertiesTest from './Metadata/MakerNoteHuaweiMetadata/SetProperties.test';
+
+import CloneTest from './Metadata/Metadata/Clone.test';
+import GetAllPropertiesTest from './Metadata/Metadata/GetAllProperties.test';
+import GetBlobTest from './Metadata/Metadata/GetBlob.test';
+import GetPropertiesTest from './Metadata/Metadata/GetProperties.test';
+import SetBlobTest from './Metadata/Metadata/SetBlob.test';
+import SetPropertiesTest from './Metadata/Metadata/SetProperties.test';
+
 export default function testsuite() {
   imageXMPMetadata();
+
+  ExifCloneTest();
+  ExifCreateInstanceTest();
+  ExifGetAllPropertiesTest();
+  ExifGetBlobTest();
+  ExifGetPropertiesTest();
+  ExifSetBlobTest();
+  ExifSetPropertiesTest();
+
+  MakerNoteCloneTest();
+  MakerNoteCreateInstanceTest();
+  MakerNoteGetAllPropertiesTest();
+  MakerNoteGetBlobTest();
+  MakerNoteGetPropertiesTest();
+  MakerNoteSetBlobTest();
+  MakerNoteSetPropertiesTest();
+
+  CloneTest();
+  GetAllPropertiesTest();
+  GetBlobTest();
+  GetPropertiesTest();
+  SetBlobTest();
+  SetPropertiesTest();
 }

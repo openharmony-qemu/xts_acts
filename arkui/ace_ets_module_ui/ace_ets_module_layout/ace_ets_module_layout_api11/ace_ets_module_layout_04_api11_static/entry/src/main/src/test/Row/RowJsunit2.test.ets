@@ -14,31 +14,16 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 
 import Utils from '../Utils.test';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function rowJsunit2() {
   describe('rowJsunit2', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("rowJsunit2 beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("rowJsunit2 beforeEach start");
       let options: router.RouterOptions = {
@@ -62,7 +47,11 @@ export default function rowJsunit2() {
     });
 
     afterEach(async () => {
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('rowJsunit2Test await err: ' + JSON.stringify(err));
+      }
       console.info("row after each called");
     });
 
@@ -77,7 +66,11 @@ export default function rowJsunit2() {
      */
 it('testRow_static_100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testRow_static_100] START');
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('rowJsunit2Test await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row');
      let obj = JSON.parseJsonElement(strJson);
      console.info("testRow_static_100 component obj is: " + JSON.stringify(obj));
@@ -97,7 +90,11 @@ it('testRow_static_100', Level.LEVEL0, async (done: () => void): Promise<void> =
      */
 it('testRow_static_200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testRow_static_200] START');
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('rowJsunit2Test await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row');
      let obj = JSON.parseJsonElement(strJson);
      console.info("testRow_static_200 component obj is: " + JSON.stringify(obj));
@@ -117,7 +114,11 @@ it('testRow_static_200', Level.LEVEL0, async (done: () => void): Promise<void> =
      */
 it('testRow_static_300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testRow_static_300] START');
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('rowJsunit2Test await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row');
      let obj = JSON.parseJsonElement(strJson);
      console.info("testRow_static_300 component obj is: " + JSON.stringify(obj));
@@ -137,7 +138,11 @@ it('testRow_static_300', Level.LEVEL0, async (done: () => void): Promise<void> =
      */
 it('testRow_static_400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testRow_static_400] START');
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('rowJsunit2Test await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row');
      let obj = JSON.parseJsonElement(strJson);
      console.info("testRow_static_400 component obj is: " + JSON.stringify(obj));
@@ -157,7 +162,11 @@ it('testRow_static_400', Level.LEVEL0, async (done: () => void): Promise<void> =
      */
 it('testRow_static_500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testRow_static_500] START');
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('rowJsunit2Test await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row');
      let obj = JSON.parseJsonElement(strJson);
      console.info("testRow_static_500 component obj is: " + JSON.stringify(obj));
@@ -177,7 +186,11 @@ it('testRow_static_500', Level.LEVEL0, async (done: () => void): Promise<void> =
      */
 it('testRow_static_600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testRow_static_600] START');
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('rowJsunit2Test await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row');
      let obj = JSON.parseJsonElement(strJson);
      console.info("testRow_static_600 component obj is: " + JSON.stringify(obj));

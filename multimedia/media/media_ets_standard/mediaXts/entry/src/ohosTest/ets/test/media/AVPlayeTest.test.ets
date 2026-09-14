@@ -5566,5 +5566,27 @@ export default function AVPlayerTest() {
         testTimedMetaDataListening01(fileDescriptor, "SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0200", avPlayer, timedMetaDataON, done);
       }
     });
+
+    /**
+      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100
+      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100
+      * @tc.desc   Test off_mediaKeySystemInfoUpdate
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100', Level.LEVEL0, async (done:Function) => {
+        try {
+            let avPlayer = await media.createAVPlayer();
+            let callback = (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
+                console.log("XX SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100 off_mediaKeySystemInfoUpdate callback called");
+            }
+            avPlayer!.off('mediaKeySystemInfoUpdate', callback);
+        } catch (err) {
+            console.log("XX SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100 off_mediaKeySystemInfoUpdate", err.message);
+            expect().assertFail();
+        }
+        done();
+    });
   })
 }

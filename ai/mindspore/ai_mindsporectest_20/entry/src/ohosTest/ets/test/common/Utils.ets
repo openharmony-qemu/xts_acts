@@ -36,7 +36,7 @@ export default class Utils {
   static sleep(time: number) {
     return new Promise<string>((resolve, reject) => {
       setTimeout(() => {
-        resolve("ok")
+        resolve('ok')
       }, time)
     }).then(() => {
       console.info(`sleep ${time} over...`)
@@ -48,28 +48,28 @@ export default class Utils {
   }
 
   static getSandboxFileDir() {
-    let sandboxFileDir = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().filesDir + "/"
+    let sandboxFileDir = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().filesDir + '/'
     console.log(`[getSandboxFileDir] return ${sandboxFileDir}`);
     return sandboxFileDir;
   }
 
   static deleteFile(filePath: string) {
-    console.info("[deleteFile] filePath:" + filePath);
+    console.info('[deleteFile] filePath:' + filePath);
     try {
       fs.unlinkSync(filePath)
     } catch (error) {
-      console.info("[deleteFile] error:" + error);
+      console.info('[deleteFile] error:' + error);
     }
   }
 
   static isFileExist(filePath: string): boolean {
-    console.info("[isFileExist] filePath:" + filePath);
+    console.info('[isFileExist] filePath:' + filePath);
     try {
       let fileExist = fs.accessSync(filePath)
-      console.info("[isFileExist] return:" + fileExist);
+      console.info('[isFileExist] return:' + fileExist);
       return fileExist
     } catch (error) {
-      console.info("[isFileExist] error:" + error);
+      console.info('[isFileExist] error:' + error);
       return false
     }
   }
@@ -77,8 +77,10 @@ export default class Utils {
   static async flingComponent(key: string, isHorizontal: boolean, isForward: boolean) {
     let driver = Driver.create();
     let rect = Utils.getComponentRect(key);
-    let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect))
-    let centerY = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect))
+    let winLeft: number = AppStorage.get<number>('winLeft') ?? 0;
+    let winTop: number = AppStorage.get<number>('winTop') ?? 0;
+    let centerX = Math.round(winLeft + Utils.getRectHorizontalCenterX(rect))
+    let centerY = Math.round(winTop + Utils.getRectVerticalCenterY(rect))
     let X1 =  Math.round(centerX - vp2px(66.67));
     let X2 =  Math.round(centerX + vp2px(66.67));
     let Y1 = Math.round(centerY - vp2px(66.67));
@@ -153,8 +155,10 @@ export default class Utils {
 
   static async fingerZoom(key: string, isOut: boolean) {
     let rect = Utils.getComponentRect(key);
-    let centerX =  Math.round(globalThis.winLeft +  Utils.getRectHorizontalCenterX(rect))
-    let centerY =  Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect))
+    let winLeft: number = AppStorage.get<number>('winLeft') ?? 0;
+    let winTop: number = AppStorage.get<number>('winTop') ?? 0;
+    let centerX = Math.round(winLeft + Utils.getRectHorizontalCenterX(rect))
+    let centerY = Math.round(winTop + Utils.getRectVerticalCenterY(rect))
     let fingerUpCenterY = Math.round(centerY - vp2px(66.67));
     let fingerDownCenterY = Math.round(centerY + vp2px(66.67));
     let driver: Driver = Driver.create();
@@ -185,10 +189,10 @@ export default class Utils {
       eventId: eventId,
       priority: events_emitter.EventPriority.LOW
     }, (eventData: events_emitter.EventData) => {
-      console.info("Value Change CallBack");
+      console.info('Value Change CallBack');
       if (eventData != null && eventData.data != null) {
         if (pageTag == eventData.data.PAGE_TAG) {
-          console.info("CallBack value:" + JSON.stringify(eventData));
+          console.info('CallBack value:' + JSON.stringify(eventData));
           callBack(eventData.data.VALUE);
         }
       }
@@ -199,18 +203,18 @@ export default class Utils {
     try {
       let backData: events_emitter.EventData = {
         data: {
-          "PAGE_TAG": pageTag,
-          "VALUE": emitValue
+          'PAGE_TAG': pageTag,
+          'VALUE': emitValue
         }
       }
       let backEvent: events_emitter.InnerEvent = {
         eventId: eventId,
         priority: events_emitter.EventPriority.LOW
       }
-      console.info("start to emit page state");
+      console.info('start to emit page state');
       events_emitter.emit(backEvent, backData);
     } catch (err) {
-      console.info("emit page state err: " + JSON.stringify(err));
+      console.info('emit page state err: ' + JSON.stringify(err));
     }
   }
 
@@ -294,8 +298,8 @@ export default class Utils {
 
   static getDragComponentRect(key: string) {
     let strJson: string = getInspectorByKey(key);
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
-    console.info("[getInspectorByKey] rectInfo is: " + JSON.parse('[' + JSON.parse(strJson).$rect + ']'));
+    console.info('[getInspectorByKey] current component obj is: ' + JSON.stringify(JSON.parse(strJson)));
+    console.info('[getInspectorByKey] rectInfo is: ' + JSON.parse('[' + JSON.parse(strJson).$rect + ']'));
     Utils.rect_left = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[0] + ']')[0]
     Utils.rect_top = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[0] + ']')[1]
     Utils.rect_right = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[1] + ']')[0]
@@ -398,13 +402,13 @@ export default class Utils {
         console.info(`====>${name} start<====`);
         await Utils.driver.triggerKey(key);
         if (key == 16) {
-          let com = await Utils.driver.findComponent(ON.id("KeyCodeTest1"));
+          let com = await Utils.driver.findComponent(ON.id('KeyCodeTest1'));
           await com.click();
           await com.click();
         } else if ((key > 23 && key < 2054) || (key > 23 && key < 2054) || [2626, 2627].includes(key)) {
           await Utils.driver.triggerKey(1);
           let cmd = 'aa start -a MainAbility -b com.acts.keycodeevent';
-          let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+          let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
           if(user !== undefined){
               cmd += ' -u ' + user;
           }
@@ -428,10 +432,10 @@ export default class Utils {
       abilityDelegator.executeShellCommand(cmd, (err, data) => {
         if (err) {
           console.error(`command ${cmd} failed: ${JSON.stringify(err)}`);
-          reject("failed");
+          reject('failed');
         } else {
           console.info(`command ${cmd} executed: ${data.stdResult}`);
-          resolve("executed");
+          resolve('executed');
         }
       });
     })

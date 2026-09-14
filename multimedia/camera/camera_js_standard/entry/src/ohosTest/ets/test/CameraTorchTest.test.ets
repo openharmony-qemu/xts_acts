@@ -640,7 +640,7 @@ export default function cameraTorchTest() {
  
         } catch (error) {
           console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_SETTORCHMODEONWITHLEVEL_0200 err` + error.code);
-          expect().assertFail();
+          expect(error.code).assertEqual(camera.CameraErrorCode.OPERATION_NOT_ALLOWED)
         }
       }
       done();

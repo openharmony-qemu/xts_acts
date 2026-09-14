@@ -1,0 +1,12 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "ArkWebCapi覆盖测试"
+    },
+    {
+      "name": "entry_desc",
+      "value": "ArkWeb CAPI 覆盖测试"
+    }
+  ]
+}

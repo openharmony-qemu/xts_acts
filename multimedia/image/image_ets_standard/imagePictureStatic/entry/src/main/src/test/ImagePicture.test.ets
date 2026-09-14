@@ -100,7 +100,7 @@ export default function imagePicture() {
   let exifRecords: Record<string, string|null> = {"ImageWidth": "512", "ImageLength": "512"};
   let isSupportHEIFDecode: boolean;
   let isSupportHEICEncode: boolean;
-  let isSupportHdr: Boolean;
+  let isSupportHdr: Boolean = false;
 
   describe('imagePicture', (): void => {
     beforeAll(async (): Promise<void> => {
@@ -112,12 +112,11 @@ export default function imagePicture() {
         image.createImageSource(filesDir + '/' + "test.jpg")!.supportedFormats.includes("image/heic");
       isSupportHEICEncode =
         image.createImagePacker().supportedFormats.includes("image/heic");
-
       try {
-        isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
+        isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
+        console.info('isSupportHdr is ' + isSupportHdr);
       } catch (err) {
-        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-        isSupportHdr = false;
+        console.error('The file path does not exist');
       }
     })
 

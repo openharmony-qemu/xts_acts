@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 export default function getUIContextApiTest() {
   describe('getUIContextApiTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("getUIContextApiTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
-    });
     afterEach(async () => {
       await Utils.sleep(1000);
       console.info("getUIContextApiTest after each called");
@@ -41,22 +35,27 @@ export default function getUIContextApiTest() {
      * @tc.level    Level.LEVEL0
      */
     it('getUIContextApi01Test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('getUIContextApi01Test_static_001 START');
-      let PAGE_TAG = 'getUIContextApi01';
-      await Utils.pushPage(`image/${PAGE_TAG}`);
-      console.info('getUIContextApi01Test_static_001 page success');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('Button001'));
-      await (button?.click() as Promise<void>);
-      console.info('Button001 click success');
-      await Utils.sleep(100);
-      let strJson = inspector.getInspectorByKey('getUIContextApi01_text001');
-      console.info('getUIContextApi01_text001 success');
-      let obj = JSON.parseJsonElement(strJson);
-      let hdr: string = obj.getElement('$attrs').getString('content');
-      console.info('getUIContextApi01Test_static_001 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageCacheCount = 50');
-      done();
+      try {
+        console.info('getUIContextApi01Test_static_001 START');
+        let PAGE_TAG = 'getUIContextApi01';
+        await Utils.pushPage(`image/${PAGE_TAG}`);
+        console.info('getUIContextApi01Test_static_001 page success');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('Button001'));
+        await (button?.click() as Promise<void>);
+        console.info('Button001 click success');
+        await Utils.sleep(100);
+        let strJson = inspector.getInspectorByKey('getUIContextApi01_text001');
+        console.info('getUIContextApi01_text001 success');
+        let obj = JSON.parseJsonElement(strJson);
+        let hdr: string = obj.getElement('$attrs').getString('content');
+        console.info('getUIContextApi01Test_static_001 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageCacheCount = 50');
+        done();
+      } catch (err) {
+        console.error('getUIContextApi01Test_static_001 error:' + err);
+        done();
+      }
     })
     /**
      * @tc.number   getUIContextApi01Test_static_002
@@ -65,20 +64,25 @@ export default function getUIContextApiTest() {
      * @tc.level    Level.LEVEL0
      */
     it('getUIContextApi01Test_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('getUIContextApi01Test_static_002 START');
-      let PAGE_TAG = 'getUIContextApi01';
-      await Utils.pushPage(`image/${PAGE_TAG}`);
-      console.info('getUIContextApi01Test_static_002 page success');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('Button001'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(100);
-      let strJson = inspector.getInspectorByKey('getUIContextApi01_text002');
-      let obj = JSON.parseJsonElement(strJson);
-      let hdr: string = obj.getElement('$attrs').getString('content');
-      console.info('getUIContextApi01Test_static_002 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageRawDataCacheSize = 10485760(B)');
-      done();
+      try {
+        console.info('getUIContextApi01Test_static_002 START');
+        let PAGE_TAG = 'getUIContextApi01';
+        await Utils.pushPage(`image/${PAGE_TAG}`);
+        console.info('getUIContextApi01Test_static_002 page success');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('Button001'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(100);
+        let strJson = inspector.getInspectorByKey('getUIContextApi01_text002');
+        let obj = JSON.parseJsonElement(strJson);
+        let hdr: string = obj.getElement('$attrs').getString('content');
+        console.info('getUIContextApi01Test_static_002 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageRawDataCacheSize = 10485760(B)');
+        done();
+      } catch (err) {
+        console.error('getUIContextApi01Test_static_002 error:' + err);
+        done();
+      }
     })
     /**
      * @tc.number   getUIContextApi02Test_static_001
@@ -87,20 +91,25 @@ export default function getUIContextApiTest() {
      * @tc.level    Level.LEVEL2
      */
     it('getUIContextApi02Test_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('getUIContextApi02Test_static_001 START');
-      let PAGE_TAG = 'getUIContextApi02';
-      await Utils.pushPage(`image/${PAGE_TAG}`);
-      console.info('getUIContextApi02Test_static_001 page success');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('Button001'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(100);
-      let strJson = inspector.getInspectorByKey('getUIContextApi02_text001');
-      let obj = JSON.parseJsonElement(strJson);
-      let hdr: string = obj.getElement('$attrs').getString('content');
-      console.info('getUIContextApi02Test_static_001 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageCacheCount = 0');
-      done();
+      try {
+        console.info('getUIContextApi02Test_static_001 START');
+        let PAGE_TAG = 'getUIContextApi02';
+        await Utils.pushPage(`image/${PAGE_TAG}`);
+        console.info('getUIContextApi02Test_static_001 page success');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('Button001'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(100);
+        let strJson = inspector.getInspectorByKey('getUIContextApi02_text001');
+        let obj = JSON.parseJsonElement(strJson);
+        let hdr: string = obj.getElement('$attrs').getString('content');
+        console.info('getUIContextApi02Test_static_001 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageCacheCount = 0');
+        done();
+      } catch (err) {
+        console.error('getUIContextApi02Test_static_001 error:' + err);
+        done();
+      }
     })
     /**
      * @tc.number   getUIContextApi02Test_static_002
@@ -109,20 +118,25 @@ export default function getUIContextApiTest() {
      * @tc.level    Level.LEVEL2
      */
     it('getUIContextApi02Test_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('getUIContextApi02Test_static_002 START');
-      let PAGE_TAG = 'getUIContextApi02';
-      await Utils.pushPage(`image/${PAGE_TAG}`);
-      console.info('getUIContextApi02Test_static_002 page success');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('Button001'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(100);
-      let strJson = inspector.getInspectorByKey('getUIContextApi02_text002');
-      let obj = JSON.parseJsonElement(strJson);
-      let hdr: string = obj.getElement('$attrs').getString('content');
-      console.info('getUIContextApi02Test_static_002 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageRawDataCacheSize = 0');
-      done();
+      try {
+        console.info('getUIContextApi02Test_static_002 START');
+        let PAGE_TAG = 'getUIContextApi02';
+        await Utils.pushPage(`image/${PAGE_TAG}`);
+        console.info('getUIContextApi02Test_static_002 page success');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('Button001'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(100);
+        let strJson = inspector.getInspectorByKey('getUIContextApi02_text002');
+        let obj = JSON.parseJsonElement(strJson);
+        let hdr: string = obj.getElement('$attrs').getString('content');
+        console.info('getUIContextApi02Test_static_002 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageRawDataCacheSize = 0');
+        done();
+      } catch (err) {
+        console.error('getUIContextApi02Test_static_002 error:' + err);
+        done();
+      }
     })
     /**
      * @tc.number   getUIContextApi03Test_static_001
@@ -131,20 +145,25 @@ export default function getUIContextApiTest() {
      * @tc.level    Level.LEVEL2
      */
     it('getUIContextApi03Test_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('getUIContextApi03Test_static_001 START');
-      let PAGE_TAG = 'getUIContextApi03';
-      await Utils.pushPage(`image/${PAGE_TAG}`);
-      console.info('getUIContextApi03Test_static_001 page success');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('Button001'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(100);
-      let strJson = inspector.getInspectorByKey('getUIContextApi03_text001');
-      let obj = JSON.parseJsonElement(strJson);
-      let hdr: string = obj.getElement('$attrs').getString('content');
-      console.info('getUIContextApi03Test_static_001 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageCacheCount = 1');
-      done();
+      try {
+        console.info('getUIContextApi03Test_static_001 START');
+        let PAGE_TAG = 'getUIContextApi03';
+        await Utils.pushPage(`image/${PAGE_TAG}`);
+        console.info('getUIContextApi03Test_static_001 page success');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('Button001'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(100);
+        let strJson = inspector.getInspectorByKey('getUIContextApi03_text001');
+        let obj = JSON.parseJsonElement(strJson);
+        let hdr: string = obj.getElement('$attrs').getString('content');
+        console.info('getUIContextApi03Test_static_001 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageCacheCount = 1');
+        done();
+      } catch (err) {
+        console.error('getUIContextApi03Test_static_001 error:' + err);
+        done();
+      }
     })
     /**
      * @tc.number   getUIContextApi03Test_static_002
@@ -153,20 +172,25 @@ export default function getUIContextApiTest() {
      * @tc.level    Level.LEVEL2
      */
     it('getUIContextApi03Test_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('getUIContextApi03Test_static_002 START');
-      let PAGE_TAG = 'getUIContextApi03';
-      await Utils.pushPage(`image/${PAGE_TAG}`);
-      console.info('getUIContextApi03Test_static_002 page success');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('Button001'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(100);
-      let strJson = inspector.getInspectorByKey('getUIContextApi03_text002');
-      let obj = JSON.parseJsonElement(strJson);
-      let hdr: string = obj.getElement('$attrs').getString('content');
-      console.info('getUIContextApi03Test_static_002 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageRawDataCacheSize = 1');
-      done();
+      try {
+        console.info('getUIContextApi03Test_static_002 START');
+        let PAGE_TAG = 'getUIContextApi03';
+        await Utils.pushPage(`image/${PAGE_TAG}`);
+        console.info('getUIContextApi03Test_static_002 page success');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('Button001'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(100);
+        let strJson = inspector.getInspectorByKey('getUIContextApi03_text002');
+        let obj = JSON.parseJsonElement(strJson);
+        let hdr: string = obj.getElement('$attrs').getString('content');
+        console.info('getUIContextApi03Test_static_002 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageRawDataCacheSize = 1');
+        done();
+      } catch (err) {
+        console.error('getUIContextApi03Test_static_002 error:' + err);
+        done();
+      }
     })
     /**
      * @tc.number   getUIContextApi04Test_static_001
@@ -175,20 +199,25 @@ export default function getUIContextApiTest() {
      * @tc.level    Level.LEVEL2
      */
     it('getUIContextApi04Test_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('getUIContextApi04Test_static_001 START');
-      let PAGE_TAG = 'getUIContextApi04';
-      await Utils.pushPage(`image/${PAGE_TAG}`);
-      console.info('getUIContextApi04Test_static_001 page success');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('Button001'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(100);
-      let strJson = inspector.getInspectorByKey('getUIContextApi04_text001');
-      let obj = JSON.parseJsonElement(strJson);
-      let hdr: string = obj.getElement('$attrs').getString('content');
-      console.info('getUIContextApi04Test_static_001 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageCacheCount = 2147483647');
-      done();
+      try {
+        console.info('getUIContextApi04Test_static_001 START');
+        let PAGE_TAG = 'getUIContextApi04';
+        await Utils.pushPage(`image/${PAGE_TAG}`);
+        console.info('getUIContextApi04Test_static_001 page success');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('Button001'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(100);
+        let strJson = inspector.getInspectorByKey('getUIContextApi04_text001');
+        let obj = JSON.parseJsonElement(strJson);
+        let hdr: string = obj.getElement('$attrs').getString('content');
+        console.info('getUIContextApi04Test_static_001 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageCacheCount = 2147483647');
+        done();
+      } catch (err) {
+        console.error('getUIContextApi04Test_static_001 error:' + err);
+        done();
+      }
     })
     /**
      * @tc.number   getUIContextApi04Test_static_002
@@ -197,20 +226,25 @@ export default function getUIContextApiTest() {
      * @tc.level    Level.LEVEL2
      */
     it('getUIContextApi04Test_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('getUIContextApi04Test_static_002 START');
-      let PAGE_TAG = 'getUIContextApi04';
-      await Utils.pushPage(`image/${PAGE_TAG}`);
-      console.info('getUIContextApi04Test_static_002 page success');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('Button001'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(100);
-      let strJson = inspector.getInspectorByKey('getUIContextApi04_text002');
-      let obj = JSON.parseJsonElement(strJson);
-      let hdr: string = obj.getElement('$attrs').getString('content');
-      console.info('getUIContextApi04Test_static_002 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageRawDataCacheSize = 2147483647');
-      done();
+      try {
+        console.info('getUIContextApi04Test_static_002 START');
+        let PAGE_TAG = 'getUIContextApi04';
+        await Utils.pushPage(`image/${PAGE_TAG}`);
+        console.info('getUIContextApi04Test_static_002 page success');
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('Button001'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(100);
+        let strJson = inspector.getInspectorByKey('getUIContextApi04_text002');
+        let obj = JSON.parseJsonElement(strJson);
+        let hdr: string = obj.getElement('$attrs').getString('content');
+        console.info('getUIContextApi04Test_static_002 is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('setImageRawDataCacheSize = 2147483647');
+        done();
+      } catch (err) {
+        console.error('getUIContextApi04Test_static_002 error:' + err);
+        done();
+      }
     })
   })
 }

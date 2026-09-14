@@ -19,6 +19,7 @@ group("security") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "ability",
       "access_token",
       "asset",
       "certificate_framework",

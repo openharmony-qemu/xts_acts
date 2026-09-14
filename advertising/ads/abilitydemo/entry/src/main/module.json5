@@ -37,7 +37,7 @@
     "abilities": [
       {
         "name": "FullScreenAdAbility",
-        "srcEntry": "./ets/ability/FullScreenAdAbility.ts",
+        "srcEntry": "./ets/ability/FullScreenAdAbility.ets",
         "description": "full screen ad ability",
         "icon": "$media:icon",
         "startWindowIcon": "$media:icon",
@@ -50,7 +50,7 @@
       {
         "name": "AdsCoreService",
         "type": "adsService",
-        "srcEntry": "./ets/ability/AdsCoreService.ts",
+        "srcEntry": "./ets/ability/AdsCoreService.ets",
         "description": "AdsCoreService",
         "exported": true,
         "skills": []
@@ -58,14 +58,14 @@
       {
         "name": "AdsUIExtensionAbility",
         "type": "ads",
-        "srcEntry": "./ets/ability/AdsUIExtensionAbility.ts",
+        "srcEntry": "./ets/ability/AdsUIExtensionAbility.ets",
         "description": "AdsUIExtensionAbility",
         "exported": true
       },
       {
         "name": "AdsApiService",
         "type": "service",
-        "srcEntry": "./ets/ability/AdsApiService.ts",
+        "srcEntry": "./ets/ability/AdsApiService.ets",
         "description": "AdsApiService",
         "exported": true,
         "skills": []

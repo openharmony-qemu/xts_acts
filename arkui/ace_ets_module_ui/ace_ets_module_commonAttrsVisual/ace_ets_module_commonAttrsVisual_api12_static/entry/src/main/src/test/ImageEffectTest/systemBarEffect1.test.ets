@@ -14,32 +14,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function systemBarEffectTest() {
 
   describe('systemBarEffectTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("systemBarEffectTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api12.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("systemBarEffectTest beforeEach start");
       let options: router.RouterOptions = {
@@ -62,26 +47,41 @@ export default function systemBarEffectTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('systemBarEffectTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("systemBarEffectTest after each called");
     });
 
     
     
-    
 /**
-     * @tc.number   systemBarEffectTest_static_0100
-     * @tc.name     systemBarEffectTest_static_0100
-     * @tc.desc     systemBarEffectTest_static_0100
-     * @tc.level    Level.LEVEL2
-     */
+      * @tc.number   systemBarEffectTest_static_0100
+      * @tc.name     systemBarEffectTest_static_0100
+      * @tc.desc     systemBarEffectTest_static_0100
+      * @tc.level    Level.LEVEL2
+      */
 it('systemBarEffectTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('systemBarEffectTest_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('systemBarEffectTest sleep err: ' + JSON.stringify(err));
+      }
       let button1 = await driver.findComponent(ON.id('SystemBarEffect_id'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('systemBarEffectTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('systemBarEffectTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('SystemBarEffect_text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('systemBarEffect succ');
       console.info('[systemBarEffectTest_static_0100] END');

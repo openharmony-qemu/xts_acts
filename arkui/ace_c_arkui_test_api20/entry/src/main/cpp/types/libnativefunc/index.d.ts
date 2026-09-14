@@ -13,6 +13,12 @@
  * limitations under the License.
  */
 export const TestSetForceDarkConfig: () => number;
+export const TestSetForceDarkConfigNodeTypeInvalid: () => number;
+export const TestSetForceDarkConfigNodeTypeCustom: () => number;
+export const TestSetForceDarkConfigNodeTypeDatePicker: () => number;
+export const TestSetForceDarkConfigNodeTypeStack: () => number;
+export const TestSetForceDarkConfigNodeTypeGrid: () => number;
+export const TestGetNodeTypeParam: () => number;
 
 export const TestInitModuleForArkTSEnv: () => number;
 

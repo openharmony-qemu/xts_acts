@@ -17,7 +17,6 @@
 
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -38,29 +37,14 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function RelativeContainerStartApi() {
   describe('RelativeContainerStartApi', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("RelativeContainerStartApi beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("RelativeContainerStartApi beforeEach start");
       let options: router.RouterOptions = {
@@ -94,7 +78,11 @@ export default function RelativeContainerStartApi() {
      */
 it('RelativeContainerStartApi_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RelativeContainerStartApi_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('RelativeContainerStartApi sleep err: ' + JSON.stringify(err));
+      }
 
       let row1 = CommonFunc.getComponentRect('RelativeContainerStartApi' + '_row1')
       let row2 = CommonFunc.getComponentRect('RelativeContainerStartApi' + '_row2')
@@ -102,7 +90,11 @@ it('RelativeContainerStartApi_static_0100', Level.LEVEL0, async (done: () => voi
 
       expect(Math.abs(row3.left - row2.right) <= 1).assertTrue();
       expect(Math.abs(row3.top - row1.top) <= 1).assertTrue();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('RelativeContainerStartApi sleep err: ' + JSON.stringify(err));
+      }
 
       console.info('RelativeContainerStartApi_static_0100 END');
       done();

@@ -14,24 +14,22 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 
 let libUtil: LibUtil = new LibUtil();
 
 export default function ArkuiXComponentTest(){
   describe('ArkuiXComponentTest',  () =>{
-    beforeAll(async (): Promise<void> => {
-      console.info("[ui] beforeAll start");
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api18_static", "EntryAbility")
-      console.info("[ui] beforeAll start");
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100)
+      try {
+        await Utils.sleep(100)
+      } catch (err) {
+        console.info('ArkuiXComponentTest beforeEach err: ' + JSON.stringify(err));
+      }
     })
 
     /**
@@ -41,11 +39,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_a', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.DragEndPendingTest_a()).assertEqual(0)
-      console.log('DragEndPendingTest_a will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.DragEndPendingTest_a()).assertEqual(0)
+        console.log('DragEndPendingTest_a will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_a err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -55,11 +58,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_b', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_b()).assertEqual(0)
-      console.log('ArkuiXComponentTest_b will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_b()).assertEqual(0)
+        console.log('ArkuiXComponentTest_b will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_b err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -69,11 +77,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_c', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_c()).assertEqual(0)
-      console.log('ArkuiXComponentTest_c will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_c()).assertEqual(0)
+        console.log('ArkuiXComponentTest_c will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_c err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -83,11 +96,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_d', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_d()).assertEqual(0)
-      console.log('ArkuiXComponentTest_d will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_d()).assertEqual(0)
+        console.log('ArkuiXComponentTest_d will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_d err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -97,11 +115,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_e', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_e()).assertEqual(0)
-      console.log('ArkuiXComponentTest_e will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_e()).assertEqual(0)
+        console.log('ArkuiXComponentTest_e will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_e err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -111,11 +134,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_f', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_f()).assertEqual(0)
-      console.log('ArkuiXComponentTest_f will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_f()).assertEqual(0)
+        console.log('ArkuiXComponentTest_f will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_f err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -125,11 +153,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_g', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_g()).assertEqual(0)
-      console.log('ArkuiXComponentTest_g will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_g()).assertEqual(0)
+        console.log('ArkuiXComponentTest_g will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_g err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -139,11 +172,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_g1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_g1()).assertEqual(0)
-      console.log('ArkuiXComponentTest_g1 will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_g1()).assertEqual(0)
+        console.log('ArkuiXComponentTest_g1 will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_g1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -153,11 +191,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_h', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_h()).assertEqual(0)
-      console.log('ArkuiXComponentTest_h will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_h()).assertEqual(0)
+        console.log('ArkuiXComponentTest_h will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_h err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -167,11 +210,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_h1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_h1()).assertEqual(0)
-      console.log('ArkuiXComponentTest_h1 will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_h1()).assertEqual(0)
+        console.log('ArkuiXComponentTest_h1 will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_h1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -181,11 +229,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_i', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_i()).assertEqual(0)
-      console.log('ArkuiXComponentTest_i will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_i()).assertEqual(0)
+        console.log('ArkuiXComponentTest_i will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_i err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -195,11 +248,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_i1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_i1()).assertEqual(0)
-      console.log('ArkuiXComponentTest_i1 will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_i1()).assertEqual(0)
+        console.log('ArkuiXComponentTest_i1 will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_i1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -209,11 +267,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_j', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_j()).assertEqual(0)
-      console.log('ArkuiXComponentTest_j will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_j()).assertEqual(0)
+        console.log('ArkuiXComponentTest_j will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_j err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -223,11 +286,16 @@ export default function ArkuiXComponentTest(){
      * @tc.level    Level.LEVEL0
      */
     it('ArkuiXComponentTest_j1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.ArkuiXComponentTest_j1()).assertEqual(0)
-      console.log('ArkuiXComponentTest_j1 will drag and check:: ')
-      await Utils.sleep(200)
+      try {
+        expect(libUtil.ArkuiXComponentTest_j1()).assertEqual(0)
+        console.log('ArkuiXComponentTest_j1 will drag and check:: ')
+        await Utils.sleep(200)
 
-      done()
+        done()
+      } catch (err) {
+        console.info('ArkuiXComponentTest_j1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
   })

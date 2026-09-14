@@ -102,10 +102,10 @@ class ReflectionUtils057 {
 function createFixedArrayFromType058(componentType: Class, size: int): Object {
   const n = componentType.getName();
   if (n === Utils.scalarReflectI32Fqn()) {
-    let out: FixedArray<int> = new FixedArray<int>(size);
+    let out: FixedArray<int> = new FixedArray<int>(size, 0);
     return out;
   } else if (n === "std.core.String") {
-    let out2: FixedArray<string> = new FixedArray<string>(size);
+    let out2: FixedArray<string> = new FixedArray<string>(size, '');
     return out2;
   }
   throw new Error("Unsupported component type");
@@ -597,7 +597,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetFixedArrayComponentType035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: FixedArray<int> = new FixedArray<int>(1000);
+      let arr: FixedArray<int> = new FixedArray<int>(1000, 0);
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
@@ -900,7 +900,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetFixedArrayComponentType053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let largeArr: FixedArray<int> = new FixedArray<int>(10000);
+      let largeArr: FixedArray<int> = new FixedArray<int>(10000, 0);
       let cls = Class.of(largeArr);
       let startTime = Date.now();
       let componentType = cls.getFixedArrayComponentType();
@@ -918,7 +918,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetFixedArrayComponentType054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: FixedArray<int> = new FixedArray<int>(3);
+      let arr: FixedArray<int> = new FixedArray<int>(3, 0);
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType !== null).assertTrue();

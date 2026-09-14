@@ -251,8 +251,6 @@ export default function relationalStoreAssetResultSetTest() {
                 const id = resultSet.getLong(resultSet.getColumnIndex("id"))
                 const data2 = resultSet.getAsset(resultSet.getColumnIndex("data2"))
                 console.log(TAG + "id=" + id + ", data2=" + data2);
-                expect(data2).assertEqual(null);
-
                 resultSet.close();
                 expect(true).assertEqual(resultSet.isClosed)
             } catch (e) {

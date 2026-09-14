@@ -26,7 +26,7 @@ export default class EntryAbility2 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'EntryAbility2 onCreate');
     AppStorage.setOrCreate<Want>('TestAbilityWant', want);
-    if(want?.action == 'result'){
+    if(want.action == 'result'){
       commonEventManager.publish('AbilityRuntime_OptionResult', (result) => {
         hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_5500: ${JSON.stringify(result)}`);
         this.context.terminateSelf()
@@ -66,6 +66,7 @@ export default class EntryAbility2 extends UIAbility {
     commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
       sub2 = subscriber;
       commonEventManager.subscribe(sub2, (err, commonEventData) => {
+        hilog.info(DOMAIN, 'testTag', '%{public}s', 'EntryAbility2 start terminateSelf');
         this.context.terminateSelf(() => {});
         commonEventManager.unsubscribe(subscriber, (err, data) => {});
       });

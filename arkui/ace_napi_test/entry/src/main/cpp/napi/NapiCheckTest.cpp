@@ -23,6 +23,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <random>
 #include <thread>
 #include <memory>
 #include <uv.h>
@@ -13804,6 +13805,337 @@ static napi_value ManyStrongReferences(napi_env env, napi_callback_info info) {
     return CreateBoolean(env, true);
 }
 
+// ======================================== napi_get_global_handle_count start ======================================== //
+// global_handle_count 测试用的全局 strong / sendable 引用
+napi_strong_ref g_ghcStrongRef = nullptr;
+napi_sendable_ref g_ghcSendableRef = nullptr;
+
+// 原子接口：返回当前 env 的 global_handle_count（number），供 ets 端编排用例使用
+static napi_value GetGlobalHandleCountValue(napi_env env, napi_callback_info info)
+{
+    size_t count = 0;
+    napi_status status = napi_get_global_handle_count(env, &count);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_get_global_handle_count failed");
+        return nullptr;
+    }
+    napi_value result = nullptr;
+    napi_create_double(env, static_cast<double>(count), &result);
+    return result;
+}
+
+// 原子接口：创建一个全局 strong reference，供 ets 端编排用例使用
+static napi_value CreateStrongRefGhc(napi_env env, napi_callback_info info)
+{
+    // 先清理已存在的引用，保证用例间状态干净
+    if (g_ghcStrongRef != nullptr) {
+        napi_delete_strong_reference(env, g_ghcStrongRef);
+        g_ghcStrongRef = nullptr;
+    }
+    napi_value obj = nullptr;
+    napi_status status = napi_create_object(env, &obj);
+    if (status != napi_ok) {
+        return CreateBoolean(env, false);
+    }
+    status = napi_create_strong_reference(env, obj, &g_ghcStrongRef);
+    if (status != napi_ok) {
+        g_ghcStrongRef = nullptr;
+        return CreateBoolean(env, false);
+    }
+    return CreateBoolean(env, true);
+}
+
+// 原子接口：删除全局 strong reference，供 ets 端编排用例使用
+static napi_value DeleteStrongRefGhc(napi_env env, napi_callback_info info)
+{
+    if (g_ghcStrongRef == nullptr) {
+        return CreateBoolean(env, false);
+    }
+    napi_status status = napi_delete_strong_reference(env, g_ghcStrongRef);
+    g_ghcStrongRef = nullptr;
+    if (status != napi_ok) {
+        return CreateBoolean(env, false);
+    }
+    return CreateBoolean(env, true);
+}
+
+// 用例1：传入有效 env 和 count 指针，验证返回 napi_ok 且 count 写入 global_handle 数量
+static napi_value GetGlobalHandleCountBasic(napi_env env, napi_callback_info info)
+{
+    size_t count = 0;
+    napi_status status = napi_get_global_handle_count(env, &count);
+    ASSERT_EQ_RS(status, napi_ok, "GetGlobalHandleCountBasic status");
+    // count 为当前 global handle 数量，进程已有引用故通常大于 0
+    OH_LOG_INFO(LOG_APP, "GetGlobalHandleCountBasic count=%{public}zu", count);
+    if (count <= 0) {
+        return CreateBoolean(env, false);
+    }
+    return CreateBoolean(env, true);
+}
+
+// 用例4：env 为 nullptr，验证返回 napi_invalid_arg
+static napi_value GetGlobalHandleCountEnvNull(napi_env env, napi_callback_info info)
+{
+    size_t count = 0;
+    napi_status status = napi_get_global_handle_count(nullptr, &count);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "GetGlobalHandleCountEnvNull");
+    OH_LOG_INFO(LOG_APP, "GetGlobalHandleCountEnvNull success");
+    return CreateBoolean(env, true);
+}
+
+// 用例5：count 为 nullptr，验证返回 napi_invalid_arg
+static napi_value GetGlobalHandleCountCountNull(napi_env env, napi_callback_info info)
+{
+    napi_status status = napi_get_global_handle_count(env, nullptr);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "GetGlobalHandleCountCountNull");
+    OH_LOG_INFO(LOG_APP, "GetGlobalHandleCountCountNull success");
+    return CreateBoolean(env, true);
+}
+
+// 用例6：存在未捕获 ArkTS_Error，验证返回 napi_pending_exception
+static napi_value GetGlobalHandleCountPendingException(napi_env env, napi_callback_info info)
+{
+    // 制造未捕获异常
+    napi_status status = napi_throw_error(env, TEST_ERROR_CODE, TEST_ERROR_MESSAGE);
+    if (status != napi_ok) {
+        return CreateBoolean(env, false);
+    }
+    size_t count = 0;
+    // pending exception 时接口应短路返回 napi_pending_exception
+    status = napi_get_global_handle_count(env, &count);
+    if (status != napi_pending_exception) {
+        napi_value exception = nullptr;
+        napi_get_and_clear_last_exception(env, &exception);
+        OH_LOG_ERROR(LOG_APP, "GetGlobalHandleCountPendingException failed");
+        return CreateBoolean(env, false);
+    }
+    // 清理异常，避免污染后续用例
+    napi_value exception = nullptr;
+    napi_get_and_clear_last_exception(env, &exception);
+    OH_LOG_INFO(LOG_APP, "GetGlobalHandleCountPendingException success");
+    return CreateBoolean(env, true);
+}
+
+// 用例9：多 context 与主 env 共享同一 vm，主 env 强引用使子 env count 同步变化（验证共享语义）
+static napi_value GetGlobalHandleCountMultiContext(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_env newEnv = nullptr;
+    status = napi_create_ark_context(env, &newEnv);
+    ASSERT_EQ_RS(status, napi_ok, "GetGlobalHandleCountMultiContext create context");
+
+    // 子 env 基础 count
+    size_t subCount1 = 0;
+    status = napi_get_global_handle_count(newEnv, &subCount1);
+    if (status != napi_ok) {
+        napi_switch_ark_context(env);
+        napi_destroy_ark_context(newEnv);
+        return CreateBoolean(env, false);
+    }
+
+    // 主 env 创建 strong reference
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_strong_ref mainRef = nullptr;
+    status = napi_create_strong_reference(env, obj, &mainRef);
+    if (status != napi_ok) {
+        napi_switch_ark_context(env);
+        napi_destroy_ark_context(newEnv);
+        return CreateBoolean(env, false);
+    }
+
+    // 主 env count 应增长
+    size_t mainCount = 0;
+    status = napi_get_global_handle_count(env, &mainCount);
+    if (status != napi_ok) {
+        napi_delete_strong_reference(env, mainRef);
+        napi_switch_ark_context(env);
+        napi_destroy_ark_context(newEnv);
+        return CreateBoolean(env, false);
+    }
+
+    // 子 env 再次查询，context env 与主 env 共享同一 vm，count 应随主 env strong ref 同步增长且与 mainCount 相等
+    size_t subCount2 = 0;
+    status = napi_get_global_handle_count(newEnv, &subCount2);
+    napi_switch_ark_context(env);
+    napi_destroy_ark_context(newEnv);
+    napi_delete_strong_reference(env, mainRef);
+
+    if (status != napi_ok || subCount2 <= subCount1 || subCount2 != mainCount) {
+        OH_LOG_ERROR(LOG_APP, "GetGlobalHandleCountMultiContext not shared sub1=%{public}zu sub2=%{public}zu main=%{public}zu",
+                     subCount1, subCount2, mainCount);
+        return CreateBoolean(env, false);
+    }
+    OH_LOG_INFO(LOG_APP, "GetGlobalHandleCountMultiContext success (shared vm) sub1=%{public}zu sub2=%{public}zu main=%{public}zu",
+                subCount1, subCount2, mainCount);
+    return CreateBoolean(env, true);
+}
+
+static bool CreateBatchStrongRef(napi_env env, int count, std::vector<napi_strong_ref>& refs)
+{
+    for (int i = 0; i < count; i++) {
+        napi_value obj = nullptr;
+        napi_create_object(env, &obj);
+        napi_strong_ref ref = nullptr;
+        napi_status status = napi_create_strong_reference(env, obj, &ref);
+        if (status != napi_ok || ref == nullptr) {
+            for (auto r : refs) {
+                napi_delete_strong_reference(env, r);
+            }
+            refs.clear();
+            return false;
+        }
+        refs.push_back(ref);
+    }
+    return true;
+}
+
+static int DeleteBatchStrongRef(napi_env env, int count, std::vector<napi_strong_ref>& refs)
+{
+    int deleted = 0;
+    for (int i = 0; i < count && !refs.empty(); i++) {
+        napi_delete_strong_reference(env, refs.back());
+        refs.pop_back();
+        deleted++;
+    }
+    return deleted;
+}
+
+static void ClearStrongRefs(napi_env env, std::vector<napi_strong_ref>& refs)
+{
+    for (auto r : refs) {
+        napi_delete_strong_reference(env, r);
+    }
+    refs.clear();
+}
+
+// 用例10：创建删除 strong_reference 组合，验证 count 精确变化（随机创建多个、删除多个）
+static napi_value GetGlobalHandleCountCombo(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    size_t base = 0;
+    status = napi_get_global_handle_count(env, &base);
+    ASSERT_EQ_RS(status, napi_ok, "GetGlobalHandleCountCombo base");
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> createDist(TEST_OPERATION_COUNT, TEST_OPERATION_COUNT * 2); // 5~10
+    int createNum = createDist(gen);
+    std::vector<napi_strong_ref> refs;
+    if (!CreateBatchStrongRef(env, createNum, refs)) {
+        return CreateBoolean(env, false);
+    }
+    size_t afterCreate = 0;
+    status = napi_get_global_handle_count(env, &afterCreate);
+    if (status != napi_ok || afterCreate < base + static_cast<size_t>(createNum)) {
+        ClearStrongRefs(env, refs);
+        OH_LOG_ERROR(LOG_APP, "GetGlobalHandleCountCombo afterCreate mismatch");
+        return CreateBoolean(env, false);
+    }
+
+    std::uniform_int_distribution<int> deleteDist(1, createNum); // 1~createNum
+    int deleted = DeleteBatchStrongRef(env, deleteDist(gen), refs);
+    size_t afterDelete = 0;
+    status = napi_get_global_handle_count(env, &afterDelete);
+    ClearStrongRefs(env, refs);
+    if (status != napi_ok) {
+        return CreateBoolean(env, false);
+    }
+    if (afterDelete > afterCreate || afterDelete + static_cast<size_t>(deleted) < afterCreate) {
+        OH_LOG_ERROR(LOG_APP, "GetGlobalHandleCountCombo afterDelete mismatch base=%{public}zu create=%{public}d afterCreate=%{public}zu del=%{public}d afterDelete=%{public}zu",
+                     base, createNum, afterCreate, deleted, afterDelete);
+        return CreateBoolean(env, false);
+    }
+    OH_LOG_INFO(LOG_APP, "GetGlobalHandleCountCombo success base=%{public}zu create=%{public}d afterCreate=%{public}zu del=%{public}d afterDelete=%{public}zu",
+                base, createNum, afterCreate, deleted, afterDelete);
+    return CreateBoolean(env, true);
+}
+
+// 用例11：Sendable 强引用不影响 global_handle_count
+static napi_value GetGlobalHandleCountSendable(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    size_t base = 0;
+    status = napi_get_global_handle_count(env, &base);
+    ASSERT_EQ_RS(status, napi_ok, "GetGlobalHandleCountSendable base");
+
+    if (g_ghcSendableRef != nullptr) {
+        napi_delete_strong_sendable_reference(env, g_ghcSendableRef);
+        g_ghcSendableRef = nullptr;
+    }
+
+    // 创建 sendable 数组（sendable 对象）
+    napi_value sendableArr = nullptr;
+    status = napi_create_sendable_array_with_length(env, 0, &sendableArr);
+    if (status != napi_ok) {
+        return CreateBoolean(env, false);
+    }
+    // 创建 sendable 强引用
+    status = napi_create_strong_sendable_reference(env, sendableArr, &g_ghcSendableRef);
+    if (status != napi_ok) {
+        g_ghcSendableRef = nullptr;
+        return CreateBoolean(env, false);
+    }
+
+    size_t after = 0;
+    status = napi_get_global_handle_count(env, &after);
+    if (g_ghcSendableRef != nullptr) {
+        napi_delete_strong_sendable_reference(env, g_ghcSendableRef);
+        g_ghcSendableRef = nullptr;
+    }
+    if (status != napi_ok) {
+        return CreateBoolean(env, false);
+    }
+    // sendable 强引用不计入 global_handle_count，应保持不变
+    if (after != base) {
+        OH_LOG_ERROR(LOG_APP, "GetGlobalHandleCountSendable changed base=%{public}zu after=%{public}zu", base, after);
+        return CreateBoolean(env, false);
+    }
+    OH_LOG_INFO(LOG_APP, "GetGlobalHandleCountSendable success base=%{public}zu after=%{public}zu", base, after);
+    return CreateBoolean(env, true);
+}
+
+// 用例12：get_strong_reference_value 获取对象后 count 不变
+static napi_value GetGlobalHandleCountGetStrongRefValue(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_strong_ref ref = nullptr;
+    status = napi_create_strong_reference(env, obj, &ref);
+    ASSERT_EQ_RS(status, napi_ok, "GetGlobalHandleCountGetStrongRefValue create");
+
+    size_t before = 0;
+    status = napi_get_global_handle_count(env, &before);
+    if (status != napi_ok) {
+        napi_delete_strong_reference(env, ref);
+        return CreateBoolean(env, false);
+    }
+
+    // get_strong_reference_value 获取引用对象，不应增加 global_handle_count
+    napi_value value = nullptr;
+    status = napi_get_strong_reference_value(env, ref, &value);
+    if (status != napi_ok) {
+        napi_delete_strong_reference(env, ref);
+        return CreateBoolean(env, false);
+    }
+
+    size_t after = 0;
+    status = napi_get_global_handle_count(env, &after);
+    napi_delete_strong_reference(env, ref);
+    if (status != napi_ok) {
+        return CreateBoolean(env, false);
+    }
+    // count 不应变化
+    if (after != before) {
+        OH_LOG_ERROR(LOG_APP, "GetGlobalHandleCountGetStrongRefValue changed before=%{public}zu after=%{public}zu", before, after);
+        return CreateBoolean(env, false);
+    }
+    OH_LOG_INFO(LOG_APP, "GetGlobalHandleCountGetStrongRefValue success before=%{public}zu after=%{public}zu", before, after);
+    return CreateBoolean(env, true);
+}
+// ======================================== napi_get_global_handle_count end ======================================== //
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -14049,6 +14381,17 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("postDeleteBehavior", PostDeleteBehavior),
         DECLARE_NAPI_FUNCTION("crossScopeStrongRef", CrossScopeStrongRef),
         DECLARE_NAPI_FUNCTION("manyStrongReferences", ManyStrongReferences),
+        DECLARE_NAPI_FUNCTION("getGlobalHandleCountValue", GetGlobalHandleCountValue),
+        DECLARE_NAPI_FUNCTION("createStrongRefGhc", CreateStrongRefGhc),
+        DECLARE_NAPI_FUNCTION("deleteStrongRefGhc", DeleteStrongRefGhc),
+        DECLARE_NAPI_FUNCTION("getGlobalHandleCountBasic", GetGlobalHandleCountBasic),
+        DECLARE_NAPI_FUNCTION("getGlobalHandleCountEnvNull", GetGlobalHandleCountEnvNull),
+        DECLARE_NAPI_FUNCTION("getGlobalHandleCountCountNull", GetGlobalHandleCountCountNull),
+        DECLARE_NAPI_FUNCTION("getGlobalHandleCountPendingException", GetGlobalHandleCountPendingException),
+        DECLARE_NAPI_FUNCTION("getGlobalHandleCountMultiContext", GetGlobalHandleCountMultiContext),
+        DECLARE_NAPI_FUNCTION("getGlobalHandleCountCombo", GetGlobalHandleCountCombo),
+        DECLARE_NAPI_FUNCTION("getGlobalHandleCountSendable", GetGlobalHandleCountSendable),
+        DECLARE_NAPI_FUNCTION("getGlobalHandleCountGetStrongRefValue", GetGlobalHandleCountGetStrongRefValue),
     };
 
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(*properties), properties));

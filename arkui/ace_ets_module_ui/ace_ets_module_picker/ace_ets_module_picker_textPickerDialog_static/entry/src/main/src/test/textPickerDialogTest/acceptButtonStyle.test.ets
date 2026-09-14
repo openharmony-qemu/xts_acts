@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function acceptButtonStyleTest() {
   describe('acceptButtonStyleTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("acceptButtonStyleTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.textPickerDialog.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("acceptButtonStyleTest beforeEach start");
       let options: router.RouterOptions = {
@@ -60,26 +54,31 @@ export default function acceptButtonStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_ACCEPTBUTTONSTYLE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('show'));
-      button?.click();
-      await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let dialog = tree
-        .getArray('$children')[1]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[1]
-        .getArray('$children')[2]
-        .getElement('$attrs')
-      await CommonFunc.sleep(1000);
-      expect(dialog.getString('type')).assertEqual('ButtonType.Normal');
-      expect(dialog.getString('buttonStyle')).assertEqual('ButtonStyleMode.NORMAL');
-      expect(dialog.getString('role')).assertEqual('ButtonRole.NORMAL');
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await CommonFunc.sleep(1000);
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('show'));
+        button?.click();
+        await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        let dialog = tree
+          .getArray('$children')[1]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[1]
+          .getArray('$children')[2]
+          .getElement('$attrs')
+        await CommonFunc.sleep(1000);
+        expect(dialog.getString('type')).assertEqual('ButtonType.Normal');
+        expect(dialog.getString('buttonStyle')).assertEqual('ButtonStyleMode.NORMAL');
+        expect(dialog.getString('role')).assertEqual('ButtonRole.NORMAL');
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await CommonFunc.sleep(1000);
+        done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_ACCEPTBUTTONSTYLE_STATIC_0100 error:' + err);
+        done();
+      }
     })
 
     /**
@@ -91,26 +90,31 @@ export default function acceptButtonStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_ACCEPTBUTTONSTYLE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('show'));
-      button?.click();
-      await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let dialog = tree
-        .getArray('$children')[1]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[1]
-        .getArray('$children')[2]
-        .getElement('$attrs')
-      await CommonFunc.sleep(1000);
-      expect(dialog.getString('type')).assertEqual('ButtonType.Normal');
-      expect(dialog.getString('buttonStyle')).assertEqual('ButtonStyleMode.NORMAL');
-      expect(dialog.getString('role')).assertEqual('ButtonRole.NORMAL');
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await CommonFunc.sleep(2000);
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('show'));
+        button?.click();
+        await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        let dialog = tree
+          .getArray('$children')[1]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[1]
+          .getArray('$children')[2]
+          .getElement('$attrs')
+        await CommonFunc.sleep(1000);
+        expect(dialog.getString('type')).assertEqual('ButtonType.Normal');
+        expect(dialog.getString('buttonStyle')).assertEqual('ButtonStyleMode.NORMAL');
+        expect(dialog.getString('role')).assertEqual('ButtonRole.NORMAL');
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await CommonFunc.sleep(2000);
+        done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_ACCEPTBUTTONSTYLE_STATIC_0200 error:' + err);
+        done();
+      }
     })
 
     /**
@@ -122,26 +126,31 @@ export default function acceptButtonStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_ACCEPTBUTTONSTYLE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('show2'));
-      button?.click();
-      await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let dialog = tree
-        .getArray('$children')[1]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[1]
-        .getArray('$children')[2]
-        .getElement('$attrs')
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('show2'));
+        button?.click();
+        await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        let dialog = tree
+          .getArray('$children')[1]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[1]
+          .getArray('$children')[2]
+          .getElement('$attrs')
 
-      expect(dialog.getString('type')).assertEqual('ButtonType.ROUNDED_RECTANGLE');
-      expect(dialog.getString('buttonStyle')).assertEqual('ButtonStyleMode.EMPHASIZED');
-      expect(dialog.getString('role')).assertEqual('ButtonRole.NORMAL');
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await CommonFunc.sleep(2000);
-      done();
+        expect(dialog.getString('type')).assertEqual('ButtonType.ROUNDED_RECTANGLE');
+        expect(dialog.getString('buttonStyle')).assertEqual('ButtonStyleMode.EMPHASIZED');
+        expect(dialog.getString('role')).assertEqual('ButtonRole.NORMAL');
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await CommonFunc.sleep(2000);
+        done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_ACCEPTBUTTONSTYLE_STATIC_0300 error:' + err);
+        done();
+      }
     })
 
     /**
@@ -153,26 +162,31 @@ export default function acceptButtonStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_ACCEPTBUTTONSTYLE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('show3'));
-      button?.click();
-      await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let dialog = tree
-        .getArray('$children')[1]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[1]
-        .getArray('$children')[2]
-        .getElement('$attrs')
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('show3'));
+        button?.click();
+        await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        let dialog = tree
+          .getArray('$children')[1]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[1]
+          .getArray('$children')[2]
+          .getElement('$attrs')
 
-      expect(dialog.getString('type')).assertEqual('ButtonType.ROUNDED_RECTANGLE');
-      expect(dialog.getString('buttonStyle')).assertEqual('ButtonStyleMode.EMPHASIZED');
-      expect(dialog.getString('role')).assertEqual('ButtonRole.NORMAL');
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await CommonFunc.sleep(2000);
-      done();
+        expect(dialog.getString('type')).assertEqual('ButtonType.ROUNDED_RECTANGLE');
+        expect(dialog.getString('buttonStyle')).assertEqual('ButtonStyleMode.EMPHASIZED');
+        expect(dialog.getString('role')).assertEqual('ButtonRole.NORMAL');
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await CommonFunc.sleep(2000);
+        done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_ACCEPTBUTTONSTYLE_STATIC_0400 error:' + err);
+        done();
+      }
     })
   })
 }

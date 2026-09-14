@@ -20,7 +20,8 @@ import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import OpenLinkOptions from '@ohos.app.ability.OpenLinkOptions';
-import { common, StartOptions, Want } from '@kit.AbilityKit';
+import { common, contextConstant, StartOptions, Want } from '@kit.AbilityKit';
+import { systemParameterEnhance } from '@kit.BasicServicesKit';
 import dialogRequest from '@ohos.app.ability.dialogRequest';
 import { rpc } from '@kit.IPCKit';
 import bundleManager from '@ohos.bundle.bundleManager';
@@ -29,12 +30,19 @@ import hilog from '@ohos.hilog';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 
 let context = getContext(this) as common.UIAbilityContext;;
+let npEnable: string;
 const DOMAIN = 0x0000;
 const LOG_TAG = 'COMPLETION_HANDLER_TEST';
 export default function openLinkTest() {
   describe('AbilityBaseUIAbilityContextTest', () => {
     beforeAll(() => {
       context = globalThis.context;
+      try {
+        npEnable = systemParameterEnhance.getSync('persist.sys.abilityms.start_options_with_process_option');
+      } catch (err) {
+        console.error(`AbilityBase_UIAbilityContext get system parameter error: ${JSON.stringify(err)}`);
+        npEnable = 'fail';
+      }
     });
     afterEach(() => {
     });
@@ -2647,6 +2655,55 @@ export default function openLinkTest() {
         let message = (err as BusinessError).message;
         console.error(`${tag} RequestDialogService failed, code is ${code}, message is ${message}`);
         expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_7900
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_7900
+     * @tc.desc   Call the interface startAbility through context with processMode, return errorcode 16300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7900', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7900`;
+      console.log(`${tag}, it begin`);
+      if (npEnable === 'true') {
+        let want: Want = {
+          bundleName: 'com.acts.ability.baseerrorrely',
+          abilityName: 'EntryAbility',
+        };
+        let options: StartOptions = {
+          processMode: contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM,
+          startupVisibility: contextConstant.StartupVisibility.STARTUP_SHOW
+        };
+        try {
+          context.startAbility(want, options)
+            .then(() => {
+              console.info(`${tag}, startAbility succeed`);
+              try{
+                expect().assertFail();
+              }catch(e){}
+              done();
+            })
+            .catch((err: BusinessError) => {
+              console.error(`${tag}, startAbility failed, code is ${err.code}, message is ${err.message}`);
+              try{
+                expect(err.code).assertEqual(16300003);
+              }catch(e){}
+              done();
+            });
+        } catch (err) {
+          let code = (err as BusinessError).code;
+          let message = (err as BusinessError).message;
+          console.error(`${tag} startAbility failed, code is ${code}, message is ${message}`);
+          expect().assertFail();
+          done();
+        }
+      } else {
+        console.error(`${tag} current device not support startOptions with processMode.`);
         done();
       }
     });

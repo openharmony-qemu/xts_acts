@@ -14,30 +14,15 @@
  * limitations under the License.
  */
 import inspector from '@ohos.arkui.inspector';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index';
+import { describe, beforeEach, it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-let flexGrow = 3;
-let compareFlexGrow = 1;
-const uiContext = new UIContext();
+
 export default function frameNodeTest1() {
   describe('frameNodeTest1', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("frameNodeTest1 beforeEach start");
-      await startAbility("com.arkui.ace.FrameNode.api12.static", "EntryAbility")
-    });
     beforeEach(async () => {
       console.info("frameNodeTest1 beforeEach start");
       let options: router.RouterOptions = {
@@ -51,7 +36,7 @@ export default function frameNodeTest1() {
         if (!("frameNode" == pages.name)) {
           console.info("get frameNodeTest1 state pages.name: " + JSON.stringify(pages.name));
           
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
           
         }
@@ -71,18 +56,24 @@ export default function frameNodeTest1() {
      * @tc.level    Level.LEVEL0
      */
 it('frameNodeTest1_static_0100', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('frameNodeTest1_0100 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('frameNode_5'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('frameNode_1');
-      let obj= JSON.parseJsonElement(strJson);
-      console.info("[frameNodeTest1_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('ChildrenCount:0');
-      console.info('[frameNodeTest1_0100] END');
-      done();
+      try {
+        console.info('frameNodeTest1_0100 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('frameNode_5'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('frameNode_1');
+        let obj= JSON.parseJsonElement(strJson);
+        console.info("[frameNodeTest1_0100] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('ChildrenCount:0');
+        console.info('[frameNodeTest1_0100] END');
+        done();
+      } catch (error) {
+        console.error('[frameNodeTest1_static_0100] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     });
   })
 }

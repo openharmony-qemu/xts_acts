@@ -71,7 +71,7 @@ export default class CommonTest {
             pageConfig.componentKey = targetView;
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
-            await Utils.pushPage(pageConfig);
+            try { await Utils.pushPage(pageConfig); } catch (e) { console.info('[' + caseTag + ']' + ' push page error:' + e); }
             try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
@@ -119,7 +119,7 @@ export default class CommonTest {
               }
             }
 
-            await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+            try { await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex); } catch (e) { console.info('[' + caseTag + ']' + ' back error:' + e); }
 
             console.info('[' + caseTag + '] END');
             done();

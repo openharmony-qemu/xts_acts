@@ -51,6 +51,32 @@ export default function perfTestErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       try {
+        let metrics: Array<PerfMetric> = [-1]
+        PerfTest.create({
+          metrics: metrics,
+          actionCode: (finish: Callback<boolean>) => {
+            finish(true)
+          },
+        });
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, test_PerfTest_create_32400003 strategy.metrics = -1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        let metrics: Array<PerfMetric> = [9]
+        PerfTest.create({
+          metrics: metrics,
+          actionCode: (finish: Callback<boolean>) => {
+            finish(true)
+          },
+        });
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, test_PerfTest_create_32400003 strategy.metrics = 9 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
         let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.CPU_LOAD, PerfMetric.CPU_USAGE, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
         let perfTestStrategy: PerfTestStrategy = {
           metrics: metrics,
@@ -607,6 +633,54 @@ export default function perfTestErrorTest() {
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400003 metric=undefined error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.CPU_LOAD, PerfMetric.CPU_USAGE, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
+        let perfTestStrategy: PerfTestStrategy = {
+          metrics: metrics,
+          actionCode: async (finish: Callback<boolean>) => {
+            console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400003 actionCode called 3`);
+            finish(true)
+          },
+          iterations: 1,
+          resetCode: async (finish: Callback<boolean>) => {
+            console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400003 resetCode called 3`);
+            finish(true)
+          },
+          timeout: 5000,
+        }
+        let perfTest: PerfTest= PerfTest.create(perfTestStrategy);
+        await perfTest.run();
+        await sleep(1000);
+        perfTest.getMeasureResult(-1);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400003 metric=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.CPU_LOAD, PerfMetric.CPU_USAGE, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
+        let perfTestStrategy: PerfTestStrategy = {
+          metrics: metrics,
+          actionCode: async (finish: Callback<boolean>) => {
+            console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400003 actionCode called 3`);
+            finish(true)
+          },
+          iterations: 1,
+          resetCode: async (finish: Callback<boolean>) => {
+            console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400003 resetCode called 3`);
+            finish(true)
+          },
+          timeout: 5000,
+        }
+        let perfTest: PerfTest= PerfTest.create(perfTestStrategy);
+        await perfTest.run();
+        await sleep(1000);
+        perfTest.getMeasureResult(9);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400003 metric=9 error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400003 end`);

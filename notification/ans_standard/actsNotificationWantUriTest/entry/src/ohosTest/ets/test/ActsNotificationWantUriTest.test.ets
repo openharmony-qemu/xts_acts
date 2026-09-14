@@ -175,7 +175,13 @@ export default function ActsNotificationWantUriTest() {
         let wantAgent2: WantAgent | undefined = await createWantAgent(uri2, TC_NAME);
         if (wantAgent1 && wantAgent2) {
           let request: notificationManager.NotificationRequest = createNotificationRequest(wantAgent1, wantAgent2);
-          await publishAndCheck(request, uri1, done, TC_NAME);
+          try {
+            await publishAndCheck(request, uri1, done, TC_NAME);
+          } catch (err) {
+            hilog.error(DOMAIN, TAG, `${TS_NAME}#${TC_NAME} publishAndCheck failed, err:${JSON.stringify(err)}`);
+            expect().assertFail();
+            done();
+          }
         } else {
           expect().assertFail();
           done();
@@ -201,7 +207,13 @@ export default function ActsNotificationWantUriTest() {
         let wantAgent2: WantAgent | undefined = await createWantAgent(uri2, TC_NAME);
         if (wantAgent1 && wantAgent2) {
           let notificationRequest = createNotificationRequest(wantAgent1, wantAgent2);
-          await publishAndCheck(notificationRequest, "", done, TC_NAME);
+          try {
+            await publishAndCheck(notificationRequest, '', done, TC_NAME);
+          } catch (err) {
+            hilog.error(DOMAIN, TAG, `${TS_NAME}#${TC_NAME} publishAndCheck failed, err:${JSON.stringify(err)}`);
+            expect().assertFail();
+            done();
+          }
         } else {
           expect().assertFail();
           done();
@@ -227,7 +239,13 @@ export default function ActsNotificationWantUriTest() {
         let wantAgent2: WantAgent | undefined  = await createWantAgent(uri2, TC_NAME);
         if (wantAgent1 && wantAgent2) {
           let notificationRequest = createNotificationRequest(wantAgent1, wantAgent2);
-          await publishAndCheck(notificationRequest, uri1, done, TC_NAME);
+          try {
+            await publishAndCheck(notificationRequest, uri1, done, TC_NAME);
+          } catch (err) {
+            hilog.error(DOMAIN, TAG, `${TS_NAME}#${TC_NAME} publishAndCheck failed, err:${JSON.stringify(err)}`);
+            expect().assertFail();
+            done();
+          }
         } else {
           expect().assertFail();
           done();
@@ -258,7 +276,13 @@ export default function ActsNotificationWantUriTest() {
             wantAgent2,
             { 'ohos.notificationManager.wantUri': uri3 }
           );
-          await publishAndCheck(notificationRequest, uri1, done, TC_NAME);
+          try {
+            await publishAndCheck(notificationRequest, uri1, done, TC_NAME);
+          } catch (err) {
+            hilog.error(DOMAIN, TAG, `${TS_NAME}#${TC_NAME} publishAndCheck failed, err:${JSON.stringify(err)}`);
+            expect().assertFail();
+            done();
+          }
         } else {
           expect().assertFail();
           done();

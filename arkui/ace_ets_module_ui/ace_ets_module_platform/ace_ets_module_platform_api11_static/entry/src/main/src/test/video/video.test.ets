@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -26,10 +25,6 @@ interface EventMessage {
 }
 export default function videoOnFullscreenChangeJsunit() {
   describe('videoOnFullscreenChangeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.platform.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -51,11 +46,15 @@ export default function videoOnFullscreenChangeJsunit() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('videoOnFullscreenChangeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("videoOnFullscreenChange after each called");
     });
 
-    
+
     /**
      * @tc.number   testvideoOnFullscreenChangeStatic0001
      * @tc.name     testvideoOnFullscreenChangeStatic0001
@@ -64,7 +63,11 @@ export default function videoOnFullscreenChangeJsunit() {
      */
 it('testvideoOnFullscreenChangeStatic0001', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0001 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testvideoOnFullscreenChange0001 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
       console.info("[testvideoOnFullscreenChange0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -74,7 +77,7 @@ it('testvideoOnFullscreenChangeStatic0001', Level.LEVEL1, async () => {
 
     });
 
-    
+
     /**
      * @tc.number   testvideoOnFullscreenChangeStatic0002
      * @tc.name     testvideoOnFullscreenChangeStatic0002
@@ -83,7 +86,11 @@ it('testvideoOnFullscreenChangeStatic0001', Level.LEVEL1, async () => {
      */
 it('testvideoOnFullscreenChangeStatic0002', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0002 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testvideoOnFullscreenChange0002 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
       console.info("[testvideoOnFullscreenChange0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -93,7 +100,7 @@ it('testvideoOnFullscreenChangeStatic0002', Level.LEVEL1, async () => {
 
     });
 
-    
+
     /**
      * @tc.number   testvideoOnFullscreenChangeStatic0003
      * @tc.name     testvideoOnFullscreenChangeStatic0003
@@ -102,7 +109,11 @@ it('testvideoOnFullscreenChangeStatic0002', Level.LEVEL1, async () => {
      */
 it('testvideoOnFullscreenChangeStatic0003', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0003 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testvideoOnFullscreenChange0003 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
       console.info("[testvideoOnFullscreenChange0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -111,7 +122,7 @@ it('testvideoOnFullscreenChangeStatic0003', Level.LEVEL1, async () => {
 
     });
 
-    
+
     /**
      * @tc.number   testvideoOnFullscreenChangeStatic0004
      * @tc.name     testvideoOnFullscreenChangeStatic0004
@@ -120,7 +131,11 @@ it('testvideoOnFullscreenChangeStatic0003', Level.LEVEL1, async () => {
      */
 it('testvideoOnFullscreenChangeStatic0004', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0004 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testvideoOnFullscreenChange0004 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
       console.info("[testvideoOnFullscreenChange0004] component opacity strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -130,7 +145,7 @@ it('testvideoOnFullscreenChangeStatic0004', Level.LEVEL1, async () => {
 
     });
 
-    
+
     /**
      * @tc.number   testvideoOnFullscreenChangeStatic0005
      * @tc.name     testvideoOnFullscreenChangeStatic0005
@@ -139,7 +154,11 @@ it('testvideoOnFullscreenChangeStatic0004', Level.LEVEL1, async () => {
      */
 it('testvideoOnFullscreenChangeStatic0005', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0005 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testvideoOnFullscreenChange0005 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
       console.info("[testvideoOnFullscreenChange0005] component align strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -149,7 +168,7 @@ it('testvideoOnFullscreenChangeStatic0005', Level.LEVEL1, async () => {
 
     });
 
-    
+
     /**
      * @tc.number   testvideoOnFullscreenChangeStatic0006
      * @tc.name     testvideoOnFullscreenChangeStatic0006
@@ -158,7 +177,11 @@ it('testvideoOnFullscreenChangeStatic0005', Level.LEVEL1, async () => {
      */
 it('testvideoOnFullscreenChangeStatic0006', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0006 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testvideoOnFullscreenChange0006 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
       console.info("[testvideoOnFullscreenChange0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -167,7 +190,7 @@ it('testvideoOnFullscreenChangeStatic0006', Level.LEVEL1, async () => {
 
     });
 
-    
+
     /**
      * @tc.number   testvideoOnFullscreenChangeStatic0007
      * @tc.name     testvideoOnFullscreenChangeStatic0007
@@ -176,7 +199,11 @@ it('testvideoOnFullscreenChangeStatic0006', Level.LEVEL1, async () => {
      */
 it('testvideoOnFullscreenChangeStatic0007', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0007 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testvideoOnFullscreenChange0007 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
       console.info("[testvideoOnFullscreenChange0007] component lineHeight strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -185,7 +212,7 @@ it('testvideoOnFullscreenChangeStatic0007', Level.LEVEL1, async () => {
 
     });
 
-    
+
     /**
      * @tc.number   testvideoOnFullscreenChangeStatic0009
      * @tc.name     testvideoOnFullscreenChangeStatic0009
@@ -194,7 +221,11 @@ it('testvideoOnFullscreenChangeStatic0007', Level.LEVEL1, async () => {
      */
 it('testvideoOnFullscreenChangeStatic0009', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange009 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testvideoOnFullscreenChange0009 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
       console.info("[testvideoOnFullscreenChange0009] component padding strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -204,7 +235,7 @@ it('testvideoOnFullscreenChangeStatic0009', Level.LEVEL1, async () => {
 
     });
 
-    
+
     /**
      * @tc.number   testvideoOnFullscreenChangeStatic0010
      * @tc.name     testvideoOnFullscreenChangeStatic0010
@@ -213,7 +244,11 @@ it('testvideoOnFullscreenChangeStatic0009', Level.LEVEL1, async () => {
      */
 it('testvideoOnFullscreenChangeStatic0010', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0010 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testvideoOnFullscreenChange0010 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
       console.info("[testvideoOnFullscreenChange0010] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);

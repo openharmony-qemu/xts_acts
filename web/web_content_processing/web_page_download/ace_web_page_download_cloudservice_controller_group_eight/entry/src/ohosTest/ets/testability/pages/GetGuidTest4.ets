@@ -15,16 +15,20 @@
 
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { URL } from '../../test/Config';
 import { LocalContext } from '../../test/GloablConfig';
 import Utils from '../../test/Util';
 import events_emitter from '@ohos.events.emitter';
 import JSON from '@ohos.util.json';
 import { waitForExist } from '../../test/WaitTest.test';
 
+import { DownloadFallbackManager } from '../../test/DownloadFallbackHelper';
+
 @Entry
 @Component
 struct WebComponent {
+  private downloadFallback: DownloadFallbackManager | null = null;
+  private resultEmitted: boolean = false;
+  private cancelTriggered: boolean = false;
   controller: webview.WebviewController = new webview.WebviewController();
   delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
   @State emitKey: string = '';
@@ -55,6 +59,11 @@ struct WebComponent {
     }
   }
 
+  private handleDownloadPassThrough(field: string): void {
+    console.info('[DownloadFallback] pass through for ' + field);
+    Utils.emitEvent(true, 130810);
+  }
+
   build(){
     Column() {
       Button('getGuid')
@@ -64,13 +73,6 @@ struct WebComponent {
           await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
           await waitForExist(()=>this.isReceive, this.emitKey, 0);
           this.isReceive = -1;
-          try {
-            this.controller.startDownload('https:' +
-              '//mirrors.huaweicloud.com/npm-software/v6.9.1.tar.gz');
-          } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-          }
-
           try {
             this.delegate.onBeforeDownload(async (webDownloadItem: webview.WebDownloadItem) => {
               console.log('will start a download.', LocalContext.context.cacheDir);
@@ -89,8 +91,11 @@ struct WebComponent {
                   }
                   return ''+flag;
                 }, this.emitKey, 'true');
+                this.cancelTriggered = true;
                 webDownloadItem.cancel()
                 await waitForExist(() => this.currentDownloadState, this.emitKey, webview.WebDownloadState.CANCELED);
+                this.resultEmitted = true;
+                this.downloadFallback?.handleDownloadSuccess();
                 Utils.emitEvent(flag, 130810);
               }
             })
@@ -98,6 +103,11 @@ struct WebComponent {
               console.log('download finish State: ' + webDownloadItem.getState())
               this.currentDownloadState = webDownloadItem.getState();
               console.log('download failed guid: ' + webDownloadItem.getGuid());
+              if (this.cancelTriggered) {
+                this.cancelTriggered = false;
+              } else if (!this.resultEmitted) {
+                this.downloadFallback?.handleDownloadFailed();
+              }
             })
             this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish State: ' + webDownloadItem.getState())
@@ -105,6 +115,17 @@ struct WebComponent {
               console.log('download finish guid: ' + webDownloadItem.getGuid());
             })
             this.controller.setDownloadDelegate(this.delegate);
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+
+          try {
+            this.resultEmitted = false;
+            this.cancelTriggered = false;
+            this.downloadFallback = new DownloadFallbackManager(this.controller, '6.9.1', () => {
+              this.handleDownloadPassThrough('downloadFallback');
+            });
+            this.downloadFallback.startDownload();
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }

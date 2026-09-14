@@ -15,6 +15,7 @@
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium'
 import socket from "@ohos.net.socket";
 import { BusinessError, Callback } from '@ohos.base';
+import connection from '@ohos.net.connection';
 import { ArrayBufferToString } from './utils';
 
 
@@ -1512,19 +1513,20 @@ export default function TCPSocketConnectionTest() {
           console.info('fail to listen' + err.code.toString());
         });
         tcpServer.on('connect', async (client: socket.TCPSocketConnection) => {
-          await client.getSocketFd().then((fd: number) => {
+          try {
+            let fd: number = await client.getSocketFd();
             console.info(`${caseName} success fd:${fd}`);
             expectTrue(fd !== -1);
             done();
-          }).catch((err: BusinessError) => {
+          } catch (err) {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
             expectFail();
             done();
-          }).finally(() => {
+          } finally {
             tcpServer.off('connect');
             console.info(`${caseName} test end`);
             done();
-          });
+          }
         });
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
@@ -1564,19 +1566,20 @@ export default function TCPSocketConnectionTest() {
         });
         tcpServer.on('connect', async (client: socket.TCPSocketConnection) => {
           await client.close().catch(() => {});
-          await client.getSocketFd().then((fd: number) => {
+          try {
+            let fd: number = await client.getSocketFd();
             console.info(`${caseName} success fd:${fd}`);
             expectTrue(fd === -1);
             done();
-          }).catch((err: BusinessError) => {
+          } catch (err) {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
             expectFail();
             done();
-          }).finally(() => {
+          } finally {
             tcpServer.off('connect');
             console.info(`${caseName} test end`);
             done();
-          });
+          }
         });
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
@@ -1893,19 +1896,20 @@ export default function TCPSocketConnectionTest() {
           console.info('fail to listen' + err.code.toString());
         });
         tcpServer.on('connect', async (client: socket.TCPSocketConnection) => {
-          await client.getSocketFd().then((fd: number) => {
+          try {
+            let fd: number = await client.getSocketFd();
             console.info(`${caseName} success fd:${fd}`);
             expectTrue(fd !== -1);
             done();
-          }).catch((err: BusinessError) => {
+          } catch (err) {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
-            expectTrue(err.code == 201);
+            expectTrue(err.code === 201);
             done();
-          }).finally(() => {
+          } finally {
             tcpServer.off('connect');
             console.info(`${caseName} test end`);
             done();
-          });
+          }
         });
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
@@ -2151,5 +2155,58 @@ export default function TCPSocketConnectionTest() {
         done();
       }
     });
+    /**
+     * @tc.name   testConnectionTCPSocketType0100
+     * @tc.number SUB_NetworkMgr_Connection_TCPSocket_Type_0100
+     * @tc.desc   test connection.TCPSocket type (type TCPSocket = socket.TCPSocket) with constructTCPSocketInstance and connection module APIs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConnectionTCPSocketType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testConnectionTCPSocketType0100';
+      console.info(`${caseName} test start`);
+      try {
+        let tcpSocket: connection.TCPSocket = socket.constructTCPSocketInstance();
+        console.info(`${caseName} TCPSocket created`);
+        expect(tcpSocket).assertInstanceOf('Object');
+        expectTrue(tcpSocket !== undefined);
+        expectTrue(tcpSocket !== null);
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (error) {
+            console.info(`${caseName} getDefaultNet error: ${JSON.stringify(error)}`);
+            expectTrue(false);
+            done();
+            return;
+          }
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            expectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} getDefaultNet success, netId: ${data.netId}`);
+            expectTrue(data.netId > 0);
+            expectTrue(data.netId !== undefined);
+            expectTrue(data.netId !== null);
+            tcpSocket.close((err: BusinessError) => {
+              if (err) {
+                console.info(`${caseName} close err: ${JSON.stringify(err)}`);
+                expectTrue(err.code === 2300999);
+              } else {
+                console.info(`${caseName} close success`);
+                expectSuccess();
+              }
+              console.info(`${caseName}---End`);
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
+        expectTrue(false);
+        done();
+      }
+    });
+
   })
 }

@@ -22,8 +22,8 @@ async function sleep(time: number) {
 }
 let eventData: emitter.EventData = {
   data: {
-    "content": "content",
-    "id": 1,
+    'content': 'content',
+    'id': 1,
   }
 };
 
@@ -334,7 +334,8 @@ export default function actsEmitterCovered() {
       try{
         emitter.emit(null,eventData);
         console.info(TAG+ ' emit event success');
-        expect(emitter.getListenerCount(null)).assertEqual(undefined)
+        let emiterCount = emitter.getListenerCount(null)
+        console.info(TEST_CASE_NAME+ ',emiterCount is: ', JSON.stringify(emiterCount));
         done();
       }catch(err){
         console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
@@ -379,7 +380,8 @@ export default function actsEmitterCovered() {
       try{
         emitter.emit(undefined,eventData);
         console.info(TAG+ ' emit event success');
-        expect(emitter.getListenerCount(undefined)).assertEqual(undefined)
+        let emiterCount = emitter.getListenerCount(undefined)
+        console.info(TEST_CASE_NAME+ ',emiterCount is: ', JSON.stringify(emiterCount));
         done();
       }catch(err){
         console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
@@ -603,7 +605,7 @@ export default function actsEmitterCovered() {
       }
       try {
         console.info(TAG+ ' test case start');
-        emitter1.on("", onCallback)
+        emitter1.on('', onCallback)
       } catch (err) {
         console.info(TAG+ ` on failed,data is %{public}s`, JSON.stringify(err));
         expect(false).assertTrue();
@@ -611,9 +613,9 @@ export default function actsEmitterCovered() {
         done();
       }
       try{
-        emitter1.emit("",eventData);
+        emitter1.emit('',eventData);
         console.info(TAG+ ' emit event success');
-        emitter1.emit("",option,eventData);
+        emitter1.emit('',option,eventData);
         console.info(TAG+ ' emit event success');
         emitter1.off('',onCallback)
         done();

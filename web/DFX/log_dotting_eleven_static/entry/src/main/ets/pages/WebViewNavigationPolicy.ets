@@ -326,7 +326,7 @@ struct Index {
                 }, 2000)
               } catch (error) {
                 console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                if (error.code == 801) {
+                if (error.code === 801) {
                   Utils.emitEvent(true, 174020)
                 }
               }
@@ -356,7 +356,7 @@ struct Index {
                 }, 2000)
               } catch (error) {
                 console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                if (error.code == 801) {
+                if (error.code === 801) {
                   Utils.emitEvent(true, 174021)
                 }
               }
@@ -386,7 +386,7 @@ struct Index {
                 }, 2000)
               } catch (error) {
                 console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                if (error.code == 801) {
+                if (error.code === 801) {
                   Utils.emitEvent(true, 174060)
                 }
               }
@@ -416,7 +416,7 @@ struct Index {
                 }, 2000)
               } catch (error) {
                 console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                if (error.code == 801) {
+                if (error.code === 801) {
                   Utils.emitEvent(true, 174061)
                 }
               }

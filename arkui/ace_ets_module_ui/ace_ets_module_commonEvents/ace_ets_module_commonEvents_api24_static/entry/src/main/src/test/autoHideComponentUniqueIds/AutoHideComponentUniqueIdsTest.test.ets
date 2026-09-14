@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, Component } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 export default function AutoHideComponentUniqueIdsTest() {
   describe('AutoHideComponentUniqueIdsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api24.static", "EntryAbility");
-    });
 
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -50,8 +46,12 @@ export default function AutoHideComponentUniqueIdsTest() {
     });
 
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(1000);
       console.info("AutoHideComponentUniqueIdsTest after each called");
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+      }
     });
 
     /**
@@ -63,6 +63,7 @@ export default function AutoHideComponentUniqueIdsTest() {
      * @tc.level   LEVEL1
      */
     it('testDragEventAutoHideSingleNumber', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('testDragEventAutoHideSingleNumber START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -82,7 +83,12 @@ export default function AutoHideComponentUniqueIdsTest() {
       expect(obj.getElement('$attrs').getString('visibility')).assertEqual('Visibility.None');
       
       console.info('testDragEventAutoHideSingleNumber END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -94,6 +100,7 @@ export default function AutoHideComponentUniqueIdsTest() {
      * @tc.level   LEVEL1
      */
     it('testDragEventAutoHideNumberArray', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('testDragEventAutoHideNumberArray START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -118,7 +125,12 @@ export default function AutoHideComponentUniqueIdsTest() {
       expect(obj3.getElement('$attrs').getString('visibility')).assertEqual('Visibility.None');
       
       console.info('testDragEventAutoHideNumberArray END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -130,6 +142,7 @@ export default function AutoHideComponentUniqueIdsTest() {
      * @tc.level   LEVEL1
      */
     it('testDragEventAutoHideEmptyArray', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('testDragEventAutoHideEmptyArray START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -159,7 +172,12 @@ export default function AutoHideComponentUniqueIdsTest() {
       expect(obj3.getElement('$attrs').getString('visibility')).assertEqual('Visibility.Visible');
       
       console.info('testDragEventAutoHideEmptyArray END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -171,6 +189,7 @@ export default function AutoHideComponentUniqueIdsTest() {
      * @tc.level   LEVEL1
      */
     it('testDragEventAutoHideIncludeSelf', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('testDragEventAutoHideIncludeSelf START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -195,7 +214,12 @@ export default function AutoHideComponentUniqueIdsTest() {
       expect(obj2.getElement('$attrs').getString('visibility')).assertEqual('Visibility.None');
       
       console.info('testDragEventAutoHideIncludeSelf END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -207,6 +231,7 @@ export default function AutoHideComponentUniqueIdsTest() {
      * @tc.level   LEVEL1
      */
     it('testDragControllerAutoHideSingleNumber', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('testDragControllerAutoHideSingleNumber START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -225,7 +250,12 @@ export default function AutoHideComponentUniqueIdsTest() {
       expect(obj2.getElement('$attrs').getString('visibility')).assertEqual('Visibility.None');
       
       console.info('testDragControllerAutoHideSingleNumber END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -237,6 +267,7 @@ export default function AutoHideComponentUniqueIdsTest() {
      * @tc.level   LEVEL1
      */
     it('testDragControllerAutoHideNumberArray', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('testDragControllerAutoHideNumberArray START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -260,7 +291,12 @@ export default function AutoHideComponentUniqueIdsTest() {
       expect(obj3.getElement('$attrs').getString('visibility')).assertEqual('Visibility.None');
       
       console.info('testDragControllerAutoHideNumberArray END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -272,6 +308,7 @@ export default function AutoHideComponentUniqueIdsTest() {
      * @tc.level   LEVEL1
      */
     it('testDragControllerAutoHideEmptyArray', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('testDragControllerAutoHideEmptyArray START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -300,7 +337,12 @@ export default function AutoHideComponentUniqueIdsTest() {
       expect(obj3.getElement('$attrs').getString('visibility')).assertEqual('Visibility.Visible');
       
       console.info('testDragControllerAutoHideEmptyArray END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
   });
 }

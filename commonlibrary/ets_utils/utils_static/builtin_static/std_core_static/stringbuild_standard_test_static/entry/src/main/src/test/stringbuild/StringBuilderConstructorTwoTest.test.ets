@@ -79,7 +79,7 @@ export default function StringBuilderConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testStringBuilderConstructorTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let chars: FixedArray<char> = new FixedArray<char>(10000);
+        let chars: FixedArray<char> = new FixedArray<char>(10000, c'\u0000');
         for (let i = 0; i < 10000; i++) {
           chars[i] = c'X';
         }
@@ -543,7 +543,7 @@ export default function StringBuilderConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testStringBuilderConstructorTwo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let chars: FixedArray<char> = new FixedArray<char>(5000);
+        let chars: FixedArray<char> = new FixedArray<char>(5000, c'\u0000');
         for (let i = 0; i < 5000; i++) {
           chars[i] = c'A';
         }
@@ -624,7 +624,7 @@ export default function StringBuilderConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testStringBuilderConstructorTwo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let chars: FixedArray<char> = new FixedArray<char>(20000);
+        let chars: FixedArray<char> = new FixedArray<char>(20000, c'\u0000');
         for (let i = 0; i < 20000; i++) {
           chars[i] = c'X';
         }

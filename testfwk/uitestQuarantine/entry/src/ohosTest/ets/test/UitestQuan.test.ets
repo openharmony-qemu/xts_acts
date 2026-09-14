@@ -103,63 +103,531 @@ export default function UiTest() {
     })
 
     /**
-     * @tc.name   testDragBetween
-     * @tc.number uiTest_20002
+     * @tc.name   testDragBetweenDefault
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0001
      * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDragBetween', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(TestTag, 'testDragBetween start');
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let button = await driver.findComponent(ON.id('jump'))
-      await button.longClick()
-      await driver.delayMs(waitUiReadyMs)
-      let text1 = await driver.findComponent(ON.text('one'))
-      let text2 = await driver.findComponent(ON.text('two'))
-      let center1 = await text1.getBoundsCenter()
-      let center2 = await text2.getBoundsCenter()
-      await driver.dragBetween(center1, center2, 3000, 3000)
-      await driver.delayMs(waitUiReadyMs)
-      let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
-      expect(text == null).assertTrue()
-      await stopApplication('com.uitestScene.acts')
-      console.log(TestTag, 'testDragBetween over');
+    it('testDragBetweenDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testDragBetweenDefault start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        await button.longClick()
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let center1 = await text1.getBoundsCenter()
+        let center2 = await text2.getBoundsCenter()
+        await driver.dragBetween(center1, center2)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+        console.log(TestTag, 'testDragBetweenDefault over');
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
     })
 
     /**
-     * @tc.name   testNewMouseDrag
-     * @tc.number uiTest_20003
+     * @tc.name   testDragBetweenSpeed
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0002
+     * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDragBetweenSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testDragBetweenSpeed start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        await button.longClick()
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let center1 = await text1.getBoundsCenter()
+        let center2 = await text2.getBoundsCenter()
+        await driver.dragBetween(center1, center2, 600)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+        console.log(TestTag, 'testDragBetweenSpeed over');
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testDragBetweenDuring
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0003
+     * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDragBetweenDuring', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testDragBetweenSpeed start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        await button.longClick()
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let center1 = await text1.getBoundsCenter()
+        let center2 = await text2.getBoundsCenter()
+        await driver.dragBetween(center1, center2, 800, 1500)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+        console.log(TestTag, 'testDragBetweenSpeed over');
+      } catch (error) {
+        expect().assertFail()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testDragBetweenSpeedNull
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0004
+     * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDragBetweenSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testDragBetweenSpeed start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        await button.longClick()
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let center1 = await text1.getBoundsCenter()
+        let center2 = await text2.getBoundsCenter()
+        await driver.dragBetween(center1, center2, null)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+        console.log(TestTag, 'testDragBetweenSpeed over');
+      } catch (error) {
+        expect().assertFail()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testDragBetweenSpeedUndefined
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0005
+     * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDragBetweenSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testDragBetweenSpeedUndefined start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        await button.longClick()
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let center1 = await text1.getBoundsCenter()
+        let center2 = await text2.getBoundsCenter()
+        await driver.dragBetween(center1, center2, undefined)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+        console.log(TestTag, 'testDragBetweenSpeedUndefined over');
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testDragBetweenDuringNull
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0006
+     * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDragBetweenDuringNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testDragBetweenSpeed start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        await button.longClick()
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let center1 = await text1.getBoundsCenter()
+        let center2 = await text2.getBoundsCenter()
+        await driver.dragBetween(center1, center2, 800, null)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+        console.log(TestTag, 'testDragBetweenSpeed over');
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testDragBetweenDuringUndefined
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0007
+     * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDragBetweenDuringUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testDragBetweenDuringUndefined start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        await button.longClick()
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let center1 = await text1.getBoundsCenter()
+        let center2 = await text2.getBoundsCenter()
+        await driver.dragBetween(center1, center2, 800, undefined)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+        console.log(TestTag, 'testDragBetweenDuringUndefined over');
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testNewMouseDragDefault
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0001
      * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNewMouseDrag', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(TestTag, 'testNewMouseDrag start');
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let button = await driver.findComponent(ON.id('jump'))
-      let center = await button.getBoundsCenter();
-      await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
-      console.log(TestTag, 'mouseLongClick successful');
-      await driver.delayMs(waitUiReadyMs)
-      let text1 = await driver.findComponent(ON.text('one'))
-      let text2 = await driver.findComponent(ON.text('two'))
-      let point1 = await text1.getBoundsCenter()
-      let point2 = await text2.getBoundsCenter()
-      await driver.mouseDrag(point1, point2, 600, 3000)
-      await driver.delayMs(2000)
-      let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
-      expect(text == null).assertTrue()
-      console.log(TestTag, 'testNewMouseDrag over');
+    it('testNewMouseDragDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testNewMouseDragDefault start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
+        console.log(TestTag, 'mouseLongClick successful');
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        console.log(TestTag, 'testNewMouseDragDefault over');
+      } catch (error) {
+        expect().assertFail()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testNewMouseDragSpeed
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0002
+     * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNewMouseDragSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testNewMouseDragSpeed start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
+        console.log(TestTag, 'mouseLongClick successful');
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, 600)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        console.log(TestTag, 'testNewMouseDragSpeed over');
+      } catch (error) {
+        expect().assertFail()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testNewMouseDragSpeedNull
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0003
+     * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNewMouseDragSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testNewMouseDragSpeed start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
+        console.log(TestTag, 'mouseLongClick successful');
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, null)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        console.log(TestTag, 'testNewMouseDragSpeed over');
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testNewMouseDragSpeedUndefined
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0004
+     * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNewMouseDragSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testNewMouseDragSpeedUndefined start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
+        console.log(TestTag, 'mouseLongClick successful');
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, undefined)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        console.log(TestTag, 'testNewMouseDragSpeedUndefined over');
+      } catch (error) {
+        expect().assertFail()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testNewMouseDragSpeedLowRange
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0013
+     * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNewMouseDragSpeedLowRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testNewMouseDragSpeedLowRange start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
+        console.log(TestTag, 'mouseLongClick successful');
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, 199)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        console.log(TestTag, 'testNewMouseDragSpeedLowRange over');
+        await stopApplication('com.uitestScene.acts');
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testNewMouseDragSpeedAboveMax
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0023
+     * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNewMouseDragSpeedAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testNewMouseDragSpeedAboveMax start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
+        console.log(TestTag, 'mouseLongClick successful');
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, 40001)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        console.log(TestTag, 'testNewMouseDragSpeedAboveMax over');
+        await stopApplication('com.uitestScene.acts')
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testNewMouseDragDuring
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0005
+     * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNewMouseDragDuring', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testNewMouseDragDuring start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
+        console.log(TestTag, 'mouseLongClick successful');
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, 600, 1500)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        console.log(TestTag, 'testNewMouseDragDuring over');
+      } catch (error) {
+        expect().assertFail()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testNewMouseDragDuringNull
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0006
+     * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNewMouseDragDuringNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testNewMouseDragDuringNull start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
+        console.log(TestTag, 'mouseLongClick successful');
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, 600, null)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        console.log(TestTag, 'testNewMouseDragDuringNull over');
+      } catch (error) {
+        expect().assertFail()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testNewMouseDragDuringUndefined
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0007
+     * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNewMouseDragDuringUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testNewMouseDragDuringUndefined start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
+        console.log(TestTag, 'mouseLongClick successful');
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, 600, undefined)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        console.log(TestTag, 'testNewMouseDragDuringUndefined over');
+      } catch (error) {
+        expect().assertFail()
+      }
+      done()
     })
 
     /**
      * @tc.name   testPressHomeWithId
-     * @tc.number uiTest_20021
+     * @tc.number SUB_testfwk_UITEST_PRESSHOME_FUNCTION_0001
      * @tc.desc   pressHome test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -195,7 +663,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testScrollSearchHorizontal
-     * @tc.number UiTest_API16_018
+     * @tc.number SUB_testfwk_UITEST_SCROLLSEARCH_FUNCTION_0001
      * @tc.desc   scroll horizontally on this UiComponent to find matched UiComponent.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -257,7 +725,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testMouseDrag
-     * @tc.number uiTest_11003
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0008
      * @tc.desc   drag on the screen between the specified points by mouse.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -281,6 +749,103 @@ export default function UiTest() {
       await driver.mouseDrag(point1, point2)
       await stopApplication('com.uitestScene.acts');
     })
+
+    /**
+     * @tc.name   testMouseDragDefault
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0009
+     * @tc.desc   drag on the screen between the specified points by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMouseDragDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT)
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await driver.mouseDrag(point1, point2)
+        await stopApplication('com.uitestScene.acts');
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testMouseDragSpeedNull
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0010
+     * @tc.desc   drag on the screen between the specified points by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMouseDragSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT)
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, null)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await driver.mouseDrag(point1, point2)
+        await stopApplication('com.uitestScene.acts');
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testMouseDragSpeedUndefined
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0011
+     * @tc.desc   drag on the screen between the specified points by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMouseDragSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT)
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, undefined)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await driver.mouseDrag(point1, point2)
+        await stopApplication('com.uitestScene.acts');
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
   })
 
   describe('UiTest_API10', () => {
@@ -302,7 +867,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testFling
-     * @tc.number uiTest_10002
+     * @tc.number SUB_testfwk_UITEST_FLING_FUNCTION_0001
      * @tc.desc   inject fling on the device display.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -365,7 +930,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testTriggerCombineKeys
-     * @tc.number uiTest_9023
+     * @tc.number SUB_testfwk_UITEST_TRIGGERCOMBINEKEYS_FUNCTION_0001
      * @tc.desc   press two or three key combinations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -412,7 +977,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDisplayRotation
-     * @tc.number uiTest_9049
+     * @tc.number SUB_testfwk_UITEST_DISPLAYROTATION_FUNCTION_0001
      * @tc.desc   get the rotation of the device display and set it.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -469,7 +1034,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testGetDisplayRotationWithId
-     * @tc.number uiTest_9060
+     * @tc.number SUB_testfwk_UITEST_GETDISPLAYROTATION_FUNCTION_0001
      * @tc.desc   getDisplayRotation test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -530,7 +1095,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testPressHome
-     * @tc.number uiTest_9052
+     * @tc.number SUB_testfwk_UITEST_PRESSHOME_FUNCTION_0002
      * @tc.desc   press the home key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -548,7 +1113,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDrag
-     * @tc.number uiTest_9054
+     * @tc.number SUB_testfwk_UITEST_DRAG_FUNCTION_0001
      * @tc.desc   drag on the screen between the specified points.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -572,8 +1137,98 @@ export default function UiTest() {
     })
 
     /**
+     * @tc.name   testDragSpeed
+     * @tc.number SUB_testfwk_UITEST_DRAG_FUNCTION_0002
+     * @tc.desc   drag on the screen between the specified points.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDragSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        await button.longClick()
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.drag(point1.x, point1.y, point2.x, point2.y, 800)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testDragSpeedNull
+     * @tc.number SUB_testfwk_UITEST_DRAG_FUNCTION_0003
+     * @tc.desc   drag on the screen between the specified points.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDragSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        await button.longClick()
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.drag(point1.x, point1.y, point2.x, point2.y, null)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testDragSpeedUndefined
+     * @tc.number SUB_testfwk_UITEST_DRAG_FUNCTION_0004
+     * @tc.desc   drag on the screen between the specified points.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDragSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        await button.longClick()
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.drag(point1.x, point1.y, point2.x, point2.y, undefined)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
      * @tc.name   testDragTo
-     * @tc.number uiTest_9055
+     * @tc.number SUB_testfwk_UITEST_DRAGTO_FUNCTION_0001
      * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

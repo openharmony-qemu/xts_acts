@@ -702,7 +702,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              expect(commonEventData.parameters?.result).assertEqual(16000001);
+              expect(commonEventData.parameters!.result).assertEqual(16000001);
               AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf()
             } catch {
             }
@@ -755,7 +755,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              expect(commonEventData.parameters?.result).assertEqual(16000050);
+              expect(commonEventData.parameters!.result).assertEqual(16000050);
               AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
             } catch {
             }
@@ -963,7 +963,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              if (commonEventData.parameters?.result == 16000078) {
+              if (commonEventData.parameters!.result == 16000078) {
                 expect(true).assertTrue()
                 AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
               } else {
@@ -1020,7 +1020,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              if (commonEventData.parameters?.result == 16000073) {
+              if (commonEventData.parameters!.result == 16000073) {
                 expect(true).assertTrue();
                 AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
               } else {
@@ -1077,7 +1077,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              if (commonEventData.parameters?.result == 16000080) {
+              if (commonEventData.parameters!.result == 16000080) {
                 expect(true).assertTrue()
                 AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
               } else {
@@ -1135,7 +1135,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              if (commonEventData.parameters?.result == 16000050) {
+              if (commonEventData.parameters!.result == 16000050) {
                 expect(true).assertTrue()
                 AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
               } else {
@@ -1192,7 +1192,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              if (commonEventData.parameters?.result == 16000004) {
+              if (commonEventData.parameters!.result == 16000004) {
                 expect(true).assertTrue()
                 AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
               } else {
@@ -1249,7 +1249,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              if (commonEventData.parameters?.result == 16000078) {
+              if (commonEventData.parameters!.result == 16000078) {
                 expect(true).assertTrue()
                 AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
               } else {
@@ -1306,7 +1306,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              if (commonEventData.parameters?.result == 16000073) {
+              if (commonEventData.parameters!.result == 16000073) {
                 expect(true).assertTrue()
                 AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
               } else {
@@ -1363,7 +1363,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              if (commonEventData.parameters?.result == 16000080) {
+              if (commonEventData.parameters!.result == 16000080) {
                 expect(true).assertTrue()
                 AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
               } else {
@@ -1420,7 +1420,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              if (commonEventData.parameters?.result == 16000072) {
+              if (commonEventData.parameters!.result == 16000072) {
                 expect(true).assertTrue()
                 AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
               } else {
@@ -1477,7 +1477,7 @@ export default function errorCodeTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              if (commonEventData.parameters?.result == 16000019) {
+              if (commonEventData.parameters!.result == 16000019) {
                 expect(true).assertTrue()
                 AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
               } else {

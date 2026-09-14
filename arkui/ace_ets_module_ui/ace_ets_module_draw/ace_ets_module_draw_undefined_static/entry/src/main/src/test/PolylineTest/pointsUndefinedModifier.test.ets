@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index';
+
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 export default function PointsUndefinedModifierTest() {
   describe('PointsUndefinedModifierTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility('com.arkui.ace.scroll.undefined.static', 'EntryAbility');
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('PointsUndefinedModifierTest beforeEach start');
       let options: router.RouterOptions = {
@@ -42,7 +36,7 @@ export default function PointsUndefinedModifierTest() {
         console.info('get PointsUndefinedModifierTest state pages:' + JSON.stringify(pages));
         if (!('pointsUndefinedModifier' == pages.name)) {
           console.info('get PointsUndefinedModifierTest pages.name:' + JSON.stringify(pages.name));
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -59,6 +53,7 @@ export default function PointsUndefinedModifierTest() {
      */
     it('PointsUndefinedModifierTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[PointsUndefinedModifierTest_static_0100] START');
+      try {
       await CommonFunc.sleep(500);
       const uiContext = AppStorage.get<UIContext>('uiContent')!;
 
@@ -87,6 +82,11 @@ export default function PointsUndefinedModifierTest() {
 
       console.info('[PointsUndefinedModifierTest_static_0100] END');
       done();
+      } catch (err) {
+        console.error('PointsUndefinedModifierTest_static_0100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

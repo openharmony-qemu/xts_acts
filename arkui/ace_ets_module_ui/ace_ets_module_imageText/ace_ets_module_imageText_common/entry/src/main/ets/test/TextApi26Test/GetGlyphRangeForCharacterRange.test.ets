@@ -47,6 +47,9 @@ export default function GetGlyphRangeForCharacterRangeTest() {
       AppStorage.delete('glyphRange_partial');
       AppStorage.delete('glyphRange_oob');
       AppStorage.delete('glyphRange_undefined_range');
+      AppStorage.delete('glyphRange_null_textEncoding');
+      AppStorage.delete('glyphRange_undfined_textEncoding');
+      AppStorage.delete('glyphRange_exceeds_textEncoding');
       await CommonFunc.sleep(500);
       console.info('GetGlyphRangeForCharacterRangeTest afterEach called');
     });
@@ -263,6 +266,99 @@ export default function GetGlyphRangeForCharacterRangeTest() {
       }
       
       console.info('[GetGlyphRangeForCharacterRangeTest_0060] END');
+      done();
+    });
+
+    /**
+     * @tc.name   GetGlyphRangeForCharacterRangeTest_0070
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETGLYPHRANGE_NULL_TEXTENCODING_0070
+     * @tc.desc   Test getGlyphRangeForCharacterRange with null TextEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GetGlyphRangeForCharacterRangeTest_0070', Level.LEVEL2, async (done: Function) => {
+      console.info('[GetGlyphRangeForCharacterRangeTest_0070] START');
+      try {
+        await CommonFunc.sleep(500);
+
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
+
+        const result: string | undefined = AppStorage.get<string>('glyphRange_null_textEncoding');
+        console.info('[GetGlyphRangeForCharacterRangeTest_0070] result: ' + result);
+        expect(result !== 'undefined').assertTrue();
+        expect(result).assertContain('first:[');
+        expect(result).assertContain('second:[');
+      }catch (err) {
+        console.error('GetGlyphRangeForCharacterRangeTest_0070 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      console.info('[GetGlyphRangeForCharacterRangeTest_0070] END');
+      done();
+    });
+
+    /**
+     * @tc.name   GetGlyphRangeForCharacterRangeTest_0080
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETGLYPHRANGE_UNDEFINED_TEXTENCODING_0080
+     * @tc.desc   Test getGlyphRangeForCharacterRange with undefined TextEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GetGlyphRangeForCharacterRangeTest_0080', Level.LEVEL2, async (done: Function) => {
+      console.info('[GetGlyphRangeForCharacterRangeTest_0080] START');
+      try {
+        await CommonFunc.sleep(500);
+
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
+
+        const result: string | undefined = AppStorage.get<string>('glyphRange_undfined_textEncoding');
+        console.info('[GetGlyphRangeForCharacterRangeTest_0080] result: ' + result);
+        expect(result !== 'undefined').assertTrue();
+        expect(result).assertContain('first:[');
+        expect(result).assertContain('second:[');
+      }catch (err) {
+        console.error('GetGlyphRangeForCharacterRangeTest_0080 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      console.info('[GetGlyphRangeForCharacterRangeTest_0080] END');
+      done();
+    });
+
+    /**
+     * @tc.name   GetGlyphRangeForCharacterRangeTest_0090
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETGLYPHRANGE_EXCEEDS_TEXTENCODING_0090
+     * @tc.desc   Test getGlyphRangeForCharacterRange with exceeds TextEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GetGlyphRangeForCharacterRangeTest_0090', Level.LEVEL2, async (done: Function) => {
+      console.info('[GetGlyphRangeForCharacterRangeTest_0090] START');
+      try {
+        await CommonFunc.sleep(500);
+
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
+
+        const result: string | undefined = AppStorage.get<string>('glyphRange_exceeds_textEncoding');
+        console.info('[GetGlyphRangeForCharacterRangeTest_0090] result: ' + result);
+        expect(result !== 'undefined').assertTrue();
+        expect(result).assertContain('first:[');
+        expect(result).assertContain('second:[');
+      }catch (err) {
+        console.error('GetGlyphRangeForCharacterRangeTest_0090 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      console.info('[GetGlyphRangeForCharacterRangeTest_0090] END');
       done();
     });
   });

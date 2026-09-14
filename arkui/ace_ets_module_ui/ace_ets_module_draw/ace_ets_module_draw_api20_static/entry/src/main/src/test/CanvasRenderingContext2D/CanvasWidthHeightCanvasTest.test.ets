@@ -14,24 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 export default function CanvasWidthHeightCanvasTest() {
   describe('CanvasWidthHeightCanvasTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CanvasWidthHeightCanvasTest beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("CanvasWidthHeightCanvas beforeEach start");
       let options: router.RouterOptions = {
@@ -63,7 +55,11 @@ export default function CanvasWidthHeightCanvasTest() {
     */
     it('CanvasWidthHeightCanvasTest_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
     console.info('[CanvasWidthHeightCanvasTest_0010] START');
-    await CommonFunc.sleep(1000);
+    try {
+      await CommonFunc.sleep(1000);
+    } catch (err) {
+      console.info('CanvasWidthHeightCanvasTestTest await err: ' + JSON.stringify(err));
+    }
 
     let strJson = inspector.getInspectorByKey('CanvasWidthHeightCanvas');
     let obj = JSON.parseJsonElement(strJson);

@@ -49,6 +49,7 @@ napi_value AuxiliaryPictureNativeCreateSuccess(napi_env env, napi_callback_info 
 napi_value AuxiliaryPictureInfoGetSizeSucces(napi_env env, napi_callback_info info);
 napi_value AuxiliaryPictureInfoSetSizeSuccess(napi_env env, napi_callback_info info);
 napi_value AuxiliaryPictureInfoGetRowStrideSuccess(napi_env env, napi_callback_info info);
+napi_value AuxiliaryPictureInfoGetRowStrideBadParameter(napi_env env, napi_callback_info info);
 napi_value AuxiliaryPictureInfoSetRowStrideSuccess(napi_env env, napi_callback_info info);
 napi_value AuxiliaryPictureInfoGetPixelFormatSuccess(napi_env env, napi_callback_info info);
 napi_value AuxiliaryPictureInfoSetPixelFormatSuccess(napi_env env, napi_callback_info info);

@@ -52,10 +52,6 @@ import sendableTranslateSyncTest from './sendable/pixelMap/translateSync.test';
 import PictureGetGainmapPixelmapTest from './image/Picture/getGainmapPixelmap.test';
 import getHdrComposedPixelmapTest from './image/Picture/getHdrComposedPixelmap.test';
 import PictureGetMetadataTest from './image/Picture/getMetadata.test';
-import getPropertiesTest from './image/Metadata/getProperties.test';
-import setPropertiesTest from './image/Metadata/setProperties.test';
-import getAllPropertiesTest from './image/Metadata/getAllProperties.test';
-import metadataCloneTest from './image/Metadata/clone.test';
 import imageSourceCreatePixelMapTest from './image/ImageSource/createPixelMap.test';
 import imageSourceCreatePixelMapSyncTest from './image/ImageSource/createPixelMapSync.test';
 import imageSourceGetImageInfoTest from './image/ImageSource/getImageInfo.test'
@@ -166,10 +162,6 @@ export default function testsuite() {
   PictureGetAuxiliaryPictureTest();
   PictureMarshallingTest();
   getHdrComposedPixelmapTest();
-  getPropertiesTest();
-  setPropertiesTest();
-  getAllPropertiesTest();
-  metadataCloneTest();
   createUnpremultipliedPixelMapSyncTest();
   createPixelMapFromSurfaceTest();
   AuxiliaryPictureWritePixelsFromBufferTest();

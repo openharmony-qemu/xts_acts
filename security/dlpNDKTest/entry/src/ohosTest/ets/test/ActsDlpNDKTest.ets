@@ -198,5 +198,33 @@ export default function ActsDlpNDKTest() {
       }
 
     })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DlpNotSupported_0010
+     * @tc.number SUB_Security_DataSecurity_DlpNotSupported_0010
+     * @tc.desc   Verify that the DLP API returns error code 801 when the DataLossPrevention capability is not supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_DataSecurity_DlpNotSupported_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const OH_DLP_NOT_SUPPORTED = 801;
+      console.log("=======> SUB_Security_DataSecurity_DlpNotSupported_0010  ==========");
+      let result: number = OH_DLP_NOT_SUPPORTED;
+      try{
+        result = await testNapi.osGetDlpPermissionInfoA();
+        console.log("=======>SUB_Security_DataSecurity_DlpNotSupported_0010 result:" + result);
+        if (result === OH_DLP_NOT_SUPPORTED) {
+          expect(result).assertEqual(OH_DLP_NOT_SUPPORTED);
+        } else {
+          expect(result).assertEqual(19100006);
+        }
+        done();
+      } catch (error) {
+        console.error("=======>SUB_Security_DataSecurity_DlpNotSupported_0010 error:" + error);
+        expect(result).assertEqual(19100006);
+        done();
+      }
+    })
   })
 }

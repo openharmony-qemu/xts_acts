@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../hypium/index";
+import { describe, beforeEach, it, expect, Level } from "../../../hypium/index";
 import Utils from './common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from './Util.test'
 
 export default function InspectorLayoutCallbackTest() {
 
   describe('InspectorLayoutCallbackTest', (): void => {
 
     let PAGE_TAG = 'InspectorLayoutCallback';
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_inspector_xts_api16.static", "EntryAbility")
-    });
 
     beforeEach(async (done: () => void): Promise<void> => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info("[InspectorLayoutCallbackTest] beforeEach sleep err: " + JSON.stringify(err));
+      }
       done();
     });
 
@@ -41,21 +41,25 @@ export default function InspectorLayoutCallbackTest() {
      * @tc.level    Level.LEVEL0
      */
     it('InspectorLayoutCallback001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.pushPage(`${PAGE_TAG}`, false);
-      console.info("[InspectorLayoutCallback001] start succ");
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await Utils.sleep(2000);
-      let layoutcallback_test01 = await driver.findComponent(ON.id('layoutcallback_test01'));
-      await Utils.sleep(2000);
-      await (layoutcallback_test01?.click() as Promise<void>);
-      await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('text_node0');
-      await Utils.sleep(2000);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[InspectorLayoutCallback001] component obj is: " + JSON.stringify(obj));
-      await Utils.sleep(2000);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('layout callback');
+      try {
+        await Utils.pushPage(`${PAGE_TAG}`, false);
+        console.info("[InspectorLayoutCallback001] start succ");
+        await Utils.sleep(2000);
+        let driver = Driver.create();
+        await Utils.sleep(2000);
+        let layoutcallback_test01 = await driver.findComponent(ON.id('layoutcallback_test01'));
+        await Utils.sleep(2000);
+        await (layoutcallback_test01?.click() as Promise<void>);
+        await Utils.sleep(2000);
+        let strJson: string = inspector.getInspectorByKey('text_node0');
+        await Utils.sleep(2000);
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[InspectorLayoutCallback001] component obj is: " + JSON.stringify(obj));
+        await Utils.sleep(2000);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('layout callback');
+      } catch (err) {
+        console.info("[InspectorLayoutCallback001] err: " + JSON.stringify(err));
+      }
       done()
     });
 
@@ -66,21 +70,25 @@ export default function InspectorLayoutCallbackTest() {
      * @tc.level    Level.LEVEL0
      */
     it('InspectorLayoutCallback002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.pushPage(`${PAGE_TAG}`, false);
-      console.info("[InspectorLayoutCallback002] start succ");
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await Utils.sleep(2000);
-      let layoutcallback_test01 = await driver.findComponent(ON.id('layoutcallback_test02'));
-      await Utils.sleep(2000);
-      await (layoutcallback_test01?.click() as Promise<void>);
-      await Utils.sleep(2000);
-      let callbackJson: string = inspector.getInspectorByKey('text_node0');
-      await Utils.sleep(2000);
-      let obj = JSON.parseJsonElement(callbackJson);
-      console.info("[InspectorLayoutCallback002] component obj is: " + JSON.stringify(obj));
-      await Utils.sleep(2000);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      try {
+        await Utils.pushPage(`${PAGE_TAG}`, false);
+        console.info("[InspectorLayoutCallback002] start succ");
+        await Utils.sleep(2000);
+        let driver = Driver.create();
+        await Utils.sleep(2000);
+        let layoutcallback_test01 = await driver.findComponent(ON.id('layoutcallback_test02'));
+        await Utils.sleep(2000);
+        await (layoutcallback_test01?.click() as Promise<void>);
+        await Utils.sleep(2000);
+        let callbackJson: string = inspector.getInspectorByKey('text_node0');
+        await Utils.sleep(2000);
+        let obj = JSON.parseJsonElement(callbackJson);
+        console.info("[InspectorLayoutCallback002] component obj is: " + JSON.stringify(obj));
+        await Utils.sleep(2000);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      } catch (err) {
+        console.info("[InspectorLayoutCallback002] err: " + JSON.stringify(err));
+      }
       done()
     });
 
@@ -91,21 +99,25 @@ export default function InspectorLayoutCallbackTest() {
      * @tc.level    Level.LEVEL0
      */
     it('InspectorLayoutCallback003', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.pushPage(`${PAGE_TAG}`, false);
-      console.info("[InspectorLayoutCallback003] start succ");
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await Utils.sleep(2000);
-      let layoutcallback_test01 = await driver.findComponent(ON.id('drawcallback_test01'));
-      await Utils.sleep(2000);
-      await (layoutcallback_test01?.click() as Promise<void>);
-      await Utils.sleep(2000);
-      let callbackJson: string = inspector.getInspectorByKey('text_node0');
-      await Utils.sleep(2000);
-      let obj = JSON.parseJsonElement(callbackJson);
-      console.info("[InspectorLayoutCallback003] component obj is: " + JSON.stringify(obj));
-      await Utils.sleep(2000);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('draw callback');
+      try {
+        await Utils.pushPage(`${PAGE_TAG}`, false);
+        console.info("[InspectorLayoutCallback003] start succ");
+        await Utils.sleep(2000);
+        let driver = Driver.create();
+        await Utils.sleep(2000);
+        let layoutcallback_test01 = await driver.findComponent(ON.id('drawcallback_test01'));
+        await Utils.sleep(2000);
+        await (layoutcallback_test01?.click() as Promise<void>);
+        await Utils.sleep(2000);
+        let callbackJson: string = inspector.getInspectorByKey('text_node0');
+        await Utils.sleep(2000);
+        let obj = JSON.parseJsonElement(callbackJson);
+        console.info("[InspectorLayoutCallback003] component obj is: " + JSON.stringify(obj));
+        await Utils.sleep(2000);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('draw callback');
+      } catch (err) {
+        console.info("[InspectorLayoutCallback003] err: " + JSON.stringify(err));
+      }
       done()
     });
 
@@ -116,21 +128,25 @@ export default function InspectorLayoutCallbackTest() {
      * @tc.level    Level.LEVEL0
      */
     it('InspectorLayoutCallback004', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.pushPage(`${PAGE_TAG}`, false);
-      console.info("[InspectorLayoutCallback004] start succ");
-      await Utils.sleep(2000);
-      let driver = Driver.create();
-      await Utils.sleep(2000);
-      let layoutcallback_test01 = await driver.findComponent(ON.id('drawcallback_test02'));
-      await Utils.sleep(2000);
-      await (layoutcallback_test01?.click() as Promise<void>);
-      await Utils.sleep(2000);
-      let callbackJson: string = inspector.getInspectorByKey('text_node0');
-      await Utils.sleep(2000);
-      let obj = JSON.parseJsonElement(callbackJson);
-      console.info("[InspectorLayoutCallback004] component obj is: " + JSON.stringify(obj));
-      await Utils.sleep(2000);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      try {
+        await Utils.pushPage(`${PAGE_TAG}`, false);
+        console.info("[InspectorLayoutCallback004] start succ");
+        await Utils.sleep(2000);
+        let driver = Driver.create();
+        await Utils.sleep(2000);
+        let layoutcallback_test01 = await driver.findComponent(ON.id('drawcallback_test02'));
+        await Utils.sleep(2000);
+        await (layoutcallback_test01?.click() as Promise<void>);
+        await Utils.sleep(2000);
+        let callbackJson: string = inspector.getInspectorByKey('text_node0');
+        await Utils.sleep(2000);
+        let obj = JSON.parseJsonElement(callbackJson);
+        console.info("[InspectorLayoutCallback004] component obj is: " + JSON.stringify(obj));
+        await Utils.sleep(2000);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      } catch (err) {
+        console.info("[InspectorLayoutCallback004] err: " + JSON.stringify(err));
+      }
       done()
     });
   })

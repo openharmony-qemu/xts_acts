@@ -15,29 +15,14 @@
  */
 
 import Utils, {
-  Attrs,
   BasePageConfig,
-  DisplayValue,
   PageConfig,
-  RectValue,
   TestValue
 } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { beforeAll, describe, expect } from '../../../../hypium/index'
-import { HorizontalAlign, ItemAlign, VerticalAlign } from '@ohos.arkui.component'
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { describe, expect } from '../../../../hypium/index'
+import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function displayPriorityTest() {
 
@@ -173,11 +158,6 @@ export default function displayPriorityTest() {
   ]
 
   describe('DisplayPriorityTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("displayPriorityTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.displayPriority.test.static", "EntryAbility")
-
-    });
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
       async (data: BasePageConfig): Promise<void> => {
         const uiContext = AppStorage.get<UIContext>('uiContext');
@@ -193,8 +173,11 @@ export default function displayPriorityTest() {
         let compareTwoButtonRect = Utils.getComponentRect(data.pageConfig.compareTwoButtonKey!);
 
         console.info('DisplayPriorityTest.test', data.testValue.setValue)
-        await Utils.sleep(1000);
-
+        try {
+          await Utils.sleep(1000);
+        } catch (err) {
+          console.info('displayPriorityTest sleep err: ' + JSON.stringify(err));
+        }
         if ((data.pageConfig.containerView == 'Row') || (data.pageConfig.containerView == 'Flex')) {
           //When the parent container is Row or Flex
           if (data.testValue.describe == 'LowPriorityIsHidden') {

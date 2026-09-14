@@ -16,32 +16,15 @@
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import {
-  Component,
   Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
+  ON
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 async function ComparisonLGAssert() {
   let GridRow: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_001');
@@ -59,7 +42,6 @@ async function ComparisonLGAssert() {
   let GridCol_12: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_11');
   let GridCol_13: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_12');
 
-  
   expect(Math.floor(Math.abs(GridCol_1.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_1.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_2.top - GridRow.top)) <= 1).assertTrue();
@@ -74,7 +56,6 @@ async function ComparisonLGAssert() {
   expect(Math.floor(Math.abs(GridCol_11.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_12.top - GridRow.top)) <= 1).assertTrue();
 
-  
   expect(Math.floor(Math.abs(GridCol_13.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_13.top - GridCol_1.bottom)) <= 1).assertTrue();
 }
@@ -95,7 +76,6 @@ async function ComparisonMDAssert() {
   let GridCol_12: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_11');
   let GridCol_13: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_12');
 
-  
   expect(Math.floor(Math.abs(GridCol_1.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_1.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_2.top - GridRow.top)) <= 1).assertTrue();
@@ -106,7 +86,6 @@ async function ComparisonMDAssert() {
   expect(Math.floor(Math.abs(GridCol_7.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_8.top - GridRow.top)) <= 1).assertTrue();
 
-  
   expect(Math.floor(Math.abs(GridCol_9.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_9.top - GridCol_1.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_10.top - GridCol_1.bottom)) <= 1).assertTrue();
@@ -131,28 +110,24 @@ async function ComparisonSMAssert() {
   let GridCol_12: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_11');
   let GridCol_13: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_12');
 
-  
   expect(Math.floor(Math.abs(GridCol_1.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_1.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_2.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_3.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_4.top - GridRow.top)) <= 1).assertTrue();
 
-  
   expect(Math.floor(Math.abs(GridCol_5.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_5.top - GridCol_1.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_6.top - GridCol_1.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_7.top - GridCol_1.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_8.top - GridCol_1.bottom)) <= 1).assertTrue();
 
-  
   expect(Math.floor(Math.abs(GridCol_9.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_9.top - GridCol_5.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_10.top - GridCol_5.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_11.top - GridCol_5.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_12.top - GridCol_5.bottom)) <= 1).assertTrue();
 
-  
   expect(Math.floor(Math.abs(GridCol_13.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_13.top - GridCol_9.bottom)) <= 1).assertTrue();
 }
@@ -173,49 +148,36 @@ async function ComparisonXSAssert() {
   let GridCol_12: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_11');
   let GridCol_13: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_12');
 
-  
   expect(Math.floor(Math.abs(GridCol_1.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_1.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_2.top - GridRow.top)) <= 1).assertTrue();
 
-  
   expect(Math.floor(Math.abs(GridCol_3.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_3.top - GridCol_1.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_4.top - GridCol_1.bottom)) <= 1).assertTrue();
 
-  
   expect(Math.floor(Math.abs(GridCol_5.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_5.top - GridCol_3.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_6.top - GridCol_3.bottom)) <= 1).assertTrue();
 
-  
   expect(Math.floor(Math.abs(GridCol_7.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_7.top - GridCol_5.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_8.top - GridCol_5.bottom)) <= 1).assertTrue();
 
-  
   expect(Math.floor(Math.abs(GridCol_9.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_9.top - GridCol_7.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_10.top - GridCol_7.bottom)) <= 1).assertTrue();
 
-  
   expect(Math.floor(Math.abs(GridCol_11.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_11.top - GridCol_9.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_12.top - GridCol_9.bottom)) <= 1).assertTrue();
 
-  
   expect(Math.floor(Math.abs(GridCol_13.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_13.top - GridCol_11.bottom)) <= 1).assertTrue();
 }
 
 export default function GridRowNoColumnsTest() {
   describe('GridRowNoColumnsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("GridRowNoColumnsTest beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("GridRowNoColumnsTest beforeEach start");
       let options: router.RouterOptions = {
@@ -228,114 +190,109 @@ export default function GridRowNoColumnsTest() {
         console.info("get GridRowNoColumnsTest state pages:" + JSON.stringify(pages));
         if (!("GridRowNoColumnsPage" == pages.name)) {
           console.info("get GridRowNoColumnsTest pages.name:" + JSON.stringify(pages.name));
-          
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push GridRowNoColumnsTest page error:" + err);
+        expect().assertFail();
       }
       console.info("GridRowNoColumnsTest beforeEach end");
-      
     });
     afterEach(async () => {
     });
 
-    
-    
 /**
      * @tc.number   GridRowNoColumnsTest_static_0100
      * @tc.name     GridRowNoColumnsTest_static_0100
      * @tc.desc     GridRowNoColumnsTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('GridRowNoColumnsTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[GridRowNoColumnsTest_static_0100] START');
-      let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+    it('GridRowNoColumnsTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[GridRowNoColumnsTest_static_0100] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
 
-      
-      let button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_1'));
-      
-      await (button?.click() as Promise<void>);
-      console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_1");
-      await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_1'));
+        await (button?.click() as Promise<void>);
+        console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_1");
+        await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
-      obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('xxl');
-      await ComparisonLGAssert();
+        let strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
+          obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('xxl');
+        await ComparisonLGAssert();
 
-      
-      button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_2'));
-      await (button?.click() as Promise<void>);
-      console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_2");
-      await CommonFunc.sleep(1000);
+        button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_2'));
+        await (button?.click() as Promise<void>);
+        console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_2");
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
-      obj = JSON.parseJsonElement(strJson);
-      console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
-      obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('xl');
-      await ComparisonLGAssert();
+        strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
+        obj = JSON.parseJsonElement(strJson);
+        console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
+          obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('xl');
+        await ComparisonLGAssert();
 
-      
-      button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_3'));
-      await (button?.click() as Promise<void>);
-      console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_3");
-      await CommonFunc.sleep(1000);
+        button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_3'));
+        await (button?.click() as Promise<void>);
+        console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_3");
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
-      obj = JSON.parseJsonElement(strJson);
-      console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
-      obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('lg');
-      await ComparisonLGAssert();
+        strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
+        obj = JSON.parseJsonElement(strJson);
+        console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
+          obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('lg');
+        await ComparisonLGAssert();
 
-      
-      button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_4'));
-      await (button?.click() as Promise<void>);
-      console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_4");
-      await CommonFunc.sleep(1000);
+        button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_4'));
+        await (button?.click() as Promise<void>);
+        console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_4");
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
-      obj = JSON.parseJsonElement(strJson);
-      console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
-      obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('md');
-      await ComparisonMDAssert();
+        strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
+        obj = JSON.parseJsonElement(strJson);
+        console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
+          obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('md');
+        await ComparisonMDAssert();
 
-      
-      button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_5'));
-      await (button?.click() as Promise<void>);
-      console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_5");
-      await CommonFunc.sleep(1000);
+        button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_5'));
+        await (button?.click() as Promise<void>);
+        console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_5");
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
-      obj = JSON.parseJsonElement(strJson);
-      console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
-      obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('sm');
-      await ComparisonSMAssert();
+        strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
+        obj = JSON.parseJsonElement(strJson);
+        console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
+          obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('sm');
+        await ComparisonSMAssert();
 
-      
-      button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_6'));
-      await (button?.click() as Promise<void>);
-      console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_6");
-      await CommonFunc.sleep(1000);
+        button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_6'));
+        await (button?.click() as Promise<void>);
+        console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_6");
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
-      obj = JSON.parseJsonElement(strJson);
-      console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
-      obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('xs');
-      await ComparisonXSAssert();
+        strJson = inspector.getInspectorByKey('GridRow_No_Columns_001_currentBp');
+        obj = JSON.parseJsonElement(strJson);
+        console.info("[GridRowNoColumnsTest_static_0100] obj.$attrs.content:" +
+          obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('xs');
+        await ComparisonXSAssert();
 
-      console.info('[GridRowNoColumnsTest_static_0100] END');
-      done();
+        console.info('[GridRowNoColumnsTest_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[GridRowNoColumnsTest_static_0100] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     });
   })
 }

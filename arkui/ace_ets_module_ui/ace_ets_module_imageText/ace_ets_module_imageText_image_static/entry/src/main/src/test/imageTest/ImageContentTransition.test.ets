@@ -14,25 +14,20 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME_L = 1000;
 const SLEEP_TIME_S = 100;
 
 export default function ImageContentTransitionTest() {
   describe('ImageContentTransitionTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ImageContentTransitionTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("ImageContentTransitionTest beforeEach start");
       let options: router.RouterOptions = {
@@ -65,15 +60,21 @@ export default function ImageContentTransitionTest() {
      */
     it('ContentTransition_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ContentTransition_static_001 START');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('ContentTransition001'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(SLEEP_TIME_S);
-      let strJson = inspector.getInspectorByKey('ContentTransition001');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('ContentTransition_static_001 is: ' + obj.getElement('$attrs').getString('contentTransition'));
-      expect(obj.getElement('$attrs').getString('contentTransition')).assertEqual('ContentTransitionEffect.IDENTITY');
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('ContentTransition001'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('ContentTransition001');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('ContentTransition_static_001 is: ' + obj.getElement('$attrs').getString('contentTransition'));
+        expect(obj.getElement('$attrs').getString('contentTransition')).assertEqual('ContentTransitionEffect.IDENTITY');
+        done();
+      } catch (err) {
+        console.error('ContentTransition_static_001 error:' + err);
+        expect(false).assertTrue();
+        done();
+      }
     })
     /**
      * @tc.number   ContentTransition_static_002
@@ -83,15 +84,21 @@ export default function ImageContentTransitionTest() {
      */
     it('ContentTransition_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ContentTransition_static_002 START');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('ContentTransition002'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(SLEEP_TIME_S);
-      let strJson = inspector.getInspectorByKey('ContentTransition002');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('ContentTransition_static_002 is: ' + obj.getElement('$attrs').getString('contentTransition'));
-      expect(obj.getElement('$attrs').getString('contentTransition')).assertEqual('ContentTransitionEffect.OPACITY');
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('ContentTransition002'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('ContentTransition002');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('ContentTransition_static_002 is: ' + obj.getElement('$attrs').getString('contentTransition'));
+        expect(obj.getElement('$attrs').getString('contentTransition')).assertEqual('ContentTransitionEffect.OPACITY');
+        done();
+      } catch (err) {
+        console.error('ContentTransition_static_002 error:' + err);
+        expect(false).assertTrue();
+        done();
+      }
     })
     /**
      * @tc.number   ContentTransition_static_003
@@ -101,15 +108,21 @@ export default function ImageContentTransitionTest() {
      */
     it('ContentTransition_static_003', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ContentTransition_static_003 START');
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('ContentTransition003'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(SLEEP_TIME_S);
-      let strJson = inspector.getInspectorByKey('ContentTransition003');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('ContentTransition_static_003 is: ' + obj.getElement('$attrs').getString('contentTransition'));
-      expect(obj.getElement('$attrs').getString('contentTransition')).assertEqual('ContentTransitionEffect.IDENTITY');
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('ContentTransition003'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('ContentTransition003');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('ContentTransition_static_003 is: ' + obj.getElement('$attrs').getString('contentTransition'));
+        expect(obj.getElement('$attrs').getString('contentTransition')).assertEqual('ContentTransitionEffect.IDENTITY');
+        done();
+      } catch (err) {
+        console.error('ContentTransition_static_003 error:' + err);
+        expect(false).assertTrue();
+        done();
+      }
     })
     /**
      * @tc.number   ContentTransition_static_004

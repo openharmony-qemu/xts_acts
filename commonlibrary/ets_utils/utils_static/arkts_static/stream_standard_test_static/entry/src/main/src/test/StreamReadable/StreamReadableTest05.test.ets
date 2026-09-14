@@ -22,7 +22,7 @@ class TestReadable extends stream.Readable {
     super();
   }
 
-  doRead(_: number): void {
+  doRead(_: int): void {
   }
 }
 
@@ -34,7 +34,7 @@ class TestReadableHighWaterMark extends stream.Readable {
     this.highWaterMark = 10;
   }
 
-  doRead(_: number): void {
+  doRead(_: int): void {
   }
 }
 

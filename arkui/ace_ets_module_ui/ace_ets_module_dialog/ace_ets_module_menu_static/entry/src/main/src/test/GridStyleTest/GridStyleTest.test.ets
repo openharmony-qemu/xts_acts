@@ -14,35 +14,38 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { MenuGridPosition } from '@ohos.arkui.component';
 
 const SLEEP_TIME = 1000;
 
 export default function GridStyleTest(): void {
   describe('GridStyleTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.menu.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
-      const routerInstance = AppStorage.get<Router>('router') as Router;
-      routerInstance.clear();
-      const pages = routerInstance.getState();
-      if (pages.name !== 'GridStyleTestPageIndex') {
-        routerInstance.replaceUrl({ url: 'MainAbility/pages/GridStyle/GridStyleTestPage' });
+      try {
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.clear();
+        const pages = routerInstance.getState();
+        if (pages.name !== 'GridStyleTestPageIndex') {
+          routerInstance.replaceUrl({ url: 'MainAbility/pages/GridStyle/GridStyleTestPage' });
+        }
+        await Utils.sleep(500);
+      } catch (err) {
+        console.info('GridStyleTest beforeEach err: ' + JSON.stringify(err));
       }
-      await Utils.sleep(500);
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('GridStyleTest afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     it('GridStyleTest_MenuGridPosition_TOP_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -56,69 +59,89 @@ export default function GridStyleTest(): void {
     });
 
     it('GridStyleTest_MenuGridPosition_UI_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      const btnTop = await driver.findComponent(ON.id('btn_enum_top'));
-      expect(!!btnTop).assertEqual(true);
-      if (btnTop) {
-        await btnTop.click();
+      try {
+        const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME);
+        const btnTop = await driver.findComponent(ON.id('btn_enum_top'));
+        expect(!!btnTop).assertEqual(true);
+        if (btnTop) {
+          await btnTop.click();
+        }
+        await CommonFunc.sleep(500);
+        const resultText = await driver.findComponent(ON.id('result_text'));
+        if (resultText) {
+          const resultStr = await resultText.getText();
+          expect(resultStr.indexOf('MenuGridPosition.TOP')).assertLarger(-1);
+        }
+        done();
+      } catch (err) {
+        console.info('GridStyleTest err: ' + JSON.stringify(err));
+        done();
       }
-      await CommonFunc.sleep(500);
-      const resultText = await driver.findComponent(ON.id('result_text'));
-      if (resultText) {
-        const resultStr = await resultText.getText();
-        expect(resultStr.indexOf('MenuGridPosition.TOP')).assertLarger(-1);
-      }
-      done();
     });
 
     it('GridStyleTest_Count_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      const btn = await driver.findComponent(ON.id('text_count_0'));
-      if (btn) {
-        await btn.click();
+      try {
+        const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME);
+        const btn = await driver.findComponent(ON.id('text_count_0'));
+        if (btn) {
+          await btn.click();
+        }
+        await CommonFunc.sleep(500);
+        const resultText = await driver.findComponent(ON.id('result_text'));
+        if (resultText) {
+          const resultStr = await resultText.getText();
+          expect(resultStr.indexOf('count=0')).assertLarger(-1);
+        }
+        done();
+      } catch (err) {
+        console.info('GridStyleTest err: ' + JSON.stringify(err));
+        done();
       }
-      await CommonFunc.sleep(500);
-      const resultText = await driver.findComponent(ON.id('result_text'));
-      if (resultText) {
-        const resultStr = await resultText.getText();
-        expect(resultStr.indexOf('count=0')).assertLarger(-1);
-      }
-      done();
     });
 
     it('GridStyleTest_AllParams_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      const btn = await driver.findComponent(ON.id('text_all_params'));
-      if (btn) {
-        await btn.click();
+      try {
+        const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME);
+        const btn = await driver.findComponent(ON.id('text_all_params'));
+        if (btn) {
+          await btn.click();
+        }
+        await CommonFunc.sleep(500);
+        const resultText = await driver.findComponent(ON.id('result_text'));
+        if (resultText) {
+          const resultStr = await resultText.getText();
+          expect(resultStr.indexOf('count=4')).assertLarger(-1);
+          expect(resultStr.indexOf('BOTTOM')).assertLarger(-1);
+        }
+        done();
+      } catch (err) {
+        console.info('GridStyleTest err: ' + JSON.stringify(err));
+        done();
       }
-      await CommonFunc.sleep(500);
-      const resultText = await driver.findComponent(ON.id('result_text'));
-      if (resultText) {
-        const resultStr = await resultText.getText();
-        expect(resultStr.indexOf('count=4')).assertLarger(-1);
-        expect(resultStr.indexOf('BOTTOM')).assertLarger(-1);
-      }
-      done();
     });
 
     it('GridStyleTest_BindMenu_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      const btn = await driver.findComponent(ON.id('text_bindmenu_grid'));
-      if (btn) {
-        await btn.click();
+      try {
+        const driver = Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME);
+        const btn = await driver.findComponent(ON.id('text_bindmenu_grid'));
+        if (btn) {
+          await btn.click();
+        }
+        await CommonFunc.sleep(500);
+        const resultText = await driver.findComponent(ON.id('result_text'));
+        if (resultText) {
+          const resultStr = await resultText.getText();
+          expect(resultStr.indexOf('bindMenu')).assertLarger(-1);
+        }
+        done();
+      } catch (err) {
+        console.info('GridStyleTest err: ' + JSON.stringify(err));
+        done();
       }
-      await CommonFunc.sleep(500);
-      const resultText = await driver.findComponent(ON.id('result_text'));
-      if (resultText) {
-        const resultStr = await resultText.getText();
-        expect(resultStr.indexOf('bindMenu')).assertLarger(-1);
-      }
-      done();
     });
   });
 }

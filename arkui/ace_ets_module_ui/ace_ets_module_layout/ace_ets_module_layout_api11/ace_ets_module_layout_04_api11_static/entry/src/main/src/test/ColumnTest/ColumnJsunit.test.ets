@@ -14,30 +14,16 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, expect, it, beforeAll,Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
-
 export default function columnJsunit() {
   describe('columnTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("columnTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("columnTest beforeEach start");
       let options: router.RouterOptions = {
@@ -58,11 +44,19 @@ export default function columnJsunit() {
       } catch (err) {
         console.error("push Column page error " + JSON.stringify(err));
       }
-      await UtilsTest.msSleep(2000)
+      try {
+      await UtilsTest.msSleep(1000)
+      } catch (err) {
+      console.info('columnTestTest await err: ' + JSON.stringify(err));
+      }
     });
 
     afterEach(async () => {
+      try {
       await UtilsTest.msSleep(1000)
+      } catch (err) {
+      console.info('columnTestTest await err: ' + JSON.stringify(err));
+      }
       console.info("Column after each called");
     });
 

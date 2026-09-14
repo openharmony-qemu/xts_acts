@@ -96,7 +96,7 @@ struct webViewScrollable {
           Button("web click").key('WebBackToTopButton').onClick(async () => {
             console.info("key==>" + this.str)
             await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
             let driver: Driver = Driver.create();
             switch (this.str) {
               case "emitBackToTop001": {

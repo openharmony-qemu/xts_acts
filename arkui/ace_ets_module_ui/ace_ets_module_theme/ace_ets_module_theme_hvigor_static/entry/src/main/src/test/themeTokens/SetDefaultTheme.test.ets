@@ -14,18 +14,12 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { Driver, MouseButton, ON, Point } from '@ohos.UiTest';
+import { afterAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { Resource, ResourceColor } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import { CustomColors, CustomTheme, Theme, ThemeControl } from '@ohos.arkui.theme';
 import { defaultThemeProperty } from '../../../ets/MainAbility/pages/themeTokensPages/SetDefaultThemeTestPage';
@@ -44,11 +38,6 @@ export default function setDefaultThemeTest() {
   const defaultThemeProperty: string = 'DefaultThemeProperty';
 
   describe('ActsSetDefaultThemeTest', () => {
-    beforeAll(async () => {
-      console.info('ActsSetDefaultThemeTest startAbility');
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    })
     beforeEach(async (): Promise<void> => {
       try {
         const options: router.RouterOptions = {

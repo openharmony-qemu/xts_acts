@@ -24,7 +24,7 @@ struct Index {
   @State message: string = 'MainAbility'
 
   aboutToAppear() {
-    console.info("start run testcase!!!!")
+    console.info('start run testcase!!!!')
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
         let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
         console.info('start run testcase!!!')

@@ -31,7 +31,7 @@ const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 const EVENT_ID_SET_SUITE_KEY = 177301;
 let driver = Driver.create();
 
-export default function webInitTest() {
+export default function webInitTest(): void {
 
     describe('WebInitTest', () => {
       beforeAll(async (): Promise<void> => {

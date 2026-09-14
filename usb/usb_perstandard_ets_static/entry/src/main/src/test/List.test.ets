@@ -19,6 +19,7 @@ import UsbManagerEnumTest from "./UsbManagerEnumTest.test";
 import UsbManagerNormalHapTest from "./UsbManagerNormalHap.test";
 import AddUsbManagerTest from "./AddUsbManagerTest.test";
 import UsbRetValueTest from "./UsbRetValueTest.test";
+import USBDeviceStructTest from "./USBDeviceStructTest.test";
 export default function testsuite() {
   UsbTransferTest();
   UsbBaseTest();
@@ -26,4 +27,5 @@ export default function testsuite() {
   UsbManagerNormalHapTest();
   AddUsbManagerTest();
   UsbRetValueTest();
+  USBDeviceStructTest();
 }

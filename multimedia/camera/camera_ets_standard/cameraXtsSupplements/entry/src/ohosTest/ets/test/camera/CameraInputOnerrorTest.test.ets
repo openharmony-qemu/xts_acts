@@ -28,6 +28,30 @@ let fdNumber: number;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
 let count = 0;
 
+interface TestCameraInfo {
+  cameraId: string;
+  cameraPosition: number;
+  cameraType: number;
+  connectionType: number;
+  hostDeviceName: string;
+  hostDeviceType: number;
+  cameraOrientation: number;
+  isRetractable?: boolean;
+  lensEquivalentFocalLength?: Array<number>;
+  isLogicalCamera?: boolean;
+  constituentCameraDevices?: Array<TestCameraInfo>;
+  lensFocalLength?: number;
+  minimumFocusDistance?: number;
+  lensDistortion?: Array<number>;
+  lensIntrinsicCalibration?: Array<number>;
+  sensorPhysicalSize?: Array<number>;
+  sensorPixelArraySize?: Array<number>;
+  sensorColorFilterArrangement?: number;
+  automotiveCameraPosition?: number;
+}
+
+let mainBackCamera: TestCameraInfo;
+
 function getCameraManager() {
   console.info(TAG, 'getCameraManager.');
   mCameraManager = camera.getCameraManager(testContext);
@@ -66,6 +90,36 @@ let callbackOn = (err: BusinessError) => {
   count = count + 1;
 }
 
+function getMainCameraInfo() {
+  console.info(TAG, 'getMainCameraInfo.');
+  if (isEmpty(mCameraDeviceArray)) {
+    return false;
+  }
+  let cameraDevice = mCameraDeviceArray[0];
+  mainBackCamera = {
+    cameraType: cameraDevice.cameraType,
+    lensIntrinsicCalibration: cameraDevice.lensIntrinsicCalibration,
+    connectionType: cameraDevice.connectionType,
+    cameraPosition: cameraDevice.cameraPosition,
+    cameraId: cameraDevice.cameraId,
+    lensDistortion: cameraDevice.lensDistortion,
+    sensorPixelArraySize: cameraDevice.sensorPixelArraySize,
+    isRetractable: cameraDevice.isRetractable,
+    minimumFocusDistance: cameraDevice.minimumFocusDistance,
+    automotiveCameraPosition: cameraDevice.automotiveCameraPosition,
+    hostDeviceName: cameraDevice.hostDeviceName,
+    cameraOrientation: cameraDevice.cameraOrientation,
+    lensFocalLength: cameraDevice.lensFocalLength,
+    isLogicalCamera: cameraDevice.isLogicalCamera,
+    lensEquivalentFocalLength: cameraDevice.lensEquivalentFocalLength,
+    hostDeviceType: cameraDevice.hostDeviceType,
+    sensorPhysicalSize: cameraDevice.sensorPhysicalSize,
+    sensorColorFilterArrangement: cameraDevice.sensorColorFilterArrangement,
+    constituentCameraDevices: cameraDevice.constituentCameraDevices
+  }
+  return true;
+}
+
 export default function CameraInputOnerrorTest() {
   describe('CameraInputOnerrorTest', () => {
     beforeAll(async () => {
@@ -74,6 +128,7 @@ export default function CameraInputOnerrorTest() {
       await driveFn();
       getCameraManager();
       getSupportedCameraDeviceArray();
+      getMainCameraInfo();
     });
 
     beforeEach(() => {
@@ -921,5 +976,916 @@ export default function CameraInputOnerrorTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1800
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1800
+     * @tc.desc   CameraInput -on_error -cameraPosition -CAMERA_POSITION_FRONT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1800', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1800';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.cameraPosition = camera.CameraPosition.CAMERA_POSITION_FRONT
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1900
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1900
+     * @tc.desc   CameraInput -on_error -cameraPosition - -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1900', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1900';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.cameraPosition = -1
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_CAMERA_TYPE_ON_ERROR_0100
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_CAMERA_TYPE_ON_ERROR_0100
+     * @tc.desc   CameraInput -on_error -cameraType -CAMERA_TYPE_WIDE_ANGLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_CAMERA_TYPE_ON_ERROR_0100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_CAMERA_TYPE_ON_ERROR_0100';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.cameraType = camera.CameraType.CAMERA_TYPE_WIDE_ANGLE
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0200
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0200
+     * @tc.desc   CameraInput -on_error -cameraType - -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0200', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0200';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.cameraType = -1
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0300
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0300
+     * @tc.desc   CameraInput -on_error -connectionType -CAMERA_CONNECTION_BUILT_IN.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0300', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0300';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.connectionType = camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0400
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0400
+     * @tc.desc   CameraInput -on_error -connectionType - -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0400', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0400';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.connectionType = -1
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0500
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0500
+     * @tc.desc   CameraInput -on_error -hostDeviceType -UNKNOWN_TYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0500', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0500';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.hostDeviceType = camera.HostDeviceType.UNKNOWN_TYPE
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0600
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0600
+     * @tc.desc   CameraInput -on_error -hostDeviceType - -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0600', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0600';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.hostDeviceType = -1
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0700
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0700
+     * @tc.desc   CameraInput -on_error -hostDeviceName - empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0700', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0700';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.hostDeviceName = ""
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0800
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0800
+     * @tc.desc   CameraInput -on_error -lensEquivalentFocalLength - not null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0800', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0800';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.lensEquivalentFocalLength = [13]
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0900
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0900
+     * @tc.desc   CameraInput -on_error -isLogicalCamera - true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0900', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0900';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.isLogicalCamera = true
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1000
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1000
+     * @tc.desc   CameraInput -on_error -isLogicalCamera - false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1000', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1000';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.isLogicalCamera = false
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1100
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1100
+     * @tc.desc   CameraInput -on_error -constituentCameraDevices - null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1100';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.constituentCameraDevices = []
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1200
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1200
+     * @tc.desc   CameraInput -on_error -cameraId - empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1200', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1200';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.cameraId = ""
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1300
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1300
+     * @tc.desc   CameraInput -on_error -lensDistortion - null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1300', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1300';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.lensDistortion = []
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1400
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1400
+     * @tc.desc   CameraInput -on_error -lensIntrinsicCalibration - null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1400', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1400';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.lensIntrinsicCalibration = []
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1500
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1500
+     * @tc.desc   CameraInput -on_error -sensorPhysicalSize - null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1500', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1500';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.sensorPhysicalSize = []
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1600
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1600
+     * @tc.desc   CameraInput -on_error -sensorPixelArraySize - null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1600', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1600';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.sensorPixelArraySize = []
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1700
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1700
+     * @tc.desc   CameraInput -on_error -sensorColorFilterArrangement - BGGR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1700', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1700';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.sensorColorFilterArrangement = camera.SensorColorFilterArrangement.BGGR
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1800
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1800
+     * @tc.desc   CameraInput -on_error -sensorColorFilterArrangement - GBRG.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1800', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1800';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.sensorColorFilterArrangement = camera.SensorColorFilterArrangement.GBRG
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1900
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1900
+     * @tc.desc   CameraInput -on_error -sensorColorFilterArrangement - GRBG.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1900', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_1900';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.sensorColorFilterArrangement = camera.SensorColorFilterArrangement.GRBG
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2000
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2000
+     * @tc.desc   CameraInput -on_error -sensorColorFilterArrangement - RGGB.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2000', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2000';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.sensorColorFilterArrangement = camera.SensorColorFilterArrangement.RGGB
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2100
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2100
+     * @tc.desc   CameraInput -on_error -sensorColorFilterArrangement - -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2100';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let useDevice = mainBackCamera
+      useDevice.sensorColorFilterArrangement = -1
+
+      try {
+        getCameraInput();
+        mCameraInput.on('error', useDevice, callbackOn);
+        await mCameraInput.open();
+        await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2200
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2200
+     * @tc.desc   CameraInput -on_error -automotiveCameraPosition - all enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2200', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_2200';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+
+      let automotiveCameraPositionArray = [
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_OTHER,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_FRONT,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_REAR,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_LEFT,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_RIGHT,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_OTHER,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_LEFT,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_CENTER,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_RIGHT,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_LEFT,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_CENTER,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_RIGHT,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_LEFT,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_CENTER,
+        camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_RIGHT,
+        -1
+      ]
+
+      try {
+        for (let pos of automotiveCameraPositionArray) {
+          count = 0
+          let useDevice = mainBackCamera
+          useDevice.sensorColorFilterArrangement = pos
+  
+          getCameraInput();
+          mCameraInput.on('error', useDevice, callbackOn);
+          await mCameraInput.open();
+          await mCameraInput.open();
+          mCameraInput.off('error', useDevice, callbackOn);
+          console.info(TAG, testName, 'Success', count);
+          expect(count == 1).assertTrue();
+          await mCameraInput?.close();
+        }
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect().assertFail();
+      } finally {
+        count = 0;
+        done();
+      }
+    })
+
   })
 }

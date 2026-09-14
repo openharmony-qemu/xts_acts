@@ -1519,5 +1519,167 @@ export default function AudioHapticTest() {
       }
       done();
     })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_SYSTEM_SOUND_PLAYER_LOAD_NULL_0100
+     * @tc.name testAudioSystemSoundPlayerLoadNull_0100
+     * @tc.desc Test load with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAudioSystemSoundPlayerLoadNull_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (!isSupportHaptic) {
+        console.log('file not exists');
+        done();
+        return;
+      }
+      try {
+        let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
+        let data = await systemSoundManager.createSystemSoundPlayer();
+        await systemSoundPlayer!.load(null);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`testAudioSystemSoundPlayerLoadNull_0100 error: ${error.code}, ${error.message}`);
+        expect(error.message).assertContain('load of null');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_SYSTEM_SOUND_PLAYER_LOAD_UNDEFINED_0200
+     * @tc.name testAudioSystemSoundPlayerLoadUndefined_0200
+     * @tc.desc Test load with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAudioSystemSoundPlayerLoadUndefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (!isSupportHaptic) {
+        console.log('file not exists');
+        done();
+        return;
+      }
+      try {
+        let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
+        let data = await systemSoundManager.createSystemSoundPlayer();
+        await systemSoundPlayer!.load(undefined);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`testAudioSystemSoundPlayerLoadUndefined_0200 error: ${error.code}, ${error.message}`);
+        expect(error.message).assertContain('load of null');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_SYSTEM_SOUND_PLAYER_PLAY_NULL_0100
+     * @tc.name testAudioSystemSoundPlayerPlayNull_0100
+     * @tc.desc Test play with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAudioSystemSoundPlayerPlayNull_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (!isSupportHaptic) {
+        console.log('file not exists');
+        done();
+        return;
+      }
+      try {
+        let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
+        let data = await systemSoundManager.createSystemSoundPlayer();
+        await systemSoundPlayer!.play(null);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`testAudioSystemSoundPlayerPlayNull_0100 error: ${error.code}, ${error.message}`);
+        expect(error.message).assertContain('play of null');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_SYSTEM_SOUND_PLAYER_PLAY_UNDEFINED_0200
+     * @tc.name testAudioSystemSoundPlayerPlayUndefined_0200
+     * @tc.desc Test play with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAudioSystemSoundPlayerPlayUndefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (!isSupportHaptic) {
+        console.log('file not exists');
+        done();
+        return;
+      }
+      try {
+        let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
+        let data = await systemSoundManager.createSystemSoundPlayer();
+        await systemSoundPlayer!.play(undefined);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`testAudioSystemSoundPlayerPlayUndefined_0200 error: ${error.code}, ${error.message}`);
+        expect(error.message).assertContain('play of null');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_SYSTEM_SOUND_PLAYER_UNLOAD_NULL_0100
+     * @tc.name testAudioSystemSoundPlayerUnloadNull_0100
+     * @tc.desc Test unload with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAudioSystemSoundPlayerUnloadNull_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (!isSupportHaptic) {
+        console.log('file not exists');
+        done();
+        return;
+      }
+      try {
+        let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
+        let data = await systemSoundManager.createSystemSoundPlayer();
+        await systemSoundPlayer!.unload(null);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`testAudioSystemSoundPlayerUnloadNull_0100 error: ${error.code}, ${error.message}`);
+        expect(error.message).assertContain('unload of null');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_SYSTEM_SOUND_PLAYER_UNLOAD_UNDEFINED_0200
+     * @tc.name testAudioSystemSoundPlayerUnloadUndefined_0200
+     * @tc.desc Test unload with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAudioSystemSoundPlayerUnloadUndefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (!isSupportHaptic) {
+        console.log('file not exists');
+        done();
+        return;
+      }
+      try {
+        let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
+        let data = await systemSoundManager.createSystemSoundPlayer();
+        await systemSoundPlayer!.unload(undefined);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`testAudioSystemSoundPlayerUnloadUndefined_0200 error: ${error.code}, ${error.message}`);
+        expect(error.message).assertContain('unload of null');
+        done();
+      }
+    });
   })
 }

@@ -1,0 +1,13 @@
+/node_modules
+/oh_modules
+/local.properties
+/autosign
+/.idea
+**/build
+/.hvigor
+**/hypium
+.cxx
+.clangd
+.clang-format
+.clang-tidy
+**/.test

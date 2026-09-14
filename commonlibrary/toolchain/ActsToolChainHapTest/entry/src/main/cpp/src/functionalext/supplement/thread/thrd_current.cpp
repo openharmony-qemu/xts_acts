@@ -34,6 +34,7 @@
 
 static int g_count = 0;
 static pthread_mutex_t g_mutex = PTHREAD_MUTEX_INITIALIZER;
+static thrd_t g_selfId;
 
 int TrylockWithTimeout(pthread_mutex_t *mutex)
 {
@@ -62,11 +63,11 @@ int TrylockWithTimeout(pthread_mutex_t *mutex)
 
 static int ThreadFuncA(void *arg)
 {
+    (void)arg;
     g_count++;
-    thrd_t id = thrd_current();
-    thrd_t expected = *static_cast<thrd_t*>(arg);
-    if (!(thrd_equal(id, expected))) {
-        t_error("%s thrd_current failed", __func__);
+    g_selfId = thrd_current();
+    if (!(thrd_equal(g_selfId, thrd_current()))) {
+        t_error("%s thrd_current inconsistent", __func__);
     }
 
     thrd_exit(thrd_success);
@@ -97,7 +98,7 @@ void ThrdCurrent0100(void)
     int result;
     thrd_t thr;
 
-    result = thrd_create(&thr, ThreadFuncA, &thr);
+    result = thrd_create(&thr, ThreadFuncA, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -111,6 +112,10 @@ void ThrdCurrent0100(void)
     result = thrd_join(thr, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
+    }
+
+    if (!(thrd_equal(g_selfId, thr))) {
+        t_error("%s thrd_current != created thr", __func__);
     }
 
     if (g_count != 1) {

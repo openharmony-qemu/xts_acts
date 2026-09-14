@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import {
@@ -28,27 +28,11 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest } from '../../Util.test'
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function UIComponentScrollSwiperDisplaycount0210() {
   describe('UIComponentScrollSwiperDisplaycount0210', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("UIComponentScrollSwiperDisplaycount0210 beforeEach start");
       try {
@@ -89,18 +73,27 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210', Level.LEVEL0, 
       await CommonFunc.sleep(3000)
       let driver = Driver.create()
       await CommonFunc.sleep(500);
-      let swiper = await driver.findComponent(ON.id("swiperdisplaycount0210"));
-      let point = await (swiper?.getBoundsCenter() as Promise<Point>);
-      await CommonFunc.sleep(1000);
-      await driver.fling({
-        x: point.x - 30, y: point.y
-      }, {
-        x: point.x + 30, y: point.y
-      }, 5, 1000);
+      let rect = CommonFunc.getComponentRectOnScreen('swiperdisplaycount0210');
+      let top: number = rect.top;
+      let right: number = rect.right;
+      let left: number = rect.left;
+      let bottom: number = rect.bottom;
+      let height: number = bottom - top;
+      let width: number = right - left;
+      console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210 rect: left=" + left + " right=" + right + " top=" + top + " bottom=" + bottom + " width=" + width + " height=" + height);
+      let centerY: int = Math.round(top + height / 2).toInt();
+      let startX: int = Math.round(left + width * 0.8).toInt();
+      let endX: int = Math.round(left + width * 0.2).toInt();
+      for (let i: int = 0; i < 5; i++) {
+        let fromPoint: Point = { x: startX, y: centerY } as Point;
+        let toPoint: Point = { x: endX, y: centerY } as Point;
+        await driver.fling(fromPoint, toPoint, 5, 1000);
+        await CommonFunc.sleep(1000);
+      }
       await CommonFunc.sleep(1000);
       let strIndex: string = inspector.getInspectorByKey('swiperdisplaycount0210_1')
       let jsonIndex = JSON.parseJsonElement(strIndex).getElement('$attrs').getString('content');
-      expect(jsonIndex).assertEqual('0')
+      expect(jsonIndex).assertEqual('5')
       await CommonFunc.sleep(1000);
       console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210 END');
       done();

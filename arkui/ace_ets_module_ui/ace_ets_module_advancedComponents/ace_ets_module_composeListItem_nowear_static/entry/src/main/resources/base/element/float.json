@@ -1,0 +1,12 @@
+{
+  "float": [
+    {
+      "name": "font_hello",
+      "value": "28.0vp"
+    },
+    {
+      "name": "font_world",
+      "value": "20.0fp"
+    }
+  ]
+}

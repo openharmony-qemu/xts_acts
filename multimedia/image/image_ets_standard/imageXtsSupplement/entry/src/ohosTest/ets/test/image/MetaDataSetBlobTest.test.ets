@@ -21,47 +21,28 @@ import fs from '@ohos.file.fs';
 import json from '@ohos.util.json';
 
 const TAG = 'MetaDataSetBlobTest.xts'
-let fdNumber: number;
-let imageSourceApi: image.ImageSource;
-let pixelMaps: image.PixelMap;
-let imageSource: image.ImageSource;
-let testContext: common.UIAbilityContext;
-let path: string;
-let file: fs.File;
-
 
 async function getFd(fileName: string) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let filePath = `file://${testContext.filesDir}/${fileName}`;
   console.info(TAG, 'image case filePath is ' + filePath);
   const fileInfo = await fs.open(filePath);
-  fdNumber = fileInfo.fd
+  let fdNumber: number = fileInfo.fd
+  return fdNumber
 }
 
 async function getImageSource(path: string): Promise<image.ImageSource> {
-  await getFd(path);
+  let fdNumber = await getFd(path);
   const imageSourceApi = image.createImageSource(fdNumber);
   console.info(TAG, "createImageSource: " + JSON.stringify(imageSourceApi.getImageInfoSync()));
+  await fs.close(fdNumber);
   return imageSourceApi;
-}
-
-async function getPropertiesAbnormalPromiseTest(testName: string, path: string): Promise<image.Metadata> {
-  imageSourceApi = await getImageSource(path);
-  let commodityPixelMap: image.PixelMap = await imageSourceApi.createPixelMap();
-  let pictureObj: image.Picture = await image.createPicture(commodityPixelMap);
-  let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
-  let metaData: image.Metadata | null = await pictureObj.getMetadata(metadataType);
-  console.log(TAG, testName, JSON.stringify(metaData));
-  return metaData;
 }
 
 export default function MetaDataSetBlobTest() {
   describe('MetaDataSetBlobTest', () => {
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
-      testContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      path = `file://${testContext.filesDir}/test.jpg`;
-      file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
     });
 
     beforeEach(() => {
@@ -74,7 +55,6 @@ export default function MetaDataSetBlobTest() {
 
     afterAll(async () => {
       console.info(TAG, 'afterAll case.');
-      await imageSourceApi?.release();
     });
 
     /**
@@ -88,16 +68,23 @@ export default function MetaDataSetBlobTest() {
     it('SUB_IMAGE_METADATA_SET_BLOB_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_METADATA_SET_BLOB_TEST_001';
       const path = 'test_exif_v2.jpg';
+      let imageSourceApi: image.ImageSource = await getImageSource(path);
+      let pixelMap: image.PixelMap = await imageSourceApi.createPixelMap();
+      let picture: image.Picture = await image.createPicture(pixelMap);
       try {
-        let metaData = await getPropertiesAbnormalPromiseTest(testName, path);
+        let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
+        let metaData: image.Metadata | null = await picture.getMetadata(metadataType);
+        console.log(TAG, testName, JSON.stringify(metaData));
         await metaData.setBlob(null);
         expect().assertFail();
-        done();
       } catch (error) {
-        console.error(TAG, testName, ' setBlob error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(7600206);
-        done();
+        console.error(TAG, testName, ' fail, ', error.message, error.code);
+        expect(error.code).assertEqual('7600206');
       }
+      await picture.release();
+      await pixelMap.release();
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -111,16 +98,23 @@ export default function MetaDataSetBlobTest() {
     it('SUB_IMAGE_METADATA_SET_BLOB_TEST_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_METADATA_SET_BLOB_TEST_002';
       const path = 'test_exif_v2.jpg';
+      let imageSourceApi: image.ImageSource = await getImageSource(path);
+      let pixelMap: image.PixelMap = await imageSourceApi.createPixelMap();
+      let picture: image.Picture = await image.createPicture(pixelMap);
       try {
-        let metaData = await getPropertiesAbnormalPromiseTest(testName, path);
+        let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
+        let metaData: image.Metadata | null = await picture.getMetadata(metadataType);
+        console.log(TAG, testName, JSON.stringify(metaData));
         await metaData.setBlob(undefined);
         expect().assertFail();
-        done();
       } catch (error) {
-        console.error(TAG, testName, ' setBlob error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(7600206);
-        done();
+        console.error(TAG, testName, ' fail, ', error.message, error.code);
+        expect(error.code).assertEqual('7600206');
       }
+      await picture.release();
+      await pixelMap.release();
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -134,24 +128,16 @@ export default function MetaDataSetBlobTest() {
     it('SUB_IMAGE_SOURCE_CREATE_PIXELMAP_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_SOURCE_CREATE_PIXELMAP_TEST_001';
       const path = 'test_exif_v2.jpg';
-      imageSourceApi = await getImageSource(path);
       try {
-        imageSourceApi.createPixelMap(async (err: BusinessError, pixelMap: image.PixelMap) => {
-          if (err) {
-            console.error(TAG, testName, `Failed to create pixelMap.code is ${err.code},message is ${err.message}`);
-            await imageSourceApi?.release();
-            expect().assertFail();
-          } else {
-            console.info(TAG, testName, 'Succeeded in creating pixelMap object.');
-            await imageSourceApi?.release();
-            expect(isEmpty(pixelMap.isEditable)).assertFalse();
-          }
-        })
+        let imageSourceApi: image.ImageSource = await getImageSource(path);
+        let pixelMap: image.PixelMap = await imageSourceApi.createPixelMap();
+        expect(isEmpty(pixelMap.isEditable)).assertFalse();
+        await pixelMap.release();
+        await imageSourceApi.release();
+        done();
       } catch (error) {
-        console.error(TAG, testName, ' setBlob error', error.message, error.code);
+        console.error(TAG, testName, ' fail, ', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSourceApi?.release();
         done();
       }
     })
@@ -167,17 +153,16 @@ export default function MetaDataSetBlobTest() {
     it('SUB_IMAGE_SOURCE_GET_IMAGE_PROPERTIES_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_SOURCE_GET_IMAGE_PROPERTIES_TEST_001';
       const path = 'test_exif_v2.jpg';
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi: image.ImageSource = await getImageSource(path);
       try {
         await imageSourceApi.getImageProperties(null);
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName, ' setBlob error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(401);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('401');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -191,17 +176,16 @@ export default function MetaDataSetBlobTest() {
     it('SUB_IMAGE_SOURCE_GET_IMAGE_PROPERTIES_TEST_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_SOURCE_GET_IMAGE_PROPERTIES_TEST_002';
       const path = 'test_exif_v2.jpg';
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi: image.ImageSource = await getImageSource(path);
       try {
         await imageSourceApi.getImageProperties(undefined);
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName, ' setBlob error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(401);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('401');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -269,21 +253,13 @@ export default function MetaDataSetBlobTest() {
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.imageWidth = 0;
       try {
-        await testExifMetadata.getProperties(null).then((data) => {
-          console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
-          expect().assertFail();
-        }).catch((error: BusinessError) => {
-          console.error(TAG, testName,
-            `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
-          expect().assertFail();
-        });
+        await testExifMetadata.getProperties(null)
+        expect().assertFail();
       } catch (error) {
         console.error(TAG, testName, 'exifMetadata getProperties error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(401);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('401');
       }
+      done();
     })
 
     /**
@@ -302,30 +278,22 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
-          await metaData.exifMetadata.getProperties(undefined).then((data) => {
-            console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,
-              `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
-            expect().assertFail();
-          });
+          await metaData.exifMetadata.getProperties(undefined);
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
         }
       } catch (error) {
         console.error(TAG, testName, 'exifMetadata getProperties error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(401);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('401');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -344,30 +312,23 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
-          await metaData.exifMetadata.setProperties(null).then((data) => {
-            console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,
-              `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
-            expect().assertFail();
-          });
+          await metaData.exifMetadata.setProperties(null);
+          expect().assertFail();
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
         }
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata setProperties error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(401);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('401');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -386,30 +347,23 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
-          await metaData.exifMetadata.setProperties(undefined).then((data) => {
-            console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,
-              `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
-            expect().assertFail();
-          });
+          await metaData.exifMetadata.setProperties(undefined);
+          expect().assertFail();
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
         }
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata setProperties error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(401);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('401');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -428,7 +382,7 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
@@ -441,11 +395,10 @@ export default function MetaDataSetBlobTest() {
         }
       } catch (error) {
         console.error(TAG, testName, 'exifMetadata setProperties error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(7600202);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('7600202');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -464,7 +417,7 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
@@ -621,10 +574,9 @@ export default function MetaDataSetBlobTest() {
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata clone error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSourceApi?.release();
-        done();
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -643,7 +595,7 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
@@ -657,11 +609,10 @@ export default function MetaDataSetBlobTest() {
         }
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata setBlob error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(7600206);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('7600206');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -680,7 +631,7 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
@@ -692,14 +643,12 @@ export default function MetaDataSetBlobTest() {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
         }
-        done();
       } catch (error) {
         console.error(TAG, testName, ' exifMetadata setBlob error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(7600206);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('7600206');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -718,30 +667,24 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-          await metaData.makerNoteHuaweiMetadata.setProperties(null).then(async () => {
-            console.info(TAG, testName, 'Set properties success.');
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,
-              `Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);
-            expect().assertFail();
-          })
+          await metaData.makerNoteHuaweiMetadata.setProperties(null);
+          console.info(TAG, testName, 'Set properties success.');
+          expect().assertFail();
         } else {
           console.error(TAG, testName, 'metadata is null. ');
           expect().assertFail();
         }
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setProperties error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(401);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('401');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -760,7 +703,7 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
@@ -773,11 +716,10 @@ export default function MetaDataSetBlobTest() {
         }
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setProperties error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(401);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('401');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -796,7 +738,7 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
@@ -809,11 +751,10 @@ export default function MetaDataSetBlobTest() {
         }
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setBlob error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(7600206);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('7600206');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -832,7 +773,7 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
@@ -845,11 +786,10 @@ export default function MetaDataSetBlobTest() {
         }
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata setBlob error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(7600206);
-      } finally {
-        await imageSourceApi?.release();
-        done();
+        expect(error.code).assertEqual('7600206');
       }
+      await imageSourceApi.release();
+      done();
     })
 
     /**
@@ -868,7 +808,7 @@ export default function MetaDataSetBlobTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      imageSourceApi = await getImageSource(path);
+      let imageSourceApi = await getImageSource(path);
       try {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
@@ -919,10 +859,9 @@ export default function MetaDataSetBlobTest() {
       } catch (error) {
         console.error(TAG, testName, ' makerNoteHuaweiMetadata clone error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSourceApi?.release();
-        done();
       }
+      await imageSourceApi.release();
+      done();
     });
 
     /**
@@ -947,17 +886,16 @@ export default function MetaDataSetBlobTest() {
         let ops: image.SourceOptions = {
           sourceDensity: 98,
         };
-        imageSourceApi = image.createImageSource(array, ops);
+        let imageSourceApi = image.createImageSource(array, ops);
         let imageData = await imageSourceApi.readImageMetadata();
         console.info(TAG, testName, 'metadataType');
         await imageData.heifsMetadata?.setBlob(null);
         console.info(TAG, testName, 'heifsMetadata success setBlob');
         expect(isEmpty(imageData)).assertFalse();
-        await imageSourceApi?.release();
+        await imageSourceApi.release();
         done();
       } catch (error) {
         console.error(TAG, testName, ' heifsMetadata setBlob error', error.message, error.code);
-        await imageSourceApi?.release();
         expect().assertFail();
         done();
       }
@@ -985,21 +923,20 @@ export default function MetaDataSetBlobTest() {
         let ops: image.SourceOptions = {
           sourceDensity: 98,
         };
-        imageSourceApi = image.createImageSource(array, ops);
+        let imageSourceApi = image.createImageSource(array, ops);
         let imageData = await imageSourceApi.readImageMetadata();
         console.info(TAG, testName, 'metadataType');
         await imageData.heifsMetadata?.setBlob(undefined);
         console.info(TAG, testName, 'heifsMetadata success setBlob');
         expect(isEmpty(imageData)).assertFalse();
+        await imageSourceApi.release();
         done();
       } catch (error) {
         console.error(TAG, testName, ' heifsMetadata setBlob error', error.message, error.code);
-        await imageSourceApi?.release();
         expect().assertFail();
         done();
       }
     });
-
 
     /**
      * @tc.number     SUB_IMAGE_SOURCE_HEIFS_METADATA_CLONE_TEST_001
@@ -1023,18 +960,17 @@ export default function MetaDataSetBlobTest() {
         let ops: image.SourceOptions = {
           sourceDensity: 98,
         };
-        imageSourceApi = image.createImageSource(array, ops);
-        let imageData = await imageSourceApi.readImageMetadata()
-        console.info(TAG, testName, 'metadataType',json.stringify(imageData.heifsMetadata))
-        let result:image.HeifsMetadata|undefined= await imageData.heifsMetadata?.clone()
-        console.info(TAG, testName, 'heifsMetadata success setBlob');
+        let imageSourceApi = image.createImageSource(array, ops);
+        let imageData = await imageSourceApi.readImageMetadata();
+        console.info(TAG, testName, 'metadataType', JSON.stringify(imageData.heifsMetadata));
+        let result: image.HeifsMetadata | undefined = await imageData.heifsMetadata?.clone();
+        console.info(TAG, testName, 'heifsMetadata success clone');
         expect(result?.heifsDelayTime).assertEqual(imageData.heifsMetadata?.heifsDelayTime);
+        await imageSourceApi.release();
         done();
       } catch (error) {
-        console.error(TAG, testName, ' heifsMetadata setBlob error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(7600202);
-      } finally {
-        imageSourceApi?.release();
+        console.error(TAG, testName, ' heifsMetadata clone error', error.message, error.code);
+        expect(error.code).assertEqual('7600202');
         done();
       }
     });
@@ -1049,25 +985,25 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00010';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.UNKNOWN };
-        console.warn(TAG, testName, ' createImageSource success');
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         console.warn(TAG, testName, ' createImageSource success');
         let res = await imageSource.getImageInfo();
         console.warn(TAG, testName, ' createImageSource success');
         expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
         console.warn(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
-
 
     /**
      * @tc.name   SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00011
@@ -1079,18 +1015,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00011';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.BGRA_8888 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.BGRA_8888).assertTrue();
-        console.info(TAG, testName, ' createImageSource success',JSON.stringify(res));
+        console.info(TAG, testName, ' createImageSource success', JSON.stringify(res));
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1105,18 +1043,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00012';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_565 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGB_565).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1131,18 +1071,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00013';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_8888 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1157,18 +1099,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00014';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.BGRA_8888 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.BGRA_8888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1183,18 +1127,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00015';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_888 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGB_888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1209,18 +1155,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00016';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ALPHA_8 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.ALPHA_8).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1235,18 +1183,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00017', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00017';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_F16 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGBA_F16).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1261,18 +1211,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00018', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00018';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV21 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.NV21).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1287,18 +1239,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00019', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00019';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV12 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.NV12).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1313,18 +1267,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00020', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00020';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_1010102 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGBA_1010102).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1339,18 +1295,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00021', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00021';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCBCR_P010 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.YCBCR_P010).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1365,18 +1323,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00022', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00022';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCRCB_P010 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.YCRCB_P010).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1391,18 +1351,20 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00023', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_URL_00023';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ASTC_4x4 };
-        imageSource = image.createImageSource(path, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.ASTC_4x4).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1417,18 +1379,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00007';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.UNKNOWN };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1443,18 +1409,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00008';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ARGB_8888 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.ARGB_8888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1469,18 +1439,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00009';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_565 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGB_565).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1495,18 +1469,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00010';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_8888 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1521,18 +1499,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00011';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.BGRA_8888 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.BGRA_8888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1547,18 +1529,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00012';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_888 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGB_888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1573,18 +1559,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00013';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ALPHA_8 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.ALPHA_8).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1599,18 +1589,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00014';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_F16 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGBA_F16).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1625,18 +1619,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00015';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV21 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.NV21).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1651,18 +1649,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00016';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV12 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.NV12).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1677,18 +1679,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00017', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00017';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_1010102 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGBA_1010102).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1703,18 +1709,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00018', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00018';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCBCR_P010 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.YCBCR_P010).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1729,18 +1739,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00019', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00019';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCRCB_P010 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.YCRCB_P010).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1755,18 +1769,22 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00020', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_IMAGE_SOURCE_FD_00020';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
       try {
         let sourceOptions: image.SourceOptions =
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ASTC_4x4 };
-        imageSource = image.createImageSource(file.fd, sourceOptions);
+        let imageSource: image.ImageSource = image.createImageSource(file.fd, sourceOptions);
+        await fs.close(file.fd);
         let res = await imageSource.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.ASTC_4x4).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
         expect().assertFail();
-      } finally {
-        await imageSource?.release();
         done();
       }
     });
@@ -1781,6 +1799,8 @@ export default function MetaDataSetBlobTest() {
      */
     it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000001';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       const formats = [
         image.PixelMapFormat.RGBA_8888,
         image.PixelMapFormat.BGRA_8888,
@@ -1799,21 +1819,22 @@ export default function MetaDataSetBlobTest() {
             cropAndScaleStrategy: image.CropAndScaleStrategy.CROP_FIRST,
             index: 0
           };
-          pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+          let pixelMaps: image.PixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
           expect(isEmpty(pixelMaps)).assertFalse();
           console.warn(TAG, testName, format, ' createPixelMap success', JSON.stringify(pixelMaps));
           let res = await pixelMaps.getImageInfo();
           console.warn(TAG, testName, format, ' createPixelMap success', JSON.stringify(res));
           expect(res.pixelFormat == format).assertTrue();
           console.warn(TAG, testName, format, ' createPixelMap success', JSON.stringify(res));
+          await pixelMaps.release();
+          await imageSource.release();
+          done();
         } catch (error) {
           console.error(TAG, testName, format, ' createPixelMap error', error);
           expect().assertFail();
-        } finally {
-          await pixelMaps?.release();
+          done();
         }
       }
-      done();
     });
 
     /**
@@ -1826,6 +1847,8 @@ export default function MetaDataSetBlobTest() {
      */
     it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000002';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let imageSource = image.createImageSource(path);
         let decodingOptions: image.DecodingOptions = {
@@ -1837,14 +1860,15 @@ export default function MetaDataSetBlobTest() {
           cropAndScaleStrategy: image.CropAndScaleStrategy.CROP_FIRST,
           index: 0
         };
-        pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+        let pixelMaps: image.PixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
         expect(pixelMaps.isEditable).assertTrue();
         console.info(TAG, testName, ' createPixelMap success');
+        await pixelMaps.release();
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createPixelMap error', error);
         expect().assertFail();
-      } finally {
-        await pixelMaps?.release();
         done();
       }
     });
@@ -1859,6 +1883,8 @@ export default function MetaDataSetBlobTest() {
      */
     it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000003';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let imageSource = image.createImageSource(path);
         let decodingOptions: image.DecodingOptions = {
@@ -1870,14 +1896,15 @@ export default function MetaDataSetBlobTest() {
           cropAndScaleStrategy: image.CropAndScaleStrategy.CROP_FIRST,
           index: 0
         };
-        pixelMaps = await imageSource.createPixelMapUsingAllocator(decodingOptions, image.AllocatorType.SHARE_MEMORY);
-        expect(pixelMaps.isEditable).assertFalse()
+        let pixelMaps: image.PixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+        expect(pixelMaps.isEditable).assertFalse();
         console.info(TAG, testName, ' createPixelMap success');
+        await pixelMaps.release();
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, ' createPixelMap error', error);
         expect().assertFail();
-      } finally {
-        await pixelMaps?.release();
         done();
       }
     });
@@ -1892,6 +1919,8 @@ export default function MetaDataSetBlobTest() {
      */
     it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000004';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let imageSource = image.createImageSource(path);
         let decodingOptions: image.DecodingOptions = {
@@ -1900,16 +1929,17 @@ export default function MetaDataSetBlobTest() {
           desiredPixelFormat: image.PixelMapFormat.UNKNOWN,
           index: 0
         };
-        pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+        let pixelMaps: image.PixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
         let res = await pixelMaps.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
         console.info(TAG, testName, image.PixelMapFormat.UNKNOWN, ' createPixelMap success');
+        await pixelMaps.release();
+        await imageSource.release();
+        done();
       } catch (error) {
         console.error(TAG, testName, image.PixelMapFormat.UNKNOWN, ' createPixelMap error', error,
           JSON.stringify(error));
         expect().assertFail();
-      } finally {
-        await pixelMaps?.release();
         done();
       }
     });
@@ -1924,6 +1954,8 @@ export default function MetaDataSetBlobTest() {
      */
     it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000005';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       const formats = [
         image.PixelMapFormat.ARGB_8888,
         image.PixelMapFormat.RGBA_F16,
@@ -1937,19 +1969,19 @@ export default function MetaDataSetBlobTest() {
             desiredPixelFormat: format,
             index: 0
           };
-          pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+          let pixelMaps: image.PixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
           let res = await pixelMaps.getImageInfo();
           expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
           console.info(TAG, testName, format, ' createPixelMap success');
+          await pixelMaps.release();
+          await imageSource.release();
+          done();
         } catch (error) {
-          console.error(TAG, testName, format, ' createPixelMap error', error,
-            JSON.stringify(error));
+          console.error(TAG, testName, format, ' createPixelMap error', error, JSON.stringify(error));
           expect().assertFail();
-        } finally {
-          await pixelMaps?.release();
+          done();
         }
       }
-      done();
     });
 
     /**
@@ -1962,6 +1994,8 @@ export default function MetaDataSetBlobTest() {
      */
     it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000006';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let imageSource = image.createImageSource(path);
         let decodingOptions: image.DecodingOptions = {
@@ -1970,16 +2004,16 @@ export default function MetaDataSetBlobTest() {
           desiredPixelFormat: image.PixelMapFormat.RGBA_1010102,
           index: 0
         };
-        pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+        let pixelMaps: image.PixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
         let res = await pixelMaps.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
         console.info(TAG, testName, image.PixelMapFormat.RGBA_1010102, ' createPixelMap success');
+        await pixelMaps.release();
+        await imageSource.release();
+        done();
       } catch (error) {
-        console.error(TAG, testName, image.PixelMapFormat.RGBA_1010102, ' createPixelMap error', error,
-          JSON.stringify(error));
+        console.error(TAG, testName, image.PixelMapFormat.RGBA_1010102, ' createPixelMap error', error, JSON.stringify(error));
         expect().assertFail();
-      } finally {
-        await pixelMaps?.release();
         done();
       }
     });
@@ -1994,6 +2028,8 @@ export default function MetaDataSetBlobTest() {
      */
     it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000007';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
       try {
         let imageSource = image.createImageSource(path);
         let decodingOptions: image.DecodingOptions = {
@@ -2002,16 +2038,16 @@ export default function MetaDataSetBlobTest() {
           desiredPixelFormat: image.PixelMapFormat.YCBCR_P010,
           index: 0
         };
-        pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
+        let pixelMaps: image.PixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
         let res = await pixelMaps.getImageInfo();
         expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
         console.info(TAG, testName, image.PixelMapFormat.YCBCR_P010, ' createPixelMap success');
+        await pixelMaps.release();
+        await imageSource.release();
+        done();
       } catch (error) {
-        console.error(TAG, testName, image.PixelMapFormat.YCBCR_P010, ' createPixelMap error', error,
-          JSON.stringify(error));
+        console.error(TAG, testName, image.PixelMapFormat.YCBCR_P010, ' createPixelMap error', error, JSON.stringify(error));
         expect().assertFail();
-      } finally {
-        await pixelMaps?.release();
         done();
       }
     });
@@ -2026,25 +2062,28 @@ export default function MetaDataSetBlobTest() {
      */
     it('SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SEND_ABLE_IMAGE_CREATE_PIXEL_MAP_SYNC_000008';
+      let testContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let path = `file://${testContext.filesDir}/test.jpg`;
+      let pixelMaps: image.PixelMap;
+      let decodingOptions: image.DecodingOptions = {
+        editable: true,
+        rotate: 10,
+        desiredPixelFormat: image.PixelMapFormat.ALPHA_8,
+        index: 0
+      };
+      let imageSource = image.createImageSource(path);
       try {
-        let imageSource = image.createImageSource(path);
-        let decodingOptions: image.DecodingOptions = {
-          editable: true,
-          rotate: 10,
-          desiredPixelFormat: image.PixelMapFormat.ALPHA_8,
-          index: 0
-        };
         pixelMaps = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, image.AllocatorType.SHARE_MEMORY);
-        expect().assertFail();
         console.info(TAG, testName, image.PixelMapFormat.ALPHA_8, ' createPixelMap success');
-      } catch (error) {
-        console.error(TAG, testName, image.PixelMapFormat.ALPHA_8, ' createPixelMap error', error,
-          JSON.stringify(error));
-        expect(Number(error.code)).assertEqual(7700301);
-      } finally {
-        await pixelMaps?.release();
+        expect().assertFail();
         done();
+      } catch (error) {
+        console.error(TAG, testName, image.PixelMapFormat.ALPHA_8, ' createPixelMap error', error, JSON.stringify(error));
+        expect(error.code).assertEqual('7700301');
       }
+      await imageSource.release();
+      done();
     });
+
   })
 }

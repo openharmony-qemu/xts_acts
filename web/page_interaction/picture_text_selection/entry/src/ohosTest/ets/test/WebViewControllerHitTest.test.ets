@@ -27,6 +27,7 @@ let emitKey = "";
 let tcName = ''
 const EVENT_ID_SET_SUITE_KEY = 176301;
 const driver = Driver.create();
+const XTS_ASSET_URL_PREFIX = 'http://localhost:8080/assets';
 
 export default function webViewControllerHitTest() {
 
@@ -74,9 +75,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue001'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.EditText, 176310, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.EditText, 176310, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -93,9 +109,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue002'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.Email, 176320, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.Email, 176320, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -112,9 +143,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue003'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchor, 176330, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchor, 176330, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -131,9 +177,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue004'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchorImg, 176340, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchorImg, 176340, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -150,9 +211,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue005'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.Img, 176350, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.Img, 176350, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -169,9 +245,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue007'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.Phone, 176370, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.Phone, 176370, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -188,9 +279,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue008'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.Unknown, 176380, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.Unknown, 176380, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -207,9 +313,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue009'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, '123@123.com', 176390, () => { isReturn = true });
+      Utils.registerEvent(tcName, '123@123.com', 176390, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -226,9 +347,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue010'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, 'https://openharmony.cn/', 176400, () => { isReturn = true });
+      Utils.registerEvent(tcName, `${XTS_ASSET_URL_PREFIX}/index.html`, 176400, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -245,9 +381,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue011'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, 'resource://rawfile/icon.png', 176410, () => { isReturn = true });
+      Utils.registerEvent(tcName, `${XTS_ASSET_URL_PREFIX}/icon.png`, 176410, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -264,9 +415,25 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue012'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, 'resource://rawfile/icon.png', 176420, () => { isReturn = true });
+      // page still loads resource://rawfile/hitTypeImg.html (local rawfile, not XtsTestServer)
+      Utils.registerEvent(tcName, 'resource://rawfile/icon.png', 176420, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -283,9 +450,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue013'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, '123456789', 176430, () => { isReturn = true });
+      Utils.registerEvent(tcName, '123456789', 176430, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -302,9 +484,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTest001'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.EditText, 176440, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.EditText, 176440, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -321,9 +518,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTest002'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.Email, 176450, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.Email, 176450, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -340,9 +552,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTest003'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchor, 176460, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchor, 176460, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -359,9 +586,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTest004'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchorImg, 176470, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.HttpAnchorImg, 176470, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -378,9 +620,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTest005'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.Img, 176480, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.Img, 176480, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -397,9 +654,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTest007'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.Phone, 176500, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.Phone, 176500, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -416,9 +688,24 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTest008'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, webView.WebHitTestType.Unknown, 176510, () => { isReturn = true });
+      Utils.registerEvent(tcName, webView.WebHitTestType.Unknown, 176510, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
   })

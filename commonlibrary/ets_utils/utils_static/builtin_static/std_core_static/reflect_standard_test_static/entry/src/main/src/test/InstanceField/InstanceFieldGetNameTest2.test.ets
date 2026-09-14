@@ -254,7 +254,7 @@ class ShadowDerived_061 extends ShadowBase_061 {
 }
 
 class FixedArrName_062 {
-  public fa: FixedArray<int> = new FixedArray<int>(3)
+  public fa: FixedArray<int> = new FixedArray<int>(3, 0)
 }
 
 class MultiDim_063 {

@@ -28,9 +28,9 @@ export async function copyRawfileToSandbox(
       let file = fs.openSync(targetPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
       fs.writeSync(file.fd, buffer.buffer);
       fs.closeSync(file);
-      console.log("[rawfile_copy_to_sandbox] " + name + " is copy success");
+      console.log('[rawfile_copy_to_sandbox] ' + name + ' is copy success');
     } catch (e) {
-      console.log("[rawfile_copy_to_sandbox] " + name + " is copy failed: " + JSON.stringify(e));
+      console.log('[rawfile_copy_to_sandbox] ' + name + ' is copy failed: ' + JSON.stringify(e));
     }
   }
 }

@@ -24,7 +24,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 
 let testAbilityContext: common.UIAbilityContext;
 
-export default function webConfigCookieCharacter() {
+export default function webConfigCookieCharacter(): void {
 
   describe('webConfigCookieCharacterTestSuite', () => {
 
@@ -85,7 +85,7 @@ export default function webConfigCookieCharacter() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitConfigCookieCharacter003', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testConfigCookieCharacterStatic003', '', 133480, done);
+      Utils.registerEvent('testConfigCookieCharacterStatic003', 'a=b', 133480, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webConfigCookieCharacterButton', 10, '');
       await Utils.msSleep(2000);
@@ -103,7 +103,7 @@ export default function webConfigCookieCharacter() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitConfigCookieCharacter004', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testConfigCookieCharacterStatic004', '', 133490, done);
+      Utils.registerEvent('testConfigCookieCharacterStatic004', 'a=b', 133490, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webConfigCookieCharacterButton', 10, '');
       await Utils.msSleep(2000);
@@ -157,7 +157,7 @@ export default function webConfigCookieCharacter() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitConfigCookieIncludeHttpOnlyCharacter003', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testConfigCookieIncludeHttpOnlyCharacterStatic003', '', 133520, done);
+      Utils.registerEvent('testConfigCookieIncludeHttpOnlyCharacterStatic003', 'a=b,HttpOnly', 133520, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webConfigCookieCharacterButton', 10, '');
       await Utils.msSleep(2000);
@@ -175,7 +175,7 @@ export default function webConfigCookieCharacter() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitConfigCookieIncludeHttpOnlyCharacter004', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testConfigCookieIncludeHttpOnlyCharacterStatic004', '', 133530, done);
+      Utils.registerEvent('testConfigCookieIncludeHttpOnlyCharacterStatic004', 'a=b,HttpOnly', 133530, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webConfigCookieCharacterButton', 10, '');
       await Utils.msSleep(2000);

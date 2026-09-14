@@ -17,7 +17,7 @@
   "module": {
     "name": "phone",
     "type": "feature",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
+    "srcEntry": "./ets/Application/AbilityStage.ets",
     "description": "$string:phone_entry_dsc",
     "mainElement": "MainAbility",
     "deviceTypes": [],

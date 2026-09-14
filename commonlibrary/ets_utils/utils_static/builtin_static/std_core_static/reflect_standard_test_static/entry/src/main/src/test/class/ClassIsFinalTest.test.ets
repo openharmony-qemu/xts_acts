@@ -498,7 +498,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsFinal016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixedArr = new FixedArray<int>(10)
+      let fixedArr = new FixedArray<int>(10, 0)
       let cls = Class.of(fixedArr)
       expect(cls.isFinal()).assertEqual(true)
     });

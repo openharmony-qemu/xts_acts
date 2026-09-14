@@ -15,29 +15,16 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index";
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function Row_Margin() {
   describe('Row_Margin', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Row_Margin beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Row_Margin beforeEach start");
       let options: router.RouterOptions = {
@@ -57,12 +44,20 @@ export default function Row_Margin() {
       } catch (err) {
         console.error("push Row_Margin page error " + JSON.stringify(err));
       }
+      try {
       await CommonFunc.sleep(1000)
+      } catch (err) {
+      console.info('Row_MarginTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_Margin beforeEach end");
     });
 
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000)
+      } catch (err) {
+      console.info('Row_MarginTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_Margin after each called");
     });
 
@@ -82,7 +77,11 @@ it('testParentComponentChangedRowMargin_static_01', Level.LEVEL0, async (done: (
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'margin', value: 5
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_MarginTest await err: ' + JSON.stringify(err));
+      }
       let Column: RectValue = CommonFunc.getComponentRect('Column_Row_Margin');
       let Row: RectValue = CommonFunc.getComponentRect('Row_Margin_Row');
       let Text1: RectValue = CommonFunc.getComponentRect('Row_Margin_Text1');

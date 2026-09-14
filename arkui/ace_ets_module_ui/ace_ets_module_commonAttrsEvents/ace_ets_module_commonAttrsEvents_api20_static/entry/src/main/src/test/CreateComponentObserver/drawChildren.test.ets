@@ -16,12 +16,11 @@
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, beforeAll, afterEach, TestType, Size } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, afterEach, TestType, Size } from '../../../../hypium/index';
 import { i18n } from '@kit.LocalizationKit';
 import display from '@ohos.display';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test'
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -32,11 +31,6 @@ const SLEEP_TIME_2500 = 2500;
 
 export default function DrawChildrenTest() {
   describe('DrawChildrenTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("DrawChildrenTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api20.static", "EntryAbility")
-    });
 
     beforeEach(async () => {
       console.info('DrawChildrenTest beforeEach start');
@@ -68,21 +62,26 @@ export default function DrawChildrenTest() {
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
 it('DrawChildrenTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('DrawChildrenTest_static_001 START');
-      await Utils.sleep(SLEEP_TIME_1000);
-      let strJson = inspector.getInspectorByKey('Button1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('DrawChildrenTest_static_001 component obj is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('text1尺寸ok');
-      let driver = Driver.create();
-      let btn1 = await driver.findComponent(ON.id('Button1'));
-      await (btn1?.click() as Promise<void>);
-      await Utils.sleep(SLEEP_TIME_1000);
-      strJson = inspector.getInspectorByKey('Button1');
-      obj = JSON.parseJsonElement(strJson);
-      console.info('DrawChildrenTest_static_001 component obj is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('text1尺寸okok');
-      console.info('[DrawChildrenTest_static_001] END');
+      try {
+        console.info('DrawChildrenTest_static_001 START');
+        await Utils.sleep(SLEEP_TIME_1000);
+        let strJson = inspector.getInspectorByKey('Button1');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('DrawChildrenTest_static_001 component obj is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('text1尺寸ok');
+        let driver = Driver.create();
+        let btn1 = await driver.findComponent(ON.id('Button1'));
+        await (btn1?.click() as Promise<void>);
+        await Utils.sleep(SLEEP_TIME_1000);
+        strJson = inspector.getInspectorByKey('Button1');
+        obj = JSON.parseJsonElement(strJson);
+        console.info('DrawChildrenTest_static_001 component obj is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('text1尺寸okok');
+        console.info('[DrawChildrenTest_static_001] END');
+      } catch (err) {
+        console.error('DrawChildrenTest_static_001 error:' + err);
+        expect(false).assertTrue();
+      }
       done();
     });
 
@@ -95,22 +94,27 @@ it('DrawChildrenTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
 it('DrawChildrenTest_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('DrawChildrenTest_static_002 START');
-      await Utils.sleep(SLEEP_TIME_1000);
-      let strJson = inspector.getInspectorByKey('Button2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('DrawChildrenTest_static_002 component obj is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('text2旋转ok');
-      await Utils.sleep(SLEEP_TIME_1000);
-      let driver = Driver.create();
-      let btn1 = await driver.findComponent(ON.id('Button2'));
-      await (btn1?.click() as Promise<void>);
-      await Utils.sleep(SLEEP_TIME_1000);
-      strJson = inspector.getInspectorByKey('Button2');
-      obj = JSON.parseJsonElement(strJson);
-      console.info('DrawChildrenTest_static_002 component obj is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('text2旋转okok');
-      console.info('[DrawChildrenTest_static_002] END');
+      try {
+        console.info('DrawChildrenTest_static_002 START');
+        await Utils.sleep(SLEEP_TIME_1000);
+        let strJson = inspector.getInspectorByKey('Button2');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('DrawChildrenTest_static_002 component obj is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('text2旋转ok');
+        await Utils.sleep(SLEEP_TIME_1000);
+        let driver = Driver.create();
+        let btn1 = await driver.findComponent(ON.id('Button2'));
+        await (btn1?.click() as Promise<void>);
+        await Utils.sleep(SLEEP_TIME_1000);
+        strJson = inspector.getInspectorByKey('Button2');
+        obj = JSON.parseJsonElement(strJson);
+        console.info('DrawChildrenTest_static_002 component obj is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('text2旋转okok');
+        console.info('[DrawChildrenTest_static_002] END');
+      } catch (err) {
+        console.error('DrawChildrenTest_static_002 error:' + err);
+        expect(false).assertTrue();
+      }
       done();
     });
 
@@ -123,21 +127,26 @@ it('DrawChildrenTest_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
 it('DrawChildrenTest_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('DrawChildrenTest_static_003 START');
-      await Utils.sleep(SLEEP_TIME_1000);
-      let strJson = inspector.getInspectorByKey('Button3');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('DrawChildrenTest_static_003 component obj is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('text1offokok');
-      let driver = Driver.create();
-      let btn1 = await driver.findComponent(ON.id('Button3'));
-      await (btn1?.click() as Promise<void>);
-      await Utils.sleep(SLEEP_TIME_1000);
-      strJson = inspector.getInspectorByKey('Button3');
-      obj = JSON.parseJsonElement(strJson);
-      console.info('DrawChildrenTest_static_003 component obj is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('text1offokok');
-      console.info('[DrawChildrenTest_static_003] END');
+      try {
+        console.info('DrawChildrenTest_static_003 START');
+        await Utils.sleep(SLEEP_TIME_1000);
+        let strJson = inspector.getInspectorByKey('Button3');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('DrawChildrenTest_static_003 component obj is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('text1offokok');
+        let driver = Driver.create();
+        let btn1 = await driver.findComponent(ON.id('Button3'));
+        await (btn1?.click() as Promise<void>);
+        await Utils.sleep(SLEEP_TIME_1000);
+        strJson = inspector.getInspectorByKey('Button3');
+        obj = JSON.parseJsonElement(strJson);
+        console.info('DrawChildrenTest_static_003 component obj is: ' + obj.getElement('$attrs').getString('content'));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('text1offokok');
+        console.info('[DrawChildrenTest_static_003] END');
+      } catch (err) {
+        console.error('DrawChildrenTest_static_003 error:' + err);
+        expect(false).assertTrue();
+      }
       done();
     });
   })

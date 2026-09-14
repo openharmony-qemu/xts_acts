@@ -35,7 +35,7 @@ class Sample {
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }
@@ -76,8 +76,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
         data: new Sample()
       };
       try {
-        emitter1.once("eventOnce", callback1);
-        emitter2.once("eventOnce", callback2);
+        emitter1.once('eventOnce', callback1);
+        emitter2.once('eventOnce', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -93,8 +93,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventOnce");
-        let num2: number = emitter2.getListenerCount("eventOnce");
+        let num1: number = emitter1.getListenerCount('eventOnce');
+        let num2: number = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -111,8 +111,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.emit("eventOnce", eventData);
-        emitter2.emit("eventOnce", eventData);
+        emitter1.emit('eventOnce', eventData);
+        emitter2.emit('eventOnce', eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -129,8 +129,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventOnce");
-        emitter2.off("eventOnce");
+        emitter1.off('eventOnce');
+        emitter2.off('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -146,8 +146,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventOnce");
-        let num2 = emitter2.getListenerCount("eventOnce");
+        let num1 = emitter1.getListenerCount('eventOnce');
+        let num2 = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -193,8 +193,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
         data: new Sample()
       };
       try {
-        emitter1.once("eventOnce", callback1);
-        emitter2.once("eventOnce", callback2);
+        emitter1.once('eventOnce', callback1);
+        emitter2.once('eventOnce', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -210,8 +210,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventOnce");
-        let num2: number = emitter2.getListenerCount("eventOnce");
+        let num1: number = emitter1.getListenerCount('eventOnce');
+        let num2: number = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -228,8 +228,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.emit("eventOnce", options, eventData);
-        emitter2.emit("eventOnce", options, eventData);
+        emitter1.emit('eventOnce', options, eventData);
+        emitter2.emit('eventOnce', options, eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -246,8 +246,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventOnce");
-        emitter2.off("eventOnce");
+        emitter1.off('eventOnce');
+        emitter2.off('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -263,8 +263,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventOnce");
-        let num2 = emitter2.getListenerCount("eventOnce");
+        let num1 = emitter1.getListenerCount('eventOnce');
+        let num2 = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -311,8 +311,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
           }
         }
       try {
-        emitter1.once("eventOnce", callback1);
-        emitter2.once("eventOnce", callback2);
+        emitter1.once('eventOnce', callback1);
+        emitter2.once('eventOnce', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -328,8 +328,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventOnce");
-        let num2: number = emitter2.getListenerCount("eventOnce");
+        let num1: number = emitter1.getListenerCount('eventOnce');
+        let num2: number = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -352,8 +352,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
           data: new Sample()
         };
         count = 0
-        emitter1.emit("eventOnce", options, eventData);
-        emitter2.emit("eventOnce", options, eventData);
+        emitter1.emit('eventOnce', options, eventData);
+        emitter2.emit('eventOnce', options, eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -370,8 +370,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventOnce", callback1);
-        emitter2.off("eventOnce", callback2);
+        emitter1.off('eventOnce', callback1);
+        emitter2.off('eventOnce', callback2);
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -387,8 +387,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventOnce");
-        let num2 = emitter2.getListenerCount("eventOnce");
+        let num1 = emitter1.getListenerCount('eventOnce');
+        let num2 = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -437,8 +437,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
           }
         }
       try {
-        emitter1.once("eventOnce", callback1);
-        emitter2.once("eventOnce", callback2);
+        emitter1.once('eventOnce', callback1);
+        emitter2.once('eventOnce', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -454,8 +454,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventOnce");
-        let num2: number = emitter2.getListenerCount("eventOnce");
+        let num1: number = emitter1.getListenerCount('eventOnce');
+        let num2: number = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -473,13 +473,13 @@ export default function ActsNotificationCesMoreInstanceTest() {
       try {
         let eventData: emitter.EventData = {
           data: {
-            "content": "content",
-            "id": 1,
+            'content': 'content',
+            'id': 1,
           }
         };
         count = 0
-        emitter1.emit("eventOnce", eventData);
-        emitter2.emit("eventOnce", eventData);
+        emitter1.emit('eventOnce', eventData);
+        emitter2.emit('eventOnce', eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -496,8 +496,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventOnce");
-        emitter2.off("eventOnce");
+        emitter1.off('eventOnce');
+        emitter2.off('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -513,8 +513,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventOnce");
-        let num2 = emitter2.getListenerCount("eventOnce");
+        let num1 = emitter1.getListenerCount('eventOnce');
+        let num2 = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -553,8 +553,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
         expect(JSON.stringify(eventData)).assertEqual('{"data":{"content":"content","id":1}}');
       }
       try {
-        emitter1.on("eventId", callback1);
-        emitter2.on("eventId", callback2);
+        emitter1.on('eventId', callback1);
+        emitter2.on('eventId', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -570,8 +570,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventId");
-        let num2: number = emitter2.getListenerCount("eventId");
+        let num1: number = emitter1.getListenerCount('eventId');
+        let num2: number = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -589,13 +589,13 @@ export default function ActsNotificationCesMoreInstanceTest() {
       try {
         let eventData: emitter.EventData = {
           data: {
-            "content": "content",
-            "id": 1,
+            'content': 'content',
+            'id': 1,
           }
         };
         count = 0
-        emitter1.emit("eventId", eventData);
-        emitter2.emit("eventId", eventData);
+        emitter1.emit('eventId', eventData);
+        emitter2.emit('eventId', eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -612,8 +612,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventId");
-        emitter2.off("eventId");
+        emitter1.off('eventId');
+        emitter2.off('eventId');
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -629,8 +629,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventId");
-        let num2 = emitter2.getListenerCount("eventId");
+        let num1 = emitter1.getListenerCount('eventId');
+        let num2 = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -677,8 +677,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
           }
         }
       try {
-        emitter1.on("eventId", callback1);
-        emitter2.on("eventId", callback2);
+        emitter1.on('eventId', callback1);
+        emitter2.on('eventId', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -694,8 +694,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventId");
-        let num2: number = emitter2.getListenerCount("eventId");
+        let num1: number = emitter1.getListenerCount('eventId');
+        let num2: number = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -715,8 +715,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
           data: new Sample()
         };
         count = 0
-        emitter1.emit("eventId", eventData);
-        emitter2.emit("eventId", eventData);
+        emitter1.emit('eventId', eventData);
+        emitter2.emit('eventId', eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -733,8 +733,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventId");
-        emitter2.off("eventId");
+        emitter1.off('eventId');
+        emitter2.off('eventId');
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -750,8 +750,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventId");
-        let num2 = emitter2.getListenerCount("eventId");
+        let num1 = emitter1.getListenerCount('eventId');
+        let num2 = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -790,8 +790,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
         expect(JSON.stringify(eventData)).assertEqual('{"data":{"content":"content","id":1}}');
       }
       try {
-        emitter1.on("eventId", callback1);
-        emitter2.on("eventId", callback2);
+        emitter1.on('eventId', callback1);
+        emitter2.on('eventId', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -807,8 +807,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventId");
-        let num2: number = emitter2.getListenerCount("eventId");
+        let num1: number = emitter1.getListenerCount('eventId');
+        let num2: number = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -826,13 +826,13 @@ export default function ActsNotificationCesMoreInstanceTest() {
       try {
         let eventData: emitter.EventData = {
           data: {
-            "content": "content",
-            "id": 1,
+            'content': 'content',
+            'id': 1,
           }
         };
         count = 0
-        emitter1.emit("eventId", eventData);
-        emitter2.emit("eventId", eventData);
+        emitter1.emit('eventId', eventData);
+        emitter2.emit('eventId', eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -849,8 +849,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventId");
-        emitter2.off("eventId");
+        emitter1.off('eventId');
+        emitter2.off('eventId');
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -866,8 +866,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventId");
-        let num2 = emitter2.getListenerCount("eventId");
+        let num1 = emitter1.getListenerCount('eventId');
+        let num2 = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -906,8 +906,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
         expect(JSON.stringify(eventData)).assertEqual('{"data":{"content":"content","id":1}}');
       }
       try {
-        emitter1.on("eventId", callback1);
-        emitter2.on("eventId", callback2);
+        emitter1.on('eventId', callback1);
+        emitter2.on('eventId', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -923,8 +923,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventId");
-        let num2: number = emitter2.getListenerCount("eventId");
+        let num1: number = emitter1.getListenerCount('eventId');
+        let num2: number = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -942,13 +942,13 @@ export default function ActsNotificationCesMoreInstanceTest() {
       try {
         let eventData: emitter.EventData = {
           data: {
-            "content": "content",
-            "id": 1,
+            'content': 'content',
+            'id': 1,
           }
         };
         count = 0
-        emitter1.emit("eventId", eventData);
-        emitter2.emit("eventId", eventData);
+        emitter1.emit('eventId', eventData);
+        emitter2.emit('eventId', eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -965,8 +965,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventId", callback1);
-        emitter2.off("eventId", callback2);
+        emitter1.off('eventId', callback1);
+        emitter2.off('eventId', callback2);
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -982,8 +982,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventId");
-        let num2 = emitter2.getListenerCount("eventId");
+        let num1 = emitter1.getListenerCount('eventId');
+        let num2 = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -1022,8 +1022,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
         expect(JSON.stringify(eventData)).assertEqual('{"data":{"content":"content","id":1}}');
       }
       try {
-        emitter1.once("eventOnce", callback1);
-        emitter2.once("eventOnce", callback2);
+        emitter1.once('eventOnce', callback1);
+        emitter2.once('eventOnce', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -1039,8 +1039,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventOnce");
-        let num2: number = emitter2.getListenerCount("eventOnce");
+        let num1: number = emitter1.getListenerCount('eventOnce');
+        let num2: number = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -1061,13 +1061,13 @@ export default function ActsNotificationCesMoreInstanceTest() {
         };
         let eventData: emitter.EventData = {
           data: {
-            "content": "content",
-            "id": 1,
+            'content': 'content',
+            'id': 1,
           }
         };
         count = 0
-        emitter1.emit("eventOnce", options, eventData);
-        emitter2.emit("eventOnce", options, eventData);
+        emitter1.emit('eventOnce', options, eventData);
+        emitter2.emit('eventOnce', options, eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -1084,8 +1084,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventOnce", callback1);
-        emitter2.off("eventOnce", callback2);
+        emitter1.off('eventOnce', callback1);
+        emitter2.off('eventOnce', callback2);
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -1101,8 +1101,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventOnce");
-        let num2 = emitter2.getListenerCount("eventOnce");
+        let num1 = emitter1.getListenerCount('eventOnce');
+        let num2 = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -1149,8 +1149,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
           }
         }
       try {
-        emitter1.once("eventOnce", callback1);
-        emitter2.once("eventOnce", callback2);
+        emitter1.once('eventOnce', callback1);
+        emitter2.once('eventOnce', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -1166,8 +1166,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventOnce");
-        let num2: number = emitter2.getListenerCount("eventOnce");
+        let num1: number = emitter1.getListenerCount('eventOnce');
+        let num2: number = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -1187,8 +1187,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
           data: new Sample()
         };
         count = 0
-        emitter1.emit("eventOnce", eventData);
-        emitter2.emit("eventOnce", eventData);
+        emitter1.emit('eventOnce', eventData);
+        emitter2.emit('eventOnce', eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -1205,8 +1205,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventOnce", callback1);
-        emitter2.off("eventOnce", callback2);
+        emitter1.off('eventOnce', callback1);
+        emitter2.off('eventOnce', callback2);
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -1222,8 +1222,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventOnce");
-        let num2 = emitter2.getListenerCount("eventOnce");
+        let num1 = emitter1.getListenerCount('eventOnce');
+        let num2 = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -1262,8 +1262,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
         expect(JSON.stringify(eventData)).assertEqual('{"data":{"content":"content","id":1}}');
       }
       try {
-        emitter1.once("eventOnce", callback1);
-        emitter2.once("eventOnce", callback2);
+        emitter1.once('eventOnce', callback1);
+        emitter2.once('eventOnce', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -1279,8 +1279,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventOnce");
-        let num2: number = emitter2.getListenerCount("eventOnce");
+        let num1: number = emitter1.getListenerCount('eventOnce');
+        let num2: number = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -1298,16 +1298,16 @@ export default function ActsNotificationCesMoreInstanceTest() {
       try {
         let eventData: emitter.EventData = {
           data: {
-            "content": "content",
-            "id": 1,
+            'content': 'content',
+            'id': 1,
           }
         };
         let options: emitter.Options = {
           priority: emitter.EventPriority.HIGH
         };
         count = 0
-        emitter1.emit("eventOnce", options, eventData);
-        emitter2.emit("eventOnce", options, eventData);
+        emitter1.emit('eventOnce', options, eventData);
+        emitter2.emit('eventOnce', options, eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -1324,8 +1324,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventOnce");
-        emitter2.off("eventOnce");
+        emitter1.off('eventOnce');
+        emitter2.off('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -1341,8 +1341,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventOnce");
-        let num2 = emitter2.getListenerCount("eventOnce");
+        let num1 = emitter1.getListenerCount('eventOnce');
+        let num2 = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -1381,8 +1381,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
         expect(JSON.stringify(eventData)).assertEqual('{"data":{"content":"content","id":1}}');
       }
       try {
-        emitter1.once("eventOnce", callback1);
-        emitter2.once("eventOnce", callback2);
+        emitter1.once('eventOnce', callback1);
+        emitter2.once('eventOnce', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -1398,8 +1398,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventOnce");
-        let num2: number = emitter2.getListenerCount("eventOnce");
+        let num1: number = emitter1.getListenerCount('eventOnce');
+        let num2: number = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -1417,16 +1417,16 @@ export default function ActsNotificationCesMoreInstanceTest() {
       try {
         let eventData: emitter.EventData = {
           data: {
-            "content": "content",
-            "id": 1,
+            'content': 'content',
+            'id': 1,
           }
         };
         let options: emitter.Options = {
           priority: emitter.EventPriority.HIGH
         };
         count = 0
-        emitter1.emit("eventOnce", options, eventData);
-        emitter2.emit("eventOnce", options, eventData);
+        emitter1.emit('eventOnce', options, eventData);
+        emitter2.emit('eventOnce', options, eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -1443,8 +1443,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventOnce", callback1);
-        emitter2.off("eventOnce", callback2);
+        emitter1.off('eventOnce', callback1);
+        emitter2.off('eventOnce', callback2);
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -1460,8 +1460,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventOnce");
-        let num2 = emitter2.getListenerCount("eventOnce");
+        let num1 = emitter1.getListenerCount('eventOnce');
+        let num2 = emitter2.getListenerCount('eventOnce');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -1508,8 +1508,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
           }
         }
       try {
-        emitter1.on("eventId", callback1);
-        emitter2.on("eventId", callback2);
+        emitter1.on('eventId', callback1);
+        emitter2.on('eventId', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -1525,8 +1525,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventId");
-        let num2: number = emitter2.getListenerCount("eventId");
+        let num1: number = emitter1.getListenerCount('eventId');
+        let num2: number = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -1544,16 +1544,16 @@ export default function ActsNotificationCesMoreInstanceTest() {
       try {
         let eventData: emitter.EventData = {
           data: {
-            "content": "content",
-            "id": 1,
+            'content': 'content',
+            'id': 1,
           }
         };
         let options: emitter.Options = {
           priority: emitter.EventPriority.HIGH
         };
         count = 0
-        emitter1.emit("eventId", options, eventData);
-        emitter2.emit("eventId", options, eventData);
+        emitter1.emit('eventId', options, eventData);
+        emitter2.emit('eventId', options, eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -1570,8 +1570,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventId", callback1);
-        emitter2.off("eventId", callback2);
+        emitter1.off('eventId', callback1);
+        emitter2.off('eventId', callback2);
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -1587,8 +1587,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventId");
-        let num2 = emitter2.getListenerCount("eventId");
+        let num1 = emitter1.getListenerCount('eventId');
+        let num2 = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -1635,8 +1635,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
           }
         }
       try {
-        emitter1.on("eventId", callback1);
-        emitter2.on("eventId", callback2);
+        emitter1.on('eventId', callback1);
+        emitter2.on('eventId', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -1652,8 +1652,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventId");
-        let num2: number = emitter2.getListenerCount("eventId");
+        let num1: number = emitter1.getListenerCount('eventId');
+        let num2: number = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -1673,8 +1673,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
           data: new Sample()
         };
         count = 0
-        emitter1.emit("eventId", eventData);
-        emitter2.emit("eventId", eventData);
+        emitter1.emit('eventId', eventData);
+        emitter2.emit('eventId', eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -1691,8 +1691,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventId", callback1);
-        emitter2.off("eventId", callback2);
+        emitter1.off('eventId', callback1);
+        emitter2.off('eventId', callback2);
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -1708,8 +1708,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventId");
-        let num2 = emitter2.getListenerCount("eventId");
+        let num1 = emitter1.getListenerCount('eventId');
+        let num2 = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -1748,8 +1748,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
         expect(JSON.stringify(eventData)).assertEqual('{"data":{"content":"content","id":1}}');
       }
       try {
-        emitter1.on("eventId", callback1);
-        emitter2.on("eventId", callback2);
+        emitter1.on('eventId', callback1);
+        emitter2.on('eventId', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -1765,8 +1765,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventId");
-        let num2: number = emitter2.getListenerCount("eventId");
+        let num1: number = emitter1.getListenerCount('eventId');
+        let num2: number = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -1784,13 +1784,13 @@ export default function ActsNotificationCesMoreInstanceTest() {
       try {
         let eventData: emitter.EventData = {
           data: {
-            "content": "content",
-            "id": 1,
+            'content': 'content',
+            'id': 1,
           }
         };
         count = 0
-        emitter1.emit("eventId", eventData);
-        emitter2.emit("eventId", eventData);
+        emitter1.emit('eventId', eventData);
+        emitter2.emit('eventId', eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -1807,8 +1807,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventId");
-        emitter2.off("eventId");
+        emitter1.off('eventId');
+        emitter2.off('eventId');
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -1824,8 +1824,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventId");
-        let num2 = emitter2.getListenerCount("eventId");
+        let num1 = emitter1.getListenerCount('eventId');
+        let num2 = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);
@@ -1864,8 +1864,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
         expect(JSON.stringify(eventData)).assertEqual('{"data":{"content":"content","id":1}}');
       }
       try {
-        emitter1.on("eventId", callback1);
-        emitter2.on("eventId", callback2);
+        emitter1.on('eventId', callback1);
+        emitter2.on('eventId', callback2);
         hilog.info(0x0000, 'testTag', `${testNum} once success`);
         count++
         expect(count).assertEqual(1);
@@ -1881,8 +1881,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1: number = emitter1.getListenerCount("eventId");
-        let num2: number = emitter2.getListenerCount("eventId");
+        let num1: number = emitter1.getListenerCount('eventId');
+        let num2: number = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success,num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(1);
         expect(num2).assertEqual(1);
@@ -1900,16 +1900,16 @@ export default function ActsNotificationCesMoreInstanceTest() {
       try {
         let eventData: emitter.EventData = {
           data: {
-            "content": "content",
-            "id": 1,
+            'content': 'content',
+            'id': 1,
           }
         };
         let options: emitter.Options = {
           priority: emitter.EventPriority.HIGH
         };
         count = 0
-        emitter1.emit("eventId", options, eventData);
-        emitter2.emit("eventId", options, eventData);
+        emitter1.emit('eventId', options, eventData);
+        emitter2.emit('eventId', options, eventData);
         hilog.info(0x001, 'testTag', `${testNum} emit case success`);
         count++
         expect(count).assertEqual(1);
@@ -1926,8 +1926,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       await sleep(1000)
       try {
         count = 0
-        emitter1.off("eventId");
-        emitter2.off("eventId");
+        emitter1.off('eventId');
+        emitter2.off('eventId');
         hilog.info(0x001, 'testTag', `${testNum}off case success`);
         count++
         expect(count).assertEqual(1);
@@ -1943,8 +1943,8 @@ export default function ActsNotificationCesMoreInstanceTest() {
       }
       await sleep(1000)
       try {
-        let num1 = emitter1.getListenerCount("eventId");
-        let num2 = emitter2.getListenerCount("eventId");
+        let num1 = emitter1.getListenerCount('eventId');
+        let num2 = emitter2.getListenerCount('eventId');
         hilog.info(0x001, 'testTag', `${testNum} getListenerCount case success:num1:${num1},num2:${num2}`);
         expect(num1).assertEqual(0);
         expect(num2).assertEqual(0);

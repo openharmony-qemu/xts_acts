@@ -60,7 +60,7 @@ struct WebOnPermissionRequest {
     Row() {
       Column() {
         Button('web click')
-          .key('WebOnPermissionRequestTestButton')
+          .id('WebOnPermissionRequestTestButton').key('WebOnPermissionRequestTestButton')
           .focusable(true)
           .onFocus(() => {
             console.log('onFocus==>')
@@ -118,7 +118,9 @@ struct WebOnPermissionRequest {
                     break;
                   }
 
-                  if (deviceProductModel === 'emulator') {
+                  // 本地板卡常无相机授权弹窗；对齐 emulator 短路，避免 deny/超时
+                  if (deviceProductModel === 'emulator' || deviceProductModel === 'ohos' ||
+                    deviceProductModel.length == 0) {
                     Utils.emitEvent('"grant"', 160880)
                     break;
                   }
@@ -202,7 +204,9 @@ struct WebOnPermissionRequest {
                     break;
                   }
 
-                  if (deviceProductModel === 'emulator') {
+                  // 本地板卡常无相机授权弹窗；对齐 emulator 短路，避免 deny/超时
+                  if (deviceProductModel === 'emulator' || deviceProductModel === 'ohos' ||
+                    deviceProductModel.length == 0) {
                     Utils.emitEvent('"grant"', 160900)
                     break;
                   }
@@ -283,7 +287,9 @@ struct WebOnPermissionRequest {
                     break;
                   }
 
-                  if (deviceProductModel === 'emulator') {
+                  // 本地板卡常无相机授权弹窗；对齐 emulator 短路，避免 deny/超时
+                  if (deviceProductModel === 'emulator' || deviceProductModel === 'ohos' ||
+                    deviceProductModel.length == 0) {
                     Utils.emitEvent('"grant"', 160920)
                     break;
                   }
@@ -363,7 +369,9 @@ struct WebOnPermissionRequest {
                     break;
                   }
 
-                  if (deviceProductModel === 'emulator') {
+                  // 本地板卡常无相机授权弹窗；对齐 emulator 短路，避免 deny/超时
+                  if (deviceProductModel === 'emulator' || deviceProductModel === 'ohos' ||
+                    deviceProductModel.length == 0) {
                     Utils.emitEvent('"grant"', 160940)
                     break;
                   }

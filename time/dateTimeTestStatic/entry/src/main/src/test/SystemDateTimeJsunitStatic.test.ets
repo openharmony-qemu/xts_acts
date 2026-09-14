@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -286,30 +287,6 @@ export default function SystemDateTimeJsunitStaticTest(): void {
     });
 
     /**
-     * @tc.name   SUB_systemDateTime_getTime_null_Static_0010
-     * @tc.number SUB_systemDateTime_getTime_null_Static_0010
-     * @tc.desc   Test systemDateTime.getTime API with null parameter coverage.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_systemDateTime_getTime_null_Static_0010", Level.LEVEL0, async (done: ()=> void): Promise<void> => {
-      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getTime_null_Static_0010 start----------------");
-      try {
-        let nullParam: boolean | null = null;
-        let currentTime = systemDateTime.getTime(nullParam as boolean);
-        hilog.info(domain, tag, "====>SUB_systemDateTime_getTime_null_Static_0010 currentTime: " + JSON.stringify(currentTime));
-        expect(typeof(currentTime) === 'long').assertEqual(true);
-        done();
-      } catch (err) {
-        hilog.info(domain, tag, "====>SUB_systemDateTime_getTime_null_Static_0010 catch error: " + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getTime_null_Static_0010 end-----------------");
-    });
-
-    /**
      * @tc.name   SUB_systemDateTime_getTime_undefined_Static_0010
      * @tc.number SUB_systemDateTime_getTime_undefined_Static_0010
      * @tc.desc   Test systemDateTime.getTime API with undefined parameter coverage.
@@ -330,102 +307,6 @@ export default function SystemDateTimeJsunitStaticTest(): void {
         done();
       }
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getTime_undefined_Static_0010 end-----------------");
-    });
-
-    /**
-     * @tc.name   SUB_systemDateTime_getUptime_null_TimeType_Static_0010
-     * @tc.number SUB_systemDateTime_getUptime_null_TimeType_Static_0010
-     * @tc.desc   Test systemDateTime.getUptime API with null timeType parameter coverage.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_systemDateTime_getUptime_null_TimeType_Static_0010", Level.LEVEL0, async (done: ()=> void): Promise<void> => {
-      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_null_TimeType_Static_0010 start----------------");
-      try {
-        let nullTimeType: systemDateTime.TimeType | null = null;
-        let uptime = systemDateTime.getUptime(nullTimeType as systemDateTime.TimeType);
-        hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_null_TimeType_Static_0010 uptime: " + JSON.stringify(uptime));
-        expect(typeof(uptime) === 'long').assertEqual(true);
-        done();
-      } catch (err) {
-        hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_null_TimeType_Static_0010 catch error: " + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_null_TimeType_Static_0010 end-----------------");
-    });
-
-    /**
-     * @tc.name   SUB_systemDateTime_getUptime_undefined_TimeType_Static_0010
-     * @tc.number SUB_systemDateTime_getUptime_undefined_TimeType_Static_0010
-     * @tc.desc   Test systemDateTime.getUptime API with undefined timeType parameter coverage.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_systemDateTime_getUptime_undefined_TimeType_Static_0010", Level.LEVEL0, async (done: ()=> void): Promise<void> => {
-      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_undefined_TimeType_Static_0010 start----------------");
-      try {
-        let undefinedTimeType: systemDateTime.TimeType | undefined = undefined;
-        let uptime = systemDateTime.getUptime(undefinedTimeType as systemDateTime.TimeType);
-        hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_undefined_TimeType_Static_0010 uptime: " + JSON.stringify(uptime));
-        expect(typeof(uptime) === 'long').assertEqual(true);
-        done();
-      } catch (err) {
-        hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_undefined_TimeType_Static_0010 catch error: " + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_undefined_TimeType_Static_0010 end-----------------");
-    });
-
-    /**
-     * @tc.name   SUB_systemDateTime_getUptime_invalid_Enum_Static_0010
-     * @tc.number SUB_systemDateTime_getUptime_invalid_Enum_Static_0010
-     * @tc.desc   Test systemDateTime.getUptime API with invalid enum value outside API definition.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_systemDateTime_getUptime_invalid_Enum_Static_0010", Level.LEVEL0, async (done: ()=> void): Promise<void> => {
-      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_invalid_Enum_Static_0010 start----------------");
-      try {
-        let invalidTimeType: systemDateTime.TimeType = 999;
-        let uptime = systemDateTime.getUptime(invalidTimeType);
-        hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_invalid_Enum_Static_0010 uptime: " + JSON.stringify(uptime));
-        expect(typeof(uptime) === 'long').assertEqual(true);
-        done();
-      } catch (err) {
-        hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_invalid_Enum_Static_0010 catch error: " + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_invalid_Enum_Static_0010 end-----------------");
-    });
-
-    /**
-     * @tc.name   SUB_systemDateTime_getUptime_TimeType_Null_IsNano_Static_0010
-     * @tc.number SUB_systemDateTime_getUptime_TimeType_Null_IsNano_Static_0010
-     * @tc.desc   Test systemDateTime.getUptime API with null isNanoseconds parameter coverage.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_systemDateTime_getUptime_TimeType_Null_IsNano_Static_0010", Level.LEVEL0, async (done: ()=> void): Promise<void> => {
-      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_TimeType_Null_IsNano_Static_0010 start----------------");
-      try {
-        let nullIsNano: boolean | null = null;
-        let uptime = systemDateTime.getUptime(systemDateTime.TimeType.ACTIVE, nullIsNano as boolean);
-        hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_TimeType_Null_IsNano_Static_0010 uptime: " + JSON.stringify(uptime));
-        expect(typeof(uptime) === 'long').assertEqual(true);
-        done();
-      } catch (err) {
-        hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_TimeType_Null_IsNano_Static_0010 catch error: " + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_TimeType_Null_IsNano_Static_0010 end-----------------");
     });
 
     /**

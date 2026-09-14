@@ -16,7 +16,9 @@
   "apiType": 'stageMode',
   "buildOption": {
     "sourceOption": {
-      "workers": []
+      "workers": [
+        "./src/ohosTest/ets/test/CollectionsSetConcurrent/SetWorker.ets",
+      ]
     }
   },
   "targets": [

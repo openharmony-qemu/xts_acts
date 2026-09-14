@@ -652,6 +652,220 @@ export default function SelectionManagerTest() {
     });
 
     /**
+     * @tc.name   testSelectionManagerTest5500
+     * @tc.number SUB_Driver_Selection_Dyn_5500
+     * @tc.desc   test on destroyed callback success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSelectionManagerTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('************* testSelectionManagerTest5500*************');
+      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      let context = abilityDelegator.getAppContext();
+      context.stageMode = true;
+      let panelInfo: PanelInfo = {
+        panelType: PanelType.MAIN_PANEL,
+        x: 0,
+        y: 0,
+        width: 100,
+        height: 100
+      }
+      let panel: selectionManager.Panel | undefined = undefined;
+      let num:number = 0;
+      let onDestroyCallback1 = () => {
+        num = num + 1;
+        console.info(`panel has onDestroyCallback1. num:${num}`);
+        expect(num == 1).assertTrue();
+      };
+      let onDestroyCallback2 = () => {
+        num = num + 1;
+        console.info(`panel has onDestroyCallback2. num:${num}`);
+        expect(num == 2).assertTrue();
+      };
+      let onDestroyCallback3 = () => {
+        num = num + 1;
+        console.info(`panel has onDestroyCallback3. num:${num}`);
+        expect(num == 3).assertTrue();
+      };
+      try {
+        panel = await selectionManager.createPanel(context, panelInfo);
+        panel.on('destroyed', onDestroyCallback1);
+        panel.on('destroyed', onDestroyCallback2);
+        panel.on('destroyed', onDestroyCallback3);
+        setTimeout(()=>{
+          done();
+        },100);
+      } catch(error) {
+        console.info(`testSelectionManagerTest5500 throw error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      } finally {
+        if (panel) {
+          await selectionManager.destroyPanel(panel);
+          done();
+        }
+      }
+      console.info('************* testSelectionManagerTest5500 Test end*************');
+      done();
+    });
+
+    /**
+     * @tc.name   testSelectionManagerTest5600
+     * @tc.number SUB_Driver_Selection_Dyn_5600
+     * @tc.desc   test off destroyed callback success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSelectionManagerTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('************* testSelectionManagerTest5600*************');
+      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      let context = abilityDelegator.getAppContext();
+      context.stageMode = true;
+      let panelInfo: PanelInfo = {
+        panelType: PanelType.MENU_PANEL,
+        x: 0,
+        y: 0,
+        width: 100,
+        height: 100
+      }
+      let panel: selectionManager.Panel | undefined = undefined;
+      let destroyCallback = () => {
+        console.info('panel has destroyCallback');
+      };
+      try {
+        panel = await selectionManager.createPanel(context, panelInfo);
+        panel.on('destroyed', destroyCallback);
+        panel.off('destroyed',destroyCallback);
+        await selectionManager.destroyPanel(panel);
+        panel = undefined;
+        done();
+      } catch(error) {
+        console.info(`testSelectionManagerTest5600 throw error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      } finally {
+        if (panel) {
+          await selectionManager.destroyPanel(panel);
+          done();
+        }
+      }
+      console.info('************* testSelectionManagerTest5600 Test end*************');
+      done();
+    });
+
+    /**
+     * @tc.name   testSelectionManagerTest5700
+     * @tc.number SUB_Driver_Selection_Dyn_5700
+     * @tc.desc   test on hidden callback success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSelectionManagerTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('************* testSelectionManagerTest5700*************');
+      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      let context = abilityDelegator.getAppContext();
+      context.stageMode = true;
+      let panelInfo: PanelInfo = {
+        panelType: PanelType.MAIN_PANEL,
+        x: 0,
+        y: 0,
+        width: 100,
+        height: 100
+      }
+      let panel: selectionManager.Panel | undefined = undefined;
+      let num:number = 0;
+      let onHiddenCallback1 = () => {
+        num = num + 1;
+        console.info(`panel has onHiddenCallback1. num:${num}`);
+        expect(num == 1).assertTrue();
+      };
+      let onHiddenCallback2 = () => {
+        num = num + 1;
+        console.info(`panel has onHiddenCallback2. num:${num}`);
+        expect(num == 2).assertTrue();
+      };
+      let onHiddenCallback3 = () => {
+        num = num + 1;
+        console.info(`panel has onHiddenCallback3. num:${num}`);
+        expect(num == 3).assertTrue();
+      };
+      try {
+        panel = await selectionManager.createPanel(context, panelInfo);
+        panel.on('hidden', onHiddenCallback1);
+        panel.on('hidden', onHiddenCallback2);
+        panel.on('hidden', onHiddenCallback3);
+        await panel.hide();
+        setTimeout(()=>{
+          done();
+        },100);
+      } catch(error) {
+        console.info(`testSelectionManagerTest5700 throw error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      } finally {
+        if (panel) {
+          panel.off('hidden', onHiddenCallback1);
+          panel.off('hidden', onHiddenCallback2);
+          panel.off('hidden', onHiddenCallback3);
+          await selectionManager.destroyPanel(panel);
+          done();
+        }
+      }
+      console.info('************* testSelectionManagerTest5700 Test end*************');
+      done();
+    });
+
+    /**
+     * @tc.name   testSelectionManagerTest5800
+     * @tc.number SUB_Driver_Selection_Dyn_5800
+     * @tc.desc   test off hidden callback success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSelectionManagerTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('************* testSelectionManagerTest5800*************');
+      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      let context = abilityDelegator.getAppContext();
+      context.stageMode = true;
+      let panelInfo: PanelInfo = {
+        panelType: PanelType.MENU_PANEL,
+        x: 0,
+        y: 0,
+        width: 100,
+        height: 100
+      }
+      let panel: selectionManager.Panel | undefined = undefined;
+      let hiddenCallback = () => {
+        console.info('panel has hiddenCallback');
+      };
+      try {
+        panel = await selectionManager.createPanel(context, panelInfo);
+        panel.on('hidden', hiddenCallback);
+        panel.off('hidden',hiddenCallback);
+        done();
+      } catch(error) {
+        console.info(`testSelectionManagerTest5800 throw error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      } finally {
+        if (panel) {
+          await selectionManager.destroyPanel(panel);
+          done();
+        }
+      }
+      console.info('************* testSelectionManagerTest5800 Test end*************');
+      done();
+    });
+
+    /**
      * @tc.name   testSelectionManagerTest2000
      * @tc.number SUB_Driver_Selection_Dyn_2000
      * @tc.desc   verify ERROR code 401 of setUiContent.

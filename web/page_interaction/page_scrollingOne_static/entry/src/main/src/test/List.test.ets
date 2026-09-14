@@ -15,7 +15,9 @@
  */
 
 import WebNestedScrollOptionsScrollBackwardHorizontalTest from './WebNestedScrollOptionsScrollBackwardHorizontalTest.test'
+import WebViewSetScrollbarModeParamTest from './WebViewSetScrollbarModeParamTest.test'
 
 export default function testsuite() {
     WebNestedScrollOptionsScrollBackwardHorizontalTest();
+    WebViewSetScrollbarModeParamTest()
 }

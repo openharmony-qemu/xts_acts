@@ -3266,7 +3266,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect(a.meth(new FixedArray<A96>(1))).assertEqual('FA:A')
+      expect(a.meth(new FixedArray<A96>(1, new A96()))).assertEqual('FA:A')
     });
 
     /**

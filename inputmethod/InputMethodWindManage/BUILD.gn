@@ -20,5 +20,5 @@ ohos_js_app_suite("ActsInputMethodWindManageTest") {
   subsystem_name = "inputmethod"
   part_name = "imf"
   hap_name = "ActsInputMethodWindManageTest"
-  certificate_profile = "signature/ActsInputMethodWindManageTest.p7b"
+  certificate_profile = "./signature/ActsInputMethodWindManageTest.p7b"
 }

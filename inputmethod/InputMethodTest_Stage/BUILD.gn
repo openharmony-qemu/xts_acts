@@ -20,5 +20,5 @@ ohos_js_app_suite("ActsImeAbilityTest") {
   subsystem_name = "inputmethod"
   part_name = "imf"
   hap_name = "ActsImeAbilityTest"
-  certificate_profile = "signature/ActInputMethodStageAPITest.p7b"
+  certificate_profile = "./signature/ActInputMethodStageAPITest.p7b"
 }

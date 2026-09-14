@@ -87,6 +87,9 @@ export default function swiperIndicatorDistanceTest() {
       let objDot2: ESObject = JSON.parse(obj2Dot.$attrs.indicator);
       expect(Number.parseFloat(objDigit2.bottom)).assertEqual(0);
       console.info('DigitIndicator_0100 space2: ' + objDot2.space);
+      let resourceSpace = getContext().resourceManager.getNumber($r('sys.float.swiper_indicator_dot_item_space').id)
+      console.info("[DigitIndicator_0100] resourceSpace2: " + px2vp(resourceSpace));
+      expect(Number.parseFloat(objDot2.space)).assertEqual(px2vp(resourceSpace));
       expect(objDot2.space.substr(objDot2.space.length - 2, 2)).assertEqual("vp");
       expect(objDigit2.bottom.substr(objDigit2.bottom.length - 2, 2)).assertEqual("vp");
 

@@ -16,7 +16,10 @@
   "apiType": 'stageMode',
   "buildOption": {
     "sourceOption": {
-      "workers": []
+      "workers": [
+        "./src/ohosTest/ets/test/CollectionsConcatArrayTest/ConcatArrayWorker.ets",
+        "./src/ohosTest/ets/test/SendableLruCacheConcurrent/SendableLruCacheWorker.ets"
+      ]
     }
   },
   "targets": [

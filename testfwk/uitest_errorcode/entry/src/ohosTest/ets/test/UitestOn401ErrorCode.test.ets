@@ -47,6 +47,20 @@ export default function uitestEnumTest() {
         console.log(`${TestTag}, testApi9_ON_text_401 text = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
+      try {
+        ON.text(null, MatchPattern.EQUALS);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_ON_text_401 text = null 1 error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        ON.text(undefined, MatchPattern.EQUALS);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi9_ON_text_401 text = undefined 1 error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
       console.log(`${TestTag}, testApi9_ON_text_401 END`);
     })
 

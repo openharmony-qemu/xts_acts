@@ -36,6 +36,7 @@ import { albumKeys } from '../common.ets'
 export default function removeAssetsTest () {
   describe('removeAssetsTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    const invalidArgErrorCode = 13900020;
     let getAlbum = async (testNum: string, type: photoAccessHelper.AlbumType, subtype: photoAccessHelper.AlbumSubtype, key: string = '', value: string | number = '') => {
       let predicatesAlbum: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       if (key != '') {
@@ -573,14 +574,14 @@ export default function removeAssetsTest () {
 
     /**
       * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1500
-      * @tc.name   removeAssets_callback_015
+      * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_CALLBACK_015
       * @tc.desc   remove asset from source enhancement album,error code 13900020
       * @tc.size   MEDIUM
       * @tc.type   Function
       * @tc.level  Level 2
     */
-    it('removeAssets_callback_015', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'removeAssets_callback_015';
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_CALLBACK_015', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_CALLBACK_015';
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SOURCE, albumSubtype.SOURCE_GENERIC);
         let assetNames: Array<string> = [
@@ -1018,6 +1019,273 @@ export default function removeAssetsTest () {
       } catch (error) {
         console.info(`${testNum} failed; error: ${error}`);
         expect(error.code).assertEqual('14000011');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0700
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_007
+     * @tc.desc   removeAssets from favorite album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_007', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_007';
+      try {
+        let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.FAVORITE);
+        let assetNames: Array<string> = [
+          'removeAssets_callback_07.jpg'
+        ]
+        await pushCreateAsset(testContext, assetNames);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        await asset.setFavorite(true);
+        console.info(`${testNum} setFavorite successed`);
+        album.removeAssets([asset]);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0800
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_008
+     * @tc.desc   removeAssets from video album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_008', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_008';
+      try {
+        let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.VIDEO);
+        let assetNames: Array<string> = [
+          'removeAssets_callback_08.mp4'
+        ]
+        await pushCreateAsset(testContext, assetNames);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        console.info(`${testNum} start remove asset`);
+        album.removeAssets([asset]);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0900
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_009
+     * @tc.desc   removeAssets from hidden album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_009', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_009';
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper.getHiddenAlbums(photoAccessHelper.HiddenPhotosDisplayMode.ASSETS_MODE);
+        console.info(testNum + 'album count is : ' + fetchResult.getCount());
+        let album: photoAccessHelper.Album = await fetchResult.getLastObject();
+        let assetNames: Array<string> = [
+          'removeAssets_callback_09.jpg'
+        ]
+        await pushCreateAsset(testContext, assetNames);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        await asset.setHidden(true);
+        console.info(`${testNum} start remove asset`);
+        album.removeAssets([asset]);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1000
+     * @tc.name    SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_010
+     * @tc.desc    removeAssets from trash album,error code 13900020
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_010', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_010';
+      try {
+        let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.TRASH);
+        let assetNames: Array<string> = [
+          'removeAssets_callback_10.jpg'
+        ]
+        await pushCreateAsset(testContext, assetNames);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, [asset]);
+        console.info(`${testNum} start remove asset`);
+        album.removeAssets([asset]);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1100
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_011
+     * @tc.desc   removeAssets from screenshot album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_011', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_011';
+      try {
+        let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.SCREENSHOT);
+        let assetNames: Array<string> = [
+          'removeAssets_callback_11.jpg'
+        ]
+        await pushCreateAsset(testContext, assetNames);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, [asset]);
+        console.info(`${testNum} start remove asset`);
+        album.removeAssets([asset]);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1200
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_012
+     * @tc.desc   removeAssets from camera album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_012', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_012';
+      try {
+        let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.CAMERA);
+        let assetNames: Array<string> = [
+          'removeAssets_callback_12.jpg'
+        ]
+        await pushCreateAsset(testContext, assetNames);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        console.info(`${testNum} start remove asset`);
+        album.removeAssets([asset]);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1300
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_013
+     * @tc.desc   removeAssets from image album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_013', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_013';
+      try {
+        let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.IMAGE);
+        let assetNames: Array<string> = [
+          'removeAssets_callback_13.jpg'
+        ]
+        await pushCreateAsset(testContext, assetNames);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        console.info(`${testNum} start remove asset`);
+        album.removeAssets([asset]);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1400
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_014
+     * @tc.desc   removeAssets from cloud enhancement album,error code 13900020
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_014', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_014';
+      try {
+        let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.CLOUD_ENHANCEMENT);
+        let assetNames: Array<string> = [
+          'removeAssets_callback_14.jpg'
+        ]
+        await pushCreateAsset(testContext, assetNames);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        console.info(`${testNum} start remove asset`);
+        album.removeAssets([asset]);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    });
+
+    /**
+      * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_1500
+      * @tc.name   SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_015
+      * @tc.desc   removeAssets from source enhancement album,error code 13900020
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
+    */
+    it('SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_015', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_REMOVEASSETS_PROMISE_015';
+      try {
+        let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SOURCE, albumSubtype.SOURCE_GENERIC);
+        let assetNames: Array<string> = [
+          'removeAssets_callback_15.jpg'
+        ]
+        await pushCreateAsset(testContext, assetNames);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        console.info(`${testNum} start remove asset`);
+        album.removeAssets([asset]);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
         done();
       }
     });

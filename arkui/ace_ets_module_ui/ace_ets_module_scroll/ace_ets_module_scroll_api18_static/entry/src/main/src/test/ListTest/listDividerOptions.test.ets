@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
@@ -32,20 +32,9 @@ import {
   TextAttribute,
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { startAbility, UtilsTest } from '../Util.test.ets';
 
 export default function listDividerOptions() {
   describe('listDividerOptions', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("listDividerOptions beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("listDividerOptions beforeEach start");
       let options: router.RouterOptions = {
@@ -59,6 +48,7 @@ export default function listDividerOptions() {
         if (!("listDividerOptions" == pages.name)) {
           console.info("get listDividerOptions pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push listDividerOptions page error:" + err);

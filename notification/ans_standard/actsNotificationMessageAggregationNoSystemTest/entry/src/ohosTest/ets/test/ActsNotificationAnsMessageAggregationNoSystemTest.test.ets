@@ -25,14 +25,14 @@ import { WantAgent, wantAgent } from '@kit.AbilityKit';
 import { commonEventManager } from '@kit.BasicServicesKit';
 import { installer } from '@kit.AbilityKit';
 
-let TAG: string = "HitsNotificationTest"
+let TAG: string = 'HitsNotificationTest'
 let context: common.UIAbilityContext;
-let bundleName: string = "com.example.actsnotificationmessageagreegationnosystemtest"
+let bundleName: string = 'com.example.actsnotificationmessageagreegationnosystemtest'
 
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }

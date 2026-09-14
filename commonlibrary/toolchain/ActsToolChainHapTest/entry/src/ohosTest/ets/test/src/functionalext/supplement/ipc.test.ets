@@ -27,7 +27,7 @@ export default function ipc_group_test() {
      * @tc.level  LEVEL1
      */
     it("semtimedop", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("semtimedop");
+      const result: number = await testNapi.runTest("semtimedop");
       expect(result).assertEqual(0);
       done();
     });

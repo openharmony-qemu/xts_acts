@@ -14,29 +14,15 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility, stopApplication } from '../../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function ScrollToIndexForGridJsunit01() {
   describe('ScrollToIndexForGridJsunit01', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ScrollToIndexForGrid01 beforeEach start");
@@ -51,6 +37,7 @@ export default function ScrollToIndexForGridJsunit01() {
           console.info("get ScrollToIndexForGrid01 state pages.name: " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push ScrollToIndexForGrid01 page error: " + err);

@@ -20,5 +20,5 @@ ohos_js_app_suite("ActsDateTimeAPITest") {
   subsystem_name = "time"
   part_name = "time_service"
   hap_name = "ActsDateTimeAPITest"
-  certificate_profile = "signature/ActsDateTimeAPITest.p7b"
+  certificate_profile = "./signature/ActsDateTimeAPITest.p7b"
 }

@@ -194,7 +194,7 @@ describe("DeviceManagerJsTest", function () {
         try {
             let devices = deviceManager.queryDevices();
             console.info(TAG, 'Test case testQueryDevices005 ret : ', JSON.stringify(devices));
-            expect().assertFail();
+            expect(devices != null && devices.length > 0).assertTrue();
         } catch (err) {
             console.info(TAG, 'Test case testQueryDevices005 catch err : ', err);
             expect(err.code).assertEqual(22900001);

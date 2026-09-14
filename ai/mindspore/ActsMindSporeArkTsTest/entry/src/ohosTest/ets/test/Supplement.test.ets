@@ -33,7 +33,7 @@ import {
 
 async function Predict_fun(model_obj: mindSporeLite.Model): Promise<boolean> {
   const modelInputs = model_obj.getInputs();
-  setRandomInputs("Predict_fun", modelInputs)
+  setRandomInputs('Predict_fun', modelInputs)
   let modelOutputs = await model_obj.predict(modelInputs);
   expect(modelOutputs).not().assertUndefined();
   expect(modelOutputs).not().assertNull();
@@ -50,15 +50,20 @@ async function Predict_fun(model_obj: mindSporeLite.Model): Promise<boolean> {
 export default function supplementTest() {
   describe('SupplementTest', () => {
     beforeAll(async () => {
-      let dir = globalThis.abilityContext.filesDir + "/";
+      try {
+      let dir = globalThis.abilityContext.filesDir + '/';
       try {
         await copyRawfileToSandbox(globalThis.context, dir,
-          ["ml_face_isface.ms", "ml_face_isface_0.input",
-           "ml_ocr_cn.ms", "lenet_train.ms", "lenet_train_0.input", "lenet_train_1.input"]);
+          ['ml_face_isface.ms', 'ml_face_isface_0.input',
+           'ml_ocr_cn.ms', 'lenet_train.ms', 'lenet_train_0.input', 'lenet_train_1.input']);
       } catch (error) {
-        console.info("[rawfile_copy_to_sandbox] failed: " + error);
+        console.info('[rawfile_copy_to_sandbox] failed: ' + error);
       }
-      console.info("[rawfile_copy_to_sandbox] sandbox path: " + dir);
+      console.info('[rawfile_copy_to_sandbox] sandbox path: ' + dir);
+      } catch (error) {
+        console.error('beforeAll failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     })
 
     beforeEach(() => {
@@ -75,18 +80,18 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_SetupVirtualBatch_Non_Train_Model_0002', Level.LEVEL0, async (done: Function) => {
-      console.log("==========MSLITE Supplement_0002 setupVirtualBatch on non-train model start===========");
+      console.log('==========MSLITE Supplement_0002 setupVirtualBatch on non-train model start===========');
       try {
         let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file);
         expect(msliteModel !== null).assertTrue();
         let ret = msliteModel.setupVirtualBatch(2, -1, -1);
-        console.log("==========MSLITE setupVirtualBatch on non-train model ret: " + ret + "===========");
+        console.log('==========MSLITE setupVirtualBatch on non-train model ret: ' + ret + '===========');
         expect(ret).assertFalse();
       } catch (error) {
-        console.log("==========MSLITE Supplement_0002 error (acceptable): " + JSON.stringify(error) + "===========");
+        console.log('==========MSLITE Supplement_0002 error (acceptable): ' + JSON.stringify(error) + '===========');
       }
-      console.log("==========MSLITE Supplement_0002 end===========");
+      console.log('==========MSLITE Supplement_0002 end===========');
       done();
     })
 
@@ -99,11 +104,11 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_UpdateWeights_Wrong_Name_0003', Level.LEVEL0, async (done: Function) => {
-      console.log("==========MSLITE Supplement_0003 updateWeights wrong name start===========");
+      console.log('==========MSLITE Supplement_0003 updateWeights wrong name start===========');
       try {
         let syscontext: common.Context = globalThis.context;
-        let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_0.input");
-        let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_1.input");
+        let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_0.input');
+        let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_1.input');
         let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file);
         expect(msliteModel !== null).assertTrue();
@@ -114,15 +119,15 @@ export default function supplementTest() {
         msliteModel.runStep(modelInputs);
         let weights = msliteModel.getWeights();
         expect(weights.length).assertLarger(0);
-        console.log("==========MSLITE original weight name: " + weights[0].name + "===========");
-        weights[0].name = "AAAA";
+        console.log('==========MSLITE original weight name: ' + weights[0].name + '===========');
+        weights[0].name = 'AAAA';
         let ret = msliteModel.updateWeights(weights);
-        console.log("==========MSLITE updateWeights wrong name ret: " + ret + "===========");
+        console.log('==========MSLITE updateWeights wrong name ret: ' + ret + '===========');
         expect(ret).assertFalse();
       } catch (error) {
-        console.log("==========MSLITE Supplement_0003 error (acceptable): " + JSON.stringify(error) + "===========");
+        console.log('==========MSLITE Supplement_0003 error (acceptable): ' + JSON.stringify(error) + '===========');
       }
-      console.log("==========MSLITE Supplement_0003 end===========");
+      console.log('==========MSLITE Supplement_0003 end===========');
       done();
     })
 
@@ -135,11 +140,11 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_UpdateWeights_Wrong_Type_0004', Level.LEVEL0, async (done: Function) => {
-      console.log("==========MSLITE Supplement_0004 updateWeights wrong type start===========");
+      console.log('==========MSLITE Supplement_0004 updateWeights wrong type start===========');
       try {
         let syscontext: common.Context = globalThis.context;
-        let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_0.input");
-        let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_1.input");
+        let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_0.input');
+        let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_1.input');
         let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file);
         expect(msliteModel !== null).assertTrue();
@@ -150,15 +155,15 @@ export default function supplementTest() {
         msliteModel.runStep(modelInputs);
         let weights = msliteModel.getWeights();
         expect(weights.length).assertLarger(0);
-        console.log("==========MSLITE original weight dtype: " + weights[0].dtype + "===========");
+        console.log('==========MSLITE original weight dtype: ' + weights[0].dtype + '===========');
         weights[0].dtype = mindSporeLite.DataType.NUMBER_TYPE_INT8;
         let ret = msliteModel.updateWeights(weights);
-        console.log("==========MSLITE updateWeights wrong type ret: " + ret + "===========");
+        console.log('==========MSLITE updateWeights wrong type ret: ' + ret + '===========');
         expect(ret).assertFalse();
       } catch (error) {
-        console.log("==========MSLITE Supplement_0004 error (acceptable): " + JSON.stringify(error) + "===========");
+        console.log('==========MSLITE Supplement_0004 error (acceptable): ' + JSON.stringify(error) + '===========');
       }
-      console.log("==========MSLITE Supplement_0004 end===========");
+      console.log('==========MSLITE Supplement_0004 end===========');
       done();
     })
 
@@ -172,17 +177,17 @@ export default function supplementTest() {
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_TrainMode_Get_Set_0006', Level.LEVEL0, async (done: Function) => {
       try {
-        console.log("==========MSLITE Supplement_0006 trainMode get start===========");
+        console.log('==========MSLITE Supplement_0006 trainMode get start===========');
         let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file);
         expect(msliteModel !== null).assertTrue();
         msliteModel.trainMode = true;
-        console.log("==========MSLITE trainMode after set true: " + msliteModel.trainMode + "===========");
+        console.log('==========MSLITE trainMode after set true: ' + msliteModel.trainMode + '===========');
         expect(msliteModel.trainMode).assertTrue();
         msliteModel.trainMode = false;
-        console.log("==========MSLITE trainMode after set false: " + msliteModel.trainMode + "===========");
+        console.log('==========MSLITE trainMode after set false: ' + msliteModel.trainMode + '===========');
         expect(msliteModel.trainMode).assertFalse();
-        console.log("==========MSLITE Supplement_0006 end===========");
+        console.log('==========MSLITE Supplement_0006 end===========');
         done();
       } catch (error) {
         console.log('it error: ' + JSON.stringify(error));
@@ -201,7 +206,7 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_Resize_Negative_Dim_0007', Level.LEVEL0, async (done: Function) => {
-      console.log("==========MSLITE Supplement_0007 resize negative dim start===========");
+      console.log('==========MSLITE Supplement_0007 resize negative dim start===========');
       try {
         let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file);
@@ -209,12 +214,12 @@ export default function supplementTest() {
         const modelInputs = msliteModel.getInputs();
         let new_dim: number[][] = [[1, -32, 512, 1]];
         let ret = msliteModel.resize(modelInputs, new_dim);
-        console.log("==========MSLITE resize negative dim ret: " + ret + "===========");
+        console.log('==========MSLITE resize negative dim ret: ' + ret + '===========');
         expect(ret).assertFalse();
       } catch (error) {
-        console.log("==========MSLITE Supplement_0007 error (acceptable): " + JSON.stringify(error) + "===========");
+        console.log('==========MSLITE Supplement_0007 error (acceptable): ' + JSON.stringify(error) + '===========');
       }
-      console.log("==========MSLITE Supplement_0007 end===========");
+      console.log('==========MSLITE Supplement_0007 end===========');
       done();
     })
 
@@ -227,7 +232,7 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_Resize_Dim_Count_Mismatch_0008', Level.LEVEL0, async (done: Function) => {
-      console.log("==========MSLITE Supplement_0008 resize dim count mismatch start===========");
+      console.log('==========MSLITE Supplement_0008 resize dim count mismatch start===========');
       try {
         let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file);
@@ -235,12 +240,12 @@ export default function supplementTest() {
         const modelInputs = msliteModel.getInputs();
         let new_dim: number[][] = [[1, 32, 1]];
         let ret = msliteModel.resize(modelInputs, new_dim);
-        console.log("==========MSLITE resize dim count mismatch ret: " + ret + "===========");
+        console.log('==========MSLITE resize dim count mismatch ret: ' + ret + '===========');
         expect(ret).assertFalse();
       } catch (error) {
-        console.log("==========MSLITE Supplement_0008 error (acceptable): " + JSON.stringify(error) + "===========");
+        console.log('==========MSLITE Supplement_0008 error (acceptable): ' + JSON.stringify(error) + '===========');
       }
-      console.log("==========MSLITE Supplement_0008 end===========");
+      console.log('==========MSLITE Supplement_0008 end===========');
       done();
     })
 
@@ -253,7 +258,7 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_Resize_Static_Model_0009', Level.LEVEL0, async (done: Function) => {
-      console.log("==========MSLITE Supplement_0009 resize static model start===========");
+      console.log('==========MSLITE Supplement_0009 resize static model start===========');
       try {
         let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file);
@@ -261,12 +266,12 @@ export default function supplementTest() {
         const modelInputs = msliteModel.getInputs();
         let new_dim: number[][] = [[1, 96, 96, 3]];
         let ret = msliteModel.resize(modelInputs, new_dim);
-        console.log("==========MSLITE resize static model ret: " + ret + "===========");
+        console.log('==========MSLITE resize static model ret: ' + ret + '===========');
         expect(ret).assertFalse();
       } catch (error) {
-        console.log("==========MSLITE Supplement_0009 error (acceptable): " + JSON.stringify(error) + "===========");
+        console.log('==========MSLITE Supplement_0009 error (acceptable): ' + JSON.stringify(error) + '===========');
       }
-      console.log("==========MSLITE Supplement_0009 end===========");
+      console.log('==========MSLITE Supplement_0009 end===========');
       done();
     })
 
@@ -280,16 +285,16 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_Load_Empty_Buffer_0011', Level.LEVEL0, async (done: Function) => {
-      console.log("==========MSLITE Supplement_0011 load empty buffer start===========");
+      console.log('==========MSLITE Supplement_0011 load empty buffer start===========');
       try {
         let emptyBuffer: ArrayBuffer = new ArrayBuffer(0);
         let msliteModel = await mindSporeLite.loadModelFromBuffer(emptyBuffer);
-        console.log("==========MSLITE load empty buffer result: " + msliteModel + "===========");
+        console.log('==========MSLITE load empty buffer result: ' + msliteModel + '===========');
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("==========MSLITE Supplement_0011 error (acceptable): " + JSON.stringify(error) + "===========");
+        console.log('==========MSLITE Supplement_0011 error (acceptable): ' + JSON.stringify(error) + '===========');
       }
-      console.log("==========MSLITE Supplement_0011 end===========");
+      console.log('==========MSLITE Supplement_0011 end===========');
       done();
     })
 
@@ -304,23 +309,23 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_Cpu_ThreadNum_Zero_0013', Level.LEVEL0, async (done: Function) => {
-      console.log("==========MSLITE Supplement_0013 threadNum=0 start===========");
+      console.log('==========MSLITE Supplement_0013 threadNum=0 start===========');
       try {
         let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadNum = 0;
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
-        console.log("==========MSLITE threadNum=0 load result: " + msliteModel + "===========");
+        console.log('==========MSLITE threadNum=0 load result: ' + msliteModel + '===========');
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
         let predict_ret = await Predict_fun(msliteModel);
         expect(predict_ret).assertTrue();
       } catch (error) {
-        console.log("==========MSLITE Supplement_0013 error (acceptable): " + JSON.stringify(error) + "===========");
+        console.log('==========MSLITE Supplement_0013 error (acceptable): ' + JSON.stringify(error) + '===========');
       }
-      console.log("==========MSLITE Supplement_0013 end===========");
+      console.log('==========MSLITE Supplement_0013 end===========');
       done();
     })
 
@@ -333,27 +338,27 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_Cpu_CoreList_Negative_0014', Level.LEVEL0, async (done: Function) => {
-      console.log("==========MSLITE Supplement_0014 coreList negative start===========");
+      console.log('==========MSLITE Supplement_0014 coreList negative start===========');
       try {
         let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadNum = 2;
         context.cpu.threadAffinityCoreList = [-1, -2];
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
-        console.log("==========MSLITE coreList negative load result: " + msliteModel + "===========");
+        console.log('==========MSLITE coreList negative load result: ' + msliteModel + '===========');
         if (msliteModel !== null && msliteModel !== undefined) {
-          console.log("==========MSLITE model loaded with negative coreList===========");
+          console.log('==========MSLITE model loaded with negative coreList===========');
         } else {
-          console.log("==========MSLITE model load failed with negative coreList===========");
+          console.log('==========MSLITE model load failed with negative coreList===========');
         }
         let predict_ret = await Predict_fun(msliteModel);
         expect(predict_ret).assertTrue();
       } catch (error) {
-        console.log("==========MSLITE Supplement_0014 error (acceptable): " + JSON.stringify(error) + "===========");
+        console.log('==========MSLITE Supplement_0014 error (acceptable): ' + JSON.stringify(error) + '===========');
       }
-      console.log("==========MSLITE Supplement_0014 end===========");
+      console.log('==========MSLITE Supplement_0014 end===========');
       done();
     })
 
@@ -367,7 +372,7 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_NNRT_Cache_Config_0016', Level.LEVEL0, async (done: Function) => {
-      console.log("==========MSLITE Supplement_0016 NNRT cache start===========");
+      console.log('==========MSLITE Supplement_0016 NNRT cache start===========');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null) {
@@ -377,7 +382,7 @@ export default function supplementTest() {
         }
         let flag: number = 99;
         for (let i = 0; i < all_devices.length; i++) {
-          if (all_devices[i].deviceName().startsWith("NPU_")) {
+          if (all_devices[i].deviceName().startsWith('NPU_')) {
             flag = i;
           }
         }
@@ -387,30 +392,30 @@ export default function supplementTest() {
           return;
         }
         let syscontext: common.Context = globalThis.context;
-        let inputBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent("ml_face_isface_0.input");
-        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent("ml_face_isface.ms");
-        let cacheDir: string = globalThis.abilityContext.filesDir + "/cache_dir/";
+        let inputBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface_0.input');
+        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
+        let cacheDir: string = globalThis.abilityContext.filesDir + '/cache_dir/';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.deviceID = all_devices[flag].deviceID();
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_NONE;
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_NONE;
         let cachePathExt: mindSporeLite.Extension = {
-          name: "CachePath",
+          name: 'CachePath',
           value: strToArrayBuffer(cacheDir)
         };
         let cacheVerExt: mindSporeLite.Extension = {
-          name: "CacheVersion",
-          value: strToArrayBuffer("1")
+          name: 'CacheVersion',
+          value: strToArrayBuffer('1')
         };
         let modelNameExt: mindSporeLite.Extension = {
-          name: "ModelName",
-          value: strToArrayBuffer("cache_model")
+          name: 'ModelName',
+          value: strToArrayBuffer('cache_model')
         };
         context.nnrt.extensions = [cachePathExt, cacheVerExt, modelNameExt];
         let msliteModel = await mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context);
-        console.log("==========MSLITE NNRT cache load result: " + msliteModel + "===========");
+        console.log('==========MSLITE NNRT cache load result: ' + msliteModel + '===========');
         expect(msliteModel !== null).assertTrue();
         const modelInputs = msliteModel.getInputs();
         modelInputs[0].setData(inputBuffer.buffer);
@@ -419,9 +424,9 @@ export default function supplementTest() {
         let pass: boolean = await compareOutputPrecision(syscontext, 'ml_face_isface', modelOutputs);
         expect(pass).assertTrue();
       } catch (error) {
-        console.log("==========MSLITE Supplement_0016 error: " + JSON.stringify(error) + "===========");
+        console.log('==========MSLITE Supplement_0016 error: ' + JSON.stringify(error) + '===========');
       }
-      console.log("==========MSLITE Supplement_0016 end===========");
+      console.log('==========MSLITE Supplement_0016 end===========');
       done();
     })
 
@@ -436,11 +441,11 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_ExportModel_Folder_Path_0017', Level.LEVEL0, async (done: Function) => {
-      console.log("==========MSLITE Supplement_0017 exportModel folder path start===========");
+      console.log('==========MSLITE Supplement_0017 exportModel folder path start===========');
       try {
         let syscontext: common.Context = globalThis.context;
-        let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_0.input");
-        let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_1.input");
+        let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_0.input');
+        let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_1.input');
         let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file);
         expect(msliteModel !== null).assertTrue();
@@ -450,14 +455,14 @@ export default function supplementTest() {
         modelInputs[1].setData(inputBuffer1.buffer);
         msliteModel.runStep(modelInputs);
         let folderPath: string = globalThis.abilityContext.filesDir;
-        console.log("==========MSLITE exportModel folder path: " + folderPath + "===========");
+        console.log('==========MSLITE exportModel folder path: ' + folderPath + '===========');
         let ret = msliteModel.exportModel(folderPath, mindSporeLite.QuantizationType.NO_QUANT, true);
-        console.log("==========MSLITE exportModel folder path ret: " + ret + "===========");
+        console.log('==========MSLITE exportModel folder path ret: ' + ret + '===========');
         expect(ret).assertFalse();
       } catch (error) {
-        console.log("==========MSLITE Supplement_0017 error (acceptable): " + JSON.stringify(error) + "===========");
+        console.log('==========MSLITE Supplement_0017 error (acceptable): ' + JSON.stringify(error) + '===========');
       }
-      console.log("==========MSLITE Supplement_0017 end===========");
+      console.log('==========MSLITE Supplement_0017 end===========');
       done();
     })
 
@@ -472,13 +477,13 @@ export default function supplementTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_Predict_Callback_0018', Level.LEVEL0, (done: Function) => {
-      console.log("==========MSLITE Supplement_0018 predict callback start===========");
+      console.log('==========MSLITE Supplement_0018 predict callback start===========');
       let syscontext: common.Context = globalThis.context;
       let inputName = 'ml_face_isface_0.input';
       let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
       syscontext.resourceManager.getRawFileContent(inputName, (error: BusinessError, inputBuffer: Uint8Array) => {
         if (error) {
-          console.log("==========MSLITE getRawFileContent error: " + JSON.stringify(error) + "===========");
+          console.log('==========MSLITE getRawFileContent error: ' + JSON.stringify(error) + '===========');
           done();
           return;
         }
@@ -517,7 +522,7 @@ export default function supplementTest() {
      */
     it('SUB_AI_MindSpore_ArkTS_Supplement_SetData_Twice_0019', Level.LEVEL0, async (done: Function) => {
       try {
-        console.log("==========MSLITE Supplement_0019 setData twice start===========");
+        console.log('==========MSLITE Supplement_0019 setData twice start===========');
         let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file);
         expect(msliteModel !== null).assertTrue();
@@ -527,14 +532,14 @@ export default function supplementTest() {
         let data2: ArrayBuffer = fillFloat32Array(dataSize, 2.0);
         modelInputs[0].setData(data1);
         let result1: Float32Array = new Float32Array(modelInputs[0].getData());
-        console.log("==========MSLITE after setData(1.0), first elements: " +
-          result1[0] + ", " + result1[1] + "===========");
+        console.log('==========MSLITE after setData(1.0), first elements: ' +
+          result1[0] + ', ' + result1[1] + '===========');
         modelInputs[0].setData(data2);
         let result2: Float32Array = new Float32Array(modelInputs[0].getData());
-        console.log("==========MSLITE after setData(2.0), first elements: " +
-          result2[0] + ", " + result2[1] + "===========");
+        console.log('==========MSLITE after setData(2.0), first elements: ' +
+          result2[0] + ', ' + result2[1] + '===========');
         expect(result2[0]).assertEqual(2.0);
-        console.log("==========MSLITE Supplement_0019 end===========");
+        console.log('==========MSLITE Supplement_0019 end===========');
         done();
       } catch (error) {
         console.log('it error: ' + JSON.stringify(error));

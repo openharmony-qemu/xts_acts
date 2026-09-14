@@ -14,7 +14,7 @@ import("//test/xts/tools/build/suite.gni")
 ohos_js_app_static_suite("ActsInputMethodWindManageStaticTest") {
   # test_hap = true
   testonly = true
-  certificate_profile = "signature/ActsInputMethodWindManageStaticTest.p7b"
+  certificate_profile = "./signature/ActsInputMethodWindManageStaticTest.p7b"
   hap_name = "ActsInputMethodWindManageStaticTest"
   part_name = "imf"
   subsystem_name = "inputmethod"

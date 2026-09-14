@@ -14,30 +14,15 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function Row_flexBasis_Type() {
   describe('Row_flexBasis_Type', () => {
-    beforeAll(async () => {
-      console.info("Row_flexBasis_Type beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Row_flexBasis_Type beforeEach start");
       let options: router.RouterOptions = {
@@ -61,7 +46,11 @@ export default function Row_flexBasis_Type() {
       }
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('Row_flexBasis_TypeTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_flexBasis_Type after each called")
     });
 
@@ -78,7 +67,11 @@ export default function Row_flexBasis_Type() {
         name: 'addflexBasis1', value: 100
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_flexBasis_TypeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_flexBasis_Type_011: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_011');
       let Row_flexBasis_Type_012: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_012');
@@ -151,7 +144,11 @@ export default function Row_flexBasis_Type() {
         name: 'addflexBasis1', value: 0
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_flexBasis_TypeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_flexBasis_Type_011: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_011');
       let Row_flexBasis_Type_012: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_012');
@@ -224,7 +221,11 @@ export default function Row_flexBasis_Type() {
         name: 'addflexBasis2', value: 'auto'
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_flexBasis_TypeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_flexBasis_Type_021: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_021');
       let Row_flexBasis_Type_022: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_022');
@@ -293,7 +294,11 @@ export default function Row_flexBasis_Type() {
         name: 'addflexBasis2', value: '200vp'
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_flexBasis_TypeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_flexBasis_Type_021: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_021');
       let Row_flexBasis_Type_022: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_022');
@@ -362,7 +367,11 @@ export default function Row_flexBasis_Type() {
         name: 'addflexBasis2', value: '200px'
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_flexBasis_TypeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_flexBasis_Type_021: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_021');
       let Row_flexBasis_Type_022: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_022');
@@ -430,7 +439,11 @@ export default function Row_flexBasis_Type() {
         name: 'addflexBasis2', value: '200fp'
       });
       let context = AppStorage.get<UIContext>('context') as UIContext
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_flexBasis_TypeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_flexBasis_Type_021: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_021');
       let Row_flexBasis_Type_022: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_022');
@@ -500,7 +513,11 @@ export default function Row_flexBasis_Type() {
         name: 'addflexBasis2', value: '200lpx'
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_flexBasis_TypeTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_flexBasis_Type_021: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_021');
       let Row_flexBasis_Type_022: RectValue = CommonFunc.getComponentRect('Row_flexBasis_Type_022');

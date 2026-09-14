@@ -29,7 +29,7 @@ let ctx = getContext(this) as common.UIAbilityContext;
 let subscriber: commonEventManager.CommonEventSubscriber;
 // 订阅者信息
 let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-  events: ["event"],
+  events: ['event'],
   publisherBundleName: 'com.example.myapplication'
 };
 
@@ -184,9 +184,9 @@ export default function ActsAllowTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "test_titleUpdateOnlytrue",
-            text: "test_text",
-            additionalText: "test_additionalText"
+            title: 'test_titleUpdateOnlytrue',
+            text: 'test_text',
+            additionalText: 'test_additionalText'
           }
         },
         updateOnly: true,
@@ -198,15 +198,15 @@ export default function ActsAllowTest() {
       };
       await sleep(500);
       notificationManager.publish(notificationRequest).then(() => {
-        console.info(TAG + "publish update success");
+        console.info(TAG + 'publish update success');
         expect(false).assertTrue()
         done();
       }).catch((err: BusinessError) => {
-        console.log(notificationRequest.creatorBundleName + " publish success1")
-        console.log(notificationRequest.creatorUid + " publish success1")
-        console.log(notificationRequest.creatorPid + " publish success1")
-        console.log(notificationRequest.creatorUserId + " publish success1")
-        console.log(notificationRequest.hashCode + " publish success1")
+        console.log(notificationRequest.creatorBundleName + ' publish success1')
+        console.log(notificationRequest.creatorUid + ' publish success1')
+        console.log(notificationRequest.creatorPid + ' publish success1')
+        console.log(notificationRequest.creatorUserId + ' publish success1')
+        console.log(notificationRequest.hashCode + ' publish success1')
         expect(notificationRequest.creatorBundleName).assertEqual('123')
         expect(notificationRequest.creatorUid).assertEqual(123)
         expect(notificationRequest.creatorPid).assertEqual(123)

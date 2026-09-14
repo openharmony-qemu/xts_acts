@@ -7,6 +7,9 @@ import tripleInheritanceTaskPoolTest from './tripleInheritanceTaskPool.test';
 import tripleInheritanceWorkerTest from './tripleInheritanceWorker.test';
 import SendableClassEcmaTest from './SendableClassEcmaTest.test';
 
+import useSendableTest from './UseSendableTest.test';
+import iSendableImplTest from './ISendableImplTest.test';
+
 export default function testsuite() {
   sendableClassTest();
   sendableClass_staticTest();
@@ -15,5 +18,8 @@ export default function testsuite() {
   sendableInheritClassTest();
   tripleInheritanceTaskPoolTest();
   tripleInheritanceWorkerTest();
-  SendableClassEcmaTest()
+  SendableClassEcmaTest();
+
+  useSendableTest();
+  iSendableImplTest();
 }

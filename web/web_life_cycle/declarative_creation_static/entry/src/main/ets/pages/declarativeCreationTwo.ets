@@ -20,7 +20,7 @@ import webView from '@ohos.web.webview'
 import { Utils } from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
-
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 @CustomDialog
 struct NewWebViewComp {
   controller?: CustomDialogController
@@ -86,6 +86,13 @@ struct WebViewEnumAndSetWebController {
               console.info('Set flag = ' + this.flag)
               break;
             }
+
+            case 'emitSwitchNextPageMouseInfo': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/MouseInfoCallbackTest' })
+              console.log('push URL success')
+            }
           }
         })
       }
@@ -115,3 +122,4 @@ struct WebViewEnumAndSetWebController {
     }
   }
 }
+

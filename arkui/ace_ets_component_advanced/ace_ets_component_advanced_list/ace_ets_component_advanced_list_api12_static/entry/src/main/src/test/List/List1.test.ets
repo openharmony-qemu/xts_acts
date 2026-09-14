@@ -13,22 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,  Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it,  Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { ON, Driver } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility } from '../Util.test'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function ListTest() {
   describe('ListTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ListTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.example.myapplication.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       console.info("search_caret beforeEach start");
       let options: router.RouterOptions = {
@@ -67,12 +60,17 @@ it('ArkUI_Stage_List_OnDigitalCrown_Static_0100', Level.LEVEL1, async (done: () 
       // Verify the functions of the ListItem component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0100] START');
       // Verify the functions of onDigitalCrown
-      let driver = Driver.create()
-      await CommonFunc.sleep(2000);
-      let listDigitalCrown = await driver.findComponent(ON.id('listitem01'));
-      let text = await (listDigitalCrown?.getText() as Promise<string>);
-      console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0100] listDigitalCrown: " + text);
-      expect(text).assertEqual('OpenharmonyTest1');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let listDigitalCrown = await driver.findComponent(ON.id('listitem01'));
+        let text = await (listDigitalCrown?.getText() as Promise<string>);
+        console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0100] listDigitalCrown: " + text);
+        expect(text).assertEqual('OpenharmonyTest1');
+      } catch (err) {
+        console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0100] err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0100] END');
       done();
     });
@@ -88,12 +86,17 @@ it('ArkUI_Stage_List_OnDigitalCrown_Static_0200', Level.LEVEL1, async (done: () 
       // Verify the functions of the ListItem component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0200] START');
       // Verify the functions of onDigitalCrown
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let textDigitalCrown = await driver.findComponent(ON.id('listitem02'));
-      let text = await (textDigitalCrown?.getText() as Promise<string>);
-      console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0200] textDigitalCrown: " + text);
-      expect(text).assertEqual('OpenharmonyTest2');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let textDigitalCrown = await driver.findComponent(ON.id('listitem02'));
+        let text = await (textDigitalCrown?.getText() as Promise<string>);
+        console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0200] textDigitalCrown: " + text);
+        expect(text).assertEqual('OpenharmonyTest2');
+      } catch (err) {
+        console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0200] err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0200] END');
       done();
     });
@@ -109,12 +112,17 @@ it('ArkUI_Stage_List_OnDigitalCrown_Static_0300', Level.LEVEL1, async (done: () 
       // Verify the functions of the button component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0300] START');
       // Verify the functions of onDigitalCrown
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let listItemDigitalCrown = await driver.findComponent(ON.id('button1'));
-      let text = await (listItemDigitalCrown?.getText() as Promise<string>);
-      console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0300] listItemDigitalCrown: " + text);
-      expect(text).assertEqual('testCrownBTN1');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let listItemDigitalCrown = await driver.findComponent(ON.id('button1'));
+        let text = await (listItemDigitalCrown?.getText() as Promise<string>);
+        console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0300] listItemDigitalCrown: " + text);
+        expect(text).assertEqual('testCrownBTN1');
+      } catch (err) {
+        console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0300] err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0300] END');
       done();
     });
@@ -130,12 +138,17 @@ it('ArkUI_Stage_List_OnDigitalCrown_Static_0400', Level.LEVEL1, async (done: () 
       // Verify the functions of the button component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0400] START');
       // Verify the functions of onDigitalCrown
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let listDigitalCrown = await driver.findComponent(ON.id('button2'));
-      let text = await (listDigitalCrown?.getText() as Promise<string>);
-      console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0400] listDigitalCrown: " + text);
-      expect(text).assertEqual('testCrownBTN2');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let listDigitalCrown = await driver.findComponent(ON.id('button2'));
+        let text = await (listDigitalCrown?.getText() as Promise<string>);
+        console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0400] listDigitalCrown: " + text);
+        expect(text).assertEqual('testCrownBTN2');
+      } catch (err) {
+        console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0400] err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0400] END');
       done();
     });
@@ -151,12 +164,17 @@ it('ArkUI_Stage_List_OnDigitalCrown_Static_0500', Level.LEVEL1, async (done: () 
       // Verify the functions of the text component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0500] START');
       // Verify the functions of onDigitalCrown
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let listItemDigitalCrown = await driver.findComponent(ON.id('text01'));
-      let text = await (listItemDigitalCrown?.getText() as Promise<string>);
-      console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0500] listItemDigitalCrown: " + text);
-      expect(text).assertEqual('testCrowntext1');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let listItemDigitalCrown = await driver.findComponent(ON.id('text01'));
+        let text = await (listItemDigitalCrown?.getText() as Promise<string>);
+        console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0500] listItemDigitalCrown: " + text);
+        expect(text).assertEqual('testCrowntext1');
+      } catch (err) {
+        console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0500] err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0500] END');
       done();
     });
@@ -173,12 +191,17 @@ it('ArkUI_Stage_List_OnDigitalCrown_Static_0600', Level.LEVEL1, async (done: () 
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0600] START');
 
       // Verify the functions of onDigitalCrown
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let listDigitalCrown = await driver.findComponent(ON.id('text02'));
-      let text = await (listDigitalCrown?.getText() as Promise<string>);
-      console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0600] listDigitalCrown: " + text);
-      expect(text).assertEqual('testCrowntext2');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let listDigitalCrown = await driver.findComponent(ON.id('text02'));
+        let text = await (listDigitalCrown?.getText() as Promise<string>);
+        console.info("[ArkUI_Stage_List_OnDigitalCrown_Static_0600] listDigitalCrown: " + text);
+        expect(text).assertEqual('testCrowntext2');
+      } catch (err) {
+        console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0600] err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
 
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0600] END');
       done();

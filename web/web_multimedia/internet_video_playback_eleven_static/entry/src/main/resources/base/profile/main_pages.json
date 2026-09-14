@@ -1,5 +1,7 @@
 {
   "src": [
-    "pages/EnableMediaNetworkProxy"
+    "pages/EnableMediaNetworkProxy",
+	"pages/HandleFullscreenChangedParamTest",
+	"pages/HandleStatusChangedParamTest"
   ]
 }

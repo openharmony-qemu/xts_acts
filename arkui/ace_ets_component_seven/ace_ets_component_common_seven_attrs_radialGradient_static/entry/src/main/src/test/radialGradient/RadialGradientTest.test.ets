@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
-import { startAbility, UtilsTest } from '../Util.test';
 
 /**
  * Test of common attribute: radialGradient
@@ -72,12 +71,6 @@ export default function radialGradientTest() {
    * Create test suite.
    */
   describe('radialGradientTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000);
-      
-    });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       console.error('[' + data.caseTag + '] radialGradientTest.');
       console.error('[' + data.caseTag + '] radialGradientTest. data.testValue.setValue.radialGradient : ' +

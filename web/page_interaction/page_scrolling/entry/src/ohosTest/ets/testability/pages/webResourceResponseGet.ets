@@ -104,7 +104,7 @@ struct webResourceResponseGet {
         Button("WebResourceResponseGet click").key('WebResourceResponseGetButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "testScrollType001": {
               try {
@@ -119,7 +119,7 @@ struct webResourceResponseGet {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScrolltwo.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 let result = this.controllerone.scrollByWithResult(200, 200);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 console.log("original result: " + result);
@@ -135,7 +135,7 @@ struct webResourceResponseGet {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScrolltwo.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 let result = this.controller.scrollByWithResult(200, 200);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 console.log("original result: " + result);

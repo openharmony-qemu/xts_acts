@@ -339,8 +339,8 @@ export default function CameraErrorCodeUsecaseTest() {
       }
     })
 
-    beforeEach(() => {
-      sleep(1000);
+    beforeEach(async () => {
+      await sleep(1000);
       console.info('beforeEach case');
     })
 

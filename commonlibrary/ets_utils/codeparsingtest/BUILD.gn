@@ -18,12 +18,21 @@ group("codeparsingtest") {
   if (is_standard_system) {
     deps = [
       "actscodeparsingtest:ActsCodeParsingTest",
-      "baselibtest:ActsBaseLibTest",
       "decimallibtest:ActsDecimalLibTest",
       "specialchartest:ActsSpecialCharTest",
-      "base2libtest:ActsBase2LibTest",
-      "base3libtest:ActsBase3LibTest",
       "annotationtest:ActsAnnotationTest",
+      "buffer_standard_test:ActsBufferLibTest",
+      "container_standard_test:ActsContainerLibTest",
+      "container2_standard_test:ActsContainer2LibTest",
+      "container3_standard_test:ActsContainer3LibTest",
+      "convertXml_standard_test:ActsConvertXmlLibTest",
+      "fastbuffer_standard_test:ActsFastBufferLibTest",
+      "global_standard:ActsGlobalLibTest",
+      "stream_standard_test:ActsStreamLibTest",
+      "uri_standard_test:ActsUriLibTest",
+      "url_standard_test:ActsUrlLibTest",
+      "util_standard_test:ActsUtilLibTest",
+      "xml_standard_test:ActsXmlLibTest",
     ]
   }
 }

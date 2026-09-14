@@ -13,7 +13,7 @@
  	  * See the License for the specific language governing permissions and
  	  * limitations under the License.
  	  */
- 	 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+ 	 import { describe, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
  	 import router from '@ohos.router';
  	 import {
  	   Component,
@@ -28,25 +28,15 @@
  	 import RectValue from '../../../ets/MainAbility/common/Rect';
  	 import {MessageManager,Callback,Message} from '../../../ets/MainAbility/common/MessageManager';
  	 import { AppStorage } from '@ohos.arkui.stateManagement';
- 	 import { UtilsTest } from '../Util.test';
+
  	 import inspector from '@ohos.arkui.inspector';
- 	 import hilog from '@ohos.hilog'
- 	 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
- 	 import UIAbility from '@ohos.app.ability.UIAbility';
- 	 import common from '@ohos.app.ability.common';
- 	 import { BusinessError } from '@ohos.base';
+
  	 import { UIContext, Router } from '@ohos.arkui.UIContext';
  	 
  	 import text from "@ohos.graphics.text";
  	 import {KeyCode} from '@ohos.multimodalInput.keyCode';
  	 export default function orphanCharOptimizationundefined(): void{
  	   describe('orphanCharOptimizationundefined', () => {
- 	     beforeAll(async (): Promise<void> => {
- 	       console.info("assemblyCallbackTest beforeAll start");
- 	 
- 	       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api24.static", "EntryAbility")
- 	 
- 	     });
  	 
  	     beforeEach(async (): Promise<void> => {
  	       console.info("==============================");
@@ -69,8 +59,12 @@
  	     });
  	 
  	     afterEach(async (): Promise<void> => {
+ 	       try {
  	       await CommonFunc.sleep(1000);
  	       console.info('getCurrentLocalPosition after each called');
+ 	       } catch (e) {
+ 	         console.error('error: ' + JSON.stringify(e));
+ 	       }
  	     });
  	     /**
  	      * @tc.number   SUB_ACE_ARKUI_OPTIMIZATION_0300
@@ -79,6 +73,7 @@
  	      * @tc.level   Level.LEVEL0
  	      */
  	     it('SUB_ACE_ARKUI_OPTIMIZATION_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ 	       try {
  	       console.info('[SUB_ACE_ARKUI_OPTIMIZATION_0300] START');
  	       await CommonFunc.sleep(1000);
  	       let driver: Driver = Driver.create();
@@ -120,8 +115,12 @@
  	       await CommonFunc.sleep(1000);
  	       expect(obj.getElement('$attrs').getString('orphanCharOptimization')).assertEqual('false');
  	       console.info('[SUB_ACE_ARKUI_OPTIMIZATION_0300] END');
- 	 
- 	       done();
+ 	       } catch (e) {
+ 	         console.error('error: ' + JSON.stringify(e));
+ 	         expect().assertFail();
+ 	       } finally {
+ 	         done();
+ 	       }
  	     });
  	     /**
  	      * @tc.number   SUB_ACE_ARKUI_OPTIMIZATION_0200
@@ -130,6 +129,7 @@
  	      * @tc.level   Level.LEVEL0
  	      */
  	     it('SUB_ACE_ARKUI_OPTIMIZATION_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ 	       try {
  	       console.info('[SUB_ACE_ARKUI_OPTIMIZATION_0200] START');
  	       await CommonFunc.sleep(1000);
  	       let driver: Driver = Driver.create();
@@ -167,7 +167,12 @@
  	       await CommonFunc.sleep(1000);
  	       expect(obj.getElement('$attrs').getString('orphanCharOptimization')).assertEqual('false');
  	       console.info('[SUB_ACE_ARKUI_OPTIMIZATION_0200] END');
- 	       done();
+ 	       } catch (e) {
+ 	         console.error('error: ' + JSON.stringify(e));
+ 	         expect().assertFail();
+ 	       } finally {
+ 	         done();
+ 	       }
  	     });
  	   })
  	 }

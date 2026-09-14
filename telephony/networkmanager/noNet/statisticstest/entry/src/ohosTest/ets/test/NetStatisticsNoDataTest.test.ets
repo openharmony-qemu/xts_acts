@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll,it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
 import statistics from '@ohos.net.statistics';
 import connection from '@ohos.net.connection';
@@ -29,7 +29,12 @@ const ExpectTrue: (n: boolean, caseName?: string) => void = (n: boolean, caseNam
   }
 }
 
-let hasData: boolean;
+function sleep (time:number):Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok')},time)
+  });
+}
 
 async function getApplicationUid(): Promise<number> {
   try {
@@ -50,9 +55,23 @@ export default function   netStatisticsNoDataTest() {
   describe('NetStatisticsNoDataTest', () => {
 
     beforeAll(async () => {
-      hasData = await data.isCellularDataEnabled();
-      if (hasData) {
-        console.info(`hasData is ${hasData}`);
+      try {
+        let netHandle = await connection.getDefaultNet();
+        console.info(`NetStatisticsNoDataTest beforeAll netHandle is ${JSON.stringify(netHandle)}`);
+        if (netHandle.netId == 0) {
+          console.info(`NetStatisticsNoDataTest beforeAll no default network`);
+          return;
+        }
+        let netCapabilities = await connection.getNetCapabilities(netHandle);
+        if (netCapabilities.bearerTypes.includes(connection.NetBearType.BEARER_WIFI)) {
+          console.info(`NetStatisticsNoDataTest beforeAll current network is WIFI, do nothing`);
+        } else if (netCapabilities.bearerTypes.includes(connection.NetBearType.BEARER_CELLULAR)) {
+          console.info(`NetStatisticsNoDataTest beforeAll current network is CELLULAR, need to disable cellular data`);
+        } else {
+          console.info(`NetStatisticsNoDataTest beforeAll current network bearerTypes is ${JSON.stringify(netCapabilities.bearerTypes)}`);
+        }
+      } catch (err) {
+        console.info(`NetStatisticsNoDataTest beforeAll getDefaultNet or getNetCapabilities failed ${JSON.stringify(err)}`);
       }
     });
 

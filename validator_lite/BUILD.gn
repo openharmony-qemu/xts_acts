@@ -1,6 +1,7 @@
 import("//test/xts/tools/lite/build/suite_lite.gni")
 
 _config_dir = "$root_out_dir/suites/acts_validator_lite/config"
+_suite_path = rebase_path("${SUITE_OUTPUT_PREFIX}acts_validator_lite")
 
 action("copy_validator_config") {
   script = "//test/xts/tools/lite/build/utils.py"
@@ -12,13 +13,82 @@ action("copy_validator_config") {
     "--arguments",
     "output=" + rebase_path("$_config_dir") + "#sources=" + rebase_path("validator.json") + "#to_dir=False",
   ]
-  deps = [ ":acts_validator_lite_xdevice" ]
 }
 
-test_suite("acts_validator_lite") {
-  deps = [
-    "//test/xts/acts/validator_lite/acts_validator_lite:acts_validator_lite_remove_from_rootfs",
-    ":copy_validator_config",
+action("acts_validator_lite_xdevice") {
+  script = "//test/xts/tools/lite/build/utils.py"
+  deps = [ "//test/xts/acts/build_lite:acts_xdevice" ]
+  outputs = [ "$root_out_dir/suites/acts_validator_lite/tools/" ]
+  args = [
+    "--method_name",
+    "copy_file",
+    "--arguments",
+    "output=" + rebase_path("$root_out_dir/suites/acts_validator_lite/tools") +
+    "#source_dirs=" + rebase_path("$root_out_dir/suites/acts/tools") +
+    "#to_dir=True",
   ]
-  version = "OpenHarmony-ValidatorLite-1.0.0"
+}
+
+action("acts_validator_lite_xdevice_extras") {
+  script = "//test/xts/tools/lite/build/utils.py"
+  deps = [ "//test/xts/acts/build_lite:acts_xdevice" ]
+  outputs = [
+    "$root_out_dir/suites/acts_validator_lite/run.bat",
+    "$root_out_dir/suites/acts_validator_lite/run.sh",
+  ]
+  args = [
+    "--method_name",
+    "copy_file",
+    "--arguments",
+    "output=" + rebase_path("$root_out_dir/suites/acts_validator_lite") +
+    "#sources=" + rebase_path("//test/testfwk/xdevice/run.bat") + "," +
+    rebase_path("//test/testfwk/xdevice/run.sh") + "#to_dir=True",
+  ]
+}
+
+action("acts_validator_lite_config") {
+  script = "//test/xts/tools/lite/build/utils.py"
+  deps = [ ":acts_validator_lite_xdevice_extras" ]
+  outputs = [ "$root_out_dir/suites/acts_validator_lite/config/" ]
+  args = [
+    "--method_name",
+    "copy_file",
+    "--arguments",
+    "output=" + rebase_path("$root_out_dir/suites/acts_validator_lite/config") +
+    "#source_dirs=" + rebase_path("//test/testfwk/xdevice/config") +
+    "#to_dir=True",
+  ]
+}
+
+_deps = [
+  ":acts_validator_lite_xdevice",
+  ":acts_validator_lite_xdevice_extras",
+  ":acts_validator_lite_config",
+  "//test/xts/acts/validator_lite/acts_validator_lite:acts_validator_lite_remove_from_rootfs",
+  ":copy_validator_config",
+]
+
+action("acts_validator_lite_generate_module_data") {
+  script = "//test/xts/tools/lite/build/utils.py"
+  deps = _deps
+  args = [
+    "--method_name",
+    "record_test_component_info",
+    "--arguments",
+    "out_dir=${_suite_path}/testcases#version=OpenHarmony-ValidatorLite-1.0.0",
+  ]
+  outputs = [ "${SUITE_OUTPUT_PREFIX}/acts_validator_lite/${SUITE_TESTCASES_NAME}/module_info.json" ]
+}
+
+action("acts_validator_lite") {
+  script = "//test/xts/tools/lite/build/suite.py"
+  deps = [ ":acts_validator_lite_generate_module_data" ]
+  args = [
+    "archive_suite",
+    "--suite_path",
+    _suite_path,
+    "--build_enabled",
+    "true",
+  ]
+  outputs = [ "${SUITE_OUTPUT_PREFIX}acts_validator_lite.zip" ]
 }

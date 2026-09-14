@@ -29,7 +29,7 @@ import { Driver, ON } from '@ohos.UiTest';
 let emitKey = ''
 let testAbilityContext: common.UIAbilityContext;
 
-export default function webInitTest() {
+export default function webInitTest(): void {
 
   describe('WebInitTest', () => {
 
@@ -79,7 +79,7 @@ export default function webInitTest() {
       await Utils.msSleep(5000);
       Utils.emitEvent('emitOnce001', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testOnce001', true, 409, done);
+      Utils.registerEvent('testOnceStatic001', true, 409, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebInitTestButton', 10, '');
       await Utils.msSleep(5000)
@@ -99,7 +99,7 @@ export default function webInitTest() {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitOnce002', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('testOnce002', false, 410, done);
+      Utils.registerEvent('testOnceStatic002', false, 410, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebInitTestButton', 10, '');
       await Utils.msSleep(5000)
@@ -119,7 +119,47 @@ export default function webInitTest() {
         await Utils.msSleep(2000);
         Utils.emitEvent('emitOnce003', 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent('testOnce003', "401", 202603182, done);
+        Utils.registerEvent('testOnceStatic003', "401", 202603182, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebInitTestButton', 10, '');
+        await Utils.msSleep(5000)
+        done()
+      })
+
+    /**
+     * @tc.name   testOnceStatic004
+     * @tc.number SUB_WEB_ONCE_0400
+     * @tc.desc   test once webCreated should not be called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnceStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitOnce004', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testOnceStatic004', "401", 202603183, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebInitTestButton', 10, '');
+        await Utils.msSleep(5000)
+        done()
+      })
+
+    /**
+     * @tc.name   testOnceStatic005
+     * @tc.number SUB_WEB_ONCE_0500
+     * @tc.desc   test once webCreated should not be called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnceStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitOnce005', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testOnceStatic005', "401", 202603184, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebInitTestButton', 10, '');
         await Utils.msSleep(5000)

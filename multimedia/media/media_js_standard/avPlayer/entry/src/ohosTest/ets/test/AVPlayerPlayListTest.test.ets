@@ -488,6 +488,15 @@ export default function AVPlayerPlayListTest() {
         expect(error.code).assertEqual(5400102);
         done();
       }
+      try {
+        let arr = await avPlayer?.getMediaSources();
+        console.info('SUB_MULTIMEDIA_MEDIA_AVPLAYER_PLAYLIST_GETMEDIASOURCE_0200 arr: ' + JSON.stringify(arr))
+        done();
+      } catch (err) {
+        console.error('SUB_MULTIMEDIA_MEDIA_AVPLAYER_PLAYLIST_GETMEDIASOURCE_0200 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+        done();
+      }
     });
 
     /**

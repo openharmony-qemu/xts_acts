@@ -22,6 +22,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '../../../hypium/index';
 import { State } from '@ohos.arkui.stateManagement'
 import { BusinessError, Callback, RecordData } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 import {
   $rawfile,
   BarPosition,
@@ -109,6 +110,12 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
+            }
+
+            case 'emitOnSwitchNextHorizontalTest': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: "pages/WebViewSetScrollbarModeParamTest" })
             }
           }
         })

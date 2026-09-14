@@ -13,35 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import UIAbility from '@ohos.app.ability.UIAbility';
-import hilog from '@ohos.hilog'
-import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { startAbility, UtilsTest } from '../Util.test';
-
-let testAbilityContext: common.UIAbilityContext;
-let domain: int = 0x0000;
-let tag: string = 'testTag';
 
 
 export default function scrollAniFalse() {
   describe('scrollAniFalse', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("scrollAniFalse beforeEach start");
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll14.static", "EntryAbility");
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("scrollAniFalse beforeEach start");

@@ -187,10 +187,16 @@ static napi_value OHCertManagerNativeApiPrivateFunc0100(napi_env env, napi_callb
     
     OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length() + 1), (uint8_t*)identity.c_str()};
     OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
-    
+    if (credential == nullptr) {
+        napi_throw_error(env, nullptr, "malloc credential error");
+        return nullptr;
+    }
+    (void)SafeMemset(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
+
     int32_t ohResult = OH_CertManager_GetPrivateCertificate(&keyUri, credential);
     
     OH_CertManager_FreeCredential(credential);
+    free(credential);
     napi_value ret;
     napi_create_int32(env, -1, &ret);
     if (ohResult == OH_CM_SUCCESS) {
@@ -226,10 +232,16 @@ static napi_value OHCertManagerNativeApiPrivateErr0100(napi_env env, napi_callba
     
     OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length() + 1), (uint8_t*)identity.c_str()};
     OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
-    
+    if (credential == nullptr) {
+        napi_throw_error(env, nullptr, "malloc credential error");
+        return nullptr;
+    }
+    (void)SafeMemset(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
+
     int32_t ohResult = OH_CertManager_GetPrivateCertificate(&keyUri, credential);
     
     OH_CertManager_FreeCredential(credential);
+    free(credential);
     napi_value ret;
     napi_create_int32(env, -1, &ret);
     if (ohResult == OH_CM_PARAMETER_VALIDATION_FAILED) {
@@ -265,10 +277,16 @@ static napi_value OHCertManagerNativeApiPrivateErr0200(napi_env env, napi_callba
     
     OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length() + 1), (uint8_t*)identity.c_str()};
     OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
-    
+    if (credential == nullptr) {
+        napi_throw_error(env, nullptr, "malloc credential error");
+        return nullptr;
+    }
+    (void)SafeMemset(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
+
     int32_t ohResult = OH_CertManager_GetPrivateCertificate(&keyUri, credential);
     
     OH_CertManager_FreeCredential(credential);
+    free(credential);
     napi_value ret;
     napi_create_int32(env, -1, &ret);
     if (ohResult == OH_CM_NOT_FOUND) {
@@ -304,11 +322,16 @@ static napi_value OHCertManagerNativeApiPublicErr0100(napi_env env, napi_callbac
     
     OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length() + 1), (uint8_t*)identity.c_str()};
     OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
+    if (credential == nullptr) {
+        napi_throw_error(env, nullptr, "malloc credential error");
+        return nullptr;
+    }
     (void)SafeMemset(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
 
     int32_t ohResult = OH_CertManager_GetPublicCertificate(&keyUri, credential);
     
     OH_CertManager_FreeCredential(credential);
+    free(credential);
     napi_value ret;
     napi_create_int32(env, -1, &ret);
     if (ohResult == OH_CM_PARAMETER_VALIDATION_FAILED) {
@@ -344,10 +367,16 @@ static napi_value OHCertManagerNativeApiPublicErr0200(napi_env env, napi_callbac
     
     OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length() + 1), (uint8_t*)identity.c_str()};
     OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
-    
+    if (credential == nullptr) {
+        napi_throw_error(env, nullptr, "malloc credential error");
+        return nullptr;
+    }
+    (void)SafeMemset(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
+
     int32_t ohResult = OH_CertManager_GetPublicCertificate(&keyUri, credential);
     
     OH_CertManager_FreeCredential(credential);
+    free(credential);
     napi_value ret;
     napi_create_int32(env, -1, &ret);
     if (ohResult == OH_CM_INNER_FAILURE) {
@@ -383,10 +412,16 @@ static napi_value OHCertManagerNativeApiPublicErr0300(napi_env env, napi_callbac
     
     OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length() + 1), (uint8_t*)identity.c_str()};
     OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
-    
+    if (credential == nullptr) {
+        napi_throw_error(env, nullptr, "malloc credential error");
+        return nullptr;
+    }
+    (void)SafeMemset(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
+
     int32_t ohResult = OH_CertManager_GetPublicCertificate(&keyUri, credential);
     
     OH_CertManager_FreeCredential(credential);
+    free(credential);
     napi_value ret;
     napi_create_int32(env, -1, &ret);
     if (ohResult == OH_CM_NO_AUTHORIZATION) {

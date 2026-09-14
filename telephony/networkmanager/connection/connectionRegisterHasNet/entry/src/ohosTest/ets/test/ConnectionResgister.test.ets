@@ -1391,5 +1391,223 @@ export default function ConnectionRegisterTest() {
         done();
       }
     });
- })
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync2800
+     * @tc.number SUB_NetworkManager_Register_Async_2800
+     * @tc.desc   createNetConnection with netCapabilities.bearerTypes as an empty array, register success but no matched network
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testNetworkManagerRegisterAsync2800';
+      console.info(`${caseName}---Start`);
+      try{
+        let netSpecifier: connection.NetSpecifier = {
+          netCapabilities: {
+            linkUpBandwidthKbps: 0,
+            linkDownBandwidthKbps: 0,
+            bearerTypes: [],
+            networkCap: [NetCapNET_CAPABILITY_INTERNET],
+          }, bearerPrivateIdentifier: '123'
+        }
+        let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+        console.info(caseName+ " register start");
+        netConn.register(async (error) => {
+          if (error) {
+            console.info(caseName + " register fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+            console.info(`${caseName}---End`);
+            done();
+          }else{
+            console.info(caseName+ " register success");
+          }
+        });
+        await netConnOnEvent6(caseName, netConn)
+        await sleep(500);
+        console.info(caseName+ " unregister start");
+        netConn.unregister(async (error) => {
+          if (error) {
+            console.info(caseName + " unregister fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+          } else {
+            console.info(caseName + " unregister success ");
+            console.info(caseName + " ListenTimes is :" +ListenTimes);
+            ExpectTrue(caseName, ListenTimes === 0);
+          }
+          console.info(`${caseName}---End`);
+          done();
+        });
+      }catch (err){
+        console.info(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail(caseName);
+        console.info(`${caseName} --test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync2900
+     * @tc.number SUB_NetworkManager_Register_Async_2900
+     * @tc.desc   createNetConnection with netCapabilities.networkCap as an empty array, register success and match the default network
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testNetworkManagerRegisterAsync2900';
+      console.info(`${caseName}---Start`);
+      try{
+        let netSpecifier: connection.NetSpecifier = {
+          netCapabilities: {
+            bearerTypes: [NetBearTypeBEARER_WIFI, NetBearTypeBEARER_CELLULAR],
+            networkCap: [],
+          }
+        }
+        let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+        console.info(caseName+ " register start");
+        netConn.register(async (error) => {
+          if (error) {
+            console.info(caseName + " register fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+            console.info(`${caseName}---End`);
+            done();
+          }else{
+            console.info(caseName+ " register success");
+          }
+        });
+        await netConnOnEvent6(caseName, netConn)
+        await sleep(500);
+        console.info(caseName+ " unregister start");
+        netConn.unregister(async (error) => {
+          if (error) {
+            console.info(caseName + " unregister fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+          } else {
+            console.info(caseName + " unregister success ");
+            console.info(caseName + " ListenTimes is :" +ListenTimes);
+            ExpectTrue(caseName, ListenTimes === 11);
+          }
+          console.info(`${caseName}---End`);
+          done();
+        });
+      }catch (err){
+        console.info(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail(caseName);
+        console.info(`${caseName} --test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync3000
+     * @tc.number SUB_NetworkManager_Register_Async_3000
+     * @tc.desc   createNetConnection with netCapabilities.networkCap NET_CAPABILITY_CHECKING_CONNECTIVITY, register success but no matched network
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testNetworkManagerRegisterAsync3000';
+      console.info(`${caseName}---Start`);
+      try{
+      let netSpecifier: connection.NetSpecifier = {
+        netCapabilities: {
+          linkUpBandwidthKbps: 0,
+          linkDownBandwidthKbps: 0,
+          bearerTypes: [NetBearTypeBEARER_CELLULAR],
+          networkCap: [NetCapNET_CAPABILITY_CHECKING_CONNECTIVITY],
+        }, bearerPrivateIdentifier: '123'
+      }
+      let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+        console.info(caseName+ " register start");
+        await netConn.register(async (error) => {
+          if (error) {
+            console.info(caseName + " register fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+            console.info(`${caseName}---End`);
+            done();
+          }else{
+            console.info(caseName+ " register success");
+          }
+        });
+        await netConnOnEvent6(caseName, netConn)
+        await sleep(500);
+        console.info(caseName+ " unregister start");
+        netConn.unregister(async (error) => {
+          if (error) {
+            console.info(caseName + " unregister fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+          } else {
+            console.info(caseName + " unregister success ");
+            console.info(caseName + " ListenTimes is :" +ListenTimes);
+            ExpectTrue(caseName, ListenTimes === 0);
+          }
+          console.info(`${caseName}---End`);
+          done();
+        });
+      }catch (err){
+        console.info(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail(caseName);
+        console.info(`${caseName} --test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync3100
+     * @tc.number SUB_NetworkManager_Register_Async_3100
+     * @tc.desc   createNetConnection with netCapabilities.networkCap as a multi-element array, register success but no matched network
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testNetworkManagerRegisterAsync3100';
+      console.info(`${caseName}---Start`);
+      try{
+      let netSpecifier: connection.NetSpecifier = {
+        netCapabilities: {
+          linkUpBandwidthKbps: 0,
+          linkDownBandwidthKbps: 0,
+          bearerTypes: [NetBearTypeBEARER_CELLULAR],
+          networkCap: [NetCapNET_CAPABILITY_INTERNET, NetCapNET_NET_CAPABILITY_VALIDATED],
+        }, bearerPrivateIdentifier: '123'
+      }
+      let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+        console.info(caseName+ " register start");
+        await netConn.register(async (error) => {
+          if (error) {
+            console.info(caseName + " register fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+            console.info(`${caseName}---End`);
+            done();
+          }else{
+            console.info(caseName+ " register success");
+          }
+        });
+        await netConnOnEvent6(caseName, netConn)
+        await sleep(500);
+        console.info(caseName+ " unregister start");
+        netConn.unregister(async (error) => {
+          if (error) {
+            console.info(caseName + " unregister fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+          } else {
+            console.info(caseName + " unregister success ");
+            console.info(caseName + " ListenTimes is :" +ListenTimes);
+            ExpectTrue(caseName, ListenTimes === 0);
+          }
+          console.info(`${caseName}---End`);
+          done();
+        });
+      }catch (err){
+        console.info(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail(caseName);
+        console.info(`${caseName} --test end`);
+        done();
+      }
+    });
+  })
 }

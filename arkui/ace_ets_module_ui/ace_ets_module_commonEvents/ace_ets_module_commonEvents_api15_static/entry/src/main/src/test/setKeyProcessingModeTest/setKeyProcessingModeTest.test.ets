@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Component, Driver, MouseButton, ON, PointerMatrix } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,24 +21,9 @@ import RectValue from '../../../ets/MainAbility/common/Rect';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function setKeyProcessingModeTest() {
   describe('setKeyProcessingModeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("setKeyProcessingModeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -61,7 +46,11 @@ export default function setKeyProcessingModeTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("setKeyProcessingModeTest after each error: " + err);
+      }
       console.info("setKeyProcessingModeTest after each called");
     });
 
@@ -79,9 +68,9 @@ it('setKeyProcessingModeTest_static_0100', Level.LEVEL0, async (done: () => void
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await (driver.findComponent(ON.id('FOCUS_NAVIGATION')) as Promise<Component>);
-      await CommonFunc.sleep(2000);
-      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
+      await (btn?.click() as Promise<void>)
+      await CommonFunc.sleep(500);
       await driver.triggerKey(2049);
       await CommonFunc.sleep(500);
       await driver.triggerKey(2049);
@@ -89,14 +78,13 @@ it('setKeyProcessingModeTest_static_0100', Level.LEVEL0, async (done: () => void
       await driver.triggerKey(2049);
       await CommonFunc.sleep(1000);
       let obj = inspector.getInspectorByKey('focus');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       let focus: string = JSON.parseJsonElement(obj).getElement('$attrs').getString('content');
       console.log('setKeyProcessingModeTest_static_0100---' + focus)
       expect(focus).assertEqual('Button3');
       console.info('setKeyProcessingModeTest_static_0100 END');
       done();
     });
-
 
     
     
@@ -110,15 +98,15 @@ it('setKeyProcessingModeTest_static_0200', Level.LEVEL0, async (done: () => void
 
       console.info('setKeyProcessingModeTest_0200 START');
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       let btn = await (driver.findComponent(ON.id('ANCESTOR_EVENT')) as Promise<Component>);
       await CommonFunc.sleep(2000);
       await (btn?.click() as Promise<void>)
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2049);
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       await driver.triggerKey(2049);
       await CommonFunc.sleep(1000);
       let obj = inspector.getInspectorByKey('focus');
@@ -129,7 +117,6 @@ it('setKeyProcessingModeTest_static_0200', Level.LEVEL0, async (done: () => void
       console.info('setKeyProcessingModeTest_0200 END');
       done();
     });
-
 
   
   })

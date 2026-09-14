@@ -26,7 +26,7 @@ import hilog from '@ohos.hilog';
 import { NativeEmbedParamStatus } from '@ohos.arkui.component'
 import { Driver, ON } from '@ohos.UiTest';
 
-export default function WebOnNativeEmbedObjectParamChange() {
+export default function WebOnNativeEmbedObjectParamChange(): void {
   describe('ActsAceWebOnNativeEmbedObjectParamChange', ():void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
@@ -55,5 +55,31 @@ export default function WebOnNativeEmbedObjectParamChange() {
         await Utils.msSleep(3000);
         done()
       })
+
+    /**
+     * @tc.name   testSwitchNextPageStatic06
+     * @tc.number SUB_WEB_NEXT_PAGE_0200
+     * @tc.desc   switchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSwitchNextPageStatic06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      try {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitSwitchNextPageStatic06', 10)
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('updateButton', 10, '');
+        await Utils.msSleep(4000)
+        } catch(err) {
+         console.log('testSwitchNextPageStatic06' + err)
+        }
+        done()
+      })
+            
+            
+
+
   })
 }

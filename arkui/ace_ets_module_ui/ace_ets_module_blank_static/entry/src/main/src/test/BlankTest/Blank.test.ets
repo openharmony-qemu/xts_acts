@@ -13,26 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
 
 export default function BlankTest() {
   describe('BlankTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] BlankTest beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.blank.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('[ARKUI_NEW] BlankTest beforeEach start');
       let options: router.RouterOptions = {
@@ -44,7 +36,7 @@ export default function BlankTest() {
         let pages = routerInstance.getState();
         console.info('[ARKUI_NEW] BlankTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== "BlankIndex") {
-          routerInstance.replaceUrl(options);
+          await routerInstance.replaceUrl(options);
         }
         await Utils.sleep(500);
       } catch (err) {
@@ -55,7 +47,11 @@ export default function BlankTest() {
 
     afterEach(async (): Promise<void> => {
       console.info('[ARKUI_NEW] BlankTest afterEach start');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('[ARKUI_NEW] BlankTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('[ARKUI_NEW] BlankTest afterEach end');
     });
 

@@ -22,12 +22,15 @@ import { Hypium } from '@ohos/hypium';
 
 import testNapi from 'libentry.so';
 import {waitForExist} from '../../test/WaitTest';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct webRegisterCustomsComponent {
     
     controller: web_webview.WebviewController = new web_webview.WebviewController("scheme-handler");
+    mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
+    hasTriggeredCustomLoad: boolean = false;
     @State str: string = ""
     @State interceptUrl: string = ''
     heads: Header[] = new Array()
@@ -63,6 +66,15 @@ struct webRegisterCustomsComponent {
     }
     onPageHide() {
         events_emitter.off(118010)
+    }
+    aboutToDisappear() {
+        this.controller.loadUrl(this.mServer.getShutdownUrl());
+    }
+    private getCustomScriptUrl(): string {
+        const host = this.mServer.getBaseUri().replace('http://', '').replace('https://', '');
+        console.info('ygz getCustomScriptUrl ==> host: ' + host);
+        console.info('ygz getCustomScriptUrl ==> url: ' + `custom://${host}/isolated_script.js`);
+        return `custom://${host}/isolated_script.js`;
     }
     private valueChangeCallBack = (eventData: events_emitter.EventData) => {
         console.info("web page valueChangeCallBack");
@@ -116,12 +128,17 @@ struct webRegisterCustomsComponent {
                     }
                 })
             }
-            Web({ src: $rawfile('index.html'), controller: this.controller })
+            Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
                 .height('50%')
                 .width('100%')
                 .javaScriptAccess(true)
                 .fileAccess(true)
                 .onPageEnd(()=>{
+                    if (!this.hasTriggeredCustomLoad) {
+                        this.hasTriggeredCustomLoad = true;
+                        this.controller.loadUrl(this.getCustomScriptUrl());
+                        return;
+                    }
                     this.isPageEnd = 0;
                 })
         }

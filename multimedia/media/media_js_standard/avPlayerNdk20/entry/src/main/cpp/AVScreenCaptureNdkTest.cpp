@@ -1162,6 +1162,23 @@ static napi_value OH_CaptureMode0102(napi_env env, napi_callback_info info)
     return retValue;
 }
 
+static napi_value OH_CaptureMode0103(napi_env env, napi_callback_info info)
+{
+    OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
+    OH_AVScreenCaptureConfig config;
+    SetConfig(config);
+    config.captureMode = OH_CAPTURE_VIRTUAL_EXTENDED_SCREEN;
+    auto errcode = OH_AVScreenCapture_Init(screenCapture, config);
+    int32_t res = 1;
+    if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
+        res = 0;
+    }
+    OH_AVScreenCapture_Release(screenCapture);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
 static napi_value OH_AudioCodecFormat0100(napi_env env, napi_callback_info info)
 {
     OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
@@ -1684,9 +1701,13 @@ static napi_value OH_AudioCaptureSourceTypeEnum(napi_env env, napi_callback_info
     napi_value result = nullptr;
     int32_t mic = 1;
     int32_t playback = 2;
+    int32_t invalid  = -1;
+    int32_t appPlayback  = 3;
     int32_t res = 1;
     if (OH_AudioCaptureSourceType::OH_MIC == mic &&
-        OH_AudioCaptureSourceType::OH_ALL_PLAYBACK == playback) {
+        OH_AudioCaptureSourceType::OH_ALL_PLAYBACK == playback &&
+        OH_AudioCaptureSourceType::OH_SOURCE_INVALID == invalid &&
+        OH_AudioCaptureSourceType::OH_APP_PLAYBACK == appPlayback) {
         res = 0;
     }
     napi_create_int32(env, res, &result);
@@ -1697,8 +1718,10 @@ static napi_value OH_CaptureModeEnum(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     int32_t screen = 0;
+    int32_t extendedScreen = 3;
     int32_t res = 1;
-    if (OH_CaptureMode::OH_CAPTURE_HOME_SCREEN == screen) {
+    if (OH_CaptureMode::OH_CAPTURE_HOME_SCREEN == screen &&
+        OH_CaptureMode::OH_CAPTURE_VIRTUAL_EXTENDED_SCREEN == extendedScreen) {
         res = 0;
     }
     napi_create_int32(env, res, &result);
@@ -1955,6 +1978,7 @@ napi_property_descriptor desc[] = {
     {"OH_CaptureMode0100", nullptr, OH_CaptureMode0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_CaptureMode0101", nullptr, OH_CaptureMode0101, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_CaptureMode0102", nullptr, OH_CaptureMode0102, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_CaptureMode0103", nullptr, OH_CaptureMode0103, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AudioCodecFormat0100", nullptr, OH_AudioCodecFormat0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AudioCodecFormat0101", nullptr, OH_AudioCodecFormat0101, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_VideoCodecFormat0100", nullptr, OH_VideoCodecFormat0100, nullptr, nullptr, nullptr, napi_default, nullptr},

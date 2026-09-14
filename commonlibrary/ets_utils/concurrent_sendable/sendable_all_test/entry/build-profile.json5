@@ -18,8 +18,8 @@
     "sourceOption": {
       "workers": [
         "./src/ohosTest/ets/workers/Worker.ets",
-        "./src/ohosTest/ets/workers/sendable_worker.ets",
-        "./src/ohosTest/ets/workers/config_worker.ets",
+        "./src/ohosTest/ets/workers/SendableWorker.ets",
+        "./src/ohosTest/ets/workers/ConfigWorker.ets",
         "./src/ohosTest/ets/workers/SharedModuleWorker.ets"
       ]
     }

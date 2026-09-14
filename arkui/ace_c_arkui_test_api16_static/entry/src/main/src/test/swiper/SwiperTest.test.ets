@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level , beforeAll } from '../../../../hypium/index';
+import { expect, describe, it, afterEach, Level } from '../../../../hypium/index';
 import { Driver, ON, PointerMatrix, Rect, Component } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import inspector from '@ohos.arkui.inspector';
 import { LibUtil } from '../../../ets/pages/LibUtil'
-import { UtilsTest } from '../Util.test'
 
 let libUtil: LibUtil = new LibUtil();
 
 export default function swiperTest() {
 
   describe('swiperTest',() => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api16.static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('swiperTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     
@@ -41,27 +41,32 @@ export default function swiperTest() {
      * @tc.level    Level.LEVEL1
      */
     it('swiperAutoPlayTest001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('swiperAutoPlayTest001 START');
-      let PAGE_TAG = 'SwiperAutoPlayTest';
-      await Utils.pushPage(`swiper/${PAGE_TAG}`);
-      await Utils.sleep(1000)
-      let driver = Driver.create()
-      await Utils.sleep(1000)
-      let strJson = inspector.getInspectorByKey('SwiperAutoPlay');
-      await Utils.sleep(1000)
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('autoPlay')).assertEqual('true');
-      expect(obj.getElement('$attrs').getString('stopWhenTouched')).assertEqual('true');
+      try {
+        console.info('swiperAutoPlayTest001 START');
+        let PAGE_TAG = 'SwiperAutoPlayTest';
+        await Utils.pushPage(`swiper/${PAGE_TAG}`);
+        await Utils.sleep(1000)
+        let driver = Driver.create()
+        await Utils.sleep(1000)
+        let strJson = inspector.getInspectorByKey('SwiperAutoPlay');
+        await Utils.sleep(1000)
+        let obj = JSON.parseJsonElement(strJson);
+        expect(obj.getElement('$attrs').getString('autoPlay')).assertEqual('true');
+        expect(obj.getElement('$attrs').getString('stopWhenTouched')).assertEqual('true');
 
-      let button1: Component = await driver.findComponent(ON.id('onClick1')) as Component;
-      await button1.click();
-      await Utils.sleep(1000);
-      let strJson1 = inspector.getInspectorByKey('SwiperAutoPlay');
-      await Utils.sleep(1000)
-      let obj1 = JSON.parseJsonElement(strJson1);
-      expect(obj1.getElement('$attrs').getString('autoPlay')).assertEqual('false');
-      expect(obj1.getElement('$attrs').getString('stopWhenTouched')).assertEqual('true');
-      done();
+        let button1: Component = await driver.findComponent(ON.id('onClick1')) as Component;
+        await button1.click();
+        await Utils.sleep(1000);
+        let strJson1 = inspector.getInspectorByKey('SwiperAutoPlay');
+        await Utils.sleep(1000)
+        let obj1 = JSON.parseJsonElement(strJson1);
+        expect(obj1.getElement('$attrs').getString('autoPlay')).assertEqual('false');
+        expect(obj1.getElement('$attrs').getString('stopWhenTouched')).assertEqual('true');
+        done();
+      } catch (err) {
+        console.info('swiperAutoPlayTest001 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

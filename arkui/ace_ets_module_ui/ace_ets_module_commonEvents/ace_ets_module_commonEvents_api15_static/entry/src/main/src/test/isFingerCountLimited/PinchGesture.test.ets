@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Component, Driver, MouseButton, ON, PointerMatrix } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,24 +21,9 @@ import RectValue from '../../../ets/MainAbility/common/Rect';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function pinchGestureTest() {
   describe('PinchGestureTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info('PinchGesture beforeEach start');
       let options: router.RouterOptions = {
@@ -116,7 +101,6 @@ it('PinchGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       console.info('[PinchGesture1_static_0100] END');
       done();
     });
-
 
     
     
