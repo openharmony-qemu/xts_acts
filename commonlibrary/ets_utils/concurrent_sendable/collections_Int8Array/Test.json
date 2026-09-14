@@ -1,0 +1,20 @@
+{
+"description": "Configuration for startup collections Int8Array Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "800000",
+        "bundle-name": "com.example.collections.int8array",
+        "module-name": "entry_test",
+        "shell-timeout": "800000",
+        "compile-mode": "esmodule"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ActsCollectionsInt8ArrayTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        }
+    ]
+}
