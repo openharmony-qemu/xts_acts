@@ -667,8 +667,7 @@ static napi_value getWindowAvoidAreaNullParam(napi_env env, napi_callback_info i
     auto res = OH_WindowManager_GetWindowAvoidArea(
         windowId,
         WindowManager_AvoidAreaType::WINDOW_MANAGER_AVOID_AREA_TYPE_SYSTEM,
-        nullptr
-        );
+        nullptr);
     napi_value resultValue;
     napi_create_int32(env, res, &resultValue);
     return resultValue;
@@ -2587,7 +2586,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"getKeyEventFilter", nullptr, getKeyEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getKeyEventFilterNullParam", nullptr, getKeyEventFilterNullParam, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getWindowAvoidAreaNullParam", nullptr, getWindowAvoidAreaNullParam,
-        nullptr, nullptr, nullptr, napi_default, nullptr},
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getMouseEventFilter", nullptr, getMouseEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getMouseEventFilterNullParam", nullptr, getMouseEventFilterNullParam, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getTouchEventFilter", nullptr, getTouchEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
