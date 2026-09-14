@@ -2222,7 +2222,7 @@ export default function CameraPhotoSessionTest() {
 
         for (let i = 0; i < 10; i++) {	 
           await sleep(200);	 
-          if (isExposureStart) {	 
+          if (isExposureStart || isExposureFinish) {	 
             break;	 
           }
         }
