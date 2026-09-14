@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import socket from '@ohos.net.socket';
 import { BusinessError, Callback } from '@ohos.base';
 import {
@@ -88,12 +88,12 @@ export default function UDPSocketTest() {
         udp.send(sendOptions).then(() => {
           console.info(`${caseName} send success`);
           udp.close();
-          expectFail();
+          expect(false).assertTrue();
           console.info(`${caseName} test end`);
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} send err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 201);
+          expect(err.code).assertEqual(201);
           udp.close();
           console.info(`${caseName} test end`);
           done();
@@ -101,7 +101,7 @@ export default function UDPSocketTest() {
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectFail();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -129,12 +129,12 @@ export default function UDPSocketTest() {
         udp.setExtraOptions(extraOptions).then(() => {
           console.info(`${caseName} setExtraOptions success`);
           udp.close();
-          expectFail();
+          expect(false).assertTrue();
           console.info(`${caseName} test end`);
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} setExtraOptions err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 201);
+          expect(err.code).assertEqual(201);
           udp.close();
           console.info(`${caseName} test end`);
           done();
@@ -142,7 +142,7 @@ export default function UDPSocketTest() {
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectFail();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -170,10 +170,10 @@ export default function UDPSocketTest() {
         udp.setExtraOptions(extraOptions, (err: BusinessError) => {
           console.info(`${caseName} setExtraOptions callback err: ${JSON.stringify(err)}`);
           if (err) {
-            expectTrue(err.code === 201);
+            expect(err.code).assertEqual(201);
           } else {
             console.info(`${caseName} setExtraOptions callback success`);
-            expectFail();
+            expect(false).assertTrue();
           }
           udp.close();
           console.info(`${caseName} test end`);
@@ -182,7 +182,7 @@ export default function UDPSocketTest() {
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectFail();
+        expect(false).assertTrue();
         done();
       }
     });
