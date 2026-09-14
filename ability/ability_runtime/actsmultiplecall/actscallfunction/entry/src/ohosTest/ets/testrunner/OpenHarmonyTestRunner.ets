@@ -14,19 +14,20 @@
  */
 import hilog from '@ohos.hilog';
 import TestRunner from '@ohos.application.testRunner'
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { BusinessError } from '@ohos.base'
 
-let abilityDelegator = undefined;
-let abilityDelegatorArguments = undefined;
+let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined = undefined;
+let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs | undefined = undefined;
 
-function translateParamsToString(parameters) {
+function translateParamsToString(parameters: Record<string, string>) {
   const keySet = new Set([
     '-s class', '-s notClass', '-s suite', '-s it',
     '-s level', '-s testType', '-s size', '-s timeout',
     '-s dryRun'
   ])
   let targetParams = '';
-  for (const key in parameters) {
+  for (const key of Object.keys(parameters)) {
     if (keySet.has(key)) {
       targetParams = `${targetParams} ${key} ${parameters[key]}`;
     }
@@ -39,7 +40,7 @@ async function onAbilityCreateCallback() {
   hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');
 }
 
-async function addAbilityMonitorCallback(err: any) {
+async function addAbilityMonitorCallback(err: BusinessError) {
   hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
   hilog.info(0x0000, 'testTag', 'addAbilityMonitorCallback : %{public}s', JSON.stringify(err) ?? '');
 }
@@ -59,13 +60,13 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
     abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     let testAbilityName = abilityDelegatorArguments.bundleName + '.TestAbility';
-    let lMonitor = {
+    let lMonitor: AbilityDelegatorRegistry.AbilityMonitor = {
       abilityName: testAbilityName,
       onAbilityCreate: onAbilityCreateCallback,
     };
     abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback);
-    let cmd = 'aa start -d 0 -a TestAbility' + ' -b ' + abilityDelegatorArguments.bundleName;
-    let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    let cmd = 'aa start -d 0 -a ' + testAbilityName + ' -b ' + abilityDelegatorArguments.bundleName;
+    let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
     if(user !== undefined){
         cmd += ' -u ' + user;
     }
@@ -76,7 +77,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     }
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
-    abilityDelegator.executeShellCommand(cmd, (err: any, d: any) => {
+    abilityDelegator.executeShellCommand(cmd, (err: BusinessError, d: AbilityDelegatorRegistry.ShellCmdResult) => {
       hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
       hilog.info(0x0000, 'testTag', 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
       hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.stdResult ?? '');

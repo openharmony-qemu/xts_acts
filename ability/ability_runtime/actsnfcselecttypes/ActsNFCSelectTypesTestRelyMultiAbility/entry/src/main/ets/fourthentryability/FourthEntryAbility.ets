@@ -12,59 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import hilog from '@ohos.hilog';
-import Ability from '@ohos.app.ability.UIAbility';
+import Ability from '@ohos.app.ability.UIAbility'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+
 import type Window from '@ohos.window';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
-class MyParcelable {
-  num: number = 0;
-  str: String = '';
-  result: boolean = false;
-
-  constructor(num, string, result) {
-    this.num = num;
-    this.str = string;
-    this.result = result;
-  }
-
-  MyParcelable(num, string, result) {
-    this.num = num;
-    this.str = string;
-    this.result = result;
-  }
-
-  marshalling(messageParcel) {
-    messageParcel.writeInt(this.num);
-    messageParcel.writeString(this.str);
-    messageParcel.writeBoolean(this.result);
-    return true;
-  }
-
-  unmarshalling(messageParcel) {
-    this.num = messageParcel.readInt();
-    this.str = messageParcel.readString();
-    this.result = messageParcel.readBoolean();
-    return true;
-  }
-}
-
-function callWithResult(data): MyParcelable {
-  console.log('====>Callee callWithResult called');
-  let recvSequence = new MyParcelable(0, '', false);
-  data.readParcelable(recvSequence);
-  let result = true;
-  let str = recvSequence.str + ' processed';
-  recvSequence.MyParcelable(recvSequence.num, str, result);
-  return recvSequence;
-}
-
-export default class EntryAbility extends Ability {
-  onCreate(want, launchParam) {
+export default class FourthEntryAbility extends Ability {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
     hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:' + JSON.stringify(launchParam) ?? '');
-    this.callee.on('call', callWithResult);
   }
 
   onDestroy() {

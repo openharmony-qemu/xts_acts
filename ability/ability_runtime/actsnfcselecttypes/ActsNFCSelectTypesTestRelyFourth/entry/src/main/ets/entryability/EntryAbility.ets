@@ -15,25 +15,27 @@
 
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
-import type window from '@ohos.window';
+import window from '@ohos.window';
 import commonEvent from '@ohos.commonEventManager';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import { Want } from '@kit.AbilityKit';
 
-let message;
-let commonEventData = {
-  parameters: {
-    message: message,
+let message: string = '';
+let commonEventData: commonEvent.CommonEventPublishData = {
+  parameters:{
+    message:message,
   }
 };
 let timeout = 50;
 
 export default class EntryAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Abilitytest4 onCreate');
     globalThis.terminate = () => {
       setTimeout(() => {
         this.context.terminateSelf().then(() => {
           console.info('====>EntryAbility terminateSelf end');
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.info('====>EntryAbility terminateSelf err:' + JSON.stringify(err));
         });
       }, timeout);
@@ -42,7 +44,7 @@ export default class EntryAbility extends UIAbility {
     let actionStr = want.action;
     if (actionStr === 'ohos.nfc.tag.test.action') {
       hilog.info(0x0000, 'testTag', '%{public}s', 'a4Ability ok');
-      commonEventData.parameters.message = 'select';
+      commonEventData.parameters!.message = 'select';
       commonEvent.publish('ACTS_CROSS_CALL_EVENT', commonEventData, (err) => {
         console.info('====>' + actionStr + ' apublish err:' + JSON.stringify(err));
         globalThis.terminate();
@@ -58,7 +60,7 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability4 onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err, data) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

@@ -13,36 +13,44 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import Ability from '@ohos.app.ability.UIAbility';
+import Ability from '@ohos.app.ability.UIAbility'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
 import commonEvent from '@ohos.commonEventManager';
 import type Window from '@ohos.window';
+import { BusinessError } from '@ohos.base';
+import rpc from '@ohos.rpc';
+import window from '@ohos.window';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import { Caller } from '@ohos.app.ability.UIAbility';
 
-class MyParcelable {
-  num: number = 0;
-  str: String = '';
-  result: boolean = false;
+class MyParcelable implements rpc.Parcelable {
+  public num: number = 0;
+  public str: string = '';
+  public result: boolean = false;
 
-  constructor(num, string, result) {
+  constructor(num: number, string: string, result: boolean) {
     this.num = num;
     this.str = string;
     this.result = result;
   }
 
-  MyParcelable(num, string, result) {
+  MyParcelable(num: number, string: string, result: boolean) {
     this.num = num;
     this.str = string;
     this.result = result;
   }
 
-  marshalling(messageParcel) {
+  marshalling(messageParcel: rpc.MessageSequence) {
     messageParcel.writeInt(this.num);
     messageParcel.writeString(this.str);
     messageParcel.writeBoolean(this.result);
     return true;
   }
 
-  unmarshalling(messageParcel) {
+  unmarshalling(messageParcel: rpc.MessageSequence) {
     this.num = messageParcel.readInt();
     this.str = messageParcel.readString();
     this.result = messageParcel.readBoolean();
@@ -50,8 +58,8 @@ class MyParcelable {
   }
 }
 
-export default class EntryAbility extends Ability {
-  onCreate(want, launchParam) {
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
@@ -61,7 +69,7 @@ export default class EntryAbility extends Ability {
       setTimeout(() => {
         this.context.terminateSelf().then(() => {
           console.debug('====>terminateSelf end');
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.debug('====>terminateSelf err:' + JSON.stringify(err));
         });
       }, 50)
@@ -71,15 +79,15 @@ export default class EntryAbility extends Ability {
       this.context.startAbilityByCall({
         bundleName: 'com.acts.callapprely',
         abilityName: 'EntryAbility',
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         let param = new MyParcelable(100, 'Acts_SingleInstanceCallFunction_0100', false);
-        caller.callWithResult('call', param).then((data) => {
+        caller.callWithResult('call', param).then((data: rpc.MessageSequence) => {
           console.debug('====>Acts_SingleInstanceCallFunction_0100 call success');
           let result = new MyParcelable(0, '', false);
           data.readParcelable(result);
           caller.release();
           console.debug('====>Acts_SingleInstanceCallFunction_0100 callWithResult result:' + JSON.stringify(result));
-          let commonEventData = {
+          let commonEventData: commonEvent.CommonEventPublishData = {
             parameters: {
               num: result.num,
               str: result.str,
@@ -90,10 +98,10 @@ export default class EntryAbility extends Ability {
             console.debug('====>Acts_SingleInstanceCallFunction_0100 publish err:' + JSON.stringify(err));
             globalThis.terminate();
           })
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.debug('====>Acts_SingleInstanceCallFunction_0100 callWithResult err:' + JSON.stringify(err));
         })
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0100 startAbilityByCall err:' + JSON.stringify(err));
       })
     }
@@ -102,11 +110,11 @@ export default class EntryAbility extends Ability {
       this.context.startAbilityByCall({
         bundleName: 'com.acts.actscallfunction',
         abilityName: 'SecondAbility',
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0200 startAbilityByCall caller:' + JSON.stringify(caller));
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0200 startAbilityByCall err:' + JSON.stringify(err));
-        let commonEventData = {
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
             num: err.code,
           }
@@ -120,9 +128,9 @@ export default class EntryAbility extends Ability {
 
     globalThis.singleCallFunction_0300 = () => {
 
-      function releaseCallback(data): void {
+      const releaseCallback = (data: string) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0300 releaseCallBack:' + data);
-        let commonEventData = {
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
             str: data,
             result: true
@@ -136,15 +144,15 @@ export default class EntryAbility extends Ability {
       this.context.startAbilityByCall({
         bundleName: 'com.acts.callapprely',
         abilityName: 'EntryAbility',
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         caller.onRelease(releaseCallback);
         let param = new MyParcelable(300, 'Acts_SingleInstanceCallFunction_0300', false);
-        caller.callWithResult('call', param).then((data) => {
+        caller.callWithResult('call', param).then((data: rpc.MessageSequence) => {
           console.debug('====>Acts_SingleInstanceCallFunction_0300 call success');
           let result = new MyParcelable(0, '', false);
           data.readParcelable(result);
           console.debug('====>Acts_SingleInstanceCallFunction_0300 callWithResult result:' + JSON.stringify(result));
-          let commonEventData = {
+          let commonEventData: commonEvent.CommonEventPublishData = {
             parameters: {
               num: result.num,
               str: result.str,
@@ -156,20 +164,20 @@ export default class EntryAbility extends Ability {
             globalThis.terminate();
           })
           caller.release();
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.debug('====>Acts_SingleInstanceCallFunction_0300 callWithResult err:' + JSON.stringify(err));
         })
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0300 startAbilityByCall err:' + JSON.stringify(err));
       })
     }
 
     globalThis.singleCallFunction_0400 = () => {
-      let caller;
+      let caller: Caller;
 
-      function releaseCallback(data): void {
+      const releaseCallback = (data: string) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0400 releaseCallBack:' + data);
-        let commonEventData = {
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
             str: data,
             result: true
@@ -183,20 +191,22 @@ export default class EntryAbility extends Ability {
       this.context.startAbilityByCall({
         bundleName: 'com.acts.callapprely',
         abilityName: 'EntryAbility'
-      }).then((data) => {
+      }).then((data: Caller) => {
         caller = data;
         caller.onRelease(releaseCallback);
         let param = new MyParcelable(400, 'Acts_SingleInstanceCallFunction_0400', false);
-        caller.callWithResult('call', param).then((data) => {
+        caller.callWithResult('call', param).then((data: rpc.MessageSequence) => {
           console.debug('====>Acts_SingleInstanceCallFunction_0400 call success');
           let result = new MyParcelable(0, '', false);
           data.readParcelable(result);
           console.debug('====>Acts_SingleInstanceCallFunction_0400 callWithResult result:' + JSON.stringify(result));
           let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
           let forcestop = 'aa force-stop com.acts.callapprely';
-          abilityDelegator.executeShellCommand(forcestop, (err, data) => {
+          abilityDelegator.executeShellCommand(
+            forcestop,
+            (err: BusinessError) => {
             console.debug('====>Acts_SingleInstanceCallFunction_0400 forcestop err:' + JSON.stringify(err));
-            let commonEventData = {
+            let commonEventData: commonEvent.CommonEventPublishData = {
               parameters: {
                 num: result.num,
                 str: result.str,
@@ -208,10 +218,10 @@ export default class EntryAbility extends Ability {
               globalThis.terminate();
             })
           })
-        }).catch(err => {
+        }).catch((err: BusinessError) => {
           console.debug('====>Acts_SingleInstanceCallFunction_0400 callWithResult err:' + JSON.stringify(err));
         })
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0400 startAbilityByCall err:' + JSON.stringify(err));
       })
     }
@@ -220,22 +230,22 @@ export default class EntryAbility extends Ability {
       this.context.startAbilityByCall({
         bundleName: 'com.acts.thirdpartyapprely',
         abilityName: 'SecondAbility',
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         console.info('====>Acts_SingleInstanceCallFunction_0500 startAbilityByCall data:' + JSON.stringify(caller));
         let param = new MyParcelable(0, 'Acts_SingleInstanceCallFunction_0500', false);
-        caller.callWithResult('call', param).then((data2) => {
+        caller.callWithResult('call', param).then((data2: rpc.MessageSequence) => {
           this.context.startAbilityByCall({
             bundleName: 'com.acts.thirdpartyapprely',
             abilityName: 'SecondAbility'
           }).then((caller2) => {
             let receivedData1 = new MyParcelable(0, '', false);
             data2.readParcelable(receivedData1);
-            caller2.callWithResult('call', receivedData1).then((data3) => {
+            caller2.callWithResult('call', receivedData1).then((data3: rpc.MessageSequence) => {
               console.info('====>Acts_SingleInstanceCallFunction_0500 call_result:' + JSON.stringify(data3));
               let receivedData = new MyParcelable(0, '', false);
               data3.readParcelable(receivedData);
               caller2.release();
-              let commonEventData = {
+              let commonEventData: commonEvent.CommonEventPublishData = {
                 parameters: {
                   num: receivedData.num,
                   str: receivedData.str,
@@ -249,10 +259,10 @@ export default class EntryAbility extends Ability {
           })
           caller.release()
         }
-        ).catch((err) => {
+        ).catch((err: BusinessError) => {
           console.info('====>Acts_SingleInstanceCallFunction_0500 callWithResult err:' + JSON.stringify(err));
         })
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.info('====>Acts_SingleInstanceCallFunction_0500 startAbilityByCall err:' + JSON.stringify(err));
       })
     }
@@ -261,11 +271,11 @@ export default class EntryAbility extends Ability {
       this.context.startAbilityByCall({
         bundleName: 'com.acts.thirdpartyapprely',
         abilityName: 'SecondAbility',
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         console.info('====>Acts_SingleInstanceCallFunction_0700 startAbilityByCall caller:' +
         JSON.stringify(caller));
         let param = new MyParcelable(0, 'Acts_SingleInstanceCallFunction_0700', false);
-        caller.callWithResult('call', param).then((data2) => {
+        caller.callWithResult('call', param).then((data2: rpc.MessageSequence) => {
           let receivedData1 = new MyParcelable(0, '', false);
           data2.readParcelable(receivedData1);
           let isCallerRelease = false;
@@ -286,14 +296,14 @@ export default class EntryAbility extends Ability {
                 bundleName: 'com.acts.thirdpartyapprely',
                 abilityName: 'SecondAbility'
               }).then((caller2) => {
-                caller2.callWithResult('call', receivedData1).then((data3) => {
+                caller2.callWithResult('call', receivedData1).then((data3: rpc.MessageSequence) => {
                   console.info('====>Acts_SingleInstanceCallFunction_0700 call_result:' + JSON.stringify(data3));
                   let receivedData = new MyParcelable(0, '', false);
                   data3.readParcelable(receivedData);
                   caller2.onRelease((err) => {
                     if (err === 'release') {
                       receivedData.str = `${receivedData.str}, release the second caller successful.`
-                      let commonEventData = {
+                      let commonEventData: commonEvent.CommonEventPublishData = {
                         parameters: {
                           num: receivedData.num,
                           str: receivedData.str
@@ -311,10 +321,10 @@ export default class EntryAbility extends Ability {
             }
           }, 200)
         }
-        ).catch((err) => {
+        ).catch((err: BusinessError) => {
           console.info('====>Acts_SingleInstanceCallFunction_0700 callWithResult err:' + JSON.stringify(err));
         })
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.info('====>Acts_SingleInstanceCallFunction_0700 startAbilityByCall err:' + JSON.stringify(err));
       })
     }
@@ -323,10 +333,10 @@ export default class EntryAbility extends Ability {
       let count = 0;
       let isCallerRelease = false;
       let isCaller1Release = false;
-      let verifyResult = (str) => {
-        console.info('====>Acts_SingleInstanceCallFunction_0800 verify' + isCallerRelease + " " + isCaller1Release);
+      let verifyResult = (str: string) => {
+        console.info('====>Acts_SingleInstanceCallFunction_0800 verify' + isCallerRelease + ' ' + isCaller1Release);
         if (isCallerRelease && isCaller1Release) {
-          let commonEventData = {
+          let commonEventData: commonEvent.CommonEventPublishData = {
             parameters: {
               num: 2,
               str: str
@@ -342,11 +352,11 @@ export default class EntryAbility extends Ability {
       this.context.startAbilityByCall({
         bundleName: 'com.acts.thirdpartyapprely',
         abilityName: 'SecondAbility',
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         console.info('====>Acts_SingleInstanceCallFunction_0800 startAbilityByCall caller:' +
         JSON.stringify(caller));
         let param = new MyParcelable(0, 'Acts_SingleInstanceCallFunction_0800', false);
-        caller.callWithResult('call', param).then((data2) => {
+        caller.callWithResult('call', param).then((data2: rpc.MessageSequence) => {
           let receivedData1 = new MyParcelable(0, '', false);
           data2.readParcelable(receivedData1);
           caller.onRelease((err) => {
@@ -362,7 +372,7 @@ export default class EntryAbility extends Ability {
             bundleName: 'com.acts.thirdpartyapprely',
             abilityName: 'SecondAbility',
           }).then((caller2) => {
-            caller2.callWithResult('call', receivedData1).then((data3) => {
+            caller2.callWithResult('call', receivedData1).then((data3: rpc.MessageSequence) => {
               console.info('====>Acts_SingleInstanceCallFunction_0800 call_result:' + JSON.stringify(data3));
               let receivedData = new MyParcelable(0, '', false);
               data3.readParcelable(receivedData);
@@ -377,37 +387,39 @@ export default class EntryAbility extends Ability {
               })
               let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
               let pkillCmd = 'aa force-stop com.acts.thirdpartyapprely';
-              abilityDelegator.executeShellCommand(pkillCmd, (err, data) => {
+              abilityDelegator.executeShellCommand(
+                pkillCmd,
+                (err: BusinessError) => {
                 console.info('====>Acts_SingleInstanceCallFunction_0800 pkillCmd err:' + JSON.stringify(err));
               })
             })
           })
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.info('====>Acts_SingleInstanceCallFunction_0800 callWithResult err:' + JSON.stringify(err));
         })
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.info('====>Acts_SingleInstanceCallFunction_0800 startAbilityByCall err:' + JSON.stringify(err));
       })
     }
 
     globalThis.multipleAndSingleCallFunction_0100 = () => {
-      let firstCaller;
-      let secondCaller;
-      let thirdCaller;
+      let firstCaller: Caller;
+      let secondCaller: Caller;
+      let thirdCaller: Caller;
       this.context.startAbilityByCall({
         bundleName: 'com.acts.callapprely',
         abilityName: 'EntryAbility',
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         firstCaller = caller;
         let num = 100;
         let param = new MyParcelable(num, 'Acts_SingleInstanceCallFunction_0900', false);
-        firstCaller.callWithResult('call', param).then((data) => {
+        firstCaller.callWithResult('call', param).then((data: rpc.MessageSequence) => {
           console.debug('====>Acts_SingleInstanceCallFunction_0900 call success');
           let result = new MyParcelable(0, '', false);
           data.readParcelable(result);
           console.debug('====>Acts_SingleInstanceCallFunction_0900 callWithResult result:' +
           JSON.stringify(result));
-          let commonEventData = {
+          let commonEventData: commonEvent.CommonEventPublishData = {
             parameters: {
               num: result.num,
               str: result.str,
@@ -421,26 +433,26 @@ export default class EntryAbility extends Ability {
             bundleName: 'com.acts.callapprely',
             abilityName: 'SecondAbility',
             action: 'multipleAndSingleCallFunction_0100'
-          }).then((caller) => {
+          }).then((caller: Caller) => {
             secondCaller = caller;
             console.info('====>Acts_SingleInstanceCallFunction_0900 startAbilityByCall data:' +
             JSON.stringify(secondCaller));
             let param = new MyParcelable(0, 'Acts_SingleInstanceCallFunction_0900', false);
-            secondCaller.callWithResult('call', param).then((data2) => {
+            secondCaller.callWithResult('call', param).then((data2: rpc.MessageSequence) => {
               this.context.startAbilityByCall({
                 bundleName: 'com.acts.callapprely',
                 abilityName: 'SecondAbility',
                 action: 'multipleAndSingleCallFunction_0100'
-              }).then((caller) => {
+              }).then((caller: Caller) => {
                 thirdCaller = caller;
                 let receivedData1 = new MyParcelable(0, '', false);
                 data2.readParcelable(receivedData1);
-                thirdCaller.callWithResult('call', receivedData1).then((data3) => {
+                thirdCaller.callWithResult('call', receivedData1).then((data3: rpc.MessageSequence) => {
                   let receivedData = new MyParcelable(0, '', false);
                   data3.readParcelable(receivedData);
                   console.info('====>Acts_SingleInstanceCallFunction_0900 receivedData:' +
                   JSON.stringify(receivedData));
-                  let commonEventData = {
+                  let commonEventData: commonEvent.CommonEventPublishData = {
                     parameters: {
                       num: receivedData.num,
                       str: receivedData.str,
@@ -455,11 +467,11 @@ export default class EntryAbility extends Ability {
                     globalThis.terminate();
                   })
                 })
-              }).catch((err) => {
+              }).catch((err: BusinessError) => {
                 console.info('====>Acts_SingleInstanceCallFunction_0900 multiple second err: ' + JSON.stringify(err));
               })
             })
-          }).catch((err) => {
+          }).catch((err: BusinessError) => {
             console.info('====>Acts_SingleInstanceCallFunction_0900 multiple first err:' + JSON.stringify(err));
           })
         })
@@ -471,16 +483,16 @@ export default class EntryAbility extends Ability {
       this.context.startAbilityByCall({
         bundleName: 'com.acts.thirdpartyapprely',
         abilityName: 'SecondAbility',
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         console.info('====>Acts_SingleInstanceCallFunction_1000 startAbilityByCall caller:' +
         JSON.stringify(caller));
         let param = new MyParcelable(0, 'Acts_SingleInstanceCallFunction_1000 single', false);
-        caller.callWithResult('call', param).then((data) => {
+        caller.callWithResult('call', param).then((data: rpc.MessageSequence) => {
           console.info('====>Acts_SingleInstanceCallFunction_1000 startAbilityByCall caller2:' +
           JSON.stringify(data));
           let receivedData = new MyParcelable(0, '', false);
           data.readParcelable(receivedData);
-          let commonEventData = {
+          let commonEventData: commonEvent.CommonEventPublishData = {
             parameters: {
               num: receivedData.num,
               str: receivedData.str,
@@ -492,10 +504,10 @@ export default class EntryAbility extends Ability {
               globalThis.terminate();
             }, 500)
           })
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.info('====>Acts_SingleInstanceCallFunction_1000 callWithResult err:' + JSON.stringify(err));
         })
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.info('====>Acts_SingleInstanceCallFunction_1000 startAbilityByCall err:' + JSON.stringify(err));
       })
     }
@@ -506,18 +518,18 @@ export default class EntryAbility extends Ability {
         bundleName: 'com.acts.callapprely',
         abilityName: 'SecondAbility',
         action: 'Acts_SingleInstanceCallFunction_1100'
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         console.info('====>Acts_SingleInstanceCallFunction_1100 actscallfunction startAbilityByCall caller:' +
         JSON.stringify(caller));
         let param = new MyParcelable(0, 'Acts_SingleInstanceCallFunction_1100 callerA', false);
         console.info('====>Acts_SingleInstanceCallFunction_1100 startAbilityByCall2 caller:' +
         JSON.stringify(caller));
-        caller.callWithResult('call', param).then((data) => {
+        caller.callWithResult('call', param).then((data: rpc.MessageSequence) => {
           console.info('====>Acts_SingleInstanceCallFunction_1100 actscallfunction callWithResult caller:' +
           JSON.stringify(data));
           let receivedData = new MyParcelable(0, '', false);
           data.readParcelable(receivedData);
-          let commonEventData = {
+          let commonEventData: commonEvent.CommonEventPublishData = {
             parameters: {
               num: receivedData.num,
               str: receivedData.str,
@@ -527,10 +539,10 @@ export default class EntryAbility extends Ability {
             console.log('====>Acts_SingleInstanceCallFunction_1100 actscallfunction publish err:' +
             JSON.stringify(err));
           })
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.info('====>Acts_SingleInstanceCallFunction_1100 callWithResult err:' + JSON.stringify(err));
         })
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.info('====>Acts_SingleInstanceCallFunction_1100 startAbilityByCall err:' + JSON.stringify(err));
       })
       globalThis.terminate();
@@ -541,13 +553,13 @@ export default class EntryAbility extends Ability {
       this.context.startAbilityByCall({
         bundleName: 'com.acts.callapprely',
         abilityName: 'ThirdAbility'
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         console.info('====>Acts_SingleInstanceCallFunction_1200 actscallfunction startAbilityByCall caller:' +
         JSON.stringify(caller));
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.info('====>Acts_SingleInstanceCallFunction_1200 actscallfunction startAbilityByCall caller err:' +
         JSON.stringify(err));
-        let commonEventData = {
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
             num: err
           }
@@ -599,12 +611,12 @@ export default class EntryAbility extends Ability {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
-  onWindowStageCreate(windowStage: Window.WindowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err, data) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.ERROR);
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');

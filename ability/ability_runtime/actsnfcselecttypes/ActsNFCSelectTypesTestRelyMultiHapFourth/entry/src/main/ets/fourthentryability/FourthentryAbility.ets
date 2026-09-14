@@ -12,37 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import hilog from '@ohos.hilog';
-import Ability from '@ohos.app.ability.UIAbility';
-import commonEvent from '@ohos.commonEventManager';
-import type Window from '@ohos.window';
 
-export default class EntryAbility extends Ability {
-  onCreate(want, launchParam) {
+import hilog from '@ohos.hilog';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import type Window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import { Want } from '@kit.AbilityKit';
+
+export default class FourthentryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
     hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:' + JSON.stringify(launchParam) ?? '');
-    if (want.action === 'Acts_SingleInstanceCallFunction_0600') {
-      this.context.startAbilityByCall({
-        bundleName: 'com.acts.thirdpartyapprely',
-        abilityName: 'SecondAbility',
-      }).then((caller) => {
-        console.info('====>Acts_SingleInstanceCallFunction_0600 startAbilityByCall caller:' +
-        JSON.stringify(caller));
-      }).catch((err) => {
-        console.info('====>Acts_SingleInstanceCallFunction_0600 startAbilityByCall err:' + JSON.stringify(err));
-        let commonEventData = {
-          parameters: {
-            num: err.code,
-            str: '',
-          }
-        };
-        commonEvent.publish('ACTS_CALL_EVENT', commonEventData, (err) => {
-          console.log('====>Acts_SingleInstanceCallFunction_0600 publish err:' + JSON.stringify(err));
-        })
-      })
-    }
   }
 
   onDestroy() {

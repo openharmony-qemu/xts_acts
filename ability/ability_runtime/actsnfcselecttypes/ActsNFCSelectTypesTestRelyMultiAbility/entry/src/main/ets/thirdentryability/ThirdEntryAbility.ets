@@ -16,9 +16,12 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import type window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
-export default class ThirdentryAbility extends UIAbility {
-  onCreate(want, launchParam) {
+import { Want } from '@kit.AbilityKit';
+
+export default class ThirdEntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
   }
 
