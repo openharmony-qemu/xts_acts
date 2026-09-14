@@ -42,6 +42,6 @@
     "testability/pages/WindowTest/extensionCreateSubWindowWithTrueOpt",
     "testability/pages/WindowTest/EmbeddedComponentGetWindowAvoidAreaPage",
     "testability/pages/WindowTest/extensionGetWindowAvoidArea",
-    "testability/pages/WindowTest/KeyBoradTest"
+    "testability/pages/WindowTest/KeyBoradFocus"
   ]
 }
