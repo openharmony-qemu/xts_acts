@@ -43,6 +43,7 @@ export default function sSapTest() {
       await clickRequestPermission();
       return_boolean = manager.isNearLinkSupported();
       try {
+        await openNearLink();
         ssapClient=ssap.createClient(ADDRESS);
         console.info('[Nearlink Test]ssap client info: '+ ssapClient);
         expect(ssapClient != null).assertTrue();
@@ -63,7 +64,7 @@ export default function sSapTest() {
     });
     beforeEach(async (done:Function) => {
       console.info('beforeEach start');
-      await openNearLink();
+      
       console.info('beforeEach end');
       done();
     })
