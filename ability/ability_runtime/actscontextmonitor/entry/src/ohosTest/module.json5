@@ -18,7 +18,7 @@
     "type": "feature",
     "description": "$string:module_test_desc",
     "mainElement": "TestAbility",
-    "srcEntry": "./ets/abilityStage/ability01.ts",
+    "srcEntry": "./ets/abilityStage/ability01.ets",
     "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
@@ -46,7 +46,7 @@
       },
       {
         "name": "abilityStage02",
-        "srcEntry": "./ets/test/abilityStage/ability02.ts",
+        "srcEntry": "./ets/test/abilityStage/ability02.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -66,7 +66,7 @@
       },
       {
         "name": "abilityStage03",
-        "srcEntry": "./ets/test/abilityStage/ability03.ts",
+        "srcEntry": "./ets/test/abilityStage/ability03.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",

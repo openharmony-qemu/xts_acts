@@ -19,7 +19,7 @@ import Want from '@ohos.app.ability.Want';
 import { Caller } from '@ohos.app.ability.UIAbility';
 
 const CASE_TIME_OUT = 5000;
-let ACTS_CrossCallFunction:commonEvent.CommonEventSubscribeInfo = {
+let actsCrossCallFunction:commonEvent.CommonEventSubscribeInfo = {
   events: ['ACTS_CROSS_CALL_EVENT', 'ACTS_CROSS_RELEASE_EVENT']
 };
 
@@ -44,7 +44,7 @@ export default function abilityTest() {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0100 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0100 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -69,7 +69,11 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0100 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -94,7 +98,7 @@ export default function abilityTest() {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0200 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0200 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -119,7 +123,11 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0200 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -144,7 +152,7 @@ export default function abilityTest() {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0300 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0300 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -169,7 +177,11 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0300 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -194,7 +206,7 @@ export default function abilityTest() {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0400 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0400 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -219,7 +231,11 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0400 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -244,7 +260,7 @@ export default function abilityTest() {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0500 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0500 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -269,7 +285,11 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0500 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -294,7 +314,7 @@ export default function abilityTest() {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0600 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0600 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -319,7 +339,11 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0600 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -344,7 +368,7 @@ export default function abilityTest() {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0700 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0700 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -369,7 +393,11 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0700 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (flag === false) {
@@ -394,7 +422,7 @@ export default function abilityTest() {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0800 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0600 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -419,7 +447,11 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0800 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (flag === false) {
@@ -463,7 +495,7 @@ export default function abilityTest() {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info("====>Acts_CrossUserCall_1000");
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_1000 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -488,7 +520,11 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_1000 StartServiceAbility err:" + JSON.stringify(err));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (flag === false) {
@@ -531,7 +567,7 @@ export default function abilityTest() {
     it('Acts_CrossUserCall_1200', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then((data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then((data) => {
         console.info('====>Acts_CrossUserCall_1200 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -557,7 +593,11 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_1200 StartServiceAbility err:  " + JSON.stringify((err.code)));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(()=>{
         if (flag === false) {
@@ -603,7 +643,7 @@ export default function abilityTest() {
     it('Acts_CrossUserCall_1400', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then((data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then((data) => {
         console.info('====>Acts_CrossUserCall_1400 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -628,7 +668,11 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_1400 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(()=>{
         if (flag === false) {
@@ -678,7 +722,7 @@ export default function abilityTest() {
     it('Acts_CrossUserCall_1600', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then((data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then((data) => {
         console.info('====>Acts_CrossUserCall_1600 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -704,7 +748,11 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_1600 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (flag === false) {
@@ -754,7 +802,7 @@ export default function abilityTest() {
     it('Acts_CrossUserCall_1800', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then((data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then((data) => {
         console.info('====>Acts_CrossUserCall_1800 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -780,7 +828,11 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_1800 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(()=>{
         if (flag === false) {
@@ -830,7 +882,7 @@ export default function abilityTest() {
     it('Acts_CrossUserCall_2000', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then((data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then((data) => {
         console.info('====>Acts_CrossUserCall_2000 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -855,7 +907,11 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_2000 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (flag === false) {
@@ -880,7 +936,7 @@ export default function abilityTest() {
       let subscriber:commonEvent.CommonEventSubscriber;
       let eventCount = 0;
       console.info('====>Acts_CrossUserCall_2900 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_2900 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -913,7 +969,11 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_2900 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (eventCount !== 2){
@@ -938,7 +998,7 @@ export default function abilityTest() {
       let subscriber:commonEvent.CommonEventSubscriber;
       let eventCount = 0;
       console.info('====>Acts_CrossUserCall_3000 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_3000 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -971,7 +1031,11 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_3000 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
       setTimeout(() => {
         if (eventCount !== 2){
