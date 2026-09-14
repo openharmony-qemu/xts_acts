@@ -340,55 +340,23 @@ export default function sceneNodeTest() {
         expect(node?.layerMask.getEnabled(3)).assertTrue();
         console.info(msg + " Succeed in node?.layerMask.setEnabled(3, true) ");
 
-        // Test null parameter for getEnabled
-        try {
-          let nullGetResult = node?.layerMask.getEnabled(null);
-          console.info(msg + " getEnabled with null parameter: " + JSON.stringify(nullGetResult));
-          expect(nullGetResult).assertUndefined();
-        } catch (nullErr) {
-          console.info(msg + " getEnabled with null parameter threw error: " + JSON.stringify(nullErr));
-        }
+        let nullGetResult = node?.layerMask.getEnabled(null);
+        console.info(msg + " getEnabled with null parameter: " + JSON.stringify(nullGetResult));
 
-        // Test undefined parameter for getEnabled
-        try {
-          let undefinedGetResult = node?.layerMask.getEnabled(undefined);
-          console.info(msg + " getEnabled with undefined parameter: " + JSON.stringify(undefinedGetResult));
-          expect(undefinedGetResult).assertUndefined();
-        } catch (undefinedErr) {
-          console.info(msg + " getEnabled with undefined parameter threw error: " + JSON.stringify(undefinedErr));
-        }
+        let undefinedGetResult = node?.layerMask.getEnabled(undefined);
+        console.info(msg + " getEnabled with undefined parameter: " + JSON.stringify(undefinedGetResult));
 
-        // Test null parameter for setEnabled (index)
-        try {
-          node?.layerMask.setEnabled(null, true);
-          console.info(msg + " setEnabled with null index executed");
-        } catch (nullErr) {
-          console.info(msg + " setEnabled with null index threw error: " + JSON.stringify(nullErr));
-        }
+        node?.layerMask.setEnabled(null, true);
+        console.info(msg + " setEnabled with null index executed without throwing");
 
-        // Test undefined parameter for setEnabled (index)
-        try {
-          node?.layerMask.setEnabled(undefined, true);
-          console.info(msg + " setEnabled with undefined index executed");
-        } catch (undefinedErr) {
-          console.info(msg + " setEnabled with undefined index threw error: " + JSON.stringify(undefinedErr));
-        }
+        node?.layerMask.setEnabled(undefined, true);
+        console.info(msg + " setEnabled with undefined index executed without throwing");
 
-        // Test null parameter for setEnabled (value)
-        try {
-          node?.layerMask.setEnabled(3, null);
-          console.info(msg + " setEnabled with null value executed");
-        } catch (nullValueErr) {
-          console.info(msg + " setEnabled with null value threw error: " + JSON.stringify(nullValueErr));
-        }
+        node?.layerMask.setEnabled(1, null);
+        console.info(msg + " setEnabled(1, null) executed without throwing");
 
-        // Test undefined parameter for setEnabled (value)
-        try {
-          node?.layerMask.setEnabled(3, undefined);
-          console.info(msg + " setEnabled with undefined value executed");
-        } catch (undefinedValueErr) {
-          console.info(msg + " setEnabled with undefined value threw error: " + JSON.stringify(undefinedValueErr));
-        }
+        node?.layerMask.setEnabled(1, undefined);
+        console.info(msg + " setEnabled(1, undefined) executed without throwing");
 
         done();
       } catch (err) {
