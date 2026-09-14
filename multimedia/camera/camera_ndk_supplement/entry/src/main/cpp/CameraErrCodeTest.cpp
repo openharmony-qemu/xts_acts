@@ -129,7 +129,7 @@ napi_value initWithSurfaces(napi_env env, napi_callback_info info)
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    napi_get_value_string_utf8(env, args[0],  g_faceId, sizeof( g_faceId), &uuidLen);
+    napi_get_value_string_utf8(env, args[0], g_faceId, sizeof(g_faceId), &uuidLen);
     napi_value ret;
     napi_create_int32(env, 0, &ret);
     return ret;
@@ -171,7 +171,7 @@ static void CreateAndOpenCamera()
     LOGI("camer input 创建成功");
 }
 
-static void createPhotoOutput(char *surFaceId)
+static void CreatePhotoOutput(char *surFaceId)
 {
     const Camera_Device camera = cameras[0];
     Camera_OutputCapability *cameraOutputCapability = nullptr;
@@ -250,7 +250,7 @@ static void CreateCaptureSession()
 void CreatePhotoSession()
 {
     CreateAndOpenCamera();
-    createPhotoOutput( g_faceId);
+    CreatePhotoOutput(g_faceId);
     CreateCaptureSession();
 }
 
@@ -278,18 +278,6 @@ napi_value CaptureSessionGetWhiteBalanceRange(napi_env env, napi_callback_info i
         Camera_ErrorCode rest = OH_CaptureSession_GetWhiteBalanceRange(captureSession, &minColorTmp, &maxColorTmp);
         ret = rest;
         if (rest == CAMERA_INVALID_ARGUMENT) {
-            ret = CAMERA_OK;
-        }
-    } else if (index == ARG_INDEX_2) {
-        OHOS::CameraStandard::CameraNdkCommon cameraNdkCommon;
-        cameraNdkCommon.InitCamera();
-        Camera_ErrorCode rest = OH_CameraManager_CreateCaptureSession(cameraNdkCommon.cameraManager, &captureSession);
-        OH_CaptureSession_SetSessionMode(captureSession, NORMAL_VIDEO);
-        OH_CaptureSession_BeginConfig(captureSession);
-        OH_CaptureSession_CommitConfig(captureSession);
-        rest = OH_CaptureSession_GetWhiteBalanceRange(captureSession, &minColorTmp, &maxColorTmp);
-        ret = rest;
-        if (rest == CAMERA_OK) {
             ret = CAMERA_OK;
         }
     } else if (index == ARG_INDEX_3) {
