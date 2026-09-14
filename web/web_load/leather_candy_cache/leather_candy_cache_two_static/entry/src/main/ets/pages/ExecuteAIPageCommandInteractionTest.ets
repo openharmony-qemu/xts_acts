@@ -195,7 +195,7 @@ struct ExecuteAIPageCommandInteractionTest {
     for (let i = 0; i < 5; i++) {
       try {
         const result: Promise<string> | string = runner.executeAIPageCommand(command);
-        res = typeof result === 'string' ? result : await result;
+        res = typeof result === 'string' ? result as string : await result;
         console.info(msg + ' retry ' + (i + 1) + '/5 result: ' + res);
         if (res && res.includes('code')) { break; }
       } catch (error) {
