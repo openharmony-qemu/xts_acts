@@ -1139,6 +1139,29 @@ napi_value JSPackingOptionsGetQualityBadParameter(napi_env env, napi_callback_in
     return ret;
 }
 
+napi_value JSPackingOptionsGetQualityBadParameterQuality(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    void *ptr = nullptr;
+    napi_get_value_external(env, argValue[NUM_0], &ptr);
+    OH_PackingOptions *packingOptions = reinterpret_cast<OH_PackingOptions *>(ptr);
+
+    uint32_t quality;
+    Image_ErrorCode errCode = OH_PackingOptions_GetQuality(packingOptions, nullptr);
+    
+    int32_t resultValue = errCode == IMAGE_BAD_PARAMETER ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
 napi_value JSPackingOptionsSetQuality(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -1309,6 +1332,30 @@ napi_value JSPackingOptionsGetDesiredDynamicRangeBadParameter(napi_env env, napi
     napi_create_int32(env, resultValue, &ret);
     return ret;
 }
+
+napi_value JSPackingOptionsGetDesiredDynamicRangeBadParameterRange(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        OH_LOG_ERROR(LOG_APP, "PackingOptionsGetDesiredDynamicRange napi_get_cb_info failed");
+        return result;
+    }
+
+    void *ptr = nullptr;
+    napi_get_value_external(env, argValue[NUM_0], &ptr);
+    OH_PackingOptions *packingOptions = reinterpret_cast<OH_PackingOptions *>(ptr);
+
+    Image_ErrorCode errCode = OH_PackingOptions_GetDesiredDynamicRange(packingOptions, nullptr);
+  
+    int32_t resultValue = errCode == IMAGE_BAD_PARAMETER ? 0 : -1;
+    napi_value ret;
+    napi_create_int32(env, resultValue, &ret);
+    return ret;
+}
+
 napi_value JSPackingOptionsRelease(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
