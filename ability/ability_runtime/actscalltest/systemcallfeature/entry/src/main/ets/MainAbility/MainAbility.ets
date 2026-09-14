@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Ability from '@ohos.app.ability.Ability'
+import Ability from '@ohos.app.ability.UIAbility'
 import Want from '@ohos.app.ability.Want'
 import AbilityConstant from '@ohos.app.ability.AbilityConstant'
 import window from '@ohos.window'

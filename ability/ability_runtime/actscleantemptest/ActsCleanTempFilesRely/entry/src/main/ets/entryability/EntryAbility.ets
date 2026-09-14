@@ -205,7 +205,7 @@ function cleanTempFiles(actionStr: string): void {
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    actionStr = want.parameters.key as string;
+    actionStr = want.parameters?.key as string;
     tempDir = this.context.tempDir;
     currentContext = this.context;
     applicationContext = this.context.getApplicationContext();
@@ -213,7 +213,7 @@ export default class EntryAbility extends UIAbility {
   }
   onNewWant(want: Want): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onNewWant');
-    actionStr = want.parameters.key as string;
+    actionStr = want.parameters?.key as string;
     tempDir = this.context.tempDir;
     currentContext = this.context;
     applicationContext = this.context.getApplicationContext();
