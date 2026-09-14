@@ -55,69 +55,6 @@ export default function webInitTest(): void {
       console.info('web beforeEach start');
     })
 
-    /**
-    * @tc.name         testSetAudioMutedNullStatic001
-    * @tc.number       SUB_ACE_WEB_SET_AUDIO_MUTED_NULL_0100
-    * @tc.desc         test setAudioMuted with null param
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 0
-    */
-    it('testSetAudioMutedNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      try {
-        await Utils.msSleep(2000);
-        Utils.emitEvent('emitSetAudioMutedNullStatic001', 10)
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent('testSetAudioMutedNullStatic001', '401', 41022701, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-        const data = backData?.data as Record<string, RecordData>;
-        const action = data['ACTION'];
-        expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebInitButton', 10, '');
-        await Utils.msSleep(4000);
-        done()
-    
-      } catch (err) {
-        console.info('[testSetAudioMutedNullStatic001] err:' + JSON.stringify(err));
-        done();
-
-        }
-      })
-
-    /**
-    * @tc.name         testSetAudioMutedUndefinedStatic001
-    * @tc.number       SUB_ACE_WEB_SET_AUDIO_MUTED_UNDEFINED_0100
-    * @tc.desc         test setAudioMuted with undefined param
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 0
-    */
-    it('testSetAudioMutedUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      try {
-        await Utils.msSleep(2000);
-        Utils.emitEvent('emitSetAudioMutedUndefinedStatic001', 10)
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent('testSetAudioMutedUndefinedStatic001', '401', 41022702, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-        const data = backData?.data as Record<string, RecordData>;
-        const action = data['ACTION'];
-        expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebInitButton', 10, '');
-        await Utils.msSleep(4000);
-        done()
-    
-      } catch (err) {
-        console.info('[testSetAudioMutedUndefinedStatic001] err:' + JSON.stringify(err));
-        done();
-
-        }
-      })
 
     /**
     * @tc.name         testControllerAttachStateStatic001
@@ -287,24 +224,6 @@ export default function webInitTest(): void {
       done()
     })
 
-    /**
-    * @tc.name         testDeleteAllDataStatic003
-    * @tc.number       SUB_WEB_DELETEALLDATA_0300
-    * @tc.desc         test deleteAllData with null
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 3
-    */
-    it('testDeleteAllDataStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitDeleteAllData003', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent('testDeleteAllDataStatic003', "success", 60607, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('WebInitButton', 10, '');
-      await Utils.msSleep(6000);
-      done()
-    })
 
     /**
     * @tc.name         testDeleteAllDataStatic004

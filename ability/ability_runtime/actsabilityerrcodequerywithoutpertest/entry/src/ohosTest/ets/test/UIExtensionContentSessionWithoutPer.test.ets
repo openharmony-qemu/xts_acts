@@ -18,6 +18,8 @@ import base, { BusinessError } from '@ohos.base';
 import { abilityAccessCtrl, common } from '@kit.AbilityKit';
 import { router } from '@kit.ArkUI';
 import { bundleManager } from '@kit.AbilityKit';
+import { UIExtensionContentSession } from '@kit.AbilityKit';
+
 
 let ACTS_EVENT: commonEventManager.CommonEventSubscribeInfo = {
   events: ['ACTS_TEST_LOADCONTENT',
@@ -33,7 +35,7 @@ class MyRouterParam {
   constructor(from: string) {
     this.fromPage = from;
   }
-  fromPage: string = "";
+  fromPage: string = '';
 }
 
 export default function UIExtensionContentSessionWithoutPerTest() {
@@ -69,10 +71,10 @@ export default function UIExtensionContentSessionWithoutPerTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log(tag + "subscribeCallBack success " + JSON.stringify(data))
+            console.log(tag + 'subscribeCallBack success ' + JSON.stringify(data))
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(201)
-              console.log(tag + "subscribeCallBack ACTS_TEST_DESTROY")
+              console.log(tag + 'subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -113,10 +115,10 @@ export default function UIExtensionContentSessionWithoutPerTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log(tag + "subscribeCallBack success")
+            console.log(tag + 'subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(201)
-              console.log(tag + "subscribeCallBack ACTS_TEST_DESTROY")
+              console.log(tag + 'subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -157,10 +159,10 @@ export default function UIExtensionContentSessionWithoutPerTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log(tag + "subscribeCallBack success")
+            console.log(tag + 'subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(201)
-              console.log(tag + "subscribeCallBack ACTS_TEST_DESTROY")
+              console.log(tag + 'subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -201,10 +203,10 @@ export default function UIExtensionContentSessionWithoutPerTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log(tag + "subscribeCallBack success")
+            console.log(tag + 'subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(201)
-              console.log(tag + "subscribeCallBack ACTS_TEST_DESTROY")
+              console.log(tag + 'subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -245,7 +247,7 @@ export default function UIExtensionContentSessionWithoutPerTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log(tag + "subscribeCallBack success")
+            console.log(tag + 'subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
                 const left:number = data?.parameters?.left as number;
                 const top:number = data?.parameters?.top as number;

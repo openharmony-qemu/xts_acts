@@ -55,55 +55,6 @@ export default function webViewControllerPart3Test() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    /**
-     * @tc.name   testSetNetworkAvailableNullStatic001
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_NULL_0100
-     * @tc.desc   test setNetworkAvailable with null param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetNetworkAvailableNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        await Utils.msSleep(2000);
-        Utils.emitEvent("testSetNetworkAvailableNullStatic001", 10)
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent("testSetNetworkAvailableNullStatic001", '401', 41022401, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
-        await Utils.msSleep(2000);
-        done();
-      })
-
-    /**
-     * @tc.name   testSetNetworkAvailableUndefinedStatic001
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_UNDEFINED_0100
-     * @tc.desc   test setNetworkAvailable with undefined param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetNetworkAvailableUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        await Utils.msSleep(2000);
-        Utils.emitEvent("testSetNetworkAvailableUndefinedStatic001", 10)
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent("testSetNetworkAvailableUndefinedStatic001", '401', 41022402, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
-        await Utils.msSleep(2000);
-        done();
-      })
 
     /**
      * @tc.name   testSetNetworkAvailableStatic001

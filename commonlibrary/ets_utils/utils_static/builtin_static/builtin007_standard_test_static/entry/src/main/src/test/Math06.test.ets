@@ -2726,7 +2726,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0086 start');
-        const testValue = ArrayValue.of([1.0]);
+        const testValue = ArrayValue.of([1.0] as ValueArray<double>);
         expect(testValue).not().assertNull();
         done();
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0086 end');
@@ -2744,7 +2744,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0087 start');
-        const testValue = ArrayValue.of([1.1, 2.2, 3.3]);
+        const testValue = ArrayValue.of([1.1, 2.2, 3.3] as ValueArray<double>);
         expect(testValue).not().assertUndefined();
         done();
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0087 end');
@@ -2762,7 +2762,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0088 start');
-        const testValue = ArrayValue.of([Number.MIN_VALUE]);
+        const testValue = ArrayValue.of([Number.MIN_VALUE] as ValueArray<double>);
         expect(testValue).not().assertNull();
         done();
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0088 end');
@@ -2780,7 +2780,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0089 start');
-        const testValue = ArrayValue.of([Number.MAX_VALUE]);
+        const testValue = ArrayValue.of([Number.MAX_VALUE] as ValueArray<double>);
         expect(testValue).not().assertUndefined();
         done();
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0089 end');

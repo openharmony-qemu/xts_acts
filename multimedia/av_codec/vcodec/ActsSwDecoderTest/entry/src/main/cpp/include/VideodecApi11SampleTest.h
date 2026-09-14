@@ -143,7 +143,8 @@ public:
     void FlushBuffer();
     void StopOutloop();
     bool IsRender();
-    bool MdCompare(unsigned char *buffer, int len, const char *source[]);
+    bool MdCompare(uint8_t source[]);
+    std::vector<uint8_t> LoadHashFile();
     VDecAPI11Signal *signal_;
     uint32_t errCount = 0;
     uint32_t outCount = 0;
@@ -166,6 +167,7 @@ public:
     bool useHDRSource = false;
     int32_t DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
     int enbleBlankFrame = 0;
+    bool noCaleHash = false;
 private:
     int32_t PrepareStartDecoderPipeline();
     int32_t PrepareStartDecoderOpenInputFile();

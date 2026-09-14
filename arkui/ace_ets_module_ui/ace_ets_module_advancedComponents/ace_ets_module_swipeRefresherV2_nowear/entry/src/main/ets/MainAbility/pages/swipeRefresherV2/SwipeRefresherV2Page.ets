@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,23 +26,22 @@ struct SwipeRefresherV2Page {
   build() {
     Column() {
       Scroll() {
-        Column({ space: 20 }) {
+        Column({ space: 3 }) {
           Text('SwipeRefresherV2 测试页面')
-            .fontSize(24)
+            .fontSize(20)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
 
           Divider()
 
           Text('场景1: 基本用法 - isLoading为false')
-            .fontSize(18)
+            .fontSize(15)
             .fontWeight(FontWeight.Medium)
 
           SwipeRefresherV2({
             isLoading: this.isLoading1
           })
             .width('100%')
-            .height(100)
+            .height(50)
 
           Button('切换加载状态')
             .onClick(() => {
@@ -52,7 +51,7 @@ struct SwipeRefresherV2Page {
           Divider()
 
           Text('场景2: 带content属性 - isLoading为true')
-            .fontSize(18)
+            .fontSize(15)
             .fontWeight(FontWeight.Medium)
 
           SwipeRefresherV2({
@@ -60,12 +59,12 @@ struct SwipeRefresherV2Page {
             content: this.contentValue
           })
             .width('100%')
-            .height(100)
+            .height(50)
 
           Divider()
 
           Text('场景3: content为空字符串')
-            .fontSize(18)
+            .fontSize(15)
             .fontWeight(FontWeight.Medium)
 
           SwipeRefresherV2({
@@ -73,7 +72,7 @@ struct SwipeRefresherV2Page {
             content: ''
           })
             .width('100%')
-            .height(100)
+            .height(50)
 
           Button('触发加载')
             .onClick(() => {
@@ -83,19 +82,19 @@ struct SwipeRefresherV2Page {
           Divider()
 
           Text('场景4: content为undefined')
-            .fontSize(18)
+            .fontSize(15)
             .fontWeight(FontWeight.Medium)
 
           SwipeRefresherV2({
             isLoading: false
           })
             .width('100%')
-            .height(100)
+            .height(50)
 
           Divider()
 
           Text('场景5: 动态切换isLoading')
-            .fontSize(18)
+            .fontSize(15)
             .fontWeight(FontWeight.Medium)
 
           SwipeRefresherV2({
@@ -103,7 +102,7 @@ struct SwipeRefresherV2Page {
             content: '加载中，请稍候...'
           })
             .width('100%')
-            .height(100)
+            .height(50)
 
           Button('停止加载')
             .onClick(() => {
@@ -114,11 +113,9 @@ struct SwipeRefresherV2Page {
             .onClick(() => {
               this.isLoading2 = true;
             })
-            .margin({ top: 10 })
         }
         .alignItems(HorizontalAlign.Center)
         .width('100%')
-        .padding({ left: 20, right: 20, bottom: 50 })
       }
     }
     .width('100%')

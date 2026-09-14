@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BatteryStatisticsTest from './BatteryStatistics.test.js';
+import BatteryStatisticsTest from './BatteryStatistics.test';
 
 export default function testsuite() {
   BatteryStatisticsTest();

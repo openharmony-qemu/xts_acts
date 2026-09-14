@@ -122,7 +122,6 @@ struct IndexPage {
     { title: 'ModalTransition', uri: 'pages/ArkUI/ModalTransition' },
     { title: 'BindContentCoverOption', uri: 'pages/ArkUI/BindContentCoverOption' },
     { title: 'EnableShowHideWithContentCover', uri: 'pages/ArkUI/EnableShowHideWithContentCover' },
-    { title: 'ImageAnimationControllerPage', uri: 'pages/ArkUI/ImageAnimationControllerPage' },
     { title: 'AnimatedDrawableDescriptorFrameDurations', uri: 'pages/ArkUI/AnimatedDrawableDescriptorFrameDurations' },
     { title: 'GetDarkModeTest', uri: 'pages/ArkUI/GetDarkModeTest' },
     { title: 'TabBarIndicatorPixmap', uri: 'pages/ArkUI/TabBarIndicatorPixmap' },

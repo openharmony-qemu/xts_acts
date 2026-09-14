@@ -84,6 +84,8 @@ import ReusableChildState2Test from './Reusable/ReusableChildState2Test.test';
 import ReusableChildState3Test from './Reusable/ReusableChildState3Test.test';
 import ReusableChildState4Test from './Reusable/ReusableChildState4Test.test';
 
+import ToolchainSyntaxVerification from './Toolchain/ToolchainSyntaxVerification.test';
+
 export default function testsuite() {
     Consume0020Test();
     Consume0030Test();
@@ -151,4 +153,5 @@ export default function testsuite() {
     ReusableChildState2Test();
     ReusableChildState3Test();
     ReusableChildState4Test();
+    ToolchainSyntaxVerification();
 }

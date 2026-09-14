@@ -896,7 +896,7 @@ export default function ArrayList_01Test():void {
         const TAG = 'testArrayList01Clear0021';
         console.log(TAG + ' start');
 
-        let arrayList = new ArrayList<MixedArray | number[] | string[]>();
+        let arrayList = new ArrayList<MixedArray>();
 
         arrayList.add([72, 101, 108, 108, 111, 87, 111, 114, 108, 100, 49, 50, 51, 63]);
 

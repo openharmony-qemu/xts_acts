@@ -2,7 +2,6 @@
   "src": [
     "pages/index",
     "pages/ArkUI/ArkUI_index",
-    "pages/ArkUI/ScrollListTest",
     "pages/ArkUI/LongPressGesture",
     "pages/ArkUI/PanGesture",
     "pages/ArkUI/PinchGestureTest",
@@ -141,7 +140,6 @@
     "pages/ArkUI/ModalTransition",
     "pages/ArkUI/BindContentCoverOption",
     "pages/ArkUI/EnableShowHideWithContentCover",
-    "pages/ArkUI/ImageAnimationControllerPage",
     "pages/ArkUI/AnimatedDrawableDescriptorFrameDurations",
     "pages/ArkUI/GetDarkModeTest",
     "pages/ArkUI/TabBarIndicatorPixmap",
