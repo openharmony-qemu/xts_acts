@@ -75,7 +75,7 @@ class MyRichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 @Entry
 @Component
 struct SR20250916000370 {
-  @State name: string = 'RichEditior ComponentContent Keyboard';
+  @State name: string = 'RichEditiorComponentContentKeyboard';
   @State stepTips: string = '操作步骤:\n' + '1.点击打开按钮 \n' +
     '2.分别点击下方的富文本.\n' +
     '预期结果：\n' + '点击富文本时键盘正常弹出，再点击其他富文本时，键盘接续正常\n'

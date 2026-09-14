@@ -23,7 +23,7 @@ import { BusinessError } from '@ohos.base';
 @Entry
 @Component
 struct transform3DDemo {
-  @State name: string = 'menuColorMode';
+  @State name: string = 'MenuColorMode';
   @State stepTips: string = '操作步骤:\n' + '1.点击FOLLOW_SYSTEM和LIGHT按钮,点击下方Menu,观察弹出菜单颜色\n' +
     '2.点击FOLLOW_SYSTEM和DARK按钮,点击下方Menu,观察弹出菜单颜色\n' +
     '3.点击FOLLOW_TARGET和LIGHT按钮,点击下方Menu,观察弹出菜单颜色\n' +
