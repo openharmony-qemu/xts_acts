@@ -281,6 +281,7 @@ int TestPathGetLastPointNormal();
 int TestPathGetLastPointNull();
 int TestPathGetLastPointMultipleCalls();
 int TestPathIsEqualNormal();
+int TestPathIsEqualNormal2();
 int TestPathIsEqualNull();
 int TestPathIsEqualMultipleCalls();
 } // namespace Drawing

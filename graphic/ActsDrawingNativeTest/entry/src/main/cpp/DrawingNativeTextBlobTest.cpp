@@ -390,6 +390,7 @@ int TestTextBlobCreateFromStringNormal()
     OH_Drawing_FontSetTypeface(font, typeSurface);
     OH_Drawing_TextEncoding encodeArray[] = {
         TEXT_ENCODING_UTF8,
+        TEXT_ENCODING_UTF16,
         TEXT_ENCODING_UTF32,
         TEXT_ENCODING_GLYPH_ID,
     };
@@ -402,7 +403,7 @@ int TestTextBlobCreateFromStringNormal()
         OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
         EXPECT_NE(nullptr, canvas);
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, 0, 0);
+        OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, 100.0f, 100.0f);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
         OH_Drawing_CanvasDestroy(canvas);
@@ -428,14 +429,16 @@ int TestTextBlobCreateFromStringNull()
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlob *textBlob1 = OH_Drawing_TextBlobCreateFromString(nullptr, font, TEXT_ENCODING_UTF8);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
-    OH_Drawing_ErrorCodeReset();
+    EXPECT_EQ(textBlob1, nullptr);
     // 2. OH_Drawing_TextBlobCreateFromString with the second parameter being nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlob *textBlob2 = OH_Drawing_TextBlobCreateFromString(str, nullptr, TEXT_ENCODING_UTF8);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(textBlob2, nullptr);
     // 3. OH_Drawing_TextBlobCreateFromPosText with the first parameter being a string
-    OH_Drawing_TextBlob *textBlob3 = OH_Drawing_TextBlobCreateFromString("123456", font, TEXT_ENCODING_UTF8);
-    EXPECT_NE(textBlob3, nullptr);
+    OH_Drawing_TextBlob *textBlob3 = OH_Drawing_TextBlobCreateFromString("", font, TEXT_ENCODING_UTF8);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(textBlob3, nullptr);
     // 4. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TextBlobDestroy(textBlob1);
@@ -697,18 +700,15 @@ int TestTextBlobBuilderAllocRunPosNormal()
     OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
     EXPECT_NE(builder, nullptr);
     // 2. OH_Drawing_TextBlobBuilderAllocRunPos
-    const OH_Drawing_RunBuffer *runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, DRAWING_NUMBER_9, rect)
-        ;
+    const OH_Drawing_RunBuffer *runBuffer =
+        OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, DRAWING_NUMBER_9, rect);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     EXPECT_NE(runBuffer, nullptr);
     // 3. Free memory
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_FontDestroy(font);
-    if (0) {
-        // todo cpp crash
-        OH_Drawing_TextBlobBuilderDestroy(builder);
-    }
+    OH_Drawing_TextBlobBuilderDestroy(builder);
     DrawingNativeTextBlobTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
@@ -725,30 +725,32 @@ int TestTextBlobBuilderAllocRunPosNull()
     EXPECT_NE(builder, nullptr);
     // 2. Call OH_Drawing_TextBlobBuilderAllocRunPos with the first parameter as nullptr and check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobBuilderAllocRunPos(nullptr, font, DRAWING_NUMBER_9, rect);
+    const OH_Drawing_RunBuffer *runBuffer =
+        OH_Drawing_TextBlobBuilderAllocRunPos(nullptr, font, DRAWING_NUMBER_9, rect);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(runBuffer, nullptr);
     OH_Drawing_ErrorCodeReset();
     // 3. Call OH_Drawing_TextBlobBuilderAllocRunPos with the second parameter as nullptr and check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobBuilderAllocRunPos(builder, nullptr, DRAWING_NUMBER_9, rect);
+    runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, nullptr, DRAWING_NUMBER_9, rect);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(runBuffer, nullptr);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_TextBlobBuilderAllocRunPos with the third parameter as nullptr and check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, 0, rect);
+    runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, 0, rect);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(runBuffer, nullptr);
     OH_Drawing_ErrorCodeReset();
     // 5. Call OH_Drawing_TextBlobBuilderAllocRunPos with the fourth parameter as nullptr and check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, DRAWING_NUMBER_9, nullptr);
+    runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, DRAWING_NUMBER_9, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    EXPECT_NE(runBuffer, nullptr);
     // 6. Free memory
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_FontDestroy(font);
-    if (0) {
-        // todo cpp crash
-        OH_Drawing_TextBlobBuilderDestroy(builder);
-    }
+    OH_Drawing_TextBlobBuilderDestroy(builder);
     DrawingNativeTextBlobTestTearDown();
     return OH_DRAWING_SUCCESS;
 }

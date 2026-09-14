@@ -580,6 +580,31 @@ int TestPathIsEqualNormal()
     return OH_DRAWING_SUCCESS;
 }
 
+// 补充场景15: PathIsEqual不相等路径测试
+int TestPathIsEqualNormal2()
+{
+    DrawingNativePathPart4TestSetUp();
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    
+    OH_Drawing_Path *other = OH_Drawing_PathCreate();
+    EXPECT_NE(other, nullptr);
+    OH_Drawing_PathMoveTo(other, 0, 0);
+    OH_Drawing_PathLineTo(other, 200.0f, 200.0f);
+    
+    bool equal = true;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIsEqual(path, other, &equal);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(equal, false);
+    
+    OH_Drawing_PathDestroy(path);
+    OH_Drawing_PathDestroy(other);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
 int TestPathIsEqualNull()
 {
     DrawingNativePathPart4TestSetUp();

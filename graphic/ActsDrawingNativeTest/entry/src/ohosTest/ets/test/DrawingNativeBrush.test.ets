@@ -257,6 +257,19 @@ export default function DrawingNativeBrushTest() {
     })
 
     /**
+     * @tc.name   testBrushSetGetColorMultipleTimes
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0700
+     * @tc.desc   Test for testBrushSetGetColorMultipleTimes.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testBrushSetGetColorMultipleTimes', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingBrushColor(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
      * @tc.name   testBrushGetAlphaNormal
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0100
      * @tc.desc   Test for testBrushGetAlphaNormal.
@@ -331,6 +344,19 @@ export default function DrawingNativeBrushTest() {
      */
     it('testBrushSetAlphaMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushAlpha(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testBrushSetGetAlphaMultipleTimes
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0700
+     * @tc.desc   Test for testBrushSetGetAlphaMultipleTimes.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testBrushSetGetAlphaMultipleTimes', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingBrushAlpha(6);
       expect(result).assertEqual(0);
     })
 
@@ -517,80 +543,93 @@ export default function DrawingNativeBrushTest() {
     })
 
     /**
-     * @tc.name   testBrushGetRedFloatNormal
+     * @tc.name   testBrushGetAlphaFloatBoundary
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0300
+     * @tc.desc   Test for testBrushGetAlphaFloatBoundary.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testBrushGetAlphaFloatBoundary', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingBrushGetFloat(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testBrushGetRedFloatNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0400
      * @tc.desc   Test for testBrushGetRedFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
     it('testBrushGetRedFloatNormal', Level.LEVEL2, () => {
-      const result = libDrawingNative.DrawingBrushGetFloat(2);
+      const result = libDrawingNative.DrawingBrushGetFloat(3);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testBrushGetRedFloatAbnormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0500
      * @tc.desc   Test for testBrushGetRedFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
     it('testBrushGetRedFloatAbnormal', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingBrushGetFloat(3);
+      const result = libDrawingNative.DrawingBrushGetFloat(4);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testBrushGetGreenFloatNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0600
      * @tc.desc   Test for testBrushGetGreenFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
     it('testBrushGetGreenFloatNormal', Level.LEVEL2, () => {
-      const result = libDrawingNative.DrawingBrushGetFloat(4);
+      const result = libDrawingNative.DrawingBrushGetFloat(5);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testBrushGetGreenFloatAbnormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0700
      * @tc.desc   Test for testBrushGetGreenFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
     it('testBrushGetGreenFloatAbnormal', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingBrushGetFloat(5);
+      const result = libDrawingNative.DrawingBrushGetFloat(6);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testBrushGetBlueFloatNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0800
      * @tc.desc   Test for testBrushGetBlueFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
     it('testBrushGetBlueFloatNormal', Level.LEVEL2, () => {
-      const result = libDrawingNative.DrawingBrushGetFloat(6);
+      const result = libDrawingNative.DrawingBrushGetFloat(7);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testBrushGetBlueFloatAbnormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0900
      * @tc.desc   Test for testBrushGetBlueFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
     it('testBrushGetBlueFloatAbnormal', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingBrushGetFloat(7);
+      const result = libDrawingNative.DrawingBrushGetFloat(8);
       expect(result).assertEqual(0);
     })
 
@@ -630,6 +669,19 @@ export default function DrawingNativeBrushTest() {
      */
     it('testBrushSetColor4fAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushSetColor4f(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testBrushSetColor4fMaximum
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushSetColor4f_0400
+     * @tc.desc   Test for testBrushSetColor4fMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testBrushSetColor4fMaximum', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingBrushSetColor4f(3);
       expect(result).assertEqual(0);
     })
   })

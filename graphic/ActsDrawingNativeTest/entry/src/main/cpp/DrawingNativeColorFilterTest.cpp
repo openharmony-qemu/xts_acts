@@ -327,6 +327,35 @@ int TestColorFilterCreateMatrixMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
+// 补充场景10: ColorFilterCreateMatrix matrix数组边界值测试
+int TestColorFilterCreateMatrixBoundaryValues()
+{
+    DrawingNativeColorFilterTestSetUp();
+    
+    float matrix[20];
+    
+    // 所有元素为0
+    for (int i = 0; i < 20; i++) {
+        matrix[i] = 0.0f;
+    }
+    OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
+    EXPECT_NE(colorFilter, nullptr);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    OH_Drawing_ColorFilterDestroy(colorFilter);
+    
+    // 所有元素为极大值
+    for (int i = 0; i < 20; i++) {
+        matrix[i] = FLT_MAX;
+    }
+    colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
+    EXPECT_NE(colorFilter, nullptr);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    OH_Drawing_ColorFilterDestroy(colorFilter);
+    
+    DrawingNativeColorFilterTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
 int TestColorFilterCreateLinearToSrgbGammaNormal()
 {
     DrawingNativeColorFilterTestSetUp();
