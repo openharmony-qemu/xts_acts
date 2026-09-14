@@ -679,7 +679,7 @@ export default function audioRoutingManager() {
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let capturerInfo: audio.AudioCapturerInfo = {
-        source: 9,
+        source: 999,
         capturerFlags: 0
       }
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();

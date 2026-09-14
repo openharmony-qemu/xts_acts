@@ -43,7 +43,7 @@ let getPermission = async () => {
             });
         let driver = Driver.create();
         await Utils.msSleep(1000);
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 10000);
         let permissionButton2 = await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
         await Utils.msSleep(1000);
         if (permissionButton != null) {
