@@ -3182,7 +3182,7 @@ export default function windowPCTest() {
         console.log(msgStr + 'Succeeded off windowStatusDidChange without callback ');
         let windowStatusTypeBefore = windowClass.getWindowStatus()
         await sleep(100)
-        if((windowStatusTypeBefore !== window.WindowStatusType.FULL_SCREEN && windowStatusTypeBefore !== window.WindowStatusType.MAXIMIZE)&&isInFreeWindowMode){
+        if((windowStatusTypeBefore !== window.WindowStatusType.FULL_SCREEN && windowStatusTypeBefore !== window.WindowStatusType.MAXIMIZE)&&isFreeWindowMode){
           await windowClass.maximize()
           console.log(msgStr + 'Succeeded maximize');
         }else{
