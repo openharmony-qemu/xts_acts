@@ -59,6 +59,10 @@ napi_value TestProxyGetEditStatus_Normal(napi_env env, napi_callback_info info);
 napi_value TestProxyGetCapability_ExtensionError(napi_env env, napi_callback_info info);
 napi_value TestProxyGetCapability_Normal(napi_env env, napi_callback_info info);
 napi_value TestProxyMultiExtension_Normal(napi_env env, napi_callback_info info);
+napi_value TestStreamRead_StreamFailed(napi_env env, napi_callback_info info);
+napi_value TestStreamWrite_StreamFailed(napi_env env, napi_callback_info info);
+napi_value TestStreamGetPosition_StreamFailed(napi_env env, napi_callback_info info);
+napi_value TestStreamGetSize_StreamFailed(napi_env env, napi_callback_info info);
 
 constexpr int32_t BUF_SIZE = 64;
 extern const char* testExtensionGetContextNormal;

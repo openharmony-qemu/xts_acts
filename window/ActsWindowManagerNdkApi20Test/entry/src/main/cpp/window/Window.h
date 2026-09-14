@@ -26,6 +26,7 @@ extern int32_t g_displayId;
 
 bool MouseEventFilter(Input_MouseEvent* mouseEvent);
 bool TouchEventFilter(Input_TouchEvent* touchEvent);
+bool KeyEventFilter(Input_KeyEvent* keyEvent);
 
 napi_value GetWindowId(napi_env env, napi_callback_info info);
 napi_value GetMainWindowId(napi_env env, napi_callback_info info);
@@ -48,7 +49,6 @@ napi_value WindowManagerErrorCodeOk(napi_env env, napi_callback_info info);
 napi_value WindowManagerErrorCodeNoPermission(napi_env env, napi_callback_info info);
 napi_value WindowManagerErrorCodeInvalidParam(napi_env env, napi_callback_info info);
 napi_value WindowManagerErrorCodeDeviceNotSupported(napi_env env, napi_callback_info info);
-napi_value WindowManagerErrorCodeInvalidWindowId(napi_env env, napi_callback_info info);
 napi_value WindowManagerErrorCodeStateAbnormal(napi_env env, napi_callback_info info);
 napi_value WindowManagerErrorCodeSystemAbnormal(napi_env env, napi_callback_info info);
 napi_value GetWindowAvoidAreaType(napi_env env, napi_callback_info info);
@@ -61,6 +61,13 @@ napi_value RegisterTouchEventFilterOkOrServiceError(napi_env env, napi_callback_
 napi_value RegisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_info info);
 napi_value UnregisterTouchEventFilterOkOrServiceError(napi_env env, napi_callback_info info);
 napi_value UnregisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_info info);
+napi_value RegisterKeyEventFilterOkOrServiceError(napi_env env, napi_callback_info info);
+napi_value RegisterKeyEventFilterInvalidWindowId(napi_env env, napi_callback_info info);
+napi_value RegisterKeyEventFilterInvalidParam(napi_env env, napi_callback_info info);
+napi_value UnregisterKeyEventFilterOkOrServiceError(napi_env env, napi_callback_info info);
+napi_value UnregisterKeyEventFilterInvalidWindowId(napi_env env, napi_callback_info info);
+napi_value RegisterMouseEventFilterInvalidParam(napi_env env, napi_callback_info info);
+napi_value RegisterTouchEventFilterInvalidParam(napi_env env, napi_callback_info info);
 
 napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_callback_info info);
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0200(napi_env env, napi_callback_info info);

@@ -26,7 +26,7 @@ const TAG = 'SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy';
 const CASE_TIMEOUT = 5000;
 const MULTIPLE_CASE_TIMEOUT = 6000;
 const AFTER_EACH_CASE_TIMEOUT = 1500;
-let ACTS_OnDestroy: commonEvent.CommonEventSubscribeInfo = {
+let actsOnDestroy: commonEvent.CommonEventSubscribeInfo = {
   events: ['Acts_EntryOnDestroy', 'Acts_SecondOnDestroy', 'Acts_EntryAbilityTerminate', 'Acts_OtherAbilityTerminate',
     'Acts_SecondOtherAbilityTerminate']
 };
@@ -80,7 +80,7 @@ export default function abilityTest() {
         }
       })
 
-      commonEvent.createSubscriber(ACTS_OnDestroy).then(async (data) => {
+      commonEvent.createSubscriber(actsOnDestroy).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, subscribeCallBack);
         console.info(TAG + '_0100 startAbility');
@@ -105,7 +105,11 @@ export default function abilityTest() {
           console.error('waitForComponent error' + JSON.stringify(err));
           done();
         }
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
 
     })
 
@@ -150,7 +154,7 @@ export default function abilityTest() {
         }
       })
 
-      commonEvent.createSubscriber(ACTS_OnDestroy).then(async (data) => {
+      commonEvent.createSubscriber(actsOnDestroy).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, subscribeCallBack);
         console.info(TAG + '_0200 startAbility');
@@ -175,7 +179,11 @@ export default function abilityTest() {
           console.error('waitForComponent error' + JSON.stringify(err));
           done();
         }
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -215,7 +223,7 @@ export default function abilityTest() {
         }
       })
 
-      commonEvent.createSubscriber(ACTS_OnDestroy).then(async (data) => {
+      commonEvent.createSubscriber(actsOnDestroy).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, subscribeCallBack);
         console.info(TAG + '_0300 startAbility');
@@ -238,9 +246,14 @@ export default function abilityTest() {
           }
         } catch (err) {
           console.error('waitForComponent error' + JSON.stringify(err));
+          expect().assertFail();
           done();
         }
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -276,7 +289,7 @@ export default function abilityTest() {
         }
       })
 
-      commonEvent.createSubscriber(ACTS_OnDestroy).then(async (data) => {
+      commonEvent.createSubscriber(actsOnDestroy).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, subscribeCallBack);
         console.info(TAG + '_0500 startAbility');
@@ -306,9 +319,14 @@ export default function abilityTest() {
           }
         } catch (err) {
           console.error('waitForComponent error' + JSON.stringify(err));
+          expect().assertFail();
           done();
         }
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -358,7 +376,7 @@ export default function abilityTest() {
         }
       })
 
-      commonEvent.createSubscriber(ACTS_OnDestroy).then(async (data) => {
+      commonEvent.createSubscriber(actsOnDestroy).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, subscribeCallBack);
         console.info(TAG + '_0500 startAbility');
@@ -381,9 +399,14 @@ export default function abilityTest() {
           }
         } catch (err) {
           console.error('waitForComponent error' + JSON.stringify(err));
+          expect().assertFail();
           done();
         }
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
   })
 }

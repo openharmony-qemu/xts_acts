@@ -45,6 +45,7 @@ struct SmartGestureSelect {
 
   private readonly passThroughCallback = (proposal: BaseGestureHandlingProposal): GestureHandlingResolution => {
     this.pushLog(`passThrough -> action=${proposal.action}` + `operateIntention=${proposal.operateIntention}`);
+    this.isOk = true;
     return new GestureHandlingResolution(true);
   };
 
@@ -129,7 +130,12 @@ struct SmartGestureSelect {
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
+    .opacity(this.isOk ? 1 : 0.4)
+    .enabled(this.isOk)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
+      globalThis.arkResult = 'true ';
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -153,6 +159,7 @@ struct SmartGestureSelect {
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -167,11 +174,15 @@ struct SmartGestureSelect {
 
   aboutToAppear() {
     FirstDialog.ChooseDialog(this.stepTips, this.name);
-    this.controller().registerMonitor(this.passThroughCallback);
-    this.controller().registerMonitor(this.passThroughCallback);
-    this.controller().registerMonitor(this.passThroughCallback);
-    this.controller().unregisterMonitor(this.passThroughCallback);
-    this.getUIContext().getSmartGestureController().enableSmartTapAndSlideGestures(true);
+    try {
+      this.controller().registerMonitor(this.passThroughCallback);
+      this.controller().registerMonitor(this.passThroughCallback);
+      this.controller().registerMonitor(this.passThroughCallback);
+      this.controller().unregisterMonitor(this.passThroughCallback);
+      this.getUIContext().getSmartGestureController().enableSmartTapAndSlideGestures(true);
+    } catch (e) {
+      console.error('SmartGesture not supported on this device: ' + JSON.stringify(e));
+    }
   }
 
   onPageHide() {
@@ -195,6 +206,7 @@ struct SmartGestureSelect {
         .backgroundColor(Color.Black)
         .size({ width: '10%', height: '10%' })
         .onClick(() => {
+          globalThis.arkTitle = this.name;
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
             params: { result: 'None' }

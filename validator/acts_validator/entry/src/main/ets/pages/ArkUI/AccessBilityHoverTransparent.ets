@@ -25,7 +25,7 @@ const TAG = '[onAccessibilityHoverTransparent]';
 @Entry
 @Component
 struct AccessibilityHoverTransparentDemo {
-  @State name: string = 'onAccessibilityHoverTransparent';
+  @State name: string = 'AccessBilityHoverTransparent';
   @State stepTips: string = '测试目的: 验证无障碍接口onAccessibilityHoverTransparent\n' + '\n' +
     '操作步骤: 开启屏幕朗读\n' +
     '1、触摸accessibilityLevel_yes文本\n' +

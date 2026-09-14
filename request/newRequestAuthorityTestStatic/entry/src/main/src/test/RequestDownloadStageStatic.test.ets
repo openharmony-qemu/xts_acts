@@ -23,6 +23,8 @@ import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
+import {WifiConnectStatus} from '../common/WifiConnectStatus';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let baseContext: common.UIAbilityContext | undefined;
@@ -66,8 +68,10 @@ export default function requestDownloadStageStaticUnit() {
     /**
      * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
      */
-    beforeEach((): void => {
-      console.info('====>beforeEach: Prerequisites is executed.');
+    beforeEach(async (): Promise<void> => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
     });
 
     /**

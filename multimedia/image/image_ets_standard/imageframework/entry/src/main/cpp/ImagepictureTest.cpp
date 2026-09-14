@@ -446,6 +446,20 @@ napi_value AuxiliaryPictureInfoGetRowStrideSuccess(napi_env env, napi_callback_i
     napi_create_int32(env, ret, &result);
     return result;
 }
+napi_value AuxiliaryPictureInfoGetRowStrideBadParameter(napi_env env, napi_callback_info info)
+{
+    OH_AuxiliaryPictureInfo *auxiliaryPictureInfo = nullptr;
+    OH_AuxiliaryPictureInfo_Create(&auxiliaryPictureInfo);
+    OH_AuxiliaryPictureInfo_SetRowStride(auxiliaryPictureInfo, ROW_STRIDE);
+    Image_ErrorCode returnValue = OH_AuxiliaryPictureInfo_GetRowStride(auxiliaryPictureInfo, nullptr);
+    int ret = -1;
+    if (returnValue == IMAGE_BAD_PARAMETER) {
+        ret = 0;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
 napi_value AuxiliaryPictureInfoSetRowStride(napi_env env, napi_callback_info info)
 {
     OH_AuxiliaryPictureInfo *auxiliaryPictureInfo = nullptr;

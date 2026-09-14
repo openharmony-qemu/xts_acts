@@ -29,6 +29,7 @@ import { resourceManager } from '@kit.LocalizationKit';
 import { display } from '@kit.ArkUI';
 import { JSON, worker } from '@kit.ArkTS';
 import { Driver, ON } from '@ohos.UiTest';
+import { Configuration } from '@kit.AbilityKit';
 
 
 const TAG: string = 'DisplayContextTest';
@@ -723,7 +724,7 @@ export function sendableContext(context: Context): boolean | undefined {
   let myWorker: worker.ThreadWorker = new worker.ThreadWorker('../workers/Worker.ets');
   let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(context);
   let object: SendableObject = new SendableObject(sendableContext, 'BaseContext');
-  let contextAfter: common.Context = sendableContextManager.convertToContext(sendableContext);
+  let contextAfter: common.Context | undefined = sendableContextManager.convertToContext(sendableContext);
 
   hilog.info(DOMAIN_NUMBER, TAG, 'Ability context after convert: %{public}s', JSON.stringify(contextAfter));
   expect(contextAfter.cacheDir).assertEqual(context.cacheDir);

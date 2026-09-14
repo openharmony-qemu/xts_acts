@@ -20,7 +20,7 @@ const CASE_TIME_OUT = 5000;
 const EXIT_TWO_CALLEE = 2;
 const KILL_TWO = 2;
 const CALLEE_BACK = 2;
-let ACTS_CallFunction: commonEvent.CommonEventSubscribeInfo = {
+let actsCallFunction: commonEvent.CommonEventSubscribeInfo = {
   events: ['ACTS_CALL_EVENT', 'ACTS_RELEASE_EVENT', 'ACTS_SECOND_CALL_EVENT']
 };
 
@@ -44,7 +44,7 @@ export default function abilityTest() {
     it('Acts_SingleInstanceCallFunction_0100', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
       console.debug('====>Acts_SingleInstanceCallFunction_0100 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0100 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -67,7 +67,11 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_0100 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -81,7 +85,7 @@ export default function abilityTest() {
     it('Acts_SingleInstanceCallFunction_0200', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
       console.debug('====>Acts_SingleInstanceCallFunction_0200 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0200 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -103,7 +107,11 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_0200 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -118,7 +126,7 @@ export default function abilityTest() {
       let subscriber: commonEvent.CommonEventSubscriber;
       let eventCount = 0;
       console.debug('====>Acts_SingleInstanceCallFunction_0300 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0300 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -149,7 +157,11 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_0300 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -164,7 +176,7 @@ export default function abilityTest() {
       let subscriber: commonEvent.CommonEventSubscriber;
       let eventCount = 0;
       console.debug('====>Acts_SingleInstanceCallFunction_0400 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0400 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -195,7 +207,11 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_0400 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -209,7 +225,7 @@ export default function abilityTest() {
     it('Acts_SingleInstanceCallFunction_0500', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
       console.info('====>Acts_SingleInstanceCallFunction_0500 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.info('====>Acts_SingleInstanceCallFunction_0500 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -231,7 +247,11 @@ export default function abilityTest() {
           console.info('====>Acts_SingleInstanceCallFunction_0500 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -245,7 +265,7 @@ export default function abilityTest() {
     it('Acts_SingleInstanceCallFunction_0600', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
       console.info('====>Acts_SingleInstanceCallFunction_0600 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.info('====>Acts_SingleInstanceCallFunction_0600 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -267,7 +287,11 @@ export default function abilityTest() {
           console.info('====>Acts_SingleInstanceCallFunction_0600 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -282,7 +306,7 @@ export default function abilityTest() {
       let subscriber: commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_SingleInstanceCallFunction_0700 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.info('====>Acts_SingleInstanceCallFunction_0700 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -306,7 +330,11 @@ export default function abilityTest() {
           console.info('====>Acts_SingleInstanceCallFunction_0700 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -320,7 +348,7 @@ export default function abilityTest() {
     it('Acts_SingleInstanceCallFunction_0800', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
       console.info('====>Acts_SingleInstanceCallFunction_0800 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.info('====>Acts_SingleInstanceCallFunction_0800 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -342,7 +370,11 @@ export default function abilityTest() {
           console.info('====>Acts_SingleInstanceCallFunction_0800 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -357,7 +389,7 @@ export default function abilityTest() {
       let subscriber: commonEvent.CommonEventSubscriber;
       let eventCount = 0;
       console.debug('====>Acts_SingleInstanceCallFunction_0900 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.debug('====>Acts_SingleInstanceCallFunction_0900 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -389,7 +421,11 @@ export default function abilityTest() {
           JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -404,7 +440,7 @@ export default function abilityTest() {
       let subscriber: commonEvent.CommonEventSubscriber;
       let eventCount = 0;
       console.debug('====>Acts_SingleInstanceCallFunction_1000 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.debug('====>Acts_SingleInstanceCallFunction_1000 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -447,7 +483,11 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_1000 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -462,7 +502,7 @@ export default function abilityTest() {
       let subscriber: commonEvent.CommonEventSubscriber;
       let eventCount = 0;
       console.debug('====>Acts_SingleInstanceCallFunction_1100 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.debug('====>Acts_SingleInstanceCallFunction_1100 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -492,7 +532,11 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_1100 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -507,7 +551,7 @@ export default function abilityTest() {
       let subscriber: commonEvent.CommonEventSubscriber;
       let eventCount = 0;
       console.debug('====>Acts_SingleInstanceCallFunction_1200 start');
-      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCallFunction).then(async (data) => {
         console.debug('====>Acts_SingleInstanceCallFunction_1200 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -530,7 +574,11 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_1200 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
   })
 }

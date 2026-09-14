@@ -225,6 +225,166 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_LocaleInvalid(na
     return result;
 }
 
+static napi_value TestProxyDestroyContentEmbedInfo_NullInfo(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_DestroyContentEmbedInfo(nullptr);
+    OH_LOG_INFO(LOG_APP, "TestProxyDestroyContentEmbedInfo_NullInfo failed code: %{public}d", code);
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyDestroyContentEmbedInfo_Normal(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Info *embedInfo = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedInfo(&embedInfo);
+    OH_LOG_INFO(LOG_APP, "TestProxyDestroyContentEmbedInfo_Normal create code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_DestroyContentEmbedInfo(embedInfo);
+    OH_LOG_INFO(LOG_APP, "TestProxyDestroyContentEmbedInfo_Normal destroy code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetContentEmbedInfo_ParamInvalid(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_GetContentEmbedInfo(nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedInfo_ParamInvalid failed code: %{public}d", code);
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetFormatCountFromInfo_ParamInvalid(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_GetFormatCountFromInfo(nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFormatCountFromInfo_ParamInvalid failed code: %{public}d", code);
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetFormatFromInfo_ParamInvalid(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_GetFormatFromInfo(nullptr, 0, nullptr);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_ParamInvalid failed code: %{public}d", code);
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyDestroyContentEmbedFormat_ParamInvalid(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_DestroyContentEmbedFormat(nullptr);
+    OH_LOG_INFO(LOG_APP, "OH_ContentEmbed_DestroyContentEmbedFormat failed code: %{public}d", code);
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyDestroyContentEmbedFormat_Normal(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Format *format = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
+    OH_LOG_INFO(LOG_APP, "TestProxyDestroyContentEmbedFormat_Normal create code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_DestroyContentEmbedFormat(format);
+    OH_LOG_INFO(LOG_APP, "TestProxyDestroyContentEmbedFormat_Normal destroy code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_ParamInvalid(napi_env env,
+    napi_callback_info info)
+{
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale(nullptr, nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP,
+        "TestProxyGetContentEmbedFormatByOEidAndLocale_ParamInvalid failed code: %{public}d", code);
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetOEidFromFormat_ParamInvalid(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_GetOEidFromFormat(nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetOEidFromFormat_ParamInvalid failed code: %{public}d", code);
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetNameAndDescriptionFromFormat_ParamInvalid(napi_env env,
+    napi_callback_info info)
+{
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_GetNameAndDescriptionFromFormat(nullptr, nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP,
+        "TestProxyGetNameAndDescriptionFromFormat_ParamInvalid failed code: %{public}d", code);
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -246,6 +406,36 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestProxyGetContentEmbedInfo_LocaleInvalid5", nullptr,
             TestProxyGetContentEmbedInfo_LocaleInvalid5,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyDestroyContentEmbedInfo_NullInfo", nullptr,
+            TestProxyDestroyContentEmbedInfo_NullInfo,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyDestroyContentEmbedInfo_Normal", nullptr,
+            TestProxyDestroyContentEmbedInfo_Normal,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetContentEmbedInfo_ParamInvalid", nullptr,
+            TestProxyGetContentEmbedInfo_ParamInvalid,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetFormatCountFromInfo_ParamInvalid", nullptr,
+            TestProxyGetFormatCountFromInfo_ParamInvalid,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetFormatFromInfo_ParamInvalid", nullptr,
+            TestProxyGetFormatFromInfo_ParamInvalid,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyDestroyContentEmbedFormat_ParamInvalid", nullptr,
+            TestProxyDestroyContentEmbedFormat_ParamInvalid,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyDestroyContentEmbedFormat_Normal", nullptr,
+            TestProxyDestroyContentEmbedFormat_Normal,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetContentEmbedFormatByOEidAndLocale_ParamInvalid", nullptr,
+            TestProxyGetContentEmbedFormatByOEidAndLocale_ParamInvalid,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetOEidFromFormat_ParamInvalid", nullptr,
+            TestProxyGetOEidFromFormat_ParamInvalid,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetNameAndDescriptionFromFormat_ParamInvalid", nullptr,
+            TestProxyGetNameAndDescriptionFromFormat_ParamInvalid,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"initObjectServiceConnect", nullptr,
             initObjectServiceConnect,
@@ -357,6 +547,18 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestProxyMultiExtension_Normal", nullptr,
             TestProxyMultiExtension_Normal,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestStreamRead_StreamFailed", nullptr,
+            TestStreamRead_StreamFailed,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestStreamWrite_StreamFailed", nullptr,
+            TestStreamWrite_StreamFailed,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestStreamGetPosition_StreamFailed", nullptr,
+            TestStreamGetPosition_StreamFailed,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestStreamGetSize_StreamFailed", nullptr,
+            TestStreamGetSize_StreamFailed,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

@@ -38,6 +38,7 @@ static ArkUI_NodeHandle refresh;
 static ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
 static ArkUI_NodeHandle spanColumn = nullptr;
 static ArkUI_NodeHandle text = nullptr;
+static bool g_isOnDigitalCrownCompleted = false;
 // 设置ID
 static auto IDTest(ArkUI_NodeHandle &nodeHandle, std::string isID)
 {
@@ -67,6 +68,13 @@ static void OnEventReceive(ArkUI_NodeEvent* event)
 
     ArkUI_NativeNodeAPI_1* nodeAPI = nullptr;
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
+}
+
+napi_value onDigitalCrownTest::IsOnDigitalCrownCompleted(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_get_boolean(env, g_isOnDigitalCrownCompleted, &result);
+    return result;
 }
 
 napi_value onDigitalCrownTest::CreateNativeNode(napi_env env, napi_callback_info info)
@@ -202,6 +210,7 @@ napi_value onDigitalCrownTest::CreateNativeNode(napi_env env, napi_callback_info
 
                         eventInfo = oss.str();
                         UpdateTextAndLog(text, eventInfo);
+                        g_isOnDigitalCrownCompleted = true;
                     }
                 } else if (eventType == ARKUI_UIINPUTEVENT_TYPE_UNKNOWN) {
                     std::ostringstream oss;

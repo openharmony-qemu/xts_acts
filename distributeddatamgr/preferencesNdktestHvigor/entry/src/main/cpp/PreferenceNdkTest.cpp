@@ -667,7 +667,7 @@ static napi_value OH_Preferences_MultiProcessObserver_0200(napi_env env, napi_ca
     (void)OH_PreferencesOption_Destroy(option);
     NAPI_ASSERT(env, errCode == PREFERENCES_OK, "OH_PreferencesOption_Destroy is fail.");
     int ret = OH_Preferences_RegisterMultiProcessDataObserver(pref, nullptr, DataChangeObserverCallback);
-    NAPI_ASSERT(env, ret == PREFERENCES_OK || ret == PREFERENCES_ERROR_STORAGE, "OH_Preferences_RegisterMultiProcessDataObserver is fail.");
+    NAPI_ASSERT(env, ret == PREFERENCES_OK, "OH_Preferences_RegisterMultiProcessDataObserver is success.");
     if (ret == PREFERENCES_OK) {
         int errCode1 = OH_Preferences_UnregisterMultiProcessDataObserver(pref, nullptr, DataChangeObserverCallback);
         NAPI_ASSERT(env, errCode1 == PREFERENCES_OK, "OH_Preferences_UnregisterMultiProcessDataObserver is fail.");

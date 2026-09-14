@@ -25,14 +25,14 @@ let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 function sleep(ms: number) {
   return new Promise<string>(resolve => setTimeout(resolve, ms));
 }
-let TestAbilityContext:common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
-      TestAbilityContext = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.

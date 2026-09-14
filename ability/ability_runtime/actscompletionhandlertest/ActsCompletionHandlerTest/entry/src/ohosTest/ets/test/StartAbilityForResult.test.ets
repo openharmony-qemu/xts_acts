@@ -218,7 +218,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         const ability = await abilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility();
         testContext = ability.context;
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, "get context failed: " + JSON.stringify(err));
+        hilog.info(DOMAIN, LOG_TAG, 'get context failed: ' + JSON.stringify(err));
         try { expect().assertFail(); } catch (err) {}
       }
       try {
@@ -261,7 +261,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0100', Level.LEVEL3, async(done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      LOG_TAG = "StartAbilityForResult_0100";
+      LOG_TAG = 'StartAbilityForResult_0100';
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0100 begin');
       if (!supportSceneBoard) {
         hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0100 sceneboard is not supported`);
@@ -288,8 +288,8 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
 
       try {
         testContext.startAbilityForResult({
-          bundleName: "com.example.completionhandlerrely",
-          abilityName: "EntryAbility"
+          bundleName: 'com.example.completionhandlerrely',
+          abilityName: 'EntryAbility'
         }, {
           completionHandler: handler
         }).then(() => {
@@ -326,7 +326,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0200', Level.LEVEL3, async(done: Function) => {
-      LOG_TAG = "StartAbilityForResult_0200";
+      LOG_TAG = 'StartAbilityForResult_0200';
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0200 begin');
       if (!supportSceneBoard) {
@@ -356,8 +356,8 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
 
       try {
         testContext.startAbilityForResult({
-          bundleName: "com.example.completionhandlerrely",
-          abilityName: "EntryAbility"
+          bundleName: 'com.example.completionhandlerrely',
+          abilityName: 'EntryAbility'
         }, {
           completionHandler: handler
         }).then(() => {
@@ -394,7 +394,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300', Level.LEVEL3, async(done: Function) => {
-      LOG_TAG = "StartAbilityForResult_0300";
+      LOG_TAG = 'StartAbilityForResult_0300';
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 begin');
       if (!supportSceneBoard) {
@@ -434,7 +434,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){}else{
+          if(err.code == 16000050){}else{
             expect().assertFail();
             done();
           }
@@ -466,7 +466,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400', Level.LEVEL3, async(done: Function) => {
-      LOG_TAG = "StartAbilityForResult_0400";
+      LOG_TAG = 'StartAbilityForResult_0400';
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 begin');
       if (!supportSceneBoard) {
@@ -506,7 +506,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){}else{
+          if(err.code == 16000050){}else{
             expect().assertFail();
             done();
           }
@@ -538,7 +538,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500', Level.LEVEL3, async(done: Function) => {
-      LOG_TAG = "StartAbilityForResult_0500";
+      LOG_TAG = 'StartAbilityForResult_0500';
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 begin');
       if (!supportSceneBoard) {
@@ -599,7 +599,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600', Level.LEVEL3, async(done: Function) => {
-      LOG_TAG = "StartAbilityForResult_0600";
+      LOG_TAG = 'StartAbilityForResult_0600';
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 begin');
       if (!supportSceneBoard) {
@@ -639,7 +639,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){}else{
+          if(err.code == 16000050){}else{
             expect().assertFail();
             done();
           }
@@ -671,7 +671,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700', Level.LEVEL3, async(done: Function) => {
-      LOG_TAG = "StartAbilityForResult_0700";
+      LOG_TAG = 'StartAbilityForResult_0700';
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 begin');
       if (!supportSceneBoard) {
@@ -713,7 +713,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){}else{
+          if(err.code == 16000050){}else{
             expect().assertFail();
             done();
           }
@@ -745,7 +745,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
      * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0800', Level.LEVEL3, async(done: Function) => {
-      LOG_TAG = "StartAbilityForResult_0800";
+      LOG_TAG = 'StartAbilityForResult_0800';
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0800 begin');
       if (!supportSceneBoard) {

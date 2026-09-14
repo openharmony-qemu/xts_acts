@@ -75,10 +75,16 @@ struct transform3DDemo {
       Image($r('app.media.ic_public_pass'))
        .width('20vp')
        .height('20vp')
-    }.width('30%')
-   .height('30vp')
-   .backgroundColor(Color.Grey)
-   .onClick(() => {
+    }
+    .width('30%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .opacity(this.isOk ? 1 : 0.4)
+    .enabled(this.isOk)
+    .onClick(() => {
+      globalThis.arkTitle = this.name;
+      globalThis.arkResult = 'true ';
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -102,6 +108,7 @@ struct transform3DDemo {
    .height('30vp')
    .backgroundColor(Color.Grey)
    .onClick(() => {
+     globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -145,6 +152,7 @@ struct transform3DDemo {
        .backgroundColor(Color.Black)
        .size({ width: '40vp', height: '30vp' })
        .onClick(() => {
+         globalThis.arkTitle = this.name;
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
             params: { result: 'None' }
@@ -182,12 +190,13 @@ struct transform3DDemo {
              .height(200)
              .width(200)
              .backgroundColor(Color.Blue)
-             .onHover((isHover: boolean) => {
-                if (isHover && this.pixelMap != undefined) {
-                  this.cursorController.setCustomCursor(this.pixelMap, 16, 16);
-                } else {
-                  this.cursorController.restoreDefault();
-                }
+              .onHover((isHover: boolean) => {
+                 if (isHover && this.pixelMap != undefined) {
+                   this.cursorController.setCustomCursor(this.pixelMap, 16, 16);
+                   this.isOk = true;
+                 } else {
+                   this.cursorController.restoreDefault();
+                 }
               })
           }.width('100%')
         }

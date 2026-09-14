@@ -35,3 +35,5 @@ export const OH_Rdb_SetPlugins0100: () => number;
 export const OH_Rdb_SetSemanticIndex_Param_0100: () => number;
 export const OH_Rdb_SetSemanticIndex_Param_0200: () => number;
 export const OH_Rdb_SetSemanticIndex_Param_0300: () => number;
+export const OH_RDB_TRANS_BUTT0100: () => number;
+export const OH_RdbTrans_UpdateWithConflictResolution0100: () => number;

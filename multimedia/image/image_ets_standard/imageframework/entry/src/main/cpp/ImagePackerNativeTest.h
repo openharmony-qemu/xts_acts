@@ -58,6 +58,7 @@ napi_value JSPackingOptionsGetMimeTypeNull(napi_env env, napi_callback_info info
 napi_value JSPackingOptionsGetMimeTypeNullInvalidParameter(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsGetQuality(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsGetQualityBadParameter(napi_env env, napi_callback_info info);
+napi_value JSPackingOptionsGetQualityBadParameterQuality(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsSetQuality(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsSetQualityBadParameter(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsSetNeedsPackProperties(napi_env env, napi_callback_info info);
@@ -68,6 +69,7 @@ napi_value JSPackingOptionsSetDesiredDynamicRange(napi_env env, napi_callback_in
 napi_value JSPackingOptionsSetDesiredDynamicRangeBadParameter(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsGetDesiredDynamicRange(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsGetDesiredDynamicRangeBadParameter(napi_env env, napi_callback_info info);
+napi_value JSPackingOptionsGetDesiredDynamicRangeBadParameterRange(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsRelease(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsReleaseBadParameter(napi_env env, napi_callback_info info);
 napi_value JSPackingOptionsForSequenceCreate(napi_env env, napi_callback_info info);

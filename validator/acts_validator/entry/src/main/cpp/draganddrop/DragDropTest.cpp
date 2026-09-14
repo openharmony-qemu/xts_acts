@@ -33,6 +33,8 @@ namespace ArkUICapiTest {
     static bool change = false;
     static bool change1 = false;
     static bool change2 = true;
+    static int g_dragDropCount = 0;
+    const int DRAG_DROP_REQUIRED_COUNT = 2;
     
     void SetWidth1(ArkUI_NodeHandle &node, float width = SIZE_200)
     {
@@ -42,6 +44,13 @@ namespace ArkUICapiTest {
         ArkUI_NumberValue widthValue[] = {width};
         ArkUI_AttributeItem widthItem = {widthValue, 1};
         nodeAPI->setAttribute(node, NODE_WIDTH, &widthItem);
+    }
+
+    napi_value DragDropTest::IsDragDropCompleted(napi_env env, napi_callback_info info)
+    {
+        napi_value result = nullptr;
+        napi_get_boolean(env, g_dragDropCount >= DRAG_DROP_REQUIRED_COUNT, &result);
+        return result;
     }
     
     void SetHeight1(ArkUI_NodeHandle &node, float height = SIZE_200)
@@ -141,6 +150,7 @@ namespace ArkUICapiTest {
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "cxxdragTest", "Text Drag Successful!");
         nodeAPI->resetAttribute(dragText3, NODE_TEXT_CONTENT);
         SetText(dropText3, "drag me", SIZE_30);
+        g_dragDropCount++;
         } else if (result == ARKUI_DRAG_RESULT_FAILED) {
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "cxxdragTest", "Text Drag Failed!");
         }

@@ -4284,6 +4284,32 @@ static napi_value OHgetExposureDuration(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value GetWhiteBalanceRange(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->GetWhiteBalanceRange(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value GetWhiteBalance(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->GetWhiteBalance(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -4497,6 +4523,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr },
         { "oHgetExposureDuration", nullptr, OHgetExposureDuration, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "getWhiteBalanceRange", nullptr, GetWhiteBalanceRange, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getWhiteBalance", nullptr, GetWhiteBalance, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_property_descriptor desc1[] = {
         {"oHCaptureSessionRegisterCallback", nullptr, OHCaptureSessionRegisterCallback, nullptr, nullptr, nullptr,

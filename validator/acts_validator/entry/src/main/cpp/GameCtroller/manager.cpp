@@ -182,6 +182,17 @@ static ArkUI_AnimatorOption *createAnimatorOptionKeyFrame() {
 }
 ArkUI_NodeHandle text1;
 
+napi_value Manager::IsGameControllerCompleted(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    auto manager = Manager::GetInstance();
+    napi_value result = nullptr;
+    napi_get_boolean(env, manager ? manager->isCompleted_ : false, &result);
+    return result;
+}
+
 napi_value Manager::CreateNativeNode(napi_env env, napi_callback_info info) {
 
     if ((env == nullptr) || (info == nullptr)) {
@@ -346,6 +357,7 @@ napi_value Manager::CreateNativeNode(napi_env env, napi_callback_info info) {
                             "absZValue == %{public}f absRzValue ==%{public}f absGasValue == %{public}f absBrakeValue == %{public}f bsHat0XValue == %{public}f"
                             "bsHat0YValue == %{public}f", absXValue, absYValue, absZValue, absRzValue, absGasValue, absBrakeValue, absHat0XValue, absHat0YValue);
                            OH_ArkUI_FocusAxisEvent_SetStopPropagation(event, false);
+                           Manager::GetInstance()->isCompleted_ = true;
                             std::string absx = "absX: ";
                             std::string absy = "; absY: ";
                             std::string absz = "; absZ: ";
