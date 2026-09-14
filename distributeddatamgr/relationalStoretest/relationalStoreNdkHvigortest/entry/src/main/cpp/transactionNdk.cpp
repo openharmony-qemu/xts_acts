@@ -998,7 +998,7 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "OH_RDB_TRANS_BUTT0100", nullptr, OH_RDB_TRANS_BUTT0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_RdbTrans_UpdateWithConflictResolution0100", nullptr, OH_RdbTrans_UpdateWithConflictResolution0100,
-            nullptr, nullptr, nullptr,napi_default, nullptr },
+            nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
