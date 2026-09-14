@@ -77,5 +77,122 @@ export default function setOverlayEnabledCoverage() {
         }
       });
 
+       /**
+     * @tc.name   SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200
+     * @tc.number SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200
+     * @tc.desc   Failed to set when the isEnabled parameter is null in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    (done: Function) => {
+      try {
+        overlay.setOverlayEnabled(MODULE_NAME, null, (err: BusinessError) => {
+          if (err) {
+            console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200 callback err' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          } else {
+            console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200 callback unexpected success');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (e) {
+        console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200 catch' + JSON.stringify(e));
+        expect((e as BusinessError).code).assertEqual(ERROR_CODE);
+        done();
+      }
+    });
+
+  /**
+   * @tc.name   SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300
+   * @tc.number SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300
+   * @tc.desc   Failed to set when the isEnabled parameter is undefined in callback mode
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    (done: Function) => {
+      try {
+        overlay.setOverlayEnabled(MODULE_NAME, undefined, (err: BusinessError) => {
+          if (err) {
+            console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300 callback err' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          } else {
+            console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300 callback unexpected success');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (e) {
+        console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300 catch' + JSON.stringify(e));
+        expect((e as BusinessError).code).assertEqual(ERROR_CODE);
+        done();
+      }
+    });
+
+
+     /**
+     * @tc.name   SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200
+     * @tc.number SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200
+     * @tc.desc   Failed to set when the isEnabled parameter is null in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+     (done: Function) => {
+       try {
+         overlay.setOverlayEnabled(MODULE_NAME, null, (err: BusinessError) => {
+           if (err) {
+             console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200 callback err' + JSON.stringify(err));
+             expect().assertFail();
+             done();
+           } else {
+             console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200 callback unexpected success');
+             expect().assertFail();
+             done();
+           }
+         });
+       } catch (e) {
+         console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1200 catch' + JSON.stringify(e));
+         expect((e as BusinessError).code).assertEqual(ERROR_CODE);
+         done();
+       }
+     });
+
+   /**
+    * @tc.name   SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300
+    * @tc.number SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300
+    * @tc.desc   Failed to set when the isEnabled parameter is undefined in callback mode
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+   it('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+     (done: Function) => {
+       try {
+         overlay.setOverlayEnabled(MODULE_NAME, undefined, (err: BusinessError) => {
+           if (err) {
+             console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300 callback err' + JSON.stringify(err));
+             expect().assertFail();
+             done();
+           } else {
+             console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300 callback unexpected success');
+             expect().assertFail();
+             done();
+           }
+         });
+       } catch (e) {
+         console.info('SUB_BMS_FRAMEWORK_Status_OverlayEnable_1300 catch' + JSON.stringify(e));
+         expect((e as BusinessError).code).assertEqual(ERROR_CODE);
+         done();
+       }
+     });
+
   });
 }
