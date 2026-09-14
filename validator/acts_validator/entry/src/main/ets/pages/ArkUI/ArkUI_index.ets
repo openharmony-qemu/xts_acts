@@ -44,7 +44,6 @@ struct IndexPage {
   @State TEST: number = 0;
   private TestCaseList: TestCase[] = [
     { title: 'CapiGrid', uri: 'pages/ArkUI/CapiGrid' },
-    { title: 'ScrollingList', uri: 'pages/ArkUI/ScrollListTest' },
     { title: 'TouchMove', uri: 'pages/ArkUI/TouchMoveTest' },
     { title: 'PinchGesture', uri: 'pages/ArkUI/PinchGestureTest' },
     { title: 'RotationGesture', uri: 'pages/ArkUI/RotationGestureTest' },
