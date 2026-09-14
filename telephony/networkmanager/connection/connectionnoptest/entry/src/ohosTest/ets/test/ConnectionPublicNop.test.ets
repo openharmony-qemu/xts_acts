@@ -182,7 +182,7 @@ export default function ConnectionPublicNopTest() {
         done();
       } catch (err) {
         console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == PERMISSION_DENIED_CODE);
+        except(err.code).assertEqual(201);
         console.info(`${caseName}---End`);
         done();
       }
