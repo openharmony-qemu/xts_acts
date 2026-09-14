@@ -17,7 +17,6 @@
 @Component
 struct MainAbilityIndex {
   aboutToAppear() {
-    // 勿在此调用 Hypium：TestAbility 已 hypiumTest；二次跑套件 → mark blocked
     console.info('ThirdCallTest MainAbility Index aboutToAppear')
   }
 

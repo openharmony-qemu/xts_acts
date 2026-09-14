@@ -31,7 +31,6 @@ let actsRegister: commonEvent.CommonEventSubscribeInfo = {
     'Acts_CleanTempFiles_0402']
 };
 
-/** 清掉 rely，避免上条用例残留 startAbility → 16000017 START_ABILITY_WAITTING */
 async function stopRelyApp(): Promise<void> {
   const cmd = 'aa force-stop com.acts.cleancachefilesreply';
   try {

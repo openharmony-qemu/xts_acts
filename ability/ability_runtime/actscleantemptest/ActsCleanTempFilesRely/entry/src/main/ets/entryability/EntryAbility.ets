@@ -109,28 +109,23 @@ function onForegroundInner(actionStr: string): void {
     let file = fs.openSync(tempDir + '/test.txt', fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     let writeLen = fs.writeSync(file.fd, 'Try to write str.');
     let buf = new ArrayBuffer(BUFSIZE);
-    fs.closeSync(file);
-    let readFile = fs.openSync(tempDir + '/test.txt', fs.OpenMode.READ_ONLY);
-    let readLen = fs.readSync(readFile.fd, buf, {
+    let readLen = fs.readSync(file.fd, buf, {
         offset: OFFSETNUMBER,
       });
     let readBuf = String.fromCharCode(...Array.from(new Uint8Array(buf.slice(OFFSETNUMBER, readLen))));
     console.log('Acts_CleanTempFiles_0201 writeLen is: ' + writeLen + 'readBuf is: ' + readBuf);
-    fs.closeSync(readFile);
+    fs.closeSync(file);
     commonEventData.parameters!.message = readBuf;
 
     let applicationFile = fs.openSync(applicationTempDir + '/test.txt',
   fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     let applicationWriteLen = fs.writeSync(applicationFile.fd, 'Try to write application str.');
-    fs.closeSync(applicationFile);
-    let readAppFile = fs.openSync(applicationTempDir + '/test.txt',
-  fs.OpenMode.READ_ONLY);
-    let applicationReadLen = fs.readSync(readAppFile.fd, buf, {
+    let applicationReadLen = fs.readSync(applicationFile.fd, buf, {
         offset: OFFSETNUMBER,
       });
     let applicReadBuf = String.fromCharCode(...Array.from(new Uint8Array(buf.slice(OFFSETNUMBER, applicationReadLen))));
     console.log('Acts_CleanTempFiles_0201 secWriteLen is: ' + applicationWriteLen + 'secreadBuf is: ' + applicReadBuf);
-    fs.closeSync(readAppFile);
+    fs.closeSync(applicationFile);
     commonEventData.parameters!.secondMessage = applicReadBuf;
     commonEvent.publish('Acts_CleanTempFiles_0201', commonEventData, (err: BusinessError) => {
       console.log('Acts_CleanTempFiles_0201 publish err: ' + JSON.stringify(err));
@@ -173,14 +168,12 @@ function cleanTempFiles(actionStr: string): void {
     let writeLen = fs.writeSync(file.fd, 'Try to write Acts_CleanTempFiles_0301 str.');
     console.log('Acts_CleanTempFiles_0301 The length of str is: ' + writeLen);
     let buf = new ArrayBuffer(BUFSIZE);
-    fs.closeSync(file);
-    let readFile = fs.openSync(tempDir + '/test.txt', fs.OpenMode.READ_ONLY);
-    let readLen = fs.readSync(readFile.fd, buf, {
+    let readLen = fs.readSync(file.fd, buf, {
         offset: OFFSETNUMBER,
       });
     let readBuf = String.fromCharCode(...Array.from(new Uint8Array(buf.slice(OFFSETNUMBER, readLen))));
     console.log('Acts_CleanTempFiles_0301 the content of file: ' + readBuf);
-    fs.closeSync(readFile);
+    fs.closeSync(file);
     console.log('Acts_CleanTempFiles_0301 Message: ' + JSON.stringify(readBuf));
     commonEventData.parameters!.message = readBuf;
     commonEvent.publish('Acts_CleanTempFiles_0301', commonEventData, (err: BusinessError) => {
@@ -212,16 +205,16 @@ function cleanTempFiles(actionStr: string): void {
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    actionStr = want.parameters?.key as string;
-    tempDir = this.context.cacheDir;
+    actionStr = want.parameters.key as string;
+    tempDir = this.context.tempDir;
     currentContext = this.context;
     applicationContext = this.context.getApplicationContext();
     applicationTempDir = applicationContext.tempDir;
   }
   onNewWant(want: Want): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onNewWant');
-    actionStr = want.parameters?.key as string;
-    tempDir = this.context.cacheDir;
+    actionStr = want.parameters.key as string;
+    tempDir = this.context.tempDir;
     currentContext = this.context;
     applicationContext = this.context.getApplicationContext();
     applicationTempDir = applicationContext.tempDir;
@@ -256,27 +249,22 @@ export default class EntryAbility extends UIAbility {
       let file = fs.openSync(this.context.tempDir + '/test.txt', fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
       let writeLen = fs.writeSync(file.fd, 'Try to write str.');
       let buf = new ArrayBuffer(BUFSIZE);
-      fs.closeSync(file);
-      let readFile = fs.openSync(this.context.tempDir + '/test.txt', fs.OpenMode.READ_ONLY);
-      let readLen = fs.readSync(readFile.fd, buf, {
+      let readLen = fs.readSync(file.fd, buf, {
         offset: OFFSETNUMBER,
       });
       let readBuf = String.fromCharCode(...Array.from(new Uint8Array(buf.slice(OFFSETNUMBER, readLen))));
       console.log('Acts_CleanTempFiles_0101 writeLen is: ' + writeLen + 'readBuf is: ' + readBuf);
-      fs.closeSync(readFile);
+      fs.closeSync(file);
       commonEventData.parameters!.message = readBuf;
       let applicationFile = fs.openSync(applicationTempDir + '/test.txt',
   fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
       let applicationWriteLen = fs.writeSync(applicationFile.fd, 'Try to write application str.');
-    fs.closeSync(applicationFile);
-    let readAppFile = fs.openSync(applicationTempDir + '/test.txt',
-  fs.OpenMode.READ_ONLY);
-      let applicationReadLen = fs.readSync(readAppFile.fd, buf, {
+      let applicationReadLen = fs.readSync(applicationFile.fd, buf, {
         offset: OFFSETNUMBER,
       });
       let applicaReadBuf = String.fromCharCode(...Array.from(
         new Uint8Array(buf.slice(OFFSETNUMBER, applicationReadLen))));
-      fs.closeSync(readAppFile);
+      fs.closeSync(applicationFile);
       console.log('Acts_CleanTempFiles_0101 secWriteLen: ' + applicationWriteLen + 'secreadBuf: ' + applicaReadBuf);
       commonEventData.parameters!.secondMessage = applicaReadBuf;
       commonEvent.publish('Acts_CleanTempFiles_0101', commonEventData, (err: BusinessError) => {

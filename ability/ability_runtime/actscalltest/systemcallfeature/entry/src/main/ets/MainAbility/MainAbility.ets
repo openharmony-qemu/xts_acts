@@ -82,8 +82,8 @@ export default class MainAbility extends Ability {
         // Ability is creating, initialize resources for this ability
         console.log('SystemCallTest Second Hap MainAbility onCreate')
         globalThis.abilityWant = want;
-        (this as ESObject).callee.on('test2300', this.test2300);
-        (this as ESObject).callee.on('test4600', this.test4600);
+        this.callee.on('test2300', this.test2300);
+        this.callee.on('test4600', this.test4600);
         callSeq = callSeq + 'onCreate';
     }
 

@@ -223,13 +223,13 @@ export default class SecondAbility extends Ability {
         globalThis.abilityWant = want;
         globalThis.secondCallee = this.callee;
         globalThis.abilityContext2 = this.context;
-        (this as ESObject).callee.on('test2100', this.test2100);
-        (this as ESObject).callee.on('testOff', this.testOff);
-        (this as ESObject).callee.on('stressMethod', this.stressMethod);
-        (this as ESObject).callee.on('loopMethod', this.loopMethod);
-        (this as ESObject).callee.on('testCall', testCall);
-        (this as ESObject).callee.on('testCall2', testCall2);
-        (this as ESObject).callee.on('testCallWithResult', testCallWithResult);
+        this.callee.on('test2100', this.test2100);
+        this.callee.on('testOff', this.testOff);
+        this.callee.on('stressMethod', this.stressMethod);
+        this.callee.on('loopMethod', this.loopMethod);
+        this.callee.on('testCall', testCall);
+        this.callee.on('testCall2', testCall2);
+        this.callee.on('testCallWithResult', testCallWithResult);
     }
 
     onDestroy() {

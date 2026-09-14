@@ -17,8 +17,6 @@
 @Component
 struct MainAbilityIndex {
   aboutToAppear() {
-    // 勿在此调用 Hypium：TestAbility 已 hypiumTest；beforeAll 再 start MainAbility
-    // 会二次跑套件，xDevice 报 mark blocked（req7 CallTest 2026-09-10 实锤）
     console.info('SystemCallTest MainAbility Index aboutToAppear');
   }
 
