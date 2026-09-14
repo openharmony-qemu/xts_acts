@@ -110,9 +110,9 @@ export default function getWantAgentWithUserIdTest() {
      * @tc.number SUB_Ability_GetWantAgent_Test_0200
      * @tc.name SUB_Ability_GetWantAgent_Test_0200
      * @tc.desc test GetWantAgent CallBack with userID success
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it("SUB_Ability_GetWantAgent_Test_0200", Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0200';
@@ -226,9 +226,9 @@ export default function getWantAgentWithUserIdTest() {
      * @tc.number   SUB_Ability_GetWantAgent_Test_0400
      * @tc.name     SUB_Ability_GetWantAgent_Test_0400
      * @tc.desc     test GetWantAgent callback  with not contain userID
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it("SUB_Ability_GetWantAgent_Test_0400", Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0400';

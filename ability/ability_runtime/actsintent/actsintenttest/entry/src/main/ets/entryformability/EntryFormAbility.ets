@@ -7,11 +7,11 @@ import { Want, InsightIntentForm } from '@kit.AbilityKit';
   intentVersion: '1.0.1',
   displayName: '播放歌曲',
   displayDescription: '播放音乐意图',
-  icon: "$r('app.media.startIcon')",
+  icon: $r('app.media.startIcon'),
   llmDescription: '支持传递歌曲名称，播放音乐',
   keywords: ['音乐播放', '播放歌曲', 'PlayMusic'],
   parameters: {
-    schema: 'playMusicv',
+    '$schema': 'file://schemas/song-schema.json',
     'type': 'object',
     'title': 'Song Schema',
     'description': 'A schema for describing songs and their artists',
@@ -55,8 +55,6 @@ import { Want, InsightIntentForm } from '@kit.AbilityKit';
   formName: 'widget'
 })
 export default class EntryFormAbility extends FormExtensionAbility {
-  public songName: string = '';
-
   onAddForm(want: Want) {
     // Called to return a FormBindingData object.
     const formData = '';
