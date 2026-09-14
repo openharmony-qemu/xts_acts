@@ -75,7 +75,7 @@ export default function WebHttpBodyStream(): void {
         Utils.emitEvent('emitonSwitchNextPage', 10)
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebHttpBodyStream', 10, '');
-        await Utils.msSleep(2000);
+        await Utils.msSleep(4000);
         done();
       })
   })

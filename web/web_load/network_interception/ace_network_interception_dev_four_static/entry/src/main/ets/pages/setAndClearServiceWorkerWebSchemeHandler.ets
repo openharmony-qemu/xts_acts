@@ -103,11 +103,6 @@ struct webResourceResponsePage {
                 this.webviewcontroller.setWebSchemeHandler('https', this.webSchemeHander);
                 web_webview.WebviewController.setServiceWorkerWebSchemeHandler('https', this.webSchemeHander);
                 this.webviewcontroller.loadUrl('https://www.example.com/service_worker.html')
-                setTimeout(() => {
-                  Utils.emitEvent(this.getRequestMethodResult, 8854)
-                  Utils.emitEvent(this.hasGestureResult, 8860)
-                }, 2000)
-
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -125,10 +120,6 @@ struct webResourceResponsePage {
                 web_webview.WebviewController.setServiceWorkerWebSchemeHandler('https', this.webSchemeHander);
                 web_webview.WebviewController.clearServiceWorkerWebSchemeHandler();
                 this.webviewcontroller.loadUrl('https://www.example.com/service_worker.html')
-                setTimeout(() => {
-                  Utils.emitEvent(this.getRequestUrlResult, 8862)
-                }, 2000)
-
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -325,6 +316,15 @@ struct webResourceResponsePage {
         })
         .javaScriptAccess(true)
         .domStorageAccess(true)
+        .onPageEnd(() => {
+          if (this.stringObj.str === 'setAndClearServiceWorkerWebSchemeHandler0100') {
+            Utils.emitEvent(this.getRequestMethodResult + '|' + String(this.hasGestureResult), 8854);
+          } else if (this.stringObj.str === 'setAndClearServiceWorkerWebSchemeHandler0200') {
+            Utils.emitEvent(this.getRequestUrlResult + '|' + this.getRequestMethodResult + '|' +
+              this.getReferrerResult + '|' + String(this.isMainFrameResult) + '|' +
+              String(this.hasGestureResult), 8862);
+          }
+        })
     }
   }
 }
