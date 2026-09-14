@@ -145,7 +145,6 @@ export default function audioCapturer() {
         console.info(`${Tag}:BufferAudioFramework: bytes read from file: ${rlen}`);
         await audioRen.write(buf);
       }
-      fs.closeSync(musicFile);
       ss.closeSync();
       console.info(`${Tag}: Renderer after read`);
       await audioRen.drain().then(() => {
