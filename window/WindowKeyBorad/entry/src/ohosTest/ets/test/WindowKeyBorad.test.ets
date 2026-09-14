@@ -548,7 +548,7 @@ export default function windowKeyBorad() {
         };
         let windowClass = await windowStage.createSubWindow('test_OffKeyboardDidShow_OffKeyboardDidHide_WithCallback')
         console.info(`${caseName} Succeeded create subwindow:${JSON.stringify(windowClass)}`);
-        await windowClass.setUIContent('testability/pages/WindowTest/KeyBoradTest')
+        await windowClass.setUIContent('testability/pages/WindowTest/KeyBoradFocus')
         console.info(`${caseName} Succeeded setuicontent`);
         await windowClass.showWindow()
         console.info(`${caseName} Succeeded show window`);
