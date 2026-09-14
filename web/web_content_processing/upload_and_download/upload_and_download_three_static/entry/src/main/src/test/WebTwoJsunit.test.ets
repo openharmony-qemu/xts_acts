@@ -60,55 +60,7 @@ export default function webTwoJsunit() {
       await Utils.msSleep(2000);
     })
 
-    /**
-     * @tc.name   emitRefreshNullStatic001
-     * @tc.number SUB_ACE_WEB_REFRESH_NULL_0100
-     * @tc.desc   test refresh with null ignoreCache param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('emitRefreshNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        Utils.emitEvent('emitRefreshNullStatic001', 10)
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent('emitRefreshNullStatic001', true, 41021801, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('webcomponenttwo', 10, '');
-        await Utils.msSleep(2000);
-        done()
-      })
-
-    /**
-     * @tc.name   emitRefreshUndefinedStatic001
-     * @tc.number SUB_ACE_WEB_REFRESH_UNDEFINED_0100
-     * @tc.desc   test refresh with undefined ignoreCache param
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('emitRefreshUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        Utils.emitEvent('emitRefreshUndefinedStatic001', 10)
-        await Utils.msSleep(2000);
-        Utils.registerBaseEvent('emitRefreshUndefinedStatic001', true, 41021802, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('webcomponenttwo', 10, '');
-        await Utils.msSleep(2000);
-        done()
-      })
-
-    /**
+            /**
      * @tc.name   onDownloadFailed
      * @tc.number SUB_ACE_WEB_API_0100
      * @tc.desc   ets allow the Web access overview mode

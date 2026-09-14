@@ -143,18 +143,14 @@ struct Index {
 
             case "emitClearSessionCookiePromise": {
               try {
-                setTimeout(() => {
-                  web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
-                  web_webview.WebCookieManager.clearSessionCookie()
-                    .then(() => {
-                      console.log("clearSessionCookie success!");
-                    })
-                },2000)
-                setTimeout(() => {
-                  this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
-                  console.log("emitClearSessionCookiePromise cookie = " + this.cookieResult);
-                  Utils.emitEvent(this.cookieResult, 148)
-                },2000)
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
+                web_webview.WebCookieManager.clearSessionCookie()
+                  .then(() => {
+                    console.log("clearSessionCookie success!");
+                    this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
+                    console.log("emitClearSessionCookiePromise cookie = " + this.cookieResult);
+                    Utils.emitEvent(this.cookieResult, 148)
+                  })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -163,19 +159,15 @@ struct Index {
 
             case "emitClearSessionCookieCallback": {
               try {
-                setTimeout(() => {
-                  web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
-                  web_webview.WebCookieManager.clearSessionCookie((error) => {
-                    if (error) {
-                      console.log("error: " + error);
-                    }
-                  })
-                },2000)
-                setTimeout(() => {
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
+                web_webview.WebCookieManager.clearSessionCookie((error) => {
+                  if (error) {
+                    console.log("error: " + error);
+                  }
                   this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                   console.log("emitClearSessionCookieCallback cookie = " + this.cookieResult);
                   Utils.emitEvent(this.cookieResult, 146)
-                },2000)
+                })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }

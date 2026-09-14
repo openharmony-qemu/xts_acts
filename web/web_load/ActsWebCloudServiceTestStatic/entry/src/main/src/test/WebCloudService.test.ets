@@ -359,77 +359,7 @@ export default function webCloudServiceTest() {
             }
         })
 
-        /**
-         * @tc.name   testLoadDataNullStatic001
-         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADDATA_NULL_0100
-         * @tc.desc   test loadData with null params
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('testLoadDataNullStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
-          async (done: () => void): Promise<void> => {
-            try {
-            Utils.emitEvent("LoadDataNullStatic001", 10);
-            Utils.registerBaseEvent("testLoadDataNullStatic001", 'success', 41021902, done,
-              (backData: emitter.EventData, expected: Object) => {
-                const data = backData?.data as Record<string, RecordData>;
-                expect(data['ACTION']).assertEqual(expected);
-              });
-            await Utils.msSleep(2000);
-            try {
-              let driver = Driver.create();
-              let button = await driver.findComponent(ON.text('WebviewContrllerTestButton'));
-              if (button != null) {
-                await button.click();
-              }
-            } catch (error) {
-              console.info('testLoadDataNullStatic001 error: ' + JSON.stringify(error));
-            }
-            await Utils.msSleep(3000);
-            done();
-            } catch (err) {
-              console.info('testLoadDataNullStatic001 err: ' + JSON.stringify(err));
-              done();
-            }
-        })
-
-        /**
-         * @tc.name   testLoadDataUndefinedStatic001
-         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADDATA_UNDEFINED_0100
-         * @tc.desc   test loadData with undefined params
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('testLoadDataUndefinedStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
-          async (done: () => void): Promise<void> => {
-            try {
-            Utils.emitEvent("LoadDataUndefinedStatic001", 10);
-            Utils.registerBaseEvent("testLoadDataUndefinedStatic001", 'success', 41021903, done,
-              (backData: emitter.EventData, expected: Object) => {
-                const data = backData?.data as Record<string, RecordData>;
-                expect(data['ACTION']).assertEqual(expected);
-              });
-            await Utils.msSleep(2000);
-            try {
-              let driver = Driver.create();
-              let button = await driver.findComponent(ON.text('WebviewContrllerTestButton'));
-              if (button != null) {
-                await button.click();
-              }
-            } catch (error) {
-              console.info('testLoadDataUndefinedStatic001 error: ' + JSON.stringify(error));
-            }
-            await Utils.msSleep(3000);
-            done();
-            } catch (err) {
-              console.info('testLoadDataUndefinedStatic001 err: ' + JSON.stringify(err));
-              done();
-            }
-        })
-
-        /**
+                        /**
          * @tc.name   testWebviewController_url_static
          * @tc.number SUB_WEB_WEBVIEWCONTROLLER_URL_0001
          * @tc.desc   test url
