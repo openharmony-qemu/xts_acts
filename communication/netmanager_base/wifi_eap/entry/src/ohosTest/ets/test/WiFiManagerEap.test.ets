@@ -1,4 +1,4 @@
-/*
+/*BASIS
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@ export default function wifiEapTest(){
                 expect(true).assertTrue();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_js_0100 regCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                if(error==undefined){
+                if(error===undefined){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0100 eap register error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
@@ -154,7 +154,7 @@ export default function wifiEapTest(){
                     expect(true).assertTrue();
                 }catch(error){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0200 unregCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                    if(error==undefined){
+                    if(error===undefined){
                         console.error(`SUB_Communication_Netmanager_Eap_js_0200 eap unregister error is undefined`);
                         expect(true).assertTrue();
                     }else if(error.code==201){
@@ -210,7 +210,7 @@ export default function wifiEapTest(){
                 expect(true).assertTrue();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_js_0300 replyCustomEapData failed,code is ${error.code}, message is ${error.message}`);
-                if(error==undefined){
+                if(error===undefined){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0300 eap replyCustomEapData error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
@@ -409,7 +409,7 @@ export default function wifiEapTest(){
                 expect(true).assertTrue();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_js_0500 startEthEap failed,code is ${error.code}, message is ${error.message}`);
-                if(error==undefined){
+                if(error===undefined){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0500 eap startEthEap error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
@@ -462,7 +462,7 @@ export default function wifiEapTest(){
                 expect(true).assertTrue();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_js_0600 logOffEthEap failed,code is ${error.code}, message is ${error.message}`);
-                if(error==undefined){
+                if(error===undefined){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0600 eap logOffEthEap error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
