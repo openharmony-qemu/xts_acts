@@ -76,8 +76,6 @@ export default function webCustomErrorCodeStatic(): void {
           });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCustomErrorCodeStaticButton', 10, '');
-        await Utils.msSleep(4000);
-        done();
       })
   })
 }

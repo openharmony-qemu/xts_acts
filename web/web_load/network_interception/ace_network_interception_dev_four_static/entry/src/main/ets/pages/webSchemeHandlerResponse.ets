@@ -230,6 +230,14 @@ struct WebSchemeHandlerResponse {
             }
 
 
+            case 'SwitchNextPageStaticWebCustomErrorCode': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webCustomErrorCode' })
+              console.log('push webCustomErrorCode success')
+              break;
+            }
+
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();

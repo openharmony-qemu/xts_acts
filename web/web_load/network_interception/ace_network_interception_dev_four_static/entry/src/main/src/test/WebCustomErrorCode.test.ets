@@ -70,8 +70,6 @@ export default function WebCustomErrorCode(): void {
           });
         await Utils.msSleep(2000)
         inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
-        await Utils.msSleep(2000);
-        done();
       })
 
     /**
@@ -85,6 +83,10 @@ export default function WebCustomErrorCode(): void {
     it('testDidFailCustomErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000)
+        Utils.emitEvent('SwitchNextPageStaticWebCustomErrorCode', 10)
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+        await Utils.msSleep(2000)
         Utils.emitEvent("testDidFailCustomErrorCodeStatic001", 10)
         await Utils.msSleep(2000)
         Utils.registerBaseEvent("testDidFailCustomErrorCodeStatic001", CUSTOM_ERROR_CODE, 8822, done,
@@ -94,8 +96,6 @@ export default function WebCustomErrorCode(): void {
           });
         await Utils.msSleep(2000)
         inspector.sendEventByKey('WebCustomErrorCode', 10, '');
-        await Utils.msSleep(4000);
-        done();
       })
 
     /**
@@ -118,8 +118,6 @@ export default function WebCustomErrorCode(): void {
           });
         await Utils.msSleep(2000)
         inspector.sendEventByKey('WebCustomErrorCode', 10, '');
-        await Utils.msSleep(4000);
-        done();
       })
   })
 }

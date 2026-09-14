@@ -100,8 +100,6 @@ struct webResourceError {
                 this.controller.clearWebSchemeHandler();
                 this.controller.setWebSchemeHandler('https', this.schemeHandler);
                 this.controller.loadUrl(`${this.testUrl}?t=${Date.now()}`);
-                await waitForExist(() => this.customErrorCode, 'WebResourceErrorCustomErrorCode', 32159, 5000);
-                Utils.emitEvent(this.customErrorCode, 120025);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -123,6 +121,9 @@ struct webResourceError {
             console.log(`errorCode is: ${this.errorCode}`);
             this.customErrorCode = event.error.getCustomErrorCode();
             console.log(`customErrorCode is: ${this.customErrorCode}`);
+            if (this.str === 'testGetCustomErrorCode001') {
+              Utils.emitEvent(this.customErrorCode, 120025);
+            }
           }
         })
         .onPageEnd(()=>{
