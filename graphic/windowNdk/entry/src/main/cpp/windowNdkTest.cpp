@@ -656,6 +656,24 @@ static napi_value getKeyEventFilter(napi_env env, napi_callback_info info){
     return retValue;
 }
 
+static napi_value getWindowAvoidAreaNullParam(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+
+    auto res = OH_WindowManager_GetWindowAvoidArea(
+        windowId,
+        WindowManager_AvoidAreaType::WINDOW_MANAGER_AVOID_AREA_TYPE_SYSTEM,
+        nullptr);
+    napi_value resultValue;
+    napi_create_int32(env, res, &resultValue);
+    return resultValue;
+}
+
 static napi_value getKeyEventFilterNullParam(napi_env env, napi_callback_info info){
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -2569,6 +2587,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr },
         {"getKeyEventFilter", nullptr, getKeyEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getKeyEventFilterNullParam", nullptr, getKeyEventFilterNullParam, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getWindowAvoidAreaNullParam", nullptr, getWindowAvoidAreaNullParam,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getMouseEventFilter", nullptr, getMouseEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getMouseEventFilterNullParam", nullptr, getMouseEventFilterNullParam, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getTouchEventFilter", nullptr, getTouchEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},

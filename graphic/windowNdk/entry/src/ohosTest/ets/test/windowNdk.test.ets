@@ -2775,6 +2775,30 @@ export default function windowNdk() {
         }
       })
 
+      /**
+      * @tc.name   test_OH_WindowManager_GetWindowAvoidArea_401
+      * @tc.number SUB_WINDOW_GetWindowAvoidArea_FUNCTION_0100
+      * @tc.desc   test OH_WindowManager_GetWindowAvoidArea_401 with null param
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_OH_WindowManager_GetWindowAvoidArea_401', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_GetWindowAvoidArea_401';
+        try {
+          console.info(`${caseName} start`);
+          let result = windowNdkTest.getWindowAvoidAreaNullParam(windowId);
+          console.info(`${caseName} resultCode: ${result}`);
+          expect(result).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: code=${err.code}, message=${err.message}`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
     /**
       * @tc.name   test_OH_NativeWindowManager_GetMouseEventFilter_OK
       * @tc.number SUB_WINDOW_GetEventFilter_FUNCTION_0400
