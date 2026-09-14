@@ -182,7 +182,7 @@ export default function ConnectionPublicNopTest() {
         done();
       } catch (err) {
         console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
-        ExpectTrue(error.code == PARAMETER_ERROR_CODE);
+        ExpectTrue(err.code == PARAMETER_ERROR_CODE);
         console.info(`${caseName}---End`);
         done();
       }
