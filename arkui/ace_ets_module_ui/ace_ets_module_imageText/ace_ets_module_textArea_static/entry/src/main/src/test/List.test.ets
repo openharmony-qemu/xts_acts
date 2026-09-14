@@ -19,6 +19,7 @@ import TextAreaOnWillCutTest from './TextAreaApi26Test/TextAreaOnWillCut.test';
 import TextAreaShaderStyleTest from './TextAreaApi26Test/TextAreaShaderStyle.test';
 import TextAreaStrokeJoinStyleTest from './TextAreaApi26Test/TextAreaStrokeJoinStyle.test';
 import TextAreaPunctuationOverflowTest from './TextAreaApi26Test/TextAreaPunctuationOverflow.test';
+import TextAreaEnableSelectedDataDetectorTest from './TextAreaApi26Test/TextAreaEnableSelectedDataDetector.test';
 
 export default function testsuite() {
   TextAreaAttributeTest();
@@ -27,4 +28,5 @@ export default function testsuite() {
   TextAreaShaderStyleTest();
   TextAreaStrokeJoinStyleTest();
   TextAreaPunctuationOverflowTest();
+  TextAreaEnableSelectedDataDetectorTest();
 }

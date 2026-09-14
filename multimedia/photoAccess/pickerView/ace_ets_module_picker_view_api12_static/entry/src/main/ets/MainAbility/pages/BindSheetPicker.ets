@@ -30,6 +30,7 @@ const topMargin: number = 20;
 @Component
 struct BindSheetPicker {
   private photoSelectOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+  private eventId: long = EventType.PICKER_SHEET_PAGE;
 
   private photoPicker: photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker();
 
@@ -52,7 +53,9 @@ struct BindSheetPicker {
     this.initPhotoAccessHelper();
     const router: Router = AppStorage.get<Router>('router') as Router;
     const parameter = router.getParams() as RouterSelectOptionsParams;
-    this.photoSelectOptions = parameter?.photoSelectOptions;
+    this.photoSelectOptions = parameter?.pickerOptions ?? parameter?.photoSelectOptions ??
+      new photoAccessHelper.PhotoSelectOptions();
+    this.eventId = parameter?.eventId ?? 0;
   }
 
   sendEvent(message: Object, eventId: long) {
@@ -95,7 +98,7 @@ struct BindSheetPicker {
             .then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
               console.info('PhotoViewPicker.select success, PhotoPickerResult uri: ' +
               JSON.stringify(photoSelectResult));
-              this.sendEvent(photoSelectResult, EventType.PICKER_SHEET_PAGE);
+              this.sendEvent(photoSelectResult, this.eventId);
             }).catch((err: Error) => {
             console.error('PhotoViewPicker.select failed with err: ' + JSON.stringify(err));
           });

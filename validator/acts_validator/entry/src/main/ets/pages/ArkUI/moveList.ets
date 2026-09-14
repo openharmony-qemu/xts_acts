@@ -25,8 +25,8 @@ const TAG = '[moveList]';
 @Component
 struct moveListExample {
   @State name: string = 'moveList';
-  @State stepTips: string = '操作步骤：长按子组件List_0并拖拽到List_1的位置' + '\n' +
-    '预期结果：触发onMove回调，onLongPress: 0，onMoveThrough: 0/1，onDragStart: 0，onDrop: 1';
+  @State stepTips: string = '操作步骤：长按拖拽list组件内任一子组件到另一子组件的位置上' + '\n' +
+    '预期结果：触发onMove事件回调，onMoveThrough改变：原始索引号/目标索引号';
   @State isVue: boolean = false;
   @State intervalNum: number = 0;
   private data: number[] = [];
@@ -96,7 +96,7 @@ struct moveListExample {
 
   aboutToAppear() {
     FirstDialog.ChooseDialog(this.stepTips, this.name);
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 3; i++) {
       Logger.info(TAG, 'data.push i =>' + i)
       this.data.push(i)
     }

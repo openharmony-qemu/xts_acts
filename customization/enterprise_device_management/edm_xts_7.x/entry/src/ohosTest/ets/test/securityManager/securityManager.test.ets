@@ -40,6 +40,8 @@ export default function securityManagerTest() {
     testGetAllowedPermissionBundles();
     testGetWatermarkImageApps();
     testSetPasswordPolicy();
+    testSetDeviceSecurityLevelPolicy();
+    testGetDeviceSecurityLevelPolicy();
   })
 }
 
@@ -64,7 +66,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200002).assertTrue();
+      expect(error.code).assertEqual(9200002);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -84,7 +86,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(null, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -102,7 +104,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(undefined, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -120,7 +122,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(INVALID_WANT, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -139,7 +141,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -160,7 +162,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -203,7 +205,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -222,7 +224,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, INVALID_PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -244,7 +246,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -263,7 +265,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200002).assertTrue();
+      expect(error.code).assertEqual(9200002);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -283,7 +285,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -301,7 +303,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -319,7 +321,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -367,7 +369,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -386,7 +388,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200002).assertTrue();
+      expect(error.code).assertEqual(9200002);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -407,7 +409,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(null, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -428,7 +430,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(undefined, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -449,7 +451,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(INVALID_WANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -470,7 +472,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, null, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -491,7 +493,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, undefined, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -512,7 +514,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, '', PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -533,7 +535,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, null, DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -554,7 +556,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, undefined, DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -575,7 +577,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, '', DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -596,7 +598,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, null, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -617,7 +619,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, undefined, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -638,7 +640,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, -1, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -659,7 +661,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -680,7 +682,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -701,7 +703,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, { intervalsRow: 0, intervalsCol: 10 });
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -722,7 +724,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, { intervalsRow: 256, intervalsCol: 10 });
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -743,7 +745,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, { intervalsRow: 10, intervalsCol: 0 });
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -764,7 +766,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, { intervalsRow: 10, intervalsCol: 256 });
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -808,7 +810,7 @@ function testSetWatermarkImageWithProperties() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, 0, VALID_PROPERTIES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -852,7 +854,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, true, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -871,7 +873,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, true, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200002).assertTrue();
+      expect(error.code).assertEqual(9200002);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -891,7 +893,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(null, TEST_PERMISSION_1, true, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -909,7 +911,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(undefined, TEST_PERMISSION_1, true, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -927,7 +929,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(INVALID_WANT, TEST_PERMISSION_1, true, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -946,7 +948,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, null, true, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -967,7 +969,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, undefined, true, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -988,7 +990,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, '', true, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1009,7 +1011,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, null, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1030,7 +1032,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, undefined, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1051,7 +1053,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, true, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1072,7 +1074,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, true, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1155,7 +1157,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, 'invalid_permission', true, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1176,7 +1178,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, true, INVALID_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1197,7 +1199,7 @@ function testSetDisallowedPermission() {
       securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, true, 10000);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1219,7 +1221,7 @@ function testGetDisallowedPermissions() {
       securityManager.getDisallowedPermissions(SELFWANT, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -1238,7 +1240,7 @@ function testGetDisallowedPermissions() {
       securityManager.getDisallowedPermissions(SELFWANT, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200002).assertTrue();
+      expect(error.code).assertEqual(9200002);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1258,7 +1260,7 @@ function testGetDisallowedPermissions() {
       securityManager.getDisallowedPermissions(undefined, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -1276,7 +1278,7 @@ function testGetDisallowedPermissions() {
       securityManager.getDisallowedPermissions(INVALID_WANT, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -1295,7 +1297,7 @@ function testGetDisallowedPermissions() {
       securityManager.getDisallowedPermissions(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1316,7 +1318,7 @@ function testGetDisallowedPermissions() {
       securityManager.getDisallowedPermissions(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1415,7 +1417,7 @@ function testGetDisallowedPermissions() {
       let result = securityManager.getDisallowedPermissions(SELFWANT, INVALID_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1436,7 +1438,7 @@ function testGetDisallowedPermissions() {
       securityManager.getDisallowedPermissions(SELFWANT, 10000);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1458,7 +1460,7 @@ function testAddAllowedPermissionBundle() {
       securityManager.addAllowedPermissionBundle(SELFWANT, TEST_PERMISSION_1, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -1477,7 +1479,7 @@ function testAddAllowedPermissionBundle() {
       securityManager.addAllowedPermissionBundle(SELFWANT, TEST_PERMISSION_1, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200002).assertTrue();
+      expect(error.code).assertEqual(9200002);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1497,7 +1499,7 @@ function testAddAllowedPermissionBundle() {
       securityManager.addAllowedPermissionBundle(null, TEST_PERMISSION_1, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -1515,7 +1517,7 @@ function testAddAllowedPermissionBundle() {
       securityManager.addAllowedPermissionBundle(undefined, TEST_PERMISSION_1, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -1533,7 +1535,7 @@ function testAddAllowedPermissionBundle() {
       securityManager.addAllowedPermissionBundle(INVALID_WANT, TEST_PERMISSION_1, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -1552,7 +1554,7 @@ function testAddAllowedPermissionBundle() {
       securityManager.addAllowedPermissionBundle(SELFWANT, null, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1573,7 +1575,7 @@ function testAddAllowedPermissionBundle() {
       securityManager.addAllowedPermissionBundle(SELFWANT, undefined, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1594,7 +1596,7 @@ function testAddAllowedPermissionBundle() {
       securityManager.addAllowedPermissionBundle(SELFWANT, '', TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1615,7 +1617,7 @@ function testAddAllowedPermissionBundle() {
       securityManager.addAllowedPermissionBundle(SELFWANT, TEST_PERMISSION_1, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1636,7 +1638,7 @@ function testAddAllowedPermissionBundle() {
       securityManager.addAllowedPermissionBundle(SELFWANT, TEST_PERMISSION_1, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1661,7 +1663,7 @@ function testAddAllowedPermissionBundle() {
       });
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1760,7 +1762,7 @@ function testAddAllowedPermissionBundle() {
       });
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, false, CURRENT_USER_ID);
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -1787,7 +1789,7 @@ function testAddAllowedPermissionBundle() {
       });
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, false, CURRENT_USER_ID);
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -1813,7 +1815,7 @@ function testAddAllowedPermissionBundle() {
       });
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1839,7 +1841,7 @@ function testAddAllowedPermissionBundle() {
       });
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, false, CURRENT_USER_ID);
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -1889,7 +1891,7 @@ function testRemoveAllowedPermissionBundle() {
       securityManager.removeAllowedPermissionBundle(SELFWANT, TEST_PERMISSION_1, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -1908,7 +1910,7 @@ function testRemoveAllowedPermissionBundle() {
       securityManager.removeAllowedPermissionBundle(SELFWANT, TEST_PERMISSION_1, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200002).assertTrue();
+      expect(error.code).assertEqual(9200002);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1928,7 +1930,7 @@ function testRemoveAllowedPermissionBundle() {
       securityManager.removeAllowedPermissionBundle(null, TEST_PERMISSION_1, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -1946,7 +1948,7 @@ function testRemoveAllowedPermissionBundle() {
       securityManager.removeAllowedPermissionBundle(undefined, TEST_PERMISSION_1, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -1964,7 +1966,7 @@ function testRemoveAllowedPermissionBundle() {
       securityManager.removeAllowedPermissionBundle(INVALID_WANT, TEST_PERMISSION_1, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -1983,7 +1985,7 @@ function testRemoveAllowedPermissionBundle() {
       securityManager.removeAllowedPermissionBundle(SELFWANT, null, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2004,7 +2006,7 @@ function testRemoveAllowedPermissionBundle() {
       securityManager.removeAllowedPermissionBundle(SELFWANT, undefined, TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2025,7 +2027,7 @@ function testRemoveAllowedPermissionBundle() {
       securityManager.removeAllowedPermissionBundle(SELFWANT, '', TEST_APP_INSTANCE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2046,7 +2048,7 @@ function testRemoveAllowedPermissionBundle() {
       securityManager.removeAllowedPermissionBundle(SELFWANT, TEST_PERMISSION_1, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2067,7 +2069,7 @@ function testRemoveAllowedPermissionBundle() {
       securityManager.removeAllowedPermissionBundle(SELFWANT, TEST_PERMISSION_1, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2092,7 +2094,7 @@ function testRemoveAllowedPermissionBundle() {
       });
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2187,7 +2189,7 @@ function testGetAllowedPermissionBundles() {
       securityManager.getAllowedPermissionBundles(SELFWANT, TEST_PERMISSION_1, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -2206,7 +2208,7 @@ function testGetAllowedPermissionBundles() {
       securityManager.getAllowedPermissionBundles(SELFWANT, TEST_PERMISSION_1, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200002).assertTrue();
+      expect(error.code).assertEqual(9200002);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2227,7 +2229,7 @@ function testGetAllowedPermissionBundles() {
         securityManager.getAllowedPermissionBundles(null, TEST_PERMISSION_1, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -2245,7 +2247,7 @@ function testGetAllowedPermissionBundles() {
       securityManager.getAllowedPermissionBundles(undefined, TEST_PERMISSION_1, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -2263,7 +2265,7 @@ function testGetAllowedPermissionBundles() {
       securityManager.getAllowedPermissionBundles(INVALID_WANT, TEST_PERMISSION_1, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     }
     done();
   });
@@ -2282,7 +2284,7 @@ function testGetAllowedPermissionBundles() {
       securityManager.getAllowedPermissionBundles(SELFWANT, null, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2303,7 +2305,7 @@ function testGetAllowedPermissionBundles() {
       securityManager.getAllowedPermissionBundles(SELFWANT, undefined, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2324,7 +2326,7 @@ function testGetAllowedPermissionBundles() {
       securityManager.getAllowedPermissionBundles(SELFWANT, '', CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2345,7 +2347,7 @@ function testGetAllowedPermissionBundles() {
       securityManager.getAllowedPermissionBundles(SELFWANT, TEST_PERMISSION_1, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2366,7 +2368,7 @@ function testGetAllowedPermissionBundles() {
       securityManager.getAllowedPermissionBundles(SELFWANT, TEST_PERMISSION_1, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2419,7 +2421,7 @@ function testGetWatermarkImageApps() {
       securityManager.getWatermarkImageApps(SELFWANT, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -2438,7 +2440,7 @@ function testGetWatermarkImageApps() {
       securityManager.getWatermarkImageApps(SELFWANT, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200002).assertTrue();
+      expect(error.code).assertEqual(9200002);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2459,7 +2461,7 @@ function testGetWatermarkImageApps() {
       securityManager.getWatermarkImageApps(null, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2480,7 +2482,7 @@ function testGetWatermarkImageApps() {
       securityManager.getWatermarkImageApps(undefined, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2501,7 +2503,7 @@ function testGetWatermarkImageApps() {
       securityManager.getWatermarkImageApps(INVALID_WANT, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2522,7 +2524,7 @@ function testGetWatermarkImageApps() {
       securityManager.getWatermarkImageApps(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2543,7 +2545,7 @@ function testGetWatermarkImageApps() {
       securityManager.getWatermarkImageApps(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2564,7 +2566,7 @@ function testGetWatermarkImageApps() {
       securityManager.getWatermarkImageApps(SELFWANT, -1);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2607,7 +2609,7 @@ function testGetWatermarkImageApps() {
       securityManager.getWatermarkImageApps(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200012);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2712,6 +2714,231 @@ function testSetPasswordPolicy() {
       expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetDeviceSecurityLevelPolicy() {
+  /**
+   * @tc.name   test_set_device_security_level_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DEVICE_SECURITY_LEVEL_POLICY_JS_0100
+   * @tc.desc   test securityManager setDeviceSecurityLevelPolicy without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_device_security_level_policy_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.setDeviceSecurityLevelPolicy(securityManager.DeviceSecurityLevelPolicy.DEFAULT_ENFORCED);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_device_security_level_policy_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200001);
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_device_security_level_policy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DEVICE_SECURITY_LEVEL_POLICY_JS_0200
+   * @tc.desc   test securityManager setDeviceSecurityLevelPolicy with not super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_device_security_level_policy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.setDeviceSecurityLevelPolicy(securityManager.DeviceSecurityLevelPolicy.DEFAULT_ENFORCED);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_device_security_level_policy_0200 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200002);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_device_security_level_policy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DEVICE_SECURITY_LEVEL_POLICY_JS_0300
+   * @tc.desc   test securityManager setDeviceSecurityLevelPolicy with parameter verification failed
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_device_security_level_policy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setDeviceSecurityLevelPolicy(99);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_device_security_level_policy_0300 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200012);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_device_security_level_policy_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DEVICE_SECURITY_LEVEL_POLICY_JS_0400
+   * @tc.desc   test securityManager setDeviceSecurityLevelPolicy with DEFAULT_ENFORCED
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_device_security_level_policy_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setDeviceSecurityLevelPolicy(securityManager.DeviceSecurityLevelPolicy.DEFAULT_ENFORCED);
+      let level: securityManager.DeviceSecurityLevelPolicy = securityManager.getDeviceSecurityLevelPolicy();
+      expect(level).assertEqual(securityManager.DeviceSecurityLevelPolicy.DEFAULT_ENFORCED);
+    } catch (error) {
+      console.info('test_set_device_security_level_policy_0400 error.code = ' + error.code);
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_device_security_level_policy_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DEVICE_SECURITY_LEVEL_POLICY_JS_0500
+   * @tc.desc   test securityManager setDeviceSecurityLevelPolicy with ALLOW_BALANCED
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_device_security_level_policy_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setDeviceSecurityLevelPolicy(securityManager.DeviceSecurityLevelPolicy.ALLOW_BALANCED);
+      let level: securityManager.DeviceSecurityLevelPolicy = securityManager.getDeviceSecurityLevelPolicy();
+      expect(level).assertEqual(securityManager.DeviceSecurityLevelPolicy.ALLOW_BALANCED);
+    } catch (error) {
+      console.info('test_set_device_security_level_policy_0500 error.code = ' + error.code);
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_device_security_level_policy_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DEVICE_SECURITY_LEVEL_POLICY_JS_0600
+   * @tc.desc   test securityManager setDeviceSecurityLevelPolicy with ALLOW_FLEXIBLE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_device_security_level_policy_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setDeviceSecurityLevelPolicy(securityManager.DeviceSecurityLevelPolicy.ALLOW_FLEXIBLE);
+      let level: securityManager.DeviceSecurityLevelPolicy = securityManager.getDeviceSecurityLevelPolicy();
+      expect(level).assertEqual(securityManager.DeviceSecurityLevelPolicy.ALLOW_FLEXIBLE);
+    } catch (error) {
+      console.info('test_set_device_security_level_policy_0600 error.code = ' + error.code);
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+}
+
+function testGetDeviceSecurityLevelPolicy() {
+  /**
+   * @tc.name   test_get_device_security_level_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_SECURITY_LEVEL_POLICY_JS_0100
+   * @tc.desc   test securityManager getDeviceSecurityLevelPolicy without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_device_security_level_policy_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getDeviceSecurityLevelPolicy();
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_device_security_level_policy_0100 error.code = ' + error.code);
+      expect(error.code).assertEqual(9200001);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_device_security_level_policy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_SECURITY_LEVEL_POLICY_JS_0200
+   * @tc.desc   test securityManager getDeviceSecurityLevelPolicy with not super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_device_security_level_policy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.getDeviceSecurityLevelPolicy();
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_device_security_level_policy_0200 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200002);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_device_security_level_policy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_SECURITY_LEVEL_POLICY_JS_0300
+   * @tc.desc   test securityManager getDeviceSecurityLevelPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_device_security_level_policy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setDeviceSecurityLevelPolicy(securityManager.DeviceSecurityLevelPolicy.DEFAULT_ENFORCED);
+      let level: securityManager.DeviceSecurityLevelPolicy = securityManager.getDeviceSecurityLevelPolicy();
+      expect(level).assertEqual(securityManager.DeviceSecurityLevelPolicy.DEFAULT_ENFORCED);
+
+      securityManager.setDeviceSecurityLevelPolicy(securityManager.DeviceSecurityLevelPolicy.ALLOW_BALANCED);
+      level = securityManager.getDeviceSecurityLevelPolicy();
+      expect(level).assertEqual(securityManager.DeviceSecurityLevelPolicy.ALLOW_BALANCED);
+
+      securityManager.setDeviceSecurityLevelPolicy(securityManager.DeviceSecurityLevelPolicy.ALLOW_FLEXIBLE);
+      level = securityManager.getDeviceSecurityLevelPolicy();
+      expect(level).assertEqual(securityManager.DeviceSecurityLevelPolicy.ALLOW_FLEXIBLE);
+    } catch (error) {
+      console.info('test_get_device_security_level_policy_0300 error.code = ' + error.code);
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });

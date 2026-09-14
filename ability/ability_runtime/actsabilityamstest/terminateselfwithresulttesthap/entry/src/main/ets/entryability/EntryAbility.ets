@@ -17,8 +17,10 @@ import { AbilityConstant, common, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import commonEventManger from '@ohos.commonEventManager';
+import commonEventManager from '@ohos.commonEventManager';
 import ParamManager from '../common/Param';
+
+
 
 let param = new ParamManager();
 
@@ -26,15 +28,15 @@ export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'testTag', `want, 50 == ${JSON.stringify(want)}`);
-    param.setTextNme(want.action);
+    param.setTextNme(want.action ?? '');
     let events = want.action;
     if (events) {
-      let commonEventData: commonEventManger.CommonEventPublishData = {
+      let commonEventData: commonEventManager.CommonEventPublishData = {
         parameters: {
           data: want
         }
       };
-      commonEventManger.publish(events, commonEventData, (result) => {
+      commonEventManager.publish(events, commonEventData, (result) => {
         hilog.info(0x0000, 'testTag', `onConnect, 50 == ${JSON.stringify(result)}`);
       });
     }

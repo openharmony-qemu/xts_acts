@@ -20,6 +20,7 @@ import TextFontVariationsTest from './TextApi26Test/TextFontVariations.test';
 import TextIncrementalUpdatePolicyTest from './TextApi26Test/TextIncrementalUpdatePolicy.test';
 import TextPunctuationOverflowTest from './TextApi26Test/TextPunctuationOverflow.test';
 import TextTailIndentsTest from './TextApi26Test/TextTailIndents.test';
+import TextEnableSelectedDataDetectorTest from './TextApi26Test/TextEnableSelectedDataDetector.test';
 
 export default function testsuite() {
   TextAttributeTest();
@@ -29,4 +30,5 @@ export default function testsuite() {
   TextIncrementalUpdatePolicyTest();
   TextPunctuationOverflowTest();
   TextTailIndentsTest();
+  TextEnableSelectedDataDetectorTest();
 }

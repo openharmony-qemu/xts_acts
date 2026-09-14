@@ -45,7 +45,6 @@ struct IndexPage {
   private TestCaseList: TestCase[] = [
     { title: 'CapiGrid', uri: 'pages/ArkUI/CapiGrid' },
     { title: 'AccessibilityCustom', uri: 'pages/ArkUI/AccessibilityCustom' },
-    { title: 'ScrollingList', uri: 'pages/ArkUI/ScrollListTest' },
     { title: 'TouchMove', uri: 'pages/ArkUI/TouchMoveTest' },
     { title: 'DraggingSizeChangeEffect', uri: 'pages/ArkUI/DraggingSizeChangeEffect' },
     { title: 'KeyEvent', uri: 'pages/ArkUI/KeyEvent' },
