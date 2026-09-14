@@ -1650,14 +1650,14 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_HSS_Addbeaconfence_0300
-     * @tc.number SUB_HSS_Addbeaconfence_0300
+     * @tc.name   SUB_Location_Location_addBeaconFence_perm_test_0300
+     * @tc.number SUB_Location_Location_addBeaconFence_perm_test_0300
      * @tc.desc   Add a beacon fence with identifier of empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_HSS_Addbeaconfence_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_Location_addBeaconFence_perm_test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let beacon = {
             'identifier': '',
             'beaconFenceInfoType': geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
@@ -1670,17 +1670,17 @@ export default function geolocationTest_geo8() {
         let fenceRequest = { 'beacon': beacon };
         try {
             geolocationm.addBeaconFence(fenceRequest).then((id) => {
-                console.info('[lbs_js] SUB_HSS_Addbeaconfence_0300 success, fence id: ' + id);
+                console.info('[lbs_js] SUB_Location_Location_addBeaconFence_perm_test_0300 success, fence id: ' + id);
                 expect(typeof id).assertEqual('number');
                 geolocationm.removeBeaconFence(beacon).then(() => {
-                    console.info('[lbs_js] SUB_HSS_Addbeaconfence_0300 cleanup success');
+                    console.info('[lbs_js] SUB_Location_Location_addBeaconFence_perm_test_0300 cleanup success');
                     done();
                 }).catch((error) => {
-                    console.info('[lbs_js] SUB_HSS_Addbeaconfence_0300 cleanup err: ' + JSON.stringify(error));
+                    console.info('[lbs_js] SUB_Location_Location_addBeaconFence_perm_test_0300 cleanup err: ' + JSON.stringify(error));
                     done();
                 });
             }).catch((error) => {
-                console.info('[lbs_js] SUB_HSS_Addbeaconfence_0300 promise err: ' + JSON.stringify(error));
+                console.info('[lbs_js] SUB_Location_Location_addBeaconFence_perm_test_0300 promise err: ' + JSON.stringify(error));
                 if (error.code === '801') {
                     expect(error.code).assertEqual('801');
                 } else {
@@ -1689,7 +1689,7 @@ export default function geolocationTest_geo8() {
                 done();
             });
         } catch (error) {
-            console.info('[lbs_js] SUB_HSS_Addbeaconfence_0300 try err: ' + JSON.stringify(error));
+            console.info('[lbs_js] SUB_Location_Location_addBeaconFence_perm_test_0300 try err: ' + JSON.stringify(error));
             if (error.code === '801') {
                 expect(error.code).assertEqual('801');
             } else {
@@ -1700,14 +1700,14 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_HSS_Removebeaconfence_0200
-     * @tc.number SUB_HSS_Removebeaconfence_0200
+     * @tc.name   SUB_Location_Location_removeBeaconFence_perm_test_0200
+     * @tc.number SUB_Location_Location_removeBeaconFence_perm_test_0200
      * @tc.desc   Remove a beacon fence with illegal beaconFenceInfoType enum value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_HSS_Removebeaconfence_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_Location_removeBeaconFence_perm_test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let beacon = {
             'identifier': 'xts_beaconfence_illegal_0200',
             'beaconFenceInfoType': 99,
@@ -1720,14 +1720,14 @@ export default function geolocationTest_geo8() {
         let fenceRequest = { 'beacon': beacon };
         try {
             geolocationm.addBeaconFence(fenceRequest).then((id) => {
-                console.info('[lbs_js] SUB_HSS_Removebeaconfence_0200 add success, fence id: ' + id);
+                console.info('[lbs_js] SUB_Location_Location_removeBeaconFence_perm_test_0200 add success, fence id: ' + id);
                 expect(typeof id).assertEqual('number');
                 geolocationm.removeBeaconFence(beacon).then(() => {
-                    console.info('[lbs_js] SUB_HSS_Removebeaconfence_0200 remove success');
+                    console.info('[lbs_js] SUB_Location_Location_removeBeaconFence_perm_test_0200 remove success');
                     expect(true).assertTrue();
                     done();
                 }).catch((error) => {
-                    console.info('[lbs_js] SUB_HSS_Removebeaconfence_0200 promise err: ' + JSON.stringify(error));
+                    console.info('[lbs_js] SUB_Location_Location_removeBeaconFence_perm_test_0200 promise err: ' + JSON.stringify(error));
                     if (error.code === '801') {
                         expect(error.code).assertEqual('801');
                     } else {
@@ -1736,7 +1736,7 @@ export default function geolocationTest_geo8() {
                     done();
                 });
             }).catch((error) => {
-                console.info('[lbs_js] SUB_HSS_Removebeaconfence_0200 add err: ' + JSON.stringify(error));
+                console.info('[lbs_js] SUB_Location_Location_removeBeaconFence_perm_test_0200 add err: ' + JSON.stringify(error));
                 if (error.code === '801') {
                     expect(error.code).assertEqual('801');
                 } else {
@@ -1745,7 +1745,7 @@ export default function geolocationTest_geo8() {
                 done();
             });
         } catch (error) {
-            console.info('[lbs_js] SUB_HSS_Removebeaconfence_0200 try err: ' + JSON.stringify(error));
+            console.info('[lbs_js] SUB_Location_Location_removeBeaconFence_perm_test_0200 try err: ' + JSON.stringify(error));
             if (error.code === '801') {
                 expect(error.code).assertEqual('801');
             } else {
@@ -1756,16 +1756,16 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_HSS_isWlanBssidMatched_0800
-     * @tc.number SUB_HSS_isWlanBssidMatched_0800
+     * @tc.name   SUB_Location_Location_isWlanBssidMatched_perm_test_0800
+     * @tc.number SUB_Location_Location_isWlanBssidMatched_perm_test_0800
      * @tc.desc   Check wlan bssid match with needStartScan of null and undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_HSS_isWlanBssidMatched_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_Location_isWlanBssidMatched_perm_test_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
-        console.info('SUB_HSS_isWlanBssidMatched_0800: ' + isAcessToken);
+        console.info('SUB_Location_Location_isWlanBssidMatched_perm_test_0800: ' + isAcessToken);
         if (!isAcessToken) {
             console.info('The device does not support location core');
             done();
@@ -1775,10 +1775,10 @@ export default function geolocationTest_geo8() {
         let rssiThreshold = -70;
         try {
             geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, null).then((res) => {
-                console.info('[lbs_js] SUB_HSS_isWlanBssidMatched_0800 null result: ' + JSON.stringify(res));
+                console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 null result: ' + JSON.stringify(res));
                 expect().assertFail();
             }).catch((error) => {
-                console.info('[lbs_js] SUB_HSS_isWlanBssidMatched_0800 null promise err: ' + JSON.stringify(error));
+                console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 null promise err: ' + JSON.stringify(error));
                 if (error.code === '801') {
                     expect(error.code).assertEqual('801');
                 } else {
@@ -1786,7 +1786,7 @@ export default function geolocationTest_geo8() {
                 }
             });
         } catch (error) {
-            console.info('[lbs_js] SUB_HSS_isWlanBssidMatched_0800 null try err: ' + JSON.stringify(error));
+            console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 null try err: ' + JSON.stringify(error));
             if (error.code === '801') {
                 expect(error.code).assertEqual('801');
             } else {
@@ -1795,10 +1795,10 @@ export default function geolocationTest_geo8() {
         }
         try {
             geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, undefined).then((res) => {
-                console.info('[lbs_js] SUB_HSS_isWlanBssidMatched_0800 undefined result: ' + JSON.stringify(res));
+                console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 undefined result: ' + JSON.stringify(res));
                 expect().assertFail();
             }).catch((error) => {
-                console.info('[lbs_js] SUB_HSS_isWlanBssidMatched_0800 undefined promise err: ' + JSON.stringify(error));
+                console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 undefined promise err: ' + JSON.stringify(error));
                 if (error.code === '801') {
                     expect(error.code).assertEqual('801');
                 } else {
@@ -1806,7 +1806,7 @@ export default function geolocationTest_geo8() {
                 }
             });
         } catch (error) {
-            console.info('[lbs_js] SUB_HSS_isWlanBssidMatched_0800 undefined try err: ' + JSON.stringify(error));
+            console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 undefined try err: ' + JSON.stringify(error));
             if (error.code === '801') {
                 expect(error.code).assertEqual('801');
             } else {

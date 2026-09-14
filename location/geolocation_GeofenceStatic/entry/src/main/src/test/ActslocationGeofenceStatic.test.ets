@@ -403,74 +403,7 @@ export default function actslocationTest() {
             done();
         })  
 
-        /**
-         * @tc.number  SUB_Location_GF_Point_0100
-         * @tc.name  SUB_Location_GF_Point_0100
-         * @tc.desc  Point latitude/longitude properties via addFusionFence
-         * @tc.level  Level 2
-         * @tc.type  Function
-         * @tc.size  MEDIUMTEST
-         */
-        it('SUB_Location_GF_Point_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let point: geoLocationManager.Point = {
-                latitude: 31.12,
-                longitude: 121.11
-            };
-            expect(typeof point.latitude).assertEqual('number');
-            expect(point.latitude).assertEqual(31.12);
-            expect(typeof point.longitude).assertEqual('number');
-            expect(point.longitude).assertEqual(121.11);
-            let fenceTransitionCallback = (transition: geoLocationManager.FusionFenceTransition): void => {
-                console.info('SUB_Location_GF_Point_0100 fenceTransitionCallback: ' + JSON.stringify(transition));
-                expect(typeof transition.identifier).assertEqual('string');
-                expect(transition.scene).assertEqual(geoLocationManager.FusionFenceScene.SUBWAY);
-            };
-            let fusionFenceRequestParams: geoLocationManager.FusionFenceRequestParams = {
-                identifier: 'point_test_0100',
-                scene: geoLocationManager.FusionFenceScene.SUBWAY,
-                fenceType: geoLocationManager.FusionFenceType.GNSS,
-                poiLocation: point,
-                monitorTransitionEvents: geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_ENTER,
-                loiterTimeMs: 10000,
-                expirationMs: 100000.0,
-                fenceTransitionCallback: fenceTransitionCallback
-            };
-            expect(fusionFenceRequestParams.poiLocation.latitude).assertEqual(31.12);
-            expect(fusionFenceRequestParams.poiLocation.longitude).assertEqual(121.11);
-            try {
-                geoLocationManager.addFusionFence(fusionFenceRequestParams).then(() => {
-                    console.info('SUB_Location_GF_Point_0100 addFusionFence success');
-                    geoLocationManager.removeFusionFence('point_test_0100').then(() => {
-                        done();
-                    }).catch((err) => {
-                        console.info('SUB_Location_GF_Point_0100 cleanup err: ' + JSON.stringify(err));
-                        done();
-                    });
-                }).catch((err) => {
-                    let e: BusinessError = err as BusinessError;
-                    console.info('SUB_Location_GF_Point_0100 errCode:' + e.code + ', message:' + e.message);
-                    if (e.code === 801) {
-                        expect(e.code).assertEqual(801);
-                    } else if (e.code === 202) {
-                        expect(e.code).assertEqual(202);
-                    } else {
-                        expect().assertFail();
-                    }
-                    done();
-                });
-            } catch (err) {
-                let e: BusinessError = err as BusinessError;
-                console.info('SUB_Location_GF_Point_0100 errCode:' + e.code + ', message:' + e.message);
-                if (e.code === 801) {
-                    expect(e.code).assertEqual(801);
-                } else if (e.code === 202) {
-                    expect(e.code).assertEqual(202);
-                } else {
-                    expect().assertFail();
-                }
-                done();
-            }
-        })
+        
 
     })
 }

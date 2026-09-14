@@ -3730,16 +3730,16 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @tc.name   SUB_HSS_LocationSystem_offLocationChange_0100
-     * @tc.number SUB_HSS_LocationSystem_offLocationChange_0100
+     * @tc.name   SUB_Location_Location_offLocationChange_perm_test_0300
+     * @tc.number SUB_Location_Location_offLocationChange_perm_test_0300
      * @tc.desc   When the location switch is disabled, off('locationChange') will return 3301100.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_HSS_LocationSystem_offLocationChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_Location_Location_offLocationChange_perm_test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
-        console.info('SUB_HSS_LocationSystem_offLocationChange_0100: ' + isAcessToken);
+        console.info('SUB_Location_Location_offLocationChange_perm_test_0300: ' + isAcessToken);
         if (!isAcessToken) {
             console.info('The device does not support location');
             done();

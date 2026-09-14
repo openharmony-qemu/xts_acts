@@ -1608,14 +1608,14 @@ export default function geolocationTest_geo5() {
     });
 
     /**
-     * @tc.name   SUB_HSS_LocationSystem_GeoAddress_0100
-     * @tc.number SUB_HSS_LocationSystem_GeoAddress_0100
+     * @tc.name   SUB_Location_Location_GeoAddress_perm_test_0100
+     * @tc.number SUB_Location_Location_GeoAddress_perm_test_0100
      * @tc.desc   Check GeoAddress properties in getAddressesFromLocation result.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_HSS_LocationSystem_GeoAddress_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_Location_GeoAddress_perm_test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let isAvailable = geolocationm.isGeocoderAvailable();
         if (isAvailable) {
             let reverseGeocodeRequest = { "latitude": 31.265496, "longitude": 121.62771, "maxItems": 1, "locale": "zh" };
