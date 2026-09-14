@@ -6,13 +6,11 @@
         "shell-timeout": "600000",
         "bundle-name": "com.acts.test.object2test",
         "module-name": "entry_test",
-        "testcase-timeout": 70000,
-        "compile-mode": "esmodule"
+        "testcase-timeout": 70000
     },
     "kits": [
         {
             "test-file-name": [
-                "ActsObject2LibTest.hap",
                 "ActsObject2Test.hap"
             ],
             "type": "AppInstallKit",
