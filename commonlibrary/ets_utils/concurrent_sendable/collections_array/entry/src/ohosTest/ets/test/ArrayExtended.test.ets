@@ -1172,3 +1172,1102 @@ export default function ArrayExtendedTest() {
     it('CollectionsSecondtest8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const caseName = 'CollectionsSecondtest8100';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          collections.Array.from([-10, 20, -30, 40, -50]).forEach((value1, value2, Array) => {
+            let a = Array.sort((a: number, b: number) => a - b).forEach((value1, value2, array) => {
+              array.includes(20);
+            });
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest8200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0040
+     * @tc.desc   Array findIndex 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest8200';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          let array = new collections.Array<number>(1, 2, 3, 4, 5);
+          const normal = new NormalClass(10);
+          const unbound = array.findIndex;
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest8300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0041
+     * @tc.desc   Array findIndex 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest8300';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          collections.Array.from([-10, 20, -30, 40, -50]).forEach((value1, value2, Array) => {
+            let a = Array.sort((a: number, b: number) => a - b).forEach((value1, value2, array) => {
+              array.findIndex((value: number) => value % 2 === 0);
+            });
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest8400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0042
+     * @tc.desc   Array fill 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest8400';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          let array = new collections.Array<number>(1, 2, 3, 4, 5);
+          const normal = new NormalClass(10);
+          const unbound = array.fill;
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest8500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0043
+     * @tc.desc   Array fill 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest8500';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          collections.Array.from([-10, 20, -30, 40, -50]).forEach((value1, value2, Array) => {
+            let a = Array.sort((a: number, b: number) => a - b).forEach((value1, value2, array) => {
+              array.fill(0, 1, 3);
+            });
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+    
+    /**
+     * @tc.name   CollectionsSecondtest8600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0044
+     * @tc.desc   Array shrinkTo 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest8600';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          let array = new collections.Array<number>(1, 2, 3, 4, 5);
+          const normal = new NormalClass(10);
+          const unbound = array.shrinkTo;
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(401)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest8700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0045
+     * @tc.desc   Array shrinkTo 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest8700';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          collections.Array.from([-10, 20, -30, 40, -50]).sort((a: number, b: number) => a - b).forEach((value1, value2, Array) => {
+            let a = Array.sort((a: number, b: number) => a - b).forEach((value1, value2, array) => {
+              array.shrinkTo(0);
+            });
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest8800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0046
+     * @tc.desc   Array extendTo 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest8800';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          let array = new collections.Array<number>(1, 2, 3, 4, 5);
+          const normal = new NormalClass(10);
+          const unbound = array.extendTo;
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(401)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest8900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0047
+     * @tc.desc   Array extendTo 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest8900';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          collections.Array.from([-10, 20, -30, 40, -50]).sort((a: number, b: number) => a - b).forEach((value1, value2, Array) => {
+            let a = Array.sort((a: number, b: number) => a - b).forEach((value1, value2, array) => {
+              array.extendTo(1, 10);
+            });
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest9000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0048
+     * @tc.desc   Array concat 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest9000';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          let array = new collections.Array<number>(1, 2, 3, 4, 5);
+          const normal = new NormalClass(10);
+          const unbound = array.concat;
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest9100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0049
+     * @tc.desc   Array concat 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest9100';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          collections.Array.from([-10, 20, -30, 40, -50]).sort((a: number, b: number) => a - b).forEach((value1, value2, Array) => {
+            let a = Array.sort((a: number, b: number) => a - b).forEach((value1, value2, array) => {
+              array.extendTo(1, 10);
+            });
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest9200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0050
+     * @tc.desc   Array splice 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest9200';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          let array = new collections.Array<number>(1, 2, 3, 4, 5);
+          const normal = new NormalClass(10);
+          const unbound = array.splice;
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest9300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0051
+     * @tc.desc   Array splice 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest9300';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          collections.Array.from([-10, 20, -30, 40, -50]).sort((a: number, b: number) => a - b).forEach((value1, value2, Array) => {
+            let a = Array.sort((a: number, b: number) => a - b).forEach((value1, value2, array) => {
+              array.splice(10);
+            });
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest9400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0052
+     * @tc.desc   Array every 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest9400';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          let array = new collections.Array<number>(1, 2, 3, 4, 5);
+          const normal = new NormalClass(10);
+          const unbound = array.every;
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest9500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0053
+     * @tc.desc   Array every 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest9500';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          collections.Array.from([-10, 20, -30, 40, -50]).sort((a: number, b: number) => a - b).forEach((value1, value2, Array) => {
+            let a = Array.sort((a: number, b: number) => a - b).forEach((value1, value2, array) => {
+              array.every((element: number) => element > 0);
+            });
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest9600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0054
+     * @tc.desc   Array toLocaleString 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest9600';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          let array = new collections.Array<number>(1, 2, 3, 4, 5);
+          const normal = new NormalClass(10);
+          const unbound = array.toLocaleString;
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest9700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0055
+     * @tc.desc   Array toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest9700';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          collections.Array.from([-10, 20, -30, 40, -50]).sort((a: number, b: number) => a - b).forEach((value1, value2, Array) => {
+            let a = Array.sort((a: number, b: number) => a - b).forEach((value1, value2, array) => {
+              array.toLocaleString();
+            });
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest9800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0056
+     * @tc.desc   Map 10200012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest9800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest9800';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          const normal = new NormalClass(10);
+          const unbound = collections.Map
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200012)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest9900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0057
+     * @tc.desc   myMap.keys 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest9900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest9900';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          const myMap: collections.Map<number, string> = new collections.Map<number, string>([
+            [0, "one"],
+            [1, "two"],
+            [2, "three"],
+            [3, "four"]
+          ]);
+          const normal = new NormalClass(10);
+          const unbound = myMap.keys
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0058
+     * @tc.desc   myMap.values 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest0100';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          const myMap: collections.Map<number, string> = new collections.Map<number, string>([
+            [0, "one"],
+            [1, "two"],
+            [2, "three"],
+            [3, "four"]
+          ]);
+          const normal = new NormalClass(10);
+          const unbound = myMap.values
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0059
+     * @tc.desc   myMap.get 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest0200';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          const myMap: collections.Map<number, string> = new collections.Map<number, string>([
+            [0, "one"],
+            [1, "two"],
+            [2, "three"],
+            [3, "four"]
+          ]);
+          const normal = new NormalClass(10);
+          const unbound = myMap.get
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest0300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0060
+     * @tc.desc   map.get 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest0300';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          new collections.Map<string, number>([
+            ['foo', 0],
+            ['bar', 1],
+            ['baz', 2],
+          ]).forEach((value, key, map) => {
+            map.set("foo", 3).get('1')
+            console.info(`m[${key}] = ${value}`);
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest0400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0061
+     * @tc.desc   map.keys 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest0400';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          new collections.Map<string, number>([
+            ['foo', 0],
+            ['bar', 1],
+            ['baz', 2],
+          ]).forEach((value, key, map) => {
+            map.set("foo", 3).keys()
+            console.info(`m[${key}] = ${value}`);
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest0500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0062
+     * @tc.desc   map.keys 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest0500';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          new collections.Map<string, number>([
+            ['foo', 0],
+            ['bar', 1],
+            ['baz', 2],
+          ]).forEach((value, key, map) => {
+            map.set("foo", 3).entries()
+            console.info(`m[${key}] = ${value}`);
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest0600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0063
+     * @tc.desc   map.values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest0600';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          new collections.Map<string, number>([
+            ['foo', 0],
+            ['bar', 1],
+            ['baz', 2],
+          ]).forEach((value, key, map) => {
+            map.set("foo", 3).values()
+            console.info(`m[${key}] = ${value}`);
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+
+    /**
+     * @tc.name   CollectionsSecondtest0700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0064
+     * @tc.desc   myMap.has 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest0700';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          const myMap: collections.Map<number, string> = new collections.Map<number, string>([
+            [0, "one"],
+            [1, "two"],
+            [2, "three"],
+            [3, "four"]
+          ]);
+          const normal = new NormalClass(10);
+          const unbound = myMap.has
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+    /**
+     * @tc.name   CollectionsSecondtest07001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0065
+     * @tc.desc   myMap.has 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest07001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest07001';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          const myMap: collections.Map<number, string> = new collections.Map<number, string>([
+            [0, "one"],
+            [1, "two"],
+            [2, "three"],
+            [3, "four"]
+          ]);
+          const normal = new NormalClass(10);
+          const unbound = myMap.entries
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+    /**
+     * @tc.name   CollectionsSecondtest07002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0066
+     * @tc.desc   myMap.has 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest07002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest07002';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          const myMap: collections.Map<number, string> = new collections.Map<number, string>([
+            [0, "one"],
+            [1, "two"],
+            [2, "three"],
+            [3, "four"]
+          ]);
+          const normal = new NormalClass(10);
+          const unbound = myMap.clear
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+    /**
+     * @tc.name   CollectionsSecondtest07003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0067
+     * @tc.desc   myMap.has 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest07003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest07003';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          const myMap: collections.Map<number, string> = new collections.Map<number, string>([
+            [0, "one"],
+            [1, "two"],
+            [2, "three"],
+            [3, "four"]
+          ]);
+          const normal = new NormalClass(10);
+          const unbound = myMap.delete
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+    /**
+     * @tc.name   CollectionsSecondtest07004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0068
+     * @tc.desc   myMap.has 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest07004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest07004';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          const myMap: collections.Map<number, string> = new collections.Map<number, string>([
+            [0, "one"],
+            [1, "two"],
+            [2, "three"],
+            [3, "four"]
+          ]);
+          const normal = new NormalClass(10);
+          const unbound = myMap.forEach
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest0800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0069
+     * @tc.desc   map.has 10800201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest0800';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          new collections.Map<string, number>([
+            ['foo', 0],
+            ['bar', 1],
+            ['baz', 2],
+          ]).forEach((value, key, map) => {
+            map.set("foo", 3).has('1')
+            console.info(`m[${key}] = ${value}`);
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest0900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0070
+     * @tc.desc   myMap.set 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest0900';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          const myMap: collections.Map<number, string> = new collections.Map<number, string>([
+            [0, "one"],
+            [1, "two"],
+            [2, "three"],
+            [3, "four"]
+          ]);
+          const normal = new NormalClass(10);
+          const unbound = myMap.set
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200011)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest1000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0071
+     * @tc.desc   map.set 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest1000';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          new collections.Map<string, number>([
+            ['foo', 0],
+            ['bar', 1],
+            ['baz', 2],
+          ]).forEach((value, key, map) => {
+            map.set("foo", 3).has('1')
+            console.info(`m[${key}] = ${value}`);
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest1100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0072
+     * @tc.desc   map.set 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest1100';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          new collections.Map<string, number>([
+            ['foo', 0],
+            ['bar', 1],
+            ['baz', 2],
+          ]).forEach((value, key, map) => {
+            map.set("foo", 3).has('1')
+            console.info(`m[${key}] = ${value}`);
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest1200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0073
+     * @tc.desc   Map 10200012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest1200';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          const normal = new NormalClass(10);
+          const unbound = collections.ArrayBuffer
+          const bound: () => void = unbound.bind(normal);
+          bound()
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200012)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   CollectionsSecondtest1300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_EXTENDED_0074
+     * @tc.desc   map.set 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsSecondtest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'CollectionsSecondtest1300';
+        console.info(`${caseName} test start`);
+        let flag: boolean = false;
+        try {
+          new collections.Map<string, number>([
+            ['foo', 0],
+            ['bar', 1],
+            ['baz', 2],
+          ]).forEach((value, key, map) => {
+            map.set("foo", 3).has('1')
+            console.info(`m[${key}] = ${value}`);
+          });
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect(e.code).assertEqual(10200201)
+          flag = true
+        }
+        expect(flag).assertTrue()
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+  })
+}
