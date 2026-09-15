@@ -114,27 +114,9 @@ struct PatternLockL0_03 {
     FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
-  // 验证绘制的密码是否为1、3
-  isValidPassword(input: Array<number>): boolean {
-    const target = [1, 3];
-    if (input.length !== target.length) {
-      return false;
-    }
-    return input.toString() === target.toString();
-  }
-
   // 检查两个PatternLock组件绘制的密码是否一致
   checkAllPatternDrawn() {
     if (this.passwords1.length > 0 && this.passwords2.length > 0) {
-      // 验证密码是否为1、3
-      if (!this.isValidPassword(this.passwords1) || !this.isValidPassword(this.passwords2)) {
-        promptAction.showToast({ message: '请设置1、3为连接点', duration: 2000 });
-        this.patternLockController.reset();
-        this.patternLockController1.reset();
-        this.passwords1 = [];
-        this.passwords2 = [];
-        return;
-      }
       if (this.passwords1.toString() === this.passwords2.toString()) {
         promptAction.showToast({ message: '密码设置成功', duration: 1000 });
         setTimeout(() => {
@@ -185,7 +167,7 @@ struct PatternLockL0_03 {
       Column({ space: 10 }) {
         Row({ space: 5 }){
           Column({ space: 5 }){
-            Text("原生属性").fontColor(Color.Red).margin({ top: 10 })
+            Text("原生属性" + this.passwords1).fontColor(Color.Red).margin({ top: 10 })
             PatternLock(this.patternLockController)
               .sideLength('47.5%')
               .circleRadius(9)
@@ -205,7 +187,7 @@ struct PatternLockL0_03 {
               })
           }
           Column({ space: 5 }){
-            Text("Modifier").fontColor(Color.Red).margin({ top: 10 })
+            Text("Modifier" + this.passwords2).fontColor(Color.Red).margin({ top: 10 })
             PatternLock(this.patternLockController1)
               .attributeModifier(this.customModifier)
               .onPatternComplete((input: Array<number>) => {
