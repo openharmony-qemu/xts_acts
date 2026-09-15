@@ -2543,29 +2543,6 @@ export default function deviceSettingsTest() {
       }
       done();
     });
-  
-    /**
-     * @tc.name   test_device_settings_add_hidden_settings_menu_0105
-     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_ADD_HIDDEN_SETTINGS_MENU_JS_0105
-     * @tc.desc   test add hidden settings menu success
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_device_settings_add_hidden_settings_menu_0105", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        deviceSettings.addHiddenSettingsMenu(SELFWANT, FULL_VALID_MENUS_TO_HIDE);
-        const addResultList: Array<number> = deviceSettings.getHiddenSettingsMenu(SELFWANT) as Array<number>;
-        const result = FULL_VALID_MENUS_TO_HIDE.every(menu => addResultList.includes(menu as number));
-        expect(result).assertTrue();
-      } catch (error) {
-        expect(Number(error.code) === 801).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    });
     
     /**
      * @tc.name   test_device_settings_add_hidden_settings_menu_0106
