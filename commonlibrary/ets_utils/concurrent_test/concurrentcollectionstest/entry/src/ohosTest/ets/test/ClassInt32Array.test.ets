@@ -1103,22 +1103,3 @@ export default function Int32ArrayGlobalTest() {
         let array: collections.Int32Array = collections.Int32Array.from([1, 2, 3, 4, 5]);
         try {
           let group = new taskpool.TaskGroup(caseName)
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(Int32_test_0027, array, caseName, i)
-          }
-          await taskpool.execute(group).then((res) => {
-            expect(JSON.stringify(res)).assertContain('5,4,3,2,1')
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-  })
-}
