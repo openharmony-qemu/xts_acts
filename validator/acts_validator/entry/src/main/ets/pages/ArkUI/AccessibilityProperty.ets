@@ -39,6 +39,7 @@ struct AccessibilityProperty {
     '11、绿框绘制在组件上，屏幕朗读朗读“accessibilitySelected false Checked undefined”\n' +
     '12、绿框绘制在组件上，屏幕朗读朗读“accessibilitySelected undefined Checked undefined”';
   @State vueStatus: boolean = false;
+  @State stepCount: number = 0;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -112,6 +113,14 @@ struct AccessibilityProperty {
     FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
+  onPageShow() {
+    this.intervalNum = setInterval(() => {
+      if (this.stepCount >= 12) {
+        this.vueStatus = true;
+      }
+    }, 500)
+  }
+
   onPageHide() {
     clearInterval(this.intervalNum)
   }
@@ -176,28 +185,57 @@ struct AccessibilityProperty {
               .onClick(async () => {
                 this.yesEnable = true
                 this.onAccessibilityHoverEnable = true
-                this.vueStatus=true
               })
           }
         }
 
-        Text('checkable测试(true)').accessibilityChecked(true);
-        Text('checkable测试(false)').accessibilityChecked(false);
-        Text('checkable测试(undefined)').accessibilityChecked(undefined);
+        Text('checkable测试(true)').accessibilityChecked(true)
+          .onAccessibilityFocus((isFocus: boolean) => {
+            if (isFocus && this.stepCount === 0) {
+              this.stepCount = 1
+            }
+          });
+        Text('checkable测试(false)').accessibilityChecked(false)
+          .onAccessibilityFocus((isFocus: boolean) => {
+            if (isFocus && this.stepCount === 1) {
+              this.stepCount = 2
+            }
+          });
+        Text('checkable测试(undefined)').accessibilityChecked(undefined)
+          .onAccessibilityFocus((isFocus: boolean) => {
+            if (isFocus && this.stepCount === 2) {
+              this.stepCount = 3
+            }
+          });
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected true')
             .accessibilitySelected(true)
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 3) {
+                this.stepCount = 4
+              }
+            })
         }
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected false')
             .accessibilitySelected(false)
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 4) {
+                this.stepCount = 5
+              }
+            })
         }
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected undefined')
             .accessibilitySelected(undefined)
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 5) {
+                this.stepCount = 6
+              }
+            })
         }
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
@@ -212,6 +250,11 @@ struct AccessibilityProperty {
             .accessibilityChecked(true)
             .accessibilitySelected(undefined)
           Text('accessibilityChecked true Select undefined')
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 6) {
+                this.stepCount = 7
+              }
+            })
         }
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
@@ -226,6 +269,11 @@ struct AccessibilityProperty {
             .accessibilityChecked(false)
             .accessibilitySelected(undefined)
           Text('accessibilityChecked false Select undefined')
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 7) {
+                this.stepCount = 8
+              }
+            })
         }
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
@@ -240,24 +288,44 @@ struct AccessibilityProperty {
             .accessibilityChecked(undefined)
             .accessibilitySelected(undefined)
           Text('accessibilityChecked undefined Select undefined')
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 8) {
+                this.stepCount = 9
+              }
+            })
         }
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected true Checked undefined')
             .accessibilitySelected(true)
             .accessibilityChecked(undefined)
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 9) {
+                this.stepCount = 10
+              }
+            })
         }
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected false Checked undefined')
             .accessibilitySelected(false)
             .accessibilityChecked(undefined)
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 10) {
+                this.stepCount = 11
+              }
+            })
         }
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
           Text('accessibilitySelected undefined Checked undefined')
             .accessibilitySelected(undefined)
             .accessibilityChecked(undefined)
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 11) {
+                this.stepCount = 12
+              }
+            })
         }
       }.height('70%')
       .width('100%')

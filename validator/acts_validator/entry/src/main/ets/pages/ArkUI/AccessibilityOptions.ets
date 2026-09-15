@@ -35,6 +35,7 @@ struct AccessibilityOptions {
     '5、绿框绘制在组件上，屏幕朗读朗读“有accessibility有text btn123按钮”\n' +
     '6、绿框绘制在组件上，屏幕朗读朗读“btn123按钮”';
   @State vueStatus: boolean = false;
+  @State stepCount: number = 0;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -108,6 +109,14 @@ struct AccessibilityOptions {
     FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
+  onPageShow() {
+    this.intervalNum = setInterval(() => {
+      if (this.stepCount >= 5) {
+        this.vueStatus = true;
+      }
+    }, 500)
+  }
+
   onPageHide() {
     clearInterval(this.intervalNum)
   }
@@ -172,7 +181,6 @@ struct AccessibilityOptions {
               .onClick(async () => {
                 this.yesEnable = true
                 this.onAccessibilityHoverEnable = true
-                this.vueStatus=true
               })
           }
         }
@@ -183,11 +191,36 @@ struct AccessibilityOptions {
             .borderRadius(5)
             .accessibilityText("有accessibility有text优先读accessibility")
             .accessibilityLevel("yes").height('9%')
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 0) {
+                this.stepCount = 1
+              }
+            })
           Button().accessibilityLevel("yes").accessibilityText("accessibility无text 读accessibility").height('9%')
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 1) {
+                this.stepCount = 2
+              }
+            })
           Button("无accessibility有text 读text").accessibilityLevel("yes").height('9%')
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 2) {
+                this.stepCount = 3
+              }
+            })
           Button().height('9%')
           Button('btnl23').accessibilityText("有accessibility有text btn123").accessibilityLevel("yes").height('9%')
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 3) {
+                this.stepCount = 4
+              }
+            })
           Button('btn123').accessibilityLevel("yes").height('9%')
+            .onAccessibilityFocus((isFocus: boolean) => {
+              if (isFocus && this.stepCount === 4) {
+                this.stepCount = 5
+              }
+            })
         }
         .accessibilityGroup(true, { accessibilityPreferred: true })
       }.height('70%')
