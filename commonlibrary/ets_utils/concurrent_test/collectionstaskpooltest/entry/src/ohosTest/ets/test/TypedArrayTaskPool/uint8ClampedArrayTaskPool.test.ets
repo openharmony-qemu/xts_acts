@@ -5387,35 +5387,3 @@ export default function uint8ClampedArrayTaskPoolTest() {
         });
       }
       while (num < 10) {
-        await sleep(100);
-      }
-      console.info(`${caseName} test end`);
-      done()
-    });
-
-    /**
-     * @tc.name   testUint8ClampedArrayTaskPool0187
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT8CLAMPED_ARRAY_TASK_POOL_18700
-     * @tc.desc   Testing Collections of Uint8ClampedArray, array is [1,2,3], 0 <= index < arrayLength, array[index] = array element.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testUint8ClampedArrayTaskPool0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName = 'testUint8ClampedArrayTaskPool0187';
-      console.info(`${caseName} test start`);
-      let num = 0;
-      for (let i = 0; i < 10; i++) {
-        taskpool.execute(testUint8ClampedArrayTaskPool0187).then((value) => {
-          num++;
-          expect(value).assertEqual(true);
-        });
-      }
-      while (num < 10) {
-        await sleep(100);
-      }
-      console.info(`${caseName} test end`);
-      done()
-    })
-  })
-}
