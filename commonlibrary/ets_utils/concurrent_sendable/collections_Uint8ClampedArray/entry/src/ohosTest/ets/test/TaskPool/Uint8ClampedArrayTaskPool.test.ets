@@ -2786,3 +2786,1983 @@ export default function Uint8ClampedArrayTaskPoolTest() {
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0090
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0090
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0090';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0090).then((value) => {
+            num++;
+            expect(value).assertEqual('undefined,5');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0091
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0091
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0091';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0091).then((value) => {
+            num++;
+            expect(value).assertEqual(undefined);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0092
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0092
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0092';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0092).then((value) => {
+            num++;
+            expect(value).assertEqual(0);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0093
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0093
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0093';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0093).then((value) => {
+            num++;
+            expect(value).assertEqual(undefined);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0094
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0094
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0094';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0094).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0095
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0095
+     * @tc.desc   Testing if findIndex returns the first element index that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0095';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0095).then((value) => {
+            num++;
+            expect(value).assertEqual(-1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0096
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0096
+     * @tc.desc   Testing if findIndex returns the first element index that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0096';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0096).then((value) => {
+            num++;
+            expect(value).assertEqual(1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0097
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0097
+     * @tc.desc   Testing if findIndex returns the first element index that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0097';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0097).then((value) => {
+            num++;
+            expect(value).assertEqual(-1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0098
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0098
+     * @tc.desc   Testing if forEach executes the provided callback function for each element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0098';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0098).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0099
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0099
+     * @tc.desc   Testing if forEach executes the provided callback function for each element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0099';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0099).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0100
+     * @tc.desc   Testing if forEach executes the provided callback function for each element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0100';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0100).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0101
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0101
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0101';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0101).then((value) => {
+            num++;
+            expect(value).assertEqual(-1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0102
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0102
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0102';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0102).then((value) => {
+            num++;
+            expect(value).assertEqual(-1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0103
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0103
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0103';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0103).then((value) => {
+            num++;
+            expect(value).assertEqual(1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0104
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0104
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0104';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0104).then((value) => {
+            num++;
+            expect(value).assertEqual(9);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0105
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0105
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0105';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0105).then((value) => {
+            num++;
+            expect(value).assertEqual(6);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0106
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0106
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0106';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0106).then((value) => {
+            num++;
+            expect(value).assertEqual(2);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0107
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0107
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0107';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0107).then((value) => {
+            num++;
+            expect(value).assertEqual(3);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0108
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0108
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0108';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0108).then((value) => {
+            num++;
+            expect(value).assertEqual(-1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0109
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0109
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0109';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0109).then((value) => {
+            num++;
+            expect(value).assertEqual('');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0110
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0110
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0110';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0110).then((value) => {
+            num++;
+            expect(value).assertEqual('');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0111
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0111
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0111';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0111).then((value) => {
+            num++;
+            expect(value).assertEqual("1,2,3,4,5");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0112
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0112
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0112';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0112).then((value) => {
+            num++;
+            expect(value).assertEqual("12345");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0113
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0113
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0113';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0113).then((value) => {
+            num++;
+            expect(value).assertEqual("1,2,3,4,5");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0114
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0114
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0114';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0114).then((value) => {
+            num++;
+            expect(value).assertEqual("1/2/3/4/5");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0115
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0115
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0115';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0115).then((value) => {
+            num++;
+            expect(value).assertEqual("1,。￥·2,。￥·3,。￥·4,。￥·5");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0116
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0116
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0116';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0116).then((value) => {
+            num++;
+            expect(value).assertEqual("1녕하こんйте2녕하こんйте3녕하こんйте4녕하こんйте5");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0117
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0117
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0117';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0117).then((value) => {
+            num++;
+            expect(value).assertEqual("1，2，3，4，5");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0118
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0118
+     * @tc.desc   Testing applying a callback function to each element to create a new ArkTS TypedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0118';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0118).then((value) => {
+            num++;
+            expect(value).assertEqual("");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0119
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0119
+     * @tc.desc   Testing applying a callback function to each element to create a new ArkTS TypedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0119';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0119).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0120
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0120
+     * @tc.desc   Testing applying a callback function to each element to create a new ArkTS TypedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0120';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0120).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0121
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0121
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0121';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0121).then((value) => {
+            num++;
+            expect(value).assertEqual('error');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0122
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0122
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0122';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0122).then((value) => {
+            num++;
+            expect(value).assertEqual(15);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0123
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0123
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0123';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0123).then((value) => {
+            num++;
+            expect(value).assertEqual(23);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0124
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0124
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0124';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0124).then((value) => {
+            num++;
+            expect(value).assertEqual('initialValue12345');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0125
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0125
+     * @tc.desc   Testing reverse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0125';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0125).then((value) => {
+            num++;
+            expect(value).assertEqual('');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0126
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0126
+     * @tc.desc   Testing reverse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0126';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0126).then((value) => {
+            num++;
+            expect(value).assertEqual('5,4,3,2,1');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0127
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0127
+     * @tc.desc   Testing reverse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0127';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0127).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0128
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0128
+     * @tc.desc   Testing the set of uint8ClampedArray, offset is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0128';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0128).then((value) => {
+            num++;
+            expect(value).assertEqual("1,3,5,0,0,0,0,0");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0129
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0129
+     * @tc.desc   Testing the set of uint8ClampedArray, offset is null, forEach succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0129';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0129).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0130
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0130
+     * @tc.desc   Testing the set of uint8ClampedArray, offset is -1, return failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0130';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0130).then((value) => {
+            num++;
+            expect(value).assertEqual("error");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0131
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0131
+     * @tc.desc   Testing the set of uint8ClampedArray, offset is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0131';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0131).then((value) => {
+            num++;
+            expect(value).assertEqual("1,3,5,0,0,0,0,0");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0132
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0132
+     * @tc.desc   Testing the set of uint8ClampedArray, offset is 0, forEach succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0132';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0132).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0133
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0133
+     * @tc.desc   Testing the set of uint8ClampedArray, offset is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0133';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0133).then((value) => {
+            num++;
+            expect(value).assertEqual("0,0,1,3,5,0,0,0");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0134
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0134
+     * @tc.desc   Testing the set of uint8ClampedArray, offset is 2, forEach succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0134';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0134).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0135
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0135
+     * @tc.desc   Testing the set of uint8ClampedArray, offset is 10(overstep), return failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0135';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0135).then((value) => {
+            num++;
+            expect(value).assertEqual("error");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0136
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0136
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is null, start is 1, end is 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0136';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0136).then((value) => {
+            num++;
+            expect(value).assertEqual("");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0137
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0137
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0137';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0137).then((value) => {
+            num++;
+            expect(value).assertEqual("");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0138
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0138
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is not null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0138';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0138).then((value) => {
+            num++;
+            expect(value).assertEqual("1,2,3,4,5");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0139
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0139
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is not null, parameter is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0139';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint8ClampedArrayTaskPool0139).then((value) => {
+            num++;
+            expect(value).assertEqual("1,2,3,4,5");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0140
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0140
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is not null, parameter is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0140';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0140).then((value) => {
+          num++;
+          expect(value).assertEqual("5");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0141
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0141
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is not null, start is -1, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0141';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0141).then((value) => {
+          num++;
+          expect(value).assertEqual("");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0142
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0142
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is not null, start is -1, end is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0142';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0142).then((value) => {
+          num++;
+          expect(value).assertEqual("");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0143
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0143
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is not null, start is 0, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0143';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0143).then((value) => {
+          num++;
+          expect(value).assertEqual("1,2,3,4");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0144
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0144
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is not null, parameter is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0144';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0144).then((value) => {
+          num++;
+          expect(value).assertEqual("3,4,5");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0145
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0145
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is not null, parameter is 10(overstep).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0145';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0145).then((value) => {
+          num++;
+          expect(value).assertEqual("");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0146
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0146
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is not null, parameter is 10(overstep).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0146';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0146).then((value) => {
+          num++;
+          expect(value).assertEqual("");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0147
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0147
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is not null, parameter is 10(overstep).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0147';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0147).then((value) => {
+          num++;
+          expect(value).assertEqual("");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0148
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0148
+     * @tc.desc   Testing the Slice of uint8ClampedArray, array is not null, start is 2, end is 4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0148';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0148).then((value) => {
+          num++;
+          expect(value).assertEqual("3,4");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0149
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0149
+     * @tc.desc   Testing the sort of uint8ClampedArray, array is null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0149';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0149).then((value) => {
+          num++;
+          expect(value).assertEqual("");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0150
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0150
+     * @tc.desc   Testing the sort of uint8ClampedArray, array is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0150';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0150).then((value) => {
+          num++;
+          expect(value).assertEqual("");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0151
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0151
+     * @tc.desc   Testing the sort of uint8ClampedArray, array is not null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0151';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0151).then((value) => {
+          num++;
+          expect(value).assertEqual("1,2,3,4,5");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0152
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0152
+     * @tc.desc   Testing the sort of uint8ClampedArray, array is not null, parameter is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0152';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0152).then((value) => {
+          num++;
+          expect(value).assertEqual("1,2,3,4,5");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0153
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0153
+     * @tc.desc   Testing the sort of uint8ClampedArray, array is not null, parameter is grade down.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0153';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0153).then((value) => {
+          num++;
+          expect(value).assertEqual("5,4,3,2,1");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0154
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0154
+     * @tc.desc   Testing the sort of uint8ClampedArray, array is not null, set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0154';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0154).then((value) => {
+          num++;
+          expect(value).assertEqual("2,5,7,8,9");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0155
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0155
+     * @tc.desc   Testing the subarray of uint8ClampedArray, array is not null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0155';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0155).then((value) => {
+          num++;
+          expect(value).assertEqual("1,3,5,7,9");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0156
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0156
+     * @tc.desc   Testing the subarray of uint8ClampedArray, array is not null, begin is -1, end is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0156';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0156).then((value) => {
+          num++;
+          expect(value).assertEqual("9");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0157
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0157
+     * @tc.desc   Testing the subarray of uint8ClampedArray, array is not null, begin is -1, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0157';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0157).then((value) => {
+          num++;
+          expect(value).assertEqual("");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0158
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0158
+     * @tc.desc   Testing the subarray of uint8ClampedArray, array is not null, begin is -1, end is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0158';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0158).then((value) => {
+          num++;
+          expect(value).assertEqual("");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0159
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0159
+     * @tc.desc   Testing the subarray of uint8ClampedArray, array is not null, begin is -1, end is overstep.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0159';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0159).then((value) => {
+          num++;
+          expect(value).assertEqual("9");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0160
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0160
+     * @tc.desc   Testing the subarray of uint8ClampedArray, array is not null, begin is 2, end is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0160';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0160).then((value) => {
+          num++;
+          expect(value).assertEqual("5,7,9");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    });
+
+    /**
+     * @tc.name   testUint8ClampedArrayTaskPool0161
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_TASKPOOL_0161
+     * @tc.desc   Testing the subarray of uint8ClampedArray, array is not null, begin is 2, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint8ClampedArrayTaskPool0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint8ClampedArrayTaskPool0161';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testUint8ClampedArrayTaskPool0161).then((value) => {
+          num++;
+          expect(value).assertEqual("5,7");
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
