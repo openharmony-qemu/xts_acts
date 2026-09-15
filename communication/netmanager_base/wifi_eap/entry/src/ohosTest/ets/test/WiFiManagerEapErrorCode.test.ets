@@ -87,8 +87,8 @@ export default function wifiEapErrorTest(){
                 expect().assertFail();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 regCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register permission denied`);
@@ -163,8 +163,8 @@ export default function wifiEapErrorTest(){
                 expect().assertFail();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 regCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register permission denied`);
@@ -238,8 +238,8 @@ export default function wifiEapErrorTest(){
                 //expect().assertFail();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 regCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register permission denied`);
@@ -307,8 +307,8 @@ export default function wifiEapErrorTest(){
                 expect().assertFail();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 unregCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister permission denied`);
@@ -375,8 +375,8 @@ export default function wifiEapErrorTest(){
                 expect().assertFail();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 unregCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister permission denied`);
@@ -444,8 +444,8 @@ export default function wifiEapErrorTest(){
                 expect().assertFail();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 unregCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister permission denied`);
@@ -498,8 +498,8 @@ export default function wifiEapErrorTest(){
                 expect().assertFail();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 replyCustomEapData failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 eap replyCustomEapData is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 eap replyCustomEapData error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 eap replyCustomEapData permission denied`);
@@ -566,8 +566,8 @@ export default function wifiEapErrorTest(){
                 expect().assertFail();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 startEthEap failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 eap startEthEap is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 eap startEthEap error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 eap startEthEap permission denied`);
