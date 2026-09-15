@@ -352,6 +352,7 @@ int TestRecordCmdUtilsGetHeightAbnormal()
     // Extremely large height may cause allocation failure, verify GetHeight only when BeginRecording succeeds
     OH_Drawing_ErrorCode errorCode2 = OH_Drawing_RecordCmdUtilsGetHeight(recordCmdUtils, &dstHeight);
     EXPECT_EQ(errorCode2, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(dstHeight, height);
     OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
     OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
     OH_Drawing_RecordCmdDestroy(recordCmd);
@@ -469,6 +470,7 @@ int TestRecordCmdUtilsGetWidthAbnormal()
     // Extremely large width may cause allocation failure, verify GetWidth only when BeginRecording succeeds
     OH_Drawing_ErrorCode errorCode2 = OH_Drawing_RecordCmdUtilsGetWidth(recordCmdUtils, &dstWidth);
     EXPECT_EQ(errorCode2, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(dstWidth, width);
     OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
     OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
     OH_Drawing_RecordCmdDestroy(recordCmd);
