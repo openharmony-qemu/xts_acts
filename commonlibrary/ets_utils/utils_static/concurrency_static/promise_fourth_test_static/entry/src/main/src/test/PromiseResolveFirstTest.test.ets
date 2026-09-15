@@ -79,7 +79,7 @@ Done()
       let executed = false
       promise.then(() => {
         executed = true
-      })
+      }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
       await new Promise<void>((resolve: (value: void) => void, _reject: (reason: Error) => void): void => {
               setTimeout(() => { resolve(undefined) }, 100)
             })
@@ -474,7 +474,7 @@ Done()
       let count = 0
       let promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(Promise.resolve().then(() => { count++ }))
+        promises.push(Promise.resolve().then(() => { count++ }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() }))
       }
       await Promise.all(promises)
       expect(count).assertEqual(10)
@@ -597,7 +597,7 @@ Done()
             results.push(i)
             completedCount++
             checkComplete()
-          })
+          }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
         }
       })
       await waitPromise

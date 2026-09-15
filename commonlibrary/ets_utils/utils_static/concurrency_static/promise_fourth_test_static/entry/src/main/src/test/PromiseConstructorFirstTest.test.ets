@@ -809,6 +809,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
         reject(new Error("error"))
       })
       let p2 = promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         return 0
       })
       let result = await p2
@@ -1216,6 +1217,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()

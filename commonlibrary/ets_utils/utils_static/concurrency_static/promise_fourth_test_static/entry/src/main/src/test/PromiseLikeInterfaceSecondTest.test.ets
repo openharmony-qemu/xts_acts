@@ -487,7 +487,7 @@ export default function BuiltinsPromiseLikeInterfaceSecondTest(): void  {
       let promiseLike: PromiseLike<string> = Promise.reject<string>(new Error("error"))
       let result = promiseLike
         .then((value: string) => value + " processed")
-        .catch((error: Error) => "recovered")
+        .catch((error: Error) => { expect(error instanceof Error).assertTrue(); return "recovered" })
         .then((value: string) => value.toUpperCase())
       let val = await result
       expect(val).assertContain("RECOVERED")
@@ -658,7 +658,7 @@ export default function BuiltinsPromiseLikeInterfaceSecondTest(): void  {
       let completed = false
       promiseLike.then((_value: string) => {
         completed = true
-      })
+      }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
       let waitCount = 0
       while (!completed && waitCount < 100) {
         await new Promise<void>((resolve) => {
@@ -774,6 +774,7 @@ export default function BuiltinsPromiseLikeInterfaceSecondTest(): void  {
           throw new Error("error in step 1")
         })
         .catch((error: Error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered"
         })
         .then((value: string) => {
@@ -977,6 +978,7 @@ export default function BuiltinsPromiseLikeInterfaceSecondTest(): void  {
         await promiseLike.then<void>((v: string) => {
           throw new Error("thenable error")
         }).catch((err: Error) => {
+          expect(err instanceof Error).assertTrue()
           errorHandled = true
         })
         expect(errorHandled).assertTrue()

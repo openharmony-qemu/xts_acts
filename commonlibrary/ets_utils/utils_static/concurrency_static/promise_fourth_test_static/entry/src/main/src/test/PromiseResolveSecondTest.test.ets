@@ -1093,7 +1093,7 @@ export default function BuiltinsPromiseResolveSecondTest(): void {
     it('PromiseResolveSecondTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("test")
       let state = "pending"
-      promise.then(() => { state = "resolved" })
+      promise.then(() => { state = "resolved" }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
       await promise
       expect(state).assertEqual("resolved")
       Done();

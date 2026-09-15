@@ -581,6 +581,7 @@ export default function BuiltinsPromiseRejectSecondTest(): void {
       let promise = Promise.reject<string>(new Error("rejected"))
       let caught = false
       promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       while (!caught) {
@@ -623,7 +624,7 @@ export default function BuiltinsPromiseRejectSecondTest(): void {
       let chainCompleted = false
       try {
         let value = await Promise.reject<string>(new Error("test"))
-          .catch((error) => { return "recovered" })
+          .catch((error) => { expect(error instanceof Error).assertTrue(); return "recovered" })
         chainCompleted = true
         expect(value).assertEqual("recovered")
       } catch (error) {
@@ -819,6 +820,7 @@ export default function BuiltinsPromiseRejectSecondTest(): void {
     it('PromiseRejectSecondTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let result = await Promise.reject<string>(new Error("test"))
         .catch((error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered"
         })
         .then((value) => {
@@ -1006,6 +1008,7 @@ export default function BuiltinsPromiseRejectSecondTest(): void {
       let caughtCount = 0
       await Promise.allSettled(promises.map(p =>
         p.catch((error) => {
+          expect(error instanceof Error).assertTrue()
           caughtCount++
         })
       ))

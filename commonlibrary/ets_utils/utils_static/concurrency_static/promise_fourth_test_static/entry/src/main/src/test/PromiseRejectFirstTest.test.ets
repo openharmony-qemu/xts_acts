@@ -428,6 +428,7 @@ export default function BuiltinsPromiseRejectFirstTest(): void {
       let secondCatch = false
       await promise
         .catch((error) => {
+          expect(error instanceof Error).assertTrue()
           firstCatch = true
           return "handled"
         })
@@ -642,6 +643,7 @@ export default function BuiltinsPromiseRejectFirstTest(): void {
       let caughtCount = 0
       await Promise.allSettled(promises.map(p =>
         p.catch((error) => {
+          expect(error instanceof Error).assertTrue()
           caughtCount++
         })
       ))
@@ -777,6 +779,7 @@ export default function BuiltinsPromiseRejectFirstTest(): void {
         count++
       })
       promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         count++
       })
       while (count < 2) {
@@ -824,6 +827,7 @@ export default function BuiltinsPromiseRejectFirstTest(): void {
       let caught: boolean = false
       try {
         await promise.catch((error) => {
+          expect(error instanceof Error).assertTrue()
           throw new Error("new error from catch")
         })
         expect().assertFail()
@@ -849,6 +853,7 @@ export default function BuiltinsPromiseRejectFirstTest(): void {
         await promise.then(
           () => {},
           (error) => {
+            expect(error instanceof Error).assertTrue()
             throw new Error("error from onRejected")
           }
         )

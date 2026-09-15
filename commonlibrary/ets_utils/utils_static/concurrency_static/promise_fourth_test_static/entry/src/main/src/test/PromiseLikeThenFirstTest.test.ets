@@ -91,7 +91,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let promise: PromiseLike<string> = Promise.resolve<string>("hello")
       let result = promise.then(
         (value: string) => value.toUpperCase(),
-        (error: Error) => "fallback"
+        (error: Error) => { expect(error instanceof Error).assertTrue(); return "fallback" }
       )
       let val = await result
       expect(val).assertEqual("HELLO")
@@ -126,7 +126,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let promise: PromiseLike<string> = Promise.resolve<string>("hello")
       let result = promise.then(
         (value: string) => value,
-        (error: Error) => "error"
+        (error: Error) => { expect(error instanceof Error).assertTrue(); return "error" }
       )
       let val = await result
       expect(val).assertEqual("hello")
@@ -388,7 +388,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let promise: PromiseLike<string> = Promise.reject<string>(new Error("failed"))
       let result = promise.then(
         (value: string) => value,
-        (error: Error) => "recovered"
+        (error: Error) => { expect(error instanceof Error).assertTrue(); return "recovered" }
       )
       let val = await result
       expect(val).assertEqual("recovered")
@@ -428,7 +428,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let promise: PromiseLike<string> = Promise.reject<string>(new Error("failed"))
       let result = promise.then(
         (value: string) => value,
-        (error: Error): string => "recovered"
+        (error: Error): string => { expect(error instanceof Error).assertTrue(); return "recovered" }
       )
       let val = await result
       expect(val).assertEqual("recovered")
@@ -659,7 +659,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let promise: PromiseLike<string> = Promise.reject<string>(new Error("failed"))
       let result = promise.then(
         (value: string) => value,
-        (error: Error): number => 42
+        (error: Error): number => { expect(error instanceof Error).assertTrue(); return 42 }
       )
       let val = await result
       expect(val).assertEqual(42)
@@ -1254,6 +1254,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let result = promise.then(
         (value: string) => value,
         (error: Error) => {
+          expect(error instanceof Error).assertTrue()
           throw new Error("Uncaught from onRejected")
         }
       )

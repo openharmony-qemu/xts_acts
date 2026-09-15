@@ -77,7 +77,7 @@ export default function BuiltinsPromiseLikeInterfaceFirstTest(): void {
       let promiseLike: PromiseLike<string> = Promise.resolve<string>("hello")
       let result = promiseLike.then(
         (value: string) => value + " world",
-        (error: Error) => "caught"
+        (error: Error) => { expect(error instanceof Error).assertTrue(); return "caught" }
       )
       let val = await result
       expect(val).assertEqual("hello world")
@@ -752,6 +752,7 @@ export default function BuiltinsPromiseLikeInterfaceFirstTest(): void {
       let promiseLike: PromiseLike<string> = Promise.reject<string>(error)
       let result = promiseLike.then((value: string) => value)
         .catch((err: Error) => {
+          expect(err instanceof Error).assertTrue()
           return "recovered"
         })
       let val = await result
@@ -796,6 +797,7 @@ export default function BuiltinsPromiseLikeInterfaceFirstTest(): void {
       let promiseLike: PromiseLike<string> = Promise.reject<string>(new Error("original error"))
       let result = promiseLike.then((value: string) => value)
         .catch((error: Error) => {
+          expect(error instanceof Error).assertTrue()
           throw new Error("error in onRejected")
         })
       let caught: boolean = false
@@ -837,7 +839,7 @@ export default function BuiltinsPromiseLikeInterfaceFirstTest(): void {
     it('PromiseLikeInterfaceFirstTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promiseLike: PromiseLike<string> = Promise.reject<string>(new Error("error"))
       let result = promiseLike.then<string>((value: string) => value)
-        .catch((error: Error) => "recovered")
+        .catch((error: Error) => { expect(error instanceof Error).assertTrue(); return "recovered" })
       let val = await result
       expect(val).assertContain("recovered")
       Done();

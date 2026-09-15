@@ -83,7 +83,7 @@ export default function BuiltinsPromiseResolveThirdTest(): void {
       let result = ""
       promise.then((value) => {
         result = value
-      })
+      }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
       await promise
       expect(result).assertEqual("success")
       Done();
@@ -408,9 +408,9 @@ export default function BuiltinsPromiseResolveThirdTest(): void {
       let promise = Promise.resolve<string>("test")
       let results: string[] = []
       let count = 0
-      promise.then(v => { results.push(v + "1"); count++ })
-      promise.then(v => { results.push(v + "2"); count++ })
-      promise.then(v => { results.push(v + "3"); count++ })
+      promise.then(v => { results.push(v + "1"); count++ }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
+      promise.then(v => { results.push(v + "2"); count++ }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
+      promise.then(v => { results.push(v + "3"); count++ }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
       while (count < 3) {
         await new Promise<void>((resolve: (value: void) => void, _reject: (reason: Error) => void): void => {
           setTimeout(() => { resolve(undefined) }, 100)
@@ -747,7 +747,7 @@ export default function BuiltinsPromiseResolveThirdTest(): void {
         promises.push(
           Promise.resolve<number>(i).then(() => {
             counter++
-          })
+          }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
         )
       }
       await Promise.all(promises)
@@ -1215,7 +1215,7 @@ export default function BuiltinsPromiseResolveThirdTest(): void {
       let promises: Promise<void>[] = []
       let resolvedCount = new AtomicInt(0)
       for (let i = 0; i < 100; i++) {
-        promises.push(Promise.resolve<number>(i).then(() => { resolvedCount.fetchAdd(1) }))
+        promises.push(Promise.resolve<number>(i).then(() => { resolvedCount.fetchAdd(1) }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() }))
       }
       await Promise.all(promises)
       expect(promises.length).assertEqual(100)

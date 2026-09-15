@@ -99,7 +99,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
         })
         inner.then((value) => {
           resolve(value * 2)
-        })
+        }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
       })
       let value = await promise
       expect(value).assertEqual(84)
@@ -287,6 +287,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
         reject(new Error("Initial error"))
       })
       let result = await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         return "recovered value"
       })
       expect(result).assertEqual("recovered value")
@@ -312,6 +313,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
       })
       let caught: boolean = false
       await level2.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -559,6 +561,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -584,9 +587,9 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
         let check = () => {
           if (completedCount === totalTasks) resolve(undefined)
         }
-        p1.then((v) => { results.push(v); completedCount++; check() })
-        p2.then((v) => { results.push(v); completedCount++; check() })
-        p3.then((v) => { results.push(v); completedCount++; check() })
+        p1.then((v) => { results.push(v); completedCount++; check() }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
+        p2.then((v) => { results.push(v); completedCount++; check() }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
+        p3.then((v) => { results.push(v); completedCount++; check() }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
       })
       await waitPromise
       expect(results.length).assertEqual(3)
@@ -698,6 +701,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
       ]
       let caught: boolean = false
       await Promise.all(promises).catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -939,6 +943,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
       };
       let caught: boolean = false
       await mockFetchError().catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -963,6 +968,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
       };
       let caught: boolean = false
       await fetchWithTimeout().catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -1229,6 +1235,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
     it('PromiseConstructorSecondTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let result = await Promise.reject<string>(new Error("handler error"))
         .catch((error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered: test"
         })
       expect(result).assertEqual("recovered: test")
@@ -1283,6 +1290,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
 
         let result = await Promise.reject<number>(new Error("eaWorker error"))
           .catch<number>((error: Error) => {
+            expect(error instanceof Error).assertTrue()
             return workerResult
           })
         expect(result).assertEqual(100)
@@ -1368,7 +1376,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
         let workerResult = job.Await()
 
         let result = await Promise.reject<string>(new Error("handler error"))
-          .catch<string>((error: Error) => workerResult)
+          .catch<string>((error: Error) => { expect(error instanceof Error).assertTrue(); return workerResult })
         expect(result).assertEqual("recovered: test")
       } finally {
         eaWorker.join().Await()

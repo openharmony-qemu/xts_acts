@@ -405,7 +405,7 @@ export default function BuiltinsPromiseStatusTest(): void {
         let allSettled = Promise.allSettled<string>([p])
         promises.push(allSettled.then<void>((results: PromiseSettledResult<string>[]) => {
           countStatus(results[0])
-        }))
+        }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() }))
       }
       await Promise.all(promises)
       expect(fulfilledCount + rejectedCount).assertEqual(10)
@@ -641,7 +641,7 @@ export default function BuiltinsPromiseStatusTest(): void {
               if (results[0].status === PromiseStatus.fulfilled) {
                 counter.fetchAdd(1)
               }
-            })
+            }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
         )
       }
       await Promise.all<void>(promises)

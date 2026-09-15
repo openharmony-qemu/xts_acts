@@ -66,7 +66,7 @@ export default function BuiltinsPromiseLikeThenSecondTest(): void {
       let promise: Promise<string> = Promise.resolve<string>("hello")
       let result = promise.then<string | number, string | number>(
         (value: string): string | number => value.length,
-        (error: Error): string | number => 0
+        (error: Error): string | number => { expect(error instanceof Error).assertTrue(); return 0 }
       )
       let val = await result
       expect(val).assertEqual(5)
@@ -207,6 +207,7 @@ export default function BuiltinsPromiseLikeThenSecondTest(): void {
       let result = promise.then<string>(
           (value: string) => value
         ).catch((error: Error) => {
+            expect(error instanceof Error).assertTrue()
             return "recovered"
           }
         )
@@ -785,6 +786,7 @@ export default function BuiltinsPromiseLikeThenSecondTest(): void {
         .then(
           (value: string) => value,
           (error: Error) => {
+            expect(error instanceof Error).assertTrue()
             return "recovered"
           }
         )
@@ -938,11 +940,11 @@ export default function BuiltinsPromiseLikeThenSecondTest(): void {
       let promise: Promise<string> = Promise.reject<string>(new Error("failed"))
       let result1 = promise.then<string>(
         (value: string) => value
-      ).catch((error: Error) => "recovered"
+      ).catch((error: Error) => { expect(error instanceof Error).assertTrue(); return "recovered" }
       )
       let result2 = promise.then<string>(
         (value: string) => value
-      ).catch((error: Error) => Promise.resolve<string>("recovered")
+      ).catch((error: Error) => { expect(error instanceof Error).assertTrue(); return Promise.resolve<string>("recovered") }
       )
       let val1 = await result1
       let val2 = await result2
@@ -1066,7 +1068,7 @@ export default function BuiltinsPromiseLikeThenSecondTest(): void {
         promise.then((value: number) => {
           results.push(value)
           return value
-        })
+        }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
       }
       await Promise.resolve(promise)
       expect(results.length).assertEqual(200)
