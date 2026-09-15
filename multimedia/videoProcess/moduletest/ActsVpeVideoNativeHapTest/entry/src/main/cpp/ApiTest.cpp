@@ -141,7 +141,8 @@ static OH_VideoProcessing* CreateVideoProcessorDualType()
     return vp;
 }
 
-static bool CheckSetSurface(napi_env env, OH_VideoProcessing* videoProcessor, OHNativeWindow* pNativeWindow)
+static bool CheckSetSurface(napi_env env, OH_VideoProcessing* videoProcessor,
+    OHNativeWindow* pNativeWindow)
 {
     auto ret = OH_VideoProcessing_SetSurface(videoProcessor, pNativeWindow);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
@@ -152,7 +153,8 @@ static bool CheckSetSurface(napi_env env, OH_VideoProcessing* videoProcessor, OH
     return true;
 }
 
-static bool CheckGetSurface(napi_env env, OH_VideoProcessing* videoProcessor, OHNativeWindow* pNativeWindow, OHNativeWindow** inWindow)
+static bool CheckGetSurface(napi_env env, OH_VideoProcessing* videoProcessor,
+    OHNativeWindow* pNativeWindow, OHNativeWindow** inWindow)
 {
     auto ret = OH_VideoProcessing_GetSurface(videoProcessor, inWindow);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
@@ -163,10 +165,13 @@ static bool CheckGetSurface(napi_env env, OH_VideoProcessing* videoProcessor, OH
     return true;
 }
 
-static bool CreateAndRegCallback(napi_env env, OH_VideoProcessing* videoProcessor, OHNativeWindow* pNativeWindow, VideoProcessing_Callback** callback)
+static bool CreateAndRegCallback(napi_env env, OH_VideoProcessing* videoProcessor,
+    OHNativeWindow* pNativeWindow, VideoProcessing_Callback** callback)
 {
     auto ret = OH_VideoProcessingCallback_Create(callback);
-    if (ret != VIDEO_PROCESSING_SUCCESS) return false;
+    if (ret != VIDEO_PROCESSING_SUCCESS) {
+        return false;
+    }
     OH_VideoProcessingCallback_BindOnError(*callback, onErrorEmptyCallback);
     OH_VideoProcessingCallback_BindOnState(*callback, OnState);
     ret = OH_VideoProcessing_RegisterCallback(videoProcessor, *callback, nullptr);
@@ -179,7 +184,8 @@ static bool CreateAndRegCallback(napi_env env, OH_VideoProcessing* videoProcesso
     return true;
 }
 
-static void CleanupVpe(OH_VideoProcessing* videoProcessor, VideoProcessing_Callback* callback, OHNativeWindow* pNativeWindow)
+static void CleanupVpe(OH_VideoProcessing* videoProcessor,
+    VideoProcessing_Callback* callback, OHNativeWindow* pNativeWindow)
 {
     if (callback) OH_VideoProcessingCallback_Destroy(callback);
     if (videoProcessor) OH_VideoProcessing_Destroy(videoProcessor);
@@ -1552,7 +1558,7 @@ napi_value VpeVideoApiTest06300(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_06500
  * @tc.number SUB_VPE_VIDEO_API_TEST_06500
- * @tc.desc   OH_VideoProcessing_Create returns VIDEO_PROCESSING_ERROR_INVALID_INSTANCE when videoProcessor is not null
+ * @tc.desc   Create returns ERROR_INVALID_INSTANCE when videoProcessor is not null
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1575,7 +1581,7 @@ napi_value VpeVideoApiTest06500(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_06600
  * @tc.number SUB_VPE_VIDEO_API_TEST_06600
- * @tc.desc   OH_VideoProcessing_Create returns VIDEO_PROCESSING_ERROR_UNSUPPORTED_PROCESSING when type is not supported
+ * @tc.desc   Create returns ERROR_UNSUPPORTED_PROCESSING when type is not supported
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1604,7 +1610,7 @@ napi_value VpeVideoApiTest06600(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_06800
  * @tc.number SUB_VPE_VIDEO_API_TEST_06800
- * @tc.desc   OH_VideoProcessing_Create returns VIDEO_PROCESSING_ERROR_INVALID_PARAMETER when type is invalid (-1)
+ * @tc.desc  Create returns ERROR_INVALID_PARAMETER when type is invalid (-1)
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1621,7 +1627,7 @@ napi_value VpeVideoApiTest06800(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_06900
  * @tc.number SUB_VPE_VIDEO_API_TEST_06900
- * @tc.desc   OH_VideoProcessing_Destroy returns VIDEO_PROCESSING_ERROR_INVALID_INSTANCE with non-null inlalid pointer
+ * @tc.desc   Destroy returns ERROR_INVALID_INSTANCE with non-null inlalid pointer
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1665,7 +1671,8 @@ napi_value VpeVideoApiTest07000(napi_env env, napi_callback_info info)
         CleanupVpe(videoProcessor, callback, pNativeWindow);
         return CreateIntInt32Result(env, 0);
     }
-    usleep(10000);
+    int32_t sleeptime = 10000;
+    usleep(sleeptime);
     if (lState != VIDEO_PROCESSING_STATE_RUNNING) {
         CleanupVpe(videoProcessor, callback, pNativeWindow);
         return CreateIntInt32Result(env, -1);
@@ -1680,7 +1687,7 @@ napi_value VpeVideoApiTest07000(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_07100
  * @tc.number SUB_VPE_VIDEO_API_TEST_07100
- * @tc.desc   OH_VideoProcessing_RegisterCallback returns VIDEO_PROCESSING_ERROR_INVALID_INSTANCE with non-null invalid pointer
+ * @tc.desc   RegisterCallback returns ERROR_INVALID_INSTANCE with non-null invalid pointer
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1698,7 +1705,7 @@ napi_value VpeVideoApiTest07100(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_07200
  * @tc.number SUB_VPE_VIDEO_API_TEST_07200
- * @tc.desc   OH_VideoProcessing_RegisterCallback returns VIDEO_PROCESSING_ERROR_INVALID_PARAMETER when callback is null
+ * @tc.desc   RegisterCallback returns ERROR_INVALID_PARAMETER when callback is null
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1707,7 +1714,7 @@ napi_value VpeVideoApiTest07200(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = CreateVideoProcessorDualType();
-    if ( videoProcessor == nullptr ) { return CreateIntInt32Result(env, 0); }
+    if (videoProcessor == nullptr) { return CreateIntInt32Result(env, 0); }
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_RegisterCallback(videoProcessor, nullptr, nullptr);
     if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) {
         OH_VideoProcessing_Destroy(videoProcessor);
@@ -1720,7 +1727,7 @@ napi_value VpeVideoApiTest07200(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_07300
  * @tc.number SUB_VPE_VIDEO_API_TEST_07300
- * @tc.desc   OH_VideoProcessing_SetSurface returns VIDEO_PROCESSING_ERROR_INVALID_INSTANCE with non-null invalid pointer
+ * @tc.desc   SetSurface returns ERROR_INVALID_INSTANCE with non-null invalid pointer
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1738,7 +1745,7 @@ napi_value VpeVideoApiTest07300(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_07400
  * @tc.number SUB_VPE_VIDEO_API_TEST_07400
- * @tc.desc   OH_VideoProcessing_SetSurface returns VIDEO_PROCESSING_ERROR_INVALID_PARAMETER when windows is null
+ * @tc.desc   SetSurface returns ERROR_INVALID_PARAMETER when windows is null
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1760,7 +1767,7 @@ napi_value VpeVideoApiTest07400(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_07500
  * @tc.number SUB_VPE_VIDEO_API_TEST_07500
- * @tc.desc   OH_VideoProcessing_GetSurface returns VIDEO_PROCESSING_ERROR_INVALID_INSTANCE with non-null invalid pointer
+ * @tc.desc   GetSurface returns ERROR_INVALID_INSTANCE with non-null invalid pointer
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1779,7 +1786,7 @@ napi_value VpeVideoApiTest07500(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_07600
  * @tc.number SUB_VPE_VIDEO_API_TEST_07600
- * @tc.desc   OH_VideoProcessing_GetSurface returns VIDEO_PROCESSING_ERROR_INVALID_PARAMETER when window is null
+ * @tc.desc   GetSurface returns ERROR_INVALID_PARAMETER when window is null
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1788,7 +1795,7 @@ napi_value VpeVideoApiTest07600(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = CreateVideoProcessorDualType();
-    if ( videoProcessor == nullptr ) { return CreateIntInt32Result(env, 0); }
+    if (videoProcessor == nullptr) { return CreateIntInt32Result(env, 0); }
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_GetSurface(videoProcessor, nullptr);
     if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) {
         OH_VideoProcessing_Destroy(videoProcessor);
@@ -1801,7 +1808,7 @@ napi_value VpeVideoApiTest07600(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_07800
  * @tc.number SUB_VPE_VIDEO_API_TEST_07800
- * @tc.desc   OH_VideoProcessing_Start returns VIDEO_PROCESSING_ERROR_INVALID_INSTANCE with non-null invalid pointer
+ * @tc.desc   Start returns ERROR_INVALID_INSTANCE with non-null invalid pointer
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1819,7 +1826,7 @@ napi_value VpeVideoApiTest07800(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_07900
  * @tc.number SUB_VPE_VIDEO_API_TEST_07900
- * @tc.desc   OH_VideoProcessing_Start returns VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED when surface is not set
+ * @tc.desc   Start returns ERROR_OPERATION_NOT_PERMITTED when surface is not set
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1828,7 +1835,7 @@ napi_value VpeVideoApiTest07900(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = CreateVideoProcessorDualType();
-    if ( videoProcessor == nullptr ) { return CreateIntInt32Result(env, 0); }
+    if (videoProcessor == nullptr) { return CreateIntInt32Result(env, 0); }
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Start(videoProcessor);
     if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) {
         OH_VideoProcessing_Destroy(videoProcessor);
@@ -1841,7 +1848,7 @@ napi_value VpeVideoApiTest07900(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_08000
  * @tc.number SUB_VPE_VIDEO_API_TEST_08000
- * @tc.desc   OH_VideoProcessing_Stop returns VIDEO_PROCESSING_ERROR_INVALID_INSTANCE with non-null invalid pointer
+ * @tc.desc   Stop returns ERROR_INVALID_INSTANCE with non-null invalid pointer
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1859,7 +1866,7 @@ napi_value VpeVideoApiTest08000(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_08100
  * @tc.number SUB_VPE_VIDEO_API_TEST_08100
- * @tc.desc   OH_VideoProcessing_Stop returns VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED when instance is already stopped
+ * @tc.desc   Stop returns ERROR_OPERATION_NOT_PERMITTED when instance is already stopped
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1868,7 +1875,7 @@ napi_value VpeVideoApiTest08100(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = CreateVideoProcessorDualType();
-    if ( videoProcessor == nullptr ) { return CreateIntInt32Result(env, 0); }
+    if (videoProcessor == nullptr) { return CreateIntInt32Result(env, 0); }
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Stop(videoProcessor);
     if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) {
         OH_VideoProcessing_Destroy(videoProcessor);
@@ -1881,7 +1888,7 @@ napi_value VpeVideoApiTest08100(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_08200
  * @tc.number SUB_VPE_VIDEO_API_TEST_08200
- * @tc.desc   OH_VideoProcessing_RenderOutputBuffer returns VIDEO_PROCESSING_ERROR_INVALID_INSTANCE with non-null invalid pointer
+ * @tc.desc   RenderOutputBuffer returns ERROR_INVALID_INSTANCE with non-null invalid pointer
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1899,7 +1906,7 @@ napi_value VpeVideoApiTest08200(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_08300
  * @tc.number SUB_VPE_VIDEO_API_TEST_08300
- * @tc.desc   OH_VideoProcessing_RenderOutputBuffer returns VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED when callback is not set
+ * @tc.desc   RenderOutputBuffer returns OPERATION_NOT_PERMITTED when callback is not set
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1908,7 +1915,7 @@ napi_value VpeVideoApiTest08300(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = CreateVideoProcessorDualType();
-    if ( videoProcessor == nullptr ) { return CreateIntInt32Result(env, 0); }
+    if (videoProcessor == nullptr) { return CreateIntInt32Result(env, 0); }
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_RenderOutputBuffer(videoProcessor, g_index);
     if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) {
         OH_VideoProcessing_Destroy(videoProcessor);
@@ -1921,7 +1928,7 @@ napi_value VpeVideoApiTest08300(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_08400
  * @tc.number SUB_VPE_VIDEO_API_TEST_08400
- * @tc.desc   OH_VideoProcessingCallback_Create  returns VIDEO_PROCESSING_ERROR_INVALID_PARAMETER when callback is not null
+ * @tc.desc   Callback_Create  returns ERROR_INVALID_PARAMETER when callback is not null
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1939,7 +1946,7 @@ napi_value VpeVideoApiTest08400(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_08600
  * @tc.number SUB_VPE_VIDEO_API_TEST_08600
- * @tc.desc   OH_VideoProcessingCallback_Destroy returns VIDEO_PROCESSING_ERROR_INVALID_PARAMETER when callback is null
+ * @tc.desc   Destroy returns ERROR_INVALID_PARAMETER when callback is null
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1967,7 +1974,7 @@ napi_value VpeVideoApiTest08600(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_08700
  * @tc.number SUB_VPE_VIDEO_API_TEST_08700
- * @tc.desc   OH_VideoProcessingCallback_BindOnError returns VIDEO_PROCESSING_ERROR_INVALID_PARAMETER when onError is  null
+ * @tc.desc   Callback_BindOnError returns ERROR_INVALID_PARAMETER when onError is  null
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -1992,7 +1999,7 @@ napi_value VpeVideoApiTest08700(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_08800
  * @tc.number SUB_VPE_VIDEO_API_TEST_08800
- * @tc.desc   OH_VideoProcessingCallback_BindOnState returns VIDEO_PROCESSING_ERROR_INVALID_PARAMETER when onState is null
+ * @tc.desc   Callback_BindOnState returns ERROR_INVALID_PARAMETER when onState is null
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -2017,7 +2024,7 @@ napi_value VpeVideoApiTest08800(napi_env env, napi_callback_info info)
 /**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_08900
  * @tc.number SUB_VPE_VIDEO_API_TEST_08900
- * @tc.desc   OH_VideoProcessingCallback_BindOnNewOutputBuffer returns VIDEO_PROCESSING_ERROR_INVALID_PARAMETER when OnNewOutputBuffer is null
+ * @tc.desc   Callback_BindOnNewOutputBuffer returns ERROR_INVALID_PARAMETER when OnNewOutputBuffer is null
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
