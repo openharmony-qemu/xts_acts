@@ -149,11 +149,10 @@ struct imageDownloadInfo {
             console.log("AceErrorInfo " + JSON.stringify(e?.downloadInfo))
             this.errInfo = JSON.stringify(e?.downloadInfo)
             console.log("AceErrorInfo cacheDownload " + JSON.stringify(cacheDownload.getDownloadInfo(this.srcArray[this.index])))
-            // 验证返回值中包含dnsServers关键字，则判定用例通过
+            // 验证返回值中包含dnsServers关键字
             let downloadInfoStr = JSON.stringify(e?.downloadInfo)
             if (downloadInfoStr && downloadInfoStr.indexOf('dnsServers') !== -1) {
               console.log("AceErrorInfo dnsServers verified, set Vue = true")
-              this.Vue = true;
             } else {
               console.log("AceErrorInfo dnsServers not found in downloadInfo")
             }
