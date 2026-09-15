@@ -51,7 +51,7 @@ using std::atomic_store;
 #define MODIFIER_MAX_256 256
 #define MODIFIER_MAX_255 255
 #define MODIFIER_MAX_16 16
-#define MODIFIER_BIT_0X8000 0x8000 // codecheck: noqa G.NAM.03-CPP
+#define MODIFIER_BIT_0X8000 0x8000 
 #define SLEEP_DURATION_10 10
 #define TEST_DOUBLE_2_0 2.0
 #define TEST_DOUBLE_3_0 3.0
@@ -60,31 +60,31 @@ using std::atomic_store;
 #define ARGINFO_MAX_32 32
 
 
-struct PrintfInfo { // codecheck: noqa G.NAM.03-CPP
+struct PrintfInfo { 
     int prec;
     int width;
     wchar_t spec;
-    unsigned int isLongDouble : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int isShort : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int isLong : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int alt : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int space : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int left : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int showsign : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int group : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int extra : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int isChar : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int wide : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int i18n : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int isBinary128 : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int reservedPad : 4; // codecheck: noqa G.NAM.03-CPP
+    unsigned int isLongDouble : 1; 
+    unsigned int isShort : 1; 
+    unsigned int isLong : 1; 
+    unsigned int alt : 1; 
+    unsigned int space : 1; 
+    unsigned int left : 1; 
+    unsigned int showsign : 1;
+    unsigned int group : 1; 
+    unsigned int extra : 1; 
+    unsigned int isChar : 1; 
+    unsigned int wide : 1; 
+    unsigned int i18n : 1; 
+    unsigned int isBinary128 : 1; 
+    unsigned int reservedPad : 4; 
     unsigned short user;
     wchar_t pad;
 };
-typedef int PrintfFunction(FILE *, const struct PrintfInfo *, const void *const *); // codecheck: noqa G.NAM.03-CPP
-// codecheck: noqa G.NAM.03-CPP
+typedef int PrintfFunction(FILE *, const struct PrintfInfo *, const void *const *);
+
 typedef int PrintfArginfoSizeFunction(const struct PrintfInfo *, size_t, int *, int *);
-typedef void PrintfVaArgFunction(void *, va_list *); // codecheck: noqa G.NAM.03-CPP
+typedef void PrintfVaArgFunction(void *, va_list *); 
 #define PA_INT 0
 #define PA_CHAR 1
 #define PA_STRING 2
@@ -97,58 +97,41 @@ typedef void PrintfVaArgFunction(void *, va_list *); // codecheck: noqa G.NAM.03
 #define PA_FLAG_SHORT (1 << 10)
 #define PA_FLAG_PTR (1 << 11)
 
-typedef int (*RegSpecifierFnT)(int, PrintfFunction, PrintfArginfoSizeFunction); // codecheck: noqa G.NAM.03-CPP
-typedef int (*RegModifierFnT)(const wchar_t *); // codecheck: noqa G.NAM.03-CPP
-typedef int (*RegTypeFnT)(PrintfVaArgFunction); // codecheck: noqa G.NAM.03-CPP
-static RegSpecifierFnT g_regSpecifier = nullptr; // codecheck: noqa G.NAM.03-CPP
-static RegModifierFnT g_regModifier = nullptr; // codecheck: noqa G.NAM.03-CPP
-static RegTypeFnT g_regType = nullptr; // codecheck: noqa G.NAM.03-CPP
-typedef int (*SnFmtFnT)(char *, size_t, const char *, ...); // codecheck: noqa G.NAM.03-CPP
-static SnFmtFnT g_snFmt = nullptr; // codecheck: noqa G.NAM.03-CPP
-typedef int (*SwFmtFnT)(wchar_t *, size_t, const wchar_t *, ...); // codecheck: noqa G.NAM.03-CPP
-static SwFmtFnT g_swFmt = nullptr; // codecheck: noqa G.NAM.03-CPP
-typedef int (*AsFmtFnT)(char **, const char *, ...); // codecheck: noqa G.NAM.03-CPP
-static AsFmtFnT g_asFmt = nullptr; // codecheck: noqa G.NAM.03-CPP
-static void LoadFunctions(void) // codecheck: noqa G.NAM.03-CPP
+typedef int (*RegSpecifierFnT)(int, PrintfFunction, PrintfArginfoSizeFunction); 
+typedef int (*RegModifierFnT)(const wchar_t *); 
+typedef int (*RegTypeFnT)(PrintfVaArgFunction); 
+static RegSpecifierFnT g_regSpecifier = nullptr; 
+static RegModifierFnT g_regModifier = nullptr; 
+static RegTypeFnT g_regType = nullptr; 
+static void LoadFunctions(void) 
 {
     if (!g_regSpecifier) {
-        // codecheck: noqa G.NAM.03-CPP
         g_regSpecifier = (RegSpecifierFnT)dlsym(RTLD_DEFAULT, "register_printf_specifier");
     }
     if (!g_regModifier) {
-        // codecheck: noqa G.NAM.03-CPP
         g_regModifier = (RegModifierFnT)dlsym(RTLD_DEFAULT, "register_printf_modifier");
     }
     if (!g_regType) {
-        g_regType = (RegTypeFnT)dlsym(RTLD_DEFAULT, "register_printf_type"); // codecheck: noqa G.NAM.03-CPP
-    }
-    if (!g_snFmt) {
-        g_snFmt = (SnFmtFnT)dlsym(RTLD_DEFAULT, "snprintf"); // codecheck: noqa G.NAM.03-CPP
-    }
-    if (!g_swFmt) {
-        g_swFmt = (SwFmtFnT)dlsym(RTLD_DEFAULT, "swprintf"); // codecheck: noqa G.NAM.03-CPP
-    }
-    if (!g_asFmt) {
-        g_asFmt = (AsFmtFnT)dlsym(RTLD_DEFAULT, "asprintf"); // codecheck: noqa G.NAM.03-CPP
+        g_regType = (RegTypeFnT)dlsym(RTLD_DEFAULT, "register_printf_type"); 
     }
 }
-static int MyFunc(FILE *s, const struct PrintfInfo *info, const void *const *args) // codecheck: noqa G.NAM.03-CPP
+static int MyFunc(FILE *s, const struct printf_info *info, const void *const *args)
 {
     return 0;
 }
 
-static int MyArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz) // codecheck: noqa G.NAM.03-CPP
+static int MyArginfo(const struct printf_info *info, size_t n, int *at, int *sz) 
 {
     return 0;
 }
 
-static int LongPrintf(FILE *s, const struct PrintfInfo *info, const void *const *args) // codecheck: noqa G.NAM.03-CPP
+static int LongPrintf(FILE *s, const struct printf_info *info, const void *const *args)
 {
-    const long *lp = *static_cast<const long *const *>(args[0]); // codecheck: noqa G.EXP.14
-    return fprintf(s, "%ld", *lp); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+    const long *lp = *static_cast<const long *const *>(args[0]); 
+    return fprintf(s, "%ld", *lp); 
 }
 
-static int LongArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz) // codecheck: noqa G.NAM.03-CPP
+static int LongArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz) 
 {
     if (n > 0) {
         at[0] = PA_POINTER;
@@ -157,46 +140,45 @@ static int LongArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz
     return 1;
 }
 
-static int WlongPrintf(FILE *s, const struct PrintfInfo *info, const void *const *args) // codecheck: noqa G.NAM.03-CPP
+static int WlongPrintf(FILE *s, const struct PrintfInfo *info, const void *const *args) 
 {
-    const long *lp = *static_cast<const long *const *>(args[0]); // codecheck: noqa G.EXP.14
+    const long *lp = *static_cast<const long *const *>(args[0]); 
     if (info->wide) {
         return fwprintf(s, L"%ld", *lp);
     }
-    return fprintf(s, "%ld", *lp); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+    return fprintf(s, "%ld", *lp); 
 }
 
-static int FuncA(FILE *s, const struct PrintfInfo *i, const void *const *a) // codecheck: noqa G.NAM.03-CPP
+static int FuncA(FILE *s, const struct PrintfInfo *i, const void *const *a) 
 {
     return fputc('A', s);
 }
 
-static int FuncB(FILE *s, const struct PrintfInfo *i, const void *const *a) // codecheck: noqa G.NAM.03-CPP
+static int FuncB(FILE *s, const struct PrintfInfo *i, const void *const *a) 
 {
     return fputc('B', s);
 }
 
-static int FuncM2(FILE *s, const struct PrintfInfo *i, const void *const *a) // codecheck: noqa G.NAM.03-CPP
+static int FuncM2(FILE *s, const struct PrintfInfo *i, const void *const *a) 
 {
     return -TEST_VALUE_2;
 }
 
-static int FuncM1(FILE *s, const struct PrintfInfo *i, const void *const *a) // codecheck: noqa G.NAM.03-CPP
+static int FuncM1(FILE *s, const struct PrintfInfo *i, const void *const *a) 
 {
     return -1;
 }
 
-static int Func0(FILE *s, const struct PrintfInfo *i, const void *const *a) // codecheck: noqa G.NAM.03-CPP
+static int Func0(FILE *s, const struct PrintfInfo *i, const void *const *a) 
+    return 0;
+}
+
+static int Arginfo0(const struct PrintfInfo *info, size_t n, int *at, int *sz) 
 {
     return 0;
 }
 
-static int Arginfo0(const struct PrintfInfo *info, size_t n, int *at, int *sz) // codecheck: noqa G.NAM.03-CPP
-{
-    return 0;
-}
-
-static int Arginfo32(const struct PrintfInfo *info, size_t n, int *at, int *sz) // codecheck: noqa G.NAM.03-CPP
+static int Arginfo32(const struct PrintfInfo *info, size_t n, int *at, int *sz) 
 {
     size_t k = n < TEST_VALUE_32 ? n : TEST_VALUE_32;
     for (size_t i = 0; i < k; i++) {
@@ -210,7 +192,7 @@ static char g_seenPad;
 
 static int g_seenLeft;
 
-static int PadFunc(FILE *s, const struct PrintfInfo *info, const void *const *a) // codecheck: noqa G.NAM.03-CPP
+static int PadFunc(FILE *s, const struct PrintfInfo *info, const void *const *a) 
 {
     g_seenPad = static_cast<char>(info->pad);
     g_seenLeft = static_cast<int>(info->left);
@@ -219,7 +201,7 @@ static int PadFunc(FILE *s, const struct PrintfInfo *info, const void *const *a)
 
 static int g_seenPrec;
 
-static int PrecFunc(FILE *s, const struct PrintfInfo *info, const void *const *a) // codecheck: noqa G.NAM.03-CPP
+static int PrecFunc(FILE *s, const struct PrintfInfo *info, const void *const *a) 
 {
     g_seenPrec = info->prec;
     return fputc('.', s);
@@ -270,8 +252,7 @@ static void *OutThr(void *arg)
     while (!atomic_load(&g_stopFlag)) {
         char b[16];
         long v = 1;
-        const char *outFmt = "%B";
-        if (g_snFmt(b, sizeof(b), outFmt, &v) < 0) { // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+        if (snprintf(b, sizeof(b), "%B", &v) < 0) { 
             atomic_fetch_add(&g_outErr, 1);
         }
     }
@@ -295,9 +276,7 @@ static void *OutReg(void *arg)
     for (int i = 0; i < LOOP_COUNT_1000; i++) {
         char b[16];
         long v = 42;
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.FMT.05 G.CNS.02
-        const char *regFmt = "%B";
-        if (g_snFmt(b, sizeof(b), regFmt, &v) < 0 || strcmp(b, "42") != 0) {
+        if (snprintf(b, sizeof(b), "%B", &v) < 0 || strcmp(b, "42") != 0) {
             atomic_fetch_add(&g_mismatch, 1);
         }
     }
@@ -313,7 +292,7 @@ static void *Stress(void *arg)
         char sp = 'A' + (idx % 20);
         g_regSpecifier(sp, MyFunc, Arginfo0);
         char b[16];
-        (void)g_snFmt(b, sizeof(b), "%c", sp); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+        snprintf(b, sizeof(b), "%c", sp); 
     }
     return nullptr;
 }
@@ -373,8 +352,7 @@ static napi_value RegPrintfSpecifier_0300(napi_env env, napi_callback_info info)
         g_regSpecifier('B', LongPrintf, LongArginfo);
         long val = 42;
         char buf[64];
-        const char *longFmt = "%B";
-        int ret = g_snFmt(buf, sizeof(buf), longFmt, &val); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+        int ret = snprintf(buf, sizeof(buf), "%B", &val); 
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -408,14 +386,12 @@ static napi_value RegPrintfSpecifier_0400(napi_env env, napi_callback_info info)
         g_regSpecifier('B', LongPrintf, LongArginfo);
         long val = 42;
         char tf[128];
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
-        (void)g_snFmt(tf, sizeof(tf), "/data/local/tmp/t_%d", getpid());
+        (void)snprintf(tf, sizeof(tf), "/data/local/tmp/t_%d", getpid()); 
         FILE *fp = fopen(tf, "w");
         if (!(fp != nullptr)) {
             _exit(0);
         }
-        const char *fileFmt = "%B";
-        int ret = fprintf(fp, fileFmt, &val); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+        int ret = fprintf(fp, "%B", &val); 
         (void)fclose(fp);
         if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_2)) {
             _exit(0);
@@ -455,8 +431,7 @@ static napi_value RegPrintfSpecifier_0500(napi_env env, napi_callback_info info)
         g_regSpecifier('B', LongPrintf, LongArginfo);
         long val = 42;
         char *str = nullptr;
-        const char *wrapFmt = "[[%B]]";
-        int ret = g_asFmt(&str, wrapFmt, &val); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01
+        int ret = asprintf(&str, "[[%B]]", &val); 
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -491,8 +466,7 @@ static napi_value RegPrintfSpecifier_0600(napi_env env, napi_callback_info info)
         g_regSpecifier('B', WlongPrintf, LongArginfo);
         long val = 42;
         wchar_t wb[64];
-        const wchar_t *wbFmt = L"%B";
-        int ret = g_swFmt(wb, 64, wbFmt, &val); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+        int ret = swprintf(wb, 64, L"%B", &val);
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -722,8 +696,7 @@ static napi_value RegPrintfSpecifier_1700(napi_env env, napi_callback_info info)
         g_regSpecifier('C', FuncA, MyArginfo);
         g_regSpecifier('C', FuncB, MyArginfo);
         char buf[8];
-        const char *specCFmt = "%C";
-        (void)g_snFmt(buf, sizeof(buf), specCFmt); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02 G.SEC.01
+        (void)snprintf(buf, sizeof(buf), "%C"); 
         if (strcmp((buf), ("B")) != 0) {
             _exit(0);
         }
@@ -774,7 +747,7 @@ static napi_value RegPrintfSpecifier_1900(napi_env env, napi_callback_info info)
         return result;
     }
     char buf[16];
-    (void)g_snFmt(buf, sizeof(buf), "%d", TEST_VALUE_123); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+    (void)snprintf(buf, sizeof(buf), "%d", TEST_VALUE_123); 
     if (strcmp((buf), ("123")) != 0) {
         napi_create_int32(env, 1, &result);
         return result;
@@ -796,7 +769,7 @@ static napi_value RegPrintfSpecifier_2000(napi_env env, napi_callback_info info)
         return result;
     }
     char buf[16];
-    (void)g_snFmt(buf, sizeof(buf), "%s", "abc"); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+    (void)snprintf(buf, sizeof(buf), "%s", "abc"); 
     if (strcmp((buf), ("abc")) != 0) {
         napi_create_int32(env, 1, &result);
         return result;
@@ -814,7 +787,7 @@ static napi_value RegPrintfSpecifier_2100(napi_env env, napi_callback_info info)
     }
     g_regSpecifier('f', MyFunc, MyArginfo);
     char buf[32];
-    (void)g_snFmt(buf, sizeof(buf), "%f", 1.0); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+    (void)snprintf(buf, sizeof(buf), "%f", 1.0); 
     if (strcmp((buf), ("1.000000")) != 0) {
         napi_create_int32(env, 1, &result);
         return result;
@@ -833,8 +806,7 @@ static napi_value RegPrintfSpecifier_2200(napi_env env, napi_callback_info info)
         }
         char buf[16];
         errno = 0;
-        const char *qFmt = "%Q";
-        int ret = g_snFmt(buf, sizeof(buf), qFmt, 1); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+        int ret = snprintf(buf, sizeof(buf), "%Q", 1); 
         if (static_cast<int>(ret) != static_cast<int>(-1)) {
             _exit(1);
         }
@@ -866,7 +838,7 @@ static napi_value RegPrintfSpecifier_2300(napi_env env, napi_callback_info info)
     }
     char buf[16];
     for (int i = 0; i < LOOP_COUNT_10000; i++) {
-        int ret = g_snFmt(buf, sizeof(buf), "%d", 1); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+        int ret = snprintf(buf, sizeof(buf), "%d", 1);
         if (static_cast<int>(ret) <= static_cast<int>(0)) {
             napi_create_int32(env, 1, &result);
             return result;
@@ -886,7 +858,7 @@ static napi_value RegPrintfSpecifier_2400(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', FuncM2, MyArginfo);
         char buf[16];
-        int ret = g_snFmt(buf, sizeof(buf), "%B"); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02 G.SEC.01
+        int ret = snprintf(buf, sizeof(buf), "%B");
         if (static_cast<int>(ret) != static_cast<int>(-1)) {
             _exit(1);
         }
@@ -916,7 +888,7 @@ static napi_value RegPrintfSpecifier_2500(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', FuncM1, MyArginfo);
         char buf[16];
-        int ret = g_snFmt(buf, sizeof(buf), "%B"); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02 G.SEC.01
+        int ret = snprintf(buf, sizeof(buf), "%B"); 
         if (static_cast<int>(ret) != static_cast<int>(-1)) {
             _exit(1);
         }
@@ -946,7 +918,7 @@ static napi_value RegPrintfSpecifier_2600(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', Func0, MyArginfo);
         char buf[16] = {0};
-        int ret = g_snFmt(buf, sizeof(buf), "%B"); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02 G.SEC.01
+        int ret = snprintf(buf, sizeof(buf), "%B"); 
         if (static_cast<int>(ret) != static_cast<int>(0)) {
             _exit(1);
         }
@@ -979,7 +951,7 @@ static napi_value RegPrintfSpecifier_2700(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', MyFunc, Arginfo0);
         char buf[16];
-        int ret = g_snFmt(buf, sizeof(buf), "%B"); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02 G.SEC.01
+        int ret = snprintf(buf, sizeof(buf), "%B"); 
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -1009,11 +981,9 @@ static napi_value RegPrintfSpecifier_2800(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('X', MyFunc, Arginfo32);
         char buf[16];
-        const char *x32Fmt = "%X";
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.FMT.05 G.CNS.02 G.SEC.01
-        int ret = g_snFmt(buf, sizeof(buf), x32Fmt,
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
-            17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
+        int ret = snprintf(buf, sizeof(buf), "%X",
+		 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+		  17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32); 
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -1043,9 +1013,7 @@ static napi_value RegPrintfSpecifier_2900(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', PadFunc, Arginfo0);
         char buf[16];
-        const char *padDashFmt = "%0-B";
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
-        (void)g_snFmt(buf, sizeof(buf), padDashFmt, TEST_VALUE_123);
+        (void)snprintf(buf, sizeof(buf), "%0-B", TEST_VALUE_123); 
         if (static_cast<int>(g_seenPad) != static_cast<int>(' ')) {
             _exit(0);
         }
@@ -1078,9 +1046,7 @@ static napi_value RegPrintfSpecifier_3000(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', PadFunc, Arginfo0);
         char buf[16];
-        const char *padZeroFmt = "%0B";
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02 G.SEC.01
-        (void)g_snFmt(buf, sizeof(buf), padZeroFmt, TEST_VALUE_123);
+        (void)snprintf(buf, sizeof(buf), "%0B", TEST_VALUE_123); 
         if (static_cast<int>(g_seenPad) != static_cast<int>('0')) {
             _exit(0);
         }
@@ -1113,9 +1079,7 @@ static napi_value RegPrintfSpecifier_3100(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', PrecFunc, Arginfo0);
         char buf[16];
-        const char *precStarFmt = "%.*B";
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
-        (void)g_snFmt(buf, sizeof(buf), precStarFmt, -TEST_VALUE_5, TEST_VALUE_123);
+        (void)snprintf(buf, sizeof(buf), "%.*B", -TEST_VALUE_5, TEST_VALUE_123); 
         if (static_cast<int>(g_seenPrec) != static_cast<int>(-1)) {
             _exit(1);
         }
@@ -1145,8 +1109,7 @@ static napi_value RegPrintfSpecifier_3200(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', PrecFunc, Arginfo0);
         char buf[16];
-        const char *precFmt = "%.3B";
-        (void)g_snFmt(buf, sizeof(buf), precFmt, TEST_VALUE_123); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+        (void)snprintf(buf, sizeof(buf), "%.3B", TEST_VALUE_123); 
         if (static_cast<int>(g_seenPrec) != static_cast<int>(3)) {
             _exit(1);
         }
@@ -1176,8 +1139,7 @@ static napi_value RegPrintfSpecifier_3300(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', PrecFunc, Arginfo0);
         char buf[16];
-        const char *bFmt = "%B";
-        (void)g_snFmt(buf, sizeof(buf), bFmt, TEST_VALUE_123); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+        (void)snprintf(buf, sizeof(buf), "%B", TEST_VALUE_123); 
         if (static_cast<int>(g_seenPrec) != static_cast<int>(-1)) {
             _exit(1);
         }
@@ -1206,7 +1168,7 @@ static napi_value RegPrintfSpecifier_3400(napi_env env, napi_callback_info info)
     }
     g_regSpecifier('B', MyFunc, MyArginfo);
     char buf[64];
-    (void)g_snFmt(buf, sizeof(buf), "%d %s %f", 1, "a", 1.0); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+    (void)snprintf(buf, sizeof(buf), "%d %s %f", 1, "a", 1.0); 
     if (strcmp((buf), ("1 a 1.000000")) != 0) {
         napi_create_int32(env, 1, &result);
         return result;
@@ -1227,8 +1189,7 @@ static napi_value RegPrintfSpecifier_3500(napi_env env, napi_callback_info info)
         g_regSpecifier('C', MyFunc, Arginfo0);
         g_regSpecifier('D', MyFunc, Arginfo0);
         char buf[32];
-        const char *multiFmt = "%B %C %D";
-        int ret = g_snFmt(buf, sizeof(buf), multiFmt); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02 G.SEC.01
+        int ret = snprintf(buf, sizeof(buf), "%B %C %D"); 
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -1410,11 +1371,10 @@ static napi_value RegPrintfSpecifier_4200(napi_env env, napi_callback_info info)
 }
 
 
-EXTERN_C_START // codecheck: noqa G.EXP.05
-// codecheck: noqa G.FUD.05
+EXTERN_C_START 
 static napi_value Init(napi_env env, napi_value exports)
 {
-    LoadFunctions(); // codecheck: noqa G.NAM.03-CPP
+    LoadFunctions();
     napi_property_descriptor desc[] = {
         {"RegPrintfSpecifier_0100", nullptr, RegPrintfSpecifier_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RegPrintfSpecifier_0200", nullptr, RegPrintfSpecifier_0200, nullptr, nullptr, nullptr, napi_default, nullptr},

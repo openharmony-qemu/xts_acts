@@ -47,7 +47,7 @@ using std::atomic_load;
 #define MODIFIER_MAX_256 256
 #define MODIFIER_MAX_255 255
 #define MODIFIER_MAX_16 16
-#define MODIFIER_BIT_0X8000 0x8000 // codecheck: noqa G.NAM.03-CPP
+#define MODIFIER_BIT_0X8000 0x8000 
 #define SLEEP_DURATION_10 10
 #define TEST_DOUBLE_2_0 2.0
 #define TEST_DOUBLE_3_0 3.0
@@ -56,31 +56,31 @@ using std::atomic_load;
 #define ARGINFO_MAX_32 32
 
 
-struct PrintfInfo { // codecheck: noqa G.NAM.03-CPP
+struct PrintfInfo { 
     int prec;
     int width;
     wchar_t spec;
-    unsigned int isLongDouble : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int isShort : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int isLong : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int alt : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int space : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int left : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int showsign : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int group : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int extra : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int isChar : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int wide : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int i18n : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int isBinary128 : 1; // codecheck: noqa G.NAM.03-CPP
-    unsigned int reservedPad : 4; // codecheck: noqa G.NAM.03-CPP
+    unsigned int isLongDouble : 1;
+    unsigned int isShort : 1; 
+    unsigned int isLong : 1; 
+    unsigned int alt : 1; 
+    unsigned int space : 1; 
+    unsigned int left : 1; 
+    unsigned int showsign : 1; 
+    unsigned int group : 1; 
+    unsigned int extra : 1; 
+    unsigned int isChar : 1; 
+    unsigned int wide : 1; 
+    unsigned int i18n : 1; 
+    unsigned int isBinary128 : 1; 
+    unsigned int reservedPad : 4; 
     unsigned short user;
     wchar_t pad;
 };
-typedef int PrintfFunction(FILE *, const struct PrintfInfo *, const void *const *); // codecheck: noqa G.NAM.03-CPP
-// codecheck: noqa G.NAM.03-CPP
+typedef int PrintfFunction(FILE *, const struct PrintfInfo *, const void *const *); 
+
 typedef int PrintfArginfoSizeFunction(const struct PrintfInfo *, size_t, int *, int *);
-typedef void PrintfVaArgFunction(void *, va_list *); // codecheck: noqa G.NAM.03-CPP
+typedef void PrintfVaArgFunction(void *, va_list *);
 #define PA_INT 0
 #define PA_CHAR 1
 #define PA_STRING 2
@@ -93,29 +93,22 @@ typedef void PrintfVaArgFunction(void *, va_list *); // codecheck: noqa G.NAM.03
 #define PA_FLAG_SHORT (1 << 10)
 #define PA_FLAG_PTR (1 << 11)
 
-typedef int (*RegSpecifierFnT)(int, PrintfFunction, PrintfArginfoSizeFunction); // codecheck: noqa G.NAM.03-CPP
-typedef int (*RegModifierFnT)(const wchar_t *); // codecheck: noqa G.NAM.03-CPP
-typedef int (*RegTypeFnT)(PrintfVaArgFunction); // codecheck: noqa G.NAM.03-CPP
-static RegSpecifierFnT g_regSpecifier = nullptr; // codecheck: noqa G.NAM.03-CPP
-static RegModifierFnT g_regModifier = nullptr; // codecheck: noqa G.NAM.03-CPP
-static RegTypeFnT g_regType = nullptr; // codecheck: noqa G.NAM.03-CPP
-typedef int (*SnFmtFnT)(char *, size_t, const char *, ...); // codecheck: noqa G.NAM.03-CPP
-static SnFmtFnT g_snFmt = nullptr; // codecheck: noqa G.NAM.03-CPP
-static void LoadFunctions(void) // codecheck: noqa G.NAM.03-CPP G.FMT.03
+typedef int (*RegSpecifierFnT)(int, PrintfFunction, PrintfArginfoSizeFunction); 
+typedef int (*RegModifierFnT)(const wchar_t *); 
+typedef int (*RegTypeFnT)(PrintfVaArgFunction); 
+static RegSpecifierFnT g_regSpecifier = nullptr;
+static RegModifierFnT g_regModifier = nullptr; 
+static RegTypeFnT g_regType = nullptr; 
+static void LoadFunctions(void) 
 {
     if (!g_regSpecifier) {
-        // codecheck: noqa G.NAM.03-CPP
         g_regSpecifier = (RegSpecifierFnT)dlsym(RTLD_DEFAULT, "register_printf_specifier");
     }
     if (!g_regModifier) {
-        // codecheck: noqa G.NAM.03-CPP
         g_regModifier = (RegModifierFnT)dlsym(RTLD_DEFAULT, "register_printf_modifier");
     }
     if (!g_regType) {
-        g_regType = (RegTypeFnT)dlsym(RTLD_DEFAULT, "register_printf_type"); // codecheck: noqa G.NAM.03-CPP
-    }
-    if (!g_snFmt) {
-        g_snFmt = (SnFmtFnT)dlsym(RTLD_DEFAULT, "snprintf"); // codecheck: noqa G.NAM.03-CPP
+        g_regType = (RegTypeFnT)dlsym(RTLD_DEFAULT, "register_printf_type"); 
     }
 }
 static void MyVa(void *mem, va_list *ap)
@@ -124,7 +117,7 @@ static void MyVa(void *mem, va_list *ap)
     *p = va_arg(*ap, long);
 }
 
-struct Pair { // codecheck: noqa G.NAM.03-CPP
+struct Pair { 
     long i;
     double d;
 };
@@ -133,46 +126,42 @@ static int g_pairType;
 
 static void PairVa(void *mem, va_list *ap)
 {
-    struct Pair *p = reinterpret_cast<struct Pair *>(mem); // codecheck: noqa G.NAM.03-CPP
+    struct Pair *p = reinterpret_cast<struct Pair *>(mem);
     p->i = va_arg(*ap, long);
     p->d = va_arg(*ap, double);
 }
 
-// codecheck: noqa G.NAM.03-CPP G.FMT.03
 static int PairPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    const struct Pair *p = *static_cast<const struct Pair *const *>(a[0]); // codecheck: noqa G.EXP.14
-    return fprintf(s, "(%ld, %f)", p->i, p->d); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+    const struct Pair *p = *static_cast<const struct Pair *const *>(a[0]); 
+    return fprintf(s, "(%ld, %f)", p->i, p->d); 
 }
 
-// codecheck: noqa G.NAM.03-CPP G.FMT.03
 static int PairArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 {
     if (n > 0) {
         at[0] = g_pairType;
-        sz[0] = sizeof(struct Pair); // codecheck: noqa G.NAM.03-CPP
+        sz[0] = sizeof(struct Pair); 
     }
     return 1;
 }
 
-struct Tp { // codecheck: noqa G.NAM.03-CPP
+struct Tp { 
     long i;
     double d;
 };
 
-// codecheck: noqa G.NAM.03-CPP G.FMT.03
 static int TpPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    const struct Tp *p = *static_cast<const struct Tp *const *>(a[0]); // codecheck: noqa G.EXP.14
-    return fprintf(s, "(%ld, %f)", p->i, p->d); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+    const struct Tp *p = *static_cast<const struct Tp *const *>(a[0]); 
+    return fprintf(s, "(%ld, %f)", p->i, p->d); 
 }
 
-// codecheck: noqa G.NAM.03-CPP G.FMT.03
 static int TpArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 {
     if (n > 0) {
         at[0] = PA_POINTER;
-        sz[0] = sizeof(struct Tp*); // codecheck: noqa G.NAM.03-CPP
+        sz[0] = sizeof(struct Tp*);
     }
     return 1;
 }
@@ -181,23 +170,22 @@ static int g_vtype;
 
 static void VVa(void *mem, va_list *ap)
 {
-    struct Pair *p = reinterpret_cast<struct Pair *>(mem); // codecheck: noqa G.NAM.03-CPP
+    struct Pair *p = reinterpret_cast<struct Pair *>(mem); 
     p->i = va_arg(*ap, long);
     p->d = va_arg(*ap, double);
 }
 
-// codecheck: noqa G.NAM.03-CPP G.FMT.03
 static int VPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    const struct Pair *p = *static_cast<const struct Pair *const *>(a[0]); // codecheck: noqa G.EXP.14
-    return fprintf(s, "(%ld, %f)", p->i, p->d); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+    const struct Pair *p = *static_cast<const struct Pair *const *>(a[0]); 
+    return fprintf(s, "(%ld, %f)", p->i, p->d); 
 }
 
-static int VArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz) // codecheck: noqa G.NAM.03-CPP G.FMT.03
+static int VArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 {
     if (n > 0) {
         at[0] = g_vtype;
-        sz[0] = sizeof(struct Pair); // codecheck: noqa G.NAM.03-CPP
+        sz[0] = sizeof(struct Pair); 
     }
     return 1;
 }
@@ -210,14 +198,12 @@ static void DblVa(void *mem, va_list *ap)
     *p = va_arg(*ap, double);
 }
 
-// codecheck: noqa G.NAM.03-CPP G.FMT.03
 static int DblPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    const double *p = *static_cast<const double *const *>(a[0]); // codecheck: noqa G.EXP.14
-    return fprintf(s, "%.2f", *p); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+    const double *p = *static_cast<const double *const *>(a[0]);
+    return fprintf(s, "%.2f", *p); 
 }
 
-// codecheck: noqa G.NAM.03-CPP G.FMT.03
 static int DblArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 {
     if (n > 0) {
@@ -227,13 +213,11 @@ static int DblArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
     return 1;
 }
 
-// codecheck: noqa G.NAM.03-CPP G.FMT.03
 static int UnkPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
     return fputc('.', s);
 }
 
-// codecheck: noqa G.NAM.03-CPP G.FMT.03
 static int UnkArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 {
     if (n > 0) {
@@ -405,9 +389,7 @@ static napi_value RegPrintfType_0700(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('P', PairPrintf, PairArginfo);
         char buf[64];
-        const char *pairFmt = "%P";
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
-        int ret = g_snFmt(buf, sizeof(buf), pairFmt, 1L, TEST_DOUBLE_2_0);
+        int ret = snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0); 
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -439,10 +421,9 @@ static napi_value RegPrintfType_0800(napi_env env, napi_callback_info info)
             _exit(0);
         }
         g_regSpecifier('P', TpPrintf, TpArginfo);
-        struct Tp v = {1, 2.0}; // codecheck: noqa G.NAM.03-CPP
+        struct Tp v = {1, 2.0}; 
         char buf[64];
-        const char *tpFmt = "%P";
-        (void)g_snFmt(buf, sizeof(buf), tpFmt, &v); // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
+        (void)snprintf(buf, sizeof(buf), "%P", &v); 
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
@@ -473,9 +454,7 @@ static napi_value RegPrintfType_0900(napi_env env, napi_callback_info info)
         g_vtype = g_regType(VVa);
         g_regSpecifier('P', VPrintf, VArginfo);
         char buf[64];
-        const char *vpairFmt = "%P";
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
-        (void)g_snFmt(buf, sizeof(buf), vpairFmt, 1L, TEST_DOUBLE_2_0);
+        (void)snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0); 
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
@@ -509,9 +488,7 @@ static napi_value RegPrintfType_1000(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('P', PairPrintf, PairArginfo);
         char buf[64];
-        const char *pair42Fmt = "%P";
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
-        (void)g_snFmt(buf, sizeof(buf), pair42Fmt, 42L, TEST_DOUBLE_3_14);
+        (void)snprintf(buf, sizeof(buf), "%P", 42L, TEST_DOUBLE_3_14); 
         if (!(strstr(buf, "42") != nullptr)) {
             _exit(1);
         }
@@ -542,9 +519,7 @@ static napi_value RegPrintfType_1100(napi_env env, napi_callback_info info)
         g_dblType = g_regType(DblVa);
         g_regSpecifier('P', DblPrintf, DblArginfo);
         char buf[32];
-        const char *dblFmt = "%P";
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
-        (void)g_snFmt(buf, sizeof(buf), dblFmt, TEST_DOUBLE_3_14);
+        (void)snprintf(buf, sizeof(buf), "%P", TEST_DOUBLE_3_14); 
         if (strcmp((buf), ("3.14")) != 0) {
             _exit(1);
         }
@@ -650,9 +625,7 @@ static napi_value RegPrintfType_1500(napi_env env, napi_callback_info info)
         g_regType(MyVa);
         }
         char buf[64];
-        const char *pairLoopFmt = "%P";
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.CNS.02
-        (void)g_snFmt(buf, sizeof(buf), pairLoopFmt, 1L, TEST_DOUBLE_2_0);
+        (void)snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0); 
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
@@ -682,9 +655,7 @@ static napi_value RegPrintfType_1600(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('X', UnkPrintf, UnkArginfo);
         char buf[16];
-        // codecheck: noqa G.FUU.03 G.FUU.21 G.FUU.01 G.FMT.05 G.CNS.02 G.SEC.01
-        const char *unkFmt = "%X";
-        (void)g_snFmt(buf, sizeof(buf), unkFmt, reinterpret_cast<void* *>(0));
+        (void)snprintf(buf, sizeof(buf), "%X", reinterpret_cast<void* *>(0));
         if (!(1)) {
             _exit(1);
         }
@@ -800,11 +771,10 @@ static napi_value RegPrintfType_2000(napi_env env, napi_callback_info info)
 }
 
 
-EXTERN_C_START // codecheck: noqa G.EXP.05
-// codecheck: noqa G.FUD.05
+EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
-    LoadFunctions(); // codecheck: noqa G.NAM.03-CPP
+    LoadFunctions();
     napi_property_descriptor desc[] = {
         {"RegPrintfType_0100", nullptr, RegPrintfType_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RegPrintfType_0200", nullptr, RegPrintfType_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
