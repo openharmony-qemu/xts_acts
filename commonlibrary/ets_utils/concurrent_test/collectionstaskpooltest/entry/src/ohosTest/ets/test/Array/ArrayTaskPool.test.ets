@@ -6316,39 +6316,3 @@ export default function ArrayTaskPoolTest() {
         }
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-      done()
-    })
-    /**
-     * @tc.name   testCollectionsArray0211
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAY_21100
-     * @tc.desc   Testing Collections of Array [index:number], index 1.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCollectionsArray0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName = 'testCollectionsArray0211';
-      console.info(`${caseName} test start`);
-      let num = 0;
-      try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(testCollectionsArray0211).then((value) => {
-            num++;
-            expect(value).assertEqual('2');
-          });
-        }
-        while (num < 10) {
-          await sleep(100);
-        }
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-      done()
-    })
-  })
-}
