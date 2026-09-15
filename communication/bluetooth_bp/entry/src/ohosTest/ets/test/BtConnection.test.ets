@@ -5058,5 +5058,35 @@ describe('btConnectionTest', () => {
         }
         done();
     })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERYRESULT_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERYRESULT_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off discoveryResult without callback param test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        let onReceiveEvent: (data: Array<bluetooth.DiscoveryResult>) => void = (data: Array<bluetooth.DiscoveryResult>) => {
+            console.info('bluetooth discoveryResult callback');
+        }
+        try {
+            bluetooth.on('discoveryResult', onReceiveEvent);
+            console.info('[bluetooth_js]on discoveryResult success');
+            await sleep(900);
+            bluetooth.off('discoveryResult');
+            console.info('[bluetooth_js]off discoveryResult without callback success');
+        } catch (error) {
+            console.info(`[bluetooth_js]off discoveryResult no callback error, code is ${error.code}, message is ${error.message}`);
+            if (error.code === 801) {
+                console.info('[bluetooth_js]discoveryResult is not support');
+                expect(error.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    })
 })
 }
