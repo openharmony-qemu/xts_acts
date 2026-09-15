@@ -2784,3 +2784,364 @@ export default function Uint8ClampedArrayAllTest() {
 
     /**
      * @tc.name   TypeArrayUint8ClampedArray0169
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0140
+     * @tc.desc   Verify real-world: Audio equalizer effect (gain per frequency)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const applyEqualizer = (samples: collections.Uint8ClampedArray, gains: number[]) => {
+        const output = new collections.Uint8ClampedArray(samples.length);
+        gains.forEach((gain, band) => {
+          const index = band % samples.length;
+          const signed = samples[index] - 128;
+          output[index] = (signed * gain) + 128;
+        });
+        return output;
+      };
+
+      const samples = new collections.Uint8ClampedArray([128, 150, 100]);
+      const gains = [1.5, 0.5, 2.0];
+      const processed = applyEqualizer(samples, gains);
+      expect(processed.toString()).assertEqual('128,139,72');
+      expect(processed.length).assertEqual(3);
+      expect(processed[0]).assertEqual(128);
+      expect(processed[1]).assertEqual(139);
+      expect(processed[2]).assertEqual(72);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ClampedArray0170
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0141
+     * @tc.desc   Verify real-world: QR code module data encoding
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const encodeQrPixels = (modules: number[][]): collections.Uint8ClampedArray => {
+        const flat = modules.flat();
+        const pixels: number[] = [];
+        flat.forEach(m => {
+          const value = m ? 0 : 255;
+          pixels.push(value, value, value, 255);
+        });
+        return new collections.Uint8ClampedArray(pixels);
+      };
+
+      const qrModules = [[1, 0], [0, 1]];
+      const pixels = encodeQrPixels(qrModules);
+      expect(pixels.length).assertEqual(16);
+      expect(pixels[0]).assertEqual(0);
+      expect(pixels[1]).assertEqual(0);
+      expect(pixels[2]).assertEqual(0);
+      expect(pixels[3]).assertEqual(255);
+      expect(pixels[4]).assertEqual(255);
+      expect(pixels[5]).assertEqual(255);
+      expect(pixels[6]).assertEqual(255);
+      expect(pixels[7]).assertEqual(255);
+      expect(pixels[8]).assertEqual(255);
+      expect(pixels[9]).assertEqual(255);
+      expect(pixels[10]).assertEqual(255);
+      expect(pixels[11]).assertEqual(255);
+      expect(pixels[12]).assertEqual(0);
+      expect(pixels[13]).assertEqual(0);
+      expect(pixels[14]).assertEqual(0);
+      expect(pixels[15]).assertEqual(255);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ClampedArray0171
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0142
+     * @tc.desc   Verify real-world: Industrial sensor data aggregation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const aggregateSensorData = (readings: number[][]): collections.Uint8ClampedArray => {
+        return new collections.Uint8ClampedArray(readings.map(channel => {
+          const avg = channel.reduce((sum, val) => sum + val, 0) / channel.length;
+          return (avg / 65535) * 255;
+        }));
+      };
+
+      const readings = [
+        [0, 65535, 32767],
+        [80000, 90000]
+      ];
+      const aggregated = aggregateSensorData(readings);
+      expect(aggregated.toString()).assertEqual('127,255');
+      expect(aggregated.length).assertEqual(2);
+      expect(aggregated[0]).assertEqual(127);
+      expect(aggregated[1]).assertEqual(255);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ClampedArray0172
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0143
+     * @tc.desc   Verify real-world: Color lookup table (LUT) application
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0172', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const applyLUT = (grayPixels: collections.Uint8ClampedArray, lut: collections.Uint8ClampedArray) => {
+        const rgbPixels = new collections.Uint8ClampedArray(grayPixels.length * 3);
+        for (let i = 0; i < grayPixels.length; i++) {
+          const index = grayPixels[i] * 3;
+          rgbPixels[i * 3] = lut[index];
+          rgbPixels[i * 3 + 1] = lut[index + 1];
+          rgbPixels[i * 3 + 2] = lut[index + 2];
+        }
+        return rgbPixels;
+      };
+
+      const sepiaLUT = new collections.Uint8ClampedArray(768);
+      for (let i = 0; i < 256; i++) {
+        sepiaLUT[i * 3] = Math.min(255, i * 1.2);
+        sepiaLUT[i * 3 + 1] = Math.min(255, i * 0.9);
+        sepiaLUT[i * 3 + 2] = Math.min(255, i * 0.6);
+      }
+
+      const gray = new collections.Uint8ClampedArray([100, 200]);
+      const colored = applyLUT(gray, sepiaLUT);
+      expect(colored[0]).assertEqual(120);
+      expect(colored[4]).assertEqual(180);
+      expect(colored.length).assertEqual(6);
+      expect(colored[1]).assertEqual(90);
+      expect(colored[2]).assertEqual(60);
+      expect(colored[3]).assertEqual(240);
+      expect(colored[5]).assertEqual(120);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ClampedArray0173
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0144
+     * @tc.desc   Verify real-world: GPS coordinate encoding (simple)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const encodeCoordinates = (lat: number, lon: number): collections.Uint8ClampedArray => {
+        const latEncoded = ((lat + 90) / 180) * 255;
+        const lonEncoded = ((lon + 180) / 360) * 255;
+        return new collections.Uint8ClampedArray([latEncoded, lonEncoded]);
+      };
+
+      const encoded = encodeCoordinates(0, 0);
+      expect(encoded[0]).assertEqual(128);
+      expect(encoded[1]).assertEqual(128);
+      expect(encoded.length).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ClampedArray0174
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0145
+     * @tc.desc   Verify real-world: Barcode data encoding (Code 128)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0174', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const encodeBarcode = (modules: number[], height: number): collections.Uint8ClampedArray => {
+        const pixels: number[] = [];
+        modules.forEach(m => {
+          const color = m ? 0 : 255;
+          for (let i = 0; i < height; i++) {
+            pixels.push(color);
+          }
+        });
+        return new collections.Uint8ClampedArray(pixels);
+      };
+
+      const modules = [1, 0, 1, 1];
+      const barcode = encodeBarcode(modules, 3);
+      expect(barcode.length).assertEqual(12);
+      expect(barcode[1]).assertEqual(0);
+      expect(barcode[2]).assertEqual(0);
+      expect(barcode[0]).assertEqual(0);
+      expect(barcode[3]).assertEqual(255);
+      expect(barcode[4]).assertEqual(255);
+      expect(barcode[5]).assertEqual(255);
+      expect(barcode[6]).assertEqual(0);
+      expect(barcode[7]).assertEqual(0);
+      expect(barcode[8]).assertEqual(0);
+      expect(barcode[9]).assertEqual(0);
+      expect(barcode[10]).assertEqual(0);
+      expect(barcode[11]).assertEqual(0);
+
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ClampedArray0175
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0146
+     * @tc.desc   Verify real-world: LED display color blending
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const blendColors = (
+        color1: collections.Uint8ClampedArray,
+        color2: collections.Uint8ClampedArray,
+        alpha: number
+      ): collections.Uint8ClampedArray => {
+        return new collections.Uint8ClampedArray([
+          color1[0] * (1 - alpha) + color2[0] * alpha,
+          color1[1] * (1 - alpha) + color2[1] * alpha,
+          color1[2] * (1 - alpha) + color2[2] * alpha
+        ]);
+      };
+
+      const red = new collections.Uint8ClampedArray([255, 0, 0]);
+      const blue = new collections.Uint8ClampedArray([0, 0, 255]);
+      const purple = blendColors(red, blue, 0.5);
+      expect(purple.toString()).assertEqual('128,0,128');
+      expect(purple.length).assertEqual(3);
+      expect(purple[0]).assertEqual(128);
+      expect(purple[1]).assertEqual(0);
+      expect(purple[2]).assertEqual(128);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ClampedArray0176
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0147
+     * @tc.desc   Verify real-world: Automotive sensor data normalization
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0176', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const normalizeCarSensors = (values: GeneratedTypeLiteralInterface_1): collections.Uint8ClampedArray => {
+        return new collections.Uint8ClampedArray([
+          (values.speed / 200) * 255,
+          (values.fuel / 100) * 255,
+          ((values.temp + 40) / 160) * 255
+        ]);
+      };
+
+      const sensors: GeneratedTypeLiteralInterface_1 = { speed: 100, fuel: 50, temp: 40 };
+      const normalized = normalizeCarSensors(sensors);
+      expect(normalized.toString()).assertEqual('128,128,128');
+      expect(normalized.length).assertEqual(3);
+      expect(normalized[0]).assertEqual(128);
+      expect(normalized[1]).assertEqual(128);
+      expect(normalized[2]).assertEqual(128);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ClampedArray0177
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0148
+     * @tc.desc   Verify real-world: Text rendering (glyph bitmap generation)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0177', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+
+      const generateGlyph = (): collections.Uint8ClampedArray => {
+        const glyph = new collections.Uint8ClampedArray(64);
+
+        for (let y = 0; y < 8; y++) {
+          for (let x = 0; x < 8; x++) {
+            const dx = x - 3.5;
+            const dy = y - 3.5;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            glyph[y * 8 + x] = Math.max(0, Math.min(255, 255 * (3 - dist)));
+          }
+        }
+        return glyph;
+      };
+
+      const glyph = generateGlyph();
+      expect(glyph.length).assertEqual(64);
+      expect(glyph[3 * 8 + 3]).assertEqual(255);
+      expect(glyph[0]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ClampedArray0178
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0149
+     * @tc.desc   Verify real-world: Robotics motor speed calibration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0178', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const calibrateSpeeds = (speeds: number[]): collections.Uint8ClampedArray => {
+        return new collections.Uint8ClampedArray(speeds.map(speed => {
+          return ((speed + 100) / 200) * 255;
+        }));
+      };
+
+      const targetSpeeds = [-100, 0, 50, 150];
+      const calibrated = calibrateSpeeds(targetSpeeds);
+      expect(calibrated.toString()).assertEqual('0,128,191,255');
+      expect(calibrated.length).assertEqual(4);
+      expect(calibrated[0]).assertEqual(0);
+      expect(calibrated[1]).assertEqual(128);
+      expect(calibrated[2]).assertEqual(191);
+      expect(calibrated[3]).assertEqual(255);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ClampedArray0179
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0150
+     * @tc.desc   Verify real-world: Weather station data encoding
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0179', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const encodeWeatherData = (data: GeneratedTypeLiteralInterface_2): collections.Uint8ClampedArray => {
+        return new collections.Uint8ClampedArray([
+          (data.humidity / 100) * 255,
+          ((data.pressure - 900) / 200) * 255
+        ]);
+      };
+
+      const weather: GeneratedTypeLiteralInterface_2 = { humidity: 50, pressure: 1000 };
+      const encoded = encodeWeatherData(weather);
+      expect(encoded.toString()).assertEqual('128,128');
+      expect(encoded.length).assertEqual(2);
+      expect(encoded[0]).assertEqual(128);
+      expect(encoded[1]).assertEqual(128);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ClampedArray0180
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_CLAMPED_ARRAY_ALL_0151
+     * @tc.desc   Verify real-world: Security system motion detection
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint8ClampedArray0180', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const detectMotion = (
+        frame1: collections.Uint8ClampedArray,
+        frame2: collections.Uint8ClampedArray,
+        threshold: number
+      ): collections.Uint8ClampedArray => {
+        const motion = new collections.Uint8ClampedArray(frame1.length);
+        for (let i = 0; i < frame1.length; i++) {
+          const diff = Math.abs(frame1[i] - frame2[i]);
+          motion[i] = diff > threshold ? 255 : 0;
+        }
+        return motion;
+      };
+
+      const frame1 = new collections.Uint8ClampedArray([100, 150, 200]);
+      const frame2 = new collections.Uint8ClampedArray([105, 150, 220]);
+      const motion = detectMotion(frame1, frame2, 10);
+      expect(motion.toString()).assertEqual('0,0,255');
+      expect(motion.length).assertEqual(3);
+      expect(motion[0]).assertEqual(0);
+      expect(motion[1]).assertEqual(0);
+      expect(motion[2]).assertEqual(255);
+    })
+
+  })
+}
