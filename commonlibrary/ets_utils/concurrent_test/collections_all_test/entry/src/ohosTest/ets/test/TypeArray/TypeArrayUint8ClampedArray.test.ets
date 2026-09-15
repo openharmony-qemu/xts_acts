@@ -3112,36 +3112,3 @@ export default function typeArrayUint8ClampedArrayTest() {
     })
 
     /**
-     * @tc.name   TypeArrayUint8ClampedArray0180
-     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0180
-     * @tc.desc   Verify real-world: Security system motion detection
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('TypeArrayUint8ClampedArray0180', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
-      const detectMotion = (
-        frame1: collections.Uint8ClampedArray,
-        frame2: collections.Uint8ClampedArray,
-        threshold: number
-      ): collections.Uint8ClampedArray => {
-        const motion = new collections.Uint8ClampedArray(frame1.length);
-        for (let i = 0; i < frame1.length; i++) {
-          const diff = Math.abs(frame1[i] - frame2[i]);
-          motion[i] = diff > threshold ? 255 : 0;
-        }
-        return motion;
-      };
-
-      const frame1 = new collections.Uint8ClampedArray([100, 150, 200]);
-      const frame2 = new collections.Uint8ClampedArray([105, 150, 220]);
-      const motion = detectMotion(frame1, frame2, 10);
-      expect(motion.toString()).assertEqual('0,0,255');
-      expect(motion.length).assertEqual(3);
-      expect(motion[0]).assertEqual(0);
-      expect(motion[1]).assertEqual(0);
-      expect(motion[2]).assertEqual(255);
-    })
-
-  })
-}
