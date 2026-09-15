@@ -14,9 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import RectValue from '../../MainAbility/common/Rect';
 import router from '@ohos.router';
 
 export default function SwiperFakeDragTest() {
@@ -56,13 +54,7 @@ export default function SwiperFakeDragTest() {
       console.info('[SwiperFakeDragTest_0100] START');
       try {
         await CommonFunc.sleep(1000);
-        let driver = await Driver.create()
-        let list: RectValue = CommonFunc.getComponentRect('swiper1');
-        await CommonFunc.sleep(1000);
-        await driver.swipe(Math.round(list.left + (list.right - list.left) / 2),
-          Math.round(list.top + (list.bottom - list.top) / 2),
-          Math.round(list.left + (list.right - list.left) / 4),
-          Math.round(list.top + (list.bottom - list.top) / 2));
+        sendEventByKey('btn_fakeDrag_0100', 10, '');
         await CommonFunc.sleep(1000);
         let isFakeDraggingFlag: boolean | undefined = AppStorage.get('isFakeDraggingFlag');
         expect(isFakeDraggingFlag == false).assertTrue();
@@ -93,16 +85,8 @@ export default function SwiperFakeDragTest() {
       try {
         // 验证页面加载成功且方法能正常调用
         await CommonFunc.sleep(1000);
-        let driver = await Driver.create()
-        let list: RectValue = CommonFunc.getComponentRect('swiper2');
-        console.info('[SwiperFakeDragTest_0200] list');
+        sendEventByKey('btn_fakeDrag_0200', 10, '');
         await CommonFunc.sleep(1000);
-        await driver.swipe(Math.round(list.left + (list.right - list.left) * 0.8),
-          Math.round(list.top + (list.bottom - list.top) / 2),
-          Math.round(list.left + (list.right - list.left) * 0.2),
-          Math.round(list.top + (list.bottom - list.top) / 2));
-        await CommonFunc.sleep(2000);
-        console.info('[SwiperFakeDragTest_0200] swipe');
         let isFakeDraggingFlag: boolean | undefined = AppStorage.get('isFakeDraggingFlag');
         console.info('[SwiperFakeDragTest_0200] isFakeDraggingFlag is ', isFakeDraggingFlag);
         expect(isFakeDraggingFlag == false).assertTrue();
