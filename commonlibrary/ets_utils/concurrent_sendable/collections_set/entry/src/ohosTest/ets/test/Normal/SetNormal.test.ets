@@ -2676,3 +2676,414 @@ export default function SetNormalTest() {
     it('testSet0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testSet0117";
       try {
+        const setList = new collections.Set<string>(["a", "b", "c"]);
+        const iterator = setList.values();
+        expect(iterator.next().value).assertEqual("a");
+        expect(iterator.next().value).assertEqual("b");
+        expect(iterator.next().value).assertEqual("c");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0118
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0118
+     * @tc.desc   Testing the values of set, set is not null, add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0118";
+      try {
+        const setList = new collections.Set<string>(["a", "b", "c"]);
+        setList.add("abc");
+        const iterator = setList.values();
+        expect(iterator.next().value).assertEqual("a");
+        expect(iterator.next().value).assertEqual("b");
+        expect(iterator.next().value).assertEqual("c");
+        expect(iterator.next().value).assertEqual("abc");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0119
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0119
+     * @tc.desc   Testing the values of set, set is not null, delete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0119";
+      try {
+        const setList = new collections.Set<string>(["a", "b", "c"]);
+        let rst = setList.delete("a");
+        expect(rst).assertTrue();
+        const iterator = setList.values();
+        expect(iterator.next().value).assertEqual("b");
+        expect(iterator.next().value).assertEqual("c");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0120
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0120
+     * @tc.desc   Testing the values of set, set is not null, clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0120";
+      try {
+        const setList = new collections.Set<string>(["a", "b", "c"]);
+        setList.clear();
+        const iterator = setList.values();
+        expect(iterator.next().value == null).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0121
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0121
+     * @tc.desc   Testing the clear of set, set is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0121";
+      try {
+        const setList = new collections.Set<number>();
+        setList.clear();
+        const iterator = setList.values();
+        expect(iterator.next().value == null).assertEqual(true);
+        expect(setList.size).assertEqual(0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0122
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0122
+     * @tc.desc   Testing the clear of set, set is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0122";
+      try {
+        const setList = new collections.Set<number>([1, 2, 3]);
+        setList.clear();
+        const iterator = setList.values();
+        expect(iterator.next().value == null).assertEqual(true);
+        expect(setList.size).assertEqual(0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0123
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0123
+     * @tc.desc   Testing the clear of set, set is not null, clear, add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0123";
+      try {
+        const setList = new collections.Set<number>([1, 2, 3]);
+        setList.clear();
+        expect(setList.size).assertEqual(0);
+        setList.add(3);
+        const iterator = setList.values();
+        expect(iterator.next().value).assertEqual(3);
+        expect(setList.size).assertEqual(1);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0124
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0124
+     * @tc.desc   Testing the delete of set, delete non-exist keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0124";
+      try {
+        const setList = new collections.Set<number>([1, 3, 5]);
+        let rst = setList.delete(2);
+        expect(rst).assertFalse();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0125
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0125
+     * @tc.desc   Testing the delete of set, delete exist keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0125";
+      try {
+        const setList = new collections.Set<number>([1, 3, 5]);
+        let rst = setList.delete(3);
+        expect(rst).assertTrue();
+        const iterator = setList.values();
+        expect(iterator.next().value).assertEqual(1);
+        expect(iterator.next().value).assertEqual(5);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0126
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0126
+     * @tc.desc   Testing the delete of set, delete null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0126";
+      try {
+        const setList = new collections.Set<null>([null]);
+        expect(setList.size).assertEqual(1);
+        let rst = setList.delete(null);
+        expect(rst).assertTrue();
+        const iterator = setList.values();
+        expect(iterator.next().value == null).assertEqual(true);
+        expect(setList.size).assertEqual(0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0127
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0127
+     * @tc.desc   Testing the delete of set, delete undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0127";
+      try {
+        const setList = new collections.Set<undefined>([undefined]);
+        expect(setList.size).assertEqual(1);
+        let rst = setList.delete(undefined);
+        expect(rst).assertTrue();
+        expect(setList.size).assertEqual(0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0128
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0128
+     * @tc.desc   Testing the has of set, has non-exist keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0128";
+      try {
+        const setList = new collections.Set<number>([1, 2, 3]);
+        let rst = setList.has(5);
+        expect(rst).assertFalse();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0129
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0129
+     * @tc.desc   Testing the has of set, has exist keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0129";
+      try {
+        const setList = new collections.Set<number>([1, 2, 3]);
+        let rst = setList.has(2);
+        expect(rst).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0130
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0130
+     * @tc.desc   Testing the has of set, has null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0130";
+      try {
+        const setList = new collections.Set<null>([null]);
+        let rst = setList.has(null);
+        expect(rst).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0131
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0131
+     * @tc.desc   Testing the has of set, has undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0131";
+      try {
+        const setList = new collections.Set<undefined>([undefined]);
+        let rst = setList.has(undefined);
+        expect(rst).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0132
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0132
+     * @tc.desc   Testing the add of set, add non-exist value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0132";
+      try {
+        const setList = new collections.Set<number>([1, 2]);
+        setList.add(3);
+        const iterator = setList.values();
+        expect(iterator.next().value).assertEqual(1);
+        expect(iterator.next().value).assertEqual(2);
+        expect(iterator.next().value).assertEqual(3);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0133
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0133
+     * @tc.desc   Testing the add of set, add exist value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0133";
+      try {
+        const setList = new collections.Set<number>([1, 2, 3]);
+        setList.add(3);
+        const iterator = setList.values();
+        expect(iterator.next().value).assertEqual(1);
+        expect(iterator.next().value).assertEqual(2);
+        expect(iterator.next().value).assertEqual(3);
+        expect(setList.size).assertEqual(3);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0134
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0134
+     * @tc.desc   Testing the add of set, add null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0134";
+      try {
+        const setList = new collections.Set<null>([null]);
+        expect(setList.size).assertEqual(1);
+        setList.add(null);
+        const iterator = setList.values();
+        expect(iterator.next().value == null).assertEqual(true);
+        expect(setList.size).assertEqual(1);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testSet0135
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_NORMAL_0135
+     * @tc.desc   Testing the add of set, add undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testSet0135";
+      try {
+        const setList = new collections.Set<undefined>([undefined]);
+        expect(setList.size).assertEqual(1);
+        setList.add(undefined);
+        const iterator = setList.values();
+        expect(iterator.next().value).assertEqual(undefined);
+        expect(setList.size).assertEqual(1);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+  })
+}
