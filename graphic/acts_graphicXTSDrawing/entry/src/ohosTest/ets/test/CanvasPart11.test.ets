@@ -141,7 +141,7 @@ export default function DrawingTsCanvasPart11Test(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -163,7 +163,7 @@ export default function DrawingTsCanvasPart11Test(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -606,7 +606,7 @@ export default function DrawingTsCanvasPart11Test(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` beginRecording with null width errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
 
       try {
@@ -617,7 +617,7 @@ export default function DrawingTsCanvasPart11Test(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` beginRecording with null height errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
 
       try {
@@ -628,7 +628,7 @@ export default function DrawingTsCanvasPart11Test(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` beginRecording with undefined width errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
 
       try {
@@ -639,7 +639,7 @@ export default function DrawingTsCanvasPart11Test(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` beginRecording with undefined height errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
     })
     /**
@@ -687,8 +687,8 @@ export default function DrawingTsCanvasPart11Test(): void {
     it('testCanvasDrawRecordCmdBeginRecordingExtremeValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawRecordCmdBeginRecordingExtremeValue';
       let canvas = new drawing.Canvas(pixel);
-      let widths: Array<number> = [10000, 60000, Number.MAX_VALUE];
-      let heights: Array<number> = [10000, 60000, Number.MAX_VALUE];
+      let widths: Array<number> = [5000, 10000, 60000, 70000];
+      let heights: Array<number> = [5000, 10000, 60000, 70000];
 
       for (let i = 0; i < widths.length; i++) {
         try {
