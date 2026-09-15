@@ -81,7 +81,6 @@ napi_value VpeVideoApiTest06100(napi_env env, napi_callback_info info);
 napi_value VpeVideoApiTest06200(napi_env env, napi_callback_info info);
 napi_value VpeVideoApiTest06300(napi_env env, napi_callback_info info);
 napi_value VpeVideoApiTest06500(napi_env env, napi_callback_info info);
-napi_value VpeVideoApiTest06600(napi_env env, napi_callback_info info);
 napi_value VpeVideoApiTest06800(napi_env env, napi_callback_info info);
 napi_value VpeVideoApiTest06900(napi_env env, napi_callback_info info);
 napi_value VpeVideoApiTest07000(napi_env env, napi_callback_info info);

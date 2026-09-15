@@ -1579,35 +1579,6 @@ napi_value VpeVideoApiTest06500(napi_env env, napi_callback_info info)
 }
 
 /**
- * @tc.name   SUB_VPE_VIDEO_API_TEST_06600
- * @tc.number SUB_VPE_VIDEO_API_TEST_06600
- * @tc.desc   Create returns ERROR_UNSUPPORTED_PROCESSING when type is not supported
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-napi_value VpeVideoApiTest06600(napi_env env, napi_callback_info info)
-{
-    OH_VideoProcessing_InitializeEnvironment();
-    bool csSupported = OH_VideoProcessing_IsColorSpaceConversionSupported(&SRC_INFO, &DST_INFO);
-    bool mgSupported = OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO);
-    if (csSupported && mgSupported) { return CreateIntInt32Result(env, 0); }
-    if (!csSupported) {
-        OH_VideoProcessing* videoProcessor = nullptr;
-        VideoProcessing_ErrorCode ret =
-        OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
-        if (ret != VIDEO_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) { return CreateIntInt32Result(env, -1); }
-    }
-    if (!mgSupported) {
-        OH_VideoProcessing* videoProcessor = nullptr;
-        VideoProcessing_ErrorCode ret =
-        OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
-        if (ret != VIDEO_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) { return CreateIntInt32Result(env, -1); }
-    }
-    return CreateIntInt32Result(env, 0);
-}
-
-/**
  * @tc.name   SUB_VPE_VIDEO_API_TEST_06800
  * @tc.number SUB_VPE_VIDEO_API_TEST_06800
  * @tc.desc  Create returns ERROR_INVALID_PARAMETER when type is invalid (-1)

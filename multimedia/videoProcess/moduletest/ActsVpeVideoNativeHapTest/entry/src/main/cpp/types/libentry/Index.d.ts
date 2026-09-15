@@ -78,7 +78,6 @@ export const VpeVideoApiTest06100: () => Promise<number>;
 export const VpeVideoApiTest06200: () => Promise<number>;
 export const VpeVideoApiTest06300: () => Promise<number>;
 export const VpeVideoApiTest06500: () => Promise<number>;
-export const VpeVideoApiTest06600: () => Promise<number>;
 export const VpeVideoApiTest06800: () => Promise<number>;
 export const VpeVideoApiTest06900: () => Promise<number>;
 export const VpeVideoApiTest07000: () => Promise<number>;

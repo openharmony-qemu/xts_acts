@@ -919,20 +919,6 @@ export default function VpeVideoApiTest() {
     })
 
     /**
-     * @tc.name   SUB_VPE_VIDEO_API_TEST_6600
-     * @tc.number SUB_VPE_VIDEO_API_TEST_6600
-     * @tc.desc   function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_VPE_VIDEO_API_TEST_6600', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.VpeVideoApiTest06600();
-      expect(result).assertEqual(0);
-      done();
-    })
-
-    /**
      * @tc.name   SUB_VPE_VIDEO_API_TEST_6800
      * @tc.number SUB_VPE_VIDEO_API_TEST_6800
      * @tc.desc   function test

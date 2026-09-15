@@ -179,7 +179,6 @@ static void InitPush3(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("VpeVideoApiTest06200", VpeVideoApiTest06200));
     desc.push_back(XL("VpeVideoApiTest06300", VpeVideoApiTest06300));
     desc.push_back(XL("VpeVideoApiTest06500", VpeVideoApiTest06500));
-    desc.push_back(XL("VpeVideoApiTest06600", VpeVideoApiTest06600));
     desc.push_back(XL("VpeVideoApiTest06800", VpeVideoApiTest06800));
     desc.push_back(XL("VpeVideoApiTest06900", VpeVideoApiTest06900));
     desc.push_back(XL("VpeVideoApiTest07000", VpeVideoApiTest07000));
