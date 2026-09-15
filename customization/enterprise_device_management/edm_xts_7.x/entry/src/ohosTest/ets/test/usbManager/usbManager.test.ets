@@ -48,6 +48,7 @@ export default function usbManagerTest() {
     testAddDisallowedPermissiveUsbDevices();
     testRemoveDisallowedPermissiveUsbDevices();
     testGetDisallowedPermissiveUsbDevices();
+    testGetUsbSerialNumber();
   })
 }
 
@@ -748,6 +749,173 @@ function testGetDisallowedPermissiveUsbDevices() {
       usbManager.removeDisallowedPermissiveUsbDevices(SELFWANT, PERMISSIVE_USB_DEVICES);
     } catch (error) {
       expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetUsbSerialNumber() {
+  /**
+   * @tc.name   test_getUsbSerialNumber_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_SERIAL_NUMBER_JS_0100
+   * @tc.desc   test getUsbSerialNumber without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getUsbSerialNumber_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      usbManager.getUsbSerialNumber(1, 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getUsbSerialNumber_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_SERIAL_NUMBER_JS_0200
+   * @tc.desc   test getUsbSerialNumber with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getUsbSerialNumber_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      usbManager.getUsbSerialNumber(1, 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getUsbSerialNumber_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_SERIAL_NUMBER_JS_0300
+   * @tc.desc   test getUsbSerialNumber with null busNum
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getUsbSerialNumber_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.getUsbSerialNumber(null, 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getUsbSerialNumber_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_SERIAL_NUMBER_JS_0400
+   * @tc.desc   test getUsbSerialNumber with undefined busNum
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getUsbSerialNumber_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.getUsbSerialNumber(undefined, 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getUsbSerialNumber_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_SERIAL_NUMBER_JS_0500
+   * @tc.desc   test getUsbSerialNumber with null devAddress
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getUsbSerialNumber_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.getUsbSerialNumber(1, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getUsbSerialNumber_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_SERIAL_NUMBER_JS_0600
+   * @tc.desc   test getUsbSerialNumber with undefined devAddress
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getUsbSerialNumber_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.getUsbSerialNumber(1, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getUsbSerialNumber_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_SERIAL_NUMBER_JS_0700
+   * @tc.desc   test getUsbSerialNumber with invalid busNum
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getUsbSerialNumber_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.getUsbSerialNumber(-1, 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getUsbSerialNumber_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_SERIAL_NUMBER_JS_0800
+   * @tc.desc   test getUsbSerialNumber with invalid devAddress
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getUsbSerialNumber_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.getUsbSerialNumber(1, -1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
