@@ -27,7 +27,6 @@ import webview from '@ohos.web.webview'
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../src/test/Utils.test';
 import { BusinessError, Callback, RecordData } from '@ohos.base'
-import { Hypium } from '../../../hypium/index';
 import { State } from '@ohos.arkui.stateManagement'
 import { WebNetErrorList } from '@ohos.web.netErrorList';
 
@@ -43,6 +42,7 @@ const TEST_URL: string = 'ht' + 'tps://w' + 'ww.example.c' + 'om/';
 struct webCustomErrorCode {
   stringObj: StringFields = new StringFields();
   @State customErrorCode: int = -1;
+  @State isPageEnd: int = -1;
   controller: webview.WebviewController = new webview.WebviewController(undefined)
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler()
 
@@ -52,6 +52,16 @@ struct webCustomErrorCode {
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  private waitAndEmitCustomError(retries: number): void {
+    if (this.customErrorCode === CUSTOM_ERROR_CODE) {
+      Utils.emitEvent(this.customErrorCode, 8822);
+    } else if (retries > 0) {
+      setTimeout(() => {
+        this.waitAndEmitCustomError(retries - 1);
+      }, 500);
+    }
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
@@ -71,14 +81,25 @@ struct webCustomErrorCode {
             case 'testDidFailCustomErrorCodeStatic001': {
               try {
                 this.customErrorCode = -1;
+                this.schemeHandler = new webview.WebSchemeHandler();
                 this.schemeHandler.onRequestStart((
                   request: webview.WebSchemeHandlerRequest,
                   resourceHandler: webview.WebResourceHandler) => {
-                  resourceHandler.didFail(WebNetErrorList.ERR_FAILED, true, CUSTOM_ERROR_CODE);
+                  try {
+                    resourceHandler.didFail(WebNetErrorList.ERR_FAILED, true, CUSTOM_ERROR_CODE);
+                  } catch (error) {
+                    error = error as BusinessError;
+                    console.error(`didFail ErrorCode: ${error.code}, Message: ${error.message}`);
+                  }
                   return true;
                 });
+                this.controller.clearWebSchemeHandler();
                 this.controller.setWebSchemeHandler('https', this.schemeHandler);
-                this.controller.loadUrl(TEST_URL);
+                this.isPageEnd = -1;
+                this.controller.loadUrl(TEST_URL + '?t=' + Date.now());
+                setTimeout(() => {
+                  this.waitAndEmitCustomError(20);
+                }, 1000);
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
@@ -88,6 +109,7 @@ struct webCustomErrorCode {
             case 'testDidFailInvalidHandlerStatic001': {
               try {
                 let errorCode: int = 0;
+                this.schemeHandler = new webview.WebSchemeHandler();
                 this.schemeHandler.onRequestStart((
                   request: webview.WebSchemeHandlerRequest,
                   resourceHandler: webview.WebResourceHandler) => {
@@ -97,13 +119,12 @@ struct webCustomErrorCode {
                   } catch (error) {
                     errorCode = (error as BusinessError).code;
                   }
+                  Utils.emitEvent(errorCode, 8824);
                   return true;
                 });
+                this.controller.clearWebSchemeHandler();
                 this.controller.setWebSchemeHandler('https', this.schemeHandler);
-                this.controller.loadUrl(TEST_URL);
-                setTimeout(() => {
-                  Utils.emitEvent(errorCode, 8824);
-                }, 2000);
+                this.controller.loadUrl(TEST_URL + '?t=' + Date.now());
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
@@ -120,10 +141,10 @@ struct webCustomErrorCode {
         .onErrorReceive((event) => {
           if (event) {
             this.customErrorCode = event.error.getCustomErrorCode();
-            if (this.stringObj.str === 'testDidFailCustomErrorCodeStatic001') {
-              Utils.emitEvent(this.customErrorCode, 8822);
-            }
           }
+        })
+        .onPageEnd(() => {
+          this.isPageEnd = 1;
         })
     }
   }

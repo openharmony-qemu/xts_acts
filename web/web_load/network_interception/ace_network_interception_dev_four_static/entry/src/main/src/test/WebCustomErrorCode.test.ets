@@ -41,13 +41,6 @@ export default function WebCustomErrorCode(): void {
         }
       });
       await Utils.msSleep(2000)
-      let cmd = "aa start -a EntryAbility -b com.open.harmony.actsacenetworkinterceptiondevfourtest.static";
-      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-      if (user !== undefined) {
-        cmd += ' -u ' + user;
-      }
-      abilityDelegator.executeShellCommand(cmd)
-      await Utils.msSleep(2000)
     });
 
     /**
@@ -61,9 +54,13 @@ export default function WebCustomErrorCode(): void {
     it('testSetGetCustomErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000)
+        Utils.emitEvent('SwitchBackToWebSchemeHandlerResponse', 10)
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('webSchemeHandlerRequest', 10, '');
+        await Utils.msSleep(4000)
         Utils.emitEvent("WebSchemeHandlerResponse_setCustomErrorCode", 10)
         await Utils.msSleep(2000)
-        Utils.registerBaseEvent("WebSchemeHandlerResponse_setCustomErrorCode", CUSTOM_ERROR_CODE, 8820, done,
+        Utils.registerBaseEvent("WebSchemeHandlerResponse_setCustomErrorCode", CUSTOM_ERROR_CODE, 8826, done,
           (backData: events_emitter.EventData, expected: Object) => {
             const data = backData?.data as Record<string, Object>;
             expect(data['ACTION']).assertEqual(expected);
@@ -85,8 +82,8 @@ export default function WebCustomErrorCode(): void {
         await Utils.msSleep(2000)
         Utils.emitEvent('SwitchNextPageStaticWebCustomErrorCode', 10)
         await Utils.msSleep(2000)
-        inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
-        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebSchemeHandlerResponse2', 10, '');
+        await Utils.msSleep(4000)
         Utils.emitEvent("testDidFailCustomErrorCodeStatic001", 10)
         await Utils.msSleep(2000)
         Utils.registerBaseEvent("testDidFailCustomErrorCodeStatic001", CUSTOM_ERROR_CODE, 8822, done,
