@@ -43,8 +43,6 @@ import SetConcurrentTest from './Concurrent/SetConcurrent.test';
 import SetNormalTest from './Normal/SetNormal.test';
 import SetTaskPoolTest from './TaskPool/SetTaskPool.test';
 
-import CollectionsSetExpand1024Test from './CollectionsSetExpand1024Test.test';
-
 export default function testsuite() {
   SetBasicTest();
   SetConcurrentTest();
