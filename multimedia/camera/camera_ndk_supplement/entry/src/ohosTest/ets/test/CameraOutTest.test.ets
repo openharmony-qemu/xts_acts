@@ -1447,6 +1447,34 @@ export default function CameraOutTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0300
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0300
+     * @tc.desc   Test CaptureSessionGetWhiteBalanceRange -- CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = CameraOut.CaptureSessionGetWhiteBalanceRange(3)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0400
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0400
+     * @tc.desc   Test CaptureSessionGetWhiteBalanceRange -- CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = CameraOut.CaptureSessionGetWhiteBalanceRange(4)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0100
      * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0100
      * @tc.desc   Test CaptureSessionGetWhiteBalance
@@ -1470,6 +1498,20 @@ export default function CameraOutTest() {
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionGetWhiteBalance(1)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0300
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0300
+     * @tc.desc   Test CaptureSessionGetWhiteBalance -- CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = CameraOut.CaptureSessionGetWhiteBalance(3)
       expect(ret).assertEqual(TEST_OK)
       done()
     })
