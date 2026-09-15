@@ -115,9 +115,27 @@ struct PatternLockL0_04 {
     FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
+  // 验证绘制的密码是否为1、3连接点
+  isValidPassword(input: Array<number>): boolean {
+    const target = [0, 2];
+    if (input.length !== target.length) {
+      return false;
+    }
+    return input.toString() === target.toString();
+  }
+
   // 检查两个PatternLock组件绘制的密码是否一致
   checkAllPatternDrawn() {
     if (this.passwords1.length > 0 && this.passwords2.length > 0) {
+      // 验证密码是否为1、3连接点
+      if (!this.isValidPassword(this.passwords1) || !this.isValidPassword(this.passwords2)) {
+        promptAction.showToast({ message: '请设置1、3为连接点', duration: 2000 });
+        this.patternLockController.reset();
+        this.patternLockController1.reset();
+        this.passwords1 = [];
+        this.passwords2 = [];
+        return;
+      }
       if (this.passwords1.toString() === this.passwords2.toString()) {
         promptAction.showToast({ message: '密码设置成功', duration: 1000 });
         setTimeout(() => {
