@@ -532,6 +532,7 @@ export default function BuiltinsPromiseLikeInterfaceSecondTest(): void  {
           throw new Error("error in step 1")
         })
         .catch((error: Error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered"
         })
         .then((value: string) => {

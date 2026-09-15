@@ -403,6 +403,7 @@ export default function BuiltinsPromiseRejectFirstTest(): void {
       let promise = Promise.reject()
       let result = await promise
         .catch((error) => {
+          expect(error instanceof Error).assertTrue()
           caught = true
           return "recovered"
         })
@@ -776,6 +777,7 @@ export default function BuiltinsPromiseRejectFirstTest(): void {
       let promise = Promise.reject()
       let count = 0
       promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         count++
       })
       promise.catch((error) => {

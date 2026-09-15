@@ -578,6 +578,7 @@ export default function BuiltinsPromiseLikeInterfaceFirstTest(): void {
       let promiseLike: PromiseLike<string> = Promise.reject<string>(new Error("test"))
       let result = promiseLike.then((value: string) => value)
         .catch((error: Error) => {
+          expect(error instanceof Error).assertTrue()
           return Promise.resolve<string>("recovered")
         })
       let val = await result
@@ -732,6 +733,7 @@ export default function BuiltinsPromiseLikeInterfaceFirstTest(): void {
       let promiseLike: PromiseLike<string> = Promise.reject<string>(error)
       let result = promiseLike.then((value: string) => value)
         .catch((err: Error) => {
+          expect(err instanceof Error).assertTrue()
           return "recovered"
         })
       let val = await result

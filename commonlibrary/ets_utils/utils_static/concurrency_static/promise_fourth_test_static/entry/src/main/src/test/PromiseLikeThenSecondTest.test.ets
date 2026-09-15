@@ -123,6 +123,7 @@ export default function BuiltinsPromiseLikeThenSecondTest(): void {
       let result = promise.then(
         (value: string) => value,
         (error: Error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered"
         }
       )
@@ -228,7 +229,7 @@ export default function BuiltinsPromiseLikeThenSecondTest(): void {
       let promise: Promise<string> = Promise.reject<string>(new Error("failed"))
       let result = promise.then<string>(
           (value: string) => value
-        ).catch((error: Error) => "recovered"
+        ).catch((error: Error) => { expect(error instanceof Error).assertTrue(); return "recovered" }
         )
         .then((value: string) => value.toUpperCase())
       let val = await result
@@ -1046,7 +1047,7 @@ export default function BuiltinsPromiseLikeThenSecondTest(): void {
         promise.then((value: number) => {
           results.push(value)
           return value
-        })
+        }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
       }
       await Promise.resolve(promise)
       expect(results.length).assertEqual(100)

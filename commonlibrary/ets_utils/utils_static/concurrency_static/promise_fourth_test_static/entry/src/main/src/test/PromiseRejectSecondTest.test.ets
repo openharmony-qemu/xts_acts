@@ -647,6 +647,7 @@ export default function BuiltinsPromiseRejectSecondTest(): void {
       let error2Caught = false
       promise
         .catch((error) => {
+          expect(error instanceof Error).assertTrue()
           throw new Error("error2")
         })
         .catch((error) => {

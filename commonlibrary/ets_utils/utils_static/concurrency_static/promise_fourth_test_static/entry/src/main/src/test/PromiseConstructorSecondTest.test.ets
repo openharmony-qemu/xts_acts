@@ -188,6 +188,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
       })
       let result = await promise
         .catch((error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered value"
         })
       expect(result).assertEqual("recovered value")
@@ -431,6 +432,7 @@ export default function BuiltinsPromiseConstructorSecondTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()

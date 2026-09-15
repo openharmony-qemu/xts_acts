@@ -724,7 +724,7 @@ export default function BuiltinsPromiseResolveThirdTest(): void {
         promises.push(
           Promise.resolve<number>(i).then(() => {
             counter++
-          })
+          }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
         )
       }
       await Promise.all(promises)
@@ -981,7 +981,7 @@ export default function BuiltinsPromiseResolveThirdTest(): void {
       let promises: Promise<void>[] = []
       let resolvedCount = new AtomicInt(0)
       for (let i = 0; i < 50; i++) {
-        promises.push(Promise.resolve<number>(i).then(() => { resolvedCount.fetchAdd(1) }))
+        promises.push(Promise.resolve<number>(i).then(() => { resolvedCount.fetchAdd(1) }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() }))
       }
       await Promise.all(promises)
       expect(promises.length).assertEqual(50)

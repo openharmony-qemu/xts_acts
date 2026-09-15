@@ -1307,7 +1307,7 @@ export default function BuiltinsPromiseSettledResultTest(): void {
           Promise.allSettled<number>([Promise.resolve(1.0)])
             .then<void>((results: PromiseSettledResult<number>[]) => {
               counter.fetchAdd(1)
-            })
+            }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
         )
       }
       await Promise.all(promises)

@@ -873,7 +873,7 @@ export default function BuiltinsPromiseRejectedResultTest(): void {
               if (results[0].status === "rejected") {
                 counter.fetchAdd(1)
               }
-            })
+            }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
         )
       }
       await Promise.all(promises)
