@@ -17,7 +17,7 @@ group("actsabilityhypersnapgetlasterror") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "actsabilityhypersnapgetlasterrorstatictest:ActsAbilityHyperSnapGetLastErrorStaticTest",
+      "actsabilityhypersnapgetlasterrorteststatic:ActsAbilityHyperSnapGetLastErrorStaticTest",
       "actsabilityhypersnapgetlasterrortest:ActsAbilityHyperSnapGetLastErrorTest"
     ]
   }

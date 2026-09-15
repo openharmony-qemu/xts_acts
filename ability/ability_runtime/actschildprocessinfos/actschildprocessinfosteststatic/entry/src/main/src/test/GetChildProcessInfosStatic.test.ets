@@ -116,7 +116,7 @@ export default function getChildProcessInfosStaticTest(): void {
           createErr = (e as BusinessError).code;
         }
         if (createErr !== -1) {
-          console.error(`${TAG} AfterArk createErr=${createErr}`);
+          console.info(`${TAG} AfterArk createErr=${createErr}`);
           expect(isCreateUnsupported(createErr) || createErr === ERR_SERVICE).assertTrue();
           let infos: Array<childProcessManager.ChildProcessInformation> =
             await childProcessManager.getChildProcessInfos();

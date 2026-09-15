@@ -17,7 +17,7 @@ group("actschildprocessinfos") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "actschildprocessinfosstatictest:ActsChildProcessInfosStaticTest",
+      "actschildprocessinfosteststatic:ActsChildProcessInfosStaticTest",
       "actschildprocessinfostest:ActsChildProcessInfosTest"
     ]
   }
