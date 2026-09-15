@@ -5381,3 +5381,41 @@ export default function Int32ArrayTaskPoolTest() {
       console.info(`${caseName} test start`);
       let num = 0;
       for (let i = 0; i < 10; i++) {
+        taskpool.execute(testInt32ArrayTaskPool0186).then((value) => {
+          num++;
+          expect(value).assertEqual(true);
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    });
+
+    /**
+     * @tc.name   testInt32ArrayTaskPool0187
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT32_ARRAY_TASKPOOL_0187
+     * @tc.desc   Testing Collections of int32array, array is [1,2,3], 0 <= index < arrayLength, array[index] = array element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt32ArrayTaskPool0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testInt32ArrayTaskPool0187';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      for (let i = 0; i < 10; i++) {
+        taskpool.execute(testInt32ArrayTaskPool0187).then((value) => {
+          num++;
+          expect(value).assertEqual(true);
+        }).catch(() => { console.error('catch error'); });
+      }
+      while (num < 10) {
+        await sleep(100);
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  })
+}
