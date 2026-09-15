@@ -1869,5 +1869,65 @@ export default function geoLocationManager_nop_test() {
       }
     })
 
+    /**
+     * @tc.name   SUB_Location_nop_onBluetoothScanResultChange_0100
+     * @tc.number SUB_Location_nop_onBluetoothScanResultChange_0100
+     * @tc.desc   Using geoLocationManager.on('bluetoothScanResultChange') without permission (201).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_onBluetoothScanResultChange_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let callback = (result: geoLocationManager.BluetoothScanResult): void => {
+          console.info('SUB_Location_nop_onBluetoothScanResultChange_0100 result: ' + JSON.stringify(result));
+        };
+        try {
+          geoLocationManager.on('bluetoothScanResultChange', callback);
+          console.info('SUB_Location_nop_onBluetoothScanResultChange_0100 unexpectedly subscribed');
+          try {
+            geoLocationManager.off('bluetoothScanResultChange', callback);
+          } catch (e) {
+            console.info('SUB_Location_nop_onBluetoothScanResultChange_0100 cleanup off err: ' + JSON.stringify(e));
+          }
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info('SUB_Location_nop_onBluetoothScanResultChange_0100 catch err: ' + JSON.stringify(err));
+          if (err.code === '801') {
+            expect(err.code).assertEqual('801');
+          } else {
+            expect(err.code).assertEqual('201');
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Location_nop_getCurrentLocation_0200
+     * @tc.number SUB_Location_nop_getCurrentLocation_0200
+     * @tc.desc   Using geoLocationManager.getCurrentLocation promise without permission (201).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_getCurrentLocation_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          await geoLocationManager.getCurrentLocation();
+          console.info('SUB_Location_nop_getCurrentLocation_0200 unexpectedly succeeded');
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info('SUB_Location_nop_getCurrentLocation_0200 catch err: ' + JSON.stringify(err));
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(201);
+          }
+          done();
+        }
+      })
+
   })
 }
