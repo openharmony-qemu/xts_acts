@@ -278,7 +278,7 @@ export default function CoverageStaticTest(): void {
     /**
      * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_SDKALIAS_1900
      * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_SDKALIAS_1900
-     * @tc.desc Cover misc SDK aliases: Accessibility/SystemBar/ContentSlot/InputEventType etc.
+     * @tc.desc Cover misc SDK aliases: SystemBar/ContentSlot/InputEventType and hover callback.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1

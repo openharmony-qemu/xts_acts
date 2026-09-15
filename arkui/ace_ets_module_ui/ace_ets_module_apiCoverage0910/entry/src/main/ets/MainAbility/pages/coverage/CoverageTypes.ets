@@ -188,7 +188,6 @@ struct CoverageTypes {
 
   private initExtraCoverage(): void {
     const pivot: Pivot = { x: 0.5, y: 0.5 };
-    // common.Filter = uiEffect.Filter
     const filterObj: Filter = uiEffect.createFilter().blur(2);
     this.pivotFilterFlag =
       (pivot.x === 0.5 && filterObj !== undefined) ? 'ok' : 'fail';
