@@ -1,0 +1,15 @@
+<div class="container" onswipe="swipeEvent">
+  <text class="titleTextStyle">
+    ArkUI
+  </text>
+  <list class="todo-wraper" onswipe="swipeEvent" ref="list">
+    <list-item for="{{todolist}}" class="listItem">
+      <input
+              type="button"
+              class="buttonStyle"
+              value="{{$item.title}}"
+              on:click="clickChange($item)"
+              />
+    </list-item>
+  </list>
+</div>

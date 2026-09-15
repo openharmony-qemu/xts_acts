@@ -1,0 +1,63 @@
+{
+  "app": {
+    "bundleName": "com.example.actsvalidator",
+    "vendor": "example",
+    "version": {
+      "code": 1,
+      "name": "1.0"
+    },
+    "apiVersion": {
+      "compatible": 3,
+      "target": 4
+    }
+  },
+  "deviceConfig": {
+    "default": {}
+  },
+  "module": {
+    "package": "com.example.actsvalidator",
+    "name": ".ActsValidatorLiteAbilityPackage",
+    "deviceType": [
+      "smartVision"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry"
+    },
+    "abilities": [
+      {
+        "name": "ValidatorAbility",
+        "srcLanguage": "js",
+        "srcPath": "default",
+        "icon": "assets/entry/resources/base/media/icon.png",
+        "description": "Acts Validator Lite test ability",
+        "label": "ActsValidatorLite",
+        "type": "page",
+        "visible": true,
+        "launchType": "standard"
+      }
+    ],
+    "js": [
+      {
+        "pages": [
+          "pages/index/index",
+          "pages/ArkUI/chart/line/index",
+          "pages/ArkUI/common/index/index",
+          "pages/ArkUI/marquee/index",
+          "pages/ArkUI/ui_advanced/index",
+          "pages/ArkUI/ui_basic/index",
+          "pages/Communication/nfc/index",
+          "pages/DistributedData/storage/index",
+          "pages/FileManagement/file/index",
+          "pages/PowerManager/power/index",
+          "pages/Startup/deviceInfo/index",
+          "pages/Sensors/index/index",
+          "pages/Location/index/index",
+          "pages/common/help/index"
+        ],
+        "name": "ValidatorAbility"
+      }
+    ]
+  }
+}
