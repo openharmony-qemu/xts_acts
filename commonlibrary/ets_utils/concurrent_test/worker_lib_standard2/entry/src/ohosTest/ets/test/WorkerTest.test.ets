@@ -1190,3 +1190,1910 @@ export default function workerTest() {
       } catch (error) {
         console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage005
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_0800
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage005';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'Date');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'Date');
+        }
+        const date1: Date = new Date();
+        workerInstance_1.postMessage(date1);
+        const date2: Date = new Date();
+        workerInstance_2.postMessage(date2);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage006
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_0900
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage006';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'Date');
+          const date2: Date = new Date();
+          workerInstance_2.postMessage(date2);
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'Date');
+        }
+        const date1: Date = new Date();
+        workerInstance_1.postMessage(date1);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage007
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1000
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage007';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'RegExp');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'RegExp');
+        }
+        const re1: RegExp = new RegExp('worker1');
+        workerInstance_1.postMessage(re1);
+        const re2: RegExp = new RegExp('worker2');
+        workerInstance_2.postMessage(re2);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage008
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1100
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage008';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'RegExp');
+          const re2: RegExp = new RegExp('worker2');
+          workerInstance_2.postMessage(re2);
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'RegExp');
+        }
+        const re1: RegExp = new RegExp('worker1');
+        workerInstance_1.postMessage(re1);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage009
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1200
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage009';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'Array');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'Array');
+        }
+        const arr1: Array<number> = new Array(1, 2, 3);
+        workerInstance_1.postMessage(arr1);
+        const arr2: Array<number> = Array(4, 5, 6);
+        workerInstance_2.postMessage(arr2);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage010
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1300
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage010';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'Array');
+          const arr2: Array<number> = Array(4, 5, 6);
+          workerInstance_2.postMessage(arr2);
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'Array');
+        }
+        const arr1: Array<number> = new Array(1, 2, 3);
+        workerInstance_1.postMessage(arr1);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage011
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1400
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage011';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'Map');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'Map');
+        }
+        const map1: Map<string, string> = new Map([['name', 'worker1']]);
+        workerInstance_1.postMessage(map1);
+        const map2: Map<string, string> = new Map([['name', 'worker2']]);
+        workerInstance_2.postMessage(map2);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage012
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1500
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage012';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'Map');
+          const map2: Map<string, string> = new Map([['name', 'worker2']]);
+          workerInstance_2.postMessage(map2);
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'Map');
+        }
+        const map1: Map<string, string> = new Map([['name', 'worker1']]);
+        workerInstance_1.postMessage(map1);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage013
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1600
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage013';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'Set');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'Set');
+        }
+        const set1: Set<number> = new Set([1, 2, 3]);
+        workerInstance_1.postMessage(set1);
+        const set2: Set<number> = new Set([4, 5, 6]);
+        workerInstance_2.postMessage(set2);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage014
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1700
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage014';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'Set');
+          const set2: Set<number> = new Set([4, 5, 6]);
+          workerInstance_2.postMessage(set2);
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'Set');
+        }
+        const set1: Set<number> = new Set([1, 2, 3]);
+        workerInstance_1.postMessage(set1);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage015
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1800
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage015';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)}`);
+          flag_1 = true;
+          expectAssertEqual(e.data.name, 'workerInstance_1');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)}`);
+          flag_2 = true;
+          expectAssertEqual(e.data.name, 'workerInstance_2');
+        }
+        workerInstance_1.postMessage({
+          name: 'workerInstance_1',
+          type: 'worker.ThreadWorker'
+        });
+        workerInstance_2.postMessage({
+          name: 'workerInstance_2',
+          type: 'worker.ThreadWorker'
+        });
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage016
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_1900
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage016';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)}`);
+          flag_1 = true;
+          expectAssertEqual(e.data.name, 'workerInstance_1');
+          workerInstance_2.postMessage({
+            name: 'workerInstance_2',
+            type: 'worker.ThreadWorker'
+          });
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)}`);
+          flag_2 = true;
+          expectAssertEqual(e.data.name, 'workerInstance_2');
+        }
+        workerInstance_1.postMessage({
+          name: 'workerInstance_1',
+          type: 'worker.ThreadWorker'
+        });
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage017
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2000
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage017';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'ArrayBuffer');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'ArrayBuffer');
+        }
+        const buff1: ArrayBuffer = new ArrayBuffer(8);
+        workerInstance_1.postMessage(buff1);
+        const buff2: ArrayBuffer = new ArrayBuffer(16);
+        workerInstance_2.postMessage(buff2);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+        console.info(`${caseName} test end`);
+      }
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage018
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2100
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage018';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'ArrayBuffer');
+          const buff2: ArrayBuffer = new ArrayBuffer(16);
+          workerInstance_2.postMessage(buff2);
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'ArrayBuffer');
+        }
+        const buff1: ArrayBuffer = new ArrayBuffer(8);
+        workerInstance_1.postMessage(buff1);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage019
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2200
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage019';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'Int8Array');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'Int8Array');
+        }
+        const intArr1: Int8Array = new Int8Array([1, 2, 3]);
+        workerInstance_1.postMessage(intArr1);
+        const intArr2: Int8Array = new Int8Array([4, 5, 6]);
+        workerInstance_2.postMessage(intArr2);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage020
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2300
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage020';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_1 = true;
+          expectAssertInstanceOf(e.data, 'Int8Array');
+          const intArr2: Int8Array = new Int8Array([4, 5, 6]);
+          workerInstance_2.postMessage(intArr2);
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)} type => ${JSON.stringify(typeof e.data)}`);
+          flag_2 = true;
+          expectAssertInstanceOf(e.data, 'Int8Array');
+        }
+        const intArr1: Int8Array = new Int8Array([1, 2, 3]);
+        workerInstance_1.postMessage(intArr1);
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerPostMessage021
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2400
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerPostMessage021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerPostMessage021';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)}`);
+          flag_1 = true;
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)}`);
+          flag_2 = true;
+        }
+        let buffer_1: ArrayBuffer = new ArrayBuffer(8);
+        workerInstance_1.postMessage(buffer_1, [buffer_1]);
+        try {
+          let length: number = buffer_1.byteLength;
+        } catch (error) {
+          console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+          expectAssertEqual(error.message, 'IsDetachedBuffer');
+        }
+        let buffer_2: ArrayBuffer = new ArrayBuffer(8);
+        workerInstance_2.postMessage(buffer_2, [buffer_2]);
+        try {
+          let length: number = buffer_2.byteLength;
+        } catch (error) {
+          console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+          expectAssertEqual(error.message, 'IsDetachedBuffer');
+        }
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerOn001
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2500
+     * @tc.desc   test add an event listening to Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerOn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerOn001';
+      console.info(`${caseName} test start`);
+      try {
+        let count: number = 0;
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.on('workerInstance_1_on', () => {
+          console.info(`${caseName}: workerInstance_1_on listener callback`);
+          flag_1 = true;
+          count++;
+        });
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.on('workerInstance_2_on', () => {
+          console.info(`${caseName}: workerInstance_2_on listener callback`);
+          flag_2 = true;
+          count++;
+        });
+        workerInstance_1.dispatchEvent({
+          type: 'workerInstance_1_on', timeStamp: 0
+        });
+        workerInstance_2.dispatchEvent({
+          type: 'workerInstance_2_on', timeStamp: 0
+        });
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        expectAssertEqual(count, 2);
+        workerInstance_1.off('workerInstance_1_on');
+        workerInstance_2.off('workerInstance_2_on');
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerOn002
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2600
+     * @tc.desc   test add an event listening to Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerOn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerOn002';
+      console.info(`${caseName} test start`);
+      try {
+        let count: number = 0;
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.on('workerInstance_1_on', () => {
+          console.info(`${caseName}: workerInstance_1_on listener callback`);
+          flag_1 = true;
+          workerInstance_2.dispatchEvent({
+            type: 'workerInstance_2_on', timeStamp: 0
+          });
+        });
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.on('workerInstance_2_on', () => {
+          console.info(`${caseName}: workerInstance_2_on listener callback`);
+          flag_2 = true;
+          count++;
+        });
+        workerInstance_1.dispatchEvent({
+          type: 'workerInstance_1_on', timeStamp: 0
+        });
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        expectAssertEqual(count, 1);
+        workerInstance_1.off('workerInstance_1_on');
+        workerInstance_2.off('workerInstance_2_on');
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerOnce001
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2700
+     * @tc.desc   test add an event listener to the Worker, which will be automatically deleted after only executing once.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerOnce001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerOnce001';
+      console.info(`${caseName} test start`);
+      try {
+        let count_1: number = 0;
+        let count_2: number = 0;
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.once('workerInstance_1_once', () => {
+          console.info(`${caseName}: workerInstance_1_once listener callback`);
+          flag_1 = true;
+          count_1++;
+        });
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.once('workerInstance_2_once', () => {
+          console.info(`${caseName}: workerInstance_2_once listener callback`);
+          flag_2 = true;
+          count_2++;
+        });
+        for (let i: number = 0; i < 3; i++) {
+          workerInstance_1.dispatchEvent({
+            type: 'workerInstance_1_once', timeStamp: 0
+          });
+          workerInstance_2.dispatchEvent({
+            type: 'workerInstance_2_once', timeStamp: 0
+          });
+        }
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        expectAssertEqual(count_1, 1);
+        expectAssertEqual(count_2, 1);
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerOnce002
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2800
+     * @tc.desc   test add an event listener to the Worker, which will be automatically deleted after only executing once.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerOnce002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerOnce002';
+      console.info(`${caseName} test start`);
+      try {
+        let count: number = 0;
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.once('workerInstance_1_once', () => {
+          console.info(`${caseName}: workerInstance_1_once listener callback`);
+          flag_1 = true;
+          workerInstance_2.dispatchEvent({
+            type: 'workerInstance_2_once', timeStamp: 0
+          });
+        });
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.once('workerInstance_2_once', () => {
+          console.info(`${caseName}: workerInstance_2_once listener callback`);
+          flag_2 = true;
+          count++;
+        });
+        workerInstance_1.dispatchEvent({
+          type: 'workerInstance_1_once', timeStamp: 0
+        });
+        workerInstance_1.dispatchEvent({
+          type: 'workerInstance_1_once', timeStamp: 0
+        });
+        workerInstance_1.dispatchEvent({
+          type: 'workerInstance_1_once', timeStamp: 0
+        });
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        expectAssertEqual(count, 1);
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerOff001
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_2900
+     * @tc.desc   test delete event listeners of type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerOff001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerOff001';
+      console.info(`${caseName} test start`);
+      try {
+        let count_1: number = 0;
+        let count_2: number = 0;
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.on('workerInstance_1_on', () => {
+          console.info(`${caseName}: workerInstance_1_on listener callback`);
+          flag_1 = true;
+          count_1++;
+        });
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.on('workerInstance_2_on', () => {
+          console.info(`${caseName}: workerInstance_2_on listener callback`);
+          flag_2 = true;
+          count_2++;
+        });
+        workerInstance_1.dispatchEvent({
+          type: 'workerInstance_1_on', timeStamp: 0
+        });
+        workerInstance_2.dispatchEvent({
+          type: 'workerInstance_2_on', timeStamp: 0
+        });
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        expectAssertEqual(count_1, 1);
+        expectAssertEqual(count_2, 1);
+        workerInstance_1.off('workerInstance_1_on');
+        workerInstance_2.off('workerInstance_2_on');
+        workerInstance_1.dispatchEvent({
+          type: 'workerInstance_1_on', timeStamp: 0
+        });
+        workerInstance_2.dispatchEvent({
+          type: 'workerInstance_2_on', timeStamp: 0
+        });
+        await asyncSleep(1000);
+        expectAssertEqual(count_1, 1);
+        expectAssertEqual(count_2, 1);
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerOff002
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_3000
+     * @tc.desc   test delete event listeners of type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerOff002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerOff002';
+      console.info(`${caseName} test start`);
+      try {
+        let count: number = 0;
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.on('workerInstance_1_on', () => {
+          console.info(`${caseName}: workerInstance_1_on listener callback`);
+          flag_1 = true;
+          count++;
+          workerInstance_2.off('workerInstance_2_on');
+        });
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.on('workerInstance_2_on', () => {
+          console.info(`${caseName}: workerInstance_2_on listener callback`);
+          count++;
+        });
+        workerInstance_1.dispatchEvent({
+          type: 'workerInstance_1_on', timeStamp: 0
+        });
+        while (!flag_1) {
+          await asyncSleep(100);
+        }
+        expectAssertEqual(count, 1);
+        workerInstance_1.off('workerInstance_1_on');
+        workerInstance_1.dispatchEvent({
+          type: 'workerInstance_1_on', timeStamp: 0
+        });
+        workerInstance_2.dispatchEvent({
+          type: 'workerInstance_2_on', timeStamp: 0
+        });
+        await asyncSleep(1000);
+        expectAssertEqual(count, 1);
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerRegisterGlobalCallObject001
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_3100
+     * @tc.desc   test register an object on the ThreadWorker instance of the host thread, and the methods on this object can be called in the Worker thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerRegisterGlobalCallObject001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerRegisterGlobalCallObject001';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_004.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)}`);
+          flag_1 = true;
+          expectAssertEqual(e.data, 'this is a message from TestObj');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_004.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)}`);
+          flag_2 = true;
+          expectAssertEqual(e.data, 'this is a message from TestObj with input: hello there!');
+        }
+        let registerObj_1: TestObj = new TestObj();
+        workerInstance_1.registerGlobalCallObject('myObj', registerObj_1);
+        let registerObj_2: TestObj = new TestObj();
+        workerInstance_2.registerGlobalCallObject('myObj', registerObj_2);
+        workerInstance_1.postMessage('noParameters');
+        workerInstance_2.postMessage('withParameters');
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerRegisterGlobalCallObject002
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_3200
+     * @tc.desc   test register an object on the ThreadWorker instance of the host thread, and the methods on this object can be called in the Worker thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerRegisterGlobalCallObject002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerRegisterGlobalCallObject002';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_004.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)}`);
+          flag_1 = true;
+          expectAssertEqual(e.data, 'this is a message from TestObj');
+          let registerObj_2: TestObj = new TestObj();
+          workerInstance_2.registerGlobalCallObject('myObj', registerObj_2);
+          workerInstance_2.postMessage('withParameters');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_004.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)}`);
+          flag_2 = true;
+          expectAssertEqual(e.data, 'this is a message from TestObj with input: hello there!');
+        }
+        let registerObj_1: TestObj = new TestObj();
+        workerInstance_1.registerGlobalCallObject('myObj', registerObj_1);
+        workerInstance_1.postMessage('noParameters');
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerUnregisterGlobalCallObject001
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_3300
+     * @tc.desc   test canceling the object registered on the host thread ThreadWorker instance will release a strong reference to the object that matches the key in the ThreadWorker instance, and there will be no error when there is no matching object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerUnregisterGlobalCallObject001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerUnregisterGlobalCallObject001';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_004.ts');
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+        }
+        workerInstance_1.onerror = (err: ErrorEvent): void => {
+          console.info(`${caseName}: workerInstance_1.onerror: ${JSON.stringify(err)}`);
+          flag_1 = true;
+          expectAssertEqual(err.message, 'BusinessError: The globalCallObject is not registered');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_004.ts');
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+        }
+        workerInstance_2.onerror = (err: ErrorEvent): void => {
+          console.info(`${caseName}: workerInstance_2.onerror: ${JSON.stringify(err)}`);
+          flag_2 = true;
+          expectAssertEqual(err.message, 'BusinessError: The globalCallObject is not registered');
+        }
+        let registerObj_1: TestObj = new TestObj();
+        workerInstance_1.registerGlobalCallObject('myObj', registerObj_1);
+        let registerObj_2: TestObj = new TestObj();
+        workerInstance_2.registerGlobalCallObject('myObj', registerObj_2);
+        workerInstance_1.unregisterGlobalCallObject('myObj');
+        workerInstance_2.unregisterGlobalCallObject('myObj');
+        workerInstance_1.postMessage('noParameters');
+        workerInstance_2.postMessage('withParameters');
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerUnregisterGlobalCallObject002
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_3400
+     * @tc.desc   test canceling the object registered on the host thread ThreadWorker instance will release a strong reference to the object that matches the key in the ThreadWorker instance, and there will be no error when there is no matching object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerUnregisterGlobalCallObject002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerUnregisterGlobalCallObject002';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_004.ts');
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+        }
+        workerInstance_1.onerror = (err: ErrorEvent): void => {
+          console.info(`${caseName}: workerInstance_1.onerror: ${JSON.stringify(err)}`);
+          flag_1 = true;
+          expectAssertEqual(err.message, 'BusinessError: The globalCallObject is not registered');
+          workerInstance_2.unregisterGlobalCallObject('myObj');
+          workerInstance_2.postMessage('withParameters');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_004.ts');
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+        }
+        workerInstance_2.onerror = (err: ErrorEvent): void => {
+          console.info(`${caseName}: workerInstance_2.onerror: ${JSON.stringify(err)}`);
+          flag_2 = true;
+          expectAssertEqual(err.message, 'BusinessError: The globalCallObject is not registered');
+        }
+        let registerObj_1: TestObj = new TestObj();
+        workerInstance_1.registerGlobalCallObject('myObj', registerObj_1);
+        let registerObj_2: TestObj = new TestObj();
+        workerInstance_2.registerGlobalCallObject('myObj', registerObj_2);
+        workerInstance_1.unregisterGlobalCallObject('myObj');
+        workerInstance_1.postMessage('noParameters');
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerTerminateAndOnexit001
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_3500
+     * @tc.desc   test the event handler that is called when the Worker is destroyed is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerTerminateAndOnexit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerTerminateAndOnexit001';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_002.ts');
+        let isTerminate_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        expectAssertTrue(isTerminate_1);
+        expectAssertTrue(isTerminate_2);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerTerminateAndOnexit002
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_3600
+     * @tc.desc   test the event handler that is called when the Worker is destroyed is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerTerminateAndOnexit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerTerminateAndOnexit002';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+          workerInstance_2.terminate();
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_002.ts');
+        let isTerminate_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_1.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        expectAssertTrue(isTerminate_1);
+        expectAssertTrue(isTerminate_2);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerTerminateAndOnexit003
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_3700
+     * @tc.desc   test the event handler that is called when the Worker is destroyed is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerTerminateAndOnexit003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerTerminateAndOnexit003';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        workerInstance.onexit = (code: number) => {
+          console.info(`${caseName}: workerInstance.onexit`);
+          expectAssertEqual(code, 0);
+          done();
+        }
+        workerInstance.terminate();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerTerminateAndOnexit004
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_3800
+     * @tc.desc   test the event handler that is called when the Worker is destroyed is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerTerminateAndOnexit004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerTerminateAndOnexit004';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_005.ts');
+        workerInstance.onexit = (code: number) => {
+          console.info(`${caseName}: workerInstance.onexit`);
+          expectAssertEqual(code, 1);
+          done();
+        }
+        workerInstance.onerror = (err: ErrorEvent): void => {
+          console.info(`${caseName}: workerInstance.onerror: ${JSON.stringify(err)}`);
+        }
+        workerInstance.postMessage('error');
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerOnerror001
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_3900
+     * @tc.desc   test the event handler that is called when a Worker encounters an exception during execution, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerOnerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerOnerror001';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_005.ts');
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+        }
+        workerInstance_1.onerror = (err: ErrorEvent): void => {
+          console.info(`${caseName}: workerInstance_1.onerror: ${JSON.stringify(err)}`);
+          flag_1 = true;
+          expectAssertEqual(err.message, 'Error: worker throw error');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_005.ts');
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+        }
+        workerInstance_2.onerror = (err: ErrorEvent): void => {
+          console.info(`${caseName}: workerInstance_2.onerror: ${JSON.stringify(err)}`);
+          flag_2 = true;
+          expectAssertEqual(err.message, 'Error: worker throw error');
+        }
+        workerInstance_1.postMessage('error');
+        workerInstance_2.postMessage('error');
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerOnerror002
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_4000
+     * @tc.desc   test the event handler that is called when a Worker encounters an exception during execution, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerOnerror002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerOnerror002';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_005.ts');
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+        }
+        workerInstance_1.onerror = (err: ErrorEvent): void => {
+          console.info(`${caseName}: workerInstance_1.onerror: ${JSON.stringify(err)}`);
+          flag_1 = true;
+          expectAssertEqual(err.message, 'Error: worker throw error');
+          workerInstance_2.postMessage('error');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_005.ts');
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+        }
+        workerInstance_2.onerror = (err: ErrorEvent): void => {
+          console.info(`${caseName}: workerInstance_2.onerror: ${JSON.stringify(err)}`);
+          flag_2 = true;
+          expectAssertEqual(err.message, 'Error: worker throw error');
+        }
+        workerInstance_1.postMessage('error');
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerOnmessage001
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_4100
+     * @tc.desc   test the event handler that is called by the host thread when it receives a message sent by a Worker created by it through the workerPort. postMessage interface, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerOnmessage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerOnmessage001';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
+        let isTerminate_1: boolean = false;
+        let flag_1: boolean = false;
+        workerInstance_1.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_1.onexit`);
+          isTerminate_1 = true;
+        }
+        workerInstance_1.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_1.onmessage: ${JSON.stringify(e)}`);
+          flag_1 = true;
+          expectAssertEqual(e.data, 'string message');
+        }
+        const workerInstance_2: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker_002.ts');
+        let isTerminate_2: boolean = false;
+        let flag_2: boolean = false;
+        workerInstance_2.onexit = (): void => {
+          console.info(`${caseName}: workerInstance_2.onexit`);
+          isTerminate_2 = true;
+        }
+        workerInstance_2.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance_2.onmessage: ${JSON.stringify(e)}`);
+          flag_2 = true;
+          expectAssertEqual(e.data, 'Hello string message');
+        }
+        workerInstance_1.postMessage('string message');
+        workerInstance_2.postMessage('string message');
+        while (!(flag_1 && flag_2)) {
+          await asyncSleep(100);
+        }
+        workerInstance_1.terminate();
+        workerInstance_2.terminate();
+        while (!(isTerminate_1 && isTerminate_2)) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testWorkerOnmessage002
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_4200
+     * @tc.desc   test the event handler that is called by the host thread when it receives a message sent by a Worker created by it through the workerPort. postMessage interface, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerOnmessage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testWorkerOnmessage002';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ts');
