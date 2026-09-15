@@ -3204,3 +3204,1531 @@ export default function Int8ArrayNormalTest() {
      * @tc.desc   Testing the subarray of int8Array, array is not null, parameter is null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0155";
+      try {
+        let arrList: collections.Int8Array = new collections.Int8Array([1, 3, 5, 7, 9]);
+        let arrListNew = arrList.subarray();
+        expect(arrListNew.toString()).assertEqual("1,3,5,7,9");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0156
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0156
+     * @tc.desc   Testing the subarray of int8Array, array is not null, begin is -1, end is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0156";
+      try {
+        let arrList: collections.Int8Array = new collections.Int8Array([1, 3, 5, 7, 9]);
+        let arrListNew = arrList.subarray(-1);
+        expect(arrListNew.toString()).assertEqual("9");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0157
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0157
+     * @tc.desc   Testing the subarray of int8Array, array is not null, begin is -1, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0157";
+      try {
+        let arrList: collections.Int8Array = new collections.Int8Array([1, 3, 5, 7, 9]);
+        let arrListNew = arrList.subarray(-1, -1);
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0158
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0158
+     * @tc.desc   Testing the subarray of int8Array, array is not null, begin is -1, end is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0158";
+      try {
+        let arrList: collections.Int8Array = new collections.Int8Array([1, 3, 5, 7, 9]);
+        let arrListNew = arrList.subarray(-1, 2);
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0159
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0159
+     * @tc.desc   Testing the subarray of int8Array, array is not null, begin is -1, end is overstep.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0159";
+      try {
+        let arrList: collections.Int8Array = new collections.Int8Array([1, 3, 5, 7, 9]);
+        let arrListNew = arrList.subarray(-1, 7);
+        expect(arrListNew.toString()).assertEqual("9");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0160
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0160
+     * @tc.desc   Testing the subarray of int8Array, array is not null, begin is 2, end is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0160";
+      try {
+        let arrList: collections.Int8Array = new collections.Int8Array([1, 3, 5, 7, 9]);
+        let arrListNew = arrList.subarray(2);
+        expect(arrListNew.toString()).assertEqual("5,7,9");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0161
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0161
+     * @tc.desc   Testing the subarray of int8Array, array is not null, begin is 2, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0161";
+      try {
+        let arrList: collections.Int8Array = new collections.Int8Array([1, 3, 5, 7, 9]);
+        let arrListNew = arrList.subarray(2, -1);
+        expect(arrListNew.toString()).assertEqual("5,7");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0162
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0162
+     * @tc.desc   Testing the subarray of int8Array, array is not null, begin is 2, end is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0162";
+      try {
+        let arrList: collections.Int8Array = new collections.Int8Array([1, 3, 5, 7, 9]);
+        let arrListNew = arrList.subarray(2, 2);
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0163
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0163
+     * @tc.desc   Testing the subarray of int8Array, array is not null, begin is 2, end is overstep.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0163";
+      try {
+        let arrList: collections.Int8Array = new collections.Int8Array([1, 3, 5, 7, 9]);
+        let arrListNew = arrList.subarray(2, 10);
+        expect(arrListNew.toString()).assertEqual("5,7,9");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0164
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0164
+     * @tc.desc   Testing the subarray of int8Array, array is not null, begin is overstep, end is overstep.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0164";
+      try {
+        let arrList: collections.Int8Array = new collections.Int8Array([1, 3, 5, 7, 9]);
+        let arrListNew = arrList.subarray(7, 10);
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0165
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0165
+     * @tc.desc   Testing Collections of int8array, array is [], at(1), return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0165";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([]);
+        console.info("array: " + array);
+        expect(array.at(1)).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0166
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0166
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], at(3), return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0166";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array: " + array);
+        expect(array.at(3)).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0167
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0167
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], at(-1), return element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0167";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array: " + array);
+        expect(array.at(-1)).assertEqual(3);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0168
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0168
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], at(5), return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0168";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array: " + array);
+        expect(array.at(5)).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0169
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0169
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], at(0), return element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0169";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array: " + array);
+        expect(array.at(0)).assertEqual(1);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0170
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0170
+     * @tc.desc   Testing Collections of int8array, array is [], includes(2), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0170";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([]);
+        console.info("array includes: " + array);
+        expect(array.includes(2)).assertEqual(false);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0171
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0171
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], includes(5,-1), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0171";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array includes: " + array);
+        expect(array.includes(5, -1)).assertEqual(false);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0172
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0172
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], includes(3,-1), return true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0172";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array includes: " + array);
+        expect(array.includes(3, -1)).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0173
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0173
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], includes(10), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0173";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array includes: " + array);
+        expect(array.includes(10)).assertEqual(false);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0174
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0174
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], includes(1), return true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0174";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array includes: " + array);
+        expect(array.includes(1)).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0175
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0175
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], includes(1,5), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0175";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array includes: " + array);
+        expect(array.includes(1, 5)).assertEqual(false);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0176
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0176
+     * @tc.desc   Testing Collections of int8array, array is [], entries(), undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0176";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([]);
+        let iterator: IterableIterator<[number, number]> = array.entries();
+        console.info("array includes: " + array);
+        expect(iterator.next().value).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0177
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0177
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], entries() .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0177";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        let iterator: IterableIterator<[number, number]> = array.entries();
+        console.info("array includes: " + array);
+        expect(iterator.next().value.toString()).assertEqual('0,1');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0178
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0178
+     * @tc.desc   Testing Collections of int8array, array is [], keys().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0178";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([]);
+        let iterator: IterableIterator<number> = array.keys();
+        let tempNum: number = 0;
+        for (const key of iterator) {
+          console.info("iterator key:" + key);
+          tempNum = tempNum + 1;
+        }
+        expect(tempNum).assertEqual(0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0179
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0179
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], keys(),iterator.next().value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0179";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([-1, 2, 3]);
+        let iterator: IterableIterator<number> = array.keys();
+        expect(iterator.next().value).assertEqual(0);
+        expect(iterator.next().value).assertEqual(1);
+        expect(iterator.next().value).assertEqual(2);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0180
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0180
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], keys(),for iterator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0180";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        let iterator: IterableIterator<number> = array.keys();
+        let tempNum: number = 0;
+        for (const key of iterator) {
+          console.info("iterator key:" + key);
+          expect(key).assertEqual(tempNum);
+          tempNum = tempNum + 1;
+        }
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0181
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0181
+     * @tc.desc   Testing Collections of int8array, array is [], values().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0181";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([]);
+        let iterator: IterableIterator<number> = array.values();
+        console.info("iterator values:" + iterator);
+        expect(iterator.next().done).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0182
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0182
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], values(),iterator.next().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0182";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        let iterator: IterableIterator<number> = array.values();
+        console.info("iterator values:" + iterator);
+        expect(iterator.next().value).assertEqual(1);
+        expect(iterator.next().value).assertEqual(2);
+        expect(iterator.next().value).assertEqual(3);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0183
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0183
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], values(),for value iterator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0183";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        let iterator: IterableIterator<number> = array.values();
+        console.info("iterator values:" + iterator);
+        let tempNum: number = 1;
+        for (const value of iterator) {
+          console.info("iterator value:" + value);
+          expect(value).assertEqual(tempNum);
+          tempNum = tempNum + 1;
+        }
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0184
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0184
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], set array,values(),for value iterator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0184";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        array.set([4, 5, 6]);
+        let iterator: IterableIterator<number> = array.values();
+        console.info("iterator values:" + iterator);
+        let tempNum: number = 4;
+        for (const value of iterator) {
+          console.info("iterator value:" + value);
+          expect(value).assertEqual(tempNum);
+          tempNum = tempNum + 1;
+        }
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0185
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0185
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], index < 0, array[index] = undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0185";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array is:" + array);
+        expect(array[-1]).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0186
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0186
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3], index > arrayLength, array[index] = undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0186";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array is:" + array);
+        expect(array[5]).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8Array0187
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0187
+     * @tc.desc   Testing Collections of int8array, array is [1,2,3],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8Array0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8Array0187";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        console.info("array is:" + array);
+        expect(array[1]).assertEqual(2);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayReduceRight0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0188
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayReduceRight0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayReduceRight0001";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([]);
+        array.reduceRight((accumulator: number, value: number) => accumulator + value);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayReduceRight0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0189
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayReduceRight0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayReduceRight0002";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 5]);
+        let expectedValues: number[] = [15, 14, 12, 9, 5];
+        let reduceRightdValue: number = array.reduceRight((accumulator: number, value: number, index: number) => {
+          let newAccumulator = accumulator + value;
+          expect(newAccumulator).assertEqual(expectedValues[index]);
+          return newAccumulator;
+        });
+        expect(reduceRightdValue).assertEqual(15);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayReduceRight0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0190
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayReduceRight0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayReduceRight0003";
+      try {
+        const array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 5]);
+        const initialAccumulator = 8;
+        const expectedValues: number[] = [23, 22, 20, 17, 13];
+        let reduceRightdValue: number = array.reduceRight((accumulator: number, value: number, index: number) => {
+          const newAccumulator = accumulator + value;
+          expect(newAccumulator).assertEqual(expectedValues[index]);
+          return newAccumulator;
+        }, initialAccumulator);
+        expect(reduceRightdValue).assertEqual(23);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayReduceRight0004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0191
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayReduceRight0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayReduceRight0004";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 5]);
+        let initialValue = "initialValue";
+        let reduceRightdValue: string = array.reduceRight<string>((accumulator: string, value: number) =>
+        accumulator + value, initialValue);
+        expect(reduceRightdValue).assertEqual('initialValue54321');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testInt8ArrayToLocaleString0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0192
+     * @tc.desc   Test the function of the interface ArkTS Array ToLocaleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayToLocaleString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayToLocaleString0001";
+      try {
+        const array1 = new collections.Int8Array();
+        const iterator1 = array1.toLocaleString();
+        console.log(`${TAG} result:` + iterator1);
+        expect(iterator1).assertEqual('');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayToLocaleString0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0193
+     * @tc.desc   Test the function of the interface ArkTS Array ToLocaleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayToLocaleString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayToLocaleString0002";
+      try {
+        const array1 = new collections.Int8Array(1);
+        const iterator1 = array1.toLocaleString();
+        console.log(`${TAG} result:` + iterator1);
+        expect(iterator1).assertEqual('0');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testInt8ArrayToLocaleString0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0194
+     * @tc.desc   Test the function of the interface ArkTS Array ToLocaleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayToLocaleString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayToLocaleString0003";
+      try {
+        const array1 = new collections.Int8Array([1,2,3]);
+        const iterator1 = array1.toLocaleString();
+        console.log(`${TAG} result:` + iterator1);
+        expect(iterator1).assertEqual('1,2,3');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testInt8ArrayLastIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0195
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayLastIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayLastIndexOf0001";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([]);
+        let res : number = array.lastIndexOf(3);
+        expect(res).assertEqual(-1);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayLastIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0196
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayLastIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayLastIndexOf0002";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        let res : number = array.lastIndexOf(4);
+        expect(res).assertEqual(-1);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayLastIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0197
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayLastIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayLastIndexOf0003";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3]);
+        array.set([4, 5], 1);
+        let res : number = array.lastIndexOf(4);
+        expect(res).assertEqual(1);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayLastIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0198
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayLastIndexOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayLastIndexOf0004";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 3, 5, 3, 6, 3, 3]);
+        let res : number = array.lastIndexOf(3, -1);
+        expect(res).assertEqual(array.length - 1);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayLastIndexOf0005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0199
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayLastIndexOf0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayLastIndexOf0005";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 3, 5, 3, 6, 3, 3]);
+        let res : number = array.lastIndexOf(3, 5);
+        expect(res).assertEqual(4);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayLastIndexOf0006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0200
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayLastIndexOf0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayLastIndexOf0006";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 4, 3, 5, 3, 6, 3, 3]);
+        let res : number = array.lastIndexOf(3, 3);
+        expect(res).assertEqual(3);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayLastIndexOf0007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0201
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayLastIndexOf0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayLastIndexOf0007";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 4, 3, 5, 3, 6, 3, 3]);
+        let res : number = array.lastIndexOf(3, 2);
+        expect(res).assertEqual(-1);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testInt8ArrayLastIndexOf0008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0202
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayLastIndexOf0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayLastIndexOf0008";
+      try {
+        let array: collections.Int8Array = collections.Int8Array.from([1, 2, 3, 4, 3, 5, 3, 6, 3, 3]);
+        let res : number = array.lastIndexOf(3);
+        expect(res).assertEqual(9);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testInt8ArrayOf0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0203
+     * @tc.desc   Test the function of the interface Of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayOf0001";
+      try {
+        let result : collections.Int8Array = collections.Int8Array.of(1);
+        expect(result.toString()).assertEqual('1');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testInt8ArrayOf0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0204
+     * @tc.desc   Test the function of the interface Of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInt8ArrayOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testInt8ArrayOf0002";
+      try {
+        let result : collections.Int8Array = collections.Int8Array.of(1, 2, 3);
+        expect(result.toString()).assertEqual('1,2,3');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    });
+
+    /**
+     * @tc.name   testInt8ArrayMissing0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0205
+     * @tc.desc   Testing 'from' return properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Int8Array = collections.Int8Array.from([1,2,3]);
+      expect(array.toString()).assertEqual('1,2,3');
+      expect(array[1]).assertEqual(2);
+      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
+      expect(array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(array.byteLength).assertEqual(3);
+      expect(array.byteOffset).assertEqual(0);
+      expect(array.length).assertEqual(3);
+      done()
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0206
+     * @tc.desc   Testing 'from' return properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Int8Array = collections.Int8Array.from<string>(
+        ["1", "3", "5"], (v: string, k: number) => parseInt(v));
+      expect(array.toString()).assertEqual('1,3,5');
+      expect(array[1]).assertEqual(3);
+      expect(array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(array.byteLength).assertEqual(3);
+      expect(array.byteOffset).assertEqual(0);
+      expect(array.length).assertEqual(3);
+      done()
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0207
+     * @tc.desc   Testing 'from' interface with undefined mapFn.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let myset = new Set([1, 3, 5]);
+      let array: collections.Int8Array = collections.Int8Array.from(myset, undefined);
+      expect(array.toString()).assertEqual('1,3,5');
+      expect(array[1]).assertEqual(3);
+      expect(array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(array.byteLength).assertEqual(3);
+      expect(array.byteOffset).assertEqual(0);
+      expect(array.length).assertEqual(3);
+      done()
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0208
+     * @tc.desc   Testing 'copyWithin' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      let result = int8Array.copyWithin(0, 3, undefined);
+      expect(result[1]).assertEqual(5);
+      expect(result.toString()).assertEqual('4,5,3,4,5');
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done()
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0209
+     * @tc.desc   Testing 'fill' with undefined start parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      let result = int8Array.fill(9, undefined, 3);
+      expect(result[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('9,9,9,4,5');
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0210
+     * @tc.desc   Testing 'fill' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      let result = int8Array.fill(9, 1, undefined);
+      expect(result[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('1,9,9,9,9');
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0211
+     * @tc.desc   Testing 'fill' with undefined start/end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      let result = int8Array.fill(9, undefined, undefined);
+      expect(result[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('9,9,9,9,9');
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0212
+     * @tc.desc   Testing 'filter' with undefined predicate parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let arrayLike = [0, 1, 2, 3, 4];
+      let array: collections.Int8Array = collections.Int8Array.from(arrayLike);
+      let filtered: collections.Int8Array = array.filter((element: number) => element % 2 == 0);
+      expect(filtered.toString()).assertEqual('0,2,4');
+      expect(filtered[1]).assertEqual(2);
+      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
+      expect(filtered.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(filtered.byteLength).assertEqual(3);
+      expect(filtered.byteOffset).assertEqual(0);
+      expect(filtered.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0213
+     * @tc.desc   Testing 'indexOf' with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      const result = int8Array.indexOf(3, undefined);
+      expect(result).assertEqual(2);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0214
+     * @tc.desc   Testing 'join' with undefined separator parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      const result = int8Array.join(undefined);
+      expect(result).assertEqual('1,2,3,4,5');
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0215
+     * @tc.desc   Testing 'join' with empty string separator parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      const result = int8Array.join('');
+      expect(result).assertEqual('12345');
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0216
+     * @tc.desc   Testing 'set' with undefined offset parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      int8Array.set([6, 7], undefined);
+      expect(int8Array.toString()).assertEqual('6,7,3,4,5')
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0217
+     * @tc.desc   Testing 'slice' with undefined start parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      const result = int8Array.slice(undefined,4);
+      expect(result.toString()).assertEqual('1,2,3,4');
+      expect(result[1]).assertEqual(2);
+      expect(result.buffer.byteLength).assertEqual(4);
+      expect(result.byteLength).assertEqual(4);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(4);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0218
+     * @tc.desc   Testing 'slice' with null end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      const result = int8Array.slice();
+      expect(result.toString()).assertEqual('1,2,3,4,5');
+      expect(result[1]).assertEqual(2);
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0219
+     * @tc.desc   Testing 'slice' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      const result = int8Array.slice(4, undefined);
+      expect(result.toString()).assertEqual('5');
+      expect(result[0]).assertEqual(5);
+      expect(result.buffer.byteLength).assertEqual(1);
+      expect(result.byteLength).assertEqual(1);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(1);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0220
+     * @tc.desc   Testing 'sort' with undefined compareFn parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([5, 3, 1, 4, 2]);
+      let result = int8Array.sort(undefined);
+      expect(result.toString()).assertEqual('1,2,3,4,5');
+      expect(result[0]).assertEqual(1);
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0221
+     * @tc.desc   Testing 'subarray' with undefined begin parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      const result = int8Array.subarray(undefined);
+      expect(result.toString()).assertEqual('1,2,3,4,5');
+      expect(result[0]).assertEqual(1);
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0222
+     * @tc.desc   Testing 'subarray' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      const result = int8Array.subarray(2, undefined);
+      expect(result.toString()).assertEqual('3,4,5');
+      expect(result[0]).assertEqual(3);
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(3);
+      expect(result.byteOffset).assertEqual(2);
+      expect(result.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0223
+     * @tc.desc   Testing 'subarray' return properties: BYTES_PER_ELEMENT, buffer, byteLength, byteOffset, length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      const result = int8Array.subarray(1, 4);
+      expect(result.toString()).assertEqual('2,3,4');
+      expect(result[0]).assertEqual(2);
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(3);
+      expect(result.byteOffset).assertEqual(1);
+      expect(result.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0224
+     * @tc.desc   Testing 'includes' with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      const result = int8Array.includes(3, undefined);
+      expect(result).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0225
+     * @tc.desc   Testing 'lastIndexOf' with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      const result = int8Array.lastIndexOf(3, undefined);
+      expect(result).assertEqual(-1);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0226
+     * @tc.desc   Test of() creating Int8Array from variadic arguments.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result : collections.Int8Array = collections.Int8Array.of(1, 2, 3);
+      expect(result.toString()).assertEqual('1,2,3');
+      expect(result[0]).assertEqual(1);
+      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
+      expect(result.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(result.byteLength).assertEqual(3);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0227
+     * @tc.desc   Test map() with Math.sqrt callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Int8Array = new collections.Int8Array([25, 36, 49]);
+      const mapped = array.map(Math.sqrt);
+      expect(mapped.toString()).assertEqual("5,6,7");
+      expect(mapped[0]).assertEqual(5);
+      expect(mapped.buffer.byteLength).assertEqual(3);
+      expect(mapped.byteLength).assertEqual(3);
+      expect(mapped.byteOffset).assertEqual(0);
+      expect(mapped.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testInt8ArrayMissing0024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_NORMAL_0228
+     * @tc.desc   Test reverse() mutating array in place.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInt8ArrayMissing0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Int8Array = new collections.Int8Array([1,2,3,4,5]);
+      const result = array.reverse();
+      expect(result.toString()).assertEqual("5,4,3,2,1");
+      expect(result[0]).assertEqual(5);
+      expect(result.buffer.byteLength).assertEqual(5); 
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+  })
+}
