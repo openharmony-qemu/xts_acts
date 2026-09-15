@@ -153,3 +153,923 @@ export default function Uint8ArrayConcurrentTestConcurrent() {
           let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
             group.addTask(test_uint8Array_001, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.length}`);
+          expect(uint8Array.length).assertEqual(1000)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0029
+     * @tc.desc   test_concurrent_collections_uint8Array_002 - test Uint8Array from method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_002';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_002, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.length}`);
+          expect(uint8Array.length).assertEqual(4)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0030
+     * @tc.desc   test_concurrent_collections_uint8Array_003 - test Uint8Array from with array parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_003';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array3()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_003, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.length}`);
+          expect(uint8Array.length).assertEqual(4)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0031
+     * @tc.desc   test_concurrent_collections_uint8Array_004 - test Uint8Array copyWithin method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_004';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array4()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_004, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.length}`);
+          expect(uint8Array.length).assertEqual(8)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0032
+     * @tc.desc   test_concurrent_collections_uint8Array_005 - test Uint8Array from with Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_005';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array5()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_005, uint8Array, caseName, i).then((res) => {
+              expect(res as boolean)
+                .assertFalse()
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0033
+     * @tc.desc   test_concurrent_collections_uint8Array_006 - test Uint8Array from with Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_006';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array6()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_006, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.length}`);
+          expect(uint8Array.length).assertEqual(4)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0034
+     * @tc.desc   test_concurrent_collections_uint8Array_007 - test Uint8Array from with mapping function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_007';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array7()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_007, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.length}`);
+          expect(uint8Array.length).assertEqual(3)
+          expect(uint8Array[0]).assertEqual(1)
+          expect(uint8Array[1]).assertEqual(3)
+          expect(uint8Array[2]).assertEqual(5)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0035
+     * @tc.desc   test_concurrent_collections_uint8Array_008 - test Uint8Array of method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_008';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array8()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_008, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.length}`);
+          expect(uint8Array.length).assertEqual(4)
+          expect(uint8Array[0]).assertEqual(1)
+          expect(uint8Array[1]).assertEqual(2)
+          expect(uint8Array[2]).assertEqual(3)
+          expect(uint8Array[3]).assertEqual(4)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0036
+     * @tc.desc   test_concurrent_collections_uint8Array_009 - test Uint8Array copyWithin result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_009';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array9()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_009, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.length}`);
+          expect(uint8Array.length).assertEqual(8)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0037
+     * @tc.desc   test_concurrent_collections_uint8Array_010 - test Uint8Array with ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_010';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array10()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_010, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.length}`);
+          expect(uint8Array.length).assertEqual(5)
+          expect(uint8Array.byteLength).assertEqual(5)
+          expect(uint8Array.byteOffset).assertEqual(1)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0038
+     * @tc.desc   test_concurrent_collections_uint8Array_011 - test Uint8Array some and every methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_011';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_011, uint8Array, caseName, i).then((res) => {
+              expect(res as boolean)
+                .assertFalse()
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0039
+     * @tc.desc   test_concurrent_collections_uint8Array_012 - test Uint8Array fill method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_012';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_012, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.toString()}`);
+          expect(uint8Array[0]).assertEqual(1)
+          expect(uint8Array[1]).assertEqual(0)
+          expect(uint8Array[2]).assertEqual(0)
+          expect(uint8Array[3]).assertEqual(4)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0040
+     * @tc.desc   test_concurrent_collections_uint8Array_013 - test Uint8Array filter and find methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_013';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_013, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('2,4,2')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0041
+     * @tc.desc   test_concurrent_collections_uint8Array_014 - test Uint8Array findIndex and indexOf methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_014';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_014, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('1,1')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0042
+     * @tc.desc   test_concurrent_collections_uint8Array_015 - test Uint8Array forEach method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_015';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_015, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('forEach_completed')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0043
+     * @tc.desc   test_concurrent_collections_uint8Array_016 - test Uint8Array lastIndexOf and join methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_016';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_016, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('1,1-2-3-4')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0044
+     * @tc.desc   test_concurrent_collections_uint8Array_017 - test Uint8Array map method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_017';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_017, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('2,4,6,8')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0045
+     * @tc.desc   test_concurrent_collections_uint8Array_018 - test Uint8Array reduce methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_018';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_018, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('10,16')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0046
+     * @tc.desc   test_concurrent_collections_uint8Array_019 - test Uint8Array reduceRight methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_019';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_019, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('10,16')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0047
+     * @tc.desc   test_concurrent_collections_uint8Array_020 - test Uint8Array reduceRight methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_020';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_020, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            expect(JSON.stringify(res)).assertContain('4,3,2,1')
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.toString()}`);
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0048
+     * @tc.desc   test_concurrent_collections_uint8Array_021 - test Uint8Array set method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_021';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array1()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_021, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.length}`);
+          expect(uint8Array.length).assertEqual(1000)
+          expect(uint8Array[0]).assertEqual(100)
+          expect(uint8Array[1]).assertEqual(101)
+          expect(uint8Array[2]).assertEqual(102)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0049
+     * @tc.desc   test_concurrent_collections_uint8Array_022 - test Uint8Array slice method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_022';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_022, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('2,3')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0050
+     * @tc.desc   test_concurrent_collections_uint8Array_023 - test Uint8Array sort method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_023';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i = 0; i < concurrentNum; i++) {
+            group.addTask(test_uint8Array_023, uint8Array, caseName, i)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${uint8Array.toString()}`);
+          expect(uint8Array[0]).assertEqual(4)
+          expect(uint8Array[1]).assertEqual(3)
+          expect(uint8Array[2]).assertEqual(2)
+          expect(uint8Array[3]).assertEqual(1)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0051
+     * @tc.desc   test_concurrent_collections_uint8Array_024 - test Uint8Array subarray method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_024';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_024, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('2,3')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_025
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0052
+     * @tc.desc   test_concurrent_collections_uint8Array_025 - test Uint8Array at and includes methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_025';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_025, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('3,true')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_026
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0053
+     * @tc.desc   test_concurrent_collections_uint8Array_026 - test Uint8Array entries method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_026';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_026, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('0,1')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+
+    /**
+     * @tc.name   test_concurrent_collections_uint8Array_027
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT8_ARRAY_CONCURRENT_0054
+     * @tc.desc   test_concurrent_collections_uint8Array_027 - test Uint8Array keys and values methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_concurrent_collections_uint8Array_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'test_concurrent_collections_uint8Array_027';
+        console.info(`${caseName} test start`);
+        let uint8Array = getInitUint8Array2()
+        let count = 0;
+        try {
+          for (let i = 0; i < concurrentNum; i++) {
+            await taskpool.execute(test_uint8Array_027, uint8Array, caseName, i).then((res) => {
+              expect(res as string)
+                .assertEqual('0,1')
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+              expect().assertFail()
+            })
+          }
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        console.info(`${caseName} test end`);
+        done()
+      })
+  })
+}
