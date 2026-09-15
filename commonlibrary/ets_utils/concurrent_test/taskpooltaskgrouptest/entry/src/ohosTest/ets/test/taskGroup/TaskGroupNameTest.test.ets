@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import taskpool from '@ohos.taskpool';
-import { sleep } from '../Utils';
+import { sleep } from '../../testability/pages/Utils';
 import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS';
 
 import { NameNestedCounter, nameNestedInnerFunc } from './TaskGroupNameTestInner';

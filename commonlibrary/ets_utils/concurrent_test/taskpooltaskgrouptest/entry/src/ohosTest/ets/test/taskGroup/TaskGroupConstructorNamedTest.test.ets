@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import taskpool from '@ohos.taskpool';
 import { ArkTSUtils } from '@kit.ArkTS';
-import { sleep } from '../Utils';
+import { sleep } from '../../testability/pages/Utils';
 import { ConstructorNamedNestedCounter, constructorNamedNestedInnerFunc } from './TaskGroupConstructorNamedTestInner';
 
 @Concurrent
@@ -394,12 +394,8 @@ export default function TaskGroupConstructorNamedTest(): void {
     it('TaskGroupConstructorNamedTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let threw = false
       let group: taskpool.TaskGroup | null = null
-      // undefBox[9] is out of bounds: statically Object, evaluates to a
-      // non-string runtime value so the same 401 path is covered without an
-      // illegal null literal argument.
-      let undefBox: Object[] = []
       try {
-        group = new taskpool.TaskGroup(undefBox[9] as string)
+        group = new taskpool.TaskGroup(null!)
       } catch (error) {
         threw = true
         expect(error.code).assertEqual(401)

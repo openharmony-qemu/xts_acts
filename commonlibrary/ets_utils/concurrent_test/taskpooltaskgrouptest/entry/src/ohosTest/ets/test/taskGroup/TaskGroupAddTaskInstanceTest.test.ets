@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import taskpool from '@ohos.taskpool';
 import { ArkTSUtils } from '@kit.ArkTS';
-import { sleep } from '../Utils';
+import { sleep } from '../../testability/pages/Utils';
 import { AddTaskInstanceNestedCounter, addTaskInstanceNestedInnerFunc } from './TaskGroupAddTaskInstanceTestInner';
 
 @Concurrent
@@ -923,6 +923,26 @@ export default function TaskGroupAddTaskInstanceTest(): void {
         expect(false).assertFail();
       }
       done()
+    })
+
+    /**
+     * @tc.name   TaskGroupAddTaskInstanceTest2900
+     * @tc.number SUB_TASKGROUP_ADDTASKINSTANCE_TEST_2900
+     * @tc.desc   Verify addTask(null as taskpool.Task) on the addTask(Task) overload throws error 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TaskGroupAddTaskInstanceTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let group = new taskpool.TaskGroup()
+      let threw = false
+      try {
+        group.addTask(null!)
+      } catch (error) {
+        threw = true
+        expect(error.code).assertEqual(401)
+      }
+      expect(threw).assertTrue()
     })
   })
 }
