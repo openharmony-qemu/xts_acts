@@ -151,7 +151,7 @@ struct WebSchemeHandlerResponse {
                 try {
                   response.setCustomErrorCode(32159)
                   console.log("[schemeHandler] getCustomErrorCode:" + response.getCustomErrorCode())
-                  Utils.emitEvent(response.getCustomErrorCode(), 8820)
+                  Utils.emitEvent(response.getCustomErrorCode(), 8826)
                 } catch (error) {
                   console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
