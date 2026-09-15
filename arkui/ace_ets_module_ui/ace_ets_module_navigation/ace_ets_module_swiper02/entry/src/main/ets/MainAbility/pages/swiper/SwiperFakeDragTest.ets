@@ -36,19 +36,34 @@ struct SwiperFakeDragTest {
             AppStorage.setOrCreate('stopFakeDragFlag', ret);
           })
 
-        Button('FakeDrag 0200')
-          .id('btn_fakeDrag_0200')
+        Button('isFakeDragging 0200')
+          .id('btn_isFakeDragging_0200')
           .onClick(() => {
             let ret = this.swiperController2.isFakeDragging();
             console.info('SwiperFakeDrag 0200 isFakeDragging ret = ', ret);
             AppStorage.setOrCreate('isFakeDraggingFlag', ret);
-            ret = this.swiperController2.startFakeDrag();
+          })
+
+        Button('startFakeDrag 0200')
+          .id('btn_startFakeDrag_0200')
+          .onClick(() => {
+            let ret = this.swiperController2.startFakeDrag();
             console.info('SwiperFakeDrag 0200 startFakeDrag ret = ', ret);
             AppStorage.setOrCreate('startFakeDragFlag', ret);
-            ret = this.swiperController2.fakeDragBy(100);
+          })
+
+        Button('fakeDragBy 0200')
+          .id('btn_fakeDragBy_0200')
+          .onClick(() => {
+            let ret = this.swiperController2.fakeDragBy(100);
             console.info('SwiperFakeDrag 0200 fakeDragBy ret = ', ret);
             AppStorage.setOrCreate('fakeDragByFlag', ret);
-            ret = this.swiperController2.stopFakeDrag();
+          })
+
+        Button('stopFakeDrag 0200')
+          .id('btn_stopFakeDrag_0200')
+          .onClick(() => {
+            let ret = this.swiperController2.stopFakeDrag();
             console.info('SwiperFakeDrag 0200 stopFakeDrag ret = ', ret);
             AppStorage.setOrCreate('stopFakeDragFlag', ret);
           })

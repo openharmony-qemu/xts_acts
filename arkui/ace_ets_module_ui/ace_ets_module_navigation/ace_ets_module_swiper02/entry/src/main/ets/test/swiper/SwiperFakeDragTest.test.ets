@@ -83,22 +83,30 @@ export default function SwiperFakeDragTest() {
     it('SwiperFakeDragTest_0200', Level.LEVEL0, async () => {
       console.info('[SwiperFakeDragTest_0200] START');
       try {
-        // 验证页面加载成功且方法能正常调用
         await CommonFunc.sleep(1000);
-        sendEventByKey('btn_fakeDrag_0200', 10, '');
-        await CommonFunc.sleep(1000);
+        sendEventByKey('btn_isFakeDragging_0200', 10, '');
+        await CommonFunc.sleep(500);
         let isFakeDraggingFlag: boolean | undefined = AppStorage.get('isFakeDraggingFlag');
         console.info('[SwiperFakeDragTest_0200] isFakeDraggingFlag is ', isFakeDraggingFlag);
         expect(isFakeDraggingFlag == false).assertTrue();
         AppStorage.delete('isFakeDraggingFlag');
+
+        sendEventByKey('btn_startFakeDrag_0200', 10, '');
+        await CommonFunc.sleep(500);
         let startFakeDragFlag: boolean | undefined = AppStorage.get('startFakeDragFlag');
         console.info('[SwiperFakeDragTest_0200] startFakeDragFlag is ', startFakeDragFlag);
         expect(startFakeDragFlag == true).assertTrue();
         AppStorage.delete('startFakeDragFlag');
+
+        sendEventByKey('btn_fakeDragBy_0200', 10, '');
+        await CommonFunc.sleep(500);
         let fakeDragByFlag: boolean | undefined = AppStorage.get('fakeDragByFlag');
         console.info('[SwiperFakeDragTest_0200] fakeDragByFlag is ', fakeDragByFlag);
         expect(fakeDragByFlag == true).assertTrue();
         AppStorage.delete('fakeDragByFlag');
+
+        sendEventByKey('btn_stopFakeDrag_0200', 10, '');
+        await CommonFunc.sleep(500);
         let stopFakeDragFlag: boolean | undefined = AppStorage.get('stopFakeDragFlag');
         console.info('[SwiperFakeDragTest_0200] stopFakeDragFlag is ', stopFakeDragFlag);
         expect(stopFakeDragFlag == true).assertTrue();
