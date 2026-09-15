@@ -12,7 +12,7 @@ import { Observed } from '@ohos.arkui.stateManagement'
 export class ModifierAutoPlay4 implements AttributeModifier<SwiperAttribute> {
   public isUndefined: boolean = false;
   applyNormalAttribute(instance: SwiperAttribute): void {
-    instance.autoPlay(true, this.isUndefined ? undefined : {stopWhenTouched : false} as AutoPlayOptions)
+    instance.autoPlay(true, this.isUndefined ? {stopWhenTouched : true} as AutoPlayOptions : {stopWhenTouched : false} as AutoPlayOptions)
   }
 }
 
