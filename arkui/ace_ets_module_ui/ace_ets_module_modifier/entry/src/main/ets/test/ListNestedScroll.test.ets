@@ -53,12 +53,15 @@ export default function listNestedScrollJsunit() {
     it('ArkUI_Stage_listNestedScroll01', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_Stage_listNestedScroll01] START');
       await Utils.sleep(2000)
-      let webRect = Utils.getComponentRect('listNestedScroll' + '_ColumnSize');
-      console.info(`ArkUI_Stage_listNestedScroll01 get webRect is:` + JSON.stringify(webRect));
-      let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
-      let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      await driver.swipe(Math.round(x), Math.round(y + vp2px(60)), Math.round(x), Math.round(y - vp2px(60)));
+      await Utils.sleep(500)
+      let columnRect = await driver.findComponent(ON.id('listNestedScroll_ColumnSize'));
+      let rect = await columnRect.getBounds();
+      console.info(`ArkUI_Stage_listNestedScroll01 webRect is:` + JSON.stringify(rect));
+      let top = rect.top
+      let bottom = rect.bottom
+      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round(bottom - (bottom - top)/10),
+        Math.round((rect.left + rect.right) / 2), Math.round(top + (bottom - top)/6));
       console.info('[ArkUI_Stage_listNestedScroll01] driver.swipe end');
       try {
         let callBack = (backData: events_emitter.EventData) => {
