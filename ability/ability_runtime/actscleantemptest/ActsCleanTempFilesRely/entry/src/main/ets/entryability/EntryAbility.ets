@@ -178,9 +178,6 @@ function cleanTempFiles(actionStr: string): void {
     commonEventData.parameters!.message = readBuf;
     commonEvent.publish('Acts_CleanTempFiles_0301', commonEventData, (err: BusinessError) => {
       console.log('Acts_CleanTempFiles_0301 publish err: ' + JSON.stringify(err));
-      setTimeout(() => {
-        currentContext!.terminateSelf();
-      }, DELAY_TIME);
     });
   } else if (actionStr === 'Acts_CleanTempFiles_0302') {
     setTimeout(() => {
