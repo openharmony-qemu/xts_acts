@@ -1537,14 +1537,32 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       const msg = 'testBeginRecordingSpecialNumberValue2Static';
       let specialValues: Array<int> = [(Number.MAX_VALUE).toInt(), (Infinity).toInt()];
 
+      try {
+        let recordCmdUtils = new drawing.RecordCmdUtils();
+        recordCmdUtils.beginRecording((Number.MAX_VALUE).toInt(), (Number.MAX_VALUE).toInt());
+        console.info(msg + ` Number.MAX_VALUE toInt Value=${(Number.MAX_VALUE).toInt()}`);
+        let height = recordCmdUtils.getHeight();
+        let width = recordCmdUtils.getWidth();
+        console.info(msg + ` MAX MIN getHeight=${height}  getWidth=${width}`);
+        expect(width == (Number.MAX_VALUE).toInt()).assertTrue();
+        expect(height == (Number.MAX_VALUE).toInt()).assertTrue();
+        recordCmdUtils.finishRecording();
+        console.info(msg + ` getHeight boundary MAX MIN succeeded`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` getHeight boundary MAX MIN errorCode is: ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
       for (let i = 0; i < specialValues.length; i++) {
         try {
           let recordCmdUtils = new drawing.RecordCmdUtils();
           recordCmdUtils.beginRecording(specialValues[i], 200);
           console.info(msg + ` beginRecording with special width[${i}] succeeded`);
-          console.info(msg + ` beginRecording with special width[${i}] :${specialValues[i]}`);
+          console.info(msg + ` beginRecording with special setValue[${i}] :${specialValues[i]}`);
           let width = recordCmdUtils.getWidth();
-          expect(Math.abs(width - 2147483520) < 0.01).assertTrue();
+          console.info(msg + ` beginRecording with special width[${i}] :${width}`);
+          expect(width == specialValues[i]).assertTrue();
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + ` beginRecording with special width[${i}] errorCode is: ${e.code} + errormsg is: ${e.message}`);
@@ -1556,10 +1574,11 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
         try {
           let recordCmdUtils = new drawing.RecordCmdUtils();
           recordCmdUtils.beginRecording(200, specialValues[i]);
-          console.info(msg + ` beginRecording with special height[${i}] succeeded`);
-          console.info(msg + ` beginRecording with special width[${i}] :${specialValues[i]}`);
+          console.info(msg + ` beginRecording height special height[${i}] succeeded`);
+          console.info(msg + ` beginRecording height special setValue[${i}] :${specialValues[i]}`);
           let height = recordCmdUtils.getHeight();
-          expect(Math.abs(height - 2147483520) < 0.01).assertTrue();
+          console.info(msg + ` beginRecording height special height[${i}] :${height}`);
+          expect(height == specialValues[i]).assertTrue();
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + ` beginRecording with special height[${i}] errorCode is: ${e.code} + errormsg is: ${e.message}`);
