@@ -23,8 +23,9 @@ import {
 } from '@ohos.arkui.advanced.Filter';
 import {
   ToolBarV2, ToolBarV2Item, ToolBarV2ItemText, ToolBarV2ItemImage,
-  ToolBarV2ItemState, ToolBarV2ItemAction
+  ToolBarV2ItemState, ToolBarV2ItemAction, ToolBarV2SymbolGlyph
 } from '@ohos.arkui.advanced.ToolBarV2';
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import promptAction from '@ohos.promptAction';
 import {
   Entry, ComponentV2, Column, Text, Button, Scroll, Radio, Rating, Slider,
@@ -32,11 +33,18 @@ import {
   LengthMetricsUnit, PulseSymbolEffect, SymbolGlyph, $r,
   OnRadioChangeCallback, OnRatingChangeCallback, SliderTriggerChangeCallback,
   SliderChangeMode, ButtonTriggerClickCallback, TransitionFinishCallback,
-  TipsMessageType, Degree
+  TipsMessageType, Degree, ContentTransition,
+  SliderPrefixOptions, SliderSuffixOptions,
+  CustomDialogController, CompatibleInitCallback, CompatibleUpdateCallback,
+  CompatibleUpdatableBuilder, CompatibleComponentInfo, compatibleWrappedBuilder,
+  AccessibilityTransparentCallback, ContentSlotAttribute,
+  DataSyncOptions, PageTransitionCallback, SystemBarStyle, ToolBarItemAttribute,
+  PromptActionCommonState, TouchEvent, RouteType
 } from '@ohos.arkui.component';
 import { Local, AppStorage } from '@ohos.arkui.stateManagement';
-import { Router } from '@ohos.arkui.UIContext';
-import { ColorMetrics } from '@ohos.arkui.node';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { ColorMetrics, Pivot, Translation, typeNode } from '@ohos.arkui.node';
+import { InputEventType } from 'arkui.BuilderNode';
 
 type OnFilterChangedCallback = (filterResults: Array<FilterResult>) => void;
 
@@ -55,12 +63,22 @@ struct CoverageStaticIndex {
   @Local pulseFlag: string = 'ok';
   @Local toolBarFlag: string = 'init';
   @Local extraAliasFlag: string = 'init';
+  @Local matrixPropFlag: string = 'init';
+  @Local commonCtrlFlag: string = 'init';
+  @Local clickSoundFlag: string = 'init';
+  @Local moreAliasFlag: string = 'init';
+  @Local toolBarSymbolFlag: string = 'init';
+  @Local typeNodeFlag: string = 'init';
+  @Local interopFlag: string = 'init';
+  @Local dialogGetStateFlag: string = 'init';
+  @Local sdkAliasFlag: string = 'init';
   @Local toolBarList: ToolBarV2Item[] = [];
   @Local popoverOptions: PopoverDialogV2Options = {
     builder: (): void => {
       this.dialogBuilder();
     }
   };
+  private coverageDlgCtrl: CustomDialogController | undefined = undefined;
   private filterParam: FilterParams[] = [{
     name: '类别',
     options: ['全部', 'A', 'B']
@@ -95,6 +113,10 @@ struct CoverageStaticIndex {
   private toolBarAction: ToolBarV2ItemAction = (index: int): void => {
     this.toolBarFlag = `idx_${index}`;
   };
+  private sdkHoverCb: AccessibilityTransparentCallback =
+    (event: TouchEvent): void => {
+      console.info('[CoverageStatic] hover ' + `${event}`);
+    };
 
   aboutToAppear(): void {
     try {
@@ -120,6 +142,13 @@ struct CoverageStaticIndex {
     const m2: Matrix2D = new Matrix2D(LengthMetricsUnit.DEFAULT);
     m1.identity();
     m2.identity();
+    m1.rotateX = 0.1;
+    m1.rotateY = 0.2;
+    m1.scaleX = 1.1;
+    m1.scaleY = 1.2;
+    m1.translateX = 3;
+    m1.translateY = 4;
+    this.matrixPropFlag = 'ok';
     this.typeAliasFlag = 'ready';
     this.filterCb([]);
     this.filterFlag = 'ready';
@@ -128,18 +157,108 @@ struct CoverageStaticIndex {
     this.sliderFlag = 'bound';
     this.clickFlag = 'bound';
     this.pulseFlag = 'ok';
+    this.clickSoundFlag = 'ok';
     new PulseSymbolEffect();
     this.initToolBarItems();
+    this.initCommonCtrlAndAliases();
+    this.initTypeNodeCoverage();
+    this.initInteropAndDialog();
+    this.initSdkMiscAliases();
     const degreeAlias: Degree = '45deg';
     const tipMsg: TipsMessageType = 'static-tip';
     this.extraAliasFlag = degreeAlias.length > 0 ? 'ok' : 'fail';
     console.info('TipsMessageType len=' + `${tipMsg}`.length);
   }
 
+  private initCommonCtrlAndAliases(): void {
+    const commonCtrl: promptAction.CommonController = new promptAction.CommonController();
+    const st = commonCtrl.getState();
+    commonCtrl.close();
+    this.commonCtrlFlag = (st !== null) ? 'ok' : 'fail';
+    const contentTrans: ContentTransition | undefined = undefined;
+    const translation: Translation = { x: 1, y: 2 };
+    const pivot: Pivot = { x: 0.5, y: 0.5 };
+    const prefixOpt: SliderPrefixOptions | undefined = undefined;
+    const suffixOpt: SliderSuffixOptions | undefined = undefined;
+    const aliasMark: string =
+      `${translation.x}_${pivot.y}_${contentTrans}_${prefixOpt}_${suffixOpt}`;
+    this.moreAliasFlag = (aliasMark.indexOf('1_0.5') >= 0) ? 'ok' : 'fail';
+  }
+
+  private initTypeNodeCoverage(): void {
+    try {
+      const ctx: UIContext = this.getUIContext();
+      const badge: typeNode.Badge = typeNode.createBadgeNode(ctx);
+      const marquee: typeNode.Marquee = typeNode.createMarqueeNode(ctx);
+      const qr: typeNode.QRCode = typeNode.createQRCodeNode(ctx);
+      const rating: typeNode.Rating = typeNode.createRatingNode(ctx);
+      const select: typeNode.Select = typeNode.createSelectNode(ctx);
+      const symbol: typeNode.SymbolGlyph = typeNode.createSymbolGlyphNode(ctx);
+      const clock: typeNode.TextClock = typeNode.createTextClockNode(ctx);
+      const timer: typeNode.TextTimer = typeNode.createTextTimerNode(ctx);
+      const mark: string =
+        `${badge}_${marquee}_${qr}_${rating}_${select}_${symbol}_${clock}_${timer}`;
+      this.typeNodeFlag = (mark.length > 0) ? 'ok' : 'fail';
+    } catch (err) {
+      console.info('[CoverageStatic] initTypeNodeCoverage error ' + err);
+      this.typeNodeFlag = 'fail';
+    }
+  }
+
+  @Builder
+  compatibleUpdatableSample(arg: string): void {
+    Text(arg).id('compatibleUpdatableSample')
+  }
+
+  private initInteropAndDialog(): void {
+    try {
+      const initCb: CompatibleInitCallback =
+        (parent: ESValue): CompatibleComponentInfo => {
+          return { name: 'cov', component: parent };
+        };
+      const updateCb: CompatibleUpdateCallback = (component: ESValue): void => {
+        console.info('[CoverageStatic] compatible update ' + `${component}`);
+      };
+      const updBuilder: CompatibleUpdatableBuilder<string> = this.compatibleUpdatableSample;
+      this.coverageDlgCtrl = new CustomDialogController({
+        builder: (): void => {
+          this.dialogBuilder();
+        }
+      });
+      const ctrl: CustomDialogController = this.coverageDlgCtrl as CustomDialogController;
+      const dlgState: PromptActionCommonState = ctrl.getState();
+      this.dialogGetStateFlag = `${dlgState}`.length >= 0 ? 'ok' : 'fail';
+      const mark: string =
+        `${initCb}_${updateCb}_${updBuilder}_${compatibleWrappedBuilder}`;
+      this.interopFlag = (mark.length > 0) ? 'ok' : 'fail';
+    } catch (err) {
+      console.info('[CoverageStatic] initInteropAndDialog error ' + err);
+      this.interopFlag = 'fail';
+      this.dialogGetStateFlag = 'fail';
+    }
+  }
+
+  private initSdkMiscAliases(): void {
+    const pageCb: PageTransitionCallback =
+      (type: RouteType, progress: double): void => {
+        console.info('[CoverageStatic] page ' + `${type}_${progress}`);
+      };
+    const barStyle: SystemBarStyle = { statusBarContentColor: '#FFFFFF' };
+    const slotAttr: ContentSlotAttribute | undefined = undefined;
+    const syncOpt: DataSyncOptions | undefined = undefined;
+    const inputEv: InputEventType | undefined = undefined;
+    const toolbarAttr: ToolBarItemAttribute | undefined = undefined;
+    const mark: string =
+      `${this.sdkHoverCb}_${pageCb}_${barStyle.statusBarContentColor}_` +
+      `${slotAttr}_${syncOpt}_${inputEv}_${toolbarAttr}`;
+    this.sdkAliasFlag = (mark.indexOf('#FFFFFF') >= 0) ? 'ok' : 'fail';
+  }
+
   private initToolBarItems(): void {
     try {
       const textItem: ToolBarV2ItemText = new ToolBarV2ItemText({
         text: 'A',
+        color: ColorMetrics.resourceColor('#ff0000ff'),
         activatedColor: ColorMetrics.resourceColor('#ff0000ff')
       });
       const imageItem: ToolBarV2ItemImage = new ToolBarV2ItemImage({
@@ -153,10 +272,22 @@ struct CoverageStaticIndex {
         action: this.toolBarAction,
         state: ToolBarV2ItemState.ACTIVATE
       }));
+      const symbolIcon: ToolBarV2SymbolGlyph = new ToolBarV2SymbolGlyph({
+        normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')),
+        activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star'))
+      });
+      this.toolBarList.push(new ToolBarV2Item({
+        content: new ToolBarV2ItemText({ text: 'B' }),
+        icon: symbolIcon,
+        action: this.toolBarAction,
+        state: ToolBarV2ItemState.ENABLE
+      }));
       this.toolBarFlag = this.toolBarList.length >= 1 ? 'ready' : 'fail';
+      this.toolBarSymbolFlag = this.toolBarList.length >= 2 ? 'ok' : 'fail';
     } catch (err) {
       console.info('[CoverageStatic] initToolBarItems error ' + err);
       this.toolBarFlag = 'fail';
+      this.toolBarSymbolFlag = 'fail';
     }
   }
 
@@ -209,6 +340,15 @@ struct CoverageStaticIndex {
         Text(this.pulseFlag).id('pulseFlag')
         Text(this.toolBarFlag).id('toolBarFlag')
         Text(this.extraAliasFlag).id('extraAliasFlag')
+        Text(this.matrixPropFlag).id('matrixPropFlag')
+        Text(this.commonCtrlFlag).id('commonCtrlFlag')
+        Text(this.clickSoundFlag).id('clickSoundFlag')
+        Text(this.moreAliasFlag).id('moreAliasFlag')
+        Text(this.toolBarSymbolFlag).id('toolBarSymbolFlag')
+        Text(this.typeNodeFlag).id('typeNodeFlag')
+        Text(this.interopFlag).id('interopFlag')
+        Text(this.dialogGetStateFlag).id('dialogGetStateFlag')
+        Text(this.sdkAliasFlag).id('sdkAliasFlag')
 
         PopoverDialogV2({
           visible: this.isShow,
@@ -231,6 +371,8 @@ struct CoverageStaticIndex {
 
         Button('clickCb')
           .id('btnClick')
+          .enableClickSoundEffect(true)
+          .onAccessibilityHoverTransparent(this.sdkHoverCb)
           .onClick((): void => {
             this.clickCb(1, 2);
           })

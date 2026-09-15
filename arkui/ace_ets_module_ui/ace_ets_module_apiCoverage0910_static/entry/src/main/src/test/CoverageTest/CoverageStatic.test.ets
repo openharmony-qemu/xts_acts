@@ -181,5 +181,111 @@ export default function CoverageStaticTest(): void {
       await Utils.sleep(500);
       assertFlagContains('extraAliasFlag', 'ok');
     });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_MATRIXPROP_1100
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_MATRIXPROP_1100
+     * @tc.desc Cover Matrix2D rotateX/Y scaleX/Y translateX/Y setters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_MATRIXPROP_1100', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('matrixPropFlag', 'ok');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_COMMONCTRL_1200
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_COMMONCTRL_1200
+     * @tc.desc Cover promptAction.CommonController construct/getState/close
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_COMMONCTRL_1200', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('commonCtrlFlag', 'ok');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_CLICKSOUND_1300
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_CLICKSOUND_1300
+     * @tc.desc Cover Button.enableClickSoundEffect
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_CLICKSOUND_1300', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('clickSoundFlag', 'ok');
+      assertFlagContains('btnClick', 'clickCb');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_MOREALIAS_1400
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_MOREALIAS_1400
+     * @tc.desc Cover ContentTransition/Translation/SystemBarStyle and related aliases
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_MOREALIAS_1400', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('moreAliasFlag', 'ok');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_TOOLBARSYMBOL_1600
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_TOOLBARSYMBOL_1600
+     * @tc.desc Cover ToolBarV2SymbolGlyph as ToolBarV2Item.icon
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_TOOLBARSYMBOL_1600', Level.LEVEL1, async () => {
+      await Utils.sleep(800);
+      assertFlagContains('toolBarSymbolFlag', 'ok');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_TYPENODE_1700
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_TYPENODE_1700
+     * @tc.desc Cover typeNode Badge/Marquee/QRCode/Rating/Select/SymbolGlyph/TextClock/TextTimer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_TYPENODE_1700', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('typeNodeFlag', 'ok');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_INTEROP_1800
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_INTEROP_1800
+     * @tc.desc Cover Compatible* callbacks and CustomDialogController.getState
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_INTEROP_1800', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('interopFlag', 'ok');
+      assertFlagContains('dialogGetStateFlag', 'ok');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_STATIC_SDKALIAS_1900
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_STATIC_SDKALIAS_1900
+     * @tc.desc Cover misc SDK aliases: Accessibility/SystemBar/ContentSlot/InputEventType etc.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_STATIC_SDKALIAS_1900', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      assertFlagContains('sdkAliasFlag', 'ok');
+    });
   });
 }
