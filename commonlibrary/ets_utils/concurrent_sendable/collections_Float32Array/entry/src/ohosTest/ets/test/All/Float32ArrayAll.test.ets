@@ -1978,3 +1978,918 @@ export default function Float32ArrayAllTest() {
      * @tc.desc   Verify index access boundaries of Float32Array
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0]);
+
+      expect(arr[0]).assertEqual(1.0);
+      expect(arr[2]).assertEqual(3.0);
+
+      expect(isNaN(arr[3])).assertEqual(true);
+
+      const originalLength = arr.length;
+      arr[5] = 5.0;
+      expect(arr.length).assertEqual(originalLength);
+      expect(arr[5]).assertUndefined();
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0133
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0096
+     * @tc.desc   Verify index handling in Float32Array's map method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0133', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0]);
+
+        const indexedMap = arr.map((val, index) => {
+          return val * index;
+        });
+        expect(indexedMap.toString()).assertEqual('0,2,6');
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0134
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0097
+     * @tc.desc   Verify index handling in Float32Array's filter method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0134', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+
+        const evenIndices = arr.filter((_val, index) => {
+          return index % 2 === 0;
+        });
+        expect(evenIndices.toString()).assertEqual('1,3,5');
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0135
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0098
+     * @tc.desc   Verify Float32Array's reduce method with initial value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0135', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0]);
+
+        const sumWithInitial = arr.reduce((acc, val) => {
+          return acc + val;
+        }, 10.0);
+        expect(approxEqual(sumWithInitial, 16.0)).assertEqual(true);
+
+        const str = arr.reduce((acc, val) => {
+          return acc + val.toString() + ',';
+        }, '');
+        expect(str).assertEqual('1,2,3,');
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0136
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0099
+     * @tc.desc   Verify relationship between Float32Array's subarray and original array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+        const sub = arr.subarray(1, 4);
+
+        sub[0] = 20.0
+        expect(arr[1]).assertEqual(20.0);
+
+        arr[2] = 30.0;
+        expect(sub[1]).assertEqual(30.0);
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0137
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0100
+     * @tc.desc   Verify the relationship between Float32Array's slice and the original array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+        const slice = arr.slice(1, 4);
+
+        slice[0] = 20.0;
+        expect(arr[1]).assertEqual(2.0);
+
+        arr[2] = 30.0;
+        expect(slice[1]).assertEqual(3.0);
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0138
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0101
+     * @tc.desc   Verify Float32Array's fill method handling of start and end indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+
+        arr.fill(0.0, 1, 4);
+        expect(arr.toString()).assertEqual('1,0,0,0,5');
+
+        arr.fill(9.0, 3, 1);
+        expect(arr.toString()).assertEqual('1,0,0,0,5');
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0139
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0102
+     * @tc.desc   Verify Float32Array's set method handling of different sources
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array(5);
+
+        arr.set([1.0, 2.0, 3.0]);
+        expect(arr.toString()).assertEqual('1,2,3,0,0');
+        expect(arr.length).assertEqual(5);
+        const source = new collections.Float32Array([4.0, 5.0]);
+        arr.set(source, 3);
+        expect(arr.toString()).assertEqual('1,2,3,4,5');
+        expect(arr.length).assertEqual(5);
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0140
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0103
+     * @tc.desc   Verify Float32Array's copyWithin method handling of overlapping ranges
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+        arr.copyWithin(2, 0, 3);
+        expect(arr.toString()).assertEqual('1,2,1,2,3');
+        expect(arr.length).assertEqual(5);
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0142
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0104
+     * @tc.desc   Verify Float32Array's find method handling of indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+
+        const found = arr.find((val, index) => {
+          return val > index * 1.5;
+        });
+        expect(found).assertEqual(1);
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0143
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0105
+     * @tc.desc   Verify Float32Array's static from method using a mapping function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+
+        const arr = collections.Float32Array.from([1, 2, 3], (x) => {
+          return x * 2.5;
+        });
+        expect(arr.toString()).assertEqual('2.5,5,7.5');
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0144
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0106
+     * @tc.desc   Verify Float32Array's includes method handling of special values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([0.0, -0.0, NaN, Infinity]);
+        expect(arr.includes(0.0)).assertEqual(true);
+        expect(arr.includes(-0.0)).assertEqual(true);
+        expect(arr.includes(NaN)).assertEqual(true);
+        expect(arr.includes(Infinity)).assertEqual(true);
+        expect(arr.includes(-Infinity)).assertEqual(false);
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0145
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0107
+     * @tc.desc   Verify Float32Array and DataView handling of endianness
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const buffer = new ArrayBuffer(4);
+        const dv = new DataView(buffer);
+
+
+        dv.setFloat32(0, 1.234, false);
+
+
+        const leValue = dv.getFloat32(0, true);
+
+        expect(approxEqual(leValue, 1.234)).assertEqual(false);
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0146
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0108
+     * @tc.desc   Verify Float32Array's buffer properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const buffer = new collections.ArrayBuffer(16)
+      const arr = new collections.Float32Array(buffer, 4, 3)
+      expect(arr.buffer).assertEqual(buffer)
+      expect(arr.byteOffset).assertEqual(4)
+      expect(arr.byteLength).assertEqual(12)
+      expect(arr.length).assertEqual(3)
+      expect(collections.Float32Array.BYTES_PER_ELEMENT).assertEqual(4)
+      Done()
+    })
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0147
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0109
+     * @tc.desc   Verify Float32Array's buffer sharing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const buffer = new collections.ArrayBuffer(16)
+      const arr1 = new collections.Float32Array(buffer)
+      const arr2 = new collections.Float32Array(buffer)
+      arr1[0] = 10.0
+      expect(arr2[0]).assertEqual(10.0)
+      arr2[1] = 20.0
+      expect(arr1[1]).assertEqual(20.0)
+      Done()
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0148
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0110
+     * @tc.desc   Verify mathematical operations with special values in Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const arr = new collections.Float32Array([0.0, NaN, Infinity, -Infinity])
+      expect(isNaN(arr[0] / arr[0])).assertEqual(true)
+      expect(isNaN(arr[1] + 1.0)).assertEqual(true)
+      expect(isNaN(arr[2] - arr[2])).assertEqual(true)
+      expect(isNaN(arr[2] / arr[2])).assertEqual(true)
+      Done()
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0149
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0111
+     * @tc.desc   Verify batch conversion of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const size = 5
+      const input = new collections.Float32Array(size)
+      for (let i = 0; i < size; i++) { input[i] = i * 0.1 }
+      const output = new collections.Float32Array(size)
+      for (let i = 0; i < size; i++) { output[i] = 20 * Math.log10(input[i] || 0.0001) }
+      expect(approxEqual(output[1], 20 * Math.log10(0.1))).assertEqual(true)
+      expect(approxEqual(output[3], 20 * Math.log10(0.3))).assertEqual(true)
+      Done()
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0150
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0112
+     * @tc.desc   Verify operations on empty Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const emptyArr = new collections.Float32Array(0)
+      expect(emptyArr.map((val) => val * 2).length).assertEqual(0)
+      expect(emptyArr.filter((val) => val > 0).length).assertEqual(0)
+      expect(emptyArr.reduce((acc, val) => acc + val, 0)).assertEqual(0)
+      Done()
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0151
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0113
+     * @tc.desc   Verify Float32Array's filter method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0])
+      const evenNumbers = arr.filter((val) => val % 2 === 0)
+      expect(evenNumbers.toString()).assertEqual('2,4')
+      Done()
+    })
+
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0152
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0114
+     * @tc.desc   Verify Float32Array's map method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0])
+      const squared = arr.map((val) => val * val)
+      expect(squared.toString()).assertEqual('1,4,9,16')
+      Done()
+    })
+
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0153
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0115
+     * @tc.desc   Verify Float32Array's find method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const arr = new collections.Float32Array([10.0, 20.0, 30.0, 40.0, 50.0])
+      const found = arr.find((val) => val > 25.0)
+      expect(found).assertEqual(30.0)
+      Done()
+    })
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0154
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0116
+     * @tc.desc   Verify Float32Array's findIndex method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0154', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const arr = new collections.Float32Array([10.0, 20.0, 30.0, 40.0, 50.0])
+      const foundIndex = arr.findIndex((val) => val > 25.0)
+      expect(foundIndex).assertEqual(2)
+      Done()
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0155
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0117
+     * @tc.desc   Verify Float32Array's every method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const arr1 = new collections.Float32Array([2.0, 4.0, 6.0, 8.0])
+      const arr2 = new collections.Float32Array([2.0, 3.0, 6.0, 8.0])
+      const allEven1 = arr1.every((val) => val % 2 === 0)
+      const allEven2 = arr2.every((val) => val % 2 === 0)
+      expect(allEven1).assertEqual(true)
+      expect(allEven2).assertEqual(false)
+      Done()
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0156
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0118
+     * @tc.desc   Verify Float32Array's some method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const arr1 = new collections.Float32Array([1.0, 3.0, 5.0, 7.0])
+      const arr2 = new collections.Float32Array([1.0, 3.0, 6.0, 7.0])
+      const hasEven1 = arr1.some((val) => val % 2 === 0)
+      const hasEven2 = arr2.some((val) => val % 2 === 0)
+      expect(hasEven1).assertEqual(false)
+      expect(hasEven2).assertEqual(true)
+      Done()
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0157
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0119
+     * @tc.desc   Verify Float32Array's forEach method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0])
+      const results: number[] = []
+      arr.forEach((val) => { results.push(val * 2) })
+      expect(results.toString()).assertEqual('2,4,6,8')
+      expect(results.length).assertEqual(4)
+      Done()
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0158
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0120
+     * @tc.desc   Verify Float32Array's reduce method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0]);
+
+        const sum = arr.reduce((acc, val) => {
+          return acc + val;
+        }, 0);
+        expect(approxEqual(sum, 10.0)).assertEqual(true);
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0159
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0121
+     * @tc.desc   Verify Float32Array's reduceRight method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0]);
+
+        const str = arr.reduceRight((acc, val) => {
+          return acc + val.toString();
+        }, '');
+        expect(str).assertEqual('4321');
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0160
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0122
+     * @tc.desc   Verify Float32Array's sort method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([3.0, 1.0, 4.0, 2.0]);
+
+        arr.sort((a, b) => {
+          return a - b;
+        });
+        expect(arr.toString()).assertEqual('1,2,3,4');
+        expect(arr.length).assertEqual(4)
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0161
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0123
+     * @tc.desc   Verify Float32Array's filter method using arrow functions with index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0161', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0]);
+        const filtered = arr.filter((val, index) => {
+          return index % 2 === 0 && val > 2.0;
+        });
+        expect(filtered.toString()).assertEqual('3,5');
+        expect(filtered.length).assertEqual(2);
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0162
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0124
+     * @tc.desc   Verify Float32Array's map method using arrow functions with index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0162', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0]);
+
+        const mapped = arr.map((val, index) => {
+          return val * (index + 1);
+        });
+        expect(mapped.toString()).assertEqual('1,4,9,16');
+        expect(mapped.length).assertEqual(4);
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0163
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0125
+     * @tc.desc   Verify Float32Array's find method using arrow functions with index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0163', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([10.0, 20.0, 30.0, 40.0, 50.0]);
+
+        const found = arr.find((val, index) => {
+          return val > 25.0 && index % 2 === 0;
+        });
+        expect(found).assertEqual(30.0);
+
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0164
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0126
+     * @tc.desc   Verify Float32Array's static from method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0164', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+
+        const arr = collections.Float32Array.from([1, 2, 3, 4], (x) => {
+          return x * 1.5;
+        });
+        expect(arr.toString()).assertEqual('1.5,3,4.5,6');
+        expect(arr.length).assertEqual(4);
+        Done();
+      })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0165
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0127
+     * @tc.desc   Verify Float32Array's sort method using arrow functions with conditions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0165', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (Done: Function) => {
+        const arr = new collections.Float32Array([3.0, NaN, 1.0, 5.0, NaN, 2.0]);
+
+        arr.sort((a, b) => {
+          if (isNaN(a)) {
+            return 1;
+          }
+          if (isNaN(b)) {
+            return -1;
+          }
+          return a - b;
+        });
+        expect(arr[0]).assertEqual(1.0);
+        expect(arr[1]).assertEqual(2.0);
+        expect(arr[2]).assertEqual(3.0);
+        expect(arr[3]).assertEqual(5.0);
+        expect(isNaN(arr[4])).assertEqual(true);
+        expect(isNaN(arr[5])).assertEqual(true);
+        expect(arr.length).assertEqual(6);
+        Done();
+      })
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0166
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0128
+     * @tc.desc   Verify Float32Array basic properties (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0166', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array(5);
+      expect(arr.length).assertEqual(5);
+      expect(arr.byteLength).assertEqual(20);
+      expect(collections.Float32Array.BYTES_PER_ELEMENT).assertEqual(4);
+      expect(arr.buffer.byteLength).assertEqual(20);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0167
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0129
+     * @tc.desc   Verify Float32Array index access (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0167', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0]);
+      arr[0] = 10.0;
+      arr[3] = 40.0;
+      expect(arr[0]).assertEqual(10.0);
+      expect(arr[1]).assertEqual(2.0);
+      expect(arr[2]).assertEqual(3.0);
+      expect(arr[3]).assertEqual(40.0);
+      expect(arr.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0168
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0130
+     * @tc.desc   Verify Float32Array's filter method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0168', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array([1.5, 2.5, 3.5, 4.5, 5.5]);
+      const filtered = arr.filter((val) => {
+        return val > 3.0;
+      });
+
+      expect(filtered.length).assertEqual(3);
+      expect(approxEqual(filtered[0], 3.5)).assertEqual(true);
+      expect(approxEqual(filtered[1], 4.5)).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0169
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0131
+     * @tc.desc   Verify Float32Array's map method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0]);
+      const squared = arr.map((val) => {
+        return val * val;
+      });
+
+      expect(squared.toString()).assertEqual('1,4,9,16');
+      expect(squared.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0170
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0132
+     * @tc.desc   Verify Float32Array's every method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr1 = new collections.Float32Array([2.0, 4.0, 6.0, 8.0]);
+      const arr2 = new collections.Float32Array([2.0, 3.0, 6.0, 8.0]);
+      const allGreater1 = arr1.every((val) => {
+        return val > 1.0;
+      });
+      const allEven = arr2.every((val) => {
+        return val % 2 === 0;
+      });
+
+      expect(allGreater1).assertEqual(true);
+      expect(allEven).assertEqual(false);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0171
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0133
+     * @tc.desc   Verify Float32Array's some method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr1 = new collections.Float32Array([1.0, 3.0, 5.0, 7.0]);
+      const arr2 = new collections.Float32Array([1.0, 3.0, 6.0, 7.0]);
+
+      const hasGreater5 = arr1.some((val) => {
+        return val > 5.0;
+      });
+
+      const hasEven = arr2.some((val) => {
+        return val % 2 === 0;
+      });
+
+      expect(hasGreater5).assertEqual(true);
+      expect(hasEven).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0172
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0134
+     * @tc.desc   Verify Float32Array's fill method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0172', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array(5);
+
+      arr.fill(3.14);
+
+      expect(arr[0]).assertEqual(3.140000104904175);
+      expect(arr[4]).assertEqual(3.140000104904175);
+
+      arr.fill(1.59, 1, 4);
+      expect(arr[0]).assertEqual(3.140000104904175);
+      expect(arr[1]).assertEqual(1.590000033378601);
+      expect(arr[3]).assertEqual(1.590000033378601);
+      expect(arr[4]).assertEqual(3.140000104904175);
+      expect(arr.length).assertEqual(5);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0173
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0135
+     * @tc.desc   Verify Float32Array's set method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array(6);
+      const source = new collections.Float32Array([1.0, 2.0, 3.0]);
+      arr.set(source);
+      arr.set(source, 3);
+      expect(arr.toString()).assertEqual('1,2,3,1,2,3');
+      expect(arr.length).assertEqual(6);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0174
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0136
+     * @tc.desc   Verify Float32Array's copyWithin method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0174', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+      arr.copyWithin(0, 3);
+      expect(arr.toString()).assertEqual('4,5,3,4,5');
+      expect(arr.length).assertEqual(5);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0175
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0137
+     * @tc.desc   Verify Float32Array's sort method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array([3.0, 1.0, 4.0, 2.0, 5.0]);
+      arr.sort((a, b) => a - b);
+      expect(arr.toString()).assertEqual('1,2,3,4,5');
+      expect(arr.length).assertEqual(5);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0176
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0138
+     * @tc.desc   Verify Float32Array's indexOf method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0176', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0, 2.0, 1.0]);
+
+      expect(arr.indexOf(2.0)).assertEqual(1);
+      expect(arr.indexOf(2.0, 2)).assertEqual(3);
+      expect(arr.indexOf(6.0)).assertEqual(-1);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0177
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0139
+     * @tc.desc   Verify Float32Array's lastIndexOf method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0177', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0, 2.0, 1.0]);
+
+      expect(arr.lastIndexOf(2.0)).assertEqual(3);
+      expect(arr.lastIndexOf(2.0, 2)).assertEqual(1);
+      expect(arr.lastIndexOf(6.0)).assertEqual(-1);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0178
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0140
+     * @tc.desc   Verify Float32Array's includes method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0178', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+
+      expect(arr.includes(3.0)).assertEqual(true);
+      expect(arr.includes(6.0)).assertEqual(false);
+      expect(arr.includes(3.0, 3)).assertEqual(false);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0179
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0141
+     * @tc.desc   Verify Float32Array's subarray method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0179', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+      const sub = arr.subarray(1, 4);
+      expect(sub.toString()).assertEqual('2,3,4');
+      expect(sub.length).assertEqual(3);
+      sub[0] = 20.0;
+      expect(arr[1]).assertEqual(20.0);
+    })
+
+    /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0180
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_ALL_0142
+     * @tc.desc   Verify Float32Array's slice method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayFloat32ArrayBufferDv0180', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+      const slice = arr.slice(1, 4);
+      expect(slice.toString()).assertEqual('2,3,4');
+      expect(slice.length).assertEqual(3);
+      slice[0] = 20.0;
+      expect(arr[1]).assertEqual(2.0);
+    })
+
+  })
+}
+
+function approxEqual(a: number, b: number, epsilon: number = 0.000001): boolean {
+  return Math.abs(a - b) < epsilon;
+}
