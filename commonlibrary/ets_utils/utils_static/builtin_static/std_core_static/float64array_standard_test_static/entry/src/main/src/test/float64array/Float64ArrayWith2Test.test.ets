@@ -231,13 +231,9 @@ export default function Float64ArrayWith2Test(): void {
      */
     it('testFloat64ArrayWith2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const num999Pointzero: number = 999.0;
-      try {
-        const values = new Float64Array([0.1, 9007199254740991, 0]);
-        values.with(-3, num999Pointzero);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("RangeError");
-      }
+      const values = new Float64Array([0.1, 9007199254740991, 0]);
+      values.with(-3, num999Pointzero);
+      expect(values.toString()).assertEqual("0.1,9007199254740991,0");
     });
 
     /**

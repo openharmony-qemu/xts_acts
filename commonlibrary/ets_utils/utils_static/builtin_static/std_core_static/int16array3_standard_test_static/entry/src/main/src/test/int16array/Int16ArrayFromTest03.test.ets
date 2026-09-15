@@ -1299,7 +1299,7 @@ export default function Int16ArrayFromTest03(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestThree085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<int> = new FixedArray<int>(100);
+      let src: FixedArray<int> = new FixedArray<int>(100, 0);
       for (let i: int = 0; i < 100; i++) {
         src[i] = 1;
       }
@@ -1324,7 +1324,7 @@ export default function Int16ArrayFromTest03(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestThree086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<int> = new FixedArray<int>(100);
+      let src: FixedArray<int> = new FixedArray<int>(100, 0);
       for (let i: int = 0; i < 100; i++) {
         src[i] = -32768;
       }
