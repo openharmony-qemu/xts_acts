@@ -713,9 +713,10 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
         }
       }
       try {
+        console.info(msg + `1  Number.MAX_VALUE toInt Value=${Number.MAX_VALUE}`);
         let recordCmdUtils = new drawing.RecordCmdUtils();
         recordCmdUtils.beginRecording(Number.MAX_VALUE, Number.MAX_VALUE);
-        console.info(msg + ` Number.MAX_VALUE toInt Value=${Number.MAX_VALUE}`);
+        console.info(msg + ` 2 Number.MAX_VALUE toInt Value=${Number.MAX_VALUE}`);
         let height = recordCmdUtils.getHeight();
         let width = recordCmdUtils.getWidth();
         console.info(msg + ` MAX MIN getHeight=${height}  getWidth=${width}`);
