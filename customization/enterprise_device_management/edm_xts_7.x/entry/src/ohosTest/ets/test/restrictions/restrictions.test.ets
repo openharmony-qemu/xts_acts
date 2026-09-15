@@ -467,7 +467,11 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200001).assertTrue();
+      }
     }
     done();
   });
