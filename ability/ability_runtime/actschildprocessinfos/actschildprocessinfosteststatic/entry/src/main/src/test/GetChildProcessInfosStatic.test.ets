@@ -18,7 +18,6 @@ import childProcessManager from '@ohos.app.ability.childProcessManager';
 import { ChildProcessArgs } from '@ohos.app.ability.ChildProcessArgs';
 import { ChildProcessOptions } from '@ohos.app.ability.ChildProcessOptions';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 
 const TAG: string = 'GetChildProcessInfosStatic';
@@ -84,7 +83,7 @@ export default function getChildProcessInfosStaticTest(): void {
         try {
           infos = await childProcessManager.getChildProcessInfos();
         } catch (e) {
-          errCode = (e as BusinessError).code;
+          errCode = e.code;
         }
         if (errCode !== -1) {
           expect(errCode).assertEqual(ERR_SERVICE);
@@ -113,7 +112,7 @@ export default function getChildProcessInfosStaticTest(): void {
           let options: ChildProcessOptions = { isolationMode: false };
           pid = await childProcessManager.startArkChildProcess(arkProcessPath, args, options);
         } catch (e) {
-          createErr = (e as BusinessError).code;
+          createErr = e.code;
         }
         if (createErr !== -1) {
           console.info(`${TAG} AfterArk createErr=${createErr}`);
@@ -154,7 +153,7 @@ export default function getChildProcessInfosStaticTest(): void {
         try {
           infos = await appContext.getUIAbilityChildProcessInfos();
         } catch (e) {
-          errCode = (e as BusinessError).code;
+          errCode = e.code;
         }
         if (errCode !== -1) {
           expect(errCode === ERR_SERVICE || errCode === ERR_CONTEXT).assertTrue();

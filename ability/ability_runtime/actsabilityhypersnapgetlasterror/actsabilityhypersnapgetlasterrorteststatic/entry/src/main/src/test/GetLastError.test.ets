@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2026 Kaihong Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 import { describe, it, expect, Level } from '../../../hypium/index';
 import hyperSnapManager from '@ohos.app.ability.hyperSnapManager';
-import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 
 const TAG: string = 'HyperSnapGetLastErrorStatic';
@@ -34,16 +33,6 @@ function assertErrorInfo(info: hyperSnapManager.HyperSnapErrorInfo): void {
   expect(isValidErrorCode(info.code)).assertTrue();
   expect(info.msg.length >= 0).assertTrue();
   expect(info.occurTimeStamp >= 0).assertTrue();
-}
-
-async function callGetLastError(
-  errType: hyperSnapManager.HyperSnapErrorType
-): Promise<hyperSnapManager.HyperSnapErrorInfo | number> {
-  try {
-    return await hyperSnapManager.getLastError(errType);
-  } catch (e) {
-    return (e as BusinessError).code;
-  }
 }
 
 export default function getLastErrorTest(): void {
@@ -94,15 +83,24 @@ export default function getLastErrorTest(): void {
      */
     it('SUB_Ability_AbilityRuntime_HyperSnap_GetLastError_Create_static_0100', Level.LEVEL0,
       async (): Promise<void> => {
-        let result: hyperSnapManager.HyperSnapErrorInfo | number =
-          await callGetLastError(hyperSnapManager.HyperSnapErrorType.CREATE_SNAPSHOT);
-        if (typeof result === 'number') {
-          hilog.info(0x0000, TAG, 'Create_static catch=%{public}d', result);
-          expect(result).assertEqual(ERR_SERVICE);
+        let errCode: number = -1;
+        let info: hyperSnapManager.HyperSnapErrorInfo | undefined = undefined;
+        try {
+          info = await hyperSnapManager.getLastError(
+            hyperSnapManager.HyperSnapErrorType.CREATE_SNAPSHOT);
+        } catch (e) {
+          errCode = e.code;
+        }
+        if (errCode !== -1) {
+          hilog.info(0x0000, TAG, 'Create_static catch=%{public}d', errCode);
+          expect(errCode).assertEqual(ERR_SERVICE);
           return;
         }
-        hilog.info(0x0000, TAG, 'Create_static code=%{public}d', codeValue(result.code));
-        assertErrorInfo(result);
+        expect(info !== undefined).assertTrue();
+        if (info !== undefined) {
+          hilog.info(0x0000, TAG, 'Create_static code=%{public}d', codeValue(info.code));
+          assertErrorInfo(info);
+        }
       });
 
     /**
@@ -115,15 +113,24 @@ export default function getLastErrorTest(): void {
      */
     it('SUB_Ability_AbilityRuntime_HyperSnap_GetLastError_Fork_static_0100', Level.LEVEL0,
       async (): Promise<void> => {
-        let result: hyperSnapManager.HyperSnapErrorInfo | number =
-          await callGetLastError(hyperSnapManager.HyperSnapErrorType.FORK_FROM_SNAPSHOT);
-        if (typeof result === 'number') {
-          hilog.info(0x0000, TAG, 'Fork_static catch=%{public}d', result);
-          expect(result).assertEqual(ERR_SERVICE);
+        let errCode: number = -1;
+        let info: hyperSnapManager.HyperSnapErrorInfo | undefined = undefined;
+        try {
+          info = await hyperSnapManager.getLastError(
+            hyperSnapManager.HyperSnapErrorType.FORK_FROM_SNAPSHOT);
+        } catch (e) {
+          errCode = e.code;
+        }
+        if (errCode !== -1) {
+          hilog.info(0x0000, TAG, 'Fork_static catch=%{public}d', errCode);
+          expect(errCode).assertEqual(ERR_SERVICE);
           return;
         }
-        hilog.info(0x0000, TAG, 'Fork_static code=%{public}d', codeValue(result.code));
-        assertErrorInfo(result);
+        expect(info !== undefined).assertTrue();
+        if (info !== undefined) {
+          hilog.info(0x0000, TAG, 'Fork_static code=%{public}d', codeValue(info.code));
+          assertErrorInfo(info);
+        }
       });
 
     /**
@@ -136,18 +143,36 @@ export default function getLastErrorTest(): void {
      */
     it('SUB_Ability_AbilityRuntime_HyperSnap_GetLastError_Indep_static_0100', Level.LEVEL0,
       async (): Promise<void> => {
-        let createResult: hyperSnapManager.HyperSnapErrorInfo | number =
-          await callGetLastError(hyperSnapManager.HyperSnapErrorType.CREATE_SNAPSHOT);
-        let forkResult: hyperSnapManager.HyperSnapErrorInfo | number =
-          await callGetLastError(hyperSnapManager.HyperSnapErrorType.FORK_FROM_SNAPSHOT);
-        if (typeof createResult === 'number' || typeof forkResult === 'number') {
-          let code: number = typeof createResult === 'number' ? createResult : forkResult as number;
+        let createErr: number = -1;
+        let forkErr: number = -1;
+        let createInfo: hyperSnapManager.HyperSnapErrorInfo | undefined = undefined;
+        let forkInfo: hyperSnapManager.HyperSnapErrorInfo | undefined = undefined;
+        try {
+          createInfo = await hyperSnapManager.getLastError(
+            hyperSnapManager.HyperSnapErrorType.CREATE_SNAPSHOT);
+        } catch (e) {
+          createErr = e.code;
+        }
+        try {
+          forkInfo = await hyperSnapManager.getLastError(
+            hyperSnapManager.HyperSnapErrorType.FORK_FROM_SNAPSHOT);
+        } catch (e) {
+          forkErr = e.code;
+        }
+        if (createErr !== -1 || forkErr !== -1) {
+          let code: number = createErr !== -1 ? createErr : forkErr;
           hilog.info(0x0000, TAG, 'Indep_static catch=%{public}d', code);
           expect(code).assertEqual(ERR_SERVICE);
           return;
         }
-        assertErrorInfo(createResult);
-        assertErrorInfo(forkResult);
+        expect(createInfo !== undefined).assertTrue();
+        expect(forkInfo !== undefined).assertTrue();
+        if (createInfo !== undefined) {
+          assertErrorInfo(createInfo);
+        }
+        if (forkInfo !== undefined) {
+          assertErrorInfo(forkInfo);
+        }
       });
   });
 }
