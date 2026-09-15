@@ -47,7 +47,7 @@ using std::atomic_load;
 #define MODIFIER_MAX_256 256
 #define MODIFIER_MAX_255 255
 #define MODIFIER_MAX_16 16
-#define MODIFIER_BIT_0X8000 0x8000 
+#define MODIFIER_BIT_0X8000 0x8000
 #define SLEEP_DURATION_10 10
 #define TEST_DOUBLE_2_0 2.0
 #define TEST_DOUBLE_3_0 3.0
@@ -56,28 +56,28 @@ using std::atomic_load;
 #define ARGINFO_MAX_32 32
 
 
-struct PrintfInfo { 
+struct PrintfInfo {
     int prec;
     int width;
     wchar_t spec;
     unsigned int isLongDouble : 1;
-    unsigned int isShort : 1; 
-    unsigned int isLong : 1; 
-    unsigned int alt : 1; 
-    unsigned int space : 1; 
-    unsigned int left : 1; 
-    unsigned int showsign : 1; 
-    unsigned int group : 1; 
-    unsigned int extra : 1; 
-    unsigned int isChar : 1; 
-    unsigned int wide : 1; 
-    unsigned int i18n : 1; 
-    unsigned int isBinary128 : 1; 
-    unsigned int reservedPad : 4; 
+    unsigned int isShort : 1;
+    unsigned int isLong : 1;
+    unsigned int alt : 1;
+    unsigned int space : 1;
+    unsigned int left : 1;
+    unsigned int showsign : 1;
+    unsigned int group : 1;
+    unsigned int extra : 1;
+    unsigned int isChar : 1;
+    unsigned int wide : 1;
+    unsigned int i18n : 1;
+    unsigned int isBinary128 : 1;
+    unsigned int reservedPad : 4;
     unsigned short user;
     wchar_t pad;
 };
-typedef int PrintfFunction(FILE *, const struct PrintfInfo *, const void *const *); 
+typedef int PrintfFunction(FILE *, const struct PrintfInfo *, const void *const *);
 
 typedef int PrintfArginfoSizeFunction(const struct PrintfInfo *, size_t, int *, int *);
 typedef void PrintfVaArgFunction(void *, va_list *);
@@ -93,13 +93,13 @@ typedef void PrintfVaArgFunction(void *, va_list *);
 #define PA_FLAG_SHORT (1 << 10)
 #define PA_FLAG_PTR (1 << 11)
 
-typedef int (*RegSpecifierFnT)(int, PrintfFunction, PrintfArginfoSizeFunction); 
-typedef int (*RegModifierFnT)(const wchar_t *); 
-typedef int (*RegTypeFnT)(PrintfVaArgFunction); 
+typedef int (*RegSpecifierFnT)(int, PrintfFunction, PrintfArginfoSizeFunction);
+typedef int (*RegModifierFnT)(const wchar_t *);
+typedef int (*RegTypeFnT)(PrintfVaArgFunction);
 static RegSpecifierFnT g_regSpecifier = nullptr;
-static RegModifierFnT g_regModifier = nullptr; 
-static RegTypeFnT g_regType = nullptr; 
-static void LoadFunctions(void) 
+static RegModifierFnT g_regModifier = nullptr;
+static RegTypeFnT g_regType = nullptr;
+static void LoadFunctions(void)
 {
     if (!g_regSpecifier) {
         g_regSpecifier = (RegSpecifierFnT)dlsym(RTLD_DEFAULT, "register_printf_specifier");
@@ -108,7 +108,7 @@ static void LoadFunctions(void)
         g_regModifier = (RegModifierFnT)dlsym(RTLD_DEFAULT, "register_printf_modifier");
     }
     if (!g_regType) {
-        g_regType = (RegTypeFnT)dlsym(RTLD_DEFAULT, "register_printf_type"); 
+        g_regType = (RegTypeFnT)dlsym(RTLD_DEFAULT, "register_printf_type");
     }
 }
 static void MyVa(void *mem, va_list *ap)
@@ -117,7 +117,7 @@ static void MyVa(void *mem, va_list *ap)
     *p = va_arg(*ap, long);
 }
 
-struct Pair { 
+struct Pair {
     long i;
     double d;
 };
@@ -133,28 +133,28 @@ static void PairVa(void *mem, va_list *ap)
 
 static int PairPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    const struct Pair *p = *static_cast<const struct Pair *const *>(a[0]); 
-    return fprintf(s, "(%ld, %f)", p->i, p->d); 
+    const struct Pair *p = *static_cast<const struct Pair *const *>(a[0]);
+    return fprintf(s, "(%ld, %f)", p->i, p->d);
 }
 
 static int PairArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 {
     if (n > 0) {
         at[0] = g_pairType;
-        sz[0] = sizeof(struct Pair); 
+        sz[0] = sizeof(struct Pair);
     }
     return 1;
 }
 
-struct Tp { 
+struct Tp {
     long i;
     double d;
 };
 
 static int TpPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    const struct Tp *p = *static_cast<const struct Tp *const *>(a[0]); 
-    return fprintf(s, "(%ld, %f)", p->i, p->d); 
+    const struct Tp *p = *static_cast<const struct Tp *const *>(a[0]);
+    return fprintf(s, "(%ld, %f)", p->i, p->d);
 }
 
 static int TpArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
@@ -170,22 +170,22 @@ static int g_vtype;
 
 static void VVa(void *mem, va_list *ap)
 {
-    struct Pair *p = reinterpret_cast<struct Pair *>(mem); 
+    struct Pair *p = reinterpret_cast<struct Pair *>(mem);
     p->i = va_arg(*ap, long);
     p->d = va_arg(*ap, double);
 }
 
 static int VPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    const struct Pair *p = *static_cast<const struct Pair *const *>(a[0]); 
-    return fprintf(s, "(%ld, %f)", p->i, p->d); 
+    const struct Pair *p = *static_cast<const struct Pair *const *>(a[0]);
+    return fprintf(s, "(%ld, %f)", p->i, p->d);
 }
 
 static int VArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 {
     if (n > 0) {
         at[0] = g_vtype;
-        sz[0] = sizeof(struct Pair); 
+        sz[0] = sizeof(struct Pair);
     }
     return 1;
 }
@@ -201,7 +201,7 @@ static void DblVa(void *mem, va_list *ap)
 static int DblPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
     const double *p = *static_cast<const double *const *>(a[0]);
-    return fprintf(s, "%.2f", *p); 
+    return fprintf(s, "%.2f", *p);
 }
 
 static int DblArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
@@ -389,7 +389,7 @@ static napi_value RegPrintfType_0700(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('P', PairPrintf, PairArginfo);
         char buf[64];
-        int ret = snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0); 
+        int ret = snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0);
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -421,9 +421,9 @@ static napi_value RegPrintfType_0800(napi_env env, napi_callback_info info)
             _exit(0);
         }
         g_regSpecifier('P', TpPrintf, TpArginfo);
-        struct Tp v = {1, 2.0}; 
+        struct Tp v = {1, 2.0};
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%P", &v); 
+        (void)snprintf(buf, sizeof(buf), "%P", &v);
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
@@ -454,7 +454,7 @@ static napi_value RegPrintfType_0900(napi_env env, napi_callback_info info)
         g_vtype = g_regType(VVa);
         g_regSpecifier('P', VPrintf, VArginfo);
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0); 
+        (void)snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0);
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
@@ -488,7 +488,7 @@ static napi_value RegPrintfType_1000(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('P', PairPrintf, PairArginfo);
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%P", 42L, TEST_DOUBLE_3_14); 
+        (void)snprintf(buf, sizeof(buf), "%P", 42L, TEST_DOUBLE_3_14);
         if (!(strstr(buf, "42") != nullptr)) {
             _exit(1);
         }
@@ -519,7 +519,7 @@ static napi_value RegPrintfType_1100(napi_env env, napi_callback_info info)
         g_dblType = g_regType(DblVa);
         g_regSpecifier('P', DblPrintf, DblArginfo);
         char buf[32];
-        (void)snprintf(buf, sizeof(buf), "%P", TEST_DOUBLE_3_14); 
+        (void)snprintf(buf, sizeof(buf), "%P", TEST_DOUBLE_3_14);
         if (strcmp((buf), ("3.14")) != 0) {
             _exit(1);
         }
@@ -625,7 +625,7 @@ static napi_value RegPrintfType_1500(napi_env env, napi_callback_info info)
         g_regType(MyVa);
         }
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0); 
+        (void)snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0);
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
