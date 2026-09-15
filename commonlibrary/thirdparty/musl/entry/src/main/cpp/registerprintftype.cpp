@@ -54,7 +54,7 @@ using std::atomic_load;
 #define TEST_DOUBLE_3_14 3.14
 #define EXPECTED_RET_2 2
 #define ARGINFO_MAX_32 32
-
+#define EXPECTED_RET_NEG_1 (-1)
 
 struct PrintfInfo {
     int prec;
@@ -346,7 +346,7 @@ static napi_value RegPrintfType_0500(napi_env env, napi_callback_info info)
     }
     errno = 0;
     int ret = g_regType(nullptr);
-    if (static_cast<int>(ret) != static_cast<int>(-1)) {
+    if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -389,7 +389,7 @@ static napi_value RegPrintfType_0700(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('P', PairPrintf, PairArginfo);
         char buf[64];
-        int ret = snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0);
+        int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", 1L, TEST_DOUBLE_2_0);
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -423,7 +423,7 @@ static napi_value RegPrintfType_0800(napi_env env, napi_callback_info info)
         g_regSpecifier('P', TpPrintf, TpArginfo);
         struct Tp v = {1, 2.0};
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%P", &v);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", &v);
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
@@ -454,7 +454,7 @@ static napi_value RegPrintfType_0900(napi_env env, napi_callback_info info)
         g_vtype = g_regType(VVa);
         g_regSpecifier('P', VPrintf, VArginfo);
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", 1L, TEST_DOUBLE_2_0);
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
@@ -488,7 +488,7 @@ static napi_value RegPrintfType_1000(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('P', PairPrintf, PairArginfo);
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%P", 42L, TEST_DOUBLE_3_14);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", TEST_VALUE_42, TEST_DOUBLE_3_14);
         if (!(strstr(buf, "42") != nullptr)) {
             _exit(1);
         }
@@ -519,7 +519,7 @@ static napi_value RegPrintfType_1100(napi_env env, napi_callback_info info)
         g_dblType = g_regType(DblVa);
         g_regSpecifier('P', DblPrintf, DblArginfo);
         char buf[32];
-        (void)snprintf(buf, sizeof(buf), "%P", TEST_DOUBLE_3_14);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", TEST_DOUBLE_3_14);
         if (strcmp((buf), ("3.14")) != 0) {
             _exit(1);
         }
@@ -570,7 +570,7 @@ static napi_value RegPrintfType_1300(napi_env env, napi_callback_info info)
     }
     errno = 0;
     int ret = g_regType(MyVa);
-    if (static_cast<int>(ret) != static_cast<int>(-1)) {
+    if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -595,7 +595,7 @@ static napi_value RegPrintfType_1400(napi_env env, napi_callback_info info)
     for (int i = 0; i < LOOP_COUNT_10; i++) {
         errno = 0;
         int ret = g_regType(MyVa);
-        if (static_cast<int>(ret) != static_cast<int>(-1)) {
+        if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
             napi_create_int32(env, 1, &result);
             return result;
         }
@@ -625,7 +625,7 @@ static napi_value RegPrintfType_1500(napi_env env, napi_callback_info info)
         g_regType(MyVa);
         }
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", 1L, TEST_DOUBLE_2_0);
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
@@ -655,7 +655,7 @@ static napi_value RegPrintfType_1600(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('X', UnkPrintf, UnkArginfo);
         char buf[16];
-        (void)snprintf(buf, sizeof(buf), "%X", reinterpret_cast<void* *>(0));
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%X", reinterpret_cast<void* *>(0));
         if (!(1)) {
             _exit(1);
         }

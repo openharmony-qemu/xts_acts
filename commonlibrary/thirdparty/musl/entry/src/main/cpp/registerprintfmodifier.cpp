@@ -57,7 +57,8 @@ using std::atomic_store;
 #define TEST_DOUBLE_4_0 4.0
 #define EXPECTED_RET_2 2
 #define ARGINFO_MAX_32 32
-
+#define EXPECTED_RET_NEG_1 (-1)
+#define WS_ARRAY_SIZE_257 257
 
 struct PrintfInfo {
     int prec;
@@ -309,7 +310,7 @@ static void *OThr(void *arg)
     while (!atomic_load(&g_stop3)) {
         char b[16];
         long v = 1;
-        if (snprintf(b, sizeof(b), "%B", &v) < 0) {
+        if (snprintf_s(b, sizeof(b), sizeof(b) - 1, "%B", &v) < 0) {
             atomic_fetch_add(&g_oerr, 1);
         }
     }
@@ -377,7 +378,7 @@ static void *Stress2(void *arg)
         g_regSpecifier('A' + (idx % TEST_VALUE_20), MyFunc, Arginfo0);
         char b[16];
         long v = idx;
-        snprintf(b, sizeof(b), "%B", &v);
+        (void)snprintf_s(b, sizeof(b), sizeof(b) - 1, "%B", &v);
         wchar_t ws[3] = {L'M', static_cast<wchar_t>(L'0' + (idx % 10)), 0};
         g_regModifier(ws);
     }
@@ -437,9 +438,9 @@ static napi_value RegPrintfModifier_0300(napi_env env, napi_callback_info info)
             _exit(0);
         }
         g_regSpecifier('R', ModPrintf, ModArginfo);
-        int v = 42;
+        int v = TEST_VALUE_42;
         char buf[32];
-        (void)snprintf(buf, sizeof(buf), "%I32R", &v);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%I32R", &v);
         if (static_cast<int>(g_seenUser) != static_cast<int>(bit)) {
             _exit(0);
         }
@@ -469,7 +470,7 @@ static napi_value RegPrintfModifier_0400(napi_env env, napi_callback_info info)
         }
         g_regModifier(L"I32");
         char buf[32];
-        (void)snprintf(buf, sizeof(buf), "%I32d", TEST_VALUE_42);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%I32d", TEST_VALUE_42);
         if (strcmp((buf), ("42")) != 0) {
             _exit(1);
         }
@@ -499,7 +500,7 @@ static napi_value RegPrintfModifier_0500(napi_env env, napi_callback_info info)
         }
         g_regModifier(L"I32");
         g_regSpecifier('R', ModPrintf, ModArginfo);
-        int v = 42;
+        int v = TEST_VALUE_42;
         wchar_t wb[ARGINFO_MAX_32];
         int ret = swprintf(wb, ARGINFO_MAX_32, L"%I32R", &v);
         if (static_cast<int>(ret) < static_cast<int>(0)) {
@@ -530,7 +531,7 @@ static napi_value RegPrintfModifier_0600(napi_env env, napi_callback_info info)
     }
     errno = 0;
     int ret = g_regModifier(L"");
-    if (static_cast<int>(ret) != static_cast<int>(-1)) {
+    if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -551,7 +552,7 @@ static napi_value RegPrintfModifier_0700(napi_env env, napi_callback_info info)
     }
     errno = 0;
     int ret = g_regModifier(nullptr);
-    if (static_cast<int>(ret) != static_cast<int>(-1)) {
+    if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -573,7 +574,7 @@ static napi_value RegPrintfModifier_0800(napi_env env, napi_callback_info info)
     wchar_t ws[2] = {0x100, 0};
     errno = 0;
     int ret = g_regModifier(ws);
-    if (static_cast<int>(ret) != static_cast<int>(-1)) {
+    if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -595,7 +596,7 @@ static napi_value RegPrintfModifier_0900(napi_env env, napi_callback_info info)
     wchar_t ws[2] = {0xFFFF, 0};
     errno = 0;
     int ret = g_regModifier(ws);
-    if (static_cast<int>(ret) != static_cast<int>(-1)) {
+    if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -635,14 +636,14 @@ static napi_value RegPrintfModifier_1100(napi_env env, napi_callback_info info)
         napi_create_int32(env, 0, &result);
         return result;
     }
-    wchar_t ws[257];
+    wchar_t ws[WS_ARRAY_SIZE_257];
     for (int i = 0; i < MODIFIER_MAX_256; i++) {
         ws[i] = L'A';
     }
     ws[MODIFIER_MAX_256] = 0;
     errno = 0;
     int ret = g_regModifier(ws);
-    if (static_cast<int>(ret) != static_cast<int>(-1)) {
+    if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -737,7 +738,7 @@ static napi_value RegPrintfModifier_1600(napi_env env, napi_callback_info info)
     }
     errno = 0;
     int ret = g_regModifier(L"Z");
-    if (static_cast<int>(ret) != static_cast<int>(-1)) {
+    if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -763,7 +764,7 @@ static napi_value RegPrintfModifier_1700(napi_env env, napi_callback_info info)
     for (int i = 0; i < LOOP_COUNT_10; i++) {
         errno = 0;
         int ret = g_regModifier(L"Q");
-        if (static_cast<int>(ret) != static_cast<int>(-1)) {
+        if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
             napi_create_int32(env, 1, &result);
             return result;
         }
@@ -836,7 +837,7 @@ static napi_value RegPrintfModifier_2000(napi_env env, napi_callback_info info)
         int v = 7;
         char buf[32];
         g_seenUser = 0;
-        (void)snprintf(buf, sizeof(buf), "%I32R", &v);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%I32R", &v);
         if (static_cast<int>(g_seenUser) != static_cast<int>(b2)) {
             _exit(0);
         }
@@ -873,7 +874,7 @@ static napi_value RegPrintfModifier_2100(napi_env env, napi_callback_info info)
         int v = 7;
         char buf[32];
         g_seenUser = 0;
-        (void)snprintf(buf, sizeof(buf), "%IR", &v);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%IR", &v);
         if (static_cast<int>(g_seenUser) != static_cast<int>(b1)) {
             _exit(0);
         }
@@ -911,7 +912,7 @@ static napi_value RegPrintfModifier_2200(napi_env env, napi_callback_info info)
         int v = 7;
         char buf[32];
         g_seenUser = 0;
-        (void)snprintf(buf, sizeof(buf), "%ABCDR", &v);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%ABCDR", &v);
         if (static_cast<int>(g_seenUser) != static_cast<int>(b4)) {
             _exit(0);
         }
@@ -941,7 +942,7 @@ static napi_value RegPrintfModifier_2300(napi_env env, napi_callback_info info)
         }
         g_regModifier(L"I");
         char buf[32];
-        (void)snprintf(buf, sizeof(buf), "%ld", 42L);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%ld", 42L);
         if (strcmp((buf), ("42")) != 0) {
             _exit(1);
         }
@@ -970,7 +971,7 @@ static napi_value RegPrintfModifier_2400(napi_env env, napi_callback_info info)
     }
     char buf[16];
     for (int i = 0; i < LOOP_COUNT_10000; i++) {
-        int ret = snprintf(buf, sizeof(buf), "%d", 1);
+        int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%d", 1);
         if (static_cast<int>(ret) <= static_cast<int>(0)) {
             napi_create_int32(env, 1, &result);
             return result;
@@ -989,7 +990,7 @@ static napi_value RegPrintfModifier_2500(napi_env env, napi_callback_info info)
     }
     g_regModifier(L"I");
     char buf[64];
-    (void)snprintf(buf, sizeof(buf), "%ld %hd %lld", 1L, static_cast<short>(TEST_VALUE_2), 3LL);
+    (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%ld %hd %lld", 1L, static_cast<short>(TEST_VALUE_2), 3LL);
     if (strcmp((buf), ("1 2 3")) != 0) {
         napi_create_int32(env, 1, &result);
         return result;
@@ -1107,7 +1108,7 @@ static napi_value RegPrintfCombined_3000(napi_env env, napi_callback_info info)
         g_regModifier(L"I32");
         g_regSpecifier('R', PairPrintf, PairArginfo);
         char buf[64];
-        int ret = snprintf(buf, sizeof(buf), "%I32R", 1L, TEST_DOUBLE_2_0);
+        int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%I32R", 1L, TEST_DOUBLE_2_0);
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -1142,7 +1143,7 @@ static napi_value RegPrintfCombined_3100(napi_env env, napi_callback_info info)
         g_regSpecifier('C', MyFunc, Arginfo0);
         g_regSpecifier('D', MyFunc, Arginfo0);
         char buf[32];
-        int ret = snprintf(buf, sizeof(buf), "%B %C %D");
+        int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B %C %D");
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -1173,7 +1174,7 @@ static napi_value RegPrintfCombined_3200(napi_env env, napi_callback_info info)
         g_regSpecifier('B', LongPrintf, LongArginfo);
         long v = 1;
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%d %B %s %B", TEST_VALUE_2, &v, "a", &v);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%d %B %s %B", TEST_VALUE_2, &v, "a", &v);
         if (!(strstr(buf, "2") != nullptr)) {
             _exit(1);
         }
@@ -1203,7 +1204,7 @@ static napi_value RegPrintfCombined_3300(napi_env env, napi_callback_info info)
         }
         g_regModifier(L"I32");
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%I32d %ld %hd", 1, 2L, static_cast<short>(TEST_VALUE_3));
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%I32d %ld %hd", 1, 2L, static_cast<short>(TEST_VALUE_3));
         if (!(strstr(buf, "1") != nullptr)) {
             _exit(0);
         }
@@ -1237,7 +1238,7 @@ static napi_value RegPrintfCombined_3400(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('P', PairPrintf, PairArginfo);
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%d %P %f", 1, 2L, TEST_DOUBLE_3_0, TEST_DOUBLE_4_0);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%d %P %f", 1, 2L, TEST_DOUBLE_3_0, TEST_DOUBLE_4_0);
         if (!(strstr(buf, "1") != nullptr)) {
             _exit(0);
         }
@@ -1266,9 +1267,9 @@ static napi_value RegPrintfCombined_3500(napi_env env, napi_callback_info info)
             _exit(0);
         }
         g_regSpecifier('B', LongPrintf, LongArginfo);
-        long v = 42;
+        long v = TEST_VALUE_42;
         char buf[32];
-        int ret = snprintf(buf, sizeof(buf), "%*B", 5, &v);
+        int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%*B", 5, &v);
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -1297,9 +1298,9 @@ static napi_value RegPrintfCombined_3600(napi_env env, napi_callback_info info)
             _exit(0);
         }
         g_regSpecifier('B', LongPrintf, LongArginfo);
-        long v = 42;
+        long v = TEST_VALUE_42;
         char buf[32];
-        int ret = snprintf(buf, sizeof(buf), "%.*B", 3, &v);
+        int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%.*B", 3, &v);
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -1328,9 +1329,9 @@ static napi_value RegPrintfCombined_3700(napi_env env, napi_callback_info info)
             _exit(0);
         }
         g_regSpecifier('B', LongPrintf, LongArginfo);
-        long v = 42;
+        long v = TEST_VALUE_42;
         char buf[32];
-        int ret = snprintf(buf, sizeof(buf), "%*.*B", 5, 3, &v);
+        int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%*.*B", 5, 3, &v);
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -1360,9 +1361,9 @@ static napi_value RegPrintfCombined_3800(napi_env env, napi_callback_info info)
         }
         g_regModifier(L"I32");
         g_regSpecifier('R', ModPrintf, ModArginfo);
-        int v = 42;
+        int v = TEST_VALUE_42;
         char buf[32];
-        int ret = snprintf(buf, sizeof(buf), "%*I32R", 5, &v);
+        int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%*I32R", 5, &v);
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -1392,7 +1393,7 @@ static napi_value RegPrintfCombined_3900(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('X', MyFunc, Arginfo3);
         char buf[16];
-        int ret = snprintf(buf, sizeof(buf), "%X", 1, 2, 3);
+        int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%X", 1, 2, 3);
         if (static_cast<int>(ret) < static_cast<int>(0)) {
             _exit(1);
         }
@@ -1422,7 +1423,7 @@ static napi_value RegPrintfCombined_4000(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('X', MyFunc2, Arginfo2);
         char buf[32];
-        (void)snprintf(buf, sizeof(buf), "%X %d", 1, TEST_VALUE_2, TEST_VALUE_42);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%X %d", 1, TEST_VALUE_2, TEST_VALUE_42);
         if (!(strstr(buf, "42") != nullptr)) {
             _exit(0);
         }
@@ -1493,10 +1494,10 @@ static napi_value RegPrintfCombined_4300(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('C', FuncA, Arginfo0);
         char b1[8];
-        (void)snprintf(b1, sizeof(b1), "%C");
+        (void)snprintf_s(b1, sizeof(b1), sizeof(b1) - 1, "%C");
         g_regSpecifier('C', FuncB, Arginfo0);
         char b2[8];
-        (void)snprintf(b2, sizeof(b2), "%C");
+        (void)snprintf_s(b2, sizeof(b2), sizeof(b2) - 1, "%C");
         if (strcmp((b1), ("A")) != 0) {
             _exit(0);
         }
@@ -1533,7 +1534,7 @@ static napi_value RegPrintfCombined_4400(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('P', PairPrintf, PairArginfo);
         char buf[64];
-        (void)snprintf(buf, sizeof(buf), "%P", 1L, TEST_DOUBLE_2_0);
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", 1L, TEST_DOUBLE_2_0);
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(0);
         }
@@ -1568,8 +1569,8 @@ static napi_value RegPrintfCombined_4500(napi_env env, napi_callback_info info)
         g_regSpecifier('B', Hb, Arginfo0);
         g_regSpecifier('C', Hc, Arginfo0);
         char buf[8];
-        (void)snprintf(buf, sizeof(buf), "%IB");
-        (void)snprintf(buf, sizeof(buf), "%IC");
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%IB");
+        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%IC");
         if (static_cast<int>(g_seenB) != static_cast<int>(bit)) {
             _exit(0);
         }
@@ -1602,9 +1603,9 @@ static napi_value RegPrintfCombined_4600(napi_env env, napi_callback_info info)
     g_regSpecifier('B', LongPrintf, LongArginfo);
     pid_t pid = fork();
     if (pid == 0) {
-        long v = 42;
+        long v = TEST_VALUE_42;
         char b[16];
-        snprintf(b, sizeof(b), "%B", &v);
+        (void)snprintf_s(b, sizeof(b), sizeof(b) - 1, "%B", &v);
         if (strcmp(b, "42") != 0) {
             _exit(1);
         }
