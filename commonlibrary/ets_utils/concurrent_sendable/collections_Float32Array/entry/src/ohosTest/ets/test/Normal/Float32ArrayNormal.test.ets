@@ -3043,3 +3043,1714 @@ export default function Float32ArrayNormalTest() {
      */
     it('testFloat32Array0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testFloat32Array0146";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 2.2, 3.3, 4.4, 5.5]);
+        let arrListNew = arrList.slice(2, 2);
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0147
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0147
+     * @tc.desc   Testing the Slice of Float32Array, array is not null, start is 2, end is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0147";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 2.2, 3.3, 4.4, 5.5]);
+        let arrListNew = arrList.slice(2, 0);
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0148
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0148
+     * @tc.desc   Testing the Slice of Float32Array, array is not null, start is 2, end is 4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0148";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 2.2, 3.3, 4.4, 5.5]);
+        let arrListNew = arrList.slice(2, 4);
+        expect(arrListNew.toString()).assertEqual("3.299999952316284,4.400000095367432");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testFloat32Array0149
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0149
+     * @tc.desc   Testing the sort of Float32Array, array is null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0149";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array();
+        let arrListNew = arrList.sort();
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0150
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0150
+     * @tc.desc   Testing the sort of Float32Array, array is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0150";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array();
+        let arrListNew = arrList.sort((a: number, b: number) => a - b);
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0151
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0151
+     * @tc.desc   Testing the sort of Float32Array, array is not null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0151";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([5.1, 2.1, 3.1, 4.1, 1.1]);
+        let arrListNew = arrList.sort();
+        expect(arrListNew.toString())
+          .assertEqual("1.100000023841858,2.0999999046325684,3.0999999046325684,4.099999904632568,5.099999904632568");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0152
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0152
+     * @tc.desc   Testing the sort of Float32Array, array is not null, parameter is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0152";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([5.1, 2.1, 3.1, 4.1, 1.1]);
+        let arrListNew = arrList.sort(undefined);
+        expect(arrListNew.toString())
+          .assertEqual("1.100000023841858,2.0999999046325684,3.0999999046325684,4.099999904632568,5.099999904632568");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0153
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0153
+     * @tc.desc   Testing the sort of Float32Array, array is not null, parameter is grade down.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0153";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([5.1, 2.1, 3.1, 4.1, 1.1]);
+        let arrListNew = arrList.sort((a: number, b: number) => b - a);
+        expect(arrListNew.toString())
+          .assertEqual("5.099999904632568,4.099999904632568,3.0999999046325684,2.0999999046325684,1.100000023841858");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0154
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0154
+     * @tc.desc   Testing the sort of Float32Array, array is not null, set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0154";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([5.1, 2.1, 3.1, 4.1, 1.1]);
+        arrList.set([7.1, 9.1, 8.1], 2);
+        let arrListNew = arrList.sort();
+        expect(arrListNew.toString())
+          .assertEqual("2.0999999046325684,5.099999904632568,7.099999904632568,8.100000381469727,9.100000381469727");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0155
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0155
+     * @tc.desc   Testing the subarray of Float32Array, array is not null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0155";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 3.1, 5.1, 7.1, 9.1]);
+        let arrListNew = arrList.subarray();
+        expect(arrListNew.toString())
+          .assertEqual("1.100000023841858,3.0999999046325684,5.099999904632568,7.099999904632568,9.100000381469727");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0156
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0156
+     * @tc.desc   Testing the subarray of Float32Array, array is not null, begin is -1, end is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0156";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 3.1, 5.1, 7.1, 9.1]);
+        let arrListNew = arrList.subarray(-1);
+        expect(arrListNew.toString()).assertEqual("9.100000381469727");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0157
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0157
+     * @tc.desc   Testing the subarray of Float32Array, array is not null, begin is -1, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0157";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 3.1, 5.1, 7.1, 9.1]);
+        let arrListNew = arrList.subarray(-1, -1);
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0158
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0158
+     * @tc.desc   Testing the subarray of Float32Array, array is not null, begin is -1, end is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0158";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 3.1, 5.1, 7.1, 9.1]);
+        let arrListNew = arrList.subarray(-1, 2);
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0159
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0159
+     * @tc.desc   Testing the subarray of Float32Array, array is not null, begin is -1, end is overstep.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0159";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 3.1, 5.1, 7.1, 9.1]);
+        let arrListNew = arrList.subarray(-1, 7);
+        expect(arrListNew.toString()).assertEqual("9.100000381469727");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0160
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0160
+     * @tc.desc   Testing the subarray of Float32Array, array is not null, begin is 2, end is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0160";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 3.1, 5.1, 7.1, 9.1]);
+        let arrListNew = arrList.subarray(2);
+        expect(arrListNew.toString()).assertEqual("5.099999904632568,7.099999904632568,9.100000381469727");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0161
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0161
+     * @tc.desc   Testing the subarray of Float32Array, array is not null, begin is 2, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0161";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 3.1, 5.1, 7.1, 9.1]);
+        let arrListNew = arrList.subarray(2, -1);
+        expect(arrListNew.toString()).assertEqual("5.099999904632568,7.099999904632568");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0162
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0162
+     * @tc.desc   Testing the subarray of Float32Array, array is not null, begin is 2, end is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0162";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 3.1, 5.1, 7.1, 9.1]);
+        let arrListNew = arrList.subarray(2, 2);
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0163
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0163
+     * @tc.desc   Testing the subarray of Float32Array, array is not null, begin is 2, end is overstep.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0163";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 3.1, 5.1, 7.1, 9.1]);
+        let arrListNew = arrList.subarray(2, 10);
+        expect(arrListNew.toString()).assertEqual("5.099999904632568,7.099999904632568,9.100000381469727");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0164
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0164
+     * @tc.desc   Testing the subarray of Float32Array, array is not null, begin is overstep, end is overstep.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0164";
+      try {
+        let arrList: collections.Float32Array = new collections.Float32Array([1.1, 3.1, 5.1, 7.1, 9.1]);
+        let arrListNew = arrList.subarray(7, 10);
+        expect(arrListNew.toString()).assertEqual("");
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0165
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0165
+     * @tc.desc   Testing Collections of Float32array, array is [], at(1), return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0165";
+      try {
+        let float32Array: collections.Float32Array = new collections.Float32Array();
+        console.info("float32Array: " + float32Array);
+        expect(float32Array.at(1)).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0166
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0166
+     * @tc.desc   Testing Collections of Float32array, array is [3.2, 4.1], at(3), return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0166";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([3.2, 4.1]);
+        console.info("float32Array: " + float32Array);
+        expect(float32Array.at(3)).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0167
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0167
+     * @tc.desc   Testing Collections of Float32array, array is [3.2, 4.1, 5.0], at(-1), return element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0167";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([3.2, 4.1, 5.0]);
+        console.info("float32Array: " + float32Array);
+        expect(float32Array.at(-1)).assertEqual(5.0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0168
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0168
+     * @tc.desc   Testing Collections of Float32array, array is [3.2, 4.1, 5.0], at(5), return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0168";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([3.2, 4.1, 5.0]);
+        console.info("float32Array: " + float32Array);
+        expect(float32Array.at(5)).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0169
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0169
+     * @tc.desc   Testing Collections of Float32array, array is [3.2, 4.1, 5.0], at(0), return element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0169";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([3.0, 4.0, 5.0]);
+        console.info("float32Array: " + float32Array);
+        expect(float32Array.at(0)).assertEqual(3);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0170
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0170
+     * @tc.desc   Testing Collections of Float32array, array is [], includes(2), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0170";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([]);
+        console.info("float32Array includes: " + float32Array);
+        expect(float32Array.includes(2)).assertEqual(false);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0171
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0171
+     * @tc.desc   Testing Collections of Float32array, array is [3.2, 4.1, 5.0], includes(5,-1), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0171";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([3.2, 4.1, 5.0]);
+        console.info("float32Array includes: " + float32Array);
+        expect(float32Array.includes(10, -1)).assertEqual(false);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0172
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0172
+     * @tc.desc   Testing Collections of Float32array, array is [3.2, 4.1, 5.0], includes(5.0,-1), return true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0172";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([3.2, 4.1, 5.0]);
+        console.info("float32Array includes: " + float32Array);
+        expect(float32Array.includes(5.0, -1)).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0173
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0173
+     * @tc.desc   Testing Collections of Float32array, array is [3.2, 4.1, 5.0], includes(10), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0173";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([3.2, 4.1, 5.0]);
+        console.info("float32Array includes: " + float32Array);
+        expect(float32Array.includes(10)).assertEqual(false);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0174
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0174
+     * @tc.desc   Testing Collections of Float32array, array is [3.2, 4.1, 5.0], includes(4.1), return true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0174";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([3.2, 4.1, 5.0]);
+        console.info("float32Array includes: " + float32Array);
+        expect(float32Array.includes(5)).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0175
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0175
+     * @tc.desc   Testing Collections of Float32array, array is [3.2, 4.1, 5.0], includes(4.1,5), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0175";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([3.2, 4.1, 5.0]);
+        console.info("float32Array includes: " + float32Array);
+        expect(float32Array.includes(4.1, 5)).assertEqual(false);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0176
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0176
+     * @tc.desc   Testing Collections of Float32array, array is [], entries(), .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0176";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([]);
+        let iterator: IterableIterator<[number, number]> = float32Array.entries();
+        console.info("float32Array: " + float32Array);
+        expect(iterator.next().value).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0177
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0177
+     * @tc.desc   Testing Collections of Float32array, array is [3.2, 4.1, 5.0], entries() .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0177";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([3.0, 4.1, 5.0]);
+        let iterator: IterableIterator<[number, number]> = float32Array.entries();
+        console.info("float32Array: " + float32Array);
+        expect(iterator.next().value.toString()).assertEqual('0,3');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0178
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0178
+     * @tc.desc   Testing Collections of Float32array, array is [], keys().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0178";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([]);
+        let iterator: IterableIterator<number> = float32Array.keys();
+        let tempNum: number = 0;
+        for (const key of iterator) {
+          console.info("iterator key:" + key);
+          tempNum = tempNum + 1;
+        }
+        expect(tempNum).assertEqual(0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0179
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0179
+     * @tc.desc   Testing Collections of Float32array, array is [1.0,2.0,3.0], keys(),iterator.next().value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0179";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([1.0, 2.0, 3.0]);
+        let iterator: IterableIterator<number> = float32Array.keys();
+        expect(iterator.next().value).assertEqual(0);
+        expect(iterator.next().value).assertEqual(1);
+        expect(iterator.next().value).assertEqual(2);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0180
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0180
+     * @tc.desc   Testing Collections of Float32array, array is [1.0,2.0,3.0], keys(),for iterator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0180";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([1.0, 2.0, 3.0]);
+        let iterator: IterableIterator<number> = float32Array.keys();
+        let tempNum: number = 0;
+        for (const key of iterator) {
+          console.info("iterator key:" + key);
+          expect(key).assertEqual(tempNum);
+          tempNum = tempNum + 1;
+        }
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0181
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0181
+     * @tc.desc   Testing Collections of Float32array, array is [], values().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0181";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([]);
+        let iterator: IterableIterator<number> = float32Array.values();
+        console.info("iterator values:" + iterator);
+        expect(iterator.next().done).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0182
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0182
+     * @tc.desc   Testing Collections of Float32array, array is [1.0,2.0,3.0], values(),iterator.next().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0182";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([1.0, 2.0, 3.0]);
+        let iterator: IterableIterator<number> = float32Array.values();
+        console.info("iterator values:" + iterator);
+        expect(iterator.next().value).assertEqual(1.0);
+        expect(iterator.next().value).assertEqual(2.0);
+        expect(iterator.next().value).assertEqual(3.0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0183
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0183
+     * @tc.desc   Testing Collections of Float32array, array is [1.0,2.0,3.0], values(),for value iterator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0183";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([1.0, 2.0, 3.0]);
+        let iterator: IterableIterator<number> = float32Array.values();
+        console.info("iterator values:" + iterator);
+        let tempNum: number = 1;
+        for (const value of iterator) {
+          console.info("iterator value:" + value);
+          expect(value).assertEqual(tempNum);
+          tempNum = tempNum + 1;
+        }
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0184
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0184
+     * @tc.desc   Testing Collections of Float32array, array is [1.0,2.0,3.0], set array,values(),for value iterator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0184";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([1.0, 2.0, 3.0]);
+        float32Array.set([4, 5, 6]);
+        let iterator: IterableIterator<number> = float32Array.values();
+        console.info("float32Array values:" + float32Array);
+        let tempNum: number = 4;
+        for (const value of iterator) {
+          console.info("iterator value:" + value);
+          expect(value).assertEqual(tempNum);
+          tempNum = tempNum + 1;
+        }
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0185
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0185
+     * @tc.desc   Testing Collections of Float32array, array is [1.0,2.0,3.0], index < 0, array[index] = undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0185";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([1.0, 2.0, 3.0]);
+        console.info("float32Array is:" + float32Array);
+        expect(float32Array[-1]).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0186
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0186
+     * @tc.desc   Testing Collections of Float32array, array is [1.0,2.0,3.0], index > arrayLength, array[index] = undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0186";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([1.0, 2.0, 3.0]);
+        console.info("float32Array is:" + float32Array);
+        expect(float32Array[5]).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32Array0187
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0187
+     * @tc.desc   Testing Collections of Float32array, array is [1.0,2.0,3.0],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32Array0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32Array0187";
+      try {
+        let float32Array: collections.Float32Array = collections.Float32Array.from([1.0, 2.0, 3.0]);
+        console.info("float32Array is:" + float32Array);
+        expect(float32Array[1]).assertEqual(2.0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testFloat32ArrayReduceRight0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0188
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayReduceRight0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayReduceRight0001";
+      try {
+        let array: collections.Float32Array = collections.Float32Array.from([]);
+        array.reduceRight((accumulator: number, value: number) => accumulator + value);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayReduceRight0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0189
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayReduceRight0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayReduceRight0002";
+      try {
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 5]);
+        let expectedValues: number[] = [15, 14, 12, 9, 5];
+        let reduceRightdValue: number = array.reduceRight((accumulator: number, value: number, index: number) => {
+          let newAccumulator = accumulator + value;
+          expect(newAccumulator).assertEqual(expectedValues[index]);
+          return newAccumulator;
+        });
+        expect(reduceRightdValue).assertEqual(15);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayReduceRight0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0190
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayReduceRight0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayReduceRight0003";
+      try {
+        const array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 5]);
+        const initialAccumulator = 8;
+        const expectedValues: number[] = [23, 22, 20, 17, 13];
+        let reduceRightdValue: number = array.reduceRight((accumulator: number, value: number, index: number) => {
+          const newAccumulator = accumulator + value;
+          expect(newAccumulator).assertEqual(expectedValues[index]);
+          return newAccumulator;
+        }, initialAccumulator);
+        expect(reduceRightdValue).assertEqual(23);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayReduceRight0004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0191
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayReduceRight0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayReduceRight0004";
+      try {
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 5]);
+        let initialValue = "initialValue";
+        let reduceRightdValue: string = array.reduceRight<string>((accumulator: string, value: number) =>
+        accumulator + value, initialValue);
+        expect(reduceRightdValue).assertEqual('initialValue54321');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayToLocaleString0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0192
+     * @tc.desc   Test the function of the interface ArkTS Array ToLocaleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayToLocaleString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayToLocaleString0001";
+      try {
+        const array1 = new collections.Float32Array();
+        const iterator1 = array1.toLocaleString();
+        console.log(`${TAG} result:` + iterator1);
+        expect(iterator1).assertEqual('');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayToLocaleString0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0193
+     * @tc.desc   Test the function of the interface ArkTS Array ToLocaleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayToLocaleString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayToLocaleString0002";
+      try {
+        const array1 = new collections.Float32Array(1);
+        const iterator1 = array1.toLocaleString();
+        console.log(`${TAG} result:` + iterator1);
+        expect(iterator1).assertEqual('0');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testFloat32ArrayToLocaleString0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0194
+     * @tc.desc   Test the function of the interface ArkTS Array ToLocaleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayToLocaleString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayToLocaleString0003";
+      try {
+        const array1 = new collections.Float32Array([1,2,3]);
+        const iterator1 = array1.toLocaleString();
+        console.log(`${TAG} result:` + iterator1);
+        expect(iterator1).assertEqual('1,2,3');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testFloat32ArrayLastIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0195
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayLastIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayLastIndexOf0001";
+      try {
+        let array: collections.Float32Array = collections.Float32Array.from([]);
+        let res : number = array.lastIndexOf(3);
+        expect(res).assertEqual(-1);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayLastIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0196
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayLastIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayLastIndexOf0002";
+      try {
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3]);
+        let res : number = array.lastIndexOf(4);
+        expect(res).assertEqual(-1);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayLastIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0197
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayLastIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayLastIndexOf0003";
+      try {
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3]);
+        array.set([4, 5], 1);
+        let res : number = array.lastIndexOf(4);
+        expect(res).assertEqual(1);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayLastIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0198
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayLastIndexOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayLastIndexOf0004";
+      try {
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 3, 5, 3, 6, 3, 3]);
+        let res : number = array.lastIndexOf(3, -1);
+        expect(res).assertEqual(array.length - 1);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayLastIndexOf0005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0199
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayLastIndexOf0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayLastIndexOf0005";
+      try {
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 3, 5, 3, 6, 3, 3]);
+        let res : number = array.lastIndexOf(3, 5);
+        expect(res).assertEqual(4);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayLastIndexOf0006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0200
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayLastIndexOf0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayLastIndexOf0006";
+      try {
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 4, 3, 5, 3, 6, 3, 3]);
+        let res : number = array.lastIndexOf(3, 3);
+        expect(res).assertEqual(3);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayLastIndexOf0007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0201
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayLastIndexOf0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayLastIndexOf0007";
+      try {
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 4, 3, 5, 3, 6, 3, 3]);
+        let res : number = array.lastIndexOf(3, 2);
+        expect(res).assertEqual(-1);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testFloat32ArrayLastIndexOf0008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0202
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayLastIndexOf0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayLastIndexOf0008";
+      try {
+        let array: collections.Float32Array = collections.Float32Array.from([1, 2, 3, 4, 3, 5, 3, 6, 3, 3]);
+        let res : number = array.lastIndexOf(3);
+        expect(res).assertEqual(9);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayOf0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0203
+     * @tc.desc   Test the function of the interface Of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayOf0001";
+      try {
+        let result : collections.Float32Array = collections.Float32Array.of(1);
+        expect(result.toString()).assertEqual('1');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    });
+    /**
+     * @tc.name   testFloat32ArrayOf0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0204
+     * @tc.desc   Test the function of the interface Of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testFloat32ArrayOf0002";
+      try {
+        let result : collections.Float32Array = collections.Float32Array.of(1, 2, 3);
+        expect(result.toString()).assertEqual('1,2,3');
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+      done()
+    });
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0205
+     * @tc.desc   Testing 'from' return properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Float32Array = collections.Float32Array.from([1.0,2.0,3.0]);
+      expect(array.toString()).assertEqual('1,2,3');
+      expect(array[1]).assertEqual(2);
+      expect(Float32Array.BYTES_PER_ELEMENT).assertEqual(4);
+      expect(array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(array.byteLength).assertEqual(12);
+      expect(array.byteOffset).assertEqual(0);
+      expect(array.length).assertEqual(3);
+      done()
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0206
+     * @tc.desc   Testing 'from' return properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Float32Array = collections.Float32Array.from<string>(
+        ["1", "3", "5"], (v: string, k: number) => parseFloat(v));
+      expect(array.toString()).assertEqual('1,3,5');
+      expect(array[1]).assertEqual(3);
+      expect(array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(array.byteLength).assertEqual(12);
+      expect(array.byteOffset).assertEqual(0);
+      expect(array.length).assertEqual(3);
+      done()
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0207
+     * @tc.desc   Testing 'from' interface with undefined mapFn.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let myset = new Set([1, 3, 5]);
+      let array: collections.Float32Array = collections.Float32Array.from(myset, undefined);
+      expect(array.toString()).assertEqual('1,3,5');
+      expect(array[1]).assertEqual(3);
+      expect(array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(array.byteLength).assertEqual(12);
+      expect(array.byteOffset).assertEqual(0);
+      expect(array.length).assertEqual(3);
+      done()
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0208
+     * @tc.desc   Testing 'copyWithin' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      let result = float32Array.copyWithin(0, 3, undefined);
+      expect(result[1]).assertEqual(5);
+      expect(result.toString()).assertEqual('4,5,3,4,5');
+      expect(result.buffer.byteLength).assertEqual(20);
+      expect(result.byteLength).assertEqual(20);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done()
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0209
+     * @tc.desc   Testing 'fill' with undefined start parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      let result = float32Array.fill(9, undefined, 3);
+      expect(result[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('9,9,9,4,5');
+      expect(result.buffer.byteLength).assertEqual(20);
+      expect(result.byteLength).assertEqual(20);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0210
+     * @tc.desc   Testing 'fill' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      let result = float32Array.fill(9, 1, undefined);
+      expect(result[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('1,9,9,9,9');
+      expect(result.buffer.byteLength).assertEqual(20);
+      expect(result.byteLength).assertEqual(20);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0211
+     * @tc.desc   Testing 'fill' with undefined start/end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      let result = float32Array.fill(9, undefined, undefined);
+      expect(result[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('9,9,9,9,9');
+      expect(result.buffer.byteLength).assertEqual(20);
+      expect(result.byteLength).assertEqual(20);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0212
+     * @tc.desc   Testing 'filter' with undefined predicate parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let arrayLike = [0, 1, 2, 3, 4];
+      let array: collections.Float32Array = collections.Float32Array.from(arrayLike);
+      let filtered: collections.Float32Array = array.filter((element: number) => element % 2 == 0);
+      expect(filtered.toString()).assertEqual('0,2,4');
+      expect(filtered[1]).assertEqual(2);
+      expect(Float32Array.BYTES_PER_ELEMENT).assertEqual(4);
+      expect(filtered.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(filtered.byteLength).assertEqual(12);
+      expect(filtered.byteOffset).assertEqual(0);
+      expect(filtered.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0213
+     * @tc.desc   Testing 'indexOf' with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      const result = float32Array.indexOf(3, undefined);
+      expect(result).assertEqual(2);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0214
+     * @tc.desc   Testing 'join' with undefined separator parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      const result = float32Array.join(undefined);
+      expect(result).assertEqual('1,2,3,4,5');
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0215
+     * @tc.desc   Testing 'join' with empty string separator parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      const result = float32Array.join('');
+      expect(result).assertEqual('12345');
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0216
+     * @tc.desc   Testing 'set' with undefined offset parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      float32Array.set([6, 7], undefined);
+      expect(float32Array.toString()).assertEqual('6,7,3,4,5')
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0217
+     * @tc.desc   Testing 'slice' with undefined start parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      const result = float32Array.slice(undefined,4);
+      expect(result.toString()).assertEqual('1,2,3,4');
+      expect(result[1]).assertEqual(2);
+      expect(result.buffer.byteLength).assertEqual(16);
+      expect(result.byteLength).assertEqual(16);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(4);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0218
+     * @tc.desc   Testing 'slice' with null end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      const result = float32Array.slice();
+      expect(result.toString()).assertEqual('1,2,3,4,5');
+      expect(result[1]).assertEqual(2);
+      expect(result.buffer.byteLength).assertEqual(20);
+      expect(result.byteLength).assertEqual(20);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0219
+     * @tc.desc   Testing 'slice' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      const result = float32Array.slice(4, undefined);
+      expect(result.toString()).assertEqual('5');
+      expect(result[0]).assertEqual(5);
+      expect(result.buffer.byteLength).assertEqual(4);
+      expect(result.byteLength).assertEqual(4);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(1);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0220
+     * @tc.desc   Testing 'sort' with undefined compareFn parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([5, 3, 1, 4, 2]);
+      let result = float32Array.sort(undefined);
+      expect(result.toString()).assertEqual('1,2,3,4,5');
+      expect(result[0]).assertEqual(1);
+      expect(result.buffer.byteLength).assertEqual(20);
+      expect(result.byteLength).assertEqual(20);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0221
+     * @tc.desc   Testing 'subarray' with undefined begin parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      const result = float32Array.subarray(undefined);
+      expect(result.toString()).assertEqual('1,2,3,4,5');
+      expect(result[0]).assertEqual(1);
+      expect(result.buffer.byteLength).assertEqual(20);
+      expect(result.byteLength).assertEqual(20);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0222
+     * @tc.desc   Testing 'subarray' with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      const result = float32Array.subarray(2, undefined);
+      expect(result.toString()).assertEqual('3,4,5');
+      expect(result[0]).assertEqual(3);
+      expect(result.buffer.byteLength).assertEqual(20);
+      expect(result.byteLength).assertEqual(12);
+      expect(result.byteOffset).assertEqual(8);
+      expect(result.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0223
+     * @tc.desc   Test subarray() return properties validation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      const result = float32Array.subarray(1, 4);
+      expect(result.toString()).assertEqual('2,3,4');
+      expect(result[0]).assertEqual(2);
+      expect(result.buffer.byteLength).assertEqual(20);
+      expect(result.byteLength).assertEqual(12);
+      expect(result.byteOffset).assertEqual(4);
+      expect(result.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0224
+     * @tc.desc   Testing 'includes' with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      const result = float32Array.includes(3, undefined);
+      expect(result).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0225
+     * @tc.desc   Testing 'lastIndexOf' with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let float32Array: collections.Float32Array = new collections.Float32Array([1, 2, 3, 4, 5]);
+      const result = float32Array.lastIndexOf(3, undefined);
+      expect(result).assertEqual(-1);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0226
+     * @tc.desc   Test of() creating Float32Array from variadic arguments.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result : collections.Float32Array = collections.Float32Array.of(1, 2, 3);
+      expect(result.toString()).assertEqual('1,2,3');
+      expect(result[0]).assertEqual(1);
+      expect(Float32Array.BYTES_PER_ELEMENT).assertEqual(4);
+      expect(result.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(result.byteLength).assertEqual(12);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0227
+     * @tc.desc   Test map() with Math.sqrt callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Float32Array = new collections.Float32Array([25, 36, 49]);
+      const mapped = array.map(Math.sqrt);
+      expect(mapped.toString()).assertEqual("5,6,7");
+      expect(mapped[0]).assertEqual(5);
+      expect(mapped.buffer.byteLength).assertEqual(12);
+      expect(mapped.byteLength).assertEqual(12);
+      expect(mapped.byteOffset).assertEqual(0);
+      expect(mapped.length).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testFloat32ArrayMissing0024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_NORMAL_0228
+     * @tc.desc   Test reverse() mutating array in place.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloat32ArrayMissing0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Float32Array = new collections.Float32Array([1,2,3,4,5]);
+      const result = array.reverse();
+      expect(result.toString()).assertEqual("5,4,3,2,1");
+      expect(result[0]).assertEqual(5);
+      expect(result.buffer.byteLength).assertEqual(20); 
+      expect(result.byteLength).assertEqual(20);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+
+  })
+}

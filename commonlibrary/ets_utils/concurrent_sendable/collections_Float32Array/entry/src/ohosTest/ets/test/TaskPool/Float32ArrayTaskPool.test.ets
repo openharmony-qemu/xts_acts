@@ -1,0 +1,269 @@
+/*
+ * Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { collections, taskpool } from '@kit.ArkTS';
+import {
+  sleep,
+  testFloat32ArrayTaskPool0001,
+  testFloat32ArrayTaskPool0002,
+  testFloat32ArrayTaskPool0003,
+  testFloat32ArrayTaskPool0004,
+  testFloat32ArrayTaskPool0005,
+  testFloat32ArrayTaskPool0006,
+  testFloat32ArrayTaskPool0007,
+  testFloat32ArrayTaskPool0008,
+  testFloat32ArrayTaskPool0009,
+  testFloat32ArrayTaskPool0010,
+  testFloat32ArrayTaskPool0011,
+  testFloat32ArrayTaskPool0012,
+  testFloat32ArrayTaskPool0013,
+  testFloat32ArrayTaskPool0014,
+  testFloat32ArrayTaskPool0015,
+  testFloat32ArrayTaskPool0016,
+  testFloat32ArrayTaskPool0017,
+  testFloat32ArrayTaskPool0018,
+  testFloat32ArrayTaskPool0019,
+  testFloat32ArrayTaskPool0020,
+  testFloat32ArrayTaskPool0021,
+  testFloat32ArrayTaskPool0022,
+  testFloat32ArrayTaskPool0023,
+  testFloat32ArrayTaskPool0024,
+  testFloat32ArrayTaskPool0025,
+  testFloat32ArrayTaskPool0026,
+  testFloat32ArrayTaskPool0027,
+  testFloat32ArrayTaskPool0028,
+  testFloat32ArrayTaskPool0029,
+  testFloat32ArrayTaskPool0030,
+  testFloat32ArrayTaskPool0031,
+  testFloat32ArrayTaskPool0032,
+  testFloat32ArrayTaskPool0033,
+  testFloat32ArrayTaskPool0034,
+  testFloat32ArrayTaskPool0035,
+  testFloat32ArrayTaskPool0036,
+  testFloat32ArrayTaskPool0037,
+  testFloat32ArrayTaskPool0038,
+  testFloat32ArrayTaskPool0039,
+  testFloat32ArrayTaskPool0040,
+  testFloat32ArrayTaskPool0041,
+  testFloat32ArrayTaskPool0042,
+  testFloat32ArrayTaskPool0043,
+  testFloat32ArrayTaskPool0044,
+  testFloat32ArrayTaskPool0045,
+  testFloat32ArrayTaskPool0046,
+  testFloat32ArrayTaskPool0047,
+  testFloat32ArrayTaskPool0048,
+  testFloat32ArrayTaskPool0049,
+  testFloat32ArrayTaskPool0050,
+  testFloat32ArrayTaskPool0051,
+  testFloat32ArrayTaskPool0052,
+  testFloat32ArrayTaskPool0053,
+  testFloat32ArrayTaskPool0054,
+  testFloat32ArrayTaskPool0055,
+  testFloat32ArrayTaskPool0056,
+  testFloat32ArrayTaskPool0057,
+  testFloat32ArrayTaskPool0058,
+  testFloat32ArrayTaskPool0059,
+  testFloat32ArrayTaskPool0060,
+  testFloat32ArrayTaskPool0061,
+  testFloat32ArrayTaskPool0062,
+  testFloat32ArrayTaskPool0063,
+  testFloat32ArrayTaskPool0064,
+  testFloat32ArrayTaskPool0065,
+  testFloat32ArrayTaskPool0066,
+  testFloat32ArrayTaskPool0067,
+  testFloat32ArrayTaskPool0068,
+  testFloat32ArrayTaskPool0069,
+  testFloat32ArrayTaskPool0070,
+  testFloat32ArrayTaskPool0071,
+  testFloat32ArrayTaskPool0072,
+  testFloat32ArrayTaskPool0073,
+  testFloat32ArrayTaskPool0074,
+  testFloat32ArrayTaskPool0075,
+  testFloat32ArrayTaskPool0076,
+  testFloat32ArrayTaskPool0077,
+  testFloat32ArrayTaskPool0078,
+  testFloat32ArrayTaskPool0079,
+  testFloat32ArrayTaskPool0080,
+  testFloat32ArrayTaskPool0081,
+  testFloat32ArrayTaskPool0082,
+  testFloat32ArrayTaskPool0083,
+  testFloat32ArrayTaskPool0084,
+  testFloat32ArrayTaskPool0085,
+  testFloat32ArrayTaskPool0086,
+  testFloat32ArrayTaskPool0087,
+  testFloat32ArrayTaskPool0088,
+  testFloat32ArrayTaskPool0089,
+  testFloat32ArrayTaskPool0090,
+  testFloat32ArrayTaskPool0091,
+  testFloat32ArrayTaskPool0092,
+  testFloat32ArrayTaskPool0093,
+  testFloat32ArrayTaskPool0094,
+  testFloat32ArrayTaskPool0095,
+  testFloat32ArrayTaskPool0096,
+  testFloat32ArrayTaskPool0097,
+  testFloat32ArrayTaskPool0098,
+  testFloat32ArrayTaskPool0099,
+  testFloat32ArrayTaskPool0100,
+  testFloat32ArrayTaskPool0101,
+  testFloat32ArrayTaskPool0102,
+  testFloat32ArrayTaskPool0103,
+  testFloat32ArrayTaskPool0104,
+  testFloat32ArrayTaskPool0105,
+  testFloat32ArrayTaskPool0106,
+  testFloat32ArrayTaskPool0107,
+  testFloat32ArrayTaskPool0108,
+  testFloat32ArrayTaskPool0109,
+  testFloat32ArrayTaskPool0110,
+  testFloat32ArrayTaskPool0111,
+  testFloat32ArrayTaskPool0112,
+  testFloat32ArrayTaskPool0113,
+  testFloat32ArrayTaskPool0114,
+  testFloat32ArrayTaskPool0115,
+  testFloat32ArrayTaskPool0116,
+  testFloat32ArrayTaskPool0117,
+  testFloat32ArrayTaskPool0118,
+  testFloat32ArrayTaskPool0119,
+  testFloat32ArrayTaskPool0120,
+  testFloat32ArrayTaskPool0121,
+  testFloat32ArrayTaskPool0122,
+  testFloat32ArrayTaskPool0123,
+  testFloat32ArrayTaskPool0124,
+  testFloat32ArrayTaskPool0125,
+  testFloat32ArrayTaskPool0126,
+  testFloat32ArrayTaskPool0127,
+  testFloat32ArrayTaskPool0128,
+  testFloat32ArrayTaskPool0129,
+  testFloat32ArrayTaskPool0130,
+  testFloat32ArrayTaskPool0131,
+  testFloat32ArrayTaskPool0132,
+  testFloat32ArrayTaskPool0133,
+  testFloat32ArrayTaskPool0134,
+  testFloat32ArrayTaskPool0135,
+  testFloat32ArrayTaskPool0136,
+  testFloat32ArrayTaskPool0137,
+  testFloat32ArrayTaskPool0138,
+  testFloat32ArrayTaskPool0139,
+  testFloat32ArrayTaskPool0140,
+  testFloat32ArrayTaskPool0141,
+  testFloat32ArrayTaskPool0142,
+  testFloat32ArrayTaskPool0143,
+  testFloat32ArrayTaskPool0144,
+  testFloat32ArrayTaskPool0145,
+  testFloat32ArrayTaskPool0146,
+  testFloat32ArrayTaskPool0147,
+  testFloat32ArrayTaskPool0148,
+  testFloat32ArrayTaskPool0149,
+  testFloat32ArrayTaskPool0150,
+  testFloat32ArrayTaskPool0151,
+  testFloat32ArrayTaskPool0152,
+  testFloat32ArrayTaskPool0153,
+  testFloat32ArrayTaskPool0154,
+  testFloat32ArrayTaskPool0155,
+  testFloat32ArrayTaskPool0156,
+  testFloat32ArrayTaskPool0157,
+  testFloat32ArrayTaskPool0158,
+  testFloat32ArrayTaskPool0159,
+  testFloat32ArrayTaskPool0160,
+  testFloat32ArrayTaskPool0161,
+  testFloat32ArrayTaskPool0162,
+  testFloat32ArrayTaskPool0163,
+  testFloat32ArrayTaskPool0164,
+  testFloat32ArrayTaskPool0165,
+  testFloat32ArrayTaskPool0166,
+  testFloat32ArrayTaskPool0167,
+  testFloat32ArrayTaskPool0168,
+  testFloat32ArrayTaskPool0169,
+  testFloat32ArrayTaskPool0170,
+  testFloat32ArrayTaskPool0171,
+  testFloat32ArrayTaskPool0172,
+  testFloat32ArrayTaskPool0173,
+  testFloat32ArrayTaskPool0174,
+  testFloat32ArrayTaskPool0175,
+  testFloat32ArrayTaskPool0176,
+  testFloat32ArrayTaskPool0177,
+  testFloat32ArrayTaskPool0178,
+  testFloat32ArrayTaskPool0179,
+  testFloat32ArrayTaskPool0180,
+  testFloat32ArrayTaskPool0181,
+  testFloat32ArrayTaskPool0182,
+  testFloat32ArrayTaskPool0183,
+  testFloat32ArrayTaskPool0184,
+  testFloat32ArrayTaskPool0185,
+  testFloat32ArrayTaskPool0186,
+  testFloat32ArrayTaskPool0187,
+} from './float32Array_function';
+
+export default function Float32ArrayTaskPoolTest() {
+  describe('Float32ArrayTaskPoolTest', () => {
+    /**
+     * @tc.name   testFloat32ArrayTaskPool0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_TASKPOOL_0001
+     * @tc.desc   Testing the iterative ability of Float32Array using a for loop in TaskPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayTaskPool0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testFloat32ArrayTaskPool0001';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testFloat32ArrayTaskPool0001).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8,9,10');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayTaskPool0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FLOAT32_ARRAY_TASKPOOL_0002
+     * @tc.desc   Testing the iterative ability of Float32Array using ... deconstruction in TaskPool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloat32ArrayTaskPool0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testFloat32ArrayTaskPool0002';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testFloat32ArrayTaskPool0002).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8,9,10');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testFloat32ArrayTaskPool0003
