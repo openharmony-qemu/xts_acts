@@ -1,0 +1,26 @@
+{
+  "appID": "com.example.actsvalidator",
+  "appName": "ActsValidatorLite",
+  "versionName": "1.0.0",
+  "versionCode": 1,
+  "minPlatformVersion": 4,
+  "pages": [
+    "pages/index/index",
+    "pages/ArkUI/chart/line/index",
+    "pages/ArkUI/common/index/index",
+    "pages/ArkUI/marquee/index",
+    "pages/ArkUI/ui_advanced/index",
+    "pages/ArkUI/ui_basic/index",
+    "pages/Communication/nfc/index",
+    "pages/DistributedData/storage/index",
+    "pages/FileManagement/file/index",
+    "pages/PowerManager/power/index",
+    "pages/Startup/deviceInfo/index",
+    "pages/Sensors/index/index",
+    "pages/Location/index/index",
+    "pages/common/help/index"
+  ],
+  "deviceType": [
+    "smartVision"
+  ]
+}

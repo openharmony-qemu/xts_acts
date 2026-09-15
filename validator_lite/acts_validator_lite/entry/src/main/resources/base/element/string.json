@@ -1,0 +1,12 @@
+{
+  "string": [
+    {
+      "name": "MainAbility_label",
+      "value": "Simple Validator"
+    },
+    {
+      "name": "MainAbility_desc",
+      "value": "Lightweight Validator for Manual Testing"
+    }
+  ]
+}
