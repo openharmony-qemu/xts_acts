@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level, beforeAll} from '@ohos/hypium'
+import { Driver, ON } from '@ohos.UiTest';
+
 import appManager from "@ohos.app.ability.appManager"
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
@@ -24,6 +26,18 @@ let ERROR_INNER_ERROR = 16000050;
 
 export default function appManagerTest() {
   describe('appManagerTest', () => {
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+
 
     /**
      * @tc.name   System_API_Test_App_Manager_0100

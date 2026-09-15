@@ -14,9 +14,10 @@
  */
 
 import { describe, afterEach, it, expect, beforeAll, Level } from '@ohos/hypium';
+
 import abilityConstant from '@ohos.app.ability.AbilityConstant';
 import wantConstant from "@ohos.app.ability.wantConstant";
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import errorCode from '@ohos.ability.errorCode';
 import wantAgent from '@ohos.app.ability.wantAgent';
 import { ConfigurationConstant } from '@kit.AbilityKit';
@@ -35,6 +36,16 @@ let driver1:Driver;
 export default function ApiCoverTest() {
   describe('EnumerationTest', () => {
     beforeAll(async()=>{
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       try{
         driver1 = await Driver.create();
       }catch{

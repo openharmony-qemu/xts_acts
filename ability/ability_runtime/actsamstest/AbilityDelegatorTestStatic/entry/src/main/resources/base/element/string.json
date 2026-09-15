@@ -19,6 +19,30 @@
     {
       "name": "EntryAbility1_label",
       "value": "label"
+    },
+    {
+      "name": "TestAbility_desc_A",
+      "value": "description"
+    },
+    {
+      "name": "TestAbility_label_A",
+      "value": "AbilityA"
+    },
+    {
+      "name": "TestAbility_desc_B",
+      "value": "description"
+    },
+    {
+      "name": "TestAbility_label_B",
+      "value": "AbilityB"
+    },
+    {
+      "name": "TestAbility_desc_C",
+      "value": "description"
+    },
+    {
+      "name": "TestAbility_label_C",
+      "value": "AbilityC"
     }
   ]
 }

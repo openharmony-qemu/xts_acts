@@ -14,6 +14,7 @@
  */
 
 import { describe, afterEach, it, expect, beforeAll, Level } from '@ohos/hypium';
+
 import appManagerNew from '@ohos.app.ability.appManager';
 import commonEvent from '@ohos.commonEvent';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -31,7 +32,7 @@ import { BusinessError } from '@ohos.base';
 import commonEventManager from '@ohos.commonEventManager';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import { AbilityLifecycleCallback, InteropAbilityLifecycleCallback } from '@kit.AbilityKit';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import DemoProcess from '../process/AProcess';
 import { window } from '@kit.ArkUI';
 
@@ -56,6 +57,16 @@ let driver1:Driver;
 export default function ApiCoverTest() {
   describe('ApiCoverTestTest', () => {
     beforeAll(async()=>{
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       try{
         driver1 = await Driver.create();
       }catch{

@@ -14,6 +14,8 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { Driver, ON } from '@ohos.UiTest';
+
 import common from '@ohos.app.ability.common';
 import EnvironmentCallback from '@ohos.app.ability.EnvironmentCallback';
 import { BusinessError } from '@ohos.base';
@@ -35,6 +37,18 @@ function sleep(time: number) {
 
 export default function ContextEnvironmentTest(applicationContext: common.ApplicationContext) {
   describe('ContextEnvironmentTest', () => {
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+
 
     beforeEach(async (done: Function) => {
       isUpdated = false;

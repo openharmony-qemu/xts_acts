@@ -14,6 +14,8 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { Driver, ON } from '@ohos.UiTest';
+
 import bundle from '@ohos.bundle';
 import bundleManager from '@ohos.bundle.bundleManager';
 import application from '@ohos.app.ability.application';
@@ -39,7 +41,17 @@ export default function actsStageContextTest() {
       console.info("===callback3 called");
       count3++;
     }
-    beforeAll(()=>{
+    beforeAll(async ()=>{
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
     })
     beforeEach(() => {

@@ -14,6 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import Want from '@ohos.app.ability.Want';
@@ -137,6 +138,16 @@ export default function abilityTest() {
     }
 
     beforeAll(async (done:Function) => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess beforeAll]';
       try {
         functionEnable = systemParameterEnhance.getSync('persist.sys.abilityms.start_options_with_process_option', 'false');
