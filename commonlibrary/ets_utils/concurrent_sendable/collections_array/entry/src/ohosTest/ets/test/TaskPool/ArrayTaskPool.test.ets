@@ -4490,3 +4490,1865 @@ export default function ArrayTaskPoolTest() {
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0148
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0148
+     * @tc.desc   Testing Collections of Array reduce function with initial value 10, summing up all elements.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0148';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0148).then((value) => {
+            num++;
+            expect(value).assertEqual(20);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0149
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0149
+     * @tc.desc   Testing Collections of Array reduce function with popping elements, summing up all elements.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0149';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0149).then((value) => {
+            num++;
+            expect(value).assertEqual('11,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0150
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0150
+     * @tc.desc   Testing Collections of Array reduce function with pushing elements, summing up all elements.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0150';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0150).then((value) => {
+            num++;
+            expect(value).assertEqual('16,21');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0151
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0151
+     * @tc.desc   Testing Collections of Array at, collectionsArray [], at(a) undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0151';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0151).then((value) => {
+            num++;
+            expect(value).assertEqual('undefined');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0152
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0152
+     * @tc.desc   Testing Collections of Array at, collectionsArray [1,2,3,4,5], at(5) undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0152';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0152).then((value) => {
+            num++;
+            expect(value).assertEqual('undefined');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0153
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0153
+     * @tc.desc   Testing Collections of Array at, collectionsArray [1,2,3,4,5], at(-2)  4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0153';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0153).then((value) => {
+            num++;
+            expect(value).assertEqual('4');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0154
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0154
+     * @tc.desc   Testing Collections of Array at, collectionsArray [1,2,3], at(5)  undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0154';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0154).then((value) => {
+            num++;
+            expect(value).assertEqual('undefined');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0155
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0155
+     * @tc.desc   Testing Collections of Array at, collectionsArray [1,2,3], at(1)  2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0155';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0155).then((value) => {
+            num++;
+            expect(value).assertEqual('2');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0156
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0156
+     * @tc.desc   Testing Collections of Array entries, collectionsArray [], entries, undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0156';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0156).then((value) => {
+            num++;
+            expect(value).assertEqual('undefined');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0157
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0157
+     * @tc.desc   Testing Collections of Array entries, collectionsArray ['a','b','c'], entries key-value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0157';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0157).then((value) => {
+            num++;
+            expect(value).assertEqual('0,a,1,b,2,c');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0158
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0158
+     * @tc.desc   Testing Collections of Array keys, collectionsArray [], keys non.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0158';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0158).then((value) => {
+            num++;
+            expect(value).assertEqual('');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0159
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0159
+     * @tc.desc   Testing Collections of Array keys, collectionsArray ['a','b','c'], keys 0,1,2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0159';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0159).then((value) => {
+            num++;
+            expect(value).assertEqual('0,1,2');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0160
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0160
+     * @tc.desc   Testing Collections of Array keys, collectionsArray ['a','b','c'], keys 0,1,2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0160';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0160).then((value) => {
+            num++;
+            expect(value).assertEqual('0,1,2');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0161
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0161
+     * @tc.desc   Testing Collections of Array values, collectionsArray [], values  true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0161';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0161).then((value) => {
+            num++;
+            expect(value).assertEqual('true');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0162
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0162
+     * @tc.desc   Testing Collections of Array values, collectionsArray ['e','f','g'], values 'e','f','g'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0162';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0162).then((value) => {
+            num++;
+            expect(value).assertEqual('e,f,g');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0163
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0163
+     * @tc.desc   Testing Collections of Array values, collectionsArray ['e','f','g'],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0163';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0163).then((value) => {
+            num++;
+            expect(value).assertEqual('e,f');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0164
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0164
+     * @tc.desc   Testing Collections of Array values, collectionsArray ['e','f','g'],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0164';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0164).then((value) => {
+            num++;
+            expect(value).assertEqual('e,f,g,h');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0165
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0165
+     * @tc.desc   Testing Collections of Array find, collectionsArray [], find undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0165';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0165).then((value) => {
+            num++;
+            expect(value).assertEqual('undefined');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0166
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0166
+     * @tc.desc   Testing Collections of Array find, collectionsArray [1,3,5], find undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0166';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0166).then((value) => {
+            num++;
+            expect(value).assertEqual('undefined');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0167
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0167
+     * @tc.desc   Testing Collections of Array find, collectionsArray [1,3,5], find index -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0167';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0167).then((value) => {
+            num++;
+            expect(value).assertEqual('undefined');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0168
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0168
+     * @tc.desc   Testing Collections of Array find, collectionsArray [1,3,5], find index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0168';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0168).then((value) => {
+            num++;
+            expect(value).assertEqual('1');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0169
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0169
+     * @tc.desc   Testing Collections of Array find, collectionsArray [1,3,5], find value % 2 === 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0169';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0169).then((value) => {
+            num++;
+            expect(value).assertEqual('3');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0170
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0170
+     * @tc.desc   Testing Collections of Array includes, collectionsArray [], includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0170';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0170).then((value) => {
+            num++;
+            expect(value).assertEqual('false');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0171
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0171
+     * @tc.desc   Testing Collections of Array includes, collectionsArray [1,2,3],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0171';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0171).then((value) => {
+            num++;
+            expect(value).assertEqual('false');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0172
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0172
+     * @tc.desc   Testing Collections of Array includes, collectionsArray [1,2,3],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0172';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0172).then((value) => {
+            num++;
+            expect(value).assertEqual('false');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0173
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0173
+     * @tc.desc   Testing Collections of Array includes, collectionsArray [1,2,3],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0173';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0173).then((value) => {
+            num++;
+            expect(value).assertEqual('false');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0174
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0174
+     * @tc.desc   Testing Collections of Array includes, collectionsArray [1,2,3],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0174';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0174).then((value) => {
+            num++;
+            expect(value).assertEqual('true');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0175
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0175
+     * @tc.desc   Testing Collections of Array includes, collectionsArray [1,2,3],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0175';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0175).then((value) => {
+            num++;
+            expect(value).assertEqual('false');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0176
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0176
+     * @tc.desc   Testing Collections of Array findIndex, collectionsArray [],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0176';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0176).then((value) => {
+            num++;
+            expect(value).assertEqual('-1');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0177
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0177
+     * @tc.desc   Testing Collections of Array findIndex, collectionsArray [2,3,4], Index  -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0177';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0177).then((value) => {
+            num++;
+            expect(value).assertEqual('-1');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0178
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0178
+     * @tc.desc   Testing Collections of Array findIndex, collectionsArray [1,3,5], return -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0178';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0178).then((value) => {
+            num++;
+            expect(value).assertEqual('-1');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0179
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0179
+     * @tc.desc   Testing Collections of Array findIndex, collectionsArray [1,3,5].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0179';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0179).then((value) => {
+            num++;
+            expect(value).assertEqual('0');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0180
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0180
+     * @tc.desc   Testing Collections of Array findIndex, collectionsArray [1,3,5].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0180';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0180).then((value) => {
+            num++;
+            expect(value).assertEqual('-1');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0181
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0181
+     * @tc.desc   Testing Collections of Array fill, start -1,end normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0181';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0181).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0182
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0182
+     * @tc.desc   Testing Collections of Array fill, start normal,end -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0182';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0182).then((value) => {
+            num++;
+            expect(value).assertEqual('-1,-1,-1,-1,5');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0183
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0183
+     * @tc.desc   Testing Collections of Array fill, start out of range, end normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0183';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0183).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0184
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0184
+     * @tc.desc   Testing Collections of Array fill, start normal, end error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0184';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0184).then((value) => {
+            num++;
+            expect(value).assertEqual('-1,-1,-1,-1,-1');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0185
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0185
+     * @tc.desc   Testing Collections of Array fill, fill null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0185';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0185).then((value) => {
+            num++;
+            expect(value).assertEqual('');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0186
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0186
+     * @tc.desc   Testing Collections of Array fill, fill undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0186';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0186).then((value) => {
+            num++;
+            expect(value).assertEqual('');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0187
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0187
+     * @tc.desc   Testing Collections of Array fill, fill 8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0187';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0187).then((value) => {
+            num++;
+            expect(value).assertEqual('8,8,8,8,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0188
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0188
+     * @tc.desc   Testing Collections of Array shrinkTo, arrayLength >= array.length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0188';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0188).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0189
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0189
+     * @tc.desc   Testing Collections of Array shrinkTo, arrayLength<array.length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0189';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0189).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0190
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0190
+     * @tc.desc   Testing Collections of Array shrinkTo, arrayLength=-1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0190';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0190).then((value) => {
+            num++;
+            expect(value).assertEqual("error");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0191
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0191
+     * @tc.desc   Testing Collections of Array extendTo, arrayLength <= array.length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0191';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0191).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0192
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0192
+     * @tc.desc   Testing Collections of Array extendTo, arrayLength>array.length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0192';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0192).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,10,10');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0193
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0193
+     * @tc.desc   Testing Collections of Array extendTo, arrayLength -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0193';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0193).then((value) => {
+            num++;
+            expect(value).assertEqual("error");
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0194
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0194
+     * @tc.desc   Testing Collections of Array concat, one array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0194';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0194).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0195
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0195
+     * @tc.desc   Testing Collections of Array concat, two array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0195';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0195).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0196
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0196
+     * @tc.desc   Testing Collections of Array concat, param is abnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0196';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0196).then((value) => {
+            num++;
+            expect(value).assertEqual(',');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0197
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0197
+     * @tc.desc   Testing Collections of Array splice, array [].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0197';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0197).then((value) => {
+            num++;
+            expect(value).assertEqual('');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0198
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0198
+     * @tc.desc   Testing Collections of Array splice, array [1,2,3], start -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0198';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0198).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2;3');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0199
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0199
+     * @tc.desc   Testing Collections of Array splice, array [1,2,3], start error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0199';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0199).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3;');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0200
+     * @tc.desc   Testing Collections of Array splice, array [1,2,3], start< -array.length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0200';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0200).then((value) => {
+            num++;
+            expect(value).assertEqual(';1,2,3');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0201
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0201
+     * @tc.desc   Testing Collections of Array splice, array [1,2,3], start 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0201';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0201).then((value) => {
+            num++;
+            expect(value).assertEqual(';1,2,3');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0202
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0202
+     * @tc.desc   Testing Collections of Array splice, array [1,2,3], start 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0202';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0202).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2;3');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0203
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0203
+     * @tc.desc   Testing Collections of Array splice, array [1,2,3], start 0, deleteCount -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0203';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0203).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3;');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0204
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0204
+     * @tc.desc   Testing Collections of Array splice, array [1,2,3], start 0, deleteCount 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0204';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0204).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3;');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0205
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0205
+     * @tc.desc   Testing Collections of Array splice, array [1,2,3], start 0, deleteCount 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0205';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0205).then((value) => {
+            num++;
+            expect(value).assertEqual('3;1,2');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0206
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0206
+     * @tc.desc   Testing Collections of Array splice, array [1,2,3], start 0, deleteCount 10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0206';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0206).then((value) => {
+            num++;
+            expect(value).assertEqual(';1,2,3');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0207
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0207
+     * @tc.desc   Testing Collections of Array splice, array [1,2,3], start 0, deleteCount 0, items null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0207';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0207).then((value) => {
+            num++;
+            expect(value).assertEqual(',,,;');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0208
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0208
+     * @tc.desc   Testing Collections of Array splice, array [1,2,3], start 0, deleteCount 0, items undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0208';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0208).then((value) => {
+            num++;
+            expect(value).assertEqual(',,;');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0209
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0209
+     * @tc.desc   Testing Collections of Array [index:number], index -5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0209';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0209).then((value) => {
+            num++;
+            expect(value).assertEqual('undefined');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0210
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0210
+     * @tc.desc   Testing Collections of Array [index:number], index 5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0210';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0210).then((value) => {
+            num++;
+            expect(value).assertEqual('undefined');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testCollectionsArray0211
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_TASKPOOL_0211
+     * @tc.desc   Testing Collections of Array [index:number], index 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCollectionsArray0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testCollectionsArray0211';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testCollectionsArray0211).then((value) => {
+            num++;
+            expect(value).assertEqual('2');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  })
+}
