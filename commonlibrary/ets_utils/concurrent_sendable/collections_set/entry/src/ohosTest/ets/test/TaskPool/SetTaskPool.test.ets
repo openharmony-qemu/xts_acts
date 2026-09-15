@@ -3443,3 +3443,632 @@ export default function SetTaskPoolTest() {
     it('testSet0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSet0114';
       console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0114).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0115
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0115
+     * @tc.desc   Testing the keys of set, set is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0115';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0115).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0116
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0116
+     * @tc.desc   Testing the values of set, set is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0116';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0116).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0117
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0117
+     * @tc.desc   Testing the values of set, set is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0117';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0117).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0118
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0118
+     * @tc.desc   Testing the values of set, set is not null, add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0118';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0118).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0119
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0119
+     * @tc.desc   Testing the values of set, set is not null, delete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0119';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0119).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0120
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0120
+     * @tc.desc   Testing the values of set, set is not null, clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0120';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0120).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0121
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0121
+     * @tc.desc   Testing the clear of set, set is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0121';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0121).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0122
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0122
+     * @tc.desc   Testing the clear of set, set is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0122';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0122).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0123
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0123
+     * @tc.desc   Testing the clear of set, set is not null, clear, add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0123';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0123).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0124
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0124
+     * @tc.desc   Testing the delete of set, delete non-exist keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0124';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0124).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0125
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0125
+     * @tc.desc   Testing the delete of set, delete exist keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0125';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0125).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0126
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0126
+     * @tc.desc   Testing the delete of set, delete null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0126';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0126).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0127
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0127
+     * @tc.desc   Testing the delete of set, delete undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0127';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0127).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0128
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0128
+     * @tc.desc   Testing the has of set, has non-exist keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0128';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0128).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0129
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0129
+     * @tc.desc   Testing the has of set, has exist keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0129';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0129).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0130
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0130
+     * @tc.desc   Testing the has of set, has null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0130';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0130).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0131
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0131
+     * @tc.desc   Testing the has of set, has undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0131';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0131).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0132
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0132
+     * @tc.desc   Testing the add of set, add non-exist value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0132';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0132).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0133
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0133
+     * @tc.desc   Testing the add of set, add exist value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0133';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0133).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0134
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0134
+     * @tc.desc   Testing the add of set, add null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0134';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0134).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testSet0135
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SET_TASKPOOL_0135
+     * @tc.desc   Testing the add of set, add undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSet0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSet0135';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testSet0135).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  })
+}
