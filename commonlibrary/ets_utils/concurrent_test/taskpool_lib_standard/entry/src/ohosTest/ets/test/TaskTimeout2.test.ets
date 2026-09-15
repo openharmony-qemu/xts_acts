@@ -2083,3 +2083,484 @@ export default function TaskTimeout2Test() {
       expect(isTerminate).assertEqual(true);
       console.log(`${caseName} end.`);
       done();
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass070
+     @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0417
+     * @tc.desc   Timeout before async task reject
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass070';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let task = new taskpool.Task(rejectTaskLong);
+      taskpool.execute(task, { timeout: 100 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch: ${e}`);
+        isTerminate = true;
+        expect(e.code).assertEqual(10200058);
+      });
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass071
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0418
+     * @tc.desc   Cancel before exception before timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass071';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let task = new taskpool.Task(taskError, 200);
+      taskpool.execute(task, { timeout: 300 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch: ${e}`);
+        isTerminate = true;
+      });
+      setTimeout(() => {
+        taskpool.cancel(task);
+      }, 100);
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      expect(isTerminate).assertEqual(true);
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass072
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0419
+     * @tc.desc   Exception before cancel before timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass072';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let task = new taskpool.Task(taskError, 100);
+      taskpool.execute(task, { timeout: 1000 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch: ${e}`);
+        isTerminate = true;
+      });
+      setTimeout(() => {
+        try {
+          taskpool.cancel(task);
+        } catch (e) {
+        }
+      }, 100);
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      expect(isTerminate).assertEqual(true);
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass073
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0420
+     * @tc.desc   Timeout before cancel before exception
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass073';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let task = new taskpool.Task(taskError, 200);
+      taskpool.execute(task, { timeout: 100 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch: ${e}`);
+        isTerminate = true;
+        expect(e.code).assertEqual(10200058);
+      });
+      setTimeout(() => {
+        try {
+          taskpool.cancel(task);
+        } catch (e) {
+          expect(e.code).assertEqual(10200015);
+        }
+      }, 200);
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass074
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0421
+     * @tc.desc   Nested scenario cancel + exception + timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass074';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let task = new taskpool.Task(nestedInnerCancelExceptionTimeout);
+      taskpool.execute(task, { timeout: 5000 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch: ${e}`);
+        isTerminate = true;
+      });
+      setTimeout(() => {
+        try {
+          taskpool.cancel(task);
+        } catch (e) {
+        }
+      }, 100);
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      expect(isTerminate).assertEqual(true);
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass075
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0422
+     * @tc.desc   Task group cancel + exception + timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass075';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let group = new taskpool.TaskGroup();
+      let task1 = new taskpool.Task(taskError, 100);
+      let task2 = new taskpool.Task(timeoutDemo, 300);
+      group.addTask(task1);
+      group.addTask(task2);
+      taskpool.execute(group, { timeout: 300 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch: ${e}`);
+        isTerminate = true;
+      });
+      setTimeout(() => {
+        try {
+          taskpool.cancel(task2);
+          taskpool.cancel(group);
+        } catch (e) {
+        }
+      }, 100);
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      expect(isTerminate).assertEqual(true);
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass076
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0423
+     * @tc.desc   Queue task cancel + exception + timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass076';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let innerTask = new taskpool.Task(timeoutDemo, 300);
+      let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10);
+      let runnerTaskObj = new taskpool.Task(asyncRunnerTaskNestedTimeout);
+      runner.execute(runnerTaskObj).catch((e: BusinessError) => {
+        console.log(`${caseName} catch: ${e}`);
+        isTerminate = true;
+      });
+      setTimeout(() => {
+        try {
+          taskpool.cancel(innerTask);
+          taskpool.cancel(runnerTaskObj);
+        } catch (e) {
+        }
+      }, 100);
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      expect(isTerminate).assertEqual(true);
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass077
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0424
+     * @tc.desc   Nested scenario cancel + exception + timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass077';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let count = 0;
+      let task = new taskpool.Task(timeoutDemo, 100);
+      taskpool.execute(task, { timeout: 10 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch task: ${e}`);
+        count++;
+        if (count >= 3) {
+          isTerminate = true;
+        }
+      })
+      let task1 = new taskpool.Task(taskError, 100);
+      taskpool.execute(task1, { timeout: 100 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch task1: ${e}`);
+        count++;
+        if (count >= 3) {
+          isTerminate = true;
+        }
+      })
+      taskpool.execute(new taskpool.Task(rejectTaskShort), { timeout: 100 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch rejectTaskShort: ${e}`);
+        count++;
+        if (count >= 3) {
+          isTerminate = true;
+        }
+      })
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      expect(count).assertEqual(3);
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass078
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0425
+     * @tc.desc   Task nested AsyncRunner - inner timeout shorter than outer
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass078';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let task = new taskpool.Task(taskAsyncRunnerInnerShortOuterLong);
+      taskpool.execute(task, { timeout: 2000 }).then((res) => {
+        console.log(`${caseName} then`);
+        expect(res).assertEqual(100);
+        isTerminate = true;
+      }).catch(() => { console.error('catch error'); });
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass079
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0426
+     * @tc.desc   Task nested SequenceRunner - inner timeout shorter than outer
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass079';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let task = new taskpool.Task(taskSequenceRunnerInnerShortOuterLong);
+      taskpool.execute(task, { timeout: 2000 }).then((res) => {
+        isTerminate = true;
+        console.log(`${caseName} then`);
+        expect(res).assertEqual(100);
+      }).catch(() => { console.error('catch error'); });
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass080
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0427
+     * @tc.desc   Task nested AsyncRunner - inner timeout longer than outer
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass080';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let task = new taskpool.Task(taskAsyncRunnerInnerLongOuterShort);
+      taskpool.execute(task, { timeout: 50 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch: ${e}`);
+        isTerminate = true;
+        expect(e.code).assertEqual(10200058);
+      });
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass081
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0428
+     * @tc.desc   Task nested SequenceRunner - inner timeout longer than outer
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass081';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let task = new taskpool.Task(taskSequenceRunnerInnerLongOuterShort);
+      taskpool.execute(task, { timeout: 100 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch: ${e}`);
+        isTerminate = true;
+        expect(e.code).assertEqual(10200058);
+      });
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass082
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0429
+     * @tc.desc   TaskGroup nested AsyncRunner - inner timeout shorter than outer
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass082';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let group = new taskpool.TaskGroup();
+      group.addTask(taskGroupAsyncRunnerInnerShortOuterLong);
+      group.addTask(taskGroupAsyncRunnerInnerShortOuterLong);
+      taskpool.execute(group, { timeout: 2000 }).then((res) => {
+        isTerminate = true;
+        console.log(`${caseName} then`);
+        expect(res.length).assertEqual(2);
+        expect(res[0]).assertEqual(100);
+      }).catch(() => { console.error('catch error'); });
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass083
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0430
+     * @tc.desc   TaskGroup nested SequenceRunner - inner timeout shorter than outer
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass083';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let group = new taskpool.TaskGroup();
+      group.addTask(taskGroupSequenceRunnerInnerShortOuterLong);
+      group.addTask(taskGroupSequenceRunnerInnerShortOuterLong);
+      taskpool.execute(group, { timeout: 2000 }).then((res) => {
+        isTerminate = true;
+        console.log(`${caseName} then`);
+        expect(res.length).assertEqual(2);
+        expect(res[0]).assertEqual(100);
+      }).catch(() => { console.error('catch error'); });
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass084
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0431
+     * @tc.desc   TaskGroup nested AsyncRunner - inner timeout longer than outer
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass084';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let group = new taskpool.TaskGroup();
+      group.addTask(taskGroupAsyncRunnerInnerLongOuterShort);
+      group.addTask(taskGroupAsyncRunnerInnerLongOuterShort);
+      group.addTask(taskGroupAsyncRunnerInnerLongOuterShort);
+      group.addTask(taskGroupAsyncRunnerInnerLongOuterShort);
+      group.addTask(taskGroupAsyncRunnerInnerLongOuterShort);
+      taskpool.execute(group, { timeout: 80 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch: ${e}`);
+        isTerminate = true;
+        expect(e.code).assertEqual(10200070);
+      });
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      console.log(`${caseName} end.`);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass085
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0432
+     * @tc.desc   TaskGroup nested SequenceRunner - inner timeout longer than outer
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'TaskTimeout2TestClass085';
+      console.log(`${caseName} start.`);
+      let isTerminate = false;
+      let group = new taskpool.TaskGroup();
+      group.addTask(taskGroupSequenceRunnerInnerLongOuterShort);
+      group.addTask(taskGroupSequenceRunnerInnerLongOuterShort);
+      group.addTask(taskGroupSequenceRunnerInnerLongOuterShort);
+      group.addTask(taskGroupSequenceRunnerInnerLongOuterShort);
+      group.addTask(taskGroupSequenceRunnerInnerLongOuterShort);
+      taskpool.execute(group, { timeout: 200 }).catch((e: BusinessError) => {
+        console.log(`${caseName} catch: ${e}`);
+        isTerminate = true;
+        expect(e.code).assertEqual(10200070);
+      });
+      while (!isTerminate) {
+        await promiseCase();
+      }
+      console.log(`${caseName} end.`);
+      done();
+    })
+  })
+}
