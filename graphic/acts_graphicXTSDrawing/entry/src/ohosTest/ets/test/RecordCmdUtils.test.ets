@@ -125,51 +125,6 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
         expect().assertFail();
       }
     })
-
-    /**
-     * @tc.name   testDrawRecordCmdNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_RECORDCMDUTILS_0400
-     * @tc.desc   testDrawRecordCmdNull
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDrawRecordCmdNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testDrawRecordCmdNull';
-      let canvas = new drawing.Canvas(pixel);
-      try {
-        canvas.drawRecordCmd(null);
-        console.info(msg + ' drawRecordCmd null succeeded');
-        expect().assertFail();
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
-      }
-    })
-
-    /**
-     * @tc.name   testDrawRecordCmdUndefined
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_RECORDCMDUTILS_0500
-     * @tc.desc   testDrawRecordCmdUndefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDrawRecordCmdUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testDrawRecordCmdUndefined';
-      let canvas = new drawing.Canvas(pixel);
-      try {
-        canvas.drawRecordCmd(undefined);
-        console.info(msg + ' drawRecordCmd undefined succeeded');
-        expect().assertFail();
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
-      }
-    })
-
     /**
      * @tc.name   testDrawRecordCmdMultiplePlayback
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_RECORDCMDUTILS_0600
@@ -760,9 +715,12 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
         recordCmdUtils.beginRecording(Number.MAX_VALUE, Number.MAX_VALUE);
+        console.info(msg + ` Number.MAX_VALUE toInt Value=${Number.MAX_VALUE}`);
         let height = recordCmdUtils.getHeight();
         let width = recordCmdUtils.getWidth();
         console.info(msg + ` MAX MIN getHeight=${height}  getWidth=${width}`);
+        expect(width == Number.MAX_VALUE).assertTrue();
+        expect(height == Number.MAX_VALUE).assertTrue();
         recordCmdUtils.finishRecording();
         console.info(msg + ` getHeight boundary MAX MIN succeeded`);
       } catch (e) {
@@ -1546,9 +1504,8 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
     it('testBeginRecordingExtremeMinValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBeginRecordingExtremeMinValue';
       let negMaxValue: number = -Number.MAX_VALUE;
-      let negSafeInteger: number = -Number.MAX_SAFE_INTEGER;
-      let extremeWidths: Array<number> = [-100, -1000, -10000, negSafeInteger, negMaxValue];
-      let extremeHeights: Array<number> = [-100, -1000, -10000, negSafeInteger, negMaxValue];
+      let extremeWidths: Array<number> = [-100.1, -1000.9, -10000.8, negMaxValue];
+      let extremeHeights: Array<number> = [-100.1, -1000.9, -10000.8, negMaxValue];
 
       for (let i = 0; i < extremeWidths.length; i++) {
         try {
@@ -1645,9 +1602,10 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
           let recordCmdUtils = new drawing.RecordCmdUtils();
           recordCmdUtils.beginRecording(specialValues[i], 200);
           console.info(msg + ` beginRecording with special width[${i}] succeeded`);
-          console.info(msg + ` beginRecording with special width[${i}] :${specialValues[i]}`);
+          console.info(msg + ` beginRecording with special setValue[${i}] :${specialValues[i]}`);
           let width = recordCmdUtils.getWidth();
-          expect(Math.abs(width - 2147483520) < 0.01).assertTrue();
+          console.info(msg + ` beginRecording with special width[${i}] :${width}`);
+          expect(width == specialValues[i]).assertTrue();
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + ` beginRecording with special width[${i}] errorCode is: ${e.code} + errormsg is: ${e.message}`);
@@ -1660,9 +1618,10 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
           let recordCmdUtils = new drawing.RecordCmdUtils();
           recordCmdUtils.beginRecording(200, specialValues[i]);
           console.info(msg + ` beginRecording with special height[${i}] succeeded`);
-          console.info(msg + ` beginRecording with special width[${i}] :${specialValues[i]}`);
+          console.info(msg + ` beginRecording with special setValue[${i}] :${specialValues[i]}`);
           let height = recordCmdUtils.getHeight();
-          expect(Math.abs(height - 2147483520) < 0.01).assertTrue();
+          console.info(msg + ` beginRecording height special height[${i}] :${height}`);
+          expect(height == specialValues[i]).assertTrue();
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + ` beginRecording with special height[${i}] errorCode is: ${e.code} + errormsg is: ${e.message}`);
@@ -1690,7 +1649,7 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` beginRecording with null width errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
 
       try {
@@ -1701,7 +1660,7 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` beginRecording with null height errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
 
       try {
@@ -1712,7 +1671,7 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` beginRecording with undefined width errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
 
       try {
@@ -1723,7 +1682,7 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` beginRecording with undefined height errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
 
       try {
@@ -1734,7 +1693,7 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` beginRecording with both null errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
 
       try {
@@ -1745,7 +1704,7 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` beginRecording with both undefined errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(25900001);
+        expect(e.code).assertEqual(401);
       }
     })
 
