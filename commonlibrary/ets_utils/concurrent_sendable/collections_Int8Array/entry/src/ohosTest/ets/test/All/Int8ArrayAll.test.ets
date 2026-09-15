@@ -1940,3 +1940,1983 @@ export default function Int8ArrayAllTest() {
         errorMsg = `byteLength mismatch for length ${testLength}`;
       }
       expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0096
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0084
+     * @tc.desc   Verify Int8Array set method with Uint8ClampedArray (clamped values)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const clampedSource: Uint8ClampedArray = new Uint8ClampedArray([260, -10]);
+      const int8Arr: collections.Int8Array = new collections.Int8Array(2);
+      int8Arr.set(clampedSource);
+      expect(int8Arr[0]).assertEqual(-1);
+      expect(int8Arr[1]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0097
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0085
+     * @tc.desc   Verify Int8Array subarray with same start and end as original view (full copy)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([-3, -2, -1, 0, 1, 2, 3]);
+      const subArr: collections.Int8Array = int8Arr.subarray(0, int8Arr.length);
+      let errorMsg: string = '';
+
+      if (subArr.length !== int8Arr.length) {
+        errorMsg = 'Subarray length should match original';
+      } else {
+        for (let i = 0; i < int8Arr.length; i++) {
+          if (subArr[i] !== int8Arr[i]) {
+            errorMsg = `Value at index ${i} mismatch between subarray and original`;
+            break;
+          }
+        }
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0098
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0086
+     * @tc.desc   Verify Int8Array subarray modification affects original view (buffer share)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([5, 10, 15, 20]);
+      const subArr: collections.Int8Array = int8Arr.subarray(1, 3);
+      subArr[1] = 150;
+      expect(int8Arr[2]).assertEqual(-106);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0099
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0087
+     * @tc.desc   Verify Int8Array with maximum valid length (2^53-1, within safe integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const safeMaxLength: number = Number.MAX_SAFE_INTEGER;
+      let hasError: boolean = false;
+      let errorMsg: string = '';
+
+      try {
+
+        const int8Arr: collections.Int8Array = new collections.Int8Array(safeMaxLength);
+        if (int8Arr.length !== safeMaxLength) {
+          errorMsg = 'Length mismatch for safe max length';
+        }
+      } catch (e) {
+
+        if ((e as Error).name !== 'RangeError') {
+          hasError = true;
+        }
+      }
+
+      if (hasError) {
+        errorMsg = 'Should not throw non-RangeError for safe max length';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0088
+     * @tc.desc   Verify Int8Array constructor with single value (treated as length)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const testLength: number = 5;
+      const int8Arr: collections.Int8Array = new collections.Int8Array(testLength);
+      let errorMsg: string = '';
+
+      if (int8Arr.length !== testLength) {
+        errorMsg = `Length mismatch: ${int8Arr.length} vs ${testLength}`;
+      } else {
+        for (let i = 0; i < int8Arr.length; i++) {
+          if (int8Arr[i] !== 0) {
+            errorMsg = `Initial value at index ${i} should be 0`;
+            break;
+          }
+        }
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0101
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0089
+     * @tc.desc   Verify Int8Array constructed with ArrayBuffer (offset 1, length 5) basic properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const buf: collections.ArrayBuffer = new collections.ArrayBuffer(10);
+      const int8Arr: collections.Int8Array = new collections.Int8Array(buf, 1, 5);
+      let errorMsg: string = '';
+
+      if (int8Arr.buffer !== buf) {
+        errorMsg = 'Buffer reference mismatch';
+      } else if (int8Arr.byteOffset !==
+        1) {
+        errorMsg = 'byteOffset should be 1';
+      } else if (int8Arr.byteLength !== 5) {
+        errorMsg =
+          'byteLength should be 5';
+      } else if (int8Arr.length !== 5) {
+        errorMsg = 'length should be 5';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0102
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0090
+     * @tc.desc   Verify Int8Array stores positive value within range (64) correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const testVal: number = 64;
+      int8Arr[0] = testVal;
+      let errorMsg: string = '';
+
+      if (int8Arr[0] !== testVal) {
+        errorMsg = `Should store positive value ${testVal}`;
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0103
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0091
+     * @tc.desc   Verify Int8Array stores negative value within range (-64) correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const testVal: number = -64;
+      int8Arr[0] = testVal;
+      let errorMsg: string = '';
+
+      if (int8Arr[0] !== testVal) {
+        errorMsg = `Should store negative value ${testVal}`;
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0104
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0092
+     * @tc.desc   Verify Int8Array overflows to 0 when value is 256
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const overflowVal: number = 256;
+      const expectedVal: number = 0;
+      int8Arr[0] = overflowVal;
+      let errorMsg: string = '';
+
+      if (int8Arr[0] !== expectedVal) {
+        errorMsg = `${overflowVal} should overflow to ${expectedVal}`;
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0105
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0093
+     * @tc.desc   Verify Int8Array overflows to 0 when value is -256
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const overflowVal: number = -256;
+      const expectedVal: number = 0;
+      int8Arr[0] = overflowVal;
+      let errorMsg: string = '';
+
+      if (int8Arr[0] !== expectedVal) {
+        errorMsg = `${overflowVal} should overflow to ${expectedVal}`;
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0106
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0094
+     * @tc.desc   Verify Int8Array set method with Float32Array (truncated to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const floatSource: Float32Array = new Float32Array([10.9, 20.1, 30.5]);
+      const int8Arr: collections.Int8Array = new collections.Int8Array(3);
+      int8Arr.set(floatSource);
+      let errorMsg: string = '';
+
+      if (int8Arr[0] !== 10) {
+        errorMsg = 'Truncated float 10.9 should be 10';
+      } else if (int8Arr[1] !== 20) {
+        errorMsg =
+          'Truncated float 20.1 should be 20';
+      } else if (int8Arr[2] !== 30) {
+        errorMsg =
+          'Truncated float 30.5 should be 30';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0107
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0095
+     * @tc.desc   Verify Int8Array set method with start index 0 (full view coverage)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(4);
+      const sourceArr: number[] = [-10, -20, -30, -40];
+      int8Arr.set(sourceArr, 0);
+      let errorMsg: string = '';
+
+      for (let i = 0; i < int8Arr.length; i++) {
+        if (int8Arr[i] !== sourceArr[i]) {
+          errorMsg = `Value at index ${i} mismatch: ${int8Arr[i]} vs ${sourceArr[i]}`;
+          break;
+        }
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0108
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0096
+     * @tc.desc   Verify Int8Array subarray with start index larger than end index (empty view)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([5, 15, 25, 35]);
+      const subArr: collections.Int8Array = int8Arr.subarray(3, 1);
+      let errorMsg: string = '';
+
+      if (subArr.length !== 0) {
+        errorMsg = 'Subarray should be empty when start > end';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0109
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0097
+     * @tc.desc   Verify DataView reads Int8Array buffer with offset and length mismatch
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(6);
+      const int8Arr: Int8Array = new Int8Array(buf, 2, 2);
+      int8Arr.set([20, 30]);
+      const dv: DataView = new DataView(buf);
+      let errorMsg: string = '';
+
+      if (dv.getInt8(2) !== 20) {
+        errorMsg =
+          'DataView read offset 2 (Int8Array[0]) mismatch';
+      } else if (dv.getInt8(3) !== 30) {
+        errorMsg =
+          'DataView read offset 3 (Int8Array[1]) mismatch';
+      } else if (dv.getInt8(1) !== 0) {
+        errorMsg =
+          'DataView read unassigned offset 1 should be 0';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0110
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0098
+     * @tc.desc   Verify DataView writes to Int8Array buffer outside view range (no effect on Int8Array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(5);
+      const int8Arr: Int8Array = new Int8Array(buf, 1, 3);
+      int8Arr.set([10, 20, 30]);
+      const dv: DataView = new DataView(buf);
+      dv.setInt8(0, 40);
+      dv.setInt8(4, 50);
+      let errorMsg: string = '';
+
+      if (int8Arr[0] !== 10 || int8Arr[2] !== 30) {
+        errorMsg =
+          'Int8Array view values should remain unchanged';
+      } else if (dv.getInt8(0) !== 40 ||
+        dv.getInt8(4) !== 50) {
+        errorMsg = 'DataView should write to buffer outside view';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0111
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0099
+     * @tc.desc   Verify Int8Array converts to plain array with Array.from (custom mapper)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([-3, -6, -9]);
+      const plainArr: collections.Int8Array = collections.Int8Array.from(int8Arr, val => val * (-1));
+      let errorMsg: string = '';
+
+      if (plainArr[0] !== 3 || plainArr[1] !== 6 || plainArr[2] !== 9) {
+        errorMsg = 'Custom mapper result mismatch';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0112
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0100
+     * @tc.desc   Verify plain array with mixed valid and overflow values converts to Int8Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const plainArr: number[] = [127, 128, -128, -129];
+      const int8Arr: collections.Int8Array = new collections.Int8Array(plainArr);
+      let errorMsg: string = '';
+
+      if (int8Arr[0] !== 127) {
+        errorMsg = 'Valid value 127 mismatch';
+      } else if (int8Arr[1] !== -128) {
+        errorMsg =
+          'Overflow value 128 should be -128';
+      } else if (int8Arr[2] !== -128) {
+        errorMsg =
+          'Valid value -128 mismatch';
+      } else if (int8Arr[3] !== 127) {
+        errorMsg = 'Underflow value -129 should be 127';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0113
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0101
+     * @tc.desc   Verify Int8Array index access with maximum valid index (length-1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([5, 10, 15, 20]);
+      const maxIdx: number = int8Arr.length - 1;
+      let errorMsg: string = '';
+
+      if (int8Arr[maxIdx] !== 20) {
+        errorMsg = `Value at max index ${maxIdx} should be 20`;
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0114
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0102
+     * @tc.desc   Verify Int8Array assignment with maximum valid index (length-1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(4);
+      const maxIdx: number = int8Arr.length - 1;
+      const assignVal: number = 25;
+      int8Arr[maxIdx] = assignVal;
+      let errorMsg: string = '';
+
+      if (int8Arr[maxIdx] !== assignVal) {
+        errorMsg = `Assignment at max index ${maxIdx} failed`;
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0115
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0103
+     * @tc.desc   Verify Int8Array forEach method with empty array (no iteration)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      let iterateCount: number = 0;
+      int8Arr.forEach(() => iterateCount++);
+      let errorMsg: string = '';
+
+      if (iterateCount !== 0) {
+        errorMsg = 'forEach should not iterate empty array';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0116
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0104
+     * @tc.desc   Verify Int8Array map method with empty array (returns empty array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      const mappedArr: collections.Int8Array = int8Arr.map(val => val * 2);
+      let errorMsg: string = '';
+
+      if (mappedArr.length !== 0) {
+        errorMsg =
+          'map should return empty array for empty Int8Array';
+      } else if (!(mappedArr instanceof collections.Int8Array)) {
+        errorMsg =
+          'map should return Int8Array type';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0117
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0105
+     * @tc.desc   Verify Int8Array filter method with empty array (returns empty array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      const filteredArr: collections.Int8Array = int8Arr.filter(val => val > 0);
+      let errorMsg: string = '';
+
+      if (filteredArr.length !== 0) {
+        errorMsg =
+          'filter should return empty array for empty Int8Array';
+      } else if (!(filteredArr instanceof
+        collections.Int8Array)) {
+        errorMsg = 'filter should return Int8Array type';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0118
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0106
+     * @tc.desc   Verify Int8Array find method with empty array (returns undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      const foundVal: number | undefined = int8Arr.find(val => val > 0);
+      let errorMsg: string = '';
+
+      if (foundVal !== undefined) {
+        errorMsg = 'find should return undefined for empty Int8Array';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0119
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0107
+     * @tc.desc   Verify Int8Array findIndex method with empty array (returns -1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      const foundIdx: number = int8Arr.findIndex(val => val > 0);
+      let errorMsg: string = '';
+
+      if (foundIdx !== -1) {
+        errorMsg = 'findIndex should return -1 for empty Int8Array';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0120
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0108
+     * @tc.desc   Verify Int8Array every method with empty array (returns true)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      const result: boolean = int8Arr.every(val => val > 0);
+      let errorMsg: string = '';
+
+      if (result !== true) {
+        errorMsg = 'every should return true for empty Int8Array (vacuous truth)';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0121
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0109
+     * @tc.desc   Verify Int8Array some method with empty array (returns false)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      const result: boolean = int8Arr.some(val => val > 0);
+      let errorMsg: string = '';
+
+      if (result !== false) {
+        errorMsg = 'some should return false for empty Int8Array';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0122
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0110
+     * @tc.desc   Verify Int8Array reduce method with empty array and initial value (uses initial)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      const initialVal: number = 5;
+      const total: number = int8Arr.reduce((acc, val) => acc + val, initialVal);
+      let errorMsg: string = '';
+
+      if (total !== initialVal) {
+        errorMsg = 'reduce should use initial value for empty Int8Array';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0123
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0111
+     * @tc.desc   Verify Int8Array includes method with empty array (returns false)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      const result: boolean = int8Arr.includes(0);
+      let errorMsg: string = '';
+
+      if (result !== false) {
+        errorMsg = 'includes should return false for empty Int8Array';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0124
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0112
+     * @tc.desc   Verify Int8Array indexOf method with empty array (returns -1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      const idx: number = int8Arr.indexOf(0);
+      let errorMsg: string = '';
+
+      if (idx !== -1) {
+        errorMsg = 'indexOf should return -1 for empty Int8Array';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0125
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0113
+     * @tc.desc   Verify Int8Array lastIndexOf method with empty array (returns -1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      const idx: number = int8Arr.lastIndexOf(0);
+      let errorMsg: string = '';
+
+      if (idx !== -1) {
+        errorMsg = 'lastIndexOf should return -1 for empty Int8Array';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0126
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0114
+     * @tc.desc   Verify Int8Array slice method with empty array (returns empty array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      const slicedArr: collections.Int8Array = int8Arr.slice(0, 1);
+      let errorMsg: string = '';
+
+      if (slicedArr.length !== 0) {
+        errorMsg =
+          'slice should return empty array for empty Int8Array';
+      } else if (!(slicedArr instanceof collections.Int8Array)) {
+        errorMsg =
+          'slice should return Int8Array type';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0127
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0115
+     * @tc.desc   Verify Int8Array copyWithin method with empty array (no modification)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      int8Arr.copyWithin(0, 1);
+      let errorMsg: string = '';
+
+      if (int8Arr.length !== 0) {
+        errorMsg = 'copyWithin should not modify empty Int8Array';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0128
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0116
+     * @tc.desc   Verify Int8Array fill method with empty array (no modification)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      int8Arr.fill(10);
+      let errorMsg: string = '';
+
+      if (int8Arr.length !== 0) {
+        errorMsg = 'fill should not modify empty Int8Array';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0129
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0117
+     * @tc.desc   Verify Int8Array constructor with Float64Array (truncated to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const floatSource: Float64Array = new Float64Array([-15.999, 25.001, 35.5]);
+      const int8Arr: collections.Int8Array = new collections.Int8Array(floatSource);
+      let errorMsg: string = '';
+
+      if (int8Arr[0] !== -15) {
+        errorMsg = 'Truncated float -15.999 should be -15';
+      } else if (int8Arr[1] !==
+        25) {
+        errorMsg = 'Truncated float 25.001 should be 25';
+      } else if (int8Arr[2] !== 35) {
+        errorMsg =
+          'Truncated float 35.5 should be 35';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0135
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0118
+     * @tc.desc   Verify Int8Array subarray with end index 0 (empty view)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0135', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([10, 20, 30]);
+      const subArr: collections.Int8Array = int8Arr.subarray(0, 0);
+      let errorMsg: string = '';
+
+      if (subArr.length !== 0) {
+        errorMsg = 'Subarray should be empty when end index = start index (0)';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0136
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0119
+     * @tc.desc   Verify Int8Array slice method with start index equal to end index (empty array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([5, 15, 25]);
+      const slicedArr: collections.Int8Array = int8Arr.slice(1, 1);
+      let errorMsg: string = '';
+
+      if (slicedArr.length !== 0) {
+        errorMsg =
+          'slice should return empty array when start = end';
+      } else if (!(slicedArr instanceof collections.Int8Array)) {
+        errorMsg =
+          'slice should return Int8Array type';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0137
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0120
+     * @tc.desc   Verify Int8Array copyWithin method with target index beyond array length (no modification)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4]);
+      const originalVals: number[] = [...int8Arr];
+      int8Arr.copyWithin(5, 0);
+      let errorMsg: string = '';
+
+      for (let i = 0; i < int8Arr.length; i++) {
+        if (int8Arr[i] !== originalVals[i]) {
+          errorMsg = `Value at index ${i} changed after copyWithin with target beyond length`;
+          break;
+        }
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0138
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0121
+     * @tc.desc   Verify Int8Array fill method with start index beyond array length (no modification)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([10, 20, 30]);
+      const originalVals: number[] = [...int8Arr];
+      const fillVal: number = 40;
+      const startIdx: number = int8Arr.length + 1;
+      int8Arr.fill(fillVal, startIdx);
+      let errorMsg: string = '';
+
+      for (let i = 0; i < int8Arr.length; i++) {
+        if (int8Arr[i] !== originalVals[i]) {
+          errorMsg = `Value at index ${i} changed after fill with start beyond length`;
+          break;
+        }
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0139
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0122
+     * @tc.desc   Verify Int8Array fill method with start index > end index (no modification)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([5, 10, 15, 20]);
+      const originalVals: number[] = [...int8Arr];
+      const fillVal: number = 25;
+      const startIdx: number = 3;
+      const endIdx: number = 1;
+      int8Arr.fill(fillVal, startIdx, endIdx);
+      let errorMsg: string = '';
+
+      for (let i = 0; i < int8Arr.length; i++) {
+        if (int8Arr[i] !== originalVals[i]) {
+          errorMsg = `Value at index ${i} changed after fill with start > end`;
+          break;
+        }
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0140
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0123
+     * @tc.desc   Verify Int8Array constructor with non-integer length (truncated to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const nonIntLength: number = 4.9;
+      const int8Arr: collections.Int8Array = new collections.Int8Array(nonIntLength);
+      let errorMsg: string = '';
+
+      if (int8Arr.length !== 4) {
+        errorMsg = `Non-integer length ${nonIntLength} should be truncated to 4`;
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0141
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0124
+     * @tc.desc   Verify Int8Array constructor with zero length (empty array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0141', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(0);
+      let errorMsg: string = '';
+
+      if (int8Arr.length !== 0) {
+        errorMsg =
+          'Zero length constructor should return empty Int8Array';
+      } else if (int8Arr.byteLength !== 0) {
+        errorMsg =
+          'Empty Int8Array should have byteLength 0';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0142
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0125
+     * @tc.desc   Verify Int8Array set method with source array containing NaN (converted to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(3);
+      const sourceArr: number[] = [10, NaN, 20];
+      int8Arr.set(sourceArr);
+      let errorMsg: string = '';
+
+      if (int8Arr[0] !== 10) {
+        errorMsg = 'Valid value 10 mismatch';
+      } else if (int8Arr[1] !== 0) {
+        errorMsg =
+          'NaN in source should be converted to 0';
+      } else if (int8Arr[2] !== 20) {
+        errorMsg = 'Valid value 20 mismatch';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0143
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0126
+     * @tc.desc   Verify Int8Array set method with source array containing Infinity (converted to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(3);
+      const sourceArr: number[] = [Infinity, -Infinity, 15];
+      int8Arr.set(sourceArr);
+      let errorMsg: string = '';
+
+      if (int8Arr[0] !== 0) {
+        errorMsg = 'Infinity in source should be converted to 0';
+      } else if (int8Arr[1] !==
+        0) {
+        errorMsg = '-Infinity in source should be converted to 0';
+      } else if (int8Arr[2] !== 15) {
+        errorMsg =
+          'Valid value 15 mismatch';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0144
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0127
+     * @tc.desc   Verify Int8Array indexOf method with start index (searches from start)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([5, 10, 5, 15, 5]);
+      const targetVal: number = 5;
+      const startIdx: number = 2;
+      const expectedIdx: number = 2;
+      const foundIdx: number = int8Arr.indexOf(targetVal, startIdx);
+      let errorMsg: string = '';
+
+      if (foundIdx !== expectedIdx) {
+        errorMsg = `indexOf with start ${startIdx} should find index ${expectedIdx}`;
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0145
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0128
+     * @tc.desc   Verify Int8Array lastIndexOf method with start index (searches backward from start)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([5, 10, 5, 15, 5]);
+      const targetVal: number = 5;
+      const startIdx: number = 3;
+      const expectedIdx: number = 2;
+      const foundIdx: number = int8Arr.lastIndexOf(targetVal, startIdx);
+      let errorMsg: string = '';
+
+      if (foundIdx !== expectedIdx) {
+        errorMsg = `lastIndexOf with start ${startIdx} should find index ${expectedIdx}`;
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0146
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0129
+     * @tc.desc   Verify Int8Array includes method with start index (searches from start)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([-5, -10, -15, -20]);
+      const targetVal: number = -15;
+      const startIdx: number = 2;
+      const result: boolean = int8Arr.includes(targetVal, startIdx);
+      let errorMsg: string = '';
+
+      if (!result) {
+        errorMsg = `includes with start ${startIdx} should find ${targetVal}`;
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0147
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0130
+     * @tc.desc   Verify Int8Array includes method with start index beyond array length (returns false)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([-5, -10, -15]);
+      const targetVal: number = -5;
+      const startIdx: number = 5;
+      const result: boolean = int8Arr.includes(targetVal, startIdx);
+      let errorMsg: string = '';
+
+      if (result) {
+        errorMsg = `includes with start ${startIdx} (beyond length) should return false`;
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0148
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0131
+     * @tc.desc   Verify Int8Array slice method with end index beyond array length (truncated to length)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([10, 20, 30, 40]);
+      const startIdx: number = 1;
+      const endIdx: number = 10;
+      const slicedArr: collections.Int8Array = int8Arr.slice(startIdx, endIdx);
+      let errorMsg: string = '';
+
+      if (slicedArr.length !== 3) {
+        errorMsg =
+          `slice with end ${endIdx} should have length 3`;
+      } else if (slicedArr[0] !== 20 ||
+        slicedArr[2] !== 40) {
+        errorMsg = 'sliced array values mismatch';
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0149
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0132
+     * @tc.desc   Verify Int8Array copyWithin method with start index beyond array length (no modification)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([1, 2, 3]);
+      const originalVals: number[] = [...int8Arr];
+      int8Arr.copyWithin(0, 5);
+      let errorMsg: string = '';
+
+      for (let i = 0; i < int8Arr.length; i++) {
+        if (int8Arr[i] !== originalVals[i]) {
+          errorMsg = `Value at index ${i} changed after copyWithin with start beyond length`;
+          break;
+        }
+      }
+      expect(errorMsg).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0150
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0133
+     * @tc.desc   Verify Int8Array copyWithin method with start > end (no modification)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([10, 20, 30, 40]);
+      const originalVals: number[] = [...int8Arr];
+      int8Arr.copyWithin(1, 3, 2);
+      let errorMsg: string = '';
+
+      for (let i = 0; i < int8Arr.length; i++) {
+        if (int8Arr[i] !== originalVals[i]) {
+          errorMsg = `Value at index ${i} changed after copyWithin with start > end`;
+          break;
+        }
+      }
+      expect(errorMsg).assertEqual('');
+    })
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0151
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0134
+     * @tc.desc   Verify Int8Array constructed with ArrayBuffer (offset 0, length 3) basic properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const buf: collections.ArrayBuffer = new collections.ArrayBuffer(3);
+      const int8Arr: collections.Int8Array = new collections.Int8Array(buf, 0, 3);
+      expect(int8Arr.buffer).assertEqual(buf);
+      expect(int8Arr.byteOffset).assertEqual(0);
+      expect(int8Arr.byteLength).assertEqual(3);
+      expect(int8Arr.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0152
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0135
+     * @tc.desc   Verify Int8Array constructed with ArrayBuffer (offset 2, length 2) basic properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const buf: collections.ArrayBuffer = new collections.ArrayBuffer(5);
+      const int8Arr: collections.Int8Array = new collections.Int8Array(buf, 2, 2);
+      expect(int8Arr.buffer).assertEqual(buf);
+      expect(int8Arr.byteOffset).assertEqual(2);
+      expect(int8Arr.byteLength).assertEqual(2);
+      expect(int8Arr.length).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0153
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0136
+     * @tc.desc   Verify Int8Array initial values are all 0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(4);
+      expect(int8Arr[0]).assertEqual(0);
+      expect(int8Arr[1]).assertEqual(0);
+      expect(int8Arr[2]).assertEqual(0);
+      expect(int8Arr[3]).assertEqual(0);
+      expect(int8Arr.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0154
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0137
+     * @tc.desc   Verify Int8Array stores legal maximum value (127) correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0154', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const maxValue: number = 127;
+      int8Arr[0] = maxValue;
+      expect(int8Arr[0]).assertEqual(maxValue);
+      expect(int8Arr.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0155
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0138
+     * @tc.desc   Verify Int8Array stores legal minimum value (-128) correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const minValue: number = -128;
+      int8Arr[0] = minValue;
+      expect(int8Arr[0]).assertEqual(minValue);
+      expect(int8Arr.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0156
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0139
+     * @tc.desc   Verify Int8Array overflows to -128 when value is 128
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const overflowVal: number = 128;
+      const expectedVal: number = -128;
+      int8Arr[0] = overflowVal;
+      expect(int8Arr[0]).assertEqual(expectedVal);
+      expect(int8Arr.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0157
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0140
+     * @tc.desc   Verify Int8Array overflows to 127 when value is -129
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const overflowVal: number = -129;
+      const expectedVal: number = 127;
+      int8Arr[0] = overflowVal;
+      expect(int8Arr[0]).assertEqual(expectedVal);
+      expect(int8Arr.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0158
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0141
+     * @tc.desc   Verify Int8Array overflows to 0 when value is 256
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const overflowVal: number = 256;
+      const expectedVal: number = 0;
+      int8Arr[0] = overflowVal;
+      expect(int8Arr[0]).assertEqual(expectedVal);
+      expect(int8Arr.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0159
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0142
+     * @tc.desc   Verify Int8Array stores positive value within range (64) correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const testVal: number = 64;
+      int8Arr[0] = testVal;
+      expect(int8Arr[0]).assertEqual(testVal);
+      expect(int8Arr.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0160
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0143
+     * @tc.desc   Verify Int8Array stores negative value within range (-64) correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const testVal: number = -64;
+      int8Arr[0] = testVal;
+      expect(int8Arr[0]).assertEqual(testVal);
+      expect(int8Arr.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0161
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0144
+     * @tc.desc   Verify Int8Array set method with plain array (start index 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0161', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(4);
+      const sourceArr: number[] = [10, 20, 30, 40];
+      int8Arr.set(sourceArr, 0);
+      expect(int8Arr[0]).assertEqual(10);
+      expect(int8Arr[1]).assertEqual(20);
+      expect(int8Arr[2]).assertEqual(30);
+      expect(int8Arr[3]).assertEqual(40);
+      expect(int8Arr.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0162
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0145
+     * @tc.desc   Verify Int8Array set method with plain array (start index 2)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0162', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(5);
+      const sourceArr: number[] = [50, 60];
+      const startIdx: number = 2;
+      int8Arr.set(sourceArr, startIdx);
+      expect(int8Arr[startIdx]).assertEqual(50);
+      expect(int8Arr[startIdx + 1]).assertEqual(60);
+      expect(int8Arr[0]).assertEqual(0);
+      expect(int8Arr[1]).assertEqual(0);
+      expect(int8Arr.length).assertEqual(5);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0163
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0146
+     * @tc.desc   Verify Int8Array set method with empty plain array (no modification)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0163', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([1, 2, 3]);
+      const emptySource: number[] = [];
+      int8Arr.set(emptySource);
+      expect(int8Arr[0]).assertEqual(1);
+      expect(int8Arr[1]).assertEqual(2);
+      expect(int8Arr[2]).assertEqual(3);
+      expect(int8Arr.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0164
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0147
+     * @tc.desc   Verify Int8Array set method with Uint8Array (valid range values)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0164', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const uint8Source: Uint8Array = new Uint8Array([70, 80]);
+      const int8Arr: collections.Int8Array = new collections.Int8Array(2);
+      int8Arr.set(uint8Source);
+      expect(int8Arr[0]).assertEqual(70);
+      expect(int8Arr[1]).assertEqual(80);
+      expect(int8Arr.length).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0165
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0148
+     * @tc.desc   Verify Int8Array set method with Int16Array (truncated to 8-bit)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0165', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int16Source: Int16Array = new Int16Array([200, 300]);
+      const int8Arr: collections.Int8Array = new collections.Int8Array(2);
+      int8Arr.set(int16Source);
+      expect(int8Arr[0]).assertEqual(-56);
+      expect(int8Arr[1]).assertEqual(44);
+      expect(int8Arr.length).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0166
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0149
+     * @tc.desc   Verify Int8Array set method with Uint8ClampedArray (clamped values)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0166', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const clampedSource: Uint8ClampedArray = new Uint8ClampedArray([260, -10]);
+      const int8Arr: collections.Int8Array = new collections.Int8Array(2);
+      int8Arr.set(clampedSource);
+      expect(int8Arr[0]).assertEqual(-1);
+      expect(int8Arr[1]).assertEqual(0);
+      expect(int8Arr.length).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0167
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0150
+     * @tc.desc   Verify Int8Array set method throws RangeError when source length exceeds view
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0167', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(3);
+      const overLengthSource: number[] = [1, 2, 3, 4];
+      let isRangeError: boolean = false;
+
+      try {
+        int8Arr.set(overLengthSource);
+      } catch (e) {
+        isRangeError = (e as Error).name === 'RangeError';
+      }
+      expect(isRangeError).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0168
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0151
+     * @tc.desc   Verify Int8Array subarray shares buffer with original view (modify subarray)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0168', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4]);
+      const subArr: collections.Int8Array = int8Arr.subarray(1, 3);
+      subArr[0] = 20;
+      expect(int8Arr[1]).assertEqual(20);
+      expect(subArr[0]).assertEqual(20);
+      expect(subArr[1]).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0169
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0152
+     * @tc.desc   Verify Int8Array subarray with start index 0 (full range)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([5, 6, 7]);
+      const subArr: collections.Int8Array = int8Arr.subarray(0);
+      expect(subArr.length).assertEqual(int8Arr.length);
+      expect(subArr[0]).assertEqual(5);
+      expect(subArr[1]).assertEqual(6);
+      expect(subArr[2]).assertEqual(7);
+      expect(subArr.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0170
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0153
+     * @tc.desc   Verify Int8Array subarray returns empty view when start=end
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([8, 9, 10]);
+      const subArr: collections.Int8Array = int8Arr.subarray(2, 2);
+      expect(subArr.length).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0171
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0154
+     * @tc.desc   Verify Int8Array subarray with negative start index (treated as 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([10, 20, 30, 40]);
+      const subArr: collections.Int8Array = int8Arr.subarray(-2, 3);
+      expect(subArr.length).assertEqual(1);
+      expect(subArr[0]).assertEqual(30);
+      expect(subArr[1]).assertEqual(undefined);
+      expect(subArr[2]).assertEqual(undefined);
+      expect(subArr.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0172
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0155
+     * @tc.desc   Verify Int8Array subarray with end index exceeding view length (treated as view length)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0172', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([10, 20, 30, 40]);
+      const subArr: collections.Int8Array = int8Arr.subarray(1, 10);
+      expect(subArr.length).assertEqual(3);
+      expect(subArr[0]).assertEqual(20);
+      expect(subArr[1]).assertEqual(30);
+      expect(subArr[2]).assertEqual(40);
+      expect(subArr.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0173
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0156
+     * @tc.desc   Verify DataView reads Int8Array shared buffer (offset 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(3);
+      const int8Arr: Int8Array = new Int8Array(buf);
+      int8Arr.set([-10, 20, -30]);
+      const dv: DataView = new DataView(buf);
+      expect(dv.getInt8(0)).assertEqual(-10);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0174
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0157
+     * @tc.desc   Verify DataView reads Int8Array shared buffer (offset 2)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0174', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(3);
+      const int8Arr: Int8Array = new Int8Array(buf);
+      int8Arr.set([-10, 20, -30]);
+      const dv: DataView = new DataView(buf);
+      expect(dv.getInt8(2)).assertEqual(-30);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0175
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0158
+     * @tc.desc   Verify DataView modifies Int8Array shared buffer (offset 1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(3);
+      const int8Arr: Int8Array = new Int8Array(buf);
+      const dv: DataView = new DataView(buf);
+      const modifyVal: number = 50;
+      dv.setInt8(1, modifyVal);
+      expect(int8Arr[1]).assertEqual(modifyVal);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0176
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0159
+     * @tc.desc   Verify bidirectional sync between DataView and Int8Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0176', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(2);
+      const int8Arr: Int8Array = new Int8Array(buf);
+      const dv: DataView = new DataView(buf);
+
+
+      int8Arr[0] = 40;
+      expect(dv.getInt8(0)).assertEqual(40);
+
+
+      dv.setInt8(1, -60);
+      expect(int8Arr[1]).assertEqual(-60);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0177
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0160
+     * @tc.desc   Verify DataView reads Int8Array buffer with non-zero byteOffset
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0177', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buf: ArrayBuffer = new ArrayBuffer(6);
+      const int8Arr: Int8Array = new Int8Array(buf, 2, 2);
+      int8Arr.set([20, 30]);
+      const dv: DataView = new DataView(buf);
+
+      expect(dv.getInt8(2)).assertEqual(20);
+      expect(dv.getInt8(3)).assertEqual(30);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0178
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0161
+     * @tc.desc   Verify Int8Array converts to plain array via Array.from
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0178', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([-5, 0, 5]);
+      const plainArr: collections.Int8Array = collections.Int8Array.from(int8Arr);
+      expect(plainArr instanceof collections.Int8Array).assertEqual(true);
+      expect(plainArr[0]).assertEqual(-5);
+      expect(plainArr[1]).assertEqual(0);
+      expect(plainArr[2]).assertEqual(5);
+      expect(plainArr.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0179
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0162
+     * @tc.desc   Verify Int8Array converts to plain array via spread syntax
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0179', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([-10, 20, -30]);
+      const plainArr: number[] = [...int8Arr];
+      expect(Array.isArray(plainArr)).assertEqual(true);
+      expect(plainArr[0]).assertEqual(-10);
+      expect(plainArr[1]).assertEqual(20);
+      expect(plainArr[2]).assertEqual(-30);
+      expect(plainArr.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0180
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0163
+     * @tc.desc   Verify modifying converted plain array does not affect original Int8Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0180', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([1, 2]);
+      const plainArr: collections.Int8Array = collections.Int8Array.from(int8Arr);
+      plainArr[0] = 100;
+      expect(int8Arr[0]).assertEqual(1);
+      expect(plainArr[0]).assertEqual(100);
+      expect(plainArr.length).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0181
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0164
+     * @tc.desc   Verify Int8Array converts to plain array with map via Array.from
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0181', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([2, 4, 6]);
+      const plainArr: collections.Int8Array = collections.Int8Array.from(int8Arr, val => val * 2);
+      expect(plainArr[0]).assertEqual(4);
+      expect(plainArr[1]).assertEqual(8);
+      expect(plainArr[2]).assertEqual(12);
+      expect(plainArr.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0182
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0165
+     * @tc.desc   Verify plain array with overflow values converts to Int8Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0182', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const plainArr: number[] = [128, -129, 255];
+      const int8Arr: collections.Int8Array = new collections.Int8Array(plainArr);
+      expect(int8Arr[0]).assertEqual(-128);
+      expect(int8Arr[1]).assertEqual(127);
+      expect(int8Arr[2]).assertEqual(-1);
+      expect(int8Arr.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0183
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0166
+     * @tc.desc   Verify Int8Array forEach method iterates all elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0183', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([3, 6, 9]);
+      let sum: number = 0;
+      int8Arr.forEach(val => sum += val);
+      expect(sum).assertEqual(18);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0184
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0167
+     * @tc.desc   Verify Int8Array forEach method passes correct index to callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0184', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([10, 20, 30]);
+      let collectedIndices: number[] = [];
+      int8Arr.forEach((_, idx) => collectedIndices.push(idx));
+      expect(collectedIndices[0]).assertEqual(0);
+      expect(collectedIndices[1]).assertEqual(1);
+      expect(collectedIndices[2]).assertEqual(2);
+      expect(collectedIndices.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0185
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0168
+     * @tc.desc   Verify Int8Array map method returns new Int8Array with mapped values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0185', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([1, 2, 3]);
+      const mappedArr: collections.Int8Array = int8Arr.map(val => val + 5);
+      expect(mappedArr[0]).assertEqual(6);
+      expect(mappedArr[1]).assertEqual(7);
+      expect(mappedArr[2]).assertEqual(8);
+      expect(mappedArr instanceof collections.Int8Array).assertEqual(true);
+      expect(mappedArr.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0186
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0169
+     * @tc.desc   Verify Int8Array filter method returns new Int8Array with filtered values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0186', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([-5, 0, 5, 10, -10]);
+      const filteredArr: collections.Int8Array = int8Arr.filter(val => val > 0);
+      expect(filteredArr.length).assertEqual(2);
+      expect(filteredArr[0]).assertEqual(5);
+      expect(filteredArr[1]).assertEqual(10);
+      expect(filteredArr instanceof collections.Int8Array).assertEqual(true);
+      expect(filteredArr.length).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0187
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0170
+     * @tc.desc   Verify Int8Array find method returns first matching value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0187', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([15, 25, 35, 45]);
+      const foundVal: number | undefined = int8Arr.find(val => val > 30);
+      expect(foundVal).assertEqual(35);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0188
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0171
+     * @tc.desc   Verify Int8Array findIndex method returns first matching index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0188', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([15, 25, 35, 45]);
+      const foundIdx: number = int8Arr.findIndex(val => val > 30);
+      expect(foundIdx).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0189
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0172
+     * @tc.desc   Verify Int8Array every method returns true when all elements match condition
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0189', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([-10, -20, -30]);
+      const allNegative: boolean = int8Arr.every(val => val < 0);
+      expect(allNegative).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0190
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0173
+     * @tc.desc   Verify Int8Array some method returns true when at least one element matches condition
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0190', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([-10, -20, 30]);
+      const hasPositive: boolean = int8Arr.some(val => val > 0);
+      expect(hasPositive).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0191
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0174
+     * @tc.desc   Verify Int8Array reduce method accumulates values with initial value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0191', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([2, 4, 6]);
+      const initialVal: number = 10;
+      const total: number = int8Arr.reduce((acc, val) => acc + val, initialVal);
+      expect(total).assertEqual(22);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0192
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0175
+     * @tc.desc   Verify Int8Array reduce method accumulates values without initial value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0192', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([2, 4, 6]);
+      const total: number = int8Arr.reduce((acc, val) => acc + val);
+      expect(total).assertEqual(12);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0193
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0176
+     * @tc.desc   Verify Int8Array includes method returns true for existing value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0193', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([-127, 0, 127]);
+      const has127: boolean = int8Arr.includes(127);
+      expect(has127).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0194
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0177
+     * @tc.desc   Verify Int8Array includes method returns false for non-existing value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0194', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([-127, 0, 127]);
+      const has128: boolean = int8Arr.includes(128);
+      expect(has128).assertEqual(false);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0195
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0178
+     * @tc.desc   Verify Int8Array indexOf method returns first occurrence index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0195', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([5, 10, 5, 15]);
+      const firstIdx: number = int8Arr.indexOf(5);
+      expect(firstIdx).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0196
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0179
+     * @tc.desc   Verify Int8Array lastIndexOf method returns last occurrence index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0196', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([5, 10, 5, 15]);
+      const lastIdx: number = int8Arr.lastIndexOf(5);
+      expect(lastIdx).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0197
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0180
+     * @tc.desc   Verify Int8Array slice method returns new Int8Array (no buffer share)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0197', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4]);
+      const slicedArr: collections.Int8Array = int8Arr.slice(1, 3);
+      slicedArr[0] = 20;
+      expect(int8Arr[1]).assertEqual(2);
+      expect(slicedArr[0]).assertEqual(20);
+      expect(slicedArr[1]).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0198
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0181
+     * @tc.desc   Verify Int8Array copyWithin method copies elements within array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0198', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
+      int8Arr.copyWithin(0, 3);
+      expect(int8Arr[0]).assertEqual(4);
+      expect(int8Arr[1]).assertEqual(5);
+      expect(int8Arr[2]).assertEqual(3);
+      expect(int8Arr[3]).assertEqual(4);
+      expect(int8Arr[4]).assertEqual(5);
+      expect(int8Arr.length).assertEqual(5);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0199
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0182
+     * @tc.desc   Verify Int8Array fill method fills all elements with specified value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayTest0199', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(3);
+      const fillVal: number = -15;
+      int8Arr.fill(fillVal);
+      expect(int8Arr[0]).assertEqual(-15);
+      expect(int8Arr[1]).assertEqual(-15);
+      expect(int8Arr[2]).assertEqual(-15);
+      expect(int8Arr.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayTest0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0183
+     * @tc.desc   Verify Int8Array fill method fills elements with specified range (start index)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayInt8ArrayTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4]);
+      const fillVal: number = 9;
+      const startIdx: number = 2;
+      int8Arr.fill(fillVal, startIdx);
+      expect(int8Arr[0]).assertEqual(1);
+      expect(int8Arr[1]).assertEqual(2);
+      expect(int8Arr[2]).assertEqual(9);
+      expect(int8Arr[3]).assertEqual(9);
+      expect(int8Arr.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayBound0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0184
+     * @tc.desc   Verify Int8Array handles maximum legal value (127) assignment and read
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayBound0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const maxLegalVal: number = 127;
+      int8Arr[0] = maxLegalVal;
+      expect(int8Arr[0]).assertEqual(maxLegalVal);
+      expect(int8Arr.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayBound0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0185
+     * @tc.desc   Verify Int8Array handles minimum legal value (-128) assignment and read
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt8ArrayBound0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const int8Arr: collections.Int8Array = new collections.Int8Array(1);
+      const minLegalVal: number = -128;
+      int8Arr[0] = minLegalVal;
+      expect(int8Arr[0]).assertEqual(minLegalVal);
+      expect(int8Arr.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt8ArrayBound0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT8_ARRAY_ALL_0186
+     * @tc.desc   Verify Int8Array overflows correctly when value = max legal + 1 (128)
