@@ -81,9 +81,9 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210', Level.LEVEL0, 
       let height: number = bottom - top;
       let width: number = right - left;
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0210 rect: left=" + left + " right=" + right + " top=" + top + " bottom=" + bottom + " width=" + width + " height=" + height);
-      let centerY: int = Math.round(top + height / 2).toInt();
-      let startX: int = Math.round(left + width * 0.8).toInt();
-      let endX: int = Math.round(left + width * 0.2).toInt();
+      let centerY: int = Math.round(top + height / 2) as int;
+      let startX: int = Math.round(left + width * 0.8) as int;
+      let endX: int = Math.round(left + width * 0.2) as int;
       for (let i: int = 0; i < 5; i++) {
         let fromPoint: Point = { x: startX, y: centerY } as Point;
         let toPoint: Point = { x: endX, y: centerY } as Point;
