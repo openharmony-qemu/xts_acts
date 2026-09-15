@@ -27,7 +27,7 @@ import wifiMg from '@ohos.wifiManager';
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function webResourceError(): void {
+export default function webResourceError() {
 
   describe('webResourceErrorTestSuite', () => {
 

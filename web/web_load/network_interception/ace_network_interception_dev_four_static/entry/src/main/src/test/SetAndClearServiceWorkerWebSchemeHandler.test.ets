@@ -23,8 +23,8 @@ import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function SetAndClearServiceWorkerWebSchemeHandler(): void {
-  describe('SetAndClearServiceWorkerWebSchemeHandler', (): void => {
+export default function SetAndClearServiceWorkerWebSchemeHandler() {
+  describe('SetAndClearServiceWorkerWebSchemeHandler', () => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
       await Utils.msSleep(4000);

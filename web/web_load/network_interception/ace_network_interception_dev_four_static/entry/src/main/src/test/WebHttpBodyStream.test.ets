@@ -23,8 +23,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function WebHttpBodyStream(): void {
-  describe('WebHttpBodyStream', (): void => {
+export default function WebHttpBodyStream() {
+  describe('WebHttpBodyStream', () => {
         beforeAll(async (): Promise<void> => {
           console.log('App start')
         });

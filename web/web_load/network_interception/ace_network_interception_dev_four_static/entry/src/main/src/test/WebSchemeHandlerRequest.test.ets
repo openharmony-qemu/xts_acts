@@ -22,8 +22,8 @@ import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function WebSchemeHandlerRequest(): void {
-  describe('webSchemeHandlerRequest', (): void => {
+export default function WebSchemeHandlerRequest() {
+  describe('webSchemeHandlerRequest', () => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
     });

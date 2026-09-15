@@ -25,7 +25,7 @@ import common from '@ohos.app.ability.common';
 import wifiMg from '@ohos.wifiManager';
 let testAbilityContext: common.UIAbilityContext;
 
-export default function WebInitTest(): void {
+export default function WebInitTest() {
 
   describe('WebInitTest', () => {
     beforeAll(async (): Promise<void> => {

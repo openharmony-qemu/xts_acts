@@ -26,7 +26,7 @@ import wifiMg from '@ohos.wifiManager';
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function webCustomErrorCodeStatic(): void {
+export default function webCustomErrorCodeStatic() {
   describe('webCustomErrorCodeStaticTestSuite', () => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')

@@ -25,7 +25,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 
 const CUSTOM_ERROR_CODE: int = 32159;
 
-export default function WebCustomErrorCode(): void {
+export default function WebCustomErrorCode() {
   describe('WebCustomErrorCodeStatic', () => {
     beforeAll(async (): Promise<void> => {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

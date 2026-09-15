@@ -27,18 +27,6 @@ export default class Utils{
     })
   }
 
-  static async waitForCondition(check: () => boolean, name: string, interval: int, maxRetries: int): Promise<boolean> {
-    for (let i = 0; i < maxRetries; i++) {
-      if (check()) {
-        console.info(`waitForCondition ${name} ok`);
-        return true;
-      }
-      await Utils.msSleep(interval);
-    }
-    console.info(`waitForCondition ${name} timeout`);
-    return false;
-  }
-
   static async emitEvent(actualValue: boolean | string | number | object, eventId: Long) {
     try {
       let tempData: Record<string, RecordData> = {};
@@ -61,7 +49,7 @@ export default class Utils{
   }
 
   static registerBaseEvent(testCaseName: string, expected: Object, eventId: Long,
-    done: () => void, expectFunction: (backData: events_emitter.EventData, expected: Object) => void): void {
+    done: () => void, expectFunction: (backData: events_emitter.EventData, expected: Object) => void) {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
@@ -83,7 +71,7 @@ export default class Utils{
     }
   }
 
-  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void): void {
+  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) {
     Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
       const data = backData?.data as Record<string, RecordData>;
       const action = data['ACTION'];
