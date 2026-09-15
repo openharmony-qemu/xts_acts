@@ -1358,3 +1358,1983 @@ export default function Uint32ArrayTaskPoolTest() {
             num++;
             expect(value).assertEqual('1,2,3,4,5,6,7,8');
           }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0041
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0041
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0041';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0041).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0042
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0042
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0042';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0042).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0043
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0043
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0043';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0043).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0044
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0044
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0044';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0044).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0045
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0045
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0045';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0045).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0046
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0046
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0046';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0046).then((value) => {
+            num++;
+            expect(value).assertEqual('3,4,5,6,7,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0047
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0047
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0047';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0047).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0048
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0048
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0048';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0048).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0049
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0049
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0049';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0049).then((value) => {
+            num++;
+            expect(value).assertEqual('3,4,5,6,7,8,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0050
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0050
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0050';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0050).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0051
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0051
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0051';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0051).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0052
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0052
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0052';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0052).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0053
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0053
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0053';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0053).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0054
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0054
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0054';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0054).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,1,2,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0055
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0055
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0055';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0055).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0056
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0056
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0056';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0056).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0057
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0057
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0057';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0057).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0058
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0058
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0058';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0058).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0059
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0059
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0059';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0059).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0060
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0060
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0060';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0060).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0061
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0061
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0061';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0061).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6,7,8');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0062
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0062
+     * @tc.desc   Testing whether it returns true when there are elements that meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0062';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0062).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0063
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0063
+     * @tc.desc   Testing whether it returns false when no elements meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0063';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0063).then((value) => {
+            num++;
+            expect(value).assertEqual(false);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0064
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0064
+     * @tc.desc   Testing whether it returns true when all elements that meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0064';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0064).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0065
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0065
+     * @tc.desc   Testing whether it returns true when all elements that meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0065';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0065).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0066
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0066
+     * @tc.desc   Testing whether it returns false when not all elements meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0066';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0066).then((value) => {
+            num++;
+            expect(value).assertEqual(false);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0067
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0067
+     * @tc.desc   Testing whether it returns false when no elements meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0067';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0067).then((value) => {
+            num++;
+            expect(value).assertEqual(false);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0068
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0068
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0068';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0068).then((value) => {
+            num++;
+            expect(value).assertEqual('4,4,4,1,4,4,1,4,3');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0069
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0069
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0069';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0069).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0070
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0070
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0070';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0070).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0071
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0071
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0071';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0071).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0072
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0072
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0072';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0072).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,4');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0073
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0073
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0073';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0073).then((value) => {
+            num++;
+            expect(value).assertEqual('4,4,4,4,4,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0074
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0074
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0074';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0074).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0075
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0075
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0075';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0075).then((value) => {
+            num++;
+            expect(value).assertEqual('4,4,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0076
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0076
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0076';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0076).then((value) => {
+            num++;
+            expect(value).assertEqual('4,4,4,4,4,4');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0077
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0077
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0077';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0077).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,4,4,4,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0078
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0078
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0078';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0078).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0079
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0079
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0079';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0079).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0080
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0080
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0080';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0080).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,4,4,4,4');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0081
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0081
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0081';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0081).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0082
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0082
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0082';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0082).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0083
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0083
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0083';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0083).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0084
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0084
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0084';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0084).then((value) => {
+            num++;
+            expect(value).assertEqual('1,2,3,4,5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0085
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0085
+     * @tc.desc   Testing if filter returns a new ArkTS TypedArray with elements that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0085';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0085).then((value) => {
+            num++;
+            expect(value).assertEqual('0,2,4');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0086
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0086
+     * @tc.desc   Testing if filter returns a new ArkTS TypedArray with elements that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0086';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0086).then((value) => {
+            num++;
+            expect(value).assertEqual(0);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0087
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0087
+     * @tc.desc   Testing if filter returns a new ArkTS TypedArray with elements that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0087';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0087).then((value) => {
+            num++;
+            expect(value).assertEqual(' after set is 5,6');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0088
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0088
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0088';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0088).then((value) => {
+            num++;
+            expect(value).assertEqual(3);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0089
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0089
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0089';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0089).then((value) => {
+            num++;
+            expect(value).assertEqual(undefined);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0090
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0090
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0090';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0090).then((value) => {
+            num++;
+            expect(value).assertEqual('undefined,5');
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0091
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0091
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0091';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0091).then((value) => {
+            num++;
+            expect(value).assertEqual(undefined);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0092
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0092
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0092';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0092).then((value) => {
+            num++;
+            expect(value).assertEqual(0);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0093
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0093
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0093';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0093).then((value) => {
+            num++;
+            expect(value).assertEqual(undefined);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0094
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0094
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0094';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0094).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0095
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0095
+     * @tc.desc   Testing if findIndex returns the first element index that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0095';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0095).then((value) => {
+            num++;
+            expect(value).assertEqual(-1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0096
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0096
+     * @tc.desc   Testing if findIndex returns the first element index that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0096';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0096).then((value) => {
+            num++;
+            expect(value).assertEqual(1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0097
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0097
+     * @tc.desc   Testing if findIndex returns the first element index that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0097';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0097).then((value) => {
+            num++;
+            expect(value).assertEqual(-1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0098
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0098
+     * @tc.desc   Testing if forEach executes the provided callback function for each element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0098';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0098).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0099
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0099
+     * @tc.desc   Testing if forEach executes the provided callback function for each element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0099';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0099).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0100
+     * @tc.desc   Testing if forEach executes the provided callback function for each element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0100';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0100).then((value) => {
+            num++;
+            expect(value).assertEqual(true);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0101
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0101
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0101';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0101).then((value) => {
+            num++;
+            expect(value).assertEqual(-1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0102
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0102
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0102';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0102).then((value) => {
+            num++;
+            expect(value).assertEqual(-1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0103
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0103
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0103';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0103).then((value) => {
+            num++;
+            expect(value).assertEqual(1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0104
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0104
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0104';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0104).then((value) => {
+            num++;
+            expect(value).assertEqual(9);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0105
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0105
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0105';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0105).then((value) => {
+            num++;
+            expect(value).assertEqual(6);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0106
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0106
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0106';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0106).then((value) => {
+            num++;
+            expect(value).assertEqual(2);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0107
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0107
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0107';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0107).then((value) => {
+            num++;
+            expect(value).assertEqual(3);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+    /**
+     * @tc.name   testUint32ArrayTaskPool0108
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UINT32_ARRAY_TASKPOOL_0108
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUint32ArrayTaskPool0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testUint32ArrayTaskPool0108';
+      console.info(`${caseName} test start`);
+      let num = 0;
+      try {
+        for (let i = 0; i < 10; i++) {
+          taskpool.execute(testUint32ArrayTaskPool0108).then((value) => {
+            num++;
+            expect(value).assertEqual(-1);
+          }).catch(() => { console.error('catch error'); });
+        }
+        while (num < 10) {
+          await sleep(100);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
