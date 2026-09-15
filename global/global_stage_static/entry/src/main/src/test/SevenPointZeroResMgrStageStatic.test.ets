@@ -29,6 +29,7 @@ import Context from 'application.Context';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog'
 import fontManager from '@ohos.fontManager';
+import { common } from '@kit.AbilityKit';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -49,6 +50,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       resContext = abilityDelegator.getAppContext()
       res = resContext.resourceManager
+      resContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext')
       const cacheDir = resContext.resourceDir;
       validFontPath = `${cacheDir}/TestFont_Sans.ttf`;
     });

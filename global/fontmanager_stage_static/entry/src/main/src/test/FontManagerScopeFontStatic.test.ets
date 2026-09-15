@@ -19,6 +19,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Context from 'application.Context';
+import { common } from '@kit.AbilityKit';
 
 const ERR_INVALID_PARAM: int = 401;
 const ERR_FILE_NOT_EXISTS: int = 31100101;
@@ -43,8 +44,7 @@ export default function fontManagerScopeFontTest():void {
     let resContext: Context;
 
     beforeAll(() => {
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      resContext = abilityDelegator.getAppContext()
+      resContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext')
       const cacheDir = resContext.resourceDir;
       validFontPath = `${cacheDir}/TestFont_Sans.ttf`;
       errorFontPath = `${cacheDir}/errorTTF.ttf`;
