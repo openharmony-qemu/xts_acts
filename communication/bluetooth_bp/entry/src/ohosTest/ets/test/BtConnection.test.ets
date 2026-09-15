@@ -5067,7 +5067,7 @@ describe('btConnectionTest', () => {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERYRESULT_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         let onReceiveEvent: (data: Array<bluetooth.DiscoveryResult>) => void = (data: Array<bluetooth.DiscoveryResult>) => {
             console.info('bluetooth discoveryResult callback');
         }
