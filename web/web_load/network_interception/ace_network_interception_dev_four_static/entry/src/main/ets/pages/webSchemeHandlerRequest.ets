@@ -49,8 +49,8 @@ struct webSchemeHandlerRequest {
   webviewcontroller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   webSchemeHander: web_webview.WebSchemeHandler = new web_webview.WebSchemeHandler();
   htmlData: string = "<html><body bgcolor=\"white\">Source:<pre>source</pre></body></html>";
-  postDataStream: web_webview.WebHttpBodyStream = new web_webview.WebHttpBodyStream()
-  resourceHandler: web_webview.WebResourceHandler = new web_webview.WebResourceHandler()
+  postDataStream: web_webview.WebHttpBodyStream | null = null
+  resourceHandler: web_webview.WebResourceHandler | null = null
   requests:web_webview.WebSchemeHandlerRequest[] = []
   @State getRequestUrlResult: string = "lock";
   @State getRequestMethodResult: string = "lock";
@@ -93,11 +93,20 @@ struct webSchemeHandlerRequest {
               break;
             }
 
+            case 'SwitchBackToWebSchemeHandlerResponse': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webSchemeHandlerResponse' })
+              console.log('push URL success')
+              break;
+            }
+
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
               router.pushUrl({ url: 'pages/webResourceType' })
               console.log('push URL success')
+              break;
             }
           }
         })
@@ -160,7 +169,10 @@ struct webSchemeHandlerRequest {
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
 
-              this.postDataStream = request.getHttpBodyStream() as web_webview.WebHttpBodyStream ;
+              let stream = request.getHttpBodyStream();
+              if (stream) {
+                this.postDataStream = stream;
+              }
               this.resourceHandler = resourceHandler;
 
               if(schemeMap.has(request.getRequestUrl())){
@@ -174,9 +186,9 @@ struct webSchemeHandlerRequest {
                 response.setStatusText("OK")
                 response.setMimeType("text/html")
                 response.setEncoding("utf-8")
-                this.resourceHandler.didReceiveResponse(response);
+                resourceHandler.didReceiveResponse(response);
                 console.log("[schemeHandler] didReceiveResponse" )
-                this.resourceHandler.didReceiveResponseBody(arrayBuffer);
+                resourceHandler.didReceiveResponseBody(arrayBuffer);
                 console.log("[schemeHandler] didReceiveResponseBody" )
                 resourceHandler.didFail(WebNetErrorList.ERR_FAILED, true);
                 Utils.emitEvent(true,142190)

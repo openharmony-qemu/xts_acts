@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/webDownloadEnumTest",
-    "pages/WebResourceErrorConstructor"
+    "pages/WebResourceErrorConstructor",
+    "pages/webCustomErrorCodeStatic"
   ]
 }
