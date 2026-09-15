@@ -4734,3 +4734,15 @@ export default function Int16ArrayNormalTest() {
      * @tc.level  LEVEL1
      */
     it('testInt16ArrayMissing0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array: collections.Int16Array = new collections.Int16Array([1,2,3,4,5]);
+      const result = array.reverse();
+      expect(result.toString()).assertEqual("5,4,3,2,1");
+      expect(result[0]).assertEqual(5);
+      expect(result.buffer.byteLength).assertEqual(10); 
+      expect(result.byteLength).assertEqual(10);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      done();
+    })
+  })
+}
