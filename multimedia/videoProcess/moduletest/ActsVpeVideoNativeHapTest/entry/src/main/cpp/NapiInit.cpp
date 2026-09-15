@@ -178,6 +178,28 @@ static void InitPush3(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("VpeVideoApiTest06100", VpeVideoApiTest06100));
     desc.push_back(XL("VpeVideoApiTest06200", VpeVideoApiTest06200));
     desc.push_back(XL("VpeVideoApiTest06300", VpeVideoApiTest06300));
+    desc.push_back(XL("VpeVideoApiTest06500", VpeVideoApiTest06500));
+    desc.push_back(XL("VpeVideoApiTest06600", VpeVideoApiTest06600));
+    desc.push_back(XL("VpeVideoApiTest06800", VpeVideoApiTest06800));
+    desc.push_back(XL("VpeVideoApiTest06900", VpeVideoApiTest06900));
+    desc.push_back(XL("VpeVideoApiTest07000", VpeVideoApiTest07000));
+    desc.push_back(XL("VpeVideoApiTest07100", VpeVideoApiTest07100));
+    desc.push_back(XL("VpeVideoApiTest07200", VpeVideoApiTest07200));
+    desc.push_back(XL("VpeVideoApiTest07300", VpeVideoApiTest07300));
+    desc.push_back(XL("VpeVideoApiTest07400", VpeVideoApiTest07400));
+    desc.push_back(XL("VpeVideoApiTest07500", VpeVideoApiTest07500));
+    desc.push_back(XL("VpeVideoApiTest07600", VpeVideoApiTest07600));
+    desc.push_back(XL("VpeVideoApiTest07800", VpeVideoApiTest07800));
+    desc.push_back(XL("VpeVideoApiTest07900", VpeVideoApiTest07900));
+    desc.push_back(XL("VpeVideoApiTest08000", VpeVideoApiTest08000));
+    desc.push_back(XL("VpeVideoApiTest08100", VpeVideoApiTest08100));
+    desc.push_back(XL("VpeVideoApiTest08200", VpeVideoApiTest08200));
+    desc.push_back(XL("VpeVideoApiTest08300", VpeVideoApiTest08300));
+    desc.push_back(XL("VpeVideoApiTest08400", VpeVideoApiTest08400));
+    desc.push_back(XL("VpeVideoApiTest08600", VpeVideoApiTest08600));
+    desc.push_back(XL("VpeVideoApiTest08700", VpeVideoApiTest08700));
+    desc.push_back(XL("VpeVideoApiTest08800", VpeVideoApiTest08800));
+    desc.push_back(XL("VpeVideoApiTest08900", VpeVideoApiTest08900));
 }
 
 static napi_value Init(napi_env env, napi_value exports)

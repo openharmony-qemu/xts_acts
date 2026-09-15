@@ -77,5 +77,29 @@ export const VpeVideoApiTest06000: () => Promise<number>;
 export const VpeVideoApiTest06100: () => Promise<number>;
 export const VpeVideoApiTest06200: () => Promise<number>;
 export const VpeVideoApiTest06300: () => Promise<number>;
+export const VpeVideoApiTest06500: () => Promise<number>;
+export const VpeVideoApiTest06600: () => Promise<number>;
+export const VpeVideoApiTest06800: () => Promise<number>;
+export const VpeVideoApiTest06900: () => Promise<number>;
+export const VpeVideoApiTest07000: () => Promise<number>;
+export const VpeVideoApiTest07100: () => Promise<number>;
+export const VpeVideoApiTest07200: () => Promise<number>;
+export const VpeVideoApiTest07300: () => Promise<number>;
+export const VpeVideoApiTest07400: () => Promise<number>;
+export const VpeVideoApiTest07500: () => Promise<number>;
+export const VpeVideoApiTest07600: () => Promise<number>;
+export const VpeVideoApiTest07800: () => Promise<number>;
+export const VpeVideoApiTest07900: () => Promise<number>;
+export const VpeVideoApiTest08000: () => Promise<number>;
+export const VpeVideoApiTest08100: () => Promise<number>;
+export const VpeVideoApiTest08200: () => Promise<number>;
+export const VpeVideoApiTest08300: () => Promise<number>;
+export const VpeVideoApiTest08400: () => Promise<number>;
+export const VpeVideoApiTest08600: () => Promise<number>;
+export const VpeVideoApiTest08700: () => Promise<number>;
+export const VpeVideoApiTest08800: () => Promise<number>;
+export const VpeVideoApiTest08900: () => Promise<number>;
+
+
 
 export const TearDown: () => number;

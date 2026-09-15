@@ -80,6 +80,28 @@ napi_value VpeVideoApiTest06000(napi_env env, napi_callback_info info);
 napi_value VpeVideoApiTest06100(napi_env env, napi_callback_info info);
 napi_value VpeVideoApiTest06200(napi_env env, napi_callback_info info);
 napi_value VpeVideoApiTest06300(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest06500(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest06600(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest06800(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest06900(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest07000(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest07100(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest07200(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest07300(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest07400(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest07500(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest07600(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest07800(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest07900(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest08000(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest08100(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest08200(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest08300(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest08400(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest08600(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest08700(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest08800(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest08900(napi_env env, napi_callback_info info);
 void TearDown(void);
 
 #endif // API_TEST_H
