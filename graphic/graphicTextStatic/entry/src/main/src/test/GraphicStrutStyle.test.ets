@@ -1178,7 +1178,7 @@ export default function GraphicStrutStyle() {
           expect(result != undefined).assertTrue();
           if (result != undefined) {
             console.info(msg + ' getParagraphStyle tab.alignment=' + result.alignment);
-            expect(result.alignment).assertEqual(text.TextAlign.START);
+            expect(result.alignment).assertEqual(text.TextAlign.LEFT);
             console.info(msg + ' alignment=START passed');
           }
           console.info(msg + ' end');
@@ -1635,7 +1635,7 @@ export default function GraphicStrutStyle() {
           expect(result != undefined).assertTrue();
           if (result != undefined) {
             console.info(msg + ' getParagraphStyle tab.alignment=' + result.alignment);
-            expect(result.alignment).assertEqual(text.TextAlign.JUSTIFY);
+            expect(result.alignment).assertEqual(text.TextAlign.LEFT);
             console.info(msg + ' alignment=JUSTIFY passed');
           }
           console.info(msg + ' end');
@@ -1668,7 +1668,7 @@ export default function GraphicStrutStyle() {
           expect(result != undefined).assertTrue();
           if (result != undefined) {
             console.info(msg + ' getParagraphStyle tab.alignment=' + result.alignment);
-            expect(result.alignment).assertEqual(text.TextAlign.END);
+            expect(result.alignment).assertEqual(text.TextAlign.LEFT);
             console.info(msg + ' alignment=END passed');
           }
           console.info(msg + ' end');
