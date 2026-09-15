@@ -1741,3 +1741,809 @@ export default function ArrayCompleteTest() {
     it('testArrayIncludes0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testArrayIncludes0100';
       console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        console.log(`${caseName} array ${array.length}`);
+        let findValue: boolean = array.includes(5);
+        console.log(`${caseName} includes ${findValue}`);
+        expect(true).assertEqual(findValue);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayIncludes0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0067
+     * @tc.desc   Determines whether the Array contains the specified element and returns a Boolean value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayIncludes0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayIncludes0200';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>();
+        console.log(`${caseName} array ${array.length}`);
+        let findValue: boolean = array.includes(5);
+        console.log(`${caseName} includes ${findValue}`);
+        expect(false).assertEqual(findValue);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayIncludes0300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0068
+     * @tc.desc   Determines whether the Array contains the specified element and returns a Boolean value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayIncludes0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayIncludes0300';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        console.log(`${caseName} array ${array.length}`);
+        let findValue: boolean = array.includes(11);
+        console.log(`${caseName} includes ${findValue}`);
+        expect(false).assertEqual(findValue);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayIncludes0400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0069
+     * @tc.desc   Determines whether the Array contains the specified element and returns a Boolean value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayIncludes0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayIncludes0400';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        console.log(`${caseName} array ${array.length}`);
+        let findValue: boolean = array.includes(5, 6);
+        console.log(`${caseName} includes ${findValue}`);
+        expect(false).assertEqual(findValue);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayIncludes0500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0070
+     * @tc.desc   Determines whether the Array contains the specified element and returns a Boolean value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayIncludes0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayIncludes0500';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        console.log(`${caseName} array ${array.length}`);
+        let findValue: boolean = array.includes(5, -1);
+        console.log(`${caseName} includes ${findValue}`);
+        expect(false).assertEqual(findValue);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayIncludes0600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0071
+     * @tc.desc   Determines whether the Array contains the specified element and returns a Boolean value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayIncludes0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayIncludes0600';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        console.log(`${caseName} array ${array.length}`);
+        let findValue: boolean = array.includes(5, 11);
+        console.log(`${caseName} includes ${findValue}`);
+        expect(false).assertEqual(findValue);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayIncludes0700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0072
+     * @tc.desc   Determines whether the Array contains the specified element and returns a Boolean value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayIncludes0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayIncludes0700';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        console.log(`${caseName} array ${array.length}`);
+        let findValue: boolean = array.includes(5, 2.5);
+        console.log(`${caseName} includes ${findValue}`);
+        expect(true).assertEqual(findValue);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayIncludes0800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0073
+     * @tc.desc   Determines whether the Array contains the specified element and returns a Boolean value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayIncludes0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayIncludes0800';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        console.log(`${caseName} array ${array.length}`);
+        let findValue: boolean = array.includes(5, undefined);
+        console.log(`${caseName} includes ${findValue}`);
+        expect(true).assertEqual(findValue);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFindIndex0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0074
+     * @tc.desc   Returns the index of the first element in Array that satisfies the specified test function, or-1 if none of the elements are satisfied.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFindIndex0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFindIndex0100';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        console.log(`${caseName} array ${array.length}`);
+        let findValue: number | undefined = array.findIndex((value: number) => value > 5);
+        console.log(`${caseName} findIndex ${findValue}`);
+        expect(5).assertEqual(findValue);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFindIndex0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0075
+     * @tc.desc   Returns the index of the first element in Array that satisfies the specified test function, or-1 if none of the elements are satisfied.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFindIndex0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFindIndex0200';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>();
+        console.log(`${caseName} array ${array.length}`);
+        let findValue: number | undefined = array.findIndex((value: number) => value > 5);
+        console.log(`${caseName} findIndex ${findValue}`);
+        expect(-1).assertEqual(findValue);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFindIndex0300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0076
+     * @tc.desc   Returns the index of the first element in Array that satisfies the specified test function, or-1 if none of the elements are satisfied.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFindIndex0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFindIndex0300';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        console.log(`${caseName} array ${array.length}`);
+        let findValue: number | undefined = array.findIndex((value: number) => value === 10);
+        console.log(`${caseName} findIndex ${findValue}`);
+        expect(-1).assertEqual(findValue);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFill0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0077
+     * @tc.desc   Fills all elements in the specified range of Array with the specified values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFill0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFill0100';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>();
+        console.log(`${caseName} array ${array.length}`);
+        let fillArray: collections.Array<number> = array.fill(0);
+        console.log(`${caseName} fill ${fillArray.length}`);
+        console.log(`${caseName} array fill ${array.length}`);
+        expect(0).assertEqual(fillArray.length);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFill0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0078
+     * @tc.desc   Fills all elements in the specified range of Array with the specified values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFill0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFill0200';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1);
+        console.log(`${caseName} array ${array.length}`);
+        let fillArray: collections.Array<number> = array.fill(0);
+        console.log(`${caseName} fill ${fillArray.length} ${fillArray}`);
+        console.log(`${caseName} array fill ${array.length}`);
+        expect(0).assertEqual(fillArray[0]);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFill0300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0079
+     * @tc.desc   Fills all elements in the specified range of Array with the specified values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFill0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFill0300';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        let fillArray: collections.Array<number> = array.fill(0, 1, 2);
+        console.log(`${caseName} fill ${fillArray.length} ${fillArray}`);
+        console.log(`${caseName} array fill ${array.length}`);
+        expect(true).assertEqual(fillArray[0] === 1 && fillArray[1] === 0 && fillArray[2] === 3);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFill0400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0080
+     * @tc.desc   Fills all elements in the specified range of Array with the specified values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFill0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFill0400';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        let fillArray: collections.Array<number> = array.fill(0, -1, 2);
+        console.log(`${caseName} fill ${fillArray.length} ${fillArray}`);
+        console.log(`${caseName} array fill ${array.length}`);
+        expect(true).assertEqual(fillArray[0] === 1 && fillArray[1] === 2 && fillArray[2] === 3);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFill0500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0081
+     * @tc.desc   Fills all elements in the specified range of Array with the specified values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFill0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFill0500';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        let fillArray: collections.Array<number> = array.fill(0, 1, -1);
+        console.log(`${caseName} fill ${fillArray.length} ${fillArray}`);
+        console.log(`${caseName} array fill ${array.length}`);
+        expect(true).assertEqual(fillArray[0] === 1 && fillArray[1] === 0 && fillArray[2] === 3);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFill0600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0082
+     * @tc.desc   Fills all elements in the specified range of Array with the specified values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFill0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFill0600';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        let fillArray: collections.Array<number> = array.fill(0, 3, 2);
+        console.log(`${caseName} fill ${fillArray.length} ${fillArray}`);
+        console.log(`${caseName} array fill ${array.length}`);
+        expect(true).assertEqual(fillArray[0] === 1 && fillArray[1] === 2 && fillArray[2] === 3);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFill0700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0083
+     * @tc.desc   Fills all elements in the specified range of Array with the specified values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFill0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFill0700';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        let fillArray: collections.Array<number> = array.fill(0, 1, 3);
+        console.log(`${caseName} fill ${fillArray.length} ${fillArray}`);
+        console.log(`${caseName} array fill ${array.length}`);
+        expect(true).assertEqual(fillArray[0] === 1 && fillArray[1] === 0 && fillArray[2] === 0);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFill0800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0084
+     * @tc.desc   Fills all elements in the specified range of Array with the specified values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFill0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFill0800';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        let fillArray: collections.Array<number> = array.fill(0, undefined, 2);
+        console.log(`${caseName} fill ${fillArray.length} ${fillArray}`);
+        console.log(`${caseName} array fill ${array.length}`);
+        expect(true).assertEqual(fillArray[0] === 0 && fillArray[1] === 0 && fillArray[2] === 3);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFill0900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0085
+     * @tc.desc   Fills all elements in the specified range of Array with the specified values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFill0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFill0900';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        let fillArray: collections.Array<number> = array.fill(0, 1, undefined);
+        console.log(`${caseName} fill ${fillArray.length} ${fillArray}`);
+        console.log(`${caseName} array fill ${array.length}`);
+        expect(true).assertEqual(fillArray[0] === 1 && fillArray[1] === 0 && fillArray[2] === 0);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayFill1000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0086
+     * @tc.desc   Fills all elements in the specified range of Array with the specified values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayFill1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayFill1000';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        let fillArray: collections.Array<number> = array.fill(3, 2, 1);
+        console.log(`${caseName} fill ${fillArray.length} ${fillArray}`);
+        console.log(`${caseName} array fill ${array.length}`);
+        expect(true).assertEqual(fillArray[0] === 1 && fillArray[1] === 2 && fillArray[2] === 3);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayShrinkTo0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0087
+     * @tc.desc   Shrinks the Array to the specified length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayShrinkTo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayShrinkTo0100';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        console.log(`${caseName} array ${array.length}`);
+        array.shrinkTo(1);
+        console.log(`${caseName} shrinkTo ${array.length} `);
+        expect(1).assertEqual(array.length);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayShrinkTo0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0088
+     * @tc.desc   Shrinks the Array to the specified length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayShrinkTo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayShrinkTo0200';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>();
+        console.log(`${caseName} array ${array.length}`);
+        array.shrinkTo(1);
+        console.log(`${caseName} shrinkTo ${array.length} `);
+        expect(0).assertEqual(array.length);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayShrinkTo0300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0089
+     * @tc.desc   Shrinks the Array to the specified length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayShrinkTo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayShrinkTo0300';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        array.shrinkTo(10);
+        console.log(`${caseName} shrinkTo ${array.length} `);
+        expect(3).assertEqual(array.length);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayShrinkTo0400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0090
+     * @tc.desc   Shrinks the Array to the specified length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayShrinkTo0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayShrinkTo0400';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        array.shrinkTo(-1);
+        console.log(`${caseName} shrinkTo ${array.length} `);
+        expect(false);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect(401).assertEqual(error.code);
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayShrinkTo0500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0091
+     * @tc.desc   Shrinks the Array to the specified length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayShrinkTo0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayShrinkTo0500';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        array.shrinkTo(1.2);
+        console.log(`${caseName} shrinkTo ${array.length} `);
+        expect(false);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect(401).assertEqual(error.code);
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayExtendTo0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0092
+     * @tc.desc   Expands the Array to the specified length, and the extended part is filled with the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayExtendTo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayExtendTo0100';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        array.extendTo(5, 10);
+        console.log(`${caseName} extendTo ${array.length} `);
+        expect(5).assertEqual(array.length);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayExtendTo0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0093
+     * @tc.desc   Expands the Array to the specified length, and the extended part is filled with the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayExtendTo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayExtendTo0200';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        array.extendTo(2, 10);
+        console.log(`${caseName} extendTo ${array.length} `);
+        expect(3).assertEqual(array.length);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayExtendTo0300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0094
+     * @tc.desc   Expands the Array to the specified length, and the extended part is filled with the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayExtendTo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayExtendTo0300';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        array.extendTo(-1, 10);
+        console.log(`${caseName} extendTo ${array.length} `);
+        expect(false);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect(401).assertEqual(error.code);
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayExtendTo0400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0095
+     * @tc.desc   Expands the Array to the specified length, and the extended part is filled with the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayExtendTo0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayExtendTo0400';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        console.log(`${caseName} array ${array.length}`);
+        array.extendTo(1.2, 10);
+        console.log(`${caseName} extendTo ${array.length} `);
+        expect().assertEqual(false);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect(401).assertEqual(error.code);
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testArrayExtendTo0500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_COMPLETE_0096
+     * @tc.desc   Expands the Array to the specified length, and the extended part is filled with the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayExtendTo0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testArrayExtendTo0500';
+      console.log(`${caseName} test start `);
+      try {
+        let array: collections.Array<number> = new collections.Array<number>();
+        console.log(`${caseName} array ${array.length}`);
+        array.extendTo(3, 10);
+        console.log(`${caseName} extendTo ${array.length} `);
+        expect(3).assertEqual(array.length);
+        done();
+      } catch (error) {
+        console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
+        expect().assertFail();
+        done();
+      }
+      console.log(`${caseName} test end `);
+    });
+  });
+}
