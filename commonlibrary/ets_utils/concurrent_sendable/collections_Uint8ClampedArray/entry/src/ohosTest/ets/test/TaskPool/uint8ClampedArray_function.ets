@@ -1325,3 +1325,139 @@ export function testUint8ClampedArrayTaskPool0172(): boolean {
   return array.includes(3, -1);
 }
 
+@Concurrent
+export function testUint8ClampedArrayTaskPool0173(): boolean {
+  let array = collections.Uint8ClampedArray.from([1, 2, 3]);
+  return array.includes(10);
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0174(): boolean {
+  let array = collections.Uint8ClampedArray.from([1, 2, 3]);
+  return array.includes(1);
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0175(): boolean {
+  let array = collections.Uint8ClampedArray.from([1, 2, 3]);
+  return array.includes(1, 5);
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0176(): string {
+  let array = collections.Uint8ClampedArray.from([]);
+  let iterator: IterableIterator<[number, number]> = array.entries();
+  let rst = typeof iterator.next().value;
+  return rst;
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0177(): string {
+  let array = collections.Uint8ClampedArray.from([1, 2, 3]);
+  let iterator: IterableIterator<[number, number]> = array.entries();
+  return iterator.next().value.toString();
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0178(): number {
+  let array = collections.Uint8ClampedArray.from([]);
+  let iterator: IterableIterator<number> = array.keys();
+  let tempNum: number = 0;
+  for (const key of iterator) {
+    tempNum++
+  }
+  return tempNum;
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0179(): string {
+  let array = collections.Uint8ClampedArray.from([-1, 2, 3]);
+  let iterator: IterableIterator<number> = array.keys();
+  let rst = [iterator.next().value, iterator.next().value, iterator.next().value].toString();
+  return rst;
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0180(): boolean {
+  let array = collections.Uint8ClampedArray.from([1, 2, 3]);
+  let iterator: IterableIterator<number> = array.keys();
+  let tempNum: number = 0;
+  for (const key of iterator) {
+    console.info("iterator key:" + key);
+    if (key !== tempNum) {
+      return false;
+    }
+    tempNum = tempNum + 1;
+  }
+  return true;
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0181(): boolean {
+  let array = collections.Uint8ClampedArray.from([]);
+  let iterator: IterableIterator<number> = array.values();
+  console.info("iterator values:" + iterator);
+  return iterator.next().done === true;
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0182(): boolean {
+  let array = collections.Uint8ClampedArray.from([1, 2, 3]);
+  let iterator: IterableIterator<number> = array.values();
+  console.info("iterator values:" + iterator);
+  return iterator.next().value === 1 && iterator.next().value === 2 && iterator.next().value === 3;
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0183(): boolean {
+  let array = collections.Uint8ClampedArray.from([1, 2, 3]);
+  let iterator: IterableIterator<number> = array.values();
+  console.info("iterator values:" + iterator);
+  let tempNum: number = 1;
+  for (const value of iterator) {
+    console.info("iterator value:" + value);
+    if (value !== tempNum) {
+      return false;
+    }
+    tempNum = tempNum + 1;
+  }
+  return true;
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0184(): boolean {
+  let array = collections.Uint8ClampedArray.from([1, 2, 3]);
+  array.set([4, 5, 6]);
+  let iterator: IterableIterator<number> = array.values();
+  console.info("iterator values:" + iterator);
+  let tempNum: number = 4;
+  for (const value of iterator) {
+    console.info("iterator value:" + value);
+    if (value !== tempNum) {
+      return false;
+    }
+    tempNum = tempNum + 1;
+  }
+  return true;
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0185(): boolean {
+  let array = collections.Uint8ClampedArray.from([1, 2, 3]);
+  console.info("array is:" + array);
+  return array[-1] === undefined;
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0186(): boolean {
+  let array = collections.Uint8ClampedArray.from([1, 2, 3]);
+  console.info("array is:" + array);
+  return array[5] === undefined;
+}
+
+@Concurrent
+export function testUint8ClampedArrayTaskPool0187(): boolean {
+  let array = collections.Uint8ClampedArray.from([1, 2, 3]);
+  console.info("array is:" + array);
+  return array[1] === 2;
+}
