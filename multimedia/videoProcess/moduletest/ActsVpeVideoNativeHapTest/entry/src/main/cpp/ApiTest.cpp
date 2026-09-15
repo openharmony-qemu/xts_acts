@@ -1954,7 +1954,7 @@ napi_value VpeVideoApiTest08400(napi_env env, napi_callback_info info)
 napi_value VpeVideoApiTest08600(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
-    OH_VideoProcessing_Callback* callback = nullptr;
+    VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(&callback);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         return CreateIntInt32Result(env, -1);
@@ -1982,7 +1982,7 @@ napi_value VpeVideoApiTest08600(napi_env env, napi_callback_info info)
 napi_value VpeVideoApiTest08700(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
-    OH_VideoProcessing_Callback* callback = nullptr;
+    VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(&callback);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         return CreateIntInt32Result(env, -1);
