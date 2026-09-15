@@ -57,7 +57,7 @@ export default function gridNestedScrollJsunit() {
       await Utils.sleep(500)
       let columnRect = await driver.findComponent(ON.id('gridNestedScroll_ColumnSize'));
       let rect = await columnRect.getBounds();
-      console.info(`ArkUI_Stage_gridNestedScroll01 webRect is:` + JSON.stringify(rect));
+      console.info(`ArkUI_Stage_gridNestedScroll01 get webRect is:` + JSON.stringify(rect));
       let top = rect.top
       let bottom = rect.bottom
       await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round(bottom - (bottom - top)/10),
