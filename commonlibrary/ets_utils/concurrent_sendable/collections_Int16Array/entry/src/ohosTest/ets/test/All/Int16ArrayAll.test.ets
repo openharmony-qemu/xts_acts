@@ -2766,3 +2766,1207 @@ export default function Int16ArrayAllTest() {
         }
 
         return result;
+      };
+
+      const original = new collections.Int16Array([100, 200, 32767, -32768]);
+      const key = 500;
+
+      const encrypted = additiveCipher(original, key);
+      const decrypted = additiveCipher(encrypted, -key);
+
+      expect(encrypted.toString()).assertEqual('600,700,-32269,-32268');
+      expect(decrypted.toString()).assertEqual(original.toString());
+    })
+    /**
+     * @tc.name   TypeArrayInt16Array0126
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0106
+     * @tc.desc   Verify Int16Array with data segmentation based on thresholds
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const segmentData = (data: collections.Int16Array, thresholds: number[]): number[][] => {
+        const segments = thresholds.map((): number[] => []);
+        segments.push([]);
+
+        for (const val of data) {
+          let segmentIndex = thresholds.length;
+          for (let i = 0; i < thresholds.length; i++) {
+            if (val <= thresholds[i]) {
+              segmentIndex = i;
+              break;
+            }
+          }
+          segments[segmentIndex].push(val);
+        }
+
+        return segments;
+      };
+
+      const data = new collections.Int16Array([10, 25, 5, 35, 45, 15, 50, 5]);
+      const thresholds = [15, 30, 45];
+      const segments = segmentData(data, thresholds);
+
+      expect(segments[0].toString()).assertEqual([10,5,15,5].toString());
+      expect(segments[1].toString()).assertEqual([25].toString());
+      expect(segments[2].toString()).assertEqual([35, 45].toString());
+      expect(segments[3].toString()).assertEqual([50].toString());
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0127
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0107
+     * @tc.desc   Verify Int16Array with bitwise sign extension
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const signExtend = (value: number, bits: number): number => {
+        if (bits >= 16) {
+          return value & 0xFFFF;
+        }
+
+        const mask = 1 << (bits - 1);
+        value = value & ((1 << bits) - 1);
+
+        return (value & mask) ? value | (0xFFFF ^ ((1 << bits) - 1)) : value;
+      };
+
+
+      const arr = new collections.Int16Array([0x7F, 0x80, 0x1A, 0xFF]);
+      const extended = arr.map(val => signExtend(val, 8));
+
+      expect(extended[0]).assertEqual(0x007F);
+      expect(extended[1]).assertEqual(-0x80);
+      expect(extended[2]).assertEqual(0x001A);
+      expect(extended[3]).assertEqual(-0x1);
+      expect(extended.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0128
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0108
+     * @tc.desc   Verify Int16Array with data transformation using FFT simulation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const simulateFFTMagnitude = (data: collections.Int16Array): collections.Int16Array => {
+        const result = new collections.Int16Array(Math.floor(data.length / 2) + 1);
+
+        for (let i = 0; i < result.length; i++) {
+          let sum = 0;
+          for (let j = 0; j < data.length; j++) {
+            sum += Math.abs(data[j] * Math.cos(i * j * Math.PI / data.length));
+          }
+          result[i] = Math.min(32767, Math.round(sum / data.length));
+        }
+
+        return result;
+      };
+
+
+      const signal = new collections.Int16Array(100);
+      for (let i = 0; i < signal.length; i++) {
+        signal[i] = Math.round(Math.sin(2 * Math.PI * 3 * i / 100) * 1000);
+      }
+
+      const magnitude = simulateFFTMagnitude(signal);
+
+
+      expect(magnitude[2]).assertEqual(397);
+      expect(magnitude[3]).assertEqual(424);
+      expect(magnitude[4]).assertEqual(404);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0129
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0109
+     * @tc.desc   Verify Int16Array with data validation using check digits
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const calculateCheckDigit = (value: number): number => {
+        let sum = 0;
+        let num = Math.abs(value);
+
+        while (num > 0) {
+          sum += num % 10;
+          num = Math.floor(num / 10);
+        }
+
+        return sum % 10;
+      };
+
+
+      const validateWithCheckDigit = (value: number, checkDigit: number): boolean => {
+        return calculateCheckDigit(value) === checkDigit;
+      };
+
+      const values = new collections.Int16Array([1234, 5678, 91011, 1213]);
+      const checkDigits = values.map(calculateCheckDigit);
+
+      expect(checkDigits.toString()).assertEqual([0,6,3,7].toString());
+
+      expect(validateWithCheckDigit(1234, 2)).assertEqual(false);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0130
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0110
+     * @tc.desc   Verify Int16Array with bitwise byte swapping
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const swapBytes = (value: number): number => {
+        return ((value & 0xFF) << 8) | ((value >> 8) & 0xFF);
+      };
+
+      const arr = new collections.Int16Array([0x1234, 0xABCD, 0x00FF, 0xFF00]);
+      const swapped = arr.map(swapBytes);
+
+      expect(swapped[0]).assertEqual(0x3412);
+      expect(swapped[1]).assertEqual(-0x3255);
+      expect(swapped[2]).assertEqual(-0x100);
+      expect(swapped[3]).assertEqual(0x00FF);
+
+
+      const swappedBack = swapped.map(swapBytes);
+      expect(swappedBack.toString()).assertEqual(arr.toString());
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0131
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0111
+     * @tc.desc   Verify Int16Array with data interpolation using nearest neighbor downsampling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0131', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const downsample = (data: collections.Int16Array, factor: number): collections.Int16Array => {
+        const resultLength = Math.floor(data.length / factor);
+        const result = new collections.Int16Array(resultLength);
+
+        for (let i = 0; i < resultLength; i++) {
+          const index = Math.round(i * factor);
+          result[i] = data[Math.min(index, data.length - 1)];
+        }
+
+        return result;
+      };
+
+      const original = new collections.Int16Array([10, 20, 30, 40, 50, 60, 70, 80, 90]);
+      const downsampled = downsample(original, 3);
+
+      expect(downsampled.length).assertEqual(3);
+      expect(downsampled.toString()).assertEqual('10,40,70');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0132
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0112
+     * @tc.desc   Verify Int16Array with data transformation using z-score normalization
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const zScoreNormalize = (data: collections.Int16Array): collections.Int16Array => {
+        const mean = data.reduce((sum, val) => sum + val, 0) / data.length;
+
+
+        const variance = data.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / data.length;
+        const stdDev = Math.sqrt(variance);
+
+
+        if (stdDev < 0.0001) {
+          return new collections.Int16Array(data.length).fill(0);
+        }
+
+
+        return new collections.Int16Array(data.map(val => {
+          const zScore = (val - mean) / stdDev;
+          return Math.round(zScore * 10000);
+        }));
+      };
+
+      const data = new collections.Int16Array([10, 20, 30, 40, 50]);
+      const normalized = zScoreNormalize(data);
+
+
+      const mean = normalized.reduce((sum, val) => sum + val, 0) / normalized.length;
+      expect(Math.abs(mean)).assertEqual(0);
+
+      expect(normalized[0]).assertEqual(-14142);
+      expect(normalized[1]).assertEqual(-7071);
+      expect(normalized[2]).assertEqual(0);
+      expect(normalized[3]).assertEqual(7071);
+      expect(normalized[4]).assertEqual(14142);
+      expect(normalized.length).assertEqual(5);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0133
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0113
+     * @tc.desc   Verify Int16Array with sliding window sum
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0133', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const slidingWindowSum = (data: collections.Int16Array, windowSize: number): collections.Int16Array => {
+        const result = new collections.Int16Array(data.length - windowSize + 1);
+
+        let sum = 0;
+        for (let i = 0; i < windowSize; i++) {
+          sum += data[i];
+        }
+        result[0] = sum;
+
+        for (let i = 1; i < result.length; i++) {
+          sum = sum - data[i - 1] + data[i + windowSize - 1];
+          result[i] = sum;
+        }
+
+        return result;
+      };
+
+      const data = new collections.Int16Array([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+      const windowSums = slidingWindowSum(data, 3);
+
+      expect(windowSums.toString()).assertEqual('6,9,12,15,18,21,24');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0134
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0114
+     * @tc.desc   Verify Int16Array with bitwise field insertion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0134', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const insertBitField = (original: number, value: number, start: number, length: number): number => {
+        const mask = ((1 << length) - 1) << start;
+        const cleared = original & ~mask;
+        const shiftedValue = (value & ((1 << length) - 1)) << start;
+        return cleared | shiftedValue;
+      };
+
+      let value = 0;
+
+      value = insertBitField(value, 0b101, 0, 3);
+      value = insertBitField(value, 0b1100, 3, 4);
+      value = insertBitField(value, 0b10101, 7, 5);
+
+      const arr = new collections.Int16Array([value]);
+
+      expect(arr[0]).assertEqual(0b101011100101);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0136
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0115
+     * @tc.desc   Verify Int16Array with data filtering using moving median
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const movingMedian = (data: collections.Int16Array, windowSize: number): collections.Int16Array => {
+        const result = new collections.Int16Array(data.length - windowSize + 1);
+        const halfWindow = Math.floor(windowSize / 2);
+
+        for (let i = 0; i < result.length; i++) {
+
+          const window = collections.Int16Array.from(data.subarray(i, i + windowSize)).sort((a, b) => a - b);
+
+          result[i] = window[halfWindow];
+        }
+
+        return result;
+      };
+
+
+      const noisyData = new collections.Int16Array([10, 12, 8, 15, 9, 11, 13, 7, 14]);
+      const filteredData = movingMedian(noisyData, 3);
+
+      expect(filteredData.toString()).assertEqual('10,12,9,11,11,11,13');
+
+      expect(filteredData.every(val => val >= 9 && val <= 13)).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0137
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0116
+     * @tc.desc   Verify Int16Array with bitwise sign bit manipulation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const flipSign = (value: number): number => {
+        return value ^ 0x8000;
+      };
+
+      const arr = new collections.Int16Array([100, -200, 32767, -32768, 0]);
+      const flipped = arr.map(flipSign);
+
+      expect(flipped[0]).assertEqual(-32668);
+      expect(flipped[1]).assertEqual(32568);
+      expect(flipped[2]).assertEqual(-1);
+      expect(flipped[3]).assertEqual(0);
+      expect(flipped[4]).assertEqual(-32768);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0139
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0117
+     * @tc.desc   Verify Int16Array with data validation using range checks
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const validateRanges = (data: collections.Int16Array, ranges: GeneratedObjectLiteralInterface_2[]): boolean[] => {
+        return Array.from(data).map(val =>
+        ranges.some(range => val >= range.min && val <= range.max)
+        );
+      };
+
+
+      const validRanges: GeneratedObjectLiteralInterface_2[] = [
+        ({ min: 0, max: 100 }),
+        { min: 200, max: 300 },
+        { min: -50, max: -10 }
+      ];
+
+      const data = new collections.Int16Array([50, 150, -30, 250, -60, 350, 0]);
+      const isValid = validateRanges(data, validRanges);
+
+      expect(isValid.toString()).assertEqual([true, false, true, true, false, false, true].toString());
+
+      const validCount = isValid.filter(Boolean).length;
+      expect(validCount).assertEqual(4);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0140
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0118
+     * @tc.desc   Verify Int16Array with bitwise bit masking for packed data
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const packValues = (vals: number[], bitLengths: number[]): number => {
+        let packed = 0;
+        let shift = 0;
+
+        for (let i = 0; i < vals.length; i++) {
+          const bits = bitLengths[i];
+          const mask = (1 << bits) - 1;
+          packed |= (vals[i] & mask) << shift;
+          shift += bits;
+          if (shift > 16) {
+            break;
+          }
+        }
+
+        return packed;
+      };
+
+
+      const unpackValues = (packed: number, bitLengths: number[]): number[] => {
+        const vals: number[] = [];
+        let shift = 0;
+
+        for (const bits of bitLengths) {
+          const mask = (1 << bits) - 1;
+          vals.push((packed >> shift) & mask);
+          shift += bits;
+          if (shift > 16) {
+            break;
+          }
+        }
+
+        return vals;
+      };
+
+
+      const values = [0b1010, 0b110011, 0b001100];
+      const bitLengths = [4, 6, 6];
+      const packed = packValues(values, bitLengths);
+
+      const arr = new collections.Int16Array([packed]);
+      const unpacked = unpackValues(arr[0], bitLengths);
+
+      expect(arr[0]).assertEqual(0b0011001100111010);
+      expect(unpacked.toString()).assertEqual(values.toString());
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0141
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0119
+     * @tc.desc   Verify Int16Array with data transformation using logarithmic scaling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0141', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const logScale = (data: collections.Int16Array, base: number = Math.E): collections.Int16Array => {
+        return new collections.Int16Array(data.map(val => {
+          if (val <= 0) {
+            return 0;
+          }
+          const logVal = Math.log(val) / Math.log(base);
+          return Math.round(logVal * 1000);
+        }));
+      };
+
+      const data = new collections.Int16Array([1, 2, 4, 8, 16, 32, 64]);
+      const log2Scaled = logScale(data, 2);
+      const log10Scaled = logScale(data, 10);
+
+      expect(log2Scaled.toString()).assertEqual('0,1000,2000,3000,4000,5000,6000');
+      expect(log10Scaled[0]).assertEqual(0);
+      expect(log10Scaled[1]).assertEqual(301);
+      expect(log10Scaled[2]).assertEqual(602);
+      expect(log10Scaled[3]).assertEqual(903);
+      expect(log10Scaled[4]).assertEqual(1204);
+      expect(log10Scaled[5]).assertEqual(1505);
+      expect(log10Scaled[6]).assertEqual(1806);
+      expect(log10Scaled.length).assertEqual(7);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0142
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0120
+     * @tc.desc   Verify Int16Array with sliding window standard deviation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const slidingWindowStdDev = (data: collections.Int16Array, windowSize: number): collections.Int16Array => {
+        const result = new collections.Int16Array(data.length - windowSize + 1);
+
+        for (let i = 0; i < result.length; i++) {
+          const window = data.subarray(i, i + windowSize);
+          const mean = window.reduce((sum, val) => sum + val, 0) / windowSize;
+          const variance = window.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / windowSize;
+          const stdDev = Math.sqrt(variance);
+          result[i] = Math.round(stdDev);
+        }
+
+        return result;
+      };
+
+
+      const data = new collections.Int16Array([10, 12, 11, 20, 5, 25, 15, 30]);
+      const stdDevs = slidingWindowStdDev(data, 3);
+
+      expect(stdDevs.toString()).assertEqual('1,4,6,8,8,6');
+      expect(stdDevs[0]).assertEqual(1);
+      expect(stdDevs[1]).assertEqual(4);
+      expect(stdDevs[2]).assertEqual(6);
+      expect(stdDevs[3]).assertEqual(8);
+      expect(stdDevs[4]).assertEqual(8);
+      expect(stdDevs[5]).assertEqual(6);
+      expect(stdDevs.length).assertEqual(6);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0143
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0121
+     * @tc.desc   Verify Int16Array with bitwise bit set/clear operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const setBit = (value: number, bit: number): number => {
+        return value | (1 << bit);
+      };
+      const clearBit = (value: number, bit: number): number => {
+        return value & ~(1 << bit);
+      };
+
+      const isBitSet = (value: number, bit: number): boolean => {
+        return (value & (1 << bit)) !== 0;
+      };
+
+      let value = 0;
+      value = setBit(value, 3);
+      value = setBit(value, 7);
+      value = clearBit(value, 3);
+
+      const arr = new collections.Int16Array([value]);
+
+      expect(arr[0]).assertEqual(0b10000000);
+      expect(isBitSet(arr[0], 7)).assertEqual(true);
+      expect(isBitSet(arr[0], 3)).assertEqual(false);
+      expect(isBitSet(arr[0], 0)).assertEqual(false);
+    })
+    /**
+     * @tc.name   TypeArrayInt16Array0144
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0122
+     * @tc.desc   Verify Int16Array with data encryption using simple substitution
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const createSubstitutionMap = (shift: number): Map<number, number> => {
+        const map = new Map<number, number>();
+        for (let i = -32768; i <= 32767; i++) {
+          let value = i + shift;
+
+          if (value > 32767) {
+            value = -32768 + (value - 32768);
+          }
+          if (value < -32768) {
+            value = 32767 - (-32768 - value);
+          }
+          map.set(i, value);
+        }
+        return map;
+      };
+
+
+      const substitute = (data: collections.Int16Array, map: Map<number, number>): collections.Int16Array => {
+        return new collections.Int16Array(data.map(val => map.get(val) || val));
+      };
+
+      const shift = 5;
+      const encryptMap = createSubstitutionMap(shift);
+      const decryptMap = createSubstitutionMap(-shift);
+
+      const original = new collections.Int16Array([10, 20, 32767, -32768, 0]);
+      const encrypted = substitute(original, encryptMap);
+      const decrypted = substitute(encrypted, decryptMap);
+
+      expect(encrypted.toString()).assertEqual('15,25,-32764,-32763,5');
+      expect(decrypted.toString()).assertEqual('10,20,32766,-32768,5');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0145
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0123
+     * @tc.desc   Verify Int16Array with data classification using thresholds
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const classify = (data: collections.Int16Array, thresholds: number[], labels: string[]): string[] => {
+        if (thresholds.length + 1 !== labels.length) {
+          throw new Error('Number of labels must be one more than number of thresholds');
+        }
+
+        return Array.from(data).map(val => {
+          for (let i = 0; i < thresholds.length; i++) {
+            if (val <= thresholds[i]) {
+              return labels[i];
+            }
+          }
+          return labels[labels.length - 1];
+        });
+      };
+
+      const data = new collections.Int16Array([5, 15, 25, 35, 45, 55]);
+      const thresholds = [10, 30, 50];
+      const labels = ['Low', 'Medium', 'High', 'Very High'];
+
+      const classifications = classify(data, thresholds, labels);
+
+      expect(classifications.toString()).assertEqual([
+        'Low',
+        'Medium',
+        'Medium',
+        'High',
+        'High',
+        'Very High'
+      ].toString());
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0146
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0124
+     * @tc.desc   Verify Int16Array with bitwise bitwise operations between arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const bitwiseOperation = (
+        a: collections.Int16Array,
+        b: collections.Int16Array,
+        operation: (x: number, y: number) => number
+      ): collections.Int16Array => {
+        const length = Math.min(a.length, b.length);
+        const result = new collections.Int16Array(length);
+
+        for (let i = 0; i < length; i++) {
+          result[i] = operation(a[i], b[i]);
+        }
+
+        return result;
+      };
+
+      const arr1 = new collections.Int16Array([0b1010, 0b1100, 0b0011]);
+      const arr2 = new collections.Int16Array([0b1001, 0b0110, 0b1100]);
+
+      const andResult = bitwiseOperation(arr1, arr2, (x, y) => x & y);
+      const orResult = bitwiseOperation(arr1, arr2, (x, y) => x | y);
+      const xorResult = bitwiseOperation(arr1, arr2, (x, y) => x ^ y);
+
+      expect(andResult.toString())
+        .assertEqual('8,4,0');
+      expect(andResult.toString()).assertEqual('8,4,0');
+      expect(orResult.toString()).assertEqual('11,14,15');
+      expect(xorResult.toString()).assertEqual('3,10,15');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0147
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0125
+     * @tc.desc   Verify Int16Array with data transformation using exponential scaling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const exponentialScale = (data: collections.Int16Array, _base: number = Math.E): collections.Int16Array => {
+        return new collections.Int16Array(data.map(val => {
+          if (val < 0) {
+            const expVal = Math.exp(-val / 100);
+            return Math.round(-1000 / expVal);
+          }
+          const expVal = Math.exp(val / 100);
+          return Math.min(32767, Math.round(expVal * 10));
+        }));
+      };
+
+      const data = new collections.Int16Array([0, 50, 100, -50, -100]);
+      const scaled = exponentialScale(data, Math.E);
+
+      expect(scaled[0]).assertEqual(10);
+      expect(scaled[1]).assertEqual(16);
+      expect(scaled[2]).assertEqual(27);
+      expect(scaled[3]).assertEqual(-607);
+      expect(scaled[4]).assertEqual(-368);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0148
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0126
+     * @tc.desc   Verify Int16Array with sliding window mode calculation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const slidingWindowMode = (data: collections.Int16Array, windowSize: number): collections.Int16Array => {
+        const result = new collections.Int16Array(data.length - windowSize + 1);
+
+        for (let i = 0; i < result.length; i++) {
+          const window = data.subarray(i, i + windowSize);
+          const counts = new Map<number, number>();
+
+
+          for (const val of window) {
+            counts.set(val, (counts.get(val) || 0) + 1);
+          }
+
+
+          let maxCount = 0;
+          let mode = window[0];
+          for (const item of counts) {
+            if (item[1] > maxCount) {
+              maxCount = item[1];
+              mode = item[0];
+            }
+          }
+
+          result[i] = mode;
+        }
+
+        return result;
+      };
+
+
+      const data = new collections.Int16Array([5, 5, 3, 5, 7, 7, 7, 3, 3, 3]);
+      const modes = slidingWindowMode(data, 3);
+
+      expect(modes.toString()).assertEqual('5,5,3,7,7,7,3,3');
+      expect(modes[0]).assertEqual(5);
+      expect(modes[1]).assertEqual(5);
+      expect(modes[2]).assertEqual(3);
+      expect(modes[3]).assertEqual(7);
+      expect(modes[4]).assertEqual(7);
+      expect(modes[5]).assertEqual(7);
+      expect(modes[6]).assertEqual(3);
+      expect(modes[7]).assertEqual(3);
+      expect(modes.length).assertEqual(8);
+
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0149
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0127
+     * @tc.desc   Verify Int16Array with bitwise bit reversal for signed values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const reverseSignedBits = (value: number): number => {
+        let reversed = 0;
+        let val = value;
+
+        for (let i = 0; i < 16; i++) {
+          reversed = (reversed << 1) | (val & 1);
+          val >>= 1;
+        }
+
+        return reversed;
+      };
+
+      const arr = new collections.Int16Array([1, -1, 3, -4]);
+      const reversed = arr.map(reverseSignedBits);
+
+      expect(reversed[0]).assertEqual(-32768);
+      expect(reversed[1]).assertEqual(-1);
+      expect(reversed[2]).assertEqual(-16384);
+      expect(reversed[3]).assertEqual(16383);
+      expect(reversed.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0150
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0128
+     * @tc.desc   Verify Int16Array with data encryption using transposition cipher
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const transpose = (data: collections.Int16Array, permutation: number[]): collections.Int16Array => {
+        const length = Math.min(data.length, permutation.length);
+        const result = new collections.Int16Array(data.length);
+
+
+        for (let i = 0; i < length; i++) {
+          result[i] = data[permutation[i]];
+        }
+
+
+        for (let i = length; i < data.length; i++) {
+          result[i] = data[i];
+        }
+
+        return result;
+      };
+
+
+      const inversePermutation = (permutation: number[]): number[] => {
+        const inverse = new Array<number>(permutation.length);
+        for (let i = 0; i < permutation.length; i++) {
+          inverse[permutation[i]] = i;
+        }
+        return inverse;
+      };
+
+      const original = new collections.Int16Array([10, 20, 30, 40, 50, 60]);
+      const permutation = [2, 0, 3, 1];
+      const inverse = inversePermutation(permutation);
+
+      const encrypted = transpose(original, permutation);
+      const decrypted = transpose(encrypted, inverse);
+
+      expect(encrypted.toString()).assertEqual('30,10,40,20,50,60');
+      expect(decrypted.toString()).assertEqual(original.toString());
+    })
+    /**
+     * @tc.name   TypeArrayInt16Array0151
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0129
+     * @tc.desc   Verify Int16Array with data normalization using min-max scaling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const minMaxScale = (data: collections.Int16Array, newMin: number, newMax: number): collections.Int16Array => {
+        const min = Math.min(...data);
+        const max = Math.max(...data);
+        const range = max - min || 1;
+
+        return new collections.Int16Array(data.map(val => {
+          const scaled = ((val - min) / range) * (newMax - newMin) + newMin;
+          return Math.round(scaled);
+        }));
+      };
+
+      const data = new collections.Int16Array([10, 20, 30, 40, 50]);
+      const scaled = minMaxScale(data, 0, 100);
+
+      expect(scaled.toString()).assertEqual('0,25,50,75,100');
+
+      const negativeData = new collections.Int16Array([-5, -3, 0, 2, 4]);
+      const scaledNegative = minMaxScale(negativeData, -100, 100);
+
+      expect(scaledNegative.toString()).assertEqual('-100,-56,11,56,100');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0152
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0130
+     * @tc.desc   Verify Int16Array with bitwise mask generation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+
+      const generateMask = (bits: number): number => {
+        if (bits <= 0) {
+          return 0;
+        }
+        if (bits >= 16) {
+          return 0xFFFF;
+        }
+        return (0xFFFF << (16 - bits)) & 0xFFFF;
+      };
+
+      const applyMasks = (data: collections.Int16Array, maskSizes: number[]): collections.Int16Array => {
+        const result = new collections.Int16Array(Math.min(data.length, maskSizes.length));
+
+        for (let i = 0; i < result.length; i++) {
+          const mask = generateMask(maskSizes[i]);
+          result[i] = data[i] & mask;
+        }
+
+        return result;
+      };
+
+      const data = new collections.Int16Array([0b10101010, 0b10101010, 0b10101010, 0b10101010]);
+      const maskSizes = [4, 8, 12, 16];
+      const masked = applyMasks(data, maskSizes);
+
+      expect(masked[0]).assertEqual(0b0000);
+      expect(masked[1]).assertEqual(0b0000);
+      expect(masked[2]).assertEqual(0b10100000);
+      expect(masked[3]).assertEqual(0b10101010);
+      expect(masked.length).assertEqual(4);
+      expect(data.length).assertEqual(4);
+      expect(data[0]).assertEqual(0b10101010);
+      expect(data[1]).assertEqual(0b10101010);
+      expect(data[2]).assertEqual(0b10101010);
+      expect(data[3]).assertEqual(0b10101010);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0153
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0131
+     * @tc.desc   Verify Int16Array with data transformation using logarithmic compression
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const logCompress = (data: collections.Int16Array, base: number = 10): collections.Int16Array => {
+        return new collections.Int16Array(data.map(val => {
+          if (val <= 0) {
+            return 0;
+          }
+          return Math.round(Math.log(val) / Math.log(base) * 1000);
+        }));
+      };
+
+      const data = new collections.Int16Array([1, 10, 100, 1000, 10000, 32767]);
+      const compressed = logCompress(data);
+
+      expect(compressed[0]).assertEqual(0);
+      expect(compressed[1]).assertEqual(1000);
+      expect(compressed[2]).assertEqual(2000);
+      expect(compressed[3]).assertEqual(3000);
+      expect(compressed[4]).assertEqual(4000);
+      expect(compressed.length).assertEqual(6);
+      expect(data.length).assertEqual(6);
+      expect(data[0]).assertEqual(1);
+      expect(data[1]).assertEqual(10);
+      expect(data[2]).assertEqual(100);
+      expect(data[3]).assertEqual(1000);
+      expect(data[4]).assertEqual(10000);
+      expect(data[5]).assertEqual(32767);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0154
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0132
+     * @tc.desc   Verify Int16Array with sliding window percentile calculation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0154', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const slidingWindowPercentile = (
+        data: collections.Int16Array,
+        windowSize: number,
+        percentile: number
+      ): collections.Int16Array => {
+        const result = new collections.Int16Array(data.length - windowSize + 1);
+
+        for (let i = 0; i < result.length; i++) {
+          const window = collections.Int16Array.from(data.subarray(i, i + windowSize)).sort((a, b) => a - b);
+          const index = Math.min(window.length - 1, Math.round(window.length * percentile / 100));
+          result[i] = window[index];
+        }
+
+        return result;
+      };
+
+      const data = new collections.Int16Array([10, 20, 30, 40, 50, 60, 70, 80]);
+      const p25 = slidingWindowPercentile(data, 4, 25);
+      const p75 = slidingWindowPercentile(data, 4, 75);
+
+      expect(p25.toString()).assertEqual('20,30,40,50,60');
+      expect(p75.toString()).assertEqual('40,50,60,70,80');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0155
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0133
+     * @tc.desc   Verify Int16Array with bitwise bit stuffing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const bitStuff = (value: number): number => {
+        let stuffed = 0;
+        let consecutiveOnes = 0;
+        let val = value & 0xFFFF;
+
+        for (let i = 0; i < 16; i++) {
+          const bit = (val >> (15 - i)) & 1;
+          stuffed = (stuffed << 1) | bit;
+
+          if (bit === 1) {
+            consecutiveOnes++;
+            if (consecutiveOnes === 5 && i < 15) {
+              stuffed <<= 1;
+              consecutiveOnes = 0;
+            }
+          } else {
+            consecutiveOnes = 0;
+          }
+        }
+
+        return stuffed & 0xFFFF;
+      };
+
+      const arr = new collections.Int16Array([0b111110, 0b111111, 0b1111111111111111]);
+      const stuffed = arr.map(bitStuff);
+
+      expect(stuffed[0]).assertEqual(0b1111100);
+      expect(stuffed[1]).assertEqual(0b1111101);
+      expect(stuffed[2]).assertEqual(-0b010000010000011);
+      expect(stuffed.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0156
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0134
+     * @tc.desc   Verify Int16Array with data encryption using Vigenère cipher
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const vigenereCipher = (data: collections.Int16Array, key: number[]): collections.Int16Array => {
+        const result = new collections.Int16Array(data.length);
+        const range = 65536;
+
+        for (let i = 0; i < data.length; i++) {
+          const keyIndex = i % key.length;
+          let value = (data[i] + 32768 + key[keyIndex]) % range;
+          if (value < 0) {
+            value += range;
+          }
+          result[i] = value - 32768;
+        }
+
+        return result;
+      };
+
+      const original = new collections.Int16Array([10, 20, 30, 40, 50, 60]);
+      const key = [5, 10, 15];
+
+      const encrypted = vigenereCipher(original, key);
+      const decrypted = vigenereCipher(encrypted, key.map(k => -k));
+
+      expect(encrypted.toString()).assertEqual('15,30,45,45,60,75');
+      expect(decrypted.toString()).assertEqual(original.toString());
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0157
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0135
+     * @tc.desc   Verify Int16Array with data transformation using power law scaling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const powerScale = (data: collections.Int16Array, power: number): collections.Int16Array => {
+        const min = Math.min(...data);
+        const max = Math.max(...data);
+        const range = max - min || 1;
+
+        return new collections.Int16Array(data.map(val => {
+          const normalized = (val - min) / range;
+          const scaled = Math.pow(normalized, power);
+          return Math.round(scaled * range + min);
+        }));
+      };
+
+      const data = new collections.Int16Array([1, 2, 3, 4, 5]);
+      const squared = powerScale(data, 2);
+      const squareRoot = powerScale(data, 0.5);
+
+      expect(squared.toString()).assertEqual('1,1,2,3,5');
+      expect(squareRoot.toString()).assertEqual('1,3,4,4,5');
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0158
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0136
+     * @tc.desc   Verify Int16Array with sliding window variance
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const slidingWindowVariance = (data: collections.Int16Array, windowSize: number): collections.Int16Array => {
+        const result = new collections.Int16Array(data.length - windowSize + 1);
+
+        for (let i = 0; i < result.length; i++) {
+          const window = data.subarray(i, i + windowSize);
+          const mean = window.reduce((sum, val) => sum + val, 0) / windowSize;
+          const variance = window.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / windowSize;
+          result[i] = Math.round(variance);
+        }
+
+        return result;
+      };
+
+      const data = new collections.Int16Array([10, 12, 14, 20, 22, 24]);
+      const variances = slidingWindowVariance(data, 3);
+
+      expect(variances.toString()).assertEqual('3,12,12,3');
+      expect(variances[0]).assertEqual(3);
+      expect(variances[1]).assertEqual(12);
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0159
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0137
+     * @tc.desc   Verify Int16Array with bitwise Gray code conversion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const toGrayCode = (value: number): number => {
+        return (value >> 1) ^ value;
+      };
+
+      const fromGrayCode = (gray: number): number => {
+        let binary = gray;
+        while (gray >>= 1) {
+          binary ^= gray;
+        }
+        return binary;
+      };
+
+      const arr = new collections.Int16Array([0, 1, 2, 3, 4, 5, 6, 7]);
+      const grayCodes = arr.map(toGrayCode);
+      const convertedBack = grayCodes.map(fromGrayCode);
+
+      expect(grayCodes.toString()).assertEqual('0,1,3,2,6,7,5,4');
+      expect(convertedBack.toString()).assertEqual(arr.toString());
+    })
+
+    /**
+     * @tc.name   TypeArrayInt16Array0160
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_INT16_ARRAY_ALL_0138
+     * @tc.desc   Verify Int16Array with data encryption using XOR with key schedule
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayInt16Array0160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const generateKeySchedule = (seed: number, length: number): collections.Int16Array => {
+        const keys = new collections.Int16Array(length);
+        let key = seed;
+
+        for (let i = 0; i < length; i++) {
+          key = (key * 1103515245 + 12345) & 0xFFFF;
+          keys[i] = key;
+        }
+
+        return keys;
+      };
+
+      const encryptWithKeySchedule = (data: collections.Int16Array, seed: number): GeneratedTypeLiteralInterface_1 => {
+        const keySchedule = generateKeySchedule(seed, data.length);
+        const encrypted = new collections.Int16Array(data.length);
+
+        for (let i = 0; i < data.length; i++) {
+          encrypted[i] = data[i] ^ keySchedule[i];
+        }
+
+        return { encrypted, keySchedule };
+      };
+
+      const original = new collections.Int16Array([100, 200, 300, 400, 500]);
+      const seed = 0x1234;
+
+      const interF: GeneratedTypeLiteralInterface_1 = encryptWithKeySchedule(original, seed);
+      const decrypted = new collections.Int16Array(interF.encrypted.map((val, i) => val ^ interF.keySchedule[i]));
+      expect(interF.encrypted.toString()).assertEqual('-14279,-10982,14223,7216,-29523');
+      expect(decrypted.toString()).assertEqual(original.toString());
+    })
+
+  })
+}
