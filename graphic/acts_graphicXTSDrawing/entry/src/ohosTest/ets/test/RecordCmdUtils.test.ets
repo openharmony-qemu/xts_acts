@@ -1599,6 +1599,7 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       let specialValues: Array<number> = [Number.MAX_VALUE, Infinity];
 
       for (let i = 0; i < specialValues.length; i++) {
+        console.info(msg + ` beginRecording 1 with special setValue[${i}] :${specialValues[i]}`);
         try {
           let recordCmdUtils = new drawing.RecordCmdUtils();
           recordCmdUtils.beginRecording(specialValues[i], 200);
@@ -1615,17 +1616,18 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       }
 
       for (let i = 0; i < specialValues.length; i++) {
+        console.info(msg + ` beginRecording 1 height special setValue[${i}] :${specialValues[i]}`);
         try {
           let recordCmdUtils = new drawing.RecordCmdUtils();
           recordCmdUtils.beginRecording(200, specialValues[i]);
-          console.info(msg + ` beginRecording with special height[${i}] succeeded`);
-          console.info(msg + ` beginRecording with special setValue[${i}] :${specialValues[i]}`);
+          console.info(msg + ` beginRecording height special height[${i}] succeeded`);
+          console.info(msg + ` beginRecording height special setValue[${i}] :${specialValues[i]}`);
           let height = recordCmdUtils.getHeight();
           console.info(msg + ` beginRecording height special height[${i}] :${height}`);
           expect(height == specialValues[i]).assertTrue();
         } catch (e) {
           e = e as BusinessError;
-          console.info(msg + ` beginRecording with special height[${i}] errorCode is: ${e.code} + errormsg is: ${e.message}`);
+          console.info(msg + ` beginRecording height special height[${i}] errorCode is: ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
       }
