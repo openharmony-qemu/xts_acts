@@ -149,6 +149,14 @@ struct imageDownloadInfo {
             console.log("AceErrorInfo " + JSON.stringify(e?.downloadInfo))
             this.errInfo = JSON.stringify(e?.downloadInfo)
             console.log("AceErrorInfo cacheDownload " + JSON.stringify(cacheDownload.getDownloadInfo(this.srcArray[this.index])))
+            // 验证返回值中包含dnsServers关键字，则判定用例通过
+            let downloadInfoStr = JSON.stringify(e?.downloadInfo)
+            if (downloadInfoStr && downloadInfoStr.indexOf('dnsServers') !== -1) {
+              console.log("AceErrorInfo dnsServers verified, set Vue = true")
+              this.Vue = true;
+            } else {
+              console.log("AceErrorInfo dnsServers not found in downloadInfo")
+            }
           })
 
           Button('确认')
@@ -156,7 +164,18 @@ struct imageDownloadInfo {
           .width('30%')
           .height('6%')
           .onClick(() => {
-            this.Vue = true;
+            // 验证返回值中是否携带网络信息字段dnsServers，携带则通过，否则不通过
+            let downloadInfoStr = this.errInfo
+            if (downloadInfoStr && downloadInfoStr.indexOf('dnsServers') !== -1) {
+              console.log("AceErrorInfo confirm: dnsServers verified, set Vue = true")
+              this.Vue = true;
+            } else {
+              console.log("AceErrorInfo confirm: dnsServers not found, case failed")
+              this.Vue = false;
+              promptAction.showToast({
+                message: '失败：未检测到dnsServers', duration: 1000
+              });
+            }
           })
       }
       .justifyContent(FlexAlign.Center)
@@ -201,4 +220,3 @@ struct imageDownloadInfo {
     .backgroundColor('#F1F3F5')
   }
 }
-
