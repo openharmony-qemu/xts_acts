@@ -51,7 +51,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       resContext = abilityDelegator.getAppContext()
       res = resContext.resourceManager
-      resContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext')
+      resContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext')!
       const cacheDir = resContext.resourceDir;
       console.info("cacheDir:"+cacheDir);
       validFontPath = `${cacheDir}/TestFont_Sans.ttf`;

@@ -45,7 +45,7 @@ export default function fontManagerScopeFontTest():void {
     let resContext: Context;
 
     beforeAll(() => {
-      resContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext')
+      resContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext')!
       const cacheDir = resContext.resourceDir;
       console.info("cacheDir:"+cacheDir);
       validFontPath = `${cacheDir}/TestFont_Sans.ttf`;
