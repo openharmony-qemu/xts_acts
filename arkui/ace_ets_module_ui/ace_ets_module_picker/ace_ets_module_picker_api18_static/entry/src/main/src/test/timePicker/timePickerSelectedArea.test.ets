@@ -48,14 +48,14 @@ export default function timePickerSelectedAreaTest() {
     });
 
     /**
-     * @tc.number   timePickerSelectedAreaTest_static_001
-     * @tc.name     timePickerSelectedAreaTest_static_001
-     * @tc.desc     timePickerSelectedAreaTest_static_001
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_TIMEPICKER_SELECTEDAREA_0001
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_SELECTEDAREA_0001
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_SELECTEDAREA_0001
      * @tc.level    Level.LEVEL0
      */
-    it('timePickerSelectedAreaTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_SELECTEDAREA_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        console.info('timePickerSelectedAreaTest_static_001 START');
+        console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_SELECTEDAREA_0001 START');
         let driver = Driver.create();
         await Utils.sleep(2000);
         let timePicker = await driver.findComponent(ON.id('timePicker'));
@@ -75,12 +75,12 @@ export default function timePickerSelectedAreaTest() {
 
         let textStr = await driver.findComponent(ON.id('textFlag'));
         let eText = await textStr!.getText();
-        console.info("[timePickerSelectedAreaTest_static_001] text: " + JSON.stringify(eText));
+        console.info("[SUB_ARKUI_ACE_ENGINE_TIMEPICKER_SELECTEDAREA_0001] text: " + JSON.stringify(eText));
         expect(eText).assertEqual('enter');
-        console.info('[timePickerSelectedAreaTest_static_001] END');
+        console.info('[SUB_ARKUI_ACE_ENGINE_TIMEPICKER_SELECTEDAREA_0001] END');
         done();
       } catch (err) {
-        console.info('timePickerSelectedAreaTest_static_001 err: ' + JSON.stringify(err));
+        console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_SELECTEDAREA_0001 err: ' + JSON.stringify(err));
         done();
       }
     });

@@ -48,14 +48,14 @@ export default function timePickerLoopTest() {
     });
 
     /**
-     * @tc.number   timePickerLoopTest_static_001
-     * @tc.name     timePickerLoopTest_static_001
-     * @tc.desc     timePickerLoopTest_static_001
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0001
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0001
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0001
      * @tc.level    Level.LEVEL0
      */
-    it('timePickerLoopTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        console.info('timePickerLoopTest_static_001 START');
+        console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0001 START');
         let driver: Driver = Driver.create();
         await Utils.sleep(1000);
         let button = await driver.findComponent(ON.id('trueFlag'));
@@ -65,25 +65,25 @@ export default function timePickerLoopTest() {
 
         let strJson = inspector.getInspectorByKey('timePicker');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('timePickerLoopTest_static_001 component obj is: ' + obj.getElement('$attrs').getString('loop'));
+        console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0001 component obj is: ' + obj.getElement('$attrs').getString('loop'));
         expect(obj.getElement('$attrs').getString('loop')).assertEqual('true');
-        console.info('[timePickerLoopTest_static_001] END');
+        console.info('[SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0001] END');
         done();
       } catch (err) {
-        console.info('timePickerLoopTest_static_001 err: ' + JSON.stringify(err));
+        console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0001 err: ' + JSON.stringify(err));
         done();
       }
     });
 
     /**
-     * @tc.number   timePickerLoopTest_static_002
-     * @tc.name     timePickerLoopTest_static_002
-     * @tc.desc     timePickerLoopTest_static_002
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0002
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0002
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0002
      * @tc.level    Level.LEVEL0
      */
-    it('timePickerLoopTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        console.info('timePickerLoopTest_static_002 START');
+        console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0002 START');
         let driver: Driver = Driver.create();
         await Utils.sleep(1000);
         let button = await driver.findComponent(ON.id('falseFlag'));
@@ -93,25 +93,25 @@ export default function timePickerLoopTest() {
 
         let strJson = inspector.getInspectorByKey('timePicker');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('timePickerLoopTest_static_002 component obj is: ' + obj.getElement('$attrs').getString('loop'));
+        console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0002 component obj is: ' + obj.getElement('$attrs').getString('loop'));
         expect(obj.getElement('$attrs').getString('loop')).assertEqual('false');
-        console.info('[timePickerLoopTest_static_002] END');
+        console.info('[SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0002] END');
         done();
       } catch (err) {
-        console.info('timePickerLoopTest_static_002 err: ' + JSON.stringify(err));
+        console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0002 err: ' + JSON.stringify(err));
         done();
       }
     });
 
     /**
-     * @tc.number   timePickerLoopTest_static_003
-     * @tc.name     timePickerLoopTest_static_003
-     * @tc.desc     timePickerLoopTest_static_003
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0003
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0003
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0003
      * @tc.level    Level.LEVEL0
      */
-    it('timePickerLoopTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        console.info('timePickerLoopTest_static_003 START');
+        console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0003 START');
         let driver: Driver = Driver.create();
         await Utils.sleep(1000);
         let button = await driver.findComponent(ON.id('undefinedFlag'));
@@ -121,12 +121,12 @@ export default function timePickerLoopTest() {
 
         let strJson = inspector.getInspectorByKey('timePicker');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('timePickerLoopTest_static_003 component obj is: ' + obj.getElement('$attrs').getString('loop'));
+        console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0003 component obj is: ' + obj.getElement('$attrs').getString('loop'));
         expect(obj.getElement('$attrs').getString('loop')).assertEqual('true');
-        console.info('[timePickerLoopTest_static_003] END');
+        console.info('[SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0003] END');
         done();
       } catch (err) {
-        console.info('timePickerLoopTest_static_003 err: ' + JSON.stringify(err));
+        console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_LOOP_0003 err: ' + JSON.stringify(err));
         done();
       }
     });

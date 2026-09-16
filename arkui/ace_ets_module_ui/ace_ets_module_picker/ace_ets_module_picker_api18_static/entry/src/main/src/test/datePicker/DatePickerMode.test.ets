@@ -45,14 +45,14 @@ export default function datePickerMode() {
     });
 
     /**
-     * @tc.number   DatePicker_static_0100
-     * @tc.name     DatePicker_static_0100
-     * @tc.desc     DatePicker_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0100
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0100
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0100
      * @tc.level    Level.LEVEL1
      */
-    it('DatePicker_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0100';
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0100';
 
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_001');
       console.info('[' + tagName + '] Search end is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -64,14 +64,14 @@ export default function datePickerMode() {
     });
 
     /**
-     * @tc.number   DatePicker_static_0200
-     * @tc.name     DatePicker_static_0200
-     * @tc.desc     DatePicker_static_0200
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0200
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0200
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0200
      * @tc.level    Level.LEVEL1
      */
-    it('DatePicker_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0200';
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0200';
 
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_002');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -83,14 +83,14 @@ export default function datePickerMode() {
     });
 
     /**
-     * @tc.number   DatePicker_static_0300
-     * @tc.name     DatePicker_static_0300
-     * @tc.desc     DatePicker_static_0300
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0300
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0300
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0300
      * @tc.level    Level.LEVEL1
      */
-    it('DatePicker_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0300';
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0300';
 
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_003');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -102,14 +102,14 @@ export default function datePickerMode() {
     });
 
     /**
-     * @tc.number   DatePicker_static_0400
-     * @tc.name     DatePicker_static_0400
-     * @tc.desc     DatePicker_static_0400
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0400
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0400
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0400
      * @tc.level    Level.LEVEL1
      */
-    it('DatePicker_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0400';
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0400';
 
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_004');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -121,14 +121,14 @@ export default function datePickerMode() {
     });
 
     /**
-     * @tc.number   DatePicker_static_0500
-     * @tc.name     DatePicker_static_0500
-     * @tc.desc     DatePicker_static_0500
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0500
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0500
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0500
      * @tc.level    Level.LEVEL1
      */
-    it('DatePicker_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0500';
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0500';
 
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_005');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -140,14 +140,14 @@ export default function datePickerMode() {
     });
 
     /**
-     * @tc.number   DatePicker_static_0600
-     * @tc.name     DatePicker_static_0600
-     * @tc.desc     DatePicker_static_0600
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0600
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0600
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0600
      * @tc.level    Level.LEVEL1
      */
-    it('DatePicker_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0600';
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0600';
 
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_006');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -159,14 +159,14 @@ export default function datePickerMode() {
     });
 
     /**
-     * @tc.number   DatePicker_static_0700
-     * @tc.name     DatePicker_static_0700
-     * @tc.desc     DatePicker_static_0700
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0700
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0700
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0700
      * @tc.level    Level.LEVEL1
      */
-    it('DatePicker_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0700';
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0700';
 
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_007');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)

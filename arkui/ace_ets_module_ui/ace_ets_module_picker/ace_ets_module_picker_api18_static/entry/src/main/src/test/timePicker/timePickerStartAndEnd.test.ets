@@ -46,97 +46,97 @@ export default function TimePickerStartAndEnd() {
     });
 
     /**
-     * @tc.number   TimePickerStartAndEnd_static_001
-     * @tc.name     TimePickerStartAndEnd_static_001
-     * @tc.desc     TimePickerStartAndEnd_static_001
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0001
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0001
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0001
      * @tc.level    Level.LEVEL1
      */
-    it('TimePickerStartAndEnd_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker');
-      console.log('TimePickerStartAndEnd_static_001')
+      console.log('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0001')
       await Utils.sleep(1000)
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TimePickerStartAndEnd_static_001 ' + obj.getElement('$attrs').getString('start'))
+      console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0001 ' + obj.getElement('$attrs').getString('start'))
       expect(obj.getElement('$attrs').getString('start')).assertEqual('8:0');
       done();
     });
 
     /**
-     * @tc.number   TimePickerStartAndEnd_static_002
-     * @tc.name     TimePickerStartAndEnd_static_002
-     * @tc.desc     TimePickerStartAndEnd_static_002
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0002
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0002
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0002
      * @tc.level    Level.LEVEL1
      */
-    it('TimePickerStartAndEnd_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker');
-      console.log('TimePickerStartAndEnd_static_002')
+      console.log('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0002')
       await Utils.sleep(1000)
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TimePickerStartAndEnd_static_002 ' + obj.getElement('$attrs').getString('end'))
+      console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0002 ' + obj.getElement('$attrs').getString('end'))
       expect(obj.getElement('$attrs').getString('end')).assertEqual('10:0');
       done();
     });
 
     /**
-     * @tc.number   TimePickerStartAndEnd_static_003
-     * @tc.name     TimePickerStartAndEnd_static_003
-     * @tc.desc     TimePickerStartAndEnd_static_003
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0003
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0003
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0003
      * @tc.level    Level.LEVEL1
      */
-    it('TimePickerStartAndEnd_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker2');
-      console.log('TimePickerStartAndEnd_static_003')
+      console.log('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0003')
       await Utils.sleep(1000)
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TimePickerStartAndEnd_static_003 ' + obj.getElement('$attrs').getString('start'))
+      console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0003 ' + obj.getElement('$attrs').getString('start'))
       expect(obj.getElement('$attrs').getString('start')).assertEqual('0:0');
       done();
     });
 
     /**
-     * @tc.number   TimePickerStartAndEnd_static_004
-     * @tc.name     TimePickerStartAndEnd_static_004
-     * @tc.desc     TimePickerStartAndEnd_static_004
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0004
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0004
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0004
      * @tc.level    Level.LEVEL1
      */
-    it('TimePickerStartAndEnd_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker2');
-      console.log('TimePickerStartAndEnd_static_004')
+      console.log('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0004')
       await Utils.sleep(1000)
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TimePickerStartAndEnd_static_004 ' + obj.getElement('$attrs').getString('end'))
+      console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0004 ' + obj.getElement('$attrs').getString('end'))
       expect(obj.getElement('$attrs').getString('end')).assertEqual('23:59');
       done();
     });
 
     /**
-     * @tc.number   TimePickerStartAndEnd_static_005
-     * @tc.name     TimePickerStartAndEnd_static_005
-     * @tc.desc     TimePickerStartAndEnd_static_005
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0005
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0005
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0005
      * @tc.level    Level.LEVEL1
      */
-    it('TimePickerStartAndEnd_static_005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker3');
-      console.log('TimePickerStartAndEnd_static_005')
+      console.log('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0005')
       await Utils.sleep(1000)
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TimePickerStartAndEnd_static_005 ' + obj.getElement('$attrs').getString('start'))
+      console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0005 ' + obj.getElement('$attrs').getString('start'))
       expect(obj.getElement('$attrs').getString('start')).assertEqual('0:0');
       done();
     });
 
     /**
-     * @tc.number   TimePickerStartAndEnd_static_006
-     * @tc.name     TimePickerStartAndEnd_static_006
-     * @tc.desc     TimePickerStartAndEnd_static_006
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0006
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0006
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0006
      * @tc.level    Level.LEVEL1
      */
-    it('TimePickerStartAndEnd_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker3');
-      console.log('TimePickerStartAndEnd_static_006')
+      console.log('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0006')
       await Utils.sleep(1000)
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TimePickerStartAndEnd_static_006 ' + obj.getElement('$attrs').getString('end'))
+      console.info('SUB_ARKUI_ACE_ENGINE_TIMEPICKER_STARTANDEND_0006 ' + obj.getElement('$attrs').getString('end'))
       expect(obj.getElement('$attrs').getString('end')).assertEqual('23:59');
       done();
     });
