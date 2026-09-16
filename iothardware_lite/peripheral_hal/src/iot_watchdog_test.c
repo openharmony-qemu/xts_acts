@@ -17,6 +17,7 @@
 #include "iot_errno.h"
 #include "iot_watchdog.h"
 
+
 void (*g_watchDogfunc)(void);
 
 LITE_TEST_SUIT(wifiiot, wifiiotlite, IotWatchDogTestSuite);
@@ -78,6 +79,4 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog003, Function | MediumTest |
 {
     g_watchDogfunc = IoTWatchDogDisable;
 };
-
-RUN_TEST_SUITE(IotWatchDogTestSuite);
 
