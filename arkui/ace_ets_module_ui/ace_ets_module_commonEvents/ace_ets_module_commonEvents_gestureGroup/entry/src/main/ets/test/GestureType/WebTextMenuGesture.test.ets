@@ -107,6 +107,8 @@ export default function WebTextMenuGestureTest() {
       await image.longClick();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('CONTEXT_MENU_HOVER_GESTURE')).assertEqual(GestureControl.GestureType.CONTEXT_MENU_HOVER_GESTURE);
+      let menum = await driver.findComponent(ON.text('菜单选项'));
+      await menum.click();
       console.info('[WebTextMenumGestureTest_0300] END');
       done();
     });
