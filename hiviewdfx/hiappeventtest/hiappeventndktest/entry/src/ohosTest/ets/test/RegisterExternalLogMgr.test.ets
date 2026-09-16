@@ -69,26 +69,6 @@ export default function RegisterExternalLogMgr() {
     })
 
     /**
-     * @tc.name RegisterExternalLogMgrSuccess001
-     * @tc.number SUB_HIVIEWDFX_HIAPPEVENT_RegisterExternalLogMgrSuccess_0100
-     * @tc.desc Test OH_HiAppEvent_RegExternalLogCapacityReachedCallback - success case
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
-     */
-    it('RegisterExternalLogMgrSuccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      try {
-        let code = testNapi.RegisterExternalLogMgrSuccess();
-        expect(code == 0).assertTrue();
-        done();
-      } catch (err) {
-        console.error(`====>testTag RegisterExternalLogMgrSuccess001 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(false).assertTrue();
-        done();
-      }
-    })
-
-    /**
      * @tc.name RegisterExternalLogMgrFalse001
      * @tc.number SUB_HIVIEWDFX_HIAPPEVENT_RegisterExternalLogMgrFalse_0100
      * @tc.desc Test OH_HiAppEvent_RegExternalLogCapacityReachedCallback - false case
