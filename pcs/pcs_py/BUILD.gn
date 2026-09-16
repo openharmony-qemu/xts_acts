@@ -27,6 +27,7 @@ ohos_copy("PyTestCase") {
     "./ActsPCSPyTest.py",
     "./PermissionUtils.py",
     "./sysCapUtils.py",
+    "./bundle_utils.py",
     "./testAppSignatureVerify.py",
     "./testBundleInstallVerify.py",
     "./testCommandWukong.py",
