@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect, Level } from '@ohos/hypium'
-import abilityManager from "@ohos.app.ability.abilityManager"
+import abilityManager from '@ohos.app.ability.abilityManager'
 import { Configuration } from '@ohos.app.ability.Configuration'
 import { BusinessError } from '@ohos.base';
 
@@ -37,7 +37,7 @@ export default function abilityManagerTest() {
         language: 'english'
       }
       abilityManager.updateConfiguration(configInit, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -59,11 +59,11 @@ export default function abilityManagerTest() {
       abilityManager.updateConfiguration(configInit)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -80,9 +80,9 @@ export default function abilityManagerTest() {
     it('System_API_Test_Ability_Manager_0300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Ability_Manager_0300';
       abilityManager.getAbilityRunningInfos((err, data) => {
-        console.log(TAG + "  err: " + JSON.stringify(err) + "  data: " + JSON.stringify(data));
+        console.log(TAG + '  err: ' + JSON.stringify(err) + '  data: ' + JSON.stringify(data));
         expect(data.length).assertEqual(1);
-        expect(data[0].ability.bundleName).assertEqual("com.acts.systemapitest");
+        expect(data[0].ability.bundleName).assertEqual('com.acts.systemapitest');
         done();
       });
     })
@@ -104,14 +104,14 @@ export default function abilityManagerTest() {
           expect(data[0].ability.bundleName).assertEqual('com.acts.systemapitest');
           expect(data[0].pid).assertLargerOrEqual(0);
           expect(data[0].uid).assertLargerOrEqual(0);
-          expect(data[0].processName).assertEqual("com.acts.systemapitest");
+          expect(data[0].processName).assertEqual('com.acts.systemapitest');
           expect(data[0].abilityState).assertLargerOrEqual(abilityManager.AbilityState.INITIAL);
           expect(data[0].startTime).assertLarger(0);
           done();
         })
         .catch((err: BusinessError) => {
           console.log(TAG + ' err:' + JSON.stringify(err));
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
     })
@@ -128,7 +128,7 @@ export default function abilityManagerTest() {
       let TAG = 'System_API_Test_Ability_Manager_0500';
       let upperLimit: number = 10;
       abilityManager.getExtensionRunningInfos(upperLimit, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -148,11 +148,11 @@ export default function abilityManagerTest() {
       abilityManager.getExtensionRunningInfos(upperLimit)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -173,7 +173,7 @@ export default function abilityManagerTest() {
 
         });
       } catch (error) {
-        console.log(TAG + "  err.code: " + error.code);
+        console.log(TAG + '  err.code: ' + error.code);
         expect(error.code).assertEqual(ERROR_CODE);
         done();
       }
@@ -192,7 +192,7 @@ export default function abilityManagerTest() {
       try {
         abilityManager.getTopAbility().then().catch();
       } catch (error) {
-        console.log(TAG + "  err.code: " + error.code);
+        console.log(TAG + '  err.code: ' + error.code);
         expect(error.code).assertEqual(ERROR_CODE);
         done();
       }
@@ -220,7 +220,7 @@ export default function abilityManagerTest() {
         done();
       } catch (error) {
         console.log(`${tag}, failed: ${JSON.stringify(error)}`);
-        expect().assertFail()
+        expect(false).assertTrue()
       }
     })
   })

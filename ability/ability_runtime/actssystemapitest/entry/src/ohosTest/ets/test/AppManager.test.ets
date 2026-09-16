@@ -13,10 +13,8 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll} from '@ohos/hypium'
-import { Driver, ON } from '@ohos.UiTest';
-
-import appManager from "@ohos.app.ability.appManager"
+import { describe, it, expect, Level } from '@ohos/hypium'
+import appManager from '@ohos.app.ability.appManager'
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 
@@ -26,18 +24,6 @@ let ERROR_INNER_ERROR = 16000050;
 
 export default function appManagerTest() {
   describe('appManagerTest', () => {
-    beforeAll(async () => {
-      let driver = Driver.create();
-      try {
-        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
-        if (allowed) {
-          await allowed.click();
-        }
-      } catch (err) {
-        console.error('findComponent failed: ' + JSON.stringify(err));
-      }
-    })
-
 
     /**
      * @tc.name   System_API_Test_App_Manager_0100
@@ -50,33 +36,33 @@ export default function appManagerTest() {
     it('System_API_Test_App_Manager_0100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0100';
       let applicationStateObserver : appManager.ApplicationStateObserver= {
-        onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
+        onForegroundApplicationChanged(appStateData) {
           console.log(TAG + '------------ onForegroundApplicationChanged -----------', appStateData);
         },
-        onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
+        onAbilityStateChanged(abilityStateData) {
           console.log(TAG + '------------ onAbilityStateChanged -----------', abilityStateData);
         },
-        onProcessCreated(processData: appManager.ProcessData) {
+        onProcessCreated(processData) {
           console.log(TAG + '------------ onProcessCreated -----------', processData);
         },
-        onProcessDied(processData: appManager.ProcessData) {
+        onProcessDied(processData) {
           console.log(TAG + '------------ onProcessDied -----------', processData);
         },
-        onProcessStateChanged(processData: appManager.ProcessData) {
+        onProcessStateChanged(processData) {
           console.log(TAG + '------------ onProcessStateChanged -----------', processData);
         },
-        onAppStarted(appStateData: appManager.AppStateData) {
+        onAppStarted(appStateData) {
           console.log(TAG + '------------ onAppStarted -----------', appStateData);
         },
-        onAppStopped(appStateData: appManager.AppStateData) {
+        onAppStopped(appStateData) {
           console.log(TAG + '------------ onAppStopped -----------', appStateData);
         },
       }
       try {
-        const observerCode = appManager.on("applicationState", applicationStateObserver);
+        const observerCode = appManager.on('applicationState', applicationStateObserver);
         console.log('-------- observerCode: ---------', observerCode);
       } catch (err) {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
         done();
       }
@@ -93,34 +79,34 @@ export default function appManagerTest() {
     it('System_API_Test_App_Manager_0200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0200';
       let applicationStateObserver : appManager.ApplicationStateObserver = {
-        onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
+        onForegroundApplicationChanged(appStateData) {
           console.log(TAG + '------------ onForegroundApplicationChanged -----------', appStateData);
         },
-        onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
+        onAbilityStateChanged(abilityStateData) {
           console.log(TAG + '------------ onAbilityStateChanged -----------', abilityStateData);
         },
-        onProcessCreated(processData: appManager.ProcessData) {
+        onProcessCreated(processData) {
           console.log(TAG + '------------ onProcessCreated -----------', processData);
         },
-        onProcessDied(processData: appManager.ProcessData) {
+        onProcessDied(processData) {
           console.log(TAG + '------------ onProcessDied -----------', processData);
         },
-        onProcessStateChanged(processData: appManager.ProcessData) {
+        onProcessStateChanged(processData) {
           console.log(TAG + '------------ onProcessStateChanged -----------', processData);
         },
-        onAppStarted(appStateData: appManager.AppStateData) {
+        onAppStarted(appStateData) {
           console.log(TAG + '------------ onAppStarted -----------', appStateData);
         },
-        onAppStopped(appStateData: appManager.AppStateData) {
+        onAppStopped(appStateData) {
           console.log(TAG + '------------ onAppStopped -----------', appStateData);
         },
       }
       let bundleNameList = ['bundleName1', 'bundleName2'];
       try {
-        const observerCode = appManager.on("applicationState", applicationStateObserver, bundleNameList);
+        const observerCode = appManager.on('applicationState', applicationStateObserver, bundleNameList);
         console.log('-------- observerCode: ---------', observerCode);
       } catch (err) {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
         done();
       }
@@ -137,7 +123,7 @@ export default function appManagerTest() {
     it('System_API_Test_App_Manager_0300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0300';
       appManager.getForegroundApplications((err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -156,11 +142,11 @@ export default function appManagerTest() {
       appManager.getForegroundApplications()
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -176,10 +162,10 @@ export default function appManagerTest() {
      */
     it('System_API_Test_App_Manager_0500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0500';
-      let bundleName = "com.ohos.application";
+      let bundleName = 'com.ohos.application';
       let accountId = 100;
       appManager.killProcessWithAccount(bundleName, accountId, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -195,16 +181,16 @@ export default function appManagerTest() {
      */
     it('System_API_Test_App_Manager_0600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0600';
-      let bundleName = "com.ohos.application";
+      let bundleName = 'com.ohos.application';
       let accountId = 100;
       appManager.killProcessWithAccount(bundleName, accountId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -220,9 +206,9 @@ export default function appManagerTest() {
      */
     it('System_API_Test_App_Manager_0700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0700';
-      let bundleName = "com.ohos.application";
+      let bundleName = 'com.ohos.application';
       appManager.killProcessesByBundleName(bundleName, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
         done();
       });
@@ -238,15 +224,15 @@ export default function appManagerTest() {
      */
     it('System_API_Test_App_Manager_0800', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0800';
-      let bundleName = "com.ohos.application";
+      let bundleName = 'com.ohos.application';
       appManager.killProcessesByBundleName(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
           done();
         })
@@ -262,9 +248,9 @@ export default function appManagerTest() {
      */
     it('System_API_Test_App_Manager_0900', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0900';
-      let bundleName = "com.ohos.application";
+      let bundleName = 'com.ohos.application';
       appManager.clearUpApplicationData(bundleName, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -280,15 +266,15 @@ export default function appManagerTest() {
      */
     it('System_API_Test_App_Manager_1000', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1000';
-      let bundleName = "com.ohos.application";
+      let bundleName = 'com.ohos.application';
       appManager.clearUpApplicationData(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -307,7 +293,7 @@ export default function appManagerTest() {
       let TAG = 'System_API_Test_App_Manager_1100';
       let pid = 0;
       appManager.getProcessMemoryByPid(pid, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -327,11 +313,11 @@ export default function appManagerTest() {
       appManager.getProcessMemoryByPid(pid)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -347,9 +333,9 @@ export default function appManagerTest() {
      */
     it('System_API_Test_App_Manager_1300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1300';
-      let bundleName = "com.ohos.application";
+      let bundleName = 'com.ohos.application';
       appManager.getRunningProcessInfoByBundleName(bundleName, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -365,15 +351,15 @@ export default function appManagerTest() {
      */
     it('System_API_Test_App_Manager_1400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1400';
-      let bundleName = "com.ohos.application";
+      let bundleName = 'com.ohos.application';
       appManager.getRunningProcessInfoByBundleName(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -389,10 +375,10 @@ export default function appManagerTest() {
      */
     it('System_API_Test_App_Manager_1500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1500';
-      let bundleName = "com.ohos.application";
+      let bundleName = 'com.ohos.application';
       let userId = 100;
       appManager.getRunningProcessInfoByBundleName(bundleName, userId, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -408,16 +394,16 @@ export default function appManagerTest() {
      */
     it('System_API_Test_App_Manager_1600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1600';
-      let bundleName = "com.ohos.application";
+      let bundleName = 'com.ohos.application';
       let userId = 100;
       appManager.getRunningProcessInfoByBundleName(bundleName, userId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -480,12 +466,12 @@ export default function appManagerTest() {
             done();
           }).catch((err:BusinessError)=>{
             console.log(`${tag} isRunningInStabilityTest error, err: ${err?.code}`);
-            try{expect().assertFail();}catch(e){}
+            try{expect(false).assertTrue();}catch(e){}
             done();
           });
         } catch (err) {
           console.error(`${tag} isRunningInStabilityTest error, errorCode: ${err?.code}`);
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         }
     });
@@ -503,6 +489,9 @@ export default function appManagerTest() {
       console.log(`${tag}, it begin`);
       try {
         appManager.isRunningInStabilityTest((err, data)=>{
+          if (err) {
+            console.error(JSON.stringify(err));
+          }
           console.error(`${tag} isRunningInStabilityTest success, errorCode: ${data}`);
           if(data == true){
             try{expect(data).assertTrue();}catch(e){}
@@ -513,7 +502,7 @@ export default function appManagerTest() {
         })
       } catch (err) {
         console.error(`${tag} isRunningInStabilityTest error, errorCode: ${err?.code}`);
-        try{expect().assertFail();}catch(e){}
+        try{expect(false).assertTrue();}catch(e){}
         done();
       }
     });
@@ -591,7 +580,7 @@ export default function appManagerTest() {
           done();
         }).catch((err:BusinessError)=>{
           console.log(`${tag} off error, err: ${err?.code}`);
-          try{expect().assertFail();}catch(e){}
+          try{expect(false).assertTrue();}catch(e){}
           done();
         });
       } catch (err) {
@@ -636,6 +625,9 @@ export default function appManagerTest() {
       console.log(`${tag}, it begin`);
       try {
         appManager.isRamConstrainedDevice((err, data)=>{
+          if (err) {
+            console.error(JSON.stringify(err));
+          }
           try{expect(typeof data).assertEqual('boolean');}catch(e){}
           if(data == true){
             try{expect(data).assertTrue();}catch(e){}
@@ -646,7 +638,7 @@ export default function appManagerTest() {
         })
       } catch (err) {
         console.error(`${tag} off error, errorCode: ${err?.code}`);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -672,12 +664,15 @@ export default function appManagerTest() {
           }
           done();
         }).catch((err:BusinessError)=>{
-          try{expect().assertFail();}catch(e){}
+          if (err) {
+            console.error(JSON.stringify(err));
+          }
+          try{expect(false).assertTrue();}catch(e){}
           done();
         })
       } catch (err) {
         console.error(`${tag} off error, errorCode: ${err?.code}`);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -692,11 +687,11 @@ export default function appManagerTest() {
       */
      it('System_API_Test_App_Manager_1700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1700';
-      let bundleName = "com.ohos.applicationsss";
+      let bundleName = 'com.ohos.applicationsss';
       try {
         appManager.killProcessesByBundleName(bundleName, false).then((data) => {
           console.log('System_API_Test_App_Manager_1700 killProcessesByBundleName success.');
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.error(`System_API_Test_App_Manager_1700 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
@@ -723,11 +718,11 @@ export default function appManagerTest() {
      */
     it('System_API_Test_App_Manager_1800', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_1800';
-      let bundleName = "com.ohos.applicationsss";
+      let bundleName = 'com.ohos.applicationsss';
       try {
         appManager.killProcessesByBundleName(bundleName, true).then((data) => {
           console.log('System_API_Test_App_Manager_1800 killProcessesByBundleName success.');
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.error(`System_API_Test_App_Manager_1800 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
@@ -762,12 +757,12 @@ export default function appManagerTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${TAG}, getAppMemorySize error, errorCode: ${err?.code}`);
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -787,7 +782,7 @@ export default function appManagerTest() {
         appManager.getAppMemorySize((err: BusinessError | null, data: number | undefined) => {
           if (err) {
             console.error(`${TAG}, getAppMemorySize error, errorCode: ${err.code}`);
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           } else {
             console.log(`${TAG}, getAppMemorySize success, data: ${data}`);
@@ -798,7 +793,7 @@ export default function appManagerTest() {
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -815,7 +810,7 @@ export default function appManagerTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0100';
       try {
         appManager.killProcessesByBundleName(null, (err: BusinessError) => {
-          console.log(TAG + " err.code: " + err.code);
+          console.log(TAG + ' err.code: ' + err.code);
           expect(err.code).assertEqual(401);
           done();
         });
@@ -838,7 +833,7 @@ export default function appManagerTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0200';
       try {
         appManager.killProcessesByBundleName(undefined, (err: BusinessError) => {
-          console.log(TAG + " err.code: " + err.code);
+          console.log(TAG + ' err.code: ' + err.code);
           expect(err.code).assertEqual(401);
           done();
         });
@@ -863,11 +858,11 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName(null)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(401);
             done();
           });
@@ -892,11 +887,11 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName(undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(401);
             done();
           });
@@ -921,11 +916,11 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName(null, false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(401);
             done();
           });
@@ -950,11 +945,11 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName(undefined, false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(401);
             done();
           });
@@ -976,20 +971,20 @@ export default function appManagerTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0700', Level.LEVEL1, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0700';
       try {
-        appManager.killProcessesByBundleName("com.ohos.application", null)
+        appManager.killProcessesByBundleName('com.ohos.application', null)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(201);
             done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1005,20 +1000,20 @@ export default function appManagerTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0800', Level.LEVEL1, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0800';
       try {
-        appManager.killProcessesByBundleName("com.ohos.application", undefined)
+        appManager.killProcessesByBundleName('com.ohos.application', undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(201);
             done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1034,20 +1029,20 @@ export default function appManagerTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0900', Level.LEVEL1, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_0900';
       try {
-        appManager.killProcessesByBundleName("")
+        appManager.killProcessesByBundleName('')
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(201);
             done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1063,14 +1058,14 @@ export default function appManagerTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1000', Level.LEVEL1, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1000';
       try {
-        appManager.killProcessesByBundleName("", (err: BusinessError) => {
-          console.log(TAG + " err.code: " + err.code);
+        appManager.killProcessesByBundleName('', (err: BusinessError) => {
+          console.log(TAG + ' err.code: ' + err.code);
           expect(err.code).assertEqual(201);
           done();
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1086,20 +1081,20 @@ export default function appManagerTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1100', Level.LEVEL1, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1100';
       try {
-        appManager.killProcessesByBundleName("", false)
+        appManager.killProcessesByBundleName('', false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(201);
             done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1115,20 +1110,20 @@ export default function appManagerTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1200', Level.LEVEL1, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1200';
       try {
-        appManager.killProcessesByBundleName("", false, 0)
+        appManager.killProcessesByBundleName('', false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(201);
             done();
           });
       } catch (e) {
-        console.log(TAG + " err.code: " + e.code);
-        expect().assertFail();
+        console.log(TAG + ' err.code: ' + e.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1145,19 +1140,19 @@ export default function appManagerTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1300';
 
       try {
-        appManager.killProcessesByBundleName("", false, null)
+        appManager.killProcessesByBundleName('', false, null)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
-            expect().assertFail();
+            console.log(TAG + ' err.code: ' + err.code);
+            expect(false).assertTrue();
             done();
           });
       } catch (e) {
-        console.log(TAG + " err.code: " + e.code);
+        console.log(TAG + ' err.code: ' + e.code);
         expect(e.code).assertEqual(401);
         done();
       }
@@ -1175,19 +1170,19 @@ export default function appManagerTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1400';
 
       try {
-        appManager.killProcessesByBundleName("", false, undefined)
+        appManager.killProcessesByBundleName('', false, undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(201);
             done();
           });
       } catch (e) {
-        console.log(TAG + " err.code: " + e.code);
+        console.log(TAG + ' err.code: ' + e.code);
         expect(e.code).assertEqual(401);
         done();
       }
@@ -1204,19 +1199,19 @@ export default function appManagerTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1500', Level.LEVEL1, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1500';
       try {
-        appManager.killProcessesByBundleName("", null)
+        appManager.killProcessesByBundleName('', null)
         .then(() => {
           console.log(TAG + ' should not reach here');
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + " err.code: " + err.code);
+          console.log(TAG + ' err.code: ' + err.code);
           expect(err.code).assertEqual(201);
           done();
         });
       } catch (err) {
-        console.log(TAG + " err.code: " + err.code);
+        console.log(TAG + ' err.code: ' + err.code);
         expect(err.code).assertEqual(401);
         done();
       }
@@ -1233,20 +1228,20 @@ export default function appManagerTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1600', Level.LEVEL1, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1600';
       try {
-        appManager.killProcessesByBundleName("", undefined)
+        appManager.killProcessesByBundleName('', undefined)
         .then(() => {
           console.log(TAG + ' should not reach here');
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + " err.code: " + err.code);
+          console.log(TAG + ' err.code: ' + err.code);
           expect(err.code).assertEqual(201);
           done();
         });
 
       } catch (err) {
-        console.log(TAG + " err.code: " + err.code);
+        console.log(TAG + ' err.code: ' + err.code);
         expect(err.code).assertEqual(401);
         done();
       }
@@ -1255,7 +1250,8 @@ export default function appManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1700
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1700
-     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as null and appIndex as 0
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as null and appIndex
+       as 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1264,20 +1260,20 @@ export default function appManagerTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1700';
 
       try {
-        appManager.killProcessesByBundleName("", null, 0)
+        appManager.killProcessesByBundleName('', null, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(201);
             done();
           });
       } catch (e) {
-        console.log(TAG + " err.code: " + e.code);
-        expect().assertFail();
+        console.log(TAG + ' err.code: ' + e.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1285,7 +1281,8 @@ export default function appManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1800
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1800
-     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as undefined and appIndex as 0
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as undefined and
+       appIndex as 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1294,20 +1291,20 @@ export default function appManagerTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1800';
 
       try {
-        appManager.killProcessesByBundleName("", undefined, 0)
+        appManager.killProcessesByBundleName('', undefined, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
+            console.log(TAG + ' err.code: ' + err.code);
             expect(err.code).assertEqual(201);
             done();
           });
       } catch (e) {
-        console.log(TAG + " err.code: " + e.code);
-        expect().assertFail();
+        console.log(TAG + ' err.code: ' + e.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1315,7 +1312,8 @@ export default function appManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1900
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1900
-     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as false and appIndex as null
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as false and appIndex
+       as null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1323,19 +1321,19 @@ export default function appManagerTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1900', Level.LEVEL1, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_1900';
       try {
-        appManager.killProcessesByBundleName("", true, null)
+        appManager.killProcessesByBundleName('', true, null)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
-            expect().assertFail();
+            console.log(TAG + ' err.code: ' + err.code);
+            expect(false).assertTrue();
             done();
           });
       } catch (e) {
-        console.log(TAG + " err.code catch: " + e.code);
+        console.log(TAG + ' err.code catch: ' + e.code);
         expect(e.code).assertEqual(401);
         done();
       }
@@ -1344,7 +1342,8 @@ export default function appManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_2000
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_2000
-     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as false and appIndex as undefined
+     * @tc.desc   Test killProcessesByBundleName with bundleName as empty string, clearPageStack as false and appIndex
+       as undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1352,338 +1351,23 @@ export default function appManagerTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_2000', Level.LEVEL1, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_2000';
       try {
-        appManager.killProcessesByBundleName("", true, undefined)
+        appManager.killProcessesByBundleName('', true, undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
+            expect(false).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code : " + err.code);
-            expect().assertFail();
+            console.log(TAG + ' err.code : ' + err.code);
+            expect(false).assertTrue();
             done();
           });
       } catch (e) {
-        console.log(TAG + " err.code catch: " + e.code);
+        console.log(TAG + ' err.code catch: ' + e.code);
         expect(e.code).assertEqual(401);
         done();
       }
 
-    });
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0100
-     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0100
-     * @tc.desc   Test duplicate registration of applicationState observer (same observer, no bundleNameList)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0100', Level.LEVEL0, (done: Function) => {
-      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0100';
-      let observer: appManager.ApplicationStateObserver = {
-        onForegroundApplicationChanged(appStateData) {
-          console.log(TAG + ' onForegroundApplicationChanged', appStateData);
-        },
-        onAbilityStateChanged(abilityStateData) {
-          console.log(TAG + ' onAbilityStateChanged', abilityStateData);
-        },
-        onProcessCreated(processData) {
-          console.log(TAG + ' onProcessCreated', processData);
-        },
-        onProcessDied(processData) {
-          console.log(TAG + ' onProcessDied', processData);
-        },
-        onProcessStateChanged(processData) {
-          console.log(TAG + ' onProcessStateChanged', processData);
-        },
-        onAppStarted(appStateData) {
-          console.log(TAG + ' onAppStarted', appStateData);
-        },
-        onAppStopped(appStateData) {
-          console.log(TAG + ' onAppStopped', appStateData);
-        },
-      };
-      try {
-        const id1 = appManager.on('applicationState', observer);
-        const id2 = appManager.on('applicationState', observer);
-        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2);
-        expect(typeof id1).assertEqual('number');
-        expect(typeof id2).assertEqual('number');
-        done();
-      } catch (err) {
-        console.log(TAG + ' err.code: ' + err.code);
-        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0200
-     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0200
-     * @tc.desc   Test duplicate registration of applicationState observer returns different IDs
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0200', Level.LEVEL0, (done: Function) => {
-      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0200';
-      let observer: appManager.ApplicationStateObserver = {
-        onForegroundApplicationChanged(appStateData) {
-          console.log(TAG + ' onForegroundApplicationChanged', appStateData);
-        },
-        onAbilityStateChanged(abilityStateData) {
-          console.log(TAG + ' onAbilityStateChanged', abilityStateData);
-        },
-        onProcessCreated(processData) {
-          console.log(TAG + ' onProcessCreated', processData);
-        },
-        onProcessDied(processData) {
-          console.log(TAG + ' onProcessDied', processData);
-        },
-        onProcessStateChanged(processData) {
-          console.log(TAG + ' onProcessStateChanged', processData);
-        },
-        onAppStarted(appStateData) {
-          console.log(TAG + ' onAppStarted', appStateData);
-        },
-        onAppStopped(appStateData) {
-          console.log(TAG + ' onAppStopped', appStateData);
-        },
-      };
-      try {
-        const id1 = appManager.on('applicationState', observer);
-        const id2 = appManager.on('applicationState', observer);
-        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2);
-        expect(id1).assertEqual(id2);
-        done();
-      } catch (err) {
-        console.log(TAG + ' err.code: ' + err.code);
-        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0300
-     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0300
-     * @tc.desc   Test triple registration of applicationState observer (same observer)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0300', Level.LEVEL0, (done: Function) => {
-      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0300';
-      let observer: appManager.ApplicationStateObserver = {
-        onForegroundApplicationChanged(appStateData) {
-          console.log(TAG + ' onForegroundApplicationChanged', appStateData);
-        },
-        onAbilityStateChanged(abilityStateData) {
-          console.log(TAG + ' onAbilityStateChanged', abilityStateData);
-        },
-        onProcessCreated(processData) {
-          console.log(TAG + ' onProcessCreated', processData);
-        },
-        onProcessDied(processData) {
-          console.log(TAG + ' onProcessDied', processData);
-        },
-        onProcessStateChanged(processData) {
-          console.log(TAG + ' onProcessStateChanged', processData);
-        },
-        onAppStarted(appStateData) {
-          console.log(TAG + ' onAppStarted', appStateData);
-        },
-        onAppStopped(appStateData) {
-          console.log(TAG + ' onAppStopped', appStateData);
-        },
-      };
-      try {
-        const id1 = appManager.on('applicationState', observer);
-        const id2 = appManager.on('applicationState', observer);
-        const id3 = appManager.on('applicationState', observer);
-        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2 + ', id3: ' + id3);
-        expect(typeof id1).assertEqual('number');
-        expect(typeof id2).assertEqual('number');
-        expect(typeof id3).assertEqual('number');
-        expect(id1).assertEqual(id2);
-        expect(id2).assertEqual(id3);
-        done();
-      } catch (err) {
-        console.log(TAG + ' err.code: ' + err.code);
-        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0400
-     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0400
-     * @tc.desc   Test duplicate registration of applicationState observer with same bundleNameList
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0400', Level.LEVEL0, (done: Function) => {
-      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0400';
-      let observer: appManager.ApplicationStateObserver = {
-        onForegroundApplicationChanged(appStateData) {
-          console.log(TAG + ' onForegroundApplicationChanged', appStateData);
-        },
-        onAbilityStateChanged(abilityStateData) {
-          console.log(TAG + ' onAbilityStateChanged', abilityStateData);
-        },
-        onProcessCreated(processData) {
-          console.log(TAG + ' onProcessCreated', processData);
-        },
-        onProcessDied(processData) {
-          console.log(TAG + ' onProcessDied', processData);
-        },
-        onProcessStateChanged(processData) {
-          console.log(TAG + ' onProcessStateChanged', processData);
-        },
-        onAppStarted(appStateData) {
-          console.log(TAG + ' onAppStarted', appStateData);
-        },
-        onAppStopped(appStateData) {
-          console.log(TAG + ' onAppStopped', appStateData);
-        },
-      };
-      let bundleNameList = ['com.example.app1', 'com.example.app2'];
-      try {
-        const id1 = appManager.on('applicationState', observer, bundleNameList);
-        const id2 = appManager.on('applicationState', observer, bundleNameList);
-        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2);
-        expect(typeof id1).assertEqual('number');
-        expect(typeof id2).assertEqual('number');
-        expect(id1).assertEqual(id2);
-        done();
-      } catch (err) {
-        console.log(TAG + ' err.code: ' + err.code);
-        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0500
-     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0500
-     * @tc.desc   Test duplicate registration of applicationState observer with different bundleNameLists
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0500', Level.LEVEL0, (done: Function) => {
-      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0500';
-      let observer: appManager.ApplicationStateObserver = {
-        onForegroundApplicationChanged(appStateData) {
-          console.log(TAG + ' onForegroundApplicationChanged', appStateData);
-        },
-        onAbilityStateChanged(abilityStateData) {
-          console.log(TAG + ' onAbilityStateChanged', abilityStateData);
-        },
-        onProcessCreated(processData) {
-          console.log(TAG + ' onProcessCreated', processData);
-        },
-        onProcessDied(processData) {
-          console.log(TAG + ' onProcessDied', processData);
-        },
-        onProcessStateChanged(processData) {
-          console.log(TAG + ' onProcessStateChanged', processData);
-        },
-        onAppStarted(appStateData) {
-          console.log(TAG + ' onAppStarted', appStateData);
-        },
-        onAppStopped(appStateData) {
-          console.log(TAG + ' onAppStopped', appStateData);
-        },
-      };
-      let bundleNameList1 = ['com.example.app1'];
-      let bundleNameList2 = ['com.example.app2', 'com.example.app3'];
-      try {
-        const id1 = appManager.on('applicationState', observer, bundleNameList1);
-        const id2 = appManager.on('applicationState', observer, bundleNameList2);
-        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2);
-        expect(typeof id1).assertEqual('number');
-        expect(typeof id2).assertEqual('number');
-        done();
-      } catch (err) {
-        console.log(TAG + ' err.code: ' + err.code);
-        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0600
-     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0600
-     * @tc.desc   Test multiple observers registration for same applicationState event
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0600', Level.LEVEL0, (done: Function) => {
-      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0600';
-      let observer1: appManager.ApplicationStateObserver = {
-        onForegroundApplicationChanged(appStateData) {
-          console.log(TAG + ' observer1 onForegroundApplicationChanged', appStateData);
-        },
-        onAbilityStateChanged(abilityStateData) {
-          console.log(TAG + ' observer1 onAbilityStateChanged', abilityStateData);
-        },
-        onProcessCreated(processData) {
-          console.log(TAG + ' observer1 onProcessCreated', processData);
-        },
-        onProcessDied(processData) {
-          console.log(TAG + ' observer1 onProcessDied', processData);
-        },
-        onProcessStateChanged(processData) {
-          console.log(TAG + ' observer1 onProcessStateChanged', processData);
-        },
-        onAppStarted(appStateData) {
-          console.log(TAG + ' observer1 onAppStarted', appStateData);
-        },
-        onAppStopped(appStateData) {
-          console.log(TAG + ' observer1 onAppStopped', appStateData);
-        },
-      };
-      let observer2: appManager.ApplicationStateObserver = {
-        onForegroundApplicationChanged(appStateData) {
-          console.log(TAG + ' observer2 onForegroundApplicationChanged', appStateData);
-        },
-        onAbilityStateChanged(abilityStateData) {
-          console.log(TAG + ' observer2 onAbilityStateChanged', abilityStateData);
-        },
-        onProcessCreated(processData) {
-          console.log(TAG + ' observer2 onProcessCreated', processData);
-        },
-        onProcessDied(processData) {
-          console.log(TAG + ' observer2 onProcessDied', processData);
-        },
-        onProcessStateChanged(processData) {
-          console.log(TAG + ' observer2 onProcessStateChanged', processData);
-        },
-        onAppStarted(appStateData) {
-          console.log(TAG + ' observer2 onAppStarted', appStateData);
-        },
-        onAppStopped(appStateData) {
-          console.log(TAG + ' observer2 onAppStopped', appStateData);
-        },
-      };
-      let bundleNameList = ['com.example.app1', 'com.example.app2'];
-      try {
-        const id1 = appManager.on('applicationState', observer1);
-        const id2 = appManager.on('applicationState', observer2);
-        const id3 = appManager.on('applicationState', observer1, bundleNameList);
-        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2 + ', id3: ' + id3);
-        expect(typeof id1).assertEqual('number');
-        expect(typeof id2).assertEqual('number');
-        expect(typeof id3).assertEqual('number');
-        done();
-      } catch (err) {
-        console.log(TAG + ' err.code: ' + err.code);
-        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
-        done();
-      }
     });
   })
 }
