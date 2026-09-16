@@ -46,8 +46,8 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_02_0100
      * @tc.name int16ArrayIndexOfPart04Test02001
      * @tc.desc Verify indexOf after $_set with from()
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test02001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -62,8 +62,8 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_02_0200
      * @tc.name int16ArrayIndexOfPart04Test02002
      * @tc.desc Verify indexOf with from()
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test02002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -77,8 +77,8 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_02_0300
      * @tc.name int16ArrayIndexOfPart04Test02003
      * @tc.desc Verify indexOf after reverse after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test02003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -93,8 +93,8 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_02_0400
      * @tc.name int16ArrayIndexOfPart04Test02004
      * @tc.desc Verify indexOf after fill after set with of()
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test02004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -112,8 +112,8 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_02_0500
      * @tc.name int16ArrayIndexOfPart04Test02005
      * @tc.desc Verify indexOf after fill after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test02005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -128,8 +128,8 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_02_0600
      * @tc.name int16ArrayIndexOfPart04Test02006
      * @tc.desc Verify indexOf after fill with from() with overflow truncation
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test02006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -145,8 +145,8 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_02_0700
      * @tc.name int16ArrayIndexOfPart04Test02007
      * @tc.desc Verify indexOf after $_set out of range throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test02007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -165,8 +165,8 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_02_0800
      * @tc.name int16ArrayIndexOfPart04Test02008
      * @tc.desc Verify indexOf after $_set out of range throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test02008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -185,8 +185,8 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_02_0900
      * @tc.name int16ArrayIndexOfPart04Test02009
      * @tc.desc Verify indexOf after fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test02009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -200,8 +200,8 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_02_1000
      * @tc.name int16ArrayIndexOfPart04Test02010
      * @tc.desc Verify indexOf with of() nested/chained calls
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test02010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {

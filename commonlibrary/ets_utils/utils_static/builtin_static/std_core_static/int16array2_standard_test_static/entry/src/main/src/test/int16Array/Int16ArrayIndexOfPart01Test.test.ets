@@ -46,8 +46,8 @@ export default function int16ArrayIndexOfPart01Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART01__0100
      * @tc.name int16ArrayIndexOfPart01Test001
      * @tc.desc Verify arr.indexOf(10) on new Int16Array([10, 20, 30]) returns 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart01Test001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -61,8 +61,8 @@ export default function int16ArrayIndexOfPart01Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART01__0200
      * @tc.name int16ArrayIndexOfPart01Test002
      * @tc.desc Verify arr.indexOf(Number.NaN) on new Int16Array([1, 2, 3]) with NaN returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart01Test002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -76,8 +76,8 @@ export default function int16ArrayIndexOfPart01Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART01__0300
      * @tc.name int16ArrayIndexOfPart01Test003
      * @tc.desc Verify arr.indexOf(Number.NaN) on new Int16Array([]) with NaN returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart01Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -91,8 +91,8 @@ export default function int16ArrayIndexOfPart01Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART01__0400
      * @tc.name int16ArrayIndexOfPart01Test004
      * @tc.desc Verify arr.indexOf(Number.POSITIVE_INFINITY) on new Int16Array([10, 0, 20]) with Infinity returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart01Test004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -106,8 +106,8 @@ export default function int16ArrayIndexOfPart01Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART01__0500
      * @tc.name int16ArrayIndexOfPart01Test005
      * @tc.desc Verify arr.indexOf(Number.NEGATIVE_INFINITY) on new Int16Array([10, 0, 20]) with -Infinity returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart01Test005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
