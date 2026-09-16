@@ -16,6 +16,9 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <sys/wait.h>
+#include "hilog/log.h"
+#include <hiappevent/hiappevent_event.h>
+#include <sys/prctl.h>
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
@@ -39,11 +42,64 @@ static napi_value Add(napi_env env, napi_callback_info info)
     return res;
 }
 
+static void OnReceiveCrashEvent(const char *domain, const struct HiAppEvent_AppEventGroup *appEventGroups,
+    uint32_t groupLen)
+{
+    for (int i = 0; i < groupLen; ++i) {
+        for (int j = 0; j < appEventGroups[i].infoLen; ++j) {
+            const struct HiAppEvent_AppEventInfo &appEventInfo = appEventGroups[i].appEventInfos[j];
+            OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.domain=%{public}s", appEventInfo.domain);
+            OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.name=%{public}s", appEventInfo.name);
+            OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.eventType=%{public}d", appEventInfo.type);
+            if (strcmp(appEventInfo.domain, DOMAIN_OS) != 0 ||
+                (strcmp(appEventInfo.name, EVENT_APP_CRASH) != 0 && strcmp(appEventInfo.name, EVENT_APP_FREEZE) != 0
+                && strcmp(appEventInfo.name, EVENT_ADDRESS_SANITIZER) != 0 && strcmp(appEventInfo.name, EVENT_CPU_USAGE_HIGH) != 0
+                && strcmp(appEventInfo.name, EVENT_APP_HICOLLIE) != 0 && strcmp(appEventInfo.name, EVENT_RESOURCE_OVERLIMIT) != 0) ){
+                continue;
+            }
+        }
+    }
+}
+
+static void OnExternalLogCapacityReached(OH_HiAppEvent_ExternalLog* externalLogArr, uint32_t arrLen)
+{
+  OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent [cpi] onCapacityReached triggered, log count: %{public}u", arrLen);
+  for (uint32_t i = 0; i < arrLen; i++) {
+      OH_HiAppEvent_ExternalLog* log = &externalLogArr[i];
+      OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent [cpi]  filePath: %{public}s, %{public}lld, %{public}ld kb event: %{public}d", log->filePath, log->generationTs, log->fileSize, log->event);
+    if (i >= 5) {
+        break;
+    }
+  }
+}
+
+static struct HiAppEvent_Watcher *systemEventWatcherR;
+
+static napi_value RegisterExternalLogMgrSuccess(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    systemEventWatcherR = OH_HiAppEvent_CreateWatcher("Watcher987");
+    const char *names[] = {EVENT_APP_CRASH, EVENT_APP_FREEZE, EVENT_ADDRESS_SANITIZER, EVENT_CPU_USAGE_HIGH, EVENT_APP_HICOLLIE, EVENT_RESOURCE_OVERLIMIT};
+    OH_HiAppEvent_SetAppEventFilter(systemEventWatcherR, DOMAIN_OS, 0, names, 6);
+    OH_HiAppEvent_SetWatcherOnReceive(systemEventWatcherR, OnReceiveCrashEvent);
+    OH_HiAppEvent_AddWatcher(systemEventWatcherR);
+    int code = OH_HiAppEvent_RegExternalLogCapacityReachedCallback(OnExternalLogCapacityReached);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    if (code == HIAPPEVENT_SUCCESS){
+        code = HIAPPEVENT_SUCCESS;
+    }
+    OH_HiAppEvent_DestroyWatcher(systemEventWatcherR);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        { "add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr }
+        { "add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "RegisterExternalLogMgrSuccess", nullptr, RegisterExternalLogMgrSuccess, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
