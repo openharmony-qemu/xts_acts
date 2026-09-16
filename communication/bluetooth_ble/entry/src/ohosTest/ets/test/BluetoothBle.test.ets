@@ -3341,7 +3341,7 @@ export default function bluetoothBleTest() {
                 device.off('serviceChange');
                 console.info('[bt_arkts]device off serviceChange without callback success');
             } catch (error) {
-                console.error(`[bt_arkts]service change off no callback is failed, code is ${error.code},message is ${error.message}`);
+                console.error(`[bt_arkts]service change on with mutiple callback is failed, code is ${error.code},message is ${error.message}`);
                 if (error.code === '801') {
                     console.info('[bt_arkts]is not support');
                     expect(error.code === '801').assertTrue();
