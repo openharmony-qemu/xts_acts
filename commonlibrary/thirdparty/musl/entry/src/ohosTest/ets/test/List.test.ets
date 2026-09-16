@@ -129,6 +129,9 @@ import wcharNdk1Test from './WcharNdk1.test';
 import timeNdk1Test from './TimeNdk1.test';
 import timexNdk1Test from './TimexNdk1.test';
 import unistdNdk1Test from './UnistdNdk1.test';
+import RegisterPrintfSpecifierTest from './RegisterPrintfSpecifier.test';
+import RegisterPrintftypeTest from './RegisterPrintftype.test';
+import RegisterPrintfModifierTest from './RegisterPrintfModifier.test';
 
 
 export default function testsuite() {
@@ -237,4 +240,7 @@ export default function testsuite() {
   threadsNdk1Test();
   muslResourceNdk1Test();
 
+  RegisterPrintfSpecifierTest();
+  RegisterPrintftypeTest();
+  RegisterPrintfModifierTest();
 }
