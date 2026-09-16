@@ -685,15 +685,15 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.name   test_OH_NativeDisplayManager_CreateAvailableArea_Max
+     * @tc.name   test_OH_NativeDisplayManager_CreateAvailableArea_InvalidParam
      * @tc.number OH_NativeDisplayManager_CreateAvailableAreaMax
-     * @tc.desc   test_OH_NativeDisplayManager_CreateAvailableArea_Max
+     * @tc.desc   test_OH_NativeDisplayManager_CreateAvailableArea参数边界值覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_OH_NativeDisplayManager_CreateAvailableArea_Max', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
-      let caseName = 'test_OH_NativeDisplayManager_CreateAvailableArea_Max';
+    it('test_OH_NativeDisplayManager_CreateAvailableArea_InvalidParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      let caseName = 'test_OH_NativeDisplayManager_CreateAvailableArea_InvalidParam';
       try{
         let errcode  = testNapi.createAvailableAreaMax();
         console.log(`${caseName} result: ${JSON.stringify(errcode)}`);
