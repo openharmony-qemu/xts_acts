@@ -55,6 +55,6 @@ export default class EntryAbility extends UIAbility {
   onBackground() {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
-    publishEvent("Acts_onBackground_MoveAbilityToBackground_Event_1");
+    publishEvent('Acts_onBackground_MoveAbilityToBackground_Event_1');
   }
 }

@@ -18,14 +18,14 @@ import { BusinessError } from '@ohos.base';
 export function publishEvent(event: string) {
   let options: CommonEventManager.CommonEventPublishData = {
     code: 0,
-    bundleName: "com.acts.moveabilitytobgtest",
+    bundleName: 'com.acts.moveabilitytobgtest',
     isOrdered: false
   }
   let publishCB = (err: BusinessError) => {
     if (err) {
       console.error(`publish failed, err: ${JSON.stringify(err)}`);
     } else {
-      console.info("publish success");
+      console.info('publish success');
     }
   }
   CommonEventManager.publish(event, options, publishCB);
