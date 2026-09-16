@@ -46,7 +46,7 @@ export default function SevenPointZeroResMgrStageStaticTest() {
 
     beforeAll(async () => {
       console.info("beforeAll case");
-      await UtilsTest.startAbility('ohos.acts.fontManager.static', 'EntryAbility')
+      await UtilsTest.startAbility('com.example.global_stage.static', 'EntryAbility')
       await UtilsTest.msSleep(1000)
       resContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext')!
       const cacheDir = resContext.resourceDir;
