@@ -660,7 +660,7 @@ export default function int16ArrayConstructorPart11Test(): void {
     it("int16ArrayConstructorPart11Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(4);
       const view1: Int16Array = new Int16Array(buf, 0, 2);
-      let val:short = 32767
+      let val:short = 32767;
       view1.$_set(0, val);
       const view2: Int16Array = new Int16Array(buf, 0, 2);
       let actual: number = view2.$_get(0);

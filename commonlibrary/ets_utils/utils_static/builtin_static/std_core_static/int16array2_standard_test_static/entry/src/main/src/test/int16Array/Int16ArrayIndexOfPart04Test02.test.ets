@@ -136,7 +136,7 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
       let source = [1, 2, 3] as number[];
       let arr = Int16Array.from(source);
       arr.fill(32768);
-      let val:short = -32768
+      let val:short = -32768;
       let result = arr.indexOf(val);
       expect(result).assertEqual(0);
     });

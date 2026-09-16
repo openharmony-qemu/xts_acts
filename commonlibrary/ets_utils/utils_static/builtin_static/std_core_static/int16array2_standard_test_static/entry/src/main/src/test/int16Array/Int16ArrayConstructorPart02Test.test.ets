@@ -14,6 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * limitations under the License
  */
 
 import {
@@ -311,14 +312,14 @@ export default function int16ArrayConstructorPart02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART02__1700
      * @tc.name int16ArrayConstructorPart02Test017
-     * @tc.desc Verify new Int16Array(5) $_set/$_get truncation semantics
+     * @tc.desc Verify $_set writes and $_get reads the maximum value of Int16Array correctly for new Int16Array(5)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart02Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array(5);
-      let val:short = 32767
+      let val:short = 32767;
       arr.$_set(0, val);
       let actual: number = arr.$_get(0);
       let expected: short = 32767;
@@ -335,7 +336,7 @@ export default function int16ArrayConstructorPart02Test(): void {
      */
     it("int16ArrayConstructorPart02Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array(5);
-      let val:short = -32768
+      let val:short = -32768;
       arr.$_set(4, val);
       let actual: number = arr.$_get(4);
       let expected: short = -32768;
@@ -490,7 +491,7 @@ export default function int16ArrayConstructorPart02Test(): void {
       let actual2: number = arr.$_get(16384);
       let expected2: int = 0;
       expect(actual2).assertEqual(expected2);
-      let val:short = 32767
+      let val:short = 32767;
       let actual3: number = arr.$_get(val);
       let expected3: int = 0;
       expect(actual3).assertEqual(expected3);
@@ -573,8 +574,8 @@ export default function int16ArrayConstructorPart02Test(): void {
       let arr: Int16Array = new Int16Array(4);
       let buf: ArrayBuffer = arr.buffer;
       let view: Int16Array = new Int16Array(buf, 0);
-      let actual: boolean = view.length >= 4;
-      expect(actual).assertTrue();
+      let actual: int = view.length;
+      expect(actual).assertEqual(4);
     });
 
     /**

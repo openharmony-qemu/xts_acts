@@ -751,8 +751,8 @@ export default function int16ArrayConstructorPart09Test(): void {
     it("int16ArrayConstructorPart09Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Int16Array(buf, 0);
-      let valMin:short = -32768
-      let valMax:short = 32767
+      let valMin:short = -32768;
+      let valMax:short = 32767;
       arr.$_set(0, valMin);
       arr.$_set(1, -1);
       arr.$_set(2, 0);

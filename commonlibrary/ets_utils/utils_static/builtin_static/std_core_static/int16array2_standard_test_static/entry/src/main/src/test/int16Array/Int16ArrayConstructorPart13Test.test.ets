@@ -291,7 +291,7 @@ export default function int16ArrayConstructorPart13Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart13Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = -32768
+      let val:short = -32768;
       const src = new Int16Array([-1, -100, val] as number[]);
       const arr = new Int16Array(src);
       let actual: number = arr.$_get(0);
@@ -314,7 +314,7 @@ export default function int16ArrayConstructorPart13Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart13Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = 32767
+      let val:short = 32767;
       const src = new Int16Array([val] as number[]);
       const arr = new Int16Array(src);
       let actual: number = arr.$_get(0);
@@ -331,7 +331,7 @@ export default function int16ArrayConstructorPart13Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart13Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = -32768
+      let val:short = -32768;
       const src = new Int16Array([val] as number[]);
       const arr = new Int16Array(src);
       let actual: number = arr.$_get(0);
@@ -417,8 +417,8 @@ export default function int16ArrayConstructorPart13Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart13Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let valMin:short = -32768
-      let valMax:short = 32767
+      let valMin:short = -32768;
+      let valMax:short = 32767;
       const src = new Int16Array([valMin, 0, valMax] as number[]);
       const arr = new Int16Array(src);
       let actual: number = arr.$_get(0);
@@ -974,7 +974,7 @@ export default function int16ArrayConstructorPart13Test(): void {
       const buf = new ArrayBuffer(8);
       const view1 = new Int16Array(buf);
       const view2 = new Int16Array(buf);
-      let val:short = 32767
+      let val:short = 32767;
       view1.$_set(0, val);
       let actual: number = view2.$_get(0);
       let expected: int = 32767;
@@ -993,7 +993,7 @@ export default function int16ArrayConstructorPart13Test(): void {
       const buf = new ArrayBuffer(8);
       const view1 = new Int16Array(buf);
       const view2 = new Int16Array(buf);
-      let val:short = -32768
+      let val:short = -32768;
       view1.$_set(0, val);
       let actual: number = view2.$_get(0);
       let expected: int = -32768;

@@ -132,7 +132,7 @@ export default function int16ArrayIndexOfPart04Test01Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test01005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = 32767
+      let val:short = 32767;
       let arr = new Int16Array([100, val, 200]);
       let result = arr.indexOf(val);
       expect(result).assertEqual(1);
@@ -150,7 +150,7 @@ export default function int16ArrayIndexOfPart04Test01Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart04Test01006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = -32768
+      let val:short = -32768;
       let arr = new Int16Array([100, val, 200]);
       let result = arr.indexOf(val);
       expect(result).assertEqual(1);

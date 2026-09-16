@@ -678,7 +678,7 @@ export default function int16ArrayConstructorPart01Test(): void {
      */
     it("int16ArrayConstructorPart01Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array();
-      let val:short = 32767
+      let val:short = 32767;
       let actual: int = arr.indexOf(val);
       let expected: int = -1;
       expect(actual).assertEqual(expected);
@@ -880,7 +880,7 @@ export default function int16ArrayConstructorPart01Test(): void {
      */
     it("int16ArrayConstructorPart01Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array();
-      let val:short = 32767
+      let val:short = 32767;
       arr.fill(val);
       let actual: int = arr.length;
       let expected: int = 0;

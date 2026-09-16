@@ -411,7 +411,7 @@ export default function int16ArrayFindLastIndexPart02Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart02Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = 32767
+      let val:short = 32767;
       let arr: Int16Array = new Int16Array([val, 1, val]);
       arr.findLastIndex((value: number): boolean => {
         return value === 1;
@@ -433,7 +433,7 @@ export default function int16ArrayFindLastIndexPart02Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart02Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = -32768
+      let val:short = -32768;
       let arr: Int16Array = new Int16Array([val, 50, val]);
       arr.findLastIndex((value: number): boolean => {
         return value === 50;

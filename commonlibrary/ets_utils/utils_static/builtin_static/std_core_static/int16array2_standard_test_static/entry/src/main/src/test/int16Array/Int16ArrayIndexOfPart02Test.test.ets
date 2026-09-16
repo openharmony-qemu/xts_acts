@@ -614,8 +614,8 @@ export default function int16ArrayIndexOfPart02Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart02Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let valMin:short = -32768
-      let valMax:short = 32767
+      let valMin:short = -32768;
+      let valMax:short = 32767;
       const arr = new Int16Array([valMin, 0, valMax]);
       const minBefore = arr.$_get(0);
       arr.indexOf(valMax);

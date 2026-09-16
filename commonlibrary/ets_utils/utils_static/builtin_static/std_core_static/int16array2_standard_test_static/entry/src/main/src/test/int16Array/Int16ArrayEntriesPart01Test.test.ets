@@ -416,7 +416,7 @@ export default function int16ArrayEntriesPart01Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart01Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = 32767
+      let val:short = 32767;
       let arr: Int16Array = new Int16Array([val]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       let r: IteratorResult<[int, Number]> = iter.next();
@@ -477,7 +477,7 @@ export default function int16ArrayEntriesPart01Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart01Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = -32768
+      let val:short = -32768;
       let arr: Int16Array = new Int16Array([val]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       let r: IteratorResult<[int, Number]> = iter.next();
@@ -525,8 +525,8 @@ export default function int16ArrayEntriesPart01Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart01Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let valMax:short = 32767
-      let valMin:short = -32768
+      let valMax:short = 32767;
+      let valMin:short = -32768;
       let arr: Int16Array = new Int16Array([valMax, valMin]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       let r1: IteratorResult<[int, Number]> = iter.next();
@@ -554,8 +554,8 @@ export default function int16ArrayEntriesPart01Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart01Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let valMin:short = -32768
-      let valMax:short = 32767
+      let valMin:short = -32768;
+      let valMax:short = 32767;
       let arr: Int16Array = new Int16Array([valMin, valMax]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       let r1: IteratorResult<[int, Number]> = iter.next();
@@ -848,8 +848,8 @@ export default function int16ArrayEntriesPart01Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart01Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let valMax:short = 32767
-      let valMin:short = -32768
+      let valMax:short = 32767;
+      let valMin:short = -32768;
       let arr: Int16Array = Int16Array.of(valMax, valMin);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       let r1: IteratorResult<[int, Number]> = iter.next();
@@ -1015,7 +1015,7 @@ export default function int16ArrayEntriesPart01Test(): void {
      */
     it("int16ArrayEntriesPart01Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array(3);
-      let val:short = 32767
+      let val:short = 32767;
       arr.fill(val);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       let r1: IteratorResult<[int, Number]> = iter.next();
@@ -1037,7 +1037,7 @@ export default function int16ArrayEntriesPart01Test(): void {
      */
     it("int16ArrayEntriesPart01Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array(3);
-      let val:short = -32768
+      let val:short = -32768;
       arr.fill(val);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       let r1: IteratorResult<[int, Number]> = iter.next();
@@ -1608,8 +1608,8 @@ export default function int16ArrayEntriesPart01Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart01Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let valMax:short = 32767
-      let valMin:short = -32768
+      let valMax:short = 32767;
+      let valMin:short = -32768;
       let arr: Int16Array = new Int16Array([valMax, valMin]);
       let values: number[] = [];
       for (let entry: [int, Number] of arr.entries()) {

@@ -163,7 +163,7 @@ export default function int16ArrayIndexOfPart03Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayIndexOfPart03Test009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = 32767
+      let val:short = 32767;
       let arr = new Int16Array([val, 0, 1]);
       let result = arr.indexOf(Number.NaN);
       expect(result).assertEqual(-1);

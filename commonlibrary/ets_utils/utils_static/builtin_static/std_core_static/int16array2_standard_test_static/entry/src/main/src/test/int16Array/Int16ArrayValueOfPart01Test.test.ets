@@ -559,8 +559,8 @@ export default function int16ArrayValueOfPart01Test(): void {
     it("int16ArrayValueOfPart01Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array(2);
       let result: Object = arr.valueOf();
-      let valMin:short = -32768
-      let valMax:short = 32767
+      let valMin:short = -32768;
+      let valMax:short = 32767;
       result.$_set(0 as int, valMin);
       result.$_set(1 as int, valMax);
       let actual: number = arr.$_get(0 as int);
@@ -700,10 +700,10 @@ export default function int16ArrayValueOfPart01Test(): void {
      */
     it("int16ArrayValueOfPart01Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([0, 0]);
-      let valMax:short = 32767
+      let valMax:short = 32767;
       arr.$_set(0 as int, valMax);
       let result: Object = arr.valueOf();
-      let valMin:short = -32768
+      let valMin:short = -32768;
       result.$_set(0 as int, valMin);
       let actual: number = arr.$_get(0 as int);
       let expected: int = -32768;

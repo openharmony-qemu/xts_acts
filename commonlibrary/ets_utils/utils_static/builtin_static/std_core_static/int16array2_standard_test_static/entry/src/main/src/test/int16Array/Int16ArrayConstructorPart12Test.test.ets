@@ -760,7 +760,7 @@ export default function int16ArrayConstructorPart12Test(): void {
       let buf: ArrayBuffer = new ArrayBuffer(8);
       let view1: Int16Array = new Int16Array(buf, 0 as Number, 4 as Number);
       let view2: Int16Array = new Int16Array(buf, 2 as Number, 2 as Number);
-      let val:short = 32767
+      let val:short = 32767;
       view1.$_set(1, val);
       let actual: number = view2.$_get(0);
       let expected: int = 32767;
@@ -779,7 +779,7 @@ export default function int16ArrayConstructorPart12Test(): void {
       let buf: ArrayBuffer = new ArrayBuffer(8);
       let view1: Int16Array = new Int16Array(buf, 0 as Number, 4 as Number);
       let view2: Int16Array = new Int16Array(buf, 2 as Number, 2 as Number);
-      let val:short = -32768
+      let val:short = -32768;
       view1.$_set(1, val);
       let actual: number = view2.$_get(0);
       let expected: int = -32768;

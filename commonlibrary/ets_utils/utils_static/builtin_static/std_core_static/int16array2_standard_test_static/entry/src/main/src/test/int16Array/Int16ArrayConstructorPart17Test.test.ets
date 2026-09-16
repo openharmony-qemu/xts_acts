@@ -753,7 +753,7 @@ export default function int16ArrayConstructorPart17Test(): void {
       const buf = new ArrayBuffer(4);
       const i16 = new Int16Array(buf);
       const u8 = new Uint8Array(buf);
-      let val:short = 32767
+      let val:short = 32767;
       i16.$_set(0, val);
       let actual: number = i16.$_get(0);
       let expected: int = 32767;
@@ -1288,7 +1288,7 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = 32767
+      let val:short = 32767;
       const src = Int16Array.of(val);
       src.$_set(0, 32768);
       const copy = new Int16Array(src);

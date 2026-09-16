@@ -485,7 +485,7 @@ export default function int16ArrayEntriesPart02Test(): void {
      */
     it("int16ArrayEntriesPart02Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array(2);
-      let val:short = 32767
+      let val:short = 32767;
       arr.fill(val);
       let iter = arr.entries();
       let entry = iter.next().value!;
@@ -507,7 +507,7 @@ export default function int16ArrayEntriesPart02Test(): void {
      */
     it("int16ArrayEntriesPart02Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array(2);
-      let val:short = -32768
+      let val:short = -32768;
       arr.$_set(0, val);
       let iter = arr.entries();
       let entry = iter.next().value!;
@@ -961,7 +961,7 @@ export default function int16ArrayEntriesPart02Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart02Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = 32767
+      let val:short = 32767;
       let arr: Int16Array = Int16Array.of(val, 100, 200);
       let valBefore: number = arr.$_get(0);
       let iter = arr.entries();
@@ -980,7 +980,7 @@ export default function int16ArrayEntriesPart02Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart02Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = -32768
+      let val:short = -32768;
       let arr: Int16Array = Int16Array.of(50, val, 70);
       let valBefore: number = arr.$_get(1);
       let iter = arr.entries();

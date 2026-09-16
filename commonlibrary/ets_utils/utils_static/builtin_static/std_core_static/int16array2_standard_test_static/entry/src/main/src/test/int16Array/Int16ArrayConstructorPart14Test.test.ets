@@ -480,7 +480,7 @@ export default function int16ArrayConstructorPart14Test(): void {
     it("int16ArrayConstructorPart14Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(2);
       const arr: Int16Array = new Int16Array(buf, 0, 1);
-      let val:short = 32767
+      let val:short = 32767;
       arr.$_set(0, val);
       const dv: DataView = new DataView(buf);
       let actual: number = dv.getInt16(0, true);
@@ -499,7 +499,7 @@ export default function int16ArrayConstructorPart14Test(): void {
     it("int16ArrayConstructorPart14Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(2);
       const arr: Int16Array = new Int16Array(buf, 0, 1);
-      let val:short = -32768
+      let val:short = -32768;
       arr.$_set(0, val);
       const dv: DataView = new DataView(buf);
       let actual: number = dv.getInt16(0, true);

@@ -147,7 +147,7 @@ export default function int16ArrayConstructorPart04Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart04Test007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = 32767
+      let val:short = 32767;
       let src: Int16Array = new Int16Array([val] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: number = copy.$_get(0);
@@ -164,7 +164,7 @@ export default function int16ArrayConstructorPart04Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart04Test008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val:short = -32768
+      let val:short = -32768;
       let src: Int16Array = new Int16Array([val] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: number = copy.$_get(0);
@@ -244,8 +244,8 @@ export default function int16ArrayConstructorPart04Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart04Test012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let valMax:short = 32767
-      let valMin:short = -32768
+      let valMax:short = 32767;
+      let valMin:short = -32768;
       let src: Int16Array = new Int16Array([valMax, valMin, valMax, valMin, valMax] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: number = copy.$_get(0);
@@ -362,8 +362,8 @@ export default function int16ArrayConstructorPart04Test(): void {
      */
     it("int16ArrayConstructorPart04Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array(100);
-      let valMax:short = 32767
-      let valMin:short = -32768
+      let valMax:short = 32767;
+      let valMin:short = -32768;
       src.$_set(0, valMax);
       src.$_set(99, valMin);
       let copy: Int16Array = new Int16Array(src);
@@ -631,8 +631,8 @@ export default function int16ArrayConstructorPart04Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart04Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let valMax:short = 32767
-      let valMin:short = -32768
+      let valMax:short = 32767;
+      let valMin:short = -32768;
       let src: Int16Array = new Int16Array([5, -3, valMax, valMin, 0] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let allMatch: boolean = true;

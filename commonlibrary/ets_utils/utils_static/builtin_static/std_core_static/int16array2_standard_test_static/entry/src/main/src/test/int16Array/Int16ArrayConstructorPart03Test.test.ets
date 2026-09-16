@@ -612,8 +612,8 @@ export default function int16ArrayConstructorPart03Test(): void {
     it("int16ArrayConstructorPart03Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array(3);
       arr.$_set(0 as int, 99);
-      let valMin:short = -32768
-      let valMax:short = 32767
+      let valMin:short = -32768;
+      let valMax:short = 32767;
       arr.$_set(1 as int, valMin);
       arr.$_set(2 as int, valMax);
       let actual: number = arr.$_get(0 as int);

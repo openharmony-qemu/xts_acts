@@ -532,7 +532,7 @@ export default function int16ArrayConstructorPart10Test(): void {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       try {
         let arr: Int16Array = new Int16Array(buf, Number.POSITIVE_INFINITY);
-        let val:short = 32767
+        let val:short = 32767;
         arr.$_set(1, val);
         expect().assertFail();
       } catch (e) {
