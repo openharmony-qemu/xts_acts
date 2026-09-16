@@ -49,7 +49,6 @@ group("ability_runtime") {
       "actsabilityerrcodequerywithoutpertest:ActsAbilityErrCodeQueryWithoutPerTest",
       "actsabilityerrorcodeteststatic:ActsAbilityErrorCodeStaticTest",
       "actsabilityhypersnapmanager:actsabilityhypersnapmanager",
-      "actsabilityhypersnapgetlasterror:actsabilityhypersnapgetlasterror",
       "actsabilitymanageretstest:ActsAbilityManagerEtsTest",
       "actsabilityrecoverytest:actsabilityrecoverytest",
       "actsabilitytooltest:actsabilitytooltest",
