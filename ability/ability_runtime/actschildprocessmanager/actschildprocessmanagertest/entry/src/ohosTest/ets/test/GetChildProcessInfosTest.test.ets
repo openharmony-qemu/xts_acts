@@ -28,7 +28,7 @@ const ERR_SERVICE = 16000050;
 const ERR_CONTEXT = 16000011;
 const ERR_CAPABILITY = 801;
 const ERR_NOT_SUPPORTED = 16000061;
-const BUNDLE = 'com.acts.childprocessinfostest';
+const BUNDLE = 'com.acts.childprocessmanagertest';
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -58,7 +58,7 @@ export default function getChildProcessInfosTest() {
       try {
         arkSupported = childProcessManager.isArkChildProcessSupported();
       } catch (err) {
-        console.error(`${TAG} isArkChildProcessSupported failed: ${JSON.stringify(err)}`);
+        console.info(`${TAG} isArkChildProcessSupported failed: ${JSON.stringify(err)}`);
         arkSupported = false;
       }
       console.info(`${TAG} isArkChildProcessSupported=${arkSupported}`);
@@ -105,7 +105,7 @@ export default function getChildProcessInfosTest() {
           }
         } catch (e) {
           let err = e as BusinessError;
-          console.error(`${TAG} Empty_0100 code=${err.code}`);
+          console.info(`${TAG} Empty_0100 code=${err.code}`);
           expect(err.code).assertEqual(ERR_SERVICE);
         }
         done();
@@ -140,7 +140,7 @@ export default function getChildProcessInfosTest() {
           expect(found).assertTrue();
         } catch (e) {
           let err = e as BusinessError;
-          console.error(`${TAG} AfterArk_0100 code=${err.code} arkSupported=${arkSupported}`);
+          console.info(`${TAG} AfterArk_0100 code=${err.code} arkSupported=${arkSupported}`);
           if (isCreateUnsupported(err.code)) {
             let infos = await childProcessManager.getChildProcessInfos();
             expect(Array.isArray(infos)).assertTrue();
@@ -184,7 +184,7 @@ export default function getChildProcessInfosTest() {
           expect(found).assertTrue();
         } catch (e) {
           let err = e as BusinessError;
-          console.error(`${TAG} AfterSpawn_0100 code=${err.code}`);
+          console.info(`${TAG} AfterSpawn_0100 code=${err.code}`);
           if (isCreateUnsupported(err.code) || err.code === ERR_SERVICE) {
             let infos = await childProcessManager.getChildProcessInfos();
             expect(Array.isArray(infos)).assertTrue();
@@ -227,7 +227,7 @@ export default function getChildProcessInfosTest() {
             await sleep(1500);
           } catch (startErr) {
             let se = startErr as BusinessError;
-            console.error(`${TAG} startAbility code=${se.code}`);
+            console.info(`${TAG} startAbility code=${se.code}`);
             if (isCreateUnsupported(se.code)) {
               let emptyCheck = await appContext.getUIAbilityChildProcessInfos();
               expect(Array.isArray(emptyCheck)).assertTrue();
@@ -246,7 +246,7 @@ export default function getChildProcessInfosTest() {
           }
         } catch (e) {
           let err = e as BusinessError;
-          console.error(`${TAG} UIAbility_0100 code=${err.code}`);
+          console.info(`${TAG} UIAbility_0100 code=${err.code}`);
           if (err.code === ERR_SERVICE || err.code === ERR_CONTEXT) {
             expect(err.code === ERR_SERVICE || err.code === ERR_CONTEXT).assertTrue();
           } else {

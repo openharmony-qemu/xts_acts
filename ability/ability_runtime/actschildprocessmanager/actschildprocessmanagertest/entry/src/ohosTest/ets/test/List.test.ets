@@ -14,7 +14,9 @@
  */
 
 import arkProcessTest from './ArkProcessTest.test'
+import GetChildProcessInfosTest from './GetChildProcessInfosTest.test'
 
 export default function testsuite() {
   arkProcessTest();
+  GetChildProcessInfosTest();
 }
