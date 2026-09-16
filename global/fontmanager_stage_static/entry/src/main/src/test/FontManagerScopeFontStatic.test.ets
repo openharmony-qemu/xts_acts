@@ -21,6 +21,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import Context from 'application.Context';
 import common  from '@ohos.app.ability.common';
 import { AppStorage }  from '@ohos.arkui.stateManagement';
+import { UtilsTest } from './Util.test';
 
 const ERR_INVALID_PARAM: int = 401;
 const ERR_FILE_NOT_EXISTS: int = 31100101;
@@ -44,7 +45,9 @@ export default function fontManagerScopeFontTest():void {
     let notExistPath: string = "";
     let resContext: Context;
 
-    beforeAll(() => {
+    beforeAll( async() => {
+      await UtilsTest.startAbility('ohos.acts.fontManager.static', 'EntryAbility')
+      await UtilsTest.msSleep(1000)
       resContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext')!
       const cacheDir = resContext.resourceDir;
       console.info("cacheDir:"+cacheDir);

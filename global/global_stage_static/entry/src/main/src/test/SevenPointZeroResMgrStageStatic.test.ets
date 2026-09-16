@@ -31,6 +31,7 @@ import hilog from '@ohos.hilog'
 import fontManager from '@ohos.fontManager';
 import common  from '@ohos.app.ability.common';
 import { AppStorage }  from '@ohos.arkui.stateManagement';
+import { UtilsTest } from './Util.test';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -45,16 +46,18 @@ export default function SevenPointZeroResMgrStageStaticTest() {
 
     beforeAll(async () => {
       console.info("beforeAll case");
+      await UtilsTest.startAbility('ohos.acts.fontManager.static', 'EntryAbility')
+      await UtilsTest.msSleep(1000)
+      resContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext')!
+      const cacheDir = resContext.resourceDir;
+      console.info("cacheDir:"+cacheDir);
+      validFontPath = `${cacheDir}/TestFont_Sans.ttf`;
     });
     beforeEach(() => {
       console.info("beforeEach case");
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       resContext = abilityDelegator.getAppContext()
       res = resContext.resourceManager
-      resContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext')!
-      const cacheDir = resContext.resourceDir;
-      console.info("cacheDir:"+cacheDir);
-      validFontPath = `${cacheDir}/TestFont_Sans.ttf`;
     });
     afterEach(async () => {
       console.info("afterEach case");
