@@ -2570,25 +2570,6 @@ static napi_value TestHiAppEventReportFrameworkMemAnomaly12(napi_env env, napi_c
     return result;
 }
 
-static void OnReceiveCrashEvent(const char *domain, const struct HiAppEvent_AppEventGroup *appEventGroups,
-    uint32_t groupLen)
-{
-    for (int i = 0; i < groupLen; ++i) {
-        for (int j = 0; j < appEventGroups[i].infoLen; ++j) {
-            const struct HiAppEvent_AppEventInfo &appEventInfo = appEventGroups[i].appEventInfos[j];
-            OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.domain=%{public}s", appEventInfo.domain);
-            OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.name=%{public}s", appEventInfo.name);
-            OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.eventType=%{public}d", appEventInfo.type);
-            if (strcmp(appEventInfo.domain, DOMAIN_OS) != 0 ||
-                (strcmp(appEventInfo.name, EVENT_APP_CRASH) != 0 && strcmp(appEventInfo.name, EVENT_APP_FREEZE) != 0
-                && strcmp(appEventInfo.name, EVENT_ADDRESS_SANITIZER) != 0 && strcmp(appEventInfo.name, EVENT_CPU_USAGE_HIGH) != 0
-                && strcmp(appEventInfo.name, EVENT_APP_HICOLLIE) != 0 && strcmp(appEventInfo.name, EVENT_RESOURCE_OVERLIMIT) != 0) ){
-                continue;
-            }
-        }
-    }
-}
-
 static void OnExternalLogCapacityReached(OH_HiAppEvent_ExternalLog* externalLogArr, uint32_t arrLen)
 {
   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent [cpi] onCapacityReached triggered, log count: %{public}u", arrLen);
@@ -2599,27 +2580,6 @@ static void OnExternalLogCapacityReached(OH_HiAppEvent_ExternalLog* externalLogA
         break;
     }
   }
-}
-
-static struct HiAppEvent_Watcher *systemEventWatcherR;
-
-static napi_value RegisterExternalLogMgrSuccess(napi_env env, napi_callback_info info)
-{
-    OH_LOG_INFO(LOG_APP, "testTag start");
-    systemEventWatcherR = OH_HiAppEvent_CreateWatcher("Watcher987");
-    const char *names[] = {EVENT_APP_CRASH, EVENT_APP_FREEZE, EVENT_ADDRESS_SANITIZER, EVENT_CPU_USAGE_HIGH, EVENT_APP_HICOLLIE, EVENT_RESOURCE_OVERLIMIT};
-    OH_HiAppEvent_SetAppEventFilter(systemEventWatcherR, DOMAIN_OS, 0, names, 6);
-    OH_HiAppEvent_SetWatcherOnReceive(systemEventWatcherR, OnReceiveCrashEvent);
-    OH_HiAppEvent_AddWatcher(systemEventWatcherR);
-    int code = OH_HiAppEvent_RegExternalLogCapacityReachedCallback(OnExternalLogCapacityReached);
-    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
-    if (code == HIAPPEVENT_SUCCESS){
-        code = HIAPPEVENT_SUCCESS;
-    }
-    OH_HiAppEvent_DestroyWatcher(systemEventWatcherR);
-    napi_value result;
-    napi_create_int32(env, code, &result);
-    return result;
 }
 
 static napi_value RegisterExternalLogMgrFalse(napi_env env, napi_callback_info info)
@@ -2909,7 +2869,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestHiAppEventReportFrameworkMemAnomaly11", nullptr, TestHiAppEventReportFrameworkMemAnomaly11, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestHiAppEventReportFrameworkMemAnomaly12", nullptr, TestHiAppEventReportFrameworkMemAnomaly12, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"add", nullptr, NAPI_Global_add, nullptr, nullptr, nullptr, napi_default, nullptr},
-        { "RegisterExternalLogMgrSuccess", nullptr, RegisterExternalLogMgrSuccess, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "RegisterExternalLogMgrFalse", nullptr, RegisterExternalLogMgrFalse, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "RegisterExternalLogMgrNull", nullptr, RegisterExternalLogMgrNull, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "RegisterExternalLogMgrnullptr", nullptr, RegisterExternalLogMgrnullptr, nullptr, nullptr, nullptr, napi_default, nullptr },
