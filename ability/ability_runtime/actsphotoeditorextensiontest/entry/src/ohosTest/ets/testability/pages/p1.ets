@@ -20,7 +20,7 @@ const TAG = 'MuseEditorExtensionAbility';
 
 @Entry
 @Component
-struct Index {
+struct PhotoEditorP1 {
     aboutToAppear() {
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
     }
