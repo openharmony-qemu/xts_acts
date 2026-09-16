@@ -33,7 +33,6 @@ export default function DeviceManagerNormalCanIUseTest() {
           return true;
       }
       console.info("Test USB device is not connected");
-      expect(true).assertTrue();
       if (typeof(done) === 'function') {
         done();
       }
