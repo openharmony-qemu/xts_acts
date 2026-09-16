@@ -2424,6 +2424,98 @@ export default function avMusicTemplateControllerTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_4900
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_4900
+     * @tc.desc   Testing send custom command
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+     async (done: Function) => {
+        try {
+          template!.onCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+            let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+            return data;
+          });
+          await CommonUtils.msSleep();
+          const command = 'commandTest';
+          const args = 'argsTest';
+          let res: avMusicTemplate.OperResult | undefined = await controller!.sendCustomCommand(command, args);
+          CommonUtils.logInfo(TAG, `4900: before off res=${JSON.stringify(res)}`);
+          expect(res!.errorCode).assertEqual(CommonConstants.SUCCESS_CODE);
+          template!.offCustomCommand();
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "SEND_CUSTOM_COMMAND_4900 catch err: " + CommonUtils.getError(err));
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_5000
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_5000
+     * @tc.desc   Testing send custom command with space command
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+     async (done: Function) => {
+        try {
+          template!.onCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+            let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+            if (command === ' ') {
+              data.errorCode = -1;
+            }
+            return data;
+          });
+          await CommonUtils.msSleep();
+          let command = ' ';
+          const args = 'argsTest2';
+          let res: avMusicTemplate.OperResult | undefined = await controller!.sendCustomCommand(command, args);
+          CommonUtils.logInfo(TAG, `5000:  res=${JSON.stringify(res)}`);
+          expect(res!.errorCode).assertEqual(-1);
+          template!.offCustomCommand();
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "SEND_CUSTOM_COMMAND_5000 catch err: " + CommonUtils.getError(err));
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_5100
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_5100
+     * @tc.desc   Testing send custom command with empty args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+     async (done: Function) => {
+        try {
+          template!.onCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+            let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+            if (args === '') {
+              data.errorCode = -1;
+            }
+            return data;
+          });
+          await CommonUtils.msSleep();
+          let command = 'commandTest';
+          const args = '';
+          let res: avMusicTemplate.OperResult | undefined = await controller!.sendCustomCommand(command, args);
+          CommonUtils.logInfo(TAG, `5100: res=${JSON.stringify(res)}`);
+          expect(res!.errorCode).assertEqual(-1);
+          template!.offCustomCommand();
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "SEND_CUSTOM_COMMAND_5100 catch err: " + CommonUtils.getError(err));
+          expect().assertFail();
+        }
+      })
 
   })
 }

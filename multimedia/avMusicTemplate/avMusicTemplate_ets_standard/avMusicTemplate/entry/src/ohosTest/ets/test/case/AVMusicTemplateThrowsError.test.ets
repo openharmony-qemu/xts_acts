@@ -3962,6 +3962,143 @@ export default function avMusicTemplateThrowsErrorTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_THROWS_ERROR_6200
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_THROWS_ERROR_6200
+     * @tc.desc   Testing on custom command
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_THROWS_ERROR_6200',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        template!.onCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+          let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+          return data;
+        });
+        done();
+      } catch (err) {
+        CommonUtils.logError(TAG, "ON_CUSTOM_COMMAND_THROWS_ERROR_6200 catch err: " + CommonUtils.getError(err));
+        expect(err.code === 801).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_THROWS_ERROR_6300
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_THROWS_ERROR_6300
+     * @tc.desc   Testing on custom command throws error 35000005 - AVMusicTemplate does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_THROWS_ERROR_6300',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        template!.onCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+          let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+          return data;
+        });
+        done();
+      } catch (err) {
+        CommonUtils.logError(TAG, "ON_CUSTOM_COMMAND_THROWS_ERROR_6300 catch err: " + CommonUtils.getError(err));
+        expect(err.code === 35000005).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_THROWS_ERROR_6400
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_THROWS_ERROR_6400
+     * @tc.desc   Testing on custom command throws error 35000012 - AVMusicTemplate error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_THROWS_ERROR_6400',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        template!.onCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+          let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+          return data;
+        });
+        done();
+      } catch (err) {
+        CommonUtils.logError(TAG, "ON_CUSTOM_COMMAND_THROWS_ERROR_6400 catch err: " + CommonUtils.getError(err));
+        expect(err.code === 35000012).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_THROWS_ERROR_6500
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_THROWS_ERROR_6500
+     * @tc.desc   Testing off custom command
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_THROWS_ERROR_6500',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        template?.offCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+          let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+          return data;
+        });
+        done();
+      } catch (err) {
+        CommonUtils.logError(TAG, "OFF_CUSTOM_COMMAND_THROWS_ERROR_6500 catch err: " + CommonUtils.getError(err));
+        expect(err.code === 801).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_THROWS_ERROR_6600
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_THROWS_ERROR_6600
+     * @tc.desc   Testing off custom command throws error 35000005 - AVMusicTemplate does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_THROWS_ERROR_6600',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        template?.offCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+          let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+          return data;
+        });
+        done();
+      } catch (err) {
+        CommonUtils.logError(TAG, "OFF_CUSTOM_COMMAND_THROWS_ERROR_6600 catch err: " + CommonUtils.getError(err));
+        expect(err.code === 35000005).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_THROWS_ERROR_6700
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_THROWS_ERROR_6700
+     * @tc.desc   Testing off custom command throws error 35000012 - AVMusicTemplate error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_THROWS_ERROR_6700',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        template?.offCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+          let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+          return data;
+        });
+        done();
+      } catch (err) {
+        CommonUtils.logError(TAG, "OFF_CUSTOM_COMMAND_THROWS_ERROR_6700 catch err: " + CommonUtils.getError(err));
+        expect(err.code === 35000012).assertTrue();
+        done();
+      }
+    })
 
 
   })
