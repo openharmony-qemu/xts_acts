@@ -162,7 +162,6 @@ export const TestHiAppEventReportFrameworkMemAnomaly9: () => number;
 export const TestHiAppEventReportFrameworkMemAnomaly10: () => number;
 export const TestHiAppEventReportFrameworkMemAnomaly11: () => number;
 export const TestHiAppEventReportFrameworkMemAnomaly12: () => number;
-export const RegisterExternalLogMgrSuccess: () => number;
 export const RegisterExternalLogMgrFalse: () => number;
 export const RegisterExternalLogMgrNull: () => number;
 export const RegisterExternalLogMgrnullptr: () => number;
