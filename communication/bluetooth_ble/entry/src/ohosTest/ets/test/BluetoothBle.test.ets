@@ -3327,10 +3327,10 @@ export default function bluetoothBleTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ON_MultiCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-            function onReceiveEvent1() {
+            let onReceiveEvent1 = () => {
                 console.info('[bluetooth_js] BLEscan device result_viod1');
             }
-            function onReceiveEvent2() {
+            let onReceiveEvent2 = () => {
                 console.info('[bluetooth_js] BLEscan device result_viod2');
             }
             try {
