@@ -62,18 +62,6 @@ export default function accountManagerTest() {
       } catch (err) {
         console.error(`acquireAuthorization exception: code is ${err.code}, message is ${err.message}`);
       }
-
-      console.info(' --- resetDomainAccountPolicy  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      let policy: accountManager.DomainAccountPolicy = {};
-      try {
-        accountManager.setDomainAccountPolicy(SELFWANT, DOMAIN_ACCOUNT_INFO1, policy);
-      } catch (error) {
-        console.info(' --- resetDomainAccountPolicy error 801 is expected, actually catch: ' + error.code);
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      console.info(' --- resetDomainAccountPolicy  -------- END --------');
       done();
     })
 
