@@ -786,5 +786,281 @@ describe('HiTraceJsTest', function () {
         console.info('testHitraceApi027 end');
         done();
     })
+
+    /**
+     * @tc.name   testHitraceApi028
+     * @tc.number DFX_DFT_Hitrace_JS_02800
+     * @tc.desc   tracepoint mode param null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi028 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi028", hiTraceChain.HiTraceFlag.DEFAULT);
+            hiTraceChain.tracepoint(null,
+                                    hiTraceChain.HiTraceTracepointType.SS, traceId, "hitrace api test.");
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi028 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi028 end');
+        done();
+    })
+
+    /**
+     * @tc.name   testHitraceApi029
+     * @tc.number DFX_DFT_Hitrace_JS_02900
+     * @tc.desc   tracepoint mode param undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi029 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi029", hiTraceChain.HiTraceFlag.DEFAULT);
+            hiTraceChain.tracepoint(undefined,
+                                    hiTraceChain.HiTraceTracepointType.SS, traceId, "hitrace api test.");
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi029 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi029 end');
+        done();
+    })
+
+    /**
+     * @tc.name   testHitraceApi030
+     * @tc.number DFX_DFT_Hitrace_JS_03000
+     * @tc.desc   tracepoint type param null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi030 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi030", hiTraceChain.HiTraceFlag.DEFAULT);
+            hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEFAULT,
+                                    null, traceId, "hitrace api test.");
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi030 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi030 end');
+        done();
+    })
+
+    /**
+     * @tc.name   testHitraceApi031
+     * @tc.number DFX_DFT_Hitrace_JS_03100
+     * @tc.desc   tracepoint type param undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi031 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi031", hiTraceChain.HiTraceFlag.DEFAULT);
+            hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEFAULT,
+                                    undefined, traceId, "hitrace api test.");
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi031 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi031 end');
+        done();
+    })
+
+    /**
+     * @tc.name   testHitraceApi032
+     * @tc.number DFX_DFT_Hitrace_JS_03200
+     * @tc.desc   isFlagEnabled flag param null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi032 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi032", hiTraceChain.HiTraceFlag.DEFAULT);
+            let result = hiTraceChain.isFlagEnabled(traceId, null);
+            expect(result).assertFalse();
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi032 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi032 end');
+        done();
+    })
+
+    /**
+     * @tc.name   testHitraceApi033
+     * @tc.number DFX_DFT_Hitrace_JS_03300
+     * @tc.desc   isFlagEnabled flag param undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi033 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi033", hiTraceChain.HiTraceFlag.DEFAULT);
+            let result = hiTraceChain.isFlagEnabled(traceId, undefined);
+            expect(result).assertFalse();
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi033 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi033 end');
+        done();
+    })
+
+    /**
+     * @tc.name   testHitraceApi034
+     * @tc.number DFX_DFT_Hitrace_JS_03400
+     * @tc.desc   tracepoint mode param out-of-range enum test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi034 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi034", hiTraceChain.HiTraceFlag.DEFAULT);
+            hiTraceChain.tracepoint(-1,
+                                    hiTraceChain.HiTraceTracepointType.SS, traceId, "hitrace api test.");
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi034 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi034 end');
+        done();
+    })
+
+    /**
+     * @tc.name   testHitraceApi035
+     * @tc.number DFX_DFT_Hitrace_JS_03500
+     * @tc.desc   tracepoint mode param out-of-range enum test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi035 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi035", hiTraceChain.HiTraceFlag.DEFAULT);
+            hiTraceChain.tracepoint(999,
+                                    hiTraceChain.HiTraceTracepointType.SS, traceId, "hitrace api test.");
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi035 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi035 end');
+        done();
+    })
+
+    /**
+     * @tc.name   testHitraceApi036
+     * @tc.number DFX_DFT_Hitrace_JS_03600
+     * @tc.desc   tracepoint type param out-of-range enum test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi036 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi036", hiTraceChain.HiTraceFlag.DEFAULT);
+            hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEFAULT,
+                                    -1, traceId, "hitrace api test.");
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi036 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi036 end');
+        done();
+    })
+
+    /**
+     * @tc.name   testHitraceApi037
+     * @tc.number DFX_DFT_Hitrace_JS_03700
+     * @tc.desc   tracepoint type param out-of-range enum test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi037 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi037", hiTraceChain.HiTraceFlag.DEFAULT);
+            hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEFAULT,
+                                    999, traceId, "hitrace api test.");
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi037 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi037 end');
+        done();
+    })
+
+    /**
+     * @tc.name   testHitraceApi038
+     * @tc.number DFX_DFT_Hitrace_JS_03800
+     * @tc.desc   isFlagEnabled flag param out-of-range enum test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi038 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi038", hiTraceChain.HiTraceFlag.DEFAULT);
+            let result = hiTraceChain.isFlagEnabled(traceId, -1);
+            expect(result).assertFalse();
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi038 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi038 end');
+        done();
+    })
+
+    /**
+     * @tc.name   testHitraceApi039
+     * @tc.number DFX_DFT_Hitrace_JS_03900
+     * @tc.desc   isFlagEnabled flag param out-of-range enum test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHitraceApi039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        console.info('testHitraceApi039 start');
+        try {
+            let traceId = hiTraceChain.begin("testHitraceApi039", hiTraceChain.HiTraceFlag.DEFAULT);
+            let result = hiTraceChain.isFlagEnabled(traceId, 999);
+            expect(result).assertFalse();
+            hiTraceChain.end(traceId);
+        } catch (error) {
+            console.log(`testHitraceApi039 got an error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+        }
+        console.info('testHitraceApi039 end');
+        done();
+    })
 })
 }
