@@ -440,7 +440,15 @@ static napi_value CreateAvailableArea(napi_env env, napi_callback_info info)
     napi_set_named_property(env, result, "height", height);
     return result;
 }
-
+static napi_value CreateAvailableAreaMax(napi_env env, napi_callback_info info)
+{
+NativeDisplayManager_Rect *availableAreaInfo;
+NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_CreateAvailableArea(9223372036854775807, &availableAreaInfo);
+OH_LOG_INFO(LOG_APP, "errorCode=%{public}d", errCode);
+napi_value errorCode;
+napi_create_int32(env, errCode, &errorCode);
+return errorCode;
+}
 static napi_value CreateAvailableArea_ErrCode140004(napi_env env, napi_callback_info info)
 {
     NativeDisplayManager_Rect *availableAreaInfo;
@@ -796,6 +804,8 @@ static napi_value displayInit(napi_env env, napi_value exports)
 {
     injectTouchEventInit(env, exports);
     napi_property_descriptor desc[] = {
+        { "createAvailableAreaMax", nullptr, CreateAvailableAreaMax, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
         { "registerAvailableAreaChangeListener", nullptr, RegisterAvailableAreaChangeListener, nullptr, nullptr,
             nullptr, napi_default, nullptr },
         { "unregisterAvailableAreaChangeListener", nullptr, UnregisterAvailableAreaChangeListener, nullptr, nullptr,
