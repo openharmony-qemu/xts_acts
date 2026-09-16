@@ -46,8 +46,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__0100
      * @tc.name int16ArrayConstructorPart17Test001
      * @tc.desc Verify new Int16Array 0 int number constructor(length: int)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -64,8 +64,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__0200
      * @tc.name int16ArrayConstructorPart17Test002
      * @tc.desc Verify new Int16Array(3) length is 3 and byteLength is 6
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -82,8 +82,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__0300
      * @tc.name int16ArrayConstructorPart17Test003
      * @tc.desc Verify new Int16Array int length constructor(length: int)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -98,8 +98,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__0400
      * @tc.name int16ArrayConstructorPart17Test004
      * @tc.desc Verify new Int16Array number length constructor(length: number)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -114,8 +114,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__0500
      * @tc.name int16ArrayConstructorPart17Test005
      * @tc.desc Verify new Int16Array 3.7 length constructor(length: number)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -129,8 +129,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__0600
      * @tc.name int16ArrayConstructorPart17Test006
      * @tc.desc Verify new Int16Array Int16Array constructor(other: Int16Array)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -148,8 +148,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__0700
      * @tc.name int16ArrayConstructorPart17Test007
      * @tc.desc Verify new Int16Array Array<int> constructor(numbers: Array<int>)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -164,8 +164,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__0800
      * @tc.name int16ArrayConstructorPart17Test008
      * @tc.desc Verify new Int16Array Int16Array ArrayBuffer Int16Array Int16Array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -180,8 +180,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__0900
      * @tc.name int16ArrayConstructorPart17Test009
      * @tc.desc Verify new Int16Array FixedArray<E> constructor(numbers: FixedArray<E>)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -196,8 +196,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__1000
      * @tc.name int16ArrayConstructorPart17Test010
      * @tc.desc Verify new Int16Array length=0 byteOffset 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -212,8 +212,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__1100
      * @tc.name int16ArrayConstructorPart17Test011
      * @tc.desc Verify new Int16Array length=0 byteLength 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -228,8 +228,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__1200
      * @tc.name int16ArrayConstructorPart17Test012
      * @tc.desc Verify new Int16Array ArrayBuffer(0) length 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -245,8 +245,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__1300
      * @tc.name int16ArrayConstructorPart17Test013
      * @tc.desc Verify new Int16Array ArrayBuffer (byteOffset) (byteOffset+length) undefined offset 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -262,8 +262,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__1400
      * @tc.name int16ArrayConstructorPart17Test014
      * @tc.desc Verify new Int16Array ArrayBuffer undefined length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -278,8 +278,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__1500
      * @tc.name int16ArrayConstructorPart17Test015
      * @tc.desc Verify new Int16Array BYTES_PER_ELEMENT 2
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -301,8 +301,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__1600
      * @tc.name int16ArrayConstructorPart17Test016
      * @tc.desc Verify new Int16Array ArrayBuffer RangeError ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -327,8 +327,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__1700
      * @tc.name int16ArrayConstructorPart17Test017
      * @tc.desc Verify new Int16Array(-1) throws RangeError and new Int16Array(1) length is 1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -353,8 +353,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__1800
      * @tc.name int16ArrayConstructorPart17Test018
      * @tc.desc Verify new Int16Array ArrayBuffer RangeError ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -382,8 +382,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__1900
      * @tc.name int16ArrayConstructorPart17Test019
      * @tc.desc Verify new Int16Array(-5) throws RangeError and new Int16Array(5) length is 5
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -408,8 +408,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__2000
      * @tc.name int16ArrayConstructorPart17Test020
      * @tc.desc Verify new Int16Array() and new Int16Array(0) toString() returns empty string
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -429,8 +429,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__2100
      * @tc.name int16ArrayConstructorPart17Test021
      * @tc.desc Verify new Int16Array(Int16Array.of(1,2)) copy toString() length equals source
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -447,8 +447,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__2200
      * @tc.name int16ArrayConstructorPart17Test022
      * @tc.desc Verify new Int16Array ArrayBuffer Array byteOffset
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -468,8 +468,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__2300
      * @tc.name int16ArrayConstructorPart17Test023
      * @tc.desc Verify new Int16Array ArrayBuffer byteOffset
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -488,8 +488,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__2400
      * @tc.name int16ArrayConstructorPart17Test024
      * @tc.desc Verify new Int16Array buffer ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -503,8 +503,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__2500
      * @tc.name int16ArrayConstructorPart17Test025
      * @tc.desc Verify new Int16Array buffer ArrayLike ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -524,8 +524,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__2600
      * @tc.name int16ArrayConstructorPart17Test026
      * @tc.desc Verify new Int16Array copy $_set(0,999) does not affect source $_get(0) equals 100
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -544,8 +544,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__2700
      * @tc.name int16ArrayConstructorPart17Test027
      * @tc.desc Verify new Int16Array ArrayBuffer $_set(0,777) reflects in DataView getInt16(0)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -562,8 +562,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__2800
      * @tc.name int16ArrayConstructorPart17Test028
      * @tc.desc Verify new Int16Array ArrayBuffer DataView
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -584,8 +584,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__2900
      * @tc.name int16ArrayConstructorPart17Test029
      * @tc.desc Verify new Int16Array overlapping views $_set(1,555) and $_set(1,666) share buffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -606,8 +606,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__3000
      * @tc.name int16ArrayConstructorPart17Test030
      * @tc.desc Verify new Int16Array copy buffer is not the same reference as source buffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -621,8 +621,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__3100
      * @tc.name int16ArrayConstructorPart17Test031
      * @tc.desc Verify new Int16Array ArrayBuffer byteLength
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -640,8 +640,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__3200
      * @tc.name int16ArrayConstructorPart17Test032
      * @tc.desc Verify new Int16Array ArrayBuffer byteOffset
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -664,8 +664,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__3300
      * @tc.name int16ArrayConstructorPart17Test033
      * @tc.desc Verify new Int16Array buffer ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -682,8 +682,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__3400
      * @tc.name int16ArrayConstructorPart17Test034
      * @tc.desc Verify new Int16Array(arr1.buffer) byteOffset is 0 and length is 4
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -702,8 +702,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__3500
      * @tc.name int16ArrayConstructorPart17Test035
      * @tc.desc Verify new Int16Array shared ArrayBuffer $_set(0,123) visible via other view $_get(0)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -724,8 +724,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__3600
      * @tc.name int16ArrayConstructorPart17Test036
      * @tc.desc Verify new Int16Array $_set(0,256) low byte is 0 and high byte is 1 in Int8Array view
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -745,8 +745,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__3700
      * @tc.name int16ArrayConstructorPart17Test037
      * @tc.desc Verify new Int16Array $_set(0,32767) $_get(0) equals 32767 and Uint8 low byte equals 255
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -766,8 +766,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__3800
      * @tc.name int16ArrayConstructorPart17Test038
      * @tc.desc Verify new Int16Array buffer length byteLength
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -788,8 +788,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__3900
      * @tc.name int16ArrayConstructorPart17Test039
      * @tc.desc Verify new Int16Array ArrayBuffer Array 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -814,8 +814,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__4000
      * @tc.name int16ArrayConstructorPart17Test040
      * @tc.desc Verify new Int16Array copy elements equal source elements by index iteration
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -834,8 +834,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__4100
      * @tc.name int16ArrayConstructorPart17Test041
      * @tc.desc Verify new Int16Array constructor variants produce correct length for empty, sized, copy and ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -862,8 +862,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__4200
      * @tc.name int16ArrayConstructorPart17Test042
      * @tc.desc Verify new Int16Array out-of-range index $_get throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -901,8 +901,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__4300
      * @tc.name int16ArrayConstructorPart17Test043
      * @tc.desc Verify new Int16Array $_set out of range throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -930,8 +930,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__4400
      * @tc.name int16ArrayConstructorPart17Test044
      * @tc.desc Verify new Int16Array negative index $_get throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -960,8 +960,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__4500
      * @tc.name int16ArrayConstructorPart17Test045
      * @tc.desc Verify new Int16Array BYTES_PER_ELEMENT 2
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -978,8 +978,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__4600
      * @tc.name int16ArrayConstructorPart17Test046
      * @tc.desc Verify new Int16Array ArrayBuffer buffer null
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -994,8 +994,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__4700
      * @tc.name int16ArrayConstructorPart17Test047
      * @tc.desc Verify new Int16Array ArrayLike buffer null ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1009,8 +1009,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__4800
      * @tc.name int16ArrayConstructorPart17Test048
      * @tc.desc Verify new Int16Array byteLength length BYTES_PER_ELEMENT
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1033,8 +1033,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__4900
      * @tc.name int16ArrayConstructorPart17Test049
      * @tc.desc Verify new Int16Array from Array<int> and FixedArray<int> produce equal $_get(0) and $_get(1)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1054,8 +1054,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__5000
      * @tc.name int16ArrayConstructorPart17Test050
      * @tc.desc Verify new Int16Array int16 Array<int> Int16Array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1074,8 +1074,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__5100
      * @tc.name int16ArrayConstructorPart17Test051
      * @tc.desc Verify new Int16Array constructor(0) vs Int16Array.of()
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1093,8 +1093,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__5200
      * @tc.name int16ArrayConstructorPart17Test052
      * @tc.desc Verify new Int16Array constructor(length) vs Int16Array.of(...) length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1109,8 +1109,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__5300
      * @tc.name int16ArrayConstructorPart17Test053
      * @tc.desc Verify new Int16Array constructor(Int16Array) vs Int16Array.from(Int16Array) length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1129,8 +1129,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__5400
      * @tc.name int16ArrayConstructorPart17Test054
      * @tc.desc Verify new Int16Array constructor(Array<int>) vs Int16Array.from(Array<int>)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1149,8 +1149,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__5500
      * @tc.name int16ArrayConstructorPart17Test055
      * @tc.desc Verify new Int16Array (int ) vs (int +int )
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1169,8 +1169,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__5600
      * @tc.name int16ArrayConstructorPart17Test056
      * @tc.desc Verify new Int16Array (number ) vs (Number +Number )
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1186,8 +1186,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__5700
      * @tc.name int16ArrayConstructorPart17Test057
      * @tc.desc Verify new Int16Array ArrayBuffer+ + vs ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1206,8 +1206,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__5800
      * @tc.name int16ArrayConstructorPart17Test058
      * @tc.desc Verify new Int16Array ArrayBuffer+0 + vs ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1226,8 +1226,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__5900
      * @tc.name int16ArrayConstructorPart17Test059
      * @tc.desc Verify new Int16Array(-1) and new Int16Array(ArrayBuffer, 1) throw RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1254,8 +1254,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__6000
      * @tc.name int16ArrayConstructorPart17Test060
      * @tc.desc Verify new Int16Array(-5) throws RangeError while existing Int16Array stays intact
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1283,8 +1283,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__6100
      * @tc.name int16ArrayConstructorPart17Test061
      * @tc.desc Verify new Int16Array int16.MAX+1 Int16Array ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1305,8 +1305,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__6200
      * @tc.name int16ArrayConstructorPart17Test062
      * @tc.desc Verify new Int16Array Array<int> vs Int16Array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1325,8 +1325,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__6300
      * @tc.name int16ArrayConstructorPart17Test063
      * @tc.desc Verify new Int16Array for-of iteration sums to 6 for of(), copy and Array<int> source
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1349,8 +1349,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__6400
      * @tc.name int16ArrayConstructorPart17Test064
      * @tc.desc Verify new Int16Array NaN length constructor(length: number) 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1368,8 +1368,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__6500
      * @tc.name int16ArrayConstructorPart17Test065
      * @tc.desc Verify new Int16Array Infinity length constructor(length: number) throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1387,8 +1387,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__6600
      * @tc.name int16ArrayConstructorPart17Test066
      * @tc.desc Verify new Int16Array -Infinity length constructor(length: number) RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1409,8 +1409,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__6700
      * @tc.name int16ArrayConstructorPart17Test067
      * @tc.desc Verify new Int16Array FixedArray<int> constructor(numbers: FixedArray<E>)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1428,8 +1428,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__6800
      * @tc.name int16ArrayConstructorPart17Test068
      * @tc.desc Verify new Int16Array FixedArray<number> constructor(numbers: FixedArray<number>)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1444,8 +1444,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__6900
      * @tc.name int16ArrayConstructorPart17Test069
      * @tc.desc Verify new Int16Array buf arr1 arr2 arr1.buffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1462,8 +1462,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__7000
      * @tc.name int16ArrayConstructorPart17Test070
      * @tc.desc Verify new Int16Array(arr1.buffer,2,4) byteOffset is 2 and length is 4
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1482,8 +1482,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__7100
      * @tc.name int16ArrayConstructorPart17Test071
      * @tc.desc Verify new Int16Array Int16Array Int32Array buffer int16 int32
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1501,8 +1501,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__7200
      * @tc.name int16ArrayConstructorPart17Test072
      * @tc.desc Verify new Int16Array Int16Array Float32Array buffer
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1520,8 +1520,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__7300
      * @tc.name int16ArrayConstructorPart17Test073
      * @tc.desc Verify two Int16Array views on the same ArrayBuffer are not reference-equal
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1536,8 +1536,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__7400
      * @tc.name int16ArrayConstructorPart17Test074
      * @tc.desc Verify new Int16Array copies are not reference-equal but $_get(0) values are equal
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1555,8 +1555,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__7500
      * @tc.name int16ArrayConstructorPart17Test075
      * @tc.desc Verify new Int16Array fill(99) sets $_get(0), $_get(1) and $_get(2) to 99 for length, of and ArrayBuffer sources
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1579,8 +1579,8 @@ export default function int16ArrayConstructorPart17Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART17__7600
      * @tc.name int16ArrayConstructorPart17Test076
      * @tc.desc Verify new Int16Array copy reverse() yields $_get(0) equals 3 and $_get(2) equals 1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart17Test076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
