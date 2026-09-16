@@ -46,8 +46,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__0100
      * @tc.name int16ArrayValueOfPart03Test001
      * @tc.desc Verify valueOf reference $_get(-1) throws RangeError for OOB negative index
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -65,8 +65,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__0200
      * @tc.name int16ArrayValueOfPart03Test002
      * @tc.desc Verify valueOf reference $_get(3) throws RangeError at length index
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -84,8 +84,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__0300
      * @tc.name int16ArrayValueOfPart03Test003
      * @tc.desc Verify empty Int16Array valueOf reference $_get(0) throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -103,8 +103,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__0400
      * @tc.name int16ArrayValueOfPart03Test004
      * @tc.desc Verify empty Int16Array valueOf reference $_get(-1) throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -122,8 +122,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__0500
      * @tc.name int16ArrayValueOfPart03Test005
      * @tc.desc Verify single-element valueOf reference $_get(1) throws RangeError at length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -141,8 +141,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__0600
      * @tc.name int16ArrayValueOfPart03Test006
      * @tc.desc Verify single-element valueOf reference $_get(-2) throws RangeError for -length-1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -160,8 +160,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__0700
      * @tc.name int16ArrayValueOfPart03Test007
      * @tc.desc Verify valueOf reference $_set(-1, 99) throws RangeError and arr[0] unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -182,8 +182,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__0800
      * @tc.name int16ArrayValueOfPart03Test008
      * @tc.desc Verify valueOf reference $_set(3, 99) at length throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -204,8 +204,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__0900
      * @tc.name int16ArrayValueOfPart03Test009
      * @tc.desc Verify empty valueOf reference $_set(0, 99) throws RangeError and same ref
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -224,8 +224,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__1000
      * @tc.name int16ArrayValueOfPart03Test010
      * @tc.desc Verify empty valueOf reference $_set(-1, 99) throws RangeError and same ref
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -244,8 +244,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__1100
      * @tc.name int16ArrayValueOfPart03Test011
      * @tc.desc Verify single-element valueOf $_set(1, 99) at length throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -266,8 +266,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__1200
      * @tc.name int16ArrayValueOfPart03Test012
      * @tc.desc Verify single-element valueOf $_set(-2, 99) throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -288,8 +288,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__1300
      * @tc.name int16ArrayValueOfPart03Test013
      * @tc.desc Verify valueOf reference $_set(0, 32768) wraps to -32768
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -305,8 +305,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__1400
      * @tc.name int16ArrayValueOfPart03Test014
      * @tc.desc Verify valueOf reference $_set(0, Double.NaN) coerces to 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -322,8 +322,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__1500
      * @tc.name int16ArrayValueOfPart03Test015
      * @tc.desc Verify valueOf reference $_set(0, Double.POSITIVE_INFINITY) coerces to 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -339,8 +339,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__1600
      * @tc.name int16ArrayValueOfPart03Test016
      * @tc.desc Verify valueOf reference $_set(0, Double.NEGATIVE_INFINITY) coerces to 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -356,8 +356,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__1700
      * @tc.name int16ArrayValueOfPart03Test017
      * @tc.desc Verify fill(32768) wrap then valueOf shared reference mutation
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -374,8 +374,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__1800
      * @tc.name int16ArrayValueOfPart03Test018
      * @tc.desc Verify fill(-32769) wrap then valueOf shared reference mutation
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -392,8 +392,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__1900
      * @tc.name int16ArrayValueOfPart03Test019
      * @tc.desc Verify fill(Double.NaN) then valueOf shared reference mutation
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -410,8 +410,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__2000
      * @tc.name int16ArrayValueOfPart03Test020
      * @tc.desc Verify fill(Double.POSITIVE_INFINITY) then valueOf shared reference mutation
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -429,8 +429,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__2100
      * @tc.name int16ArrayValueOfPart03Test021
      * @tc.desc Verify fill(-Infinity) then valueOf shared reference mutation
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -448,8 +448,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__2200
      * @tc.name int16ArrayValueOfPart03Test022
      * @tc.desc Verify fill(0x8000) wrap then valueOf shared reference mutation
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -466,8 +466,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__2300
      * @tc.name int16ArrayValueOfPart03Test023
      * @tc.desc Verify subarray(0, 0) empty view valueOf returns same reference
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -481,8 +481,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__2400
      * @tc.name int16ArrayValueOfPart03Test024
      * @tc.desc Verify subarray(0, 1) valueOf returns same view and mutation reflects
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -499,8 +499,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__2500
      * @tc.name int16ArrayValueOfPart03Test025
      * @tc.desc Verify subarray end clamp valueOf returns same view and mutation reflects
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -517,8 +517,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__2600
      * @tc.name int16ArrayValueOfPart03Test026
      * @tc.desc Verify with(0, 99) new array is not valueOf self-reference
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -533,8 +533,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__2700
      * @tc.name int16ArrayValueOfPart03Test027
      * @tc.desc Verify with(1, MIN) returns new array and original unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -553,8 +553,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__2800
      * @tc.name int16ArrayValueOfPart03Test028
      * @tc.desc Verify with(-1, MAX) returns new array and original unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -573,8 +573,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__2900
      * @tc.name int16ArrayValueOfPart03Test029
      * @tc.desc Verify after with mutation original valueOf still returns self-reference
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -587,8 +587,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__3000
      * @tc.name int16ArrayValueOfPart03Test030
      * @tc.desc Verify shared buffer view1 write visible via view2 valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -606,8 +606,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__3100
      * @tc.name int16ArrayValueOfPart03Test031
      * @tc.desc Verify offset views and valueOf reference mutation on view2
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -626,8 +626,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__3200
      * @tc.name int16ArrayValueOfPart03Test032
      * @tc.desc Verify parent write visible on subarray valueOf shared view
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -644,8 +644,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__3300
      * @tc.name int16ArrayValueOfPart03Test033
      * @tc.desc Verify subarray valueOf mutation reflects on parent array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -662,8 +662,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__3400
      * @tc.name int16ArrayValueOfPart03Test034
      * @tc.desc Verify nested subarray valueOf returns innermost view reference
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -682,8 +682,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__3500
      * @tc.name int16ArrayValueOfPart03Test035
      * @tc.desc Verify parent and child valueOf refs share buffer mutation
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -701,8 +701,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__3600
      * @tc.name int16ArrayValueOfPart03Test036
      * @tc.desc Verify empty Int16Array valueOf returns self-reference
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -715,8 +715,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__3700
      * @tc.name int16ArrayValueOfPart03Test037
      * @tc.desc Verify valueOf reference fill reverse sort chain mutates original
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -732,8 +732,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__3800
      * @tc.name int16ArrayValueOfPart03Test038
      * @tc.desc Verify valueOf reference set then $_set both mutate original
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -750,8 +750,8 @@ export default function int16ArrayValueOfPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART03__3900
      * @tc.name int16ArrayValueOfPart03Test039
      * @tc.desc Verify valueOf reference copyWithin mutates original array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayValueOfPart03Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
