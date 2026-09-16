@@ -12,8 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Ability from '@ohos.app.ability.UIAbility';
+import Ability from '@ohos.app.ability.UIAbility'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window';
 import commonEventManager from '@ohos.commonEventManager';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 const sleepTimeOne = 1000;
 
@@ -37,7 +41,7 @@ function timeout() {
 
 export default class MainAbility2 extends Ability {
 
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     console.log('MainAbility2 onCreate');
   }
 
@@ -46,10 +50,10 @@ export default class MainAbility2 extends Ability {
     console.log('MainAbility2 onDestroy');
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     console.log('MainAbility2 onWindowStageCreate');
-    windowStage.setUIContent(this.context, 'pages/index2', null);
+    windowStage.loadContent('pages/index2', null);
   }
 
   onWindowStageDestroy() {
