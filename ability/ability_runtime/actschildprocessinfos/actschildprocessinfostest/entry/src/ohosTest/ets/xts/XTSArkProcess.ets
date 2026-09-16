@@ -39,7 +39,7 @@ export default class XTSArkProcess extends ChildProcess {
         publishEvent(XTSArkProcess.EVENT, args?.entryParams, str);
       })
       .catch((err: BusinessError) => {
-        console.info(`XTSArkProcess read error, errorCode: ${err.code}, errorMsg:${err.message}`);
+        console.error(`XTSArkProcess read error, errorCode: ${err.code}, errorMsg:${err.message}`);
         publishEvent(XTSArkProcess.EVENT, args?.entryParams, '');
       })
 

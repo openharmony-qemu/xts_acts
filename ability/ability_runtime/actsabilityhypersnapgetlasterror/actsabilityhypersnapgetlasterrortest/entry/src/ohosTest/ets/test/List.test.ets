@@ -14,9 +14,7 @@
  */
 
 import HyperSnapGetLastErrorTest from './HyperSnapGetLastErrorTest.test';
-import getChildProcessInfosTest from './GetChildProcessInfosTest.test';
 
 export default function testsuite() {
   HyperSnapGetLastErrorTest();
-  getChildProcessInfosTest();
 }

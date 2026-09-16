@@ -19,7 +19,7 @@ import { BusinessError } from '@ohos.base';
 export function publishEvent(event: string, entryParams?: string, text?: string) {
   let options: CommonEventManager.CommonEventPublishData = {
     code: 0,
-    bundleName: 'com.acts.actsabilityhypersnapgetlasterrortest',
+    bundleName: 'com.acts.childprocessinfostest',
     parameters: {
       'entryParams': entryParams,
       'readText': text
@@ -28,7 +28,7 @@ export function publishEvent(event: string, entryParams?: string, text?: string)
   }
   let publishCB = (err: BusinessError) => {
     if (err) {
-      console.info(`publish failed, err: ${JSON.stringify(err)}`);
+      console.error(`publish failed, err: ${JSON.stringify(err)}`);
     } else {
       console.info(`publish success. parameters:${JSON.stringify(options.parameters)}`);
     }
