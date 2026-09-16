@@ -3335,6 +3335,7 @@ export default function bluetoothBleTest() {
             }
             try {
                 device.on('serviceChange', onReceiveEvent1);
+                console.info('[bt_arkts]device on serviceChange success');
                 device.on('serviceChange', onReceiveEvent2);
                 console.info('[bt_arkts]device on serviceChange success');
                 device.off('serviceChange');
