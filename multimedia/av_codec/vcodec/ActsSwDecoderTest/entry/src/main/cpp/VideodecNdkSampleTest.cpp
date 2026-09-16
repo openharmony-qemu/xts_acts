@@ -126,7 +126,7 @@ std::vector<uint8_t> VDecNdkSample::LoadHashFile()
 {
     std::vector<uint8_t> ret;
     JsonWrapper jsonData;
-    if (!jsonData.LoadFromFile("/data/storage/el2/base/haps/entry_test/files/hash_val.json")) {
+    if (!jsonData.LoadFromFile("/data/local/tmp/hash_val.json")) {
         return ret;
     }
     std::__fs::filesystem::path filePath = inpDir;
