@@ -5021,14 +5021,23 @@ export default function windowPropertiesTest3() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOffOcclusionStateChanged_twoCallbacksOffAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testOffOcclusionStateChanged_twoCallbacksOffAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testOffOcclusionStateChanged_twoCallbacksOffAll';
+      let callbackACalled = false;
+      let callbackBCalled = false;
+      let occlusionStatesA: number[] = [];
+      let occlusionStatesB: number[] = [];
       const callbackA = (data: window.OcclusionState) => {
         console.info(`${message} callbackA triggered. Data: ${JSON.stringify(data)}`);
+        callbackACalled = true;
+        occlusionStatesA.push(data);
       };
       const callbackB = (data: window.OcclusionState) => {
         console.info(`${message} callbackB triggered. Data: ${JSON.stringify(data)}`);
+        callbackBCalled = true;
+        occlusionStatesB.push(data);
       };
+      let subWindow: window.Window | undefined;
       try {
         mainWindowClass.on('occlusionStateChanged', callbackA);
         console.info(`${message} Succeeded in registering callbackA.`);
@@ -5036,10 +5045,34 @@ export default function windowPropertiesTest3() {
         console.info(`${message} Succeeded in registering callbackB.`);
         mainWindowClass.off('occlusionStateChanged');
         console.info(`${message} Succeeded in unregistering all callbacks.`);
+
+        const mainWindowProperties = mainWindowClass.getWindowProperties();
+        const mainWindowRect = mainWindowProperties.windowRect;
+        console.info(`${message} mainWindowRect: ${JSON.stringify(mainWindowRect)}`);
+        subWindow = await windowStage.createSubWindow('testOffOcclusionStateChanged_twoCallbacksOffAll');
+        console.info(`${message} Succeeded in creating subWindow.`);
+
+        // off后触发遮挡，验证监听不会被触发
+        console.info(`${message} Trigger occlusion by showing subwindow to occlude main window`);
+        await subWindow.resize(mainWindowRect.width / 2, mainWindowRect.height / 2);
+        await subWindow.moveWindowTo(mainWindowRect.left + mainWindowRect.width / 3,
+          mainWindowRect.top + mainWindowRect.height / 3);
+        await subWindow.setUIContent('testability/pages/First/index2');
+        await subWindow.showWindow();
+        await sleep(1000);
+        expect(callbackACalled).assertFalse();
+        expect(occlusionStatesA.length).assertEqual(0);
+        expect(callbackBCalled).assertFalse();
+        expect(occlusionStatesB.length).assertEqual(0);
+        console.info(`${message} Verified - callbacks not triggered after occlusion.`);
+
+        await subWindow.destroyWindow();
+        console.info(`${message} Subwindow destroyed successfully.`);
         done();
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        await subWindow?.destroyWindow();
         if (exception.code === 801) {
           console.info(`${message} Capability not supported.`);
           expect(exception.message != null).assertTrue();
