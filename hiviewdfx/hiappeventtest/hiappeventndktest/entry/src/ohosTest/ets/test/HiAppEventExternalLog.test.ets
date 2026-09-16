@@ -69,7 +69,7 @@ export default function HiAppEventExternalLog() {
       };
       hiAppEvent.addWatcher(watcher);
       for (let i = 0; i < 10; i++) {
-        testNapi.add(2, 3);
+        testNapi.CrashLink(2, 3);
         await asyncSleep(5000);
       }
 
@@ -215,7 +215,7 @@ export default function HiAppEventExternalLog() {
       };
       try {
         hiAppEvent.registerExternalLogManager(myLogManager);
-        testNapi.add(2, 3);
+        testNapi.CrashLink(2, 3);
         await asyncSleep(5000);
         done();
       } catch (err) {
