@@ -18,22 +18,23 @@ import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { common } from '@kit.AbilityKit';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
-import { Want } from '@kit.AbilityKit';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
 let backSet:number = 0;
 
 export default class UiAbility02 extends UIAbility {
-  onCreate(want, launchParam):void {
+onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility02 onCreate');
     globalThis.uiAbilityContext2 = this.context
     hilog.info(0x0000, 'testTag', '%{public}s', `UiAbility02 JSON.stringify(want) is: ${JSON.stringify(want)}`);
   }
-  onNewWant(want, launchParam):void {
+onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam):void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility02 onCreate');
-    commonEventManager.publish('ability02_onNewWant', function () {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability02_onForeground');
+    commonEventManager.publish('ability02_onNewWant', () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
+        'Result_5000 publish ability02_onForeground');
     });
-    commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+    commonEventManager.publish('ACTS_TEST_DESTROY', () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'commonEventManager UiAbility02 publish ACTS_TEST_DESTROY');
     });
   }
@@ -45,7 +46,7 @@ export default class UiAbility02 extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage):void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility02 onWindowStageCreate');
 
-    windowStage.loadContent('testability/pages/Index', (err, data) => {
+    windowStage.loadContent('testability/pages/Index', (err: BusinessError, data: Record<string, Object>) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -72,7 +73,8 @@ export default class UiAbility02 extends UIAbility {
         globalThis.uiAbilityContext2.startAbilityForResult(want, (err: BusinessError, result: common.AbilityResult) => {
           if (err.code) {
             // 处理业务逻辑错误
-            hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${err.code}, error.message: ${err.message}`);
+            hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${err.code},
+              error.message: ${err.message}`);
             return;
           }
           // 执行正常业务
@@ -83,10 +85,12 @@ export default class UiAbility02 extends UIAbility {
         // 处理入参错误异常
         let code = (err as BusinessError).code;
         let message = (err as BusinessError).message;
-        hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${code}, error.message: ${message}`);
+        hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${code},
+          error.message: ${message}`);
       }
-      commonEventManager.publish('ability02_onForeground', function () {
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability02_onForeground');
+      commonEventManager.publish('ability02_onForeground', () => {
+        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityF' +
+          'orResult_5000 publish ability02_onForeground');
       });
     }
   }

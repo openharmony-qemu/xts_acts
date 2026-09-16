@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect, afterEach, Level } from '@ohos/hypium';
-import commonEvent from '@ohos.commonEvent';
+import commonEvent from '@ohos.commonEventManager';
 import { Constant } from '../Common';
 import display from '@ohos.display';
 import Want from '@ohos.app.ability.Want';
@@ -24,8 +24,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import commonEventManager from '@ohos.commonEventManager';
 
 const displayId = 'displayId';
-const TAG: string = 'StartAbilityGetDisplayIdTest';
-const TEST_SUITE_NAME: string = 'StartAbilityGetDisplayIdTest';
+const TAG: string = 'startAbilityGetDisplayIdTest';
+const TEST_SUITE_NAME: string = 'startAbilityGetDisplayIdTest';
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 function sleep(time: number) {
@@ -33,7 +33,7 @@ function sleep(time: number) {
 }
 
 async function startAbilityForResult(want: Want, display: number | undefined = undefined) {
-  await AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbilityForResult(
+  await AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbilityForResult(
     want,
     {
       displayId: display
@@ -48,8 +48,8 @@ async function startAbilityForResult(want: Want, display: number | undefined = u
     })
 }
 
-async function startAbility(want: Want, display: ESObject = undefined) {
-  await AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(
+async function startAbility(want: Want, display: Record<string, Object> = undefined) {
+  await AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(
     want,
     {
       displayId: display
@@ -64,12 +64,12 @@ async function startAbility(want: Want, display: ESObject = undefined) {
     })
 }
 
-export default function StartAbilityGetDisplayIdTest() {
+export default function startAbilityGetDisplayIdTest() {
 
   describe('ActsAbilityTest', () => {
     afterEach(async (done:Function) => {
       let cmd = 'aa start -b com.ohos.startabilitygetdisplayidtest -a TestAbility';
-      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
@@ -80,12 +80,14 @@ export default function StartAbilityGetDisplayIdTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500
-     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId  which is current screen displayId
+     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId  which is current s
+       creen displayId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500", Level.LEVEL3, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500', Level.LEVEL3,
+      async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500';
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -94,16 +96,24 @@ export default function StartAbilityGetDisplayIdTest() {
         await commonEvent.createSubscriber(commonEventSubscribeInfo)
           .then((subscriber) => {
             commonEvent.subscribe(subscriber, (err, commonEventData) => {
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 500=====> data: ${JSON.stringify(commonEventData)}`);
+              if (err) {
+                console.error(JSON.stringify(err));
+              }
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 50
+                0=====> data: ${JSON.stringify(commonEventData)}`);
               expect(commonEventData.parameters![displayId]).assertEqual(0);
               commonEvent.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })
           })
 
         let currentDisplayId = display.getDefaultDisplaySync().id;
-        console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult_0500 get current screen display id=====: ${currentDisplayId}`);
+        console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult_0500 get current screen dis
+          play id=====: ${currentDisplayId}`);
         let want: Want = {
           bundleName: 'com.ohos.startabilitygetdisplayidtest',
           abilityName: 'MainAbility5',
@@ -125,7 +135,8 @@ export default function StartAbilityGetDisplayIdTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600', Level.LEVEL3, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600', Level.LEVEL3, async (done: Function) =>
+      {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600';
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -134,9 +145,16 @@ export default function StartAbilityGetDisplayIdTest() {
         await commonEvent.createSubscriber(commonEventSubscribeInfo)
           .then((subscriber) => {
             commonEvent.subscribe(subscriber, (err, commonEventData) => {
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 600=====> data: ${JSON.stringify(commonEventData)}`);
+              if (err) {
+                console.error(JSON.stringify(err));
+              }
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 60
+                0=====> data: ${JSON.stringify(commonEventData)}`);
               expect(commonEventData.parameters![displayId]).assertEqual(0);
               commonEvent.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })
@@ -163,7 +181,8 @@ export default function StartAbilityGetDisplayIdTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0700', Level.LEVEL3, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0700', Level.LEVEL3, async (done: Function) =>
+      {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0700';
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -172,8 +191,14 @@ export default function StartAbilityGetDisplayIdTest() {
         commonEvent.createSubscriber(commonEventSubscribeInfo)
           .then((subscriber) => {
             commonEvent.subscribe(subscriber, (err, commonEventData) => {
+              if (err) {
+                console.error(JSON.stringify(err));
+              }
               expect(commonEventData.parameters![displayId]).assertEqual(0);
               commonEvent.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })
@@ -203,7 +228,8 @@ export default function StartAbilityGetDisplayIdTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0300', Level.LEVEL3, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0300', Level.LEVEL3, async (done: Function) =>
+      {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0300';
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -212,10 +238,20 @@ export default function StartAbilityGetDisplayIdTest() {
         commonEvent.createSubscriber(commonEventSubscribeInfo)
           .then((subscriber) => {
             commonEvent.subscribe(subscriber, (err, commonEventData) => {
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 300=====> data: ${JSON.stringify(commonEventData)}`);
+              if (err) {
+                console.error(JSON.stringify(err));
+              }
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 30
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
+                0=====> data: ${JSON.stringify(commonEventData)}`);
 
               expect(commonEventData.parameters![displayId]).assertEqual(0);
               commonEvent.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })
@@ -242,7 +278,8 @@ export default function StartAbilityGetDisplayIdTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0200", Level.LEVEL3, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0200', Level.LEVEL3,
+      async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0200'
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -250,10 +287,20 @@ export default function StartAbilityGetDisplayIdTest() {
         }
         commonEvent.createSubscriber(commonEventSubscribeInfo)
           .then((subscriber) => {
+            if (err) {
+              console.error(JSON.stringify(err));
+            }
             commonEvent.subscribe(subscriber, (err, commonEventData) => {
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 200=====> data: ${JSON.stringify(commonEventData)}`);
+              if (err) {
+                console.error(JSON.stringify(err));
+              }
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 20
+                0=====> data: ${JSON.stringify(commonEventData)}`);
               expect(commonEventData.parameters![displayId]).assertEqual(0);
               commonEvent.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })
@@ -280,7 +327,8 @@ export default function StartAbilityGetDisplayIdTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0100", Level.LEVEL3, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0100', Level.LEVEL3,
+      async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0100';
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -289,9 +337,16 @@ export default function StartAbilityGetDisplayIdTest() {
         commonEvent.createSubscriber(commonEventSubscribeInfo)
           .then((subscriber) => {
             commonEvent.subscribe(subscriber, (err, commonEventData) => {
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 100=====> data: ${JSON.stringify(commonEventData)}`);
+              if (err) {
+                console.error(JSON.stringify(err));
+              }
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 10
+                0=====> data: ${JSON.stringify(commonEventData)}`);
               expect(commonEventData.parameters![displayId]).assertEqual(0);
               commonEvent.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })
@@ -301,7 +356,8 @@ export default function StartAbilityGetDisplayIdTest() {
           abilityName: 'MainAbility1',
         }
         let currentDisplayId = display.getDefaultDisplaySync().id;
-        console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult_0100 get current screen display id=====: ${currentDisplayId}`);
+        console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult_0100 get current screen dis
+          play id=====: ${currentDisplayId}`);
         await sleep(500);
         await startAbility(want, currentDisplayId)
         await sleep(4000);
@@ -320,7 +376,8 @@ export default function StartAbilityGetDisplayIdTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0400", Level.LEVEL3, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0400', Level.LEVEL3,
+      async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0400';
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -329,9 +386,16 @@ export default function StartAbilityGetDisplayIdTest() {
         commonEvent.createSubscriber(commonEventSubscribeInfo)
           .then((subscriber) => {
             commonEvent.subscribe(subscriber, (err, commonEventData) => {
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 400=====> data: ${JSON.stringify(commonEventData)}`);
+              if (err) {
+                console.error(JSON.stringify(err));
+              }
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 40
+                0=====> data: ${JSON.stringify(commonEventData)}`);
               expect(commonEventData.parameters![displayId]).assertEqual(0);
               commonEvent.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })

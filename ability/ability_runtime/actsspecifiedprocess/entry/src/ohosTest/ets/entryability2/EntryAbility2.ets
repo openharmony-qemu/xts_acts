@@ -17,9 +17,10 @@ import { AbilityConstant, UIAbility, application, Want} from '@kit.AbilityKit';
 import common from '@ohos.app.ability.common';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import { BusinessError } from '@kit.BasicServicesKit';
+import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import { Constant } from '../Common';
-import { commonEventManager } from '@kit.BasicServicesKit';
+
+
 const DOMAIN = 0x0000;
 
 async function publishEvent(err: BusinessError) {
@@ -52,7 +53,7 @@ export default class EntryAbility extends UIAbility {
       message: 'success',
       name: 'test'
     };
-    if (want.parameters?.isPromote === true) {
+    if (want.parameters.isPromote === true) {
       try {
         let headFlag: boolean = true;
         if (want.parameters?.isHead !== true) {
@@ -74,7 +75,7 @@ export default class EntryAbility extends UIAbility {
       }
     }
 
-    if (want.parameters?.isDemote === true) {
+    if (want.parameters.isDemote === true) {
       console.info(`${TEST_SUITE_NAME}====> begin: demote`)
       try {
         application.demoteCurrentFromCandidateMasterProcess()
@@ -94,7 +95,7 @@ export default class EntryAbility extends UIAbility {
       }
     }
 
-    if (want.parameters?.isExit === true || want.parameters?.isOnNewProcessRequest === true) {
+    if (want.parameters.isExit === true || want.parameters.isOnNewProcessRequest === true) {
       console.info(`${TEST_SUITE_NAME}====> begin: exit`)
       try {
         application.exitMasterProcessRole()

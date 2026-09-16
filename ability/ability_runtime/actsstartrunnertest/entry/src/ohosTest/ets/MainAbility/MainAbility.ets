@@ -26,7 +26,8 @@ export default class MainAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     console.log('MainAbility onCreate')
     let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-    let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();
+    let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs = AbilityDelegatorRegistry.getArgumen
+      ts();
     console.info('start run testcase!!!');
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
   }

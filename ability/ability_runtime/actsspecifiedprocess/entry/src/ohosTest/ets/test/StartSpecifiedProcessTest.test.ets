@@ -18,10 +18,11 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { BusinessError } from '@ohos.base';
 import { UIAbility, Want } from '@kit.AbilityKit';
 import common from '@ohos.app.ability.common';
-import { commonEventManager } from '@kit.BasicServicesKit';
+import { commonEventManager, systemParameterEnhance } from '@kit.BasicServicesKit';
 import { Constant } from '../Common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { systemParameterEnhance } from '@kit.BasicServicesKit';
+
+
 
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
@@ -29,11 +30,11 @@ function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time))
 }
 
-const TEST_SUITE_NAME: string = 'StartSpecifiedProcessTest';
+const TEST_SUITE_NAME: string = 'startSpecifiedProcessTest';
 let mpEnable : Boolean = false;
 
 async function startAbility(want: Want) {
-  const context = AppStorage.get<common.UIAbilityContext>("abilityContext");
+  const context = AppStorage.get<common.UIAbilityContext>('abilityContext');
   if (!context) {
     console.info(`${TEST_SUITE_NAME}====>abilityContext is not available in AppStorage====>`);
     expect().assertFail();
@@ -42,7 +43,7 @@ async function startAbility(want: Want) {
   context.startAbility(want)
     .then(() => {
       console.info(`${TEST_SUITE_NAME}====>startAbility success====>`);
-      if (want.parameters?.isPromote === true) {
+      if (want.parameters.isPromote === true) {
         console.info(`${TEST_SUITE_NAME}====>ispromote true====>`);
       }
     })
@@ -52,11 +53,11 @@ async function startAbility(want: Want) {
     })
 }
 
-export default function StartSpecifiedProcessTest() {
+export default function startSpecifiedProcessTest() {
   describe('ActsAbilityTest', () => {
     afterEach(async (done:Function) => {
       let cmd = 'aa start -b com.example.actsspecifiedprocess -a TestAbility';
-      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
@@ -75,7 +76,7 @@ export default function StartSpecifiedProcessTest() {
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100';
-      console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100====>");
+      console.log('====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100====>');
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_000]
@@ -84,14 +85,19 @@ export default function StartSpecifiedProcessTest() {
           .then((subscriber) => {
             commonEventManager.subscribe(subscriber, (err, commonEventData) => {
               if (err) {
-                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
+                  message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 100=====> data: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 100=====> d
+                ata: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(16000115).assertEqual(commonEventData.code);
               }
               commonEventManager.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })
@@ -126,7 +132,7 @@ export default function StartSpecifiedProcessTest() {
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200';
-      console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200====>");
+      console.log('====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200====>');
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_100]
@@ -135,14 +141,19 @@ export default function StartSpecifiedProcessTest() {
           .then((subscriber) => {
             commonEventManager.subscribe(subscriber, (err, commonEventData) => {
               if (err) {
-                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
+                  message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 200=====> data: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 200=====> d
+                ata: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(16000117).assertEqual(commonEventData.code);
               }
               commonEventManager.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })
@@ -177,7 +188,7 @@ export default function StartSpecifiedProcessTest() {
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300';
-      console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300====>");
+      console.log('====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300====>');
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_200]
@@ -186,14 +197,19 @@ export default function StartSpecifiedProcessTest() {
           .then((subscriber) => {
             commonEventManager.subscribe(subscriber, (err, commonEventData) => {
               if (err) {
-                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
+                  message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 300=====> data: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 300=====> d
+                ata: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(0).assertEqual(commonEventData.code);
               }
               commonEventManager.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })
@@ -228,7 +244,7 @@ export default function StartSpecifiedProcessTest() {
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400';
-      console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400====>");
+      console.log('====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400====>');
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_300]
@@ -237,14 +253,19 @@ export default function StartSpecifiedProcessTest() {
           .then((subscriber) => {
             commonEventManager.subscribe(subscriber, (err, commonEventData) => {
               if (err) {
-                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
+                  message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> data: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> d
+                ata: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(16000116).assertEqual(commonEventData.code);
               }
               commonEventManager.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })
@@ -279,7 +300,7 @@ export default function StartSpecifiedProcessTest() {
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500';
-      console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500====>");
+      console.log('====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500====>');
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_200]
@@ -288,14 +309,19 @@ export default function StartSpecifiedProcessTest() {
           .then((subscriber) => {
             commonEventManager.subscribe(subscriber, (err, commonEventData) => {
               if (err) {
-                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
+                  message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> data: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> d
+                ata: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(16000118).assertEqual(commonEventData.code);
               }
               commonEventManager.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })
@@ -331,7 +357,7 @@ export default function StartSpecifiedProcessTest() {
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600';
-      console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600====>");
+      console.log('====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600====>');
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_400]
@@ -340,14 +366,19 @@ export default function StartSpecifiedProcessTest() {
           .then((subscriber) => {
             commonEventManager.subscribe(subscriber, (err, commonEventData) => {
               if (err) {
-                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
+                  message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> data: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> d
+                ata: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(16000119).assertEqual(commonEventData.code);
               }
               commonEventManager.unsubscribe(subscriber, (err, data) => {
+                if (err) {
+                  console.error(JSON.stringify(err));
+                }
                 done();
               });
             })

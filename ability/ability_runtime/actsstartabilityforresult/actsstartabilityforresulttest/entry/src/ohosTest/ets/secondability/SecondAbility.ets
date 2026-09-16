@@ -16,9 +16,11 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
+import { BusinessError } from '@ohos.base';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
 export default class SecondAbility extends UIAbility {
-  onCreate(want, launchParam):void {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     globalThis.secondContext = this.context;
   }
@@ -31,7 +33,7 @@ export default class SecondAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('testability/pages/Index', (err, data) => {
+    windowStage.loadContent('testability/pages/Index', (err: BusinessError, data: Record<string, Object>) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -49,9 +51,9 @@ export default class SecondAbility extends UIAbility {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
     setTimeout(async () => {
-      await globalThis.secondContext.terminateSelf().then((data) => {
+      await globalThis.secondContext.terminateSelf().then((data: Record<string, Object>) => {
         hilog.info(0x0000, 'testTag', '%{public}s', 'secondAbility terminateSelf sucess' + JSON.stringify(data));
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         hilog.info(0x0000, 'testTag', '%{public}s', 'secondAbility terminateSelf errCode:' + JSON.stringify(err.code) +
         'errMessage:' + JSON.stringify(err.message));
       })
