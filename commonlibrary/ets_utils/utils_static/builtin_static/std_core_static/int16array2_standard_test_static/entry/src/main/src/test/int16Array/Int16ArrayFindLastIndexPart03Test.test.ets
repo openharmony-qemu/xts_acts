@@ -46,8 +46,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__0100
      * @tc.name int16ArrayFindLastIndexPart03Test001
      * @tc.desc Verify findLastIndex on zero-byte ArrayBuffer view returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -62,8 +62,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__0200
      * @tc.name int16ArrayFindLastIndexPart03Test002
      * @tc.desc Verify findLastIndex on zero-byte ArrayBuffer view returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -79,8 +79,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__0300
      * @tc.name int16ArrayFindLastIndexPart03Test003
      * @tc.desc Verify findLastIndex on zero-length Int16Array view returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -96,8 +96,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__0400
      * @tc.name int16ArrayFindLastIndexPart03Test004
      * @tc.desc Verify findLastIndex on zero-length Int16Array view returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -113,8 +113,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__0500
      * @tc.name int16ArrayFindLastIndexPart03Test005
      * @tc.desc Verify findLastIndex on zero-length Int16Array view returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -129,8 +129,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__0600
      * @tc.name int16ArrayFindLastIndexPart03Test006
      * @tc.desc Verify findLastIndex on zero-length Int16Array view returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -147,8 +147,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__0700
      * @tc.name int16ArrayFindLastIndexPart03Test007
      * @tc.desc Verify findLastIndex on zero-length Int16Array view returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -164,8 +164,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__0800
      * @tc.name int16ArrayFindLastIndexPart03Test008
      * @tc.desc Verify findLastIndex on zero-length Int16Array view returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -181,8 +181,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__0900
      * @tc.name int16ArrayFindLastIndexPart03Test009
      * @tc.desc Verify findLastIndex returns 0 when predicate matches
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -197,8 +197,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__1000
      * @tc.name int16ArrayFindLastIndexPart03Test010
      * @tc.desc Verify findLastIndex propagates TypeError thrown by predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -221,8 +221,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__1100
      * @tc.name int16ArrayFindLastIndexPart03Test011
      * @tc.desc Verify findLastIndex propagates TypeError thrown by predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -248,8 +248,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__1200
      * @tc.name int16ArrayFindLastIndexPart03Test012
      * @tc.desc Verify findLastIndex propagates TypeError thrown by predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -272,8 +272,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__1300
      * @tc.name int16ArrayFindLastIndexPart03Test013
      * @tc.desc Verify findLastIndex propagates RangeError thrown by predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -296,8 +296,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__1400
      * @tc.name int16ArrayFindLastIndexPart03Test014
      * @tc.desc Verify findLastIndex preserves Error message from predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -317,8 +317,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__1500
      * @tc.name int16ArrayFindLastIndexPart03Test015
      * @tc.desc Verify findLastIndex propagates Error thrown by predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -339,8 +339,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__1600
      * @tc.name int16ArrayFindLastIndexPart03Test016
      * @tc.desc Verify findLastIndex on empty array returns -1 without calling throwing predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -361,8 +361,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__1700
      * @tc.name int16ArrayFindLastIndexPart03Test017
      * @tc.desc Verify findLastIndex on empty array returns -1 without calling throwing predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -378,8 +378,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__1800
      * @tc.name int16ArrayFindLastIndexPart03Test018
      * @tc.desc Verify findLastIndex on empty Int16Array returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -400,8 +400,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__1900
      * @tc.name int16ArrayFindLastIndexPart03Test019
      * @tc.desc Verify findLastIndex propagates Error thrown at index 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -425,8 +425,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__2000
      * @tc.name int16ArrayFindLastIndexPart03Test020
      * @tc.desc Verify findLastIndex preserves custom Error.name from predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -456,8 +456,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__2100
      * @tc.name int16ArrayFindLastIndexPart03Test021
      * @tc.desc Verify findLastIndex preserves custom Error.name from predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -479,8 +479,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__2200
      * @tc.name int16ArrayFindLastIndexPart03Test022
      * @tc.desc Verify findLastIndex propagates Error thrown by predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -515,8 +515,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__2300
      * @tc.name int16ArrayFindLastIndexPart03Test023
      * @tc.desc Verify findLastIndex predicate array parameter is same reference
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -535,8 +535,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__2400
      * @tc.name int16ArrayFindLastIndexPart03Test024
      * @tc.desc Verify findLastIndex predicate array parameter is same reference
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -560,8 +560,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__2500
      * @tc.name int16ArrayFindLastIndexPart03Test025
      * @tc.desc Verify findLastIndex predicate array parameter is same reference
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -578,8 +578,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__2600
      * @tc.name int16ArrayFindLastIndexPart03Test026
      * @tc.desc Verify findLastIndex predicate sees stable array.length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -604,8 +604,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__2700
      * @tc.name int16ArrayFindLastIndexPart03Test027
      * @tc.desc Verify findLastIndex predicate sees stable array.length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -625,8 +625,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__2800
      * @tc.name int16ArrayFindLastIndexPart03Test028
      * @tc.desc Verify findLastIndex first checked index is length-1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -645,8 +645,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__2900
      * @tc.name int16ArrayFindLastIndexPart03Test029
      * @tc.desc Verify findLastIndex first checked index is length-1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -668,8 +668,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__3000
      * @tc.name int16ArrayFindLastIndexPart03Test030
      * @tc.desc Verify findLastIndex first checked index is length-1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -692,8 +692,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__3100
      * @tc.name int16ArrayFindLastIndexPart03Test031
      * @tc.desc Verify findLastIndex visits indices from length-1 down to 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -712,8 +712,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__3200
      * @tc.name int16ArrayFindLastIndexPart03Test032
      * @tc.desc Verify findLastIndex visits indices from length-1 down to 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -732,8 +732,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__3300
      * @tc.name int16ArrayFindLastIndexPart03Test033
      * @tc.desc Verify findLastIndex visits indices from length-1 down to 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -754,8 +754,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__3400
      * @tc.name int16ArrayFindLastIndexPart03Test034
      * @tc.desc Verify findLastIndex visits indices from length-1 down to 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -780,8 +780,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__3500
      * @tc.name int16ArrayFindLastIndexPart03Test035
      * @tc.desc Verify findLastIndex predicate receives MAX value 32767
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -802,8 +802,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__3600
      * @tc.name int16ArrayFindLastIndexPart03Test036
      * @tc.desc Verify findLastIndex predicate receives MIN value -32768
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -824,8 +824,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__3700
      * @tc.name int16ArrayFindLastIndexPart03Test037
      * @tc.desc Verify findLastIndex receives 0 to predicate
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -845,8 +845,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__3800
      * @tc.name int16ArrayFindLastIndexPart03Test038
      * @tc.desc Verify findLastIndex receives 0 after NaN element conversion
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -867,8 +867,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__3900
      * @tc.name int16ArrayFindLastIndexPart03Test039
      * @tc.desc Verify findLastIndex receives 0 after NaN element conversion
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -887,8 +887,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__4000
      * @tc.name int16ArrayFindLastIndexPart03Test040
      * @tc.desc Verify findLastIndex on Int16Array.from empty source returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -907,8 +907,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__4100
      * @tc.name int16ArrayFindLastIndexPart03Test041
      * @tc.desc Verify findLastIndex on Int16Array.from empty source returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -927,8 +927,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__4200
      * @tc.name int16ArrayFindLastIndexPart03Test042
      * @tc.desc Verify findLastIndex receives truncated value 3 after $_set(Double.toInt(3.7))
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -949,8 +949,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__4300
      * @tc.name int16ArrayFindLastIndexPart03Test043
      * @tc.desc Verify findLastIndex receives truncated value -3 after $_set(Double.toInt(-3.7))
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -971,8 +971,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__4400
      * @tc.name int16ArrayFindLastIndexPart03Test044
      * @tc.desc Verify findLastIndex on Int16Array.from empty source returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -993,8 +993,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__4500
      * @tc.name int16ArrayFindLastIndexPart03Test045
      * @tc.desc Verify findLastIndex on Int16Array.from empty source returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1013,8 +1013,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__4600
      * @tc.name int16ArrayFindLastIndexPart03Test046
      * @tc.desc Verify findLastIndex returns -1 when predicate never matches
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1029,8 +1029,8 @@ export default function int16ArrayFindLastIndexPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART03__4700
      * @tc.name int16ArrayFindLastIndexPart03Test047
      * @tc.desc Verify findLastIndex returns -1 when predicate never matches
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayFindLastIndexPart03Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
