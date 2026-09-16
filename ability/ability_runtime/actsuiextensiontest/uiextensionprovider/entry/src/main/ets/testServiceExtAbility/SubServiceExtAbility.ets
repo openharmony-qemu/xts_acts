@@ -17,6 +17,7 @@ import ServiceExtension from '@ohos.app.ability.ServiceExtensionAbility'
 import SubServiceExtStub from '../IdlServiceExt/SubService/sub_service_ext_stub';
 import { subCallback } from '../IdlServiceExt/SubService/sub_service_ext';
 import Logger from '../util/Logger';
+import { Want } from '@kit.AbilityKit';
 
 class ServiceExtStub extends SubServiceExtStub{
 
@@ -28,20 +29,20 @@ class ServiceExtStub extends SubServiceExtStub{
 }
 
 export default class SubServiceExtAbility extends ServiceExtension {
-  onCreate(want) {
+onCreate(want: Want) {
     Logger.info(`___SubServiceExtAbility onCreate, want: ${want.abilityName}`)
   }
 
-  onRequest(want, startId) {
+onRequest(want: Want, startId: number) {
     Logger.info(`___SubServiceExtAbility onRequest, want: ${want.abilityName}`)
   }
 
-  onConnect(want) {
+onConnect(want: Want) {
     Logger.info(`___SubServiceExtAbility onConnect , want: ${want.abilityName}`)
-    return new ServiceExtStub("sub service stub")
+    return new ServiceExtStub('sub service stub')
   }
 
-  onDisconnect(want) {
+onDisconnect(want: Want) {
     Logger.info(`___SubServiceExtAbility onDisconnect, want: ${want.abilityName}`)
   }
 

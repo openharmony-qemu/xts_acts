@@ -16,23 +16,23 @@
 const TAG: string = '=== Stage AMS ==='
 
 export default class Logger {
-    public static log(tag, ...args: any[]) {
+    public static log(tag: string, ...args: Record<string, Object>[]) {
         console.log(`${TAG}.${tag}: ${args.join('')}`)
     }
 
-    public static info(tag, ...args: any[]) {
+    public static info(tag: string, ...args: Record<string, Object>[]) {
         console.info(`${TAG}.${tag}: ${args.join('')}`)
     }
 
-    public static debug(tag, ...args: any[]) {
+    public static debug(tag: string, ...args: Record<string, Object>[]) {
         console.debug(`${TAG}.${tag}: ${args.join('')}`)
     }
 
-    public static warn(tag, ...args: any[]) {
+    public static warn(tag: string, ...args: Record<string, Object>[]) {
         console.warn(`${TAG}.${tag}: ${args.join('')}`)
     }
 
-    public static error(tag, ...args: any[]) {
+    public static error(tag: string, ...args: Record<string, Object>[]) {
         console.error(`${TAG}.${tag}: ${args.join('')}`)
     }
 }

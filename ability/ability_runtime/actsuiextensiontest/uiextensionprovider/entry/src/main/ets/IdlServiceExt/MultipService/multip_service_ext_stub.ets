@@ -13,22 +13,23 @@
  * limitations under the License.
  */
 
-import {subCallback} from "./sub_service_ext";
-import SubServiceExt from "./sub_service_ext";
-import rpc from "@ohos.rpc";
+import {multipCallback} from './multip_service_ext';
+import MultipServiceExt from './multip_service_ext';
+import rpc from '@ohos.rpc';
 
-export default class SubServiceExtStub extends rpc.RemoteObject implements SubServiceExt {
+export default class MultipServiceExtStub extends rpc.RemoteObject implements MultipServiceExt {
     constructor(des: string) {
         super(des);
     }
     
-    async onRemoteMessageRequest(code: number, data, reply, option): Promise<boolean> {
-        console.log("onRemoteMessageRequest called, code = " + code);
+async onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence, option:
+  rpc.MessageOption): Promise<boolean> {
+        console.log('onRemoteMessageRequest called, code = ' + code);
         switch(code) {
-            case SubServiceExtStub.COMMAND_SUB: {
-                let _num1 = data.readInt();
-                let _num2 = data.readInt();
-                this.sub(_num1, _num2, (errCode, returnValue) => {
+          case MultipServiceExtStub.COMMAND_MULTIP: {
+                let num1 = data.readInt();
+                let num2 = data.readInt();
+                this.multip(num1, num2, (errCode, returnValue) => {
                     reply.writeInt(errCode);
                     if (errCode == 0) {
                         reply.writeInt(returnValue);
@@ -37,15 +38,15 @@ export default class SubServiceExtStub extends rpc.RemoteObject implements SubSe
                 return true;
             }
             default: {
-                console.log("invalid request code" + code);
+                console.log('invalid request code' + code);
                 break;
             }
         }
         return false;
     }
     
-    sub(num1: number, num2: number, callback: subCallback): void{}
+    multip(num1: number, num2: number, callback: multipCallback): void{}
 
-    static readonly COMMAND_SUB = 1;
+    static readonly COMMAND_MULTIP = 1;
 }
 

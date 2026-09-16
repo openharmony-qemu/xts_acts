@@ -25,19 +25,19 @@ class Logger {
     this.domain = 0xFF00
   }
 
-  debug(...args: any[]) {
+  debug(...args: Record<string, Object>[]) {
     hilog.debug(this.domain, this.prefix, this.format, args)
   }
 
-  info(...args: any[]) {
+  info(...args: Record<string, Object>[]) {
     hilog.info(this.domain, this.prefix, this.format, args)
   }
 
-  warn(...args: any[]) {
+  warn(...args: Record<string, Object>[]) {
     hilog.warn(this.domain, this.prefix, this.format, args)
   }
 
-  error(...args: any[]) {
+  error(...args: Record<string, Object>[]) {
     hilog.error(this.domain, this.prefix, this.format, args)
   }
 }

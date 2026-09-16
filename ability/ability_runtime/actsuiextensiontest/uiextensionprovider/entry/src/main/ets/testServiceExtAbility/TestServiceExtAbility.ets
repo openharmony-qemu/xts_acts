@@ -17,6 +17,7 @@ import ServiceExtension from '@ohos.app.ability.ServiceExtensionAbility'
 import IdlServiceExtStub from '../IdlServiceExt/idl_service_ext_stub';
 import { addCallback } from '../IdlServiceExt/i_idl_service_ext';
 import Logger from '../util/Logger';
+import { Want } from '@kit.AbilityKit';
 
 class ServiceExtStub extends IdlServiceExtStub{
 
@@ -28,20 +29,20 @@ class ServiceExtStub extends IdlServiceExtStub{
 }
 
 export default class TestServiceExtAbility extends ServiceExtension {
-  onCreate(want) {
+onCreate(want: Want) {
     Logger.info(`___TestServiceExtAbility onCreate, want: ${want.abilityName}`)
   }
 
-  onRequest(want, startId) {
+onRequest(want: Want, startId: number) {
     Logger.info(`___TestServiceExtAbility onRequest, want: ${want.abilityName}`)
   }
 
-  onConnect(want) {
+onConnect(want: Want) {
     Logger.info(`___TestServiceExtAbility onConnect , want: ${want.abilityName}`)
-    return new ServiceExtStub("add service stub")
+    return new ServiceExtStub('add service stub')
   }
 
-  onDisconnect(want) {
+onDisconnect(want: Want) {
     Logger.info(`___TestServiceExtAbility onDisconnect, want: ${want.abilityName}`)
   }
 

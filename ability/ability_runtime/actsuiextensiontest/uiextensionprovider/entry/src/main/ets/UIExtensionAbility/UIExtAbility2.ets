@@ -15,6 +15,9 @@
 
 import UIExtensionAbility from '@ohos.app.ability.UIExtensionAbility'
 import Logger from '../model/Logger'
+import { UIExtensionContentSession } from '@kit.AbilityKit';
+
+
 
 const TAG: string = '[UIExtAbility2]'
 
@@ -36,15 +39,15 @@ export default class UIExtAbility2 extends UIExtensionAbility {
         Logger.log(TAG, `UIExtAbility onDestroy`)
     }
 
-    onSessionCreate(want, session) {
+onSessionCreate(want: Want, session: UIExtensionContentSession) {
         Logger.log(TAG, `UIExtAbility onSessionCreate, want: ${JSON.stringify(want)}`)
-        let storage: LocalStorage = new LocalStorage({
+        let storage: LocalStorage = new LocalStorage(({
             'session': session
-        });
+        }) as Record<string, Object>);
         session.loadContent('pages/index', storage);
     }
 
-    onSessionDestroy(session) {
+onSessionDestroy(session: UIExtensionContentSession) {
         Logger.log(TAG, `UIExtAbility onSessionDestroy`)
     }
 };

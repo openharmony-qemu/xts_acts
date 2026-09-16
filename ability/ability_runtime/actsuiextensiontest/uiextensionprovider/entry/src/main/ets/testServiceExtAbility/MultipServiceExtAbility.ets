@@ -17,6 +17,7 @@ import ServiceExtension from '@ohos.app.ability.ServiceExtensionAbility'
 import MultipServiceExtStub from '../IdlServiceExt/MultipService/multip_service_ext_stub';
 import { multipCallback } from '../IdlServiceExt/MultipService/multip_service_ext';
 import Logger from '../util/Logger';
+import { Want } from '@kit.AbilityKit';
 
 class ServiceExtStub extends MultipServiceExtStub{
 
@@ -28,20 +29,20 @@ class ServiceExtStub extends MultipServiceExtStub{
 }
 
 export default class MultipServiceExtAbility extends ServiceExtension {
-  onCreate(want) {
+onCreate(want: Want) {
     Logger.info(`___MultipServiceExtAbility onCreate, want: ${want.abilityName}`)
   }
 
-  onRequest(want, startId) {
+onRequest(want: Want, startId: number) {
     Logger.info(`___MultipServiceExtAbility onRequest, want: ${want.abilityName}`)
   }
 
-  onConnect(want) {
+onConnect(want: Want) {
     Logger.info(`___MultipServiceExtAbility onConnect , want: ${want.abilityName}`)
-    return new ServiceExtStub("multip service stub")
+    return new ServiceExtStub('multip service stub')
   }
 
-  onDisconnect(want) {
+onDisconnect(want: Want) {
     Logger.info(`___MultipServiceExtAbility onDisconnect, want: ${want.abilityName}`)
   }
 
