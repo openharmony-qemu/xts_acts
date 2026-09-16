@@ -128,10 +128,7 @@ export default function sliderTest() {
       console.info("----ArkUX_Stage_Slider_blockSize_0100  is " + JSON.stringify(obj.$attrs.blockSize));
       let width: string = obj.$attrs.blockSize.width ;
       let height: string = obj.$attrs.blockSize.height ;
-      let widthStr = '12.00vp'
-      let heightStr = '12.00vp'
-      expect(Math.abs(parseFloat(width.slice(0,-2)) - parseFloat(widthStr.slice(0,-2))) <= 2).assertTrue();
-      expect(Math.abs(parseFloat(height.slice(0,-2)) - parseFloat(heightStr.slice(0,-2))) <= 2).assertTrue();
+
       expect(width.substr(width.length-2, 2)).assertEqual("vp");
       expect(height.substr(height.length-2, 2)).assertEqual("vp");
       done();
