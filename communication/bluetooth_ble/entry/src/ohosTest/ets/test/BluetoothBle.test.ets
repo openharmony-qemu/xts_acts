@@ -3301,12 +3301,44 @@ export default function bluetoothBleTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            function onReceiveEvent1() {
+                console.info('[bluetooth_js] BLEscan device result_viod1');
+            }
+            function onReceiveEvent2() {
+                console.info('[bluetooth_js] BLEscan device result_viod2');
+            }
+            try {
+                device.on('serviceChange', onReceiveEvent1);
+                device.on('serviceChange', onReceiveEvent2);
+                console.info('[bt_arkts]device on serviceChange success');
+                device.off('serviceChange');
+                console.info('[bt_arkts]device off serviceChange without callback success');
+            } catch (error) {
+                console.error(`[bt_arkts]service change off no callback is failed, code is ${error.code},message is ${error.message}`);
+                if (error.code === '801') {
+                    console.info('[bt_arkts]is not support');
+                    expect(error.code === '801').assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ON_MultiCALLBACK_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ON_MultiCALLBACK_0100
+         * @tc.desc   Test GattClientDevice on serviceChange with mutiple callback param test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ON_MultiCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 device.on('serviceChange', onReceiveEvent_void);
                 console.info('[bt_arkts]device on serviceChange success');
                 device.off('serviceChange');
                 console.info('[bt_arkts]device off serviceChange without callback success');
-                expect(true).assertTrue();
             } catch (error) {
                 console.error(`[bt_arkts]service change off no callback is failed, code is ${error.code},message is ${error.message}`);
                 if (error.code === '801') {

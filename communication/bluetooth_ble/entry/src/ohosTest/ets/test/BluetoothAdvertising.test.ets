@@ -2578,7 +2578,6 @@ export default function bluetoothAdvertisingTest() {
         console.info('[bluetooth_js] on advertisingStateChange success');
         bluetooth.off('advertisingStateChange');
         console.info('[bluetooth_js] off advertisingStateChange without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.info("offNoCallback errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
