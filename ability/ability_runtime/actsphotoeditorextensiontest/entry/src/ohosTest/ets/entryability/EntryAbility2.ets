@@ -22,12 +22,16 @@ let globalscribe: commonEventManager.CommonEventSubscriber|undefined = undefined
 export default class EntryAbility2 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate ' + JSON.stringify(want));
-    AppStorage.setOrCreate<Want>("want_action", want);
-    commonEventManager.createSubscriber({events:["Ability_Terminate"]}).then(async (data) => {
-      console.log("EntryAbility2 createSubscriber data : " + JSON.stringify(data));
+    AppStorage.setOrCreate<Want>('want_action', want);
+    commonEventManager.createSubscriber({events:['Ability_Terminate']}).then(async (data) => {
+      console.log('EntryAbility2 createSubscriber data : ' + JSON.stringify(data));
       globalscribe = data;
       commonEventManager.subscribe(globalscribe, async (err, data) => {
-          console.log("EntryAbility2 SubscribeInfoCallback : " + JSON.stringify(data));
+          if (err) {
+            console.info(`callback err: ${JSON.stringify(err)}`);
+            return;
+          }
+          console.log('EntryAbility2 SubscribeInfoCallback : ' + JSON.stringify(data));
           this.context.terminateSelf();
       });
     })
@@ -42,11 +46,17 @@ export default class EntryAbility2 extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
  
     windowStage.loadContent('testability/pages/p1', (err, data) => {
-      if (err.code) {
-        hilog.error(0x0000, 'testTag', 'EntryAbility2 Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+      if (err) {
+        console.info(`callback err: ${JSON.stringify(err)}`);
         return;
       }
-      hilog.info(0x0000, 'testTag', 'EntryAbility2 Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', 'EntryAbility2 Failed to load the content. Cause: %{public}s',
+          JSON.stringify(err) ?? '');
+        return;
+      }
+      hilog.info(0x0000, 'testTag', 'EntryAbility2 Succeeded in loading the content. Data: %{public}s',
+        JSON.stringify(data) ?? '');
     });
   }
  

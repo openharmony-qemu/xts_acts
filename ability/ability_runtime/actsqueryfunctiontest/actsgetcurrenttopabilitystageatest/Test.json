@@ -4,7 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "600000",
         "bundle-name": "com.example.actsgetcurrenttopabilitystageatest",
-        "module-name": "entry",
+        "module-name": "entry_test",
         "shell-timeout": "30000"
     },
     "kits": [

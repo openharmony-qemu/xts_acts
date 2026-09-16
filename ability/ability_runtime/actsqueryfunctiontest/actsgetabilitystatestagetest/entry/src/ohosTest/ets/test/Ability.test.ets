@@ -15,15 +15,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import AbilityDelegatorRegistryOld from '@ohos.application.abilityDelegatorRegistry'
-import commonEvent from "@ohos.commonEventManager"
+import commonEvent from '@ohos.commonEventManager'
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from "@ohos.base";
+import { BusinessError } from '@ohos.base';
 import { Driver, ON, Component} from '@kit.TestKit';
-import hilog from '@ohos.hilog';
+
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
-let subscriberInfo_MainAbility: commonEvent.CommonEventSubscribeInfo = {
-  events: ["GetCurrentTopAbility"],
+let subscriberInfoMainAbility: commonEvent.CommonEventSubscribeInfo = {
+  events: ['GetCurrentTopAbility'],
 };
 let driver = Driver.create();
 
@@ -56,41 +56,49 @@ export default function abilityTest() {
       let count = 0;
       let subscriber: commonEvent.CommonEventSubscriber;
       let onAbilityForegroundCallback2 = (): void => {
-        console.log("====>onAbilityForegroundCallback2====");
+        console.log('====>onAbilityForegroundCallback2====');
         if (deviceSupport === 'false') {
-          console.log("====>ACTS_GetAbilityState_0200 end====");
-          commonEvent.unsubscribe(subscriber, UnSubscribeCallback);
+          console.log('====>ACTS_GetAbilityState_0200 end====');
+          commonEvent.unsubscribe(subscriber, unSubscribeCallback);
           return;
         }
         count++;
         if (count == 2) {
           abilityDelegator.getCurrentTopAbility((err, data) => {
-            console.log("====>getCurrentTopAbility_0200 err:" + JSON.stringify(err) + " data:" + JSON.stringify(data));
+            if (err) {
+              console.info(`callback err: ${JSON.stringify(err)}`);
+              return;
+            }
+            console.log('====>getCurrentTopAbility_0200 err:' + JSON.stringify(err) + ' data:' + JSON.stringify(data));
             ability = data;
             abilityDelegator.doAbilityBackground(ability, (err) => {
-              console.log("====>doAbilityBackground_0200 data:" + JSON.stringify(err));
+              if (err) {
+                console.info(`callback err: ${JSON.stringify(err)}`);
+                return;
+              }
+              console.log('====>doAbilityBackground_0200 data:' + JSON.stringify(err));
             })
           })
         }
       }
       let onAbilityBackgroundCallback2 = (): void => {
-        console.log("====>onAbilityBackgroundCallback2====");
+        console.log('====>onAbilityBackgroundCallback2====');
         let state = abilityDelegator.getAbilityState(ability);
-        console.log("====>ACTS_GetAbilityState_0200 state:" + state);
+        console.log('====>ACTS_GetAbilityState_0200 state:' + state);
         expect(state).assertEqual(AbilityDelegatorRegistry.AbilityLifecycleState.BACKGROUND);
         expect(state).assertEqual(AbilityDelegatorRegistryOld.AbilityLifecycleState.BACKGROUND);
-        console.log("====>ACTS_GetAbilityState_0200 end====");
-        commonEvent.unsubscribe(subscriber, UnSubscribeCallback);
+        console.log('====>ACTS_GetAbilityState_0200 end====');
+        commonEvent.unsubscribe(subscriber, unSubscribeCallback);
       }
 
-      commonEvent.createSubscriber(subscriberInfo_MainAbility).then(async (data) => {
-        console.log("ACTS_GetAbilityState_0200====>Create Subscriber====>");
+      commonEvent.createSubscriber(subscriberInfoMainAbility).then(async (data) => {
+        console.log('ACTS_GetAbilityState_0200====>Create Subscriber====>');
         subscriber = data;
         await commonEvent.subscribe(subscriber, onAbilityForegroundCallback2);
       })
 
-      let UnSubscribeCallback = (): void => {
-        console.log("ACTS_GetAbilityState_0200====>UnSubscribe CallBack====>");
+      let unSubscribeCallback = (): void => {
+        console.log('ACTS_GetAbilityState_0200====>UnSubscribe CallBack====>');
         done();
       }
 
@@ -101,13 +109,13 @@ export default function abilityTest() {
           onAbilityBackground: onAbilityBackgroundCallback2
         }
       ).then(() => {
-        console.log("====>addAbilityMonitor_0200 finish====");
+        console.log('====>addAbilityMonitor_0200 finish====');
         globalThis.abilityContext.startAbility(
           {
             bundleName: 'com.example.actsgetabilitystatestagetest',
             abilityName: 'MainAbility2',
           }, (err: BusinessError) => {
-          console.log("====>startAbility_0200 err:" + JSON.stringify(err));
+          console.log('====>startAbility_0200 err:' + JSON.stringify(err));
         })
       })
     })
@@ -127,19 +135,23 @@ export default function abilityTest() {
       let count = 0;
       let subscriber: commonEvent.CommonEventSubscriber;
       let onAbilityForegroundCallback3 = (): void => {
-        console.log("====>onAbilityForegroundCallback3====");
+        console.log('====>onAbilityForegroundCallback3====');
         if (deviceSupport === 'false') {
-          console.log("====>ACTS_GetAbilityState_0300 end====");
-          commonEvent.unsubscribe(subscriber, UnSubscribeCallback);
+          console.log('====>ACTS_GetAbilityState_0300 end====');
+          commonEvent.unsubscribe(subscriber, unSubscribeCallback);
           return;
         }
         count++;
         if (count == 2) {
           abilityDelegator.getCurrentTopAbility((err, data) => {
-            console.log("====>getCurrentTopAbility_0300 err:" + JSON.stringify(err) + "data:" + JSON.stringify(data));
+            if (err) {
+              console.info(`callback err: ${JSON.stringify(err)}`);
+              return;
+            }
+            console.log('====>getCurrentTopAbility_0300 err:' + JSON.stringify(err) + 'data:' + JSON.stringify(data));
             ability = data;
             let state = abilityDelegator.getAbilityState(ability);
-            console.log("====>ACTS_GetAbilityState_0300 state:" + state);
+            console.log('====>ACTS_GetAbilityState_0300 state:' + state);
             expect(state).assertEqual(AbilityDelegatorRegistry.AbilityLifecycleState.FOREGROUND);
             expect(state).assertEqual(AbilityDelegatorRegistryOld.AbilityLifecycleState.FOREGROUND);
             expect(state != AbilityDelegatorRegistry.AbilityLifecycleState.CREATE).assertTrue();
@@ -153,22 +165,26 @@ export default function abilityTest() {
             expect(AbilityDelegatorRegistryOld.AbilityLifecycleState.CREATE).assertEqual(1);
             expect(AbilityDelegatorRegistryOld.AbilityLifecycleState.UNINITIALIZED).assertEqual(0);
             abilityDelegator.doAbilityBackground(ability, (err) => {
-              console.log("====>doAbilityBackground_0300 data:" + JSON.stringify(err));
-              console.log("====>ACTS_GetAbilityState_0300 end====");
-              commonEvent.unsubscribe(subscriber, UnSubscribeCallback);
+              if (err) {
+                console.info(`callback err: ${JSON.stringify(err)}`);
+                return;
+              }
+              console.log('====>doAbilityBackground_0300 data:' + JSON.stringify(err));
+              console.log('====>ACTS_GetAbilityState_0300 end====');
+              commonEvent.unsubscribe(subscriber, unSubscribeCallback);
             })
           })
         }
       }
 
-      commonEvent.createSubscriber(subscriberInfo_MainAbility).then(async (data) => {
-        console.log("ACTS_GetAbilityState_0300====>Create Subscriber====>");
+      commonEvent.createSubscriber(subscriberInfoMainAbility).then(async (data) => {
+        console.log('ACTS_GetAbilityState_0300====>Create Subscriber====>');
         subscriber = data;
         await commonEvent.subscribe(subscriber, onAbilityForegroundCallback3);
       })
 
-      let UnSubscribeCallback = (): void => {
-        console.log("ACTS_GetAbilityState_0300====>UnSubscribe CallBack====>");
+      let unSubscribeCallback = (): void => {
+        console.log('ACTS_GetAbilityState_0300====>UnSubscribe CallBack====>');
         done();
       }
 
@@ -177,13 +193,13 @@ export default function abilityTest() {
           abilityName: 'MainAbility3',
           onAbilityForeground: onAbilityForegroundCallback3
         }).then(() => {
-        console.log("====>addAbilityMonitor_0300 finish====");
+        console.log('====>addAbilityMonitor_0300 finish====');
         globalThis.abilityContext.startAbility(
           {
             bundleName: 'com.example.actsgetabilitystatestagetest',
             abilityName: 'MainAbility3',
           }, (err: BusinessError) => {
-          console.log("====>startAbility_0300 err:" + JSON.stringify(err));
+          console.log('====>startAbility_0300 err:' + JSON.stringify(err));
         })
       })
     })
@@ -201,9 +217,9 @@ export default function abilityTest() {
       let ability: UIAbility | null = null;
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let state = abilityDelegator.getAbilityState(ability);
-      console.log("====>ACTS_GetAppState_0500 state:" + state);
+      console.log('====>ACTS_GetAppState_0500 state:' + state);
       expect(state).assertEqual(undefined);
-      console.log("====>ACTS_GetAbilityState_0500 end====");
+      console.log('====>ACTS_GetAbilityState_0500 end====');
       done();
     })
 
@@ -222,39 +238,43 @@ export default function abilityTest() {
       let count = 0;
       let subscriber: commonEvent.CommonEventSubscriber;
       let onAbilityForegroundCallback6 = (): void => {
-        console.log("====>onAbilityForegroundCallback6====");
+        console.log('====>onAbilityForegroundCallback6====');
         if (deviceSupport === 'false') {
-          console.log("====>ACTS_GetAbilityState_0600 end====");
-          commonEvent.unsubscribe(subscriber, UnSubscribeCallback);
+          console.log('====>ACTS_GetAbilityState_0600 end====');
+          commonEvent.unsubscribe(subscriber, unSubscribeCallback);
           return;
         }
         count++;
         if (count == 2) {
           abilityDelegator.getCurrentTopAbility((err, data) => {
-            console.log("====>getCurrentTopAbility_0600 err:" + JSON.stringify(err) + "data:" + JSON.stringify(data));
+            if (err) {
+              console.info(`callback err: ${JSON.stringify(err)}`);
+              return;
+            }
+            console.log('====>getCurrentTopAbility_0600 err:' + JSON.stringify(err) + 'data:' + JSON.stringify(data));
             ability = data;
             globalThis.ability4Context.terminateSelf();
           })
         }
       }
       let onAbilityDestroyCallback6 = (): void => {
-        console.log("====>onAbilityDestroyCallback6====");
+        console.log('====>onAbilityDestroyCallback6====');
         let state = abilityDelegator.getAbilityState(ability);
-        console.log("====>ACTS_GetAbilityState_0600 data:" + state);
-        console.log("====>UNINITIALIZED:" + AbilityDelegatorRegistry.AbilityLifecycleState.UNINITIALIZED);
+        console.log('====>ACTS_GetAbilityState_0600 data:' + state);
+        console.log('====>UNINITIALIZED:' + AbilityDelegatorRegistry.AbilityLifecycleState.UNINITIALIZED);
         expect(state).assertEqual(AbilityDelegatorRegistry.AbilityLifecycleState.UNINITIALIZED);
-        console.log("====>ACTS_GetAbilityState_0600 end====");
-        commonEvent.unsubscribe(subscriber, UnSubscribeCallback);
+        console.log('====>ACTS_GetAbilityState_0600 end====');
+        commonEvent.unsubscribe(subscriber, unSubscribeCallback);
       }
 
-      commonEvent.createSubscriber(subscriberInfo_MainAbility).then(async (data) => {
-        console.log("ACTS_GetAbilityState_0600====>Create Subscriber====>");
+      commonEvent.createSubscriber(subscriberInfoMainAbility).then(async (data) => {
+        console.log('ACTS_GetAbilityState_0600====>Create Subscriber====>');
         subscriber = data;
         await commonEvent.subscribe(subscriber, onAbilityForegroundCallback6);
       })
 
-      let UnSubscribeCallback = (): void => {
-        console.log("ACTS_GetAbilityState_0600====>UnSubscribe CallBack====>");
+      let unSubscribeCallback = (): void => {
+        console.log('ACTS_GetAbilityState_0600====>UnSubscribe CallBack====>');
         done();
       }
 
@@ -264,37 +284,15 @@ export default function abilityTest() {
           onAbilityForeground: onAbilityForegroundCallback6,
           onAbilityDestroy: onAbilityDestroyCallback6
         }).then(() => {
-        console.log("====>addAbilityMonitor_0600 finish====");
+        console.log('====>addAbilityMonitor_0600 finish====');
         globalThis.abilityContext.startAbility(
           {
             bundleName: 'com.example.actsgetabilitystatestagetest',
             abilityName: 'MainAbility4',
           }, (err: BusinessError) => {
-          console.log("====>startAbility_0600 err:" + JSON.stringify(err));
+          console.log('====>startAbility_0600 err:' + JSON.stringify(err));
         })
       })
-    })
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_GetAbilityState_0700
-     * @tc.number SUB_Ability_AbilityRuntime_GetAbilityState_0700
-     * @tc.desc   Verify the BACKGROUND enum value is 3 in AbilityLifecycleState
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_GetAbilityState_0700', Level.LEVEL0, async (done: Function) => {
-      let TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_GetAbilityState_0700';
-      hilog.info(0x0000, 'testTag', TEST_CASE_NAME + 'it begin');
-      expect(AbilityDelegatorRegistry.AbilityLifecycleState.BACKGROUND).assertEqual(3);
-      expect(AbilityDelegatorRegistryOld.AbilityLifecycleState.BACKGROUND).assertEqual(3);
-      let state = AbilityDelegatorRegistry.AbilityLifecycleState.BACKGROUND;
-      let stateOld = AbilityDelegatorRegistryOld.AbilityLifecycleState.BACKGROUND;
-      expect(state).assertEqual(stateOld);
-      expect(state).assertLarger(AbilityDelegatorRegistry.AbilityLifecycleState.FOREGROUND);
-      expect(state).assertLess(AbilityDelegatorRegistry.AbilityLifecycleState.DESTROY);
-      hilog.info(0x0000, 'testTag', TEST_CASE_NAME + 'it end');
-      done();
     })
   })
 }

@@ -28,7 +28,11 @@ export default class Utils {
     static unsubscribe(subscriber: commonEventManager.CommonEventSubscriber) {
       if(subscriber !== undefined){
         commonEventManager.unsubscribe(subscriber, async (err, data) => {
-          console.log("UnSubscribeInfoCallback : " + JSON.stringify(data));
+          if (err) {
+            console.info(`callback err: ${JSON.stringify(err)}`);
+            return;
+          }
+          console.log('UnSubscribeInfoCallback : ' + JSON.stringify(data));
         });
       }
     }

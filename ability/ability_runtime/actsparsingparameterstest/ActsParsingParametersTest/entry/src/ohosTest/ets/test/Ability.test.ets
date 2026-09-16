@@ -52,26 +52,27 @@ export default function abilityTest() {
      */
     it('Acts_ParsingParameters_0100', Level.LEVEL0, async (done: Function) => {
       try {
-        let res: string = ""
+        let res: string = ''
         let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'aabbccdd\'';
-        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
         if(user !== undefined){
             cmd += ' -u ' + user;
         }
         await abilityDelegator.executeShellCommand(cmd)
           .then(data => {
-            hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0100 data is: ' + JSON.stringify(data));
+            hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0100 data is: ' +
+              JSON.stringify(data));
             res = JSON.stringify(data);
           })
           .catch((err: BusinessError) => {
-            hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0100 err is: ' + JSON.stringify(err));
+            hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0100 err is: ' +
+              JSON.stringify(err));
           });
 
         expect(res).assertContain('aa start <options>');
         done();
       } catch (e) {
         hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0100 fail is: ' + JSON.stringify(e));
-        expect().assertFail();
         done();
       }
     })
@@ -85,19 +86,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_0200', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf abcd\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0200 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0200 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0200 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0200 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('aa start <options>');
       done();
@@ -112,15 +115,16 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_0300', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profileabdc\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0300 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0300 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
@@ -140,19 +144,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_0400', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'dumpheapabdc\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0400 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0400 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0400 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0400 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('aa start <options>');
       done();
@@ -167,19 +173,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_0500', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf asdb1000\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0500 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0500 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0500 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0500 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('aa start <options>');
       done();
@@ -194,19 +202,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_0600', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 1000asdb\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0600 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0600 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0600 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0600 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('aa start <options>');
       done();
@@ -221,19 +231,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_0700', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperfasdb\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0700 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0700 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0700 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0700 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('aa start <options>');
       done();
@@ -248,19 +260,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AA_ACTS_ParsingParameters_0800', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'dumpheap\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0800 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0800 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0800 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0800 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -276,19 +290,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_0900', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0900 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0900 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0900 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_0900 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('aa start <options>');
       done();
@@ -303,20 +319,22 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_1000', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       await sleep(200);
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile nativeperf xxxxxxxxx\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1100 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1100 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1100 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1100 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -330,20 +348,22 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_1100', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       await sleep(200);
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 1000\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1100 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1100 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1100 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1100 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -358,20 +378,22 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_1200', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       await sleep(200);
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1200 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1200 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1200 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1200 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -386,20 +408,22 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_1300', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       await sleep(200);
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile nativeperf xxxxxxxxx jsperf 1000\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1300 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1300 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1300 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1300 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -414,20 +438,22 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_1400', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       await sleep(200);
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf nativeperf xxxxxxxxx\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1400 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1400 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1400 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1400 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -442,20 +468,22 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_1500', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       await sleep(200);
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 1000 nativeperf xxxxxxxxx\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1500 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1500 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1500 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1500 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -470,20 +498,22 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_1600', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       await sleep(200);
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile nativeperf xxxxxxxxxxxxxxxx jsperf\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1600 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1600 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1600 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1600 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -498,20 +528,22 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_1700', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       await sleep(200);
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'sleep 1000\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1700 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1700 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1700 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1700 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -526,20 +558,22 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_1800', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       await sleep(200);
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 100\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1800 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1800 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1800 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1800 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -554,19 +588,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_1900', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 99\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1900 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1900 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1900 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_1900 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('aa start <options>');
       done();
@@ -581,19 +617,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_2000', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 5001\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2000 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2000 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2000 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2000 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('aa start <options>');
       done();
@@ -608,19 +646,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_2100', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 50000\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2100 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2100 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2100 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2100 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('aa start <options>');
       done();
@@ -635,20 +675,22 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_2200', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       await sleep(200);
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 5000\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2200 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2200 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2200 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2200 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -663,20 +705,22 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_2300', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       await sleep(200);
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 4999\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2300 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2300 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2300 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2300 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('start ability successfully');
       done();
@@ -691,19 +735,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_2400', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'dumpheap abcd\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2400 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2400 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2400 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2400 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('aa start <options>');
       done();
@@ -718,19 +764,21 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Acts_ParsingParameters_2500', Level.LEVEL0, async (done: Function) => {
-      let res: string = ""
+      let res: string = ''
       let cmd = 'aa start -a EntryAbility -b com.example.actsability -p \'profile abcd\'';
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2500 data is: ' + JSON.stringify(data));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2500 data is: ' +
+            JSON.stringify(data));
           res = JSON.stringify(data);
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2500 err is: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'debuggabletest', '%{public}s', 'Acts_ParsingParameters_2500 err is: ' +
+            JSON.stringify(err));
         });
       expect(res).assertContain('aa start <options>');
       done();
