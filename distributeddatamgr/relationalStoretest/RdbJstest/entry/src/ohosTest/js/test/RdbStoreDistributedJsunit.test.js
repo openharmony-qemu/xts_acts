@@ -330,7 +330,7 @@ describe('rdbStoreDistributedTest', function () {
         try {
             predicates = predicates.inAllDevices();
             console.info(TAG + "inAllDevices success");
-            expect(predicates).assertEqual(predicates);
+            expect(predicates).assertInstanceOf("Object");
         } catch (err) {
             console.info(TAG + "inAllDevices failed");
             expect(null).assertFail();
