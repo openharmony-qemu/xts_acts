@@ -43,3 +43,15 @@ export const SetProcessNameConfigsNullptr: () => number;
 export const DestroyChildProcessConfigs: () => number;
 export const DestroyChildProcessConfigsNullptr: () => number;
 export const KillChildProcessWithPid: (pid: number) => number;
+
+export const acquireChildProcessInfosInvalidParam: () => number;
+export const acquireChildProcessInfosEmpty: () => number[];
+export const acquireUIAbilityChildProcessInfosInvalidParam: () => number;
+export const acquireUIAbilityChildProcessInfosEmpty: () => number[];
+export const getChildProcessInfoByIndexInvalid: () => number;
+export const childProcessInfoGetPidInvalid: () => number;
+export const childProcessInfoGetProcessNameInvalid: () => number;
+export const releaseChildProcessInfosNull: () => number;
+export const queryNativeChildProcessInfos: () => number[];
+export const queryUIAbilityChildProcessInfos: () => number[];
+export const childProcessInfoGetProcessNameBufferTooSmall: () => number;

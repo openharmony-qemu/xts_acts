@@ -18,6 +18,7 @@ import nativeProcessWithArgsTest from './NativeChildProcessWithArgs.test'
 import createNativeChildProcessWithConfigsTest from './CreateNativeChildProcessWithConfigs.test'
 import startNativeChildProcessWithConfigsTest from './StartNativeChildProcessWithConfigs.test'
 import nativeChildProcessExitTest from './NativeChildProcessExit.test'
+import childProcessInfosTest from './ChildProcessInfos.test'
 
 export default function testsuite() {
   nativeChildProcessTest();
@@ -25,4 +26,5 @@ export default function testsuite() {
   createNativeChildProcessWithConfigsTest();
   startNativeChildProcessWithConfigsTest();
   nativeChildProcessExitTest();
+  childProcessInfosTest();
 }
