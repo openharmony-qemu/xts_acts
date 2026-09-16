@@ -51,16 +51,26 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
         let recordCanvas: drawing.Canvas | undefined = recordCmdUtils.beginRecording(200, 200);
-        let pen = new drawing.Pen();
-        pen.setStrokeWidth(5);
-        pen.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
-        recordCanvas!.attachPen(pen);
-        recordCanvas!.drawRect({ left: 0, right: 100, top: 0, bottom: 100 });
-        recordCanvas!.detachPen();
-        let recordCmd: drawing.RecordCmd | undefined = recordCmdUtils.finishRecording();
-        expect(recordCmd != null && recordCmd != undefined).assertTrue();
-        canvas.drawRecordCmd(recordCmd!);
-        console.info(msg + ' drawRecordCmd succeeded');
+        if(recordCanvas == undefined){
+          console.info(msg + ' drawRecordCmd undefined failed');
+          expect().assertFail();
+        } else {
+          let pen = new drawing.Pen();
+          pen.setStrokeWidth(5);
+          pen.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
+          recordCanvas.attachPen(pen);
+          recordCanvas.drawRect({ left: 0, right: 100, top: 0, bottom: 100 });
+          recordCanvas.detachPen();
+          let recordCmd: drawing.RecordCmd | undefined = recordCmdUtils.finishRecording();
+          if(recordCmd == undefined){
+            console.info(msg + ' recordCmd undefined failed');
+            expect().assertFail();
+          } else {
+            expect(recordCmd != null && recordCmd != undefined).assertTrue();
+            canvas.drawRecordCmd(recordCmd);
+            console.info(msg + ' drawRecordCmd succeeded');
+          }
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` errorCode is: ${e.code} + errormsg is: ${e.message}`);
@@ -1171,13 +1181,11 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
         let recordCmdUtils = new drawing.RecordCmdUtils();
         let recordCmd: drawing.RecordCmd | undefined = recordCmdUtils.finishRecording();
         console.info(msg + ` finishRecording without beginRecording returned: ${recordCmd}`);
-        expect(recordCmd == null || recordCmd == undefined).assertTrue();
-        console.info(msg + ' finishRecording without beginRecording handled gracefully');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` finishRecording without beginRecording errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        console.info(msg + ' finishRecording without beginRecording threw error as expected');
-        expect().assertFail();
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1538,9 +1546,9 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       let specialValues: Array<int> = [(Number.MAX_VALUE).toInt(), (Infinity).toInt()];
 
       try {
+        console.info(msg + ` Number.MAX_VALUE toInt Value=${(Number.MAX_VALUE).toInt()}`);
         let recordCmdUtils = new drawing.RecordCmdUtils();
         recordCmdUtils.beginRecording((Number.MAX_VALUE).toInt(), (Number.MAX_VALUE).toInt());
-        console.info(msg + ` Number.MAX_VALUE toInt Value=${(Number.MAX_VALUE).toInt()}`);
         let height = recordCmdUtils.getHeight();
         let width = recordCmdUtils.getWidth();
         console.info(msg + ` MAX MIN getHeight=${height}  getWidth=${width}`);
@@ -1555,6 +1563,7 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       }
 
       for (let i = 0; i < specialValues.length; i++) {
+        console.info(msg + ` beginRecording with special setValue[${i}] :${specialValues[i]}`);
         try {
           let recordCmdUtils = new drawing.RecordCmdUtils();
           recordCmdUtils.beginRecording(specialValues[i], 200);
@@ -1571,6 +1580,7 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       }
 
       for (let i = 0; i < specialValues.length; i++) {
+        console.info(msg + ` beginRecording height special setValue[${i}] :${specialValues[i]}`);
         try {
           let recordCmdUtils = new drawing.RecordCmdUtils();
           recordCmdUtils.beginRecording(200, specialValues[i]);
