@@ -19,9 +19,9 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 export default function EnableHapticFeedbackTest() {
   describe('EnableHapticFeedbackTest', () => {
-
     beforeEach(async (done: () => void): Promise<void> => {
       console.info('TextPickerAddApi beforeEach start');
       let options: router.RouterOptions = {
@@ -46,88 +46,76 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    
-    
-    
-    
-    
-/**
+    /**
      * @tc.number   TextPickerEnableHapticFeedback_static_001
      * @tc.name     TextPickerEnableHapticFeedback_static_001
      * @tc.desc     TextPickerEnableHapticFeedback_static_001
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('TextPickerEnableHapticFeedback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('textPicker1');
-      console.log('TextPickerEnableHapticFeedback_static_001')
-      await Utils.sleep(1000)
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('TextPickerEnableHapticFeedback_static_001 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
-      expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
-      done();
-    });
+    it('TextPickerEnableHapticFeedback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let strJson = inspector.getInspectorByKey('textPicker1');
+        console.log('TextPickerEnableHapticFeedback_static_001')
+        await Utils.sleep(1000)
+        let obj = JSON.parseJsonElement(strJson);
+        console.info(
+          'TextPickerEnableHapticFeedback_static_001 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
+        expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
+        done();
+      });
 
-    
-    
-    
-    
-    
-/**
+    /**
      * @tc.number   TextPickerEnableHapticFeedback_static_002
      * @tc.name     TextPickerEnableHapticFeedback_static_002
      * @tc.desc     TextPickerEnableHapticFeedback_static_002
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('TextPickerEnableHapticFeedback_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('textPicker2');
-      console.log('TextPickerEnableHapticFeedback_static_002')
-      await Utils.sleep(1000)
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('TextPickerEnableHapticFeedback_static_002 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
-      expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(false);
-      done();
-    });
+    it('TextPickerEnableHapticFeedback_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let strJson = inspector.getInspectorByKey('textPicker2');
+        console.log('TextPickerEnableHapticFeedback_static_002')
+        await Utils.sleep(1000)
+        let obj = JSON.parseJsonElement(strJson);
+        console.info(
+          'TextPickerEnableHapticFeedback_static_002 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
+        expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(false);
+        done();
+      });
 
-    
-    
-    
-    
-    
-/**
+    /**
      * @tc.number   TextPickerEnableHapticFeedback_static_003
      * @tc.name     TextPickerEnableHapticFeedback_static_003
      * @tc.desc     TextPickerEnableHapticFeedback_static_003
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('TextPickerEnableHapticFeedback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('textPicker3');
-      console.log('TextPickerEnableHapticFeedback_static_003')
-      await Utils.sleep(1000)
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('TextPickerEnableHapticFeedback_static_003 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
-      expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
-      done();
-    });
+    it('TextPickerEnableHapticFeedback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let strJson = inspector.getInspectorByKey('textPicker3');
+        console.log('TextPickerEnableHapticFeedback_static_003')
+        await Utils.sleep(1000)
+        let obj = JSON.parseJsonElement(strJson);
+        console.info(
+          'TextPickerEnableHapticFeedback_static_003 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
+        expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
+        done();
+      });
 
-    
-    
-    
-    
-    
-/**
+    /**
      * @tc.number   TextPickerEnableHapticFeedback_static_004
      * @tc.name     TextPickerEnableHapticFeedback_static_004
      * @tc.desc     TextPickerEnableHapticFeedback_static_004
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('TextPickerEnableHapticFeedback_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('textPicker4');
-      console.log('TextPickerEnableHapticFeedback_static_004')
-      await Utils.sleep(1000)
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('TextPickerEnableHapticFeedback_static_004 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
-      expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
-      done();
-    });
+    it('TextPickerEnableHapticFeedback_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let strJson = inspector.getInspectorByKey('textPicker4');
+        console.log('TextPickerEnableHapticFeedback_static_004')
+        await Utils.sleep(1000)
+        let obj = JSON.parseJsonElement(strJson);
+        console.info(
+          'TextPickerEnableHapticFeedback_static_004 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
+        expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
+        done();
+      });
   })
 }

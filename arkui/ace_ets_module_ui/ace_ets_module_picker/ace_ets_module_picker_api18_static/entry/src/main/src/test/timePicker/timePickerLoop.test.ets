@@ -20,9 +20,9 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 export default function timePickerLoopTest() {
   describe('timePickerLoopTest', () => {
-
     beforeEach(async (done: () => void): Promise<void> => {
       console.info('timePickerLoopTest beforeEach start');
       let options: router.RouterOptions = {
@@ -46,18 +46,14 @@ export default function timePickerLoopTest() {
       console.info('timePickerLoopTest beforeEach end');
       done();
     });
-    
-    
-    
-    
-    
-/**
+
+    /**
      * @tc.number   timePickerLoopTest_static_001
      * @tc.name     timePickerLoopTest_static_001
      * @tc.desc     timePickerLoopTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('timePickerLoopTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('timePickerLoopTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('timePickerLoopTest_static_001 START');
         let driver: Driver = Driver.create();
@@ -78,18 +74,14 @@ it('timePickerLoopTest_static_001', Level.LEVEL0, async (done: () => void): Prom
         done();
       }
     });
-    
-    
-    
-    
-    
-/**
+
+    /**
      * @tc.number   timePickerLoopTest_static_002
      * @tc.name     timePickerLoopTest_static_002
      * @tc.desc     timePickerLoopTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('timePickerLoopTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('timePickerLoopTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('timePickerLoopTest_static_002 START');
         let driver: Driver = Driver.create();
@@ -110,18 +102,14 @@ it('timePickerLoopTest_static_002', Level.LEVEL0, async (done: () => void): Prom
         done();
       }
     });
-    
-    
-    
-    
-    
-/**
+
+    /**
      * @tc.number   timePickerLoopTest_static_003
      * @tc.name     timePickerLoopTest_static_003
      * @tc.desc     timePickerLoopTest_static_003
      * @tc.level    Level.LEVEL0
      */
-it('timePickerLoopTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('timePickerLoopTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('timePickerLoopTest_static_003 START');
         let driver: Driver = Driver.create();

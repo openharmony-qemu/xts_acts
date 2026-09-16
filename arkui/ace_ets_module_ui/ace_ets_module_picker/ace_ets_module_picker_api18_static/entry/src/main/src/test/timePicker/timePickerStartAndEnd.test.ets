@@ -22,7 +22,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function TimePickerStartAndEnd() {
   describe('TimePickerStartAndEnd', () => {
-
     beforeEach(async () => {
       console.info('TimePickerAddApi beforeEach start');
       let options: router.RouterOptions = {
@@ -46,18 +45,13 @@ export default function TimePickerStartAndEnd() {
       console.info('TimePickerAddApi beforeEach end');
     });
 
-    
-    
-    
-    
-    
-/**
+    /**
      * @tc.number   TimePickerStartAndEnd_static_001
      * @tc.name     TimePickerStartAndEnd_static_001
      * @tc.desc     TimePickerStartAndEnd_static_001
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerStartAndEnd_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TimePickerStartAndEnd_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker');
       console.log('TimePickerStartAndEnd_static_001')
       await Utils.sleep(1000)
@@ -67,18 +61,13 @@ it('TimePickerStartAndEnd_static_001', Level.LEVEL1, async (done: () => void): P
       done();
     });
 
-    
-    
-    
-    
-    
-/**
+    /**
      * @tc.number   TimePickerStartAndEnd_static_002
      * @tc.name     TimePickerStartAndEnd_static_002
      * @tc.desc     TimePickerStartAndEnd_static_002
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerStartAndEnd_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TimePickerStartAndEnd_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker');
       console.log('TimePickerStartAndEnd_static_002')
       await Utils.sleep(1000)
@@ -88,18 +77,13 @@ it('TimePickerStartAndEnd_static_002', Level.LEVEL1, async (done: () => void): P
       done();
     });
 
-    
-    
-    
-    
-    
-/**
+    /**
      * @tc.number   TimePickerStartAndEnd_static_003
      * @tc.name     TimePickerStartAndEnd_static_003
      * @tc.desc     TimePickerStartAndEnd_static_003
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerStartAndEnd_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TimePickerStartAndEnd_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker2');
       console.log('TimePickerStartAndEnd_static_003')
       await Utils.sleep(1000)
@@ -109,18 +93,13 @@ it('TimePickerStartAndEnd_static_003', Level.LEVEL1, async (done: () => void): P
       done();
     });
 
-    
-    
-    
-    
-    
-/**
+    /**
      * @tc.number   TimePickerStartAndEnd_static_004
      * @tc.name     TimePickerStartAndEnd_static_004
      * @tc.desc     TimePickerStartAndEnd_static_004
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerStartAndEnd_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TimePickerStartAndEnd_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker2');
       console.log('TimePickerStartAndEnd_static_004')
       await Utils.sleep(1000)
@@ -130,18 +109,13 @@ it('TimePickerStartAndEnd_static_004', Level.LEVEL1, async (done: () => void): P
       done();
     });
 
-    
-    
-    
-    
-    
-/**
+    /**
      * @tc.number   TimePickerStartAndEnd_static_005
      * @tc.name     TimePickerStartAndEnd_static_005
      * @tc.desc     TimePickerStartAndEnd_static_005
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerStartAndEnd_static_005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TimePickerStartAndEnd_static_005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker3');
       console.log('TimePickerStartAndEnd_static_005')
       await Utils.sleep(1000)
@@ -151,18 +125,13 @@ it('TimePickerStartAndEnd_static_005', Level.LEVEL1, async (done: () => void): P
       done();
     });
 
-    
-    
-    
-    
-    
-/**
+    /**
      * @tc.number   TimePickerStartAndEnd_static_006
      * @tc.name     TimePickerStartAndEnd_static_006
      * @tc.desc     TimePickerStartAndEnd_static_006
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerStartAndEnd_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TimePickerStartAndEnd_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker3');
       console.log('TimePickerStartAndEnd_static_006')
       await Utils.sleep(1000)

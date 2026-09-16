@@ -20,9 +20,9 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 export default function timePickerSelectedAreaTest() {
   describe('timePickerSelectedAreaTest', () => {
-
     beforeEach(async (done: () => void): Promise<void> => {
       console.info('timePickerSelectedAreaTest beforeEach start');
       let options: router.RouterOptions = {
@@ -46,18 +46,14 @@ export default function timePickerSelectedAreaTest() {
       console.info('timePickerSelectedAreaTest beforeEach end');
       done();
     });
-    
-    
-    
-    
-    
-/**
+
+    /**
      * @tc.number   timePickerSelectedAreaTest_static_001
      * @tc.name     timePickerSelectedAreaTest_static_001
      * @tc.desc     timePickerSelectedAreaTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('timePickerSelectedAreaTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('timePickerSelectedAreaTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('timePickerSelectedAreaTest_static_001 START');
         let driver = Driver.create();
@@ -71,10 +67,10 @@ it('timePickerSelectedAreaTest_static_001', Level.LEVEL0, async (done: () => voi
         let middle = (top + bottom) / 2
 
         await driver.swipe(
-          Math.round(left + (right - left) / 6) as int,
-          Math.round(top + (bottom - top) / 2) as int,
-          Math.round(left + (right - left) / 6) as int,
-          Math.round(top) as int);
+          Math.round(left + (right - left) / 6).toInt(),
+          Math.round(top + (bottom - top) / 2).toInt(),
+          Math.round(left + (right - left) / 6).toInt(),
+          Math.round(top).toInt());
         await Utils.sleep(6000);
 
         let textStr = await driver.findComponent(ON.id('textFlag'));
