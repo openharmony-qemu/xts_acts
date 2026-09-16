@@ -45,8 +45,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__0100
      * @tc.name int16ArrayEntriesPart03Test001
      * @tc.desc Verify Int16Array of(1,2,3) entries() first next index 0 value 1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -70,8 +70,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__0200
      * @tc.name int16ArrayEntriesPart03Test002
      * @tc.desc Verify Int16Array entries() next().done true
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -86,8 +86,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__0300
      * @tc.name int16ArrayEntriesPart03Test003
      * @tc.desc Verify Int16Array entries() next().value undefined
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -101,8 +101,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__0400
      * @tc.name int16ArrayEntriesPart03Test004
      * @tc.desc Verify new Int16Array() entries iteration count 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -118,8 +118,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__0500
      * @tc.name int16ArrayEntriesPart03Test005
      * @tc.desc Verify new Int16Array() two entries iterators next done true
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -138,8 +138,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__0600
      * @tc.name int16ArrayEntriesPart03Test006
      * @tc.desc Verify new Int16Array() entries()
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -153,8 +153,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__0700
      * @tc.name int16ArrayEntriesPart03Test007
      * @tc.desc Verify new Int16Array((0).toInt()) entries()
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -168,8 +168,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__0800
      * @tc.name int16ArrayEntriesPart03Test008
      * @tc.desc Verify Int16Array.of() entries()
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -183,8 +183,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__0900
      * @tc.name int16ArrayEntriesPart03Test009
      * @tc.desc Verify Int16Array.from Array entries()
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -199,8 +199,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__1000
      * @tc.name int16ArrayEntriesPart03Test010
      * @tc.desc Verify ArrayBuffer Int16Array entries()
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -215,8 +215,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__1100
      * @tc.name int16ArrayEntriesPart03Test011
      * @tc.desc Verify Int16Array of(0) entries() next value [0,0]
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -238,8 +238,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__1200
      * @tc.name int16ArrayEntriesPart03Test012
      * @tc.desc Verify MAX(32767) entries [0, 32767]
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -262,8 +262,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__1300
      * @tc.name int16ArrayEntriesPart03Test013
      * @tc.desc Verify MIN(-32768) entries [0, -32768]
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -286,8 +286,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__1400
      * @tc.name int16ArrayEntriesPart03Test014
      * @tc.desc Verify -1 entries [0, -1]
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -309,8 +309,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__1500
      * @tc.name int16ArrayEntriesPart03Test015
      * @tc.desc Verify NaN entries [0, 0] NaN 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -329,8 +329,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__1600
      * @tc.name int16ArrayEntriesPart03Test016
      * @tc.desc Verify Infinity entries [0, 0]
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -349,8 +349,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__1700
      * @tc.name int16ArrayEntriesPart03Test017
      * @tc.desc Verify -Infinity entries [0, 0]
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -369,8 +369,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__1800
      * @tc.name int16ArrayEntriesPart03Test018
      * @tc.desc Verify Int16Array of(42) entries() second next done true
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -386,8 +386,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__1900
      * @tc.name int16ArrayEntriesPart03Test019
      * @tc.desc Verify Int16Array of(99) entries() first next done false second done true
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -405,8 +405,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__2000
      * @tc.name int16ArrayEntriesPart03Test020
      * @tc.desc Verify Int16Array of(-32768) entries() next value index 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -426,8 +426,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__2100
      * @tc.name int16ArrayEntriesPart03Test021
      * @tc.desc Verify Int16Array of(0,0,0) entries() next indices 0 1 2 values 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -469,8 +469,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__2200
      * @tc.name int16ArrayEntriesPart03Test022
      * @tc.desc Verify MAX [32767,32767] entries 32767
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -497,8 +497,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__2300
      * @tc.name int16ArrayEntriesPart03Test023
      * @tc.desc Verify Int16Array of(-32768,-32768,-32768) entries() next values -32768
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -532,8 +532,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__2400
      * @tc.name int16ArrayEntriesPart03Test024
      * @tc.desc Verify -1 [-1,-1] entries -1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -559,8 +559,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__2500
      * @tc.name int16ArrayEntriesPart03Test025
      * @tc.desc Verify 1 3 entries index 0,1,2
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -590,8 +590,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__2600
      * @tc.name int16ArrayEntriesPart03Test026
      * @tc.desc Verify Int16Array of(0,0,0,0,0) entries() iteration count 5
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -610,8 +610,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__2700
      * @tc.name int16ArrayEntriesPart03Test027
      * @tc.desc Verify Int16Array of(32767,32767,32767,32767) entries() next indices 0 1 2 value 32767
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -648,8 +648,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__2800
      * @tc.name int16ArrayEntriesPart03Test028
      * @tc.desc Verify Int16Array of(NaN,NaN) entries() next values 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -675,8 +675,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__2900
      * @tc.name int16ArrayEntriesPart03Test029
      * @tc.desc Verify Infinity entries 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -695,8 +695,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__3000
      * @tc.name int16ArrayEntriesPart03Test030
      * @tc.desc Verify NaN/Infinity/-Infinity entries 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -726,8 +726,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__3100
      * @tc.name int16ArrayEntriesPart03Test031
      * @tc.desc Verify Int16Array of(3.7) entries() next value 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -745,8 +745,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__3200
      * @tc.name int16ArrayEntriesPart03Test032
      * @tc.desc Verify Int16Array of(-3.7) entries() next value -3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -764,8 +764,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__3300
      * @tc.name int16ArrayEntriesPart03Test033
      * @tc.desc Verify 32768 entries -32768
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -783,8 +783,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__3400
      * @tc.name int16ArrayEntriesPart03Test034
      * @tc.desc Verify -32769 entries 32767
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -802,8 +802,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__3500
      * @tc.name int16ArrayEntriesPart03Test035
      * @tc.desc Verify [MIN,MAX,0,-1] entries
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -841,8 +841,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__3600
      * @tc.name int16ArrayEntriesPart03Test036
      * @tc.desc Verify entries() next().value undefined
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -857,8 +857,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__3700
      * @tc.name int16ArrayEntriesPart03Test037
      * @tc.desc Verify Int16Array of(1,2) entries() after two next for-of count 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -877,8 +877,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__3800
      * @tc.name int16ArrayEntriesPart03Test038
      * @tc.desc Verify Int16Array of(10,20,30) entries() fourth and fifth next done true
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -897,8 +897,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__3900
      * @tc.name int16ArrayEntriesPart03Test039
      * @tc.desc Verify Int16Array of(8) entries() $_iterator after next yields done true
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -914,8 +914,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__4000
      * @tc.name int16ArrayEntriesPart03Test040
      * @tc.desc Verify Int16Array of(1) entries() next value index 0 value 1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -937,8 +937,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__4100
      * @tc.name int16ArrayEntriesPart03Test041
      * @tc.desc Verify Int16Array of(2) entries() next done false value index 0 value 2
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -962,8 +962,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__4200
      * @tc.name int16ArrayEntriesPart03Test042
      * @tc.desc Verify Int16Array of(3,4) entries() first next done false
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -978,8 +978,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__4300
      * @tc.name int16ArrayEntriesPart03Test043
      * @tc.desc Verify Int16Array of(6) entries() next done false value index 0 value 6
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1003,8 +1003,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__4400
      * @tc.name int16ArrayEntriesPart03Test044
      * @tc.desc Verify Int16Array of(9) entries() next value tuple index 0 value 9
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1027,8 +1027,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__4500
      * @tc.name int16ArrayEntriesPart03Test045
      * @tc.desc Verify Int16Array of(11) entries() next value index 0 value 11
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1050,8 +1050,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__4600
      * @tc.name int16ArrayEntriesPart03Test046
      * @tc.desc Verify Int16Array of(13) entries() next done false value index 0 value 13
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1075,8 +1075,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__4700
      * @tc.name int16ArrayEntriesPart03Test047
      * @tc.desc Verify Int16Array of(1,2) entries() $_iterator shares state indices 0 1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1103,8 +1103,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__4800
      * @tc.name int16ArrayEntriesPart03Test048
      * @tc.desc Verify Int16Array of(5) entries() two $_iterator calls next done true
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1122,8 +1122,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__4900
      * @tc.name int16ArrayEntriesPart03Test049
      * @tc.desc Verify Int16Array of(7,8) two entries iterators independent index 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1144,8 +1144,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__5000
      * @tc.name int16ArrayEntriesPart03Test050
      * @tc.desc Verify Int16Array of(3) entries() for-of iteration count 1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1162,8 +1162,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__5100
      * @tc.name int16ArrayEntriesPart03Test051
      * @tc.desc Verify Int16Array of(1,2,3) entries() for-of throw Error name
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1184,8 +1184,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__5200
      * @tc.name int16ArrayEntriesPart03Test052
      * @tc.desc Verify Int16Array of(100,200,300) entries throw then $_get 100 200 300
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1214,8 +1214,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__5300
      * @tc.name int16ArrayEntriesPart03Test053
      * @tc.desc Verify Int16Array of(4,5,6) entries throw then new entries index 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1242,8 +1242,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__5400
      * @tc.name int16ArrayEntriesPart03Test054
      * @tc.desc Verify Int16Array of(10,20,30,40) entries throw then next index 1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1270,8 +1270,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__5500
      * @tc.name int16ArrayEntriesPart03Test055
      * @tc.desc Verify Int16Array of(1,2,3) entries() does not change length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1287,8 +1287,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__5600
      * @tc.name int16ArrayEntriesPart03Test056
      * @tc.desc Verify Int16Array of(7,14,21) entries() drain then $_get 7 14 21
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1311,8 +1311,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__5700
      * @tc.name int16ArrayEntriesPart03Test057
      * @tc.desc Verify Int16Array of(1,2,3) entries() next value 1 after $_set 1 99
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1332,8 +1332,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__5800
      * @tc.name int16ArrayEntriesPart03Test058
      * @tc.desc Verify Int16Array of(5,10,15) entries() second next value 999 after $_set 1 999
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1354,8 +1354,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__5900
      * @tc.name int16ArrayEntriesPart03Test059
      * @tc.desc Verify Int16Array of(2,4,6) entries() next index 0 value 888 after $_set 0 888
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1378,8 +1378,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__6000
      * @tc.name int16ArrayEntriesPart03Test060
      * @tc.desc Verify ArrayBuffer entries()
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1407,8 +1407,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__6100
      * @tc.name int16ArrayEntriesPart03Test061
      * @tc.desc Verify ArrayBuffer byteOffset entries() 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1433,8 +1433,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__6200
      * @tc.name int16ArrayEntriesPart03Test062
      * @tc.desc Verify ArrayBuffer entries() length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1461,8 +1461,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__6300
      * @tc.name int16ArrayEntriesPart03Test063
      * @tc.desc Verify ArrayBuffer entries()
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1491,8 +1491,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__6400
      * @tc.name int16ArrayEntriesPart03Test064
      * @tc.desc Verify Int16Array of(42) entries() next done false value index 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1513,8 +1513,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__6500
      * @tc.name int16ArrayEntriesPart03Test065
      * @tc.desc Verify Int16Array of(1) entries() next IteratorResult done false value index 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1535,8 +1535,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__6600
      * @tc.name int16ArrayEntriesPart03Test066
      * @tc.desc Verify IteratorResult.value![0]
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1558,8 +1558,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__6700
      * @tc.name int16ArrayEntriesPart03Test067
      * @tc.desc Verify IteratorResult.value![0] 1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1589,8 +1589,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__6800
      * @tc.name int16ArrayEntriesPart03Test068
      * @tc.desc Verify entries() entry index length-1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1609,8 +1609,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__6900
      * @tc.name int16ArrayEntriesPart03Test069
      * @tc.desc Verify Int16Array of(99) entries() next value index 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1628,8 +1628,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__7000
      * @tc.name int16ArrayEntriesPart03Test070
      * @tc.desc Verify Int16Array of(7,8) two entries iterators next value 7
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1654,8 +1654,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__7100
      * @tc.name int16ArrayEntriesPart03Test071
      * @tc.desc Verify entries() value[1] $_get
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1681,8 +1681,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__7200
      * @tc.name int16ArrayEntriesPart03Test072
      * @tc.desc Verify Int16Array of(1,2,3) two entries iterators next index 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1707,8 +1707,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__7300
      * @tc.name int16ArrayEntriesPart03Test073
      * @tc.desc Verify Int16Array of(10,20,30) two entries iterators next indices 0 0 1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1742,8 +1742,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__7400
      * @tc.name int16ArrayEntriesPart03Test074
      * @tc.desc Verify independent entries() iterators do not share iteration state
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1764,8 +1764,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__7500
      * @tc.name int16ArrayEntriesPart03Test075
      * @tc.desc Verify three independent entries() iterators each traverse all 3 elements
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1791,8 +1791,8 @@ export default function int16ArrayEntriesPart03Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART03__7600
      * @tc.name int16ArrayEntriesPart03Test076
      * @tc.desc Verify two independent entries() iterators each traverse 50 elements
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("int16ArrayEntriesPart03Test076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
