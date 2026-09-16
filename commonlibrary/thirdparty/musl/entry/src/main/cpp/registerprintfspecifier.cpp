@@ -26,6 +26,7 @@
 #include <pthread.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <securec.h>
 
 using std::atomic_int;
 using std::atomic_fetch_add;
@@ -44,9 +45,7 @@ using std::atomic_store;
 #define TEST_VALUE_3 3
 #define TEST_VALUE_5 5
 #define TEST_VALUE_7 7
-#define TEST_VALUE_32 32
 #define TEST_VALUE_2 2
-#define TEST_VALUE_4 4
 #define EXPECTED_16 16
 #define MODIFIER_MAX_256 256
 #define MODIFIER_MAX_255 255
@@ -58,10 +57,17 @@ using std::atomic_store;
 #define TEST_DOUBLE_3_14 3.14
 #define EXPECTED_RET_2 2
 #define EXPECTED_RET_NEG_1 (-1)
+#define EXPECTED_RET_NEG_2 (-2)
 #define ARGINFO_MAX_32 32
-
+#define TEST_VALUE_NEG_5 (-5)
 #define SPEC_CHAR_RANGE_20 20
-
+#define TEST_DOUBLE_4_0 4.0
+#define THREAD_ARRAY_SIZE_4 4
+#define WSTRING_SIZE_32 32
+#define WSTRING_SIZE_64 64
+#define ARGINFO_MAX_2 2
+#define ARGINFO_MAX_3 3
+#define WS_ARRAY_SIZE_257 257
 
 struct PrintfInfo {
     int prec;
@@ -85,7 +91,6 @@ struct PrintfInfo {
     wchar_t pad;
 };
 typedef int PrintfFunction(FILE *, const struct PrintfInfo *, const void *const *);
-
 typedef int PrintfArginfoSizeFunction(const struct PrintfInfo *, size_t, int *, int *);
 typedef void PrintfVaArgFunction(void *, va_list *);
 #define PA_INT 0
@@ -109,7 +114,8 @@ static RegTypeFnT g_regType = nullptr;
 static void LoadFunctions(void)
 {
     if (!g_regSpecifier) {
-        g_regSpecifier = (RegSpecifierFnT)dlsym(RTLD_DEFAULT, "register_printf_specifier");
+        g_regSpecifier = (RegSpecifierFnT)dlsym(RTLD_DEFAULT,
+            "register_printf_specifier");
     }
     if (!g_regModifier) {
         g_regModifier = (RegModifierFnT)dlsym(RTLD_DEFAULT, "register_printf_modifier");
@@ -118,19 +124,19 @@ static void LoadFunctions(void)
         g_regType = (RegTypeFnT)dlsym(RTLD_DEFAULT, "register_printf_type");
     }
 }
-static int MyFunc(FILE *s, const struct printf_info *info, const void *const *args)
+static int MyFunc(FILE *s, const struct PrintfInfo *info, const void *const *args)
 {
     return 0;
 }
 
-static int MyArginfo(const struct printf_info *info, size_t n, int *at, int *sz)
+static int MyArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 {
     return 0;
 }
 
-static int LongPrintf(FILE *s, const struct printf_info *info, const void *const *args)
+static int LongPrintf(FILE *s, const struct PrintfInfo *info, const void *const *args)
 {
-    const long *lp = *static_cast<const long *const *>(args[0]);
+    const long *lp = *reinterpret_cast<const long *const *>(args[0]);
     return fprintf(s, "%ld", *lp);
 }
 
@@ -145,7 +151,7 @@ static int LongArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz
 
 static int WlongPrintf(FILE *s, const struct PrintfInfo *info, const void *const *args)
 {
-    const long *lp = *static_cast<const long *const *>(args[0]);
+    const long *lp = *reinterpret_cast<const long *const *>(args[0]);
     if (info->wide) {
         return fwprintf(s, L"%ld", *lp);
     }
@@ -164,15 +170,16 @@ static int FuncB(FILE *s, const struct PrintfInfo *i, const void *const *a)
 
 static int FuncM2(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
-    return -TEST_VALUE_2;
+    return EXPECTED_RET_NEG_2;
 }
 
 static int FuncM1(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
-    return -1;
+    return EXPECTED_RET_NEG_1;
 }
 
 static int Func0(FILE *s, const struct PrintfInfo *i, const void *const *a)
+{
     return 0;
 }
 
@@ -183,12 +190,12 @@ static int Arginfo0(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 
 static int Arginfo32(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 {
-    size_t k = n < TEST_VALUE_32 ? n : TEST_VALUE_32;
+    size_t k = n < ARGINFO_MAX_32 ? n : ARGINFO_MAX_32;
     for (size_t i = 0; i < k; i++) {
         at[i] = PA_INT;
         sz[i] = sizeof(int);
     }
-    return TEST_VALUE_32;
+    return ARGINFO_MAX_32;
 }
 
 static char g_seenPad;
@@ -295,7 +302,8 @@ static void *Stress(void *arg)
         char sp = 'A' + (idx % SPEC_CHAR_RANGE_20);
         g_regSpecifier(sp, MyFunc, Arginfo0);
         char b[16];
-        (void)snprintf_s(b, sizeof(b), sizeof(b) - 1, "%c", sp);
+                int snRet0 = snprintf_s(b, sizeof(b), sizeof(b) - 1, "%c", sp);
+                if (snRet0 < 0) { continue; }
     }
     return nullptr;
 }
@@ -356,7 +364,9 @@ static napi_value RegPrintfSpecifier_0300(napi_env env, napi_callback_info info)
         long val = TEST_VALUE_42;
         char buf[64];
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B", &val);
-        if (static_cast<int>(ret) < static_cast<int>(0)) {
+        if (ret < 0) {
+            _exit(1);
+        } else if (ret >= sizeof(buf)) {
             _exit(1);
         }
         if (strcmp((buf), ("42")) != 0) {
@@ -389,7 +399,12 @@ static napi_value RegPrintfSpecifier_0400(napi_env env, napi_callback_info info)
         g_regSpecifier('B', LongPrintf, LongArginfo);
         long val = TEST_VALUE_42;
         char tf[128];
-        (void)snprintf_s(tf, sizeof(tf), sizeof(tf) - 1, "/data/local/tmp/t_%d", getpid());
+        int snRet2 = snprintf_s(tf, sizeof(tf), sizeof(tf) - 1, "/data/local/tmp/t_%d", getpid());
+        if (snRet2 < 0) {
+            _exit(1);
+        } else if (snRet2 >= sizeof(tf)) {
+            _exit(1);
+        }
         FILE *fp = fopen(tf, "w");
         if (!(fp != nullptr)) {
             _exit(0);
@@ -435,7 +450,7 @@ static napi_value RegPrintfSpecifier_0500(napi_env env, napi_callback_info info)
         long val = TEST_VALUE_42;
         char *str = nullptr;
         int ret = asprintf(&str, "[[%B]]", &val);
-        if (static_cast<int>(ret) < static_cast<int>(0)) {
+        if (ret < 0) {
             _exit(1);
         }
         if (strcmp((str), ("[[42]]")) != 0) {
@@ -469,8 +484,10 @@ static napi_value RegPrintfSpecifier_0600(napi_env env, napi_callback_info info)
         g_regSpecifier('B', WlongPrintf, LongArginfo);
         long val = TEST_VALUE_42;
         wchar_t wb[64];
-        int ret = swprintf_s(wb, 64, L"%B", &val);
-        if (static_cast<int>(ret) < static_cast<int>(0)) {
+        int ret = swprintf_s(wb, WSTRING_SIZE_64, L"%B", &val);
+        if (ret < 0) {
+            _exit(1);
+        } else if (ret >= WSTRING_SIZE_64) {
             _exit(1);
         }
         if (!(wcscmp(wb, L"42") == 0)) {
@@ -699,7 +716,12 @@ static napi_value RegPrintfSpecifier_1700(napi_env env, napi_callback_info info)
         g_regSpecifier('C', FuncA, MyArginfo);
         g_regSpecifier('C', FuncB, MyArginfo);
         char buf[8];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%C");
+        int snRet4 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%C");
+        if (snRet4 < 0) {
+            _exit(1);
+        } else if (snRet4 >= sizeof(buf)) {
+            _exit(1);
+        }
         if (strcmp((buf), ("B")) != 0) {
             _exit(0);
         }
@@ -750,7 +772,14 @@ static napi_value RegPrintfSpecifier_1900(napi_env env, napi_callback_info info)
         return result;
     }
     char buf[16];
-    (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%d", TEST_VALUE_123);
+    int snRet6 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%d", TEST_VALUE_123);
+    if (snRet6 < 0) {
+        napi_create_int32(env, 1, &result);
+        return result;
+    } else if (snRet6 >= sizeof(buf)) {
+        napi_create_int32(env, 1, &result);
+        return result;
+    }
     if (strcmp((buf), ("123")) != 0) {
         napi_create_int32(env, 1, &result);
         return result;
@@ -772,7 +801,14 @@ static napi_value RegPrintfSpecifier_2000(napi_env env, napi_callback_info info)
         return result;
     }
     char buf[16];
-    (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%s", "abc");
+    int snRet8 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%s", "abc");
+    if (snRet8 < 0) {
+        napi_create_int32(env, 1, &result);
+        return result;
+    } else if (snRet8 >= sizeof(buf)) {
+        napi_create_int32(env, 1, &result);
+        return result;
+    }
     if (strcmp((buf), ("abc")) != 0) {
         napi_create_int32(env, 1, &result);
         return result;
@@ -790,7 +826,14 @@ static napi_value RegPrintfSpecifier_2100(napi_env env, napi_callback_info info)
     }
     g_regSpecifier('f', MyFunc, MyArginfo);
     char buf[32];
-    (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%f", 1.0);
+    int snRet10 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%f", 1.0);
+    if (snRet10 < 0) {
+        napi_create_int32(env, 1, &result);
+        return result;
+    } else if (snRet10 >= sizeof(buf)) {
+        napi_create_int32(env, 1, &result);
+        return result;
+    }
     if (strcmp((buf), ("1.000000")) != 0) {
         napi_create_int32(env, 1, &result);
         return result;
@@ -810,7 +853,9 @@ static napi_value RegPrintfSpecifier_2200(napi_env env, napi_callback_info info)
         char buf[16];
         errno = 0;
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%Q", 1);
-        if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
+        if (ret < 0) {
+            _exit(1);
+        } else if (ret >= sizeof(buf)) {
             _exit(1);
         }
         if (static_cast<int>(errno) != static_cast<int>(EINVAL)) {
@@ -842,7 +887,10 @@ static napi_value RegPrintfSpecifier_2300(napi_env env, napi_callback_info info)
     char buf[16];
     for (int i = 0; i < LOOP_COUNT_10000; i++) {
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%d", 1);
-        if (static_cast<int>(ret) <= static_cast<int>(0)) {
+        if (ret < 0) {
+            napi_create_int32(env, 1, &result);
+            return result;
+        } else if (ret >= sizeof(buf)) {
             napi_create_int32(env, 1, &result);
             return result;
         }
@@ -862,7 +910,9 @@ static napi_value RegPrintfSpecifier_2400(napi_env env, napi_callback_info info)
         g_regSpecifier('B', FuncM2, MyArginfo);
         char buf[16];
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B");
-        if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
+        if (ret < 0) {
+            _exit(1);
+        } else if (ret >= sizeof(buf)) {
             _exit(1);
         }
         _exit(0);
@@ -892,7 +942,9 @@ static napi_value RegPrintfSpecifier_2500(napi_env env, napi_callback_info info)
         g_regSpecifier('B', FuncM1, MyArginfo);
         char buf[16];
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B");
-        if (static_cast<int>(ret) != static_cast<int>(EXPECTED_RET_NEG_1)) {
+        if (ret < 0) {
+            _exit(1);
+        } else if (ret >= sizeof(buf)) {
             _exit(1);
         }
         _exit(0);
@@ -922,7 +974,9 @@ static napi_value RegPrintfSpecifier_2600(napi_env env, napi_callback_info info)
         g_regSpecifier('B', Func0, MyArginfo);
         char buf[16] = {0};
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B");
-        if (static_cast<int>(ret) != static_cast<int>(0)) {
+        if (ret < 0) {
+            _exit(1);
+        } else if (ret >= sizeof(buf)) {
             _exit(1);
         }
         if (strcmp((buf), ("")) != 0) {
@@ -955,7 +1009,9 @@ static napi_value RegPrintfSpecifier_2700(napi_env env, napi_callback_info info)
         g_regSpecifier('B', MyFunc, Arginfo0);
         char buf[16];
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B");
-        if (static_cast<int>(ret) < static_cast<int>(0)) {
+        if (ret < 0) {
+            _exit(1);
+        } else if (ret >= sizeof(buf)) {
             _exit(1);
         }
         _exit(0);
@@ -987,7 +1043,9 @@ static napi_value RegPrintfSpecifier_2800(napi_env env, napi_callback_info info)
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%X",
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
             17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
-        if (static_cast<int>(ret) < static_cast<int>(0)) {
+        if (ret < 0) {
+            _exit(1);
+        } else if (ret >= sizeof(buf)) {
             _exit(1);
         }
         _exit(0);
@@ -1016,7 +1074,12 @@ static napi_value RegPrintfSpecifier_2900(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', PadFunc, Arginfo0);
         char buf[16];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%0-B", TEST_VALUE_123);
+        int snRet12 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%0-B", TEST_VALUE_123);
+        if (snRet12 < 0) {
+            _exit(1);
+        } else if (snRet12 >= sizeof(buf)) {
+            _exit(1);
+        }
         if (static_cast<int>(g_seenPad) != static_cast<int>(' ')) {
             _exit(0);
         }
@@ -1049,7 +1112,12 @@ static napi_value RegPrintfSpecifier_3000(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', PadFunc, Arginfo0);
         char buf[16];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%0B", TEST_VALUE_123);
+        int snRet14 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%0B", TEST_VALUE_123);
+        if (snRet14 < 0) {
+            _exit(1);
+        } else if (snRet14 >= sizeof(buf)) {
+            _exit(1);
+        }
         if (static_cast<int>(g_seenPad) != static_cast<int>('0')) {
             _exit(0);
         }
@@ -1082,7 +1150,12 @@ static napi_value RegPrintfSpecifier_3100(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', PrecFunc, Arginfo0);
         char buf[16];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%.*B", -TEST_VALUE_5, TEST_VALUE_123);
+        int snRet16 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%.*B", TEST_VALUE_NEG_5, TEST_VALUE_123);
+        if (snRet16 < 0) {
+            _exit(1);
+        } else if (snRet16 >= sizeof(buf)) {
+            _exit(1);
+        }
         if (static_cast<int>(g_seenPrec) != static_cast<int>(EXPECTED_RET_NEG_1)) {
             _exit(1);
         }
@@ -1112,8 +1185,13 @@ static napi_value RegPrintfSpecifier_3200(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', PrecFunc, Arginfo0);
         char buf[16];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%.3B", TEST_VALUE_123);
-        if (static_cast<int>(g_seenPrec) != static_cast<int>(3)) {
+        int snRet18 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%.3B", TEST_VALUE_123);
+        if (snRet18 < 0) {
+            _exit(1);
+        } else if (snRet18 >= sizeof(buf)) {
+            _exit(1);
+        }
+        if (static_cast<int>(g_seenPrec) != static_cast<int>(ARGINFO_MAX_3)) {
             _exit(1);
         }
         _exit(0);
@@ -1142,7 +1220,12 @@ static napi_value RegPrintfSpecifier_3300(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', PrecFunc, Arginfo0);
         char buf[16];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B", TEST_VALUE_123);
+        int snRet20 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B", TEST_VALUE_123);
+        if (snRet20 < 0) {
+            _exit(1);
+        } else if (snRet20 >= sizeof(buf)) {
+            _exit(1);
+        }
         if (static_cast<int>(g_seenPrec) != static_cast<int>(EXPECTED_RET_NEG_1)) {
             _exit(1);
         }
@@ -1171,7 +1254,14 @@ static napi_value RegPrintfSpecifier_3400(napi_env env, napi_callback_info info)
     }
     g_regSpecifier('B', MyFunc, MyArginfo);
     char buf[64];
-    (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%d %s %f", 1, "a", 1.0);
+    int snRet22 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%d %s %f", 1, "a", 1.0);
+    if (snRet22 < 0) {
+        napi_create_int32(env, 1, &result);
+        return result;
+    } else if (snRet22 >= sizeof(buf)) {
+        napi_create_int32(env, 1, &result);
+        return result;
+    }
     if (strcmp((buf), ("1 a 1.000000")) != 0) {
         napi_create_int32(env, 1, &result);
         return result;
@@ -1193,7 +1283,9 @@ static napi_value RegPrintfSpecifier_3500(napi_env env, napi_callback_info info)
         g_regSpecifier('D', MyFunc, Arginfo0);
         char buf[32];
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B %C %D");
-        if (static_cast<int>(ret) < static_cast<int>(0)) {
+        if (ret < 0) {
+            _exit(1);
+        } else if (ret >= sizeof(buf)) {
             _exit(1);
         }
         _exit(0);
@@ -1220,7 +1312,7 @@ static napi_value RegPrintfSpecifier_3600(napi_env env, napi_callback_info info)
         return result;
     }
     pthread_t t[THREAD_COUNT_4];
-    int idx[THREAD_COUNT_4];
+    int idx[4];
     for (int i = 0; i < THREAD_COUNT_4; i++) {
         idx[i] = i;
         pthread_create(&t[i], nullptr, RegThr, &idx[i]);
@@ -1267,8 +1359,8 @@ static napi_value RegPrintfSpecifier_3800(napi_env env, napi_callback_info info)
         napi_create_int32(env, 0, &result);
         return result;
     }
-    pthread_barrier_init(&g_barrier, nullptr, TEST_VALUE_4);
-    pthread_t t[TEST_VALUE_4];
+    pthread_barrier_init(&g_barrier, nullptr, THREAD_COUNT_4);
+    pthread_t t[THREAD_COUNT_4];
     for (int i = 0; i < THREAD_COUNT_4; i++) {
         pthread_create(&t[i], nullptr, FirstReg, nullptr);
     }
@@ -1276,7 +1368,7 @@ static napi_value RegPrintfSpecifier_3800(napi_env env, napi_callback_info info)
         pthread_join(t[i], nullptr);
     }
     pthread_barrier_destroy(&g_barrier);
-    if (static_cast<int>(atomic_load(&g_okCnt)) != static_cast<int>(TEST_VALUE_4)) {
+    if (static_cast<int>(atomic_load(&g_okCnt)) != static_cast<int>(THREAD_COUNT_4)) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -1336,8 +1428,8 @@ static napi_value RegPrintfSpecifier_4100(napi_env env, napi_callback_info info)
         napi_create_int32(env, 0, &result);
         return result;
     }
-    pthread_t t[THREAD_COUNT_8];
-    int idx[THREAD_COUNT_8];
+    pthread_t t[8];
+    int idx[8];
     for (int i = 0; i < THREAD_COUNT_8; i++) {
         idx[i] = i;
         pthread_create(&t[i], nullptr, Stress, &idx[i]);
@@ -1372,7 +1464,6 @@ static napi_value RegPrintfSpecifier_4200(napi_env env, napi_callback_info info)
     napi_create_int32(env, 0, &result);
     return result;
 }
-
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)

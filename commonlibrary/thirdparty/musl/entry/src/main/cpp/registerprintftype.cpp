@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-
 #include "napi/native_api.h"
 #include <atomic>
 #include <cerrno>
@@ -25,6 +24,7 @@
 #include <pthread.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <securec.h>
 
 using std::atomic_int;
 using std::atomic_fetch_add;
@@ -55,6 +55,16 @@ using std::atomic_load;
 #define EXPECTED_RET_2 2
 #define ARGINFO_MAX_32 32
 #define EXPECTED_RET_NEG_1 (-1)
+#define EXPECTED_RET_NEG_2 (-2)
+#define ARGINFO_MAX_2 2
+#define ARGINFO_MAX_3 3
+#define TEST_VALUE_NEG_5 (-5)
+#define SPEC_CHAR_RANGE_20 20
+#define TEST_DOUBLE_4_0 4.0
+#define THREAD_ARRAY_SIZE_4 4
+#define WSTRING_SIZE_32 32
+#define WSTRING_SIZE_64 64
+#define WS_ARRAY_SIZE_257 257
 
 struct PrintfInfo {
     int prec;
@@ -78,7 +88,6 @@ struct PrintfInfo {
     wchar_t pad;
 };
 typedef int PrintfFunction(FILE *, const struct PrintfInfo *, const void *const *);
-
 typedef int PrintfArginfoSizeFunction(const struct PrintfInfo *, size_t, int *, int *);
 typedef void PrintfVaArgFunction(void *, va_list *);
 #define PA_INT 0
@@ -102,7 +111,8 @@ static RegTypeFnT g_regType = nullptr;
 static void LoadFunctions(void)
 {
     if (!g_regSpecifier) {
-        g_regSpecifier = (RegSpecifierFnT)dlsym(RTLD_DEFAULT, "register_printf_specifier");
+        g_regSpecifier = (RegSpecifierFnT)dlsym(RTLD_DEFAULT,
+            "register_printf_specifier");
     }
     if (!g_regModifier) {
         g_regModifier = (RegModifierFnT)dlsym(RTLD_DEFAULT, "register_printf_modifier");
@@ -133,7 +143,7 @@ static void PairVa(void *mem, va_list *ap)
 
 static int PairPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    const struct Pair *p = *static_cast<const struct Pair *const *>(a[0]);
+    const struct Pair *p = *reinterpret_cast<const Pair *const *>(a[0]);
     return fprintf(s, "(%ld, %f)", p->i, p->d);
 }
 
@@ -153,7 +163,7 @@ struct Tp {
 
 static int TpPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    const struct Tp *p = *static_cast<const struct Tp *const *>(a[0]);
+    const struct Tp *p = *reinterpret_cast<const Tp *const *>(a[0]);
     return fprintf(s, "(%ld, %f)", p->i, p->d);
 }
 
@@ -177,7 +187,7 @@ static void VVa(void *mem, va_list *ap)
 
 static int VPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    const struct Pair *p = *static_cast<const struct Pair *const *>(a[0]);
+    const struct Pair *p = *reinterpret_cast<const Pair *const *>(a[0]);
     return fprintf(s, "(%ld, %f)", p->i, p->d);
 }
 
@@ -200,7 +210,7 @@ static void DblVa(void *mem, va_list *ap)
 
 static int DblPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    const double *p = *static_cast<const double *const *>(a[0]);
+    const double *p = *reinterpret_cast<const double *const *>(a[0]);
     return fprintf(s, "%.2f", *p);
 }
 
@@ -390,7 +400,9 @@ static napi_value RegPrintfType_0700(napi_env env, napi_callback_info info)
         g_regSpecifier('P', PairPrintf, PairArginfo);
         char buf[64];
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", 1L, TEST_DOUBLE_2_0);
-        if (static_cast<int>(ret) < static_cast<int>(0)) {
+        if (ret < 0) {
+            _exit(1);
+        } else if (ret >= sizeof(buf)) {
             _exit(1);
         }
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
@@ -421,9 +433,14 @@ static napi_value RegPrintfType_0800(napi_env env, napi_callback_info info)
             _exit(0);
         }
         g_regSpecifier('P', TpPrintf, TpArginfo);
-        struct Tp v = {1, 2.0};
+        struct Tp v = {1, TEST_DOUBLE_2_0};
         char buf[64];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", &v);
+        int snRet0 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", &v);
+        if (snRet0 < 0) {
+            _exit(1);
+        } else if (snRet0 >= sizeof(buf)) {
+            _exit(1);
+        }
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
@@ -454,7 +471,12 @@ static napi_value RegPrintfType_0900(napi_env env, napi_callback_info info)
         g_vtype = g_regType(VVa);
         g_regSpecifier('P', VPrintf, VArginfo);
         char buf[64];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", 1L, TEST_DOUBLE_2_0);
+        int snRet2 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", 1L, TEST_DOUBLE_2_0);
+        if (snRet2 < 0) {
+            _exit(1);
+        } else if (snRet2 >= sizeof(buf)) {
+            _exit(1);
+        }
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
@@ -488,7 +510,12 @@ static napi_value RegPrintfType_1000(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('P', PairPrintf, PairArginfo);
         char buf[64];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", TEST_VALUE_42, TEST_DOUBLE_3_14);
+        int snRet4 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", TEST_VALUE_42, TEST_DOUBLE_3_14);
+        if (snRet4 < 0) {
+            _exit(1);
+        } else if (snRet4 >= sizeof(buf)) {
+            _exit(1);
+        }
         if (!(strstr(buf, "42") != nullptr)) {
             _exit(1);
         }
@@ -519,7 +546,12 @@ static napi_value RegPrintfType_1100(napi_env env, napi_callback_info info)
         g_dblType = g_regType(DblVa);
         g_regSpecifier('P', DblPrintf, DblArginfo);
         char buf[32];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", TEST_DOUBLE_3_14);
+        int snRet6 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", TEST_DOUBLE_3_14);
+        if (snRet6 < 0) {
+            _exit(1);
+        } else if (snRet6 >= sizeof(buf)) {
+            _exit(1);
+        }
         if (strcmp((buf), ("3.14")) != 0) {
             _exit(1);
         }
@@ -625,7 +657,12 @@ static napi_value RegPrintfType_1500(napi_env env, napi_callback_info info)
         g_regType(MyVa);
         }
         char buf[64];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", 1L, TEST_DOUBLE_2_0);
+        int snRet8 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%P", 1L, TEST_DOUBLE_2_0);
+        if (snRet8 < 0) {
+            _exit(1);
+        } else if (snRet8 >= sizeof(buf)) {
+            _exit(1);
+        }
         if (strcmp((buf), ("(1, 2.000000)")) != 0) {
             _exit(1);
         }
@@ -655,7 +692,12 @@ static napi_value RegPrintfType_1600(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('X', UnkPrintf, UnkArginfo);
         char buf[16];
-        (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%X", reinterpret_cast<void* *>(0));
+        int snRet10 = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%X", reinterpret_cast<void* *>(0));
+        if (snRet10 < 0) {
+            _exit(1);
+        } else if (snRet10 >= sizeof(buf)) {
+            _exit(1);
+        }
         if (!(1)) {
             _exit(1);
         }
@@ -762,14 +804,13 @@ static napi_value RegPrintfType_2000(napi_env env, napi_callback_info info)
         int t = g_regType(MyVa);
         (void)t;
         }
-    if (!(1)) {
+        if (!(1)) {
         napi_create_int32(env, 1, &result);
         return result;
     }
     napi_create_int32(env, 0, &result);
     return result;
 }
-
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)

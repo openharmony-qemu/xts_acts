@@ -239,7 +239,7 @@ export default function testsuite() {
   termiosNdk1Test();
   threadsNdk1Test();
   muslResourceNdk1Test();
-  
+
   RegisterPrintfSpecifierTest();
   RegisterPrintftypeTest();
   RegisterPrintfModifierTest();
