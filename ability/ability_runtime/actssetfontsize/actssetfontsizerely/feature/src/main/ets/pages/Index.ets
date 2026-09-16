@@ -56,21 +56,24 @@ struct IndexFeature {
             };
             commonEventManager.publish('Rely_IndexFeature_getFontSizeScale', options, (err: BusinessError) => {
               if (err) {
-                hilog.info(0x0000, this.TAG, "[%{public}s] PublishCallBack err: %{public}s", this.TAG, JSON.stringify(err));
+                hilog.info(0x0000, this.TAG, '[%{public}s] PublishCallBack err: %{public}s', this.TAG,
+                  JSON.stringify(err));
               } else {
-                hilog.info(0x0000, this.TAG, "[%{public}s] Publish success", this.TAG);
+                hilog.info(0x0000, this.TAG, '[%{public}s] Publish success', this.TAG);
               }
             });
             try {
               this.context.terminateSelf((err: BusinessError) => {
                 if (err.code) {
-                  hilog.info(0x0000, this.TAG, "[%{public}s] terminateSelf failed, err: %{public}s", this.TAG, JSON.stringify(err));
+                  hilog.info(0x0000, this.TAG, '[%{public}s] terminateSelf failed, err: %{public}s', this.TAG,
+                    JSON.stringify(err));
                   return;
                 }
-                hilog.info(0x0000, this.TAG, "[%{public}s] terminateSelf succeed", this.TAG);
+                hilog.info(0x0000, this.TAG, '[%{public}s] terminateSelf succeed', this.TAG);
               });
             } catch (paramErr) {
-              hilog.info(0x0000, this.TAG, "[%{public}s] terminateSelf failed, paramErr: %{public}s", this.TAG, JSON.stringify(paramErr));
+              hilog.info(0x0000, this.TAG, '[%{public}s] terminateSelf failed, paramErr: %{public}s', this.TAG,
+                JSON.stringify(paramErr));
             }
           })
           .margin({top: '1%'})

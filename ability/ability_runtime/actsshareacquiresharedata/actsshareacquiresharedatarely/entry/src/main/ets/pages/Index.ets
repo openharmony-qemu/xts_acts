@@ -48,12 +48,14 @@ struct Index {
               appManager.killProcessesByBundleName(bundleName).then((data) => {
                 hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName success.', TAG);
               }).catch((err: BusinessError) => {
-                hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName fail, err: %{public}s', TAG, JSON.stringify(err));
+                hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName fail, err: %{public}s', TAG,
+                  JSON.stringify(err));
               });
             } catch (paramError) {
               let code = (paramError as BusinessError).code;
               let message = (paramError as BusinessError).message;
-              hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName paramError.code: %{public}s, message: %{public}s', TAG, code, message);
+              hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName paramError.code: %{public}s,
+                message: %{public}s', TAG, code, message);
             }
           })
 
@@ -68,12 +70,14 @@ struct Index {
               appManager.killProcessesByBundleName(bundleName).then((data) => {
                 hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName success.', TAG);
               }).catch((err: BusinessError) => {
-                hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName fail, err: %{public}s', TAG, JSON.stringify(err));
+                hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName fail, err: %{public}s', TAG,
+                  JSON.stringify(err));
               });
             } catch (paramError) {
               let code = (paramError as BusinessError).code;
               let message = (paramError as BusinessError).message;
-              hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName paramError.code: %{public}s, message: %{public}s', TAG, code, message);
+              hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName paramError.code: %{public}s,
+                message: %{public}s', TAG, code, message);
             }
           })
       }

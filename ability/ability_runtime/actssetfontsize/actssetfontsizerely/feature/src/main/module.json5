@@ -25,7 +25,7 @@
     "abilities": [
       {
         "name": "FeatureAbility",
-        "srcEntry": "./ets/featureability/FeatureAbility.ts",
+        "srcEntry": "./ets/featureability/FeatureAbility.ets",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:EntryAbility_label",

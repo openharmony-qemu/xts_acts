@@ -22,21 +22,21 @@ import common from '@ohos.app.ability.common';
 export default class MainAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     // Ability is creating, initialize resources for this ability
-    console.log("MainAbility onCreate");
-    AppStorage.setOrCreate<common.UIAbilityContext>("abilityContext", this.context);
-    AppStorage.setOrCreate<boolean>("requestDialogSuccess", false);
-    AppStorage.setOrCreate<boolean>("validRequestInfo", false);
-    AppStorage.setOrCreate<boolean>("validRequestCallback", false);
+    console.log('MainAbility onCreate');
+    AppStorage.setOrCreate<common.UIAbilityContext>('abilityContext', this.context);
+    AppStorage.setOrCreate<boolean>('requestDialogSuccess', false);
+    AppStorage.setOrCreate<boolean>('validRequestInfo', false);
+    AppStorage.setOrCreate<boolean>('validRequestCallback', false);
   }
 
   onDestroy() {
     // Ability is destroying, release resources for this ability
-    console.log("MainAbility onDestroy");
+    console.log('MainAbility onDestroy');
     this.context.getApplicationContext().killAllProcesses()
       .then((data) => {
         console.log(`MainAbility getRunningProcessInformation data ${JSON.stringify(data)}`);
       })
-      .catch((err) => {
+      .catch((err: BusinessError) => {
         console.log(`MainAbility getRunningProcessInformation err  ${JSON.stringify(err)}`);
       })
 
@@ -47,22 +47,22 @@ export default class MainAbility extends Ability {
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
-    console.log("MainAbility onWindowStageCreate");
-    windowStage.loadContent("MainAbility/pages/index/index", null);
+    console.log('MainAbility onWindowStageCreate');
+    windowStage.loadContent('MainAbility/pages/index/index', null);
   }
 
   onWindowStageDestroy() {
     //Main window is destroyed, release UI related resources
-    console.log("MainAbility onWindowStageDestroy");
+    console.log('MainAbility onWindowStageDestroy');
   }
 
   onForeground() {
     // Ability has brought to foreground
-    console.log("MainAbility onForeground");
+    console.log('MainAbility onForeground');
   }
 
   onBackground() {
     // Ability has back to background
-    console.log("MainAbility onBackground");
+    console.log('MainAbility onBackground');
   }
 }

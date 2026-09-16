@@ -33,10 +33,12 @@ export default class Ability004 extends UIAbility {
 
     windowStage.loadContent('testability/pages/Ability004', (err, data) => {
       if (err.code) {
-        hilog.error(0x0000, 'testTag', caseName + 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+        hilog.error(0x0000, 'testTag', caseName +
+          'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
       }
-      hilog.info(0x0000, 'testTag', caseName + 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+      hilog.info(0x0000, 'testTag', caseName +
+        'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
   }
 

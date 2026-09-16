@@ -34,19 +34,24 @@ function sleep(ms: number) {
 export default function setFontTest() {
   describe('setFontTest', () => {
     beforeAll(() => {
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext;
-      uiContext = AppStorage.get<UIContext>("uiContext") as UIContext;
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext;
+      uiContext = AppStorage.get<UIContext>('uiContext') as UIContext;
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     })
     beforeEach(async () => {
-      let cmd = "hilog -r";
+      let cmd = 'hilog -r';
       abilityDelegator.executeShellCommand(cmd, (err: BusinessError, data: abilityDelegatorRegistry.ShellCmdResult) => {
-        hilog.info(0x0000, TAG, "[%{public}s] ExecuteShellCommand succeed. ShellCmdResult: %{public}s", TAG, JSON.stringify(data));
+        if (err) {
+          hilog.error(0x0000, TAG, 'ExecuteShellCommand err: %{public}s', JSON.stringify(err));
+          return;
+        }
+        hilog.info(0x0000, TAG, '[%{public}s] ExecuteShellCommand succeed. ShellCmdResult: %{public}s', TAG,
+          JSON.stringify(data));
       });
       await sleep(300);
     })
     afterEach(() => {
-      hilog.info(0x0000, TAG, "[%{public}s] case end.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case end.', TAG);
     })
     afterAll(() => {
 
@@ -62,15 +67,15 @@ export default function setFontTest() {
      */
     it('SUB_Ability_AbilityRuntime_Configuration_FontSettings_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_Configuration_FontSettings_0100';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       try {
         let applicationContext = testAbilityContext.getApplicationContext();
-        hilog.info(0x0000, TAG, "[%{public}s] applicationContext: %{public}s", TAG, JSON.stringify(applicationContext));
+        hilog.info(0x0000, TAG, '[%{public}s] applicationContext: %{public}s', TAG, JSON.stringify(applicationContext));
         applicationContext.setFont(null);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       } catch (paramError) {
-        hilog.info(0x0000, TAG, "[%{public}s] paramError: %{public}s", TAG, JSON.stringify(paramError));
+        hilog.info(0x0000, TAG, '[%{public}s] paramError: %{public}s', TAG, JSON.stringify(paramError));
         expect(paramError.code).assertEqual(401);
         done();
       }
@@ -86,15 +91,15 @@ export default function setFontTest() {
      */
     it('SUB_Ability_AbilityRuntime_Configuration_FontSettings_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_Configuration_FontSettings_0200';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       try {
         let applicationContext = testAbilityContext.getApplicationContext();
-        hilog.info(0x0000, TAG, "[%{public}s] applicationContext: %{public}s", TAG, JSON.stringify(applicationContext));
+        hilog.info(0x0000, TAG, '[%{public}s] applicationContext: %{public}s', TAG, JSON.stringify(applicationContext));
         applicationContext.setFont(undefined);
-        expect().assertFail();
+        expect(false).assertTrue();
         done();
       } catch (paramError) {
-        hilog.info(0x0000, TAG, "[%{public}s] paramError: %{public}s", TAG, JSON.stringify(paramError));
+        hilog.info(0x0000, TAG, '[%{public}s] paramError: %{public}s', TAG, JSON.stringify(paramError));
         expect(paramError.code).assertEqual(401);
         done();
       }
@@ -110,24 +115,24 @@ export default function setFontTest() {
      */
     it('SUB_Ability_AbilityRuntime_Configuration_FontSettings_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_Configuration_FontSettings_0500';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       try {
         let applicationContext = testAbilityContext.getApplicationContext();
-        let cmd = "hilog -x -e UpdateConfiguration";
+        let cmd = 'hilog -x -e UpdateConfiguration';
         let flag: boolean = false;
-        hilog.info(0x0000, TAG, "[%{public}s] applicationContext: %{public}s", TAG, JSON.stringify(applicationContext));
+        hilog.info(0x0000, TAG, '[%{public}s] applicationContext: %{public}s', TAG, JSON.stringify(applicationContext));
         uiContext.getFont().registerFont({
-          familyName: "font1",
+          familyName: 'font1',
           familySrc: $rawfile('font/TestFont1.ttf')
         });
-        applicationContext.setFont("font1");
+        applicationContext.setFont('font1');
         await sleep(500);
-        hilog.info(0x0000, TAG, "[%{public}s] flag: %{public}s", TAG, JSON.stringify(flag));
-        let onUpdateCallback:string = AppStorage.get<string>("onConfigurationUpdate") as string;
+        hilog.info(0x0000, TAG, '[%{public}s] flag: %{public}s', TAG, JSON.stringify(flag));
+        let onUpdateCallback:string = AppStorage.get<string>('onConfigurationUpdate') as string;
         expect(onUpdateCallback).assertEqual(undefined)
         done();
       } catch (paramError) {
-        hilog.info(0x0000, TAG, "[%{public}s] paramError: %{public}s", TAG, JSON.stringify(paramError));
+        hilog.info(0x0000, TAG, '[%{public}s] paramError: %{public}s', TAG, JSON.stringify(paramError));
         expect().assertFail();
         done();
       }
@@ -143,15 +148,15 @@ export default function setFontTest() {
      */
     it('SUB_Ability_AbilityRuntime_Configuration_FontSettings_0600', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_Configuration_FontSettings_0600';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       try {
         let applicationContext = testAbilityContext.getApplicationContext();
-        hilog.info(0x0000, TAG, "[%{public}s] applicationContext: %{public}s", TAG, JSON.stringify(applicationContext));
+        hilog.info(0x0000, TAG, '[%{public}s] applicationContext: %{public}s', TAG, JSON.stringify(applicationContext));
         let result = applicationContext.setFont('');
         expect(result).assertEqual(undefined);
         done();
       } catch (paramError) {
-        hilog.info(0x0000, TAG, "[%{public}s] paramError: %{public}s", TAG, JSON.stringify(paramError));
+        hilog.info(0x0000, TAG, '[%{public}s] paramError: %{public}s', TAG, JSON.stringify(paramError));
         expect().assertFail();
         done();
       }

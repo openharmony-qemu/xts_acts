@@ -14,8 +14,9 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { application, common } from '@kit.AbilityKit';
-import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { application, common, AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+
+
 import{ BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 
 let context = getContext(this) as common.UIAbilityContext;
@@ -76,7 +77,8 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
+                  message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 errCode = data.data;
@@ -131,7 +133,8 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
+                  message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 errCode = data.data;
@@ -187,7 +190,8 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
+                  message is ${err.message}`);
                 return;
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
@@ -244,7 +248,8 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
+                  message is ${err.message}`);
                 return;
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
@@ -301,7 +306,8 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
+                  message is ${err.message}`);
                 return;
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
