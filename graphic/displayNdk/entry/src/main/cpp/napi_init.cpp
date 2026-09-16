@@ -443,7 +443,8 @@ static napi_value CreateAvailableArea(napi_env env, napi_callback_info info)
 static napi_value CreateAvailableAreaMax(napi_env env, napi_callback_info info)
 {
 NativeDisplayManager_Rect *availableAreaInfo;
-NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_CreateAvailableArea(9223372036854775807, &availableAreaInfo);
+NativeDisplayManager_ErrorCode errCode = 
+OH_NativeDisplayManager_CreateAvailableArea(9223372036854775807, &availableAreaInfo);
 OH_LOG_INFO(LOG_APP, "errorCode=%{public}d", errCode);
 napi_value errorCode;
 napi_create_int32(env, errCode, &errorCode);
