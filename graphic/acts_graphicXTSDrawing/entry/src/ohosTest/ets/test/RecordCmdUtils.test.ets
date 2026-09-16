@@ -713,21 +713,15 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
         }
       }
       try {
-        console.info(msg + `1  Number.MAX_VALUE toInt Value=${Number.MAX_VALUE}`);
+        console.info(msg + ` Number.MAX_VALUE toInt Value=${Number.MAX_VALUE}`);
         let recordCmdUtils = new drawing.RecordCmdUtils();
         recordCmdUtils.beginRecording(Number.MAX_VALUE, Number.MAX_VALUE);
-        console.info(msg + ` 2 Number.MAX_VALUE toInt Value=${Number.MAX_VALUE}`);
-        let height = recordCmdUtils.getHeight();
-        let width = recordCmdUtils.getWidth();
-        console.info(msg + ` MAX MIN getHeight=${height}  getWidth=${width}`);
-        expect(width == Number.MAX_VALUE).assertTrue();
-        expect(height == Number.MAX_VALUE).assertTrue();
-        recordCmdUtils.finishRecording();
-        console.info(msg + ` getHeight boundary MAX MIN succeeded`);
+        console.info(msg + ` beginRecording MAX succeeded`);
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + ` getHeight boundary MAX MIN errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        expect().assertFail();
+        console.info(msg + ` beginRecording MAX errorCode is: ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(25900001);
       }
     })
 
@@ -1233,13 +1227,11 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
         let recordCmdUtils = new drawing.RecordCmdUtils();
         let recordCmd = recordCmdUtils.finishRecording();
         console.info(msg + ` finishRecording without beginRecording returned: ${recordCmd}`);
-        expect(recordCmd == null || recordCmd == undefined).assertTrue();
-        console.info(msg + ' finishRecording without beginRecording handled gracefully');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` finishRecording without beginRecording errorCode is: ${e.code} + errormsg is: ${e.message}`);
-        console.info(msg + ' finishRecording without beginRecording threw error as expected');
-        expect().assertFail();
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1599,36 +1591,32 @@ export default function DrawingTsRecordCmdUtilsTest(): void {
       let specialValues: Array<number> = [Number.MAX_VALUE, Infinity];
 
       for (let i = 0; i < specialValues.length; i++) {
-        console.info(msg + ` beginRecording 1 with special setValue[${i}] :${specialValues[i]}`);
+        console.info(msg + ` beginRecording with special setValue[${i}] :${specialValues[i]}`);
         try {
           let recordCmdUtils = new drawing.RecordCmdUtils();
           recordCmdUtils.beginRecording(specialValues[i], 200);
           console.info(msg + ` beginRecording with special width[${i}] succeeded`);
           console.info(msg + ` beginRecording with special setValue[${i}] :${specialValues[i]}`);
-          let width = recordCmdUtils.getWidth();
-          console.info(msg + ` beginRecording with special width[${i}] :${width}`);
-          expect(width == specialValues[i]).assertTrue();
+          expect().assertFail();
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + ` beginRecording with special width[${i}] errorCode is: ${e.code} + errormsg is: ${e.message}`);
-          expect().assertFail();
+          expect(e.code).assertEqual(25900001);
         }
       }
 
       for (let i = 0; i < specialValues.length; i++) {
-        console.info(msg + ` beginRecording 1 height special setValue[${i}] :${specialValues[i]}`);
+        console.info(msg + ` beginRecording with special setValue[${i}] :${specialValues[i]}`);
         try {
           let recordCmdUtils = new drawing.RecordCmdUtils();
           recordCmdUtils.beginRecording(200, specialValues[i]);
-          console.info(msg + ` beginRecording height special height[${i}] succeeded`);
-          console.info(msg + ` beginRecording height special setValue[${i}] :${specialValues[i]}`);
-          let height = recordCmdUtils.getHeight();
-          console.info(msg + ` beginRecording height special height[${i}] :${height}`);
-          expect(height == specialValues[i]).assertTrue();
+          console.info(msg + ` beginRecording with special height[${i}] succeeded`);
+          console.info(msg + ` beginRecording with special setValue[${i}] :${specialValues[i]}`);
+          expect().assertFail();
         } catch (e) {
           e = e as BusinessError;
-          console.info(msg + ` beginRecording height special height[${i}] errorCode is: ${e.code} + errormsg is: ${e.message}`);
-          expect().assertFail();
+          console.info(msg + ` beginRecording with special height[${i}] errorCode is: ${e.code} + errormsg is: ${e.message}`);
+          expect(e.code).assertEqual(25900001);
         }
       }
     })
