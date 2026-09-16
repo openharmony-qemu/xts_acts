@@ -3301,15 +3301,8 @@ export default function bluetoothBleTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-            function onReceiveEvent1() {
-                console.info('[bluetooth_js] BLEscan device result_viod1');
-            }
-            function onReceiveEvent2() {
-                console.info('[bluetooth_js] BLEscan device result_viod2');
-            }
             try {
-                device.on('serviceChange', onReceiveEvent1);
-                device.on('serviceChange', onReceiveEvent2);
+                device.on('serviceChange', onReceiveEvent_void);
                 console.info('[bt_arkts]device on serviceChange success');
                 device.off('serviceChange');
                 console.info('[bt_arkts]device off serviceChange without callback success');
@@ -3334,8 +3327,15 @@ export default function bluetoothBleTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ON_MultiCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            function onReceiveEvent1() {
+                console.info('[bluetooth_js] BLEscan device result_viod1');
+            }
+            function onReceiveEvent2() {
+                console.info('[bluetooth_js] BLEscan device result_viod2');
+            }
             try {
-                device.on('serviceChange', onReceiveEvent_void);
+                device.on('serviceChange', onReceiveEvent1);
+                device.on('serviceChange', onReceiveEvent2);
                 console.info('[bt_arkts]device on serviceChange success');
                 device.off('serviceChange');
                 console.info('[bt_arkts]device off serviceChange without callback success');
