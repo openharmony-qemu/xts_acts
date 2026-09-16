@@ -315,7 +315,8 @@ static napi_value GetDisplayCapture(napi_env env, napi_callback_info info)
 static napi_value GetDisplayCaptureMax(napi_env env, napi_callback_info info)
 {
 OH_PixelmapNative *imagePixelMap = nullptr;
-NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_CaptureScreenPixelmap(9223372036854775807,&imagePixelMap);
+NativeDisplayManager_ErrorCode errCode = 
+OH_NativeDisplayManager_CaptureScreenPixelmap(9223372036854775807,&imagePixelMap);
 OH_LOG_INFO(LOG_APP, "get capture errorCode=%{public}d", errCode);
 napi_value errorCode;
 napi_create_int32(env, errCode, &errorCode);
