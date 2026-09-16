@@ -584,6 +584,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let result = promise.then(
         (value: string) => value,
         (error: Error) => {
+          expect(error instanceof Error).assertTrue()
           throw new Error("Second error")
         }
       )
