@@ -430,6 +430,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -514,6 +515,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -534,6 +536,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -554,6 +557,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -574,6 +578,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -594,6 +599,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -667,6 +673,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -935,6 +942,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -955,6 +963,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -1021,6 +1030,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -1047,6 +1057,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()
@@ -1071,6 +1082,7 @@ export default function BuiltinsPromiseConstructorFirstTest(): void {
       })
       let caught: boolean = false
       await promise.catch((error) => {
+        expect(error instanceof Error).assertTrue()
         caught = true
       })
       expect(caught).assertTrue()

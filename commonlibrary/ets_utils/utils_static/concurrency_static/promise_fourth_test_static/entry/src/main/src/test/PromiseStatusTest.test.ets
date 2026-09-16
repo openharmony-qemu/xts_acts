@@ -587,7 +587,7 @@ export default function BuiltinsPromiseStatusTest(): void {
               if (results[0].status === PromiseStatus.fulfilled) {
                 counter.fetchAdd(1)
               }
-            })
+            }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
         )
       }
       await Promise.all<void>(promises)

@@ -408,6 +408,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let result = promise.then(
         (value: string) => value,
         (error: Error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered"
         }
       )
@@ -448,6 +449,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let result = promise.then(
         (value: string) => value,
         (error: Error) => {
+          expect(error instanceof Error).assertTrue()
           return Promise.resolve<string>("recovered")
         }
       )
@@ -537,6 +539,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let result = promise.then(
         (value: string) => value,
         (error: Error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered"
         }
       )
@@ -559,6 +562,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let result = promise.then(
         (value: string) => value,
         (error: Error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered"
         }
       )
@@ -919,6 +923,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let result = promise.then(
         (value: string) => value,
         (error: Error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered"
         }
       )
@@ -941,6 +946,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let result = promise.then(
         (value: string) => value,
         (error: Error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered"
         }
       )
@@ -963,6 +969,7 @@ export default function BuiltinsPromiseLikeThenFirstTest(): void {
       let result = promise.then(
         (value: string) => value,
         (error: Error) => {
+          expect(error instanceof Error).assertTrue()
           return "recovered"
         }
       )

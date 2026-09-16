@@ -701,7 +701,7 @@ export default function BuiltinsPromiseResolveThirdTest(): void {
         promises.push(
           Promise.resolve<number>(i).then(() => {
             counter++
-          })
+          }).catch((error: Error) => { expect(error instanceof Error).assertTrue(); expect().assertFail() })
         )
       }
       await Promise.all(promises)

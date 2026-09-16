@@ -651,6 +651,7 @@ export default function BuiltinsPromiseRejectSecondTest(): void {
           throw new Error("error2")
         })
         .catch((error) => {
+          expect(error instanceof Error).assertTrue()
           error2Caught = true
         })
       while (!error2Caught) {
