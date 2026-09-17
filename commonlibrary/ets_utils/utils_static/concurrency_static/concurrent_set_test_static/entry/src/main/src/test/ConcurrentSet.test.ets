@@ -126,7 +126,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0001
      * @tc.name concurrent_Set_Constructor_Test_static_001
      * @tc.desc Initialize a ConcurrentSet using a parameterless initializer.
      * @tc.size MediumTest
@@ -139,7 +139,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0002
      * @tc.name concurrent_Set_Constructor_Test_static_002
      * @tc.desc Initialize the concurrentSet with an empty set.
      * @tc.size MediumTest
@@ -153,7 +153,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0003
      * @tc.name concurrent_Set_Constructor_Test_static_003
      * @tc.desc Initialize a concurrentSet with a set that contains a single element.
      * @tc.size MediumTest
@@ -168,7 +168,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0004
      * @tc.name concurrent_Set_Constructor_Test_static_004
      * @tc.desc Initialize a concurrentSet with a set containing one thousand elements.
      * @tc.size MediumTest
@@ -186,7 +186,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0005
      * @tc.name concurrent_Set_Constructor_Test_static_005
      * @tc.desc Initialize a ConcurrentSet with an empty array.
      * @tc.size MediumTest
@@ -200,7 +200,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0006
      * @tc.name concurrent_Set_Constructor_Test_static_006
      * @tc.desc Initialize a ConcurrentSet with an array containing a single element.
      * @tc.size MediumTest
@@ -215,7 +215,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0007
      * @tc.name concurrent_Set_Constructor_Test_static_007
      * @tc.desc Initialize the concurrentSet with an empty tuple.
      * @tc.size MediumTest
@@ -230,7 +230,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0008
      * @tc.name concurrent_Set_Constructor_Test_static_008
      * @tc.desc Initialize a ConcurrentSet with a tuple containing a single element.
      * @tc.size MediumTest
@@ -245,7 +245,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0010
      * @tc.name concurrent_Set_Constructor_Test_static_010
      * @tc.desc Initialize the `concurrentSet` with an empty string.
      * @tc.size MediumTest
@@ -259,7 +259,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0011
      * @tc.name concurrent_Set_Constructor_Test_static_011
      * @tc.desc Initialize a ConcurrentSet with a non-empty string.
      * @tc.size MediumTest
@@ -273,7 +273,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0012
      * @tc.name concurrent_Set_Constructor_Test_static_012
      * @tc.desc Initialize a concurrentSet using an array-like object with keys and values.
      * @tc.size MediumTest
@@ -293,7 +293,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0013
      * @tc.name concurrent_Set_Constructor_Test_static_013
      * @tc.desc Initialize the concurrentSet with an empty iteration of the keys of a set.
      * @tc.size MediumTest
@@ -308,7 +308,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0014
      * @tc.name concurrent_Set_Constructor_Test_static_014
      * @tc.desc Initialize a concurrentSet with an empty iteration of the values from a set.
      * @tc.size MediumTest
@@ -323,7 +323,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0015
      * @tc.name concurrent_Set_Constructor_Test_static_015
      * @tc.desc Initialize a concurrentSet with an empty iteration of entries from a set.
      * @tc.size MediumTest
@@ -338,7 +338,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0016
      * @tc.name concurrent_Set_Constructor_Test_static_016
      * @tc.desc Initialize a ConcurrentSet with an empty iteration of the values of an Array.
      * @tc.size MediumTest
@@ -353,7 +353,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0017
      * @tc.name concurrent_Set_Constructor_Test_static_017
      * @tc.desc Initialize a concurrentSet by iterating over the values of a set that contains only one element.
      * @tc.size MediumTest
@@ -375,7 +375,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0018
      * @tc.name concurrent_Set_Constructor_Test_static_018
      * @tc.desc Initialize a concurrentSet by iterating over the keys of a set that contains only one element.
      * @tc.size MediumTest
@@ -394,7 +394,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0019
      * @tc.name concurrent_Set_Constructor_Test_static_019
      * @tc.desc Initialize a concurrentSet by iterating over the values of a array that contains only one element.
      * @tc.size MediumTest
@@ -413,7 +413,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0020
      * @tc.name concurrent_Set_Constructor_Test_static_020
      * @tc.desc Initialize a concurrentSet by iterating over the keys of a set containing one thousand elements.
      * @tc.size MediumTest
@@ -432,7 +432,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0021
      * @tc.name concurrent_Set_Constructor_Test_static_021
      * @tc.desc Initialize a concurrentSet by iterating over the values of a set containing one thousand elements.
      * @tc.size MediumTest
@@ -451,7 +451,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0022
      * @tc.name concurrent_Set_Constructor_Test_static_022
      * @tc.desc Initialize a concurrentSet by iterating over the values of a array containing one thousand elements.
      * @tc.size MediumTest
@@ -470,7 +470,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0023
      * @tc.name concurrent_Set_Constructor_Test_static_023
     * @tc.desc Initialize a ConcurrentSet by iterating over the values of an array with 10 identical string elements.
      * @tc.size MediumTest
@@ -489,7 +489,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0024
      * @tc.name concurrent_Set_Constructor_Test_static_024
     * @tc.desc Initialize a ConcurrentSet by iterating over the keys of a Set that contains 10 identical string elements.
      * @tc.size MediumTest
@@ -508,7 +508,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__025
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0025
      * @tc.name concurrent_Set_Constructor_Test_static_025
     * @tc.desc Initialize a ConcurrentSet by iterating over the values of a Set that contains 10 identical string elements.
      * @tc.size MediumTest
@@ -527,7 +527,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__026
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0026
      * @tc.name concurrent_Set_Constructor_Test_static_026
     * @tc.desc Initialize a ConcurrentSet by iterating over the values of a Set that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
@@ -549,7 +549,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__027
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0027
      * @tc.name concurrent_Set_Constructor_Test_static_027
     * @tc.desc Initialize a ConcurrentSet by iterating over the keys of a Set that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
@@ -571,7 +571,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__028
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0028
      * @tc.name concurrent_Set_Constructor_Test_static_028
     * @tc.desc Initialize a ConcurrentSet by iterating over the values of an Array that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
@@ -593,7 +593,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__029
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0029
      * @tc.name concurrentSetTest_constructor_static_029
     * @tc.desc Initialize a concurrentSet by iterating over the values of an array that has 10 identical string elements.
      * @tc.size MediumTest
@@ -612,7 +612,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0030
      * @tc.name  concurrent_Set_Constructor_Test_static_030
     * @tc.desc Initialize a concurrentSet by iterating over the keys of a set that has 10 identical string elements.
      * @tc.size MediumTest
@@ -631,7 +631,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0031
      * @tc.name concurrent_Set_Constructor_Test_static_031
     * @tc.desc Initialize a concurrentSet by iterating over the values of a set that has identical string elements.
      * @tc.size MediumTest
@@ -650,7 +650,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__032
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0032
      * @tc.name concurrent_Set_Constructor_Test_static_032
     * @tc.desc Initialize a concurrentSet using the values iterator of a Set that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
@@ -672,7 +672,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__033
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0033
      * @tc.name concurrent_Set_Constructor_Test_static_033
     * @tc.desc Initialize a concurrentSet using the keys iterator of a Set that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
@@ -694,7 +694,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__034
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0034
      * @tc.name concurrent_Set_Constructor_Test_static_034
     * @tc.desc Initialize a concurrentSet using the values iterator of an Array that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
@@ -717,7 +717,7 @@ export default function ConcurrentSetTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__043
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0043
      * @tc.name concurrent_Set_Constructor_Test_static_043
      * @tc.desc Initialize a concurrentSet with a nested array containing 0 elements.
      * @tc.size MediumTest
@@ -731,7 +731,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__044
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0044
      * @tc.name concurrent_Set_Constructor_Test_static_044
      * @tc.desc Initialize a concurrentSet with a nested array containing one elements.
      * @tc.size MediumTest
@@ -746,7 +746,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__045
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0045
      * @tc.name concurrent_Set_Constructor_Test_static_045
      * @tc.desc Initialize a concurrentSet with a nested array containing 1000 elements.
      * @tc.size MediumTest
@@ -764,7 +764,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__046
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0046
      * @tc.name concurrent_Set_Constructor_Test_static_046
      * @tc.desc Initialize a ConcurrentSet by iterating over the values of a nested array with 0 elements.
      * @tc.size MediumTest
@@ -779,7 +779,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__047
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0047
      * @tc.name concurrent_Set_Constructor_Test_static_047
      * @tc.desc Initialize a ConcurrentSet by iterating over the values of a nested array with 1 elements.
      * @tc.size MediumTest
@@ -795,7 +795,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__048
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_0048
      * @tc.name concurrent_Set_Constructor_Test_static_048
      * @tc.desc Initialize a ConcurrentSet by iterating over the values of a nested array with 1000 elements.
      * @tc.size MediumTest
@@ -814,7 +814,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__049
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0049
      * @tc.name concurrent_Set_Add_Test_static_001
     * @tc.desc Add a duplicate string element to the concurrentSet.
      * @tc.size MediumTest
@@ -829,7 +829,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__050
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0050
      * @tc.name concurrent_Set_Add_Test_static_002
     * @tc.desc Add a duplicate string element to the concurrentSet.
      * @tc.size MediumTest
@@ -844,7 +844,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__051
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0051
      * @tc.name concurrent_Set_Add_Test_static_003
      * @tc.desc Add a object element to the concurrentSet.
      * @tc.size MediumTest
@@ -860,7 +860,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__052
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0052
      * @tc.name concurrent_Set_Add_Test_static_004
     * @tc.desc Add elements of mixed defined types to the concurrentSet.
      * @tc.size MediumTest
@@ -882,7 +882,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__053
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0053
      * @tc.name concurrent_Set_Add_Test_static_005
      * @tc.desc Add elements of the numeric type to the concurrentSet
      * @tc.size MediumTest
@@ -898,7 +898,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__054
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0054
      * @tc.name concurrent_Set_Add_Test_static_006
      * @tc.desc Add elements of ordinary numeric types and boxed numeric types to the ConcurrentSet.
      * @tc.size MediumTest
@@ -916,7 +916,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__055
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0055
      * @tc.name concurrent_Set_Add_Test_static_007
      * @tc.desc Add elements of ordinary string type and boxed string type to the concurrentSet.
      * @tc.size MediumTest
@@ -933,7 +933,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__056
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0056
      * @tc.name concurrent_Set_Add_Test_static_008
      * @tc.desc Add elements of the BigInt type to the concurrentSet.
      * @tc.size MediumTest
@@ -949,7 +949,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__057
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0057
      * @tc.name concurrent_Set_Add_Test_static_009
      * @tc.desc Add elements of the Boolean type to the concurrentSet.
      * @tc.size MediumTest
@@ -964,7 +964,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__058
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0058
      * @tc.name concurrent_Set_Add_Test_static_010
      * @tc.desc Add a class element to the concurrentSet.
      * @tc.size MediumTest
@@ -979,7 +979,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__059
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0059
      * @tc.name concurrent_Set_Add_Test_static_011
      * @tc.desc Add a array element to the concurrentSet.
      * @tc.size MediumTest
@@ -994,7 +994,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__060
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0060
      * @tc.name concurrent_Set_Add_Test_static_012
      * @tc.desc Add multiple elements of type Object to the ConcurrentSet.
      * @tc.size MediumTest
@@ -1009,7 +1009,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__061
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0061
      * @tc.name concurrent_Set_Add_Test_static_013
      * @tc.desc Add multiple types of elements to the concurrentSet, and some elements are added repeatedly.
      * @tc.size MediumTest
@@ -1038,7 +1038,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__062
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0062
      * @tc.name concurrent_Set_Add_Test_static_014
      * @tc.desc After clearing all elements of a non-empty set, add elements.
      * @tc.size MediumTest
@@ -1062,7 +1062,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__063
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0063
      * @tc.name concurrent_Set_Add_Test_static_015
      * @tc.desc A non-empty set deletes all elements and then adds elements after deletion.
      * @tc.size MediumTest
@@ -1088,14 +1088,14 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__064
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static_0064
      * @tc.name concurrent_Set_Add_Test_static_016
      * @tc.desc Insert 100 pieces of data every 10 milliseconds and repeat this operation 100 times.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("concurrent_Set_Add_Test_static_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const concurrentSet: containers.ConcurrentSet<Number> = new containers.ConcurrentSet<Number>();
       let insertCount: Number = 0;
       let intervalId: Number;
@@ -1111,12 +1111,13 @@ export default function ConcurrentSetTest(): void {
           }
           const expectedSize: Number = 100 * 100;
           expect(JSON.stringify(concurrentSet.size)).assertEqual(JSON.stringify(expectedSize));
+          done();
         }
       }, 10).toDouble();
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__065
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0065
      * @tc.name concurrent_Set_Delete_Test_static_001
     * @tc.desc Remove a duplicate string element from the concurrentSet.
      * @tc.size MediumTest
@@ -1135,7 +1136,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__066
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0066
      * @tc.name concurrent_Set_Delete_Test_static_002
     * @tc.desc Remove a duplicate string element from the concurrentSet.
      * @tc.size MediumTest
@@ -1154,7 +1155,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__067
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0067
      * @tc.name concurrent_Set_Delete_Test_static_003
      * @tc.desc Remove object from the concurrentSet.
      * @tc.size MediumTest
@@ -1175,7 +1176,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__068
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0068
      * @tc.name concurrent_Set_Delete_Test_static_004
      * @tc.desc Remove BigInt from the concurrentSet.
      * @tc.size MediumTest
@@ -1196,7 +1197,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__069
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0069
      * @tc.name concurrent_Set_Delete_Test_static_005
      * @tc.desc Remove string from the concurrentSet.
      * @tc.size MediumTest
@@ -1217,7 +1218,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__070
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0070
      * @tc.name concurrent_Set_Delete_Test_static_006
      * @tc.desc Remove boolean from the concurrentSet.
      * @tc.size MediumTest
@@ -1238,7 +1239,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__071
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0071
      * @tc.name concurrent_Set_Delete_Test_static_007
      * @tc.desc Remove class from the concurrentSet.
      * @tc.size MediumTest
@@ -1259,7 +1260,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__072
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0072
      * @tc.name concurrent_Set_Delete_Test_static_008
      * @tc.desc Remove array from the concurrentSet.
      * @tc.size MediumTest
@@ -1282,7 +1283,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__073
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0073
      * @tc.name concurrent_Set_Delete_Test_static_009
      * @tc.desc Remove number from the concurrentSet.
      * @tc.size MediumTest
@@ -1303,7 +1304,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__074
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0074
      * @tc.name concurrent_Set_Delete_Test_static_010
      * @tc.desc Delete a non-existent element from the `concurrentSet`.
      * @tc.size MediumTest
@@ -1322,7 +1323,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__075
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0075
      * @tc.name concurrent_Set_Delete_Test_static_011
     * @tc.desc Remove the set that has only one element which is a duplicate string from the concurrentSet.
      * @tc.size MediumTest
@@ -1340,7 +1341,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__076
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0076
      * @tc.name concurrent_Set_Delete_Test_static_012
     * @tc.desc Remove the set that has only one element which is a string sentinel from the concurrentSet.
      * @tc.size MediumTest
@@ -1358,7 +1359,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__077
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0077
      * @tc.name concurrent_Set_Delete_Test_static_013
      * @tc.desc Remove the set that has only one element which is object from the concurrentSet.
      * @tc.size MediumTest
@@ -1377,7 +1378,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__078
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0078
      * @tc.name concurrent_Set_Delete_Test_static_014
      * @tc.desc Remove the set that has only one element which is bigInt from the concurrentSet.
      * @tc.size MediumTest
@@ -1396,7 +1397,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__079
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0079
      * @tc.name concurrent_Set_Delete_Test_static_015
      * @tc.desc Remove the set that has only one element which is string from the concurrentSet.
      * @tc.size MediumTest
@@ -1415,7 +1416,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__080
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0080
      * @tc.name concurrent_Set_Delete_Test_static_016
      * @tc.desc Remove the set that has only one element which is boolean from the concurrentSet.
      * @tc.size MediumTest
@@ -1434,7 +1435,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__081
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0081
      * @tc.name concurrent_Set_Delete_Test_static_017
      * @tc.desc Remove the set that has only one element which is class from the concurrentSet.
      * @tc.size MediumTest
@@ -1453,7 +1454,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__082
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0082
      * @tc.name concurrent_Set_Delete_Test_static_018
      * @tc.desc Remove the set that has only one element which is array from the concurrentSet.
      * @tc.size MediumTest
@@ -1473,7 +1474,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__083
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static_0083
      * @tc.name concurrent_Set_Delete_Test_static_019
      * @tc.desc Remove the set that has only one element which is number from the concurrentSet.
      * @tc.size MediumTest
@@ -1492,7 +1493,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__084
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static_0084
      * @tc.name concurrent_Set_Has_Test_static_001
     * @tc.desc Determine whether there is a duplicate string value in the ConcurrentSet.
      * @tc.size MediumTest
@@ -1508,7 +1509,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__085
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static_0085
      * @tc.name concurrent_Set_Has_Test_static_002
     * @tc.desc Determine whether there is a string sentinel value in the ConcurrentSet.
      * @tc.size MediumTest
@@ -1524,7 +1525,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__086
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static_0086
      * @tc.name concurrent_Set_Has_Test_static_003
      * @tc.desc Determine whether there is a object value in the ConcurrentSet.
      * @tc.size MediumTest
@@ -1543,7 +1544,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__087
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static_0087
      * @tc.name concurrent_Set_Has_Test_static_004
      * @tc.desc Determine whether there is a bigInt value in the ConcurrentSet.
      * @tc.size MediumTest
@@ -1562,7 +1563,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__088
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static_0088
      * @tc.name concurrent_Set_Has_Test_static_005
      * @tc.desc Determine whether there is a string value in the ConcurrentSet.
      * @tc.size MediumTest
@@ -1581,7 +1582,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__089
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static_0089
      * @tc.name concurrent_Set_Has_Test_static_006
      * @tc.desc Determine whether there is a boolean value in the ConcurrentSet.
      * @tc.size MediumTest
@@ -1600,7 +1601,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__090
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static_0090
      * @tc.name concurrent_Set_Has_Test_static_007
      * @tc.desc Determine whether there is a class value in the ConcurrentSet.
      * @tc.size MediumTest
@@ -1619,7 +1620,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__091
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static_0091
      * @tc.name concurrent_Set_Has_Test_static_008
      * @tc.desc Determine whether there is a array value in the ConcurrentSet.
      * @tc.size MediumTest
@@ -1640,7 +1641,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__092
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static_0092
      * @tc.name concurrent_Set_Has_Test_static_009
      * @tc.desc Determine whether there is a number value in the ConcurrentSet.
      * @tc.size MediumTest
@@ -1659,7 +1660,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static__093
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static_0093
      * @tc.name concurrent_Set_Clear_And_Size_Test_static_001
      * @tc.desc The concurrentSet element is empty.
      * @tc.size MediumTest
@@ -1674,7 +1675,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static__094
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static_0094
      * @tc.name concurrent_Set_Clear_And_Size_Test_static_002
      * @tc.desc There is one element in the concurrent set.
      * @tc.size MediumTest
@@ -1690,7 +1691,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static__095
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static_0095
      * @tc.name concurrent_Set_Clear_And_Size_Test_static_003
      * @tc.desc There are multiple elements in the ConcurrentSet.
      * @tc.size MediumTest
@@ -1707,7 +1708,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static__096
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static_0096
      * @tc.name concurrent_Set_Clear_And_Size_Test_static_004
      * @tc.desc Repeatedly add, clear, and remove elements from the `concurrentSet`.
      * @tc.size MediumTest
@@ -1744,7 +1745,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static__097
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static_0097
      * @tc.name concurrent_Set_ToString_Test_static_001
      * @tc.desc Test the toString method when the concurrentSet is empty.
      * @tc.size MediumTest
@@ -1757,7 +1758,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static__098
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static_0098
      * @tc.name concurrent_Set_ToString_Test_static_002
      * @tc.desc Test of the toString method when the elements of concurrentSet are numbers.
      * @tc.size MediumTest
@@ -1773,7 +1774,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static__099
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static_0099
      * @tc.name concurrent_Set_ToString_Test_static_003
      * @tc.desc Test of the toString method when the elements of concurrentSet are boolean.
      * @tc.size MediumTest
@@ -1788,7 +1789,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static__100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static_0100
      * @tc.name concurrent_Set_ToString_Test_static_004
      * @tc.desc Test of the toString method when the elements of concurrentSet are string.
      * @tc.size MediumTest
@@ -1804,7 +1805,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetKeysTest_101
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Keys_Test_static_0101
      * @tc.name concurrent_SetKeys_Test_static_001
      * @tc.desc The elements are empty in the keys iteration.
      * @tc.size MediumTest
@@ -1829,7 +1830,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetKeysTest_102
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Keys_Test_static_0102
      * @tc.name concurrent_SetKeys_Test_static_002
      * @tc.desc Iterate with keys when there is a single element.
      * @tc.size MediumTest
@@ -1855,7 +1856,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetKeysTest_103
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Keys_Test_static_0103
      * @tc.name concurrent_SetKeys_Test_static_003
      * @tc.desc Iteration over keys when there are one hundred elements.
      * @tc.size MediumTest
@@ -1883,7 +1884,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetKeysTest_104
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Keys_Test_static_0104
      * @tc.name concurrent_SetKeys_Test_static_004
      * @tc.desc As an input parameter, pass in a new set to perform element judgment.
      * @tc.size MediumTest
@@ -1902,7 +1903,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static__105
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static_0105
      * @tc.name concurrent_Set_Values_Test_static_001
      * @tc.desc Iterating over the values when the concurrentSet is empty.
      * @tc.size MediumTest
@@ -1927,7 +1928,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static__106
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static_0106
      * @tc.name concurrent_Set_Values_Test_static_002
      * @tc.desc Iterate over the values when adding an element to a ConcurrentSet.
      * @tc.size MediumTest
@@ -1953,7 +1954,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static__107
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static_0107
      * @tc.name concurrent_Set_Values_Test_static_003
      * @tc.desc Iterate over the values when adding 100 elements to a ConcurrentSet.
      * @tc.size MediumTest
@@ -1981,7 +1982,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static__108
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static_0108
      * @tc.name concurrent_Set_Values_Test_static_004
      * @tc.desc As input parameters, pass in a new set to judge elements.
      * @tc.size MediumTest
@@ -2000,7 +2001,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetIteratorTest_109
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Iterator_Test_static_0109
      * @tc.name concurrent_Set_Iterator_Test_static_001
      * @tc.desc Iterate with an iterator when the concurrentSet is empty.
      * @tc.size MediumTest
@@ -2025,7 +2026,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetIteratorTest_110
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Iterator_Test_static_0110
      * @tc.name concurrent_Set_Iterator_Test_static_002
      * @tc.desc Iterate with an iterator when the concurrentSet has one element.
      * @tc.size MediumTest
@@ -2051,7 +2052,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetIteratorTest_111
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Iterator_Test_static_0111
      * @tc.name concurrent_Set_Iterator_Test_static_003
      * @tc.desc Iterate through a ConcurrentSet when it has 100 elements.
      * @tc.size MediumTest
@@ -2079,7 +2080,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetIteratorTest_112
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Iterator_Test_static_0112
      * @tc.name concurrent_SetIterator_Test_static_004
      * @tc.desc As input parameters, pass in a new set to judge elements.
      * @tc.size MediumTest
@@ -2098,7 +2099,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetEntriesTest_113
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Entries_Test_static_0113
      * @tc.name concurrent_Set_Entries_Test_static_001
      * @tc.desc Iterate over the empty elements (entries) in the ConcurrentSet.
      * @tc.size MediumTest
@@ -2123,7 +2124,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetEntriesTest_114
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Entries_Test_static_0114
      * @tc.name concurrent_Set_Entries_Test_static_002
      * @tc.desc Iterate over the entries of a `ConcurrentSet` when it has one element.
      * @tc.size MediumTest
@@ -2149,7 +2150,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetEntriesTest_115
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Entries_Test_static_0115
      * @tc.name concurrent_Set_Entries_Test_static_003
      * @tc.desc Iterate over the entries of a `ConcurrentSet` when it has 100 element.
      * @tc.size MediumTest
@@ -2177,7 +2178,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrentSetEntriesTest_116
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Entries_Test_static_0116
      * @tc.name concurrent_Set_Entries_Test_static_004
      * @tc.desc As input parameters, pass in a new set to judge elements.
      * @tc.size MediumTest
@@ -2196,7 +2197,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__117
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static_0117
      * @tc.name concurrent_Set_ForEach_Test_static_001
      * @tc.desc Use foreach to iterate over a ConcurrentSet and return a parameterless closure.
      * @tc.size MediumTest
@@ -2217,7 +2218,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__118
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static_0118
      * @tc.name concurrent_Set_ForEach_Test_static_002
      * @tc.desc Use foreach to iterate over a ConcurrentSet and return a closure with the parameter key.
      * @tc.size MediumTest
@@ -2238,7 +2239,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__119
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static_0119
      * @tc.name concurrent_Set_ForEach_Test_static_003
      * @tc.desc Iterate through a ConcurrentSet using foreach and return a closure with parameters key and value.
      * @tc.size MediumTest
@@ -2261,7 +2262,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__120
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static_0120
      * @tc.name concurrent_Set_ForEach_Test_static_004
      * @tc.desc Use foreach to iterate over a ConcurrentSet and return a closure with parameters key, value, and the set itself.
      * @tc.size MediumTest
@@ -2291,7 +2292,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__121
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static_0121
      * @tc.name concurrent_Set_ForEach_Test_static_005
      * @tc.desc Delete the current element in forEach
      * @tc.size MediumTest
@@ -2315,7 +2316,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__122
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static_0122
      * @tc.name concurrent_Set_ForEach_Test_static_006
      * @tc.desc Delete iterated elements in forEach
      * @tc.size MediumTest
@@ -2339,7 +2340,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__123
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static_0123
      * @tc.name concurrent_Set_ForEach_Test_static_007
      * @tc.desc Remove elements that have not been traversed in forEach
      * @tc.size MediumTest
@@ -2363,7 +2364,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__124
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static_0124
      * @tc.name concurrent_Set_ForEach_Test_static_008
      * @tc.desc Adding new elements to forEach
      * @tc.size MediumTest
@@ -2387,7 +2388,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__125
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static_0125
      * @tc.name concurrent_Set_ForEach_Test_static_009
      * @tc.desc Add elements while deleting
      * @tc.size MediumTest
@@ -2414,7 +2415,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__126
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static_0126
      * @tc.name concurrent_Set_ForEach_Test_static_010
      * @tc.desc Clear collection to forEach
      * @tc.size MediumTest
@@ -2456,7 +2457,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__127
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static_0127
      * @tc.name concurrent_Set_Async_Test_static_001
      * @tc.desc 10 threads add the same elements at the same time to verify that the final Set state is correct.
      * @tc.size MediumTest
@@ -2477,7 +2478,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__128
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static_0128
      * @tc.name concurrent_Set_Async_Test_static_002
      * @tc.desc 10 threads add the different elements at the same time to verify that the final Set state is correct.
      * @tc.size MediumTest
@@ -2497,7 +2498,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__129
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static_0129
      * @tc.name concurrent_Set_Async_Test_static_003
      * @tc.desc Preset 1000 pieces of data. Remove simultaneously with 10 threads and verify that the elements are removed correctly.
      * @tc.size MediumTest
@@ -2515,14 +2516,13 @@ export default function ConcurrentSetTest(): void {
       for (let i = 0; i < 10; i++) {
         taskGroup.addTask(createDeleteTask(concurrentSet, i * hundredTimes));
       }
-      taskpool.execute(taskGroup).then((): void => {
-        expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
-        done();
-      });
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
+      done();
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__130
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static_0130
      * @tc.name concurrent_Set_Async_Test_static_004
      * @tc.desc 10 threads execute add, remove and contains simultaneously to verify data consistency.
      * @tc.size MediumTest
@@ -2542,7 +2542,7 @@ export default function ConcurrentSetTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__133
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static_0133
      * @tc.name concurrent_Set_Async_Test_static_007
      * @tc.desc During the iteration process, another thread modifies the Set. Check whether the iterator can handle it correctly or throw an exception.
      * @tc.size MediumTest
@@ -2577,7 +2577,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__134
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static_0134
      * @tc.name concurrent_Set_Async_Test_static_008
      * @tc.desc Start 10 threads. Each thread initializes the queue using a different ArrayLike object.
      * @tc.size MediumTest
@@ -2629,7 +2629,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__135
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static_0135
      * @tc.name concurrent_Set_Async_Test_static_009
      * @tc.desc Start 10 threads. Each thread initializes a queue with a different iterable object.
      * @tc.size MediumTest
@@ -2655,7 +2655,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__136
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static_0136
      * @tc.name concurrent_Set_Async_Test_static_010
      * @tc.desc Start 10 threads. Each thread initializes a queue using a different set object.
      * @tc.size MediumTest
@@ -2681,7 +2681,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Performance_Test_static__137
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Performance_Test_static_0137
      * @tc.name concurrent_Set_Performance_Test_static_001
      * @tc.desc Single-threaded loop for 1000 times of interface testing.
      * @tc.size MediumTest
@@ -2702,7 +2702,7 @@ export default function ConcurrentSetTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Performance_Test_static__139
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Performance_Test_static_0139
      * @tc.name concurrent_Set_Performance_Test_static_003
      * @tc.desc There are 1000 elements. Perform timing for operations on common interfaces multiple times.
      * @tc.size MediumTest

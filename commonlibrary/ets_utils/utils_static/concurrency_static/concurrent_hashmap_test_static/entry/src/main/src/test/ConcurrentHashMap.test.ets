@@ -114,7 +114,7 @@ export default function ConcurrentHashMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_00102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0103
      * @tc.name constructor_With_ArrayLike_static_Test_004
      * @tc.desc Initialize map correctly from ArrayLike<[K,V]>
      * @tc.size MediumTest
@@ -1247,7 +1247,7 @@ export default function ConcurrentHashMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Map_static_Test_00167
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Map_static_Test_0168
      * @tc.name constructor_With_Map_static_Test_002
      * @tc.desc The collection contains an element
      * @tc.size MediumTest
@@ -2719,7 +2719,7 @@ export default function ConcurrentHashMapTest(): void {
     });
 
     /**
-     * @tc.number SSUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performancer_With_Test_static_0237
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performancer_With_Test_static_0237
      * @tc.name performancer_With_Test_static_Test_002
      * @tc.desc Single-thread loop 1000 times interface test
      * @tc.size MediumTest

@@ -181,7 +181,7 @@ export default function ArrayBlockingQueuetest(): void {
                     expect().assertFail();
                 } catch (error) {
                     expect(error instanceof Error).assertTrue();
-                    console.error(`${TAG} failed, error: ${JSON.stringify(error)}`);
+                    console.log(`${TAG} failed, error: ${JSON.stringify(error)}`);
                 }
             });
 
@@ -207,7 +207,7 @@ export default function ArrayBlockingQueuetest(): void {
          * @tc.level Level 0
          */
         it("Array_Blocking_Queue_PushFill_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            (): void => {
+            (done: () => void): void => {
                 const queue = new containers.ArrayBlockingQueue<number>(1);
                 queue.push(1);
 
@@ -221,6 +221,7 @@ export default function ArrayBlockingQueuetest(): void {
                 queue.pop();
                 setTimeout(() => {
                     expect(isBlocked).assertTrue();
+                    done();
                 }, 20);
             });
 
