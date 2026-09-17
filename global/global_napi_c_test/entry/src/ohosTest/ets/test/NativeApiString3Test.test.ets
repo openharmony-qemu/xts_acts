@@ -43,7 +43,7 @@ export default function NativeApiString3Test() {
 
     /**
      * @tc.name   TestGetSuccess0100
-     * @tc.number SUB_GLOBAL_SUCCESS_0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_TESTGETSUCCESS_0100
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
