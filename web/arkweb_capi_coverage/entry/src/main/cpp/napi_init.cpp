@@ -10,8 +10,39 @@
 #include "web/arkweb_interface.h"
 #include "web/native_interface_arkweb.h"
 
+namespace {
+constexpr int32_t TEST_RESULT_SUCCESS = 0;
+constexpr int32_t TEST_RESULT_FAILURE = -1;
+constexpr int32_t TEST_RESULT_TRUE = 1;
+constexpr int32_t TEST_RESULT_FALSE = 0;
+
+constexpr size_t NAPI_ARGC_ONE = 1;
+constexpr size_t NAPI_ARG_INDEX_ZERO = 0;
+constexpr int32_t CASE_NUM_0 = 0;
+constexpr int32_t CASE_NUM_1 = 1;
+constexpr int32_t CASE_NUM_2 = 2;
+constexpr int32_t CASE_NUM_3 = 3;
+constexpr int32_t CASE_NUM_4 = 4;
+constexpr int32_t CASE_NUM_5 = 5;
+
+constexpr int32_t INVALID_RESOURCE_TYPE_ON_NULL = -1;
+constexpr size_t HTTP_BODY_READ_BUFFER_SIZE = 64;
+constexpr int32_t HEADER_LIST_INDEX_ZERO = 0;
+constexpr int32_t DATA_LENGTH_ZERO = 0;
+constexpr int32_t NULL_KEY_COUNT = 0;
+
+constexpr uint32_t BLANKLESS_CACHE_CAPACITY_MIN = 0;
+constexpr uint32_t BLANKLESS_CACHE_CAPACITY_DEFAULT = 30;
+constexpr uint32_t BLANKLESS_CACHE_CAPACITY_HALF = 50;
+constexpr uint32_t BLANKLESS_CACHE_CAPACITY_MAX = 100;
+constexpr uint32_t BLANKLESS_CACHE_CAPACITY_OVER_MAX = BLANKLESS_CACHE_CAPACITY_MAX + 1;
+
+constexpr int32_t BLANKLESS_INFO_PREDICTION_INIT = 0;
+constexpr int32_t BLANKLESS_INFO_LOADING_TIME_INIT = 0;
+} // namespace
+
 // ========== 全局状态变量 ==========
-static int32_t g_testResult = 0;
+static int32_t g_testResult = TEST_RESULT_SUCCESS;
 
 static napi_value CreateResult(napi_env env, int32_t resultCode)
 {
@@ -22,12 +53,12 @@ static napi_value CreateResult(napi_env env, int32_t resultCode)
 
 static int32_t GetCaseNum(napi_env env, napi_callback_info info)
 {
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
+    size_t argc = NAPI_ARGC_ONE;
+    napi_value args[NAPI_ARGC_ONE] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    int32_t caseNum = 0;
-    if (argc >= 1 && args[0] != nullptr) {
-        napi_get_value_int32(env, args[0], &caseNum);
+    int32_t caseNum = CASE_NUM_0;
+    if (argc >= NAPI_ARGC_ONE && args[NAPI_ARG_INDEX_ZERO] != nullptr) {
+        napi_get_value_int32(env, args[NAPI_ARG_INDEX_ZERO], &caseNum);
     }
     return caseNum;
 }
@@ -62,7 +93,7 @@ static void OnCookieSaveCallbackImpl(ArkWeb_ErrorCode errorCode)
 static napi_value TestArkWeb_RegisterScrollCallback(napi_env env, napi_callback_info info)
 {
     bool ret = OH_ArkWeb_RegisterScrollCallback("test_tag", OnScrollCallbackImpl, nullptr);
-    g_testResult = ret ? 0 : -1;
+    g_testResult = ret ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -74,15 +105,15 @@ static napi_value TestArkWeb_RegisterScrollCallback(napi_env env, napi_callback_
 static napi_value TestArkWebRequestHeaderList_Destroy(napi_env env, napi_callback_info info)
 {
     OH_ArkWebRequestHeaderList_Destroy(nullptr);
-    return CreateResult(env, 0);
+    return CreateResult(env, TEST_RESULT_SUCCESS);
 }
 
 static napi_value TestArkWebRequestHeaderList_GetHeader(napi_env env, napi_callback_info info)
 {
     char* key = nullptr;
     char* value = nullptr;
-    OH_ArkWebRequestHeaderList_GetHeader(nullptr, 0, &key, &value);
-    return CreateResult(env, key == nullptr && value == nullptr ? 0 : -1);
+    OH_ArkWebRequestHeaderList_GetHeader(nullptr, HEADER_LIST_INDEX_ZERO, &key, &value);
+    return CreateResult(env, key == nullptr && value == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 // ---- resource_request ----
@@ -101,14 +132,14 @@ static napi_value TestArkWebResourceRequest_GetMethod(napi_env env, napi_callbac
 {
     char* method = nullptr;
     OH_ArkWebResourceRequest_GetMethod(nullptr, &method);
-    return CreateResult(env, method == nullptr ? 0 : -1);
+    return CreateResult(env, method == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWebResourceRequest_GetUrl(napi_env env, napi_callback_info info)
 {
     char* url = nullptr;
     OH_ArkWebResourceRequest_GetUrl(nullptr, &url);
-    return CreateResult(env, url == nullptr ? 0 : -1);
+    return CreateResult(env, url == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWebResourceRequest_GetResourceType(napi_env env, napi_callback_info info)
@@ -129,13 +160,13 @@ static napi_value TestArkWebResourceRequest_GetResourceTypeEnumCoverage(napi_env
         PLUGIN_RESOURCE, NAVIGATION_PRELOAD_MAIN_FRAME, NAVIGATION_PRELOAD_SUB_FRAME
     };
     int32_t count = static_cast<int32_t>(sizeof(types) / sizeof(types[0]));
-    int32_t sum = 0;
-    for (int32_t i = 0; i < count; i++) {
+    int32_t sum = TEST_RESULT_SUCCESS;
+    for (int32_t i = CASE_NUM_0; i < count; i++) {
         sum += static_cast<int32_t>(types[i]);
     }
     int32_t nullRet = OH_ArkWebResourceRequest_GetResourceType(nullptr);
-    if (nullRet != -1 || sum <= 0) {
-        return CreateResult(env, -1);
+    if (nullRet != INVALID_RESOURCE_TYPE_ON_NULL || sum <= TEST_RESULT_SUCCESS) {
+        return CreateResult(env, TEST_RESULT_FAILURE);
     }
     return CreateResult(env, count);
 }
@@ -145,42 +176,42 @@ static napi_value TestArkWeb_ProxyMethod_UserData(napi_env env, napi_callback_in
     ArkWeb_ProxyMethod method = {};
     method.userData = nullptr;
     void *data = method.userData;
-    return CreateResult(env, data == nullptr ? 0 : -1);
+    return CreateResult(env, data == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWeb_ControllerAPI_DeleteJavaScriptRegister(napi_env env, napi_callback_info info)
 {
     ArkWeb_ControllerAPI api = {};
     api.deleteJavaScriptRegister = nullptr;
-    return CreateResult(env, api.deleteJavaScriptRegister == nullptr ? 0 : -1);
+    return CreateResult(env, api.deleteJavaScriptRegister == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWeb_ControllerAPI_RegisterJavaScriptProxyEx(napi_env env, napi_callback_info info)
 {
     ArkWeb_ControllerAPI api = {};
     api.registerJavaScriptProxyEx = nullptr;
-    return CreateResult(env, api.registerJavaScriptProxyEx == nullptr ? 0 : -1);
+    return CreateResult(env, api.registerJavaScriptProxyEx == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWeb_WebMessagePortAPI_PostMessage(napi_env env, napi_callback_info info)
 {
     ArkWeb_WebMessagePortAPI api = {};
     api.postMessage = nullptr;
-    return CreateResult(env, api.postMessage == nullptr ? 0 : -1);
+    return CreateResult(env, api.postMessage == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWeb_WebMessageAPI_SetData(napi_env env, napi_callback_info info)
 {
     ArkWeb_WebMessageAPI api = {};
     api.setData = nullptr;
-    return CreateResult(env, api.setData == nullptr ? 0 : -1);
+    return CreateResult(env, api.setData == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWebResourceRequest_GetFrameUrl(napi_env env, napi_callback_info info)
 {
     char* frameUrl = nullptr;
     OH_ArkWebResourceRequest_GetFrameUrl(nullptr, &frameUrl);
-    return CreateResult(env, frameUrl == nullptr ? 0 : -1);
+    return CreateResult(env, frameUrl == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWebResourceRequest_Destroy(napi_env env, napi_callback_info info)
@@ -197,14 +228,14 @@ static napi_value TestArkWebResourceRequest_GetReferrer(napi_env env, napi_callb
 {
     char* referrer = nullptr;
     OH_ArkWebResourceRequest_GetReferrer(nullptr, &referrer);
-    return CreateResult(env, referrer == nullptr ? 0 : -1);
+    return CreateResult(env, referrer == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWebResourceRequest_GetRequestHeaders(napi_env env, napi_callback_info info)
 {
     ArkWeb_RequestHeaderList* headerList = nullptr;
     OH_ArkWebResourceRequest_GetRequestHeaders(nullptr, &headerList);
-    return CreateResult(env, headerList == nullptr ? 0 : -1);
+    return CreateResult(env, headerList == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 // ---- http_body_stream ----
@@ -213,13 +244,13 @@ static napi_value TestArkWebResourceRequest_GetHttpBodyStream(napi_env env, napi
 {
     ArkWeb_HttpBodyStream* bodyStream = nullptr;
     OH_ArkWebResourceRequest_GetHttpBodyStream(nullptr, &bodyStream);
-    return CreateResult(env, bodyStream == nullptr ? 0 : -1);
+    return CreateResult(env, bodyStream == nullptr ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWebResourceRequest_DestroyHttpBodyStream(napi_env env, napi_callback_info info)
 {
     OH_ArkWebResourceRequest_DestroyHttpBodyStream(nullptr);
-    return CreateResult(env, 0);
+    return CreateResult(env, TEST_RESULT_SUCCESS);
 }
 
 static napi_value TestArkWebHttpBodyStream_SetUserData(napi_env env, napi_callback_info info)
@@ -264,9 +295,9 @@ static napi_value TestArkWebHttpBodyStream_Init(napi_env env, napi_callback_info
 
 static napi_value TestArkWebHttpBodyStream_Read(napi_env env, napi_callback_info info)
 {
-    uint8_t buffer[64] = {0};
+    uint8_t buffer[HTTP_BODY_READ_BUFFER_SIZE] = {0};
     OH_ArkWebHttpBodyStream_Read(nullptr, buffer, sizeof(buffer));
-    return CreateResult(env, 0);
+    return CreateResult(env, TEST_RESULT_SUCCESS);
 }
 
 static napi_value TestArkWebHttpBodyStream_GetSize(napi_env env, napi_callback_info info)
@@ -308,7 +339,7 @@ static napi_value TestArkWebResponse_GetHeaderByName(napi_env env, napi_callback
     ArkWeb_Response* response = nullptr;
     OH_ArkWeb_CreateResponse(&response);
     if (response == nullptr) {
-        return CreateResult(env, -1);
+        return CreateResult(env, TEST_RESULT_FAILURE);
     }
     char* value = nullptr;
     int32_t setResult = OH_ArkWebResponse_SetHeaderByName(response, "Content-Type", "text/plain", true);
@@ -318,7 +349,7 @@ static napi_value TestArkWebResponse_GetHeaderByName(napi_env env, napi_callback
         OH_ArkWeb_ReleaseString(value);
     }
     OH_ArkWeb_DestroyResponse(response);
-    return CreateResult(env, valid ? 0 : -1);
+    return CreateResult(env, valid ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 // ---- resource_handler ----
@@ -345,7 +376,7 @@ static napi_value TestArkWebResourceHandler_DidReceiveResponse(napi_env env, nap
 
 static napi_value TestArkWebResourceHandler_DidReceiveData(napi_env env, napi_callback_info info)
 {
-    int32_t ret = OH_ArkWebResourceHandler_DidReceiveData(nullptr, nullptr, 0);
+    int32_t ret = OH_ArkWebResourceHandler_DidReceiveData(nullptr, nullptr, DATA_LENGTH_ZERO);
     g_testResult = ret;
 
     napi_value result;
@@ -370,7 +401,7 @@ static napi_value TestArkWeb_ReleaseString(napi_env env, napi_callback_info info
     ArkWeb_Response* response = nullptr;
     OH_ArkWeb_CreateResponse(&response);
     if (response == nullptr) {
-        return CreateResult(env, -1);
+        return CreateResult(env, TEST_RESULT_FAILURE);
     }
     OH_ArkWebResponse_SetHeaderByName(response, "X-Capi-Test", "release", true);
     char* value = nullptr;
@@ -380,13 +411,13 @@ static napi_value TestArkWeb_ReleaseString(napi_env env, napi_callback_info info
         OH_ArkWeb_ReleaseString(value);
     }
     OH_ArkWeb_DestroyResponse(response);
-    return CreateResult(env, valid ? 0 : -1);
+    return CreateResult(env, valid ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWeb_ReleaseByteArray(napi_env env, napi_callback_info info)
 {
     OH_ArkWeb_ReleaseByteArray(nullptr);
-    return CreateResult(env, 0);
+    return CreateResult(env, TEST_RESULT_SUCCESS);
 }
 
 // ---- native_js ----
@@ -394,7 +425,7 @@ static napi_value TestArkWeb_ReleaseByteArray(napi_env env, napi_callback_info i
 static napi_value TestNativeArkWeb_RunJavaScript(napi_env env, napi_callback_info info)
 {
     OH_NativeArkWeb_RunJavaScript("test_tag", "console.log(\"hello\")", OnJavaScriptCallbackImpl);
-    g_testResult = 0;
+    g_testResult = TEST_RESULT_SUCCESS;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -411,7 +442,7 @@ static napi_value TestNativeArkWeb_RegisterJavaScriptProxy(napi_env env, napi_ca
     };
     const size_t callbackCount = sizeof(callbacks) / sizeof(callbacks[0]);
     OH_NativeArkWeb_RegisterJavaScriptProxy("test_tag", "testObj", methodNames, callbacks, callbackCount, false);
-    g_testResult = 0;
+    g_testResult = TEST_RESULT_SUCCESS;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -421,7 +452,7 @@ static napi_value TestNativeArkWeb_RegisterJavaScriptProxy(napi_env env, napi_ca
 static napi_value TestNativeArkWeb_UnregisterJavaScriptProxy(napi_env env, napi_callback_info info)
 {
     OH_NativeArkWeb_UnregisterJavaScriptProxy("test_tag", "testObj");
-    g_testResult = 0;
+    g_testResult = TEST_RESULT_SUCCESS;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -431,7 +462,7 @@ static napi_value TestNativeArkWeb_UnregisterJavaScriptProxy(napi_env env, napi_
 static napi_value TestNativeArkWeb_SetJavaScriptProxyValidCallback(napi_env env, napi_callback_info info)
 {
     OH_NativeArkWeb_SetJavaScriptProxyValidCallback("test_tag", nullptr);
-    g_testResult = 0;
+    g_testResult = TEST_RESULT_SUCCESS;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -441,7 +472,7 @@ static napi_value TestNativeArkWeb_SetJavaScriptProxyValidCallback(napi_env env,
 static napi_value TestNativeArkWeb_GetJavaScriptProxyValidCallback(napi_env env, napi_callback_info info)
 {
     auto cb = OH_NativeArkWeb_GetJavaScriptProxyValidCallback("test_tag");
-    g_testResult = (cb == nullptr) ? 0 : -1;
+    g_testResult = (cb == nullptr) ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -451,7 +482,7 @@ static napi_value TestNativeArkWeb_GetJavaScriptProxyValidCallback(napi_env env,
 static napi_value TestNativeArkWeb_RegisterAsyncThreadJavaScriptProxy(napi_env env, napi_callback_info info)
 {
     OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy("test_tag", nullptr, nullptr);
-    g_testResult = 0;
+    g_testResult = TEST_RESULT_SUCCESS;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -463,7 +494,7 @@ static napi_value TestNativeArkWeb_RegisterAsyncThreadJavaScriptProxy(napi_env e
 static napi_value TestNativeArkWeb_SetDestroyCallback(napi_env env, napi_callback_info info)
 {
     OH_NativeArkWeb_SetDestroyCallback("test_tag", OnDestroyCallbackImpl);
-    g_testResult = 0;
+    g_testResult = TEST_RESULT_SUCCESS;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -473,7 +504,7 @@ static napi_value TestNativeArkWeb_SetDestroyCallback(napi_env env, napi_callbac
 static napi_value TestNativeArkWeb_GetDestroyCallback(napi_env env, napi_callback_info info)
 {
     auto cb = OH_NativeArkWeb_GetDestroyCallback("test_tag");
-    g_testResult = (cb == nullptr) ? 0 : -1;
+    g_testResult = (cb == nullptr) ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -498,22 +529,22 @@ static napi_value TestNativeArkWeb_LoadDataByCase(napi_env env, napi_callback_in
     int32_t caseNum = GetCaseNum(env, info);
     ArkWeb_ErrorCode ret = ARKWEB_SUCCESS;
     switch (caseNum) {
-        case 0:
+        case CASE_NUM_0:
             ret = OH_NativeArkWeb_LoadData("test_tag", "<html><body>Hello</body></html>",
                 "text/html", "UTF-8", nullptr, nullptr);
             break;
-        case 1:
+        case CASE_NUM_1:
             ret = OH_NativeArkWeb_LoadData("unbound_tag", "<html><body>Hello</body></html>",
                 "text/html", "UTF-8", nullptr, nullptr);
             break;
-        case 2:
+        case CASE_NUM_2:
             ret = OH_NativeArkWeb_LoadData("test_tag", "", "text/html", "UTF-8", nullptr, nullptr);
             break;
-        case 3:
+        case CASE_NUM_3:
             ret = OH_NativeArkWeb_LoadData("test_tag", "<html><body>Hello</body></html>",
                 "", "UTF-8", nullptr, nullptr);
             break;
-        case 4:
+        case CASE_NUM_4:
             ret = OH_NativeArkWeb_LoadData("test_tag", "<html><body>Hello</body></html>",
                 "text/html", "", nullptr, nullptr);
             break;
@@ -540,7 +571,7 @@ static napi_value TestNativeArkWeb_ClearBlanklessLoadingCache(napi_env env, napi
     const char* keys[] = {"key1", "key2"};
     const size_t keyCount = sizeof(keys) / sizeof(keys[0]);
     OH_NativeArkWeb_ClearBlanklessLoadingCache(keys, keyCount);
-    g_testResult = 0;
+    g_testResult = TEST_RESULT_SUCCESS;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -556,18 +587,19 @@ static napi_value TestNativeArkWeb_GetBlanklessInfoWithKey(napi_env env, napi_ca
 static napi_value TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(napi_env env, napi_callback_info info)
 {
     int32_t caseNum = GetCaseNum(env, info);
-    ArkWeb_BlanklessInfo infoResult = {ARKWEB_BLANKLESS_SUCCESS, 0, 0};
+    ArkWeb_BlanklessInfo infoResult = {ARKWEB_BLANKLESS_SUCCESS, BLANKLESS_INFO_PREDICTION_INIT,
+        BLANKLESS_INFO_LOADING_TIME_INIT};
     switch (caseNum) {
-        case 0:
+        case CASE_NUM_0:
             infoResult = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
             break;
-        case 1:
+        case CASE_NUM_1:
             infoResult = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "new_key");
             break;
-        case 2:
+        case CASE_NUM_2:
             infoResult = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "");
             break;
-        case 3:
+        case CASE_NUM_3:
             infoResult = OH_NativeArkWeb_GetBlanklessInfoWithKey("", "test_key");
             break;
         default:
@@ -581,23 +613,23 @@ static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(napi_env env
     int32_t caseNum = GetCaseNum(env, info);
     ArkWeb_BlanklessErrorCode ret = ARKWEB_BLANKLESS_SUCCESS;
     switch (caseNum) {
-        case 0:
+        case CASE_NUM_0:
             ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey("unbound_tag", "test_key", false);
             break;
-        case 1:
+        case CASE_NUM_1:
             ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey("", "test_key", false);
             break;
-        case 2:
+        case CASE_NUM_2:
             ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey("test_tag", "", false);
             break;
-        case 3:
+        case CASE_NUM_3:
             ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey(nullptr, nullptr, true);
             break;
-        case 4:
+        case CASE_NUM_4:
             OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "match_key");
             ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey("test_tag", "other_key", false);
             break;
-        case 5:
+        case CASE_NUM_5:
             OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
             ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey("test_tag", "test_key", true);
             break;
@@ -609,7 +641,7 @@ static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(napi_env env
 
 static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacity(napi_env env, napi_callback_info info)
 {
-    uint32_t ret = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(100);
+    uint32_t ret = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_MAX);
     g_testResult = static_cast<int32_t>(ret);
 
     napi_value result;
@@ -619,8 +651,8 @@ static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacity(napi_env env
 
 static napi_value TestNativeArkWeb_ClearBlanklessLoadingCacheNull(napi_env env, napi_callback_info info)
 {
-    OH_NativeArkWeb_ClearBlanklessLoadingCache(nullptr, 0);
-    g_testResult = 0;
+    OH_NativeArkWeb_ClearBlanklessLoadingCache(nullptr, NULL_KEY_COUNT);
+    g_testResult = TEST_RESULT_SUCCESS;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -639,29 +671,29 @@ static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid(napi_env en
 
 static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn(napi_env env, napi_callback_info info)
 {
-    uint32_t ret = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(50);
+    uint32_t ret = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_HALF);
     return CreateResult(env, static_cast<int32_t>(ret));
 }
 
 static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacityByCase(napi_env env, napi_callback_info info)
 {
     int32_t caseNum = GetCaseNum(env, info);
-    uint32_t capacity = 30;
+    uint32_t capacity = BLANKLESS_CACHE_CAPACITY_DEFAULT;
     switch (caseNum) {
-        case 0:
-            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(0);
+        case CASE_NUM_0:
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_MIN);
             break;
-        case 1:
-            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(100);
+        case CASE_NUM_1:
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_MAX);
             break;
-        case 2:
-            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(101);
+        case CASE_NUM_2:
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_OVER_MAX);
             break;
-        case 3:
-            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(50);
+        case CASE_NUM_3:
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_HALF);
             break;
-        case 4:
-            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(30);
+        case CASE_NUM_4:
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_DEFAULT);
             break;
         default:
             break;
@@ -674,7 +706,7 @@ static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacityByCase(napi_e
 static napi_value TestNativeArkWeb_SetActiveWebEngineVersion(napi_env env, napi_callback_info info)
 {
     OH_NativeArkWeb_SetActiveWebEngineVersion(ARKWEB_M114);
-    g_testResult = 0;
+    g_testResult = TEST_RESULT_SUCCESS;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -694,7 +726,7 @@ static napi_value TestNativeArkWeb_GetActiveWebEngineVersion(napi_env env, napi_
 static napi_value TestNativeArkWeb_IsActiveWebEngineEvergreen(napi_env env, napi_callback_info info)
 {
     bool ret = OH_NativeArkWeb_IsActiveWebEngineEvergreen();
-    g_testResult = ret ? 1 : 0;
+    g_testResult = ret ? TEST_RESULT_TRUE : TEST_RESULT_FALSE;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -706,7 +738,7 @@ static napi_value TestNativeArkWeb_IsActiveWebEngineEvergreen(napi_env env, napi
 static napi_value TestArkWebCookieManager_SaveCookieAsync(napi_env env, napi_callback_info info)
 {
     OH_ArkWebCookieManager_SaveCookieAsync(OnCookieSaveCallbackImpl);
-    g_testResult = 0;
+    g_testResult = TEST_RESULT_SUCCESS;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
