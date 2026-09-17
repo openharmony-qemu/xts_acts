@@ -2384,9 +2384,9 @@ function testCreateExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200001).assertTrue();
+        expect(error.code).assertEqual(9200001);
       }
     }
     done();
@@ -2407,9 +2407,9 @@ function testCreateExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200002).assertTrue();
+        expect(error.code).assertEqual(9200002);
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -2432,9 +2432,9 @@ function testCreateExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 401).assertTrue();
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2457,9 +2457,9 @@ function testCreateExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 401).assertTrue();
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2488,9 +2488,9 @@ function testCreateExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200012).assertTrue();
+        expect(error.code).assertEqual(9200012);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2520,9 +2520,9 @@ function testCreateExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200012).assertTrue();
+        expect(error.code).assertEqual(9200012);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2551,9 +2551,9 @@ function testCreateExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200012).assertTrue();
+        expect(error.code).assertEqual(9200012);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2582,9 +2582,9 @@ function testCreateExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200012).assertTrue();
+        expect(error.code).assertEqual(9200012);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2613,7 +2613,7 @@ function testCreateExactTimer() {
       timerId = await systemManager.createExactTimer(config);
       expect(timerId >= 0).assertTrue();
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
     } finally {
       if (timerId >= 0) {
         try {
@@ -2648,7 +2648,7 @@ function testCreateExactTimer() {
       timerId = await systemManager.createExactTimer(config);
       expect(timerId >= 0).assertTrue();
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
     } finally {
       if (timerId >= 0) {
         try {
@@ -2682,7 +2682,7 @@ function testCreateExactTimer() {
       let timerId: number = await systemManager.createExactTimer(config);
       expect(timerId >= 0).assertTrue();
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2721,9 +2721,9 @@ function testCreateExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9201053).assertTrue();
+        expect(error.code).assertEqual(9201053);
       }
     } finally {
       for (let id of timerIds) {
@@ -2753,7 +2753,7 @@ function testCreateExactTimer() {
       timerId = await systemManager.createExactTimer(getValidTimerConfig());
       expect(timerId >= 0).assertTrue();
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
     } finally {
       if (timerId >= 0) {
         try {
@@ -2788,7 +2788,7 @@ function testCreateExactTimer() {
       timerId = await systemManager.createExactTimer(config);
       expect(timerId >= 0).assertTrue();
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
     } finally {
       if (timerId >= 0) {
         try {
@@ -2818,9 +2818,9 @@ function testStartExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200001).assertTrue();
+        expect(error.code).assertEqual(9200001);
       }
     }
     done();
@@ -2841,9 +2841,9 @@ function testStartExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200002).assertTrue();
+        expect(error.code).assertEqual(9200002);
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -2866,9 +2866,9 @@ function testStartExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 401).assertTrue();
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2891,9 +2891,9 @@ function testStartExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 401).assertTrue();
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2916,9 +2916,9 @@ function testStartExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9201054).assertTrue();
+        expect(error.code).assertEqual(9201054);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2941,9 +2941,9 @@ function testStartExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9201054).assertTrue();
+        expect(error.code).assertEqual(9201054);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2965,7 +2965,7 @@ function testStartExactTimer() {
     try {
       timerId = await systemManager.createExactTimer(getValidTimerConfig());
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
       await adminManager.disableSuperAdmin(SELFHAPNAME);
       done();
       return;
@@ -2975,9 +2975,9 @@ function testStartExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 401).assertTrue();
+        expect(error.code).assertEqual(401);
       }
     } finally {
       if (timerId >= 0) {
@@ -3006,7 +3006,7 @@ function testStartExactTimer() {
     try {
       timerId = await systemManager.createExactTimer(getValidTimerConfig());
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
       await adminManager.disableSuperAdmin(SELFHAPNAME);
       done();
       return;
@@ -3016,9 +3016,9 @@ function testStartExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 401).assertTrue();
+        expect(error.code).assertEqual(401);
       }
     } finally {
       if (timerId >= 0) {
@@ -3049,7 +3049,7 @@ function testStartExactTimer() {
       await systemManager.startExactTimer(timerId, TEST_TRIGGER_TIME);
       await systemManager.stopExactTimer(timerId);
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
     } finally {
       if (timerId >= 0) {
         try {
@@ -3077,7 +3077,7 @@ function testStartExactTimer() {
     try {
       timerId = await systemManager.createExactTimer(getValidTimerConfig());
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
       await adminManager.disableSuperAdmin(SELFHAPNAME);
       done();
       return;
@@ -3087,9 +3087,9 @@ function testStartExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200012).assertTrue();
+        expect(error.code).assertEqual(9200012);
       }
     } finally {
       if (timerId >= 0) {
@@ -3120,9 +3120,9 @@ function testStopExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200001).assertTrue();
+        expect(error.code).assertEqual(9200001);
       }
     }
     done();
@@ -3143,9 +3143,9 @@ function testStopExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200002).assertTrue();
+        expect(error.code).assertEqual(9200002);
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -3168,9 +3168,9 @@ function testStopExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 401).assertTrue();
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3193,9 +3193,9 @@ function testStopExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 401).assertTrue();
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3218,9 +3218,9 @@ function testStopExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9201054).assertTrue();
+        expect(error.code).assertEqual(9201054);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3243,9 +3243,9 @@ function testStopExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9201054).assertTrue();
+        expect(error.code).assertEqual(9201054);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3269,7 +3269,7 @@ function testStopExactTimer() {
       await systemManager.startExactTimer(timerId, TEST_TRIGGER_TIME);
       await systemManager.stopExactTimer(timerId);
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
     } finally {
       if (timerId >= 0) {
         try {
@@ -3297,7 +3297,7 @@ function testStopExactTimer() {
     try {
       timerId = await systemManager.createExactTimer(getValidTimerConfig());
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
       await adminManager.disableSuperAdmin(SELFHAPNAME);
       done();
       return;
@@ -3305,7 +3305,7 @@ function testStopExactTimer() {
     try {
       await systemManager.stopExactTimer(timerId);
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
     } finally {
       if (timerId >= 0) {
         try {
@@ -3335,9 +3335,9 @@ function testDestroyExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200001).assertTrue();
+        expect(error.code).assertEqual(9200001);
       }
     }
     done();
@@ -3358,9 +3358,9 @@ function testDestroyExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200002).assertTrue();
+        expect(error.code).assertEqual(9200002);
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -3383,9 +3383,9 @@ function testDestroyExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 401).assertTrue();
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3408,9 +3408,9 @@ function testDestroyExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 401).assertTrue();
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3433,9 +3433,9 @@ function testDestroyExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9201054).assertTrue();
+        expect(error.code).assertEqual(9201054);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3458,11 +3458,11 @@ function testDestroyExactTimer() {
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else if (error.code === 9200012) {
-        expect(error.code === 9200012).assertTrue();
+        expect(error.code).assertEqual(9200012);
       } else {
-        expect(error.code === 9201054).assertTrue();
+        expect(error.code).assertEqual(9201054);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3486,7 +3486,7 @@ function testDestroyExactTimer() {
       await systemManager.destroyExactTimer(timerId);
       timerId = -1;
     } catch (error) {
-      expect(error.code === 801).assertTrue();
+      expect(error.code).assertEqual(801);
     } finally {
       if (timerId >= 0) {
         try {
