@@ -52,7 +52,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_0100
      * @tc.number Test_setControlledAppLists_001
-     * @tc.desc   setControlledAppLists success, return 19100024 or 801.
+     * @tc.desc   setControlledAppLists success, or return 19100024 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -63,17 +63,14 @@ export default function DlpEnterpriseServiceTest() {
       let appLists = ["0","1"];
       try {
         await dlpPermission.setControlledAppLists(appLists);
-        expect(null).assertFail();
+        console.info(curTag, "setControlledAppLists success");
+        expect(true).assertTrue();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
         } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100024);
+          expect(false).assertTrue();
         }
       }
       done();
@@ -82,7 +79,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_0200
      * @tc.number Test_setControlledAppLists_002
-     * @tc.desc   setControlledAppLists first param is empty, return 19100024 or 801.
+     * @tc.desc   setControlledAppLists first param is empty, success or return 19100024 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -93,17 +90,14 @@ export default function DlpEnterpriseServiceTest() {
       let appLists = [];
       try {
         await dlpPermission.setControlledAppLists(appLists);
-        expect(null).assertFail();
+        console.info(curTag, "setControlledAppLists success");
+        expect(true).assertTrue();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
         } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100024);
+          expect(false).assertTrue();
         }
       }
       done();
@@ -124,15 +118,13 @@ export default function DlpEnterpriseServiceTest() {
         await dlpPermission.setControlledAppLists(null);
         expect(null).assertFail();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
-        } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+        } else if (err.code === 401) {
           expect(err.code).assertEqual(401);
+        } else {
+          expect(false).assertTrue();
         }
       }
       done();
@@ -153,15 +145,13 @@ export default function DlpEnterpriseServiceTest() {
         await dlpPermission.setControlledAppLists(undefined);
         expect(null).assertFail();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
-        } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+        } else if (err.code === 401) {
           expect(err.code).assertEqual(401);
+        } else {
+          expect(false).assertTrue();
         }
       }
       done();
@@ -170,7 +160,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_0500
      * @tc.number Test_setControlledAppLists_005
-     * @tc.desc   setControlledAppLists second param is null, return 19100024 or 801.
+     * @tc.desc   setControlledAppLists second param is null, success or return 19100024 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -181,17 +171,14 @@ export default function DlpEnterpriseServiceTest() {
       let appLists = ["0","1"];
       try {
         await dlpPermission.setControlledAppLists(appLists, null);
-        expect(null).assertFail();
+        console.info(curTag, "setControlledAppLists success");
+        expect(true).assertTrue();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
         } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100024);
+          expect(false).assertTrue();
         }
       }
       done();
@@ -200,7 +187,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_0600
      * @tc.number Test_setControlledAppLists_006
-     * @tc.desc   setControlledAppLists second param is undefined, return 19100024 or 801.
+     * @tc.desc   setControlledAppLists second param is undefined, success or return 19100024 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -211,17 +198,14 @@ export default function DlpEnterpriseServiceTest() {
       let appLists = ["0","1"];
       try {
         await dlpPermission.setControlledAppLists(appLists, undefined);
-        expect(null).assertFail();
+        console.info(curTag, "setControlledAppLists success");
+        expect(true).assertTrue();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
         } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100024);
+          expect(false).assertTrue();
         }
       }
       done();
@@ -230,7 +214,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_0700
      * @tc.number Test_setControlledAppLists_007
-     * @tc.desc   setControlledAppLists array length is 0, return 19100024 or 801.
+     * @tc.desc   setControlledAppLists array length is 0, success or return 19100024 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -241,17 +225,14 @@ export default function DlpEnterpriseServiceTest() {
       let appLists = generateArray(0);
       try {
         await dlpPermission.setControlledAppLists(appLists);
-        expect(null).assertFail();
+        console.info(curTag, "setControlledAppLists success");
+        expect(true).assertTrue();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
         } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100024);
+          expect(false).assertTrue();
         }
       }
       done();
@@ -260,7 +241,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_0800
      * @tc.number Test_setControlledAppLists_008
-     * @tc.desc   setControlledAppLists array length is 1, return 19100024 or 801.
+     * @tc.desc   setControlledAppLists array length is 1, success or return 19100024 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -271,17 +252,14 @@ export default function DlpEnterpriseServiceTest() {
       let appLists = generateArray(1);
       try {
         await dlpPermission.setControlledAppLists(appLists);
-        expect(null).assertFail();
+        console.info(curTag, "setControlledAppLists success");
+        expect(true).assertTrue();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
         } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100024);
+          expect(false).assertTrue();
         }
       }
       done();
@@ -290,7 +268,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_0900
      * @tc.number Test_setControlledAppLists_009
-     * @tc.desc   setControlledAppLists array length is 100, return 19100024 or 801.
+     * @tc.desc   setControlledAppLists array length is 100, success or return 19100024 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -301,17 +279,14 @@ export default function DlpEnterpriseServiceTest() {
       let appLists = generateArray(100);
       try {
         await dlpPermission.setControlledAppLists(appLists);
-        expect(null).assertFail();
+        console.info(curTag, "setControlledAppLists success");
+        expect(true).assertTrue();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
         } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100024);
+          expect(false).assertTrue();
         }
       }
       done();
@@ -333,15 +308,13 @@ export default function DlpEnterpriseServiceTest() {
         await dlpPermission.setControlledAppLists(appLists);
         expect(null).assertFail();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
-        } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+        } else if (err.code === 19100001) {
           expect(err.code).assertEqual(19100001);
+        } else {
+          expect(false).assertTrue();
         }
       }
       done();
@@ -363,15 +336,13 @@ export default function DlpEnterpriseServiceTest() {
         await dlpPermission.setControlledAppLists(appLists);
         expect(null).assertFail();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
-        } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+        } else if (err.code === 19100001) {
           expect(err.code).assertEqual(19100001);
+        } else {
+          expect(false).assertTrue();
         }
       }
       done();
@@ -380,7 +351,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_1200
      * @tc.number Test_setControlledAppLists_012
-     * @tc.desc   setControlledAppLists string length is 1, return 19100024 or 801.
+     * @tc.desc   setControlledAppLists string length is 1, success or return 19100024 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -391,17 +362,14 @@ export default function DlpEnterpriseServiceTest() {
       let appLists = [generateString(1)];
       try {
         await dlpPermission.setControlledAppLists(appLists);
-        expect(null).assertFail();
+        console.info(curTag, "setControlledAppLists success");
+        expect(true).assertTrue();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
         } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100024);
+          expect(false).assertTrue();
         }
       }
       done();
@@ -410,7 +378,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_1300
      * @tc.number Test_setControlledAppLists_013
-     * @tc.desc   setControlledAppLists string length is 4096, return 19100024 or 801.
+     * @tc.desc   setControlledAppLists string length is 4096, success or return 19100024 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -421,17 +389,14 @@ export default function DlpEnterpriseServiceTest() {
       let appLists = [generateString(4096)];
       try {
         await dlpPermission.setControlledAppLists(appLists);
-        expect(null).assertFail();
+        console.info(curTag, "setControlledAppLists success");
+        expect(true).assertTrue();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
         } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100024);
+          expect(false).assertTrue();
         }
       }
       done();
@@ -453,15 +418,13 @@ export default function DlpEnterpriseServiceTest() {
         await dlpPermission.setControlledAppLists(appLists);
         expect(null).assertFail();
       } catch (err) {
+        console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else if (err.code === 19100011) {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
-          expect(err.code).assertEqual(19100011);
-        } else {
-          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+        } else if (err.code === 19100001) {
           expect(err.code).assertEqual(19100001);
+        } else {
+          expect(false).assertTrue();
         }
       }
       done();
