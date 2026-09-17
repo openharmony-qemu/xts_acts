@@ -530,7 +530,7 @@ export default function ActsDisplayNdkApi14Test() {
     })
     /**
     * @tc.name test_NativeDisplayManager_CaptureScreenPixeImapMax
-    * @tc.number SUB_BASIC_DMS_NDK_3300
+    * @tc.number SUB_BASIC_DMS_NDK_3400
     * @tc.desc test_NativeDisplayManager_CaptureScreenPixeImap_MaxParam
     * @tc.type FUNCTION
     * @tc.size MEDIUMTEST
