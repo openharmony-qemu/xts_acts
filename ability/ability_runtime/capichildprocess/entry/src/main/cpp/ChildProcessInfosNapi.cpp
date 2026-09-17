@@ -32,8 +32,8 @@
 namespace {
 
 // G.CNS.02: named lengths for NAPI int arrays returned to Hypium.
-constexpr size_t kAcquireResultLen = 2;
-constexpr size_t kQueryResultLen = 7;
+constexpr size_t K_ACQUIRE_RESULT_LEN = 2;
+constexpr size_t K_QUERY_RESULT_LEN = 7;
 
 struct QueryResultFields {
     int32_t acquireCode = 0;
@@ -66,11 +66,11 @@ napi_value MakeIntArray(napi_env env, const int32_t *values, size_t len)
 
 napi_value MakeAcquirePair(napi_env env, int32_t ret, uint32_t count)
 {
-    int32_t vals[kAcquireResultLen] = {
+    int32_t vals[K_ACQUIRE_RESULT_LEN] = {
         ret,
         static_cast<int32_t>(count),
     };
-    return MakeIntArray(env, vals, kAcquireResultLen);
+    return MakeIntArray(env, vals, K_ACQUIRE_RESULT_LEN);
 }
 
 napi_value AcquireChildInvalidParam(napi_env env, napi_callback_info info)
@@ -181,7 +181,7 @@ AbilityRuntime_ErrorCode FillProcessName(
 
 napi_value BuildQueryResult(napi_env env, const QueryResultFields &fields)
 {
-    int32_t vals[kQueryResultLen] = {
+    int32_t vals[K_QUERY_RESULT_LEN] = {
         fields.acquireCode,
         fields.count,
         fields.indexCode,
@@ -190,7 +190,7 @@ napi_value BuildQueryResult(napi_env env, const QueryResultFields &fields)
         fields.nameCode,
         fields.nameLen,
     };
-    return MakeIntArray(env, vals, kQueryResultLen);
+    return MakeIntArray(env, vals, K_QUERY_RESULT_LEN);
 }
 
 napi_value QueryNativeChildInfos(napi_env env, napi_callback_info info)
