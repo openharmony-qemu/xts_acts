@@ -1727,5 +1727,63 @@ export default function ConcurrentQueueHighConcurrencyTest(): void {
         }
         done();
       });
+
+    /**
+     * @tc.name   ConcurrentQueueHighConcurrencyTest3900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_QUEUE_HIGH_CONCURRENCY_3900
+     * @tc.desc   Verify scale 100K: 10 TaskPool producers each add 10000 unique IDs to a capacity-100000 LinkedConcurrentQueue, then drain 100000 items and verify the exact unique ID set without cross-producer FIFO order assumptions (Q-2.4-06)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ConcurrentQueueHighConcurrencyTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          let queue: containers.stackless.ConcurrentQueue<number> =
+            new containers.stackless.LinkedConcurrentQueue<number>(100000);
+          let totalItems: number = 100000;
+          let itemsPerProducer: number = 10000;
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 10; i++) {
+            tasks.push(taskpool.execute(producerTask, queue, i * itemsPerProducer, itemsPerProducer, false));
+          }
+          let results: Any = await Promise.all(tasks);
+          let resultArr: Any[] = results as Any[];
+          let produced: number = 0;
+          for (let i: int = 0; i < 10; i++) {
+            expect(resultArr[i] as number).assertEqual(itemsPerProducer);
+            produced += resultArr[i] as number;
+          }
+          expect(produced).assertEqual(totalItems);
+          expect(queue.size).assertEqual(totalItems);
+          let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
+          let polled: number = 0;
+          let pollUndefined: number = 0;
+          for (let i: number = 0; i < totalItems; i++) {
+            let item: number | undefined = queue.poll();
+            if (item !== undefined) {
+              seen.add(item);
+            } else {
+              pollUndefined++;
+            }
+            polled++;
+          }
+          expect(polled).assertEqual(totalItems);
+          expect(pollUndefined).assertEqual(0);
+          expect(seen.size).assertEqual(totalItems);
+          let missingIds: number = 0;
+          for (let id: number = 0; id < totalItems; id++) {
+            if (!seen.has(id)) {
+              missingIds++;
+            }
+          }
+          expect(missingIds).assertEqual(0);
+          expect(queue.isEmpty()).assertTrue();
+          expect(queue.size).assertEqual(0);
+        } catch (error) {
+          expect(error).assertFail();
+        }
+        done();
+      });
   });
 }
