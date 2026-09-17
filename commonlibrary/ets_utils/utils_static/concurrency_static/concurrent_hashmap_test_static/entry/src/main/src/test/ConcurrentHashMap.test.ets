@@ -69,7 +69,7 @@ function createModifyTask(map:  containers.ConcurrentHashMap<string, string>, ke
   }, map, key, value);
 }
 
-export default function ConcurrentHashMapTest() {
+export default function ConcurrentHashMapTest(): void {
   describe('ConcurrentHashMapTest', (): void => {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0100

@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 import ConcurrentHashMapHighConcurrencyTest from './ConcurrentHashMapHighConcurrencyTest.test';
+import ConcurrentHashMapTest from './ConcurrentHashMap.test';
 
 export default function testsuite(): void {
   ConcurrentHashMapHighConcurrencyTest();
+  ConcurrentHashMapTest();
 }
