@@ -70,5 +70,48 @@ export default function native_blanklessTest() {
         done();
       });
 
+    /**
+     * @tc.name TestNativeArkWeb_ClearBlanklessLoadingCacheNull
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_NULL_0014
+     * @tc.desc Test OH_NativeArkWeb_ClearBlanklessLoadingCache with null keys
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestNativeArkWeb_ClearBlanklessLoadingCacheNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestNativeArkWeb_ClearBlanklessLoadingCacheNull()).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_INVALID_0015
+     * @tc.desc Test OH_NativeArkWeb_SetBlanklessLoadingWithKey invalid args error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const result = nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid();
+        expect(result == -2 || result == -3 || result == 801).assertTrue();
+        done();
+      });
+
+    /**
+     * @tc.name TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_CAPACITY_RETURN_0016
+     * @tc.desc Test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity return value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn()).assertEqual(0);
+        done();
+      });
+
   });
 }

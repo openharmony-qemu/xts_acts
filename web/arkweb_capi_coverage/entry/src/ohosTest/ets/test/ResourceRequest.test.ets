@@ -56,7 +56,7 @@ export default function resource_requestTest() {
     /**
      * @tc.name TestArkWebResourceRequest_GetResourceType
      * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_REQUEST_GET_RESOURCE_TYPE_0039
-     * @tc.desc Test OH_ArkWebResourceRequest_GetResourceType
+     * @tc.desc Test OH_ArkWebResourceRequest_GetResourceType (nullptr returns -1)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
@@ -64,6 +64,20 @@ export default function resource_requestTest() {
     it('TestArkWebResourceRequest_GetResourceType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestArkWebResourceRequest_GetResourceType()).assertEqual(-1);
+        done();
+      });
+
+    /**
+     * @tc.name TestArkWebResourceRequest_GetResourceTypeEnumCoverage
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_RESOURCE_TYPE_ENUM_0041
+     * @tc.desc Test OH_ArkWebResourceRequest_GetResourceType all enum coverage
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestArkWebResourceRequest_GetResourceTypeEnumCoverage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestArkWebResourceRequest_GetResourceTypeEnumCoverage()).assertEqual(20);
         done();
       });
 

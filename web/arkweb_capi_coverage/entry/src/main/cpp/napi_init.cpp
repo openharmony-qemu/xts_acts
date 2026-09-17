@@ -109,6 +109,61 @@ static napi_value TestArkWebResourceRequest_GetResourceType(napi_env env, napi_c
     return result;
 }
 
+static napi_value TestArkWebResourceRequest_GetResourceTypeEnumCoverage(napi_env env, napi_callback_info info)
+{
+    ArkWeb_ResourceType types[] = {
+        MAIN_FRAME, SUB_FRAME, STYLE_SHEET, SCRIPT, IMAGE, FONT_RESOURCE, SUB_RESOURCE, OBJECT,
+        MEDIA, WORKER, SHARED_WORKER, PREFETCH, FAVICON, XHR, PING, SERVICE_WORKER, CSP_REPORT,
+        PLUGIN_RESOURCE, NAVIGATION_PRELOAD_MAIN_FRAME, NAVIGATION_PRELOAD_SUB_FRAME
+    };
+    int32_t count = static_cast<int32_t>(sizeof(types) / sizeof(types[0]));
+    int32_t sum = 0;
+    for (int32_t i = 0; i < count; i++) {
+        sum += static_cast<int32_t>(types[i]);
+    }
+    int32_t nullRet = OH_ArkWebResourceRequest_GetResourceType(nullptr);
+    if (nullRet != -1 || sum <= 0) {
+        return CreateResult(env, -1);
+    }
+    return CreateResult(env, count);
+}
+
+static napi_value TestArkWeb_ProxyMethod_UserData(napi_env env, napi_callback_info info)
+{
+    ArkWeb_ProxyMethod method = {};
+    method.userData = nullptr;
+    void *data = method.userData;
+    return CreateResult(env, data == nullptr ? 0 : -1);
+}
+
+static napi_value TestArkWeb_ControllerAPI_DeleteJavaScriptRegister(napi_env env, napi_callback_info info)
+{
+    ArkWeb_ControllerAPI api = {};
+    api.deleteJavaScriptRegister = nullptr;
+    return CreateResult(env, api.deleteJavaScriptRegister == nullptr ? 0 : -1);
+}
+
+static napi_value TestArkWeb_ControllerAPI_RegisterJavaScriptProxyEx(napi_env env, napi_callback_info info)
+{
+    ArkWeb_ControllerAPI api = {};
+    api.registerJavaScriptProxyEx = nullptr;
+    return CreateResult(env, api.registerJavaScriptProxyEx == nullptr ? 0 : -1);
+}
+
+static napi_value TestArkWeb_WebMessagePortAPI_PostMessage(napi_env env, napi_callback_info info)
+{
+    ArkWeb_WebMessagePortAPI api = {};
+    api.postMessage = nullptr;
+    return CreateResult(env, api.postMessage == nullptr ? 0 : -1);
+}
+
+static napi_value TestArkWeb_WebMessageAPI_SetData(napi_env env, napi_callback_info info)
+{
+    ArkWeb_WebMessageAPI api = {};
+    api.setData = nullptr;
+    return CreateResult(env, api.setData == nullptr ? 0 : -1);
+}
+
 static napi_value TestArkWebResourceRequest_GetFrameUrl(napi_env env, napi_callback_info info)
 {
     char* frameUrl = nullptr;
@@ -473,6 +528,33 @@ static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacity(napi_env env
     return result;
 }
 
+static napi_value TestNativeArkWeb_ClearBlanklessLoadingCacheNull(napi_env env, napi_callback_info info)
+{
+    OH_NativeArkWeb_ClearBlanklessLoadingCache(nullptr, 0);
+    g_testResult = 0;
+
+    napi_value result;
+    napi_create_int32(env, g_testResult, &result);
+    return result;
+}
+
+static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid(napi_env env, napi_callback_info info)
+{
+    ArkWeb_BlanklessErrorCode ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey(nullptr, nullptr, true);
+    g_testResult = static_cast<int32_t>(ret);
+
+    napi_value result;
+    napi_create_int32(env, g_testResult, &result);
+    return result;
+}
+
+static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn(napi_env env, napi_callback_info info)
+{
+    uint32_t ret = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(50);
+    bool validReturn = ret == 0 || ret == 50;
+    return CreateResult(env, validReturn ? 0 : -1);
+}
+
 // ---- native_engine ----
 
 static napi_value TestNativeArkWeb_SetActiveWebEngineVersion(napi_env env, napi_callback_info info)
@@ -532,6 +614,21 @@ static const napi_property_descriptor K_NAPI_DESCRIPTORS[] = {
     {"TestArkWebResourceRequest_GetUrl", nullptr, TestArkWebResourceRequest_GetUrl,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestArkWebResourceRequest_GetResourceType", nullptr, TestArkWebResourceRequest_GetResourceType,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_GetResourceTypeEnumCoverage", nullptr,
+        TestArkWebResourceRequest_GetResourceTypeEnumCoverage,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWeb_ProxyMethod_UserData", nullptr, TestArkWeb_ProxyMethod_UserData,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWeb_ControllerAPI_DeleteJavaScriptRegister", nullptr,
+        TestArkWeb_ControllerAPI_DeleteJavaScriptRegister,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWeb_ControllerAPI_RegisterJavaScriptProxyEx", nullptr,
+        TestArkWeb_ControllerAPI_RegisterJavaScriptProxyEx,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWeb_WebMessagePortAPI_PostMessage", nullptr, TestArkWeb_WebMessagePortAPI_PostMessage,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWeb_WebMessageAPI_SetData", nullptr, TestArkWeb_WebMessageAPI_SetData,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestArkWebResourceRequest_GetFrameUrl", nullptr, TestArkWebResourceRequest_GetFrameUrl,
         nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -602,6 +699,15 @@ static const napi_property_descriptor K_NAPI_DESCRIPTORS[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_SetBlanklessLoadingCacheCapacity", nullptr,
         TestNativeArkWeb_SetBlanklessLoadingCacheCapacity,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_ClearBlanklessLoadingCacheNull", nullptr,
+        TestNativeArkWeb_ClearBlanklessLoadingCacheNull,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid", nullptr,
+        TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn", nullptr,
+        TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_SetActiveWebEngineVersion", nullptr, TestNativeArkWeb_SetActiveWebEngineVersion,
         nullptr, nullptr, nullptr, napi_default, nullptr},

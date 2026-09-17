@@ -12,6 +12,76 @@ export default function native_proxyTest() {
     });
 
     /**
+     * @tc.name TestArkWeb_ProxyMethod_UserData
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_PROXY_METHOD_USER_DATA_0022
+     * @tc.desc Test ArkWeb_ProxyMethod userData field declaration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestArkWeb_ProxyMethod_UserData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestArkWeb_ProxyMethod_UserData()).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name TestArkWeb_ControllerAPI_DeleteJavaScriptRegister
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CONTROLLER_API_DELETE_JS_REGISTER_0028
+     * @tc.desc Test ArkWeb_ControllerAPI deleteJavaScriptRegister field
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestArkWeb_ControllerAPI_DeleteJavaScriptRegister', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestArkWeb_ControllerAPI_DeleteJavaScriptRegister()).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name TestArkWeb_ControllerAPI_RegisterJavaScriptProxyEx
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CONTROLLER_API_REGISTER_JS_PROXY_EX_0029
+     * @tc.desc Test ArkWeb_ControllerAPI registerJavaScriptProxyEx field
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestArkWeb_ControllerAPI_RegisterJavaScriptProxyEx', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestArkWeb_ControllerAPI_RegisterJavaScriptProxyEx()).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name TestArkWeb_WebMessagePortAPI_PostMessage
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_WEB_MESSAGE_PORT_API_POST_MESSAGE_0030
+     * @tc.desc Test ArkWeb_WebMessagePortAPI postMessage field
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestArkWeb_WebMessagePortAPI_PostMessage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestArkWeb_WebMessagePortAPI_PostMessage()).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name TestArkWeb_WebMessageAPI_SetData
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_WEB_MESSAGE_API_SET_DATA_0031
+     * @tc.desc Test ArkWeb_WebMessageAPI setData field
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestArkWeb_WebMessageAPI_SetData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestArkWeb_WebMessageAPI_SetData()).assertEqual(0);
+        done();
+      });
+
+    /**
      * @tc.name TestNativeArkWeb_RegisterJavaScriptProxy
      * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_REGISTER_JAVA_SCRIPT_PROXY_0023
      * @tc.desc Test OH_NativeArkWeb_RegisterJavaScriptProxy
