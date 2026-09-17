@@ -289,10 +289,10 @@ function testSetAutoUnlockAfterReboot() {
       await systemManager.setAutoUnlockAfterReboot(SELFWANT, false);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -316,10 +316,10 @@ function testGetAutoUnlockAfterReboot() {
       await systemManager.getAutoUnlockAfterReboot(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -343,10 +343,10 @@ function testGetDisallowedNearLink() {
             let protocols: Array<number> =
                 systemManager.getDisallowedNearLinkProtocols(SELFWANT, DEFAULT_USER_ID);
         } catch (error) {
-            if (error.code === 801) {
-              expect(error.code === 801).assertTrue();
+            if (Number(error.code) === 801) {
+              expect(Number(error.code) === 801).assertTrue();
             } else {
-              expect(error.code === 201).assertTrue();
+              expect(Number(error.code) === 201).assertTrue();
             }
         } finally {
             await adminManager.disableAdmin(SELFWANT);
@@ -373,10 +373,10 @@ function testAddDisallowedNearLinkProtocols() {
             systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
             expect(false).assertTrue();
         } catch (error) {
-            if (error.code === 801) {
-              expect(error.code === 801).assertTrue();
+            if (Number(error.code) === 801) {
+              expect(Number(error.code) === 801).assertTrue();
             } else {
-              expect(error.code === 201).assertTrue();
+              expect(Number(error.code) === 201).assertTrue();
             }
         } finally {
             await adminManager.disableAdmin(SELFWANT);
@@ -403,10 +403,10 @@ function testRemoveDisallowedNearLinkProtocols() {
             systemManager.removeDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
             expect(false).assertTrue();
         } catch (error) {
-            if (error.code === 801) {
-              expect(error.code === 801).assertTrue();
+            if (Number(error.code) === 801) {
+              expect(Number(error.code) === 801).assertTrue();
             } else {
-              expect(error.code === 201).assertTrue();
+              expect(Number(error.code) === 201).assertTrue();
             }
         } finally {
             await adminManager.disableAdmin(SELFWANT);
@@ -430,10 +430,10 @@ function testSetInstallLocalEnterpriseAppEnabled() {
       systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, true);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -457,10 +457,10 @@ function testGetInstallLocalEnterpriseAppEnabled() {
       systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -488,10 +488,10 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -516,10 +516,10 @@ function testRemoveKeyEventPolicies() {
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -543,10 +543,10 @@ function testGetKeyEventPolicies() {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -569,10 +569,10 @@ function testStartCollectLog() {
     await systemManager.startCollectLog(SELFWANT).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError) => {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
@@ -596,10 +596,10 @@ function testFinishLogCollected() {
       systemManager.finishLogCollected(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -623,10 +623,10 @@ function testSetActivationLockDisabled() {
     await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError) => {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
@@ -649,10 +649,10 @@ function testIsActivationLockDisabled() {
     await systemManager.isActivationLockDisabled(SELFWANT).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError) => {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
@@ -676,10 +676,10 @@ function testSetInstallLocalEnterpriseAppEnabledForAccount() {
       systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, true, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -703,10 +703,10 @@ function testGetInstallLocalEnterpriseAppEnabledForAccount() {
       systemManager.getInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 201).assertTrue();
+        expect(Number(error.code) === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -767,13 +767,13 @@ function testGetLocalHotaDomain() {
 
 function testCreateExactTimer() {
   /**
-   * @tc.name   test_create_exact_timer_0100
-   * @tc.number SUB_CUSTOMIZATION_EDM_CREATE_EXACT_TIMER_JS_0100
-   * @tc.desc   test systemManager createExactTimer with normal admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
+  * @tc.name   test_create_exact_timer_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_CREATE_EXACT_TIMER_JS_0100
+  * @tc.desc   test systemManager createExactTimer with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
   it("test_create_exact_timer_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
@@ -800,13 +800,13 @@ function testCreateExactTimer() {
 
 function testStartExactTimer() {
   /**
-   * @tc.name   test_start_exact_timer_0100
-   * @tc.number SUB_CUSTOMIZATION_EDM_START_EXACT_TIMER_JS_0100
-   * @tc.desc   test systemManager startExactTimer with normal admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
+  * @tc.name   test_start_exact_timer_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_START_EXACT_TIMER_JS_0100
+  * @tc.desc   test systemManager startExactTimer with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
   it("test_start_exact_timer_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
@@ -827,13 +827,13 @@ function testStartExactTimer() {
 
 function testStopExactTimer() {
   /**
-   * @tc.name   test_stop_exact_timer_0100
-   * @tc.number SUB_CUSTOMIZATION_EDM_STOP_EXACT_TIMER_JS_0100
-   * @tc.desc   test systemManager stopExactTimer with normal admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
+  * @tc.name   test_stop_exact_timer_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_STOP_EXACT_TIMER_JS_0100
+  * @tc.desc   test systemManager stopExactTimer with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
   it("test_stop_exact_timer_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
@@ -854,13 +854,13 @@ function testStopExactTimer() {
 
 function testDestroyExactTimer() {
   /**
-   * @tc.name   test_destroy_exact_timer_0100
-   * @tc.number SUB_CUSTOMIZATION_EDM_DESTROY_EXACT_TIMER_JS_0100
-   * @tc.desc   test systemManager destroyExactTimer with normal admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
+  * @tc.name   test_destroy_exact_timer_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_DESTROY_EXACT_TIMER_JS_0100
+  * @tc.desc   test systemManager destroyExactTimer with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
   it("test_destroy_exact_timer_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
