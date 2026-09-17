@@ -1,0 +1,16 @@
+export const PthreadJoinDetach_0100: () => number;
+export const PthreadJoinDetach_0200: () => number;
+export const PthreadJoinDetach_0300: () => number;
+export const PthreadJoinDetach_0400: () => number;
+export const PthreadJoinDetach_0500: () => number;
+export const PthreadJoinDetach_0600: () => number;
+export const PthreadJoinDetach_0700: () => number;
+export const PthreadJoinDetach_0800: () => number;
+export const PthreadJoinDetach_0900: () => number;
+export const PthreadJoinDetach_1000: () => number;
+export const PthreadJoinDetach_1100: () => number;
+export const PthreadJoinDetach_1200: () => number;
+export const PthreadJoinDetach_1300: () => number;
+export const PthreadJoinDetach_1400: () => number;
+export const PthreadJoinDetach_1500: () => number;
+export const PthreadJoinDetach_1600: () => number;

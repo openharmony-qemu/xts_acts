@@ -1,0 +1,6 @@
+{
+  "name": "libpthreadjoindetach.so",
+  "types": "./Index.d.ts",
+  "version": "1.0.0",
+  "description": "pthread_join detached thread test cases"
+}
