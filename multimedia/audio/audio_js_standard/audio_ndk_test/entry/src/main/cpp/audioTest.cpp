@@ -13909,7 +13909,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100(na
     int retry = 0;
     while (!g_isStreamStarted && retry < 50) {
         usleep(10000);
-        retry ++;
+        retry++;
     }
     if (!g_isStreamStarted) {
         LOG("Stream start timeout");
@@ -13974,7 +13974,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100(n
     int retry = 0;
     while (!g_isStreamStarted && retry < 50) {
         usleep(10000);
-        retry ++;
+        retry++;
     }
     if (!g_isStreamStarted) {
         LOG("Stream start timeout");
@@ -14040,7 +14040,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_
     int retry = 0;
     while (!g_isStreamStarted && retry < 50) {
         usleep(10000);
-        retry ++;
+        retry++;
     }
     if (!g_isStreamStarted) {
         LOG("Stream start timeout");
@@ -14100,7 +14100,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_010
     int retry = 0;
     while (!g_isStreamStarted && retry < 50) {
         usleep(10000);
-        retry ++;
+        retry++;
     }
     if (!g_isStreamStarted) {
         LOG("Stream start timeout");
@@ -14159,7 +14159,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100
     int retry = 0;
     while (!g_isStreamStarted && retry < 50) {
         usleep(10000);
-        retry ++;
+        retry++;
     }
     if (!g_isStreamStarted) {
         LOG("Stream start timeout");
@@ -14218,7 +14218,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0
     int retry = 0;
     while (!g_isStreamStarted && retry < 50) {
         usleep(10000);
-        retry ++;
+        retry++;
     }
     if (!g_isStreamStarted) {
         LOG("Stream start timeout");
@@ -14276,7 +14276,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0
     int retry = 0;
     while (!g_isStreamStarted && retry < 50) {
         usleep(10000);
-        retry ++;
+        retry++;
     }
     if (!g_isStreamStarted) {
         LOG("Stream start timeout");
@@ -14334,7 +14334,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_010
     int retry = 0;
     while (!g_isStreamStarted && retry < 50) {
         usleep(10000);
-        retry ++;
+        retry++;
     }
     if (!g_isStreamStarted) {
         LOG("Stream start timeout");
@@ -14608,7 +14608,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100(napi_env env
     int retry = 0;
     while (!g_isStreamStarted && retry < 50) {
         usleep(10000);
-        retry ++;
+        retry++;
     }
     if (!g_isStreamStarted) {
         LOG("Stream start timeout");
@@ -14667,7 +14667,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100(napi_e
     int retry = 0;
     while (!g_isStreamStarted && retry < 50) {
         usleep(10000);
-        retry ++;
+        retry++;
     }
     if (!g_isStreamStarted) {
         LOG("Stream start timeout");
