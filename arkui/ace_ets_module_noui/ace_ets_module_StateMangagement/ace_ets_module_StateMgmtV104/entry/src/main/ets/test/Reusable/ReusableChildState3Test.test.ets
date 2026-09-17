@@ -47,15 +47,15 @@ export default function ReusableChildState3Test() {
     });
 
     /**
-     * @tc.name   SUB_ACE_STATUSMANAGER_REUSABLECHILD3TEST_0100
-     * @tc.number SUB_ACE_STATUSMANAGER_REUSABLECHILD3TEST_0100
+     * @tc.name   SUB_ACE_STATUSMANAGER_REUSABLECHILD_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_REUSABLECHILD_0300
      * @tc.desc   ReusableChild with state variables should not crash on reuse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ACE_STATUSMANAGER_REUSABLECHILD3TEST_0100', Level.LEVEL1, async (done: Function) => {
-      console.info('[SUB_ACE_STATUSMANAGER_REUSABLECHILD3TEST_0100] START');
+    it('SUB_ACE_STATUSMANAGER_REUSABLECHILD_0300', Level.LEVEL1, async (done: Function) => {
+      console.info('[SUB_ACE_STATUSMANAGER_REUSABLECHILD_0300] START');
       // Step 1: click on button 'Switch' twice
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -70,7 +70,7 @@ export default function ReusableChildState3Test() {
       let textComponent = await driver.findComponent(ON.text('0 b 1 e g'));
       let actualText = await textComponent.getText();
       expect(actualText).assertEqual('0 b 1 e g');
-      console.info('[SUB_ACE_STATUSMANAGER_REUSABLECHILD3TEST_0100] END');
+      console.info('[SUB_ACE_STATUSMANAGER_REUSABLECHILD_0300] END');
       done();
     });
   })
