@@ -2941,8 +2941,6 @@ function testStartExactTimer() {
     } catch (error) {
       if (error.code === 801) {
         expect(error.code === 801).assertTrue();
-      } else if (error.code === 9200012) {
-        expect(error.code === 9200012).assertTrue();
       } else {
         expect(error.code === 9201054).assertTrue();
       }
