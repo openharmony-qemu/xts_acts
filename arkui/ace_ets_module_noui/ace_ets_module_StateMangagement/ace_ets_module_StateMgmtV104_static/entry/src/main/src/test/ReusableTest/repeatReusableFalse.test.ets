@@ -63,13 +63,13 @@ export default function repeatReusableFalse(): void {
 
     
     /**
-     * @tc.number   repeatreusablefalse_static_001
-     * @tc.name     repeatreusablefalse_static_001
-     * @tc.desc     repeatreusablefalse_static_001
+     * @tc.number   SUB_ARKUI_Repeatreusablefalse_Static_0100
+     * @tc.name     SUB_ARKUI_Repeatreusablefalse_Static_0100
+     * @tc.desc     SUB_ARKUI_Repeatreusablefalse_Static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('repeatreusablefalse_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[repeatreusablefalse_001] START');
+    it('SUB_ARKUI_Repeatreusablefalse_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_Repeatreusablefalse_Static_0100] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -78,7 +78,7 @@ export default function repeatReusableFalse(): void {
       await CommonFunc.sleep(5000);
       let text = await driver.findComponent(ON.text('[a] index99: item_99'))
       expect(text != null).assertTrue()
-      console.info('[repeatreusablefalse_001] END');
+      console.info('[SUB_ARKUI_Repeatreusablefalse_Static_0100] END');
       done();
     });
   })

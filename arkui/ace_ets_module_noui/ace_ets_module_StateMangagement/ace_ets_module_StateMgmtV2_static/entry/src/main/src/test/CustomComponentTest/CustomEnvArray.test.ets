@@ -50,15 +50,15 @@ export default function CustomEnvArray(): void {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvArray_0100
-     * @tc.number SUB_ARKUI_CustomEnvArray_0100
+     * @tc.name   SUB_ARKUI_CUSTOMENV_ARRAY_0100
+     * @tc.number SUB_ARKUI_CUSTOMENV_ARRAY_0100
      * @tc.desc   test @CustomEnv decorator with Array type - verify initial state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvArray_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvArray_0100] START');
+    it('SUB_ARKUI_CUSTOMENV_ARRAY_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0100] START');
       await CommonFunc.sleep(1500);
       try{
         // Verify initial state - array contains apple and banana
@@ -66,23 +66,23 @@ export default function CustomEnvArray(): void {
         let obj = JSON.parseJsonElement(strJson);
         expect(obj.getElement('$attrs').getString('content')).assertEqual('apple');
       } catch (err) {
-        console.error("SUB_ARKUI_CustomEnvArray_0100 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_ARRAY_0100 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvArray_0100] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0100] END')
       done();
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvArray_0200
-     * @tc.number SUB_ARKUI_CustomEnvArray_0200
+     * @tc.name   SUB_ARKUI_CUSTOMENV_ARRAY_0200
+     * @tc.number SUB_ARKUI_CUSTOMENV_ARRAY_0200
      * @tc.desc   test @CustomEnv Array - verify Push operation adds element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvArray_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvArray_0200] START');
+    it('SUB_ARKUI_CUSTOMENV_ARRAY_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0200] START');
       try{
         let driver: Driver = await Driver.create();
         await CommonFunc.sleep(1500);
@@ -96,30 +96,30 @@ export default function CustomEnvArray(): void {
         // After push, array is [apple, banana, cherry]
         let strJson = inspector.getInspectorByKey('customEnvArray_001');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[SUB_ARKUI_CustomEnvArray_0200] strJson is: ' + strJson);
+        console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0200] strJson is: ' + strJson);
         let content = obj.getElement('$attrs').getString('content');
-        console.info('[SUB_ARKUI_CustomEnvArray_0200] content is: ' + content);
+        console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0200] content is: ' + content);
 
         // After pushing, the first element remains apple
         expect(content).assertEqual('apple');
       } catch (err){
-        console.error("SUB_ARKUI_CustomEnvArray_0200 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_ARRAY_0200 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvArray_0200] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0200] END')
       done();
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvArray_0300
-     * @tc.number SUB_ARKUI_CustomEnvArray_0300
+     * @tc.name   SUB_ARKUI_CUSTOMENV_ARRAY_0300
+     * @tc.number SUB_ARKUI_CUSTOMENV_ARRAY_0300
      * @tc.desc   test @CustomEnv Array - verify Reverse operation flips array order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvArray_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvArray_0300] START');
+    it('SUB_ARKUI_CUSTOMENV_ARRAY_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0300] START');
       try{
         let driver: Driver = await Driver.create();
         await CommonFunc.sleep(1500);
@@ -133,29 +133,29 @@ export default function CustomEnvArray(): void {
         // First element should now be banana
         let strJson = inspector.getInspectorByKey('customEnvArray_001');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[SUB_ARKUI_CustomEnvArray_0300] strJson is: ' + strJson);
+        console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0300] strJson is: ' + strJson);
         let content = obj.getElement('$attrs').getString('content');
-        console.info('[SUB_ARKUI_CustomEnvArray_0300] content is: ' + content);
+        console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0300] content is: ' + content);
 
         expect(content).assertEqual('cherry');
       } catch (err){
-        console.error("SUB_ARKUI_CustomEnvArray_0300 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_ARRAY_0300 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvArray_0300] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0300] END')
       done();
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvArray_0400
-     * @tc.number SUB_ARKUI_CustomEnvArray_0400
+     * @tc.name   SUB_ARKUI_CUSTOMENV_ARRAY_0400
+     * @tc.number SUB_ARKUI_CUSTOMENV_ARRAY_0400
      * @tc.desc   test @CustomEnv Array - verify Fill operation replaces all elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvArray_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvArray_0400] START');
+    it('SUB_ARKUI_CUSTOMENV_ARRAY_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0400] START');
       try{
         let driver: Driver = await Driver.create();
         await CommonFunc.sleep(1500);
@@ -169,16 +169,16 @@ export default function CustomEnvArray(): void {
         // First element should still be apple
         let strJson = inspector.getInspectorByKey('customEnvArray_001');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[SUB_ARKUI_CustomEnvArray_0400] strJson is: ' + strJson);
+        console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0400] strJson is: ' + strJson);
         let content = obj.getElement('$attrs').getString('content');
-        console.info('[SUB_ARKUI_CustomEnvArray_0400] content is: ' + content);
+        console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0400] content is: ' + content);
 
         expect(content).assertEqual('apple');
       } catch (err){
-        console.error("SUB_ARKUI_CustomEnvArray_0400 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_ARRAY_0400 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvArray_0400] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_ARRAY_0400] END')
       done();
     });
 

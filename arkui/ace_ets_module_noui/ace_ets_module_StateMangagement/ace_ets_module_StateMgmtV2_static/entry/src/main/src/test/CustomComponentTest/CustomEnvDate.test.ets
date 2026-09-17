@@ -50,41 +50,41 @@ export default function CustomEnvDate(): void {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvDate_0100
-     * @tc.number SUB_ARKUI_CustomEnvDate_0100
+     * @tc.name   SUB_ARKUI_CUSTOMENV_DATE_0100
+     * @tc.number SUB_ARKUI_CUSTOMENV_DATE_0100
      * @tc.desc   test @CustomEnv decorator with Date type - verify initial state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvDate_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvDate_0100] START');
+    it('SUB_ARKUI_CUSTOMENV_DATE_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_DATE_0100] START');
       await CommonFunc.sleep(1500);
       try{
         // Verify initial state - selected date is 2021-08-08
         let strJson = inspector.getInspectorByKey('customEnvDate_001');
         let obj = JSON.parseJsonElement(strJson);
         let content = obj.getElement('$attrs').getString('content');
-        console.info('[SUB_ARKUI_CustomEnvDate_0100] content is: ' + content);
+        console.info('[SUB_ARKUI_CUSTOMENV_DATE_0100] content is: ' + content);
         expect(content).assertContain('Selected Date: 8/8/2021');
       } catch (err) {
-        console.error("SUB_ARKUI_CustomEnvDate_0100 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_DATE_0100 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvDate_0100] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_DATE_0100] END')
       done();
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvDate_0200
-     * @tc.number SUB_ARKUI_CustomEnvDate_0200
+     * @tc.name   SUB_ARKUI_CUSTOMENV_DATE_0200
+     * @tc.number SUB_ARKUI_CUSTOMENV_DATE_0200
      * @tc.desc   test @CustomEnv Date - verify setFullYear operation updates year
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvDate_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvDate_0200] START');
+    it('SUB_ARKUI_CUSTOMENV_DATE_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_DATE_0200] START');
       try{
         let driver: Driver = await Driver.create();
         await CommonFunc.sleep(1500);
@@ -97,29 +97,29 @@ export default function CustomEnvDate(): void {
         // Verify the year has been increased to 2022
         let strJson = inspector.getInspectorByKey('customEnvDate_001');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[SUB_ARKUI_CustomEnvDate_0200] strJson is: ' + strJson);
+        console.info('[SUB_ARKUI_CUSTOMENV_DATE_0200] strJson is: ' + strJson);
         let content = obj.getElement('$attrs').getString('content');
-        console.info('[SUB_ARKUI_CustomEnvDate_0200] content is: ' + content);
+        console.info('[SUB_ARKUI_CUSTOMENV_DATE_0200] content is: ' + content);
 
         expect(content).assertContain('Selected Date: 8/8/2022');
       } catch (err){
-        console.error("SUB_ARKUI_CustomEnvDate_0200 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_DATE_0200 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvDate_0200] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_DATE_0200] END')
       done();
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvDate_0300
-     * @tc.number SUB_ARKUI_CustomEnvDate_0300
+     * @tc.name   SUB_ARKUI_CUSTOMENV_DATE_0300
+     * @tc.number SUB_ARKUI_CUSTOMENV_DATE_0300
      * @tc.desc   test @CustomEnv Date - verify setMonth operation updates month
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvDate_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvDate_0300] START');
+    it('SUB_ARKUI_CUSTOMENV_DATE_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_DATE_0300] START');
       try{
         let driver: Driver = await Driver.create();
         await CommonFunc.sleep(1500);
@@ -132,31 +132,31 @@ export default function CustomEnvDate(): void {
         // Verify the month has been increased (from August to September)
         let strJson = inspector.getInspectorByKey('customEnvDate_001');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[SUB_ARKUI_CustomEnvDate_0300] strJson is: ' + strJson);
+        console.info('[SUB_ARKUI_CUSTOMENV_DATE_0300] strJson is: ' + strJson);
         let content = obj.getElement('$attrs').getString('content');
-        console.info('[SUB_ARKUI_CustomEnvDate_0300] content is: ' + content);
+        console.info('[SUB_ARKUI_CUSTOMENV_DATE_0300] content is: ' + content);
 
         // After setMonth, month changes from 7 (August) to 8 (September) or to 0 (January if wraps around)
         // The date string should contain 9 or 1 indicating month change
         expect(content).assertContain('Selected Date: 9/8/2022');
       } catch (err){
-        console.error("SUB_ARKUI_CustomEnvDate_0300 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_DATE_0300 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvDate_0300] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_DATE_0300] END')
       done();
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvDate_0400
-     * @tc.number SUB_ARKUI_CustomEnvDate_0400
+     * @tc.name   SUB_ARKUI_CUSTOMENV_DATE_0400
+     * @tc.number SUB_ARKUI_CUSTOMENV_DATE_0400
      * @tc.desc   test @CustomEnv Date - verify setDate operation updates day
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvDate_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvDate_0400] START');
+    it('SUB_ARKUI_CUSTOMENV_DATE_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_DATE_0400] START');
       try{
         let driver: Driver = await Driver.create();
         await CommonFunc.sleep(1500);
@@ -169,16 +169,16 @@ export default function CustomEnvDate(): void {
         // Verify the day has been increased to 9
         let strJson = inspector.getInspectorByKey('customEnvDate_001');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[SUB_ARKUI_CustomEnvDate_0400] strJson is: ' + strJson);
+        console.info('[SUB_ARKUI_CUSTOMENV_DATE_0400] strJson is: ' + strJson);
         let content = obj.getElement('$attrs').getString('content');
-        console.info('[SUB_ARKUI_CustomEnvDate_0400] content is: ' + content);
+        console.info('[SUB_ARKUI_CUSTOMENV_DATE_0400] content is: ' + content);
 
         expect(content).assertContain('Selected Date: 9/9/2022');
       } catch (err){
-        console.error("SUB_ARKUI_CustomEnvDate_0400 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_DATE_0400 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvDate_0400] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_DATE_0400] END')
       done();
     });
 
