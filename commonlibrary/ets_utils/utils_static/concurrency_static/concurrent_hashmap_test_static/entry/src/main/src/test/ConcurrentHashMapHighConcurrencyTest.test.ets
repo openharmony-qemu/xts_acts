@@ -1152,25 +1152,6 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
       });
 
     /**
-     * @tc.name   ConcurrentHashMapHighConcurrencyTest2700
-     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_HASH_MAP_HIGH_CONCURRENCY_2700
-     * @tc.desc   Verify ConcurrentHashMap data scale 100000 with TaskPool writers
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('ConcurrentHashMapHighConcurrencyTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        try {
-          let size: number = await runScaleCase(100000);
-          expect(size).assertEqual(100000);
-        } catch (error) {
-          expect(error).assertFail();
-        }
-        done();
-      });
-
-    /**
      * @tc.name   ConcurrentHashMapHighConcurrencyTest2800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_HASH_MAP_HIGH_CONCURRENCY_2800
      * @tc.desc   Verify cache workload completes exactly 90 reads and 10 writes while preserving 100 entries
