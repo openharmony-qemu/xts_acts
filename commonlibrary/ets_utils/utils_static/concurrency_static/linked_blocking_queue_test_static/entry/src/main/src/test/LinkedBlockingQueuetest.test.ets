@@ -2375,11 +2375,11 @@ export default function LinkedBlockingQueuetest(): void {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_GetEndTest_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
-            let queueIntPop1: containers.LinkedBlockingQueue<int | undefined> = new containers.LinkedBlockingQueue<int | undefined>(10);
+            let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
             let res = queueIntPop1.getEnd();
             let res1 = queueIntPop1.size;
-            expect(JSON.stringify(res)).assertEqual('');
-            expect(JSON.stringify(res1)).assertEqual('0');
+            expect(res).assertUndefined();
+            expect(res1).assertEqual(0);
         })
 
         /**
