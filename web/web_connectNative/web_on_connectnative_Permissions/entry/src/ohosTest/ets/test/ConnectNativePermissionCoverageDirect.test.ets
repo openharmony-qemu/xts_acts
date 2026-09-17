@@ -47,7 +47,7 @@ export default function connectNativePermissionCoverageDirect() {
     });
 
     /**
-     * @tc.name   SUB_WEB_WebNativeMessagingExtension_ConnectNative_PermissionDeny_0100
+     * @tc.name   testConnectNativePermission201Direct
      * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_PermissionDeny_0100
      * @tc.desc   connectNative without ohos.permission.WEB_NATIVE_MESSAGING in module.json5 returns 201
      * @tc.type   FUNCTION
@@ -91,7 +91,7 @@ export default function connectNativePermissionCoverageDirect() {
       })
 
     /**
-     * @tc.name   SUB_WEB_WebNativeMessagingExtension_DisconnectNative_PermissionDeny_0200
+     * @tc.name   testDisconnectNativePermission201Direct
      * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_PermissionDeny_0200
      * @tc.desc   disconnectNative without ohos.permission.WEB_NATIVE_MESSAGING in module.json5 returns 201
      * @tc.type   FUNCTION
