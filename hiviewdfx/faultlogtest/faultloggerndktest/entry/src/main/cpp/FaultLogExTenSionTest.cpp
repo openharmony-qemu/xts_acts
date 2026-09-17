@@ -20,7 +20,8 @@
 #include <hiappevent/hiappevent_event.h>
 #include <sys/prctl.h>
 
-#define PARAM_4 5
+#define PARAM_1 5
+#define PARAM_2 6
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
@@ -69,7 +70,7 @@ static void OnExternalLogCapacityReached(OH_HiAppEvent_ExternalLog* externalLogA
   for (uint32_t i = 0; i < arrLen; i++) {
       OH_HiAppEvent_ExternalLog* log = &externalLogArr[i];
       OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent [cpi]  filePath: %{public}s, %{public}lld, %{public}ld kb event: %{public}d", log->filePath, log->generationTs, log->fileSize, log->event);
-    if (i >= PARAM_4) {
+    if (i >= PARAM_1) {
         break;
     }
   }
@@ -82,7 +83,7 @@ static napi_value RegisterExternalLogMgrSuccess(napi_env env, napi_callback_info
     OH_LOG_INFO(LOG_APP, "testTag start");
     systemEventWatcherR = OH_HiAppEvent_CreateWatcher("Watcher987");
     const char *names[] = {EVENT_APP_CRASH, EVENT_APP_FREEZE, EVENT_ADDRESS_SANITIZER, EVENT_CPU_USAGE_HIGH, EVENT_APP_HICOLLIE, EVENT_RESOURCE_OVERLIMIT};
-    OH_HiAppEvent_SetAppEventFilter(systemEventWatcherR, DOMAIN_OS, 0, names, 6);
+    OH_HiAppEvent_SetAppEventFilter(systemEventWatcherR, DOMAIN_OS, 0, names, PARAM_2);
     OH_HiAppEvent_SetWatcherOnReceive(systemEventWatcherR, OnReceiveCrashEvent);
     OH_HiAppEvent_AddWatcher(systemEventWatcherR);
     int code = OH_HiAppEvent_RegExternalLogCapacityReachedCallback(OnExternalLogCapacityReached);
