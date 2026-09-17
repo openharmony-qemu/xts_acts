@@ -21,10 +21,10 @@ namespace ArkUICapiTest {
 
 static napi_value SetUiDvsyncSwitchTest001(napi_env env, napi_callback_info info)
 {
-    NAPI_START(column, ARKUI_NODE_COLUMN);
     ArkUI_ContextHandle context1;
     auto ret = OH_ArkUI_NodeUtils_SetUiDvsyncSwitch(context1, true);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    NAPI_START(column, ARKUI_NODE_COLUMN);
     auto context = OH_ArkUI_GetContextByNode(column);
     ASSERT_EQ(context != nullptr, true);
     ret = OH_ArkUI_NodeUtils_SetUiDvsyncSwitch(context, true);
