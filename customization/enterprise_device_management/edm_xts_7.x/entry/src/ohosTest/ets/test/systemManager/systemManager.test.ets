@@ -2468,6 +2468,37 @@ function testCreateExactTimer() {
   });
 
   /**
+   * @tc.name   test_create_exact_timer_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_CREATE_EXACT_TIMER_JS_0500
+   * @tc.desc   test systemManager createExactTimer with empty name
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_create_exact_timer_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let config: systemManager.ExactTimerConfig = {
+        name: '',
+        repeat: true,
+        interval: TEST_TIMER_INTERVAL,
+        callback: () => {}
+      };
+      await systemManager.createExactTimer(config);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
    * @tc.name   test_create_exact_timer_0700
    * @tc.number SUB_CUSTOMIZATION_EDM_CREATE_EXACT_TIMER_JS_0700
    * @tc.desc   test systemManager createExactTimer with name exceeding max length
@@ -2545,6 +2576,107 @@ function testCreateExactTimer() {
         name: TEST_TIMER_NAME,
         repeat: true,
         interval: 86400001,
+        callback: () => {}
+      };
+      await systemManager.createExactTimer(config);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_create_exact_timer_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_CREATE_EXACT_TIMER_JS_1000
+   * @tc.desc   test systemManager createExactTimer with name at max length boundary
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_create_exact_timer_1000", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let timerId: number = -1;
+    try {
+      let config: systemManager.ExactTimerConfig = {
+        name: 'a'.repeat(64),
+        repeat: true,
+        interval: TEST_TIMER_INTERVAL,
+        callback: () => {}
+      };
+      timerId = await systemManager.createExactTimer(config);
+      expect(timerId >= 0).assertTrue();
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      if (timerId >= 0) {
+        try {
+          await systemManager.destroyExactTimer(timerId);
+        } catch (e) {
+          console.info('destroyExactTimer failed: ' + JSON.stringify(e));
+        }
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_create_exact_timer_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_CREATE_EXACT_TIMER_JS_1100
+   * @tc.desc   test systemManager createExactTimer with interval at max boundary
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_create_exact_timer_1100", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let timerId: number = -1;
+    try {
+      let config: systemManager.ExactTimerConfig = {
+        name: TEST_TIMER_NAME,
+        repeat: true,
+        interval: 86400000,
+        callback: () => {}
+      };
+      timerId = await systemManager.createExactTimer(config);
+      expect(timerId >= 0).assertTrue();
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      if (timerId >= 0) {
+        try {
+          await systemManager.destroyExactTimer(timerId);
+        } catch (e) {
+          console.info('destroyExactTimer failed: ' + JSON.stringify(e));
+        }
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_create_exact_timer_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_CREATE_EXACT_TIMER_JS_1200
+   * @tc.desc   test systemManager createExactTimer with one-shot timer but non-zero interval
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_create_exact_timer_1200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let config: systemManager.ExactTimerConfig = {
+        name: TEST_TIMER_NAME,
+        repeat: false,
+        interval: TEST_TIMER_INTERVAL,
         callback: () => {}
       };
       await systemManager.createExactTimer(config);
@@ -2935,6 +3067,86 @@ function testStartExactTimer() {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
+  /**
+   * @tc.name   test_start_exact_timer_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_START_EXACT_TIMER_JS_1000
+   * @tc.desc   test systemManager startExactTimer with triggerTime zero
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_start_exact_timer_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let timerId: number = -1;
+    try {
+      timerId = await systemManager.createExactTimer(getValidTimerConfig());
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      done();
+      return;
+    }
+    try {
+      await systemManager.startExactTimer(timerId, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200012).assertTrue();
+      }
+    } finally {
+      if (timerId >= 0) {
+        try {
+          await systemManager.destroyExactTimer(timerId);
+        } catch (e) {
+          console.info('destroyExactTimer failed: ' + JSON.stringify(e));
+        }
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_start_exact_timer_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_START_EXACT_TIMER_JS_1100
+   * @tc.desc   test systemManager startExactTimer with negative triggerTime
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_start_exact_timer_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let timerId: number = -1;
+    try {
+      timerId = await systemManager.createExactTimer(getValidTimerConfig());
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      done();
+      return;
+    }
+    try {
+      await systemManager.startExactTimer(timerId, -1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200012).assertTrue();
+      }
+    } finally {
+      if (timerId >= 0) {
+        try {
+          await systemManager.destroyExactTimer(timerId);
+        } catch (e) {
+          console.info('destroyExactTimer failed: ' + JSON.stringify(e));
+        }
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
   });
 }
 
@@ -3103,6 +3315,45 @@ function testStopExactTimer() {
       await systemManager.stopExactTimer(timerId);
     } catch (error) {
       expect(error.code === 801).assertTrue();
+    } finally {
+      if (timerId >= 0) {
+        try {
+          await systemManager.destroyExactTimer(timerId);
+        } catch (e) {
+          console.info('destroyExactTimer failed: ' + JSON.stringify(e));
+        }
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  /**
+   * @tc.name   test_stop_exact_timer_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_STOP_EXACT_TIMER_JS_0800
+   * @tc.desc   test systemManager stopExactTimer with unstarted timer
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_stop_exact_timer_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let timerId: number = -1;
+    try {
+      timerId = await systemManager.createExactTimer(getValidTimerConfig());
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      done();
+      return;
+    }
+    try {
+      await systemManager.stopExactTimer(timerId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9201054).assertTrue();
+      }
     } finally {
       if (timerId >= 0) {
         try {
