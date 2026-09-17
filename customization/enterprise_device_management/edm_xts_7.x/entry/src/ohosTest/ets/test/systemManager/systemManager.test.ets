@@ -2679,7 +2679,8 @@ function testCreateExactTimer() {
         interval: TEST_TIMER_INTERVAL,
         callback: () => {}
       };
-      await systemManager.createExactTimer(config);
+      let timerId: number = await systemManager.createExactTimer(config);
+      expect(timerId >= 0).assertTrue();
     } catch (error) {
       expect(error.code === 801).assertTrue();
     } finally {
