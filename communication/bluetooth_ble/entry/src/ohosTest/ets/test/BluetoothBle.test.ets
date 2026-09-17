@@ -3408,9 +3408,9 @@ export default function bluetoothBleTest() {
                 console.info(`${caseName} startBLEScan success`);
             } catch (err) {
                 console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code == '801') {
                     console.info('[bluetooth_js]startBLEScan is not support');
-                    expect(Number(err.code)).assertEqual(801);
+                    expect(err.code).assertEqual('801');
                 } else {
                     console.info(`${caseName} startBLEScan failed, invalid dutyMode parameter.`);
                     expect().assertFail();
@@ -3448,9 +3448,9 @@ export default function bluetoothBleTest() {
                 console.info(`${caseName} startBLEScan success`);
             } catch (err) {
                 console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code == '801') {
                     console.info('[bluetooth_js]startBLEScan is not support');
-                    expect(Number(err.code)).assertEqual(801);
+                    expect(err.code).assertEqual('801');
                 } else {
                     console.info(`${caseName} startBLEScan failed, invalid matchMode parameter.`);
                     expect().assertFail();
@@ -3488,9 +3488,9 @@ export default function bluetoothBleTest() {
                 console.info(`${caseName} startBLEScan success`);               
             } catch (err) {
                 console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code == '801') {
                     console.info('[bluetooth_js]startBLEScan is not support');
-                    expect(Number(err.code)).assertEqual(801);
+                    expect(err.code).assertEqual('801');
                 } else {
                     console.info(`${caseName} startBLEScan failed, invalid phyType parameter.`);
                     expect().assertFail();
@@ -3528,9 +3528,9 @@ export default function bluetoothBleTest() {
                 console.info(`${caseName} startBLEScan success`);
             } catch (err) {
                 console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code == '801') {
                     console.info('[bluetooth_js]startBLEScan is not support');
-                    expect(Number(err.code)).assertEqual(801);
+                    expect(err.code).assertEqual('801');
                 } else {
                     console.info(`${caseName} startBLEScan failed, invalid reportMode parameter.`);
                     expect().assertFail();
@@ -3569,11 +3569,11 @@ export default function bluetoothBleTest() {
                 
             } catch (err) {
                 console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code == '801') {
                     console.info('[bluetooth_js]startBLEScan is not support');
-                    expect(true).assertTrue();
+                    expect(err.code).assertEqual('801');
                 } else {
-                    expect(Number(err.code)).assertEqual(2900099);
+                    expect().assertFail();
                 }
             }
             bluetooth.off("BLEDeviceFind", onReceiveEvent);
@@ -3610,11 +3610,11 @@ export default function bluetoothBleTest() {
                 
             } catch (err) {
                 console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code == '801') {
                     console.info('[bluetooth_js]startBLEScan is not support');
-                    expect(true).assertTrue();
+                    expect(err.code).assertEqual('801');
                 } else {
-                    expect(Number(err.code)).assertEqual(2900099);
+                    expect().assertFail();
                 }
             }
             bluetooth.off("BLEDeviceFind", onReceiveEvent);
