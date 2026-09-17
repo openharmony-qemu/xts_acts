@@ -128,7 +128,7 @@ let Integer: IntegerType = {
     MAX_VALUE: 2147483647
 };
 
-export default function LinkedBlockingQueuetest() {
+export default function LinkedBlockingQueuetest(): void {
     describe("linked_Blocking_Queue_", (): void => {
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_BLOCKING_QUEUE_NO_PARAMETER_TEST_0100
