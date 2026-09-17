@@ -1702,7 +1702,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.info("====> testErrorManger_4400 globalErrorOccurred catch: " + JSON.stringify(err));
-        expect(err.code == 16200001).assertTrue();
+        expect(err.code === 16200001).assertTrue();
         errorManager.off('globalErrorOccurred', errorFunc);
         done();
       }
