@@ -56,13 +56,13 @@ export default function RegisterExternalLogMgr() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('RegisterExternalLogMgrnullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('RegisterExternalLogMgrnullptr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         let code = testNapi.RegisterExternalLogMgrnullptr();
         expect(code == -9).assertTrue();
         done();
       } catch (err) {
-        console.error(`====>testTag RegisterExternalLogMgrnullptr > err code: ${err.code}, err msg: ${err.message}`)
+        console.error(`====>testTag RegisterExternalLogMgrnullptr001 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
       }
