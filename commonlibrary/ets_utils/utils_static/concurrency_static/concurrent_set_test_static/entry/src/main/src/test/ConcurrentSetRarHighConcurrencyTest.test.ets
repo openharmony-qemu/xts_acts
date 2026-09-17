@@ -694,13 +694,17 @@ export default function ConcurrentSetRarHighConcurrencyTest(): void {
       for (let i = 0; i < 50; i++) {
         promises.push(taskpool.execute(new taskpool.Task(clearAddMixTask, set, false, (200 + i) * 1.0, counter)))
       }
-      await Promise.all(promises)
-      expect(counter.load()).assertEqual(60)
-      let postClearAddPromises: Promise<Any>[] = []
-      for (let i = 200; i < 250; i++) {
-        postClearAddPromises.push(taskpool.execute(new taskpool.Task(addDiffValueTask, set, i * 1.0)))
+      try {
+        await Promise.all(promises)
+        expect(counter.load()).assertEqual(60)
+        let postClearAddPromises: Promise<Any>[] = []
+        for (let i = 200; i < 250; i++) {
+          postClearAddPromises.push(taskpool.execute(new taskpool.Task(addDiffValueTask, set, i * 1.0)))
+        }
+        await Promise.all(postClearAddPromises)
+      } catch (e) {
+        throw e
       }
-      await Promise.all(postClearAddPromises)
       let addedPhase: boolean = true
       for (let i = 200; i < 250; i++) {
         if (!set.has(i)) {
@@ -1817,8 +1821,10 @@ export default function ConcurrentSetRarHighConcurrencyTest(): void {
       let promises: Promise<Any>[] = []
       let readyTask: taskpool.Task = new taskpool.Task(fullReadWriteNumberReadyTask, set, hostStart, completed)
       let ready: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
-        readyTask.onReceiveData((): void => {
-          resolve(undefined)
+        readyTask.onReceiveData((signal: number): void => {
+          if (signal === 1.0) {
+            resolve(undefined)
+          }
         })
       })
       promises.push(taskpool.execute(readyTask))
@@ -2106,21 +2112,27 @@ export default function ConcurrentSetRarHighConcurrencyTest(): void {
       let promises: Promise<Any>[] = []
       let readyTask: taskpool.Task = new taskpool.Task(iterateDuringModifyReadyTask, set, hostStart, completed)
       let ready: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
-        readyTask.onReceiveData((): void => {
-          resolve(undefined)
+        readyTask.onReceiveData((signal: number): void => {
+          if (signal === 1.0) {
+            resolve(undefined)
+          }
         })
       })
       promises.push(taskpool.execute(readyTask))
       for (let i = 1; i < 20; i++) {
         promises.push(taskpool.execute(new taskpool.Task(iterateDuringModifyCountedTask, set, completed)))
       }
-      await ready
-      hostStart.store(1)
-      for (let i = 0; i < 20; i++) {
-        iterateDuringModifyTask(set)
-        completed.fetchAdd(1)
+      try {
+        await ready
+        hostStart.store(1)
+        for (let i = 0; i < 20; i++) {
+          iterateDuringModifyTask(set)
+          completed.fetchAdd(1)
+        }
+        await Promise.all(promises)
+      } catch (e) {
+        throw e
       }
-      await Promise.all(promises)
       expect(completed.load()).assertEqual(40)
       expect(verifySetConsistencyNumber(set)).assertTrue()
       done()
