@@ -922,7 +922,6 @@ export default function JsLeakWatcherNewStaticTest():void {
         });
         await Utils.msSleep(5000);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_3600 callback not triggered within timeout');
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcher_Interface_3600 > err code: ${err.code}, err msg: ${err.message}`)
