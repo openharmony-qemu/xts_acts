@@ -1328,7 +1328,6 @@ export default function JsLeakNewConfigEnableStatic():void {
         });
         await Utils.msSleep(5000);0
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_5100 callback not triggered within timeout');
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_5100 > err code: ${err.code}, err msg: ${err.message}`)
