@@ -104,7 +104,7 @@ const loopFiveTimes: number = 2;
 // The expected value is 1000 and to prevent runtime timeout, change the value to 100.
 const thousandTimes: number = 100;
 
-export default function ConcurrentSetTest() {
+export default function ConcurrentSetTest(): void {
   let intervalId: int | undefined = -1;
 
   describe("ConcurrentSetTest", (): void => {
