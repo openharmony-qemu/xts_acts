@@ -20,6 +20,23 @@ import webNativeMessagingExtensionManager from '@ohos.web.webNativeMessagingExte
 
 const PERMISSION_DENIED_ERROR = 201;
 const CAPABILITY_NOT_SUPPORTED_ERROR = 801;
+const WEB_NATIVE_MESSAGING_PERMISSION = 'ohos.permission.WEB_NATIVE_MESSAGING';
+const DISCONNECT_TEST_CONNECTION_ID = 1;
+const PERMISSION_CHECK_WAIT_MS = 2000;
+
+function sleep(time: number): Promise<void> {
+  return new Promise((resolve: () => void) => {
+    setTimeout(resolve, time);
+  });
+}
+
+function assertPermissionOrCapabilityError(code: number): void {
+  if (code === CAPABILITY_NOT_SUPPORTED_ERROR) {
+    expect(code).assertEqual(CAPABILITY_NOT_SUPPORTED_ERROR);
+  } else {
+    expect(code).assertEqual(PERMISSION_DENIED_ERROR);
+  }
+}
 
 export default function connectNativePermissionCoverageDirect() {
   describe('connectNativePermissionCoverageDirect', () => {
@@ -40,7 +57,7 @@ export default function connectNativePermissionCoverageDirect() {
     it('testConnectNativePermission201Direct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         const tcNumber = 'SUB_WEB_CONNECTNATIVE_PERMISSION_201_0100';
-        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin, permission=${WEB_NATIVE_MESSAGING_PERMISSION} not declared`);
 
         let want: Want = {
           bundleName: 'com.acts.context.webonconnectnativerelypermission',
@@ -51,7 +68,9 @@ export default function connectNativePermissionCoverageDirect() {
         };
 
         let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
-          onConnect: () => {},
+          onConnect: () => {
+            hilog.info(0x0000, 'testTag', `${tcNumber} onConnect unexpected without permission`);
+          },
           onDisconnect: () => {},
           onFailed: (code: number, errMsg: string) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
@@ -60,15 +79,13 @@ export default function connectNativePermissionCoverageDirect() {
 
         try {
           webNativeMessagingExtensionManager.connectNative(context, want, callback);
-          await new Promise<void>((resolve: () => void) => setTimeout(resolve, 1000));
+          await sleep(PERMISSION_CHECK_WAIT_MS);
+          hilog.info(0x0000, 'testTag', `${tcNumber} connectNative returned without throwing 201`);
+          expect().assertFail();
           done();
-        } catch (err) {
+        } catch (err: BusinessError) {
           hilog.info(0x0000, 'testTag', `${tcNumber} connectNative error: ${JSON.stringify(err)}`);
-          if (Number(err.code) === CAPABILITY_NOT_SUPPORTED_ERROR) {
-            expect(Number(err.code)).assertEqual(CAPABILITY_NOT_SUPPORTED_ERROR);
-          } else {
-            expect(Number(err.code)).assertEqual(PERMISSION_DENIED_ERROR);
-          }
+          assertPermissionOrCapabilityError(Number(err.code));
           done();
         }
       })
@@ -84,24 +101,21 @@ export default function connectNativePermissionCoverageDirect() {
     it('testDisconnectNativePermission201Direct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         const tcNumber = 'SUB_WEB_DISCONNECTNATIVE_PERMISSION_201_0100';
-        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin, permission=${WEB_NATIVE_MESSAGING_PERMISSION} not declared`);
 
         try {
-          await webNativeMessagingExtensionManager.disconnectNative(1).then(() => {
+          await webNativeMessagingExtensionManager.disconnectNative(DISCONNECT_TEST_CONNECTION_ID).then(() => {
             hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative completed without error`);
+            expect().assertFail();
             done();
           }).catch((err: BusinessError) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative error: ${JSON.stringify(err)}`);
-            if (Number(err.code) === CAPABILITY_NOT_SUPPORTED_ERROR) {
-              expect(Number(err.code)).assertEqual(CAPABILITY_NOT_SUPPORTED_ERROR);
-            } else {
-              expect(Number(err.code)).assertEqual(PERMISSION_DENIED_ERROR);
-            }
+            assertPermissionOrCapabilityError(Number(err.code));
             done();
           });
-        } catch (err) {
+        } catch (err: BusinessError) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error: ${JSON.stringify(err)}`);
-          expect(Number(err.code)).assertEqual(CAPABILITY_NOT_SUPPORTED_ERROR);
+          assertPermissionOrCapabilityError(Number(err.code));
           done();
         }
       })
