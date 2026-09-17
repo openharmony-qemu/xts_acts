@@ -104,7 +104,7 @@ const loopTenTimes: int = 2;
 
 const arrayWithNulls = new Array<Int | null | undefined>(1, null, 2, undefined, 3)
 
-export default function ArrayBlockingQueuetest() {
+export default function ArrayBlockingQueuetest(): void {
 
   const thousandElementsArray = new Array<Int>()
 
