@@ -33,7 +33,17 @@ export default function abilityTest(abilityContext:common.UIAbilityContext) {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_LaunchRule_StartUpRuleOptimizeTest_0700
      * @tc.number SUB_Ability_AbilityRuntime_LaunchRule_StartUpRuleOptimizeTest_0700
-     * @tc.desc   number one:Start test Demo;number two:Test Demo's Ability to call startAbilityForResult to * @tc.type   FUNCTION * @tc.size   MEDIUMTEST * @tc.level  LEVEL1 */ it('SUB_Ability_AbilityRuntime_LaunchRule_StartUpRuleOptimizeTest_0700', Level.LEVEL1, async (done: Function) => { try { TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LaunchRule_StartUpRuleOptimizeTest_0700'; let isStartAbility = false await testFlow(() => { // start ability
+     * @tc.desc   number one:Start test Demo;number two:Test Demo's Ability to call startAbilityForResult to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_LaunchRule_StartUpRuleOptimizeTest_0700', Level.LEVEL1, async (done: Function) => {
+      try {
+        TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LaunchRule_StartUpRuleOptimizeTest_0700';
+        let isStartAbility = false
+        await testFlow(() => {
+          // start ability
           let want: Want = {
             deviceId: '',
             bundleName: bundleName,
