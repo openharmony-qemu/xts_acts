@@ -686,7 +686,7 @@ export default function DisplayNdkTest() {
     })
     /**
      * @tc.name   test_OH_NativeDisplayManager_CreateAvailableArea_InvalidParam
-     * @tc.number OH_NativeDisplayManager_CreateAvailableAreaMax
+     * @tc.number SUB_DMS_OH_NativeDisplayManager_CreateAvailableArea_0200
      * @tc.desc   test_OH_NativeDisplayManager_CreateAvailableArea参数边界值覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
