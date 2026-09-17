@@ -17,7 +17,7 @@
     "name": "entry",
     "type": "entry",
     "mainElement": "EntryAbility",
-    "deviceTypes": [ "default", "tablet" ],
+    "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
     "abilities": [

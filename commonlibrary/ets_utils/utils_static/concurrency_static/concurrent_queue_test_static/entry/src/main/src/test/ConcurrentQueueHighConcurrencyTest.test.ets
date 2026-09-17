@@ -177,12 +177,16 @@ export default function ConcurrentQueueHighConcurrencyTest(): void {
      */
     it('ConcurrentQueueHighConcurrencyTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let queue: containers.stackless.ConcurrentQueue<number> =
-          new containers.stackless.LinkedConcurrentQueue<number>(100);
-        let result: Any = await taskpool.execute(addPollTask, queue, 0.0, 10.0);
-        expect(result as number).assertEqual(10);
-        expect(queue.isEmpty()).assertTrue();
-        expect(queue.size).assertEqual(0);
+        try {
+          let queue: containers.stackless.ConcurrentQueue<number> =
+            new containers.stackless.LinkedConcurrentQueue<number>(100);
+          let result: Any = await taskpool.execute(addPollTask, queue, 0.0, 10.0);
+          expect(result as number).assertEqual(10);
+          expect(queue.isEmpty()).assertTrue();
+          expect(queue.size).assertEqual(0);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -1055,23 +1059,27 @@ export default function ConcurrentQueueHighConcurrencyTest(): void {
      */
     it('ConcurrentQueueHighConcurrencyTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let queue: containers.stackless.ConcurrentQueue<number> =
-          new containers.stackless.LinkedConcurrentQueue<number>(100);
-        let result: Any = await taskpool.execute(nestedQueueTask, queue, 1.0, 1.0, 0.0, 10.0);
-        expect(result as number).assertEqual(10);
-        expect(queue.size).assertEqual(10);
-        let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
-        for (let i: number = 0; i < 10; i++) {
-          let item: number | undefined = queue.poll();
-          if (item !== undefined) {
-            seen.add(item);
+        try {
+          let queue: containers.stackless.ConcurrentQueue<number> =
+            new containers.stackless.LinkedConcurrentQueue<number>(100);
+          let result: Any = await taskpool.execute(nestedQueueTask, queue, 1.0, 1.0, 0.0, 10.0);
+          expect(result as number).assertEqual(10);
+          expect(queue.size).assertEqual(10);
+          let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
+          for (let i: number = 0; i < 10; i++) {
+            let item: number | undefined = queue.poll();
+            if (item !== undefined) {
+              seen.add(item);
+            }
           }
+          expect(seen.size).assertEqual(10);
+          for (let i: number = 0; i < 10; i++) {
+            expect(seen.has(i)).assertTrue();
+          }
+          expect(queue.isEmpty()).assertTrue();
+        } catch (error) {
+          expect(error).assertFail();
         }
-        expect(seen.size).assertEqual(10);
-        for (let i: number = 0; i < 10; i++) {
-          expect(seen.has(i)).assertTrue();
-        }
-        expect(queue.isEmpty()).assertTrue();
         done();
       });
 
@@ -1085,23 +1093,27 @@ export default function ConcurrentQueueHighConcurrencyTest(): void {
      */
     it('ConcurrentQueueHighConcurrencyTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let queue: containers.stackless.ConcurrentQueue<number> =
-          new containers.stackless.LinkedConcurrentQueue<number>(100);
-        let result: Any = await taskpool.execute(nestedQueueTask, queue, 1.0, 2.0, 0.0, 10.0);
-        expect(result as number).assertEqual(10);
-        expect(queue.size).assertEqual(10);
-        let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
-        for (let i: number = 0; i < 10; i++) {
-          let item: number | undefined = queue.poll();
-          if (item !== undefined) {
-            seen.add(item);
+        try {
+          let queue: containers.stackless.ConcurrentQueue<number> =
+            new containers.stackless.LinkedConcurrentQueue<number>(100);
+          let result: Any = await taskpool.execute(nestedQueueTask, queue, 1.0, 2.0, 0.0, 10.0);
+          expect(result as number).assertEqual(10);
+          expect(queue.size).assertEqual(10);
+          let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
+          for (let i: number = 0; i < 10; i++) {
+            let item: number | undefined = queue.poll();
+            if (item !== undefined) {
+              seen.add(item);
+            }
           }
+          expect(seen.size).assertEqual(10);
+          for (let i: number = 0; i < 10; i++) {
+            expect(seen.has(i)).assertTrue();
+          }
+          expect(queue.isEmpty()).assertTrue();
+        } catch (error) {
+          expect(error).assertFail();
         }
-        expect(seen.size).assertEqual(10);
-        for (let i: number = 0; i < 10; i++) {
-          expect(seen.has(i)).assertTrue();
-        }
-        expect(queue.isEmpty()).assertTrue();
         done();
       });
 
@@ -1115,23 +1127,27 @@ export default function ConcurrentQueueHighConcurrencyTest(): void {
      */
     it('ConcurrentQueueHighConcurrencyTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let queue: containers.stackless.ConcurrentQueue<number> =
-          new containers.stackless.LinkedConcurrentQueue<number>(100);
-        let result: Any = await taskpool.execute(nestedQueueTask, queue, 1.0, 3.0, 0.0, 10.0);
-        expect(result as number).assertEqual(10);
-        expect(queue.size).assertEqual(10);
-        let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
-        for (let i: number = 0; i < 10; i++) {
-          let item: number | undefined = queue.poll();
-          if (item !== undefined) {
-            seen.add(item);
+        try {
+          let queue: containers.stackless.ConcurrentQueue<number> =
+            new containers.stackless.LinkedConcurrentQueue<number>(100);
+          let result: Any = await taskpool.execute(nestedQueueTask, queue, 1.0, 3.0, 0.0, 10.0);
+          expect(result as number).assertEqual(10);
+          expect(queue.size).assertEqual(10);
+          let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
+          for (let i: number = 0; i < 10; i++) {
+            let item: number | undefined = queue.poll();
+            if (item !== undefined) {
+              seen.add(item);
+            }
           }
+          expect(seen.size).assertEqual(10);
+          for (let i: number = 0; i < 10; i++) {
+            expect(seen.has(i)).assertTrue();
+          }
+          expect(queue.isEmpty()).assertTrue();
+        } catch (error) {
+          expect(error).assertFail();
         }
-        expect(seen.size).assertEqual(10);
-        for (let i: number = 0; i < 10; i++) {
-          expect(seen.has(i)).assertTrue();
-        }
-        expect(queue.isEmpty()).assertTrue();
         done();
       });
 
@@ -1145,23 +1161,27 @@ export default function ConcurrentQueueHighConcurrencyTest(): void {
      */
     it('ConcurrentQueueHighConcurrencyTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let queue: containers.stackless.ConcurrentQueue<number> =
-          new containers.stackless.LinkedConcurrentQueue<number>(100);
-        let result: Any = await taskpool.execute(nestedQueueTask, queue, 1.0, 5.0, 0.0, 10.0);
-        expect(result as number).assertEqual(10);
-        expect(queue.size).assertEqual(10);
-        let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
-        for (let i: number = 0; i < 10; i++) {
-          let item: number | undefined = queue.poll();
-          if (item !== undefined) {
-            seen.add(item);
+        try {
+          let queue: containers.stackless.ConcurrentQueue<number> =
+            new containers.stackless.LinkedConcurrentQueue<number>(100);
+          let result: Any = await taskpool.execute(nestedQueueTask, queue, 1.0, 5.0, 0.0, 10.0);
+          expect(result as number).assertEqual(10);
+          expect(queue.size).assertEqual(10);
+          let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
+          for (let i: number = 0; i < 10; i++) {
+            let item: number | undefined = queue.poll();
+            if (item !== undefined) {
+              seen.add(item);
+            }
           }
+          expect(seen.size).assertEqual(10);
+          for (let i: number = 0; i < 10; i++) {
+            expect(seen.has(i)).assertTrue();
+          }
+          expect(queue.isEmpty()).assertTrue();
+        } catch (error) {
+          expect(error).assertFail();
         }
-        expect(seen.size).assertEqual(10);
-        for (let i: number = 0; i < 10; i++) {
-          expect(seen.has(i)).assertTrue();
-        }
-        expect(queue.isEmpty()).assertTrue();
         done();
       });
 
@@ -1261,46 +1281,50 @@ export default function ConcurrentQueueHighConcurrencyTest(): void {
      */
     it('ConcurrentQueueHighConcurrencyTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let queue: containers.stackless.ConcurrentQueue<number> =
-          new containers.stackless.LinkedConcurrentQueue<number>(200);
-        let producerTasks: Promise<Any>[] = [];
-        let firstReady: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
-          let readyTask: taskpool.Task = new taskpool.Task(producerTask, queue, 0.0, 20.0, true);
-          readyTask.onReceiveData((signal: number): void => {
-            if (signal === 1.0) {
-              resolve(undefined);
-            }
+        try {
+          let queue: containers.stackless.ConcurrentQueue<number> =
+            new containers.stackless.LinkedConcurrentQueue<number>(200);
+          let producerTasks: Promise<Any>[] = [];
+          let firstReady: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
+            let readyTask: taskpool.Task = new taskpool.Task(producerTask, queue, 0.0, 20.0, true);
+            readyTask.onReceiveData((signal: number): void => {
+              if (signal === 1.0) {
+                resolve(undefined);
+              }
+            });
+            producerTasks.push(taskpool.execute(readyTask));
           });
-          producerTasks.push(taskpool.execute(readyTask));
-        });
-        for (let i: number = 1; i < 3; i++) {
-          producerTasks.push(taskpool.execute(producerTask, queue, i * 20.0, 20.0, false));
+          for (let i: number = 1; i < 3; i++) {
+            producerTasks.push(taskpool.execute(producerTask, queue, i * 20.0, 20.0, false));
+          }
+          await firstReady;
+          let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
+          let consumerTasks: Promise<Any>[] = [];
+          for (let i: number = 0; i < 3; i++) {
+            consumerTasks.push(taskpool.execute(consumerTask, queue, seen, 20.0));
+          }
+          let producerResults: Any = await Promise.all(producerTasks);
+          let producerResultArr: Any[] = producerResults as Any[];
+          let totalProduced: number = 0;
+          for (let i: int = 0; i < 3; i++) {
+            totalProduced += producerResultArr[i] as number;
+          }
+          let results: Any = await Promise.all(consumerTasks);
+          let resultArr: Any[] = results as Any[];
+          let totalConsumed: number = 0;
+          for (let i: int = 0; i < 3; i++) {
+            totalConsumed += resultArr[i] as number;
+          }
+          expect(totalProduced).assertEqual(60);
+          expect(totalConsumed).assertEqual(60);
+          expect(seen.size).assertEqual(60);
+          for (let i: number = 0; i < 60; i++) {
+            expect(seen.has(i)).assertTrue();
+          }
+          expect(queue.isEmpty()).assertTrue();
+        } catch (error) {
+          expect(error).assertFail();
         }
-        await firstReady;
-        let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
-        let consumerTasks: Promise<Any>[] = [];
-        for (let i: number = 0; i < 3; i++) {
-          consumerTasks.push(taskpool.execute(consumerTask, queue, seen, 20.0));
-        }
-        let producerResults: Any = await Promise.all(producerTasks);
-        let producerResultArr: Any[] = producerResults as Any[];
-        let totalProduced: number = 0;
-        for (let i: int = 0; i < 3; i++) {
-          totalProduced += producerResultArr[i] as number;
-        }
-        let results: Any = await Promise.all(consumerTasks);
-        let resultArr: Any[] = results as Any[];
-        let totalConsumed: number = 0;
-        for (let i: int = 0; i < 3; i++) {
-          totalConsumed += resultArr[i] as number;
-        }
-        expect(totalProduced).assertEqual(60);
-        expect(totalConsumed).assertEqual(60);
-        expect(seen.size).assertEqual(60);
-        for (let i: number = 0; i < 60; i++) {
-          expect(seen.has(i)).assertTrue();
-        }
-        expect(queue.isEmpty()).assertTrue();
         done();
       });
 
@@ -1444,27 +1468,31 @@ export default function ConcurrentQueueHighConcurrencyTest(): void {
      */
     it('ConcurrentQueueHighConcurrencyTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let queue: containers.stackless.ConcurrentQueue<number> =
-          new containers.stackless.LinkedConcurrentQueue<number>(500);
-        let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
-        let tasks: Promise<Any>[] = [];
-        for (let i: number = 0; i < 20; i++) {
-          tasks.push(taskpool.execute(fullApiParticipant, queue, i * 10.0, 5.0, seen));
+        try {
+          let queue: containers.stackless.ConcurrentQueue<number> =
+            new containers.stackless.LinkedConcurrentQueue<number>(500);
+          let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
+          let tasks: Promise<Any>[] = [];
+          for (let i: number = 0; i < 20; i++) {
+            tasks.push(taskpool.execute(fullApiParticipant, queue, i * 10.0, 5.0, seen));
+          }
+          let mainResult: number = await fullApiParticipant(queue, 200, 5, seen);
+          let results: Any = await Promise.all(tasks);
+          let resultArr: Any[] = results as Any[];
+          for (let i: int = 0; i < 20; i++) {
+            expect(resultArr[i] as number).assertEqual(10);
+          }
+          expect(mainResult).assertEqual(10);
+          expect(seen.size).assertEqual(210);
+          for (let i: number = 0; i < 210; i++) {
+            expect(seen.has(i)).assertTrue();
+          }
+          expect(queue.isEmpty()).assertTrue();
+          expect(queue.size).assertEqual(0);
+          expect(queue.remainingCapacity()).assertEqual(500);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        let mainResult: number = await fullApiParticipant(queue, 200, 5, seen);
-        let results: Any = await Promise.all(tasks);
-        let resultArr: Any[] = results as Any[];
-        for (let i: int = 0; i < 20; i++) {
-          expect(resultArr[i] as number).assertEqual(10);
-        }
-        expect(mainResult).assertEqual(10);
-        expect(seen.size).assertEqual(210);
-        for (let i: number = 0; i < 210; i++) {
-          expect(seen.has(i)).assertTrue();
-        }
-        expect(queue.isEmpty()).assertTrue();
-        expect(queue.size).assertEqual(0);
-        expect(queue.remainingCapacity()).assertEqual(500);
         done();
       });
 
@@ -1478,27 +1506,31 @@ export default function ConcurrentQueueHighConcurrencyTest(): void {
      */
     it('ConcurrentQueueHighConcurrencyTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let queue: containers.stackless.ConcurrentQueue<number> =
-          new containers.stackless.LinkedConcurrentQueue<number>(500);
-        let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
-        let tasks: Promise<Any>[] = [];
-        for (let i: number = 0; i < 50; i++) {
-          tasks.push(taskpool.execute(fullApiParticipant, queue, i * 4.0, 2.0, seen));
+        try {
+          let queue: containers.stackless.ConcurrentQueue<number> =
+            new containers.stackless.LinkedConcurrentQueue<number>(500);
+          let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
+          let tasks: Promise<Any>[] = [];
+          for (let i: number = 0; i < 50; i++) {
+            tasks.push(taskpool.execute(fullApiParticipant, queue, i * 4.0, 2.0, seen));
+          }
+          let mainResult: number = await fullApiParticipant(queue, 200, 2, seen);
+          let results: Any = await Promise.all(tasks);
+          let resultArr: Any[] = results as Any[];
+          for (let i: int = 0; i < 50; i++) {
+            expect(resultArr[i] as number).assertEqual(4);
+          }
+          expect(mainResult).assertEqual(4);
+          expect(seen.size).assertEqual(204);
+          for (let i: number = 0; i < 204; i++) {
+            expect(seen.has(i)).assertTrue();
+          }
+          expect(queue.isEmpty()).assertTrue();
+          expect(queue.size).assertEqual(0);
+          expect(queue.remainingCapacity()).assertEqual(500);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        let mainResult: number = await fullApiParticipant(queue, 200, 2, seen);
-        let results: Any = await Promise.all(tasks);
-        let resultArr: Any[] = results as Any[];
-        for (let i: int = 0; i < 50; i++) {
-          expect(resultArr[i] as number).assertEqual(4);
-        }
-        expect(mainResult).assertEqual(4);
-        expect(seen.size).assertEqual(204);
-        for (let i: number = 0; i < 204; i++) {
-          expect(seen.has(i)).assertTrue();
-        }
-        expect(queue.isEmpty()).assertTrue();
-        expect(queue.size).assertEqual(0);
-        expect(queue.remainingCapacity()).assertEqual(500);
         done();
       });
 
@@ -1512,47 +1544,51 @@ export default function ConcurrentQueueHighConcurrencyTest(): void {
      */
     it('ConcurrentQueueHighConcurrencyTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let queue: containers.stackless.ConcurrentQueue<number> =
-          new containers.stackless.LinkedConcurrentQueue<number>(200);
-        let mainProduced: number = 0;
-        for (let i: number = 0; i < 30; i++) {
-          await queue.push(i);
-          mainProduced++;
-        }
-        expect(mainProduced).assertEqual(30);
-        let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
-        let tasks: Promise<Any>[] = [];
-        for (let i: number = 0; i < 6; i++) {
-          tasks.push(taskpool.execute(popCollectTask, queue, seen, 5.0));
-        }
-        for (let i: number = 0; i < 6; i++) {
-          tasks.push(taskpool.execute(addOnlyTask, queue, 30.0 + i * 5.0, 5.0));
-        }
-        let results: Any = await Promise.all(tasks);
-        let resultArr: Any[] = results as Any[];
-        let childrenConsumed: number = 0;
-        for (let i: int = 0; i < 6; i++) {
-          childrenConsumed += resultArr[i] as number;
-        }
-        let childrenProduced: number = 0;
-        for (let i: int = 6; i < 12; i++) {
-          childrenProduced += resultArr[i] as number;
-        }
-        expect(childrenConsumed).assertEqual(30);
-        expect(childrenProduced).assertEqual(30);
-        let mainConsumed: number = 0;
-        for (let i: number = 0; i < 30; i++) {
-          let item: number | undefined = queue.poll();
-          if (item !== undefined) {
-            seen.add(item);
-            mainConsumed++;
+        try {
+          let queue: containers.stackless.ConcurrentQueue<number> =
+            new containers.stackless.LinkedConcurrentQueue<number>(200);
+          let mainProduced: number = 0;
+          for (let i: number = 0; i < 30; i++) {
+            await queue.push(i);
+            mainProduced++;
           }
-        }
-        expect(mainConsumed).assertEqual(30);
-        expect(queue.isEmpty()).assertTrue();
-        expect(seen.size).assertEqual(60);
-        for (let i: number = 0; i < 60; i++) {
-          expect(seen.has(i)).assertTrue();
+          expect(mainProduced).assertEqual(30);
+          let seen: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
+          let tasks: Promise<Any>[] = [];
+          for (let i: number = 0; i < 6; i++) {
+            tasks.push(taskpool.execute(popCollectTask, queue, seen, 5.0));
+          }
+          for (let i: number = 0; i < 6; i++) {
+            tasks.push(taskpool.execute(addOnlyTask, queue, 30.0 + i * 5.0, 5.0));
+          }
+          let results: Any = await Promise.all(tasks);
+          let resultArr: Any[] = results as Any[];
+          let childrenConsumed: number = 0;
+          for (let i: int = 0; i < 6; i++) {
+            childrenConsumed += resultArr[i] as number;
+          }
+          let childrenProduced: number = 0;
+          for (let i: int = 6; i < 12; i++) {
+            childrenProduced += resultArr[i] as number;
+          }
+          expect(childrenConsumed).assertEqual(30);
+          expect(childrenProduced).assertEqual(30);
+          let mainConsumed: number = 0;
+          for (let i: number = 0; i < 30; i++) {
+            let item: number | undefined = queue.poll();
+            if (item !== undefined) {
+              seen.add(item);
+              mainConsumed++;
+            }
+          }
+          expect(mainConsumed).assertEqual(30);
+          expect(queue.isEmpty()).assertTrue();
+          expect(seen.size).assertEqual(60);
+          for (let i: number = 0; i < 60; i++) {
+            expect(seen.has(i)).assertTrue();
+          }
+        } catch (error) {
+          expect(error).assertFail();
         }
         done();
       });
@@ -1567,52 +1603,56 @@ export default function ConcurrentQueueHighConcurrencyTest(): void {
      */
     it('ConcurrentQueueHighConcurrencyTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let queue: containers.stackless.ConcurrentQueue<number> =
-          new containers.stackless.LinkedConcurrentQueue<number>(4);
-        for (let i: number = 0; i < 4; i++) {
-          expect(queue.add(i)).assertTrue();
+        try {
+          let queue: containers.stackless.ConcurrentQueue<number> =
+            new containers.stackless.LinkedConcurrentQueue<number>(4);
+          for (let i: number = 0; i < 4; i++) {
+            expect(queue.add(i)).assertTrue();
+          }
+          expect(queue.size).assertEqual(4);
+          expect(queue.add(4)).assertFalse();
+          expect(queue.remainingCapacity()).assertEqual(0);
+          let pushTasks: Promise<Any>[] = [];
+          let pushStarted: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
+            let t: taskpool.Task = new taskpool.Task(pushBlockTask, queue, 99.0, 1.0);
+            t.onReceiveData((signal: number): void => {
+              if (signal === 1.0) {
+                resolve(undefined);
+              }
+            });
+            pushTasks.push(taskpool.execute(t));
+          });
+          await pushStarted;
+          expect(queue.poll()).assertEqual(0);
+          let pushResults: Any = await Promise.all(pushTasks);
+          expect(pushResults[0] as number).assertEqual(1);
+          expect(queue.size).assertEqual(4);
+          expect(queue.getFirst()).assertEqual(1);
+          expect(queue.poll()).assertEqual(1);
+          expect(queue.poll()).assertEqual(2);
+          expect(queue.poll()).assertEqual(3);
+          expect(queue.poll()).assertEqual(99);
+          expect(queue.poll()).assertEqual(undefined);
+          expect(queue.isEmpty()).assertTrue();
+          let popTasks: Promise<Any>[] = [];
+          let popStarted: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
+            let t: taskpool.Task = new taskpool.Task(popBlockTask, queue, 1.0);
+            t.onReceiveData((signal: number): void => {
+              if (signal === 1.0) {
+                resolve(undefined);
+              }
+            });
+            popTasks.push(taskpool.execute(t));
+          });
+          await popStarted;
+          expect(queue.add(42)).assertTrue();
+          let popResults: Any = await Promise.all(popTasks);
+          expect(popResults[0] as number).assertEqual(42);
+          expect(queue.isEmpty()).assertTrue();
+          expect(queue.size).assertEqual(0);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        expect(queue.size).assertEqual(4);
-        expect(queue.add(4)).assertFalse();
-        expect(queue.remainingCapacity()).assertEqual(0);
-        let pushTasks: Promise<Any>[] = [];
-        let pushStarted: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
-          let t: taskpool.Task = new taskpool.Task(pushBlockTask, queue, 99.0, 1.0);
-          t.onReceiveData((signal: number): void => {
-            if (signal === 1.0) {
-              resolve(undefined);
-            }
-          });
-          pushTasks.push(taskpool.execute(t));
-        });
-        await pushStarted;
-        expect(queue.poll()).assertEqual(0);
-        let pushResults: Any = await Promise.all(pushTasks);
-        expect(pushResults[0] as number).assertEqual(1);
-        expect(queue.size).assertEqual(4);
-        expect(queue.getFirst()).assertEqual(1);
-        expect(queue.poll()).assertEqual(1);
-        expect(queue.poll()).assertEqual(2);
-        expect(queue.poll()).assertEqual(3);
-        expect(queue.poll()).assertEqual(99);
-        expect(queue.poll()).assertEqual(undefined);
-        expect(queue.isEmpty()).assertTrue();
-        let popTasks: Promise<Any>[] = [];
-        let popStarted: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
-          let t: taskpool.Task = new taskpool.Task(popBlockTask, queue, 1.0);
-          t.onReceiveData((signal: number): void => {
-            if (signal === 1.0) {
-              resolve(undefined);
-            }
-          });
-          popTasks.push(taskpool.execute(t));
-        });
-        await popStarted;
-        expect(queue.add(42)).assertTrue();
-        let popResults: Any = await Promise.all(popTasks);
-        expect(popResults[0] as number).assertEqual(42);
-        expect(queue.isEmpty()).assertTrue();
-        expect(queue.size).assertEqual(0);
         done();
       });
   });
