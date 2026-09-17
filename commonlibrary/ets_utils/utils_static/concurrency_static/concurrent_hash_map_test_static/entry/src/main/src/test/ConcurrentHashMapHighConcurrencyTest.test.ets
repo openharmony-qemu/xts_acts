@@ -302,9 +302,6 @@ function fullConcurrentTask(map: containers.ConcurrentHashMap<number, number>, w
 
 function iterateModifyOps(map: containers.ConcurrentHashMap<number, number>, worker: number): number {
   let base: number = worker * 100;
-  for (let i: int = 0; i < 10; i++) {
-    map.set(base + i, base + i);
-  }
   let keyHits: number = 0;
   let keyIter: IterableIterator<number> = map.keys();
   let keyResult: IteratorResult<number> = keyIter.next();
@@ -509,6 +506,12 @@ async function runMultiMapFullInterfaceCase(workers: number): Promise<number> {
 
 async function runIterateModifyCase(workers: number): Promise<number> {
   let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+  for (let worker: int = 0; worker <= workers; worker++) {
+    let base: number = worker * 100;
+    for (let i: int = 0; i < 10; i++) {
+      map.set(base + i, base + i);
+    }
+  }
   let start: AtomicInt = new AtomicInt(0);
   let tasks: Promise<Any>[] = [];
   let firstReady: Promise<void> | undefined = undefined;
@@ -566,8 +569,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runDistinctCase(1, 1);
-        expect(size).assertEqual(1);
+        try {
+          let size: number = await runDistinctCase(1, 1);
+          expect(size).assertEqual(1);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -581,8 +588,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runDistinctCase(3, 1);
-        expect(size).assertEqual(3);
+        try {
+          let size: number = await runDistinctCase(3, 1);
+          expect(size).assertEqual(3);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -596,8 +607,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runDistinctCase(5, 1);
-        expect(size).assertEqual(5);
+        try {
+          let size: number = await runDistinctCase(5, 1);
+          expect(size).assertEqual(5);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -611,8 +626,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runDistinctCase(10, 1);
-        expect(size).assertEqual(10);
+        try {
+          let size: number = await runDistinctCase(10, 1);
+          expect(size).assertEqual(10);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -626,8 +645,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runDistinctCase(50, 1);
-        expect(size).assertEqual(50);
+        try {
+          let size: number = await runDistinctCase(50, 1);
+          expect(size).assertEqual(50);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -641,8 +664,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runDistinctCase(100, 1);
-        expect(size).assertEqual(100);
+        try {
+          let size: number = await runDistinctCase(100, 1);
+          expect(size).assertEqual(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -656,8 +683,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runSameKeyCase(100);
-        expect(size).assertEqual(1);
+        try {
+          let size: number = await runSameKeyCase(100);
+          expect(size).assertEqual(1);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -671,8 +702,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runSameKeyCase(3);
-        expect(size).assertEqual(1);
+        try {
+          let size: number = await runSameKeyCase(3);
+          expect(size).assertEqual(1);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -686,8 +721,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runSameKeyCase(5);
-        expect(size).assertEqual(1);
+        try {
+          let size: number = await runSameKeyCase(5);
+          expect(size).assertEqual(1);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -701,8 +740,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runSameKeyCase(10);
-        expect(size).assertEqual(1);
+        try {
+          let size: number = await runSameKeyCase(10);
+          expect(size).assertEqual(1);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -716,8 +759,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runSameKeyCase(50);
-        expect(size).assertEqual(1);
+        try {
+          let size: number = await runSameKeyCase(50);
+          expect(size).assertEqual(1);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -760,35 +807,39 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        // Phase 1: all 10 set tasks run concurrently
-        let setPromises: Promise<Any>[] = [];
-        for (let i: int = 0; i < 10; i++) {
-          setPromises.push(taskpool.execute(new taskpool.Task(setRangeOnlyHelper, map, i * 10.0, 10.0)));
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          // Phase 1: all 10 set tasks run concurrently
+          let setPromises: Promise<Any>[] = [];
+          for (let i: int = 0; i < 10; i++) {
+            setPromises.push(taskpool.execute(new taskpool.Task(setRangeOnlyHelper, map, i * 10.0, 10.0)));
+          }
+          let setResults: Any[] = await Promise.all(setPromises);
+          let setCount: number = 0;
+          for (let i: int = 0; i < setResults.length; i++) {
+            setCount += setResults[i] as number;
+          }
+          expect(setCount).assertEqual(100);
+          expect(map.size).assertEqual(100);
+          // Phase 2: all 10 delete tasks run concurrently against the fully populated map
+          let deletePromises: Promise<Any>[] = [];
+          for (let i: int = 0; i < 10; i++) {
+            deletePromises.push(taskpool.execute(new taskpool.Task(deleteOddRangeOnlyHelper, map, i * 10.0, 10.0)));
+          }
+          let deleteResults: Any[] = await Promise.all(deletePromises);
+          let deleted: number = 0;
+          for (let i: int = 0; i < deleteResults.length; i++) {
+            deleted += deleteResults[i] as number;
+          }
+          expect(deleted).assertEqual(50);
+          expect(map.size).assertEqual(50);
+          expect(map.has(0)).assertTrue();
+          expect(map.has(1)).assertFalse();
+          expect(map.has(98)).assertTrue();
+          expect(map.has(99)).assertFalse();
+        } catch (error) {
+          expect(error).assertFail();
         }
-        let setResults: Any[] = await Promise.all(setPromises);
-        let setCount: number = 0;
-        for (let i: int = 0; i < setResults.length; i++) {
-          setCount += setResults[i] as number;
-        }
-        expect(setCount).assertEqual(100);
-        expect(map.size).assertEqual(100);
-        // Phase 2: all 10 delete tasks run concurrently against the fully populated map
-        let deletePromises: Promise<Any>[] = [];
-        for (let i: int = 0; i < 10; i++) {
-          deletePromises.push(taskpool.execute(new taskpool.Task(deleteOddRangeOnlyHelper, map, i * 10.0, 10.0)));
-        }
-        let deleteResults: Any[] = await Promise.all(deletePromises);
-        let deleted: number = 0;
-        for (let i: int = 0; i < deleteResults.length; i++) {
-          deleted += deleteResults[i] as number;
-        }
-        expect(deleted).assertEqual(50);
-        expect(map.size).assertEqual(50);
-        expect(map.has(0)).assertTrue();
-        expect(map.has(1)).assertFalse();
-        expect(map.has(98)).assertTrue();
-        expect(map.has(99)).assertFalse();
         done();
       });
 
@@ -835,8 +886,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runSameKeyCase(20);
-        expect(size).assertEqual(1);
+        try {
+          let size: number = await runSameKeyCase(20);
+          expect(size).assertEqual(1);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -908,10 +963,14 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        await runNestedTaskLevel(map, 1, 1);
-        expect(map.size).assertEqual(1);
-        expect(map.get(1)).assertEqual(10.0);
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          await runNestedTaskLevel(map, 1, 1);
+          expect(map.size).assertEqual(1);
+          expect(map.get(1)).assertEqual(10.0);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -925,11 +984,15 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        await runNestedTaskLevel(map, 1, 2);
-        expect(map.size).assertEqual(2);
-        expect(map.get(1)).assertEqual(10.0);
-        expect(map.get(2)).assertEqual(20.0);
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          await runNestedTaskLevel(map, 1, 2);
+          expect(map.size).assertEqual(2);
+          expect(map.get(1)).assertEqual(10.0);
+          expect(map.get(2)).assertEqual(20.0);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -943,10 +1006,14 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        await runNestedTaskLevel(map, 1, 3);
-        expect(map.size).assertEqual(3);
-        expect(map.get(3)).assertEqual(30.0);
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          await runNestedTaskLevel(map, 1, 3);
+          expect(map.size).assertEqual(3);
+          expect(map.get(3)).assertEqual(30.0);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -960,11 +1027,15 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        await runNestedTaskLevel(map, 1, 5);
-        expect(map.size).assertEqual(5);
-        for (let i: int = 1; i <= 5; i++) {
-          expect(map.get(i)).assertEqual(i * 10.0);
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          await runNestedTaskLevel(map, 1, 5);
+          expect(map.size).assertEqual(5);
+          for (let i: int = 1; i <= 5; i++) {
+            expect(map.get(i)).assertEqual(i * 10.0);
+          }
+        } catch (error) {
+          expect(error).assertFail();
         }
         done();
       });
@@ -979,8 +1050,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runScaleCase(1);
-        expect(size).assertEqual(1);
+        try {
+          let size: number = await runScaleCase(1);
+          expect(size).assertEqual(1);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -994,8 +1069,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runScaleCase(10);
-        expect(size).assertEqual(10);
+        try {
+          let size: number = await runScaleCase(10);
+          expect(size).assertEqual(10);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -1009,8 +1088,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runScaleCase(100);
-        expect(size).assertEqual(100);
+        try {
+          let size: number = await runScaleCase(100);
+          expect(size).assertEqual(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -1024,8 +1107,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runScaleCase(1000);
-        expect(size).assertEqual(1000);
+        try {
+          let size: number = await runScaleCase(1000);
+          expect(size).assertEqual(1000);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -1039,8 +1126,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runScaleCase(10000);
-        expect(size).assertEqual(10000);
+        try {
+          let size: number = await runScaleCase(10000);
+          expect(size).assertEqual(10000);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -1054,8 +1145,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runScaleCase(100000);
-        expect(size).assertEqual(100000);
+        try {
+          let size: number = await runScaleCase(100000);
+          expect(size).assertEqual(100000);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -1211,20 +1306,24 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let sessions: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 100; i++) {
-          tasks.push(taskpool.execute(sessionLoginTask, sessions, 3000.0 + i, 20000.0 + i));
+        try {
+          let sessions: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 100; i++) {
+            tasks.push(taskpool.execute(sessionLoginTask, sessions, 3000.0 + i, 20000.0 + i));
+          }
+          let results: Any[] = await Promise.all(tasks);
+          let loggedIn: number = 0;
+          for (let i: int = 0; i < results.length; i++) {
+            loggedIn += results[i] as number;
+          }
+          expect(loggedIn).assertEqual(100);
+          expect(sessions.size).assertEqual(100);
+          expect(sessions.get(3000)).assertEqual(20000.0);
+          expect(sessions.get(3099)).assertEqual(20099.0);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        let results: Any[] = await Promise.all(tasks);
-        let loggedIn: number = 0;
-        for (let i: int = 0; i < results.length; i++) {
-          loggedIn += results[i] as number;
-        }
-        expect(loggedIn).assertEqual(100);
-        expect(sessions.size).assertEqual(100);
-        expect(sessions.get(3000)).assertEqual(20000.0);
-        expect(sessions.get(3099)).assertEqual(20099.0);
         done();
       });
 
@@ -1302,52 +1401,56 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        for (let i: int = 0; i < 100; i++) {
-          map.set(i, i);
-        }
-        let start: AtomicInt = new AtomicInt(0);
-        let finish: AtomicInt = new AtomicInt(0);
-        let task: taskpool.Task = new taskpool.Task(weakMutationTask, map, 2.0, start, finish);
-        let ready: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
-          task.onReceiveData((signal: number): void => {
-            if (signal === 1) {
-              resolve(undefined);
-            }
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          for (let i: int = 0; i < 100; i++) {
+            map.set(i, i);
+          }
+          let start: AtomicInt = new AtomicInt(0);
+          let finish: AtomicInt = new AtomicInt(0);
+          let task: taskpool.Task = new taskpool.Task(weakMutationTask, map, 2.0, start, finish);
+          let ready: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
+            task.onReceiveData((signal: number): void => {
+              if (signal === 1) {
+                resolve(undefined);
+              }
+            });
           });
-        });
-        let mutation: Promise<Any> = taskpool.execute(task);
-        await ready;
-        let iter: IterableIterator<number> = map.values();
-        let first: IteratorResult<number> = iter.next();
-        let seen: number = first.done ? 0 : 1;
-        let invalid: number = 0;
-        if (!first.done) {
-          let firstValue: number | undefined = first.value;
-          if (firstValue !== undefined) {
-            if (firstValue < 0 || firstValue >= 100) {
-              invalid++;
+          let mutation: Promise<Any> = taskpool.execute(task);
+          await ready;
+          let iter: IterableIterator<number> = map.values();
+          let first: IteratorResult<number> = iter.next();
+          let seen: number = first.done ? 0 : 1;
+          let invalid: number = 0;
+          if (!first.done) {
+            let firstValue: number | undefined = first.value;
+            if (firstValue !== undefined) {
+              if (firstValue < 0 || firstValue >= 100) {
+                invalid++;
+              }
             }
           }
-        }
-        start.store(1);
-        expect(await mutation as number).assertEqual(50);
-        let result: IteratorResult<number> = iter.next();
-        while (!result.done) {
-          seen++;
-          let value: number | undefined = result.value;
-          if (value !== undefined) {
-            if (value < 0 || value >= 100) {
-              invalid++;
+          start.store(1);
+          expect(await mutation as number).assertEqual(50);
+          let result: IteratorResult<number> = iter.next();
+          while (!result.done) {
+            seen++;
+            let value: number | undefined = result.value;
+            if (value !== undefined) {
+              if (value < 0 || value >= 100) {
+                invalid++;
+              }
             }
+            result = iter.next();
           }
-          result = iter.next();
+          expect(invalid).assertEqual(0);
+          expect(seen).assertEqual(100);
+          expect(map.size).assertEqual(50);
+          expect(map.has(0)).assertFalse();
+          expect(map.get(99)).assertEqual(99.0);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        expect(invalid).assertEqual(0);
-        expect(seen).assertEqual(100);
-        expect(map.size).assertEqual(50);
-        expect(map.has(0)).assertFalse();
-        expect(map.get(99)).assertEqual(99.0);
         done();
       });
 
@@ -1361,51 +1464,55 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        for (let i: int = 0; i < 100; i++) {
-          map.set(i, i);
-        }
-        let start: AtomicInt = new AtomicInt(0);
-        let finish: AtomicInt = new AtomicInt(0);
-        let task: taskpool.Task = new taskpool.Task(weakMutationTask, map, 3.0, start, finish);
-        let ready: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
-          task.onReceiveData((signal: number): void => {
-            if (signal === 1) {
-              resolve(undefined);
-            }
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          for (let i: int = 0; i < 100; i++) {
+            map.set(i, i);
+          }
+          let start: AtomicInt = new AtomicInt(0);
+          let finish: AtomicInt = new AtomicInt(0);
+          let task: taskpool.Task = new taskpool.Task(weakMutationTask, map, 3.0, start, finish);
+          let ready: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
+            task.onReceiveData((signal: number): void => {
+              if (signal === 1) {
+                resolve(undefined);
+              }
+            });
           });
-        });
-        let mutation: Promise<Any> = taskpool.execute(task);
-        await ready;
-        let iter: IterableIterator<[number, number]> = map.entries();
-        let first: IteratorResult<[number, number]> = iter.next();
-        let seen: number = first.done ? 0 : 1;
-        start.store(1);
-        let invalid: number = 0;
-        if (!first.done) {
-          let firstValue: [number, number] | undefined = first.value;
-          if (firstValue !== undefined) {
-            if (firstValue[0] < 0 || firstValue[0] >= 100 || firstValue[1] !== firstValue[0]) {
-              invalid++;
+          let mutation: Promise<Any> = taskpool.execute(task);
+          await ready;
+          let iter: IterableIterator<[number, number]> = map.entries();
+          let first: IteratorResult<[number, number]> = iter.next();
+          let seen: number = first.done ? 0 : 1;
+          start.store(1);
+          let invalid: number = 0;
+          if (!first.done) {
+            let firstValue: [number, number] | undefined = first.value;
+            if (firstValue !== undefined) {
+              if (firstValue[0] < 0 || firstValue[0] >= 100 || firstValue[1] !== firstValue[0]) {
+                invalid++;
+              }
             }
           }
-        }
-        expect(await mutation as number).assertEqual(1);
-        let result: IteratorResult<[number, number]> = iter.next();
-        while (!result.done) {
-          seen++;
-          let value: [number, number] | undefined = result.value;
-          if (value !== undefined) {
-            if (value[0] < 0 || value[0] >= 100 || value[1] !== value[0]) {
-              invalid++;
+          expect(await mutation as number).assertEqual(1);
+          let result: IteratorResult<[number, number]> = iter.next();
+          while (!result.done) {
+            seen++;
+            let value: [number, number] | undefined = result.value;
+            if (value !== undefined) {
+              if (value[0] < 0 || value[0] >= 100 || value[1] !== value[0]) {
+                invalid++;
+              }
             }
+            result = iter.next();
           }
-          result = iter.next();
+          expect(invalid).assertEqual(0);
+          expect(seen).assertEqual(100);
+          expect(map.isEmpty()).assertTrue();
+          expect(map.size).assertEqual(0);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        expect(invalid).assertEqual(0);
-        expect(seen).assertEqual(100);
-        expect(map.isEmpty()).assertTrue();
-        expect(map.size).assertEqual(0);
         done();
       });
 
@@ -1419,49 +1526,53 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        for (let i: int = 0; i < 100; i++) {
-          map.set(i, i);
-        }
-        let start: AtomicInt = new AtomicInt(0);
-        let finish: AtomicInt = new AtomicInt(0);
-        let task: taskpool.Task = new taskpool.Task(weakMutationTask, map, 4.0, start, finish);
-        let ready: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
-          task.onReceiveData((signal: number): void => {
-            if (signal === 1) {
-              resolve(undefined);
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          for (let i: int = 0; i < 100; i++) {
+            map.set(i, i);
+          }
+          let start: AtomicInt = new AtomicInt(0);
+          let finish: AtomicInt = new AtomicInt(0);
+          let task: taskpool.Task = new taskpool.Task(weakMutationTask, map, 4.0, start, finish);
+          let ready: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
+            task.onReceiveData((signal: number): void => {
+              if (signal === 1) {
+                resolve(undefined);
+              }
+            });
+          });
+          let mutation: Promise<Any> = taskpool.execute(task);
+          await ready;
+          let seen: number = 0;
+          let invalid: number = 0;
+          let originalValues: number = 0;
+          let replacedValues: number = 0;
+          map.forEach((value: number, key: number): void => {
+            if (seen === 0) {
+              start.store(1);
+              while (finish.load() === 0) {
+              }
+            }
+            seen++;
+            if (value === key) {
+              originalValues++;
+            } else if (value === key + 1000) {
+              replacedValues++;
+            } else {
+              invalid++;
             }
           });
-        });
-        let mutation: Promise<Any> = taskpool.execute(task);
-        await ready;
-        let seen: number = 0;
-        let invalid: number = 0;
-        let originalValues: number = 0;
-        let replacedValues: number = 0;
-        map.forEach((value: number, key: number): void => {
-          if (seen === 0) {
-            start.store(1);
-            while (finish.load() === 0) {
-            }
-          }
-          seen++;
-          if (value === key) {
-            originalValues++;
-          } else if (value === key + 1000) {
-            replacedValues++;
-          } else {
-            invalid++;
-          }
-        });
-        expect(await mutation as number).assertEqual(100);
-        expect(invalid).assertEqual(0);
-        expect(seen).assertEqual(100);
-        expect(originalValues).assertEqual(1);
-        expect(replacedValues).assertEqual(99);
-        expect(map.size).assertEqual(100);
-        expect(map.get(0)).assertEqual(1000.0);
-        expect(map.get(99)).assertEqual(1099.0);
+          expect(await mutation as number).assertEqual(100);
+          expect(invalid).assertEqual(0);
+          expect(seen).assertEqual(100);
+          expect(originalValues).assertEqual(1);
+          expect(replacedValues).assertEqual(99);
+          expect(map.size).assertEqual(100);
+          expect(map.get(0)).assertEqual(1000.0);
+          expect(map.get(99)).assertEqual(1099.0);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -1475,11 +1586,15 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        let result: Any = await taskpool.execute(fullInterfaceIsolatedTask, map);
-        expect(result as number).assertEqual(1);
-        expect(map.isEmpty()).assertTrue();
-        expect(map.size).assertEqual(0);
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          let result: Any = await taskpool.execute(fullInterfaceIsolatedTask, map);
+          expect(result as number).assertEqual(1);
+          expect(map.isEmpty()).assertTrue();
+          expect(map.size).assertEqual(0);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -1493,8 +1608,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let stableCount: number = await runConcurrentFullInterfaceCase(20);
-        expect(stableCount).assertEqual(21);
+        try {
+          let stableCount: number = await runConcurrentFullInterfaceCase(20);
+          expect(stableCount).assertEqual(21);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -1508,8 +1627,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let stableCount: number = await runConcurrentFullInterfaceCase(50);
-        expect(stableCount).assertEqual(51);
+        try {
+          let stableCount: number = await runConcurrentFullInterfaceCase(50);
+          expect(stableCount).assertEqual(51);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -1523,8 +1646,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let completedMaps: number = await runMultiMapFullInterfaceCase(20);
-        expect(completedMaps).assertEqual(3);
+        try {
+          let completedMaps: number = await runMultiMapFullInterfaceCase(20);
+          expect(completedMaps).assertEqual(3);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
@@ -1538,8 +1665,12 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let size: number = await runIterateModifyCase(20);
-        expect(size).assertEqual(105);
+        try {
+          let size: number = await runIterateModifyCase(20);
+          expect(size).assertEqual(105);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         done();
       });
 
