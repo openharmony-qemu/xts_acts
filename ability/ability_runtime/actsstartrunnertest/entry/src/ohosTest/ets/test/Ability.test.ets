@@ -280,7 +280,15 @@ export default function abilityTest() {
                 });
 
             })
+            .catch((error: BusinessError) => {
+              console.error(JSON.stringify(error));
+              done();
+            });
         })
+        .catch((error: BusinessError) => {
+          console.error(JSON.stringify(error));
+          done();
+        });
     })
   })
 }
