@@ -16,23 +16,23 @@
 const TAG: string = '=== Stage Ability ==='
 
 export default class Logger {
-    public static log(tag: string, ...args: Record<string, Object>[]) {
+    public static log(tag: string, ...args: string[]) {
         console.log(`${TAG}.${tag}: ${args.join('')}`)
     }
 
-    public static info(tag: string, ...args: Record<string, Object>[]) {
+    public static info(tag: string, ...args: string[]) {
         console.info(`${TAG}.${tag}: ${args.join('')}`)
     }
 
-    public static debug(tag: string, ...args: Record<string, Object>[]) {
+    public static debug(tag: string, ...args: string[]) {
         console.debug(`${TAG}.${tag}: ${args.join('')}`)
     }
 
-    public static warn(tag: string, ...args: Record<string, Object>[]) {
+    public static warn(tag: string, ...args: string[]) {
         console.warn(`${TAG}.${tag}: ${args.join('')}`)
     }
 
-    public static error(tag: string, ...args: Record<string, Object>[]) {
+    public static error(tag: string, ...args: string[]) {
         console.error(`${TAG}.${tag}: ${args.join('')}`)
     }
 }

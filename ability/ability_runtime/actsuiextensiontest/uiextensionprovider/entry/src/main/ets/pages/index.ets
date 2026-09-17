@@ -57,8 +57,7 @@ struct Index {
       } as ESObject
     }
     commonEventManager.publish('0100_UIExtensionAbilityContext', options, (err) => {
-      console.log('SUB_AA_Extension_UIServiceExtensionAbility_Context_0100 commonEventManager
-        0100_UIExtensionAbilityContext');
+      console.log('SUB_AA_Extension_UIServiceExtensionAbility_Context_0100 commonEventManager 0100_UIExtensionAbilityContext');
     })
     let appearEvent = 'ACTS_UIExtension_AboutToAppear';
     let terminateSelfWithResultEvent = 'ACTS_UIExtension_TerminateSelfWithResult';

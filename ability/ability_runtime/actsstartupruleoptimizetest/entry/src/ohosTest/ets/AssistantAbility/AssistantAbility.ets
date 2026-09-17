@@ -37,8 +37,7 @@ export default class AssistantAbility extends UIAbility {
     let subscribeInfo:CommonEventManager.CommonEventSubscribeInfo = {
       events: ['event_100001']
     };
-    CommonEventManager.createSubscriber(subscribeInfo).then((commonEventSubscriber:CommonEventManager.CommonEventSubsc
-      riber) => {
+    CommonEventManager.createSubscriber(subscribeInfo).then((commonEventSubscriber:CommonEventManager.CommonEventSubscriber) => {
       console.log(TAG, 'createSubscriber');
       subscriber = commonEventSubscriber;
       CommonEventManager.subscribe(subscriber, (err, data) => {
@@ -54,8 +53,7 @@ export default class AssistantAbility extends UIAbility {
             want,
             resultCode
           };
-          //2.Assistant Ability registered "terminateAssistantAbility" event, call terminateAbilityWithResult received
-            after the event
+          //2.Assistant Ability registered "terminateAssistantAbility" event, call terminateAbilityWithResult received after the event
           globalThis.context.terminateSelfWithResult(abilityResult, (err:BusinessError) => {
             CommonEventManager.unsubscribe(subscriber, () => {
               console.log(TAG, '====>UnSubscribe CallBack====>');

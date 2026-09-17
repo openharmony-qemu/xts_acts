@@ -52,7 +52,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
             abilityName: testAbilityName
         };
         abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-        abilityDelegator.startAbility(want, (err : Record<string, Object>, data : Record<string, Object>) => {
+        abilityDelegator.startAbility(want, (err: BusinessError, data: ESObject) => {
             hilog.info(0x0000, 'testTag', 'startAbility : err : %{public}s', JSON.stringify(err) ?? '');
             hilog.info(0x0000, 'testTag', 'startAbility : data : %{public}s',JSON.stringify(data) ?? '');
         })

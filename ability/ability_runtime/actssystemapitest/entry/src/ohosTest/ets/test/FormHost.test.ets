@@ -547,7 +547,7 @@ export default function formHostTest() {
             done();
           })
           .catch((error: BusinessError) => {
-            console.log(TAG + ` promise catch err->${JSON.stringify(error)}`);
+            console.log(TAG + ` promise catch error->${JSON.stringify(error)}`);
           })
       } catch (error) {
         console.log(TAG + ` catch err->${JSON.stringify(error)}`);
