@@ -67,5 +67,59 @@ export default function webViewControllerPart2() {
     Utils.registerEvent("testOnNativeEmbedMouseEvent001", true, 153540, done);
     await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'testOnNativeEmbedMouseEvent001');
     })
+
+    /**
+     * @tc.name   testEventResultConstructor001
+     * @tc.number SUB_WEB_EVENTRESULT_CONSTRUCTOR_0100
+     * @tc.desc   test EventResult class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEventResultConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent('emitEventResultConstructor001', 153530);
+      let isReturn = false;
+      Utils.registerEvent('testEventResultConstructor001', true, 153550, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'testEventResultConstructor001');
+      await Utils.waitForExist(() => isReturn, 'testEventResultConstructor001_returnCheck', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEventResultConstructorReturn001
+     * @tc.number SUB_WEB_EVENTRESULT_CONSTRUCTOR_RETURN_0100
+     * @tc.desc   test EventResult constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEventResultConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitEventResultConstructorReturn001', 153530);
+      let isReturn = false;
+      Utils.registerEvent('testEventResultConstructorReturn001', true, 153551, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton',
+        'testEventResultConstructorReturn001');
+      await Utils.waitForExist(() => isReturn, 'testEventResultConstructorReturn001_returnCheck', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEventResultClass001
+     * @tc.number SUB_WEB_EVENTRESULT_CLASS_0100
+     * @tc.desc   test EventResult class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEventResultClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitEventResultClass001', 153530);
+      let isReturn = false;
+      Utils.registerEvent('testEventResultClass001', true, 153552, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'testEventResultClass001');
+      await Utils.waitForExist(() => isReturn, 'testEventResultClass001_returnCheck', true, 1000);
+      done();
+    })
   })
 }

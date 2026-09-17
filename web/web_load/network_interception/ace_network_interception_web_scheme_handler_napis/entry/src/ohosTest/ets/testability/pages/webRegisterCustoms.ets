@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import web_webview from '@ohos.web.webview';
+import { WebResourceRequest } from '@ohos.arkui.component';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 
@@ -81,7 +82,9 @@ struct webRegisterCustomsComponent {
             Row() {
                 Button("webHostingButton123").key('webHostingButton').onClick(async () => {
                     await Utils.waitForExist(()=>this.isReceive, this.str, 1);
-                    if (this.str != 'emitGetNativeAPI') {
+                    if (this.str != 'emitGetNativeAPI' && this.str != 'emitWebResourceRequestConstructor001' &&
+                      this.str != 'emitWebResourceRequestConstructorReturn001' &&
+                      this.str != 'emitWebResourceRequestClass001') {
                         await Utils.waitForExist(()=>testNapi.getRequestValue(), this.str, 1);
                     }
                     console.info("key==>" + this.str)
@@ -585,7 +588,40 @@ struct webRegisterCustomsComponent {
                             }
                             break;
                         }
-                        
+                        case "emitWebResourceRequestConstructor001": {
+                            try {
+                                let request: WebResourceRequest = new WebResourceRequest();
+                                let isDefined: boolean = request !== undefined && request !== null;
+                                Utils.emitEvent(isDefined, 142793);
+                            } catch (error) {
+                                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                                Utils.emitEvent(false, 142793);
+                            }
+                            break;
+                        }
+                        case "emitWebResourceRequestConstructorReturn001": {
+                            try {
+                                let request: WebResourceRequest = new WebResourceRequest();
+                                let isInstance: boolean = request instanceof WebResourceRequest;
+                                Utils.emitEvent(isInstance, 142794);
+                            } catch (error) {
+                                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                                Utils.emitEvent(false, 142794);
+                            }
+                            break;
+                        }
+                        case "emitWebResourceRequestClass001": {
+                            try {
+                                let accessible: boolean = WebResourceRequest != null &&
+                                  typeof WebResourceRequest === 'function';
+                                Utils.emitEvent(accessible, 142795);
+                            } catch (error) {
+                                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                                Utils.emitEvent(false, 142795);
+                            }
+                            break;
+                        }
+
                     }
                 })
             }

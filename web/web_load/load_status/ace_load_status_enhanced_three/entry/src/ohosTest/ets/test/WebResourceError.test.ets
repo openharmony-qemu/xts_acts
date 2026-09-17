@@ -98,5 +98,59 @@ export default function webResourceError() {
       await waitForExist(()=>isReturn, "testGetErrorInfo001", true,1000);
       done();
     })
+
+    /**
+     * @tc.name   testWebResourceErrorConstructor001
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_CONSTRUCTOR_0100
+     * @tc.desc   test WebResourceError class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebResourceErrorConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitWebResourceErrorConstructor001', 141501);
+      let isReturn = false;
+      Utils.registerEvent('testWebResourceErrorConstructor001', true, 141520, () => { isReturn = true });
+      Utils.waitAndClickComponent('WebResourceErrorButton', driver);
+      await waitForExist(() => isReturn, 'testWebResourceErrorConstructor001', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testWebResourceErrorConstructorReturn001
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_CONSTRUCTOR_RETURN_0100
+     * @tc.desc   test WebResourceError constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebResourceErrorConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitWebResourceErrorConstructorReturn001', 141501);
+      let isReturn = false;
+      Utils.registerEvent('testWebResourceErrorConstructorReturn001', true, 141521, () => { isReturn = true });
+      Utils.waitAndClickComponent('WebResourceErrorButton', driver);
+      await waitForExist(() => isReturn, 'testWebResourceErrorConstructorReturn001', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testWebResourceErrorClass001
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_CLASS_0100
+     * @tc.desc   test WebResourceError class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebResourceErrorClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitWebResourceErrorClass001', 141501);
+      let isReturn = false;
+      Utils.registerEvent('testWebResourceErrorClass001', true, 141522, () => { isReturn = true });
+      Utils.waitAndClickComponent('WebResourceErrorButton', driver);
+      await waitForExist(() => isReturn, 'testWebResourceErrorClass001', true, 1000);
+      done();
+    })
   })
 }

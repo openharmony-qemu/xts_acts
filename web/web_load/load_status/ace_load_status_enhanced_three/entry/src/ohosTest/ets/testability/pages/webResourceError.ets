@@ -14,6 +14,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
+import { WebResourceError } from '@ohos.arkui.component';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import { waitForExist } from '../../test/WaitTest.test';
@@ -81,6 +82,39 @@ struct webResourceError {
                 Utils.emitEvent(this.errorInfo, 141510)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "emitWebResourceErrorConstructor001": {
+              try {
+                let error: WebResourceError = new WebResourceError();
+                let isDefined: boolean = error !== undefined && error !== null;
+                Utils.emitEvent(isDefined, 141520);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false, 141520);
+              }
+              break;
+            }
+            case "emitWebResourceErrorConstructorReturn001": {
+              try {
+                let error: WebResourceError = new WebResourceError();
+                let isInstance: boolean = error instanceof WebResourceError;
+                Utils.emitEvent(isInstance, 141521);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false, 141521);
+              }
+              break;
+            }
+            case "emitWebResourceErrorClass001": {
+              try {
+                let accessible: boolean = WebResourceError != null &&
+                  typeof WebResourceError === 'function';
+                Utils.emitEvent(accessible, 141522);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false, 141522);
               }
               break;
             }

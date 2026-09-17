@@ -14,6 +14,7 @@
  */
 
 import webView from '@ohos.web.webview';
+import { JsResult, ScreenCaptureHandler, JsGeolocation } from '@ohos.arkui.component';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import cert from '@ohos.security.cert';
@@ -233,6 +234,103 @@ struct WebAttributeTest {
                     })
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  }
+                  break;
+              }
+              case "emitJsResultConstructor001": {
+                  try {
+                    let jsResult: JsResult = new JsResult();
+                    let isDefined: boolean = jsResult !== undefined && jsResult !== null;
+                    Utils.emitEvent(isDefined, 177170);
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                    Utils.emitEvent(false, 177170);
+                  }
+                  break;
+              }
+              case "emitScreenCaptureHandlerConstructor001": {
+                  try {
+                    let handler: ScreenCaptureHandler = new ScreenCaptureHandler();
+                    let isDefined: boolean = handler !== undefined && handler !== null;
+                    Utils.emitEvent(isDefined, 177180);
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                    Utils.emitEvent(false, 177180);
+                  }
+                  break;
+              }
+              case "emitJsGeolocationConstructor001": {
+                  try {
+                    let geo: JsGeolocation = new JsGeolocation();
+                    let isDefined: boolean = geo !== undefined && geo !== null;
+                    Utils.emitEvent(isDefined, 177190);
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                    Utils.emitEvent(false, 177190);
+                  }
+                  break;
+              }
+              case "emitJsResultConstructorReturn001": {
+                  try {
+                    let jsResult: JsResult = new JsResult();
+                    let isInstance: boolean = jsResult instanceof JsResult;
+                    Utils.emitEvent(isInstance, 177171);
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                    Utils.emitEvent(false, 177171);
+                  }
+                  break;
+              }
+              case "emitJsResultClass001": {
+                  try {
+                    let accessible: boolean = JsResult != null && typeof JsResult === 'function';
+                    Utils.emitEvent(accessible, 177172);
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                    Utils.emitEvent(false, 177172);
+                  }
+                  break;
+              }
+              case "emitScreenCaptureHandlerConstructorReturn001": {
+                  try {
+                    let handler: ScreenCaptureHandler = new ScreenCaptureHandler();
+                    let isInstance: boolean = handler instanceof ScreenCaptureHandler;
+                    Utils.emitEvent(isInstance, 177181);
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                    Utils.emitEvent(false, 177181);
+                  }
+                  break;
+              }
+              case "emitScreenCaptureHandlerClass001": {
+                  try {
+                    let accessible: boolean = ScreenCaptureHandler != null &&
+                      typeof ScreenCaptureHandler === 'function';
+                    Utils.emitEvent(accessible, 177182);
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                    Utils.emitEvent(false, 177182);
+                  }
+                  break;
+              }
+              case "emitJsGeolocationConstructorReturn001": {
+                  try {
+                    let geo: JsGeolocation = new JsGeolocation();
+                    let isInstance: boolean = geo instanceof JsGeolocation;
+                    Utils.emitEvent(isInstance, 177191);
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                    Utils.emitEvent(false, 177191);
+                  }
+                  break;
+              }
+              case "emitJsGeolocationClass001": {
+                  try {
+                    let accessible: boolean = JsGeolocation != null && typeof JsGeolocation === 'function';
+                    Utils.emitEvent(accessible, 177192);
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                    Utils.emitEvent(false, 177192);
                   }
                   break;
               }

@@ -522,6 +522,20 @@ struct webMessageExt {
               break;
             }
 
+            case "testWebMessageExtSetTypeParamSpec001": {
+              try {
+                let ext: webView.WebMessageExt = new webView.WebMessageExt();
+                ext.setType(webView.WebMessageType.STRING);
+                ext.setString('paramSpecTest');
+                let typeVal: number = ext.getType();
+                Utils.emitEvent(typeVal === webView.WebMessageType.STRING, 170290);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false, 170290);
+              }
+              break;
+            }
+
             case "testWebMessageExtSetError001": {
               try {
                 try {

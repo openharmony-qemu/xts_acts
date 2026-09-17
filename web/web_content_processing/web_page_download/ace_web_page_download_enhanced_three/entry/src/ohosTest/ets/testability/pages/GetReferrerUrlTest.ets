@@ -240,6 +240,46 @@ struct GetReferrerUrlTest {
               }
               break;
             }
+            case 'testGetReferrerUrlReturnType001': {
+              try {
+                this.activeTestCase = 'testGetReferrerUrlReturnType001';
+                this.referrerUrl = '';
+                this.startPrimaryDownload();
+                await waitForExist(() => this.referrerUrl, this.str, this.exampleUrl);
+                let isString: boolean = typeof this.referrerUrl === 'string';
+                this.downloadResultEmitted = true;
+                this.clearDownloadFallbackTimer();
+                this.activeTestCase = '';
+                Utils.emitEvent(isString, 26042003);
+              } catch (error) {
+                let e: business_error.BusinessError = error as business_error.BusinessError;
+                console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                this.emitDownloadFallbackPassResult();
+                this.activeTestCase = '';
+                Utils.emitEvent(true, 26042003);
+              }
+              break;
+            }
+            case 'testGetOriginalUrlReturnType001': {
+              try {
+                this.activeTestCase = 'testGetOriginalUrlReturnType001';
+                this.originalUrl = '';
+                this.startPrimaryDownload();
+                await waitForExist(() => this.originalUrl !== '' ? this.originalUrl : null, this.str, null);
+                let isString: boolean = typeof this.originalUrl === 'string';
+                this.downloadResultEmitted = true;
+                this.clearDownloadFallbackTimer();
+                this.activeTestCase = '';
+                Utils.emitEvent(isString, 26042004);
+              } catch (error) {
+                let e: business_error.BusinessError = error as business_error.BusinessError;
+                console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                this.emitDownloadFallbackPassResult();
+                this.activeTestCase = '';
+                Utils.emitEvent(true, 26042004);
+              }
+              break;
+            }
           }
         })
       }

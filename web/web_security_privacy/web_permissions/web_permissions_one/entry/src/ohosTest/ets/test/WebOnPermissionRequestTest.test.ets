@@ -143,7 +143,59 @@ export default function webOnPermissionRequest() {
       done();
     })
 
+    /**
+     * @tc.name   testPermissionRequestConstructor001
+     * @tc.number SUB_WEB_PERMISSIONREQUEST_CONSTRUCTOR_0100
+     * @tc.desc   test PermissionRequest constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPermissionRequestConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('emitPermissionRequestConstructor001', 160860);
+        Utils.registerBaseEvent('testPermissionRequestConstructor001', true, 160950,
+          done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(expected);
+          });
+        await Utils.waitAndClickComponent(driver, 'WebOnPermissionRequestTestButton');
+      })
 
+    /**
+     * @tc.name   testPermissionRequestConstructorReturn001
+     * @tc.number SUB_WEB_PERMISSIONREQUEST_CONSTRUCTOR_RETURN_0100
+     * @tc.desc   test PermissionRequest constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPermissionRequestConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('emitPermissionRequestConstructorReturn001', 160860);
+        Utils.registerBaseEvent('testPermissionRequestConstructorReturn001', true, 160951,
+          done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(expected);
+          });
+        await Utils.waitAndClickComponent(driver, 'WebOnPermissionRequestTestButton');
+      })
+
+    /**
+     * @tc.name   testPermissionRequestClass001
+     * @tc.number SUB_WEB_PERMISSIONREQUEST_CLASS_0100
+     * @tc.desc   test PermissionRequest class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPermissionRequestClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('emitPermissionRequestClass001', 160860);
+        Utils.registerBaseEvent('testPermissionRequestClass001', true, 160952,
+          done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(expected);
+          });
+        await Utils.waitAndClickComponent(driver, 'WebOnPermissionRequestTestButton');
+      })
 
   })
 }

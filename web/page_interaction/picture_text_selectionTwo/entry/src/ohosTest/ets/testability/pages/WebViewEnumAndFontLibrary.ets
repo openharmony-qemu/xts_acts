@@ -14,6 +14,7 @@
  */
 
 import Utils from '../../test/Utils';
+import { WebContextMenuParam } from '@ohos.arkui.component';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import business_error, { BusinessError } from '@ohos.base';
@@ -331,6 +332,39 @@ struct WebViewEnumAndFontLibrary {
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str,driver)
               Utils.emitEvent(Boolean(this.onContextMenuShowState), 183380);
+              break;
+            }
+            case "emitWebContextMenuParamConstructor001": {
+              try {
+                let param: WebContextMenuParam = new WebContextMenuParam();
+                let isDefined: boolean = param !== undefined && param !== null;
+                Utils.emitEvent(isDefined, 183390);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                Utils.emitEvent(false, 183390);
+              }
+              break;
+            }
+            case "emitWebContextMenuParamConstructorReturn001": {
+              try {
+                let param: WebContextMenuParam = new WebContextMenuParam();
+                let isInstance: boolean = param instanceof WebContextMenuParam;
+                Utils.emitEvent(isInstance, 183391);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                Utils.emitEvent(false, 183391);
+              }
+              break;
+            }
+            case "emitWebContextMenuParamClass001": {
+              try {
+                let accessible: boolean = WebContextMenuParam != null &&
+                  typeof WebContextMenuParam === 'function';
+                Utils.emitEvent(accessible, 183392);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                Utils.emitEvent(false, 183392);
+              }
               break;
             }
 

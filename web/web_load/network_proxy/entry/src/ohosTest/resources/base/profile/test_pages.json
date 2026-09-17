@@ -2,6 +2,7 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/webviewNetworkProxy",
+    "testability/pages/webOnVerifyPinCallback",
     "testability/pages/webCookieManager",
     "testability/pages/webDownloadManagerResumeDownloadParam",
     "testability/pages/webDownloadManagerSetDownloadDelegateParam",

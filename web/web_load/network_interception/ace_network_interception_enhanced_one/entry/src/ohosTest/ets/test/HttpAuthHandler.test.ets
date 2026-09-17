@@ -151,5 +151,59 @@ export default function httpAuthHandler() {
       await Utils.waitAndClickComponent(driver, "HttpAuthHandlerButton");
     })
 
+    /**
+     * @tc.name   testHttpAuthHandlerConstructor001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CONSTRUCTOR_0100
+     * @tc.desc   test HttpAuthHandler constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHttpAuthHandlerConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('emitHttpAuthHandlerConstructor001', EVENT_ID_SET_EIMIT_KEY);
+        let isReturn = 0;
+        Utils.registerEvent('testHttpAuthHandlerConstructor001', true, 142060, () => { isReturn = 1 });
+        await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton');
+        await Utils.waitForExist(() => isReturn, 'testHttpAuthHandlerConstructor001_checkReturn', 1);
+        done();
+      })
+
+    /**
+     * @tc.name   testHttpAuthHandlerConstructorReturn001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CONSTRUCTOR_RETURN_0100
+     * @tc.desc   test HttpAuthHandler constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHttpAuthHandlerConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('emitHttpAuthHandlerConstructorReturn001', EVENT_ID_SET_EIMIT_KEY);
+        let isReturn = 0;
+        Utils.registerEvent('testHttpAuthHandlerConstructorReturn001', true, 142061, () => { isReturn = 1 });
+        await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton');
+        await Utils.waitForExist(() => isReturn, 'testHttpAuthHandlerConstructorReturn001_checkReturn', 1);
+        done();
+      })
+
+    /**
+     * @tc.name   testHttpAuthHandlerClass001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CLASS_0100
+     * @tc.desc   test HttpAuthHandler class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHttpAuthHandlerClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('emitHttpAuthHandlerClass001', EVENT_ID_SET_EIMIT_KEY);
+        let isReturn = 0;
+        Utils.registerEvent('testHttpAuthHandlerClass001', true, 142062, () => { isReturn = 1 });
+        await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton');
+        await Utils.waitForExist(() => isReturn, 'testHttpAuthHandlerClass001_checkReturn', 1);
+        done();
+      })
+
   })
 }

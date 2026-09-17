@@ -15,6 +15,7 @@ import disconnectNativeNullUndefinedParameterTest from './DisconnectNativeNullUn
 import connectionInfoFdParameterTest from './ConnectionInfoFdParameter.test'
 
 import connectNativeCoverageDirect from './ConnectNativeCoverageDirect.test';
+import connectNativePermissionCoverageDirect from './ConnectNativePermissionCoverageDirect.test';
 
 export default function testsuite() {
   abilityTest();
@@ -23,6 +24,7 @@ export default function testsuite() {
   onFailedParameterTest();
   connectNativeParameterTest();
   connectNativeCoverageDirect();
+  connectNativePermissionCoverageDirect();
   OnDisconnectParameter()
   DisconnectNativeParameter()
   ConnectNativeErrorCode()

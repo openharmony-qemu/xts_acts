@@ -14,6 +14,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
+import { DataResubmissionHandler } from '@ohos.arkui.component';
 import webView from '@ohos.web.webview';
 import { XtsTestServer } from 'library';
 import Utils from '../../test/Utils.test';
@@ -141,6 +142,39 @@ struct WebOnDataResubmitted {
                 Utils.emitEvent(this.title, 127030)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'emitDataResubmissionHandlerConstructor001': {
+              try {
+                let handler: DataResubmissionHandler = new DataResubmissionHandler();
+                let isDefined: boolean = handler !== undefined && handler !== null;
+                Utils.emitEvent(isDefined, 127040);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false, 127040);
+              }
+              break;
+            }
+            case 'emitDataResubmissionHandlerConstructorReturn001': {
+              try {
+                let handler: DataResubmissionHandler = new DataResubmissionHandler();
+                let isInstance: boolean = handler instanceof DataResubmissionHandler;
+                Utils.emitEvent(isInstance, 127041);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false, 127041);
+              }
+              break;
+            }
+            case 'emitDataResubmissionHandlerClass001': {
+              try {
+                let accessible: boolean = DataResubmissionHandler != null &&
+                  typeof DataResubmissionHandler === 'function';
+                Utils.emitEvent(accessible, 127042);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false, 127042);
               }
               break;
             }

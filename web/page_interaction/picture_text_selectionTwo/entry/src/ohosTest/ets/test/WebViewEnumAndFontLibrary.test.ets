@@ -399,5 +399,61 @@ export default function WebViewEnumAndFontLibrary() {
       await Utils.waitForExist(() => isReturn, "onContextMenuShow" + '_returnCheck', true, 500);
       done();
     })
+
+    /**
+     * @tc.name   testWebContextMenuParamConstructor001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAM_CONSTRUCTOR_0100
+     * @tc.desc   test WebContextMenuParam class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebContextMenuParamConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitWebContextMenuParamConstructor001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testWebContextMenuParamConstructor001', true, 183390, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'buttonEnumAndFontLibrary', 'testWebContextMenuParamConstructor001');
+      await Utils.waitForExist(() => isReturn, 'testWebContextMenuParamConstructor001_returnCheck', true, 500);
+      done();
+    })
+
+    /**
+     * @tc.name   testWebContextMenuParamConstructorReturn001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAM_CONSTRUCTOR_RETURN_0100
+     * @tc.desc   test WebContextMenuParam constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebContextMenuParamConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitWebContextMenuParamConstructorReturn001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testWebContextMenuParamConstructorReturn001', true, 183391, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'buttonEnumAndFontLibrary',
+        'testWebContextMenuParamConstructorReturn001');
+      await Utils.waitForExist(() => isReturn,
+        'testWebContextMenuParamConstructorReturn001_returnCheck', true, 500);
+      done();
+    })
+
+    /**
+     * @tc.name   testWebContextMenuParamClass001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAM_CLASS_0100
+     * @tc.desc   test WebContextMenuParam class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebContextMenuParamClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitWebContextMenuParamClass001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testWebContextMenuParamClass001', true, 183392, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'buttonEnumAndFontLibrary', 'testWebContextMenuParamClass001');
+      await Utils.waitForExist(() => isReturn, 'testWebContextMenuParamClass001_returnCheck', true, 500);
+      done();
+    })
   })
 }

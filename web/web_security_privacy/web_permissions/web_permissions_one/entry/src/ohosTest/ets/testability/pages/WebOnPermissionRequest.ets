@@ -16,6 +16,7 @@
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
+import { PermissionRequest } from '@ohos.arkui.component';
 import PermissionsUtils from '../../test/PermissionsUtils';
 import { Driver, ON } from '@ohos.UiTest';
 import common from '@ohos.app.ability.common';
@@ -360,6 +361,39 @@ struct WebOnPermissionRequest {
                 } else {
                   Utils.emitEvent('"grant"', 160920)
                 }
+              }
+              case 'emitPermissionRequestConstructor001': {
+                try {
+                  let request: PermissionRequest = new PermissionRequest();
+                  let isDefined: boolean = request !== undefined && request !== null;
+                  Utils.emitEvent(isDefined, 160950);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(false, 160950);
+                }
+                break;
+              }
+              case 'emitPermissionRequestConstructorReturn001': {
+                try {
+                  let request: PermissionRequest = new PermissionRequest();
+                  let isInstance: boolean = request instanceof PermissionRequest;
+                  Utils.emitEvent(isInstance, 160951);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(false, 160951);
+                }
+                break;
+              }
+              case 'emitPermissionRequestClass001': {
+                try {
+                  let accessible: boolean = PermissionRequest != null &&
+                    typeof PermissionRequest === 'function';
+                  Utils.emitEvent(accessible, 160952);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(false, 160952);
+                }
+                break;
               }
               case 'emitPermissionRequestGrant004': {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {

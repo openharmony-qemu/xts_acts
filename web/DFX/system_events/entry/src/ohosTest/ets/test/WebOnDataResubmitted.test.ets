@@ -151,5 +151,84 @@ export default function webOnDataResubmitted() {
       }
       done();
     })
+
+    /**
+     * @tc.name   testDataResubmissionHandlerConstructor001
+     * @tc.number SUB_WEB_DATARESUBMISSIONHANDLER_CONSTRUCTOR_0100
+     * @tc.desc   test DataResubmissionHandler class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDataResubmissionHandlerConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitDataResubmissionHandlerConstructor001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testDataResubmissionHandlerConstructor001', true, 127040, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
+      Utils.waitAndClickComponent(driver, 'WebOnDataResubmittedTestButton', 'testDataResubmissionHandlerConstructor001');
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, 'testDataResubmissionHandlerConstructor001_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testDataResubmissionHandlerConstructorReturn001
+     * @tc.number SUB_WEB_DATARESUBMISSIONHANDLER_CONSTRUCTOR_RETURN_0100
+     * @tc.desc   test DataResubmissionHandler constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDataResubmissionHandlerConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitDataResubmissionHandlerConstructorReturn001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testDataResubmissionHandlerConstructorReturn001', true, 127041, (err: Error) => {
+        if (!err) {
+          isReturn = true;
+        }
+      });
+      Utils.waitAndClickComponent(driver, 'WebOnDataResubmittedTestButton',
+        'testDataResubmissionHandlerConstructorReturn001');
+      await Utils.waitForExist(() => isReturn,
+        'testDataResubmissionHandlerConstructorReturn001_returnCheck', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testDataResubmissionHandlerClass001
+     * @tc.number SUB_WEB_DATARESUBMISSIONHANDLER_CLASS_0100
+     * @tc.desc   test DataResubmissionHandler class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDataResubmissionHandlerClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitDataResubmissionHandlerClass001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testDataResubmissionHandlerClass001', true, 127042, (err: Error) => {
+        if (!err) {
+          isReturn = true;
+        }
+      });
+      Utils.waitAndClickComponent(driver, 'WebOnDataResubmittedTestButton', 'testDataResubmissionHandlerClass001');
+      await Utils.waitForExist(() => isReturn, 'testDataResubmissionHandlerClass001_returnCheck', true, 1000);
+      done();
+    })
   })
 }
