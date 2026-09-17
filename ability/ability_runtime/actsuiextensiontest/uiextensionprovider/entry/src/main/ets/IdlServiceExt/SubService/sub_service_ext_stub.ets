@@ -22,10 +22,10 @@ export default class SubServiceExtStub extends rpc.RemoteObject implements SubSe
         super(des);
     }
     
-async onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence, option:
-  rpc.MessageOption): Promise<boolean> {
+    async onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence,
+      option: rpc.MessageOption): Promise<boolean> {
         console.log('onRemoteMessageRequest called, code = ' + code);
-        switch(code) {
+        switch (code) {
           case SubServiceExtStub.COMMAND_SUB: {
                 let num1 = data.readInt();
                 let num2 = data.readInt();
@@ -37,7 +37,7 @@ async onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc
                 });
                 return true;
             }
-            default: {
+          default: {
                 console.log('invalid request code' + code);
                 break;
             }
@@ -45,8 +45,7 @@ async onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc
         return false;
     }
     
-    sub(num1: number, num2: number, callback: subCallback): void{}
+    public sub(num1: number, num2: number, callback: subCallback): void {}
 
-    static readonly COMMAND_SUB = 1;
+    public static readonly COMMAND_SUB = 1;
 }
-

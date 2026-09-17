@@ -18,12 +18,11 @@ import MultipServiceExt from './multip_service_ext';
 import rpc from '@ohos.rpc';
 
 export default class MultipServiceExtProxy implements MultipServiceExt {
-    constructor(proxy) {
+    constructor(proxy: rpc.IRemoteObject) {
         this.proxy = proxy;
     }
 
-    multip(num1: number, num2: number, callback: multipCallback): void
-    {
+    public multip(num1: number, num2: number, callback: multipCallback): void {
         let option = new rpc.rpc.MessageOption();
         let data = rpc.MessageSequence.create();
         let reply = rpc.MessageSequence.create();
@@ -45,7 +44,6 @@ export default class MultipServiceExtProxy implements MultipServiceExt {
         })
     }
 
-    static readonly COMMAND_MULTIP = 1;
-    private proxy
+    public static readonly COMMAND_MULTIP = 1;
+    private proxy: rpc.IRemoteObject
 }
-

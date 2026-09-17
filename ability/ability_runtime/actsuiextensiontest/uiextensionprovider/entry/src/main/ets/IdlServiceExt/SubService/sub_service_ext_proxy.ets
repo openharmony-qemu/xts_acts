@@ -18,12 +18,11 @@ import SubServiceExt from './sub_service_ext';
 import rpc from '@ohos.rpc';
 
 export default class SubServiceExtProxy implements SubServiceExt {
-    constructor(proxy) {
+    constructor(proxy: rpc.IRemoteObject) {
         this.proxy = proxy;
     }
 
-    sub(num1: number, num2: number, callback: subCallback): void
-    {
+    public sub(num1: number, num2: number, callback: subCallback): void {
         let option = new rpc.rpc.MessageOption();
         let data = rpc.MessageSequence.create();
         let reply = rpc.MessageSequence.create();
@@ -45,7 +44,6 @@ export default class SubServiceExtProxy implements SubServiceExt {
         })
     }
 
-    static readonly COMMAND_SUB = 1;
-    private proxy
+    public static readonly COMMAND_SUB = 1;
+    private proxy: rpc.IRemoteObject
 }
-

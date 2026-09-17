@@ -23,8 +23,7 @@ export default class IdlServiceExtProxy implements IIdlServiceExt {
         this.proxy = proxy;
     }
 
-    add(num1: number, num2: number, callback: addCallback): void
-    {
+    public add(num1: number, num2: number, callback: addCallback): void {
         let option = new rpc.MessageOption();
         let data = rpc.MessageSequence.create();
         let reply = rpc.MessageSequence.create();
@@ -46,7 +45,6 @@ export default class IdlServiceExtProxy implements IIdlServiceExt {
         })
     }
 
-    static readonly COMMAND_ADD = 1;
+    public static readonly COMMAND_ADD = 1;
     private proxy: rpc.IRemoteObject
 }
-

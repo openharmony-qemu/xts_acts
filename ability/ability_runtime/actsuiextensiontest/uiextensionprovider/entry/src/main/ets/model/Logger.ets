@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-const TAG: string = '=== Stage AMS ==='
+const TAG: string = '=== Stage Ability ==='
 
 export default class Logger {
     public static log(tag: string, ...args: Record<string, Object>[]) {
