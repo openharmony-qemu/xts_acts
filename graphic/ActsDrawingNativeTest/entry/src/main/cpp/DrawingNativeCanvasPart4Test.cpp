@@ -19,6 +19,7 @@
 #define DRAWING_NUMBER_1 1
 #define DRAWING_NUMBER_2 2
 #define DRAWING_NUMBER_3 3
+#define DRAWING_NUMBER_4 4
 #define DRAWING_NUMBER_10 10
 #define DRAWING_NUMBER_29 29
 #define DRAWING_NUMBER_32 32
@@ -1469,22 +1470,29 @@ int TestCanvasReadPixelsNormal()
     DrawingNativeCanvasPart4TestSetUp();
     // 1. Create a canvas object by calling OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
-    // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. Call OH_Drawing_CanvasReadPixels
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
-    // add assert
     EXPECT_NE(bitmap, nullptr);
     OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
     constexpr uint32_t width = DRAWING_NUMBER_200;
     constexpr uint32_t height = DRAWING_NUMBER_200;
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     void *pixels = OH_Drawing_BitmapGetPixels(bitmap);
+    OH_Drawing_CanvasBind(canvas, bitmap);
+    
     OH_Drawing_Image_Info imageInfo;
     bool ret = OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0, 0, 0);
-    // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     EXPECT_EQ(ret, false);
+    
+    imageInfo.width = DRAWING_NUMBER_200;
+    imageInfo.height = DRAWING_NUMBER_200;
+    imageInfo.colorType = COLOR_FORMAT_RGBA_8888;
+    imageInfo.alphaType = ALPHA_FORMAT_OPAQUE;
+    ret = OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, width * DRAWING_NUMBER_4, 0, 0);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(ret, true);
     // 3. Free memory
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_CanvasDestroy(canvas);
@@ -1635,23 +1643,32 @@ int TestCanvasReadPixelsToBitmapNormal()
     DrawingNativeCanvasPart4TestSetUp();
     // 1. Create a canvas object by calling OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
-    // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. Create a bitmap object by calling OH_Drawing_BitmapCreate
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
-    // add assert
     EXPECT_NE(bitmap, nullptr);
     uint32_t width = DRAWING_NUMBER_200;
     uint32_t height = DRAWING_NUMBER_200;
     OH_Drawing_BitmapFormat format{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
     OH_Drawing_BitmapBuild(bitmap, width, height, &format);
+    
     // 3. Call OH_Drawing_CanvasReadPixelsToBitmap
     bool ret = OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     EXPECT_EQ(ret, false);
-    // 4. Free memory
+    
+    // 4. Bind a source bitmap to the canvas so that CanvasReadPixelsToBitmap has pixels to read
+    OH_Drawing_Bitmap *canvasBitmap = OH_Drawing_BitmapCreate();
+    EXPECT_NE(canvasBitmap, nullptr);
+    OH_Drawing_BitmapBuild(canvasBitmap, width, height, &format);
+    OH_Drawing_CanvasBind(canvas, canvasBitmap);
+    ret = OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(ret, true);
+    
+    // 5. Free memory
     OH_Drawing_BitmapDestroy(bitmap);
+    OH_Drawing_BitmapDestroy(canvasBitmap);
     OH_Drawing_CanvasDestroy(canvas);
     DrawingNativeCanvasPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -1832,10 +1849,8 @@ int TestCanvasDrawSingleCharacterNull()
     const char *str = "a";
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacter(nullptr, str, font, x, y), OH_DRAWING_ERROR_INVALID_PARAMETER);
     //7. OH_Drawing_CanvasDrawSingleCharacter parameter str is empty
-    str = "";
-    OH_Drawing_CanvasDrawSingleCharacter(canvas, str, font, x, y);
+    OH_Drawing_CanvasDrawSingleCharacter(canvas, "", font, x, y);
     //8. OH_Drawing_CanvasDrawSingleCharacter parameter font is empty
-    str = "a";
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacter(canvas, str, nullptr, x, y), OH_DRAWING_ERROR_INVALID_PARAMETER);
     //9. OH_Drawing_CanvasDrawSingleCharacter parameter str to 0 characters
     OH_Drawing_CanvasDrawSingleCharacter(canvas, str, font, x, y);
