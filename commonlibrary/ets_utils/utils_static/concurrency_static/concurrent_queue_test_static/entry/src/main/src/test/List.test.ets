@@ -13,8 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import ArrayBlockingQueuetest from './ArrayBlockingQueue.test';
+import ArrayBlockingQueueStressTest from './ArrayBlockingQueueStressTest.test';
 import ConcurrentQueueHighConcurrencyTest from './ConcurrentQueueHighConcurrencyTest.test';
+import LinkedBlockingQueueStressTest from './LinkedBlockingQueueStressTest.test';
+import LinkedBlockingQueuetest from './LinkedBlockingQueuetest.test';
 
 export default function testsuite(): void {
+  ArrayBlockingQueuetest();
+  ArrayBlockingQueueStressTest();
   ConcurrentQueueHighConcurrencyTest();
+  LinkedBlockingQueueStressTest();
+  LinkedBlockingQueuetest();
 }
