@@ -31,6 +31,7 @@
 #define PARAM_1 1
 #define PARAM_2 100
 #define PARAM_3 256
+#define PARAM_4 5
 
 #undef LOG_DOMAIN
 #define LOG_DOMAIN 0xD003200
@@ -2576,7 +2577,7 @@ static void OnExternalLogCapacityReached(OH_HiAppEvent_ExternalLog* externalLogA
   for (uint32_t i = 0; i < arrLen; i++) {
       OH_HiAppEvent_ExternalLog* log = &externalLogArr[i];
       OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent [cpi]  filePath: %{public}s, %{public}lld, %{public}ld kb event: %{public}d", log->filePath, log->generationTs, log->fileSize, log->event);
-    if (i >= 5) {
+    if (i >= PARAM_4) {
         break;
     }
   }
