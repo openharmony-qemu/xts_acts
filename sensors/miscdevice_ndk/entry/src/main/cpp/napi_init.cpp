@@ -263,7 +263,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"vibrator_AttributeTest8", nullptr, Vibrator_AttributeTest8, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"vibrator_AttributeTest9", nullptr, Vibrator_AttributeTest9, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"vibrator_AttributeTest10", nullptr, Vibrator_AttributeTest10, nullptr, nullptr, nullptr, napi_default,
-        nullptr},
+         nullptr},
         { "cancel", nullptr, Cancel, nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
