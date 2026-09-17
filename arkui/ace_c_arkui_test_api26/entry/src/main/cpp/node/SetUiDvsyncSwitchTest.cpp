@@ -27,7 +27,7 @@ static napi_value SetUiDvsyncSwitchTest001(napi_env env, napi_callback_info info
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
     auto context = OH_ArkUI_GetContextByNode(column);
     ASSERT_EQ(context != nullptr, true);
-    auto ret = OH_ArkUI_NodeUtils_SetUiDvsyncSwitch(context, true);
+    ret = OH_ArkUI_NodeUtils_SetUiDvsyncSwitch(context, true);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
