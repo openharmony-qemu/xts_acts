@@ -330,8 +330,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_0500
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_0500
-     * @tc.desc   Call context.getApplicationcontext().setFontSizeScale, pass the parameter fontSize as null, and retur
-       n 401
+     * @tc.desc   Call context.getApplicationcontext().setFontSizeScale, pass the parameter fontSize as null, and return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -465,8 +464,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_0700
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_0700
-     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return 401 when the parame
-       ter fontSize is -1
+     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return 401 when the parameter fontSize is -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -744,8 +742,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_1100
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_1100
-     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return 401 when the parame
-       ter fontSize is null
+     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return 401 when the parameter fontSize is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -811,8 +808,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_1200
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_1200
-     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return 401 when the parame
-       ter fontSize is undefined
+     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return 401 when the parameter fontSize is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3

@@ -54,8 +54,7 @@ struct Index {
             } catch (paramError) {
               let code = (paramError as BusinessError).code;
               let message = (paramError as BusinessError).message;
-              hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName paramError.code: %{public}s,
-                message: %{public}s', TAG, code, message);
+              hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName paramError.code: %{public}s, message: %{public}s', TAG, code, message);
             }
           })
 
@@ -76,8 +75,7 @@ struct Index {
             } catch (paramError) {
               let code = (paramError as BusinessError).code;
               let message = (paramError as BusinessError).message;
-              hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName paramError.code: %{public}s,
-                message: %{public}s', TAG, code, message);
+              hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName paramError.code: %{public}s, message: %{public}s', TAG, code, message);
             }
           })
       }

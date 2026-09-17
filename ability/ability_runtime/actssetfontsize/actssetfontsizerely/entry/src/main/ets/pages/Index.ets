@@ -102,12 +102,10 @@ struct IndexEntry {
                 .then(() => {
                   hilog.info(0x0000, this.TAG, "[%{public}s] rely's button: startAbility success.", this.TAG);
                 }).catch((err: BusinessError) => {
-                hilog.info(0x0000, this.TAG, "[%{public}s] rely's button: failed. Code is %{public}s,
-                  message is %{public}s", this.TAG, err.code, err.message);
+                hilog.info(0x0000, this.TAG, "[%{public}s] rely's button: failed. Code is %{public}s, message is %{public}s", this.TAG, err.code, err.message);
               })
             } catch (paramError) {
-              hilog.info(0x0000, this.TAG, "[%{public}s] rely's button: failed. Code is %{public}s,
-                message is %{public}s", this.TAG, paramError.code, paramError.message);
+              hilog.info(0x0000, this.TAG, "[%{public}s] rely's button: failed. Code is %{public}s, message is %{public}s", this.TAG, paramError.code, paramError.message);
             }
           })
 

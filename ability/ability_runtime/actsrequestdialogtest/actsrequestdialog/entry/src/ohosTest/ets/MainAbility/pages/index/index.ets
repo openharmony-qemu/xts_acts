@@ -26,8 +26,7 @@ struct MainAbilityIndex {
     console.info('start run testcase!!!!');
     if (testTime++ == 0) {
       let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-      let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs = AbilityDelegatorRegistry.getArgume
-        nts();
+      let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();
       console.info('start run testcase!!!');
       Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
     }
