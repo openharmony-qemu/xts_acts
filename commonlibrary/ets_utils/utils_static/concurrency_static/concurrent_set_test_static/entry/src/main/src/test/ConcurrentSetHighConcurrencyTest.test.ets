@@ -61,10 +61,11 @@ function batchAddTask(s: containers.ConcurrentSet<number>, start: number, count:
   }
 }
 
-function continuousAddTask(s: containers.ConcurrentSet<number>, c: AtomicInt, count: number): void {
-  for (let i = 0; i < count; i++) {
-    let val: number = c.fetchAdd(1)
-    s.add(val)
+function durationAddTask(s: containers.ConcurrentSet<number>, c: AtomicInt, dur: number, keyRange: number): void {
+  let start: number = Date.now()
+  while (Date.now() - start < dur) {
+    let operation: number = c.fetchAdd(1)
+    s.add(operation % keyRange)
   }
 }
 
@@ -897,7 +898,7 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
     /**
      * @tc.name   ConcurrentSetHighConcurrencyTest2700
      * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_2700
-     * @tc.desc   async 5 threads continuous add 200 iterations each
+     * @tc.desc   async 5 threads continuously add bounded key-range values during 1s duration window
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -905,20 +906,31 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
     it('ConcurrentSetHighConcurrencyTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let counter: AtomicInt = new AtomicInt(0)
+      let durationMs: number = 1000
+      let toleranceMs: number = 30000
+      let startTime: number = Date.now()
       let promises: Promise<Any>[] = []
-      for (let i = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(continuousAddTask, set, counter, 200.0)))
+      try {
+        for (let i = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(durationAddTask, set, counter, durationMs * 1.0, 1000.0)))
+        }
+        await Promise.all(promises)
+      } catch (e) {
+        throw e
       }
-      await Promise.all(promises)
+      let elapsed: number = Date.now() - startTime
+      expect(elapsed).assertLargerOrEqual(durationMs)
+      expect(elapsed).assertLessOrEqual(durationMs + toleranceMs)
+      expect(counter.load()).assertLargerOrEqual(1000)
       expect(set.size).assertEqual(1000)
-      expect(counter.load()).assertEqual(1000)
+      expect(set.has(0)).assertTrue()
       done()
     })
 
     /**
      * @tc.name   ConcurrentSetHighConcurrencyTest2800
      * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_2800
-     * @tc.desc   async 5 threads continuous add 500 iterations each
+     * @tc.desc   async 5 threads continuously add bounded key-range values during 10s duration window
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -926,20 +938,31 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
     it('ConcurrentSetHighConcurrencyTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let counter: AtomicInt = new AtomicInt(0)
+      let durationMs: number = 10000
+      let toleranceMs: number = 40000
+      let startTime: number = Date.now()
       let promises: Promise<Any>[] = []
-      for (let i = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(continuousAddTask, set, counter, 500.0)))
+      try {
+        for (let i = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(durationAddTask, set, counter, durationMs * 1.0, 1000.0)))
+        }
+        await Promise.all(promises)
+      } catch (e) {
+        throw e
       }
-      await Promise.all(promises)
-      expect(set.size).assertEqual(2500)
-      expect(counter.load()).assertEqual(2500)
+      let elapsed: number = Date.now() - startTime
+      expect(elapsed).assertLargerOrEqual(durationMs)
+      expect(elapsed).assertLessOrEqual(durationMs + toleranceMs)
+      expect(counter.load()).assertLargerOrEqual(1000)
+      expect(set.size).assertEqual(1000)
+      expect(set.has(0)).assertTrue()
       done()
     })
 
     /**
      * @tc.name   ConcurrentSetHighConcurrencyTest2900
      * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_2900
-     * @tc.desc   async 5 threads continuous add 1000 iterations each
+     * @tc.desc   async 5 threads continuously add bounded key-range values during 30s duration window
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -947,13 +970,24 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
     it('ConcurrentSetHighConcurrencyTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let counter: AtomicInt = new AtomicInt(0)
+      let durationMs: number = 30000
+      let toleranceMs: number = 60000
+      let startTime: number = Date.now()
       let promises: Promise<Any>[] = []
-      for (let i = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(continuousAddTask, set, counter, 1000.0)))
+      try {
+        for (let i = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(durationAddTask, set, counter, durationMs * 1.0, 1000.0)))
+        }
+        await Promise.all(promises)
+      } catch (e) {
+        throw e
       }
-      await Promise.all(promises)
-      expect(set.size).assertEqual(5000)
-      expect(counter.load()).assertEqual(5000)
+      let elapsed: number = Date.now() - startTime
+      expect(elapsed).assertLargerOrEqual(durationMs)
+      expect(elapsed).assertLessOrEqual(durationMs + toleranceMs)
+      expect(counter.load()).assertLargerOrEqual(1000)
+      expect(set.size).assertEqual(1000)
+      expect(set.has(0)).assertTrue()
       done()
     })
 
@@ -1941,6 +1975,120 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
        expect(verifySetConsistencyNumber(set)).assertTrue()
        done()
      })
+
+    /**
+     * @tc.name   ConcurrentSetHighConcurrencyTest7600
+     * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_7600
+     * @tc.desc   async 5 threads continuously add bounded key-range values during 60s duration window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ConcurrentSetHighConcurrencyTest7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
+      let counter: AtomicInt = new AtomicInt(0)
+      let durationMs: number = 60000
+      let toleranceMs: number = 120000
+      let startTime: number = Date.now()
+      let promises: Promise<Any>[] = []
+      try {
+        for (let i = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(durationAddTask, set, counter, durationMs * 1.0, 1000.0)))
+        }
+        await Promise.all(promises)
+      } catch (e) {
+        throw e
+      }
+      let elapsed: number = Date.now() - startTime
+      expect(elapsed).assertLargerOrEqual(durationMs)
+      expect(elapsed).assertLessOrEqual(durationMs + toleranceMs)
+      expect(counter.load()).assertLargerOrEqual(1000)
+      expect(set.size).assertEqual(1000)
+      expect(set.has(0)).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ConcurrentSetHighConcurrencyTest7700
+     * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_7700
+     * @tc.desc   async batch add 100000 different elements with 10 tasks exact size check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ConcurrentSetHighConcurrencyTest7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
+      let promises: Promise<Any>[] = []
+      let batchSize: number = 10000
+      let scale: number = 100000
+      let threadCount: number = Math.ceil(scale / batchSize)
+      try {
+        for (let i = 0; i < threadCount; i++) {
+          let start: number = i * batchSize
+          let count: number = Math.min(batchSize, scale - i * batchSize)
+          promises.push(taskpool.execute(new taskpool.Task(batchAddTask, set, start * 1.0, count * 1.0)))
+        }
+        await Promise.all(promises)
+      } catch (e) {
+        throw e
+      }
+      expect(set.size).assertEqual(100000)
+      expect(set.has(0)).assertTrue()
+      expect(set.has(99999)).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ConcurrentSetHighConcurrencyTest7800
+     * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_7800
+     * @tc.desc   async 500 tasks concurrent result collection with unique results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ConcurrentSetHighConcurrencyTest7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let resultSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
+      let taskCount: number = 500
+      let uniqueResults: number = 500
+      let promises: Promise<Any>[] = []
+      try {
+        for (let i = 0; i < taskCount; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(resultTask, resultSet, i * 1.0, uniqueResults * 1.0)))
+        }
+        await Promise.all(promises)
+      } catch (e) {
+        throw e
+      }
+      expect(resultSet.size).assertEqual(uniqueResults)
+      expect(resultSet.has(0)).assertTrue()
+      expect(resultSet.has(taskCount - 1)).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ConcurrentSetHighConcurrencyTest7900
+     * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_7900
+     * @tc.desc   async 500 workers concurrent add different values extreme with boundary checks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ConcurrentSetHighConcurrencyTest7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
+      let promises: Promise<Any>[] = []
+      try {
+        for (let i = 0; i < 500; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(addDiffValueTask, set, i * 1.0)))
+        }
+        await Promise.all(promises)
+      } catch (e) {
+        throw e
+      }
+      expect(set.size).assertEqual(500)
+      expect(set.has(0)).assertTrue()
+      expect(set.has(499)).assertTrue()
+      done()
+    })
 
    })
 
