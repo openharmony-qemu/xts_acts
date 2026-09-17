@@ -1948,20 +1948,26 @@ export default function ConcurrentSetRarHighConcurrencyTest(): void {
       let promises: Promise<Any>[] = []
       let readyTask: taskpool.Task = new taskpool.Task(dedupReadWriteReadyTask, set, dedupCount, hostStart)
       let ready: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
-        readyTask.onReceiveData((): void => {
-          resolve(undefined)
+        readyTask.onReceiveData((signal: number): void => {
+          if (signal === 1.0) {
+            resolve(undefined)
+          }
         })
       })
       promises.push(taskpool.execute(readyTask))
       for (let i = 1; i < 20; i++) {
         promises.push(taskpool.execute(new taskpool.Task(dedupReadWriteTask, set, dedupCount)))
       }
-      await ready
-      hostStart.store(1)
-      for (let i = 0; i < 20; i++) {
-        dedupReadWriteTask(set, dedupCount)
+      try {
+        await ready
+        hostStart.store(1)
+        for (let i = 0; i < 20; i++) {
+          dedupReadWriteTask(set, dedupCount)
+        }
+        await Promise.all(promises)
+      } catch (e) {
+        throw e
       }
-      await Promise.all(promises)
       expect(set.has(999)).assertTrue()
       expect(set.size).assertEqual(1)
       expect(dedupCount.load()).assertEqual(400)
@@ -2089,7 +2095,11 @@ export default function ConcurrentSetRarHighConcurrencyTest(): void {
       for (let i = 0; i < channels; i++) {
         promises.push(taskpool.execute(new taskpool.Task(registerTask, userIdSet, i * 1.0, users * 1.0)))
       }
-      await Promise.all(promises)
+      try {
+        await Promise.all(promises)
+      } catch (e) {
+        throw e
+      }
        expect(userIdSet.size).assertEqual(channels * users)
        done()
      })
