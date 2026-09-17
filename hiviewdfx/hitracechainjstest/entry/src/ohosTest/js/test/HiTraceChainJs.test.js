@@ -789,7 +789,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi028
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_02800
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_02800
      * @tc.desc   tracepoint mode param null test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -812,7 +812,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi029
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_02900
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_02900
      * @tc.desc   tracepoint mode param undefined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -835,7 +835,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi030
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_03000
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_03000
      * @tc.desc   tracepoint type param null test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -858,7 +858,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi031
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_03100
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_03100
      * @tc.desc   tracepoint type param undefined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -881,7 +881,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi032
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_03200
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_03200
      * @tc.desc   isFlagEnabled flag param null test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -904,7 +904,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi033
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_03300
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_03300
      * @tc.desc   isFlagEnabled flag param undefined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -927,7 +927,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi034
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_03400
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_03400
      * @tc.desc   tracepoint mode param out-of-range enum test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -950,7 +950,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi035
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_03500
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_03500
      * @tc.desc   tracepoint mode param out-of-range enum test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -973,7 +973,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi036
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_03600
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_03600
      * @tc.desc   tracepoint type param out-of-range enum test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -996,7 +996,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi037
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_03700
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_03700
      * @tc.desc   tracepoint type param out-of-range enum test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1019,7 +1019,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi038
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_03800
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_03800
      * @tc.desc   isFlagEnabled flag param out-of-range enum test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1042,7 +1042,7 @@ describe('HiTraceJsTest', function () {
 
     /**
      * @tc.name   testHitraceApi039
-     * @tc.number SUB_DFX_DFT_Hitrace_JS_03900
+     * @tc.number SUB_DFX_DFT_HiTraceChain_JS_03900
      * @tc.desc   isFlagEnabled flag param out-of-range enum test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
