@@ -20,6 +20,8 @@
 #include <hiappevent/hiappevent_event.h>
 #include <sys/prctl.h>
 
+#define PARAM_4 5
+
 static napi_value Add(napi_env env, napi_callback_info info)
 {
     napi_value res = nullptr;
@@ -67,7 +69,7 @@ static void OnExternalLogCapacityReached(OH_HiAppEvent_ExternalLog* externalLogA
   for (uint32_t i = 0; i < arrLen; i++) {
       OH_HiAppEvent_ExternalLog* log = &externalLogArr[i];
       OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent [cpi]  filePath: %{public}s, %{public}lld, %{public}ld kb event: %{public}d", log->filePath, log->generationTs, log->fileSize, log->event);
-    if (i >= 5) {
+    if (i >= PARAM_4) {
         break;
     }
   }
