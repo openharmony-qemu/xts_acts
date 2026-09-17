@@ -778,22 +778,26 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        for (let i: int = 0; i < 100; i++) {
-          map.set(i, i);
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          for (let i: int = 0; i < 100; i++) {
+            map.set(i, i);
+          }
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 10; i++) {
+            tasks.push(taskpool.execute(readRangeTask, map, 0.0, 100.0));
+          }
+          let results: Any[] = await Promise.all(tasks);
+          let reads: number = 0;
+          for (let i: int = 0; i < results.length; i++) {
+            reads += results[i] as number;
+          }
+          expect(reads).assertEqual(1000);
+          expect(map.size).assertEqual(100);
+          expect(map.get(99)).assertEqual(99.0);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 10; i++) {
-          tasks.push(taskpool.execute(readRangeTask, map, 0.0, 100.0));
-        }
-        let results: Any[] = await Promise.all(tasks);
-        let reads: number = 0;
-        for (let i: int = 0; i < results.length; i++) {
-          reads += results[i] as number;
-        }
-        expect(reads).assertEqual(1000);
-        expect(map.size).assertEqual(100);
-        expect(map.get(99)).assertEqual(99.0);
         done();
       });
 
@@ -853,26 +857,30 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        for (let i: int = 0; i < 100; i++) {
-          map.set(i, i);
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          for (let i: int = 0; i < 100; i++) {
+            map.set(i, i);
+          }
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 10; i++) {
+            tasks.push(taskpool.execute(mixedReadTask, map, 100.0));
+          }
+          for (let i: int = 0; i < 10; i++) {
+            tasks.push(taskpool.execute(mixedWriteTask, map, 100.0));
+          }
+          let results: Any[] = await Promise.all(tasks);
+          let operationCount: number = 0;
+          for (let i: int = 0; i < results.length; i++) {
+            operationCount += results[i] as number;
+          }
+          expect(operationCount).assertEqual(2000);
+          expect(map.size).assertEqual(100);
+          expect(map.get(0)).assertEqual(1000.0);
+          expect(map.get(99)).assertEqual(1099.0);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 10; i++) {
-          tasks.push(taskpool.execute(mixedReadTask, map, 100.0));
-        }
-        for (let i: int = 0; i < 10; i++) {
-          tasks.push(taskpool.execute(mixedWriteTask, map, 100.0));
-        }
-        let results: Any[] = await Promise.all(tasks);
-        let operationCount: number = 0;
-        for (let i: int = 0; i < results.length; i++) {
-          operationCount += results[i] as number;
-        }
-        expect(operationCount).assertEqual(2000);
-        expect(map.size).assertEqual(100);
-        expect(map.get(0)).assertEqual(1000.0);
-        expect(map.get(99)).assertEqual(1099.0);
         done();
       });
 
@@ -905,20 +913,24 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        map.set(77, 707);
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 50; i++) {
-          tasks.push(taskpool.execute(readExpectedValueTask, map, 77.0, 707.0));
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          map.set(77, 707);
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 50; i++) {
+            tasks.push(taskpool.execute(readExpectedValueTask, map, 77.0, 707.0));
+          }
+          let results: Any[] = await Promise.all(tasks);
+          let reads: number = 0;
+          for (let i: int = 0; i < results.length; i++) {
+            reads += results[i] as number;
+          }
+          expect(reads).assertEqual(50);
+          expect(map.get(77)).assertEqual(707.0);
+          expect(map.size).assertEqual(1);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        let results: Any[] = await Promise.all(tasks);
-        let reads: number = 0;
-        for (let i: int = 0; i < results.length; i++) {
-          reads += results[i] as number;
-        }
-        expect(reads).assertEqual(50);
-        expect(map.get(77)).assertEqual(707.0);
-        expect(map.size).assertEqual(1);
         done();
       });
 
@@ -932,23 +944,27 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        map.set(88, 0);
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 10; i++) {
-          tasks.push(taskpool.execute(replaceSameKeyTask, map, 88.0, (i + 1) * 1.0));
-        }
-        let results: Any[] = await Promise.all(tasks);
-        let replaced: number = 0;
-        for (let i: int = 0; i < results.length; i++) {
-          replaced += results[i] as number;
-        }
-        let value: number | undefined = map.get(88);
-        expect(replaced).assertEqual(10);
-        expect(map.size).assertEqual(1);
-        expect(value !== undefined).assertTrue();
-        if (value !== undefined) {
-          expect(value >= 1 && value <= 10).assertTrue();
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          map.set(88, 0);
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 10; i++) {
+            tasks.push(taskpool.execute(replaceSameKeyTask, map, 88.0, (i + 1) * 1.0));
+          }
+          let results: Any[] = await Promise.all(tasks);
+          let replaced: number = 0;
+          for (let i: int = 0; i < results.length; i++) {
+            replaced += results[i] as number;
+          }
+          let value: number | undefined = map.get(88);
+          expect(replaced).assertEqual(10);
+          expect(map.size).assertEqual(1);
+          expect(value !== undefined).assertTrue();
+          if (value !== undefined) {
+            expect(value >= 1 && value <= 10).assertTrue();
+          }
+        } catch (error) {
+          expect(error).assertFail();
         }
         done();
       });
@@ -1164,26 +1180,30 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let cache: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        for (let i: int = 0; i < 100; i++) {
-          cache.set(i, i);
+        try {
+          let cache: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          for (let i: int = 0; i < 100; i++) {
+            cache.set(i, i);
+          }
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 9; i++) {
+            tasks.push(taskpool.execute(cacheReadTask, cache, 10.0));
+          }
+          tasks.push(taskpool.execute(cacheWriteTask, cache, 10.0));
+          let results: Any[] = await Promise.all(tasks);
+          let reads: number = 0;
+          for (let i: int = 0; i < 9; i++) {
+            reads += results[i] as number;
+          }
+          expect(reads).assertEqual(90);
+          expect(results[9] as number).assertEqual(10);
+          expect(cache.size).assertEqual(100);
+          expect(cache.get(0)).assertEqual(1000.0);
+          expect(cache.get(9)).assertEqual(1009.0);
+          expect(cache.get(99)).assertEqual(99.0);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 9; i++) {
-          tasks.push(taskpool.execute(cacheReadTask, cache, 10.0));
-        }
-        tasks.push(taskpool.execute(cacheWriteTask, cache, 10.0));
-        let results: Any[] = await Promise.all(tasks);
-        let reads: number = 0;
-        for (let i: int = 0; i < 9; i++) {
-          reads += results[i] as number;
-        }
-        expect(reads).assertEqual(90);
-        expect(results[9] as number).assertEqual(10);
-        expect(cache.size).assertEqual(100);
-        expect(cache.get(0)).assertEqual(1000.0);
-        expect(cache.get(9)).assertEqual(1009.0);
-        expect(cache.get(99)).assertEqual(99.0);
         done();
       });
 
@@ -1197,31 +1217,35 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let cache: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        for (let i: int = 0; i < 100; i++) {
-          cache.set(i, i);
+        try {
+          let cache: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          for (let i: int = 0; i < 100; i++) {
+            cache.set(i, i);
+          }
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 5; i++) {
+            tasks.push(taskpool.execute(cacheReadTask, cache, 10.0));
+          }
+          for (let i: int = 0; i < 5; i++) {
+            tasks.push(taskpool.execute(cacheWriteTask, cache, 10.0));
+          }
+          let results: Any[] = await Promise.all(tasks);
+          let reads: number = 0;
+          let writes: number = 0;
+          for (let i: int = 0; i < 5; i++) {
+            reads += results[i] as number;
+          }
+          for (let i: int = 5; i < 10; i++) {
+            writes += results[i] as number;
+          }
+          expect(reads).assertEqual(50);
+          expect(writes).assertEqual(50);
+          expect(cache.size).assertEqual(100);
+          expect(cache.get(0)).assertEqual(1000.0);
+          expect(cache.get(9)).assertEqual(1009.0);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 5; i++) {
-          tasks.push(taskpool.execute(cacheReadTask, cache, 10.0));
-        }
-        for (let i: int = 0; i < 5; i++) {
-          tasks.push(taskpool.execute(cacheWriteTask, cache, 10.0));
-        }
-        let results: Any[] = await Promise.all(tasks);
-        let reads: number = 0;
-        let writes: number = 0;
-        for (let i: int = 0; i < 5; i++) {
-          reads += results[i] as number;
-        }
-        for (let i: int = 5; i < 10; i++) {
-          writes += results[i] as number;
-        }
-        expect(reads).assertEqual(50);
-        expect(writes).assertEqual(50);
-        expect(cache.size).assertEqual(100);
-        expect(cache.get(0)).assertEqual(1000.0);
-        expect(cache.get(9)).assertEqual(1009.0);
         done();
       });
 
@@ -1235,32 +1259,36 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let config: containers.ConcurrentHashMap<string, string> = new containers.ConcurrentHashMap<string, string>();
-        config.set('timeout', '5000');
-        config.set('retries', '3');
-        config.set('logLevel', 'INFO');
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 50; i++) {
-          tasks.push(taskpool.execute(configReadTask, config));
+        try {
+          let config: containers.ConcurrentHashMap<string, string> = new containers.ConcurrentHashMap<string, string>();
+          config.set('timeout', '5000');
+          config.set('retries', '3');
+          config.set('logLevel', 'INFO');
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 50; i++) {
+            tasks.push(taskpool.execute(configReadTask, config));
+          }
+          for (let i: int = 0; i < 5; i++) {
+            tasks.push(taskpool.execute(configUpdateTask, config));
+          }
+          let results: Any[] = await Promise.all(tasks);
+          let reads: number = 0;
+          let updates: number = 0;
+          for (let i: int = 0; i < 50; i++) {
+            reads += results[i] as number;
+          }
+          for (let i: int = 50; i < 55; i++) {
+            updates += results[i] as number;
+          }
+          expect(reads).assertEqual(50);
+          expect(updates).assertEqual(5);
+          expect(config.size).assertEqual(3);
+          expect(config.get('timeout')).assertEqual('10000');
+          expect(config.get('retries')).assertEqual('5');
+          expect(config.get('logLevel')).assertEqual('INFO');
+        } catch (error) {
+          expect(error).assertFail();
         }
-        for (let i: int = 0; i < 5; i++) {
-          tasks.push(taskpool.execute(configUpdateTask, config));
-        }
-        let results: Any[] = await Promise.all(tasks);
-        let reads: number = 0;
-        let updates: number = 0;
-        for (let i: int = 0; i < 50; i++) {
-          reads += results[i] as number;
-        }
-        for (let i: int = 50; i < 55; i++) {
-          updates += results[i] as number;
-        }
-        expect(reads).assertEqual(50);
-        expect(updates).assertEqual(5);
-        expect(config.size).assertEqual(3);
-        expect(config.get('timeout')).assertEqual('10000');
-        expect(config.get('retries')).assertEqual('5');
-        expect(config.get('logLevel')).assertEqual('INFO');
         done();
       });
 
@@ -1274,25 +1302,29 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let sessions: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        for (let i: int = 0; i < 100; i++) {
-          sessions.set(2000 + i, 10000 + i);
+        try {
+          let sessions: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          for (let i: int = 0; i < 100; i++) {
+            sessions.set(2000 + i, 10000 + i);
+          }
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 50; i++) {
+            tasks.push(taskpool.execute(sessionLogoutTask, sessions, 2000.0 + i));
+          }
+          let results: Any[] = await Promise.all(tasks);
+          let deleted: number = 0;
+          for (let i: int = 0; i < results.length; i++) {
+            deleted += results[i] as number;
+          }
+          expect(deleted).assertEqual(50);
+          expect(sessions.size).assertEqual(50);
+          expect(sessions.has(2000)).assertFalse();
+          expect(sessions.has(2049)).assertFalse();
+          expect(sessions.get(2050)).assertEqual(10050.0);
+          expect(sessions.get(2099)).assertEqual(10099.0);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 50; i++) {
-          tasks.push(taskpool.execute(sessionLogoutTask, sessions, 2000.0 + i));
-        }
-        let results: Any[] = await Promise.all(tasks);
-        let deleted: number = 0;
-        for (let i: int = 0; i < results.length; i++) {
-          deleted += results[i] as number;
-        }
-        expect(deleted).assertEqual(50);
-        expect(sessions.size).assertEqual(50);
-        expect(sessions.has(2000)).assertFalse();
-        expect(sessions.has(2049)).assertFalse();
-        expect(sessions.get(2050)).assertEqual(10050.0);
-        expect(sessions.get(2099)).assertEqual(10099.0);
         done();
       });
 
@@ -1337,57 +1369,61 @@ export default function ConcurrentHashMapHighConcurrencyTest(): void {
      */
     it('ConcurrentHashMapHighConcurrencyTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-        for (let i: int = 0; i < 100; i++) {
-          map.set(i, i);
-        }
-        let start: AtomicInt = new AtomicInt(0);
-        let finish: AtomicInt = new AtomicInt(0);
-        let task: taskpool.Task = new taskpool.Task(weakMutationTask, map, 1.0, start, finish);
-        let ready: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
-          task.onReceiveData((signal: number): void => {
-            if (signal === 1) {
-              resolve(undefined);
-            }
+        try {
+          let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
+          for (let i: int = 0; i < 100; i++) {
+            map.set(i, i);
+          }
+          let start: AtomicInt = new AtomicInt(0);
+          let finish: AtomicInt = new AtomicInt(0);
+          let task: taskpool.Task = new taskpool.Task(weakMutationTask, map, 1.0, start, finish);
+          let ready: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
+            task.onReceiveData((signal: number): void => {
+              if (signal === 1) {
+                resolve(undefined);
+              }
+            });
           });
-        });
-        let mutation: Promise<Any> = taskpool.execute(task);
-        await ready;
-        let iter: IterableIterator<number> = map.keys();
-        let first: IteratorResult<number> = iter.next();
-        let seen: number = first.done ? 0 : 1;
-        let originalKeys: number = 0;
-        let appendedKeys: number = 0;
-        if (!first.done) {
-          let firstValue: number | undefined = first.value;
-          if (firstValue !== undefined) {
-            if (firstValue < 100) {
-              originalKeys++;
-            } else if (firstValue < 200) {
-              appendedKeys++;
+          let mutation: Promise<Any> = taskpool.execute(task);
+          await ready;
+          let iter: IterableIterator<number> = map.keys();
+          let first: IteratorResult<number> = iter.next();
+          let seen: number = first.done ? 0 : 1;
+          let originalKeys: number = 0;
+          let appendedKeys: number = 0;
+          if (!first.done) {
+            let firstValue: number | undefined = first.value;
+            if (firstValue !== undefined) {
+              if (firstValue < 100) {
+                originalKeys++;
+              } else if (firstValue < 200) {
+                appendedKeys++;
+              }
             }
           }
-        }
-        start.store(1);
-        expect(await mutation as number).assertEqual(100);
-        let result: IteratorResult<number> = iter.next();
-        while (!result.done) {
-          seen++;
-          let value: number | undefined = result.value;
-          if (value !== undefined) {
-            if (value < 100) {
-              originalKeys++;
-            } else if (value < 200) {
-              appendedKeys++;
+          start.store(1);
+          expect(await mutation as number).assertEqual(100);
+          let result: IteratorResult<number> = iter.next();
+          while (!result.done) {
+            seen++;
+            let value: number | undefined = result.value;
+            if (value !== undefined) {
+              if (value < 100) {
+                originalKeys++;
+              } else if (value < 200) {
+                appendedKeys++;
+              }
             }
+            result = iter.next();
           }
-          result = iter.next();
+          expect(originalKeys).assertEqual(100);
+          expect(appendedKeys).assertEqual(100);
+          expect(seen).assertEqual(200);
+          expect(map.size).assertEqual(200);
+          expect(map.get(199)).assertEqual(199.0);
+        } catch (error) {
+          expect(error).assertFail();
         }
-        expect(originalKeys).assertEqual(100);
-        expect(appendedKeys).assertEqual(100);
-        expect(seen).assertEqual(200);
-        expect(map.size).assertEqual(200);
-        expect(map.get(199)).assertEqual(199.0);
         done();
       });
 
