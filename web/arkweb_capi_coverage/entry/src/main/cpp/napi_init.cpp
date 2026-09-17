@@ -20,6 +20,18 @@ static napi_value CreateResult(napi_env env, int32_t resultCode)
     return result;
 }
 
+static int32_t GetCaseNum(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t caseNum = 0;
+    if (argc >= 1 && args[0] != nullptr) {
+        napi_get_value_int32(env, args[0], &caseNum);
+    }
+    return caseNum;
+}
+
 // ========== 回调函数 ==========
 static void OnScrollCallbackImpl(const char*, void*, double, double)
 {
@@ -481,6 +493,36 @@ static napi_value TestNativeArkWeb_LoadData(napi_env env, napi_callback_info inf
     return result;
 }
 
+static napi_value TestNativeArkWeb_LoadDataByCase(napi_env env, napi_callback_info info)
+{
+    int32_t caseNum = GetCaseNum(env, info);
+    ArkWeb_ErrorCode ret = ARKWEB_SUCCESS;
+    switch (caseNum) {
+        case 0:
+            ret = OH_NativeArkWeb_LoadData("test_tag", "<html><body>Hello</body></html>",
+                "text/html", "UTF-8", nullptr, nullptr);
+            break;
+        case 1:
+            ret = OH_NativeArkWeb_LoadData("unbound_tag", "<html><body>Hello</body></html>",
+                "text/html", "UTF-8", nullptr, nullptr);
+            break;
+        case 2:
+            ret = OH_NativeArkWeb_LoadData("test_tag", "", "text/html", "UTF-8", nullptr, nullptr);
+            break;
+        case 3:
+            ret = OH_NativeArkWeb_LoadData("test_tag", "<html><body>Hello</body></html>",
+                "", "UTF-8", nullptr, nullptr);
+            break;
+        case 4:
+            ret = OH_NativeArkWeb_LoadData("test_tag", "<html><body>Hello</body></html>",
+                "text/html", "", nullptr, nullptr);
+            break;
+        default:
+            break;
+    }
+    return CreateResult(env, static_cast<int32_t>(ret));
+}
+
 // ---- native_blankless ----
 
 static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKey(napi_env env, napi_callback_info info)
@@ -508,14 +550,61 @@ static napi_value TestNativeArkWeb_ClearBlanklessLoadingCache(napi_env env, napi
 static napi_value TestNativeArkWeb_GetBlanklessInfoWithKey(napi_env env, napi_callback_info info)
 {
     ArkWeb_BlanklessInfo infoResult = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
-    bool validError = infoResult.errCode == ARKWEB_BLANKLESS_SUCCESS ||
-        infoResult.errCode == ARKWEB_BLANKLESS_ERR_UNKNOWN ||
-        infoResult.errCode == ARKWEB_BLANKLESS_ERR_INVALID_ARGS ||
-        infoResult.errCode == ARKWEB_BLANKLESS_ERR_CONTROLLER_NOT_INITED ||
-        infoResult.errCode == ARKWEB_BLANKLESS_ERR_KEY_NOT_MATCH ||
-        infoResult.errCode == ARKWEB_BLANKLESS_ERR_SIGNIFICANT_CHANGE ||
-        infoResult.errCode == ARKWEB_BLANKLESS_ERR_DEVICE_NOT_SUPPORT;
-    return CreateResult(env, validError ? 0 : -1);
+    return CreateResult(env, static_cast<int32_t>(infoResult.errCode));
+}
+
+static napi_value TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(napi_env env, napi_callback_info info)
+{
+    int32_t caseNum = GetCaseNum(env, info);
+    ArkWeb_BlanklessInfo infoResult = {ARKWEB_BLANKLESS_SUCCESS, 0, 0};
+    switch (caseNum) {
+        case 0:
+            infoResult = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
+            break;
+        case 1:
+            infoResult = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "new_key");
+            break;
+        case 2:
+            infoResult = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "");
+            break;
+        case 3:
+            infoResult = OH_NativeArkWeb_GetBlanklessInfoWithKey("", "test_key");
+            break;
+        default:
+            break;
+    }
+    return CreateResult(env, static_cast<int32_t>(infoResult.errCode));
+}
+
+static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(napi_env env, napi_callback_info info)
+{
+    int32_t caseNum = GetCaseNum(env, info);
+    ArkWeb_BlanklessErrorCode ret = ARKWEB_BLANKLESS_SUCCESS;
+    switch (caseNum) {
+        case 0:
+            ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey("unbound_tag", "test_key", false);
+            break;
+        case 1:
+            ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey("", "test_key", false);
+            break;
+        case 2:
+            ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey("test_tag", "", false);
+            break;
+        case 3:
+            ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey(nullptr, nullptr, true);
+            break;
+        case 4:
+            OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "match_key");
+            ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey("test_tag", "other_key", false);
+            break;
+        case 5:
+            OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
+            ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey("test_tag", "test_key", true);
+            break;
+        default:
+            break;
+    }
+    return CreateResult(env, static_cast<int32_t>(ret));
 }
 
 static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacity(napi_env env, napi_callback_info info)
@@ -551,8 +640,33 @@ static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid(napi_env en
 static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn(napi_env env, napi_callback_info info)
 {
     uint32_t ret = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(50);
-    bool validReturn = ret == 0 || ret == 50;
-    return CreateResult(env, validReturn ? 0 : -1);
+    return CreateResult(env, static_cast<int32_t>(ret));
+}
+
+static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacityByCase(napi_env env, napi_callback_info info)
+{
+    int32_t caseNum = GetCaseNum(env, info);
+    uint32_t capacity = 30;
+    switch (caseNum) {
+        case 0:
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(0);
+            break;
+        case 1:
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(100);
+            break;
+        case 2:
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(101);
+            break;
+        case 3:
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(50);
+            break;
+        case 4:
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(30);
+            break;
+        default:
+            break;
+    }
+    return CreateResult(env, static_cast<int32_t>(capacity));
 }
 
 // ---- native_engine ----
@@ -691,11 +805,17 @@ static const napi_property_descriptor K_NAPI_DESCRIPTORS[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_LoadData", nullptr, TestNativeArkWeb_LoadData,
         nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_LoadDataByCase", nullptr, TestNativeArkWeb_LoadDataByCase,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_SetBlanklessLoadingWithKey", nullptr, TestNativeArkWeb_SetBlanklessLoadingWithKey,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_ClearBlanklessLoadingCache", nullptr, TestNativeArkWeb_ClearBlanklessLoadingCache,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_GetBlanklessInfoWithKey", nullptr, TestNativeArkWeb_GetBlanklessInfoWithKey,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_GetBlanklessInfoWithKeyByCase", nullptr, TestNativeArkWeb_GetBlanklessInfoWithKeyByCase,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase", nullptr, TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_SetBlanklessLoadingCacheCapacity", nullptr,
         TestNativeArkWeb_SetBlanklessLoadingCacheCapacity,
@@ -708,6 +828,9 @@ static const napi_property_descriptor K_NAPI_DESCRIPTORS[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn", nullptr,
         TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_SetBlanklessLoadingCacheCapacityByCase", nullptr,
+        TestNativeArkWeb_SetBlanklessLoadingCacheCapacityByCase,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_SetActiveWebEngineVersion", nullptr, TestNativeArkWeb_SetActiveWebEngineVersion,
         nullptr, nullptr, nullptr, napi_default, nullptr},
