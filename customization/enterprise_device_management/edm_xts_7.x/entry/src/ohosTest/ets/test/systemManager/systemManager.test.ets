@@ -3067,6 +3067,8 @@ function testStartExactTimer() {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
+  });
+
   /**
    * @tc.name   test_start_exact_timer_1000
    * @tc.number SUB_CUSTOMIZATION_EDM_START_EXACT_TIMER_JS_1000
