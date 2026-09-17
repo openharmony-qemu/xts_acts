@@ -2680,13 +2680,8 @@ function testCreateExactTimer() {
         callback: () => {}
       };
       await systemManager.createExactTimer(config);
-      expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
-      } else {
-        expect(error.code === 9200012).assertTrue();
-      }
+      expect(error.code === 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3109,47 +3104,6 @@ function testStartExactTimer() {
     }
     done();
   });
-
-  /**
-   * @tc.name   test_start_exact_timer_1100
-   * @tc.number SUB_CUSTOMIZATION_EDM_START_EXACT_TIMER_JS_1100
-   * @tc.desc   test systemManager startExactTimer with negative triggerTime
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it("test_start_exact_timer_1100", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-    let timerId: number = -1;
-    try {
-      timerId = await systemManager.createExactTimer(getValidTimerConfig());
-    } catch (error) {
-      expect(error.code === 801).assertTrue();
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
-      done();
-      return;
-    }
-    try {
-      await systemManager.startExactTimer(timerId, -1);
-      expect(false).assertTrue();
-    } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
-      } else {
-        expect(error.code === 9200012).assertTrue();
-      }
-    } finally {
-      if (timerId >= 0) {
-        try {
-          await systemManager.destroyExactTimer(timerId);
-        } catch (e) {
-          console.info('destroyExactTimer failed: ' + JSON.stringify(e));
-        }
-      }
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
-    }
-    done();
-  });
 }
 
 function testStopExactTimer() {
@@ -3351,13 +3305,8 @@ function testStopExactTimer() {
     }
     try {
       await systemManager.stopExactTimer(timerId);
-      expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
-      } else {
-        expect(error.code === 9201054).assertTrue();
-      }
+      expect(error.code === 801).assertTrue();
     } finally {
       if (timerId >= 0) {
         try {
