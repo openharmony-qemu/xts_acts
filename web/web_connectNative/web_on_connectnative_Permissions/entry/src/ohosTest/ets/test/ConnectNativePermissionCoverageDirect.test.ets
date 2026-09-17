@@ -30,11 +30,11 @@ function sleep(time: number): Promise<void> {
   });
 }
 
-function assertPermissionOrCapabilityError(code: number): void {
-  if (code === CAPABILITY_NOT_SUPPORTED_ERROR) {
-    expect(code).assertEqual(CAPABILITY_NOT_SUPPORTED_ERROR);
+function assertPermissionOrCapabilityError(err: BusinessError): void {
+  if (err.code === CAPABILITY_NOT_SUPPORTED_ERROR) {
+    expect(err.code).assertEqual(CAPABILITY_NOT_SUPPORTED_ERROR);
   } else {
-    expect(code).assertEqual(PERMISSION_DENIED_ERROR);
+    expect(err.code).assertEqual(PERMISSION_DENIED_ERROR);
   }
 }
 
@@ -83,9 +83,9 @@ export default function connectNativePermissionCoverageDirect() {
           hilog.info(0x0000, 'testTag', `${tcNumber} connectNative returned without throwing 201`);
           expect().assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} connectNative error: ${JSON.stringify(err)}`);
-          assertPermissionOrCapabilityError(Number(err.code));
+          assertPermissionOrCapabilityError(err as BusinessError);
           done();
         }
       })
@@ -110,12 +110,12 @@ export default function connectNativePermissionCoverageDirect() {
             done();
           }).catch((err: BusinessError) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative error: ${JSON.stringify(err)}`);
-            assertPermissionOrCapabilityError(Number(err.code));
+            assertPermissionOrCapabilityError(err);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error: ${JSON.stringify(err)}`);
-          assertPermissionOrCapabilityError(Number(err.code));
+          assertPermissionOrCapabilityError(err as BusinessError);
           done();
         }
       })
