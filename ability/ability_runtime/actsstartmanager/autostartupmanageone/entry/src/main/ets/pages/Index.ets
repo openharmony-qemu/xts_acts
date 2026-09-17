@@ -54,8 +54,7 @@ struct Index {
                 if (err) {
                   hilog.info(0x0000, this.TAG, '[%{public}s] setApplicationAutoStartup callback err: %{public}s',
                     this.TAG, JSON.stringify(err));
-                  this.message = 'setApplicationAutoStartup callback err, code: ' + JSON.stringify(err.code) + ',
-                    message: ' + JSON.stringify(err.message);
+                  this.message = 'setApplicationAutoStartup callback err, code: ' + JSON.stringify(err.code) + ', message: ' + JSON.stringify(err.message);
                 } else {
                   hilog.info(0x0000, this.TAG, '[%{public}s] setApplicationAutoStartup callback succeed.', this.TAG);
                   this.message = 'setApplicationAutoStartup callback succeed.';
@@ -79,8 +78,7 @@ struct Index {
             } catch (err) {
               hilog.info(0x0000, this.TAG, '[%{public}s] setApplicationAutoStartup callback throw err: %{public' +
                 '}s', this.TAG, JSON.stringify(err));
-              this.message = 'setApplicationAutoStartup callback throw err, code: ' + JSON.stringify(err.code) + ',
-                message: ' + JSON.stringify(err.message);
+              this.message = 'setApplicationAutoStartup callback throw err, code: ' + JSON.stringify(err.code) + ', message: ' + JSON.stringify(err.message);
               let options: commonEventManager.CommonEventPublishData = {
                 code: 1,
                 parameters: {
@@ -111,8 +109,7 @@ struct Index {
                 if (err) {
                   hilog.info(0x0000, this.TAG, '[%{public}s] cancelApplicationAutoStartup callback err: %{publi' +
                     'c}s', this.TAG, JSON.stringify(err));
-                  this.message = 'cancelApplicationAutoStartup callback err, code: ' + JSON.stringify(err.code) + ',
-                    message: ' + JSON.stringify(err.message);
+                  this.message = 'cancelApplicationAutoStartup callback err, code: ' + JSON.stringify(err.code) + ', message: ' + JSON.stringify(err.message);
                 } else {
                   hilog.info(0x0000, this.TAG, '[%{public}s] cancelApplicationAutoStartup callback succeed.', this.TAG);
                   this.message = 'cancelApplicationAutoStartup callback succeed.';
@@ -136,8 +133,7 @@ struct Index {
             } catch (err) {
               hilog.info(0x0000, this.TAG, '[%{public}s] cancelApplicationAutoStartup callback throw err: %{pub' +
                 'lic}s', this.TAG, JSON.stringify(err));
-              this.message = 'cancelApplicationAutoStartup callback throw err, code: ' + JSON.stringify(err.code) + ',
-                message: ' + JSON.stringify(err.message);
+              this.message = 'cancelApplicationAutoStartup callback throw err, code: ' + JSON.stringify(err.code) + ', message: ' + JSON.stringify(err.message);
               let options: commonEventManager.CommonEventPublishData = {
                 code: 1,
                 parameters: {
@@ -186,8 +182,7 @@ struct Index {
             } catch (err) {
               hilog.info(0x0000, this.TAG, '[%{public}s] setApplicationAutoStartup promise throw err: %{public}' +
                 's', this.TAG, JSON.stringify(err));
-              this.message = 'setApplicationAutoStartup promise throw err, code: ' + JSON.stringify(err.code) + ',
-                message: ' + JSON.stringify(err.message);
+              this.message = 'setApplicationAutoStartup promise throw err, code: ' + JSON.stringify(err.code) + ', message: ' + JSON.stringify(err.message);
               let options: commonEventManager.CommonEventPublishData = {
                 code: 1,
                 parameters: {
@@ -236,8 +231,7 @@ struct Index {
             } catch (err) {
               hilog.info(0x0000, this.TAG, '[%{public}s] cancelApplicationAutoStartup promise throw err: %{publ' +
                 'ic}s', this.TAG, JSON.stringify(err));
-              this.message = 'cancelApplicationAutoStartup promise throw err, code: ' + JSON.stringify(err.code) + ',
-                message: ' + JSON.stringify(err.message);
+              this.message = 'cancelApplicationAutoStartup promise throw err, code: ' + JSON.stringify(err.code) + ', message: ' + JSON.stringify(err.message);
               let options: commonEventManager.CommonEventPublishData = {
                 code: 1,
                 parameters: {
@@ -265,8 +259,7 @@ struct Index {
                 if (err) {
                   hilog.info(0x0000, this.TAG, '[%{public}s] queryAllAutoStartupApplications callback err: %{pu' +
                     'blic}s', this.TAG, JSON.stringify(err));
-                  this.message = 'queryAllAutoStartupApplications callback err, code: ' + JSON.stringify(err.code) + ',
-                    message: ' + JSON.stringify(err.message);
+                  this.message = 'queryAllAutoStartupApplications callback err, code: ' + JSON.stringify(err.code) + ', message: ' + JSON.stringify(err.message);
                 } else {
                   hilog.info(0x0000, this.TAG, '[%{public}s] queryAllAutoStartupApplications callback succeed.',
                     this.TAG);
@@ -339,8 +332,7 @@ struct Index {
             } catch (err) {
               hilog.info(0x0000, this.TAG, '[%{public}s] queryAllAutoStartupApplications promise throw err: %{p' +
                 'ublic}s', this.TAG, JSON.stringify(err));
-              this.message = 'queryAllAutoStartupApplications promise throw err, code: ' + JSON.stringify(err.code) + ',
-                message: ' + JSON.stringify(err.message);
+              this.message = 'queryAllAutoStartupApplications promise throw err, code: ' + JSON.stringify(err.code) + ', message: ' + JSON.stringify(err.message);
               let options: commonEventManager.CommonEventPublishData = {
                 code: 1,
                 parameters: {

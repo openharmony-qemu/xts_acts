@@ -53,7 +53,7 @@ export default class EntryAbility extends UIAbility {
       message: 'success',
       name: 'test'
     };
-    if (want.parameters.isPromote === true) {
+    if (want.parameters?.isPromote === true) {
       try {
         let headFlag: boolean = true;
         if (want.parameters?.isHead !== true) {
@@ -75,7 +75,7 @@ export default class EntryAbility extends UIAbility {
       }
     }
 
-    if (want.parameters.isDemote === true) {
+    if (want.parameters?.isDemote === true) {
       console.info(`${TEST_SUITE_NAME}====> begin: demote`)
       try {
         application.demoteCurrentFromCandidateMasterProcess()
@@ -95,7 +95,7 @@ export default class EntryAbility extends UIAbility {
       }
     }
 
-    if (want.parameters.isExit === true || want.parameters.isOnNewProcessRequest === true) {
+    if (want.parameters?.isExit === true || want.parameters?.isOnNewProcessRequest === true) {
       console.info(`${TEST_SUITE_NAME}====> begin: exit`)
       try {
         application.exitMasterProcessRole()

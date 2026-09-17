@@ -116,7 +116,7 @@ export default function abilityTest() {
               `${tcNumber} commonEventManager.subscribe callback err: ${JSON.stringify(err)}`);
             hilog.info(0x0000, 'testTag',
               `${tcNumber} commonEventManager.subscribe callback data: ${JSON.stringify(data)}`);
-            let result: boolean = data.parameters.result === 'false' || data.parameters.result === '801';
+            let result: boolean = data.parameters?.result === 'false' || data.parameters?.result === '801';
             expect(result).assertTrue();
             commonEventManager.unsubscribe(mySubscriber, () => {
               hilog.info(0x0000, 'testTag', `${tcNumber} commonEventManager.unsubscribe callback`);

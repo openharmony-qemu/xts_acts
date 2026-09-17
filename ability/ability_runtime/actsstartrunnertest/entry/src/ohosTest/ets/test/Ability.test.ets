@@ -211,8 +211,8 @@ export default function abilityTest() {
                 .then(() => {
                   console.log('====>startAbility end====>');
                 }).catch((error: BusinessError) => {
-                  if (err) {
-                    console.error(JSON.stringify(err));
+                  if (error) {
+                    console.error(JSON.stringify(error));
                   }
                   expect().assertFail();
                   console.log('ACTS_StartAbility_Promise_0100 - timeout');

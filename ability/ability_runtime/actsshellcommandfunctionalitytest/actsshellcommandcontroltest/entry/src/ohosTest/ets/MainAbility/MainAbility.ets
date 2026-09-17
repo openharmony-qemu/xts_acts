@@ -26,8 +26,7 @@ export default class MainAbility extends Ability {
     // Ability is creating, initialize resources for this ability
     console.log('ActsShellCommandControlTest  MainAbility onCreate');
     let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs = abilityDelegatorRegistry.getArgumen
-      ts();
+    let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs = abilityDelegatorRegistry.getArguments();
     console.info('start run testcase!!!');
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
   }

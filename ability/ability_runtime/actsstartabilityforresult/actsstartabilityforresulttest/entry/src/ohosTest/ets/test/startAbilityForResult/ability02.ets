@@ -46,7 +46,7 @@ onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam):void {
   onWindowStageCreate(windowStage: window.WindowStage):void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility02 onWindowStageCreate');
 
-    windowStage.loadContent('testability/pages/Index', (err: BusinessError, data: Record<string, Object>) => {
+    windowStage.loadContent('testability/pages/Index', (err: BusinessError, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

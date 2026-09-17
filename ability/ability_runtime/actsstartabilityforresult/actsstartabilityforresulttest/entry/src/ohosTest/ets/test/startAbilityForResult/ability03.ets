@@ -41,7 +41,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
         'Result_5000 publish ability03_onWindowStageCreate');
     });
-    windowStage.loadContent('testability/pages/Index', (err: BusinessError, data: Record<string, Object>) => {
+    windowStage.loadContent('testability/pages/Index', (err: BusinessError, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

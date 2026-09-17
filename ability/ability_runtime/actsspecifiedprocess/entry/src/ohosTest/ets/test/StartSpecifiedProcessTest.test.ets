@@ -43,7 +43,7 @@ async function startAbility(want: Want) {
   context.startAbility(want)
     .then(() => {
       console.info(`${TEST_SUITE_NAME}====>startAbility success====>`);
-      if (want.parameters.isPromote === true) {
+      if (want.parameters?.isPromote === true) {
         console.info(`${TEST_SUITE_NAME}====>ispromote true====>`);
       }
     })
@@ -88,8 +88,7 @@ export default function startSpecifiedProcessTest() {
                 console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
                   message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 100=====> d
-                ata: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 100=====> data: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(16000115).assertEqual(commonEventData.code);
@@ -144,8 +143,7 @@ export default function startSpecifiedProcessTest() {
                 console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
                   message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 200=====> d
-                ata: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 200=====> data: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(16000117).assertEqual(commonEventData.code);
@@ -200,8 +198,7 @@ export default function startSpecifiedProcessTest() {
                 console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
                   message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 300=====> d
-                ata: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 300=====> data: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(0).assertEqual(commonEventData.code);
@@ -256,8 +253,7 @@ export default function startSpecifiedProcessTest() {
                 console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
                   message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> d
-                ata: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> data: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(16000116).assertEqual(commonEventData.code);
@@ -312,8 +308,7 @@ export default function startSpecifiedProcessTest() {
                 console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
                   message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> d
-                ata: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> data: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(16000118).assertEqual(commonEventData.code);
@@ -369,8 +364,7 @@ export default function startSpecifiedProcessTest() {
                 console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code},
                   message is ${err.message}`);
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> d
-                ata: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> data: ${JSON.stringify(commonEventData)}`);
               if (commonEventData.code === 801) {
               } else {
                 expect(16000119).assertEqual(commonEventData.code);

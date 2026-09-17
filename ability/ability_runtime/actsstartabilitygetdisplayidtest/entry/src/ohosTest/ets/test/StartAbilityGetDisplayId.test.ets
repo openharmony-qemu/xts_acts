@@ -48,7 +48,7 @@ async function startAbilityForResult(want: Want, display: number | undefined = u
     })
 }
 
-async function startAbility(want: Want, display: Record<string, Object> = undefined) {
+async function startAbility(want: Want, display: ESObject = undefined) {
   await AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(
     want,
     {
@@ -80,17 +80,7 @@ export default function startAbilityGetDisplayIdTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500
-     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId  which is current s
-       creen displayId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500', Level.LEVEL3,
-      async (done: Function) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500';
-      try {
-        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId  which is current s creen displayId * @tc.type   FUNCTION * @tc.size   MEDIUMTEST * @tc.level  LEVEL3 */ it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500', Level.LEVEL3, async (done: Function) => { const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500'; try { let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_500]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo)
@@ -130,17 +120,7 @@ export default function startAbilityGetDisplayIdTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600
-     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId = undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600', Level.LEVEL3, async (done: Function) =>
-      {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600';
-      try {
-        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-          events: [Constant.event_600]
+     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId = undefined * @tc.type   FUNCTION * @tc.size   MEDIUMTEST * @tc.level  LEVEL3 */ it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600', Level.LEVEL3, async (done: Function) => { const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600'; try { let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = { events: [Constant.event_600]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo)
           .then((subscriber) => {

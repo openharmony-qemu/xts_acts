@@ -31,7 +31,7 @@ export default class IsolationProcessAbility extends UIAbility {
           hilog.info(DOMAIN, 'testTag', msg);
           let commonEventData: commonEventManager.CommonEventPublishData = {
             parameters: {
-              'result': string(data),
+              'result': String(data),
             }
           }
           commonEventManager.publish('GetAutoStartupStatus_0300', commonEventData, (err, data) => {
@@ -46,12 +46,12 @@ export default class IsolationProcessAbility extends UIAbility {
           hilog.info(DOMAIN, 'testTag', msg);
           let commonEventData: commonEventManager.CommonEventPublishData = {
             parameters: {
-              'result': string(error.code),
+              'result': String(error.code),
             }
           }
-          commonEventManager.publish('GetAutoStartupStatus_0300', commonEventData, (err, data) => {
+          commonEventManager.publish('GetAutoStartupStatus_0300', commonEventData, (error, data) => {
             hilog.info(0x0000, 'testTag',
-              `IsolationProcessAbility publish GetAutoStartupStatus_0300 err: ${JSON.stringify(err)}`);
+              `IsolationProcessAbility publish GetAutoStartupStatus_0300 error: ${JSON.stringify(error)}`);
             hilog.info(0x0000, 'testTag',
               `IsolationProcessAbility publish GetAutoStartupStatus_0300 data: ${JSON.stringify(data)}`);
           })
@@ -61,7 +61,7 @@ export default class IsolationProcessAbility extends UIAbility {
       hilog.info(DOMAIN, 'testTag', msg);
       let commonEventData: commonEventManager.CommonEventPublishData = {
         parameters: {
-          'result': string(err.code),
+          'result': String(err.code),
         }
       }
       commonEventManager.publish('GetAutoStartupStatus_0300', commonEventData, (err, data) => {

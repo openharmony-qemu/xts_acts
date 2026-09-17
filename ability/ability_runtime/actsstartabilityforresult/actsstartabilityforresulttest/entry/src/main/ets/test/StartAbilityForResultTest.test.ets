@@ -59,7 +59,7 @@ export default function startAbilityForResultTest() {
           expect(false).assertTrue();
           done();
         }).catch((error: BusinessError) => {
-          hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start ablility err : ${error}`);
+          hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start ablility error : ${error}`);
           expect(error.code == undefined).assertFalse();
           expect(error.code).assertEqual(2097152);
           done();
@@ -92,7 +92,7 @@ export default function startAbilityForResultTest() {
           expect(false).assertTrue();
           done();
         }).catch((error: BusinessError) => {
-          hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start ablility err : ${error}`);
+          hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start ablility error : ${error}`);
           expect(error.code == undefined).assertFalse();
           expect(error.code).assertEqual(2097152);
           done();

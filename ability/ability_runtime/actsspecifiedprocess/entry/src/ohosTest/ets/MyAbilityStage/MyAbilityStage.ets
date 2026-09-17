@@ -50,7 +50,7 @@ export default class MyAbilityStage extends AbilityStage {
       message: 'success',
       name: 'test'
     };
-    if (want.parameters.isOnNewProcessRequest === true) {
+    if (want.parameters?.isOnNewProcessRequest === true) {
         try {
           await application.exitMasterProcessRole()
             .then(() => {
