@@ -132,6 +132,7 @@ import unistdNdk1Test from './UnistdNdk1.test';
 import RegisterPrintfSpecifierTest from './RegisterPrintfSpecifier.test';
 import RegisterPrintftypeTest from './RegisterPrintftype.test';
 import RegisterPrintfModifierTest from './RegisterPrintfModifier.test';
+import abilityPthreadJoinTest from './PthreadJoinDetach.test';
 
 
 export default function testsuite() {
@@ -243,4 +244,6 @@ export default function testsuite() {
   RegisterPrintfSpecifierTest();
   RegisterPrintftypeTest();
   RegisterPrintfModifierTest();
+  
+  abilityPthreadJoinTest();
 }
