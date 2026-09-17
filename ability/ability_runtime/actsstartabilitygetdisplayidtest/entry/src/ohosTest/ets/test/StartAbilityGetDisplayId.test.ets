@@ -80,7 +80,17 @@ export default function startAbilityGetDisplayIdTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500
-     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId  which is current s creen displayId * @tc.type   FUNCTION * @tc.size   MEDIUMTEST * @tc.level  LEVEL3 */ it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500', Level.LEVEL3, async (done: Function) => { const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500'; try { let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId which is
+     *           current screen displayId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500', Level.LEVEL3,
+      async (done: Function) => {
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500';
+      try {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_500]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo)
@@ -89,8 +99,8 @@ export default function startAbilityGetDisplayIdTest() {
               if (err) {
                 console.error(JSON.stringify(err));
               }
-              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success 50
-                0=====> data: ${JSON.stringify(commonEventData)}`);
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult ` +
+                `subcribed success 500=====> data: ${JSON.stringify(commonEventData)}`);
               expect(commonEventData.parameters![displayId]).assertEqual(0);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
@@ -102,8 +112,8 @@ export default function startAbilityGetDisplayIdTest() {
           })
 
         let currentDisplayId = display.getDefaultDisplaySync().id;
-        console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult_0500 get current screen dis
-          play id=====: ${currentDisplayId}`);
+        console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult_0500 ` +
+          `get current screen display id=====: ${currentDisplayId}`);
         let want: Want = {
           bundleName: 'com.ohos.startabilitygetdisplayidtest',
           abilityName: 'MainAbility5',
@@ -120,7 +130,17 @@ export default function startAbilityGetDisplayIdTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600
      * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600
-     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId = undefined * @tc.type   FUNCTION * @tc.size   MEDIUMTEST * @tc.level  LEVEL3 */ it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600', Level.LEVEL3, async (done: Function) => { const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600'; try { let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = { events: [Constant.event_600]
+     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600', Level.LEVEL3, async (done: Function) =>
+      {
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600';
+      try {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [Constant.event_600]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo)
           .then((subscriber) => {
@@ -336,8 +356,8 @@ export default function startAbilityGetDisplayIdTest() {
           abilityName: 'MainAbility1',
         }
         let currentDisplayId = display.getDefaultDisplaySync().id;
-        console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult_0100 get current screen dis
-          play id=====: ${currentDisplayId}`);
+        console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult_0100 ` +
+          `get current screen display id=====: ${currentDisplayId}`);
         await sleep(500);
         await startAbility(want, currentDisplayId)
         await sleep(4000);
