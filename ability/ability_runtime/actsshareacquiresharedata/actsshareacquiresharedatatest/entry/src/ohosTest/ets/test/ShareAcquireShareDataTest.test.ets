@@ -91,6 +91,10 @@ export default function shareAcquireShareDataTest() {
           hilog.info(0x0000, TAG, '[%{public}s] createSubscriber succeed', TAG);
           commonEventManager.subscribe(subscriber, (err: BusinessError,
             commonEventData: commonEventManager.CommonEventPublishData) => {
+            if (err) {
+              hilog.error(0x0000, TAG, 'subscribe err: %{public}s', JSON.stringify(err));
+              return;
+            }
             hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG,
               JSON.stringify(commonEventData));
             try {
@@ -160,6 +164,10 @@ export default function shareAcquireShareDataTest() {
           hilog.info(0x0000, TAG, '[%{public}s] createSubscriber succeed', TAG);
           commonEventManager.subscribe(subscriber, (err: BusinessError,
             commonEventData: commonEventManager.CommonEventPublishData) => {
+            if (err) {
+              hilog.error(0x0000, TAG, 'subscribe err: %{public}s', JSON.stringify(err));
+              return;
+            }
             hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG,
               JSON.stringify(commonEventData));
             try {
