@@ -17,36 +17,36 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index'
 import Utils from './Util.test'
 
-async function addDiffValueTask(s: containers.ConcurrentSet<number>, v: number): Promise<void> {
+function addDiffValueTask(s: containers.ConcurrentSet<number>, v: number): void {
   s.add(v)
 }
 
-async function addSameValueNumTask(s: containers.ConcurrentSet<number>, v: number): Promise<void> {
+function addSameValueNumTask(s: containers.ConcurrentSet<number>, v: number): void {
   s.add(v)
 }
 
-async function addMixTask(s: containers.ConcurrentSet<number>, start: number, count: number, c: AtomicInt): Promise<void> {
+function addMixTask(s: containers.ConcurrentSet<number>, start: number, count: number, c: AtomicInt): void {
   for (let i = start; i < start + count; i++) {
     s.add(i)
     c.fetchAdd(1)
   }
 }
 
-async function hasMixTask(s: containers.ConcurrentSet<number>, start: number, count: number, c: AtomicInt): Promise<void> {
+function hasMixTask(s: containers.ConcurrentSet<number>, start: number, count: number, c: AtomicInt): void {
   for (let i = start; i < start + count; i++) {
     s.has(i)
     c.fetchAdd(1)
   }
 }
 
-async function deleteMixTask(s: containers.ConcurrentSet<number>, start: number, count: number, c: AtomicInt): Promise<void> {
+function deleteMixTask(s: containers.ConcurrentSet<number>, start: number, count: number, c: AtomicInt): void {
   for (let i = start; i < start + count; i++) {
     s.delete(i)
     c.fetchAdd(1)
   }
 }
 
-async function clearAddMixTask(s: containers.ConcurrentSet<number>, shouldClear: boolean, addStart: number, c: AtomicInt): Promise<void> {
+function clearAddMixTask(s: containers.ConcurrentSet<number>, shouldClear: boolean, addStart: number, c: AtomicInt): void {
   if (shouldClear) {
     s.clear()
   } else {
@@ -55,55 +55,51 @@ async function clearAddMixTask(s: containers.ConcurrentSet<number>, shouldClear:
   c.fetchAdd(1)
 }
 
-async function hasOnlyTask(s: containers.ConcurrentSet<number>, v: number): Promise<boolean> {
-  return s.has(v)
-}
-
-async function batchAddTask(s: containers.ConcurrentSet<number>, start: number, count: number): Promise<void> {
+function batchAddTask(s: containers.ConcurrentSet<number>, start: number, count: number): void {
   for (let i = start; i < start + count; i++) {
     s.add(i)
   }
 }
 
-async function continuousAddTask(s: containers.ConcurrentSet<number>, c: AtomicInt, count: number): Promise<void> {
+function continuousAddTask(s: containers.ConcurrentSet<number>, c: AtomicInt, count: number): void {
   for (let i = 0; i < count; i++) {
     let val: number = c.fetchAdd(1)
     s.add(val)
   }
 }
 
-async function messageSourceTask(s: containers.ConcurrentSet<string>, id: number, unique: number, perSource: number): Promise<void> {
+function messageSourceTask(s: containers.ConcurrentSet<string>, id: number, unique: number, perSource: number): void {
   for (let i = 0; i < perSource; i++) {
     let msgId: number = (id * perSource + i) % unique
     s.add(`msg_${msgId}`)
   }
 }
 
-async function resultTask(s: containers.ConcurrentSet<number>, taskId: number, unique: number): Promise<void> {
+function resultTask(s: containers.ConcurrentSet<number>, taskId: number, unique: number): void {
   let result: number = taskId % unique
   s.add(result)
 }
 
-async function registerTask(s: containers.ConcurrentSet<string>, channelId: number, userCount: number): Promise<void> {
+function registerTask(s: containers.ConcurrentSet<string>, channelId: number, userCount: number): void {
   for (let i = 0; i < userCount; i++) {
     s.add(`user_${channelId}_${i}`)
   }
 }
 
-async function duplicateRegisterTask(s: containers.ConcurrentSet<string>, userId: number, attempts: number): Promise<void> {
+function channelDuplicateRegisterTask(s: containers.ConcurrentSet<string>, channelId: number, userId: number, attempts: number): void {
   for (let i = 0; i < attempts; i++) {
-    s.add(`user_${userId}`)
+    s.add(`ch${channelId}_user_${userId}`)
   }
 }
 
-async function dataSyncTask(s: containers.ConcurrentSet<string>, nodeId: number, unique: number): Promise<void> {
+function dataSyncTask(s: containers.ConcurrentSet<string>, nodeId: number, unique: number): void {
   for (let i = 0; i < 100; i++) {
     let recordId: number = (nodeId * 100 + i) % unique
     s.add(`record_${recordId}`)
   }
 }
 
-async function fullReadWriteTask(s: containers.ConcurrentSet<number>): Promise<void> {
+function fullReadWriteTask(s: containers.ConcurrentSet<number>): void {
   for (let i = 0; i < 10; i++) {
     try {
       s.add(i)
@@ -135,11 +131,12 @@ async function fullReadWriteTask(s: containers.ConcurrentSet<number>): Promise<v
       s.forEach((value: number) => {})
       s.clear()
     } catch (e) {
+      throw e
     }
   }
 }
 
-async function fullReadWriteStringTask(s: containers.ConcurrentSet<string>): Promise<void> {
+function fullReadWriteStringTask(s: containers.ConcurrentSet<string>): void {
   for (let i = 0; i < 10; i++) {
     try {
       s.add(`str_${i}`)
@@ -164,11 +161,12 @@ async function fullReadWriteStringTask(s: containers.ConcurrentSet<string>): Pro
       s.delete(`str_${i}`)
       s.clear()
     } catch (e) {
+      throw e
     }
   }
 }
 
-async function dedupReadWriteTask(s: containers.ConcurrentSet<number>, c: AtomicInt): Promise<void> {
+function dedupReadWriteTask(s: containers.ConcurrentSet<number>, c: AtomicInt): void {
   for (let i = 0; i < 10; i++) {
     try {
       for (let j = 0; j < 5; j++) {
@@ -181,18 +179,41 @@ async function dedupReadWriteTask(s: containers.ConcurrentSet<number>, c: Atomic
         c.fetchAdd(1)
       }
     } catch (e) {
+      throw e
     }
   }
 }
 
-async function iterateDuringModifyTask(s: containers.ConcurrentSet<number>): Promise<void> {
-  for (let i = 0; i < 10; i++) {
+function verifySetConsistencyNumber(s: containers.ConcurrentSet<number>): boolean {
+  let count: number = 0
+  let keys: IterableIterator<number> = s.keys()
+  let keyResult: IteratorResult<number> = keys.next()
+  while (!keyResult.done) {
+    count++
+    keyResult = keys.next()
+  }
+  return count === s.size
+}
+
+function verifySetConsistencyString(s: containers.ConcurrentSet<string>): boolean {
+  let count: number = 0
+  let keys: IterableIterator<string> = s.keys()
+  let keyResult: IteratorResult<string> = keys.next()
+  while (!keyResult.done) {
+    count++
+    keyResult = keys.next()
+  }
+  return count === s.size
+}
+
+function iterateDuringModifyTask(s: containers.ConcurrentSet<number>): void {
+  for (let i = 0; i < 1; i++) {
     try {
       let keys: IterableIterator<number> = s.keys()
       let v: IteratorResult<number> = keys.next()
       while (!v.done) {
         let keyVal: number | undefined = v.value
-        if (keyVal !== undefined) {
+        if (keyVal !== undefined && keyVal < 10) {
           s.add(keyVal + 100)
         }
         v = keys.next()
@@ -201,41 +222,61 @@ async function iterateDuringModifyTask(s: containers.ConcurrentSet<number>): Pro
       let v2: IteratorResult<[number, number]> = entries.next()
       while (!v2.done) {
         let entryVal: [number, number] | undefined = v2.value
-        if (entryVal !== undefined) {
+        if (entryVal !== undefined && entryVal[0] < 10) {
           s.delete(entryVal[0])
         }
         v2 = entries.next()
       }
       s.forEach((value: number) => {
-        s.add(value * 2)
+        if (value < 10) {
+          s.add(value * 2)
+        }
       })
     } catch (e) {
+      throw e
     }
   }
 }
 
-async function hasCountTask(s: containers.ConcurrentSet<number>, v: number, c: AtomicInt): Promise<void> {
+function hasCountTask(s: containers.ConcurrentSet<number>, v: number, c: AtomicInt): void {
   if (s.has(v)) {
     c.fetchAdd(1)
   }
 }
 
-async function nestedAddTask(s: containers.ConcurrentSet<number>, baseVal: number, level: number, maxLevel: number): Promise<void> {
-  s.add(baseVal + level * 1000)
+// Real TaskPool nesting: each level creates a new Task and awaits completion via onReceiveData
+function nestedSetStepTask(s: containers.ConcurrentSet<number>, baseVal: number, level: number, maxLevel: number): void {
+  s.add(baseVal + level * 1000);
   if (level < maxLevel) {
-    await nestedAddTask(s, baseVal, level + 1, maxLevel)
+    taskpool.Task.sendData(1.0);
+  }
+}
+
+async function runNestedSetChain(s: containers.ConcurrentSet<number>, baseVal: number, level: number, maxLevel: number): Promise<void> {
+  let task: taskpool.Task = new taskpool.Task(nestedSetStepTask, s, baseVal, level, maxLevel);
+  if (level < maxLevel) {
+    let chainDone: Promise<void> = new Promise<void>((resolve: (value: void) => void): void => {
+      task.onReceiveData((): void => {
+        resolve(undefined);
+      });
+    });
+    await taskpool.execute(task);
+    await chainDone;
+    await runNestedSetChain(s, baseVal, level + 1, maxLevel);
+  } else {
+    await taskpool.execute(task);
   }
 }
 
 export default function ConcurrentSetHighConcurrencyTest(): void {
   describe('ConcurrentSetHighConcurrencyTest', (): void => {
     beforeAll((): void => {})
-    beforeEach(async (): Promise<void> => {
+     beforeEach((): void => {
     })
     afterEach((): void => {
     })
     afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100)
+      await Utils.msSleep(500)
     })
 
     /**
@@ -246,15 +287,15 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+       let promises: Promise<Any>[] = []
       for (let i = 0; i < 1; i++) {
-        promises.push(addDiffValueTask(set, i))
+        promises.push(taskpool.execute(new taskpool.Task(addDiffValueTask, set, i * 1.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(1)
-      Done()
+      done()
     })
 
     /**
@@ -265,15 +306,15 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 3; i++) {
-        promises.push(addDiffValueTask(set, i))
+        promises.push(taskpool.execute(new taskpool.Task(addDiffValueTask, set, i * 1.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(3)
-      Done()
+      done()
     })
 
     /**
@@ -284,15 +325,15 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(addDiffValueTask(set, i))
+        promises.push(taskpool.execute(new taskpool.Task(addDiffValueTask, set, i * 1.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(5)
-      Done()
+      done()
     })
 
     /**
@@ -303,15 +344,15 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(addDiffValueTask(set, i))
+        promises.push(taskpool.execute(new taskpool.Task(addDiffValueTask, set, i * 1.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(10)
-      Done()
+      done()
     })
 
     /**
@@ -322,15 +363,15 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 50; i++) {
-        promises.push(addDiffValueTask(set, i))
+        promises.push(taskpool.execute(new taskpool.Task(addDiffValueTask, set, i * 1.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(50)
-      Done()
+      done()
     })
 
     /**
@@ -341,15 +382,15 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 100; i++) {
-        promises.push(addDiffValueTask(set, i))
+        promises.push(taskpool.execute(new taskpool.Task(addDiffValueTask, set, i * 1.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(100)
-      Done()
+      done()
     })
 
     /**
@@ -360,16 +401,16 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 3; i++) {
-        promises.push(addSameValueNumTask(set, 30))
+        promises.push(taskpool.execute(new taskpool.Task(addSameValueNumTask, set, 30.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(1)
       expect(set.has(30)).assertTrue()
-      Done()
+      done()
     })
 
     /**
@@ -380,16 +421,16 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(addSameValueNumTask(set, 42))
+        promises.push(taskpool.execute(new taskpool.Task(addSameValueNumTask, set, 42.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(1)
       expect(set.has(42)).assertTrue()
-      Done()
+      done()
     })
 
     /**
@@ -400,16 +441,16 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(addSameValueNumTask(set, 100))
+        promises.push(taskpool.execute(new taskpool.Task(addSameValueNumTask, set, 100.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(1)
       expect(set.has(100)).assertTrue()
-      Done()
+      done()
     })
 
     /**
@@ -420,16 +461,16 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 50; i++) {
-        promises.push(addSameValueNumTask(set, 999))
+        promises.push(taskpool.execute(new taskpool.Task(addSameValueNumTask, set, 999.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(1)
       expect(set.has(999)).assertTrue()
-      Done()
+      done()
     })
 
     /**
@@ -440,16 +481,16 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 100; i++) {
-        promises.push(addSameValueNumTask(set, 1234))
+        promises.push(taskpool.execute(new taskpool.Task(addSameValueNumTask, set, 1234.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(1)
       expect(set.has(1234)).assertTrue()
-      Done()
+      done()
     })
 
     /**
@@ -460,16 +501,16 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 500; i++) {
-        promises.push(addSameValueNumTask(set, 9999))
+        promises.push(taskpool.execute(new taskpool.Task(addSameValueNumTask, set, 9999.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(1)
       expect(set.has(9999)).assertTrue()
-      Done()
+      done()
     })
 
     /**
@@ -480,17 +521,24 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let addCount: AtomicInt = new AtomicInt(0)
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 100; i++) {
-        promises.push(addMixTask(set, i, 1, addCount))
+        promises.push(taskpool.execute(new taskpool.Task(addMixTask, set, i * 1.0, 1.0, addCount)))
       }
       await Promise.all(promises)
       expect(addCount.load()).assertEqual(100)
       expect(set.size).assertEqual(100)
-      Done()
+      let allPresent: boolean = true
+      for (let i = 0; i < 100; i++) {
+        if (!set.has(i)) {
+          allPresent = false
+        }
+      }
+      expect(allPresent).assertTrue()
+      done()
     })
 
     /**
@@ -501,25 +549,39 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       for (let i = 0; i < 50; i++) {
         set.add(i)
       }
       let addCount: AtomicInt = new AtomicInt(0)
       let hasCount: AtomicInt = new AtomicInt(0)
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 50; i++) {
-        promises.push(addMixTask(set, 100 + i, 1, addCount))
+        promises.push(taskpool.execute(new taskpool.Task(addMixTask, set, (100 + i) * 1.0, 1.0, addCount)))
       }
       for (let i = 0; i < 50; i++) {
-        promises.push(hasMixTask(set, 0, 50, hasCount))
+        promises.push(taskpool.execute(new taskpool.Task(hasMixTask, set, 0.0, 50.0, hasCount)))
       }
       await Promise.all(promises)
       expect(addCount.load()).assertEqual(50)
       expect(hasCount.load()).assertEqual(2500)
       expect(set.size).assertEqual(100)
-      Done()
+      let addedPresent: boolean = true
+      for (let i = 100; i < 150; i++) {
+        if (!set.has(i)) {
+          addedPresent = false
+        }
+      }
+      expect(addedPresent).assertTrue()
+      let initialPresent: boolean = true
+      for (let i = 0; i < 50; i++) {
+        if (!set.has(i)) {
+          initialPresent = false
+        }
+      }
+      expect(initialPresent).assertTrue()
+      done()
     })
 
     /**
@@ -530,24 +592,38 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       for (let i = 0; i < 100; i++) {
         set.add(i)
       }
       let addCount: AtomicInt = new AtomicInt(0)
       let deleteCount: AtomicInt = new AtomicInt(0)
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 50; i++) {
-        promises.push(addMixTask(set, 100, 50, addCount))
+        promises.push(taskpool.execute(new taskpool.Task(addMixTask, set, 100.0, 50.0, addCount)))
       }
       for (let i = 0; i < 10; i++) {
-        promises.push(deleteMixTask(set, 0, 10, deleteCount))
+        promises.push(taskpool.execute(new taskpool.Task(deleteMixTask, set, 0.0, 10.0, deleteCount)))
       }
       await Promise.all(promises)
       expect(addCount.load()).assertEqual(2500)
       expect(deleteCount.load()).assertEqual(100)
-      Done()
+      let remainingPreserved: boolean = true
+      for (let i = 10; i < 100; i++) {
+        if (!set.has(i)) {
+          remainingPreserved = false
+        }
+      }
+      expect(remainingPreserved).assertTrue()
+      let addedPreserved: boolean = true
+      for (let i = 100; i < 150; i++) {
+        if (!set.has(i)) {
+          addedPreserved = false
+        }
+      }
+      expect(addedPreserved).assertTrue()
+      done()
     })
 
     /**
@@ -558,24 +634,31 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       for (let i = 0; i < 100; i++) {
         set.add(i)
       }
       let counter: AtomicInt = new AtomicInt(0)
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(clearAddMixTask(set, true, 0, counter))
+        promises.push(taskpool.execute(new taskpool.Task(clearAddMixTask, set, true, 0.0, counter)))
       }
       for (let i = 0; i < 50; i++) {
-        promises.push(clearAddMixTask(set, false, 200 + i, counter))
+        promises.push(taskpool.execute(new taskpool.Task(clearAddMixTask, set, false, (200 + i) * 1.0, counter)))
       }
       await Promise.all(promises)
       expect(counter.load()).assertEqual(60)
       set.add(9999)
       expect(set.has(9999)).assertTrue()
-      Done()
+      let addedPhase: boolean = true
+      for (let i = 200; i < 250; i++) {
+        if (!set.has(i)) {
+          addedPhase = false
+        }
+      }
+      expect(addedPhase).assertTrue()
+      done()
     })
 
     /**
@@ -586,17 +669,19 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       set.add(42)
       let hitCount: AtomicInt = new AtomicInt(0)
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 100; i++) {
-        promises.push(hasCountTask(set, 42, hitCount))
+        promises.push(taskpool.execute(new taskpool.Task(hasCountTask, set, 42.0, hitCount)))
       }
       await Promise.all(promises)
       expect(hitCount.load()).assertEqual(100)
-      Done()
+      expect(set.size).assertEqual(1)
+      expect(set.has(42)).assertTrue()
+      done()
     })
 
     /**
@@ -607,72 +692,100 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(nestedAddTask(set, i, 1, 1))
+        promises.push(runNestedSetChain(set, i, 1, 1))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(10)
-      Done()
+      let allPresent: boolean = true
+      for (let i = 0; i < 10; i++) {
+        if (!set.has(i + 1000)) {
+          allPresent = false
+        }
+      }
+      expect(allPresent).assertTrue()
+      done()
     })
 
     /**
      * @tc.name   ConcurrentSetHighConcurrencyTest1900
      * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_1900
-     * @tc.desc   async 2 level nesting 10 tasks concurrent add
+     * @tc.desc   async 2 level nesting 10 tasks concurrent add via TaskPool chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(nestedAddTask(set, i, 1, 2))
+        promises.push(runNestedSetChain(set, i, 1, 2))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(20)
-      Done()
+      let allPresent: boolean = true
+      for (let i = 0; i < 10; i++) {
+        if (!set.has(i + 1000) || !set.has(i + 2000)) {
+          allPresent = false
+        }
+      }
+      expect(allPresent).assertTrue()
+      done()
     })
 
     /**
      * @tc.name   ConcurrentSetHighConcurrencyTest2000
      * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_2000
-     * @tc.desc   async 3 level nesting 10 tasks concurrent add
+     * @tc.desc   async 3 level nesting 10 tasks concurrent add via TaskPool chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(nestedAddTask(set, i, 1, 3))
+        promises.push(runNestedSetChain(set, i, 1, 3))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(30)
-      Done()
+      let allPresent: boolean = true
+      for (let i = 0; i < 10; i++) {
+        if (!set.has(i + 1000) || !set.has(i + 2000) || !set.has(i + 3000)) {
+          allPresent = false
+        }
+      }
+      expect(allPresent).assertTrue()
+      done()
     })
 
     /**
      * @tc.name   ConcurrentSetHighConcurrencyTest2100
      * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_2100
-     * @tc.desc   async 5 level nesting 10 tasks concurrent add
+     * @tc.desc   async 5 level nesting 10 tasks concurrent add via TaskPool chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(nestedAddTask(set, i, 1, 5))
+        promises.push(runNestedSetChain(set, i, 1, 5))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(50)
-      Done()
+      let allPresent: boolean = true
+      for (let i = 0; i < 10; i++) {
+        if (!set.has(i + 1000) || !set.has(i + 2000) || !set.has(i + 3000) || !set.has(i + 4000) || !set.has(i + 5000)) {
+          allPresent = false
+        }
+      }
+      expect(allPresent).assertTrue()
+      done()
     })
 
     /**
@@ -683,13 +796,13 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
-      promises.push(batchAddTask(set, 0, 1))
+      let promises: Promise<Any>[] = []
+      promises.push(taskpool.execute(new taskpool.Task(batchAddTask, set, 0.0, 1.0)))
       await Promise.all(promises)
       expect(set.size).assertEqual(1)
-      Done()
+      done()
     })
 
     /**
@@ -700,13 +813,13 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
-      promises.push(batchAddTask(set, 0, 10))
+      let promises: Promise<Any>[] = []
+      promises.push(taskpool.execute(new taskpool.Task(batchAddTask, set, 0.0, 10.0)))
       await Promise.all(promises)
       expect(set.size).assertEqual(10)
-      Done()
+      done()
     })
 
     /**
@@ -717,20 +830,20 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       let batchSize: number = 100
       let scale: number = 100
       let threadCount: number = Math.ceil(scale / batchSize)
       for (let i = 0; i < threadCount; i++) {
         let start: number = i * batchSize
         let count: number = Math.min(batchSize, scale - i * batchSize)
-        promises.push(batchAddTask(set, start, count))
+        promises.push(taskpool.execute(new taskpool.Task(batchAddTask, set, start * 1.0, count * 1.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(100)
-      Done()
+      done()
     })
 
     /**
@@ -741,20 +854,20 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       let batchSize: number = 100
       let scale: number = 1000
       let threadCount: number = Math.ceil(scale / batchSize)
       for (let i = 0; i < threadCount; i++) {
         let start: number = i * batchSize
         let count: number = Math.min(batchSize, scale - i * batchSize)
-        promises.push(batchAddTask(set, start, count))
+        promises.push(taskpool.execute(new taskpool.Task(batchAddTask, set, start * 1.0, count * 1.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(1000)
-      Done()
+      done()
     })
 
     /**
@@ -765,20 +878,20 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       let batchSize: number = 1000
       let scale: number = 10000
       let threadCount: number = Math.ceil(scale / batchSize)
       for (let i = 0; i < threadCount; i++) {
         let start: number = i * batchSize
         let count: number = Math.min(batchSize, scale - i * batchSize)
-        promises.push(batchAddTask(set, start, count))
+        promises.push(taskpool.execute(new taskpool.Task(batchAddTask, set, start * 1.0, count * 1.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(10000)
-      Done()
+      done()
     })
 
     /**
@@ -789,17 +902,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let counter: AtomicInt = new AtomicInt(0)
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(continuousAddTask(set, counter, 200))
+        promises.push(taskpool.execute(new taskpool.Task(continuousAddTask, set, counter, 200.0)))
       }
       await Promise.all(promises)
-      expect(set.size).assertLargerOrEqual(10)
-      expect(counter.load()).assertLargerOrEqual(10)
-      Done()
+      expect(set.size).assertEqual(1000)
+      expect(counter.load()).assertEqual(1000)
+      done()
     })
 
     /**
@@ -810,17 +923,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let counter: AtomicInt = new AtomicInt(0)
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(continuousAddTask(set, counter, 500))
+        promises.push(taskpool.execute(new taskpool.Task(continuousAddTask, set, counter, 500.0)))
       }
       await Promise.all(promises)
-      expect(set.size).assertLargerOrEqual(10)
-      expect(counter.load()).assertLargerOrEqual(10)
-      Done()
+      expect(set.size).assertEqual(2500)
+      expect(counter.load()).assertEqual(2500)
+      done()
     })
 
     /**
@@ -831,17 +944,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('ConcurrentSetHighConcurrencyTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let counter: AtomicInt = new AtomicInt(0)
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(continuousAddTask(set, counter, 1000))
+        promises.push(taskpool.execute(new taskpool.Task(continuousAddTask, set, counter, 1000.0)))
       }
       await Promise.all(promises)
-      expect(set.size).assertLargerOrEqual(10)
-      expect(counter.load()).assertLargerOrEqual(10)
-      Done()
+      expect(set.size).assertEqual(5000)
+      expect(counter.load()).assertEqual(5000)
+      done()
     })
 
     /**
@@ -852,17 +965,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 9
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 1; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -873,17 +986,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 7
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 1; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -894,17 +1007,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 5
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 1; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -915,17 +1028,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 3
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 1; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -936,17 +1049,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 45
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -957,17 +1070,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 35
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -978,17 +1091,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 25
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -999,17 +1112,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 15
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 5; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -1020,17 +1133,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 90
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -1041,17 +1154,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 70
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -1062,17 +1175,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 50
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -1083,17 +1196,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 30
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -1104,17 +1217,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 450
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 50; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -1125,17 +1238,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 350
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 50; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -1146,17 +1259,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 250
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 50; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -1167,17 +1280,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let messageSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueMessages: number = 150
       let messagesPerSource: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 50; i++) {
-        promises.push(messageSourceTask(messageSet, i, uniqueMessages, messagesPerSource))
+        promises.push(taskpool.execute(new taskpool.Task(messageSourceTask, messageSet, i * 1.0, uniqueMessages * 1.0, messagesPerSource * 1.0)))
       }
       await Promise.all(promises)
       expect(messageSet.size).assertEqual(uniqueMessages)
-      Done()
+      done()
     })
 
     /**
@@ -1188,17 +1301,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let resultSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let taskCount: number = 10
       let uniqueResults: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < taskCount; i++) {
-        promises.push(resultTask(resultSet, i, uniqueResults))
+        promises.push(taskpool.execute(new taskpool.Task(resultTask, resultSet, i * 1.0, uniqueResults * 1.0)))
       }
       await Promise.all(promises)
       expect(resultSet.size).assertEqual(uniqueResults)
-      Done()
+      done()
     })
 
     /**
@@ -1209,17 +1322,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let resultSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let taskCount: number = 10
       let uniqueResults: number = 7
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < taskCount; i++) {
-        promises.push(resultTask(resultSet, i, uniqueResults))
+        promises.push(taskpool.execute(new taskpool.Task(resultTask, resultSet, i * 1.0, uniqueResults * 1.0)))
       }
       await Promise.all(promises)
       expect(resultSet.size).assertEqual(uniqueResults)
-      Done()
+      done()
     })
 
     /**
@@ -1230,17 +1343,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let resultSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let taskCount: number = 10
       let uniqueResults: number = 3
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < taskCount; i++) {
-        promises.push(resultTask(resultSet, i, uniqueResults))
+        promises.push(taskpool.execute(new taskpool.Task(resultTask, resultSet, i * 1.0, uniqueResults * 1.0)))
       }
       await Promise.all(promises)
       expect(resultSet.size).assertEqual(uniqueResults)
-      Done()
+      done()
     })
 
     /**
@@ -1251,17 +1364,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let resultSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let taskCount: number = 50
       let uniqueResults: number = 50
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < taskCount; i++) {
-        promises.push(resultTask(resultSet, i, uniqueResults))
+        promises.push(taskpool.execute(new taskpool.Task(resultTask, resultSet, i * 1.0, uniqueResults * 1.0)))
       }
       await Promise.all(promises)
       expect(resultSet.size).assertEqual(uniqueResults)
-      Done()
+      done()
     })
 
     /**
@@ -1272,17 +1385,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let resultSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let taskCount: number = 50
       let uniqueResults: number = 35
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < taskCount; i++) {
-        promises.push(resultTask(resultSet, i, uniqueResults))
+        promises.push(taskpool.execute(new taskpool.Task(resultTask, resultSet, i * 1.0, uniqueResults * 1.0)))
       }
       await Promise.all(promises)
       expect(resultSet.size).assertEqual(uniqueResults)
-      Done()
+      done()
     })
 
     /**
@@ -1293,17 +1406,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let resultSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let taskCount: number = 50
       let uniqueResults: number = 15
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < taskCount; i++) {
-        promises.push(resultTask(resultSet, i, uniqueResults))
+        promises.push(taskpool.execute(new taskpool.Task(resultTask, resultSet, i * 1.0, uniqueResults * 1.0)))
       }
       await Promise.all(promises)
       expect(resultSet.size).assertEqual(uniqueResults)
-      Done()
+      done()
     })
 
     /**
@@ -1314,17 +1427,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let resultSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let taskCount: number = 100
       let uniqueResults: number = 100
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < taskCount; i++) {
-        promises.push(resultTask(resultSet, i, uniqueResults))
+        promises.push(taskpool.execute(new taskpool.Task(resultTask, resultSet, i * 1.0, uniqueResults * 1.0)))
       }
       await Promise.all(promises)
       expect(resultSet.size).assertEqual(uniqueResults)
-      Done()
+      done()
     })
 
     /**
@@ -1335,17 +1448,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let resultSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let taskCount: number = 100
       let uniqueResults: number = 70
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < taskCount; i++) {
-        promises.push(resultTask(resultSet, i, uniqueResults))
+        promises.push(taskpool.execute(new taskpool.Task(resultTask, resultSet, i * 1.0, uniqueResults * 1.0)))
       }
       await Promise.all(promises)
       expect(resultSet.size).assertEqual(uniqueResults)
-      Done()
+      done()
     })
 
     /**
@@ -1356,17 +1469,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let resultSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let taskCount: number = 100
       let uniqueResults: number = 30
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < taskCount; i++) {
-        promises.push(resultTask(resultSet, i, uniqueResults))
+        promises.push(taskpool.execute(new taskpool.Task(resultTask, resultSet, i * 1.0, uniqueResults * 1.0)))
       }
       await Promise.all(promises)
       expect(resultSet.size).assertEqual(uniqueResults)
-      Done()
+      done()
     })
 
     /**
@@ -1377,17 +1490,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let channels: number = 1
       let users: number = 10
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < channels; i++) {
-        promises.push(registerTask(userIdSet, i, users))
+        promises.push(taskpool.execute(new taskpool.Task(registerTask, userIdSet, i * 1.0, users * 1.0)))
       }
       await Promise.all(promises)
       expect(userIdSet.size).assertEqual(channels * users)
-      Done()
+      done()
     })
 
     /**
@@ -1398,17 +1511,20 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
+      let channels: number = 1
       let uniqueUsers: number = 50
       let attemptsPerUser: number = 3
-      let promises: Promise<void>[] = []
-      for (let i = 0; i < uniqueUsers; i++) {
-        promises.push(duplicateRegisterTask(userIdSet, i, attemptsPerUser))
+      let promises: Promise<Any>[] = []
+      for (let ch = 0; ch < channels; ch++) {
+        for (let i = 0; i < uniqueUsers; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(channelDuplicateRegisterTask, userIdSet, ch * 1.0, i * 1.0, attemptsPerUser * 1.0)))
+        }
       }
       await Promise.all(promises)
-      expect(userIdSet.size).assertEqual(uniqueUsers)
-      Done()
+      expect(userIdSet.size).assertEqual(channels * uniqueUsers)
+      done()
     })
 
     /**
@@ -1419,17 +1535,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let channels: number = 5
       let users: number = 50
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < channels; i++) {
-        promises.push(registerTask(userIdSet, i, users))
+        promises.push(taskpool.execute(new taskpool.Task(registerTask, userIdSet, i * 1.0, users * 1.0)))
       }
       await Promise.all(promises)
       expect(userIdSet.size).assertEqual(channels * users)
-      Done()
+      done()
     })
 
     /**
@@ -1440,17 +1556,20 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
+      let channels: number = 5
       let uniqueUsers: number = 50
       let attemptsPerUser: number = 5
-      let promises: Promise<void>[] = []
-      for (let i = 0; i < uniqueUsers; i++) {
-        promises.push(duplicateRegisterTask(userIdSet, i, attemptsPerUser))
+      let promises: Promise<Any>[] = []
+      for (let ch = 0; ch < channels; ch++) {
+        for (let i = 0; i < uniqueUsers; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(channelDuplicateRegisterTask, userIdSet, ch * 1.0, i * 1.0, attemptsPerUser * 1.0)))
+        }
       }
       await Promise.all(promises)
-      expect(userIdSet.size).assertEqual(uniqueUsers)
-      Done()
+      expect(userIdSet.size).assertEqual(channels * uniqueUsers)
+      done()
     })
 
     /**
@@ -1461,17 +1580,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let channels: number = 10
       let users: number = 100
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < channels; i++) {
-        promises.push(registerTask(userIdSet, i, users))
+        promises.push(taskpool.execute(new taskpool.Task(registerTask, userIdSet, i * 1.0, users * 1.0)))
       }
       await Promise.all(promises)
       expect(userIdSet.size).assertEqual(channels * users)
-      Done()
+      done()
     })
 
     /**
@@ -1482,17 +1601,20 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
+      let channels: number = 10
       let uniqueUsers: number = 100
       let attemptsPerUser: number = 10
-      let promises: Promise<void>[] = []
-      for (let i = 0; i < uniqueUsers; i++) {
-        promises.push(duplicateRegisterTask(userIdSet, i, attemptsPerUser))
+      let promises: Promise<Any>[] = []
+      for (let ch = 0; ch < channels; ch++) {
+        for (let i = 0; i < uniqueUsers; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(channelDuplicateRegisterTask, userIdSet, ch * 1.0, i * 1.0, attemptsPerUser * 1.0)))
+        }
       }
       await Promise.all(promises)
-      expect(userIdSet.size).assertEqual(uniqueUsers)
-      Done()
+      expect(userIdSet.size).assertEqual(channels * uniqueUsers)
+      done()
     })
 
     /**
@@ -1503,16 +1625,16 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let dataSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       let uniqueRecords: number = 1000
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 10; i++) {
-        promises.push(dataSyncTask(dataSet, i, uniqueRecords))
+        promises.push(taskpool.execute(new taskpool.Task(dataSyncTask, dataSet, i * 1.0, uniqueRecords * 1.0)))
       }
       await Promise.all(promises)
       expect(dataSet.size).assertEqual(uniqueRecords)
-      Done()
+      done()
     })
 
     /**
@@ -1523,15 +1645,15 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('ConcurrentSetHighConcurrencyTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 500; i++) {
-        promises.push(addDiffValueTask(set, i))
+        promises.push(taskpool.execute(new taskpool.Task(addDiffValueTask, set, i * 1.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(500)
-      Done()
+      done()
     })
 
     /**
@@ -1542,16 +1664,16 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('ConcurrentSetHighConcurrencyTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 500; i++) {
-        promises.push(addSameValueNumTask(set, 99999))
+        promises.push(taskpool.execute(new taskpool.Task(addSameValueNumTask, set, 99999.0)))
       }
       await Promise.all(promises)
       expect(set.size).assertEqual(1)
       expect(set.has(99999)).assertTrue()
-      Done()
+      done()
     })
 
     /**
@@ -1562,18 +1684,18 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       for (let i = 0; i < 100; i++) {
         set.add(i)
       }
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 20; i++) {
-        promises.push(fullReadWriteTask(set))
+        promises.push(taskpool.execute(new taskpool.Task(fullReadWriteTask, set)))
       }
       await Promise.all(promises)
-      expect(set.size).assertLargerOrEqual(0)
-      Done()
+      expect(verifySetConsistencyNumber(set)).assertTrue()
+      done()
     })
 
     /**
@@ -1584,18 +1706,18 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       for (let i = 0; i < 200; i++) {
         set.add(i)
       }
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 50; i++) {
-        promises.push(fullReadWriteTask(set))
+        promises.push(taskpool.execute(new taskpool.Task(fullReadWriteTask, set)))
       }
       await Promise.all(promises)
-      expect(set.size).assertLargerOrEqual(0)
-      Done()
+      expect(verifySetConsistencyNumber(set)).assertTrue()
+      done()
     })
 
     /**
@@ -1606,18 +1728,18 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       for (let i = 0; i < 100; i++) {
         set.add(`init_${i}`)
       }
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 20; i++) {
-        promises.push(fullReadWriteStringTask(set))
+        promises.push(taskpool.execute(new taskpool.Task(fullReadWriteStringTask, set)))
       }
       await Promise.all(promises)
-      expect(set.size).assertLargerOrEqual(0)
-      Done()
+      expect(verifySetConsistencyString(set)).assertTrue()
+      done()
     })
 
     /**
@@ -1628,7 +1750,7 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set1: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let set2: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let set3: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
@@ -1637,17 +1759,17 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
         set2.add(i * 10)
         set3.add(`str_${i}`)
       }
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 20; i++) {
-        promises.push(fullReadWriteTask(set1))
-        promises.push(fullReadWriteTask(set2))
-        promises.push(fullReadWriteStringTask(set3))
+        promises.push(taskpool.execute(new taskpool.Task(fullReadWriteTask, set1)))
+        promises.push(taskpool.execute(new taskpool.Task(fullReadWriteTask, set2)))
+        promises.push(taskpool.execute(new taskpool.Task(fullReadWriteStringTask, set3)))
       }
       await Promise.all(promises)
-      expect(set1.size).assertLargerOrEqual(0)
-      expect(set2.size).assertLargerOrEqual(0)
-      expect(set3.size).assertLargerOrEqual(0)
-      Done()
+      expect(verifySetConsistencyNumber(set1)).assertTrue()
+      expect(verifySetConsistencyNumber(set2)).assertTrue()
+      expect(verifySetConsistencyString(set3)).assertTrue()
+      done()
     })
 
     /**
@@ -1658,18 +1780,168 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetHighConcurrencyTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void): Promise<void> => {
+    it('ConcurrentSetHighConcurrencyTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let dedupCount: AtomicInt = new AtomicInt(0)
-      let promises: Promise<void>[] = []
+      let promises: Promise<Any>[] = []
       for (let i = 0; i < 20; i++) {
-        promises.push(dedupReadWriteTask(set, dedupCount))
+        promises.push(taskpool.execute(new taskpool.Task(dedupReadWriteTask, set, dedupCount)))
       }
       await Promise.all(promises)
       expect(set.has(999)).assertTrue()
-      expect(dedupCount.load()).assertLargerOrEqual(0)
-      Done()
+      expect(set.size).assertEqual(1)
+      expect(dedupCount.load()).assertEqual(200)
+      done()
     })
 
-  })
+    /**
+     * @tc.name   ConcurrentSetHighConcurrencyTest6900
+     * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_6900
+     * @tc.desc   async 1 channel 50 users per channel registration size 50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ConcurrentSetHighConcurrencyTest6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
+      let channels: number = 1
+      let users: number = 50
+      let promises: Promise<Any>[] = []
+      for (let i = 0; i < channels; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(registerTask, userIdSet, i * 1.0, users * 1.0)))
+      }
+      await Promise.all(promises)
+      expect(userIdSet.size).assertEqual(channels * users)
+      done()
+    })
+
+    /**
+     * @tc.name   ConcurrentSetHighConcurrencyTest7000
+     * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_7000
+     * @tc.desc   async 1 channel 100 users per channel registration size 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ConcurrentSetHighConcurrencyTest7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
+      let channels: number = 1
+      let users: number = 100
+      let promises: Promise<Any>[] = []
+      for (let i = 0; i < channels; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(registerTask, userIdSet, i * 1.0, users * 1.0)))
+      }
+      await Promise.all(promises)
+       expect(userIdSet.size).assertEqual(channels * users)
+       done()
+     })
+
+     /**
+      * @tc.name   ConcurrentSetHighConcurrencyTest7100
+     * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_7100
+     * @tc.desc   async 5 channels 10 users per channel registration size 50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ConcurrentSetHighConcurrencyTest7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
+      let channels: number = 5
+      let users: number = 10
+      let promises: Promise<Any>[] = []
+      for (let i = 0; i < channels; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(registerTask, userIdSet, i * 1.0, users * 1.0)))
+      }
+      await Promise.all(promises)
+       expect(userIdSet.size).assertEqual(channels * users)
+       done()
+     })
+
+     /**
+      * @tc.name   ConcurrentSetHighConcurrencyTest7200
+     * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_7200
+     * @tc.desc   async 5 channels 100 users per channel registration size 500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ConcurrentSetHighConcurrencyTest7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
+      let channels: number = 5
+      let users: number = 100
+      let promises: Promise<Any>[] = []
+      for (let i = 0; i < channels; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(registerTask, userIdSet, i * 1.0, users * 1.0)))
+      }
+      await Promise.all(promises)
+       expect(userIdSet.size).assertEqual(channels * users)
+       done()
+     })
+
+     /**
+      * @tc.name   ConcurrentSetHighConcurrencyTest7300
+     * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_7300
+     * @tc.desc   async 10 channels 10 users per channel registration size 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ConcurrentSetHighConcurrencyTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
+      let channels: number = 10
+      let users: number = 10
+      let promises: Promise<Any>[] = []
+      for (let i = 0; i < channels; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(registerTask, userIdSet, i * 1.0, users * 1.0)))
+      }
+      await Promise.all(promises)
+       expect(userIdSet.size).assertEqual(channels * users)
+       done()
+     })
+
+     /**
+      * @tc.name   ConcurrentSetHighConcurrencyTest7400
+     * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_7400
+     * @tc.desc   async 10 channels 50 users per channel registration size 500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ConcurrentSetHighConcurrencyTest7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let userIdSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
+      let channels: number = 10
+      let users: number = 50
+      let promises: Promise<Any>[] = []
+      for (let i = 0; i < channels; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(registerTask, userIdSet, i * 1.0, users * 1.0)))
+      }
+      await Promise.all(promises)
+       expect(userIdSet.size).assertEqual(channels * users)
+       done()
+     })
+
+     /**
+      * @tc.name   ConcurrentSetHighConcurrencyTest7500
+     * @tc.number SUB_CONCURRENTSET_HIGH_CONCURRENCY_TEST_7500
+     * @tc.desc   async 20 threads iterate during concurrent modification weak consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ConcurrentSetHighConcurrencyTest7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
+      for (let i = 0; i < 100; i++) {
+        set.add(i)
+      }
+      let promises: Promise<Any>[] = []
+      for (let i = 0; i < 20; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(iterateDuringModifyTask, set)))
+      }
+      await Promise.all(promises)
+       expect(verifySetConsistencyNumber(set)).assertTrue()
+       done()
+     })
+
+   })
+
 }

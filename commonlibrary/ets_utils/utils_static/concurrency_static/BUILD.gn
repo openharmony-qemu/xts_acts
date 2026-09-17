@@ -38,6 +38,8 @@ group("concurrency_static") {
       "taskpool_test_static:ActsTaskpoolStaticTest",
       "thread_safe_container_test_static:ActsThreadSafeContainerStaticTest",
       "thread_safe_container2_test_static:ActsThreadSafeContainer2StaticTest",
+      "concurrent_hash_map_test_static:ActsConcurrentHashMapStaticTest",
+      "concurrent_queue_test_static:ActsConcurrentQueueStaticTest",
       "concurrent_set_test_static:ActsConcurrentSetStaticTest",
       "timer_test_static:ActsTimerStaticTest",
       "asyncRunner_test_static:ActsAsyncRunnerStaticTest",
