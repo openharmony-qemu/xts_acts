@@ -95,9 +95,9 @@ struct webOnVerifyPinCallback {
             }
             case 'testVerifyPinHandlerClass001': {
               try {
-                let accessible: boolean = VerifyPinHandler != null &&
+                let isClassExported: boolean = VerifyPinHandler != null &&
                   typeof VerifyPinHandler === 'function';
-                Utils.emitEvent(accessible, 200250);
+                Utils.emitEvent(isClassExported, 200250);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(false, 200250);

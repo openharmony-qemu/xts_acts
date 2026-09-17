@@ -19,10 +19,6 @@ import webNativeMessagingExtensionManager from '@ohos.web.webNativeMessagingExte
 
 const CAPABILITY_NOT_SUPPORTED = 801;
 
-function isCapabilityNotSupported(error: BusinessError): boolean {
-  return error.code === CAPABILITY_NOT_SUPPORTED;
-}
-
 export default function connectNativePermissionCoverageDirect() {
   describe('connectNativePermissionCoverageDirect', () => {
     let context: common.UIAbilityContext;
@@ -51,10 +47,10 @@ export default function connectNativePermissionCoverageDirect() {
             onDisconnect: () => {},
             onFailed: () => {},
           });
-          expect(true).assertTrue();
+          expect(false).assertTrue();
         } catch (error) {
           let err = error as BusinessError;
-          expect(isCapabilityNotSupported(err) || err.code === 201).assertTrue();
+          expect(Number(err.code)).assertEqual(CAPABILITY_NOT_SUPPORTED);
         }
         done();
       })
@@ -71,10 +67,10 @@ export default function connectNativePermissionCoverageDirect() {
       async (done: Function) => {
         try {
           await webNativeMessagingExtensionManager.disconnectNative(1);
-          expect(true).assertTrue();
+          expect(false).assertTrue();
         } catch (error) {
           let err = error as BusinessError;
-          expect(isCapabilityNotSupported(err) || err.code === 201).assertTrue();
+          expect(Number(err.code)).assertEqual(CAPABILITY_NOT_SUPPORTED);
         }
         done();
       })

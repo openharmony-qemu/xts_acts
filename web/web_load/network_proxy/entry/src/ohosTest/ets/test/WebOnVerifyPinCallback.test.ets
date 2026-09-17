@@ -100,7 +100,7 @@ export default function webOnVerifyPinCallback() {
     /**
      * @tc.name   testVerifyPinHandlerClass001
      * @tc.number SUB_WEB_VERIFYPINHANDLER_CLASS_0100
-     * @tc.desc   test VerifyPinHandler class export accessible
+     * @tc.desc   test VerifyPinHandler class export is available
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
