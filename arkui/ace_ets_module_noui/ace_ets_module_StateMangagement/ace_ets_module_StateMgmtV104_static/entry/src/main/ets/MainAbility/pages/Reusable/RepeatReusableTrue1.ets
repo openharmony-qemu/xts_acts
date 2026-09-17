@@ -28,7 +28,7 @@ export class RepeatreutrueClazz {
 @ComponentV2
 struct Repeatreutrue  {
   @Local simpleList: Array<RepeatreutrueClazz> = [];
-  private exchange: Array<int> = new Array<int>();
+  private exchange: Array<int> = [];
   private counter: number = 0;
   @Local selectOptions: SelectOption[] = [];
   @Local selectIdx: number = 0;

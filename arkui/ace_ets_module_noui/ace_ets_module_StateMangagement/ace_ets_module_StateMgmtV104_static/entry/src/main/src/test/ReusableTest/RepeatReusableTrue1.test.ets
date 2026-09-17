@@ -63,13 +63,13 @@ export default function RepeatReusableTrue1(): void {
 
     
     /**
-     * @tc.number   SUB_ARKUI_Repeatreusabletrue_Static_001
-     * @tc.name     SUB_ARKUI_Repeatreusabletrue_Static_001
-     * @tc.desc     SUB_ARKUI_Repeatreusabletrue_Static_001
+     * @tc.number   SUB_ARKUI_Repeatreusabletrue_Static_0100
+     * @tc.name     SUB_ARKUI_Repeatreusabletrue_Static_0100
+     * @tc.desc     SUB_ARKUI_Repeatreusabletrue_Static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ARKUI_Repeatreusabletrue_Static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_Repeatreusabletrue_Static_001] START');
+    it('SUB_ARKUI_Repeatreusabletrue_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_Repeatreusabletrue_Static_0100] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -78,7 +78,7 @@ export default function RepeatReusableTrue1(): void {
       await CommonFunc.sleep(5000);
       let text = await driver.findComponent(ON.text('[a] index99: item_99'))
       expect(text != null).assertTrue()
-      console.info('[SUB_ARKUI_Repeatreusabletrue_Static_001] END');
+      console.info('[SUB_ARKUI_Repeatreusabletrue_Static_0100] END');
       done();
     });
   })
