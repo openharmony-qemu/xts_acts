@@ -151,8 +151,7 @@ struct proxyConfigInsertDirectRuleParam {
             case 'testInsertDirectRuleNegativeEnum': {
               try {
                 let config: webview.ProxyConfig = new webview.ProxyConfig();
-                let invalidValue: webview.ProxySchemeFilter | number = -1;
-                config.insertDirectRule(invalidValue as webview.ProxySchemeFilter);
+                config.insertDirectRule(-1 as webview.ProxySchemeFilter);
                 Utils.emitEvent(false, 202502405);
               } catch (error) {
                 error = error as BusinessError;
@@ -165,8 +164,7 @@ struct proxyConfigInsertDirectRuleParam {
             case 'testInsertDirectRuleOutOfRangeEnum': {
               try {
                 let config: webview.ProxyConfig = new webview.ProxyConfig();
-                let invalidValue: webview.ProxySchemeFilter | number = 3;
-                config.insertDirectRule(invalidValue as webview.ProxySchemeFilter);
+                config.insertDirectRule(3 as webview.ProxySchemeFilter);
                 Utils.emitEvent(false, 202502406);
               } catch (error) {
                 error = error as BusinessError;
@@ -179,8 +177,7 @@ struct proxyConfigInsertDirectRuleParam {
             case 'testInsertDirectRuleLargeNumber': {
               try {
                 let config: webview.ProxyConfig = new webview.ProxyConfig();
-                let invalidValue: webview.ProxySchemeFilter | number = 99;
-                config.insertDirectRule(invalidValue as webview.ProxySchemeFilter);
+                config.insertDirectRule(99 as webview.ProxySchemeFilter);
                 Utils.emitEvent(false, 202502407);
               } catch (error) {
                 error = error as BusinessError;
