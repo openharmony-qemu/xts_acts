@@ -21,6 +21,7 @@ import ActsAcewebViewCookieTrack from './WebViewCookieTrack.test'
 import WebNestedScrollOptionsScrollBackwardHorizontalTest from './WebNestedScrollOptionsScrollBackwardHorizontalTest.test'
 import  webJsunit from './WebJsunit.test'
 import  webViewControllerPart2Test from './WebViewControllerPart2.test'
+import richTextTest from './RichText.test'
 export default function testsuite(): void {
     webInitTest();
     componentLifeCycleTestOne();
@@ -29,4 +30,5 @@ export default function testsuite(): void {
     WebNestedScrollOptionsScrollBackwardHorizontalTest();
     webJsunit();
     webViewControllerPart2Test();
+    richTextTest();
 }

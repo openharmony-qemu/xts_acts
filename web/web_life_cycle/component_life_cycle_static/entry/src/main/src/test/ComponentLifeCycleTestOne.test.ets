@@ -197,5 +197,25 @@ export default function componentLifeCycleTestOne(): void {
 
           }
       })
+
+    /**
+     * @tc.name   testSetRenderProcessModeInvalidStatic001
+     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_INVALID_0100
+     * @tc.desc   test setRenderProcessMode with invalid enum param spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetRenderProcessModeInvalidStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitSetRenderProcessModeInvalid001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testSetRenderProcessModeInvalidStatic001', '401', 10008, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
   })
 }

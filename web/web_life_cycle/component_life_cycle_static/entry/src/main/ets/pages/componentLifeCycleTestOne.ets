@@ -253,6 +253,16 @@ struct httpAuthHandler {
               }
               break;
             }
+            case 'emitSetRenderProcessModeInvalid001': {
+              try {
+                web_webview.WebviewController.setRenderProcessMode(999 as web_webview.RenderProcessMode);
+                Utils.emitEvent('success', 10008);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 10008);
+              }
+              break;
+            }
 
             case 'emitWebViewOnRenderProcessResponding': {
               this.controllerone.refresh()

@@ -6,6 +6,7 @@
     "pages/webViewCookieTrack",
     "pages/WebNestedScrollOptionsScrollBackwardHorizontalTest",
     "pages/web",
-    "pages/webViewControllerPart2"
+    "pages/webViewControllerPart2",
+    "pages/RichTextTest"
   ]
 }

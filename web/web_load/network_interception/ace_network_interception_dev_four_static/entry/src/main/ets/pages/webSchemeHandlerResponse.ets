@@ -77,6 +77,54 @@ struct WebSchemeHandlerResponse {
             response.setNetErrorCode(WebNetErrorList.NET_OK)
           console.info("key==>" +  this.stringObj.str)
             switch ( this.stringObj.str) {
+            case "WebSchemeHandlerResponse_ctor": {
+              try {
+                let respCtor: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
+                let isDefined: boolean = respCtor !== undefined && respCtor !== null;
+                Utils.emitEvent(isDefined, 9818);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 9818);
+              }
+              break;
+            }
+            case "WebResourceHandler_ctor": {
+              try {
+                let handler: webview.WebResourceHandler = new webview.WebResourceHandler();
+                let isDefined: boolean = handler !== undefined && handler !== null;
+                Utils.emitEvent(isDefined, 9820);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 9820);
+              }
+              break;
+            }
+            case "WebSchemeHandlerResponse_class": {
+              try {
+                let resp: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
+                let isClass: boolean = resp instanceof webview.WebSchemeHandlerResponse;
+                Utils.emitEvent(isClass, 9822);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 9822);
+              }
+              break;
+            }
+            case "WebResourceHandler_class": {
+              try {
+                let handler: webview.WebResourceHandler = new webview.WebResourceHandler();
+                let isClass: boolean = handler instanceof webview.WebResourceHandler;
+                Utils.emitEvent(isClass, 9824);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 9824);
+              }
+              break;
+            }
             case "WebSchemeHandlerResponse_getUrl": {
               try {
                   console.log("[schemeHandler] getUrl:" + response.getUrl())

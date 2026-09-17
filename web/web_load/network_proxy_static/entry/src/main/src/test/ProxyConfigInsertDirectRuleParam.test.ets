@@ -151,77 +151,77 @@ export default function proxyConfigInsertDirectRuleParam():void {
     //     done();
     //   })
 
-    // /**
-    //  * @tc.name   testInsertDirectRuleNegativeEnumStatic
-    //  * @tc.number SUB_WEB_INSERTDIRECTRULE_PARAM_0600
-    //  * @tc.desc   insertDirectRule negative enum value 401 test.
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('testInsertDirectRuleNegativeEnumStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> =>  {
-    //     try {
-    //       await Utils.msSleep(2000);
-    //       Utils.emitEvent('testInsertDirectRuleNegativeEnum', 10)
-    //       await Utils.msSleep(2000);
-    //       Utils.registerEvent('testInsertDirectRuleNegativeEnum', true, 202502405, done);
-    //       await Utils.msSleep(2000);
-    //       inspector.sendEventByKey('insertDirectRuleParamButton', 10, '');
-    //       await Utils.msSleep(2000);
-    //     } catch(err) {
-    //       console.log('testEnableReverseBypassNullStatic' + err)
-    //     }
-    //     done();
-    //   })
+    /**
+     * @tc.name   testInsertDirectRuleNegativeEnumStatic
+     * @tc.number SUB_WEB_INSERTDIRECTRULE_PARAM_0600
+     * @tc.desc   insertDirectRule negative enum value 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInsertDirectRuleNegativeEnumStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>  {
+        try {
+          await Utils.msSleep(2000);
+          Utils.emitEvent('testInsertDirectRuleNegativeEnum', 10);
+          await Utils.msSleep(2000);
+          Utils.registerEvent('testInsertDirectRuleNegativeEnum', true, 202502405, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('insertDirectRuleParamButton', 10, '');
+          await Utils.msSleep(2000);
+        } catch(err) {
+          console.log('testInsertDirectRuleNegativeEnumStatic' + err);
+        }
+        done();
+      })
 
-    // /**
-    //  * @tc.name   testInsertDirectRuleOutOfRangeEnumStatic
-    //  * @tc.number SUB_WEB_INSERTDIRECTRULE_PARAM_0700
-    //  * @tc.desc   insertDirectRule out of range enum value 401 test.
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('testInsertDirectRuleOutOfRangeEnumStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> =>  {
-    //     try {
-    //       await Utils.msSleep(2000);
-    //       Utils.emitEvent('testInsertDirectRuleOutOfRangeEnum', 10)
-    //       await Utils.msSleep(2000);
-    //       Utils.registerEvent('testInsertDirectRuleOutOfRangeEnum', true, 202502406, done);
-    //       await Utils.msSleep(2000);
-    //       inspector.sendEventByKey('insertDirectRuleParamButton', 10, '');
-    //       await Utils.msSleep(2000);
-    //     } catch(err) {
-    //       console.log('testEnableReverseBypassNullStatic' + err)
-    //     }
-    //     done();
-    //   })
+    /**
+     * @tc.name   testInsertDirectRuleOutOfRangeEnumStatic
+     * @tc.number SUB_WEB_INSERTDIRECTRULE_PARAM_0700
+     * @tc.desc   insertDirectRule out of range enum value 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInsertDirectRuleOutOfRangeEnumStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>  {
+        try {
+          await Utils.msSleep(2000);
+          Utils.emitEvent('testInsertDirectRuleOutOfRangeEnum', 10);
+          await Utils.msSleep(2000);
+          Utils.registerEvent('testInsertDirectRuleOutOfRangeEnum', true, 202502406, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('insertDirectRuleParamButton', 10, '');
+          await Utils.msSleep(2000);
+        } catch(err) {
+          console.log('testInsertDirectRuleOutOfRangeEnumStatic' + err);
+        }
+        done();
+      })
 
-    // /**
-    //  * @tc.name   testInsertDirectRuleLargeNumberStatic
-    //  * @tc.number SUB_WEB_INSERTDIRECTRULE_PARAM_0800
-    //  * @tc.desc   insertDirectRule large number 401 test.
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('testInsertDirectRuleLargeNumberStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> =>  {
-    //     try {
-    //       await Utils.msSleep(2000);
-    //       Utils.emitEvent('testInsertDirectRuleLargeNumber', 10)
-    //       await Utils.msSleep(2000);
-    //       Utils.registerEvent('testInsertDirectRuleLargeNumber', true, 202502407, done);
-    //       await Utils.msSleep(2000);
-    //       inspector.sendEventByKey('insertDirectRuleParamButton', 10, '');
-    //       await Utils.msSleep(2000);
-    //     } catch(err) {
-    //       console.log('testEnableReverseBypassNullStatic' + err)
-    //     }
-    //     done();
-    //   })
+    /**
+     * @tc.name   testInsertDirectRuleLargeNumberStatic
+     * @tc.number SUB_WEB_INSERTDIRECTRULE_PARAM_0800
+     * @tc.desc   insertDirectRule large number 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInsertDirectRuleLargeNumberStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>  {
+        try {
+          await Utils.msSleep(2000);
+          Utils.emitEvent('testInsertDirectRuleLargeNumber', 10);
+          await Utils.msSleep(2000);
+          Utils.registerEvent('testInsertDirectRuleLargeNumber', true, 202502407, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('insertDirectRuleParamButton', 10, '');
+          await Utils.msSleep(2000);
+        } catch(err) {
+          console.log('testInsertDirectRuleLargeNumberStatic' + err);
+        }
+        done();
+      })
 
     // /**
     //  * @tc.name   testInsertDirectRuleStringStatic

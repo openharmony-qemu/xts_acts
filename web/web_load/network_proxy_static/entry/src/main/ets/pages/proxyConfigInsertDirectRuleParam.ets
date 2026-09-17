@@ -148,47 +148,47 @@ struct proxyConfigInsertDirectRuleParam {
             //   break;
             // }
 
-            // case 'testInsertDirectRuleNegativeEnum': {
-            //   try {
-            //     let config: webview.ProxyConfig = new webview.ProxyConfig();
-            //     let invalidValue: webview.ProxySchemeFilter | number = -1;
-            //     config.insertDirectRule(invalidValue as webview.ProxySchemeFilter);
-            //     Utils.emitEvent(false, 202502405);
-            //   } catch (error) {
-            //     error = error as BusinessError;
-            //     console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-            //     Utils.emitEvent(error.code === 401, 202502405);
-            //   }
-            //   break;
-            // }
+            case 'testInsertDirectRuleNegativeEnum': {
+              try {
+                let config: webview.ProxyConfig = new webview.ProxyConfig();
+                let invalidValue: webview.ProxySchemeFilter | number = -1;
+                config.insertDirectRule(invalidValue as webview.ProxySchemeFilter);
+                Utils.emitEvent(false, 202502405);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code === 401, 202502405);
+              }
+              break;
+            }
 
-            // case 'testInsertDirectRuleOutOfRangeEnum': {
-            //   try {
-            //     let config: webview.ProxyConfig = new webview.ProxyConfig();
-            //     let invalidValue: webview.ProxySchemeFilter | number = 3;
-            //     config.insertDirectRule(invalidValue as webview.ProxySchemeFilter);
-            //     Utils.emitEvent(false, 202502406);
-            //   } catch (error) {
-            //     error = error as BusinessError;
-            //     console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-            //     Utils.emitEvent(error.code === 401, 202502406);
-            //   }
-            //   break;
-            // }
+            case 'testInsertDirectRuleOutOfRangeEnum': {
+              try {
+                let config: webview.ProxyConfig = new webview.ProxyConfig();
+                let invalidValue: webview.ProxySchemeFilter | number = 3;
+                config.insertDirectRule(invalidValue as webview.ProxySchemeFilter);
+                Utils.emitEvent(false, 202502406);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code === 401, 202502406);
+              }
+              break;
+            }
 
-            // case 'testInsertDirectRuleLargeNumber': {
-            //   try {
-            //     let config: webview.ProxyConfig = new webview.ProxyConfig();
-            //     let invalidValue: webview.ProxySchemeFilter | number = 99;
-            //     config.insertDirectRule(invalidValue as webview.ProxySchemeFilter);
-            //     Utils.emitEvent(false, 202502407);
-            //   } catch (error) {
-            //     error = error as BusinessError;
-            //     console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-            //     Utils.emitEvent(error.code === 401, 202502407);
-            //   }
-            //   break;
-            // }
+            case 'testInsertDirectRuleLargeNumber': {
+              try {
+                let config: webview.ProxyConfig = new webview.ProxyConfig();
+                let invalidValue: webview.ProxySchemeFilter | number = 99;
+                config.insertDirectRule(invalidValue as webview.ProxySchemeFilter);
+                Utils.emitEvent(false, 202502407);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code === 401, 202502407);
+              }
+              break;
+            }
 
             // case 'testInsertDirectRuleString': {
             //   try {

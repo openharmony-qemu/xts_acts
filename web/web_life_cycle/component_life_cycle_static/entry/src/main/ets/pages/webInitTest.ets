@@ -156,11 +156,32 @@ struct WebInitTest {
                 break;
               }
 
+              case 'emitOnceReturn001': {
+                try {
+                  webView.once('webInited', () => {
+                    console.error('webInited callback');
+                  });
+                  let isVoid: boolean = true;
+                  Utils.emitEvent(isVoid, 202603190);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(false, 202603190);
+                }
+                break;
+              }
+
               case 'emitonSwitchNextPage': {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();
                 router.pushUrl({ url: 'pages/componentLifeCycleTestOne' })
                 console.log('push URL success')
+              }
+
+              case 'emitonSwitchNextPageRichText': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/RichTextTest' })
+                console.log('push RichTextTest URL success')
               }
             }
           })

@@ -290,6 +290,86 @@ export default function WebSchemeHandlerResponse() {
       })
 
     /**
+    * @tc.name        testWebSchemeHandlerResponseCtorStatic
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_CTOR_0100
+    * @tc.desc        test WebSchemeHandlerResponse class constructor
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('testWebSchemeHandlerResponseCtorStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('WebSchemeHandlerResponse_ctor', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testWebSchemeHandlerResponseCtorStatic', true, 9818, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+    * @tc.name        testWebResourceHandlerCtorStatic
+    * @tc.number      SUB_WEB_WEBRESOURCEHANDLER_CTOR_0100
+    * @tc.desc        test WebResourceHandler class constructor
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('testWebResourceHandlerCtorStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('WebResourceHandler_ctor', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testWebResourceHandlerCtorStatic', true, 9820, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+    * @tc.name        testWebSchemeHandlerResponseClassStatic
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_CLASS_0100
+    * @tc.desc        test WebSchemeHandlerResponse class instanceof
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('testWebSchemeHandlerResponseClassStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('WebSchemeHandlerResponse_class', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testWebSchemeHandlerResponseClassStatic', true, 9822, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+    * @tc.name        testWebResourceHandlerClassStatic
+    * @tc.number      SUB_WEB_WEBRESOURCEHANDLER_CLASS_0100
+    * @tc.desc        test WebResourceHandler class instanceof
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('testWebResourceHandlerClassStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('WebResourceHandler_class', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testWebResourceHandlerClassStatic', true, 9824, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
     * @tc.name        testemitOnSwitchNextPageStatic
     * @tc.number      testemitOnSwitchNextPageStatic6666
     * @tc.desc        test emitonSwitchNextPage

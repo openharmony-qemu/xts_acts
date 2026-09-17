@@ -59,45 +59,65 @@ export default function handleStatusChangedParamTest():void {
       console.info("HandleStatusChangedParamTest beforeEach start");
     })
 
-    // /**
-    //  * @tc.name   testHandleStatusChangedParamNull001
-    //  * @tc.number SUB_WEB_NATIVEMEDIAPLAYERHANDLER_HANDLESTATUSCHANGED_PARAM_0100
-    //  * @tc.desc   handleStatusChanged null param test.
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('testHandleStatusChangedParamNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     await Utils.msSleep(15000);
-    //     Utils.emitEvent('testHandleStatusChangedParamNull001', 10)
-    //     await Utils.msSleep(2000);
-    //     Utils.registerEvent("testHandleStatusChangedParamNull001", "401", 202609021, done);
-    //     await Utils.msSleep(2000);
-    //     inspector.sendEventByKey('HandleStatusChangedParamTestButton', 10, '');
-    //     await Utils.msSleep(5000);
-    //     done();
-    //   })
+    /**
+     * @tc.name   testHandleStatusChangedPlaying001
+     * @tc.number SUB_WEB_NATIVEMEDIAPLAYERHANDLER_HANDLESTATUSCHANGED_PLAYING_0100
+     * @tc.desc   handleStatusChanged PLAYING enum test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHandleStatusChangedPlaying001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(15000);
+        Utils.emitEvent('testHandleStatusChangedPlaying001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testHandleStatusChangedPlaying001', true, 202609021, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('HandleStatusChangedParamTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
 
-    // /**
-    //  * @tc.name   testHandleStatusChangedParamUndefined001
-    //  * @tc.number SUB_WEB_NATIVEMEDIAPLAYERHANDLER_HANDLESTATUSCHANGED_PARAM_0200
-    //  * @tc.desc   handleStatusChanged undefined param test.
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('testHandleStatusChangedParamUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     await Utils.msSleep(2000);
-    //     Utils.emitEvent('testHandleStatusChangedParamUndefined001', 10)
-    //     await Utils.msSleep(2000);
-    //     Utils.registerEvent("testHandleStatusChangedParamUndefined001", "401", 202609022, done);
-    //     await Utils.msSleep(2000);
-    //     inspector.sendEventByKey('HandleStatusChangedParamTestButton', 10, '');
-    //     await Utils.msSleep(5000);
-    //     done();
-    //   })
+    /**
+     * @tc.name   testHandleStatusChangedPaused001
+     * @tc.number SUB_WEB_NATIVEMEDIAPLAYERHANDLER_HANDLESTATUSCHANGED_PAUSED_0200
+     * @tc.desc   handleStatusChanged PAUSED enum test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHandleStatusChangedPaused001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('testHandleStatusChangedPaused001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testHandleStatusChangedPaused001', true, 202609022, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('HandleStatusChangedParamTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
+
+    /**
+     * @tc.name   testHandleStatusChangedInvalidEnum001
+     * @tc.number SUB_WEB_NATIVEMEDIAPLAYERHANDLER_HANDLESTATUSCHANGED_INVALID_0300
+     * @tc.desc   handleStatusChanged out-of-range enum test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHandleStatusChangedInvalidEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('testHandleStatusChangedInvalidEnum001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testHandleStatusChangedInvalidEnum001', '401', 202609023, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('HandleStatusChangedParamTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
 
     /**
      * @tc.name   testOnSwitchNextPageChangeParamTest

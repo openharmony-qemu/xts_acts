@@ -102,28 +102,39 @@ struct HandleStatusChangedParamTest {
           .onClick((e: ClickEvent) => {
             console.info("key==>" + this.str);
             switch (this.str) {
-              // case 'testHandleStatusChangedParamNull001': {
-              //   try {
-              //     this.nativeMediaPlayerHandler?.handleStatusChanged(null);
-              //     Utils.emitEvent('no error', 202609021)
-              //   } catch (error) {
-              //     error = error as BusinessError;
-              //     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              //     Utils.emitEvent(String(error.code), 202609021)
-              //   }
-              //   break;
-              // }
-              // case 'testHandleStatusChangedParamUndefined001': {
-              //   try {
-              //     this.nativeMediaPlayerHandler?.handleStatusChanged(undefined);
-              //     Utils.emitEvent('no error', 202609022)
-              //   } catch (error) {
-              //     error = error as BusinessError;
-              //     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              //     Utils.emitEvent(String(error.code), 202609022)
-              //   }
-              //   break;
-              // }
+              case 'testHandleStatusChangedPlaying001': {
+                try {
+                  this.nativeMediaPlayerHandler?.handleStatusChanged(webview.PlaybackStatus.PLAYING);
+                  Utils.emitEvent(true, 202609021);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(false, 202609021);
+                }
+                break;
+              }
+              case 'testHandleStatusChangedPaused001': {
+                try {
+                  this.nativeMediaPlayerHandler?.handleStatusChanged(webview.PlaybackStatus.PAUSED);
+                  Utils.emitEvent(true, 202609022);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(false, 202609022);
+                }
+                break;
+              }
+              case 'testHandleStatusChangedInvalidEnum001': {
+                try {
+                  this.nativeMediaPlayerHandler?.handleStatusChanged(99 as webview.PlaybackStatus);
+                  Utils.emitEvent('401', 202609023);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 202609023);
+                }
+                break;
+              }
 
               case 'emitOnSwitchNextPageChangeParamTest': {
                 let uiContext: UIContext = this.getUIContext();
