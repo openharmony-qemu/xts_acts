@@ -16,7 +16,7 @@ import { AbilityConstant, application, common, UIAbility, Want } from '@kit.Abil
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../test/List.test';
 import Utils from '../common/Utils';
 

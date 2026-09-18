@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import formInfo  from '@ohos.application.formInfo';
 import formError from '@ohos.application.formError';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';

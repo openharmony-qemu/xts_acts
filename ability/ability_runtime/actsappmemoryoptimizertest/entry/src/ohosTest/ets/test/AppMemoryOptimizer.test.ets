@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import appMemoryOptimizer from '@ohos.app.ability.appMemoryOptimizer';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'

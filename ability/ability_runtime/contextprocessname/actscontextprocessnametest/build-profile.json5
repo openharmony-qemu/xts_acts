@@ -15,14 +15,19 @@
  
 {
   "app": {
-    "signingConfigs": [
-    ],
+    "signingConfigs": [],
     "products": [
       {
         "name": "default",
         "compileSdkVersion": "26.0.1",
         "compatibleSdkVersion": 16,
-        "runtimeOS": "OpenHarmony"
+        "runtimeOS": "OpenHarmony",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
       }
     ],
     "buildModeSet": [

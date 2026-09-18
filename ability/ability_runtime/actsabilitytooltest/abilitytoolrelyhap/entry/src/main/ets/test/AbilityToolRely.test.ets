@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const TEST_SUITE_NAME: string = 'AbilityToolRelyTest';

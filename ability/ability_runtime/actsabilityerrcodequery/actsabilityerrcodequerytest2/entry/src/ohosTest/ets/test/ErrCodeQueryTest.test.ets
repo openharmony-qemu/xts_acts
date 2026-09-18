@@ -14,7 +14,7 @@
  */
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { common, UIAbility, Want, StartOptions, InsightIntentContext,
   OpenLinkOptions, bundleManager } from '@kit.AbilityKit';
 import dialogRequest from '@ohos.app.ability.dialogRequest'
