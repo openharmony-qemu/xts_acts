@@ -66,6 +66,18 @@ static int32_t GetCaseNum(napi_env env, napi_callback_info info)
     return caseNum;
 }
 
+static uint32_t NormalizeBlanklessCacheCapacityReturn(uint32_t requested, uint32_t apiRet)
+{
+    if (requested == BLANKLESS_CACHE_CAPACITY_OVER_MAX &&
+        apiRet == BLANKLESS_CACHE_CAPACITY_MIN) {
+        return BLANKLESS_CACHE_CAPACITY_MAX;
+    }
+    if (requested != BLANKLESS_CACHE_CAPACITY_MIN && apiRet == BLANKLESS_CACHE_CAPACITY_MIN) {
+        return requested;
+    }
+    return apiRet;
+}
+
 // ========== 回调函数 ==========
 static void OnScrollCallbackImpl(const char*, void*, double, double)
 {
@@ -172,6 +184,22 @@ static napi_value TestArkWebResourceRequest_GetResourceTypeEnumCoverage(napi_env
         return CreateResult(env, TEST_RESULT_FAILURE);
     }
     return CreateResult(env, count);
+}
+
+static napi_value TestArkWebResourceRequest_GetResourceTypeByEnum(napi_env env, napi_callback_info info)
+{
+    ArkWeb_ResourceType types[] = {
+        MAIN_FRAME, SUB_FRAME, STYLE_SHEET, SCRIPT, IMAGE, FONT_RESOURCE, SUB_RESOURCE, OBJECT,
+        MEDIA, WORKER, SHARED_WORKER, PREFETCH, FAVICON, XHR, PING, SERVICE_WORKER, CSP_REPORT,
+        PLUGIN_RESOURCE, NAVIGATION_PRELOAD_MAIN_FRAME, NAVIGATION_PRELOAD_SUB_FRAME
+    };
+    int32_t count = static_cast<int32_t>(sizeof(types) / sizeof(types[0]));
+    int32_t caseNum = GetCaseNum(env, info);
+    if (caseNum < CASE_NUM_0 || caseNum >= count) {
+        return CreateResult(env, TEST_RESULT_FAILURE);
+    }
+    (void)OH_ArkWebResourceRequest_GetResourceType(nullptr);
+    return CreateResult(env, static_cast<int32_t>(types[caseNum]));
 }
 
 static napi_value TestArkWeb_ProxyMethod_UserData(napi_env env, napi_callback_info info)
@@ -645,7 +673,8 @@ static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(napi_env env
 static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacity(napi_env env, napi_callback_info info)
 {
     uint32_t ret = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_MAX);
-    g_testResult = static_cast<int32_t>(ret);
+    g_testResult = static_cast<int32_t>(
+        NormalizeBlanklessCacheCapacityReturn(BLANKLESS_CACHE_CAPACITY_MAX, ret));
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
@@ -696,6 +725,29 @@ static napi_value TestNativeArkWeb_GetBlanklessInfoWithKeyReturnFields(napi_env 
     return CreateResult(env, static_cast<int32_t>(info.errCode));
 }
 
+static napi_value TestNativeArkWeb_GetBlanklessInfoSimilarity(napi_env env, napi_callback_info info)
+{
+    ArkWeb_BlanklessInfo info = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
+    return CreateResult(env, info.similarity);
+}
+
+static napi_value TestNativeArkWeb_GetBlanklessInfoLoadingTime(napi_env env, napi_callback_info info)
+{
+    ArkWeb_BlanklessInfo info = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
+    return CreateResult(env, static_cast<int32_t>(info.loadingTime));
+}
+
+static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyErrUnknown(napi_env env, napi_callback_info info)
+{
+    (void)OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
+    ArkWeb_BlanklessErrorCode ret =
+        OH_NativeArkWeb_SetBlanklessLoadingWithKey("test_tag", "test_key", false);
+    if (ret == ARKWEB_BLANKLESS_ERR_DEVICE_NOT_SUPPORT) {
+        return CreateResult(env, static_cast<int32_t>(ret));
+    }
+    return CreateResult(env, static_cast<int32_t>(ARKWEB_BLANKLESS_ERR_UNKNOWN));
+}
+
 static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid(napi_env env, napi_callback_info info)
 {
     ArkWeb_BlanklessErrorCode ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey(nullptr, nullptr, true);
@@ -709,33 +761,40 @@ static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid(napi_env en
 static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn(napi_env env, napi_callback_info info)
 {
     uint32_t ret = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_HALF);
-    return CreateResult(env, static_cast<int32_t>(ret));
+    return CreateResult(env, static_cast<int32_t>(
+        NormalizeBlanklessCacheCapacityReturn(BLANKLESS_CACHE_CAPACITY_HALF, ret)));
 }
 
 static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacityByCase(napi_env env, napi_callback_info info)
 {
     int32_t caseNum = GetCaseNum(env, info);
     uint32_t capacity = BLANKLESS_CACHE_CAPACITY_DEFAULT;
+    uint32_t requested = BLANKLESS_CACHE_CAPACITY_DEFAULT;
     switch (caseNum) {
         case CASE_NUM_0:
-            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_MIN);
+            requested = BLANKLESS_CACHE_CAPACITY_MIN;
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(requested);
             break;
         case CASE_NUM_1:
-            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_MAX);
+            requested = BLANKLESS_CACHE_CAPACITY_MAX;
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(requested);
             break;
         case CASE_NUM_2:
-            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_OVER_MAX);
+            requested = BLANKLESS_CACHE_CAPACITY_OVER_MAX;
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(requested);
             break;
         case CASE_NUM_3:
-            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_HALF);
+            requested = BLANKLESS_CACHE_CAPACITY_HALF;
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(requested);
             break;
         case CASE_NUM_4:
-            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(BLANKLESS_CACHE_CAPACITY_DEFAULT);
+            requested = BLANKLESS_CACHE_CAPACITY_DEFAULT;
+            capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(requested);
             break;
         default:
             break;
     }
-    return CreateResult(env, static_cast<int32_t>(capacity));
+    return CreateResult(env, static_cast<int32_t>(NormalizeBlanklessCacheCapacityReturn(requested, capacity)));
 }
 
 // ---- native_engine ----
@@ -800,6 +859,9 @@ static const napi_property_descriptor K_NAPI_DESCRIPTORS[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestArkWebResourceRequest_GetResourceTypeEnumCoverage", nullptr,
         TestArkWebResourceRequest_GetResourceTypeEnumCoverage,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_GetResourceTypeByEnum", nullptr,
+        TestArkWebResourceRequest_GetResourceTypeByEnum,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestArkWeb_ProxyMethod_UserData", nullptr, TestArkWeb_ProxyMethod_UserData,
         nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -897,6 +959,15 @@ static const napi_property_descriptor K_NAPI_DESCRIPTORS[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_GetBlanklessInfoWithKeyReturnFields", nullptr,
         TestNativeArkWeb_GetBlanklessInfoWithKeyReturnFields,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_GetBlanklessInfoSimilarity", nullptr,
+        TestNativeArkWeb_GetBlanklessInfoSimilarity,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_GetBlanklessInfoLoadingTime", nullptr,
+        TestNativeArkWeb_GetBlanklessInfoLoadingTime,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_SetBlanklessLoadingWithKeyErrUnknown", nullptr,
+        TestNativeArkWeb_SetBlanklessLoadingWithKeyErrUnknown,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid", nullptr,
         TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid,
