@@ -1178,5 +1178,115 @@ export default function ActsRelationalStoreTest() {
           done();
         }
       })
+
+     /**
+     * @tc.name   TestUpdateWithConflictResolutionSuccess_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_5000
+     * @tc.desc   Test OH_Rdb_UpdateWithConflictResolution RDB_CONFLICT_NONE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestUpdateWithConflictResolutionSuccess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>TestUpdateWithConflictResolutionSuccess_0100 start====");
+        let result: number = testNapi.TestUpdateWithConflictResolutionSuccess_0100();
+        console.info("====>TestUpdateWithConflictResolutionSuccess_0100 result====", result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("====>TestUpdateWithConflictResolutionSuccess_0100 catch err: " + err);
+        expect(err).assertFail();
+        done();
+      }
+    })
+
+  /**
+   * @tc.name   TestUpdateWithConflictResolutionSuccess_0200
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_5100
+   * @tc.desc   Test OH_Rdb_UpdateWithConflictResolution RDB_CONFLICT_ABORT.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('TestUpdateWithConflictResolutionSuccess_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>TestUpdateWithConflictResolutionSuccess_0200 start====");
+        let result: number = testNapi.TestUpdateWithConflictResolutionSuccess_0200();
+        console.info("====>TestUpdateWithConflictResolutionSuccess_0200 result====", result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("====>TestUpdateWithConflictResolutionSuccess_0200 catch err: " + err);
+        expect(err).assertFail();
+        done();
+      }
+    })
+
+  /**
+   * @tc.name   TestUpdateWithConflictResolutionSuccess_0300
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_5200
+   * @tc.desc   Test OH_Rdb_UpdateWithConflictResolution RDB_CONFLICT_FAIL.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('TestUpdateWithConflictResolutionSuccess_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>TestUpdateWithConflictResolutionSuccess_0300 start====");
+        let result: number = testNapi.TestUpdateWithConflictResolutionSuccess_0300();
+        console.info("====>TestUpdateWithConflictResolutionSuccess_0300 result====", result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("====>TestUpdateWithConflictResolutionSuccess_0300 catch err: " + err);
+        expect(err).assertFail();
+        done();
+      }
+    })
+
+  /**
+   * @tc.name   TestUpdateWithConflictResolutionSuccess_0400
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_5300
+   * @tc.desc   Test OH_Rdb_UpdateWithConflictResolution RDB_CONFLICT_IGNORE.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('TestUpdateWithConflictResolutionSuccess_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>TestUpdateWithConflictResolutionSuccess_0400 start====");
+        let result: number = testNapi.TestUpdateWithConflictResolutionSuccess_0400();
+        console.info("====>TestUpdateWithConflictResolutionSuccess_0400 result====", result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("====>TestUpdateWithConflictResolutionSuccess_0400 catch err: " + err);
+        expect(err).assertFail();
+        done();
+      }
+    })
+
+  /**
+   * @tc.name   TestUpdateWithConflictResolutionSuccess_0500
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_5400
+   * @tc.desc   Test OH_Rdb_UpdateWithConflictResolution RDB_CONFLICT_REPLACE.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('TestUpdateWithConflictResolutionSuccess_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>TestUpdateWithConflictResolutionSuccess_0500 start====");
+        let result: number = testNapi.TestUpdateWithConflictResolutionSuccess_0500();
+        console.info("====>TestUpdateWithConflictResolutionSuccess_0500 result====", result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("====>TestUpdateWithConflictResolutionSuccess_0500 catch err: " + err);
+        expect(err).assertFail();
+        done();
+      }
+    })
   })
 }

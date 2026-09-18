@@ -116,6 +116,11 @@ export const testOHRdbDetachError: () => number;
 export const testOHRdbSubscribeDetails: () => number;
 export const testSetTokenizerNotSupported: () => number;
 export const testSubscribeSuccess: () => number;
+export const TestUpdateWithConflictResolutionSuccess_0100: () => number;
+export const TestUpdateWithConflictResolutionSuccess_0200: () => number;
+export const TestUpdateWithConflictResolutionSuccess_0300: () => number;
+export const TestUpdateWithConflictResolutionSuccess_0400: () => number;
+export const TestUpdateWithConflictResolutionSuccess_0500: () => number;
 
 //database/rdb/relational_store_error_code.h
 export const testRdbError: () => number;
