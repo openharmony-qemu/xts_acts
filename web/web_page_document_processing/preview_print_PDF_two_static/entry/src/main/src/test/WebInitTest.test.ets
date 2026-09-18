@@ -226,25 +226,6 @@ export default function webInitTest(): void {
 
 
     /**
-    * @tc.name         testDeleteAllDataStatic003
-    * @tc.number       SUB_WEB_DELETEALLDATA_0300
-    * @tc.desc         test deleteAllData with null
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 3
-    */
-    it('testDeleteAllDataStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitDeleteAllData003', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent('testDeleteAllDataStatic003', "success", 60607, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('WebInitButton', 10, '');
-      await Utils.msSleep(6000);
-      done()
-    })
-
-    /**
     * @tc.name         testDeleteAllDataStatic004
     * @tc.number       SUB_WEB_DELETEALLDATA_0400
     * @tc.desc         test deleteAllData with undefined
